@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","dijit/_TemplatedMixin","dojo/_base/lang","Quoin/Handlebars"],function(e,t,n,r){return e("Quoin.HandlebarsTemplated",t,{_skipNodeCache:!0,_stringRepl:function(e){var t=r.compile(e);return n.trim(t(this))}})});

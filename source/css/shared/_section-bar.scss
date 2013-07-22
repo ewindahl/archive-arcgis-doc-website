@@ -1,0 +1,105 @@
+.section-bar {
+  @include clearfix;
+  background: image-url("banner.jpg", false, true) no-repeat center center $purple;
+  @include trailer(2);
+  a {
+    color: white;
+  }
+  @include respond-to($tablet-tall){
+    @include trailer(1);
+  }
+  input {
+    @include leader(1.25);
+    @include opacity(.75);
+    width: 250px;
+    float: right;
+    border: none;
+    @include box-shadow(0 0 12px rgba(0,0,0,0.25));
+    &:focus {
+      @include opacity(.90);
+      border: none;
+    }
+    &.leader {
+      @include leader(2);
+    }
+    &.small-leader {
+      @include leader(1.75);
+    }
+  }
+
+  nav {
+    @include column(24);
+    @include leader(-1);
+    display:block;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    ul {
+      @include clearfix();
+      margin: 0;
+      li {
+        background: none;
+        float: left;
+        margin:0 5em 0 0;
+        padding: 0;
+        &.current, &:hover {
+          @include arrow("up", 7px, $white, "bottom");
+        }
+        @include respond-to($tablet-wide){
+          margin-right:2em;
+        }
+        @include respond-to($desktop){
+          margin:0 2em 0 0;
+        }
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    a {
+      @include adjust-font-size-to(15px, 1, 14px);
+      display: block;
+      @include padding-leader(.5, 15px);
+      @include padding-trailer(.5, 15px);
+    }
+    @include respond-to($phone-large){
+      display:none;
+    }
+  }
+
+  header {
+    @include column(24);
+    h1 {
+      float: left;
+      @include adjust-font-size-to(38px);
+      @include leader(1, 38px);
+      @include trailer(1, 38px);
+      font-family: $header-font;
+      text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    }
+    &.breadcrumbs {
+      small {
+        float: left;
+        padding:8px 0 4px;
+      }
+      h1 {
+        clear: both;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .btn {
+    @include leader(1.25, 14px);
+    &.leader {
+      @include leader(2);
+    }
+    @include respond-to($phone){
+      display:none;
+    }
+
+  }
+
+}
+
+.section-bar.logged-in {
+  background: image-url("banner-green.jpg", false, true) no-repeat center center #359f3f;
+}

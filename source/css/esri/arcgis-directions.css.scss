@@ -1,0 +1,468 @@
+@import "arcgis/base";
+.simpleDirections .esriStopsGetDirectionsContainer {
+  text-align:right;
+  margin:0;
+  @include respond-to($laptop-large){
+    margin-top: 2.8em;
+  }
+  @include respond-to($tablet-tall){
+    margin-top: 0;
+  }
+  @include respond-to($phone-large){
+    margin-top: 2.8em;
+  }
+}
+.simpleDirections .esriStopsGetDirections {
+  @include border-radius(4px);
+  @include background($button-secondary-background);
+  @include adjust-font-size-to(12px);
+  @include box-shadow($button-shadow);
+  @include box-sizing(border-box);
+  @include user-select(none);
+  @include transition(all 0.05s linear);
+  font-family: $button-font;
+  padding: .3em 1.25em .3em;
+  border: none;
+  color: $white;
+  display: inline-block;
+  text-transform: uppercase;
+  white-space:nowrap;
+  cursor:pointer;
+  text-shadow: $button-text-shadow;
+  letter-spacing: 1px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  margin:1px 0 0 0;
+  @include respond-to($phone){
+    padding:.3em .65em;
+  }
+}
+
+.simpleDirections .esriStopsGetDirections:hover,.simpleDirections .esriStopsGetDirections:focus {
+  @include background($button-secondary-background-hover);
+}
+
+.simpleDirections .esriStopsOptionsButton {
+  display:none;
+}
+
+.simpleDirections{
+  .esriStops {
+    width: 60%;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 1.2em;
+    .esriStopGeocoderColumn {
+      width:100%;
+    }
+    @include respond-to($laptop-large){
+      width: 90%
+    }
+    @include respond-to($tablet-tall){
+      width: 60%;
+    }
+    @include respond-to($phone-large){
+      width: 90%;
+    }
+  }
+  .esriStop{
+    width:45%;
+    position: absolute;
+    .esriStopGeocoderColumn{
+      padding:0;
+    }
+    td {
+      vertical-align:middle;
+      padding-top:4px;
+      padding-bottom:4px;
+      width: 100%;
+      position: absolute;
+    }
+  }
+  .esriStopDestination{
+    left:68%;
+    &:before{
+      content: "to";
+      display:block;
+      position: absolute;
+      font-family: $body-font;
+      left: -15%;
+      top: 5px;
+      font-family: "Lucida Grande", "Seoge UI", "Arial", sans-serif;
+      font-size: 12px;
+    }
+    @include respond-to($phone){
+      &:before{
+        left: -35%;
+      }
+    }
+  }
+  .esriStopOrigin{
+    left:13%;
+    &:before{
+      content: "from";
+      display:block;
+      position: absolute;
+      font-family: $body-font;
+      left: -26%;
+      top: 5px;
+      font-family: "Lucida Grande", "Seoge UI", "Arial", sans-serif;
+      font-size: 12px;
+    }
+    @include respond-to($phone){
+      &:before{
+        display: none;
+      }
+      left:0;
+    }
+  }
+}
+.simpleDirections .esriStop .esriStopIconColumn {
+display:none;
+}
+
+.simpleDirections .esriStop .esriStopReverseColumn {
+
+}
+
+.simpleDirections .esriStop .esriStopIconRemoveColumn {
+
+}
+
+.simpleDirections .esriStopsRemovable .esriStopIconRemoveColumn {
+  display:table-cell;
+}
+
+.simpleDirections .esriRoutesError {
+  color:#c09853;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  background-color:#fcf8e3;
+  border:1px solid #fbeed5;
+  padding:10px;
+}
+
+.simpleDirections .esriRoutes table {
+  border-collapse:collapse;
+  border-spacing:0;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+.esriRouteIconColumn {
+  width:21px;
+  vertical-align:top;
+  border-bottom:1px solid #e5e5e5;
+  padding:10px;
+}
+
+.esriRouteTextColumn {
+  vertical-align:top;
+  border-bottom:1px solid #e5e5e5;
+  padding:10px 5px 10px 0;
+}
+
+.esriRouteIconColumn .esriRouteIcon {
+  display:inline-block;
+  height:21px;
+  width:21px;
+  line-height:21px;
+  vertical-align:middle;
+  font-size:11px;
+  text-align:center;
+  color:#fff;
+  background-repeat:no-repeat;
+  background-position:left top;
+  margin:0;
+}
+
+.esriPopup .esriInfoWindowRoute {
+  display:block;
+  padding-left:26px;
+  min-height:21px;
+  background-repeat:no-repeat;
+  background-position:left top;
+}
+
+.esriPopup .esriDMTDepart .esriInfoWindowRoute,.esriPopup .esriDMTStop .esriInfoWindowRoute {
+  padding-left:0;
+  background:none;
+}
+
+.esriDMTUnknown .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/unknown.png);
+}
+
+.esriDMTStraight .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/straight.png);
+}
+
+.esriDMTBearLeft .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/bear-left.png);
+}
+
+.esriDMTBearRight .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/bear-right.png);
+}
+
+.esriDMTTurnLeft .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/left.png);
+}
+
+.esriDMTTurnRight .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/right.png);
+}
+
+.esriDMTSharpLeft .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/sharp-left.png);
+}
+
+.esriDMTSharpRight .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/sharp-right.png);
+}
+
+.esriDMTUTurn .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/uturn.png);
+}
+
+.esriDMTFerry .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/take-ferry.png);
+}
+
+.esriDMTRoundabout .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/round-about.png);
+}
+
+.esriDMTHighwayMerge .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/merge-onto-highway.png);
+}
+
+.esriDMTHighwayExit .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/take-exit.png);
+}
+
+.esriDMTHighwayChange .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/highway-change.png);
+}
+
+.esriDMTForkCenter .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/take-center-fork.png);
+}
+
+.esriDMTForkLeft .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/take-fork-left.png);
+}
+
+.esriDMTForkRight .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/take-fork-right.png);
+}
+
+.esriDMTTripItem .esriRouteIcon {
+  background-image:none;
+}
+
+.esriDMTEndOfFerry .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/get-off-ferry.png);
+}
+
+.esriDMTRampRight .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/take-ramp-right.png);
+}
+
+.esriDMTRampLeft .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/take-ramp-left.png);
+}
+
+.esriDMTTurnLeftRight .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/left-right.png);
+}
+
+.esriDMTTurnRightLeft .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/right-left.png);
+}
+
+.esriDMTTurnRightRight .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/right-right.png);
+}
+
+.esriDMTTurnLeftLeft .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/left-left.png);
+}
+
+.esriDMTPedestrianRamp .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/pedestrian-ramp.png);
+}
+
+.esriDMTElevator .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/elevator.png);
+}
+
+.esriDMTEscalator .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/escalator.png);
+}
+
+.esriDMTStairs .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/stairs.png);
+}
+
+.esriDMTDoorPassage .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/door-passage.png);
+}
+
+.esriRouteOrigin .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/greenCircle.png);
+}
+
+.esriRouteDestination .esriRouteIcon {
+  background-image:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/maneuvers/redCircle.png);
+}
+
+.simpleDirections .esriRouteZoom:hover {
+  background:#edf6fb;
+}
+
+.simpleDirections .esriRouteInfo {
+  color:#666;
+}
+
+.simpleDirections .esriRouteDestination .esriRouteInfo {
+  border:0;
+}
+
+.simpleDirections .esriRouteLength {
+  font-size:11px;
+  line-height:14px;
+}
+
+.simpleDirections .esriResultsContainer {
+  background:#fff;
+}
+
+.simpleDirections .esriResultsLoading .esriResultsContainer {
+  height:32px;
+  background:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/loading-32.gif) no-repeat center center;
+}
+
+.simpleDirections .esriResultsRouteName {
+  display:none;
+  margin:10px 0;
+}
+
+.simpleDirections .esriResultsSummary {
+  background-color:#FAFAFA;
+  font-weight:700;
+  line-height:18px;
+  border:1px solid #eee;
+  margin:0;
+  padding:9px;
+}
+
+.simpleDirections .esriResultsButtonsContainer {
+  margin:0 0 10px;
+}
+
+.simpleDirections .esriResultsViewFullRoute {
+  text-decoration:none;
+  color:#007ac2;
+  font-size:11px;
+  line-height:16px;
+  cursor:pointer;
+  float:left;
+  margin:0;
+  padding:10px 5px;
+}
+
+.simpleDirections .esriResultsPrint {
+  float:right;
+  width:16px;
+  height:16px;
+  background:url(http://servicesbeta.esri.com/jsapi/arcgis/3.4/js/esri/dijit/images/Directions/print.png) no-repeat center center;
+  cursor:pointer;
+  margin:0;
+  padding:10px 5px;
+}
+
+.simpleDirections .esriGeocoderContainer {
+  width:100%;
+  display:block;
+  position:relative;
+  margin:0;
+}
+
+.simpleDirections .esriGeocoder {
+  display:block;
+  margin:0;
+  padding: 0;
+  width: 100%;
+}
+
+.simpleDirections .esriGeocoderActive,.simpleDirections .esriGeocoderMenuActive {
+  border-bottom:1px solid #fff;
+}
+
+.simpleDirections .esriGeocoder input {
+  width:100%;
+  height:2.4em;
+}
+
+.simpleDirections .esriGeocoderResults {
+  display:none;
+  z-index:99;
+  width:100%;
+  position:absolute;
+  left:0;
+  top:100%;
+  background:#fff;
+  margin:-1px 0 0;
+  padding:0;
+}
+
+.simpleDirections .esriGeocoderResults ul {
+  border:1px solid #ccc;
+  border-top:0;
+}
+
+.simpleDirections .esriGeocoderResult {
+  display:block;
+  cursor:pointer;
+  font-size:12px;
+  line-height:14px;
+  outline:0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  padding:6px;
+}
+
+.simpleDirections .dojoDndItem {
+  margin:0;
+  padding:0;
+}
+
+.simpleDirections .dojoDndItem td {
+  border:0;
+  vertical-align:middle;
+}
+
+.simpleDirections .dojoDndItemOver,.simpleDirections .dojoDndItemAnchor {
+  background-image:none;
+  background-color:transparent;
+  cursor:default;
+}
+
+.simpleDirections .dojoDndItemBefore td {
+  border:0;
+  padding-top:2px;
+  border-top:2px dashed #ccc;
+}
+
+.simpleDirections .dojoDndItemAfter td {
+  border:0;
+  padding-bottom:2px;
+  border-bottom:2px dashed #ccc;
+}

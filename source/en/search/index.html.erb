@@ -1,0 +1,121 @@
+---
+title: Search Result
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - searchResult
+
+
+js:
+  - config
+  - dojo-config
+  - libs/jquery-1.9.1.min
+  - libs/jquery.cookie
+  - search/cfg-search
+  - search/esri.init
+  - search/jxon
+  - search/searchLabel
+  - search/searchshell-default
+  - search/searchdisplay-default
+  
+
+metatags:
+  - <META name="robot" content="NOINDEX,NOFOLLOW">
+  
+mobile: true
+
+---
+
+
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/en/arcgis-app/">Search</a></h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+	
+
+	<div class="column-4 tablet-column-24 blocks">
+		   <div class="block">
+			  <h3></h3><br/>
+			  <div id="gl-filter-ctrl">
+						<div><a href="#" id="gl-filter-clear">Clear All</a></div>
+						<div id="filters">
+							<span class="filter-label">Showing results within:</span>
+							<span class="ctrlbox"><input type="checkbox" value="help-api-guide" name="search-collection-1">Guide</span>
+							<span class="ctrlbox"><input type="checkbox" value="help-api-ref" name="search-collection-2">Api Reference</span>
+
+							<span class="filter-label">Related To:</span>
+							<span class="ctrlbox"><input type="checkbox" value="api-for-android" name="product-1">Android SDK</span>
+							<span class="ctrlbox"><input type="checkbox" value="api-flex" name="product-2">Flex API</span>
+							<span class="ctrlbox"><input type="checkbox" value="api-ios" name="product-3">IOS SDK</span>
+							
+						</div>
+					</div>
+			</div>
+	 </div>
+
+	
+	<div class="column-16 tablet-column-24">
+		<div class="container" id="rc-content">
+
+			  <div id="gl-s-ctrl">
+				  <input type="text" size="80" value="Search ArcGIS Doc Content" autocomplete="off" name="query" id="query">
+				  <input type="submit" value="" id="search">
+			  </div>
+			  
+
+						  
+						  
+
+			  <div id="gl-display">
+				 <div id="spinner" style="display: none;">
+					<img alt="loading" src="http://resources.arcgis.com/en/shared/rc/gallery/ajax-loader.gif">
+				 </div>
+				 
+				 <div id="gl-display-shown"><span>Show: </span><a href="#" id="numn1">15</a> | <a href="#" class="displayn_selected" id="numn2">30</a> | <a href="#" id="numn3">45</a> items</div>
+				 <div class="clear"></div>
+				 <div class="gl-pnavinfo-s"></div>
+				 <div class="clear"></div>
+				 
+				 <!-- Result area -->
+				 <div id="gl-content" class="display1">
+					<div class="clear"></div>
+				 </div>
+				 <!-- End of Result -->
+
+				 <div id="gl-pagenav">
+					<a id="gl-prev" class="btn disabled" href="#">Previous</a> 
+					<span class="gl-pnavinfo"></span>
+					<a id="gl-next" class="btn" href="#">Next</a>
+				 </div>
+			  </div>
+
+			  
+
+					
+		
+		<div class="clear"></div><div class="clear"></div>
+	  </div>	
+
+	</div>  <!-- End of div column-16 tablet-column-24 -->
+
+ <script type="text/javascript">
+    $(window).load(function() {
+      
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>

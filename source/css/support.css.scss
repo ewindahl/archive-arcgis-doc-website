@@ -1,0 +1,18 @@
+@import "arcgis/base";
+
+.support-option {
+  @include trailer(2);
+  @include column(12);
+  padding: 0 1em;
+  @include respond-to($tablet-wide) {
+    @include column-width(12);
+    @include pre(0);
+  }
+  @include respond-to($tablet-tall) {
+    @include column-width(24);
+  }
+
+  &.wide {
+    @include column(24);
+  }
+}

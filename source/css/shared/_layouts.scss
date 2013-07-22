@@ -1,0 +1,16 @@
+%narrow-layout {
+  @include column(12);
+  @include center-column();
+}
+
+%three-column {
+  & > :nth-child(1n) {
+    @include column(8);
+  }
+  & > :first-child {
+    @include post(1.5);
+  }
+  & > :last-child {
+    @include pre(1.5);
+  }
+}

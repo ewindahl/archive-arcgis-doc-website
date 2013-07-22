@@ -1,0 +1,1 @@
+require(["dojo/query","dojo/io-query","dojo/ready"],function(e,t,n){n(function(){var n="the email address provided.",r=window.location.search,i=r.substring(r.indexOf("?")+1,r.length),s=t.queryToObject(i);s.hasOwnProperty("email")&&(n=s.email),e("#email-address").html(n)})});
