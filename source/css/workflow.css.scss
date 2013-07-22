@@ -1,0 +1,54 @@
+@import "arcgis/base";
+
+section.workflow {
+  :last-child{
+    padding-bottom:2.5em;
+  }
+  @include clearfix();
+  padding:1em 0;
+  .bigNum {
+    @include column(3);
+    font: $header-font;
+    font-size:110px;
+    color:$blue;
+    @include respond-to($tablet-mid) {
+      font-size:50px;
+      @include column-width(2);
+    }
+    @include respond-to($phone) {
+      font-size: 1.5em;
+      line-height: 1.6em;
+      @include column-width(1);
+    }
+  }
+  .wf-desc {
+    @include column(12);
+    @include respond-to($tablet-mid) {
+      @include column-width(20);
+    }
+    h3 {
+      @include respond-to($phone) {
+        line-height:1.6em;
+      }
+    }
+  }
+  img {
+    @include column(9);
+    @include respond-to($tablet-mid) {
+      @include pre(3);
+      @include column-width(12);
+    }
+    @include respond-to($phone-large) {
+      @include pre(1);
+      @include column-width(18);
+    }
+    @include respond-to($phone) {
+      @include column-width(24);
+    }
+    
+  }
+  .videoLink{
+    max-width:none;
+    display: inline;
+  }
+}

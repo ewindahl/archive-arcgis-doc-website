@@ -1,0 +1,151 @@
+@import "arcgis/base";
+
+h2 {
+  @include leader(0);
+  @include trailer(0.5);
+  padding-left:0.25em;
+  &.inline {
+    display: inline-block;
+  }
+}
+
+.btn {
+  &.leader-top {
+    @include leader(0.5);
+  }
+}
+.card-wrap {
+  @include column(8);
+  @include trailer(3);
+}
+
+.card {
+  @include border-radius(4px);
+  background-color: $off-white;
+  padding: 1em;
+  border: 1px solid $lightest-gray;
+  color: $dark-gray;
+  h3 {
+    @include trailer(0.5);
+    @include leader(0.5);
+    a {
+      color: $dark-gray;
+    }
+  }
+  min-height:100%;
+}
+
+.no-left {
+  padding-left: 0;
+}
+
+#sidebar {
+  @include column(6);
+}
+blockquote{
+  font: $header-font;
+  font-size: 20px;
+}
+
+article {
+  @include column(17);
+  &.wo-toc{
+    @include pre(6);
+    @include respond-to($phone-large) {
+      @include pre(0);
+      @include column-width(24);
+    }
+  }
+  max-width: 48em;
+  h1 {
+    @include trailer(0.5);
+  }
+  h2 {
+    @include trailer(0.5);
+  }
+  h3 {
+    @include trailer(0.25);
+  }
+  h4 {
+    @include trailer(0.25);
+  }
+  h5{
+    @include trailer(0.25);
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+    @include for-ie8() {
+      width:400px;
+      height:auto;
+    }
+  }
+  hr {
+    @include leader(2);
+    @include trailer(2);
+  }
+  li p{
+    font-size:inherit;
+  }
+  li {
+    @include clearfix();
+    .img-right{
+      float:right;
+      padding-left:0.75em;
+      @include trailer(0.5);
+    }
+    &:before {
+      display: inline;
+    }
+    &:after {
+      display: inline;
+    }
+  }
+  table {
+    @include trailer(1);
+    td {
+      vertical-align:top;
+    }
+  }
+  .toc {
+    @extend %panel;
+    background: $light-tan;
+    float: right;
+    margin: 0 0 1em 2em;
+    width:25%;
+    min-width: 8em;
+    h5:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+.note {
+  @extend %callout;
+  background: $light-tan;
+  padding: 0.75em;
+  overflow:hidden;
+  h5 {
+    float:left;
+    padding-right:1em;
+    max-width: 15%;
+    max-height: 100%;
+  }
+  p {
+    float:left;
+    max-width: 85%;
+  }
+}
+.call-out{
+  @extend %callout;
+  background: $lightest-blue;
+  padding: 0.75em;
+  overflow:hidden;
+  h4 {
+    text-align:center;
+  }
+  p {
+    max-width: 100%;
+  }
+  
+}

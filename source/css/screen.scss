@@ -1,0 +1,711 @@
+@import "arcgis";
+
+
+.navigation-bar {
+    background-color: #0172B6;
+}
+.navigation-bar.nav-only {
+  min-height: auto;
+}
+.navigation-bar {
+  header {
+    margin-bottom:0;
+  }
+  
+}
+
+
+// responsive layout
+
+#site-logo {
+  float:none;
+  margin-right:0;
+  @include respond-to($tablet-tall) {
+    margin-right: 0;
+  }
+  @include respond-to($laptop-large) {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  @include respond-to($laptop) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+.logo-wrap {
+  display: inline-block;
+  float: left;
+  margin-top: 1.1em;
+  min-width:272px;
+}
+
+#esri-logo {
+  @include respond-to($laptop) {
+    display: none;
+  }
+}
+
+#header {
+  .btn {
+    &.small {
+      @include for-ie8 {
+        padding-top:0.3em;
+        padding-bottom:0.3em;
+      }
+      @include for-ie9 {
+        padding-bottom:0;
+      }
+    }
+  }
+  .relative-container {
+    position:relative
+  }
+  nav {
+    @include respond-to($laptop-large) {
+      margin-top: 1.3em;
+    }
+    ul {
+      @include respond-to($tablet-mid) {
+        display: none;
+      }
+    }
+    li {
+      a {
+        @include respond-to($desktop) {
+          padding: 0 1em;
+          @include adjust-font-size-to(14px);
+        }
+      }
+    }
+  }
+}
+
+// site dropDown overrides
+#header nav#dropDown {
+  margin-left: -14px;
+  margin-top: 1em;
+}
+
+// Mobile Navigation
+#mobile-navigation {
+  display: none;
+  position: relative;
+  &.dropdown-navigation{
+    margin-top:18px !important;
+  }
+  .dropdown {
+    padding-left: 2.25em;
+    &:before {
+      font-size: 16px;
+      margin-left: -16px;
+      margin-right: 9px;
+      vertical-align: -2px;
+    }
+    span {
+      @include respond-to($phone-large){
+        display:none;
+      }
+    }
+  }
+  @include respond-to($tablet-mid) {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}
+// Responsive styles for header
+.responsive {
+  #site-logo {
+    @include respond-to($phone-large) {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  // Generic Navigation Pattern
+  #header {
+    nav {
+      @include respond-to($tablet-mid) {
+        width: 50%;
+      }
+      @include respond-to($phone-large) {
+        width: 100%;
+      }
+      @include respond-to($tablet-mid) {
+        margin-top: 0;
+        float: right;
+      }
+      @include respond-to($phone-large) {
+        float: left;
+      }
+    }
+  }
+
+  // Mobile Naviagation
+  #mobile-navigation {
+    @include respond-to($phone-large) {
+      margin-right: 5%;
+      margin-top: 16px;
+      margin-bottom: 14px;
+      width: 46%;
+    }
+  }
+
+  // User Navigation
+  .dropdown-navigation {
+    @include respond-to($laptop) {
+      margin-right:0;
+      margin-bottom:0;
+    }
+  }
+
+  #logged-in-navigation {
+    @include respond-to($phone-large) {
+      @include trailer(1);
+      width: 48%;
+    }
+    .small {
+      &.btn {
+        @include for-ie9 {
+          padding-top: 0;
+          position:relative;
+        }
+      }
+    }
+  }
+  #logged-out-navigation {
+    @include respond-to($phone-large) {
+      @include trailer(1);
+      width: 48%;
+      a{
+        width: 90%;
+        margin-left: 10%;
+        text-align: center;
+      }
+    }
+  }
+
+  // Dropdown Component
+  .dropdown-wrapper {
+    .dropdown {
+      span{
+        @include respond-to($phone-large) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  nav {
+    @include respond-to($tablet-tall) {
+      @include column-width(12);
+    }
+    @include respond-to($phone) {
+      @include column-width(24);
+    }
+  }
+}
+
+// responsive navigation bar
+
+.navigation-bar {
+  @include respond-to($tablet-tall) {
+    @include trailer(1);
+  }
+  nav {
+    ul {
+      li {
+        @include respond-to($tablet-wide) {
+          margin-right:2em;
+        }
+        @include respond-to($desktop) {
+          margin:0 2em 0 0;
+        }
+      }
+    }
+    @include respond-to($phone-large) {
+      display: none;
+    }
+  }
+  .btn {
+    @include respond-to($phone) {
+      display: none;
+    }
+  }
+}
+// Login Menu
+.dropdown-navigation {
+  float: right;
+  margin-top: 16px;
+  margin-right: 20px;
+}
+
+.dropdown-wrapper {
+  @include clearfix();
+  z-index: 1;
+  position: relative;
+  .dropdown {
+    @include arrow("down", 4px, $gray, "right");
+    padding-right: 1.75em;
+    width:100%;
+    z-index:1;
+    position:relative;
+    @include for-ie8(){
+      padding-right:40px;
+    }
+    &:after {
+      top: 18px;
+      right: 8px;
+    }
+    &:hover {
+      color: $white;
+      background: $blue;
+      &:before {
+        color: $white;
+      }
+      &:after{
+        border-top-color:$white;
+      }
+    }
+  }
+  &:hover {
+    .dropdown {
+      @include border-bottom-right-radius(0px);
+      @include border-bottom-left-radius(0px);
+    }
+   .dropdown-content {
+      display: block;
+    }
+  }
+  .dropdown-content {
+    @include box-shadow(0px 0px 16px rgba(0,0,0,.15));
+    width: 100%;
+    background: mix($lightest-gray, $off-white);
+    display: none;
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    width: 100%;
+    min-width: 160px;
+    right: 0;
+    ul {
+      margin: 0;
+    }
+    li {
+      background: none;
+      padding: 0;
+      a {
+        display: block;
+        @include adjust-font-size-to(15px);
+        padding: .65em .5em;
+        &:hover {
+          background: $blue;
+          color: $white;
+        }
+      }
+    }
+    hr {
+      border-color: mix($lightest-gray, $lighter-gray);
+      border-top-width: 1px;
+      margin: 0;
+    }
+  }
+}
+.section-bar {
+  @extend .navigation-bar;
+}
+
+#developers-logo {
+  @extend #site-logo;
+}
+
+.navigation-bar.nav-only {
+  min-height: auto;
+}
+
+.panel {
+  @extend %form-in-panel;
+  background-color: #fbfbfb;
+  padding: 1.5em;
+  border-color: $lightest-gray;
+  &.blue {
+    background-color: $lightest-blue;
+    border-color: $lighter-blue;
+  }
+}
+
+
+#page {
+  padding-bottom:(3 * 24) + 261px;
+}
+
+.no-space-to-footer{
+  margin-bottom: -71px;
+}
+
+.segmented-navigation {
+  @include border-radius(4px);
+  border: 1px solid $lightest-gray;
+  overflow: hidden;
+  @include trailer(1);
+  header {
+    @include clearfix();
+    background: $off-white;
+    padding: 11px 8px 8px;
+    h1, h2, h3, h4, h5, h6 {
+      padding: 0 1em 0 0 ;
+      margin-bottom:0;
+    }
+  }
+  ul {
+    border-top: 1px solid $lightest-gray;
+  }
+  li {
+    border-bottom: 1px solid $lightest-gray;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  a {
+    display: block;
+    padding: .5em;
+    position: relative;
+    &:before {
+      color: $lighter-gray;
+      position: absolute;
+      top: 12px;
+      right: 3px;
+    }
+  }
+  li.current {
+    background: $blue;
+    a {
+      color: $white;
+      &:before {
+        color: $white;
+      }
+    }
+  }
+  li:hover {
+    background: $calcite-dark-blue;
+    a {
+      color: $white;
+      &:before {
+        color: $white;
+      }
+    }
+  }
+}
+
+.green-text {
+  color: $green;
+}
+
+.red-text {
+  color: $red;
+}
+
+dl.horizontal{
+  dt {
+    width: 175px;
+    border-right: none;
+  }
+  dd {
+    margin-left: 175px;
+  }
+}
+
+label {
+  @include adjust-font-size-to(14px, 1);
+}
+
+label {
+  #{$all-text-inputs} {
+    @include adjust-font-size-to(13px, 1, 14px);
+  }
+}
+
+.step-by-step {
+  @include border-radius(4px);
+  border: 1px solid $lightest-gray;
+  overflow: hidden;
+  .active {
+    background: $lightest-blue;
+    header {
+      background: $button-secondary-background;
+      color: $white;
+        text-shadow: $button-text-shadow;
+
+    }
+    &:before {
+      font-family: "icomoon";
+      color: $white;
+      background: $button-secondary-background;
+      content: "\74";
+    }
+  }
+  .completed {
+    &:before {
+      color: $green;
+      font-family: "icomoon";
+      content: "\65";
+    }
+  }
+  .disabled {
+    @include opacity(.5);
+    a:hover {
+      background: inherit;
+      color: inherit;
+      cursor: default;
+    }
+  }
+  li:before {
+    padding: 6px;
+    font-family: $header-bold;
+    float: left;
+    width: 24px;
+    text-align: center;
+    content:counter(li);
+    counter-increment:li;
+    border-right: 1px solid $lightest-gray;
+  }
+  header {
+    font-family: $header-font;
+    @include box-sizing(border-box);
+    border-bottom: 1px solid $lightest-gray;
+    text-indent: 6px;
+    background: $off-white;
+    padding: 6px;
+  }
+  ol {
+    @include trailer(0);
+    counter-reset:li;
+    list-style:none;
+    li {
+      clear:both;
+      border-top: 1px solid $lightest-gray;
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
+  .step-description {
+    margin: 6px 6px 0;
+    p {
+      margin: 0;
+    }
+  }
+  .step-action {
+    padding: 1em 0;
+    text-align: center;
+  }
+}
+
+//tried to use the default colors for an error based on the input.error class
+//but in chrome on windows 7 was not respecting the opacity, fell back to the "computed" color
+select.error {
+  @extend input.error;
+  background-color: #f8e9e4;
+}
+
+textarea.error {
+  @extend input.error;
+}
+
+.error a.error-anchor {
+  color:#007AC2 !important;
+}
+
+.doc-header {
+  line-height: 36px;
+  a, a:hover {
+    color: $body-text-color;
+  }
+  &:before {
+    font-size: 24px;
+    vertical-align: -2px;
+  }
+}
+
+.sdk-image-icon {
+  position: relative;
+  top: 3px;
+  padding-right: .5em;
+}
+
+.tabs {
+  @include leader(1);
+  @include trailer(1);
+  .tab-navigation {
+    ul {
+      @include clearfix();
+      border-bottom: 1px solid $lightest-gray;
+    }
+    li {
+      margin-right: 1em;
+      float: left;
+    }
+    a {
+      @include box-sizing(border-box);
+      padding: .75em 2em;
+      display: block;
+      position: relative;
+      top: 1px;
+    }
+    a.current {
+      @include border-radius(4px 4px 0 0);
+      border: 1px solid $lightest-gray;
+      border-bottom-color: $white;
+    }
+  }
+  .tab-pane {
+    display: none;
+    @include leader(1);
+    @include trailer(1);
+    &.current {
+      display: block
+    }
+  }
+}
+
+.nav-only {
+  min-height: inherit !important;
+}
+
+// beta notice
+
+#beta-notice {
+  @extend .alert;
+  @include border-radius(0);
+  @include box-shadow(none);
+  font-size: 1em;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  a {
+    &.icon-close {
+      top: 1px;
+      @include for-ie9() {
+        top: 0;
+      }
+    }
+  }
+}
+
+.beta-notice-content {
+  font-size: .75em;
+  padding-right: 2em;
+}
+
+#login-bar.beta-notice {
+  margin-bottom: 0;
+  nav ul li.current:after, nav ul li:hover:after {
+    border-bottom-color: darken($alert-info-background, 10);
+  }
+  &.navigation-bar {
+    nav {
+      display: block;
+    }
+  }
+}
+
+
+#header .header-inner {
+position: relative;
+}
+.videoLink {
+  display: block;
+  max-width:400px;
+  @include trailer(0.5);
+  position:relative;
+  .playbtn {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+}
+
+/* -- Gallery Information -- */
+#gallery {
+  background-color: $blue;
+  padding: 2em 0;
+  .container{
+    position:relative;
+  }
+  h2 {
+    color: $off-white;
+  }
+  a {
+    color: $off-white;
+  }
+  span.more {
+    position: relative;
+    float: right;
+    top: -20px;
+  }
+  #glprev, #glnext {
+    display: block;
+    height: 85px;
+    width: 44px;
+    z-index: 200;
+    position: absolute;
+    top:120px;
+    @include respond-to($tablet-wide) {
+      top:105px;
+    }
+    @include respond-to($phone-large) {
+      top:85px;
+    }
+    @include respond-to($phone) {
+      top:76px;
+    }
+    
+  }
+  #glprev {
+    float: left;
+    left:5%;
+    background: url("../img/galleryprev.png") repeat scroll 0 0 transparent;
+  }
+  #glnext {
+    float: right;
+    right:5%;
+    background: url("../img/gallerynext.png") repeat scroll 0 0 transparent;
+  }
+  .gallerydiv {
+    @include column(20);
+    @include pre(2);
+    @include post(2);
+    min-height:200px;
+  }
+  .gallerydiv > div {
+    width: 100%;
+    padding-top: 0px;
+  }
+  /*div.glimg:nth-child(1){
+    margin-left:45px;
+  }
+  div.glimg:nth-child(4){
+    margin-right:0px;
+  }*/
+  div.glimg {
+    margin: 1em 2.884615384615385%;
+    width: 19.23076923076923%;
+    float: left;
+    position: relative;
+    .desc {
+      @include respond-to($phone) {
+        display:none;
+        
+      }
+    }
+  }
+  div.glimg img {
+    max-height: 133px;
+  }
+  
+}

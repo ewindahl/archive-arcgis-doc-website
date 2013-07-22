@@ -1,0 +1,443 @@
+@import "arcgis/base";
+
+.esriPopup {
+    position: absolute;
+    z-index: 29;
+    font-size: 12px;
+    margin-top: -16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    .esriPopupWrapper {
+    }
+    .hidden {
+        display: none;
+    }
+    .sizer {
+        width: 270px;
+    }
+    a {
+        color: #336699;
+        text-decoration: underline;
+    }
+    .titlePane {
+        background-color: $light-tan;
+        color: $gray;
+        line-height: 20px;
+        padding-left: 6px;
+        @include border-radius(4px);
+        @include box-shadow(0 0px 16px rgba(0, 0, 0, 0.1));
+        font-family: $body-font;
+        cursor: default;
+        border: 1px solid $dark-tan;
+        padding: .75em .75em;
+        .spinner {
+            float: left;
+            margin-top: 2px;
+            margin-right: 4px;
+            cursor: pointer;
+            background: image-url("globe-loader.gif") no-repeat;
+            width: 16px;
+            height: 16px;
+            background-position: 0px 0px;
+        }
+    }
+    .titleButton {
+        position: absolute;
+        top: 11px;
+        cursor: pointer;
+        &.prev {
+            display:none;
+        }
+        &.next {
+            display:none;
+        }
+        &.maximize {
+            display:none;
+        }
+        &.restore {
+            display: none;
+        }
+        &.close {
+            right: 11px;
+            width: 12px;
+            height: 17px;
+            text-align: right;
+            &:before {
+                content: "k";
+                font-family: 'icomoon';
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+    }
+    .contentPane {
+        display:none;
+    }
+    .actionsPane {
+        display:none;
+    }
+    .pointer{
+        position: absolute;
+        background: image-url("popup.png") no-repeat;
+        &.top {
+            left: 50%;
+            top: -12px;
+            background-position: 0 -580px;
+            width: 24px;
+            height: 14px;
+            margin-left: -12px;
+        }
+        &.bottom {
+            left: 50%;
+            bottom: -12px;
+            background-position: 0 -55px;
+            width: 25px;
+            height: 14px;
+            margin-left: -16px;
+        }
+        &.right {
+            right: -10px;
+            top: 50%;
+            background-position: 0 -344px;
+            width: 13px;
+            height: 17px;
+            margin-top: -9px;
+        }
+        &.left {
+            left: -11px;
+            top: 50%;
+            background-position: 0 -285px;
+            width: 13px;
+            height: 17px;
+            margin-top: -8px;
+        }
+        &.topLeft {
+            left: 0px;
+            top: -43px;
+            background-position: 0 -470px;
+            width: 51px;
+            height: 45px;
+        }
+        &.topRight {
+            right: 0px;
+            top: -43px;
+            background-position: 0 -652px;
+            width: 51px;
+            height: 45px;
+        }
+        &.bottomRight {
+            right: 0px;
+            bottom: -43px;
+            background-position: 0 -91px;
+            width: 51px;
+            height: 45px;
+        }
+        &.bottomLeft {
+            left: 0px;
+            bottom: -43px;
+            background-position: 0 0;
+            width: 51px;
+            height: 45px;
+        }
+    }
+    .outerPointer{
+        position: absolute;
+        background: image-url("popup.png") no-repeat;
+        &.right {
+            right: 6px;
+            top: 50%;
+            background-position: 0 -344px;
+            width: 13px;
+            height: 17px;
+            margin-top: -9px;
+        }
+        &.left {
+            left: 5px;
+            top: 50%;
+            background-position: 0 -285px;
+            width: 13px;
+            height: 17px;
+            margin-top: -8px;
+        }
+    }
+    &.blueTheme{
+        .titlePane {
+            background-color: #5491B8;
+            border-color: #777777;
+            .spinner {
+                background: image-url("globe-loader.gif") no-repeat;
+            }
+        }
+        .pointer {
+            &.top {
+                left: 50%;
+                top: -12px;
+                background-position: 0 -617px;
+                width: 24px;
+                height: 14px;
+                margin-left: -12px;
+            }
+            &.topLeft {
+                left: 0px;
+                top: -43px;
+                background-position: 0 -525px;
+                width: 51px;
+                height: 45px;
+            }
+            &.topRight {
+                right: 0px;
+                top: -43px;
+                background-position: 0 -707px;
+                width: 51px;
+                height: 45px;
+            }
+        }
+    }
+}
+.esriViewPopup{
+    .hidden {
+        display: none;
+    }
+    .hzLine {
+        border: none;
+        border-top: 1px solid #333333;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+    .break {
+        height: 14px;
+    }
+    .header {
+        font-weight: bold;
+    }
+    .mainSection{
+        .attrTable {
+            border-collapse: collapse;
+            td {
+                padding: 2px;
+                padding-bottom: 5px;
+                &.attrName{
+                    color: #888888;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+    .attachmentsSection {
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+    }
+    .caption {
+        font-style: italic;
+    }
+    .gallery {
+        position: relative;
+        width: 200px;
+        height: 150px;
+        margin: 10px 13px 0px 12px;
+        .frame{
+            &.image {
+                text-align: center;
+            }
+            img {
+                max-width: 200px;
+                max-height: 150px;
+                border-style: none;
+            }
+            div{
+                &.chart{
+                    width: 200px;
+                    height: 150px;
+                }
+            }
+        }
+        ul{
+            &.summary{
+                position: absolute;
+                right: 0px;
+                bottom: -18px;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            li{
+                float: left;
+                &.mediaCount {
+                    margin-left:3px;
+                }
+            }
+        }
+        .mediaHandle {
+            position: absolute;
+            top: 67px;
+            cursor: pointer;
+            background: image-url("popup.png") no-repeat;
+            &.prev{
+                left: -12px;
+                background-position: 0 -198px;
+                width: 9px;
+                height: 16px;
+            }
+            &.next{
+                right: -12px;
+                background-position: 0 -417px;
+                width: 9px;
+                height: 16px;
+            }
+        }
+        .mediaIcon {
+            background: image-url("popup.png") no-repeat;
+            &.image{
+                background-position: 0 -392px;
+                width: 15px;
+                height: 15px;
+            }
+            &.chart {
+                background-position: 0 -146px;
+                width: 19px;
+                height: 15px;
+            }
+        }
+    }
+    .editSummarySection{
+        .break {
+            height: 10px;
+        }
+    }
+    .editSummary {
+        color: #888888;
+    }
+}
+.esriPopupMobile {
+    position: absolute;
+    z-index: 40;
+    font-size: 12px;
+    @include box-shadow(0 0 0.75em #111);
+    @include border-radius(5px);
+    .hidden {
+        display: none;
+    }
+    .sizer {
+        width: 260px;
+    }
+    a {
+        color: #336699;
+        text-decoration: underline;
+    }
+    .titlePane {
+        background: none repeat scroll 0 0 #0E3043;
+        color: $white;
+        height: 40px;
+        padding-left: 35px;
+        padding-right: 35px;
+        @include border-radius(6px);
+        cursor: default;
+        border: 2px solid #fff;
+        .title {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 10pt;
+            font-weight: bold;
+            width: 174x;
+            line-height: 18px;
+            margin-top: 3px;
+        }
+        .footer {
+            font-size: 9pt;
+            font-style: italic;
+            line-height: 10px;
+        }
+        .spinner {
+            float: left;
+            margin-top: 4px;
+            margin-right: 4px;
+            cursor: pointer;
+            background: image-url("globe-loader.gif") no-repeat;
+            width: 16px;
+            height: 16px;
+            background-position: 0px 0px;
+        }
+    }
+    .titleButton {
+        position: absolute;
+        top: 2px;
+        cursor: pointer;
+        &.close{
+            top: 6px;
+            left: 3px;
+            width: 32px;
+            height: 32px;
+            background: image-url("whitex.png") no-repeat;
+        }
+        &.arrow{
+            top: 6px;
+            right: 3px;
+            width: 32px;
+            height: 32px;
+            background: image-url("whiter.png") no-repeat;
+        }
+        &.prev {
+            top: 26px;
+            left: 76px;
+            width: 18px;
+            height: 11px;
+            background: image-url("leftlongarrow.png") no-repeat;
+        }
+        &.next {
+            top: 26px;
+            right: 76px;
+            width: 18px;
+            height: 11px;
+            background: image-url("rightlongarrow.png") no-repeat;
+        }
+    }
+    .pointer {
+        position: absolute;
+        &.top{
+            left: 118px;
+            top: -10px;
+            width: 24px;
+            height: 12px;
+            margin-left: 0px;
+            background: image-url("pointertop.png") no-repeat;
+        }
+        &.bottom{
+            left: 50%;
+            bottom: -10px;
+            width: 24px;
+            height: 12px;
+            margin-left: 0px;
+            background: image-url("pointerbottom.png") no-repeat;
+        }
+    }
+}
+.esriMobilePopupNavigator {
+    position: absolute;
+    top: 42px;
+    overflow: hidden;
+    width: 100%;
+    height: 18px;
+    background: #ddd;
+    z-index: 42;
+    text-align: center;
+    padding-bottom: 3px;
+}
+.esriMobilePopupInfoView {
+    display: none;
+    position: absolute;
+    top: 42px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 42;
+    padding-bottom: 30px;
+    padding-left: 2px;
+}

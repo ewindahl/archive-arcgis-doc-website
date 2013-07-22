@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","dojox/mvc/ModelRefController","dojo/Evented","Quoin/Base"],function(e,t,n,r){return e("Quoin.Controller",[t,n,r],{constuctor:function(){this.watch(function(e,t,n){this.emit("change:"+e,{newValue:n}),this.emit("change:*",{attribute:e,newValue:n})})}})});

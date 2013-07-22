@@ -1,0 +1,186 @@
+@import "arcgis/base";
+@import "shared/_banners.scss";
+
+#features {
+  @include leader(-2);
+}
+
+.feature {
+  @include leader(1);
+  @include trailer(1);
+  @include clearfix;
+  &.flip {
+    .feature-text {
+      @include last-column();
+      @include pre(1);
+    }
+    .feature-block {
+      @include pre(0);
+    }
+  }
+  @include respond-to($tablet-tall) {
+    @include trailer(2);
+    @include leader(1);
+  }
+  .cta {
+    font-family: $header-font;
+    @include adjust-font-size-to(20px, 1);
+    &.trailer-half {
+      margin-bottom: 0.667em;
+    }
+    a {
+      font-family: $header-bold;
+    }
+  }
+  .feature-text {
+    @include column(9);
+    h2 {
+      font-family: $header-font;
+      a, a:hover {
+        color: $body-text-color;
+      }
+    }
+    @include respond-to($tablet-tall) {
+      @include column-width(24);
+      @include trailer(0);
+      @include leader(0);
+    }
+  }
+  .feature-block {
+    @include column(14);
+    @include pre(1);
+    @include leader(1);
+
+    @include trailer(1);
+    position: relative;
+    @include respond-to($tablet-tall) {
+      @include column-width(24);
+      @include pre(0);
+      @include trailer(1);
+      @include leader(1);
+    }
+    &.feature-map {
+      height: 400px;
+    }
+  }
+}
+
+.pull-quote {
+  @include leader(1);
+  @include trailer(1);
+  color:$gray;
+  font-family: $header-font;
+  line-height: 1.8em;
+}
+
+.platform-graphic {
+  height: auto;
+}
+
+.sdk-image-icon {
+  position: relative;
+  top: 3px;
+  padding-right: .5em;
+}
+.panel {
+  @extend %form-in-panel;
+  background-color: #fff;
+  padding: 1.5em;
+  border-color: $lightest-gray;
+}
+
+%blue-panel {
+  background: $blue;
+  color: $lighter-blue;
+  @include padding-leader(2);
+  @include padding-trailer(1.5);
+  h2{
+    a{
+      color: $white;
+    }
+  }
+  a{
+    color: $lighter-blue;
+  }
+  h4 {
+    color: $white !important;
+  }
+  .cta {
+    a {
+      border-bottom: 1px dashed $lighter-blue;
+    }
+  }
+}
+
+#blue {
+  @extend %blue-panel;
+}
+
+#dark-blue {
+  @extend %blue-panel;
+  background-color: $darker-blue;
+}
+
+#benefits {
+  background: #fff;
+  @include padding-leader(1);
+  @include padding-trailer(1);
+  .benefit {
+    @include column(8);
+    padding:0 2em;
+    @include respond-to($phone-large) {
+      @include column-width(24);
+      @include leader(1.5);
+    }
+    &:nth-child(2){
+      border-left: 1px solid transparentize($light-blue, 0.75);
+      border-right: 1px solid transparentize($light-blue, 0.75);
+      @include respond-to($phone-large) {
+        border:none;
+      }
+    }
+  }
+  h3 {
+    @include adjust-font-size-to(24px);
+    @include leader(.5, $h3-size);
+    @include trailer(.5, $h3-size);
+    position: relative;
+    padding: 0 0 0 2.75em;
+    line-height: 1.25em;
+    min-height: 2em;
+    &:before {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      padding: 7px 0;
+      font-size: 42px;
+      color: transparentize($light-blue, 0.35);
+      background-color: transparentize($light-blue, 0.85);
+      display: block;
+      width: 56px;
+      text-align: center;
+      @include box-shadow(0 1px 0 rgba(255,255,255,.5), inset 0 1px 1px rgba(0,0,0, 0.05));
+      @include border-radius(4px);
+      @include respond-to($tablet-wide) {
+        font-size: 24px;
+        width:42px;
+      }
+      @include respond-to($phone-large) {
+        top: -8px;
+      }
+    }
+    @include respond-to($tablet-wide) {
+      @include adjust-font-size-to(18px);
+      line-height:1.25em;
+    }
+    @include respond-to($phone-large) {
+      margin-bottom:1.25em;
+    }
+
+  }
+  @include respond-to($tablet-tall) {
+    padding-top:2em;
+    margin-bottom:0;
+  }
+}
+

@@ -1,0 +1,1 @@
+require(["esri/map","demos/geocoding","demos/directions","demos/mapping","demos/spatial-storage"],function(){});

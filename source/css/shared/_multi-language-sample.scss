@@ -1,0 +1,53 @@
+.multi-language-sample {
+  nav{
+    width:100%;
+    background-color: #F8F8FF;
+    a {
+      @include border-radius(0);
+      @include box-shadow(none);
+      @include adjust-font-size-to(12px);
+      width: percentage((8 / 24));
+      text-align: center;
+      text-transform: normal;
+      background: #007AC2;
+      display: block;
+      color: white;
+      float: left;
+      font-weight: 700; 
+      font-family: $body-font;
+      padding: 4px 0;
+      margin-bottom:-1px;
+      &:hover {
+        background: #004575;
+      }
+      &.selected {
+        @include box-shadow(inset 0 1px 1px rgba(0,0,0,0.5));
+        background: #004575;
+      }
+      &.feature-repo{
+        @include border-radius(3);
+
+      }
+    }
+    a:last-child {
+      float: right;
+    }
+  }
+  pre {
+    display:none;
+    opacity:0;
+    width: 100%;
+    code {
+      @include border-radius(0);
+      border-color: #007AC2;
+      margin:-2em 0 0 0;
+      clear:both;
+      height: 330px;
+      padding: 1em;
+    }
+    &.active{
+      display:block !important;
+      opacity:1 !important;
+    }
+  }
+}

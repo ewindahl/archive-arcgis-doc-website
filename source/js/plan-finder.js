@@ -1,0 +1,1 @@
+require(["dojo/dom","dojo/dom-attr","dojo/query","dojo/dom-class","dojo/NodeList-dom","dojo/domReady!"],function(e,t,n,r){});

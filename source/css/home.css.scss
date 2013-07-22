@@ -1,0 +1,185 @@
+@import "features";
+
+#home-banner {
+  background: image-url("banner.jpg", false, true) no-repeat center center #329a40;
+  color: $white;
+  height: 380px;
+  @include respond-to($laptop) {
+    height:257px;
+  }
+  @include respond-to($tablet-tall) {
+    height:auto;
+  }
+  @include for-ie8() {
+    height:300px;
+  }
+  .transparent {
+    color: $white;
+    @include opacity(0.85);
+    &:hover{
+      @include opacity(1);
+    }
+  }
+}
+
+#home-banner-devices {
+  background: image-url("pro-screenshots-large.png", false, true) no-repeat bottom center transparent;
+  height:400px;
+  @include column(14);
+  @include last-column();
+  @include leader(1.5);
+  @include background-size(100%, auto);
+  @include for-ie8() {
+    background: image-url("pro-screenshots-small.png", false, true) no-repeat bottom center transparent;
+    height:320px;
+  }
+  @include respond-to($desktop) {
+    @include column-width(13);
+  }
+  @include respond-to($laptop) {
+    @include column-width(12);
+    height:308px;
+  }
+  @include respond-to($tablet-wide) {
+    height: 282px;
+    margin-top:2em;
+  }
+  @include respond-to($tablet-tall) {
+    height:0;
+    display:none;
+  }
+}
+
+#home-main-text {
+  @include column(8);
+  @include leader(2.5);
+  @include trailer(3);
+  @include pre(1);
+  h1 {
+    font-family: $header-font;
+    color: $white;
+    @include adjust-font-size-to(38px);
+    @include respond-to($desktop) {
+      @include adjust-font-size-to(30px);
+      line-height:1em;
+    }
+    @include respond-to($laptop) {
+      @include adjust-font-size-to(24px);
+      line-height:1em;
+    }
+  }
+  p {
+    @include adjust-font-size-to(15px);
+    @include leader(1);
+    @include trailer(1);
+    color: #eaf2cc;
+    @include respond-to($laptop) {
+      @include trailer(0.5);
+    }
+  }
+  .transparent{
+    padding:0;
+    margin-left:1.5em;
+    @include respond-to($phone) {
+      margin-top:1em;
+    }
+  }
+  .btn{
+    @include respond-to($tablet-mid) {
+      @include adjust-font-size-to(12px);
+    }
+  }
+  @include respond-to($desktop) {
+    @include column-width(10);
+  }
+  
+  @include respond-to($laptop) {
+    @include leader(2 );
+    @include post(0);
+    @include pre(0);
+    @include column-width(11);
+  }
+  @include respond-to($tablet-wide) {
+    margin-top:2em;
+  }
+  @include respond-to($tablet-tall) {
+    @include leader(2.5);
+    @include column-width(24);
+  }
+}
+
+#benefits {
+  background: #E5F1F9;
+  @include padding-leader(4);
+  @include padding-trailer(1);
+  .benefit {
+    @include column(8);
+    padding:0 2em;
+    @include respond-to($phone-large) {
+      @include column-width(24);
+      @include leader(1.5);
+    }
+    &:nth-child(2){
+      border-left: 1px solid transparentize($light-blue, 0.75);
+      border-right: 1px solid transparentize($light-blue, 0.75);
+      @include respond-to($phone-large) {
+        border:none;
+      }
+    }
+  }
+  h3 {
+    @include adjust-font-size-to(24px);
+    @include leader(.5, $h3-size);
+    @include trailer(.5, $h3-size);
+    position: relative;
+    padding: 0 0 0 2.75em;
+    line-height: 1.25em;
+    min-height: 2em;
+    &:before {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      padding: 7px 0;
+      font-size: 42px;
+      color: transparentize($light-blue, 0.35);
+      background-color: transparentize($light-blue, 0.85);
+      display: block;
+      width: 56px;
+      text-align: center;
+      @include box-shadow(0 1px 0 rgba(255,255,255,.5), inset 0 1px 1px rgba(0,0,0, 0.05));
+      @include border-radius(4px);
+      @include respond-to($tablet-wide) {
+        font-size: 24px;
+        width:42px;
+      }
+      @include respond-to($phone-large) {
+        top: -8px;
+      }
+    }
+    @include respond-to($tablet-wide) {
+      @include adjust-font-size-to(18px);
+      line-height:1.25em;
+    }
+    @include respond-to($phone-large) {
+      margin-bottom:1.25em;
+    }
+
+  }
+  @include respond-to($tablet-tall) {
+    padding-top:2em;
+    margin-bottom:0;
+  }
+}
+
+
+h1 {
+  @include for-ie8() {
+    font-size: 24px !important;
+  }
+}
+
+.large {
+  @include for-ie8() {
+    margin-bottom: 1em !important;
+  }
+}

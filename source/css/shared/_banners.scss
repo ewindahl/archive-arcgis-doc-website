@@ -1,0 +1,25 @@
+.banner {
+  @include respond-to($tablet-wide){
+    text-align:center;
+  }
+  h3 {
+    @include respond-to($tablet-wide){
+      font-size: 18px;  
+      @include column-width(24);
+    }
+    @include respond-to($phone-large){
+      text-align:center;
+    }
+  }
+  .btn {
+    @include respond-to($tablet-wide){
+      text-align:center;
+      margin: .5em 0;
+      float:none;
+    }
+  }
+  @include clearfix();
+  &.spaced-bottom {
+    @include trailer(2);
+  }
+}

@@ -1,0 +1,451 @@
+@import "arcgis/base";
+
+.demo-panel .input-output {
+    border:1px solid #d3d3cF;
+}
+.map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    .container {
+        position: relative;
+        border: none;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        .layersDiv {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            .layerTile {
+                position: absolute;
+                border: none;
+                margin: 0px;
+                padding: 0px;
+            }
+        }
+        .container {
+            -webkit-tap-highlight-color: rgba(0,  0,  0,  0);
+        }
+    }
+}
+.esriAttribution {
+    font-size: 13px;
+    color: $dark-gray;
+    display: inline-block;
+    text-align: right;
+    vertical-align: bottom;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.esriAttributionOpen {
+    white-space: normal;
+    text-align: left;
+    cursor: pointer;
+}
+.esriAttributionLastItem span.esriAttributionDelim {
+    display: none;
+}
+.map {
+    .logo-med {
+        display: inline-block;
+        vertical-align: bottom;
+        width: 65px;
+        height: 36px;
+        z-index: 30;
+        background-image: image-url("logo-med.png");
+        cursor: pointer;
+    }
+    .logo-sm {
+        @extend .logo-med;
+        border-width: 3px;
+        width: 46px;
+        height: 22px;
+        background-image: image-url("logo-sm.png");
+    }
+}
+.esriControlsBR {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    z-index: 30;
+    &.withPanArrows{
+        right: 25px;
+    }
+}
+/* Pan Buttons -TODO- */
+.map {
+    .container {
+        .fixedPan{
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-image: image-url("fixed-pan-sprite.png");
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .panUp {
+            background-position: -16px 0px;
+            top: 5px;
+        }
+        .panUpperRight {
+            background-position: -32px 0px;
+            right: 5px;
+            top: 5px;
+        }
+        .panRight {
+            background-position: -32px -16px;
+            right: 5px;
+        }
+        .panLowerRight {
+            background-position: -32px -32px;
+            right: 5px;
+            bottom: 5px;
+        }
+        .panDown {
+            background-position: -16px -32px;
+            bottom: 5px;
+        }
+        .panLowerLeft {
+            background-position: -47px -32px;
+            left: 5px;
+            bottom: 5px;
+        }
+        .panLeft {
+            background-position: -47px -16px;
+            left: 5px;
+        }
+        .panUpperLeft {
+            background-position: -47px 0px;
+            left: 5px;
+            top: 5px;
+        }
+    }
+}
+/* Tooltip Styles -TODO- */
+.map {
+    .tooltip {
+        width: 100px;
+        position: absolute;
+        border: 1px solid #7EABCD;
+        background-color: white;
+        padding: 5px;
+        font-size: 9pt;
+        z-index: 9999;
+        @include border-radius(4px);
+    }
+}
+.esriSimpleSlider {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-align: center;
+    color: #777;
+    cursor: pointer;
+    border:none;
+    @include border-radius(0);
+    @include box-shadow(0 0px 16px rgba(0, 0, 0, 0.1));
+    @include user-select(none);
+    div {
+        margin-bottom: 0;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+        line-height: 29px;
+        background-color: #F3F3EF;
+        border: 1px solid #d3d3cF;
+        @include transition(background-color 0.1s linear);
+    }
+    div:hover {
+        background-color: #e3e3dF;
+        color: #555;
+    }
+}
+.esriSimpleSliderTL { top: 20px; left: 20px;}
+.esriSimpleSliderTR { top: 20px; right: 20px;}
+.esriSimpleSliderBL { bottom: 40px; left: 20px;}
+.esriSimpleSliderBR { bottom: 45px; right: 20px;}
+
+.esriSimpleSliderIncrementButton {
+  @include border-radius(4px 4px 0 0);
+}
+
+.esriSimpleSliderDecrementButton {
+  @include border-radius(0 0 4px 4px);
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+    border-bottom: none !important;
+}
+.esriSimpleSliderHorizontal{
+    &.esriSimpleSliderBL {
+        left: 5px;
+    }
+    &.esriSimpleSliderBR {
+        right: 5px;
+    }
+    .esriSimpleSliderIncrementButton {
+        border-right: none !important; float: left;
+    }
+    .esriSimpleSliderDecrementButton {
+        float: right;
+        .dj_ie67Fix {
+            float: none;
+            text-align: center;
+        }
+    }
+}
+.esriLargeSlider {
+    position: absolute;
+}
+.esriLargeSliderTL {
+    top: 30px;
+    left: 30px;
+}
+.esriLargeSliderTR {
+    top: 30px;
+    right: 15px;
+}
+.esriLargeSliderBL {
+    bottom: 40px;
+     left: 30px;
+}
+.esriLargeSliderBR {
+    bottom: 45px;
+    right: 15px;
+}
+.esriLargeSliderVertical {
+    height: 200px;
+    .esriLargeSliderLabels{
+        height: 2em;
+        font-size: 50%;
+    }
+    .esriLargeSliderTicks {
+        width: 5px;
+    }
+}
+.esriLargeSliderHorizontal {
+    width: 200px;
+    &.esriLargeSliderBL {
+        left: 5px;
+    }
+    &.esriLargeSliderBR {
+        right: 5px;
+    }
+    .esriLargeSliderTicks {
+        height: 5px;
+    }
+    .esriLargeSliderLabels {
+        height: 2em;
+        font-size: 50%;
+    }
+}
+/*** Info Window Default -TODO- ***/
+.infowindow {
+    position: absolute;
+    .window {
+        position: absolute;
+        color: #000;
+        font-family: verdana,  sans-serif;
+        .top {
+            .left {
+                width: 15px;
+                overflow: hidden;
+                position: absolute;
+                .sprite {
+                    margin-top: 0px;
+                    margin-left: -987px;
+                }
+            }
+            .right {
+                overflow: hidden;
+                position: absolute;
+                padding-right: 5px;
+                .sprite {
+                    margin-top: 0px;
+                    position: absolute;
+                }
+                .user {
+                    position: absolute;
+                    padding: 7px 0px 0px 10px;
+                    .titlebar{
+                        .hide{
+                            position: absolute;
+                            margin-top: 5px;
+                            width: 12px;
+                            height: 8px;
+                            overflow: hidden;
+                            .sprite {
+                                margin-left: -752px;
+                                margin-top: -900px;
+                                cursor: pointer;
+                                display: block;
+                                &:hover{
+                                    margin-top:-908px;
+                                }
+                            }
+                        }
+                        .title {
+                            font-weight: bold;
+                            font-size: 10pt;
+                        }
+                    }
+                    .border {
+                        margin-top: 5px;
+                        font-size: 0pt;
+                        height: 0px;
+                        border-top: 1px solid #000;
+                        border-bottom: 1px solid #fff;
+                        opacity: 0.25;
+                    }
+                    .layout {
+                        margin: 5px 0px 0px 0px;
+                        padding-right: 5px;
+                        overflow: auto;
+                    }
+                }
+                .content {
+                    font-size: 9pt;
+                }
+            }
+        }
+        .bottom {
+            .left {
+                width: 15px;
+                height: 10px;
+                overflow: hidden;
+                position: absolute;
+                .sprite {
+                    margin-top: -990px;
+                    margin-left: -987px;
+                }
+            }
+            .right {
+                height: 10px;
+                overflow: hidden;
+                position: absolute;
+                .sprite {
+                    margin-top: -990px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+    .pointer {
+        position: absolute;
+        width: 53px;
+        height: 44px;
+        overflow: hidden;
+    }
+    .upperleft {
+        right: 0px;
+        bottom: 0px;
+        .sprite {
+            margin-left: -800px;
+            margin-top: -800px;
+        }
+    }
+    .upperright {
+        left: 0px;
+        bottom: 0px;
+        .sprite {
+            margin-left: -902px;
+            margin-top: -800px;
+        }
+    }
+    .lowerright {
+        left: 0px;
+        top: 0px;
+        .sprite {
+            margin-left: -902px;
+            margin-top: -924px;
+        }
+    }
+    .lowerleft {
+        right: 0px;
+        top: 0px;
+        .sprite {
+            margin-left: -800px;
+            margin-top: -924px;
+        }
+    }
+    .sprite {
+        width: 1000px;
+         height: 1000px;
+    }
+}
+.simpleInfoWindow {
+    position: absolute;
+    padding:0;
+    font-family: $header-font;
+    color: $dark-gray;
+    background-color: $light-tan;
+    margin-top:-2em;
+    @include border-radius(4px);
+    @include box-shadow(0 0px 16px rgba(0, 0, 0, 0.1));
+    .title {
+        border-bottom: none;
+        padding: 3.5em 1.5em 0 1.5em;
+        font-size: 1em;
+        font-weight: 700;
+        line-height: .75em;
+        color:$dark-gray;
+        &.empty {
+            border-bottom: none;
+            padding:0;
+        }
+    }
+    .content {
+        padding: 1.5em 1.8em;
+        overflow: auto;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .close {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-image: image-url("remove@2x.png");
+        background-size: 24px 24px;
+        cursor: pointer;
+        margin-top:20px;
+        margin-left:-30px;
+    }
+}
+.progress {
+    position: relative;
+    margin-left: -16px;
+    margin-top: -16px;
+    top: -50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    z-index: 100;
+    background: url("/img/globe-loader.gif") no-repeat;
+
+    &.hidden{
+        display:none;
+    }
+    &.visible{
+        display:block;
+    }
+}
+/* - - - - - - IE FIXES - - - - - */
+.dj_ie .infowindow .window .top .right .user .content { position: relative; }
+.dj_ie .simpleInfoWindow .content {position: relative;}
+.dj_ie7 .esriPopup .titlePane .spinner.hidden, .dj_ie7 .esriPopup.blueTheme .titlePane .spinner.hidden , .dj_ie7 .esriPopup .titleButton.hidden, .dj_ie7 .esriViewPopup .gallery .mediaHandle.hidden, .dj_ie7 .esriViewPopup .gallery .mediaIcon.hidden { background: none;}
+.dj_ie7 .esriPopup .titlePane .title { background-color: #444444;}
+.dj_ie7 .esriPopup.blueTheme .titlePane .title { background-color: #5491B8;}
+.dj_ie7 .esriAttribution, .dj_ie6 .esriAttribution, .dj_ie7 .map .logo-med, .dj_ie7 .map .logo-sm,  .dj_ie6 .map .logo-med, .dj_ie6 .map .logo-sm { display: inline;}
+.esriSimpleSliderHorizontal .esriSimpleSliderDecrementButton .dj_ie67Fix { float: none; text-align: center;}

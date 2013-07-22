@@ -1,0 +1,226 @@
+@import "arcgis/base";
+.panel {
+  position: absolute;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  display: inline;
+  @include border-radius(2px);
+  @include box-shadow(0px 0px 16px rgba(0, 0, 0, 0.15));
+  z-index: 101;
+  background-color: #fbfbf3;
+  &.transparent {
+    @include box-shadow(none);
+    background-color:transparent;
+    padding:0;
+  }
+}
+.panel-left{
+  top:20px;
+  left:60px;
+}
+.panel-right{
+  top: 20px;
+  right: 20px;
+}
+.panel-center {
+  position: relative;
+	margin: 10px auto;
+}
+.button-list {
+	display: inline;
+	margin: 10px;
+	list-style: none;
+}
+.titlearea {
+  display: none;
+  background-color: #C3D2FF;
+}
+.message { }
+.title-message,.user-message {
+	vertical-align: middle;
+	color: #646464;
+}
+.title-message {
+	font-size: 20px;
+	line-height: 30px;
+}
+.user-message {
+	font-size: 12px;
+	line-height: 14px;
+}
+/*** Containers ***/
+.controls {
+  text-align:center;
+}
+.controls-inner {
+	display: inline-block;
+}
+.buttons {
+  display:inline-block;
+  /*margin:8px auto;*/
+}
+.basemap-container {
+	display: inline-block;
+	overflow: hidden;
+}
+
+/**** Information panel ***/
+.info-panel {
+  padding: 5px;
+	height: 100%;
+	text-align: left;
+}
+.info-label {
+	margin-left: 5px;
+  font-size:13px;
+}
+.info-totals {
+	margin-left: 0px;
+	font-size: 12px;
+}
+.info-list {
+	display: inline-block;
+	margin-left: -20px;
+  max-height: 100px;
+  overflow-y: auto;
+	font-size: 12px;
+	line-height: 14px;
+  a:hover {
+    color: #000;
+  }
+}
+.info-item {
+  margin-left: 2px;
+  padding: 3px 3px;
+  cursor:pointer;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    color: #005580;
+    text-decoration: bold;
+  }
+}
+
+.map{
+  .tooltip {
+    color: #333;
+    border: 1px solid #333;
+    line-height: 14px;
+    @include border-radius(3px);
+  }
+  &.infoPosition  {
+    width: auto;
+    margin-right: 290px;
+  }
+}
+.arcgisTheme {
+	display: inline-block;
+	height: 20px;
+}
+/*** Pop-up ***/
+.esriPopup, .esriPopup .contentPane {
+	font-size: 10px;
+	line-height: 12px;
+	/*padding: 6px;*/  /*offsets pointer!*/
+}
+.esriPopup .sizer {
+	width: 200px;
+}
+.popupZoom {
+  float:right;
+  cursor:pointer;
+  color: rgba(140, 140, 140, 1);
+}
+/*** Basemap Gallery ***/
+.esriBasemapGallery {
+
+	padding-top: 5px;
+}
+.esriBasemapGalleryNode {
+	width: 60px;
+}
+.esriBasemapGalleryThumbnail {
+	height: 51px;
+	width: 65px;
+}
+.esriBasemapGalleryLabelContainer {
+	display: none;
+}
+.esriBasemapGallerySelectedNode .esriBasemapGalleryThumbnail {
+	border: 2px solid #3C7AFF;
+}
+/*** Geocode Widget ***/
+.simpleGeocoder {
+	display: inline-block;
+	height: 20px;
+	margin-top: 3px;
+	margin-bottom: 5px;
+	width: 235px;
+  .esriGeocoderIcon{
+    margin-top: 3px;
+    padding-top: 3px;
+  }
+  .esriGeocoder {
+    @extend .esriGeocoderIcon;
+    height: 20px;
+    border: 1px solid #CCC;
+    input{
+      padding: 3px;
+      &:focus{
+        border:none;
+        @include box-shadow(none);
+      }
+    }
+    .esriGeocoderReset {
+      margin: 2px 1px 6px 0;
+    }
+  }
+  .esriGeocoderResults {
+    margin: -3px 0 0 -1px;
+    border: 1px rgba(150, 150, 150, 0.50) solid;
+    text-align: left;
+  }
+}
+.thumbnail-holder{
+  position: relative;
+  z-index: 30;
+  top: 20px;
+  display: block;
+  right: 10px;
+  height:0;
+  float:right;
+  .tooltip{
+    float:right;
+    margin-left:10px;
+    margin-bottom:10px;
+  }
+  .btn-thumbnail {
+    display: inline-block;
+    width:  48px;
+    height: 48px;
+    margin: 0;
+    border:3px solid white;
+    @include box-shadow(0px 0px 7px rgba(0,0,0, .15));
+    @include transition(all 0.1s linear);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 48px 48px;
+    label{
+      display:none;
+    }
+    &:hover{
+      @include box-shadow(0px 0px 10px rgba(0,0,0, .25));
+      @include transition(all 0.1s linear);
+      background-position: 0 0;
+    }
+   /* &.streets  {@include retina-background("street-thumb.jpg","street-thumb@2x.jpg");}
+    &.satellite{@include retina-background("satellite-thumb.jpg","satellite-thumb@2x.jpg");}
+    &.hybrid   {@include retina-background("hybrid-thumb.jpg","hybrid-thumb@2x.jpg");}
+    &.topo     {@include retina-background("topo-thumb.jpg","topo-thumb@2x.jpg");}
+    &.gray     {@include retina-background("gray-thumb.jpg","gray-thumb@2x.jpg");}
+    &.oceans   {@include retina-background("oceans-thumb.jpg","oceans-thumb@2x.jpg");}
+    &.natgeo   {@include retina-background("nat-geo-thumb.jpg","nat-geo-thumb@2x.jpg");}*/
+  }
+}

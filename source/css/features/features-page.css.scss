@@ -1,0 +1,85 @@
+@import "arcgis/base";
+@import "features";
+@import "documentation";
+
+#get-start {
+}
+
+
+#feat-intro{
+  margin:0 2em 0 0.5em;
+  p {
+    color:$gray;
+    font-family: $header-font;
+    line-height: 1.8em;
+    font-size: 1.5em;
+  }
+}
+
+#feature-stories{
+  @include column(16);
+  @include trailer(1);
+  .feature-box {
+    @include column(12);
+    .cta {
+      font-family: $header-font;
+      @include adjust-font-size-to(20px, 1);
+      &.trailer-half {
+        margin-bottom: 0.667em;
+      }
+      a {
+        font-family: $header-bold;
+      }
+    }
+    @include respond-to($phone-large) {
+      @include column-width(24);
+    }
+  }
+  @include respond-to($tablet-tall) {
+    @include column-width(24);
+  }
+
+}
+
+#social-column {
+  padding-top:1em;
+  @include column(8);
+  @include trailer(1);
+  article {
+    padding-bottom:1.5em;
+  }
+  @include respond-to($tablet-tall) {
+    @include column-width(24);
+  }
+}
+
+.card {
+  @include trailer(1);
+  padding:1em 2em 1em 0;
+  color: $dark-gray;
+  h3 {
+    @include trailer(0.1);
+    @include leader(0.5);
+    line-height:1.6em;
+    a {
+      color: $dark-gray;
+    }
+  }
+  min-height:100%;
+}
+#blog-container, #forum-container, #promo-container, #get-start{
+  margin-bottom:1.5em;
+}
+#promo-container {
+  img {
+    padding-left: 25%;
+  }
+  a.btn {
+    margin-left: 40%;
+  }
+
+}
+.large-text {
+  font-family: $header-bold;
+  @include adjust-font-size-to(20px, 1);
+}

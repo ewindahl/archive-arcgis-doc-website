@@ -1,0 +1,455 @@
+@import "arcgis/base";
+
+#auth-sidebar {
+  @include column(8);
+  @include trailer(4);
+  @include respond-to($tablet-mid) {
+    @include column-width(12);
+  }
+  @include respond-to($phone-large) {
+    @include column-width(24);
+  }
+}
+
+#documentation-index {
+  @include column(16);
+  @include trailer(3);
+  @include respond-to($tablet-mid) {
+    @include column-width(12);
+  }
+  @include respond-to($phone-large) {
+    @include column-width(24);
+  }
+}
+
+.promoted-doc {
+  @include column(12);
+  h2 {
+    @include trailer(.125);
+    a {
+      color: $dark-gray;
+    }
+  }
+  margin-bottom: 1em;
+  @include respond-to($tablet-mid) {
+    @include column-width(24);
+  }
+}
+
+.feature-doc {
+  @include trailer(1);
+  @include column(11);
+  &:last-child {
+    @include last-column();
+  }
+  h2{
+    margin-top:1em;
+  }
+  p {
+    margin-top: 1em;
+  }
+}
+
+.sdk-links {
+  ul {
+    @include clearfix();
+  }
+  ul:first-child {
+    @include trailer(1.5);
+  }
+  li {
+    float: left;
+    @include column(6);
+    text-align: center;
+    line-height: 1.5em;
+  }
+  a, img {
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+  }
+  img {
+    margin-bottom: 4px;
+  }
+}
+
+.page-header {
+  @include column(24);
+}
+
+.page-title {
+  margin-top: 0 !important;
+  @include trailer(.25);
+}
+
+.page-sidebar {
+  @include column(6);
+  @include pre(1);
+  padding-right: 1em;
+  @include trailer(4);
+}
+
+%content {
+  @extend %content-area;
+  @include trailer(3);
+}
+
+.page-content {
+  @extend %content-area;
+  @include column(17);
+  padding-right: 1em;
+}
+
+.reference-content {
+  @extend %content-area;
+  @include trailer(1);
+  @include column(19);
+  padding-left: 1em;
+  border-left: 1px solid $lightest-gray;
+  .toc{
+    @include respond-to($tablet-mid) {
+      @include adjust-font-size-to(15px);
+    }
+    width:30%;
+  }
+  h1{
+    width:63%;
+    padding-left:0;
+    padding-right:0;
+  }
+}
+
+.reference-index {
+  @include column(5);
+  padding-right: 1em;
+  @include trailer(3);
+  @include leader(-0.5);
+  form {
+    @include trailer(.5);
+  }
+  header, .header {
+    @include clearfix();
+    background: $lightest-gray;
+    padding: 8px;
+    @include leader(.5);
+  }
+  .tooltip {
+    margin-top: 4px;
+    float: right;
+  }
+  header {
+    h4 {
+      padding: 0 1em 0 0 ;
+    }
+  }
+  ul {
+    @include trailer(.5);
+    li {
+      background: none;
+      padding: 0;
+      &.current {
+        a {
+          font-weight: 700;
+          background: $blue;
+          color: $white;
+        }
+      }
+    }
+    ul {
+      @include adjust-font-size-to(12px, 1, 14px);
+      li {
+        border-bottom: none;
+      }
+    }
+  }
+  .small {
+    @include adjust-font-size-to(12px, 1, 16px);
+  }
+
+  .sort-index-by {
+    text-align: center;
+    @include adjust-font-size-to(11px);
+    .active {
+      text-decoration: underline;
+      color: $dark-blue;
+    }
+  }
+
+  nav a {
+    display: block;
+    padding: 4px 8px;
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+    @include respond-to($tablet-mid) {
+        @include adjust-font-size-to(15px);
+    }
+  }
+  hr {
+    @include margin-leader(.25);
+    @include margin-trailer(.25);
+  }
+}
+
+td p:last-child {
+  margin-bottom: 0
+}
+
+.note {
+  @extend %callout;
+  background: $light-tan;
+}
+
+%sidebar-panel {
+  @extend %panel;
+  @include trailer(1);
+}
+
+.blue-panel {
+  @extend %sidebar-panel;
+  background: $lightest-blue;
+  border-color: mix($lightest-blue, $light-blue);
+}
+
+.green-panel {
+  @extend %sidebar-panel;
+  background: $lightest-green;
+}
+
+.tan-panel {
+  @extend %sidebar-panel;
+  background: $light-tan;
+}
+
+.gray-panel {
+  @extend %sidebar-panel;
+  background: mix($lightest-gray, $off-white);
+}
+
+.sidebar-panel {
+  @extend %sidebar-panel;
+  padding-top: 0;
+}
+
+.doc-detail {
+  border: 1px solid $blue;
+  padding: 0;
+  @include trailer(1);
+  header {
+    background: $blue;
+    color: $white;
+    padding: .75em;
+  }
+}
+
+.doc-detail-content {
+  padding: .75em;
+}
+
+.doc-feature-leader, .doc-feature {
+  @include leader(1);
+}
+
+.doc-feature-leader {
+  @include column(16);
+}
+
+.doc-feature {
+  @include column(8);
+}
+
+.doc-features {
+  @include column(16);
+  .doc-feature {
+    @include column(11);
+    @include post(.5);
+    &:last-child {
+      @include pre(.5);
+      @include post(.5);
+
+    }
+  }
+}
+
+.media {
+  margin-top: 8px;
+  > :first-child {
+    margin-top:4px;
+  }
+  @extend %media;
+  height: 39px;
+}
+
+[data-collapsed] header {
+  cursor: pointer;
+  @include clearfix();
+}
+
+[data-collapsed="true"] header {
+  @include arrow("right",5px, $light-gray);
+}
+
+[data-collapsed="false"] header {
+ @include arrow("down", 5px, $light-gray);
+}
+
+[data-collapsed="true"] header:after {
+  top: 13px;
+  right: 10px;
+}
+
+[data-collapsed="false"] header:after {
+  top: 16px;
+  right: 8px;
+}
+
+.sdk-image-icon {
+  position: relative;
+  top: 3px;
+  padding-right: .3em;
+}
+
+.auth-details-btn {
+  text-align: center;
+  white-space: normal;
+}
+
+.step_title {
+  font-family: $header-bold;
+  @include adjust-font-size-to(24px);
+}
+
+.reference-content {
+  ol {
+    font-size: 14px;
+  }
+  ol p {
+    font-size: 14px;
+  }
+}
+
+.steps {
+  > ol {
+    counter-reset:li;
+    list-style:none;
+    > li {
+      @include leader(1);
+      @include trailer(1);
+      &:before {
+        background: $lighter-blue;
+        color: white;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        content:counter(li);
+        counter-increment:li;
+        margin-right: .5em;
+      }
+    }
+  }
+}
+
+.codeblock {
+  max-width: 100% !important;
+  pre {
+    font-size: 13px;
+    @include leader(1);
+    @include trailer(0);
+  }
+}
+
+.image {
+  @include leader(1);
+}
+
+.usertext {
+  @include border-radius(4px);
+  @include rhythm-borders(1px, .25, 16px, solid);
+  font-family: monospace, serif;
+  background: $off-white;
+  border-color: $lightest-gray;
+  border-width: 1px;
+  white-space: pre;
+}
+
+/* -- Hack to remove Search Bar -- */
+.navigation-bar input, .section-bar input {
+  display:none;
+}
+/* -- Hack to add toc class for "in this topic" -- */
+.toc {
+  @extend %panel;
+  background: $light-tan;
+  float: right;
+  margin: 0 0 2em 2em;
+  h5:first-of-type {
+    margin-top: 0;
+  }
+}
+
+ #appTitle {
+    display: inline-block;
+  }
+  #appVersion,
+  #appReleased {
+    font-size: 0.9em;
+    margin-left: 1em;
+  }
+
+  #appSysRequirements,
+  #appWhatsNew {
+    background: none;
+    color: #007ac2;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    font-size: 1.1em;
+    line-height: 1.71429em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    font-family: "Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+    padding: .3em 1.25em .3em 0;
+    display: inline-block;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    letter-spacing: 1px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+  .imgFrame {
+    background: #E5F1FA;
+    border-radius: 8px;
+    border: 1px solid #6CD5F6;
+    padding: 15px 25px;
+  }
+
+  .greyFrame {
+    background: #F3F3F3;
+    border-radius: 8px;
+    border: 1px solid #EDEDED;
+    padding: 15px 25px;
+  }
+  .greyFrame p {
+    margin-bottom: 0;
+  }
+  .greyFrame #blog article {
+    margin-bottom: 1.2em;
+  }
+
+
+  #collectorMapFeature h3 {
+    margin-top: 1em;
+  }
+  #collectorDataFeature h3 {
+    margin-top: 1em;
+  }
