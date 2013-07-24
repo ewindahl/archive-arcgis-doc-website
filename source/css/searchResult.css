@@ -3,19 +3,22 @@
     min-height: 100px;
 }
 
-#rc-content
+#reference-content
 {
     min-height: 700px;
     position: relative;
+    border-left: 1px solid #EDEDED;
 }
 
-#gl-s-ctrl 
+#searchBox 
 { 
 height: 30px;
+margin: 0 20px 0 10px;
 /*  margin:15px 0 10px 220px;
     width: 690px;
     position:relative;*/
 }
+
 
 #rss 
 {
@@ -24,46 +27,91 @@ height: 30px;
     left:  910px;
 }
 
-#gl-s-ctrl input[type="text"] 
+#searchBox input[type="text"] 
 {
     position:absolute;
-    left: 100px;
-    height: 22px;
+    margin: 0 20px 0 10px;
+    height: 30px;
 	width: 600px;
     color:#888;
 }
 
-#gl-s-ctrl input[type="submit"] {
+#searchBox input[type="submit"] {
     position:absolute;
-    left: 680px;
+    margin: 3px 3px 0 590px;
     background: url("/img/orangeMag.gif") no-repeat scroll center center transparent;
     border: medium none;
     cursor: pointer;
     height: 22px;
-    margin: 1px;
     width: 22px;
     height:23px;
 }
 
-#gl-display
+#results
 {
-    float:right;
+    float:left;
     position:relative;
-    width:700px;
+    /*width:700px;*/
     min-height: 150px;
-    margin: 0 20px 0 0;
+    margin: 0 20px 0 15px;
     border: 0px solid #000;
     
 }
-
-#gl-filter-ctrl 
+.results div {
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.result {
+    clear: both;
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+p.resultMeta {
+    color: #999999;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+.result p {
+    line-height: 1.3em;
+}
+.reference-content h3 {
+    margin-bottom: 0.63158em;
+    margin-top: 1.26316em;
+}
+.result h3 {
+    line-height: 1em;
+}
+.result h3 a.searchTitle {
+    margin-bottom: 10px;
+}
+p.resultMeta {
+    color: #999999;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+#reference-index 
 {
     /*position: fixed;*/
     float:left;
-    width: 220px;
-    border-right: 1px solid #c1c1c1 ;
-    margin-top: -40px;
+    /*width: 220px;*/
+    margin-top: -30px;
     padding: 0 0 35px 0;
+    
+    margin-bottom: 4.5em;
+    /*margin-top: -0.75em;*/
+    /*padding-right: 1em;*/
+    /*width: 20.8333%;*/
+    width: -moz-max-content;
+}
+#reference-index header, .reference-index .header {
+    background: none repeat scroll 0 0 #EDEDED;
+    margin-top: 0.75em;
+    padding: 2px;
+}
+.ctrlbox {
+    display: block;
+    margin: 5px 10px 5px 25px;
 }
 
 #gl-filter-ctrl-btn 
@@ -139,7 +187,7 @@ height: 30px;
 #gl-pagenav 
 {
     position: relative;
-    margin: 10px 0 40px 0;
+    margin: 10px 0 40px -100px;
     
 }
 
@@ -175,7 +223,7 @@ height: 30px;
 }
 
 
-#gl-display .gl-pnavinfo 
+#results .gl-pnavinfo 
 {
     margin-left: 1em;
 }
@@ -187,7 +235,7 @@ height: 30px;
     margin-left:145px;
     margin-bottom: 40px;
     margin-right:15px;
-    padding-top:5px;
+    padding-top:0px;
 }
 
 #gl-prevnext 
@@ -208,9 +256,11 @@ height: 30px;
 {
     float:left;    
 }
-
-
-#gl-content 
+.searchMetaInfo
+{
+    /*border-top: 1px solid #C1C1C1;*/
+}
+#dynamicContent 
 {
     margin: 43px 0 0 0;
     min-height: 500px;
@@ -458,4 +508,19 @@ height: 30px;
   color: #c1c1c1;
   cursor: default;
   background:#f1f1f1;
+}
+
+input, select, textarea {
+    
+    display: table-cell;
+    
+}
+input[type="text"]  
+{
+    display: table-cell;
+}
+.pnavinfoText{
+    color: #999999;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
