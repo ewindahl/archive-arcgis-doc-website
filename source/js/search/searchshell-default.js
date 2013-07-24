@@ -253,21 +253,36 @@ function genGalleryModel(hash, mdfL) {
             return l.join("&");
         }
 
-        this._genAjaxData = function () {
+        this._genAjaxData = function() {
 
             function _genPartialFields(mdf) {
                 var l = [];
 
                 for (key in mdf) {
+
                     if (mdf.hasOwnProperty(key)) {
                         var state = mdf[key].state;
                         if (state) {
-                            var vL = []
+                            //alert(key);
+                            var vL = [];
                             for (var i = 0, len = mdf[key].len; i < len; i++) {
                                 if (state.charAt(i) === "1") {
                                     v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]:checked").val();
-                                    if (v) {
-                                        vL.push(key + ":" + v);
+
+                                    // Look for corresponding search-category if any
+                                    if (key == "search-collection") {
+                                        cv = $("#filters input:hidden[name=" + "search-category" + "-" + (i + 1) + "]").val();
+                                        if (cv) {
+                                            vL.push(key + ":" + v + "." + "search-category:" + cv)
+                                        } else {
+                                            vL.push(key + ":" + v);
+                                        }
+                                    } else {
+
+
+                                        if (v) {
+                                            vL.push(key + ":" + v);
+                                        }
                                     }
                                 }
                             }
@@ -294,7 +309,7 @@ function genGalleryModel(hash, mdfL) {
             l.push("Oe=utf8");
             l.push("filter=0");
             //l.push("requiredfields=search-collection:" + gcfg.collection + ".search-category:" + gcfg.category);
-			//l.push("requiredfields=search-collection:" + gcfg.collection);
+            //l.push("requiredfields=search-collection:" + gcfg.collection);
 
             /* public flags */
             l.push("start=" + this.startN);
@@ -309,11 +324,11 @@ function genGalleryModel(hash, mdfL) {
             var pfields = _genPartialFields(this.mdf);
             if (pfields) {
                 //l.push("partialfields=" + pfields);
-				l.push("requiredfields=" + pfields);
+                l.push("requiredfields=" + pfields);
             }
 
             l.push("getfields=*");
-console.log(pfields);
+            //console.log(pfields);
             return l.join("&");
         }
 
@@ -328,16 +343,17 @@ function SEData(data) {
     this.hasError = data.haserror;
     this.errMsg = data.errormessage;
 
-    var jxon = getXMLData($.parseXML(data.content).documentElement);
+    if (data.content) {
+        var jxon = getXMLData($.parseXML(data.content).documentElement);
 
-    this.estN = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["m"]);
-    this.startI = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["@sn"]);
-    this.endI = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["@en"]);
+        this.estN = (typeof jxon.res === "undefined") ? 0 : parseInt(jxon.res["m"]);
+        this.startI = (typeof jxon.res === "undefined") ? 0 : parseInt(jxon.res["@sn"]);
+        this.endI = (typeof jxon.res === "undefined") ? 0 : parseInt(jxon.res["@en"]);
 
-    this.rowL = (typeof jxon.res === "undefined") ? [] :
+        this.rowL = (typeof jxon.res === "undefined") ? [] :
                       ((jxon.res.r instanceof Array) ? jxon.res["r"] : [jxon.res["r"]]);
-
-	
+    }
+    
 	
 	//alert(JSON.stringify(jxon));  
 	//alert(jxon.toSource());
@@ -352,7 +368,7 @@ SEData.prototype.getRow = function (i) {
 function SERow(data) {
 	//console.log(data['t']);
     this.data = data;
-    /*this._md = (function (md) {
+    this._md = (function (md) {
         var r = {};
         // should limit the key set - only use subset/
         if (md) {
@@ -365,11 +381,13 @@ function SERow(data) {
             }
         }
         return r;
-    })(data["mt"]);*/
+    })(data["mt"]);
  var rslt = {};
 rslt['title'] =  data['t'];
 rslt['url'] =  data['u'];
-rslt['snippet'] =  data['s'];
+rslt['snippet'] = data['s'];
+rslt['metaData'] = this._md;
+rslt['modifiedDate'] = data['fs']['@value'];
 
 
 	return rslt;
@@ -384,10 +402,7 @@ SERow.prototype.td = function (key, dval) {
     return (this.data.hasOwnProperty(key) ? this._td[key] : dval) || this._td[key];
 
 };*/
-SERow.prototype.contentTitle = function () {
-    //return this.md("agol-item-id", "");
-	return this.td("T", "");
-};
+
 
 SERow.prototype.md = function (key, dval) {
     return (this._md.hasOwnProperty(key) ? this._md[key] : dval) || dval;
@@ -423,7 +438,7 @@ function createGalleryShell() {
         display: null,
         pageNav: null,
 
-        init: function (gm) {
+        init: function(gm) {
             if (gm.query) {
                 $("#query").val(gm.query);
             }
@@ -433,15 +448,17 @@ function createGalleryShell() {
 
         },
 
-        updateHash: function (gm, vdata0) {
-            var vdata = vdata0 || gm.genViewData();
+        updateHash: function(gm, vdata0) {
+
+        var vdata = vdata0 || gm.genViewData();
+        
             if (vdata.hash) {
                 window.location.hash = vdata.hash;
             }
 
         },
 
-        update: function (gm) {
+        update: function(gm) {
             this.gm = gm;
 
             var vdata = gm.genViewData();
@@ -455,29 +472,31 @@ function createGalleryShell() {
             this._updateFilter(gm);
 
             debug(vdata.ajaxData);
+
             $.ajax({
                 url: gm.tier.gallery,
                 dataType: "jsonp",
                 context: this,
                 data: vdata.ajaxData,
                 timeout: 6000,
-                beforeSend: function () {
-                    $("#gl-content").empty();
+                beforeSend: function() {
+                    $("#dynamicContent").empty();
                     $("#spinner").show();
                 },
-                success: function (data) {
+                success: function(data) {
                     $("#spinner").hide();
                     this._updateModelAndView(data);
                 },
-                error: function (xhr, status, err) {
-                    $("#gl-content").html(gcfg.errorMsg);
+                error: function(xhr, status, err) {
+                    $("#dynamicContent").html(gcfg.errorMsg);
                     $("#spinner").hide();
                 }
             });
 
         },
 
-        _updateFilter: function (gm) {
+
+        _updateFilter: function(gm) {
             var mdf = gm.mdf,
                 i = 0,
                 len = 0;
@@ -504,13 +523,13 @@ function createGalleryShell() {
             }
         },
 
-        updateDisplay: function () {
+        updateDisplay: function() {
             if (this.display) {
                 this.display.update(this.gm);
             }
         },
 
-        _updateModelAndView: function (data) {
+        _updateModelAndView: function(data) {
 
             var sedata = new SEData(data);
 
@@ -534,7 +553,7 @@ function createGalleryShell() {
     return shell;
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     /** init data model **/
     var gModel = null;
@@ -545,33 +564,37 @@ $(document).ready(function () {
     /** init event handler **/
 
     $("#query").bind({
-        "keydown": function (evt) {
+        "keydown": function(evt) {
             if (evt.keyCode == "13") {
                 gModel.updateQuery();
                 gShell.update(gModel);
             }
         },
-        "focus": function (evt) {
+        "focus": function(evt) {
             if ($(this).val() == $(this)[0].defaultValue) {
                 $(this).val('');
             }
         }
     });
 
-    $("#filters").bind("change", function (evt) {
+    $("#filters").bind("change", function(evt) {
         gModel.updateByFilter();
         gShell.update(gModel);
     });
 
-    $("#search").bind("click", function (evt) {
+    $("#search").bind("click", function(evt) {
         gModel.updateQuery();
         gShell.update(gModel);
 
+        if ($("#searchBox input:text[name=query]").val() == "") {
+            //alert("Please enter a search keyword");
+            //$("#searchBox input:text[name=query]").focus()
+        }
         evt.stopImmediatePropagation();
         return false;
     });
 
-    $("#gl-pagenav").delegate("#pageX", "keydown", function (evt) {
+    $("#gl-pagenav").delegate("#pageX", "keydown", function(evt) {
         if (evt.keyCode == "13") {
             var x = parseInt($("#pageX").val(), 10);
             if (!isNaN(x)) {
@@ -584,7 +607,7 @@ $(document).ready(function () {
     });
 
 
-    $("#display1, #display2, #display3").bind("click", function (evt) {
+    $("#display3").bind("click", function(evt) {
         gModel.updateDisplay(parseInt(evt.target.id.slice("display".length), 10));
         gShell.updateHash(gModel);
         gShell.updateDisplay(gModel);
@@ -597,7 +620,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#numn1, #numn2, #numn3").bind("click", function (evt) {
+    $("#numn1, #numn2, #numn3").bind("click", function(evt) {
         gModel.updateDisplayN(parseInt(evt.target.id.slice("numn".length), 10));
         gShell.update(gModel);
 
@@ -609,7 +632,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#gl-prev").bind("click", function (evt) {
+    $("#gl-prev").bind("click", function(evt) {
         if (!$(this).hasClass("disabled")) {
             gModel.dec();
             gShell.update(gModel);
@@ -618,7 +641,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#gl-next").bind("click", function (evt) {
+    $("#gl-next").bind("click", function(evt) {
         if (!$(this).hasClass("disabled")) {
             gModel.inc();
             gShell.update(gModel);
@@ -627,14 +650,14 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#gl-filter-clear").bind("click", function (evt) {
+    $("#gl-filter-clear").bind("click", function(evt) {
         gModel.clearMDF();
         gShell.update(gModel);
         evt.stopImmediatePropagation();
         return false;
     });
 
-    window.onhashchange = function (evt) {
+    window.onhashchange = function(evt) {
         var curHash = window.location.hash;
 
         if (curHash) {
@@ -651,45 +674,19 @@ $(document).ready(function () {
 
     /** init page **/
     try {
-        var initval = "#s=0&n=" + gcfg.numN + "&d=1&filter=0";
+
+        var initval = "s=0&n=" + gcfg.numN;
         if (window.location.hash) {
             initval = window.location.hash;
         }
         gModel = genGalleryModel(initval, mdfL);
+        //console.log(gModel);
+
         gShell.init(gModel);
         gShell.update(gModel);
+
     } catch (ex) {
         debug(ex.message);
     }
 
 });
-
-
-
-/*
- xmlDoc = $.parseXML( sedata );
-$xml = $( xmlDoc );
- iterateXML($xml);
-
- //$.get(tocURL, function(toc) {
-    function iterateXML(xml) {
-        // variable to accumulate markup
-        var markup = "";
-        // worker function local to makeToc
-        function processXml() {
-            markup += "<li><a href='" + $(this).attr("url") + "'>" + $(this).attr("title") + "</a>";
-            if (this.nodeName == "R") {
-                markup += "<ul>";
-                // recurse on book children
-                $(this).find("page").each(processXml);
-                markup += "</ul>";
-            }
-            markup += "</li>";
-        }
-        // call worker function on all children
-        $xml.children().each(processXml);
-        return markup;
-    }
-    //var tocOutput = makeToc($(toc));
-   /// $("#list").html(tocOutput);
-//});*/
