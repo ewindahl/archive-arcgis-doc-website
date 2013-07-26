@@ -71,7 +71,13 @@
       <% end %>
     <% end %>
     <!--- search MD -->
-
+	<script>
+	/* Temporary fix for tablet version of "get started/blog column" issue. */
+		$(document).ready(function(){
+			$(".container .tablet-column-24").css('width','66.666%')
+			$(".container .column-8").css('width','33.333%')
+		});
+	</script>
   </head>
   <body>
     <div id="wrapper">
