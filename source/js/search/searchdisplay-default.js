@@ -157,9 +157,9 @@ function genDisplay() {
                 if (explodedSubjectLabel.length >= 2) {
                     buf.push(explodedSubjectLabel[0]);
                 } else {
-                    buf.push(subject_label);
+                    buf.push(row.metaData.subject_label);
                 }
-                if (row.metaData.sub_category_label != "") {
+                if ((row.metaData.sub_category_label) && row.metaData.sub_category_label != "") {
                     buf.push(" - " + row.metaData.sub_category_label);
                 }
                 buf.push(" | ");
@@ -169,9 +169,9 @@ function genDisplay() {
                 if (explodedSubject.length >= 2) {
                     buf.push(explodedSubject[0]);
                 } else {
-                    buf.push(subject);
+                    buf.push(row.metaData.subject);
                 }
-                if (row.metaData.sub_category != "") {
+                if ((row.metaData.sub_category) && row.metaData.sub_category != "") {
                     buf.push(" - " + row.metaData.sub_category);
                 }
                 buf.push(" | ");
@@ -181,7 +181,6 @@ function genDisplay() {
                 buf.push(dateFormat(row.modifiedDate));
             }
             buf.push("</p>");
-            console.log(row.modifiedDate);
             /* End of MEta Data section */
 
             buf.push("<p class='item-snippet1'> " + row.snippet + "</p>");
