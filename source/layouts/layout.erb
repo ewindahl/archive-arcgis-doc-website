@@ -6,11 +6,11 @@
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    
+
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
-    
+
     <script>
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-215788-63']);
@@ -24,9 +24,9 @@
       })();
 
     </script>
-    
 
-	
+
+
     <!--[if lt IE 9]>
       <%= javascript_include_tag "libs/html5shiv.js" %>
       <%= javascript_include_tag "libs/selectivizr-min.js" %>
@@ -46,7 +46,7 @@
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
-    
+
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
     <%= javascript_include_tag  "libs/kss", "libs/highlight.pack" %>
     <% if current_page.data.js %>
@@ -115,7 +115,7 @@
                 </nav>
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
 				<div id="logged-out-navigation" class="dropdown-navigation">
-					<a id="login-link" class="btn small light" href="https://www.arcgis.com/home/signin.html">Sign In</a>
+					<!--<a id="login-link" class="btn small light" href="https://www.arcgis.com/home/signin.html">Sign In</a>-->
 				</div>
                 <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
                   <a href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
