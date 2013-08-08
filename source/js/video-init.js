@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+$('#docWrapper .colorbox-iframe').colorbox({ iframe: true, scrolling: false, innerWidth: "960", innerHeight: "540", current: "({current} of {total})" });
 
 	if((navigator.userAgent.match(/(iPhone|iPod|iPad|Android|blackberry)/gi))) {
 		// Remove css class "cboxElement", else it will open video on light box.

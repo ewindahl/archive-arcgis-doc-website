@@ -23,7 +23,7 @@ function debug(v) {
 };
 
 function genGalleryModel(hash, mdfL) {
-    
+
     var o = new GalleryModel(mdfL);
     o.init(hash);
     return o;
@@ -238,7 +238,7 @@ function genGalleryModel(hash, mdfL) {
             }
 
             var l = [];
-            
+
             l.push("s=" + this.startN);
             l.push("n=" + this.numN);
             l.push("d=" + this.display);
@@ -304,7 +304,7 @@ function genGalleryModel(hash, mdfL) {
             l.push("format=jsonp");
             l.push("event=search.renderSearch");
             l.push("interfaceName=developers");
-            l.push("searchViewname=developers_en");
+            l.push("searchViewname=arcgis_doc_en");
             l.push("lr=lang_en");
             l.push("Oe=utf8");
             l.push("filter=0");
@@ -353,9 +353,9 @@ function SEData(data) {
         this.rowL = (typeof jxon.res === "undefined") ? [] :
                       ((jxon.res.r instanceof Array) ? jxon.res["r"] : [jxon.res["r"]]);
     }
-    
-	
-	//alert(JSON.stringify(jxon));  
+
+
+	//alert(JSON.stringify(jxon));
 	//alert(jxon.toSource());
 
 
@@ -396,7 +396,7 @@ rslt['modifiedDate'] = data['fs']['@value'];
 /*
 SERow.prototype.contentTitle = function () {
     return this.td("agol-item-id", "");
-	
+
 };
 SERow.prototype.td = function (key, dval) {
     return (this.data.hasOwnProperty(key) ? this._td[key] : dval) || this._td[key];
@@ -412,7 +412,7 @@ SERow.prototype.val = function (key, dval) {
 };
 SERow.prototype.agolId = function () {
     return this.md("agol-item-id", "");
-	
+
 };
 
 SERow.prototype.agolItemUrl = function (agolId) {
@@ -451,7 +451,7 @@ function createGalleryShell() {
         updateHash: function(gm, vdata0) {
 
         var vdata = vdata0 || gm.genViewData();
-        
+
             if (vdata.hash) {
                 window.location.hash = vdata.hash;
             }
@@ -559,6 +559,8 @@ $(document).ready(function() {
     var gModel = null;
     var gShell = createGalleryShell();
     var mdfL = gcfg.mdfL; //metadata filter
+
+
 
 
     /** init event handler **/
