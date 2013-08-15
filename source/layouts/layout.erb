@@ -70,6 +70,11 @@
         <%= v %>
       <% end %>
     <% end %>
+
+   <!-- Language Picker
+   <link type="text/css" rel="stylesheet" href="/css/setlang.css"/>
+   <%= javascript_include_tag "setlang" %>-->
+
     <!--- search MD -->
 	<script>
 	/* Temporary fix for tablet version of "get started/blog column" issue. */
@@ -77,6 +82,11 @@
 			$(".container .tablet-column-24").css('width','66.666%')
 			$(".container .column-8").css('width','33.333%')
 		});
+
+      <!-- note style issue hack -->
+      $(".note h5").each(function(){
+         $(this).css('height',$(this).parent().innerHeight()-50);
+      });
 	</script>
   </head>
   <body>
@@ -113,7 +123,14 @@
 					<li><a href="http://www.arcgis.com/features/help.html">Help</a></li>
                   </ul>
                 </nav>
+
+
+
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
+
+                <!--<div id="lg-container" class="dropdown-navigation">
+                  <div id="lang-block"></div>
+               </div>-->
 				<div id="logged-out-navigation" class="dropdown-navigation">
 					<!--<a id="login-link" class="btn small light" href="https://www.arcgis.com/home/signin.html">Sign In</a>-->
 				</div>
