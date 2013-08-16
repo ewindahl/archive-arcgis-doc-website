@@ -188,6 +188,10 @@ function genDisplay() {
             buf.push("</div>");
 
             buf.push("</li>");
+
+            //Remove prev/next from screen as there is no result found.
+            $("#gl-display-shown").css("display","block");
+            $("#gl-pagenav").css("display","block");
         },
 
         noresult: function(buf) {
@@ -195,7 +199,13 @@ function genDisplay() {
             //buf.push("<br />");
             buf.push("<p><strong>Suggestions</strong>:</p>");
             buf.push("<ul><li>Make sure all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li><li>Try fewer keywords.</li></ul>");
-        },
+
+            //Remove prev/next from screen as there is no result found.
+            $("#gl-display-shown").css("display","none");
+            $("#gl-pagenav").css("display","none");
+
+
+           },
 
         update: function(gm) {
             try {
