@@ -36,4 +36,7 @@ configure :build do
 
   # Automatically compress PNG images
   # activate :smusher
+
+  #Localize layout
+  page "/es/*", :layout => "es"
 end

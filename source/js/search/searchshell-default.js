@@ -37,6 +37,9 @@ function genGalleryModel(hash, mdfL) {
         this.query = ""; //decoded value
         this.mdf = {}; //metadata filter
         this.tier = getTier(window.location.hostname);
+        this.lgCookieKey = "rclg0";
+         // This variable for non Enlgish content only.
+        this.searchLanguage = "";
 
         this.display = 3; //display type
 
@@ -62,6 +65,7 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.genViewData = function () {
+         //console.log(this._genHash());
             var o = {
                 hash: this._genHash(),
                 ajaxData: this._genAjaxData()
@@ -79,6 +83,14 @@ function genGalleryModel(hash, mdfL) {
 
         this.updateByHash = function (hash) {
             var o = this._parseHash(hash);
+
+            if (o.searchLanguage) {
+                this.searchLanguage = o.searchLanguage;
+
+            } else {
+                this.searchLanguage = 0;
+            }
+
 
             if (o.s) {
                 this.startN = parseInt(o.s, 10);
@@ -246,12 +258,59 @@ function genGalleryModel(hash, mdfL) {
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
             }
+            if (this.searchLanguage) {
+                l.push("searchLanguage=" + this.searchLanguage);
+                if(this.searchLanguage <= 0){
+                  $("#nativeAndEnglish").removeClass("localeSelected");
+                  $("#nativeLanguage").addClass("localeSelected");
+                }else {
+                $("#nativeLanguage").removeClass("localeSelected");
+                  $("#nativeAndEnglish").addClass("localeSelected");
+                }
+            }
             var mdstr = mdf2str(this.mdf);
             if (mdstr) {
                 l.push("md=" + mdstr);
             }
             return l.join("&");
         }
+
+         // Cookie functions
+         cookies = {
+                getItem: function (sKey) {
+                    if (!sKey || !this.hasItem(sKey)) { return null; }
+                    return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
+                },
+
+                setItem: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+                    if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return; }
+                    var sExpires = "";
+                    if (vEnd) {
+                        switch (vEnd.constructor) {
+                            case Number:
+                                sExpires = vEnd === Infinity ? "; expires=Tue, 19 Jan 2038 03:14:07 GMT" : "; max-age=" + vEnd;
+                                break;
+                            case String:
+                                sExpires = "; expires=" + vEnd;
+                                break;
+                            case Date:
+                                sExpires = "; expires=" + vEnd.toGMTString();
+                                break;
+                        }
+                    }
+                    document.cookie = escape(sKey) + "=" + escape(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+                },
+
+                removeItem: function (sKey, sPath) {
+                    if (!sKey || !this.hasItem(sKey)) { return; }
+                    document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (sPath ? "; path=" + sPath : "");
+                },
+
+                hasItem: function (sKey) {
+                    return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+                }
+
+            };
 
         this._genAjaxData = function() {
 
@@ -297,17 +356,36 @@ function genGalleryModel(hash, mdfL) {
 
             /** -- **/
 
-            var l = [];
 
+
+         var searchViewname = "arcgis_doc_en";
+         var languageRequireFields = "";
+         var lgCookieKey = cookies.getItem(this.lgCookieKey);
+
+         if(lgCookieKey && lgCookieKey != "en"){
+            //localized content
+            searchViewname = "arcgis_doc_" + lgCookieKey;
+
+            // If native language only
+            if(this.searchLanguage <= 0){
+            // searchlanguage == 1 // for both English and Native. 0 for native only
+               languageRequireFields = "(content-language:" + lgCookieKey +")";
+            }
+
+         }
+
+
+            var l = [];
             /* internal flags */
             l.push("callback=?");
             l.push("format=jsonp");
             l.push("event=search.renderSearch");
             l.push("interfaceName=developers");
-            l.push("searchViewname=arcgis_doc_en");
-            l.push("lr=lang_en");
+            l.push("searchViewname=" + searchViewname);
+            //l.push("lr=lang_en");
             l.push("Oe=utf8");
             l.push("filter=0");
+
             //l.push("requiredfields=search-collection:" + gcfg.collection + ".search-category:" + gcfg.category);
             //l.push("requiredfields=search-collection:" + gcfg.collection);
 
@@ -322,10 +400,19 @@ function genGalleryModel(hash, mdfL) {
             }
 
             var pfields = _genPartialFields(this.mdf);
-            if (pfields) {
+            /*if (pfields) {
                 //l.push("partialfields=" + pfields);
-                l.push("requiredfields=" + pfields);
+                //l.push("requiredfields=" + pfields + languageRequireFields);
+            }*/
+
+            if(pfields && languageRequireFields != ""){
+               l.push("requiredfields=" + pfields + "."+ languageRequireFields);
+            }else if (pfields) {
+               l.push("requiredfields=" + pfields);
+            }else if(languageRequireFields != ""){
+               l.push("requiredfields=" + languageRequireFields);
             }
+
 
             l.push("getfields=*");
             //console.log(pfields);
@@ -559,6 +646,7 @@ $(document).ready(function() {
     var gModel = null;
     var gShell = createGalleryShell();
     var mdfL = gcfg.mdfL; //metadata filter
+
 
 
 
