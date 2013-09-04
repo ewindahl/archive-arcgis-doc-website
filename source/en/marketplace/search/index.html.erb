@@ -1,0 +1,142 @@
+---
+title: Search Result
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - stat-page-specific
+  - searchResult
+
+
+js:
+  - config
+  - dojo-config
+  - libs/jquery-1.9.1.min
+  - libs/jquery.cookie
+  - search/cfg-search-marketplace
+  - search/esri.init
+  - search/jxon
+  - search/searchLabel
+  - search/searchshell-default
+  - search/searchdisplay-default
+
+
+metatags:
+  - <META name="robot" content="NOINDEX,NOFOLLOW">
+
+mobile: true
+
+---
+
+
+<div class="section-bar marketplace">
+  <div class="container search">
+    <header>
+      <h1 data-langlabel="search">Search</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container search">
+
+<!--<div id="localeOptions"><a id="nativeLanguage" data-langlabel="native-language" href="javascript:window.location.href">Native Language</a> | <a id="nativeAndEnglish" data-langlabel="native-and-english" href="#">Native and English</a></div>-->
+<!--	<div class="column-4 tablet-column-8 blocks">
+		   <div class="block">
+			  <h2 id="appTitle"></h2>
+			  <div id="reference-index">
+
+						<nav>
+							<div id="filters">
+								<header>
+									<div data-langlabel="showing-results-within" class="filter-label">Showing results within:</div>
+								</header>
+								<div class="ctrlbox">
+									<input type="checkbox" value="help" name="search-collection-1" checked>
+                           <label data-langlabel="help">Help</label>
+								</div>
+
+								<div class="ctrlbox">
+									<input type="checkbox" value="forums" name="search-collection-3" checked><label data-langlabel="forums">Forums</label>
+								</div>
+								<div class="ctrlbox">
+									<input type="checkbox" value="blogs" name="search-collection-4" checked><label data-langlabel="blogs">Blogs</label>
+								</div>
+
+                        <div class="ctrlbox">
+									<input type="checkbox" value="video" name="search-collection-4" checked><label data-langlabel="video">Video</label>
+								</div>
+
+								<header>
+									<div class="filter-label" data-langlabel="related-to">Related To:</div>
+								</header>
+								<div class="ctrlbox"><input type="checkbox" value="android-app" name="product-1" checked><label data-langlabel="android-app">ArcGIS app (Android)</label></div>
+								<div class="ctrlbox"><input type="checkbox" value="ios-app" name="product-2" checked><label data-langlabel="ios-app">ArcGIS app (iOS)</label></div>
+								<div class="ctrlbox"><input type="checkbox" value="win-phone-app" name="product-3" checked><label data-langlabel="win-phone-app">ArcGIS app (Win Phone)</label></div>
+                        <div class="ctrlbox"><input type="checkbox" value="collector-android" name="product-3" checked><label data-langlabel="collector-android">Collector (Android Phone)</label></div>
+                        <div class="ctrlbox"><input type="checkbox" value="collector-ios" name="product-3" checked><label data-langlabel="collector-ios">Collector (iPhone)</label></div>
+                        <div class="ctrlbox"><input type="checkbox" value="esri-maps-office" name="product-3" checked><label data-langlabel="esri-maps-office">Maps for Office</label></div>
+                        <div class="ctrlbox"><input type="checkbox" value="ops-dashboard" name="product-3" checked><label data-langlabel="ops-dashboard">Ops Dashboard</label></div>
+
+							</div>
+						</nav>
+					</div>
+			</div>
+	 </div>-->
+
+
+	<div class="column-16 tablet-column-24">
+		<div id="reference-content">
+
+			  <div id="searchBox">
+				  <input type="text" size="80" value="Search ArcGIS Doc Content" autocomplete="off"  data-langlabel="search-arcgis-doc-content" name="query" id="query">
+				  <input type="submit" value="" id="search">
+			  </div>
+
+
+			  <div id="results">
+				 <div id="spinner" style="display: none;">
+					<img alt="loading" src="http://resources.arcgis.com/en/shared/rc/gallery/ajax-loader.gif">
+				 </div>
+
+				 <div id="gl-display-shown"><span  data-langlabel="show">Show: </span><a href="#" id="numn1">15</a> | <a href="#" class="displayn_selected" id="numn2">30</a> | <a href="#" id="numn3">45</a> items</div>
+				 <div class="clear"></div>
+				 <div class="gl-pnavinfo-s"></div>
+				 <div class="clear"></div>
+
+				 <!-- Result area -->
+				 <div id="dynamicContent" class="display3">
+					<div class="clear"></div>
+				 </div>
+				 <!-- End of Result -->
+
+				 <div id="gl-pagenav">
+					<a id="gl-prev" class="orange btn disabled" href="#" data-langlabel="previous">Previous</a>
+					<div class="pnavinfoText"><span class="gl-pnavinfo"></span></div>
+					<a id="gl-next" class="orange btn" href="#" data-langlabel="next">Next</a>
+				 </div>
+			  </div>
+
+
+
+
+
+		<div class="clear"></div><div class="clear"></div>
+	  </div>
+
+	</div>  <!-- End of div column-16 tablet-column-24 -->
+
+ <script type="text/javascript">
+    $(window).load(function() {
+
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>
