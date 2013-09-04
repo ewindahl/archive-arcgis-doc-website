@@ -71,22 +71,23 @@
       <% end %>
     <% end %>
 
-   <!-- Language Picker-->
+   <!-- Language Picker
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
    <%= javascript_include_tag "locale/l10NStrings" %>
-   <%= javascript_include_tag "locale/langSelector" %>
+   <%= javascript_include_tag "locale/langSelector" %>-->
+   <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
 
     <!--- search MD -->
 	<script>
 	/* Temporary fix for tablet version of "get started/blog column" issue. */
 		$(document).ready(function(){
-			$(".container .tablet-column-24").css('width','66.666%')
-			$(".container .column-8").css('width','33.333%')
+			//$(".container .tablet-column-24").css('width','66.666%')
+			//$(".container .column-8").css('width','33.333%')
 		});
 
       <!-- note style issue hack -->
       $(".note h5").each(function(){
-         $(this).css('height',$(this).parent().innerHeight()-50);
+         //$(this).css('height',$(this).parent().innerHeight()-50);
       });
 	</script>
   </head>
@@ -98,7 +99,7 @@
           <div class="container relative-container">
               <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
                 <div class="logo-wrap">
-                  <a id="site-logo" href="/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span></a>
+                  <a id="site-logo" href="/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
                   <span class="down-arrow" id="down-arrow"></span>
                 </div>
                 <nav id="dropDown">
@@ -116,25 +117,25 @@
                   </a>
                 </nav>
                 <nav>
-                  <ul>
-                    <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html">Features</a></li>
-                    <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
-                    <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
-                    <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
-					    <li><a data-langlabel="help" href="http://www.arcgis.com/features/help.html">Help</a></li>
-                  </ul>
+
                 </nav>
 
 
 
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
 
-                <div id="lg-container" class="dropdown-navigation">
+                <!--<div id="lg-container" class="dropdown-navigation">
                   <div id="lang-block"></div>
-               </div>
+               </div> -->
 				<div id="logged-out-navigation" class="dropdown-navigation">
-					<!--<a id="login-link" class="btn small light" href="https://www.arcgis.com/home/signin.html">Sign In</a>-->
+					<a id="login-link" class="btn small light" href="https://www.arcgis.com/home/signin.html">Sign In</a>
 				</div>
+            <nav class="right-nav">
+               <ul>
+                  <li><a href="http://marketplace.arcgis.com/help.html">Help</a></li>
+               </ul>
+            </nav>
+
                 <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
                   <a href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
                   <div class="dropdown-content">
@@ -160,20 +161,19 @@
       <div class="container">
         <div class="row">
           <nav>
-            <h4 data-langlabel="arcgis">ArcGIS</h4>
+            <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
             <ul>
-              <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
-              <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html">Features</a></li>
-              <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
-              <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
-			  <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
-			  <li><a data-langlabel="help" href="http://www.arcgis.com/features/help.html">Help</a></li>
+               <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
+               <li><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html">My Console</a></li>
+              <li><a data-langlabel="help" href="http://marketplace.arcgis.com/help.html">Help</a></li>
+
             </ul>
           </nav>
           <nav>
             <h4 data-langlabel="arcgis-platform" >ArcGIS Platform</h4>
             <ul>
               <li><a data-langlabel="arcgis" href="http://www.arcgis.com">ArcGIS</a></li>
+              <li><a data-langlabel="arcgis-marketplace" href="http://marketplace.arcgis.com">ArcGIS Marketplace</a></li>
               <li><a data-langlabel="arcgis-for-professionals" href="http://pro.arcgis.com/">ArcGIS for Professionals</a></li>
               <li><a data-langlabel="arcgis-for-developers" href="http://developers.arcgis.com">ArcGIS for Developers</a></li>
             </ul>

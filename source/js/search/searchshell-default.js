@@ -258,7 +258,7 @@ function genGalleryModel(hash, mdfL) {
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
             }
-            if (this.searchLanguage) {
+            if (this.searchLanguage || this.lgCookieKey != "en") {
                 l.push("searchLanguage=" + this.searchLanguage);
                 if(this.searchLanguage <= 0){
                   $("#nativeAndEnglish").removeClass("localeSelected");
@@ -358,20 +358,24 @@ function genGalleryModel(hash, mdfL) {
 
 
 
-         var searchViewname = "arcgis_doc_en";
+         var searchViewname = gcfg.searchViewName;
          var languageRequireFields = "";
          var lgCookieKey = cookies.getItem(this.lgCookieKey);
 
-         if(lgCookieKey && lgCookieKey != "en"){
+         if((gcfg.localizeSearch == "Y") && lgCookieKey && lgCookieKey != "en"){
             //localized content
-            searchViewname = "arcgis_doc_" + lgCookieKey;
+            // searchViewname = "arcgis_doc_" + lgCookieKey;   // commenting this line as we are planning to use one collection/view for all language.
 
             // If native language only
             if(this.searchLanguage <= 0){
             // searchlanguage == 1 // for both English and Native. 0 for native only
                languageRequireFields = "(content-language:" + lgCookieKey +")";
+            } else { // else statement is required as we are planning to use one collection/view for all languagea.
+               languageRequireFields = "(content-language:" + lgCookieKey + "|content-language:en)";
             }
 
+         } else { // else statement is required as we are planning to use one collection/view for all languagea.
+            languageRequireFields = "(content-language:en)";
          }
 
 
@@ -380,7 +384,7 @@ function genGalleryModel(hash, mdfL) {
             l.push("callback=?");
             l.push("format=jsonp");
             l.push("event=search.renderSearch");
-            l.push("interfaceName=developers");
+            l.push("interfaceName="+gcfg.searchInterfaceName);
             l.push("searchViewname=" + searchViewname);
             //l.push("lr=lang_en");
             l.push("Oe=utf8");

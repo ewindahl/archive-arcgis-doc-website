@@ -475,17 +475,35 @@
             lgCookie = "en"
          }
 
-         // For testing only. Once done, please remove the following one line.
-         //lgCookie = "es";
-         //var localeJsonObj="";
-         //$("head").append('<script type="text/javascript" src="/js/locale/labels_' + lgCookie +'.json"></script>');
+         function finalDestination(href, hrefL, lgSetting, enableEnPath){
+            if(!href.match(/(search|feedback|thank-you|404)/gi)){
 
+                     if(enableEnPath){
+                        hrefL[3] = lgSetting;
+                     }else if(href.indexof("/search") < 0){
+                        if(lgPickFull.indexOf(hrefL[3]) >= 0){
 
-         /*$.getScript("/js/locale/labels_"+ lgCookie +".json", function(data){
-            alert(data);
-         });*/
+                           //hrefL.splice(3,0,lgfld);
+                           if(lgSetting == "en"){
+                              //remove langcode
+                              hrefL.splice(3,1);  //comment this line when /en will go away
+                           }else{
+                              hrefL[3] = lgSetting;
+                           }
+                        }else if(lgSetting != "en"){ //this condition is required as /en is going away
+                           // Inject language code instead of replacing the element 3
+                           hrefL.splice(3,0,lgSetting);
+                        }
+                     }
 
-         //alert(localeJsonObj['Home']);
+                  cookies.setItem(lgCookieKey, lgSetting, Infinity, "/", ".arcgis.com", false);
+                  window.location.replace(hrefL.join("/"));
+               }else {
+                  cookies.setItem(lgCookieKey, lgSetting, Infinity, "/", ".arcgis.com", false);
+                  window.location.reload(true);
+               }
+         }
+
 
 
         if (isForum(hn)) {
@@ -514,7 +532,7 @@
                 bLocale = "en";
 
                 $.ajax({
-                    url: 'http://' + RcAppUrl + '/apps/locale/',
+                    url: 'http://' + RCHost + '/apps/locale/',
                     dataType: 'json',
                     cache: false,
                     timeout: 500,
@@ -536,7 +554,15 @@
 
                     complete: function () {
                         cookies.setItem(lgCookieKey, bLocale, Infinity, "/", ".arcgis.com", false);
-                        modPage(bLocale, lgFld);
+                        if(lgPickFull.indexOf(bLocale) >= 0 && bLocale != "en"){
+                           // Redirect to corresponding cotent, If the detected language is fully supported.
+                            var href = window.location.href,
+                            hrefL = href.split("/");
+                            finalDestination(href, hrefL, bLocale, enableEnPath);
+
+                        } else { // Else if partially supported, just localize header/footer.
+                           modPage(bLocale, lgFld);
+                        }
                     }
                 });
             }
@@ -574,32 +600,7 @@
 
             } else if (RCHost === window.location.host) {
 
-               if(!href.match(/(search|feedback|thank-you|404)/gi)){
-
-                     if(enableEnPath){
-                        hrefL[3] = lgSetting;
-                     }else if(href.indexof("/search") < 0){
-                        if(lgPickFull.indexOf(hrefL[3]) >= 0){
-
-                           //hrefL.splice(3,0,lgfld);
-                           if(lgSetting == "en"){
-                              //remove langcode
-                              hrefL.splice(3,1);  //uncomment this line when /en will go away
-                           }else{
-                              hrefL[3] = lgSetting;
-                           }
-                        }else if(lgSetting != "en"){ //this condition is required as /en is going away
-                           // Inject language code instead of replacing the element 3
-                           hrefL.splice(3,0,lgSetting);
-                        }
-                     }
-
-                  cookies.setItem(lgCookieKey, lgSetting, Infinity, "/", ".arcgis.com", false);
-                  window.location.replace(hrefL.join("/"));
-               }else {
-                  cookies.setItem(lgCookieKey, lgSetting, Infinity, "/", ".arcgis.com", false);
-                  window.location.reload(true);
-               }
+               finalDestination(href, hrefL, lgSetting, enableEnPath);
 
 
             } else {
@@ -609,7 +610,7 @@
             }
         });
 
-         // When user add a non-supported language in url, change the cookie and add that language as selected in language selector
+
 
     })();
 
