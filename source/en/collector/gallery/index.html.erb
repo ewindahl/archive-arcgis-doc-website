@@ -5,7 +5,7 @@ css:
   - screen
   - /en/asset/css/common
   - stat-page-specific
-  - /js/gallery
+  - gallery
 
 
 js:
@@ -13,8 +13,7 @@ js:
   - dojo-config
   - libs/jquery-1.9.1.min
   - libs/jquery.cookie
-  - gallery/gallerycfg-localgov
-  - gallery/gallery-labels
+  - gallery/gallerycfg
   - gallery/gallery-init
   - gallery/jxon
   - gallery/galleryshell-default
@@ -29,29 +28,16 @@ mobile: true
 ---
 
 <% require 'xmlsimple' %>
-<% #config = XmlSimple.xml_in('C:\a\projects\galleryFiles\rc\3d-gis-agol-en.xml', { 'KeyAttr' => 'metaname' })
-
-
-contents = File.read('C:\a\projects\galleryFiles\rc\3d-gis-agol-en.xml')
-ref =  XmlSimple.xml_in(contents, { 'ForceArray' => true })
-#ref = XmlSimple.xml_in('<?xml version="1.0" encoding="utf-8"?><gallerycfg><filters><filter id="1" label="Category" metaname="3d-category"><value id="1" label="Analysis" metacontent="analysis"/><value id3="2" label="Visualization" metacontent="visualization"/></filter><filter id="2" label="Category" metaname="3d-category"><value id="1" label="Analysis" metacontent="analysis"/><value id3="2" label="Visualization" metacontent="visualization"/></filter></filters></gallerycfg>') %>
 <%
-
-ref['filters'][0]['filter'].each { |k|
-
-
-k["value"].each { |sk| %>
-   <%= sk %>
-<% } %>
-<%
-}
+   contents = File.read('//blaster/N/DesktopHelp/rc/3d-gis-agol=en.xml')
+   ref =  XmlSimple.xml_in(contents, { 'ForceArray' => true })
 %>
 
 
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/arcgis-app/">Search</a></h1>
+      <h1><a href="/en/collector/gallery/">Collector Gallery</a></h1>
     </header>
 	<nav>
      &nbsp;
@@ -62,40 +48,36 @@ k["value"].each { |sk| %>
 <!-- Page Content -->
 <div class="container">
 
-
 	<div class="column-4 tablet-column-8 blocks">
 		   <div class="block">
 			  <h2 id="appTitle"></h2>
 			  <div id="reference-index">
-						<!--<div><a href="#" id="gl-filter-clear">Clear All</a></div>-->
+						<div><a href="#" id="gl-filter-clear">Clear All</a></div>
 						<nav>
 							<div id="filters">
-								<header>
-									<span class="filter-label">Showing results within:</span>
-								</header>
-								<span class="ctrlbox">
-									<input type="checkbox" value="help" name="search-collection-1">Guide
-									<input type="hidden" value="help-api-guide" name="search-category-1">Guide
-								</span>
-								<span class="ctrlbox">
-									<input type="checkbox" value="help" name="search-collection-2">Api Reference
-									<input type="hidden" value="help-api-ref" name="search-category-2">Guide
-								</span>
-								<span class="ctrlbox">
-									<input type="checkbox" value="forums" name="search-collection-3">Forums
-								</span>
-								<span class="ctrlbox">
-									<input type="checkbox" value="blogs" name="search-collection-4">Blogs
-								</span>
+                     <%
+                        mfl = "["
+                        kv = "["
+                        ref['filters'][0]['filter'].each { |k|
+                     %>
+                           <span class="filter-label"><%= k['label'] %></span>
+                           <%
+                           i = 0
 
-								<header>
-									<span class="filter-label">Related To:</span>
-								</header>
-								<span class="ctrlbox"><input type="checkbox" value="api-for-android" name="product-1">Android SDK</span>
-								<span class="ctrlbox"><input type="checkbox" value="api-flex" name="product-2">Flex API</span>
-								<span class="ctrlbox"><input type="checkbox" value="api-ios" name="product-3">IOS SDK</span>
+                           k["value"].each { |sk| %>
+                              <span class="ctrlbox"><input type="checkbox" value="<%= sk['metacontent'] %>" name="<%= k['metaname'] %>-<%= sk['id'] %>"><%= sk['label'] %></span>
+                           <%
+                              kv += "'" + sk['metacontent'] + ":#{sk['label']}',"
+                              i = i+1
+                           }
 
-							</div> <!-- End of filters -->
+                           mfl += "'" + k['metaname'] + ":#{i}',"
+                           %>
+                     <% }
+                        mfl += "]"
+                        kv += "]"
+                     %>
+                   </div> <!-- End of Filters -->
 						</nav>
 					</div>
 			</div>
@@ -105,16 +87,22 @@ k["value"].each { |sk| %>
 	<div class="column-16 tablet-column-24">
 		<div id="reference-content">
 
-			  <div id="searchBox">
-				  <input type="text" size="80" value="Search ArcGIS Doc Content" autocomplete="off" name="query" id="query">
-				  <input type="submit" value="" id="search">
-			  </div>
+                  <div id="gl-s-ctrl">
+                      <input type="text" size="80" value="<%=ref['view'][0]['searchmsg']%>" autocomplete="off" name="query" id="query">
+                      <input type="submit" value="" id="search">
+                  </div>
+                  <div id="rss">
+                     <a target="_self" href="http://www.arcgis.com/sharing/search?q=(group:(57623e30541c4dd68c4f590828329b0a))&amp;f=rss" rel="nofollow">
+                        <img src="/img/gallery/rss-icon.png" alt="RSS">
+                     </a>
+                  </div>
 
-
-			  <div id="results">
+			  <div id="gl-display">
 				 <div id="spinner" style="display: none;">
-					<img alt="loading" src="http://resources.arcgis.com/en/shared/rc/gallery/ajax-loader.gif">
+					<img alt="loading" src="/img/gallery/ajax-loader.gif">
 				 </div>
+
+            <div id="gl-display-type">Display: <a id="display2" href="#">List</a> | <a id="display1" class="displaytype_selected" href="#">Thumbnail</a> | <a id="display3" href="#">Detail</a></div>
 
 				 <div id="gl-display-shown"><span>Show: </span><a href="#" id="numn1">15</a> | <a href="#" class="displayn_selected" id="numn2">30</a> | <a href="#" id="numn3">45</a> items</div>
 				 <div class="clear"></div>
@@ -122,16 +110,16 @@ k["value"].each { |sk| %>
 				 <div class="clear"></div>
 
 				 <!-- Result area -->
-				 <div id="dynamicContent" class="display3">
+				 <div id="gl-content" class="display1">
 					<div class="clear"></div>
 				 </div>
 				 <!-- End of Result -->
 
-				 <div id="gl-pagenav">
-					<a id="gl-prev" class="orange btn disabled" href="#">Previous</a>
-					<div class="pnavinfoText"><span class="gl-pnavinfo"></span></div>
-					<a id="gl-next" class="orange btn" href="#">Next</a>
-				 </div>
+   				 <div id="gl-pagenav">
+                  <a id="gl-prev" class="btn disabled" href="#">Previous</a>
+                  <span class="gl-pnavinfo">Page <input type="text" value="1" size="2" name="pageX" id="pageX"> of 1 (1 - 9 of 9 items)</span>
+                  <a id="gl-next" class="btn disabled" href="#">Next</a>
+               </div>
 			  </div>
 
 
@@ -145,7 +133,13 @@ k["value"].each { |sk| %>
 
  <script type="text/javascript">
     $(window).load(function() {
-
+      gcfg.mdfL = <%=mfl%>;
+      gcfg.kv = <%=kv%>;
+      gcfg.collection = "<%=ref['search-collection']%>";
+      gcfg.category = "<%=ref['search-category']%>";
+      gcfg.errormsg = "<%=ref['view'][0]['errormsg']%>";
+      gcfg.searchmsg = "<%=ref['view'][0]['searchmsg']%>";
+      gcfg.emptymsg = "<%=ref['view'][0]['emptymsg']%>";
     });
 
 /*
