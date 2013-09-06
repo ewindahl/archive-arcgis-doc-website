@@ -41,6 +41,8 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <%= stylesheet_link_tag "screen" %>
+    <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
+
     <% if current_page.data.css %>
       <% current_page.data.css.each do |stylesheet| %>
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
@@ -75,7 +77,7 @@
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
    <%= javascript_include_tag "locale/l10NStrings" %>
    <%= javascript_include_tag "locale/langSelector" %>-->
-   <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
+
 
     <!--- search MD -->
 	<script>
@@ -99,7 +101,7 @@
           <div class="container relative-container">
               <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
                 <div class="logo-wrap">
-                  <a id="site-logo" href="/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
+                  <a id="site-logo" href="/en/marketplace" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
                   <span class="down-arrow" id="down-arrow"></span>
                 </div>
                 <nav id="dropDown">
@@ -132,7 +134,7 @@
 				</div>
             <nav class="right-nav">
                <ul>
-                  <li><a href="http://marketplace.arcgis.com/help.html">Help</a></li>
+                  <li><a href="/en/marketplace/">Help</a></li>
                </ul>
             </nav>
 
@@ -140,11 +142,8 @@
                   <a href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
                   <div class="dropdown-content">
                     <ul>
-                    <li><%= link_to "Features", 'http://www.arcgis.com/features/features.html' %></li>
-                    <li><%= link_to "Plans", 'http://www.arcgis.com/features/plans/pricing.html' %></li>
-                    <li><%= link_to "Gallery", 'http://www.arcgis.com/home/gallery.html' %></li>
-                    <li><%= link_to "Map", 'http://www.arcgis.com/home/webmap/viewer.html' %></li>
-					<li><%= link_to "Help", 'http://www.arcgis.com/features/help.html' %></li>
+                    <li><%= link_to "My Console", 'http://marketplace.arcgis.com/console.html' %></li>
+                    <li><%= link_to "Help", '/en/marketplace/' %></li>
                     </ul>
                   </div>
                 </div>
@@ -165,7 +164,7 @@
             <ul>
                <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
                <li><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html">My Console</a></li>
-              <li><a data-langlabel="help" href="http://marketplace.arcgis.com/help.html">Help</a></li>
+              <li><a data-langlabel="help" href="/en/marketplace/">Help</a></li>
 
             </ul>
           </nav>

@@ -41,16 +41,14 @@
             },
 
             localizedEsriDomains = ['spanda.arcgis.com:4567','docdev.arcgis.com', 'docstg.arcgis.com', 'doc.arcgis.com', 'prodev.arcgis.com', 'prostg.arcgis.com', 'pro.arcgis.com'],
+            //fullySupportedItems = 'maps-for-office',
 
         //all langs
             lgLabels = {
 
             },
 
-//var localeJsonObjStringified = JSON.stringify()localeJsonObj
 
-
-//localeJsonObj = "",
         //https://developer.mozilla.org/en-US/docs/DOM/document.cookie
             cookies = {
                 getItem: function (sKey) {
@@ -96,26 +94,15 @@
             } else if (srcHost.indexOf("dev") >= 0) {
                 return "docdev.arcgis.com";
             }
-            else if (srcHost.indexOf("spanda") >= 0) {
-                return "spanda.arcgis.com:4567";
+            else if (srcHost.indexOf("localhost") >= 0) {
+                return "localhost:4567";
             }
             else {
                 return "doc.arcgis.com";
             }
         })(window.location.host);
 
-         var RcAppUrl = (function (srcHost) {
-           if (srcHost.indexOf("stg") >= 0) {
-                return "resourcesstg.arcgis.com";
-            } else if (srcHost.indexOf("dev") >= 0) {
-                return "resourcesdev.arcgis.com";
-            } else if (srcHost.indexOf("spanda") >= 0) {
-                return "resourcesdev.arcgis.com";
-            }
-            else {
-                return "doc.arcgis.com";
-            }
-        })(window.location.host);
+
 
         function isFullLg(lg) {
             return lg in rclgL
@@ -233,64 +220,8 @@
 
             }
 
-
-
-            //--- remove temp fix ---
-           /* if (lg !== "en") {
-                $("#gnav-help").attr("href", "http://" + RCHost + "/" + lgFld + "/help").text(labels[2])
-                var bc0 = $(".rc-breadcrumb > a ").eq(0);
-                if (bc0.length > 0 && bc0.attr("href").indexOf("/communities") >= 0) {
-                    bc0.attr("href", "/" + lgFld + "/communities")
-                }
-            }*/
-            //----------------
-
-            /*if (isForum) {
-                $("#arcgis-sub-footerleft > ul li  a").eq(0).attr("href", "http://" + RCHost + "/apps/feedback/feedback.php?lg=" + lg);
-            } else {
-                $("#feedbackLink").attr("href", "http://" + RCHost + "/apps/feedback/feedback.php?lg=" + lg);
-            }
-
-            $(isForum ? "#search input[name=lg]" : "#primarySearch input[name=lg]").val(lg);
-            $(isForum ? "#search input[name=do]" : "#primarySearch input[name=do]").val("search");
-
-            if (lg !== "en") {
-                var blogTab = $(isForum ? "#primaryNav li > a" : "#menu-primary-nav li > a").eq(3),
-                    forumTab = $(isForum ? "#primaryNav li > a" : "#menu-primary-nav li > a").eq(4);
-
-                blogTab.attr("alt", labels[15]);
-                blogTab.attr("title", labels[15]);
-
-                forumTab.attr("alt", labels[15]);
-                forumTab.attr("title", labels[15]);
-
-                if (window.location.host === RCHost) {
-                    blogTab.attr("target", "_blank");
-                    forumTab.attr("target", "_blank");
-                }
-            }*/
-
         }
 
-        /*function showLogin(lg) {
-            var labels = (lg in lgLabels) ? lgLabels[lg] : lgLabels["en"];
-
-            $.ajax({
-                url: 'http://' + RCHost + '/apps/login/verify.php',
-                dataType: 'json',
-                cache: false,
-                success: function (data) {
-                    if (data.success) {
-                        var titleStr = "title='" + labels[12] + " " + data.success.name + " '";
-                        var href = "href='http://" + RCHost + "/apps/login/logout.php'";
-                        $('#loginRegion').html("<a  " + href + " " + titleStr + " >" + labels[14] + "</a>");
-                    } else {
-                        var href = "href='http://" + RCHost + "/apps/login/index.php?lg=" + lg + "'";
-                        $('#loginRegion').html("<a  " + href + " >" + labels[13] + "</a>");
-                    }
-                }
-            });
-        }*/
 
       function searchLocaleOptions(lg){
          var searchURL = window.location.href;
@@ -334,12 +265,18 @@
         }
 
         function isPartialSupportedPage(lgFld, lgCookie) {
-               //if(lgcookie) { //Cookie is getting priority
-                //  return (!isFullLg(lgCookie) && (lgCookie in lgPartial));
-               //} else {
-                  return (!isFullLg(lgFld) && (lgFld in lgPartial));
-              // }
+               return (!isFullLg(lgFld) && (lgPartial.indexOf(lgFld) >= 0));
         }
+
+         function isFullySupportedItems(loc){
+            var path = loc.pathname;
+            var rgxp = new RegExp(fullySupportedItems,"g");
+            if(path.match(rgxp)){
+               return true;
+            } else {
+               return false;
+            }
+         }
 
         function isISTPage(loc) {
             var path = loc.pathname,
@@ -377,6 +314,8 @@
                 return ""
             }
         }
+
+
 
       /* This function will accept a string and return the corresponding localized string */
       function getLocalizedStrings (obj, lgfld) {
@@ -448,7 +387,6 @@
 
 
         /* =========================================== */
-//console.log(localeJsonObj['en'][1]['arcgis']);
         var lgCookie = cookies.getItem(lgCookieKey),
             loc = window.location,
             hn = loc.hostname,
@@ -461,10 +399,9 @@
 
             if(pathL.length > 0 && lgPickFull.indexOf(pathL[1]) >= 0){
                lgFld = pathL[1].toLowerCase();
-            } else if(lgPartial.indexOf(lgCookie) < 0 && lgPartial.indexOf(pathL[1]) < 0) {
-               lgFld = "en";
-            } else {
-               lgFld = "none";
+            }else {
+               //lgFld = "none";
+               lgFld = pathL[1];
             }
 
         function isForum(hn) {
@@ -472,7 +409,7 @@
         }
 
          if(lgCookie == ""){
-            lgCookie = "en"
+            //lgCookie = "en"
          }
 
          function finalDestination(href, hrefL, lgSetting, enableEnPath){
@@ -509,18 +446,19 @@
         if (isForum(hn)) {
             modForumPage(lgCookie);
 
-        } else if (lgIST = isISTPage(loc)) {
-            modPageSpecial(lgIST);
-
         } else if (isPartialSupportedPage(lgFld, lgCookie)) {
-
-            modPageSpecial(lgFld);
             cookies.setItem(lgCookieKey, lgFld, Infinity, "/", ".arcgis.com", false);
+            modPageSpecial(lgFld);
 
+        } else if (lgPickFull.indexOf(lgFld) >= 0 && ((lgCookie) && (lgCookie != lgFld && lgFld != "en"))){
+             cookies.setItem(lgCookieKey, lgFld, Infinity, "/", ".arcgis.com", false);
+             modPage(lgFld);
         } else {
-       if (lgCookie) {
+
+         if (lgCookie) {
+
                 // As per current requirement, we are going to modify header/footer links for all fully/partial supported lanugae. Because both header and footer is common for Git hub pages.
-                // This is the reason we commenting out the othinal if statement and adding the one liner.
+                // This is the reason we commenting out the original if statement and adding the one liner.
                 modPageSpecial(lgCookie);
 
                 /*if (isFullLg(lgCookie)) {
@@ -535,7 +473,7 @@
                     url: 'http://' + RCHost + '/apps/locale/',
                     dataType: 'json',
                     cache: false,
-                    timeout: 500,
+                    timeout: 1000,
                     success: function (data) {
                         if (data.accept_lang) {
                             var langs = data.accept_lang.split(";")[0].split(","),
@@ -590,15 +528,7 @@
             $("#lgpicker").toggleClass("show");
 
 
-            if ("" !== lgval) { //IST Page with lg=LANG
-                var url = hrefL.join("/");
-                url = url.replace("lg=" + lgval, "lg=" + lgSetting);
-
-                cookies.setItem(lgCookieKey, lgSetting, Infinity, "/", ".arcgis.com", false);
-                window.location.replace(url);
-                //window.location.reload(true);
-
-            } else if (RCHost === window.location.host) {
+            if (RCHost === window.location.host) {
 
                finalDestination(href, hrefL, lgSetting, enableEnPath);
 
