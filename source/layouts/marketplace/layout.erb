@@ -123,30 +123,42 @@
                 </nav>
 
 
+              <form id="mkpSearchForm" action="#">
+                <input type="search" name="mkpSearch"  placeholder="Search for apps and data">
+              </form>
+
 
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
 
                 <!--<div id="lg-container" class="dropdown-navigation">
                   <div id="lang-block"></div>
                </div> -->
-				<div id="logged-out-navigation" class="dropdown-navigation">
-					<a id="login-link" class="btn small light" href="https://www.arcgis.com/home/signin.html">Sign In</a>
-				</div>
+
+      <div id="logged-out-navigation" class="dropdown-navigation">
+        <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#">Sign In</a>
+      </div>
+      <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
+        <a id="login-link" class="dropdown btn small light" href="#">user</a>
+        <div class="dropdown-content">
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="#">My Console</a></li>
+            </ul>
+            <hr />
+            <ul>
+              <li><a href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
             <nav class="right-nav">
                <ul>
                   <li><a href="/en/marketplace/">Help</a></li>
                </ul>
             </nav>
 
-                <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
-                  <a href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
-                  <div class="dropdown-content">
-                    <ul>
-                    <li><%= link_to "My Console", 'http://marketplace.arcgis.com/console.html' %></li>
-                    <li><%= link_to "Help", '/en/marketplace/' %></li>
-                    </ul>
-                  </div>
-                </div>
               </div>
           </div>
         </header>
