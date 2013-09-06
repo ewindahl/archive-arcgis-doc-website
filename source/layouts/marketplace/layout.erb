@@ -39,14 +39,14 @@
     <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <%= stylesheet_link_tag "screen" %>
-    <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
 
     <% if current_page.data.css %>
       <% current_page.data.css.each do |stylesheet| %>
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
+
+    <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
     <%= javascript_include_tag  "libs/kss", "libs/highlight.pack" %>

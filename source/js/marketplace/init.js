@@ -77,4 +77,10 @@ $(document).ready(function() {
     return false;
   })
 
+  /* help search box */
+  $("#helpSearchForm").submit(function() {
+    var term = $("#helpSearchForm > input[name='q']").val() || "";
+    window.location.href = "/en/marketplace/search/#q="+encodeURIComponent(term);
+    return false;
+  });
 });
