@@ -35,17 +35,18 @@
           min-width: 960px;
         }
       </style>
-	  <script type="text/javascript" src="//serverapi.arcgisonline.com/jsapi/arcgis/3.3compact/"></script>
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <%= stylesheet_link_tag "screen" %>
+
     <% if current_page.data.css %>
       <% current_page.data.css.each do |stylesheet| %>
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
+
+    <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
     <%= javascript_include_tag  "libs/kss", "libs/highlight.pack" %>
@@ -75,7 +76,7 @@
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
    <%= javascript_include_tag "locale/l10NStrings" %>
    <%= javascript_include_tag "locale/langSelector" %>-->
-   <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
+
 
     <!--- search MD -->
 	<script>
@@ -99,7 +100,7 @@
           <div class="container relative-container">
               <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
                 <div class="logo-wrap">
-                  <a id="site-logo" href="/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
+                  <a id="site-logo" href="http://marketplace.arcgis.com/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
                   <span class="down-arrow" id="down-arrow"></span>
                 </div>
                 <nav id="dropDown">
@@ -121,33 +122,42 @@
                 </nav>
 
 
+              <form id="mkpSearchForm" action="#">
+                <input type="search" name="mkpSearch"  placeholder="Search for apps and data">
+              </form>
+
 
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
 
                 <!--<div id="lg-container" class="dropdown-navigation">
                   <div id="lang-block"></div>
                </div> -->
-				<div id="logged-out-navigation" class="dropdown-navigation">
-					<a id="login-link" class="btn small light" href="https://www.arcgis.com/home/signin.html">Sign In</a>
-				</div>
+
+      <div id="logged-out-navigation" class="dropdown-navigation">
+        <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#">Sign In</a>
+      </div>
+      <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
+        <a id="login-link" class="dropdown btn small light" href="#">user</a>
+        <div class="dropdown-content">
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="#">My Console</a></li>
+            </ul>
+            <hr />
+            <ul>
+              <li><a href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
             <nav class="right-nav">
                <ul>
-                  <li><a href="http://marketplace.arcgis.com/help.html">Help</a></li>
+                  <li><a href="/en/marketplace/">Help</a></li>
                </ul>
             </nav>
 
-                <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
-                  <a href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
-                  <div class="dropdown-content">
-                    <ul>
-                    <li><%= link_to "Features", 'http://www.arcgis.com/features/features.html' %></li>
-                    <li><%= link_to "Plans", 'http://www.arcgis.com/features/plans/pricing.html' %></li>
-                    <li><%= link_to "Gallery", 'http://www.arcgis.com/home/gallery.html' %></li>
-                    <li><%= link_to "Map", 'http://www.arcgis.com/home/webmap/viewer.html' %></li>
-					<li><%= link_to "Help", 'http://www.arcgis.com/features/help.html' %></li>
-                    </ul>
-                  </div>
-                </div>
               </div>
           </div>
         </header>
@@ -165,7 +175,7 @@
             <ul>
                <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
                <li><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html">My Console</a></li>
-              <li><a data-langlabel="help" href="http://marketplace.arcgis.com/help.html">Help</a></li>
+              <li><a data-langlabel="help" href="/en/marketplace/">Help</a></li>
 
             </ul>
           </nav>

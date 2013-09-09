@@ -1,3 +1,4 @@
+//mod searchViewName
 
          var gcfg = {
              contrib: 1,
@@ -8,7 +9,7 @@
              errorMsg: "Please try again.",
              nullMsg: "No results found.",
              searchInterfaceName: "developers",
-             searchViewName: "arcgis_doc_en",
+             searchViewName: "arcgis_doc",
              mdfL: [""],
              //kv: {""},
             // contribkv : {""},
