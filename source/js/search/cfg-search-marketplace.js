@@ -1,3 +1,4 @@
+//mod searchViewName
 
          var gcfg = {
              contrib: 1,
