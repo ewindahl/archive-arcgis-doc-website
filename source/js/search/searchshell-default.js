@@ -17,7 +17,7 @@ add transition effect when switching display type
 */
 
 function debug(v) {
-  console.info(v);
+  //console.info(v);
 };
 
 function genGalleryModel(hash, mdfL) {
