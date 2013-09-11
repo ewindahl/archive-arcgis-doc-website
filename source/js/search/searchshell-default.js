@@ -16,10 +16,8 @@ add transition effect when switching display type
 
 */
 
-
-
 function debug(v) {
-    //console.info(v);
+  //console.info(v);
 };
 
 function genGalleryModel(hash, mdfL) {
@@ -36,10 +34,9 @@ function genGalleryModel(hash, mdfL) {
         this.sedata = null;
         this.query = ""; //decoded value
         this.mdf = {}; //metadata filter
-        this.tier = getTier(window.location.hostname);
-        this.lgCookieKey = "rclg0";
+        //this.lgCookieKey = "rclg0";
          // This variable for non Enlgish content only.
-        this.searchLanguage = "";
+        //this.searchLanguage = "";
 
         this.display = 3; //display type
 
@@ -258,6 +255,7 @@ function genGalleryModel(hash, mdfL) {
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
             }
+            /*
             if (this.searchLanguage || this.lgCookieKey != "en") {
                 l.push("searchLanguage=" + this.searchLanguage);
                 if(this.searchLanguage <= 0){
@@ -268,6 +266,7 @@ function genGalleryModel(hash, mdfL) {
                   $("#nativeAndEnglish").addClass("localeSelected");
                 }
             }
+            */
             var mdstr = mdf2str(this.mdf);
             if (mdstr) {
                 l.push("md=" + mdstr);
@@ -276,7 +275,8 @@ function genGalleryModel(hash, mdfL) {
         }
 
          // Cookie functions
-         cookies = {
+        /* 
+        cookies = {
                 getItem: function (sKey) {
                     if (!sKey || !this.hasItem(sKey)) { return null; }
                     return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
@@ -311,6 +311,7 @@ function genGalleryModel(hash, mdfL) {
                 }
 
             };
+        */
 
         this._genAjaxData = function() {
 
@@ -359,9 +360,10 @@ function genGalleryModel(hash, mdfL) {
 
 
          var searchViewname = gcfg.searchViewName;
-         var languageRequireFields = "";
-         var lgCookieKey = cookies.getItem(this.lgCookieKey);
+         //var languageRequireFields = "";
+         //var lgCookieKey = cookies.getItem(this.lgCookieKey);
 
+         /*
          if((gcfg.localizeSearch == "Y") && lgCookieKey && lgCookieKey != "en"){
             //localized content
             // searchViewname = "arcgis_doc_" + lgCookieKey;   // commenting this line as we are planning to use one collection/view for all language.
@@ -378,6 +380,7 @@ function genGalleryModel(hash, mdfL) {
             languageRequireFields = "(content-language:en)";
          }
 
+        */
 
             var l = [];
             /* internal flags */
@@ -403,12 +406,13 @@ function genGalleryModel(hash, mdfL) {
                 l.push("q=" + encodeURIComponent(this.query));
             }
 
-            var pfields = _genPartialFields(this.mdf);
+            //var pfields = _genPartialFields(this.mdf);
             /*if (pfields) {
                 //l.push("partialfields=" + pfields);
                 //l.push("requiredfields=" + pfields + languageRequireFields);
             }*/
 
+           /*
             if(pfields && languageRequireFields != ""){
                l.push("requiredfields=" + pfields + "."+ languageRequireFields);
             }else if (pfields) {
@@ -416,7 +420,7 @@ function genGalleryModel(hash, mdfL) {
             }else if(languageRequireFields != ""){
                l.push("requiredfields=" + languageRequireFields);
             }
-
+          */
 
             l.push("getfields=*");
             //console.log(pfields);
@@ -565,7 +569,7 @@ function createGalleryShell() {
             debug(vdata.ajaxData);
 
             $.ajax({
-                url: gm.tier.gallery,
+                url: sitecfg["helpSearch"],
                 dataType: "jsonp",
                 context: this,
                 data: vdata.ajaxData,
