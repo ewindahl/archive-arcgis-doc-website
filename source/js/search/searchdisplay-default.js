@@ -5,7 +5,13 @@ function genPageNav() {
 			var pageI = gm.sedata.startI / gm.numN;
             pageI = (pageI === 0) ? 0 : Math.floor(pageI) + 1;
 
-            var pageN = 0;
+            var pageN = 0,
+                //tchen: need to handle l10n later
+                pageStr = "Page",
+                ofStr = "of",
+                itemsStr = "items",
+                txt = pageStr + " <input id='pageX' name='pageX' type='text' size='2' value='" + pageI + "'> " + ofStr + " " + pageN;
+           
             if (gm.maxN > 0) {
                 pageN = gm.maxN / gm.numN;
                 if (gm.maxN % gm.numN > 0) {
@@ -13,11 +19,6 @@ function genPageNav() {
                 }
             };
 
-            var pageStr = (typeof txtPage === "undefined") ? "Page" : txtPage;
-            var ofStr = (typeof txtOf === "undefined") ? "of" : txtOf;
-            var itemsStr = (typeof txtItems === "undefined") ? "items" : txtItems;
-
-            var txt = pageStr + " <input id='pageX' name='pageX' type='text' size='2' value='" + pageI + "'> " + ofStr + " " + pageN;
             txt = txt + " (" + gm.sedata.startI + " - " + gm.sedata.endI + " of " + gm.sedata.estN + " " + itemsStr + ")";
             if (gm.sedata.estN > 0) {
                 $(".gl-pnavinfo").html(txt);
