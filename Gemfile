@@ -5,4 +5,3 @@ source 'http://rubygems.org'
 gem "middleman", "~>3.0.13"
 gem "arcgis-framework", :git => "git@github.com:ArcGIS/arcgis-for-developers-css.git"
 # gem "wdm", "~>0.1"
-gem "listen"
