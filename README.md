@@ -24,3 +24,15 @@ This website is based off of [Middleman](http://middlemanapp.com/) + [ArcGIS CSS
  * Ruby - http://rubyinstaller.org/ is a great way to go. You need Ruby 1.9.3.
  * Ruby Development Kit. `DevKit-tdm-32-x.x.x` A walkthrough is available [here](https://github.com/oneclick/rubyinstaller/wiki/development-kit)
  * [ArcGIS CSS Framework](https://github.com/ArcGIS/arcgis-for-developers-css)
+
+## Admin
+
+### Sync
+
+Assuming /Users/thom4729/a/projects/websites/PRD/arcgis-doc-website
+
+```
+
+rsync -Chvur  --dry-run build/ /Volumes/Doc/
+
+```

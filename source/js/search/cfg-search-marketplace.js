@@ -9,7 +9,7 @@
              errorMsg: "Please try again.",
              nullMsg: "No results found.",
              searchInterfaceName: "developers",
-             searchViewName: "arcgis_doc",
+             searchViewName: "arcgis_doc_marketplace",
              mdfL: [""],
              //kv: {""},
             // contribkv : {""},

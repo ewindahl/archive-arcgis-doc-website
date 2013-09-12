@@ -51,7 +51,10 @@ $(document).ready(function() {
   	$("#logged-out-navigation").addClass ("hide");
   	$("#logged-in-navigation").removeClass ("hide");
 
-  	$("#logged-in-navigation > a").html (cookie.val["email"]);
+        var avatarurl = "http://www.gravatar.com/avatar/d7970fec8803bdbeeb5d82674a1a2c8b.jpg?s=16&d=http://d3w50ib5d2uy0g.cloudfront.net/cdn/2464/js/esri/arcgisonline/css/images/no-user-thumb.jpg",
+            avatar = "<img width='16px' height='16px' alt='' src='" + avatarurl +"' />";
+  	
+            $("#logged-in-navigation > a").html (avatar+"<span>"+cookie.val["email"]+"</span>");
   	
   	var $linkL = $("#logged-in-navigation .dropdown-menu a");
   	$linkL.eq(0).on ("click", function() {
