@@ -1,0 +1,85 @@
+---
+layout: marketplace/layout
+
+title: Search Result
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - stat-page-specific
+  - searchResult
+
+
+js:
+  - sitecfg
+  - libs/jquery-1.9.1.min
+  - libs/underscore-min
+  - libs/backbone-min
+  - search/jxon
+  - search/gsasearch
+  - marketplace/init
+
+
+metatags:
+  - <META name="robot" content="NOINDEX,NOFOLLOW">
+
+mobile: true
+
+---
+
+
+<div class="section-bar marketplace">
+  <div class="container search">
+    <header>
+      <h1 data-langlabel="search">Search</h1>
+    </header>
+  <nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container search">
+  <div class="row">
+    <div class="pre-2 column-22">
+      <div class="search-box">
+        <div id="searchBox">
+          <form id="gsaSearchForm">
+            <input type="search" size="80" placeholder="Search ArcGIS Doc Content" 
+            data-langlabel="search-arcgis-doc-content" name="q" id="query">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="pre-2 column-22">
+        <div class="row search-nav">
+          <div class="column-9 gl-pnavinfo-s"></div>
+          <div class="pre-1 column-14"></div>
+        </div>
+    </div>
+
+    <div class="pre-2 column-22">
+      <hr />
+    </div>
+
+    <div class="pre-2 column-16 post-6">
+        <div id="results">
+          <div id="spinner" style="display: none;">
+            <img alt="loading" src="http://resources.arcgis.com/en/shared/rc/gallery/ajax-loader.gif">
+          </div>
+
+            <!-- Result area -->
+            <div id="dynamicContent" class="display3">
+              <div class="clear"></div>
+            </div>
+            <!-- End of Result -->
+        </div>
+    </div>
+    <div id="gl-pagenav" class="pre-4 column-16 post-4">
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
