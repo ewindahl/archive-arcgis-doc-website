@@ -83,7 +83,7 @@ $(document).ready(function() {
   /* help search box */
   $("#helpSearchForm").submit(function() {
     var term = $("#helpSearchForm > input[name='q']").val() || "";
-    window.location.href = "/en/marketplace/search/#q="+encodeURIComponent(term);
+    window.location.href = "/search/?q="+encodeURIComponent(term);
     return false;
   });
 });

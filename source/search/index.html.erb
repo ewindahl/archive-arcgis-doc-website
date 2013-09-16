@@ -1,4 +1,6 @@
 ---
+layout: marketplace/layout
+
 title: Search Result
 css:
   - documentation
@@ -11,11 +13,10 @@ css:
 js:
   - sitecfg
   - libs/jquery-1.9.1.min
-  - libs/jquery.cookie
-  - search/cfg-search-marketplace
+  - libs/underscore-min
+  - libs/backbone-min
   - search/jxon
-  - search/searchshell-default
-  - search/searchdisplay-default
+  - search/gsasearch
   - marketplace/init
 
 
@@ -32,7 +33,7 @@ mobile: true
     <header>
       <h1 data-langlabel="search">Search</h1>
     </header>
-	<nav>
+  <nav>
      &nbsp;
     </nav>
   </div>
@@ -44,15 +45,17 @@ mobile: true
     <div class="pre-2 column-22">
       <div class="search-box">
         <div id="searchBox">
-            <input type="text" size="80" value="Search ArcGIS Doc Content" autocomplete="off"  data-langlabel="search-arcgis-doc-content" name="query" id="query">
-            <input type="submit" value="" id="search">
+          <form id="gsaSearchForm">
+            <input type="search" size="80" placeholder="Search ArcGIS Doc Content" 
+            data-langlabel="search-arcgis-doc-content" name="q" id="query">
+          </form>
         </div>
       </div>
     </div>
     <div class="pre-2 column-22">
         <div class="row search-nav">
           <div class="column-9 gl-pnavinfo-s"></div>
-          <div class="pre-1 column-14" id="gl-display-shown"><span  data-langlabel="show">Show: </span><a href="#" id="numn1">15</a> | <a href="#" class="displayn_selected" id="numn2">30</a> | <a href="#" id="numn3">45</a> items</div>
+          <div class="pre-1 column-14"></div>
         </div>
     </div>
 
@@ -73,12 +76,10 @@ mobile: true
             <!-- End of Result -->
         </div>
     </div>
-    <div class="pre-4 column-16 post-4">
-      <div id="gl-pagenav">
-        <a id="gl-prev" class="orange btn disabled" href="#" data-langlabel="previous">Previous</a>
-        <div class="pnavinfoText"><span class="gl-pnavinfo"></span></div>
-        <a id="gl-next" class="orange btn" href="#" data-langlabel="next">Next</a>
-      </div>
+    <div id="gl-pagenav" class="pre-4 column-16 post-4">
     </div>
   </div>
 </div>
+
+      </div>
+    </div>
