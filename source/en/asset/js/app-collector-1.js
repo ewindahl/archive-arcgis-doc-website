@@ -6,11 +6,15 @@ $(document).ready(function() {
 		data-plat="ios"
 
 */
+   var localedir = "en";
+   if(window.docConfig !== undefined){
+      localedir =   docConfig['localedir'];
+   }
     var val = '<p id="plats">' +
         '<span class="viewing">Viewing: </span>' +
-        '<a data-appname="collector" data-plat="android-phone" data-prefix="/en/collector/android-phone" href="/en/collector/" class=""> Android</a>' +
+        '<a data-appname="collector" data-plat="android-phone" data-prefix="/' + localedir +'/collector/android-phone" href="/en/collector/" data-langlabel="android" class=""> Android</a>' +
         ' | ' +
-        '<a data-appname="collector" data-plat="iphone" data-prefix="/en/collector/iphone" href="/en/collector/" class=""> iPhone</a>' +
+        '<a data-appname="collector" data-plat="iphone" data-prefix="/' + localedir +'/collector/iphone" href="/en/collector/" data-langlabel="iphone" class=""> iPhone</a>' +
         '</p>',
 
 		prodKey = "collector",
@@ -18,7 +22,7 @@ $(document).ready(function() {
 		homePath = "/en/collector",
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
-		fname = parts.pop(), 
+		fname = parts.pop(),
 		fldpath = parts.join ("/"),
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
@@ -33,23 +37,23 @@ $(document).ready(function() {
 				newHref = href.replace ("/"+prodDVal+"/", "/"+plat+"/");
 
 			if (href.indexOf (homePath) === 0 ) {
-				//console.log (href + "=>" + newHref);				
-				$ele.attr ("href", newHref);				
+				//console.log (href + "=>" + newHref);
+				$ele.attr ("href", newHref);
 			}
 		})
 
 	}
 
 	if (!isHome) {
-		$('.reference-content h2:first').after (val);		
+		$('.reference-content h2:first').after (val);
 	} else {
-		modHomeUrls (plat);		
+		modHomeUrls (plat);
 	}
 
 
 	$("#plats a[data-appname]").each (function (i) {
 		var $ele = $(this),
-			prefix = $ele.data ("prefix"), 
+			prefix = $ele.data ("prefix"),
 			dplat = $ele.data ("plat"),
 			url;
 
@@ -59,7 +63,7 @@ $(document).ready(function() {
 		} else {
 			$ele.toggleClass ("off");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
-			
+
 		}
 
 		$ele.attr ("href", url);
@@ -75,7 +79,7 @@ $(document).ready(function() {
 		if (isHome) {
 			modHomeUrls ($ele.data ("plat"));
 		}
-	})	
+	})
 
 
 

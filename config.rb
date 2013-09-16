@@ -23,6 +23,9 @@ set :fonts_dir, 'fonts'
 
 activate :directory_indexes
 
+#Folder specific layout
+page "/es/*", :layout => "es"
+page "/en/marketplace/*", :layout => "marketplace/layout"
 
 configure :build do
   # Minify CSS on build
@@ -36,4 +39,6 @@ configure :build do
 
   # Automatically compress PNG images
   # activate :smusher
+
+
 end

@@ -1,0 +1,224 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-215788-63']);
+      _gaq.push(['_setDomainName', 'arcgis.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+
+
+    <!--[if lt IE 9]>
+      <%= javascript_include_tag "libs/html5shiv.js" %>
+      <%= javascript_include_tag "libs/selectivizr-min.js" %>
+      <style>
+        #wrapper {
+          min-width: 960px;
+        }
+      </style>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+    <% if current_page.data.css %>
+      <% current_page.data.css.each do |stylesheet| %>
+        <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
+      <% end %>
+    <% end %>
+
+    <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
+    <%= javascript_include_tag  "libs/kss", "libs/highlight.pack" %>
+    <% if current_page.data.js %>
+      <% current_page.data.js.each do |javascript| %>
+        <%= javascript_include_tag javascript %>
+      <% end %>
+    <% end %>
+    <% if current_page.data.mobile %>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+    <% else %>
+      <style>
+        body {
+          min-width: 768px;
+        }
+      </style>
+    <% end%>
+
+	<!--- search MD -->
+	<% if current_page.data.metatags %>
+      <% current_page.data.metatags.each do |v| %>
+        <%= v %>
+      <% end %>
+    <% end %>
+
+   <!-- Language Picker
+   <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
+   <%= javascript_include_tag "locale/l10NStrings" %>
+   <%= javascript_include_tag "locale/langSelector" %>-->
+
+
+    <!--- search MD -->
+	<script>
+	/* Temporary fix for tablet version of "get started/blog column" issue. */
+		$(document).ready(function(){
+			//$(".container .tablet-column-24").css('width','66.666%')
+			//$(".container .column-8").css('width','33.333%')
+		});
+
+      <!-- note style issue hack -->
+      $(".note h5").each(function(){
+         //$(this).css('height',$(this).parent().innerHeight()-50);
+      });
+	</script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="page">
+
+        <header id="header">
+          <div class="container relative-container">
+              <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
+                <div class="logo-wrap">
+                  <a id="site-logo" href="http://marketplace.arcgis.com/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
+                  <span class="down-arrow" id="down-arrow"></span>
+                </div>
+                <nav id="dropDown">
+                  <a href="http://www.arcgis.com">
+                    <h4 data-langlabel="arcgis">ArcGIS</h4>
+                    <p data-langlabel="arcgis-desc">Learn more about ArcGIS for Organizations</p>
+                  </a>
+                  <a href="http://developers.arcgis.com">
+                    <h4 data-langlabel="arcgis-for-developers">ArcGIS for Developers</h4>
+                    <p data-langlabel="arcgis-for-developers-desc">Build location-aware apps with ArcGIS</p>
+                  </a>
+                  <a href="http://pro.arcgis.com">
+                    <h4 data-langlabel="arcgis-for-professionals">ArcGIS for Professionals</h4>
+                    <p data-langlabel="arcgis-for-professionals-desc">Build your GIS foundation on desktop and server</p>
+                  </a>
+				  <a href="http://marketplace.arcgis.com/"  class="current selected">
+                    <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
+                    <p data-langlabel="arcgis-marketplace-desc">Get apps and data for your organization</p>
+                  </a>
+                </nav>
+                <nav>
+
+                </nav>
+
+
+              <form id="mkpSearchForm" action="#">
+                <input type="search" name="mkpSearch"  placeholder="Search for apps and data">
+              </form>
+
+
+                <a href="http://www.esri.com/" id="esri-logo">Esri</a>
+
+                <!--<div id="lg-container" class="dropdown-navigation">
+                  <div id="lang-block"></div>
+               </div> -->
+
+      <div id="logged-out-navigation" class="dropdown-navigation">
+        <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#">Sign In</a>
+      </div>
+      <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
+        <a id="login-link" class="dropdown btn small light" href="#">user</a>
+        <div class="dropdown-content">
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="#">My Console</a></li>
+            </ul>
+            <hr />
+            <ul>
+              <li><a href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+            <nav class="right-nav">
+               <ul>
+                  <li><a href="/en/marketplace/">Help</a></li>
+               </ul>
+            </nav>
+
+              </div>
+          </div>
+        </header>
+
+<%= yield %>
+
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <nav>
+            <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
+            <ul>
+               <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
+               <li><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html">My Console</a></li>
+              <li><a data-langlabel="help" href="/en/marketplace/">Help</a></li>
+
+            </ul>
+          </nav>
+          <nav>
+            <h4 data-langlabel="arcgis-platform" >ArcGIS Platform</h4>
+            <ul>
+              <li><a data-langlabel="arcgis" href="http://www.arcgis.com">ArcGIS</a></li>
+              <li><a data-langlabel="arcgis-marketplace" href="http://marketplace.arcgis.com">ArcGIS Marketplace</a></li>
+              <li><a data-langlabel="arcgis-for-professionals" href="http://pro.arcgis.com/">ArcGIS for Professionals</a></li>
+              <li><a data-langlabel="arcgis-for-developers" href="http://developers.arcgis.com">ArcGIS for Developers</a></li>
+            </ul>
+          </nav>
+          <nav>
+            <h4 data-langlabel="about-esri" >About Esri</h4>
+            <ul>
+              <li><a data-langlabel="about-us" href="http://www.esri.com/about-esri/">About Us</a></li>
+              <li><a data-langlabel="careers" href="http://www.esri.com/careers/">Careers</a></li>
+              <li><a data-langlabel="insiders-blog" href="http://blogs.esri.com/esri/esri-insider/">Insiders Blog</a></li>
+              <li><a data-langlabel="user-conference" href="http://www.esri.com/events/user-conference/index.html">User Conference</a></li>
+              <li><a data-langlabel="developer-summit" href="http://www.esri.com/events/devsummit/index.html">Developer Summit</a></li>
+            </ul>
+          </nav>
+          <nav class="right">
+            <a id="esri-logo-footer" href="http://www.esri.com/">Esri</a>
+            <section id="footer-social-nav">
+              <a class="icon-twitter" href="https://twitter.com/Esri/"></a>
+              <a class="icon-facebook" href="https://www.facebook.com/esrigis/"></a>
+              <a class="icon-github" href="http://esri.github.com/"></a>
+              <a class="icon-email" href="http://www.esri.com/about-esri/contact/"></a>
+            </section>
+          </nav>
+          <small id="footer-legal">
+            &copy; Copyright 2013 Environmental Systems Research Institute, Inc. |
+            <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy-arcgis">Privacy</a> |
+            <a data-langlabel="legal" href="http://www.esri.com/legal/software-license/">Legal</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+    <%= javascript_include_tag "drop-down" %>
+  </body>
+</html>

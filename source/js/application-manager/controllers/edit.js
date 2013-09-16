@@ -1,1 +1,0 @@
-define(["Quoin/Controller"],function(e){return new e});

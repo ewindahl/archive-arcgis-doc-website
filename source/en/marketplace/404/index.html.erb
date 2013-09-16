@@ -1,0 +1,93 @@
+---
+title: Page Not Found - ArcGIS
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - libs/jquery.cookie
+  - app-feedback
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="page-not-found">Page Not Found</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+    <div class="warning">
+      <header>
+        <h1 data-langlabel="we-are-sorry">We're sorry...</h1>
+      </header>
+
+      <section>
+        <p data-langlabel="404-note">The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem.</p>
+      </section>
+
+	  <div class="popular-links">
+      <h3 data-langlabel="popular-links">Popular Links </h3>
+        <ul>
+			   <li><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html">My Console</a></li>
+            <li><a data-langlabel="help" href="/en/marketplace">Help</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="contact-form">
+      <form id="feedback-form" name="feedbackForm" method="post" action="http://resources.arcgis.com/apps/feedback/dev_feedback.php">
+        <h3 data-langlabel="report-a-problem">Report a Problem</h3>
+        <fieldset>
+
+          <label data-langlabel="message" for="message">Message: </label>
+		  <textarea data-langlabel="it-would-be-great" placeholder="It would be great if you could..." name="userFeedback" id="userFeedback"></textarea>
+          <label data-langlabel="regarding-the-page" for="regarding">Regarding the page: </label>
+		  <input type="text" id="regarding" name="fromURL">
+		  <label data-langlabel="email-address" for="email">Email address: </label>
+		  <input type="text" placeholder="johnsmith@esri.com (optional)" value="" name="userEmail" id="userEmail">
+		  <label data-langlabel="feedback-spam-note" for="email">To help prevent automated spam, enter the numerals you see: </label>
+		  <input type="text" placeholder="1 2 3 4 5 6 7" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+		   <label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+        </fieldset>
+        <!--<input type="hidden" value="https://developers.arcgis.com/en/thank-you" name="redirectUrl" id="redirect-url">-->
+        <input type="hidden" value="internal" name="source" id="source">
+        <input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+        <input type="hidden" value="en" name="lg">
+        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" onClick="return validateFeedbackForm();" name="submitFeedback">
+      </form>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+		document.getElementById('regarding').value = document.location.href;
+		document.getElementById('redirectUrl').value = "http://" + window.location.host + "/en/thank-you/";
+		DrawCaptcha();
+
+	});
+</script>
+
+  </div>
+

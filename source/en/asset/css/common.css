@@ -90,7 +90,7 @@ footer.feedback a{
   font-size:0.875em;
   float:right;
   padding-right:3em;
-  
+
 }
 footer.feedback a::before{
   font-family: 'icomoon';
@@ -102,7 +102,7 @@ footer.feedback a::before{
   position: relative;
   top: 1px;
   left: 0;
-  padding-right: .25em;  
+  padding-right: .25em;
   content:"8";
 }
 
@@ -274,6 +274,262 @@ div.step ol{margin-left:45px;}
     min-width: 0px;
 }
 
+.reference-content table {
+    border: 1px solid #C2C4BA;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 95%;
+    margin-left: 15px;
+    width: 90%;
+}
+.reference-content th p {
+    margin: 0;
+    padding: 0;
+}
+.reference-content td {
+    border: 1px solid #C2C4BA;
+    padding: 2px 5px 0;
+    vertical-align: top;
+}
+.reference-content th, #reference-content td.th_p, #reference-content td.th_e, #reference-content td.th_d, .reference-content td.th_en, .reference-content td.th_des {
+    background: none repeat scroll 0 0 #E2E2E2;
+    border: 1px solid #C2C4BA;
+    color: #000000;
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+}
+.reference-content td.th_p {
+    width: 20%;
+}
+.reference-content td.th_e {
+    width: 60%;
+}
+.reference-content .arcpyclass_retvaltbl td.th_e {
+    width: 80%;
+}
+.reference-content td.th_d {
+    width: 20%;
+}
+.reference-content .arcpyclass_retvaltbl td.th_d {
+    width: 20%;
+}
+.reference-content td.th_en {
+    width: 30%;
+}
+.reference-content td.th_des {
+}
+.reference-content td p {
+    padding-bottom: 2px;
+}
+.reference-content span.table_title, .reference-content span.sqltable_title {
+    display: block;
+    font-size: 95%;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.reference-content span.table_desc {
+    display: block;
+    font-size: 0.75em;
+    font-style: italic;
+    margin-bottom: 2em;
+    margin-left: 15px;
+}
+
+#reference-content div.section3 table.gptoolretvaltbl {
+    margin-left: 0;
+}
+#reference-content div.sqltblinfo th {
+    width: 15%;
+}
+.reference-content div.sqltblinfo th + th {
+    width: 15%;
+}
+.reference-content div.sqltblinfo th + th + th {
+    width: 60%;
+}
+.reference-content div.sqltblinfo th + th + th + th {
+    width: 10%;
+}
+.reference-content div.image {
+    margin-left: 10px;
+}
+.reference-content div.image table {
+    width: 1px;
+}
+.reference-content div.image table, .reference-content div.image table td {
+    border: medium none;
+}
+.reference-content div.caption {
+    font-size: 0.75em;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
+.reference-content div.notes {
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    clear: both;
+    display: inline-block;
+    margin: 10px;
+    width: 90%;
+}
+.reference-content div.notes img.note_img {
+    float: left;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+.reference-content div.tipbody {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    padding: 5px 5px 20px 0;
+    width: 80%;
+}
+.reference-content div.tipbody p {
+    margin: 0 0.5em;
+}
+.reference-content div.beta, .reference-content div.casestudy, .reference-content div.caution, .reference-content div.legacy, .reference-content div.license, .reference-content div.divein, .reference-content div.tip, .reference-content div.subscription, .reference-content div.note {
+    display: inline;
+    float: left;
+    font-weight: bold;
+    height: 16px;
+    padding: 5px 5px 20px 0;
+}
+
+.wfsteps table {
+    margin-left: 30px;
+}
+
+
+.reference-content div.image table {
+    width: 1px;
+}
+.reference-content div.image table, .reference-content div.image table td {
+    border: medium none;
+}
+.reference-content div.caption {
+    font-size: 0.75em;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
+.reference-content div.notes {
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    clear: both;
+    display: inline-block;
+    margin: 10px;
+    width: 90%;
+}
+.reference-content div.notes img.note_img {
+    float: left;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+
+/*.reference-content .substeps li {
+    margin-bottom: 5px;
+    margin-left: 30px;
+    padding-left: 5px;
+}*/
+
+.substeps > ol {
+    counter-reset: li;
+    list-style: none outside none;
+}
+.substeps > ol > li:before {
+    background: none repeat scroll 0 0 #B9E0F7;
+    color: white;
+    content: counter(li, lower-alpha);
+    counter-increment: li;
+    display: inline-block;
+    height: 24px;
+    margin-right: 0.5em;
+    text-align: center;
+    width: 24px;
+}
+.substeps > ol > li {
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    margin-left: 1.0em;
+}
+
 .mobileVideo {
-	display: none;
+   display: none;
+}
+
+img {
+   max-width: none;
+}
+
+.note-content p {
+    margin-bottom: 8px;
+    margin-top: 0;
+    float: none;
+}
+
+table.lined-rows > tbody th, table.lined-rows > tbody td {
+border-bottom : 1px solid #C2C4BA;
+border-top: 1px solid #C2C4BA;
+border-left: 1px solid #C2C4BA;
+}
+
+table.lined-rows > thead th, table.lined-rows > thead td {
+    border-bottom: 1px solid #C2C4BA;
+    border-top: 1px solid #C2C4BA;
+    border-right: 1px solid #C2C4BA;
+}
+
+table.lined-columns thead th, table.lined-columns thead td {
+    border-left: 1px solid #C2C4BA;
+    border-right: 1px solid #C2C4BA;
+}
+
+table.lined-columns tbody th, table.lined-columns tbody td {
+    border-right: 1px solid #C2C4BA;
+}
+
+.video-link {
+    display: block;
+}
+#vids-ext .video-link, .video-link {
+    height: 135px;
+    width: 240px;
+}
+.video-playbtn {
+    float: left;
+    left: 100px;
+    position: relative;
+    top: 56px;
+}
+.video-playbtn {
+   float: left;
+   left: 72px;
+   position: relative;
+   top: 45px;
+}
+/* patch to existing class */
+/* tchen: add .reference-content hack to fix toc indentation*/ ;
+.reference-content ul li {
+   margin-left: 14px;
+}
+.substeps > ol > li:before {
+    height: 21px;
+    width: 19px;
+}
+
+.reference-content ol p {
+	margin-bottom: 10px;
+}
+
+/* marketplace search box */
+input[name="mkpSearch"] {
+  display: inline;
+  float: left;
+  width: 400px;
+  margin-top: 1em;
+  margin-left: 1.5em;
 }

@@ -1,1 +1,0 @@
-require(["dojo/dom","dojo/dom-attr","dojo/query","dojo/dom-class","dojo/NodeList-dom","dojo/domReady!"],function(e,t,n,r){var i=n(".multi-language-sample nav a");i.on("click",function(e){e.preventDefault();var t=n(this).attr("data-language"),r=n(t);n("pre").removeClass("active"),r.addClass("active"),i.removeClass("selected"),n(this).addClass("selected")})});

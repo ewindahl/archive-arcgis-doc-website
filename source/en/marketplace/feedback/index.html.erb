@@ -1,0 +1,86 @@
+---
+title: Feedback - ArcGIS
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - libs/jquery.cookie
+  - app-feedback
+  - marketplace/init
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="feedback-title">Feedback</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+    <div class="row main">
+    <div class="warning">
+      <header>
+        <h1 data-langlabel="help-us-get-better">Help us get better</h1>
+      </header>
+
+      <section>
+        <p data-langlabel="feedback_note">See something on this website that we can improve? Send in your thoughts and ideas. If something on the site doesn't work as expected, send us details on that too. Help us make this a site you enjoy using. </p>
+      </section>
+    </div>
+
+
+    <div class="contact-form">
+      <form id="feedback-form" name="feedbackForm" method="post" action="http://resources.arcgis.com/apps/feedback/dev_feedback.php">
+        <h3 data-langlabel="send-your-suggestion">Send us your suggestion</h3>
+        <fieldset>
+
+          <label for="message" data-langlabel="message">Message: </label>
+		  <textarea data-langlabel="it-would-be-great" placeholder="It would be great if you could..." name="userFeedback" id="userFeedback"></textarea>
+          <label data-langlabel="regarding-the-page" for="regarding">Regarding the page: </label>
+		  <input type="text" id="regarding" name="fromURL">
+		  <label data-langlabel="email-address" for="email">Email address: </label>
+		  <input type="text" placeholder="johnsmith@esri.com (optional)" value="" name="userEmail" id="userEmail">
+		  <label data-langlabel="feedback-spam-note" for="email">To help prevent automated spam, enter the numerals you see: </label>
+		  <input type="text" placeholder="1 2 3 4 5 6 7" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+		   <label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+        </fieldset>
+        <!--<input type="hidden" value="https://developers.arcgis.com/en/thank-you" name="redirectUrl" id="redirect-url">-->
+        <input type="hidden" value="internal" name="source" id="source">
+        <input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+        <input type="hidden" value="en" name="lg">
+        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" onClick="return validateFeedbackForm();" name="submitFeedback">
+      </form>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+		document.getElementById('regarding').value = document.referrer;
+		document.getElementById('redirectUrl').value = "http://" + window.location.host + "/en/thank-you/?referrer_url=" + document.referrer;
+		DrawCaptcha();
+
+	});
+</script>
+
+  </div>
+

@@ -9,9 +9,6 @@ css:
   - colorbox/colorbox
 
 js:
-  - config
-  - dojo-config
-  - libs/jquery-1.9.1.min
   - libs/jquery.cookie
   - /en/asset/js/arcgis-app-1
   - libs/jquery.colorbox-min.js
@@ -46,7 +43,8 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Download the app</h2>
-          <span id="appVersion"><strong>Version:</strong> <span class="icon-android"> 2.0.5,</span> <span class="icon-apple"> 10.1.2,</span> <span class="icon-purple icon-windows-8"> 10.1.2</span></span>
+		  <span id="appVersion"><strong>Version:</strong> 10.1.2 </span>
+          <!--<span id="appVersion"><strong>Version:</strong> <span class="icon-android"> 2.0.5,</span> <span class="icon-apple"> 10.1.2,</span> <span class="icon-purple icon-windows-8"> 10.1.2</span></span>-->
           <!-- <span id="appReleased"><strong>Released:</strong> <span class="icon-android"> December 2012,</span> <span class="icon-apple"> September 2012,</span> <span class="icon-purple icon-windows-8"> May 2013</span></span> -->
 
 
@@ -105,14 +103,13 @@ mobile: true
         <h3>Device requirements</h3>
         <table><tr><td valign="top"><h4 class="icon-android">Android</h4>
         <ul>
-          <li>Android 2.2 (Froyo)<br/>or later operating system</li>
+          <li>Android 2.3.3 or later</li>
           <li>If using Android emulator: 4.0.3 system image with hardware acceleration</li>
           <li>ARMv6 or ARMv7 processor</li>
           <li>Hardware support for OpenGL ES 2.0</li>
 
           <li>Recommended:
-              <ul><li>Android 2.3 (Gingerbread)<br/>or later operating system</li>
-              <li>ARMv7 processor</li>
+              <ul><li>ARMv7 processor</li>
               <li>1 GHz processor</li>
               <li>512 MB of RAM</li>
               <li>Screen resolution of 800x480</li>
@@ -123,11 +120,11 @@ mobile: true
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS 4 or later</li>
+          <li>iOS 5 or later</li>
           <li>Supports: iPhone 3GS and later, iPad, iPod touch</li>
         </ul></td><td valign="top"><h4 class="icon-purple icon-windows-8">Windows Phone</h4>
         <ul>
-          <li>Windows Phone 7.5 (Mango) and later devices</li>
+          <li>Windows Phone 7.5 (Mango) or later</li>
         </ul></td><tr></table>
 
         <h3>Supported languages</h3>
@@ -143,9 +140,16 @@ mobile: true
         <h2>What's new</h2>
         <table><tr>
 			<td valign="top"><h4 class="icon-android">Android</h4>
-				<p>Version 2.0.5 was released in December 2012, including:
+				<p>Version 10.1.2 was released in September 2013, including:
 				<ul>
-					<li>Layers secured with the same credentials require a single sign-in (NIM084775)</li>
+					<li>Expanded support for scale dependency on layers</li>
+					<li>Support for overriding editing on web maps</li>
+					<li>Support for layer filters on web maps</li>
+					<li>New layer support: KML, WMS, OpenStreetMap</li>
+					<li>Federated security</li>
+					<li>Various bug fixes</li>
+					<li>Fixed HTML links on popups (NIM077005)</li>
+					<li>Removed support for Android 2.2</li>
         		</ul>
         		<p> See <a data-modlink="false" href="/en/arcgis-app/android/help/what-s-new.htm">What's new in Android</a> for previous versions.</p>
 			</td>
@@ -205,10 +209,6 @@ mobile: true
  </div>
 
     </div>
-
- <!--[if gt IE 8]><!-->
-      <script type="text/javascript" src="//serverapi.arcgisonline.com/jsapi/arcgis/3.4compact/"></script>
-    <!--<![endif]-->
 
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
