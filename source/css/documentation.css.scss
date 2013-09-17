@@ -199,6 +199,14 @@ td p:last-child {
 .note {
   @extend %callout;
   background: $light-tan;
+  h5 {
+	@include column(2);
+	
+  }
+  .note-content {
+  	@include column(22);
+	float: left;
+  }
 }
 
 %sidebar-panel {
