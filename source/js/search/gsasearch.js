@@ -146,7 +146,7 @@ app.genGSAQuery  = function (qkv) {
   var increment = app.queryState.get ("increment");
   return {
     "event": "search.renderSearch",
-    "interfaceName" : "developers",
+    "interfaceName" : "resourcesbeta",
     "searchViewname" : "arcgis_doc_marketplace",
     "oe" : "utf8",
     "filter" : 0,

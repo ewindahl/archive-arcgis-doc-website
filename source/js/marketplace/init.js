@@ -41,12 +41,14 @@ $(document).ready(function() {
   		ckval = $.parseJSON (cookieJar.getItem (ckname) || "{}");
  	
   	return ("email" in ckval) ? {jar:cookieJar, val: ckval}: null;
-  }
+  };
 
   /* login */
-  ckKey = "esri_auth";
-  cookie = getCookie(ckKey);
+  var ckKey = "esri_auth",
+      cookie = getCookie(ckKey);
   
+  $(".myconsole").css ("display", "none");
+
   if (cookie) {
   	$("#logged-out-navigation").addClass ("hide");
   	$("#logged-in-navigation").removeClass ("hide");
@@ -54,14 +56,20 @@ $(document).ready(function() {
         var avatarurl = "http://www.gravatar.com/avatar/d7970fec8803bdbeeb5d82674a1a2c8b.jpg?s=16&d=http://d3w50ib5d2uy0g.cloudfront.net/cdn/2464/js/esri/arcgisonline/css/images/no-user-thumb.jpg",
             avatar = "<img width='16px' height='16px' alt='' src='" + avatarurl +"' />";
   	
-            $("#logged-in-navigation > a").html (avatar+"<span>"+cookie.val["email"]+"</span>");
+        $("#logged-in-navigation > a").html (avatar+"<span>"+cookie.val["email"]+"</span>");
   	
   	var $linkL = $("#logged-in-navigation .dropdown-menu a");
-  	$linkL.eq(0).on ("click", function() {
+  	
+        if (cookie.val["role"] && cookie.val["role"].indexOf ("admin")>=0) {
+          $(".myconsole").css ("display", "block");
+
+          $linkL.eq(0).on ("click", function() {
   		//my console
   		window.location = sitecfg["mkpConsole"];
-  	});
-  	$linkL.eq(1).on ("click", function() {
+  	  });
+        }
+        
+        $linkL.eq(1).on ("click", function() {
   		//logout
   		cookie.jar.removeItem (ckKey, "/", ".arcgis.com");
   		window.location.reload(true);
