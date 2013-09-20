@@ -199,16 +199,27 @@ td p:last-child {
 .note {
   @extend %callout;
   background: $light-tan;
+  padding:0.75em;
+  overflow:hidden;
+  line-height: 1.71429em;
   h5 {
-	@include column(2);
-	
+    //@include column(2);
+    float:left;
+    width:10%;
+    margin-top: 1px;
+    font-size:0.875em;
   }
   .note-content {
-  	@include column(22);
-	float: left;
+  	//@include column(22);
+    float: left;
+    padding-left:1.25em;
+    max-width:85%;
   }
 }
-
+/* Font-size override for notes that are in List elements */
+ul .note, ol .note{
+  font-size: 1.125em;
+}
 %sidebar-panel {
   @extend %panel;
   @include trailer(1);
@@ -328,6 +339,7 @@ td p:last-child {
   @include adjust-font-size-to(24px);
 }
 
+/* Possible remove due to conflicts
 .reference-content {
   ol {
     font-size: 14px;
@@ -335,7 +347,7 @@ td p:last-child {
   ol p {
     font-size: 14px;
   }
-}
+}*/
 
 .steps {
   > ol {
@@ -356,6 +368,13 @@ td p:last-child {
         margin-right: .5em;
       }
     }
+  }
+  .info, .stepexample, ul[purpose="choices"], .stepinfo, .stepresult {
+    padding-top: 0.5em;
+    padding-left: 2.25em;
+  }
+  .stepinfo > p, .stepresult > p, .info > p, ul[purpose="choices"] p{
+    font-size: 1.0625em;
   }
 }
 
