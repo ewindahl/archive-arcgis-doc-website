@@ -476,3 +476,17 @@ ul .note, ol .note{
   #collectorDataFeature h3 {
     margin-top: 1em;
   }
+  
+  /* ol, ul specific styles */
+  ol[purpose="ol"], ul[purpose="ul"] {
+    list-style-position: outside;
+    padding-left: 2em;
+  }
+  ol[purpose="ol"] {
+    ol[purpose="ol"] {
+      list-style-type: lower-alpha;
+      ol[purpose="ol"] {
+        list-style-type: lower-roman;
+      }
+    }
+  }
