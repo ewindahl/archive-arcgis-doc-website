@@ -15,14 +15,14 @@ $(document).ready(function () {
           
         fnameFilter = {
             "about-apache-configuration.htm" : "", "about-web-server-configuration.htm" : "", "administrative-and-login-settings.htm" : "",
-            "changing-the-logging-levels.htm" : "", "communication-bi-bus.htm" : "", "configuration.htm" : "", "configure-an-upstream-proxy.htm" : "",
+            "changing-the-logging-levels.htm" : "", "communication-bi-bus-.htm" : "", "configuration.htm" : "", "configure-an-upstream-proxy.htm" : "",
             "configure-login-settings.htm" : "", "configure-proxy-settings.htm" : "", "configuring-apache.htm" : "", "controlling-who-can-access-esri-maps-for-ibm-cognos.htm" : "",
             "creating-a-default-map.htm" : "", "distribution-options.htm" : "", "esri-maps-for-ibm-cognos-architecture.htm" : "", "generate-an-application-id.htm" : "",
             "ibm-cognos-architecture.htm" : "", "ibm-cognos-files.htm" : "", "ibm-cognos-fix-packs.htm" : "", "installation-options.htm" : "", "installation-sequence-for-server-components.htm" : "",
             "installing-and-configuring-em4c-dispatcher.htm" : "", "installing-and-configuring-em4c-gateway.htm" : "", "installing-and-configuring-em4c-server.htm" : "",
             "installing-and-configuring-em4c-server-and-em4c-dispatcher.htm" : "", "installing-and-configuring-on-a-single-computer.htm" : "", "items-added-to-a-map-enabled-report.htm" : "",
             "required-ibm-cognos-capabilities.htm" : "", "supported-arcgis-authentication-methods.htm" : "", "supported-environments.htm" : "", "testing-the-configuration.htm" : "", 
-            "uninstall-esri-maps-for-ibm-cognos.htm" : "", "upgrade-esri-maps-for-ibm-cognos.htm" : ""
+            "uninstalling-esri-maps-for-ibm-cognos.htm" : "", "upgrade-esri-maps-for-ibm-cognos.htm" : ""
         },
 		prodKey = "maps_for_cognos",
 		prodDVal = "install-windows",
@@ -73,7 +73,6 @@ $(document).ready(function () {
             url = prefix + "/" + fname;
 
         }
-        
         if (!fnameFilter.hasOwnProperty(fname)) {
             url = prefix + "/";
         }
