@@ -12,13 +12,13 @@ $(document).ready(function() {
    }
     var val = '<p id="plats">' +
         '<span class="viewing">Viewing: </span>' +
-        '<a data-appname="collector" data-plat="android-phone" data-prefix="/' + localedir +'/collector/android-phone" href="/en/collector/" data-langlabel="android" class=""> Android</a>' +
+        '<a data-appname="collector" data-plat="android" data-prefix="/' + localedir +'/collector/android" href="/en/collector/" data-langlabel="android" class=""> Android</a>' +
         ' | ' +
-        '<a data-appname="collector" data-plat="iphone" data-prefix="/' + localedir +'/collector/iphone" href="/en/collector/" data-langlabel="iphone" class=""> iPhone</a>' +
+        '<a data-appname="collector" data-plat="ios" data-prefix="/' + localedir +'/collector/ios" href="/en/collector/" data-langlabel="ios" class=""> IOS</a>' +
         '</p>',
 
 		prodKey = "collector",
-		prodDVal = "android-phone",
+		prodDVal = "android",
 		homePath = "/en/collector",
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
