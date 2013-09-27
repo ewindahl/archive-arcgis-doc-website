@@ -1,5 +1,7 @@
 # ArcGIS for Doc Website
 
+This readme covers install and set-up of the repo. If you want information on the site itself--who works on it, how it is managed, release plans, and so on, see the [Wiki](https://github.com/ArcGIS/arcgis-doc-website/wiki).
+
 This website is based off of [Middleman](http://middlemanapp.com/) + [ArcGIS CSS Framework](http://https://github.com/ArcGIS/arcgis-for-developers-css).
 
 ### Testing Server Locations
