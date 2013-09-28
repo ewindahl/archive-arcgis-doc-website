@@ -84,7 +84,8 @@ $(document).ready(function () {
         var $ele = $(this),
 			url = $ele.attr("href");
 
-        $.cookie($ele.data("appname"), $ele.data("plat"), { expires: new Date(2020, 1, 1), path: "/" });
+        doc.cookieJar.setItem($ele.data("appname"), $ele.data("plat"),
+							   Infinity, "/", "*.arcgis.com");
 
         if (isHome) {
             modHomeUrls($ele.data("plat"));
