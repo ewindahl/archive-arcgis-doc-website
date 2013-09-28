@@ -49,19 +49,10 @@
   }
   &.full{
     @include column(24);
-    @include leader(2);
     .feature-box {
       @include column(8);
-      @include trailer(1);
-      height: 200px;
-      @include respond-to($tablet-wide) {
-        @include column-width(12);
-      }
       @include respond-to($phone-large) {
         @include column-width(24);
-      }
-      h3 {
-        margin-top:0.25em;
       }
     }
     #feat-intro {
