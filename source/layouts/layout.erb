@@ -157,6 +157,40 @@
 
 <%= yield %>
 
+<% if current_page.data.blog_url or current_page.data.forum_url or current_page.data.agol_gallery %>
+	<script>
+	  $(window).load(function() {
+		  <% if current_page.data.blog_url %>
+		  $("#blog").rssFeed({
+			url:"<%= current_page.data.blog_url %>", 
+			max: 2, 
+			layout: 0
+		  });
+		  <% end %>
+		  <% if current_page.data.forum_url %>
+		  $("#forum").rssFeed({
+			url:"<%= current_page.data.forum_url%>", 
+			max: 2,        
+			layout: 1
+		  });
+		  <% end %>
+		  <% if current_page.data.agol_gallery %>
+			  <% if !current_page.data.agol_url %>
+					$("#gallery-cont").agolGallery({
+					    url: "http://www.arcgis.com/sharing/rest/search?q=%20group%3A5e79591f54564399b99c76ec58a245ab%20-type:%22Code%20Attachment%22%20-type:%22Featured%20Items%22%20-type:%22Symbol%20Set%22%20-type:%22Color%20Set%22%20-type:%22Windows%20Viewer%20Add%20In%22%20-type:%22Windows%20Viewer%20Configuration%22%20%20-type:%22Code%20Attachment%22%20-type:%22Featured%20Items%22%20-type:%22Symbol%20Set%22%20-type:%22Color%20Set%22%20-type:%22Windows%20Viewer%20Add%20In%22%20-type:%22Windows%20Viewer%20Configuration%22%20&num=10&sortField=modified&sortOrder=desc&f=json",
+					   max:8
+					  });
+				<% else %>
+		  			$("#gallery-cont").agolGallery({
+					   url: "<%= current_page.data.agol_url %>",
+					   max:8
+					  });
+				<% end %>
+		  <% end %>
+	  });
+	</script>
+	<% end %>
+
       </div>
     </div>
 
