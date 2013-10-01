@@ -5,7 +5,7 @@ This readme covers install and set-up of the repo. If you want information on th
 This website is based off of [Middleman](http://middlemanapp.com/) + [ArcGIS CSS Framework](http://https://github.com/ArcGIS/arcgis-for-developers-css).
 
 ### Testing Server Locations
- * Developement - http://docdev.arcgis.com/
+ * Development - http://docdev.arcgis.com/
  * Staging - http://docstg.arcgis.com/
  * Production - http://doc.arcgis.com/
 
