@@ -12,10 +12,8 @@ This website is based off of [Middleman](http://middlemanapp.com/) + [ArcGIS CSS
 ### Features
 
 ### Installation Instructions
-1. Install Ruby 1.9.3.
-2. Install Ruby Development Kit.
-3. Run `gem install bundler` to install the [Bundler](http://gembundler.com/)
-4. Run `bundle install` to install all gem dependencies to your local development environment.
+
+Follow the [installation instructions](https://github.com/ArcGIS/arcgis-solutions-website/wiki/Setting-up-your-local-machine) on the Solutions wiki. If applicable, fork the Doc WebSite repo, not the Solution Website repo.
 
 
 ### Working with Bundler and MiddleMan
