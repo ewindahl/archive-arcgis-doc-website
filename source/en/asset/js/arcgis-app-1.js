@@ -79,7 +79,7 @@ $(document).ready(function() {
 		if (isForum) {
 			modForumUrls (plat);
 		} else {
-			$('.reference-content h2:first').after (val);
+			$('.reference-content h1:first').after (val);
 		}
 	} else {
 		modHomeUrls (plat);
