@@ -22,7 +22,7 @@ $(document).ready(function () {
             "installing-and-configuring-em4c-dispatcher.htm" : "", "installing-and-configuring-em4c-gateway.htm" : "", "installing-and-configuring-em4c-server.htm" : "",
             "installing-and-configuring-em4c-server-and-em4c-dispatcher.htm" : "", "installing-and-configuring-on-a-single-computer.htm" : "", "items-added-to-a-map-enabled-report.htm" : "",
             "required-ibm-cognos-capabilities.htm" : "", "supported-arcgis-authentication-methods.htm" : "", "supported-environments.htm" : "", "testing-the-configuration.htm" : "", 
-            "uninstalling-esri-maps-for-ibm-cognos.htm" : "", "upgrade-esri-maps-for-ibm-cognos.htm" : ""
+            "uninstall-esri-maps-for-ibm-cognos.htm" : "", "upgrade-esri-maps-for-ibm-cognos.htm" : ""
         },
 		prodKey = "maps_for_cognos",
 		prodDVal = "install-windows",
