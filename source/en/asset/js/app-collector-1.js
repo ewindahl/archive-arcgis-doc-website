@@ -14,7 +14,7 @@ $(document).ready(function() {
         '<span class="viewing">Viewing: </span>' +
         '<a data-appname="collector" data-plat="android" data-prefix="/' + localedir +'/collector/android" href="/en/collector/" data-langlabel="android" class=""> Android</a>' +
         ' | ' +
-        '<a data-appname="collector" data-plat="ios" data-prefix="/' + localedir +'/collector/ios" href="/en/collector/" data-langlabel="ios" class=""> IOS</a>' +
+        '<a data-appname="collector" data-plat="ios" data-prefix="/' + localedir +'/collector/ios" href="/en/collector/" data-langlabel="ios" class=""> iOS</a>' +
         '</p>',
 
 		prodKey = "collector",
