@@ -1,5 +1,4 @@
 # Middleman Config
-
 require "arcgis-framework"
 
 set :css_dir, 'css'
@@ -26,6 +25,9 @@ activate :directory_indexes
 #Folder specific layout
 page "/es/*", :layout => "es"
 page "/en/marketplace/*", :layout => "marketplace/layout"
+page "/sitemap.xml", :layout => false
+
+ignore "/sitemap_index.xml"
 
 configure :build do
   # Minify CSS on build
