@@ -45,7 +45,7 @@ $(document).ready(function() {
 	}
 
 	if (!isHome) {
-		$('.reference-content h1:first').after (val);
+		$('.reference-content .page-title').after (val);
 	} else {
 		modHomeUrls (plat);
 	}
