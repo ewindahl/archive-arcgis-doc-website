@@ -2,14 +2,36 @@
 
 require "arcgis-framework"
 
+
+
+activate :i18n, :mount_at_root => false
+activate :directory_indexes
+
+
+
+
 set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'img'
 set :fonts_dir, 'fonts'
 
 # Helpers function block
-#helpers do
+helpers do
 
+  alias_method :original_partial, :partial
+
+  def partial(path, options = {})
+      new_path = "localizable/" + path.to_s
+      original_partial(new_path.to_sym, options)
+  end
+
+  def t key
+    I18n.t key
+  end
+
+  def current_language
+    I18n.locale.to_s
+  end
 # --- Method to new partial path
 #  alias_method(:original_partial, :partial)
 
@@ -19,9 +41,8 @@ set :fonts_dir, 'fonts'
 #  end
 
 # --- End method of new partial path
-#end
+end
 
-activate :directory_indexes
 
 #Folder specific layout
 page "/es/*", :layout => "es"
@@ -29,6 +50,7 @@ page "/en/marketplace/*", :layout => "marketplace/layout"
 
 configure :build do
   # Minify CSS on build
+
   activate :minify_css
 
   # Minify Javascript on build
