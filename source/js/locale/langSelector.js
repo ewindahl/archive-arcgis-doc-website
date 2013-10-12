@@ -1,10 +1,8 @@
 ﻿jQuery(document).ready(function ($) {
-  return;
-/*
     if (window.location.pathname.indexOf ("/maps-for-office/") <0) {
       return;
     }
-*/
+
     (function () {
         var lgCookieKey = "rclg0",
 
