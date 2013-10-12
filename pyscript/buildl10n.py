@@ -7,10 +7,15 @@ import subprocess
 
 import libl10n
 
-libl10n.langs
+'''
+buildl10n.py all
+buildl10n.py lang (lang is ar, de, ...)
+
+'''
 
 rootDir = os.path.normpath (os.path.join (os.getcwd(), ".."))
 buildDir = os.path.normpath (os.path.join (rootDir, "..", "tmp"))
+
 
 
 def doBuild (lg, srcRoot, buildDir):
