@@ -45,8 +45,8 @@ end
 
 
 #Folder specific layout
-page "/es/*", :layout => "es"
-page "/en/marketplace/*", :layout => "marketplace/layout"
+#page "/es/*", :layout => "es"
+#page "/en/marketplace/*", :layout => "marketplace/layout"
 
 configure :build do
   # Minify CSS on build
