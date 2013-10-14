@@ -1,0 +1,151 @@
+---
+title: Community Maps
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Community Maps Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="community-maps"><META name="sub_category" content="Community Maps"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Community Maps"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/en/maps-for-office/">Community Maps</a></h1>
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/en/community-maps/">Home</a></li>
+        <li><a href="/en/community-maps/how-it-works/">How it works</a></li>
+        <li><a href="/en/community-maps/how-to-contribute/">How to contribute</a></li>
+        <li><a href="/en/community-maps/using-community-maps/">Using Community Maps</a></li>
+        <li><a href="/en/community-maps/who-is-participating/">Who is participating</a></li>
+
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <header>
+
+		  <h2 id="appTitle">Getting to know Esri Community Maps</h2>
+
+
+          <p>Community Maps is a collaborative effort by Esri and the ArcGIS community to build superior online maps and layers compiled from the best available data sources, including, perhaps, organizations like yours.  Get to know more about this exciting program, and find out if your map data can help build the living atlas of the world.</p>
+
+        </header>
+        <hr />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <!--<img src="map-your-data.jpg" />-->
+
+          <h3>How it works </h3>
+          <p>Your organization's map data can become part of the Community Maps that Esri hosts and publishes online. It is easy to join.  It is free. And benefits are great.</p>
+          <p>
+            Learn more about how Community Maps works.
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <!--<img src="enrich-data.jpg" />-->
+
+          <h3>See who's participating</h3>
+          <p>The Esri Community Maps family is made of up of hundreds of local, authoritative contributors all around the world, and the family is growing every day.  Will your organization be next?</p>
+          <p>
+           Learn more about who is contributing to Community Maps.
+          </p>
+        </div>
+
+        <div class="clear"></div>
+
+
+       <div id="collectorMapFeature" class="column-12 phone-column-24">
+
+          <h3>How to contribute</h3>
+          <p>Joining the hundreds of Esri Community Maps contributors is easy, and it's free.  Best of all, you can manage the entire contribution process through the online Contribution App.</p>
+          <p>
+            Learn more about how to join Community Maps.
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+
+          <h3>Using Community Maps</h3>
+          <p>The best part of Community Maps is using the published maps to meet needs and be more productive.  Contributing to Community Maps can be just the beginning to reaching your online GIS goals.</p>
+          <p>Learn more about using Community Maps in online maps and apps.</p>
+        </div>
+
+        <div class="clear"></div>
+
+
+
+
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+          <h3>Get started</h3>
+          <ul>
+           <li><a href="https://communitymaps.arcgis.com/home/login.html">Apply now</a></li>
+            <li><a href="http://video.arcgis.com/watch/100/community-maps-program-overview">Overview video</a></li>
+
+          </ul>
+        </div>
+        <br />
+
+         <div id="twitter">
+            <a class="twitter-timeline" href="https://twitter.com/AGOL_CM_Program" data-widget-id="309744362420576256">Tweets by @AGOL_CM_Program</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+         </div>
+         <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>From our blog</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/category/subject-community-maps/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>

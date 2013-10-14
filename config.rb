@@ -1,5 +1,4 @@
 # Middleman Config
-
 require "arcgis-framework"
 
 
@@ -32,15 +31,6 @@ helpers do
   def current_language
     I18n.locale.to_s
   end
-# --- Method to new partial path
-#  alias_method(:original_partial, :partial)
-
-#  def partial(path, options = {})
-#    new_path = "/" + path.to_s
-#    original_partial(new_path.to_sym, options)
-#  end
-
-# --- End method of new partial path
 end
 
 
