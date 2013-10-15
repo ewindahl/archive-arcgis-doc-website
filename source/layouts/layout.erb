@@ -25,8 +25,6 @@
 
     </script>
 
-
-
     <!--[if lt IE 9]>
       <%= javascript_include_tag "libs/html5shiv.js" %>
       <%= javascript_include_tag "libs/selectivizr-min.js" %>
@@ -35,7 +33,6 @@
           min-width: 960px;
         }
       </style>
-	  <script type="text/javascript" src="//serverapi.arcgisonline.com/jsapi/arcgis/3.3compact/"></script>
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
     <link rel="shortcut icon" href="/img/favicon.ico">
@@ -113,6 +110,10 @@
             </nav>
             
             <%= link_to "Esri", "http://www.esri.com", id: "esri-logo" %>
+            
+            <div id="lg-container" class="dropdown-navigation">
+              <div id="lang-block"></div>
+            </div>
             
             <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
               <a href="#" class="dropdown btn small light icon icon-list-2"><%= t("site.nav.select") %></a>
