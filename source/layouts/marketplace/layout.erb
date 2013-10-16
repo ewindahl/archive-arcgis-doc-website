@@ -77,20 +77,13 @@
    <%= javascript_include_tag "locale/l10NStrings" %>
    <%= javascript_include_tag "locale/langSelector" %>-->
 
+   <!-- set dropdown/show home in footer -->
+  <script>
+    $(document).ready(function(){
+      $($("#dropDown a").get (3)).addClass ("current selected");
+    });
+  </script>
 
-    <!--- search MD -->
-	<script>
-	/* Temporary fix for tablet version of "get started/blog column" issue. */
-		$(document).ready(function(){
-			//$(".container .tablet-column-24").css('width','66.666%')
-			//$(".container .column-8").css('width','33.333%')
-		});
-
-      <!-- note style issue hack -->
-      $(".note h5").each(function(){
-         //$(this).css('height',$(this).parent().innerHeight()-50);
-      });
-	</script>
   </head>
   <body>
     <div id="wrapper">
@@ -103,32 +96,13 @@
                   <a id="site-logo" href="http://marketplace.arcgis.com/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
                   <span class="down-arrow" id="down-arrow"></span>
                 </div>
-                <nav id="dropDown">
-                  <a href="http://www.arcgis.com">
-                    <h4 data-langlabel="arcgis">ArcGIS</h4>
-                    <p data-langlabel="arcgis-desc">Learn more about ArcGIS for Organizations</p>
-                  </a>
-                  <a href="http://developers.arcgis.com">
-                    <h4 data-langlabel="arcgis-for-developers">ArcGIS for Developers</h4>
-                    <p data-langlabel="arcgis-for-developers-desc">Build location-aware apps with ArcGIS</p>
-                  </a>
-                  <a href="http://pro.arcgis.com">
-                    <h4 data-langlabel="arcgis-for-professionals">ArcGIS for Professionals</h4>
-                    <p data-langlabel="arcgis-for-professionals-desc">Build your GIS foundation on desktop and server</p>
-                  </a>
-				  <a href="http://marketplace.arcgis.com/"  class="current selected">
-                    <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
-                    <p data-langlabel="arcgis-marketplace-desc">Get apps and data for your organization</p>
-                  </a>
-                </nav>
-                <nav>
+                
+                <%= partial "_partial/site_header_dropdown" %>
 
-                </nav>
-
-
-              <form id="mkpSearchForm" action="#">
-                <input type="search" name="mkpSearch"  placeholder="Search for apps and data">
-              </form>
+                <nav></nav>
+                <form id="mkpSearchForm" action="#">
+                  <input type="search" name="mkpSearch"  placeholder="<%= t("site.nav.mpSearch") %>">
+                </form>
 
 
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
@@ -137,30 +111,30 @@
                   <div id="lang-block"></div>
                </div> -->
 
-      <div id="logged-out-navigation" class="dropdown-navigation">
-        <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#">Sign In</a>
-      </div>
-      <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
-        <a id="login-link" class="dropdown btn small light" href="#">user</a>
-        <div class="dropdown-content">
-          <div class="dropdown-menu">
-            <ul class="myconsole">
-              <li><a href="#">My Console</a></li>
-            </ul>
-            <hr class="myconsole" />
-            <ul>
-              <li><a href="#">Log out</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+              <div id="logged-out-navigation" class="dropdown-navigation">
+                <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#"><%= t("site.nav.sign_in") %></a>
+              </div>
 
+              <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
+                <a id="login-link" class="dropdown btn small light" href="#"><%= t("site.nav.sign_in_user") %></a>
+                <div class="dropdown-content">
+                  <div class="dropdown-menu">
+                    <ul class="myconsole">
+                      <li><a href="#"><%= t("site.nav.sign_in_myconsole") %></a></li>
+                    </ul>
+                    <hr class="myconsole" />
+                    <ul>
+                      <li><a href="#"><%= t("site.nav.sign_in_logout") %></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-            <nav class="right-nav">
-               <ul>
-                  <li><a href="/en/marketplace/">Help</a></li>
-               </ul>
-            </nav>
+              <nav class="right-nav">
+                 <ul>
+                    <li><%= link_to t("site.nav.help"), t("paths.mphelp") %></li>
+                 </ul>
+              </nav>
 
               </div>
           </div>
@@ -177,48 +151,19 @@
           <nav>
             <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
             <ul>
-               <li><a data-langlabel="home" href="http://marketplace.arcgis.com">Home</a></li>
-               <li class="myconsole"><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html">My Console</a></li>
-              <li><a data-langlabel="help" href="/en/marketplace/">Help</a></li>
+               <li><a data-langlabel="home" href="http://marketplace.arcgis.com"><%= t("site.nav.home") %></a></li>
+               <li class="myconsole"><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html"><%= t("site.nav.sign_in_myconsole") %></a></li>
+              <li><a data-langlabel="help" href="<%= t("paths.mphelp") %>"><%= t("site.nav.help") %></a></li>
 
             </ul>
           </nav>
-          <nav>
-            <h4 data-langlabel="arcgis-platform" >ArcGIS Platform</h4>
-            <ul>
-              <li><a data-langlabel="arcgis" href="http://www.arcgis.com">ArcGIS</a></li>
-              <li><a data-langlabel="arcgis-marketplace" href="http://marketplace.arcgis.com">ArcGIS Marketplace</a></li>
-              <li><a data-langlabel="arcgis-for-professionals" href="http://pro.arcgis.com/">ArcGIS for Professionals</a></li>
-              <li><a data-langlabel="arcgis-for-developers" href="http://developers.arcgis.com">ArcGIS for Developers</a></li>
-            </ul>
-          </nav>
-          <nav>
-            <h4 data-langlabel="about-esri" >About Esri</h4>
-            <ul>
-              <li><a data-langlabel="about-us" href="http://www.esri.com/about-esri/">About Us</a></li>
-              <li><a data-langlabel="careers" href="http://www.esri.com/careers/">Careers</a></li>
-              <li><a data-langlabel="insiders-blog" href="http://blogs.esri.com/esri/esri-insider/">Insiders Blog</a></li>
-              <li><a data-langlabel="user-conference" href="http://www.esri.com/events/user-conference/index.html">User Conference</a></li>
-              <li><a data-langlabel="developer-summit" href="http://www.esri.com/events/devsummit/index.html">Developer Summit</a></li>
-            </ul>
-          </nav>
-          <nav class="right">
-            <a id="esri-logo-footer" href="http://www.esri.com/">Esri</a>
-            <section id="footer-social-nav">
-              <a class="icon-twitter" href="https://twitter.com/Esri/"></a>
-              <a class="icon-facebook" href="https://www.facebook.com/esrigis/"></a>
-              <a class="icon-github" href="http://esri.github.com/"></a>
-              <a class="icon-email" href="http://www.esri.com/about-esri/contact/"></a>
-            </section>
-          </nav>
-          <small id="footer-legal">
-            &copy; Copyright 2013 Environmental Systems Research Institute, Inc. |
-            <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy-arcgis">Privacy</a> |
-            <a data-langlabel="legal" href="http://www.esri.com/legal/software-license/">Legal</a>
-          </small>
+
+          <%= partial "_partial/site_footer_common" %>
         </div>
+
       </div>
     </footer>
+
     <%= javascript_include_tag "drop-down" %>
   </body>
 </html>

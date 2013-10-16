@@ -1,6 +1,8 @@
 # Middleman Config
-
 require "arcgis-framework"
+
+activate :i18n, :mount_at_root => false
+activate :directory_indexes
 
 set :css_dir, 'css'
 set :js_dir, 'js'
@@ -8,27 +10,32 @@ set :images_dir, 'img'
 set :fonts_dir, 'fonts'
 
 # Helpers function block
-#helpers do
+helpers do
 
-# --- Method to new partial path
-#  alias_method(:original_partial, :partial)
+  alias_method :original_partial, :partial
 
-#  def partial(path, options = {})
-#    new_path = "/" + path.to_s
-#    original_partial(new_path.to_sym, options)
-#  end
+  def partial(path, options = {})
+      new_path = "localizable/" + path.to_s
+      original_partial(new_path.to_sym, options)
+  end
 
-# --- End method of new partial path
-#end
+  def t key
+    I18n.t key
+  end
 
-activate :directory_indexes
+  def current_language
+    I18n.locale.to_s
+  end
+end
+
 
 #Folder specific layout
-page "/es/*", :layout => "es"
-page "/en/marketplace/*", :layout => "marketplace/layout"
+#page "/es/*", :layout => "es"
+#page "/en/marketplace/*", :layout => "marketplace/layout"
 
 configure :build do
   # Minify CSS on build
+
   activate :minify_css
 
   # Minify Javascript on build
