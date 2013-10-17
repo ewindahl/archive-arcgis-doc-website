@@ -43,21 +43,27 @@ doc.cookieJar = (function(){
 
 
 doc.l10n = (function () {
-    var rclgL = {
-            "en": "en", "en-US": "en",
-            "de": "de",
-            "es": "es",
-            "fr": "fr",
-            "ja": "ja",
-            "ru": "ru",
-            "zh-CN": "zh-cn", 
-            "zh-cn": "zh-cn"
-    },
 
-    langList = {
+    var langList = {
+        "en": "en",
         "en-us": "en",
+        "ar": "ar",
+        "da": "da",
         "de" : "de",
-        "ja" : "ja"
+        "es": "es",
+        "fr": "fr",
+        "it": "it",
+        "ja" : "ja",
+        "ko": "ko",
+        "nl" : "nl",
+        "no": "no",
+        "pl": "pl",
+        "pt-br": "pt-br",
+        "pt-pt": "pt-pt",
+        "ro": "ro",
+        "ru": "ru",
+        "sv": "sv",
+        "zh-cn": "zh-cn"
     },  
 
 
