@@ -44,7 +44,7 @@ def doBuild (lg, srcRoot, buildDir):
    shutil.copyfile(srcfp, dstfp)
 
    #copy source
-   srcd = op.join (srcRoot, "source.{0}".format (lg))
+   srcd = op.join (srcRoot, "source.other/{0}".format (lg))
    dstd = op.join (dstRoot, "source")
    print "copy {0} -> {1}".format (srcd, dstd)
    shutil.copytree(srcd, dstd)
