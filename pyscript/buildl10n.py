@@ -2,6 +2,7 @@ import os
 import sys
 import traceback
 
+import platform
 import shutil
 import subprocess
 
@@ -64,7 +65,8 @@ def doBuild (lg, srcRoot, buildDir):
    #build
    os.chdir (dstRoot)
    print "cd ", os.getcwd()
-   print subprocess.check_output(["bundle", "exec", "middleman", "build"])
+   bundle = "bundle.bat" if platform.system() == "Windows" else "bundle" 
+   print subprocess.check_call([bundle, "exec", "middleman", "build"])
 
    #copy result
    srcd = op.join (dstRoot, "build", lg)
