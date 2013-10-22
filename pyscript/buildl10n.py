@@ -2,6 +2,7 @@ import os
 import sys
 import traceback
 
+import platform
 import shutil
 import subprocess
 
@@ -44,7 +45,7 @@ def doBuild (lg, srcRoot, buildDir):
    shutil.copyfile(srcfp, dstfp)
 
    #copy source
-   srcd = op.join (srcRoot, "source.{0}".format (lg))
+   srcd = op.join (srcRoot, "source.other/{0}".format (lg))
    dstd = op.join (dstRoot, "source")
    print "copy {0} -> {1}".format (srcd, dstd)
    shutil.copytree(srcd, dstd)
@@ -64,7 +65,8 @@ def doBuild (lg, srcRoot, buildDir):
    #build
    os.chdir (dstRoot)
    print "cd ", os.getcwd()
-   print subprocess.check_output(["bundle", "exec", "middleman", "build"])
+   bundle = "bundle.bat" if platform.system() == "Windows" else "bundle" 
+   print subprocess.check_call([bundle, "exec", "middleman", "build"])
 
    #copy result
    srcd = op.join (dstRoot, "build", lg)
