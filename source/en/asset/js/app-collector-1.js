@@ -28,7 +28,7 @@ $(document).ready(function() {
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
 
-    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|macintosh)/gi))) {
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
       plat = prodIOSVal;
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
