@@ -1427,7 +1427,7 @@
       "win-phone-app": "ArcGIS app (Win Phone)",
       "windows-phone": " Windows Phone"
    },
-   "pt-BR": {
+   "pt-br": {
       "404-note": "The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem. ",
       "about-esri": "About Esri ",
       "about-us": "About Us ",
