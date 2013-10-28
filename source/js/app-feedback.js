@@ -366,16 +366,18 @@ doc.supportForm = (function() {
 
 
 
-		addReferrerLink : function () {
+		addReferrerLink : function (curlang) {
 			var referPageLink = "",
 				tempArr = document.URL.split('?');
+
 
 			document.getElementById('referPageLink').value = "Return to the " + "<a href=''>referring page</a>";			
 			if(tempArr.length >= 2){
 				var queryString = tempArr[1];
 				var tempArr2 = queryString.split('=');
-				if(tempArr2[0] == "referrer_url" && tempArr2[1] != ""){
-					document.getElementById('referPageLink').innerHTML = "Return to the " + "<a href='" + tempArr2[1] +"'>referring page</a>";
+				if((localeJsonObj[curlang]['return-to-referring-page']) && (tempArr2[0] == "referrer_url" && tempArr2[1] != "")){
+					document.getElementById('referPageLink').innerHTML = localeJsonObj[curlang]['return-to-referring-page'];
+					$("#feedback-referring-link").attr("href",tempArr2[1]);
 				}
 			}
 		}
