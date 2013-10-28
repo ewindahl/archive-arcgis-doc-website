@@ -1,7 +1,7 @@
 ﻿//this file contains core library that is used by all/most pages
 
 function dbg (s) {
-    console.info (s);
+    //window.console && console.info (s);
 }
 
 //JKnight
