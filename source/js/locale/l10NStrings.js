@@ -1533,7 +1533,7 @@
       "win-phone-app": "ArcGIS app (Win Phone)",
       "windows-phone": " Windows Phone"
    },
-   "pt-PT": {
+   "pt-pt": {
       "404-note": "The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem. ",
       "about-esri": "About Esri ",
       "about-us": "About Us ",
@@ -2005,7 +2005,7 @@
       "win-phone-app": "ArcGIS app (Win Phone)",
       "windows-phone": " Windows Phone"
    },
-   "zh-CN": {
+   "zh-cn": {
       "404-note": "无法找到您所寻找的页面。检查您输入的 URL 并重试。如果通过外部链接转到此处，请联系我们以便我们修复该问题。 ",
       "about-esri": "关于 Esri ",
       "about-us": "关于我们 ",
