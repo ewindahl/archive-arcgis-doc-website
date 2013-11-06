@@ -1,7 +1,7 @@
 ﻿//this file contains core library that is used by all/most pages
 
 function dbg (s) {
-    console.info (s);
+    //window.console && console.info (s);
 }
 
 //JKnight
@@ -15,45 +15,6 @@ if (!String.prototype.format) {
     };
 }
 
-/*
-
-            rclgL = {
-                "en": "en", "en-US": "en",
-                "de": "de",
-                "es": "es",
-                "fr": "fr",
-                "ja": "ja",
-                "ru": "ru",
-                "zh-CN": "zh-cn", "zh-cn": "zh-cn"
-            },
-
-        //RC fully supported langs
-    lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","ru","sv"],
-
-        //all langs
-            lgPickerLabels = {
-                "en": "English",
-                "ar": "عربي",
-             "da": "Dansk",
-                "de": "Deutsch",
-                "es": "Español",
-                "fr": "Français",
-                "it": "Italiano",
-                "ja": "日本語",
-                "ko": "한국어",
-                "nl": "Nederlands",
-                "no": "Norsk",
-                "pl": "Polski",
-                "pt-br": "Português (Brasil)",
-        "pt-pt": "Português (Portugal)",
-                "ro": "Română",
-                "ru": "Русский",
-                "sv": "Svenska",
-                "zh-cn": "中文(简体)"
-            },
-
-*/
 
 jQuery(document).ready(function ($) {
   var winloc = window.location;
@@ -106,29 +67,34 @@ jQuery(document).ready(function ($) {
 
 
   doc.l10n = (function () {
-      var rclgL = {
-              "en": "en", "en-US": "en",
-              "de": "de",
-              "es": "es",
-              "fr": "fr",
-              "ja": "ja",
-              "ru": "ru",
-              "zh-CN": "zh-cn", 
-              "zh-cn": "zh-cn"
-      },
 
-      /* tchen: FILL THIS OUT COMPLETELY */
       /* THIS IS THE MAPPING BETWEEN BROWSER LOCALE AND OUR LANG*/
-      langList = {
+      var langList = {
+          "en": "en",
           "en-us": "en",
+          "ar": "ar",
+          "da": "da",
           "de" : "de",
-          "ja" : "ja"
+          "es": "es",
+          "fr": "fr",
+          "it": "it",
+          "ja" : "ja",
+          "ko": "ko",
+          "nl" : "nl",
+          "no": "no",
+          "pl": "pl",
+          "pt-br": "pt-br",
+          "pt-pt": "pt-pt",
+          "ro": "ro",
+          "ru": "ru",
+          "sv": "sv",
+          "zh-cn": "zh-cn"
       },  
 
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","ru","sv"],
+      lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","sv"],
 
       //all langs
       lgPickerLabels = {
@@ -263,10 +229,19 @@ jQuery(document).ready(function ($) {
                   langTxt.appendTo(lgPicker);
               });
 
+              $("body").on ("click", function (evt) {
+                if ($("#lgpicker").hasClass ("show")) {
+                  evt.preventDefault();
+                  $("#lgpicker").toggleClass("show");
+                  $('#lgarrow').toggleClass('arrow-down arrow-up');                  
+                }
+              });
+
               $("#lglink").on ("click", function (evt) {
                   evt.preventDefault();
                   $("#lgpicker").toggleClass("show");
                   $('#lgarrow').toggleClass('arrow-down arrow-up');
+                  evt.stopPropagation();
               });
 
 
@@ -397,6 +372,8 @@ jQuery(document).ready(function ($) {
 
       } else {
         if (doc.l10n.isSupportedLang(prefLang) && !doc.l10n.isEN(prefLang)) {
+          //potential infinite loop (change lang folder to invalid choice)
+          //should check for invalid lang folder first before redirect
           window.location = doc.l10n.toLocaleUrl (prefLang);
           return false;
         }
