@@ -45,7 +45,7 @@
     <% end %>
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
-    <%= javascript_include_tag  "libs/kss", "libs/highlight.pack" %>
+    <%= javascript_include_tag  "libs/highlight.pack" %>
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>

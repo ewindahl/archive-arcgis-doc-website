@@ -1,7 +1,7 @@
 $('body').click(function() {
     $('#dropDown').hide();
     $('#openMenu').removeClass('active');
-    console.log("clicked");
+    //console.log("clicked");
     
     /*$('#dropDownAccount').hide();
     $('#openMenuAccount').removeClass('active');*/
