@@ -134,7 +134,7 @@ $(document).ready(function() {
 		}
 
 		$ele.attr ("href", url);
-		console.log(url);
+		//console.log(url);
 	});
 
 
