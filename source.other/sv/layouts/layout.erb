@@ -1,0 +1,189 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-215788-63']);
+      _gaq.push(['_setDomainName', 'arcgis.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <!--[if lt IE 9]>
+      <%= javascript_include_tag "libs/html5shiv.js" %>
+      <%= javascript_include_tag "libs/selectivizr-min.js" %>
+      <style>
+        #wrapper {
+          min-width: 960px;
+        }
+      </style>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <%= stylesheet_link_tag "screen" %>
+    <% if current_page.data.css %>
+      <% current_page.data.css.each do |stylesheet| %>
+        <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
+      <% end %>
+    <% end %>
+
+    <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
+    <%= javascript_include_tag  "libs/kss", "libs/highlight.pack" %>
+    <% if current_page.data.js %>
+      <% current_page.data.js.each do |javascript| %>
+        <%= javascript_include_tag javascript %>
+      <% end %>
+    <% end %>
+    <% if current_page.data.mobile %>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+    <% else %>
+      <style>
+        body {
+          min-width: 768px;
+        }
+      </style>
+    <% end%>
+
+	<!--- search MD -->
+	<% if current_page.data.metatags %>
+      <% current_page.data.metatags.each do |v| %>
+        <%= v %>
+      <% end %>
+    <% end %>
+
+   <!-- Language Picker-->
+   <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
+   <%= javascript_include_tag "locale/l10NStrings" %>
+   <%= javascript_include_tag "locale/langSelector" %>
+
+
+   <!-- set dropdown/show home in footer -->
+  <script>
+    $(document).ready(function(){
+      $($("#dropDown a").get (0)).addClass ("current selected");
+      $("#footer .home").toggleClass("hide");
+    });
+  </script>
+
+    <!--- search MD -->
+	<script>
+	/* Temporary fix for tablet version of "get started/blog column" issue. */
+		$(document).ready(function(){
+			$(".container .tablet-column-24").css('width','66.666%');
+			$(".container .column-8").css('width','33.333%');
+      $(".note h5").each(function(){
+         $(this).css('height',$(this).parent().innerHeight()-50);
+      });
+		});
+	</script>
+  </head>
+  <body class="<%= current_language %>" >
+    <div id="wrapper">
+      <div id="page">
+
+      <header id="header">
+        <div class="container relative-container">
+          <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
+
+            <div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
+
+            <%= partial "_partial/site_header_dropdown" %>
+            <nav>
+              <%= partial "_partial/site_header_nav" %>
+            </nav>
+            
+            <%= link_to "Esri", "http://www.esri.com", id: "esri-logo" %>
+            
+            <div id="lg-container" class="dropdown-navigation">
+              <div id="lang-block"></div>
+            </div>
+            
+            <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
+              <a href="#" class="dropdown btn small light icon icon-list-2"><%= t("site.nav.select") %></a>
+              <div class="dropdown-content">
+                <div class="dropdown-menu">
+                  <%= partial "_partial/site_header_nav" %>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </header>
+
+
+      <%= yield %>
+
+<% if current_page.data.blog_url or current_page.data.forum_url or current_page.data.agol_gallery %>
+	<script>
+	  $(window).load(function() {
+		  <% if current_page.data.blog_url %>
+		  $("#blog").rssFeed({
+			url:"<%= current_page.data.blog_url %>", 
+			max: 2, 
+			layout: 0
+		  });
+		  <% end %>
+		  <% if current_page.data.forum_url %>
+		  $("#forum").rssFeed({
+			url:"<%= current_page.data.forum_url%>", 
+			max: 2,        
+			layout: 1
+		  });
+		  <% end %>
+		  <% if current_page.data.agol_gallery %>
+			  <% if !current_page.data.agol_url %>
+					$("#gallery-cont").agolGallery({
+					    url: "http://www.arcgis.com/sharing/rest/search?q=%20group%3A5e79591f54564399b99c76ec58a245ab%20-type:%22Code%20Attachment%22%20-type:%22Featured%20Items%22%20-type:%22Symbol%20Set%22%20-type:%22Color%20Set%22%20-type:%22Windows%20Viewer%20Add%20In%22%20-type:%22Windows%20Viewer%20Configuration%22%20%20-type:%22Code%20Attachment%22%20-type:%22Featured%20Items%22%20-type:%22Symbol%20Set%22%20-type:%22Color%20Set%22%20-type:%22Windows%20Viewer%20Add%20In%22%20-type:%22Windows%20Viewer%20Configuration%22%20&num=10&sortField=modified&sortOrder=desc&f=json",
+					   max:8
+					  });
+				<% else %>
+		  			$("#gallery-cont").agolGallery({
+					   url: "<%= current_page.data.agol_url %>",
+					   max:8
+					  });
+				<% end %>
+		  <% end %>
+	  });
+	</script>
+	<% end %>
+
+      </div>
+    </div>
+  
+
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <nav>
+            <h4>ArcGIS</h4>
+            <%= partial "_partial/site_header_nav" %>
+          </nav>
+
+          <%= partial "_partial/site_footer_common" %>
+
+        </div>
+
+      </div>
+    </footer>
+
+    <%= javascript_include_tag "drop-down" %>
+  </body>
+</html>
