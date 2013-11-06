@@ -372,6 +372,8 @@ jQuery(document).ready(function ($) {
 
       } else {
         if (doc.l10n.isSupportedLang(prefLang) && !doc.l10n.isEN(prefLang)) {
+          //potential infinite loop (change lang folder to invalid choice)
+          //should check for invalid lang folder first before redirect
           window.location = doc.l10n.toLocaleUrl (prefLang);
           return false;
         }
