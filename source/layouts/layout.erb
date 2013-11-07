@@ -71,7 +71,11 @@
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
    <%= javascript_include_tag "locale/l10NStrings" %>
-   <%= javascript_include_tag "locale/langSelector" %>
+      
+   <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
+   <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
+	<%= javascript_include_tag "locale/langSelector" %>
+   <% end %>
 
 
    <!-- set dropdown/show home in footer -->
@@ -88,9 +92,6 @@
 		$(document).ready(function(){
 			$(".container .tablet-column-24").css('width','66.666%');
 			$(".container .column-8").css('width','33.333%');
-      $(".note h5").each(function(){
-         $(this).css('height',$(this).parent().innerHeight()-50);
-      });
 		});
 	</script>
   </head>
