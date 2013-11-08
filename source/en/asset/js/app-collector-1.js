@@ -18,7 +18,8 @@ $(document).ready(function() {
         '</p>',
 
 		prodKey = "collector",
-		prodDVal = "android",
+      prodDVal = "android",
+      prodIOSVal = "ios",
 		homePath = "/en/collector",
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
@@ -26,6 +27,27 @@ $(document).ready(function() {
 		fldpath = parts.join ("/"),
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
+
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
+      plat = prodIOSVal;
+      if (!isHome) {
+         UASpecificRedirect (plat, pathname);
+      }
+    }
+
+   function UASpecificRedirect (plat, pathname) {
+
+			var parts = pathname.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = pathname.replace ("/"+prodDVal+"/", "/"+plat+"/");
+
+			if (pathname.indexOf (homePath) === 0 ) {
+				window.location.replace(newHref);
+            $.cookie (prodKey, plat, {expires: new Date(2020,1,1), path:"/"});
+			}
+
+	}
 
 	function modHomeUrls (plat) {
 		$("a[href]").each (function (i) {
