@@ -1,5 +1,8 @@
 var doc = {};
 
+function dbg (s) {
+    //window.console && console.info (s);
+}
 doc.cookieJar = (function(){
     return {
         getItem: function (sKey) {
