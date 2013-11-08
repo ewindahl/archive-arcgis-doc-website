@@ -1,18 +1,27 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+---
+title: Esri Maps for Office
+css:
+  - documentation
+  - screen
+  - /es/asset/css/common
+  - stat-page-specific
+  - /es/asset/css/app-switch-1
+  - colorbox/colorbox
+
+js:
+  - config
+  - dojo-config
+  - libs/jquery-1.9.1.min
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+
+mobile: true
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
@@ -167,7 +176,9 @@ metatags:
 
     </div>
 
- 
+ <!--[if gt IE 8]><!-->
+      <script type="text/javascript" src="//serverapi.arcgisonline.com/jsapi/arcgis/3.4compact/"></script>
+    <!--<![endif]-->
 
 	<script src="/es/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
