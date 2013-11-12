@@ -23,6 +23,8 @@ $(document).ready(function() {
 
 		prodKey = "arcgisapp",
 		prodDVal = "android",
+      prodIOSVal = "ios",
+      prodWPVal = "windows-phone",
 		homePath = "/en/arcgis-app",
 		forumPath = "/en/arcgis-app/forum"
 
@@ -40,6 +42,34 @@ $(document).ready(function() {
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath,
 		isForum = fldpath === forumPath;
+
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
+      plat = prodIOSVal;
+
+      if (!isHome) {
+         UASpecificRedirect (plat, pathname);
+      }
+    } else if (!($.cookie (prodKey)) && (navigator.userAgent.match(/(windows phone)/gi))){
+      plat = prodWPVal;
+      if (!isHome) {
+         UASpecificRedirect (plat, pathname);
+      }
+    }
+
+   function UASpecificRedirect (plat, pathname) {
+
+			var parts = pathname.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = pathname.replace ("/"+prodDVal+"/", "/"+plat+"/");
+
+			if (pathname.indexOf (homePath) === 0 ) {
+				window.location.replace(newHref);
+            $.cookie (prodKey, plat, {expires: new Date(2020,1,1), path:"/"});
+			}
+
+	}
+
 
 	function modHomeUrls (plt) {
 		$("a[href]").each (function (i) {
@@ -79,7 +109,7 @@ $(document).ready(function() {
 		if (isForum) {
 			modForumUrls (plat);
 		} else {
-			$('.reference-content h1:first').after (val);
+			$('.reference-content .page-title').after (val);
 		}
 	} else {
 		modHomeUrls (plat);
@@ -104,7 +134,7 @@ $(document).ready(function() {
 		}
 
 		$ele.attr ("href", url);
-		console.log(url);
+		//console.log(url);
 	});
 
 

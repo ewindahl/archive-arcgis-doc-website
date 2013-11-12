@@ -1,0 +1,32 @@
+<nav>
+  <h4 data-langlabel="arcgis-platform"><%= t("site.footer.platform") %></h4>
+  <ul>
+    <li><%= link_to t("site.drop_down.arc.title"), t("site.drop_down.arc.link"), "data-langlabel" => "arcgis" %></li>
+    <li><%= link_to t("site.drop_down.dev.title"), t("site.drop_down.dev.link"), "data-langlabel" => "arcgis-for-developers" %></li>
+    <li><%= link_to t("site.drop_down.pro.title"), t("site.drop_down.pro.link"), "data-langlabel" => "arcgis-for-professionals" %></li>
+    <li><%= link_to t("site.drop_down.marketplace.title"), t("site.drop_down.marketplace.link"), "data-langlabel" => "arcgis-marketplace" %></li>
+  </ul>
+</nav>
+
+<nav>
+  <h4 data-langlabel="about-esri"><%= t("site.footer.about.esri.title") %></h4>
+  <ul>
+    <li><%= link_to t("site.footer.about.us.title"), t("site.footer.about.us.link"), "data-langlabel" => "about-us" %></li>
+    <li><%= link_to t("site.footer.about.careers.title"), t("site.footer.about.careers.link"), "data-langlabel" => "careers" %></li>
+    <li><%= link_to t("site.footer.about.insiders.title"), t("site.footer.about.insiders.link"), "data-langlabel" => "insiders-blog" %></li>
+    <li><%= link_to t("site.footer.about.user_conf.title"), t("site.footer.about.user_conf.link"), "data-langlabel" => "user-conference" %></li>
+    <li><%= link_to t("site.footer.about.dev_summit.title"), t("site.footer.about.dev_summit.link"), "data-langlabel" => "developer-summit" %></li>
+  </ul>
+</nav>
+
+<nav>
+  <%= link_to "Esri", t("site.footer.about.esri.link"), id: "esri-logo-footer" %>
+  <section id="footer-social-nav">
+    <%= link_to "", t("site.footer.social.twitter"), class: "icon-twitter" %>
+    <%= link_to "", t("site.footer.social.facebook"), class: "icon-facebook" %>
+    <%= link_to "", t("site.footer.social.github"), class: "icon-github" %>
+    <%= link_to "", t("site.footer.social.contact"), class: "icon-email" %>
+  </section>
+</nav>
+<small id="footer-legal"><a href="<%= t("site.legal.cr.link") %>"><%= t("site.legal.cr.title") %> &copy; <%= Time.now.year %> Esri. </a> <%= t("site.legal.reserved") %> | <%= link_to t("site.legal.privacy.title"), t("site.legal.privacy.link"), "data-langlabel" => "privacy" %> | <%= link_to t("site.legal.legal.title"), t("site.legal.legal.link"), "data-langlabel" => "legal" %></small>
+

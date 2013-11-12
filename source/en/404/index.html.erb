@@ -2,21 +2,22 @@
 title: Page Not Found - ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - feedback
 
 js:
-  - libs/jquery.cookie
   - app-feedback
 
 metatags:
   - <META name="robot" content="NOINDEX|NOFOLLOW">
 
+languageSelector: "No"
+
 mobile: true
 
 ---
+
 <div class="navigation-bar blue">
   <div class="container feedback">
     <header>
@@ -68,14 +69,13 @@ mobile: true
 		  <label data-langlabel="feedback-spam-note" for="email">To help prevent automated spam, enter the numerals you see: </label>
 		  <input type="text" placeholder="1 2 3 4 5 6 7" value="" name="txtCaptchaInput" id="txtCaptchaInput">
 
-		   <label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
+		   <label for="captchaValue"><span data-langlabel="numerals">Numerals: </span><strong><span id="txtCaptcha" class=""></span></strong></label>
 
         </fieldset>
-        <!--<input type="hidden" value="https://developers.arcgis.com/en/thank-you" name="redirectUrl" id="redirect-url">-->
         <input type="hidden" value="internal" name="source" id="source">
         <input type="hidden" value="" name="redirectUrl" id="redirectUrl">
         <input type="hidden" value="en" name="lg">
-        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" onClick="return validateFeedbackForm();" name="submitFeedback">
+        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" name="submitFeedback">
       </form>
     </div>
 
@@ -83,11 +83,30 @@ mobile: true
 
   <p>&nbsp;</p>
 
+
 <script>
 $(document).ready(function() {
-		document.getElementById('regarding').value = document.location.href;
-		document.getElementById('redirectUrl').value = "http://" + window.location.host + "/en/thank-you/";
-		DrawCaptcha();
+
+    var winloc = window.location,
+        referrer = document.referrer;
+
+    $('#regarding').val (referrer);
+    $('#redirectUrl').val ("http://" + winloc.host + "/en/thank-you/");
+
+    $('#feedback-form :submit').on ("click", function() {
+      doc.supportForm.validateFeedbackForm();
+    });
+    doc.supportForm.DrawCaptcha();
+
+    var docCfg = docCfg || {},
+        urlLang = doc.l10n.getReferrerLang(),
+        curlang = doc.l10n.calcPrefLang (docCfg["langSelector"] || "all", urlLang);
+
+
+    if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) { 
+      doc.l10n.changeLabel (curlang);
+    }
+
 
 	});
 </script>
