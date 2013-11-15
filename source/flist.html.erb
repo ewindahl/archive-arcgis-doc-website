@@ -12,8 +12,7 @@ layout: false
 <% pages = sitemap.resources.find_all{|p| p.source_file.match(/\.html/) } %>
 
 <% pages.each do |p| %>
-	<% #if not ["404.html", "thank-you.html", "flist.html", "feedback.html"].include?(p.destination_path) 
-		if not p.destination_path.match(/404\/|flist\/|feedback\/|thank-you\/|index-redirect/)
+	<% if not p.destination_path.match(/404\/|flist\/|feedback\/|thank-you\/|index-redirect/)
 	%>
 		<a href="<%= base_url + p.destination_path.gsub('index.html','') %>"><%= p.destination_path %></a>
 		<br/>
