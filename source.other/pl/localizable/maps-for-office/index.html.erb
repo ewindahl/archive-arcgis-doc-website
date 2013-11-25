@@ -1,26 +1,36 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+---
+title: Esri Maps for Office
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - stat-page-specific
+  - /en/asset/css/app-switch-1
+  - colorbox/colorbox
+
+js:
+  - config
+  - dojo-config
+  - libs/jquery-1.9.1.min
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+
+mobile: true
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
     <header>
       <h1><a href="/pl/maps-for-office/">Esri Maps for Office</a></h1>
-    </header> <nav>
+    </header>
+	<nav>
       <ul>
-        <li class='current'><a href="/pl/maps-for-office/">Strona główna</a></li>
+        <li class='current'><a href="/pl/maps-for-office/">Strona gł&oacute;wna</a></li>
         <li><a href="/pl/maps-for-office/help/">Pomoc</a></li>
         <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">Forum</a></li>
       </ul>
@@ -38,7 +48,7 @@ metatags:
           <span id="appVersion"><strong>Wersja:</strong> 2.1</span> <span id="appReleased"><strong>Data publikacji:</strong> Lipiec 2013</span>
 
 
-          <p>Dodatek Esri Maps for Office umożliwia szybkie tworzenie dynamicznych, interaktywnych map z wykorzystaniem danych z programu Excel, dzięki czemu możesz rozpocząć ich przeglądanie w zupełnie nowy sposób. Dodatek Esri Maps for Office pozwala odkryć zależności i trendy, które nie są w oczywisty sposób widoczne w danych tabelarycznych i na wykresach. Mapy mogą być udostępniane bezpośrednio za pomocą prezentacji PowerPoint lub publikowania jednym kliknięciem do chmury map Esri na platformie ArcGIS Online.</p>
+          <p>Dodatek Esri Maps for Office umożliwia szybkie tworzenie dynamicznych, interaktywnych map z wykorzystaniem danych z programu Excel, dzięki czemu możesz rozpocząć ich przeglądanie w zupełnie nowy spos&oacute;b. Dodatek Esri Maps for Office pozwala odkryć zależności i trendy, kt&oacute;re nie są w oczywisty spos&oacute;b widoczne w danych tabelarycznych i na wykresach. Mapy mogą być udostępniane bezpośrednio za pomocą prezentacji PowerPoint lub publikowania jednym kliknięciem do chmury map Esri na platformie ArcGIS Online.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Pobierz dodatek Esri Maps for Office</a>
@@ -54,9 +64,12 @@ metatags:
           <img src="map-your-data.jpg" />
 
           <h3>Mapuj swoje arkusze kalkulacyjne </h3>
-          <p>Dowiedz się, jak mapować dane programu Excel przy użyciu dodatku Esri Maps for Office. W łatwy sposób możesz tworzyć interaktywne kartogramy, mapy punktowe, mapy zagęszczenia punktów oraz mapy skupień bezpośrednio w programie Excel, dzięki czemu zyskujesz wizualną reprezentację danych, umożliwiającą ich lepsze zrozumienie.</p>
+          <p>Dowiedz się, jak mapować dane programu Excel przy użyciu dodatku Esri Maps for Office. W łatwy spos&oacute;b możesz tworzyć interaktywne kartogramy, mapy punktowe, mapy zagęszczenia punkt&oacute;w oraz mapy skupień bezpośrednio w programie Excel, dzięki czemu zyskujesz wizualną reprezentację danych, umożliwiającą ich lepsze zrozumienie.</p>
           <p>
-            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge"> Zapoznaj się z materiałem wideo</a> <video width="320" height="240" controls id="2457" class="mobileVideo"><source src="http://video.arcgis.com/download-video/2457/mp4/480"></video>
+            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">Zapoznaj się z materiałem wideo.</a>
+			<video width="320" height="240" controls id="2457" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2457/mp4/480">
+			</video>
           </p>
         </div>
 
@@ -65,9 +78,12 @@ metatags:
           <img src="enrich-data.jpg" />
 
           <h3>Wzbogać swoje dane</h3>
-          <p>Wykorzystaj bogactwo zbiorów danych firmy Esri w celu zwiększenia wartości danych biznesowych. Dodaj dane demograficzne i dane dotyczące stylu życia bezpośrednio do arkuszy kalkulacyjnych programu Excel i uzyskaj więcej informacji kontekstowych na temat miejsc, które są dla Ciebie ważne. Szybko eksploruj lokalizacje "w locie" za pomocą infografik podręcznych.</p>
+          <p>Wykorzystaj bogactwo zbior&oacute;w danych firmy Esri w celu zwiększenia wartości danych biznesowych. Dodaj dane demograficzne i dane dotyczące stylu życia bezpośrednio do arkuszy kalkulacyjnych programu Excel i uzyskaj więcej informacji kontekstowych na temat miejsc, kt&oacute;re są dla Ciebie ważne. Szybko eksploruj lokalizacje &quot;w locie&quot; za pomocą infografik podręcznych.</p>
           <p>
-           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge"> Zapoznaj się z materiałem wideo</a> <video width="320" height="240" controls id="2468" class="mobileVideo"><source src="http://video.arcgis.com/download-video/2468/mp4/480"></video>
+           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">Zapoznaj się z materiałem wideo.</a>
+		   <video width="320" height="240" controls id="2468" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2468/mp4/480">
+			</video>
           </p>
         </div>
 
@@ -77,7 +93,7 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>Wymagania systemowe</h2>
 
-        <p>Dodatek Esri Maps for Office wymaga posiadania konta, należącego do instytucji <a href="http://help.arcgis.com/pl/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> oraz programów Microsoft Office Excel lub PowerPoint 2010 lub Microsoft Office Excel lub PowerPoint 2013. Obsługiwane systemy operacyjne to:</p>
+        <p>Dodatek Esri Maps for Office wymaga posiadania konta, należącego do instytucji <a href="http://help.arcgis.com/pl/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> oraz program&oacute;w Microsoft Office Excel lub PowerPoint 2010 lub Microsoft Office Excel lub PowerPoint 2013. Obsługiwane systemy operacyjne to:</p>
 		<ul>
 		 <li>Windows XP (koniecznie z dodatkiem SP3) (wersja 32-bitowa)</li>
 		 <li>Windows 7 (wersja 32-bitowa i 64-bitowa)</li>
@@ -99,14 +115,14 @@ metatags:
 
         <a name="whatsNew"></a>
         <h2>Co nowego</h2>
-        <p>Dodatek Esri Maps for Office w wersji 2.1 został opublikowany w lipcu 2013 roku. Obejmuje on następujące ulepszenia:</p>
+        <p>Dodatek Esri Maps for Office w wersji 2.1 został opublikowany w lipcu 2013 roku. Zawierała ona następujące ulepszenia:</p>
         <ul>
         <li>Analiza statystyczna zależności za pomocą narzędzia Znajdź lokalizacje hot spot</li>
-		<li>Ulepszenia wzbogacania danych, w tym większa liczba zbiorów danych oraz możliwość wyboru poszczególnych zmiennych ze zbiorów danych.</li>
+		<li>Ulepszenia wzbogacania danych, w tym większa liczba zbior&oacute;w danych oraz możliwość wyboru poszczeg&oacute;lnych zmiennych ze zbior&oacute;w danych.</li>
 		<li>Obsługa bezpiecznego logowania za pomocą protokołu OAuth+SAML (AGOL)</li>
         <li>Obsługa bezpiecznego logowania przy użyciu IWA, PKI (tylko Portal)</li>
 		<li>Usprawnienia interfejsu użytkownika dla Infografik i narzędzia Wzbogać warstwę</li>
-		<li>Ulepszony schemat pracy do celów aktualizacji dodatku Maps for Office do najnowszej wersji</li>
+		<li>Ulepszony schemat pracy do cel&oacute;w aktualizacji dodatku Maps for Office do najnowszej wersji</li>
         </ul>
 
 
@@ -115,11 +131,11 @@ metatags:
         <ul>
           <li>Wzbogać swoje dane kontekstem geograficznym za pomocą nowego narzędzia Wzbogać warstwę</li>
 		  <li>Wybierz obiekty na swojej mapie i znajdź najbliższe obiekty w innych warstwach </li>
-		  <li>Menu kontekstowe mapy zawierają teraz Infografiki, które zapewniają bogate informacje kontekstowe o obszarach otaczających obiekty na mapie.</li>
+		  <li>Menu kontekstowe mapy zawierają teraz Infografiki, kt&oacute;re zapewniają bogate informacje kontekstowe o obszarach otaczających obiekty na mapie.</li>
 		  <li>Obsługa podglądu dla rozszerzenia Portal for ArcGIS 10.2</li>
 		  <li>Nowe opcje konfiguracyjne dla map skupień i grupowania</li>
-		  <li>Dodano możliwość filtrowania pogrupowanych obiektów na mapie dostępną po kliknięciu na granice klasy w legendzie mapy</li>
-		  <li>Ulepszony schemat pracy dla geokodowania adresów</li>
+		  <li>Dodano możliwość filtrowania pogrupowanych obiekt&oacute;w na mapie dostępną po kliknięciu na granice klasy w legendzie mapy</li>
+		  <li>Ulepszony schemat pracy dla geokodowania adres&oacute;w</li>
 		  <li>Obsługa dostosowywania galerii map bazowych z poziomu instytucji w serwisie ArcGIS Online.</li>
 		  <li>Funkcja Wstaw mapę korzysta z domyślnej mapy bazowej instytucji w serwisie ArcGIS Online.</li>
 		  <li>Wyszukiwanie danych w serwisie ArcGIS Online z wykorzystaniem popularnych kategorii, takich jak Zamożność, Biznes, Polityka i Zdrowie.</li>
@@ -129,7 +145,7 @@ metatags:
         </ul>
 
 
-        <p> </p>
+        <p>&nbsp;</p>
 
       </div>
 
@@ -160,7 +176,9 @@ metatags:
 
     </div>
 
- 
+ <!--[if gt IE 8]><!-->
+      <script type="text/javascript" src="//serverapi.arcgisonline.com/jsapi/arcgis/3.4compact/"></script>
+    <!--<![endif]-->
 
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
@@ -178,4 +196,3 @@ L = 0, 1 (default is 0)
 */
 
   </script>
-
