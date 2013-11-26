@@ -80,7 +80,7 @@ jQuery(document).ready(function ($) {
           "it": "it",
           "ja" : "ja",
           "ko": "ko",
-          "nl" : "nl",
+          /*"nl" : "nl",*/
           "no": "no",
           "pl": "pl",
           "pt-br": "pt-br",
@@ -94,7 +94,7 @@ jQuery(document).ready(function ($) {
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","sv"],
+      lgPartial = ["da","it","ko","no","pl","pt-br","pt-pt","ro","sv"],
 
       //all langs
       lgPickerLabels = {
@@ -107,7 +107,7 @@ jQuery(document).ready(function ($) {
           "it": "Italiano",
           "ja": "日本語",
           "ko": "한국어",
-          "nl": "Nederlands",
+          /*"nl": "Nederlands",*/
           "no": "Norsk",
           "pl": "Polski",
           "pt-br": "Português (Brasil)",

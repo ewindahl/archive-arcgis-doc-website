@@ -81,7 +81,7 @@ $(document).ready(function() {
     $('#redirectUrl').val ("http://" + winloc.host + "/en/thank-you/?referrer_url=" + referrer);
 
     $('#feedback-form :submit').on ("click", function() {
-      doc.supportForm.validateFeedbackForm();
+      return doc.supportForm.validateFeedbackForm();
     });
     doc.supportForm.DrawCaptcha();
 

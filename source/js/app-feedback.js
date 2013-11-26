@@ -331,7 +331,7 @@ doc.supportForm = (function() {
 				return false;
 			}
 			
-			if(!ValidCaptcha()){
+			if(!doc.supportForm.ValidCaptcha()){
 				alert("Please enter the valid captcha value!");
 				document.getElementById('txtCaptchaInput').focus();
 				return false;

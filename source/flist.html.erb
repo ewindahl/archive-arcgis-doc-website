@@ -1,0 +1,22 @@
+---
+layout: false
+
+---
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="ROBOTS" content="NOINDEX,FOLLOW" >
+   </head>
+   <body bgcolor="white">
+<% base_url = "/" %>
+<% pages = sitemap.resources.find_all{|p| p.source_file.match(/\.html/) } %>
+
+<% pages.each do |p| %>
+	<% if not p.destination_path.match(/404\/|flist\/|feedback\/|thank-you\/|index-redirect/)
+	%>
+		<a href="<%= base_url + p.destination_path.gsub('index.html','') %>"><%= p.destination_path %></a>
+		<br/>
+	<% end %>
+<% end %>
+</body>
+</html>
