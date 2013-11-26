@@ -1,23 +1,32 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+---
+title: Esri Maps for Office
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - stat-page-specific
+  - /en/asset/css/app-switch-1
+  - colorbox/colorbox
+
+js:
+  - config
+  - dojo-config
+  - libs/jquery-1.9.1.min
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+
+mobile: true
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/maps-for-office/">Esri Maps for Office</a></h1>
+      <h1><a href="/de/maps-for-office/">Esri Maps for Office</a></h1>
     </header>
 	<nav>
       <ul>
@@ -84,7 +93,7 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>Systemanforderungen</h2>
 
-        <p>Esri Maps for Office erfordert ein Konto, das Teil einer <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>-Organisation ist, sowie Microsoft Office Excel oder PowerPoint 2010 bzw. Microsoft Office Excel oder PowerPoint 2013. Die folgenden Betriebssysteme werden unterstützt:</p>
+        <p>Esri Maps for Office erfordert ein Konto, das Teil einer <a href="http://help.arcgis.com/de/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>-Organisation ist, sowie Microsoft Office Excel oder PowerPoint 2010 bzw. Microsoft Office Excel oder PowerPoint 2013. Die folgenden Betriebssysteme werden unterstützt:</p>
 		<ul>
 		 <li>Windows XP (SP3 erforderlich) (32-Bit)</li>
 		 <li>Windows 7 (32-Bit und 64-Bit)</li>
@@ -109,9 +118,9 @@ metatags:
         <p>Esri Maps for Office Version 2.1 wurde im Juli 2013 veröffentlicht. Es enthält folgende Verbesserungen:</p>
         <ul>
         <li>Analyse statistischer Muster über das Hot-Spot-Tool</li>
-		<li>Verbesserte Datenanreicherung, darunter mehr Datensammlungen, aus denen sich einzelne Variablen auswählen lassen</li>
-		<li>Support sicherer Anmeldungen durch OAuth+SAML (AGOL)</li>
-        <li>Support sicherer Anmeldungen durch IWA, PKI (nur Portal)</li>
+		<li>Verbesserte Anreicherung von Daten, darunter mehr Datensammlungen, aus denen sich einzelne Variablen auswählen lassen</li>
+		<li>Unterstützung sicherer Anmeldungen durch OAuth+SAML (AGOL)</li>
+        <li>Unterstützung sicherer Anmeldungen durch IWA, PKI (nur Portal)</li>
 		<li>Verbesserte Benutzerschnittstellen für Infografiken und das Werkzeug "Layer anreichern"</li>
 		<li>Verbesserter Workflow bei der Aktualisierung von Maps for Office auf die neueste Version</li>
         </ul>
@@ -167,7 +176,9 @@ metatags:
 
     </div>
 
- 
+ <!--[if gt IE 8]><!-->
+      <script type="text/javascript" src="//serverapi.arcgisonline.com/jsapi/arcgis/3.4compact/"></script>
+    <!--<![endif]-->
 
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
