@@ -1,4 +1,4 @@
-var localeJsonObj = {
+﻿var localeJsonObj = {
    "ar": {
       "404-note": "يتعذر العثور على الصفحة التي تبحث عنها. تأكد من عنوان URL الذي أدخلته وكرر المحاولة. إذا تم توجهيك إلى هنا من ارتباط خارجي، يرجى الاتصال بنا حتى يمكن معالجة المشكلة. ", 
       "about-esri": "نبذة عن Esri ", 
@@ -2195,4 +2195,5 @@ var localeJsonObj = {
       "win-phone-app": "ArcGIS app (Win Phone)", 
       "windows-phone": " Windows Phone"
    }
+>>>>>>> upstream/master
 };

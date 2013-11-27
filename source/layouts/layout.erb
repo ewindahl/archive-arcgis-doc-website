@@ -43,7 +43,7 @@
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
-
+	
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
     <%= javascript_include_tag  "libs/highlight.pack" %>
     <% if current_page.data.js %>
@@ -74,9 +74,16 @@
       
    <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
-	<%= javascript_include_tag "locale/langSelector" %>
+	<% if current_language == "ar" %> 
+		<%= javascript_include_tag "locale/langSelector_ar" %>
+		<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
+	<% else %>
+		<%= javascript_include_tag "locale/langSelector" %>
+	<% end %>
    <% end %>
-
 
    <!-- set dropdown/show home in footer -->
   <script>
