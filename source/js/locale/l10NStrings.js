@@ -2195,5 +2195,4 @@
       "win-phone-app": "ArcGIS app (Win Phone)", 
       "windows-phone": " Windows Phone"
    }
->>>>>>> upstream/master
 };
