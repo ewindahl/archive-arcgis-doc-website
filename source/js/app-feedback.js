@@ -331,7 +331,7 @@ doc.supportForm = (function() {
 				return false;
 			}
 			
-			if(!doc.supportForm.ValidCaptcha()){
+			if(!this.ValidCaptcha()){
 				alert("Please enter the valid captcha value!");
 				document.getElementById('txtCaptchaInput').focus();
 				return false;
@@ -353,6 +353,7 @@ doc.supportForm = (function() {
 			var g = '10';  
 			var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
 			document.getElementById("txtCaptcha").innerHTML = code;
+			document.getElementById("txtHiddenCaptcha").value = code;
 		},
 
 		ValidCaptcha : function () { 
@@ -360,7 +361,7 @@ doc.supportForm = (function() {
 				return string.split(' ').join('');
 			};
 
-			var str1 = removeSpaces(document.getElementById('txtCaptcha').innerHTML);
+			var str1 = removeSpaces(document.getElementById('txtHiddenCaptcha').value);
 			var str2 = removeSpaces(document.getElementById('txtCaptchaInput').value);
 			return (str1 === str2);
 		},
