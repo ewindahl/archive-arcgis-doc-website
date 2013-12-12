@@ -4,14 +4,12 @@ layout: marketplace/layout
 title: Feedback - ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - feedback
 
 js:
   - sitecfg
-  - libs/jquery.cookie
   - app-feedback
   - marketplace/init
 
@@ -65,10 +63,11 @@ mobile: true
 
         </fieldset>
         <!--<input type="hidden" value="https://developers.arcgis.com/en/thank-you" name="redirectUrl" id="redirect-url">-->
+		<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
         <input type="hidden" value="internal" name="source" id="source">
         <input type="hidden" value="" name="redirectUrl" id="redirectUrl">
         <input type="hidden" value="en" name="lg">
-        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" onClick="return validateFeedbackForm();" name="submitFeedback">
+        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" name="submitFeedback">
       </form>
     </div>
 
@@ -78,9 +77,25 @@ mobile: true
 
 <script>
 $(document).ready(function() {
-		document.getElementById('regarding').value = document.referrer;
-		document.getElementById('redirectUrl').value = "http://" + window.location.host + "/en/marketplace/thank-you/?referrer_url=" + document.referrer;
-		DrawCaptcha();
+    var winloc = window.location,
+        referrer = document.referrer;
+
+    $('#regarding').val (referrer);
+    $('#redirectUrl').val ("http://" + winloc.host + "/en/marketplace/thank-you/?referrer_url=" + referrer);
+
+    $('#feedback-form :submit').on ("click", function() {
+      return doc.supportForm.validateFeedbackForm();
+    });
+    doc.supportForm.DrawCaptcha();
+
+    var docCfg = docCfg || {},
+        urlLang = doc.l10n.getReferrerLang(),
+        curlang = doc.l10n.calcPrefLang (docCfg["langSelector"] || "all", urlLang);
+
+
+    if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) {   
+      doc.l10n.changeLabel (curlang);
+    }
 
 	});
 </script>

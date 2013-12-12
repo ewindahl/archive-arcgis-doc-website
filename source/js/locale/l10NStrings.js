@@ -1,4 +1,25 @@
-﻿var localeJsonObj = {
+﻿var GLangLabels = {
+          "en": "English",
+          "ar": "عربي",
+          "da": "Dansk",
+          "de": "Deutsch",
+          "es": "Español",
+          "fr": "Français",
+          "it": "Italiano",
+          "ja": "日本語",
+          "ko": "한국어",
+          "nl": "Nederlands",
+          "no": "Norsk",
+          "pl": "Polski",
+          "pt-br": "Português (Brasil)",
+          "pt-pt": "Português (Portugal)",
+          "ro": "Română",
+          "ru": "Русский",
+          "sv": "Svenska",
+          "zh-cn": "中文(简体)"
+};
+
+var localeJsonObj = {
    "ar": {
       "404-note": "يتعذر العثور على الصفحة التي تبحث عنها. تأكد من عنوان URL الذي أدخلته وكرر المحاولة. إذا تم توجهيك إلى هنا من ارتباط خارجي، يرجى الاتصال بنا حتى يمكن معالجة المشكلة. ", 
       "about-esri": "نبذة عن Esri ", 
@@ -118,7 +139,7 @@
       "user-conference": "مؤتمر المستخدمين ", 
       "video": "فيديو", 
       "we-are-sorry": "نتقدم بالاعتذار  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "da": {
@@ -240,7 +261,7 @@
       "user-conference": "Brugerkonference ", 
       "video": "Video", 
       "we-are-sorry": "Vi beklager  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "de": {
@@ -362,7 +383,7 @@
       "user-conference": "User Conference ", 
       "video": "Video", 
       "we-are-sorry": "Es tut uns leid  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "en": {
@@ -484,8 +505,78 @@
       "user-conference": "User Conference ", 
       "video": "Video", 
       "we-are-sorry": "We're sorry  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
-      "windows-phone": " Windows Phone"
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
+      "windows-phone": " Windows Phone",
+
+
+
+            "tryagain" : "Please try again later",
+            "results_zero" : "0 result",
+            "results_n" : "About {0} results (page {1} of {2})",
+
+            "collection": "Showing results within:",
+            "product": "Related To:",           
+            
+            "all": "All Collections",           
+            "all-ht": "All Collections",        
+
+            "help": "Help",         
+            "help-ht": "Help",            
+
+            "forums": "Forum",            
+            "forums-ht": "Forum",         
+
+            "videos": "Video",            
+            "videos-ht": "Video",         
+
+            "blogs": "Blog",
+            "blogs-ht": "Blog",
+
+            "any": "Any Product",         
+            "any-ht": "Any Product",            
+
+            "android-app" : "ArcGIS app (Android)",
+            "android-app-ht" : "ArcGIS app (Android)",
+
+            "ios-app" : "ArcGIS app (iOS)",
+            "ios-app-ht" : "ArcGIS app (iOS)",
+
+            "win-phone-app" : "ArcGIS app (Windows Phone)",
+            "win-phone-app-ht" : "ArcGIS app (Windows Phone)",
+            
+            "arcgis-online" : "ArcGIS Online",
+            "arcgis-online-ht" : "ArcGIS Online",
+
+            "collector-android" : "Collector (Android)",
+            "collector-android-ht" : "Collector for ArcGIS (Android)",
+
+            "collector-ios" : "Collector (iOS)",
+            "collector-ios-ht" : "Collector for ArcGIS (iOS)",
+
+            "esri-maps-office" : "Maps for Office",
+            "esri-maps-office-ht" : "Esri Maps for Office",
+
+            "esri-maps-sharepoint" : "Maps for Sharepoint",
+            "esri-maps-sharepoint-ht" : "Esri Maps for Sharepoint",
+
+            "ops-dashboard" : "Operations Dashboard",
+            "ops-dashboard-ht" : "Operations Dashboard for ArcGIS",
+
+        "bus-analyst-online" : "BAO - Bus Analyst Online",
+        "bus-analyst-online-ht" : "Business Analyst Online",
+
+        "community-analyst" : "Community Analyst",
+        "community-analyst-ht" : "Community Analyst",
+        
+        "esri-maps-cognos" : "Maps for Cognos",
+        "esri-maps-cognos-ht" : "Esri Maps for Cognos",
+        
+        "esri-maps-dynamics" : "Maps for Dynamics CRM",
+        "esri-maps-dynamics-ht" : "Esri Maps for Dynamics CRM",
+        
+        "esri-maps-micro" : "Maps for MicroStrategy",
+        "esri-maps-micro-ht" : "Esri Maps for MicroStrategy"
+
    }, 
    "es": {
       "404-note": "La página que busca no se ha podido encontrar. Compruebe la URL que ha introducido e inténtelo de nuevo. Si ha llegado a esta página desde un enlace externo, contacte con nosotros para que podamos dar solución al problema. ", 
@@ -606,7 +697,7 @@
       "user-conference": "Conferencia de usuarios ", 
       "video": "Vídeo", 
       "we-are-sorry": "Lo sentimos  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "fr": {
@@ -728,7 +819,7 @@
       "user-conference": "Conférence des utilisateurs ", 
       "video": "Vidéo", 
       "we-are-sorry": "Désolé  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "it": {
@@ -850,7 +941,7 @@
       "user-conference": "Conferenza utenti ", 
       "video": "Video", 
       "we-are-sorry": "Spiacenti  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "ja": {
@@ -972,7 +1063,7 @@
       "user-conference": "ユーザ会 ", 
       "video": "ビデオ", 
       "we-are-sorry": "申し訳ございません  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "ko": {
@@ -1094,7 +1185,7 @@
       "user-conference": "사용자 컨퍼런스 ", 
       "video": "비디오", 
       "we-are-sorry": "죄송합니다.  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "nl": {
@@ -1216,7 +1307,7 @@
       "user-conference": "User Conference ", 
       "video": "Video", 
       "we-are-sorry": "Het spijt ons  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "no": {
@@ -1338,7 +1429,7 @@
       "user-conference": "Brukerkonferanse ", 
       "video": "Video", 
       "we-are-sorry": "Vi beklager!  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "pl": {
@@ -1460,7 +1551,7 @@
       "user-conference": "Konferencja użytkowników ", 
       "video": "Wideo", 
       "we-are-sorry": "Przepraszamy  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "pt-br": {
@@ -1582,7 +1673,7 @@
       "user-conference": "Conferência de Usuários ", 
       "video": "Vídeo", 
       "we-are-sorry": "'re Desculpe  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "pt-pt": {
@@ -1704,7 +1795,7 @@
       "user-conference": "Conferência de Utilizadores ", 
       "video": "Vídeo", 
       "we-are-sorry": "Lamentamos  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "ro": {
@@ -1826,7 +1917,7 @@
       "user-conference": "Conferinţa utilizatorilor ", 
       "video": "Video", 
       "we-are-sorry": "Ne pare rău  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "ru": {
@@ -1948,7 +2039,7 @@
       "user-conference": "Конференция пользователей ", 
       "video": "Видео", 
       "we-are-sorry": "Сожалеем  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "sv": {
@@ -2070,7 +2161,7 @@
       "user-conference": "Användarkonferens ", 
       "video": "Video", 
       "we-are-sorry": "Vi beklagar  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }, 
    "zh-cn": {
@@ -2192,7 +2283,7 @@
       "user-conference": "用户大会 ", 
       "video": "视频", 
       "we-are-sorry": "非常抱歉  ", 
-      "win-phone-app": "ArcGIS app (Win Phone)", 
+      "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone"
    }
 };
