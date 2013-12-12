@@ -8,6 +8,8 @@ import subprocess
 
 import libl10n
 
+import flistl10n
+
 '''
 buildl10n.py all
 buildl10n.py lang (lang is ar, de, ...)
@@ -103,5 +105,7 @@ def main():
 
       except:
          print traceback.format_exc()
+   
+   flistl10n.generateL10nFlist()
 
 main()

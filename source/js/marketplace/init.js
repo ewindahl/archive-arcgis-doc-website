@@ -90,8 +90,21 @@ $(document).ready(function() {
 
   /* help search box */
   $("#helpSearchForm").submit(function() {
-    var term = $("#helpSearchForm > input[name='q']").val() || "";
-    window.location.href = "/search/?q="+encodeURIComponent(term);
+
+    var term = $("#helpSearchForm > input[name='q']").val() || "",
+        col = $("#helpSearchForm > input[name='collection']").val() || "",
+        prod = $("#helpSearchForm > input[name='product']").val() || "",
+        lang = $("#helpSearchForm > input[name='language']").val() || "en",
+        query = "/search/?";
+
+    query = query + "q=" + encodeURIComponent(term);
+    query = query + "&collection=" + encodeURIComponent(col);
+    query = query + "&product=" + encodeURIComponent(prod);
+    query = query + "&language=" + encodeURIComponent(lang);
+
+    window.location.href = query;
+
     return false;
+
   });
 });

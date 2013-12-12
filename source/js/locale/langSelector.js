@@ -98,26 +98,7 @@ jQuery(document).ready(function ($) {
       lgPartial = ["da","it","ko","no","pl","pt-br","pt-pt","ro","sv"],
 
       //all langs
-      lgPickerLabels = {
-          "en": "English",
-          "ar": "عربي",
-          "da": "Dansk",
-          "de": "Deutsch",
-          "es": "Español",
-          "fr": "Français",
-          "it": "Italiano",
-          "ja": "日本語",
-          "ko": "한국어",
-          /*"nl": "Nederlands",*/
-          "no": "Norsk",
-          "pl": "Polski",
-          "pt-br": "Português (Brasil)",
-          "pt-pt": "Português (Portugal)",
-          "ro": "Română",
-          "ru": "Русский",
-          "sv": "Svenska",
-          "zh-cn": "中文(简体)"
-      },
+      lgPickerLabels = GLangLabels,
 
       //historyCK = "state404", 
       prefLangCK = "preflang";

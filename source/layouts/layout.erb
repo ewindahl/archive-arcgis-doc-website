@@ -43,9 +43,10 @@
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
-	
+
+	<%= javascript_include_tag "locale/l10NStrings" %>
+
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
-    <%= javascript_include_tag  "libs/highlight.pack" %>
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>
@@ -70,7 +71,6 @@
 
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
-   <%= javascript_include_tag "locale/l10NStrings" %>
       
    <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
@@ -193,5 +193,6 @@
     </footer>
 
     <%= javascript_include_tag "drop-down" %>
+    <%= javascript_include_tag "search/searchform.js" %>
   </body>
 </html>
