@@ -584,8 +584,8 @@ app.SRListView = Backbone.View.extend ({
         var monthNames = ["January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"];
 
-        var subj = md["subject_label"] || "",
-            cat = md["sub_category_label"] || "",
+        var subj = md["subject_label"] || md["subject"] || "",
+            cat = md["sub_category_label"] || md["sub_category"] || "",
             date = md["last-modified"] ? (parseDate (md["last-modified"]) || null) : null,
             mdTpc = "",
             dateTpc = "";
@@ -609,7 +609,7 @@ app.SRListView = Backbone.View.extend ({
         }
 
         return {
-          "mdType" : md["content_type_label"] || "",
+          "mdType" : md["content_type_label"] || md["content_type"] || "",
           "mdTpc" : mdTpc,
           "dateTpc" : dateTpc
         };
