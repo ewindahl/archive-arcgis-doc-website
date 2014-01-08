@@ -69,6 +69,15 @@
       <% end %>
     <% end %>
 
+	<!-- Handle Marketplace 404 issue -->
+	<% if current_page.data.pageName and current_page.data.pageName == "404" %> 
+		<script>
+			if(window.location.href.indexOf("/marketplace/") >= 0){
+				window.location = "/en/marketplace/404/";
+			}
+		</script>
+	<% end %>
+	
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
       
