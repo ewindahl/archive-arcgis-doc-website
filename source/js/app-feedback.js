@@ -299,21 +299,22 @@ doc.supportForm = (function() {
 
 	return {
 	/* Function for the form validation */
-		validateFeedbackForm : function(){
+		validateFeedbackForm : function(lg){
+			var dict = (window.localeJsonObj || {})[lg];
 				
 			if(document.getElementById('userFeedback').value == ""){
-				alert("Please enter the valid feedback!");
+				alert(dict['enter-valid-feedback']);
 				document.getElementById('userFeedback').focus();
 				return false;
 			}
 			if(document.getElementById('userEmail').value == ""){
-				alert("Please enter your Email address!");
+				alert(dict['enter-valid-email']);
 				document.getElementById('userEmail').focus();
 				return false;
 			}
 			
 			if(!this.ValidCaptcha()){
-				alert("Please enter the valid captcha value!");
+				alert(dict['enter-valid-captcha']);
 				document.getElementById('txtCaptchaInput').focus();
 				return false;
 			}
