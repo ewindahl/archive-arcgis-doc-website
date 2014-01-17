@@ -1,0 +1,200 @@
+---
+title: Operations Dashboard for ArcGIS
+css:
+  - documentation
+  - screen
+  - /en/asset/css/common
+  - stat-page-specific
+  - /en/asset/css/app-switch-1
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/app-collector-1
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/es/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/es/operations-dashboard/">Inicio</a></li>
+        <li><a href="/es/operations-dashboard/windows-desktop/author/create-a-map.htm">Vistas de autor</a></li>
+        <li><a href="/es/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Utilizar vistas</a></li>
+        <li><a href="http://forums.arcgis.com/forums/225-Operations-Dashboard-for-ArcGIS">Foro</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <header>
+          <h2 id="appTitle">Descargar la aplicación</h2>
+          <span id="appVersion"><strong>Versión:</strong> 10.2</span> <span id="appReleased"><strong>Fecha de publicación:</strong> Noviembre de 2013</span>
+
+          <p>Supervise actividades y eventos, rastree al personal de campo y evaluar el estado y funcionamiento de las operaciones diarias.</p>
+
+          <p>
+            <a class="btn primary" href="http://www.arcgis.com/home/item.html?id=ba47e0bf6cb84a6e9f77e9caf86b88eb">Obtener Operations Dashboard</a>
+
+          </p>
+
+          <p>
+            <a id="appSysRequirements" href="#systemRequirements">Requisitos de sistema</a> <a id="appWhatsNew" href="#whatsNew">Novedades</a>
+          </p>
+
+        </header>
+        <hr />
+        <br />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="/es/operations-dashboard/dashboard-create-small.png" />
+
+          <h3>Crear y compartir una vista de operaciones</h3>
+          <p>En tres sencillos pasos, cree y comparta vistas de operaciones que incluyan mapas, listas, gráficos, calibres y mucho más, a partir de los datos geográficos en directo definidos en un mapa o servicio web.</p>
+          <p>
+            <a href="/es/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow"> ¿Cómo hacerlo?</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/es/operations-dashboard/dashboard-monitor-small.png" />
+
+          <h3>Supervisar y responder a eventos</h3>
+          <p>Utilice su vista de operaciones para centrarse en los aspectos de la operación que le interesen. Monitorice servicios, entregas, personas, vehículos y mucho más en cualquier parte del mundo, en solo cuatro pasos.</p>
+          <p>
+            <a href="/es/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow"> ¿Cómo hacerlo?</a><br /> <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge"> Ver un vídeo</a>
+			<video width="320" height="240" controls id="2195" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
+			</video>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+
+
+        <a name="systemRequirements"></a>
+        <h2>Requisitos del sistema</h2>
+
+        <p>Existen algunos requisitos de dispositivo para ejecutar Operations Dashboard, así como requisitos para los datos utilizados dentro de la aplicación. Operations Dashboard admite varios idiomas.</p>
+
+
+        <h3>Sistemas operativos compatibles</h3>
+
+        <ul>
+          <li>Windows 8.1, Windows 8.1 Pro y Windows 8.1 Enterprise (32 bit y 64 bit [EM64T])</li>
+          <li>Windows 8, Windows 8 Pro y Windows 8 Enterprise (32 bit y 64 bit [EM64T])</li>
+		  <li>Windows 7 Ultimate, Enterprise, Professional y Home Premium (32 bits y 64 bits [EM64T]) SP1</li>
+		  <li>Windows Server 2012 Standard y Datacenter (64 bits [EM64T])</li>
+		<li>Windows Server 2008 R2 Standard, Enterprise y Datacenter (64 bits [EM64T]) SP1</li>
+		<li>Windows Server 2008 Standard, Enterprise y Datacenter (32 bits y 64 bits [EM64T]) SP2</li>
+        </ul>
+
+
+        <h3>Requisitos de hardware</h3>
+        <ul>
+			<li>Velocidad de CPU: 2,2 GHz o superior; se recomienda Hyper-Threading (HTT) o multinúcleo.</li>
+			<li>Procesador: Procesadores Intel Pentium 4, Core Duo o Xeon; SSE2 como mínimo. Ejecute esta utilidad de Microsoft desde la ventana de comando de Windows para comprobar su procesador.</li>
+			<li>Espacio de disco: 1,5 GB de espacio en disco disponible.</li>
+			<li>Memoria/RAM: 2 GB o superior.</li>
+			<li>Propiedades de visualización: Profundidad de color de 24 bits.</li>
+			<li>Resolución de pantalla: 1024 x 768 o superior a tamaño normal (96 ppp).</li>
+			<li>Espacio de intercambio: Determinado por el sistema operativo; 500 MB como mínimo.</li>
+			<li>Adaptador de vídeo/gráficos: 64 MB de RAM (mínimo), se recomiendan 256 MB de RAM; compatibilidad con chipsets NVIDIA, ATI e Intel. Controlador de tarjeta gráfica acelerada. Shader Model 2.0 como mínimo. Asegúrese de utilizar el controlador más actualizado disponible.</li>
+		</ul>
+
+
+        <h3>Requisitos de software</h3>
+        <p>Se requiere <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>. Para instalarlo debe tener permisos de administrador en su equipo.</p>
+
+        <h3>Requisitos de datos</h3>
+		<p>Para utilizar los mapas en Operations Dashboard, debe tener una cuenta de organización ArcGIS. Los mapas pueden incluir datos de ArcGIS Online, Portal for ArcGIS y ArcGIS for Server. Las fuentes de datos deben alojarse en ArcGIS Online o ArcGIS 10.1 for Server o posterior.</p>
+
+		<h3>Requisitos de desarrollador</h3>
+		<p>Se requiere <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2 for WPF</a> para la personalización de Operations Dashboard for ArcGIS.</p>
+
+	<h3>Lenguajes compatibles</h3>
+	<p>Árabe, checo, danés, holandés, inglés, estonio, finlandés, francés, alemán, hebreo, italiano, japonés, coreano, letón, lituano, noruego, polaco, portugués (Brasil), portugués (Portugal), rumano, ruso, chino simplificado, español y sueco.</p>
+	<p>El idioma utilizado en la aplicación viene determinado por la configuración de idioma del sistema operativo.</p>
+
+        <a name="whatsNew"></a>
+        <h2>Novedades</h2>
+        <p>Operations Dashboard for ArcGIS versión 10.2 se publicó en noviembre de 2013. Incluye las siguientes mejoras:</p>
+        <ul>
+        <li>Compatibilidad con inicios de sesión corporativos.</li>
+        <li>Compatibilidad con Portal for ArcGIS.</li>
+        <li>Lista y widgets de calibre mejorados.</li>
+        <li>Las ventanas emergentes incluyen imágenes y gráficos.</li>
+        <li>Soporte para proxy mejorado.</li>
+        <li>Compatibilidad con la hora local.</li>
+        <li>Mejora del filtrado de horas y fechas.</li>
+        <li>Utiliza ArcGIS Runtime SDK 10.2 para WPF.</li>
+        <li>Los add-ins se pueden desarrollar utilizando ArcGIS Runtime SDK 10.2 for WPF.</li>
+        <li>Localización en árabe, checo, danés, holandés, inglés, estonio, finlandés, francés, alemán, hebreo, italiano, japonés, coreano, letón, lituano, noruego, polaco, portugués (Brasil), portugués (Portugal), rumano, ruso, chino simplificado, español y sueco.</li>
+        </ul>
+      
+        <p> </p>
+        
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+          <h3>Cómo empezar</h3>
+          <ul>
+           <li><a href="http://www.arcgis.com/home/item.html?id=ba47e0bf6cb84a6e9f77e9caf86b88eb">Instalar</a></li>
+            <li><a href="/es/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">Crear y compartir una vista de operaciones</a></li>
+            <li><a href="/es/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Supervisar y responder a actividades y eventos</a></li>
+            <li><a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/">Add-ins de desarrollo</a></li>
+
+          </ul>
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>En nuestro blog</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+<!--	<script src="/js/main.js" type="text/javascript"></script>-->
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/ios/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>
