@@ -19,8 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if (winloc.pathname.indexOf ("/maps-for-office/") <0 && winloc.pathname.indexOf ("/maps-for-sharepoint/") <0 && winloc.pathname.indexOf("/operations-dashboard/")<0) {
-
+  if (winloc.pathname.indexOf ("/maps-for-office/") <0 && winloc.pathname.indexOf ("/maps-for-sharepoint/") <0 && winloc.pathname.indexOf("/operations-dashboard/")<0 && winloc.pathname.indexOf ("/collector/") <0) {
     return;
   }
 
