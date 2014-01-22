@@ -507,6 +507,7 @@ var localeJsonObj = {
       "we-are-sorry": "We're sorry  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
+	  "viewing": "Viewing",
 
 
 
