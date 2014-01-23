@@ -220,6 +220,15 @@ td p:last-child {
 ul .note, ol .note{
   font-size: 1.125em;
 }
+.steps ul[purpose="choices"] .note p{
+  font-size: 0.875em;
+}
+
+/* font-size override for p in ul, ol */
+ul[purpose="ul"] p, ol[purpose="ol"] p{
+  font-size:1em;
+}
+
 %sidebar-panel {
   @extend %panel;
   @include trailer(1);
@@ -371,10 +380,18 @@ ul .note, ol .note{
   }
   .info, .stepexample, ul[purpose="choices"], .stepinfo, .stepresult {
     padding-top: 0.5em;
-    padding-left: 2.25em;
+    padding-left: 2.30em;
   }
   .stepinfo > p, .stepresult > p, .info > p, ul[purpose="choices"] p{
-    font-size: 1.0625em;
+    font-size: 1em;  
+  }
+  .info {
+    li[purpose="li"] {
+      > p {
+        font-size:1em;
+      }
+    }
+
   }
 }
 
