@@ -99,9 +99,16 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:ops-dashboard"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:ops-dashboard|product:arcgis-online"
           }
       },
+	  {
+        k:"arcgis-online",
+        q: {
+          r:"",
+          p:"(product:arcgis-online)"
+        }
+      }, 
       {
         k:"android-app",
         q: {
