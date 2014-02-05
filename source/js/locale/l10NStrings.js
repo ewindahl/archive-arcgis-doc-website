@@ -1,4 +1,4 @@
-var GLangLabels = {
+﻿var GLangLabels = {
    "ar": "العربية", 
    "da": "Dansk", 
    "de": "Deutsch", 
