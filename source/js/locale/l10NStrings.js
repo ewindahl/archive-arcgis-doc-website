@@ -2995,7 +2995,7 @@ var localeJsonObj = {
       "report-a-problem": "报告问题 ", 
       "results_n": "约 {0} 个结果(第 {1} 页，共 {2} 页)", 
       "results_zero": "0 个结果", 
-      "return-to-referring-page": "返回到 <a id='feedback-referring-link' href='#'>referring page</a>", 
+      "return-to-referring-page": "返回到 <a id='feedback-referring-link' href='#'>参考页</a>", 
       "search": "搜索", 
       "search-arcgis-doc-content": "搜索 ArcGIS 文档内容", 
       "search-did-not-match": "未搜索到任何匹配的文档。", 
