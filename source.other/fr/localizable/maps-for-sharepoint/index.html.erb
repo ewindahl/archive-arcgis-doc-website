@@ -7,12 +7,13 @@ css:
   - colorbox/colorbox
 
 js:
+  - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -21,6 +22,13 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/fr/maps-for-sharepoint/">Esri Maps for SharePoint</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Sharepoint">
+        <input type="hidden" name="collection" value="aide" />
+        <input type="hidden" name="product" value="esri-maps-sharepoint" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
     </header>
 	<nav>
       <ul>

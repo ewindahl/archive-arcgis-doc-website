@@ -1,4 +1,3 @@
-<!doctype html>
 ---
 title: Esri Maps for SharePoint
 css:
@@ -8,12 +7,13 @@ css:
   - colorbox/colorbox
 
 js:
+  - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,6 +22,13 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/pl/maps-for-sharepoint/">Esri Maps for SharePoint</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Sharepoint">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-sharepoint" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
     </header>
 	<nav>
       <ul>
@@ -92,23 +99,23 @@ mobile: true
 		 <p>Dzięki Esri Maps Web Part możesz: 	
 		 <ul>	
 		 <li>dodawać mapy i usługi internetowe z ArcGIS, zarówno z ArcGIS Online, jak i Portal for ArcGIS;</li>	
-		 <li>udostępniać mapy i warstwy z ArcGIS w organizacji lub do użytku publicznego;</li>	
+		 <li>udostępniać mapy i warstwy z ArcGIS w instytucji lub do użytku publicznego;</li>	
 		 <li>wyświetlać listy programu SharePoint i łączyć się z zewnętrznymi źródłami danych za pośrednictwem usług łączności biznesowej programu SharePoint (BCS);</li>	
 		 <li>łączyć się z komponentami list i wykresów za pośrednictwem połączeń typu Web Part-to-Web Part;</li>	
 		 <li>nadawać elementom listy programu SharePoint wymiar przestrzenny (geokodować je);</li>	
 		 <li>interaktywnie konfigurować wygląd map, warstw i zmieniać inne ustawienia;</li>	
-		 <li>wybierać spośród map tła udostępnionych Twojej organizacji ArcGIS w postaci galerii map bazowych;</li>	
-		 <li>określać wygląd zbiorów danych (symbolizację), używając pojedynczego symbolu, granice klas lub wartości unikalne;</li>	
+		 <li>wybierać spośród map tła udostępnionych Twojej instytucji ArcGIS w postaci galerii map bazowych;</li>	
+		 <li>określać wygląd zbiorów danych (symbolizację), używając pojedynczego symbolu, granic klas lub wartości unikalnych;</li>	
 		 <li>wyświetlać obiekty punktowe przy użyciu grupowania lub map skupień; </li>	
-		 <li>konfigurować wygląd okien podręcznych; określać styl i pola okien podręcznych wyświetlanych po umieszczeniu kursora na obiekt na mapie; </li>	
+		 <li>konfigurować wygląd okien podręcznych; określać styl i pola okien podręcznych wyświetlanych po umieszczeniu kursora na obiekcie na mapie; </li>	
 		 <li>wyświetlać w oknach podręcznych infografiki, które zapewniają bogate informacje kontekstowe o obszarach otaczających obiekty na mapie;</li>	
-		 <li>przeprowadzać analizy danych w oparciu o trasę;</li>	
-		 <li>interaktywnie wybierać i filtrować dane w obrębie obszarów ograniczonych okręgiem lub w oparciu o dany czas przejazdu;</li>	
+		 <li>przeprowadzać analizy danych na podstawie trasy;</li>	
+		 <li>interaktywnie wybierać i filtrować dane w obrębie obszarów ograniczonych okręgiem lub na podstawie danego czasu przejazdu;</li>	
 		 <li>interaktywnie uzyskiwać dodatkowe informacje kontekstowe oraz demograficzne powiązane z lokalizacjami na mapie.</li>	
 		 </ul>
 
 
-        <p>&nbsp;</p>
+        <p> </p>
 
       </div>
 
