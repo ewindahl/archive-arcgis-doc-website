@@ -1,23 +1,34 @@
----
-title: Esri Maps for SharePoint
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+---
+title: Esri Maps for SharePoint
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
     <header>
       <h1><a href="/ar/maps-for-sharepoint/">Esri Maps for SharePoint</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Sharepoint">
+        <input type="hidden" name="collection" value="تعليمات" />
+        <input type="hidden" name="product" value="esri-maps-sharepoint" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
     </header>
 	<nav>
       <ul>
@@ -38,7 +49,7 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">تنزيل التطبيق</h2>
-          <span id="appVersion"><strong>الإصدار:</strong> 3.0</span> <span id="appReleased"><strong>التوفر:</strong> يوليو 2013</span>
+          <span id="appVersion"><strong>الإصدار:</strong> 3.0.1</span> <span id="appReleased"><strong>التوفر:</strong> أكتوبر 2013</span>
 
 
           <p>يستفيد Esri Maps for SharePoint من إطار عمل Microsoft SharePoint 2010 و 2013 لعرض مكونات رسم الخرائط التفاعلية والقابلة للتكوين التي يمكن أن تمنحك عرض مكاني جغرافي لبيانات المنظمة. </p>
@@ -75,9 +86,9 @@ metatags:
 		 <h2>ما الجديد في 3.0</h2>        
 		 <p>تم إطلاق الإصدار 3.0 من Esri Maps for SharePoint في يوليو 2013. يتضمن التحديثات والتحسينات التالية:</p>        
 		 <ul>        
-		 <li>اسم المنتج الجديد&mdash;Esri Maps for SharePoint</li>	
+		 <li>اسم المنتج الجديد—Esri Maps for SharePoint</li>	
 		 <li>مدعوم لـ SharePoint 2010 وSharePoint 2013 (محليًا).</li>	
-		 <li>الإصدار الأولي Esri Maps Web Part&mdash;جزء الويب المستند إلى JavaScript مدعوم في SharePoint 2010 وSharePoint 2013 (محليًا).</li>	
+		 <li>الإصدار الأولي Esri Maps Web Part—جزء الويب المستند إلى JavaScript مدعوم في SharePoint 2010 وSharePoint 2013 (محليًا).</li>	
 		 <li>دعم Portal for ArcGIS 10.2</li>	
 		 <li>اتصال البيانات الخارجي خلال خدمات اتصال عمل (BCS) (JavaScript Map Web Part)</li>	
 		 <li>اتصالات Web Part-to-Web Part (JavaScript Map Web Part)</li>	
@@ -104,7 +115,7 @@ metatags:
 		 </ul>
 
 
-        <p>&nbsp;</p>
+        <p> </p>
 
       </div>
 
