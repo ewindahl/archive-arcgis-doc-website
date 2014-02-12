@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/it/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,7 +46,7 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Scarica l'applicazione</h2>
-          <span id="appVersion"><strong>Versione:</strong> 2.1.1</span> <span id="appReleased"><strong>Disponibile:</strong> autunno 2013</span>
+          <span id="appVersion"><strong>Versione:</strong> 2.1.2</span> <span id="appReleased"><strong>Disponibile:</strong> autunno 2013</span>
 
 
           <p>Esri Maps for Office consente di creare rapidamente mappe interattive dinamiche dei dati di Excel e iniziare a esplorarle in un modo tutto nuovo. Grazie a Esri Maps for Office è possibile scoprire modelli e tendenze non evidenti in grafici e dati in formato tabulare. Le mappe possono essere condivise immediatamente tramite presentazioni di PowerPoint oppure tramite la funzione di pubblicazione semplificata in ArcGIS Online, la piattaforma per il mapping di Esri.</p>
@@ -61,7 +67,7 @@ mobile: true
           <h3>Creare mappe da fogli di calcolo </h3>
           <p>Esri Maps for Office consente di creare mappe dai dati di Excel. È possibile creare facilmente mappe termiche, di punti, di punti raggruppati interattive e con codifica a colori direttamente in Excel e ottenere subito una rappresentazione grafica dei dati.</p>
           <p>
-            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guarda il video</a>
+            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guardare il video</a>
 			<video width="320" height="240" controls id="2457" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2457/mp4/480">
 			</video>
@@ -75,7 +81,7 @@ mobile: true
           <h3>Migliorare i dati</h3>
           <p>Grazie alle numerose raccolte dati disponibili di Esri è possibile ottimizzare ulteriormente i dati aziendali. È infatti possibile aggiungere dati demografici e sullo stile di vita direttamente nei fogli di calcolo di Excel e ottenere maggiore contesto sulle località di interesse. Grazie alle infografiche popup inoltre è possibile visualizzare al volo ulteriori informazioni sulle località.</p>
           <p>
-           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guarda il video</a>
+           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guardare il video</a>
 		   <video width="320" height="240" controls id="2468" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2468/mp4/480">
 			</video>
@@ -107,8 +113,23 @@ mobile: true
 
 
         <a name="whatsNew"></a>
-        <h2>novità</h2>
-        <p>Esri Maps for Office versione 2.1.1, rilasciato nel mese di ottobre 2013, include i seguenti miglioramenti:</p>
+        <h2>Novità</h2>
+        <p>Esri Maps for Office versione 2.1.2, rilasciato nel mese di novembre 2013, include i seguenti miglioramenti:</p>
+        <ul>
+		<li>Correzioni di bug e miglioramenti di usabilità, tra cui:
+			<ul>
+			<li>Miglioramenti apportati allo strumento Migliora layer, tra cui: utilizzo più efficiente della memoria per gestire richieste più estese di miglioramento e un indicatore di stato ottimizzato.</li>
+			<li>Correzione di un bug che causava l'arresto anomalo di Excel dopo l'installazione di Esri Maps. </li>
+			<li>Correzione di un bug che causava la visualizzazione di immagini errate nel riquadro Cerca.</li>
+			<li>Correzione di un bug che impediva la ricerca di tipi di posizione personalizzati in giapponese, russo e cinese.</li>
+			<li>Stringhe localizzate per Info principali, Ricchezza, Politica e Sanità nel riquadro Cerca.</li>
+			</ul>
+        </ul>
+
+
+        <h3>Versioni precedenti</h3>
+		
+		<p>La versione 2.1.1, rilasciata nel mese di ottobre 2013, include i seguenti miglioramenti:</p>
         <ul>
         <li>Nuove versioni localizzate per 22 lingue supportate:</li>
 			<ul>
@@ -128,9 +149,6 @@ mobile: true
 			<li>Corretto funzionamento del raggruppamento quando si utilizzano colonne aggiunte dallo strumento Aggiungi dati al layer</li>
 			</ul>
         </ul>
-
-
-        <h3>Versioni precedenti</h3>
 		
         <p>La versione 2.1, rilasciata nel mese di luglio 2013, include i seguenti miglioramenti: </p>
         <ul>
