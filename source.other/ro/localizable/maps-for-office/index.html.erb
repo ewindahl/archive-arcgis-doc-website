@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/ro/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,7 +46,7 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Descărcaţi aplicaţia</h2>
-          <span id="appVersion"><strong>Versiune:</strong> 2.1.1</span> <span id="appReleased"><strong>Disponibilă din:</strong> Toamna 2013</span>
+          <span id="appVersion"><strong>Versiune:</strong> 2.1.2</span> <span id="appReleased"><strong>Disponibilă din:</strong> Toamna 2013</span>
 
 
           <p>Esri Maps for Office vă permite să creaţi rapid hărţi dinamice şi interactive pe baza datelor în format Excel şi să începeţi să exploraţi aceste hărţi într-un mod cu totul inedit. Esri Maps for Office vă permite să scoateţi la iveală modele şi tendinţe care nu sunt evidente în datele tabelare şi în diagrame. Hărţile pot fi partajate imediat prin intermediul prezentărilor PowerPoint sau prin publicarea lor printr-un singur clic în platforma Esri pentru hărţi, ArcGIS Online.</p>
@@ -100,7 +106,6 @@ mobile: true
 		<p>entru informaţii suplimentare, inclusiv frecvenţa procesorului, cantitatea de memorie şi spaţiul pe hard disk necesare, consultaţi cerinţele de sistem pentru <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> şi <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
 
 
-
         <!--  		<h3>Support for the following languages</h3>         <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p> 		//-->
 
 
@@ -108,31 +113,43 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2>Ce este nou</h2>
-        <p>Esri Maps for Office versiunea 2.1.1 a fost lansată în octombrie 2013. Aceasta include următoarele îmbunătăţiri:</p>
+        <p>Esri Maps for Office versiunea 2.1.2 a fost lansată în noiembrie 2013. Aceasta include următoarele îmbunătăţiri:</p>
         <ul>
-        <li>Versiuni localizate noi pentru 22 de limbi suportate:</li>
+		<li>Remedieri de defecte şi îmbunătăţiri ale caracterului utilizabil, printre care:
 			<ul>
-			<li>arabă, chineză (simplificată), coreeană, daneză, ebraică, engleză, estoniană, franceză, germană, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă şi suedeză</li>
-			</ul>
-		<li>Suport pentru ferestre pop-up în hărţi web</li>
-		<li>Caracteristici de simbolizare cu ajutorul unei pictograme dintr-un URL de atribut</li>
-		<li>Remedieri şi îmbunătăţiri ale utilizării în întregul produs, printre care:
-			<ul>
-			<li>Gestionare îmbunătăţită pentru autentificările OAuth</li>
-			<li>Mesaje de eroare mai utile în instrumentul Găsire hot spot</li>
-			<li>Instrumentul Găsire hot spot poate gestiona acum nume de coloane cu spaţii</li>
-			<li>Instrumentul Selectare suportă acum buffere de dimensiune „0”</li>
-			<li>Au fost remediate probleme legate de panoul de activităţi</li>
-			<li>Au fost remediate defecte de vizibilitate a grupurilor</li>
-			<li>A fost îmbunătăţit suportul pentru organizaţii care utilizează SSL pentru toate conexiunile</li>
-			<li>Grupare funcţionează acum corect la utilizarea coloanelor adăugate din instrumentul Îmbogăţire strat tematic</li>
+			<li>Îmbunătăţiri ale instrumentului Îmbogăţire strat tematic, precum: o utilizare mai eficientă a memoriei pentru a satisface solicitări de îmbunătăţire mai mari şi un indicator de progres îmbunătăţit.</li>
+			<li>A fost remediat un defect care provoca blocarea aplicaţiei Excel după instalarea Esri Maps. </li>
+			<li>A fost remediat un defect prin care erau afişate imagini incorecte în panoul Căutare.</li>
+			<li>A fost remediat un defect care determina eşuarea căutărilor după tipuri de locaţii particularizate în limbile japoneză, rusă şi chineză.</li>
+			<li>Au fost aranjate şirurile localizate pentru Date cheie, Avere, Politică şi Sănătate din panoul Căutare.</li>
 			</ul>
         </ul>
 
 
         <h3>Versiunile anterioare</h3>
 		
-        <p>Versiunea 2.1 a fost lansată în iulie 2013. Aceasta include următoarele îmbunătăţiri: </p>
+		<p>Versiunea 2.1.1 a fost lansată în octombrie 2013. Aceasta a inclus următoarele îmbunătăţiri:</p>
+        <ul>
+        <li>Versiuni localizate noi pentru 22 de limbi suportate:</li>
+			<ul>
+			<li>arabă, chineză (simplificată), coreeană, daneză, ebraică, engleză, estoniană, franceză, germană, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă şi suedeză.</li>
+			</ul>
+		<li>Suport pentru ferestre pop up în hărţile web</li>
+		<li>Simbolizarea obiectelor spaţiale cu ajutorul unei pictograme dintr-un URL atribut</li>
+		<li>Remedieri de defecte şi îmbunătăţiri ale caracterului utilizabil în întregul produs, printre care:
+			<ul>
+			<li>Gestionare îmbunătăţită a autentificărilor OAuth</li>
+			<li>Mesaje de eroare mai utile pentru instrumentul Găsire hot spot-uri</li>
+			<li>Instrumentul Găsire hot spot-uri poate gestiona acum nume de coloane cu spaţii</li>
+			<li>Instrumentul Selectare suportă acum buffere de dimensiune „0”</li>
+			<li>Au fost remediate probleme în panoul de activităţi</li>
+			<li>Au fost remediate defecte de vizibilitate a grupurilor</li>
+			<li>A fost îmbunătăţit suportul pentru organizaţii care utilizează SSL pentru toate conexiunile</li>
+			<li>Gruparea funcţionează acum corect când se utilizează coloane adăugate din instrumentul Îmbogăţire strat tematic</li>
+			</ul>
+        </ul>
+		
+        <p>Versiunea 2.1 a fost lansată în iulie 2013. Aceasta a inclus următoarele îmbunătăţiri: </p>
         <ul>
         <li>Analiza modelelor statistice prin instrumentul Puncte de interes</li>
 		<li>Îmbunătăţiri aduse îmbogăţirii datelor, inclusiv colecţii de date suplimentare şi posibilitatea de a selecta variabile individuale din colecţiile de date</li>

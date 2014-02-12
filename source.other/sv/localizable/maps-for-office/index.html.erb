@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/sv/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="Hj&auml;lp" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,8 +46,7 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">H&auml;mta applikationen</h2>
-          <span id="appVersion"><strong>Version:</strong> 2.1.1</span> <span id="appReleased"><strong>Tillg&auml;ngligt:</strong> H&ouml;sten 2013</span>
-
+          <span id="appVersion"><strong>Version:</strong> 2.1.2</span> <span id="appReleased"><strong>Tillg&auml;nglig:</strong> H&ouml;sten 2013</span>
 
           <p>Med Esri Maps for Office kan du snabbt skapa dynamiska, interaktiva kartor med dina Excel-data och utforska dem p&aring; ett helt nytt s&auml;tt. Med Esri Maps for Office kan du uppt&auml;cka m&ouml;nster och trender som inte syns i tabelldata och diagram. Du kan dela kartorna direkt via PowerPoint-presentationer eller publicera dem med ett klick till Esris kartplattform, ArcGIS Online.</p>
 
@@ -98,9 +103,6 @@ mobile: true
 		 <li>Windows Server 2012</li>
 		</ul>
 		<p>Ytterligare information, inklusive processorhastighet, minne och h&aring;rddiskutrymme som kr&auml;vs, finns i systemkraven f&ouml;r <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> och <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
-
-
-
         <!-- 
 		<h3>Support for the following languages</h3>
         <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
@@ -111,7 +113,22 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2>Nyheter</h2>
-        <p>Esri Maps for Office version 2.1.1 sl&auml;pptes i oktober 2013. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
+        <p>Esri Maps for Office version 2.1.2 sl&auml;pptes i november 2013. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
+        <ul>
+		<li>L&ouml;sningar p&aring; fel och f&ouml;rb&auml;ttrad anv&auml;ndbarhet, inklusive:
+			<ul>
+			<li>F&ouml;rb&auml;ttringar av verktyget Berika lager, t.ex. mer effektiv minnesanv&auml;ndning f&ouml;r att hantera berikningsf&ouml;rfr&aring;gningar och en f&ouml;rb&auml;ttrad f&ouml;rloppsindikator.</li>
+			<li>Korrigerade ett fel som gjorde att Excel kraschade efter att Esri Maps installerades. </li>
+			<li>Korrigerade ett fel som gjorde att felaktiga bilder visades i s&ouml;kf&ouml;nstret.</li>
+			<li>Korrigerade ett fel som orsakade att s&ouml;kningar efter anpassade platstyper misslyckades p&aring; japanska, ryska och kinesiska.</li>
+			<li>Rensade upp lokaliserade str&auml;ngar f&ouml;r Nyckelfakta, V&auml;lst&aring;nd, Politiska fakta och H&auml;lsa i s&ouml;kf&ouml;nstret.</li>
+			</ul>
+        </ul>
+
+
+        <h3>Tidigare versioner</h3>
+		
+		<p>Version 2.1.1 sl&auml;pptes i oktober 2013. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
         <ul>
         <li>Nya lokaliserade versioner f&ouml;r 22 spr&aring;k som st&ouml;ds:</li>
 			<ul>
@@ -131,9 +148,6 @@ mobile: true
 			<li>Gruppindelning fungerar nu korrekt vid anv&auml;ndning av kolumner fr&aring;n verktyget Berika lager</li>
 			</ul>
         </ul>
-
-
-        <h3>Tidigare versioner</h3>
 		
         <p>Version 2.1 sl&auml;pptes i juli 2013. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar: </p>
         <ul>

@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/zh-CN/maps-for-office/">Esri Maps for Office</a></h1>
+      <h1><a href="/zh-cn/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="帮助" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,8 +46,7 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">下载应用程序</h2>
-          <span id="appVersion"><strong>版本：</strong>2.1.1</span> <span id="appReleased"><strong>发布日期：</strong>2013 年秋</span>
-
+          <span id="appVersion"><strong>版本：</strong>2.1.2</span> <span id="appReleased"><strong>发布日期：</strong>2013 年秋</span>
 
           <p>借助 Esri Maps for Office，您可快速创建 Excel 数据的动态交互式地图，并以全新的方式进行浏览。Esri Maps for Office 还可帮助您揭示表格数据和图表中隐含的模式和趋势。地图可通过 PowerPoint 演示文稿或将其一键发布至 Esri 的制图平台 ArcGIS Online 中以共享。</p>
 
@@ -93,7 +98,7 @@ mobile: true
 		 <li>Windows XP（必须具有 SP3）（32 位）</li>
 		 <li>Windows 7（32 位和 64 位）</li>
 		 <li>Windows 8（32 位和 64 位）</li>
-		 <li>Windows Server 2003 SP2和 MSXML 6.0（仅限于 32 位 Office）</li>
+		 <li>Windows Server 2003 SP2 和 MSXML 6.0（仅限于 32 位 Office）</li>
 		 <li>Windows Server 2008 R2</li>
 		 <li>Windows Server 2012</li>
 		</ul>
@@ -111,29 +116,41 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2>新特性</h2>
-        <p>Esri Maps for Office 2.1.1 已于 2013 年 10 月发布。该版本包括以下增强：</p>
+        <p>Esri Maps for Office 2.1.2 版已于 2013 年 11 月发布。该版本包括以下增强：</p>
         <ul>
-        <li>22 种支持语言的全新本地化版本：</li>
+		<li>软件漏洞修复和可用性改进，其中包括：
 			<ul>
-			<li>阿拉伯语、中文（简体）、丹麦语、荷兰语、英语、爱沙尼亚语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语、立陶宛语、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、西班牙语和瑞典语</li>
-			</ul>
-		<li>支持 Web 地图弹出窗口</li>
-		<li>使用属性 URL 中的图标符号化要素</li>
-		<li>所有产品的漏洞修复和可用性改进，包括：
-			<ul>
-			<li>改进的 OAuth 登录操作</li>
-			<li>&ldquo;查找热点&rdquo;工具中更有帮助的错误消息</li>
-			<li>&ldquo;查找热点&rdquo;工具现可处理带有空格的列名</li>
-			<li>&ldquo;选择&rdquo;工具现支持大小为&ldquo;0&rdquo;的缓冲</li>
-			<li>&ldquo;任务窗格&rdquo;问题已修复</li>
-			<li>组可见性漏洞已修复</li>
-			<li>改进了对所有连接都使用 SSL 的组织的支持</li>
-			<li>使用通过&ldquo;丰富图层&rdquo;工具添加的列时，分组功能可正常工作</li>
+			<li>&ldquo;丰富图层&rdquo;工具改进，如：更具效率的内存利用率以处理较大型丰富请求，以及改进的进度指示器。</li>
+			<li>修复了在安装 Esri Maps 后导致 Excel 崩溃的软件漏洞。 </li>
+			<li>修复了在&ldquo;搜索&rdquo;窗格中显示错误影像的软件漏洞。</li>
+			<li>修复了在日语、俄语和中文中导致自定义位置类型查找失败的软件漏洞。</li>
+			<li>&ldquo;搜索&rdquo;窗格中&ldquo;主要信息&rdquo;、&ldquo;财富&rdquo;、&ldquo;政策&rdquo;和&ldquo;健康&rdquo;的已清理的本地化字符串。</li>
 			</ul>
         </ul>
 
 
         <h3>先前版本</h3>
+		
+		<p>2.1.1 版本已于 2013 年 10 月发布。该版本包括以下增强：</p>
+        <ul>
+        <li>新的本地化版本支持 22 种语言：</li>
+			<ul>
+			<li>阿拉伯语、中文（简体）、丹麦语、荷兰语、英语、爱沙尼亚语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语、立陶宛语、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、西班牙语和瑞典语</li>
+			</ul>
+		<li>支持 web 地图中的弹出窗口</li>
+		<li>使用属性 URL 的图标符号化要素</li>
+		<li>所有产品的软件漏洞修复和可用性改进，其中包括：
+			<ul>
+			<li>OAuth 登录的改进处理</li>
+			<li>&ldquo;查找热点&rdquo;工具中更多有用的错误消息</li>
+			<li>&ldquo;查找热点&rdquo;工具现可处理带空格的列名</li>
+			<li>&ldquo;选择&rdquo;工具现支持大小为&ldquo;0&rdquo;的缓存</li>
+			<li>修复的任务窗格问题</li>
+			<li>修复的组可见性软件漏洞</li>
+			<li>改进了对使用所有连接的 SSL 的组织的支持</li>
+			<li>使用从&ldquo;丰富图层&rdquo;工具添加的列时，分组可正常工作</li>
+			</ul>
+        </ul>
 		
         <p>2.1 版本已于 2013 年 7 月发布。该版本包括以下增强： </p>
         <ul>

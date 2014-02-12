@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/de/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="Hilfe" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,10 +46,10 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">App herunterladen</h2>
-          <span id="appVersion"><strong>Version:</strong> 2.1.1</span> <span id="appReleased"><strong>Verfügbar:</strong> Herbst 2013</span>
+          <span id="appVersion"><strong>Version:</strong> 2.1.2</span> <span id="appReleased"><strong>Verfügbar:</strong> Herbst 2013</span>
 
 
-          <p>Mit Esri Maps for Office können Sie aus Ihren Exceldaten im Handumdrehen dynamische, interaktive Karten erstellen und sie auf völlig neue Weise erkunden. Esri Maps for Office ermöglicht es Ihnen, Muster und Tendenzen zu entdecken, die sich Tabellendaten und Diagrammen nicht ohne weiteres entnehmen lassen. Über PowerPoint-Präsentationen können Karten sofort freigegeben werden, oder Sie veröffentlichen sie mit einem Klick auf ArcGIS Online, der Mapping-Plattform von Esri.</p>
+          <p>Mit Esri Maps for Office können Sie aus Ihren Exceldaten im Handumdrehen dynamische, interaktive Karten erstellen und sie auf völlig neue Weise erkunden. Esri Maps for Office ermöglicht es Ihnen, Muster und Tendenzen zu entdecken, die sich aus Tabellendaten und Diagrammen nicht ohne weiteres entnehmen lassen. Über PowerPoint-Präsentationen können Karten sofort freigegeben werden, oder Sie veröffentlichen sie mit einem Klick auf ArcGIS Online, der Mapping-Plattform von Esri.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Erwerben Sie Esri Maps for Office</a>
@@ -111,7 +117,22 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2>Neuheiten</h2>
-        <p>Esri Maps for Office Version 2.1.1 wurde im Oktober 2013 veröffentlicht. Es enthält folgende Verbesserungen:</p>
+        <p>Esri Maps for Office Version 2.1.2 wurde im November 2013 veröffentlicht. Es enthält folgende Verbesserungen:</p>
+        <ul>
+		<li>Bugfixes und Verbesserungen der Benutzerfreundlichkeit, z. B:
+			<ul>
+			<li>Verbesserungen des Werkzeugs "Layer anreichern": effizientere Speichernutzung, um umfassendere Anreicherungsanforderungen zu verarbeiten, sowie eine verbesserte Statusanzeige.</li>
+			<li>Behebung eines Fehlers, der nach der Installation von Esri Maps zu einem Absturz von Excel führte. </li>
+			<li>Behebung eines Fehlers, der zur Anzeige falscher Bilder im Suchbereich führte.</li>
+			<li>Behebung eines Fehlers, der dazu führte, dass die Suche nach benutzerdefinierten Positionstypen in den Sprachen Japanisch, Russisch und Chinesisch fehlschlug.</li>
+			<li>Bereinigung lokalisierter Zeichenfolgen für "Wesentliche Fakten", "Business", "Politik" und "Gesundheit" im Suchbereich.</li>
+			</ul>
+        </ul>
+
+
+        <h3>Frühere Versionen</h3>
+		
+		<p>Version 2.1.1 wurde im Oktober 2013 veröffentlicht. Es enthält folgende Verbesserungen:</p>
         <ul>
         <li>Neue lokalisierte Versionen für 22 unterstützte Sprachen:</li>
 			<ul>
@@ -131,9 +152,6 @@ mobile: true
 			<li>Gruppierung funktioniert nun ordnungsgemäß bei Spalten, die über das Werkzeug "Layer anreichern" hinzugefügt wurden</li>
 			</ul>
         </ul>
-
-
-        <h3>Frühere Versionen</h3>
 		
         <p>Version 2.1 wurde im Juli 2013 veröffentlicht Es enthält folgende Verbesserungen: </p>
         <ul>

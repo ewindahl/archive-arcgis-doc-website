@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/no/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="Hjelp" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,10 +46,10 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Last ned appen</h2>
-          <span id="appVersion"><strong>Versjon:</strong> 2.1.1</span> <span id="appReleased"><strong>Tilgjengelig:</strong> H&oslash;sten 2013</span>
+          <span id="appVersion"><strong>Versjon:</strong> 2.1.2</span> <span id="appReleased"><strong>Tilgjengelig:</strong> H&oslash;sten 2013</span>
 
 
-          <p>Med Esri Maps for Office kan du raskt opprette dynamiske og interaktive kart av Excel-dataene dine og begynne &aring; utforske dem p&aring; en helt ny m&aring;te. Med Esri Maps for Office kan du avdekke m&oslash;nstre og trender som ikke er synlige i tabellbaserte data og diagrammer. Kart kan deles umiddelbart ved hjelp av PowerPoint-presentasjoner eller med ettklikkspublisering til Esris kartplattform, ArcGIS Online. </p>
+          <p>Med Esri Maps for Office kan du raskt opprette dynamiske og interaktive kart av Excel-dataene dine og begynne &aring; utforske dem p&aring; en helt ny m&aring;te. Med Esri Maps for Office kan du avdekke m&oslash;nstre og trender som ikke er synlige i tabellbaserte data og diagrammer. Kart kan deles umiddelbart ved hjelp av PowerPoint-presentasjoner eller med ettklikkspublisering til Esris kartplattform, ArcGIS Online.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Skaff deg Esri Maps for Office</a>
@@ -98,9 +104,6 @@ mobile: true
 		 <li>Windows Server 2012</li>
 		</ul>
 		<p>Se systemkravene for <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> og <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a> hvis du vil ha mer informasjon, blant annet om n&oslash;dvendig prosessorhastighet, minne og harddiskplass.</p>
-
-
-
         <!-- 
 		<h3>Support for the following languages</h3>
         <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
@@ -111,7 +114,22 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2>Nyheter</h2>
-        <p>Esri Maps for Office versjon 2.1.1 ble utgitt i oktober 2013. Det inneholder f&oslash;lgende forbedringer:</p>
+        <p>Esri Maps for Office versjon 2.1.2 ble utgitt i oktober 2013. Den inneholder f&oslash;lgende forbedringer:</p>
+        <ul>
+		<li>Feilrettinger og forbedret brukervennlighet, blant annet:
+			<ul>
+			<li>Forbedringer av datasuppleringsverkt&oslash;yet, for eksempel mer effektiv minnebruk for &aring; h&aring;ndtere st&oslash;rre suppleringsforesp&oslash;rsler og en forbedret fremdriftsindikator.</li>
+			<li>Rettet en feil som gjorde at Excel krasjet etter installasjon av Esri Maps. </li>
+			<li>Rettet en feil som gjorde at feil bilder ble vist i s&oslash;keruten.</li>
+			<li>Rettet en feil som gjorde at lokasjonstypeoppslag mislyktes p&aring; japansk, russisk og kinesisk.</li>
+			<li>Ryddet opp i lokaliserte strenger for N&oslash;kkelfakta, Velstand, Politikk og Helse i s&oslash;keruten.</li>
+			</ul>
+        </ul>
+
+
+        <h3>Tidligere versjoner</h3>
+		
+		<p>Versjon 2.1.1 ble utgitt i oktober 2013. Den inneholder f&oslash;lgende forbedringer:</p>
         <ul>
         <li>Nye lokaliserte versjoner for 22 st&oslash;ttede spr&aring;k:</li>
 			<ul>
@@ -131,9 +149,6 @@ mobile: true
 			<li>Gruppering fungerer n&aring; som det skal ved bruk av kolonner som er lagt til fra verkt&oslash;yet for suppleringsdata</li>
 			</ul>
         </ul>
-
-
-        <h3>Tidligere versjoner</h3>
 		
         <p>Versjon 2.1 ble utgitt i juli 2013. Den inneholder f&oslash;lgende forbedringer: </p>
         <ul>

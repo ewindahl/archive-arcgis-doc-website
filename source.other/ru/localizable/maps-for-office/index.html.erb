@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/ru/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="справка" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,8 +46,7 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Загрузка приложения</h2>
-          <span id="appVersion"><strong>Версия:</strong> 2.1.1</span> <span id="appReleased"><strong>Доступные:</strong> 2013</span>
-
+          <span id="appVersion"><strong>Версия:</strong> 2.1.2</span> <span id="appReleased"><strong>Доступные:</strong> Осень 2013</span>
 
           <p>Esri Maps for Office позволяет быстро создавать динамические интерактивные карты по данным Excel и начать использовать их по-новому. Esri Maps for Office помогает вам выявить закономерности и тренды, не очевидные в представлении данных в виде таблиц или списка. Карты можно сразу же использовать в презентациях PowerPoint или одним кликом опубликовать на картографической платформе Esri, в ArcGIS Online.</p>
 
@@ -111,11 +116,26 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2>Что нового</h2>
-        <p>Версия Esri Maps for Office 2.1.1 была выпущена в октябре 2013 г. Она включает следующую новую функциональность:</p>
+        <p>Версия Esri Maps for Office 2.1.2 была выпущена в ноябре 2013 г. Она включает следующую новую функциональность:</p>
+        <ul>
+		<li>Исправлены ошибки и повышено удобство работы, включая:
+			<ul>
+			<li>Улучшен инструмент Обогатить слой, например: введено эффективное использование памяти для обработки крупных запросов на обогащение и улучшен индикатор выполнения.</li>
+			<li>Исправлена ошибка, которая вызывала сбой Excel после установки Esri Maps. </li>
+			<li>Исправлена ошибка с отображением неверных изображений на панели Поиск.</li>
+			<li>Исправлена ошибка, которая вызывала сбой при поиске пользовательского типа местоположения на японском, русском и китайском языках.</li>
+			<li>Убраны строки локализации в разделах Ключевые факты, Благосостояние, Политика и Здоровье на панели Поиск.</li>
+			</ul>
+        </ul>
+
+
+        <h3>Предыдущие версии</h3>
+		
+		<p>Версия 2.1.1 была выпущена в октябре 2013. Она включает следующую новую функциональность:</p>
         <ul>
         <li>Новая локализованная версия с поддержкой локализации для 22 языков:</li>
 			<ul>
-			<li>Арабский, датский, голландский, английский, эстонский (), французский, немецкий, иврит, итальянский, японский, корейский, латвийский (), литовский (), норвежский, польский, португальский, португальский (бразильский), румынский, русский, китайский (упрощенный), испанский и шведский.</li>
+			<li>Арабский, китайский (упрощенный), датский, нидерландский, английский, эстонский, французский, немецкий, иврит, итальянский, японский, корейский, латвийский, литовский, норвежский, польский, португальский, португальский (бразильский), румынский, русский, испанский и шведский.</li>
 			</ul>
 		<li>Поддержка всплывающих окон в веб-картах.</li>
 		<li>Присвоение условных знаков объектам при помощи значков на основании URL атрибута</li>
@@ -131,9 +151,6 @@ mobile: true
 			<li>Корректно работает классификация при использовании столбцов, добавленных с помощью инструмента Обогатить слой</li>
 			</ul>
         </ul>
-
-
-        <h3>Предыдущие версии</h3>
 		
         <p>Версия 2.1 была выпущена в июле 2013. Она включает следующую новую функциональность: </p>
         <ul>

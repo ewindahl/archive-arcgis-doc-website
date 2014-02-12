@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/pl/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,10 +46,10 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Pobierz aplikację</h2>
-          <span id="appVersion"><strong>Wersja:</strong> 2.1.1</span> <span id="appReleased"><strong>Data publikacji:</strong> Jesień 2013 r.</span>
+          <span id="appVersion"><strong>Wersja:</strong> 2.1.2</span> <span id="appReleased"><strong>Dostępna:</strong> Jesień 2013</span>
 
 
-          <p>Dodatek Esri Maps for Office umożliwia szybkie tworzenie dynamicznych, interaktywnych map z wykorzystaniem danych z programu Excel, dzięki czemu możesz rozpocząć ich przeglądanie w zupełnie nowy sposób. Dodatek Esri Maps for Office pozwala odkryć zależności i trendy, które nie są w oczywisty sposób widoczne w danych tabelarycznych i na wykresach. Mapy mogą być udostępniane bezpośrednio za pomocą prezentacji programu PowerPoint lub opcji ich publikowania jednym kliknięciem na platformie mapowej firmy Esri w serwisie ArcGIS Online.</p>
+          <p>Dodatek Esri Maps for Office umożliwia szybkie tworzenie dynamicznych, interaktywnych map z wykorzystaniem danych z programu Excel, dzięki czemu możesz rozpocząć ich przeglądanie w zupełnie nowy sposób. Dodatek Esri Maps for Office pozwala odkryć zależności i trendy, które nie są w oczywisty sposób widoczne w danych tabelarycznych i na wykresach. Mapy mogą być udostępniane bezpośrednio na platformie mapowej firmy Esri, czyli w serwisie ArcGIS Online, za pomocą prezentacji PowerPoint lub funkcji publikowania jednym kliknięciem.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Pobierz dodatek Esri Maps for Office</a>
@@ -88,7 +94,7 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2>Wymagania systemowe</h2>
 
-        <p>Dodatek Esri Maps for Office wymaga posiadania konta należącego do instytucji serwisu <a href="http://help.arcgis.com/pl/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> oraz programu Microsoft Office Excel albo PowerPoint 2010 lub Microsoft Office Excel albo PowerPoint 2013. Obsługiwane systemy operacyjne to:</p>
+        <p>Dodatek Esri Maps for Office wymaga posiadania konta należącego do instytucji <a href="http://help.arcgis.com/pl/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> oraz programów Microsoft Office Excel lub PowerPoint 2010 bądź Microsoft Office Excel lub PowerPoint 2013. Obsługiwane systemy operacyjne to:</p>
 		<ul>
 		 <li>Windows XP (koniecznie z dodatkiem SP3) (wersja 32-bitowa)</li>
 		 <li>Windows 7 (wersja 32-bitowa i 64-bitowa)</li>
@@ -97,8 +103,7 @@ mobile: true
 		 <li>Windows Server 2008 R2</li>
 		 <li>Windows Server 2012</li>
 		</ul>
-		<p>Aby uzyskać dodatkowe informacje, w tym dane dotyczące wymaganej prędkości procesora, pamięci i miejsca na dysku twardym, zapoznaj się z tematem wymagania systemowe pakietu <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> i <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
-
+		<p>Aby uzyskać dodatkowe informacje, w tym dane dotyczące wymaganej prędkości procesora, ilości pamięci i miejsca na dysku twardym, zapoznaj się wymaganiami systemowymi pakietu <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> oraz <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
 
 
         <!--  		<h3>Support for the following languages</h3>         <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p> 		//-->
@@ -108,31 +113,43 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2>Co nowego</h2>
-        <p>Dodatek Esri Maps for Office w wersji 2.1.1 został udostępniony w październiku 2013 r., a ulepszenia w nim zawarte to:</p>
+        <p>Dodatek Esri Maps for Office w wersji 2.1.2 został opublikowany w listopadzie 2013 r. i zawiera następujące udoskonalenia:</p>
         <ul>
-        <li>Nowe zlokalizowane wersje oprogramowania w 22 obsługiwanych językach:</li>
+		<li>Poprawki i udoskonalenia w zakresie obsługi, w tym:
 			<ul>
-			<li>arabskim, chińskim (uproszczonym), duńskim, holenderskim, angielskim, estońskim, francuskim, niemieckim, hebrajskim, włoskim, japońskim, koreańskim, łotewskim, litewskim, norweskim, polskim, portugalskim (Brazylia), portugalskim (Portugalia), rumuńskim, rosyjskim, hiszpańskim i szwedzkim</li>
-			</ul>
-		<li>Obsługa okien podręcznych na mapach internetowych</li>
-		<li>Przypisywanie obiektom symbolu za pomocą ikony dostępnej za pośrednictwem adresu URL atrybutu</li>
-		<li>Poprawki i zwiększona funkcjonalność produktu, w tym:
-			<ul>
-			<li>Lepsza obsługa logowania z użyciem protokołu OAuth</li>
-			<li>Bardziej użyteczne komunikaty narzędzia Znajdź lokalizacje hot spot</li>
-			<li>Narzędzie Znajdź lokalizacje hot obsługuje już nazwy kolumn zawierające spacje</li>
-			<li>Narzędzie selekcji obsługuje teraz bufory o rozmiarze „0”</li>
-			<li>Usunięte problemy związane z panelem zadań</li>
-			<li>Usunięte błędy związane z widocznością grup</li>
-			<li>Lepsza obsługa instytucji stosujących protokół SSL we wszystkich połączeniach</li>
-			<li>Naprawiony błąd opcji Grupowanie pojawiający się przy stosowaniu kolumn dodanych z narzędzia Wzbogać warstwę</li>
+			<li>Udoskonalenia narzędzia Wzbogać warstwę, takie jak: wydajniejsze użycie pamięci umożliwiające obsługę większych żądań wzbogacania oraz ulepszony wskaźnik postępu</li>
+			<li>Usunięcie usterki powodującej awarię programu Excel po zainstalowaniu dodatku Esri Maps </li>
+			<li>Usunięcie usterki powodującej wyświetlanie nieprawidłowych rastrów w panelu Wyszukaj</li>
+			<li>Usunięcie usterki powodującej niepowodzenie wyszukiwania niestandardowych typów lokalizacji w japońskiej, rosyjskiej oraz chińskiej wersji językowej</li>
+			<li>Skorygowane zlokalizowane ciągi w sekcjach Najważniejsze dane, Zamożność, Polityka i Zdrowie w panelu Wyszukaj</li>
 			</ul>
         </ul>
 
 
         <h3>Poprzednie wersje</h3>
 		
-        <p>Wersja 2.1 została opublikowana w lipcu 2013 r., a ulepszenia w niej zawarte to: </p>
+		<p>Wersja 2.1.1 została opublikowana w październiku 2013 r. i zawiera następujące ulepszenia:</p>
+        <ul>
+        <li>Nowe wersje zlokalizowane dla 22 obsługiwanych języków:</li>
+			<ul>
+			<li>arabski, chiński (uproszczony), duński, holenderski, angielski, estoński, francuski, niemiecki, hebrajski, włoski, japoński, koreański, łotewski, litewski, norweski, polski, portugalski (Brazylia), portugalski (Portugalia), rumuński, rosyjski, hiszpański i szwedzki</li>
+			</ul>
+		<li>Obsługa okien podręcznych na mapach internetowych</li>
+		<li>Symbolizowanie obiektów za pomocą ikony korzystającej z adresu URL atrybutu</li>
+		<li>Poprawki i udoskonalenia w zakresie obsługi dla całego produktu, w tym:
+			<ul>
+			<li>Udoskonalona obsługa loginów w protokole OAuth</li>
+			<li>Bardziej pomocne komunikaty o błędach narzędzia Znajdź lokalizacje hot spot</li>
+			<li>Narzędzie Znajdź lokalizacje hot spot obsługuje teraz nazwy kolumn zawierające spacje</li>
+			<li>Narzędzie Wybierz obsługuje teraz bufory o rozmiarze „0”</li>
+			<li>Usunięcie problemów związanych z panelem zadań</li>
+			<li>Usunięcie usterek związanych z widocznością grup</li>
+			<li>Udoskonalenia w zakresie obsługi instytucji korzystających z protokołu SSL dla wszystkich połączeń</li>
+			<li>Funkcja Grupowanie działa teraz poprawnie podczas korzystania z kolumn dodanych z narzędzia Wzbogać warstwę</li>
+			</ul>
+        </ul>
+		
+        <p>Wersja 2.1. została opublikowana w lipcu 2013 r. i zawiera następujące ulepszenia: </p>
         <ul>
         <li>Analiza statystyczna zależności za pomocą narzędzia Znajdź lokalizacje hot spot</li>
 		<li>Ulepszenia wzbogacania danych, w tym większa liczba zbiorów danych oraz możliwość wyboru poszczególnych zmiennych ze zbiorów danych.</li>
@@ -142,7 +159,7 @@ mobile: true
 		<li>Ulepszony schemat pracy do celów aktualizacji dodatku Maps for Office do najnowszej wersji</li>
         </ul>
 		<br>
-        <p>Wersja 2.0.2 została opublikowana w maju 2013 r., a ulepszenia w niej zawarte to:</p>
+        <p>Wersja 2.0.2 została opublikowana w maju 2013 r. i zawiera następujące ulepszenia:</p>
         <ul>
           <li>Wzbogać swoje dane kontekstem geograficznym za pomocą nowego narzędzia Wzbogać warstwę</li>
 		  <li>Wybierz obiekty na swojej mapie i znajdź najbliższe obiekty w innych warstwach </li>
@@ -168,7 +185,7 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>Rozpocznij</h3>
+          <h3>Wprowadzenie</h3>
           <ul>
            <li><a href="#whatsNew">Co nowego</a></li>
             <li><a href="#systemRequirements">Wymagania systemowe</a></li>
