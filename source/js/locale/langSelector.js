@@ -19,10 +19,10 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if (winloc.pathname.indexOf ("/maps-for-office/") <0 && winloc.pathname.indexOf ("/maps-for-sharepoint/") <0 && winloc.pathname.indexOf("/operations-dashboard/")<0 && winloc.pathname.indexOf ("/collector/") <0) {
-    return;
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/)/)){
+	return;
   }
-
+  
   var doc = {};
 
   doc.cookieJar = (function(){
