@@ -18,10 +18,11 @@ if (!String.prototype.format) {
 
 jQuery(document).ready(function ($) {
   var winloc = window.location;
-  if (winloc.pathname.indexOf ("/maps-for-office/") <0) {
-    return;
-  }
 
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/)/)){
+	return;
+  }
+  
   var doc = {};
 
   doc.cookieJar = (function(){
@@ -80,7 +81,7 @@ jQuery(document).ready(function ($) {
           "it": "it",
           "ja" : "ja",
           "ko": "ko",
-          "nl" : "nl",
+          /*"nl" : "nl",*/
           "no": "no",
           "pl": "pl",
           "pt-br": "pt-br",
@@ -94,29 +95,10 @@ jQuery(document).ready(function ($) {
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","sv"],
+      lgPartial = ["da","it","ko","no","pl","pt-br","pt-pt","ro","sv"],
 
       //all langs
-      lgPickerLabels = {
-          "en": "English",
-          "ar": "عربي",
-          "da": "Dansk",
-          "de": "Deutsch",
-          "es": "Español",
-          "fr": "Français",
-          "it": "Italiano",
-          "ja": "日本語",
-          "ko": "한국어",
-          "nl": "Nederlands",
-          "no": "Norsk",
-          "pl": "Polski",
-          "pt-br": "Português (Brasil)",
-          "pt-pt": "Português (Portugal)",
-          "ro": "Română",
-          "ru": "Русский",
-          "sv": "Svenska",
-          "zh-cn": "中文(简体)"
-      },
+      lgPickerLabels = GLangLabels,
 
       //historyCK = "state404", 
       prefLangCK = "preflang";

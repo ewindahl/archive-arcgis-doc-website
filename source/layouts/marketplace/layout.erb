@@ -39,17 +39,16 @@
     <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-
+    <%= stylesheet_link_tag "screen" %>
     <% if current_page.data.css %>
       <% current_page.data.css.each do |stylesheet| %>
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
 
-    <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
+	<%= javascript_include_tag "locale/l10NStrings" %>
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
-    <%= javascript_include_tag  "libs/kss", "libs/highlight.pack" %>
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>
@@ -74,8 +73,8 @@
 
    <!-- Language Picker
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
-   <%= javascript_include_tag "locale/l10NStrings" %>
    <%= javascript_include_tag "locale/langSelector" %>-->
+   <%= javascript_include_tag "locale/l10NStrings" %>
 
    <!-- set dropdown/show home in footer -->
   <script>
@@ -85,21 +84,23 @@
   </script>
 
   </head>
-  <body>
+  <body class="<%= current_language %> marketplace">
     <div id="wrapper">
       <div id="page">
 
-        <header id="header">
+        <header id="header" class="">
           <div class="container relative-container">
               <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
+
                 <div class="logo-wrap">
                   <a id="site-logo" href="http://marketplace.arcgis.com/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
                   <span class="down-arrow" id="down-arrow"></span>
                 </div>
                 
                 <%= partial "_partial/site_header_dropdown" %>
-
-                <nav></nav>
+                <nav>
+                </nav>
+                
                 <form id="mkpSearchForm" action="#">
                   <input type="search" name="mkpSearch"  placeholder="<%= t("site.nav.mpSearch") %>">
                 </form>
@@ -145,7 +146,7 @@
       </div>
     </div>
 
-    <footer id="footer">
+    <footer id="footer" class="">
       <div class="container">
         <div class="row">
           <nav>
@@ -165,5 +166,7 @@
     </footer>
 
     <%= javascript_include_tag "drop-down" %>
+    <%= javascript_include_tag "search/searchform.js" %>
+
   </body>
 </html>

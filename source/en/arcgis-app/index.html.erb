@@ -2,7 +2,6 @@
 title: ArcGIS app for smartphones and tablets
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - /en/asset/css/app-switch-1
@@ -16,7 +15,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="ArcGIS app for smartphones and tablets Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="android-app,ios-app,win-phone-app"><META name="sub_category" content="ArcGIS app"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS app"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS">
+  - <META name="description" content="ArcGIS app for smartphones and tablets Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="android-app,ios-app,win-phone-app"><META name="sub_category" content="ArcGIS app"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS app"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
 
 mobile: true
 
@@ -25,6 +24,13 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/en/arcgis-app/">ArcGIS app for smartphones and tablets</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS app">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="android-app" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -43,7 +49,8 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Download the app</h2>
-		  <span id="appVersion"><strong>Version:</strong> 10.1.2 </span>
+		  <span id="appVersion"><strong>Version:</strong> <span class="icon-android"/><span class="icon-apple"/> 10.1.2, <span class="icon-purple icon-windows-8"/> 10.1.3</span>
+		  <!--<span id="appVersion"><strong>Version:</strong> 10.1.2 </span>-->
           <!--<span id="appVersion"><strong>Version:</strong> <span class="icon-android"> 2.0.5,</span> <span class="icon-apple"> 10.1.2,</span> <span class="icon-purple icon-windows-8"> 10.1.2</span></span>-->
           <!-- <span id="appReleased"><strong>Released:</strong> <span class="icon-android"> December 2012,</span> <span class="icon-apple"> September 2012,</span> <span class="icon-purple icon-windows-8"> May 2013</span></span> -->
 
@@ -81,7 +88,7 @@ mobile: true
           <img src="app-collector-map.jpg" />
 
           <h3>Your data</h3>
-          <p>How do I make a map? What types of services and service layers are supported? How do I open maps created in ArcMap? Get answers to all your questions on bringing your data into the app.</p>
+          <p>How do I make a map? What types of services and service layers are supported? How do I open maps created in ArcMap? Get answers to your questions on bringing your data into the app.</p>
           <p>
             <a href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm" class="icon-right-arrow">&nbsp;Get answers</a>
           </p>
@@ -97,7 +104,7 @@ mobile: true
 
 
         <h3>Data requirements</h3>
-        <p>To use your data in the ArcGIS app, you must use ArcGIS.com or Portal for ArcGIS. In your map, use services from ArcGIS Server 9.3.1 or later.</p>
+        <p>To use your data in the ArcGIS app, you must use ArcGIS.com or Portal for ArcGIS to create a map. In your map, use services from ArcGIS Server 9.3.1 or later.</p>
 
 
         <h3>Device requirements</h3>
@@ -143,8 +150,8 @@ mobile: true
 				<p>Version 10.1.2 was released in September 2013, including:
 				<ul>
 					<li>Expanded support for scale dependency on layers</li>
-					<li>Support for overriding editing on web maps</li>
-					<li>Support for layer filters on web maps</li>
+					<li>Support for overriding editing in the map</li>
+					<li>Support for layer filters in the map</li>
 					<li>New layer support: WMS, OpenStreetMap</li>
 					<li>Federated security</li>
 					<li>Various bug fixes</li>
@@ -157,8 +164,8 @@ mobile: true
 		    	<p>Version 10.1.2 was released in August 2013, including:
 				<ul>
 					<li>Expanded support for scale dependency on layers</li>
-					<li>Support for overriding editing on web maps</li>
-					<li>Support for layer filters on web maps</li>
+					<li>Support for overriding editing in the map</li>
+					<li>Support for layer filters in the map</li>
 					<li>Federated security</li>
 					<li>Localized into additional languages</li>
 					<li>Fixed posting attachments with add only permissions (NIM084199)</li>
@@ -168,6 +175,7 @@ mobile: true
         		<p>See <a data-modlink="false" href="/en/arcgis-app/ios/help/what-s-new.htm">What's new in iOS</a> for previous versions.</p>
 		    </td>
 		    <td valign="top"><h4 class="icon-purple icon-windows-8">Windows Phone</h4>
+		        <p>Version 10.1.3 was released in January 2014 with various bug fixes.</p>
 		    	<p>Version 10.1.2 was released in May 2013, including:
 		    	<ul>
 					<li>Windows Phone 8 support</li>

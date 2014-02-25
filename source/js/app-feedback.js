@@ -75,26 +75,7 @@ doc.l10n = (function () {
     lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","ru","sv"],
 
     //all langs
-    lgPickerLabels = {
-        "en": "English",
-        "ar": "عربي",
-        "da": "Dansk",
-        "de": "Deutsch",
-        "es": "Español",
-        "fr": "Français",
-        "it": "Italiano",
-        "ja": "日本語",
-        "ko": "한국어",
-        "nl": "Nederlands",
-        "no": "Norsk",
-        "pl": "Polski",
-        "pt-br": "Português (Brasil)",
-        "pt-pt": "Português (Portugal)",
-        "ro": "Română",
-        "ru": "Русский",
-        "sv": "Svenska",
-        "zh-cn": "中文(简体)"
-    },
+    lgPickerLabels = GLangLabels;
 
     historyCK = "state404", 
     prefLangCK = "preflang";
@@ -318,21 +299,22 @@ doc.supportForm = (function() {
 
 	return {
 	/* Function for the form validation */
-		validateFeedbackForm : function(){
+		validateFeedbackForm : function(lg){
+			var dict = (window.localeJsonObj || {})[lg];
 				
 			if(document.getElementById('userFeedback').value == ""){
-				alert("Please enter the valid feedback!");
+				alert(dict['enter-valid-feedback']);
 				document.getElementById('userFeedback').focus();
 				return false;
 			}
 			if(document.getElementById('userEmail').value == ""){
-				alert("Please enter your Email address!");
+				alert(dict['enter-valid-email']);
 				document.getElementById('userEmail').focus();
 				return false;
 			}
 			
-			if(!doc.supportForm.ValidCaptcha()){
-				alert("Please enter the valid captcha value!");
+			if(!this.ValidCaptcha()){
+				alert(dict['enter-valid-captcha']);
 				document.getElementById('txtCaptchaInput').focus();
 				return false;
 			}
@@ -353,6 +335,7 @@ doc.supportForm = (function() {
 			var g = '10';  
 			var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
 			document.getElementById("txtCaptcha").innerHTML = code;
+			document.getElementById("txtHiddenCaptcha").value = code;
 		},
 
 		ValidCaptcha : function () { 
@@ -360,7 +343,7 @@ doc.supportForm = (function() {
 				return string.split(' ').join('');
 			};
 
-			var str1 = removeSpaces(document.getElementById('txtCaptcha').innerHTML);
+			var str1 = removeSpaces(document.getElementById('txtHiddenCaptcha').value);
 			var str2 = removeSpaces(document.getElementById('txtCaptchaInput').value);
 			return (str1 === str2);
 		},

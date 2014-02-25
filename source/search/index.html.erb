@@ -1,5 +1,5 @@
 ---
-layout: marketplace/layout
+layout: search
 
 title: Search Result
 css:
@@ -12,9 +12,10 @@ css:
 
 js:
   - sitecfg
-  - libs/underscore-min
-  - libs/backbone-min
+  - libs/underscore
+  - libs/backbone
   - search/jxon
+  - search/searchcfg
   - search/gsasearch
   - marketplace/init
 
@@ -26,59 +27,48 @@ mobile: true
 
 ---
 
-
-<div class="section-bar marketplace">
-  <div class="container search">
-    <header>
-      <h1 data-langlabel="search">Search</h1>
-    </header>
-  <nav>
-     &nbsp;
-    </nav>
-  </div>
-</div>
-
 <!-- Page Content -->
-<div class="container search">
+<div class="container search inithide">
   <div class="row">
-    <div class="pre-2 column-22">
+    <aside class="reference-index">
+      <nav id="searchFilter">
+      </nav>
+    </aside>
+
+    <section class="reference-content">
       <div class="search-box">
         <div id="searchBox">
           <form id="gsaSearchForm">
-            <input type="search" size="80" placeholder="Search Marketplace Help" 
+            <input type="search" size="80" placeholder="Search doc.arcgis.com help" 
             data-langlabel="search-arcgis-doc-content" name="q" id="query">
           </form>
         </div>
       </div>
-    </div>
-    <div class="pre-2 column-22">
-        <div class="row search-nav">
-          <div class="column-9 gl-pnavinfo-s"></div>
-          <div class="pre-1 column-14"></div>
-        </div>
-    </div>
 
-    <div class="pre-2 column-22">
+      <div class="row search-nav">
+        <div id="searchStat" class="column-9"></div>
+        <div class="pre-1 column-2"></div>
+        <div id="searchLang" class="pre-1 column-11"></div>
+      </div>
+
       <hr />
-    </div>
 
-    <div class="pre-2 column-16 post-6">
-        <div id="results">
-          <div id="spinner" style="display: none;">
-            <img alt="loading" src="http://resources.arcgis.com/en/shared/rc/gallery/ajax-loader.gif">
-          </div>
-
-            <!-- Result area -->
-            <div id="dynamicContent" class="display3">
-              <div class="clear"></div>
-            </div>
-            <!-- End of Result -->
+      <div id="results">
+        <div id="spinner" style="display: none;">
+          <img alt="loading" src="/img/ajax-loader.gif">
         </div>
-    </div>
-    <div id="gl-pagenav" class="pre-4 column-16 post-4">
-    </div>
+
+        <!-- Result area -->
+        <div id="searchResult" class="display3">
+          <div class="clear"></div>
+        </div>
+        <!-- End of Result -->
+      </div>
+
+      <div id="searchPager">
+      </div>
+
+    </section>
+
   </div>
 </div>
-
-      </div>
-    </div>

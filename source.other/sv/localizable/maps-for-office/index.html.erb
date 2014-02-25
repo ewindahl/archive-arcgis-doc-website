@@ -1,28 +1,38 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
 ---
-<div class="navigation-bar blue">
+title: Esri Maps for Office
+
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="section-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/maps-for-office/">Esri Maps for Office</a></h1>
+      <h1><a href="/sv/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="Hj&auml;lp" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/maps-for-office/">Startsida</a></li>
-        <li><a href="/en/maps-for-office/help/">Hj&auml;lp</a></li>
+        <li class='current'><a href="/sv/maps-for-office/">Startsida</a></li>
+        <li><a href="/sv/maps-for-office/help/">Hj&auml;lp</a></li>
         <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">Forum</a></li>
       </ul>
     </nav>
@@ -36,10 +46,9 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">H&auml;mta applikationen</h2>
-          <span id="appVersion"><strong>Version:</strong> 2.1</span> <span id="appReleased"><strong>Tillg&auml;nglig:</strong> juli 2013</span>
+          <span id="appVersion"><strong>Version:</strong> 2.1.2</span> <span id="appReleased"><strong>Tillg&auml;nglig:</strong> H&ouml;sten 2013</span>
 
-
-          <p>Med Esri Maps for Office kan du snabbt och enkelt skapa dynamiska och interaktiva kartor baserat p&aring; Excel-data och f&aring; en helt ny bild av dem. Du kan se m&ouml;nster och trender som inte framg&aring;r n&auml;r informationen visas i tabeller och diagram. Kartorna kan l&auml;ggas in direkt i PowerPoint-presentationer eller publiceras i Esris molntj&auml;nst f&ouml;r kartor, ArcGIS Online.</p>
+          <p>Med Esri Maps for Office kan du snabbt skapa dynamiska, interaktiva kartor med dina Excel-data och utforska dem p&aring; ett helt nytt s&auml;tt. Med Esri Maps for Office kan du uppt&auml;cka m&ouml;nster och trender som inte syns i tabelldata och diagram. Du kan dela kartorna direkt via PowerPoint-presentationer eller publicera dem med ett klick till Esris kartplattform, ArcGIS Online.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">H&auml;mta Esri Maps for Office</a>
@@ -54,8 +63,8 @@ metatags:
         <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="map-your-data.jpg" />
 
-          <h3>G&ouml;r kartor av dina kalkylblad </h3>
-          <p>L&auml;r dig hur du g&ouml;r kartor av dina Excel-data med Esri Maps for Office. Du kan enkelt skapa olika typer av kartor som kan ge ett nytt perspektiv p&aring; dina data direkt i Excel. Det kan vara interaktiva f&auml;rgkodade kartor, punktkartor, kartor med klustrade punkter eller intensitetskartor.</p>
+          <h3>Anv&auml;nd dina kalkylblad i kartor </h3>
+          <p>L&auml;r dig hur du kan anv&auml;nda Excel-data i Esri Maps for Office. Du kan enkelt skapa interaktiva f&auml;rgkodade kartor, punktkartor, kartor med punktkluster och intensitetskartor direkt i Excel och f&aring; visuella insikter om dina data.</p>
           <p>
             <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Visa en film</a>
 			<video width="320" height="240" controls id="2457" class="mobileVideo">
@@ -69,7 +78,7 @@ metatags:
           <img src="enrich-data.jpg" />
 
           <h3>Berika data</h3>
-          <p>Tillsammans med Esris omfattande datasamlingar blir din verksamhets aff&auml;rsdata mer v&auml;rdefull. L&auml;gg till data om demografi och livsstil direkt i Excel-kalkylbladen och se de platser som &auml;r relevanta f&ouml;r dig i ett st&ouml;rre sammanhang. Du kan snabbt f&aring; mer information om platser med hj&auml;lp av infografik som visas i popup-f&ouml;nster.</p>
+          <p>Anv&auml;nd Esris omfattande datasamlingar f&ouml;r att skapa v&auml;rde &aring;t dina aff&auml;rsdata. L&auml;gg till demografi och livsstilsdata direkt i Excel-kalkylarken och skaffa mer sammanhang om de platser som &auml;r viktiga f&ouml;r dig. Utforska platser snabbt och enkelt med hj&auml;lp av infografik i popupf&ouml;nster.</p>
           <p>
            <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Visa en film</a>
 		   <video width="320" height="240" controls id="2468" class="mobileVideo">
@@ -84,55 +93,87 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>Systemkrav</h2>
 
-        <p>F&ouml;r att anv&auml;nda Esri Maps for Office m&aring;ste du ha ett konto som &auml;r en del av en <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>-organisation och antingen Microsoft Office Excel eller PowerPoint 2010, eller Microsoft Office Excel eller PowerPoint 2013. Operativsystem som st&ouml;ds:</p>
+        <p>F&ouml;r att anv&auml;nda Esri Maps for Office beh&ouml;ver du ett konto som ing&aring;r i en <a href="http://help.arcgis.com/sv/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>-organisation samt Microsoft Office Excel eller PowerPoint 2010 eller Microsoft Office Excel eller PowerPoint 2013. Bland de operativsystem som st&ouml;ds finns:</p>
 		<ul>
-		 <li>Windows XP (SP3) (32-bitars)</li>
-		 <li>Windows 7 (32-bitars och 64-bitars)</li>
-		 <li>Windows 8 (32-bitars och 64-bitars)</li>
-		 <li>Windows Server 2003 med SP2 och MSXML 6.0 (endast 32-bitars-Office)</li>
+		 <li>Windows XP (SP3 kr&auml;vs) (32-bitar)</li>
+		 <li>Windows 7 (32- och 64-bitar)</li>
+		 <li>Windows 8 (32- och 64-bitar)</li>
+		 <li>Windows Server 2003 med SP2 och MSXML 6.0 (endast 32-bitars Office)</li>
 		 <li>Windows Server 2008 R2</li>
 		 <li>Windows Server 2012</li>
 		</ul>
-		<p>Mer information om krav p&aring; bland annat processor, minne och h&aring;rddiskutrymme finns i systemkraven f&ouml;r <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> och <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
-
-
-
-        <h3>Spr&aring;k som planeras att lanseras</h3>
-        <p>Arabiska, engelska, kinesiska, franska, tyska, italienska, japanska, spanska, portugisiska (Brasilien) och ryska</p>
-
+		<p>Ytterligare information, inklusive processorhastighet, minne och h&aring;rddiskutrymme som kr&auml;vs, finns i systemkraven f&ouml;r <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> och <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
+        <!-- 
+		<h3>Support for the following languages</h3>
+        <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
+		//-->
 
 
 
 
         <a name="whatsNew"></a>
         <h2>Nyheter</h2>
-        <p>Esri Maps for Office version 2.1 sl&auml;pptes i juli 2013. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
+        <p>Esri Maps for Office version 2.1.2 sl&auml;pptes i november 2013. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
         <ul>
-        <li>Analys av statistiska m&ouml;nster med hotspot-verktyget</li>
-		<li>B&auml;ttre databerikningsfunktioner, till exempel fler datasamlingar och alternativet att kunna v&auml;lja enskilda variabler i datasamlingar</li>
-		<li>St&ouml;d f&ouml;r s&auml;ker inloggning med OAuth+SAML (AGOL)</li>
-        <li>St&ouml;d f&ouml;r s&auml;ker inloggning med IWA, PKI (endast Portal)</li>
-		<li>B&auml;ttre anv&auml;ndargr&auml;nssnitt f&ouml;r infografik och verktyget Berika lager</li>
-		<li>B&auml;ttre process f&ouml;r att uppgradera Maps for Office till den senaste versionen</li>
+		<li>L&ouml;sningar p&aring; fel och f&ouml;rb&auml;ttrad anv&auml;ndbarhet, inklusive:
+			<ul>
+			<li>F&ouml;rb&auml;ttringar av verktyget Berika lager, t.ex. mer effektiv minnesanv&auml;ndning f&ouml;r att hantera berikningsf&ouml;rfr&aring;gningar och en f&ouml;rb&auml;ttrad f&ouml;rloppsindikator.</li>
+			<li>Korrigerade ett fel som gjorde att Excel kraschade efter att Esri Maps installerades. </li>
+			<li>Korrigerade ett fel som gjorde att felaktiga bilder visades i s&ouml;kf&ouml;nstret.</li>
+			<li>Korrigerade ett fel som orsakade att s&ouml;kningar efter anpassade platstyper misslyckades p&aring; japanska, ryska och kinesiska.</li>
+			<li>Rensade upp lokaliserade str&auml;ngar f&ouml;r Nyckelfakta, V&auml;lst&aring;nd, Politiska fakta och H&auml;lsa i s&ouml;kf&ouml;nstret.</li>
+			</ul>
         </ul>
 
 
-        <h3>F&ouml;reg&aring;ende version</h3>
-        <p>Version 2.0.2 sl&auml;pptes i maj 2013. Den versionen inneh&ouml;ll f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
+        <h3>Tidigare versioner</h3>
+		
+		<p>Version 2.1.1 sl&auml;pptes i oktober 2013. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
         <ul>
-          <li>Berika data med verktyget Berika lager f&ouml;r ett geografiskt sammanhang</li>
-		  <li>V&auml;lj geoobjekt p&aring; kartan och s&ouml;k efter andra geoobjekt i n&auml;rheten inom andra lager </li>
-		  <li>Popup-f&ouml;nster har f&aring;tt infografik med information om omr&aring;dena i n&auml;rheten av geoobjekten p&aring; kartan</li>
-		  <li>St&ouml;d f&ouml;r f&ouml;rhandsgranskning i Portal for ArcGIS 10.2</li>
+        <li>Nya lokaliserade versioner f&ouml;r 22 spr&aring;k som st&ouml;ds:</li>
+			<ul>
+			<li>Arabiska, kinesiska (f&ouml;renklad), danska, nederl&auml;ndska, engelska, estniska, franska, tyska, hebreiska, italienska, japanska, koreanska, lettiska, litauiska, norska, polska, portugisiska (Brasilien), portugisiska (Portugal), rum&auml;nska, ryska, spanska och svenska</li>
+			</ul>
+		<li>St&ouml;d f&ouml;r popupf&ouml;nster i webbkartor</li>
+		<li>M&ouml;jlighet att symbolisera geoobjekt med en ikon fr&aring;n ett attribut-URL</li>
+		<li>L&ouml;sningar p&aring; fel och f&ouml;rb&auml;ttrad anv&auml;ndbarhet i hela produkten, inklusive:
+			<ul>
+			<li>F&ouml;rb&auml;ttrad hantering av OAuth-inloggning</li>
+			<li>Mer anv&auml;ndbara felmeddelanden i verktyget Hitta hotspots</li>
+			<li>Verktyget Hitta hotspots kan nu hantera kolumnnamn med blanksteg</li>
+			<li>Markeringsverktyget har nu st&ouml;d f&ouml;r buffertar med storleken &quot;0&quot;</li>
+			<li>Problem med &aring;tg&auml;rdsf&ouml;nstret har l&ouml;sts</li>
+			<li>Fel som r&ouml;r gruppvisning har l&ouml;sts</li>
+			<li>F&ouml;rb&auml;ttrat st&ouml;d f&ouml;r organisationer som anv&auml;nder SSL f&ouml;r alla anslutningar</li>
+			<li>Gruppindelning fungerar nu korrekt vid anv&auml;ndning av kolumner fr&aring;n verktyget Berika lager</li>
+			</ul>
+        </ul>
+		
+        <p>Version 2.1 sl&auml;pptes i juli 2013. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar: </p>
+        <ul>
+        <li>Analys av statistiska m&ouml;nster via verktyget Hotspots</li>
+		<li>F&ouml;rb&auml;ttringar av databerikningen, inklusive fler datasamlingar och m&ouml;jlighet att v&auml;lja enskilda variabler fr&aring;n datasamlingarna</li>
+		<li>St&ouml;d f&ouml;r s&auml;ker inloggning med OAuth+SAML (AGOL)</li>
+        <li>St&ouml;d f&ouml;r s&auml;ker inloggning med IWA, PKI (endast Portal)</li>
+		<li>F&ouml;rb&auml;ttringar av anv&auml;ndargr&auml;nssnittet f&ouml;r infografik och verktyget Berika lager</li>
+		<li>F&ouml;rb&auml;ttrat arbetsfl&ouml;de f&ouml;r uppgradering av Maps for Office till den senaste versionen</li>
+        </ul>
+		<br>
+        <p>Version 2.0.2 sl&auml;pptes i maj 2013. Den inneh&ouml;ll f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
+        <ul>
+          <li>Anv&auml;nd det nya verktyget Berika lager f&ouml;r att berika dina data med geografiskt sammanhang</li>
+		  <li>V&auml;lj geoobjekt p&aring; kartan och hitta geoobjekt i n&auml;rheten som finns i andra lager </li>
+		  <li>Kartans popupf&ouml;nster inneh&aring;ller nu infografik som ger omfattande sammanhangsberoende information f&ouml;r omr&aring;dena runt geoobjekten p&aring; kartan</li>
+		  <li>St&ouml;d f&ouml;r f&ouml;rhandsgranskning f&ouml;r Portal for ArcGIS 10.2</li>
 		  <li>Nya konfigurationsalternativ f&ouml;r intensitetskartor och klustring</li>
-		  <li>Filtrering av grupperade geoobjekt genom att klicka p&aring; klassbrytningar i teckenf&ouml;rklaringen</li>
-		  <li>B&auml;ttre process f&ouml;r adressgeokodning</li>
-		  <li>St&ouml;d f&ouml;r anpassning av galleriet f&ouml;r baskartor fr&aring;n ArcGIS Online-organisationen</li>
-		  <li>Infoga karta anv&auml;nder standardbaskartan fr&aring;n ArcGIS Online-organisationen</li>
-		  <li>S&ouml;k efter data p&aring; ArcGIS Online i vanliga kategorier som inkomst, aff&auml;rer, politiska sympatier och sjukv&aring;rd</li>
-		  <li>Platsnamn utg&aring;r numera fr&aring;n dataplatsen. Till exempel kommer etiketter i arbetsfl&ouml;det f&ouml;r geokodning att visa prefekturer f&ouml;r Japan, stater f&ouml;r USA och provinser f&ouml;r Kanada</li>
+		  <li>Nya alternativ f&ouml;r att filtrera grupperade geoobjekt p&aring; kartan genom att klicka p&aring; klassbrytningar i kartans teckenf&ouml;rklaring har lagts till</li>
+		  <li>F&ouml;rb&auml;ttrat arbetsfl&ouml;de f&ouml;r geokodning av adresser</li>
+		  <li>St&ouml;d f&ouml;r anpassning av baskartgalleriet via din ArcGIS Online-organisation</li>
+		  <li>Verktyget Infoga karta anv&auml;nder standardbaskartan fr&aring;n din ArcGIS Online-organisation</li>
+		  <li>S&ouml;k efter data om ArcGIS Online med popul&auml;ra kategorier som F&ouml;rm&ouml;genhet, Aff&auml;rer, Politik och H&auml;lsa</li>
+		  <li>Platsnamnen bygger nu p&aring; datalokalisering. Etiketter i geokodningsarbetsfl&ouml;det visar nu prefekturer i Japan, stater i USA och provinser i Kanada</li>
 		  <li>St&ouml;d f&ouml;r Microsoft Office 2013</li>
-		  <li>Andra f&ouml;rb&auml;ttringar av kvalitet, anv&auml;ndarv&auml;nlighet och kartografi</li>
+		  <li>Andra f&ouml;rb&auml;ttringar av kvalitet, anv&auml;ndarv&auml;nlighet och kartfunktioner</li>
         </ul>
 
 
@@ -148,7 +189,7 @@ metatags:
           <ul>
            <li><a href="#whatsNew">Nyheter</a></li>
             <li><a href="#systemRequirements">Systemkrav</a></li>
-			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">Visa videor</a></li>
+			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">Visa filmer</a></li>
 
           </ul>
         </div>
@@ -166,8 +207,6 @@ metatags:
  </div>
 
     </div>
-
- 
 
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
