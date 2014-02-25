@@ -11,9 +11,10 @@ $(document).ready(function() {
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'];
    }
+   var dict = (window.localeJsonObj || {})[localedir];
 
     var val = '<p id="plats">' +
-        '<span class="viewing">Viewing: </span>' +
+        '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
         '<a data-appname="arcgisapp" data-plat="android" data-prefix="/' + localedir +'/arcgis-app/android" href="/en/arcgis-app/" data-langlabel="android" class=""> Android</a>' +
         ' | ' +
         '<a data-appname="arcgisapp" data-plat="ios" data-prefix="/' + localedir +'/arcgis-app/ios" href="/en/arcgis-app/" data-langlabel="ios" class=""> iOS</a>' +
