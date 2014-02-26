@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -26,16 +27,15 @@ mobile: true
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/da/arcgis-online/">Hoved</a></li>
-        <li><a href="/da/arcgis-online/use-maps/">Brug kort</a></li>
-        <li><a href="/da/arcgis-online/create-maps/">Opret kort og apps</a></li>		
-        <li><a href="/da/arcgis-online/share-maps/">Del kort og apps</a></li>
-	<li><a href="/da/arcgis-online/administer/">Administr&eacute;r din organisation</a></li>
-	<li><a href="/da/arcgis-online/reference/">Reference</a></li>
+        <li class='current'><a title="Hjælp til ArcGIS Online" href="/da/arcgis-online/">Hoved</a></li>
+        <li><a title="Brug kort" href="/da/arcgis-online/use-maps/">Brug</a></li>
+        <li><a title="Opret kort og apps" href="/da/arcgis-online/create-maps/">Opret</a></li>		
+        <li><a title="Del kort og apps" href="/da/arcgis-online/share-maps/">Del</a></li>
+		<li><a title="Administrér din organisation" href="/da/arcgis-online/administer/">Administr&eacute;r</a></li>
+		<li><a href="/da/arcgis-online/reference/">Reference</a></li>
 	</ul>
     </nav>
   </div>
@@ -73,7 +73,8 @@ mobile: true
 
             <p><a href="/da/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Opret dit f&oslash;rste kort</a> <br/>
 
-            <a href="/da/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Opret din f&oslash;rste app</a></p>
+            <a href="/da/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Opret din f&oslash;rste app</a><br/> <a href="/da/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Angiv egenskaber for kort og lag</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-

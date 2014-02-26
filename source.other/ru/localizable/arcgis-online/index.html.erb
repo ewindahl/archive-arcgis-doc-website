@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -26,16 +27,15 @@ mobile: true
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/ru/arcgis-online/">Главная</a></li>
-        <li><a href="/ru/arcgis-online/use-maps/">Использование карт</a></li>
-        <li><a href="/ru/arcgis-online/create-maps/">Создание карт и приложений</a></li>		
-        <li><a href="/ru/arcgis-online/share-maps/">Общий доступ к картам и приложениям</a></li>
-	<li><a href="/ru/arcgis-online/administer/">Администрируйте вашу организацию</a></li>
-	<li><a href="/ru/arcgis-online/reference/">Основа</a></li>
+        <li class='current'><a title="Справка ArcGIS Online" href="/ru/arcgis-online/">Главная</a></li>
+        <li><a title="Использование карт" href="/ru/arcgis-online/use-maps/">Добавить</a></li>
+        <li><a title="Создание карт и приложений" href="/ru/arcgis-online/create-maps/">Создать</a></li>		
+        <li><a title="Общий доступ к картам и приложениям" href="/ru/arcgis-online/share-maps/">Опубликовать</a></li>
+		<li><a title="Администрируйте вашу организацию" href="/ru/arcgis-online/administer/">Администрирование</a></li>
+		<li><a href="/ru/arcgis-online/reference/">Основа</a></li>
 	</ul>
     </nav>
   </div>
@@ -60,7 +60,7 @@ mobile: true
          <p>Используйте карты для изучения, понимания и измерения географических данных.</p>
 
       
-         <p><a href="/ru/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">  Просмотр данных</a> <br/> <a href="/ru/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">  Выполнить анализ</a><br/> <a href="/ru/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">  Редактировать объекты</a></p>
+         <p><a href="/ru/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">  View data</a> <br/> <a href="/ru/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">  Выполнить анализ</a><br/> <a href="/ru/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">  Редактировать объекты</a></p>
         </div>
 
 
@@ -73,7 +73,8 @@ mobile: true
 
             <p><a href="/ru/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">  Создание вашей первой карты</a> <br/>
 
-            <a href="/ru/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">  Создание вашего первого приложения</a></p>
+            <a href="/ru/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">  Создание вашего первого приложения</a><br/> <a href="/ru/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">  Задание свойств карты и слоя</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-
