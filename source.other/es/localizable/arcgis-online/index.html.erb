@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -26,16 +27,15 @@ mobile: true
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/es/arcgis-online/">Principal</a></li>
-        <li><a href="/es/arcgis-online/use-maps/">Usar mapas</a></li>
-        <li><a href="/es/arcgis-online/create-maps/">Crear mapas y aplicaciones</a></li>		
-        <li><a href="/es/arcgis-online/share-maps/">Compartir mapas y aplicaciones</a></li>
-	<li><a href="/es/arcgis-online/administer/">Administrar una organización</a></li>
-	<li><a href="/es/arcgis-online/reference/">Referencia</a></li>
+        <li class='current'><a title="Ayuda de ArcGIS Online" href="/es/arcgis-online/">Principal</a></li>
+        <li><a title="Usar mapas" href="/es/arcgis-online/use-maps/">Utilizar</a></li>
+        <li><a title="Crear mapas y aplicaciones" href="/es/arcgis-online/create-maps/">Crear</a></li>		
+        <li><a title="Compartir mapas y aplicaciones" href="/es/arcgis-online/share-maps/">Compartir</a></li>
+		<li><a title="Administrar la organización" href="/es/arcgis-online/administer/">Administrar</a></li>
+		<li><a href="/es/arcgis-online/reference/">Referencia</a></li>
 	</ul>
     </nav>
   </div>
@@ -73,7 +73,8 @@ mobile: true
 
             <p><a href="/es/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">  Crear el primer mapa</a> <br/>
 
-            <a href="/es/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">  Crear la primera aplicación</a></p>
+            <a href="/es/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">  Crear tu primera aplicación</a><br/> <a href="/es/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">  Establecer las propiedades del mapa y de capa</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -91,7 +92,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="img/admin-org.jpg" />
 
-          <h3>Administrar una organización</h3>
+          <h3>Administrar la organización</h3>
           <p>Amplía el uso de tu SIG configurando ArcGIS Online para tu organización, invitando a usuarios a unirse y gestionando los recursos.</p>
           <p>
             <a href="/es/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">  Configurar el sitio web</a> <br/> <a href="/es/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">  Invitar a usuarios</a> <br/> <a href="/es/arcgis-online/administer/view-status.htm" class="icon-right-arrow">  Ver estadísticas de la organización</a></p>
@@ -134,7 +135,7 @@ mobile: true
 		 </li>
 		 <li><a href="http://pro.arcgis.com/es/get-started/services/">Compartir datos</a>
 		 </li>
-		 <li><a href="http://pro.arcgis.com/es/get-started/organizations/">Administrar una organización</a>
+		 <li><a href="http://pro.arcgis.com/es/get-started/organizations/">Administrar la organización</a>
 		 </li>
 		 
 		 </ul>
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-
