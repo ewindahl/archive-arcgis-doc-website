@@ -1,0 +1,98 @@
+@import "arcgis/base";
+
+.feature-product{
+  @include trailer(1.5);
+  @include column(24);
+  .product-desc {
+    @include column(9);
+    @include respond-to($tablet-tall){
+      @include column-width(24);
+    }
+    p {
+      font-size: $h4-size;
+      line-height: 2em;
+    }
+  }
+  .product-img {
+    @include column(15);
+    img {
+      float:right;
+    }
+    @include respond-to($laptop){
+      margin-top:4em;
+    }
+    @include respond-to($tablet-tall){
+      display:none;
+    }
+  }
+}
+.filter-nav {
+  @include column(24);
+  margin-top:-30px;
+  @include trailer(1);
+  @include respond-to($phone-large) {
+    display:none;
+  }
+  #filter {
+    width: 100%;
+    margin: 0 auto;
+    fieldset {
+      border: none;
+      label {
+        padding: 5px 10px;
+        margin-right:10px;
+        @include border-radius(6px, 6px);
+        color: #368fc9;
+        font-size: $h5-size;
+        &:hover {
+          cursor: pointer;
+        }
+        input {
+          display: none;
+        }
+        @include respond-to($laptop){
+          font-size: $h6-size;
+        }
+      }
+      .active {
+        color: #222;
+        background: #efefef;
+      }
+    }
+  }
+}
+.content {
+  @include column(24);
+  margin:10px auto;
+  .image-grid {
+    list-style: none;
+    font-size: 1em;
+    .product {      
+      background: none;
+      @include column(8);
+      padding: 1em;
+      height: 380px;
+      /*width: 380px;
+      float:left;
+      margin:10px;*/
+      h3 {
+        line-height: 1.5em;
+        padding-top: 0.5em;
+        letter-spacing: -1px;
+      }
+      @include respond-to($phone-large){
+        @include column-width(24);
+      }
+    }
+  }
+}
+  
+
+
+
+
+
+
+
+
+
