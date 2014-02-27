@@ -143,11 +143,12 @@
                </div> -->
 
               <div id="logged-out-navigation" class="dropdown-navigation">
-                <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#"><%= t("site.nav.sign_in") %></a>
+                <a data-langlabel="sign-in" id="login-link" class="btn marketplace" href="#">
+                  <span class="profile-icon"><%= t("site.nav.sign_in") %></a>
               </div>
 
               <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
-                <a id="login-link" class="dropdown btn small light" href="#"><%= t("site.nav.sign_in_user") %></a>
+                <a id="login-link" class="dropdown btn marketplace" href="#"><%= t("site.nav.sign_in_user") %></a>
                 <div class="dropdown-content">
                   <div class="dropdown-menu">
                     <ul class="myconsole">
@@ -163,7 +164,8 @@
 
               <nav class="right-nav">
                  <ul>
-                    <li><%= link_to t("site.nav.help"), t("paths.mphelp") %></li>
+
+                    <li><a href="<%= t("paths.mphelp") %>"><span class="help-icon"></span><%= t("site.nav.help") %></a></li>
                  </ul>
               </nav>
 
