@@ -13,7 +13,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Explorer for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="explorer-android,explorer-ipad,explorer-windows"><META name="sub_category" content="Explorer for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Explorer for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Explorer for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="explorer-android,explorer-ipad,explorer-windows"><META name="sub_category" content="Explorer for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Explorer for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="<%= current_language %>">
 
 mobile: true
 
@@ -22,6 +22,12 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/en/explorer/">Explorer for ArcGIS</a></h1>
+	  <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Explorer">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="ipad" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
