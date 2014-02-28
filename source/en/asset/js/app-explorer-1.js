@@ -11,30 +11,23 @@ $(document).ready(function() {
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'];
    }
+   var dict = (window.localeJsonObj || {})[localedir];
 
     var val = '<p id="plats">' +
-        '<span class="viewing">Viewing: </span>' +
-        '<a data-appname="explorer" data-plat="android" data-prefix="/' + localedir +'/explorer/android" href="/en/explorer/" data-langlabel="android" class=""> Android</a>' +
-        ' | ' +
+        '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
         '<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir +'/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class=""> iPad</a>' +
         ' | ' +
-        '<a data-appname="explorer" data-plat="windows" data-prefix="/' + localedir +'/explorer/windows" href="/en/explorer/" data-langlabel="windows-phone" class=""> Windows Phone</a>' +
+        '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir +'/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class=""> iPhone</a>'
         '</p>',
 
 		prodKey = "explorer",
-		prodDVal = "android",
-      prodIOSVal = "ipad",
-      prodWPVal = "windows-phone",
+		prodDVal = "ipad",
+		prodIOSVal = "iphone",
+		prodWPVal = "windows-phone",
 		homePath = "/en/explorer",
 		forumPath = "/en/explorer/forum"
 
-    fnameFilter = {
-        "create-a-map.htm": "", "connect-to-a-mobile-content-server.htm": "", "get-started-faqs.htm": "",
-        "publishing-maps-to-your-arcgis-server.htm": "", "understanding-the-map-format.htm": "",
-        "uploading-the-map-to-the-mobile-content-server.htm": "", "use-the-app-faqs.htm": "",
-        "what-s-new.htm": "", "work-with-my-data-faqs.htm": ""
-    },
-
+    
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
 		fname = parts.pop(),
@@ -49,12 +42,12 @@ $(document).ready(function() {
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
       }
-    } else if (!($.cookie (prodKey)) && (navigator.userAgent.match(/(windows phone)/gi))){
+    }/* else if (!($.cookie (prodKey)) && (navigator.userAgent.match(/(windows phone)/gi))){
       plat = prodWPVal;
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
       }
-    }
+    }*/
 
    function UASpecificRedirect (plat, pathname) {
 
@@ -129,9 +122,9 @@ $(document).ready(function() {
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
 		}
 
-		if (!fnameFilter.hasOwnProperty (fname)) {
+		/*if (!fnameFilter.hasOwnProperty (fname)) {
 			url = prefix + "/" + "help";
-		}
+		}*/
 
 		$ele.attr ("href", url);
 		//console.log(url);
