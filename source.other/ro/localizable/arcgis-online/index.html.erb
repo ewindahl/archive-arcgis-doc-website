@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/ro/arcgis-online/">Ajutor</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="ajutor" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/ro/arcgis-online/">Pagina principală</a></li>
-        <li><a href="/ro/arcgis-online/use-maps/">Utilizarea hărţilor</a></li>
-        <li><a href="/ro/arcgis-online/create-maps/">Crearea hărţilor şi aplicaţiilor</a></li>		
-        <li><a href="/ro/arcgis-online/share-maps/">Partajarea hărţilor şi aplicaţiilor</a></li>
-	<li><a href="/ro/arcgis-online/administer/">Administrarea organizaţiei</a></li>
-	<li><a href="/ro/arcgis-online/reference/">Referinţă</a></li>
+        <li class='current'><a title="Ajutor ArcGIS Online" href="/ro/arcgis-online/">Pagina principala</a></li>
+        <li><a title="Utilizarea hartilor" href="/ro/arcgis-online/use-maps/">Utilizare</a></li>
+        <li><a title="Crearea hartilor si aplicatiilor" href="/ro/arcgis-online/create-maps/">Creare</a></li>		
+        <li><a title="Partajarea hartilor si aplicatiilor" href="/ro/arcgis-online/share-maps/">Partajare</a></li>
+		<li><a title="Administrarea organizatiei" href="/ro/arcgis-online/administer/">Administrare</a></li>
+		<li><a href="/ro/arcgis-online/reference/">Referinta</a></li>
 	</ul>
     </nav>
   </div>
@@ -47,43 +47,44 @@ mobile: true
      <div class="column-16 tablet-column-24">
 
 
-    <h3 class="gray">Utilizaţi şi creaţi hărţi şi aplicaţii interactive şi partajaţi-le cu restul organizaţiei. Descoperiţi cum.</h3>
+    <h3 class="gray">Utilizati si creati harti si aplicatii interactive si partajati-le cu restul organizatiei. Descoperiti cum.</h3>
 	
 	<hr />
 	
         <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="img/perform-analysis.jpg" />
 
-          <h3>Utilizarea hărţilor</h3>
+          <h3>Utilizarea hartilor</h3>
          
  
-         <p>Utilizaţi hărţi pentru a explora, înţelege şi cuantifica date geografice.</p>
+         <p>Utilizati harti pentru a explora, întelege si cuantifica date geografice.</p>
 
       
-         <p><a href="/ro/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Vizualizarea datelor</a> <br/> <a href="/ro/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Efectuarea unei analize</a><br/> <a href="/ro/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Editarea obiectelor spaţiale</a></p>
+         <p><a href="/ro/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Vizualizarea datelor</a> <br/> <a href="/ro/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Efectuarea unei analize</a><br/> <a href="/ro/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Editarea obiectelor spatiale</a></p>
         </div>
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="img/create-maps-apps.jpg" />
 
-          <h3>Crearea hărţilor şi aplicaţiilor</h3>
-          <p>Construiţi hărţi şi aplicaţii interactive pe care organizaţia dvs. să le poată accesa de pe orice dispozitiv, oriunde şi oricând.</p>
+          <h3>Crearea hartilor si aplicatiilor</h3>
+          <p>Construiti harti si aplicatii interactive pe care organizatia dvs. sa le poata accesa de pe orice dispozitiv, oriunde si oricând.</p>
 
 
-            <p><a href="/ro/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Crearea primei voastre hărţi</a> <br/>
+            <p><a href="/ro/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Crearea primei voastre harti</a> <br/>
 
-            <a href="/ro/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Crearea primei voastre aplicaţii</a></p>
+            <a href="/ro/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Crearea primei dvs. aplicatii</a><br/> <a href="/ro/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Setarea proprietatilor pentru o harta si un strat tematic</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
        <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="img/share-maps-apps.jpg" />
 
-          <h3>Partajarea hărţilor şi aplicaţiilor</h3>
-          <p>Puneţi datele la lucru partajând hărţi şi aplicaţii în organizaţia sau comunitatea dvs.</p>
+          <h3>Partajarea hartilor si aplicatiilor</h3>
+          <p>Puneti datele la lucru partajând harti si aplicatii în organizatia sau comunitatea dvs.</p>
 
-         <p><a href="/ro/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Adăugarea elementelor</a> <br/><a href="/ro/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Partajarea elementelor</a> <br/> <a href="/ro/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publicarea obiectelor spaţiale şi segmentelor tile găzduite</a></p>
+         <p><a href="/ro/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Adaugarea elementelor</a> <br/><a href="/ro/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Partajarea elementelor</a> <br/> <a href="/ro/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publicarea obiectelor spatiale si segmentelor tile gazduite</a></p>
          
         </div>
 
@@ -91,28 +92,28 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="img/admin-org.jpg" />
 
-          <h3>Administrarea organizaţiei</h3>
-          <p>Extindeţi utilizarea sistemului dvs. GIS prin configurarea ArcGIS Online pentru organizaţia dvs., invitând utilizatori să se înscrie şi administrând resurse.</p>
+          <h3>Administrarea organizatiei</h3>
+          <p>Extindeti utilizarea sistemului dvs. GIS prin configurarea ArcGIS Online pentru organizatia dvs., invitând utilizatori sa se înscrie si administrând resurse.</p>
           <p>
-            <a href="/ro/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Configurarea site-ului web</a> <br/> <a href="/ro/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Invitarea utilizatorilor</a> <br/> <a href="/ro/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Vizualizarea statisticilor despre organizaţie</a></p>
+            <a href="/ro/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Configurarea site-ului web</a> <br/> <a href="/ro/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Invitarea utilizatorilor</a> <br/> <a href="/ro/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Vizualizarea statisticilor despre organizatie</a></p>
            
         </div>
 		<div class="clear"></div>
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
-          <h3>Aplicaţii gata de utilizat</h3>
-         <p>Profitaţi de aplicaţiile gata de utilizat pentru colectarea datelor din teren, panouri operaţionale, Microsoft Office şi Sharepoint.</p>
+          <h3>Aplicatii gata de utilizat</h3>
+         <p>Profitati de aplicatiile gata de utilizat pentru colectarea datelor din teren, panouri operationale, Microsoft Office si Sharepoint.</p>
 		 <p>
 		 
-		 <a href="http://www.arcgis.com/features/apps/index.html" class="icon-right-arrow">&nbsp;&nbsp;Aplicaţii ArcGIS</a>
+		 <a href="http://www.arcgis.com/features/apps/index.html" class="icon-right-arrow">&nbsp;&nbsp;Aplicatii ArcGIS</a>
 		 </p>
         </div>	
 	
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
-          <h3>API-uri de dezvoltatori</h3>
-          <p>Platforma ArcGIS include componente API şi SDK care permit crearea de aplicaţii pentru organizaţie şi pentru comunitate în general.</p>
+          <h3>API-uri pentru dezvoltatori</h3>
+          <p>Platforma ArcGIS include componente API si SDK care permit crearea de aplicatii pentru organizatie si pentru comunitate în general.</p>
 		 
 		 <p><a href="https://developers.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS for Developers</a></p>
         </div>
@@ -127,14 +128,14 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
 	  	  	 <div class="imgFrame block">
-          <h3>Începeţi</h3>
-		  <p>Tutoriale care vă ajută să învăţaţi cum să utilizaţi platforma ArcGIS</p>
+          <h3>Începeti</h3>
+		  <p>Tutoriale care va ajuta sa învatati cum sa utilizati platforma ArcGIS</p>
          <ul>
-		 <li><a href="http://pro.arcgis.com/ro/get-started/web/">Utilizarea hărţilor</a>
+		 <li><a href="http://pro.arcgis.com/ro/get-started/web/">Utilizarea hartilor</a>
 		 </li>
 		 <li><a href="http://pro.arcgis.com/ro/get-started/services/">Partajarea datelor</a>
 		 </li>
-		 <li><a href="http://pro.arcgis.com/ro/get-started/organizations/">Administrarea organizaţiei</a>
+		 <li><a href="http://pro.arcgis.com/ro/get-started/organizations/">Administrarea organizatiei</a>
 		 </li>
 		 
 		 </ul>
@@ -151,7 +152,7 @@ mobile: true
 		 <li>
 		 <a href="/ro/arcgis-online/reference/whats-new.htm" >&nbsp;Ce este nou</a>
 		 </li>
-		 <li><a href="/ro/arcgis-online/reference/faq.htm">&nbsp;Întrebări frecvente</a>
+		 <li><a href="/ro/arcgis-online/reference/faq.htm">&nbsp;Întrebari frecvente</a>
 		 </li>
 		 </ul>
         
@@ -161,13 +162,13 @@ mobile: true
 	
 	<section id="video-column">
       <div class="panel">
-        <h3>Crearea unei hărţi</h3>
+        <h3>Crearea unei har?i</h3>
         <a class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00"><img src="http://video.arcgis.com/thumbs/2011/04/253/making-a-map-d8a9f082b28f88c07545280c2934907a.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" controls id="2194" class="mobileVideo">
 		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
 		</video>
         
-        <p>Învăţaţi cum să utilizaţi aplicaţia de vizualizare a hărţilor încorporată pentru a crea hărţi.</p>
+        <p>Învatati cum sa utilizati aplicatia de vizualizare a hartilor încorporata pentru a crea harti.</p>
         <a href="/ro/arcgis-online/reference/videos.htm" class="btn secondary">Mai multe videoclipuri</a>
       </div>
     </section>	
@@ -180,7 +181,7 @@ mobile: true
           <div id="blog">
             <!-- blog goes here -->
           </div>
-		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Mai multe postări de pe blog</a>
+		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Mai multe postari de pe blog</a>
         </div>
 		 <br />
 		 
@@ -188,7 +189,7 @@ mobile: true
       <div class="panel">
         <h3>Pe forumul nostru</h3>
         <div id="forum"></div>
-        <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">Mai multe postări de pe forum</a>
+        <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">Mai multe postari de pe forum</a>
       </div>
     </section>      
 	
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-
