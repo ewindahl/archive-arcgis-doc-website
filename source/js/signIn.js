@@ -66,11 +66,25 @@ $(document).ready(function() {
     };
 
 
+  function  getOrgHostname (data) {
+    if (data) {
+      return data.urlKey ? data.urlKey + "." + data.customBaseUrl : data.portalHostname;
+    } else {
+      return "www.arcgis.com";
+    }
+  }
+
   /* login */
   var ckKey = "esri_auth",
       cookie = getCookie(ckKey);
   
   $(".myconsole").css ("display", "none");
+
+/*
+agolProfile - http://www.arcgis.com/home/user.html
+agolHelp - http://www.arcgis.com/home/support.html
+agolLogout
+*/
 
   if (cookie) {
   	$("#logged-out-navigation").addClass ("hide");
@@ -79,9 +93,9 @@ $(document).ready(function() {
         var avatarurl = "http://www.gravatar.com/avatar/d7970fec8803bdbeeb5d82674a1a2c8b.jpg?s=16&d=http://d3w50ib5d2uy0g.cloudfront.net/cdn/2464/js/esri/arcgisonline/css/images/no-user-thumb.jpg",
             avatar = "<img width='16px' height='16px' alt='' src='" + avatarurl +"' />";
 
-		var token = cookie.val && cookie.val.token,
+		  var token = cookie.val && cookie.val.token,
 			params = {f:"json"},
-			portalHostname = "devext.arcgis.com",  // qaext.arcgis.com, www.arcgis.com
+			portalHostname = sitecfg["portalHostname"],  
       		firstName,
 	  		text;
     
@@ -89,67 +103,44 @@ $(document).ready(function() {
       		params.token = token;
     	}
 	    
-	    $.getJSON("//" + portalHostname + "/sharing/rest/portals/self", params, function (data) {
-      		firstName = getUserDisplayName(data && data.user);          
-	  		text = firstName || "SIGN IN";
+
+	    $.getJSON(portalHostname + "/sharing/rest/portals/self", params, function (data) {
+      		var firstName = getUserDisplayName(data && data.user),        
+              orgHostname = getOrgHostname (data),   
+  	       		text = firstName || "SIGN IN";
+
       		//$(".result").html(text);
 	        $("#logged-in-navigation > a").html (avatar+"<span>"+ text +"</span>");
 
+          $("#agolProfile").attr ("href", "//" + orgHostname + sitecfg["agolProfile"]);
+          $("#agolHelp").attr ("href", "//" + orgHostname + sitecfg["agolHelp"]);
+    
+          $(".myconsole").css ("display", "block");
+  
     	});
 
+      $("#agolLogout").on ("click", function() {
+        cookie.jar.removeItem (ckKey, "/", ".arcgis.com");
+        window.location.reload(true);
+      });
 
-
-/*  	
-        $("#logged-in-navigation > a").html (avatar+"<span>"+cookie.val["email"]+"</span>");
- */
-
-  	var $linkL = $("#logged-in-navigation .dropdown-menu a");
-  	
+  /*	
         if (cookie.val["role"] && cookie.val["role"].indexOf ("admin")>=0) {
           $(".myconsole").css ("display", "block");
 
           $linkL.eq(0).on ("click", function() {
-  		//my console
-  		window.location = sitecfg["mkpConsole"];
-  	  });
+    	     });
         }
-        
-        $linkL.eq(1).on ("click", function() {
-  		//logout
-  		cookie.jar.removeItem (ckKey, "/", ".arcgis.com");
-  		window.location.reload(true);
-    });
-
+    */    
+       
   } else {  	
   	$("#logged-in-navigation").addClass ("hide");
-  	$("#logged-out-navigation > a").attr ("href", sitecfg["mkpSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
+  	
+    //agol bug: remove returnUrl for 3/4 release
+    //$("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
+
+    $("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]);
   }
 
 
-  /* app search box */
-  $("#mkpSearchForm").submit(function() {
-    var term = $("input[name='mkpSearch']").val() || "";
-    window.location.href = sitecfg["mkpSearch"] + "?q="+encodeURIComponent(term)
-    return false;
-  })
-
-  /* help search box */
-  $("#helpSearchForm").submit(function() {
-
-    var term = $("#helpSearchForm > input[name='q']").val() || "",
-        col = $("#helpSearchForm > input[name='collection']").val() || "",
-        prod = $("#helpSearchForm > input[name='product']").val() || "",
-        lang = $("#helpSearchForm > input[name='language']").val() || "en",
-        query = "/search/?";
-
-    query = query + "q=" + encodeURIComponent(term);
-    query = query + "&collection=" + encodeURIComponent(col);
-    query = query + "&product=" + encodeURIComponent(prod);
-    query = query + "&language=" + encodeURIComponent(lang);
-
-    window.location.href = query;
-
-    return false;
-
-  });
 });
