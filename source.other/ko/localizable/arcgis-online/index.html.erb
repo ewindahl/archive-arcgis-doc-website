@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/ko/arcgis-online/">도움말</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="도움말" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/ko/arcgis-online/">기본</a></li>
-        <li><a href="/ko/arcgis-online/use-maps/">맵 사용</a></li>
-        <li><a href="/ko/arcgis-online/create-maps/">맵 및 앱 생성</a></li>		
-        <li><a href="/ko/arcgis-online/share-maps/">맵 및 앱 공유</a></li>
-	<li><a href="/ko/arcgis-online/administer/">기관 관리</a></li>
-	<li><a href="/ko/arcgis-online/reference/">참조</a></li>
+        <li class='current'><a title="ArcGIS Online 도움말" href="/ko/arcgis-online/">기본</a></li>
+        <li><a title="맵 사용" href="/ko/arcgis-online/use-maps/">사용</a></li>
+        <li><a title="맵 및 앱 생성" href="/ko/arcgis-online/create-maps/">생성</a></li>		
+        <li><a title="맵 및 앱 공유" href="/ko/arcgis-online/share-maps/">공유</a></li>
+		<li><a title="기관 관리" href="/ko/arcgis-online/administer/">관리</a></li>
+		<li><a href="/ko/arcgis-online/reference/">참조</a></li>
 	</ul>
     </nav>
   </div>
@@ -47,7 +47,7 @@ mobile: true
      <div class="column-16 tablet-column-24">
 
 
-    <h3 class="gray">대화형 맵과 앱을 사용 및 생성하고 기관의 다른 구성원과 공유할 수 있습니다. 방법을 확인해 보세요.</h3>
+    <h3 class="gray">대화형 맵 및 앱을 생성하고 사용하며 기관의 다른 사용자와 공유합니다. 방법 찾기</h3>
 	
 	<hr />
 	
@@ -57,7 +57,7 @@ mobile: true
           <h3>맵 사용</h3>
          
  
-         <p>맵을 사용하여 지리 데이터를 탐색하고 파악하며 측정할 수 있습니다.</p>
+         <p>맵을 사용하여 지리 데이터를 탐색, 파악 및 측정할 수 있습니다.</p>
 
       
          <p><a href="/ko/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;데이터 보기</a> <br/> <a href="/ko/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">분석 수행</a><br/> <a href="/ko/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">피처 편집</a></p>
@@ -68,12 +68,13 @@ mobile: true
           <img src="img/create-maps-apps.jpg" />
 
           <h3>맵 및 앱 생성</h3>
-          <p>대화형 맵과 앱을 만들면 기관이 모든 장치에서 언제 어디서나 접근할 수 있습니다.</p>
+          <p>대화형 맵 및 앱을 만든 다음에는 기관의 어떤 장치에서든 시간과 장소에 상관 없이 접근할 수 있습니다.</p>
 
 
             <p><a href="/ko/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;첫 번째 맵 만들기</a> <br/>
 
-            <a href="/ko/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">첫 번쨰 앱 만들기</a></p>
+            <a href="/ko/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">첫 번째 앱 만들기</a><br/> <a href="/ko/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">맵 및 레이어 등록정보 설정</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -81,9 +82,9 @@ mobile: true
           <img src="img/share-maps-apps.jpg" />
 
           <h3>맵 및 앱 공유</h3>
-          <p>기관 또는 커뮤니티 내에서 맵과 앱을 공유하여 데이터를 활용할 수 있습니다.</p>
+          <p>기관이나 커뮤니티에서 맵과 앱을 공유하여 데이터를 활용할 수 있습니다.</p>
 
-         <p><a href="/ko/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;항목 추가</a> <br/><a href="/ko/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">항목 공유</a> <br/> <a href="/ko/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">호스팅 피처 및 타일 발행</a></p>
+         <p><a href="/ko/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;항목 추가</a> <br/><a href="/ko/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">항목 공유</a> <br/> <a href="/ko/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">호스트팅 피처 및 타일 발행</a></p>
          
         </div>
 
@@ -92,7 +93,7 @@ mobile: true
           <img src="img/admin-org.jpg" />
 
           <h3>기관 관리</h3>
-          <p>기관에 맞게 ArcGIS Online을 구성하고 사용자를 가입하도록 초대하며 리소스를 관리하여 GIS 사용 범위를 확장할 수 있습니다.</p>
+          <p>기관에 대해 ArcGIS Online을 구성하고, 사용자가 가입하도록 초대하고, 리소스를 관리하여 GIS 사용 범위를 확장할 수 있습니다.</p>
           <p>
             <a href="/ko/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;웹 사이트 구성</a> <br/> <a href="/ko/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">사용자 초대</a> <br/> <a href="/ko/arcgis-online/administer/view-status.htm" class="icon-right-arrow">기관 통계 보기</a></p>
            
@@ -102,7 +103,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
           <h3>즉시 사용 가능한 앱</h3>
-         <p>현장 데이터 수집용 앱과 운영 대시보드, Microsoft Office 및 Sharepoint를 즉시 활용할 수 있습니다.</p>
+         <p>즉시 사용 가능한 앱을 현장 데이터 컬렉션, 운영 대시보드, Microsoft Office 및 Sharepoint에 이용할 수 있습니다.</p>
 		 <p>
 		 
 		 <a href="http://www.arcgis.com/features/apps/index.html" class="icon-right-arrow">&nbsp;&nbsp;ArcGIS 앱</a>
@@ -112,7 +113,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
           <h3>개발자 API</h3>
-          <p>ArcGIS 플랫폼에 API와 SDK를 포함하여 기관과 커뮤니티 전체에 사용 가능한 앱을 만들 수 있습니다.</p>
+          <p>ArcGIS 플랫폼에는 기관 및 일반 대중을 위한 앱을 만들 수 있는 API 및 SDK가 포함되어 있습니다.</p>
 		 
 		 <p><a href="https://developers.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS for Developers</a></p>
         </div>
@@ -127,8 +128,8 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
 	  	  	 <div class="imgFrame block">
-          <h3>시작</h3>
-		  <p>ArcGIS 플랫폼의 사용 방법을 알아볼 수 있는 튜토리얼입니다.</p>
+          <h3>시작하기</h3>
+		  <p>튜토리얼을 통해 ArcGIS 플랫폼 사용 방법을 배울 수 있습니다.</p>
          <ul>
 		 <li><a href="http://pro.arcgis.com/ko/get-started/web/">맵 사용</a>
 		 </li>
@@ -147,7 +148,7 @@ mobile: true
 	  		 	  	 <div class="greyFrame">
           <h3>ArcGIS Online 정보</h3>
          <ul>
-		 <li><a href="/ko/arcgis-online/reference/what-is-agol.htm">&nbsp;ArcGIS Online이란?</a></li>
+		 <li><a href="/ko/arcgis-online/reference/what-is-agol.htm">&nbsp;ArcGIS Online이란 무엇입니까?</a></li>
 		 <li>
 		 <a href="/ko/arcgis-online/reference/whats-new.htm" >&nbsp;새로운 기능</a>
 		 </li>
@@ -167,8 +168,8 @@ mobile: true
 		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
 		</video>
         
-        <p>맵을 만들 수 있는 기본 제공 맵 뷰어의 사용 방법을 알아봅니다.</p>
-        <a href="/ko/arcgis-online/reference/videos.htm" class="btn secondary">추가 비디오</a>
+        <p>기본 제공 맵 뷰어를 사용하여 맵을 생성하는 방법을 배울 수 있습니다.</p>
+        <a href="/ko/arcgis-online/reference/videos.htm" class="btn secondary">기타 비디오</a>
       </div>
     </section>	
 	
@@ -176,19 +177,19 @@ mobile: true
 		
 <!-- Blog Feed -->
         <div class="greyFrame">
-          <h3>ESRI 블로그</h3>
+          <h3>Esri 블로그</h3>
           <div id="blog">
             <!-- blog goes here -->
           </div>
-		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">추가 블로그 게시물</a>
+		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">기타 블로그 게시물</a>
         </div>
 		 <br />
 		 
      <section id="forum-container">
       <div class="panel">
-        <h3>포럼</h3>
+        <h3>Esri 포럼</h3>
         <div id="forum"></div>
-        <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">추가 포럼 게시물</a>
+        <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">기타 포럼 게시물</a>
       </div>
     </section>      
 	
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-
