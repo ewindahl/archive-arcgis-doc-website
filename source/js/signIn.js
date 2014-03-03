@@ -135,7 +135,11 @@ agolLogout
        
   } else {  	
   	$("#logged-in-navigation").addClass ("hide");
-  	$("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
+  	
+    //agol bug: remove returnUrl for 3/4 release
+    //$("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
+
+    $("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]);
   }
 
 
