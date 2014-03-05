@@ -3,20 +3,20 @@
 
 	//searchbox code is derived from 
 	//http://tympanus.net/codrops/2013/06/26/expanding-search-bar-deconstructed/
-	function ExpandableSearch (ele, opts) {
+	function AGOLSearch (ele, opts) {
 		this.ele = ele;
-		this.inputEle = $("form > input.sb-search-input");
+		this.inputEle = $("form > input.agol-search-input");
 		this._init();
 	}
 
-	ExpandableSearch.prototype = {
+	AGOLSearch.prototype = {
 		_init: function () {
 			var self = this,
 				initSearch = function (evt) {
 					evt.stopPropagation();
 					evt.preventDefault();
 
-					if (self.ele.hasClass ("sb-search-open")) {
+					if (self.ele.hasClass ("agol-search-open")) {
 						self.close();
 					} else {
 						self.open();
@@ -49,9 +49,10 @@
 			var self = this;
 
 			this.showBorder (true);
-			this.ele.addClass ("sb-search-open");
+			this.ele.addClass ("agol-search-open");
+			this.inputEle.val ("");
 			
-			$(".sb-form").show();
+			$(".agol-search-form").show();
 			$("#lang-block, #logged-out-navigation, #logged-in-navigation").toggle();
 			this.inputEle.focus();
 			if( !mobilecheck() ) {
@@ -74,16 +75,16 @@
 			this.showBorder (false);
 			this.inputEle.val ("");
 			this.inputEle.blur();
-			this.ele.removeClass ("sb-search-open");
+			this.ele.removeClass ("agol-search-open");
 			window.setTimeout (function () {
-				$(".sb-form").hide();
+				$(".agol-search-form").hide();
 				$("#lang-block, #logged-out-navigation, #logged-in-navigation").toggle();
 			}, 300);				
 		}
 	}
 
-	$.fn.expanbleSearch = function (options) {
-		var opts = $.extend ({}, $.fn.expanbleSearch.defaults, options),
+	$.fn.agolSearch = function (options) {
+		var opts = $.extend ({}, $.fn.agolSearch.defaults, options),
 			ui = null;
 
 		return this.each (function () {
@@ -91,11 +92,11 @@
 
 
 			console.info (ele);
-			ui = new ExpandableSearch ($(ele));
+			ui = new AGOLSearch ($(ele));
 		});
 	};
 
-	$.fn.expanbleSearch.defaults = {
+	$.fn.agolSearch.defaults = {
 
 	};
 
