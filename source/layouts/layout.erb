@@ -54,6 +54,11 @@
 
   <%= javascript_include_tag "signIn" %>
 
+   <!--- beg agol search -->
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+  <%= javascript_include_tag "agolsearch" %>
+   <!--- end agol search -->
+
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>
@@ -145,10 +150,17 @@
 
             <div id="lg-container" class="banner-navigation">
 
-              <div class="dropdown-navigation no-top">
+              <div id="agolSearch" class="agol-search">
+                <form class="agol-search-form" method="GET" action="//www.arcgis.com/home/search.html">
+                  <input name="q" class="agol-search-input" placeholder="Search ArcGIS" type="text" value="">
+                  <!--
+                  <input class="agol-search-submit" type="submit" value="">
+                  -->
+                </form>
+                <span class="agol-icon-search"></span>
               </div>
 
-              <div id="logged-out-navigation" class="dropdown-navigation no-top">
+              <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
                   <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
               </div>
 
@@ -246,5 +258,12 @@
 
     <%= javascript_include_tag "drop-down" %>
     <%= javascript_include_tag "search/searchform.js" %>
+
+   <script>
+   $(function() {
+      $("#agolSearch").agolSearch();
+   });
+   </script>
+
   </body>
 </html>
