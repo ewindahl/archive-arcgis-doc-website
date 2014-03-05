@@ -76,12 +76,12 @@ $(document).ready(function() {
   	$("#logged-out-navigation").addClass ("hide");
   	$("#logged-in-navigation").removeClass ("hide");
 
-        var avatarurl = "http://www.gravatar.com/avatar/d7970fec8803bdbeeb5d82674a1a2c8b.jpg?s=16&d=http://d3w50ib5d2uy0g.cloudfront.net/cdn/2464/js/esri/arcgisonline/css/images/no-user-thumb.jpg",
+        var avatarurl = "/img/no-user-thumb.jpg",
             avatar = "<img width='16px' height='16px' alt='' src='" + avatarurl +"' />";
 
 		var token = cookie.val && cookie.val.token,
 			params = {f:"json"},
-			portalHostname = "devext.arcgis.com",  // qaext.arcgis.com, www.arcgis.com
+			portalHostname = sitecfg["portalHostname"], 
       		firstName,
 	  		text;
     
