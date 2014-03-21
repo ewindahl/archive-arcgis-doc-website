@@ -1,9 +1,15 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9 ie8"> <![endif]-->
-<!--[if IE 9]>         <html class="ie ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<%
+readDirection="ltr" 
+if current_language == "ar" 
+	readDirection="rtl"
+end 
+%>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9" dir="<%=readDirection%>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html dir="<%=readDirection%>"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
 
@@ -46,8 +52,10 @@
       <% end %>
     <% end %>
 
+  <link type="text/css" rel="stylesheet" href="/css/marketplace.css" /> 
 	<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" /> 
-	
+
+  <%= javascript_include_tag "sitecfg" %>	
 	<%= javascript_include_tag "locale/l10NStrings" %>
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
@@ -56,6 +64,9 @@
         <%= javascript_include_tag javascript %>
       <% end %>
     <% end %>
+
+    <%= javascript_include_tag "marketplace/init" %>
+
     <% if current_page.data.mobile %>
       <meta name="viewport" content="width=device-width,initial-scale=1">
     <% else %>
@@ -115,11 +126,11 @@
                </div> -->
 
               <div id="logged-out-navigation" class="dropdown-navigation">
-                <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#"><%= t("site.nav.sign_in") %></a>
+                <a data-langlabel="sign-in" id="login-link" class="btn marketplace" href="#"><span class="profile-icon"></span><%= t("site.nav.sign_in") %></a>
               </div>
 
               <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
-                <a id="login-link" class="dropdown btn small light" href="#"><%= t("site.nav.sign_in_user") %></a>
+                <a id="login-link" class="dropdown btn marketplace" href="#"><%= t("site.nav.sign_in_user") %></a>
                 <div class="dropdown-content">
                   <div class="dropdown-menu">
                     <ul class="myconsole">
@@ -135,7 +146,7 @@
 
               <nav class="right-nav">
                  <ul>
-                    <li><%= link_to t("site.nav.help"), t("paths.mphelp") %></li>
+                    <li><a href="<%= t("paths.mphelp") %>"><span class="help-icon"></span><%= t("site.nav.help") %></a></li>
                  </ul>
               </nav>
 

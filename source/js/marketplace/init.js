@@ -43,6 +43,29 @@ $(document).ready(function() {
   	return ("email" in ckval) ? {jar:cookieJar, val: ckval}: null;
   };
 
+
+  function getUserDisplayName(user) {
+      var fullName = user && user.fullName || "",
+  	      firstName = fullName;
+
+      // Format the name that shows in user profile dropdown
+      // If '_', assume the name is before the '_',
+      // If ',', assume the name is after the first ','
+      // else use the name before the first space
+      // issue: https://devtopia.esri.com/WebGIS/arcgis-portal-app/issues/705
+
+      if (fullName.indexOf("_") > -1) {
+        firstName = fullName.split("_")[0];
+      } else if (fullName.indexOf(",") > -1) {
+        firstName = fullName.split(",").slice(1).join(" ");
+      } else if (fullName.indexOf(" ") > -1) {
+        //firstName = fullName.split(" ").slice(0, -1).join(" ");
+        firstName = fullName.split(" ")[0];
+      }
+      return firstName.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, "").replace(/\s+/g, " ");
+    };
+
+
   /* login */
   var ckKey = "esri_auth",
       cookie = getCookie(ckKey);
@@ -53,11 +76,33 @@ $(document).ready(function() {
   	$("#logged-out-navigation").addClass ("hide");
   	$("#logged-in-navigation").removeClass ("hide");
 
-        var avatarurl = "http://www.gravatar.com/avatar/d7970fec8803bdbeeb5d82674a1a2c8b.jpg?s=16&d=http://d3w50ib5d2uy0g.cloudfront.net/cdn/2464/js/esri/arcgisonline/css/images/no-user-thumb.jpg",
+        var avatarurl = "/img/no-user-thumb.jpg",
             avatar = "<img width='16px' height='16px' alt='' src='" + avatarurl +"' />";
-  	
+
+		var token = cookie.val && cookie.val.token,
+			params = {f:"json"},
+			portalHostname = sitecfg["portalHostname"], 
+      		firstName,
+	  		text;
+    
+    	if (token){
+      		params.token = token;
+    	}
+	    
+	    $.getJSON("//" + portalHostname + "/sharing/rest/portals/self", params, function (data) {
+      		firstName = getUserDisplayName(data && data.user);          
+	  		text = firstName || "SIGN IN";
+      		//$(".result").html(text);
+	        $("#logged-in-navigation > a").html (avatar+"<span>"+ text +"</span>");
+
+    	});
+
+
+
+/*  	
         $("#logged-in-navigation > a").html (avatar+"<span>"+cookie.val["email"]+"</span>");
-  	
+ */
+
   	var $linkL = $("#logged-in-navigation .dropdown-menu a");
   	
         if (cookie.val["role"] && cookie.val["role"].indexOf ("admin")>=0) {

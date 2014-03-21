@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -26,16 +27,15 @@ mobile: true
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/arcgis-online/">Main</a></li>
-        <li><a href="/en/arcgis-online/use-maps/">Use maps</a></li>
-        <li><a href="/en/arcgis-online/create-maps/">Create maps and apps</a></li>		
-        <li><a href="/en/arcgis-online/share-maps/">Share maps and apps</a></li>
-	<li><a href="/en/arcgis-online/administer/">Administer your organization</a></li>
-	<li><a href="/en/arcgis-online/reference/">Reference</a></li>
+        <li class='current'><a title="ArcGIS Online Help" href="/en/arcgis-online/">Main</a></li>
+        <li><a title="Use maps" href="/en/arcgis-online/use-maps/">Use</a></li>
+        <li><a title="Create maps and apps" href="/en/arcgis-online/create-maps/">Create</a></li>		
+        <li><a title="Share maps and apps" href="/en/arcgis-online/share-maps/">Share</a></li>
+		<li><a title="Administer your organization" href="/en/arcgis-online/administer/">Administer</a></li>
+		<li><a href="/en/arcgis-online/reference/">Reference</a></li>
 	</ul>
     </nav>
   </div>
@@ -77,7 +77,9 @@ mobile: true
             <p><a href="/en/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Make your first map</a>
 			    <br/>
 
-            <a href="/en/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Make your first app</a></p>
+            <a href="/en/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Make your first app</a><br/>
+			<a href="/en/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Set map and layer properties</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -228,4 +230,3 @@ mobile: true
 
 
   </script>
-

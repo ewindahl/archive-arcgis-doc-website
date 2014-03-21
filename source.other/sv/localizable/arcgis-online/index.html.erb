@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/sv/arcgis-online/">Hj&auml;lp</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="Hj&auml;lp" />
+        <input type="hidden" name="collection" value="Help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/sv/arcgis-online/">Start</a></li>
-        <li><a href="/sv/arcgis-online/use-maps/">Anv&auml;nda kartor</a></li>
-        <li><a href="/sv/arcgis-online/create-maps/">Skapa kartor och appar</a></li>		
-        <li><a href="/sv/arcgis-online/share-maps/">Dela kartor och appar</a></li>
-	<li><a href="/sv/arcgis-online/administer/">Administrera organisationen</a></li>
-	<li><a href="/sv/arcgis-online/reference/">Referenser</a></li>
+        <li class='current'><a title="Hjälp för ArcGIS Online" href="/sv/arcgis-online/">Start</a></li>
+        <li><a title="Använda kartor" href="/sv/arcgis-online/use-maps/">Anv&auml;nda</a></li>
+        <li><a title="Skapa kartor och appar" href="/sv/arcgis-online/create-maps/">Skapa</a></li>		
+        <li><a title="Dela kartor och appar" href="/sv/arcgis-online/share-maps/">Dela</a></li>
+		<li><a title="Administrera organisationen" href="/sv/arcgis-online/administer/">Administrera</a></li>
+		<li><a href="/sv/arcgis-online/reference/">Referenser</a></li>
 	</ul>
     </nav>
   </div>
@@ -73,7 +73,8 @@ mobile: true
 
             <p><a href="/sv/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Skapa din f&ouml;rsta karta</a> <br/>
 
-            <a href="/sv/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Skapa din f&ouml;rsta karta</a></p>
+            <a href="/sv/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Skapa din f&ouml;rsta app</a><br/> <a href="/sv/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Ange egenskaper f&ouml;r kartor och lager</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-
