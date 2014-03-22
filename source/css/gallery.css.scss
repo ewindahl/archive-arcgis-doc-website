@@ -1,0 +1,470 @@
+@import "arcgis/base";
+
+#gallery-body
+{
+    min-height: 100px;
+}
+
+#rc-content
+{
+    min-height: 700px;
+    position: relative;
+}
+
+#gl-s-ctrl
+{
+    margin:0 0 20px 10px;
+    width: 690px;
+    height: 30px;
+    position:relative;
+    /*margin-left: 45px;*/
+}
+#reference-index {
+    @include column(6);
+    /*position: fixed;
+    float:left;
+    width: 220px;
+    border-right: 1px solid #c1c1c1 ;
+    margin-top: -40px;
+    padding: 0 0 35px 0;*/
+}
+#reference-content {
+  @include column(18);
+	#rss {
+    display:inline-block;
+    margin-left: 1em;
+    overflow:hidden;
+    z-index:1000;
+    margin-top:-10px;
+    margin-bottom:10px;
+    a {
+      height:20px;
+      width:20px;
+      padding:5px;
+    }
+	}
+}
+// Need these variables to determine size
+// of button that will fit in search box
+$search-icon-width: 30px;
+$search-icon-height: 30px;
+#gl-s-ctrl {
+  position: relative;
+  input[type="text"] {
+    position:absolute;
+    /*left: 100px;*/
+    height: 30px;
+    color:#888;
+	line-height: 1;
+    /*margin-left: 45px;*/
+  }
+  input[type="submit"] {
+    position:absolute;
+    left: 520px;
+    background: url("/img/orangeMag.gif") no-repeat scroll center center transparent;
+    border: medium none;
+    cursor: pointer;
+    height: $search-icon-height;
+    margin: 1px 135px;
+    width: $search-icon-width;
+  }
+}
+#gl-display
+{
+    /*float:right;*/
+    position:relative;
+    width:700px;
+    min-height: 150px;
+    /*margin: 0 50px 0 0;
+    border: 0px solid #000;*/
+}
+
+
+#gl-filter-ctrl-btn
+{
+    font-weight:bolder;
+    padding:5px 10px;
+    color:Black;
+    background-color:#f4f4f4;
+    border: 1px solid #c1c1c1 ;
+    position:absolute;
+    left:180px;
+    top:5px;
+}
+
+
+#gl-filter-clear
+{
+    float:right;
+	position:relative;
+	top:10px;
+    margin-right: 10px;
+    padding: 0 5px;
+	font-size: 0.85em;
+}
+
+.filter-label
+{
+  display:block;
+	font-family: $header-bold;
+	font-size: $h5-size;
+	line-height:h5-lines;
+  margin: 30px 0 10px 10px;
+}
+
+.ctrlbox {
+  display:block;
+  margin: 0.5em;
+	font-size: 0.85em;
+	line-height: 20px;
+	input[type="checkbox"] {
+		margin: 0.3em 1em;
+	}
+}
+
+#pageX {
+  padding:0 2px 0 2px;
+  width: 30px;
+}
+
+.displayn_selected:hover {
+  text-decoration:none;
+}
+
+.displayn_selected {
+  font-size:12px;
+  font-weight:bold;
+}
+
+.displaytype_selected:hover {
+  text-decoration:none;
+}
+
+.displaytype_selected {
+  font-size:12px;
+  font-weight:bold;
+}
+
+#gl-pagenav {
+  position: relative;
+  margin: 10px 0 40px 0;
+
+}
+
+#gl-display-type {
+  /*position:relative;
+  float:left;
+  left: 490px;*/
+  font-size:11px;
+  text-align: right;
+  line-height: 1.75em;
+  margin-top: -1.75em;
+}
+
+#gl-display-shown {
+  /*position:relative;
+  float:left;
+  left: 490px;*/
+  font-size:11px;
+  text-align: right;
+  line-height: 1.75em;
+}
+#gl-display-shown .label {
+  font-weight:bold;
+  margin-right: 0.5em;
+}
+
+.gl-pnavinfo-s {
+  position:relative;
+  float:left;
+  font-size:11px;
+  margin-top: -1.25em;
+  margin-left: 1em;
+}
+
+
+#gl-display .gl-pnavinfo {
+  margin-left: 1em;
+}
+
+#gl-pagenav .gl-pnavinfo {
+  float:left;
+  position:relative;
+  margin-left:145px;
+  margin-bottom: 40px;
+  margin-right:15px;
+	font-size: 0.85em;
+}
+
+#gl-prevnext {
+  display:inline-block;
+  width: 110px;
+  margin-left: 70px;
+}
+
+#gl-prev {
+  float:left;
+  position:relative;
+  left:130px;
+}
+
+#gl-next {
+    float:left;
+}
+
+
+#gl-content {
+  margin: 1em 0 0 0;
+  min-height: 500px;
+  width: 700px;
+  border-top:1px solid #c1c1c1;
+}
+
+#spinner {
+  display: none;
+  min-height: 400px;
+  min-width: 500;
+  position: absolute;
+  top: 250px;
+  left: 300px;
+}
+
+.display1 .item {
+  position:relative;
+  float:left;
+  margin: 12px 0px;
+  border: 0px solid black;
+  height: 200px;
+  overflow:hidden;
+}
+.display1 .item-contrib:hover {text-decoration:none;}
+.display1 .item-contrib {
+  position:absolute;
+  width:190px;
+  height:25px;
+  top:6px;
+  left: 23.5px;
+  color: #fff;
+  padding-left:10px;
+  font-family:'Avenir LT W01 65 Medium', sans-serif;
+  padding-top:5px;
+}
+.display1 .item-contrib.esri-banner {
+  background: url("/img/trans-bg-blue.png") repeat scroll 0 0 transparent;
+}
+.display1 .item-contrib.user-banner {
+  background: url("/img/trans-bg.png") repeat scroll 0 0 transparent;
+}
+.display1 .item-contrib.partner-banner {
+  background: url("/img/trans-bg-green.png") repeat scroll 0 0 transparent;
+}
+.display1 .item-title {
+  display: block;
+  padding-top: 5px;
+  text-align:left;
+  width: 200px;
+}
+
+.display1 .item-img {
+  display:block;
+  height: 133px;
+  width:200px;
+  border: 1px solid #888;
+  padding:5px;
+  -webkit-box-shadow: 0px 0px 4px #666;
+  -moz-box-shadow: 0px 0px 4px #666;
+  box-shadow: 0px 0px 4px #666;
+}
+
+.display2 .item {
+  width: 100%;
+  position:relative;
+  float:left;
+  padding:10px 5px 10px 5px;
+  margin: 0px 0 0px 0;
+  border-bottom: 0px dotted #d1d1d1;
+  overflow:hidden;
+}
+
+.display2 .item-even {
+  background-color:#f0f0f0;
+}
+
+.display2 .item-idx {
+  padding: 0 5px 0 0;
+}
+
+.display2 .item-title {
+  padding-top: 5px;
+  text-align:left;
+  font-size:15px;
+}
+
+.display2 .item-type {
+  color:#777;
+  margin-left: 30px;
+  font-size: 14px;
+  font-family:monospace;
+}
+
+.display2 .item-stat {
+  text-align:left;
+  float:right;
+  width: 300px;
+  font-size:11px;
+  color:#777;
+}
+
+.display3 .item {
+  position:relative;
+  float:left;
+  margin: 15px 0 0px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #d4d4d4;
+  width: 650px;
+  overflow:hidden;
+}
+.display3 .item-contrib:hover{text-decoration:none;}
+.display3 .item-contrib {
+  position:absolute;
+  width:190px;
+  height:25px;
+  top:6px;
+  left: 23.5px;
+  color: #fff;
+  padding-left:10px;
+  font-family:'Avenir LT W01 65 Medium', sans-serif;
+  padding-top:5px;
+}
+.display3 .item-contrib.esri-banner {
+  background: url("/img/trans-bg-blue.png") repeat scroll 0 0 transparent;
+}
+.display3 .item-contrib.user-banner {
+  background: url("/img/trans-bg.png") repeat scroll 0 0 transparent;
+}
+.display3 .item-contrib.partner-banner {
+  background: url("/img/trans-bg-green.png") repeat scroll 0 0 transparent;
+}
+.display3 .item-img {
+  display:block;
+  height: 133px;
+  width:200px;
+  float:left;
+  border: 1px solid #888;
+  padding:5px;
+}
+
+.display3 .item-info-wrap {
+  float:left;
+  width: 430px;
+}
+
+.display3 .item-title {
+  width: 400px;
+  display:inline-block;
+  margin: 0 0 0 10px;
+  font-size: large;
+  line-height:1.4em;
+}
+
+.display3 .item-snippet {
+  width: 400px;
+  display:inline-block;
+  margin: 10px 0 0 10px;
+}
+
+.display3 .item-type  {
+  font-family: monospace;
+  color:#777;
+  font-size:13px;
+ }
+
+.display3 .item-stat {
+  width: 400px;
+  display:inline-block;
+  margin: 10px 0 0 10px;
+  font-size:11px;
+  color:#777;
+
+}
+
+
+
+#gl-pagenav .btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 14px 6px;
+  color: #444;
+  font-size: 13px;
+  line-height: normal;
+  border: 1px solid #636C6C;
+
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+
+
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+
+  background-color: #ccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#d9d9d9));
+  background-image: -webkit-linear-gradient(top, #f1f1f1, #d9d9d9);
+  background-image:    -moz-linear-gradient(top, #f1f1f1, #d9d9d9);
+  background-image:     -ms-linear-gradient(top, #f1f1f1, #d9d9d9);
+  background-image:      -o-linear-gradient(top, #f1f1f1, #d9d9d9);
+  background-image:         linear-gradient(to bottom, #f1f1f1, #d9d9d9);
+
+}
+
+#gl-pagenav .btn:hover {
+  color: #000;
+  text-decoration: none;
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#aaaaaa));
+  background-image: -webkit-linear-gradient(top, #cccccc, #aaaaaa);
+  background-image:    -moz-linear-gradient(top, #cccccc, #aaaaaa);
+  background-image:     -ms-linear-gradient(top, #cccccc, #aaaaaa);
+  background-image:      -o-linear-gradient(top, #cccccc, #aaaaaa);
+  background-image:         linear-gradient(to bottom, #cccccc, #aaaaaa);
+
+}
+/*.btn:focus {
+  outline: 1px dotted #666;
+}*/
+
+#gl-pagenav .btn.active, .btn:active {
+}
+#gl-pagenav .btn.disabled
+{
+  /*display:none;*/
+  border: 1px solid #B9b9b9;
+  color: #c1c1c1;
+  cursor: default;
+  background:#f1f1f1;
+}
+
+#gl-content-ul li{
+   background: none;
+}
+
+#gl-pagenav input[type="text"]{
+  width:2em;
+  font-size: 1em;
+  display: inline;
+}
+
+#filters label {
+    font-size: 1.0em;
+	margin-bottom: 0em;
+	margin-top: 0em;
+}
+
+/* Button that clears search input text */
+#gl-cl-btn {
+	display: none;
+	margin-right: $search-icon-width;
+	margin-top: 1/6*$search-icon-height;
+	float: right;
+	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
+	cursor: pointer;
+}
