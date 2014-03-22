@@ -1,0 +1,55 @@
+   <!--****** Expanded Gallery related code ***** -->
+   <% if current_page.data.gallery_data_path and current_page.data.expanded_gallery %>
+      <%
+      require 'xmlsimple'
+      contents = File.read(current_page.data.gallery_data_path)
+      ref =  XmlSimple.xml_in(contents, { 'ForceArray' => true })
+
+      mfl = "["
+      kv = "{"
+      ckv = "{"
+      ref['filters'][0]['filter'].each { |k|
+         i = 0
+
+         k["value"].each { |sk|
+           if k['metaname'] == "g-contributor"
+               ckv += "'" + sk['metacontent'] + "':'#{sk['itemlabel']}',"
+           end
+           kv += "'" + sk['metacontent'] + "':'#{sk['label']}',"
+           i = i+1
+         }
+
+         mfl += "'" + k['metaname'] + ":#{i}',"
+      }
+      mfl += "]"
+      kv += "}"
+      ckv += "}"
+   %>
+      <script>
+         var gcfg = {
+             contrib: <%=ref['view'][0]['showContributor']%>,
+             numN: 30,
+             displayType: 1,
+             collection: "<%=ref['search-collection']%>",
+             category: "<%=ref['search-category']%>",
+             emptyImgUrl: "/img/caution.png",
+             errorMsg: "<%=ref['view'][0]['errormsg']%>",
+             searchMsg: "<%=ref['view'][0]['searchmsg']%>",
+             emptymsg: "<%=ref['view'][0]['emptymsg']%>",
+             nullMsg: "<%=ref['view'][0]['emptymsg']%>",
+             mdfL: <%=mfl%>,
+             kv: <%=kv%>,
+             contribkv : <%=ckv%>,
+             cntL: [15,30,45]
+         };
+
+         $(document).ready(function (){
+
+            if($("#query").val().trim().length <= 0){
+               $("#query").attr("value","<%=ref['view'][0]['searchmsg']%>");
+            }
+         });
+
+      </script>
+   <% end %>
+   <!-- ***** End of Expanded Gallery related code ****** -->
