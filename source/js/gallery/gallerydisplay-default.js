@@ -111,13 +111,13 @@ function genDisplay() {
                 buf.push("<li class='item item-even'>");
             }
 
-            //buf.push("<span class='item-idx'>" + (i + 1) + ".</span>");
+            buf.push("<span class='item-idx'>" + (i + 1) + ".</span>");
             buf.push("<a class='item-title' href='" + targetUrl + "' target='_blank'>");
             buf.push(row.md("agol-item-title", "n/a")); //row.val("t"));
             buf.push("</a>");
             buf.push("<br/>");
-            // buf.push("<span class='item-type'> " + row.md("agol-itemtype", "") + "</span>")
-            //buf.push("<span class='item-stat'>" + row.md("agol-numviews", "0") + " views | " + row.md("agol-numrating", "0") + " ratings | avg. rating: " + row.md("agol-avgrating", "0.0").slice(0, 3) + "" + "</span>");
+            buf.push("<span class='item-type'> " + row.md("agol-itemtype", "") + "</span>")
+            buf.push("<span class='item-stat'>" + row.md("agol-numviews", "0") + " views | " + row.md("agol-numrating", "0") + " ratings | avg. rating: " + row.md("agol-avgrating", "0.0").slice(0, 3) + "" + "</span>");
             buf.push("</li>");
 
         },
@@ -144,7 +144,7 @@ function genDisplay() {
             if(row.md("agol-snippet", "") != "None"){
 				buf.push("<p class='item-snippet'>" + row.md("agol-snippet", "") + "</p>");
 			}
-            //buf.push("<div class='item-stat'>" + row.md("agol-numviews", "0") + " views | " + row.md("agol-numrating", "0") + " ratings | avg. rating: " + row.md("agol-avgrating", "0.0").slice(0, 3) + "" + "</div>");
+            buf.push("<div class='item-stat'>" + row.md("agol-numviews", "0") + " views | " + row.md("agol-numrating", "0") + " ratings | avg. rating: " + row.md("agol-avgrating", "0.0").slice(0, 3) + "" + "</div>");
             buf.push("</div>");
 
             buf.push("</li>");
