@@ -73,23 +73,23 @@ jQuery(document).ready(function ($) {
       var langList = {
           "en": "en",
           "en-us": "en",
-          "ar": "ar",
+          "ar": "ar", "ar-dz": "ar", "ar-bh": "ar", "ar-eg": "ar",  "ar-iq": "ar",  "ar-jo": "ar", "ar-kw": "ar", "ar-lb": "ar", "ar-ly": "ar", "ar-ma": "ar", "ar-om": "ar", "ar-qa": "ar", "ar-sa": "ar", "ar-sy": "ar", "ar-tn": "ar", "ar-ae": "ar",
           "da": "da",
-          "de" : "de",
-          "es": "es",
-          "fr": "fr",
-          "it": "it",
-          "ja" : "ja",
+          "de" : "de", "de-at" : "de", "de-de" : "de", "de-li" : "de", "de-ch" : "de",
+          "es": "es", "es-us": "es", "es-us": "es", "es-ar": "es", "es-bo": "es", "es-cl": "es", "es-co": "es", "es-cr": "es", "es-do": "es", "es-ec": "es", "es-sv": "es", "es-gt": "es", "es-hn": "es", "es-mx": "es", "es-pr": "es", "es-es": "es", "es-uy": "es", "es-ve": "es",		  
+          "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr",
+          "it": "it", "it-it": "it", "it-ch": "it",
+          "ja" : "ja","ja-jp" : "ja",
           "ko": "ko",
           /*"nl" : "nl",*/
-          "no": "no",
+          "no": "no","no-no": "no",
           "pl": "pl",
           "pt-br": "pt-br",
           "pt-pt": "pt-pt",
-          "ro": "ro",
-          "ru": "ru",
-          "sv": "sv",
-          "zh-cn": "zh-cn"
+          "ro": "ro", "ro-mo": "ro",
+          "ru": "ru", "ru-mo": "ru",
+          "sv": "sv", "sv-fi": "sv", "sv-se": "sv",
+          "zh-cn": "zh-cn", "zh-hk": "zh-cn", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-cn"
       },  
 
 
@@ -102,6 +102,7 @@ jQuery(document).ready(function ($) {
 
       //historyCK = "state404", 
       prefLangCK = "preflang";
+	  esriAuthCK = "esri_auth";
 
       return {
           getReferrerLang : function () {
@@ -155,7 +156,8 @@ jQuery(document).ready(function ($) {
 */
 
           getAgolPref : function () {
-              return null;
+              var ckObj =  $.parseJSON (doc.cookieJar.getItem (esriAuthCK));
+			  return (ckObj)?ckObj.culture : null;
           },
 
           getSelectorPref : function () {
