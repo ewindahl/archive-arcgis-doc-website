@@ -1,0 +1,115 @@
+<Comment>
+layout: marketplace/layout
+
+title: Sign Up - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+</Comment>
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">Registrera dig som leverant&ouml;r</h1>
+    </header>
+	<nav>&nbsp;</nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">S&auml;lj din app p&aring; ArcGIS Marketplace F&aring; &aring;tkomst till den st&ouml;rsta GIS-anv&auml;ndargruppen i v&auml;rlden. Vi g&ouml;r det enkelt f&ouml;r dig att f&aring; kontakt med anv&auml;ndare, tillhandah&aring;lla gratis provperioder och skapa leads. Som appleverant&ouml;r beh&aring;ller du 100&nbsp;% av int&auml;kterna fr&aring;n f&ouml;rs&auml;ljningen av din app. L&auml;s mer i <a href="/en/marketplace/provider/faq.htm">Vanliga fr&aring;gor</a>. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">&Auml;r du redan Esri-partner?</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">N&aring; en st&ouml;rre publik genom att lista din l&ouml;sning p&aring; ArcGIS Marketplace. Logga in p&aring; <a href="http://partnerportal.esri.com/">Esris partnerportal</a> och ta reda p&aring; vad som kr&auml;vs f&ouml;r att bli leverant&ouml;r.</p>
+
+      </section>
+
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">&Auml;r du inte partner? &Auml;r Esri nytt f&ouml;r dig?</h2>
+		<p data-langlabel="provider-signup-note">Vi letar efter utvecklare som vill skapa utm&auml;rkta l&ouml;sningar f&ouml;r v&aring;ra anv&auml;ndare. Ber&auml;tta vem du &auml;r och vad du h&aring;ller p&aring; med, s&aring; kan vi hj&auml;lpa dig komma ig&aring;ng.</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="http://resources.arcgis.com/apps/contact-us/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="first-name" for="first-name">F&ouml;rnamn: </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">Efternamn: </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">E-postadress: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Telefonnummer: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">Om dig: </label>
+			  <textarea data-langlabel="comment" placeholder="I build apps that..." name="userComment" id="userComment"></textarea>
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">Ange siffrorna som visas f&ouml;r att f&ouml;rhindra automatisk skr&auml;ppost: </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">Siffror: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="intern" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="en" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" data-langlabel="contact-us">Skicka</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>Tack f&ouml;r att du &auml;r intresserad av att bli leverant&ouml;r &aring;t ArcGIS Marketplace. Vi kommer att h&ouml;ra av oss inom ett par arbetsdagar.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>
