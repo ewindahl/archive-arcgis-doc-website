@@ -1,0 +1,115 @@
+---
+layout: marketplace/layout
+
+title: Sign Up - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">Anmelden als Provider</h1>
+    </header>
+	<nav>&nbsp;</nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">Verkaufen Sie Ihre Apps in ArcGIS Marketplace. Erlangen Sie Zugriff auf die größte GIS-Benutzerbasis der Welt. Wir ermöglichen Ihnen, mit anderen Benutzern in Kontakt zu treten, kostenlose Testversionen bereitzustellen und Leads zu generieren. Als App-Provider können Sie 100 Prozent des Umsatzerlöses aus dem Verkauf Ihrer App einbehalten. Nähere Einzelheiten können Sie den <a href="/de/marketplace/provider/faq.htm">FAQ</a> entnehmen. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">Sind Sie bereits ein Esri Partner?</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">Erreichen Sie ein größeres Publikum, indem Sie Ihre Lösung in ArcGIS Marketplace eintragen. Melden Sie sich beim <a href="http://partnerportal.esri.com/">Esri Partner Portal</a> an, um mehr darüber zu erfahren, welche Voraussetzungen Sie erfüllen müssen, um Provider zu werden.</p>
+
+      </section>
+
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">Sie sind kein Partner? Sie sind neu bei Esri?</h2>
+		<p data-langlabel="provider-signup-note">Wir suchen Entwickler, die hervorragende Lösungen für unsere Benutzer erstellen. Senden Sie uns Angaben zu Ihrer Person und Ihre Daten, und wir helfen Ihnen bei den ersten Schritten.</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="http://resources.arcgis.com/apps/contact-us/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="first-name" for="first-name">Vorname: </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">Nachname: </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">E-Mail-Adresse: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Telefonnummer: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">Ihre Daten: </label>
+			  <textarea data-langlabel="comment" placeholder="I build apps that..." name="userComment" id="userComment"></textarea>
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">Geben Sie die angezeigten Ziffern ein, um automatisierten Spam zu verhindern: </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">Ziffern: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="intern" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="de" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" data-langlabel="contact-us">Senden</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>Vielen Dank für Ihr Interesse, ArcGIS Marketplace-Provider zu werden. Wir werden uns innerhalb der nächsten Tage mit Ihnen in Verbindung setzen.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>
