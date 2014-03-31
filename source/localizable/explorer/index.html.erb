@@ -145,106 +145,266 @@ mobile: true
 	<p>Today Explorer is a great app for working with your maps and presentations on iPhones and iPads. But there is more to come! 
 	The following outlines where we'd like to take this app, showing capabilities we'll bring to each of your devices: 
 	
-        <table border="1" style="text-align:center">
+	<style>
+	  table.sneakPeek
+	  {
+	    text-align:center;
+	  }
+	  table.sneakPeek tr.heading th
+	  {
+	    background-color:lightgray;
+	    font-style:italic;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	  }
+	  table.sneakPeek tr#deviceHeadings th
+	  {
+	    font-style:italic;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	  }
+	</style>
+        <table class="sneakPeek" border="1">
 	  <caption>Functionality by platform. <br/>
-	  <img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"> current release, <img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"> future release.<br/>
+	  <span class="icon-check" style="color:black"></span> current, <span class="icon-check icon-green"></span> soon, <span class="icon-check" style="color:lightgray"></span><span class="clear"/> later<br/>
 	  </caption>
-	  <tr><td></td>
-	    <th>Phone<br/><span style="font-size: 12px">iPhone, Android</span></th>
-	    <th>Tablet<br/><span style="font-size: 12px">iPad, Android</span></th>
-	    <th>Desktop<br/><span style="font-size: 12px">Mac</span></th>
+	  <tr id="deviceHeadings"><td rowspan="2"></td>
+	    <th colspan="3">Phone</th>
+	    <th colspan="3">Tablet</th>
+	    <th colspan="2">Desktop</th>
 	  </tr>
-          <tr><th>Create and configure maps</th>
+	  <tr>
+	    <td><span class="icon-apple"/></td>
+	    <td><span class="icon-android"/></td>
+	    <td><span class="icon-windows-8 icon-purple"/></td>
+	    <td><span class="icon-apple"/></td>
+	    <td><span class="icon-android"/></td>
+	    <td><span class="icon-windows-8 icon-purple"/></td>
+	    <td><span class="icon-apple"/></td>
+	    <td><span class="icon-windows-classic" style="color:#21C9FF"/></td>
+	  </tr>
+	  <tr class="heading">
+	    <th>Work with maps</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	  <tr>
+	    <td>Discover maps</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	    <td></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>	  	  
-	  <tr><th>Data exploration</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Discover related records</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	  </tr>
-          <tr><th>Edit features</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	    <td></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>		
+	  <tr>
+	    <td>View maps</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>	
+	  <tr>
+	    <td>Author maps</td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>		
+	  <tr>
+	    <td>Share maps</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>		
+	  <tr>
+	    <td>Give presentations</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>	
+	  <tr class="heading">
+	    <th>Work with data</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>	
+	  <tr>
+	    <td>Work with ArcGIS Online</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
-          <tr><th>Explore time-aware maps</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
+	  <tr>
+	    <td>Work with Portal for ArcGIS</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>	
+	  <tr>
+	    <td>Search data</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>		
+	  <tr>
+	    <td>Sketch on the map</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>		  
+	  <tr>
+	    <td>Edit data</td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>		
+	  <tr>
+	    <td>Support non-spatial data (related tables)</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>	
+	  <tr>
+	    <td>Work offline</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>
-          <tr><th>Filter your data</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Get directions</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	  </tr>
-          <tr><th>Give presentations</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Locate your contacts</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Measure on the map</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Search for features</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Search for points of interest</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Share maps</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Sketch on the map</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Store important places</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Use 3D maps</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	  </tr>
-          <tr><th>Use enterprise login security</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
-          <tr><th>Use maps offline</th>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmarkGray.png"></td>
-	    <td><img purpose="img" placement="inline" alt="Yes" title="Yes" src="checkmark.png"></td>
-	  </tr>
+	  <tr>
+	    <td>Temporally filter data</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>		 
+	  <tr>
+	    <td>3D</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>	
+	  <tr>
+	    <td>Peform analysis</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>	
+	  <tr class="heading">
+	    <th>Account management</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>	 	
+	  <tr>
+	    <td>Manage Favorites</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>	
+	  <tr>
+	    <td>Manage My Places</td>
+            <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>	
 	</table>
+	
 	<p>Share your <a href="http://ideas.arcgis.com/">ideas</a>, and <a href="mailto:Explorer4ArcGIS@esri.com?subject=Explorer%20feedback">send us your feedback</a>.</p>
 	
         <p>&nbsp;</p>
