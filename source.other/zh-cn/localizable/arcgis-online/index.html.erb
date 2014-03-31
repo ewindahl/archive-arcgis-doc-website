@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/zh-cn/arcgis-online/">帮助</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="帮助" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/zh-cn/arcgis-online/">概要</a></li>
-        <li><a href="/zh-cn/arcgis-online/use-maps/">使用地图</a></li>
-        <li><a href="/zh-cn/arcgis-online/create-maps/">创建地图和应用程序</a></li>		
-        <li><a href="/zh-cn/arcgis-online/share-maps/">共享地图和应用程序</a></li>
-	<li><a href="/zh-cn/arcgis-online/administer/">管理您的组织</a></li>
-	<li><a href="/zh-cn/arcgis-online/reference/">参考资料</a></li>
+        <li class='current'><a title="ArcGIS online 帮助" href="/zh-cn/arcgis-online/">主页</a></li>
+        <li><a title="使用地图" href="/zh-cn/arcgis-online/use-maps/">使用</a></li>
+        <li><a title="创建地图和应用程序" href="/zh-cn/arcgis-online/create-maps/">创建</a></li>		
+        <li><a title="共享地图和应用程序" href="/zh-cn/arcgis-online/share-maps/">共享</a></li>
+		<li><a title="管理您的组织" href="/zh-cn/arcgis-online/administer/">管理</a></li>
+		<li><a href="/zh-cn/arcgis-online/reference/">参考资料</a></li>
 	</ul>
     </nav>
   </div>
@@ -60,7 +60,7 @@ mobile: true
          <p>使用地图探究、了解和测量地理数据。</p>
 
       
-         <p><a href="/zh-cn/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;查看数据</a> <br/><a href="/zh-cn/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">执行分析</a><br/> <a href="/zh-cn/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">编辑要素</a></p>
+         <p><a href="/zh-cn/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;查看数据</a> <br/> <a href="/zh-cn/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">执行分析</a><br/> <a href="/zh-cn/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">编辑要素</a></p>
         </div>
 
 
@@ -71,7 +71,10 @@ mobile: true
           <p>构建您的组织可在任何设备上随时随地访问的交互式地图和应用程序。</p>
 
 
-            <p><a href="/zh-cn/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;创建第一个地图</a> <br/>EnterEnter            <a href="/zh-cn/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">创建第一个应用程序</a></p>
+            <p><a href="/zh-cn/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;创建第一个地图</a> <br/>
+              
+            <a href="/zh-cn/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">创建第一个应用程序</a><br/> <a href="/zh-cn/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">设置地图和图层属性</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -81,7 +84,7 @@ mobile: true
           <h3>共享地图和应用程序</h3>
           <p>通过在您的组织或社区内共享地图和应用程序来使用数据。</p>
 
-         <p><a href="/zh-cn/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;添加项目</a> <br/><a href="/zh-cn/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">共享项目</a> <br/><a href="/zh-cn/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">发布托管要素和切片</a></p>
+         <p><a href="/zh-cn/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;添加项目</a> <br/><a href="/zh-cn/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">共享项目</a> <br/> <a href="/zh-cn/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">发布托管要素和切片</a></p>
          
         </div>
 
@@ -90,9 +93,9 @@ mobile: true
           <img src="img/admin-org.jpg" />
 
           <h3>管理您的组织</h3>
-          <p>通过为组织配置 ArcGIS Online 并邀请用户加入和管理资源来扩展 GIS 的使用。</p>
+          <p>通过为组织配置 ArcGIS Online 并邀请用户加入和管理资源来扩展 GIS 的使用范围。</p>
           <p>
-            <a href="/zh-cn/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;配置网站</a> <br/><a href="/zh-cn/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">邀请用户</a> <br/><a href="/zh-cn/arcgis-online/administer/view-status.htm" class="icon-right-arrow">查看组织状态</a></p>
+            <a href="/zh-cn/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;配置网站</a> <br/> <a href="/zh-cn/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">邀请用户</a> <br/> <a href="/zh-cn/arcgis-online/administer/view-status.htm" class="icon-right-arrow">查看组织统计数据</a></p>
            
         </div>
 		<div class="clear"></div>
@@ -100,7 +103,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
           <h3>即用型应用程序</h3>
-         <p>利用外业数据采集、Operational Dashboard、Microsoft Office 和 Sharepoint 的即用型应用程序。</p>
+         <p>将即用型应用程序用于外业数据收集、Operational Dashboards、Microsoft Office 以及 Sharepoint 中。</p>
 		 <p>
 		 
 		 <a href="http://www.arcgis.com/features/apps/index.html" class="icon-right-arrow">&nbsp;&nbsp;ArcGIS 应用程序</a>
@@ -110,7 +113,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
           <h3>开发者 API</h3>
-          <p>ArcGIS 平台包括为整个组织和社区构建应用程序的 API 和 SDK。</p>
+          <p>ArcGIS 平台包括用于为贵组织和整个社区构建应用程序的 API 和 SDK。</p>
 		 
 		 <p><a href="https://developers.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS for Developers</a></p>
         </div>
@@ -126,7 +129,7 @@ mobile: true
 
 	  	  	 <div class="imgFrame block">
           <h3>入门</h3>
-		  <p>通过教程帮助您了解如何使用 ArcGIS 平台</p>
+		  <p>教程可帮助您了解如何使用 ArcGIS 平台</p>
          <ul>
 		 <li><a href="http://pro.arcgis.com/zh-cn/get-started/web/">使用地图</a>
 		 </li>
@@ -184,7 +187,7 @@ mobile: true
 		 
      <section id="forum-container">
       <div class="panel">
-        <h3>在论坛上</h3>
+        <h3>论坛</h3>
         <div id="forum"></div>
         <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">更多论坛文章</a>
       </div>
@@ -216,4 +219,3 @@ mobile: true
 
 
   </script>
-

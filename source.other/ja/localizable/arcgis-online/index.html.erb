@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/ja/arcgis-online/">ヘルプ</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="ヘルプ" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/ja/arcgis-online/">メイン</a></li>
-        <li><a href="/ja/arcgis-online/use-maps/">マップの使用</a></li>
-        <li><a href="/ja/arcgis-online/create-maps/">マップとアプリケーションの作成</a></li>		
-        <li><a href="/ja/arcgis-online/share-maps/">マップとアプリケーションの共有</a></li>
-	<li><a href="/ja/arcgis-online/administer/">組織サイトの管理</a></li>
-	<li><a href="/ja/arcgis-online/reference/">参照</a></li>
+        <li class='current'><a title="ArcGIS Online ヘルプ" href="/ja/arcgis-online/">メイン</a></li>
+        <li><a title="マップの使用" href="/ja/arcgis-online/use-maps/">使用</a></li>
+        <li><a title="マップとアプリケーションの作成" href="/ja/arcgis-online/create-maps/">作成</a></li>		
+        <li><a title="マップとアプリケーションの共有" href="/ja/arcgis-online/share-maps/">共有</a></li>
+		<li><a title="組織サイトの管理" href="/ja/arcgis-online/administer/">管理</a></li>
+		<li><a href="/ja/arcgis-online/reference/">リファレンス</a></li>
 	</ul>
     </nav>
   </div>
@@ -47,7 +47,7 @@ mobile: true
      <div class="column-16 tablet-column-24">
 
 
-    <h3 class="gray">対話型マップとアプリケーションを作成および使用して、それらを組織サイトのユーザと共有します。方法の表示。</h3>
+    <h3 class="gray">対話型マップとアプリケーションを作成および使用して、それらを組織サイトのユーザと共有します。その方法を見てみましょう。</h3>
 	
 	<hr />
 	
@@ -60,7 +60,7 @@ mobile: true
          <p>マップを使用して、地理データを探索、理解、計測できます。</p>
 
       
-         <p><a href="/ja/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;データの表示</a> <br/> <a href="/ja/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">解析の実行</a><br/> <a href="/ja/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">フィーチャの編集</a></p>
+         <p><a href="/ja/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;データの表示</a> <br/> <a href="/ja/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;解析の実行</a><br/> <a href="/ja/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">フィーチャの編集</a></p>
         </div>
 
 
@@ -73,7 +73,8 @@ mobile: true
 
             <p><a href="/ja/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;はじめてのマップ作成</a> <br/>
 
-            <a href="/ja/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;はじめてのアプリケーション作成</a></p>
+            <a href="/ja/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">はじめてのアプリケーション作成</a><br/> <a href="/ja/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">マップとレイヤ プロパティの設定</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -83,7 +84,7 @@ mobile: true
           <h3>マップとアプリケーションの共有</h3>
           <p>マップとアプリケーションを組織サイトまたはコミュニティで共有することで、データを活用できます。</p>
 
-         <p><a href="/ja/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;アイテムの追加</a> <br/><a href="/ja/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">アイテムの共有</a> <br/> <a href="/ja/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">ホスト フィーチャおよびタイルの公開</a></p>
+         <p><a href="/ja/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;アイテムの追加</a> <br/><a href="/ja/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">アイテムの共有</a> <br/> <a href="/ja/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">ホスト フィーチャおよびタイトルの公開</a></p>
          
         </div>
 
@@ -102,7 +103,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
           <h3>すぐに使用できるアプリケーション</h3>
-         <p>フィールド データ コレクション、管理用ダッシュボード、Microsoft Office、および Sharepoint 用のすぐに使用できるアプリケーションを利用します。</p>
+         <p>屋外でのデータ収集、管理用ダッシュボード、Microsoft Office、および Sharepoint 用のすぐに使用できるアプリケーションを利用することができます。</p>
 		 <p>
 		 
 		 <a href="http://www.arcgis.com/features/apps/index.html" class="icon-right-arrow">&nbsp;&nbsp;ArcGIS アプリケーション</a>
@@ -112,7 +113,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
           <h3>開発者 API</h3>
-          <p>ArcGIS プラットフォームには、組織およびコミュニティ全体向けのアプリケーションを構築する API および SDK が含まれています。</p>
+          <p>ArcGIS プラットフォームには、組織およびコミュニティ全体向けのアプリケーションを構築するための API および SDK が含まれています。</p>
 		 
 		 <p><a href="https://developers.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS for Developers</a></p>
         </div>
@@ -167,7 +168,7 @@ mobile: true
 		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
 		</video>
         
-        <p>組み込みマップ ビューアを使用したマップの作成方法について説明します。</p>
+        <p>組み込みマップ ビューアを使用してマップを作成する方法の説明。</p>
         <a href="/ja/arcgis-online/reference/videos.htm" class="btn secondary">その他のビデオ</a>
       </div>
     </section>	
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-

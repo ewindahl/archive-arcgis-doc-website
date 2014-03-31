@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/no/arcgis-online/">Hjelp</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="Hjelp" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/no/arcgis-online/">Hoved</a></li>
-        <li><a href="/no/arcgis-online/use-maps/">Bruke kart</a></li>
-        <li><a href="/no/arcgis-online/create-maps/">Opprette kart og programmer</a></li>		
-        <li><a href="/no/arcgis-online/share-maps/">Dele kart og programmer</a></li>
-	<li><a href="/no/arcgis-online/administer/">Administrer organisasjonen</a></li>
-	<li><a href="/no/arcgis-online/reference/">Referanse</a></li>
+        <li class='current'><a title="Hjelp for ArcGIS Online" href="/no/arcgis-online/">Hoved</a></li>
+        <li><a title="Bruke kart" href="/no/arcgis-online/use-maps/">Bruke</a></li>
+        <li><a title="Opprette kart og apper" href="/no/arcgis-online/create-maps/">Opprette</a></li>		
+        <li><a title="Dele kart og apper" href="/no/arcgis-online/share-maps/">Dele</a></li>
+		<li><a title="Administrere organisasjonen" href="/no/arcgis-online/administer/">Administrere</a></li>
+		<li><a href="/no/arcgis-online/reference/">Referanse</a></li>
 	</ul>
     </nav>
   </div>
@@ -71,16 +71,17 @@ mobile: true
           <p>Bygg interaktive kart og programmer som organisasjonen kan bruke p&aring; alle typer enheter, hvor som helst og n&aring;r som helst.</p>
 
 
-            <p><a href="/no/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Lage ditt f&oslash;rste kart</a> <br/>
+            <p><a href="/no/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Lag ditt f&oslash;rste kart</a> <br/>
 
-            <a href="/no/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Lage ditt f&oslash;rste program</a></p>
+            <a href="/no/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Lag din f&oslash;rste app</a><br/> <a href="/no/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Angi kart- og lagegenskaper</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
        <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="img/share-maps-apps.jpg" />
 
-          <h3>Dele kart og programmer</h3>
+          <h3>Dele kart og apper</h3>
           <p>Ta i bruk dataene dine ved &aring; dele kart og programmer i organisasjonen eller fellesskapet.</p>
 
          <p><a href="/no/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Legge til elementer</a> <br/><a href="/no/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Dele elementer</a> <br/> <a href="/no/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publisere vertsbaserte geoobjekter og fliser</a></p>
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-

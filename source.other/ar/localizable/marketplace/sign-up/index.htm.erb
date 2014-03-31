@@ -1,0 +1,115 @@
+---
+layout: marketplace/layout
+
+title: Sign Up - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">سجّل لتصبح مُزودًا</h1>
+    </header>
+	<nav>&nbsp;</nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">يمكنك بيع تطبيقك في ArcGIS Marketplace. ادخل إلى أكبر قاعدة لمستخدمي GIS في العالم. جعلنا عملية الاتصال بالمستخدمين وتوفير الفترات التجريبية المجانية وتقديم القادة عملية سهلة. بصفتك مُوفر التطبيق، سيصبح لديك 100% من العائد يُمكن إنتاجه لبيع التطبيق. تحقق من <a href="/ar/marketplace/provider/faq.htm">الأسئلة المتداولة</a> لمزيد من التفاصيل. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">هل تكون شريك Esri بالفعل؟</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">الوصول إلى قاعدة كبيرة من الحضور بواسطة إدراج الحلول في ArcGIS Marketplace. قم بتسجيل الدخول على <a href="http://partnerportal.esri.com/"> Esri Partner Portal</a> لتتعرف على المطلوب لتصبح مُوفر.</p>
+
+      </section>
+
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">هل أنت ليس شريكًا؟ هل أنت مستخدم جديد في Esri؟</h2>
+		<p data-langlabel="provider-signup-note">نحن نبحث عن مُطورين راغبين في بناء حلول كبيرة للمستخدمين. أخبرنا عنك وما هي المساعدة التي يمكن تقديمها وسنساعدك للبدء</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="http://resources.arcgis.com/apps/contact-us/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="first-name" for="first-name">الاسم الأول: </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">الاسم الأخير: </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">عنوان البريد الإلكتروني: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">رقم الهاتف: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">نبذة عنك: </label>
+			  <textarea data-langlabel="comment" placeholder="I build apps that..." name="userComment" id="userComment"></textarea>
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">للمساعدة في منع وصول رسائل البريد العشوائي، أدخل الأرقام المتاحة: </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">الأرقام <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="داخلي" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="لغة إنجليزية" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" data-langlabel="contact-us">ارسال</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>نشكرك على الاهتمام بأن تصبح مُوفر لـ ArcGIS Marketplace. سنكون على اتصال في أيام العمل التالية.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>

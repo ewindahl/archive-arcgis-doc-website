@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/pt-pt/arcgis-online/">Ajuda</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="Ajuda" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/pt-pt/arcgis-online/">Principal</a></li>
-        <li><a href="/pt-pt/arcgis-online/use-maps/">Utilizar mapas</a></li>
-        <li><a href="/pt-pt/arcgis-online/create-maps/">Criar mapas e aplicações</a></li>		
-        <li><a href="/pt-pt/arcgis-online/share-maps/">Partilhar mapas e aplicações</a></li>
-	<li><a href="/pt-pt/arcgis-online/administer/">Administrar a sua Organização</a></li>
-	<li><a href="/pt-pt/arcgis-online/reference/">Referência</a></li>
+        <li class='current'><a title="Ajuda do ArcGIS Online" href="/pt-pt/arcgis-online/"> Principal</a></li>
+        <li><a title="Utilizar mapas" href="/pt-pt/arcgis-online/use-maps/"> Utilizar</a></li>
+        <li><a title="Criar mapas e aplicações" href="/pt-pt/arcgis-online/create-maps/"> Criar</a></li>		
+        <li><a title="Partilhar mapas e aplicações" href="/pt-pt/arcgis-online/share-maps/"> Partilhar</a></li>
+		<li><a title="Administrar a sua organização" href="/pt-pt/arcgis-online/administer/"> Administrar</a></li>
+		<li><a href="/pt-pt/arcgis-online/reference/">Referência</a></li>
 	</ul>
     </nav>
   </div>
@@ -54,13 +54,13 @@ mobile: true
         <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="img/perform-analysis.jpg" />
 
-          <h3>Utilizar mapas</h3>
+          <h3>Utilize mapas</h3>
          
  
          <p>Utilize mapas para explorar, compreender e medir dados geográficos.</p>
 
       
-         <p><a href="/pt-pt/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Visualizar dados</a> <br/> <a href="/pt-pt/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Efetuar análise</a><br/> <a href="/pt-pt/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Editar elementos</a></p>
+         <p><a href="/pt-pt/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Visualizar dados</a> <br/> <a href="/pt-pt/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Realizar análise</a><br/> <a href="/pt-pt/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Editar elementos</a></p>
         </div>
 
 
@@ -73,7 +73,8 @@ mobile: true
 
             <p><a href="/pt-pt/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Crie o seu primeiro mapa</a> <br/>
 
-            <a href="/pt-pt/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Crie a sua primeira aplicação</a></p>
+            <a href="/pt-pt/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Faça a sua primeira aplicação</a><br/> <a href="/pt-pt/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp; Defina propriedades de mapas e de camadas</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -83,7 +84,7 @@ mobile: true
           <h3>Partilhar mapas e aplicações</h3>
           <p>Ponha os seus dados a trabalhar partilhando mapas e aplicações no interior da sua organização ou comunidade.</p>
 
-         <p><a href="/pt-pt/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Adicionar itens</a> <br/><a href="/pt-pt/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Partilhar itens</a> <br/> <a href="/pt-pt/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publicar elementos e mosaicos alojados</a></p>
+         <p><a href="/pt-pt/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Adicionar itens</a> <br/><a href="/pt-pt/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp; Partilhar itens </a> <br/> <a href="/pt-pt/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publicar elementos hospedados e títulos.</a></p>
          
         </div>
 
@@ -94,7 +95,7 @@ mobile: true
           <h3>Administrar a sua Organização</h3>
           <p>Alargue a utilização do seu SIG configurando o ArcGIS Online para a sua organização, podendo convidar membros e gerindo recursos.</p>
           <p>
-            <a href="/pt-pt/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Configurar o site</a> <br/> <a href="/pt-pt/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Convidar utilizadores</a> <br/> <a href="/pt-pt/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Consultar as estatísticas da organização</a></p>
+            <a href="/pt-pt/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Configurar o site</a> <br/> <a href="/pt-pt/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Convidar utilizadores</a> <br/> <a href="/pt-pt/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Visualizar estatísticas organizacionais</a></p>
            
         </div>
 		<div class="clear"></div>
@@ -130,7 +131,7 @@ mobile: true
           <h3>Introdução</h3>
 		  <p>Tutoriais para o ajudar a aprender como utilizar a plataforma ArcGIS</p>
          <ul>
-		 <li><a href="http://pro.arcgis.com/pt-pt/get-started/web/">Utilizar mapas</a>
+		 <li><a href="http://pro.arcgis.com/pt-pt/get-started/web/">Utilize mapas</a>
 		 </li>
 		 <li><a href="http://pro.arcgis.com/pt-pt/get-started/services/">Partilhar dados</a>
 		 </li>
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-

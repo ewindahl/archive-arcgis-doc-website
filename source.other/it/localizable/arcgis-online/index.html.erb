@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/it/arcgis-online/">Guida</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="Guida" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
+        <input type="hidden" name="language" value="&lt;%= current_language %&gt;" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/it/arcgis-online/">Principale</a></li>
-        <li><a href="/it/arcgis-online/use-maps/">Utilizzare mappe</a></li>
-        <li><a href="/it/arcgis-online/create-maps/">Creare mappe e applicazioni</a></li>		
-        <li><a href="/it/arcgis-online/share-maps/">Condividere mappe e applicazioni</a></li>
-	<li><a href="/it/arcgis-online/administer/">Amministrare l'organizzazione</a></li>
-	<li><a href="/it/arcgis-online/reference/">Riferimento</a></li>
+        <li class='current'><a title="Guida di ArcGIS Online" href="/it/arcgis-online/">Principale</a></li>
+        <li><a title="Utilizzare mappe" href="/it/arcgis-online/use-maps/">Utilizzare</a></li>
+        <li><a title="Creare mappe e applicazioni" href="/it/arcgis-online/create-maps/">Creare</a></li>		
+        <li><a title="Condividere mappe e applicazioni" href="/it/arcgis-online/share-maps/">Condividere</a></li>
+		<li><a title="Amministrare l'organizzazione" href="/it/arcgis-online/administer/">Amministrare</a></li>
+		<li><a href="/it/arcgis-online/reference/">Riferimento</a></li>
 	</ul>
     </nav>
   </div>
@@ -73,7 +73,8 @@ mobile: true
 
             <p><a href="/it/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Creare la prima mappa</a> <br/>
 
-            <a href="/it/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Creare la prima applicazione</a></p>
+            <a href="/it/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Creare la prima applicazione</a><br/> <a href="/it/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Impostare proprietà di mappe e layer</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -162,14 +163,12 @@ mobile: true
 	<section id="video-column">
       <div class="panel">
         <h3>Creare una mappa</h3>
-        <a class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00"><img src="http://video.arcgis.com/thumbs/2011/04/253/making-a-map-d8a9f082b28f88c07545280c2934907a.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
-		<video width="320" height="240" controls id="2194" class="mobileVideo">
+        <a class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00"><img src="http://video.arcgis.com/thumbs/2011/04/253/making-a-map-d8a9f082b28f88c07545280c2934907a.jpg"><img class="playbtn" src="/img/playbtn.png">		<video width="320" height="240" controls id="2194" class="mobileVideo">
 		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
 		</video>
         
         <p>Informazioni su come utilizzare il Map Viewer incorporato per creare mappe.</p>
-        <a href="/it/arcgis-online/reference/videos.htm" class="btn secondary">Altri video</a>
-      </div>
+        <a href="/it/arcgis-online/reference/videos.htm" class="btn secondary">Altri video</a>?      </div>
     </section>	
 	
 	<br />
@@ -180,16 +179,14 @@ mobile: true
           <div id="blog">
             <!-- blog goes here -->
           </div>
-		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Altri post del blog</a>
-        </div>
+		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Altri post del blog</a>?        </div>
 		 <br />
 		 
      <section id="forum-container">
       <div class="panel">
         <h3>Forum</h3>
         <div id="forum"></div>
-        <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">Altri post del forum</a>
-      </div>
+        <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">Altri post del forum</a>?      </div>
     </section>      
 	
 		
@@ -218,4 +215,3 @@ mobile: true
 
 
   </script>
-

@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/de/arcgis-online/">Hilfe</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="Hilfe" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/de/arcgis-online/">Start</a></li>
-        <li><a href="/de/arcgis-online/use-maps/">Verwenden von Karten</a></li>
-        <li><a href="/de/arcgis-online/create-maps/">Erstellen von Karten und Anwendungen</a></li>		
-        <li><a href="/de/arcgis-online/share-maps/">Freigeben von Karten und Anwendungen</a></li>
-	<li><a href="/de/arcgis-online/administer/">Verwalten Ihrer Organisation</a></li>
-	<li><a href="/de/arcgis-online/reference/">Bezug</a></li>
+        <li class='current'><a title="Hilfe zu ArcGIS Online" href="/de/arcgis-online/">Start</a></li>
+        <li><a title="Verwenden von Karten" href="/de/arcgis-online/use-maps/">verwenden</a></li>
+        <li><a title="Erstellen von Karten und Anwendungen" href="/de/arcgis-online/create-maps/">Erstellen</a></li>		
+        <li><a title="Freigeben von Karten und Anwendungen" href="/de/arcgis-online/share-maps/">Freigeben</a></li>
+		<li><a title="Verwalten Ihrer Organisation" href="/de/arcgis-online/administer/">Verwalten</a></li>
+		<li><a href="/de/arcgis-online/reference/">Bezug</a></li>
 	</ul>
     </nav>
   </div>
@@ -73,7 +73,8 @@ mobile: true
 
             <p><a href="/de/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">  Erstellen der ersten eigenen Karte</a> <br/>
 
-            <a href="/de/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">  Erstellen der ersten eigenen Anwendung</a></p>
+            <a href="/de/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">  Erstellen der ersten eigenen App</a><br/> <a href="/de/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">  Festlegen von Karten- und Layer-Eigenschaften</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-

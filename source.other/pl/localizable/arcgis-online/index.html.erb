@@ -9,9 +9,10 @@ js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
+  - sitecfg.js
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2013-9-25"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -22,20 +23,19 @@ mobile: true
       <h1><a href="/pl/arcgis-online/">Pomoc</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
-        <input type="hidden" name="collection" value="pomoc" />
+        <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/pl/arcgis-online/">Strona główna</a></li>
-        <li><a href="/pl/arcgis-online/use-maps/">Korzystanie z map</a></li>
-        <li><a href="/pl/arcgis-online/create-maps/">Tworzenie map i aplikacji</a></li>		
-        <li><a href="/pl/arcgis-online/share-maps/">Udostępnianie map i aplikacji</a></li>
-	<li><a href="/pl/arcgis-online/administer/">Administrowanie swoją instytucją</a></li>
-	<li><a href="/pl/arcgis-online/reference/">Odnośniki</a></li>
+        <li class='current'><a title="Pomoc ArcGIS Online" href="/pl/arcgis-online/">Strona glówna</a></li>
+        <li><a title="Korzystanie z map" href="/pl/arcgis-online/use-maps/">Korzystanie</a></li>
+        <li><a title="Tworzenie map i aplikacji" href="/pl/arcgis-online/create-maps/">Tworzenie</a></li>		
+        <li><a title="Udostepnianie map i aplikacji" href="/pl/arcgis-online/share-maps/">Udostepnianie</a></li>
+		<li><a title="Administrowanie instytucja" href="/pl/arcgis-online/administer/">Administrowanie</a></li>
+		<li><a href="/pl/arcgis-online/reference/">Odnosniki</a></li>
 	</ul>
     </nav>
   </div>
@@ -47,7 +47,7 @@ mobile: true
      <div class="column-16 tablet-column-24">
 
 
-    <h3 class="gray">Twórz interaktywne mapy i aplikacje, korzystaj z nich i udostępniaj je pozostałym użytkownikom należącym do instytucji. Dowiedz się jak.</h3>
+    <h3 class="gray">Twórz interaktywne mapy i aplikacje, korzystaj z nich i udostepniaj je pozostalym uzytkownikom nalezacym do instytucji. Dowiedz sie jak.</h3>
 	
 	<hr />
 	
@@ -60,7 +60,7 @@ mobile: true
          <p>Korzystaj z map do przeszukiwania, poznawania i pomiaru danych geograficznych.</p>
 
       
-         <p><a href="/pl/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Wyświetlanie danych</a> <br/> <a href="/pl/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Wykonywanie analiz</a><br/> <a href="/pl/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Edytowanie obiektów</a></p>
+         <p><a href="/pl/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Wyswietlanie danych</a> <br/> <a href="/pl/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Wykonywanie analiz</a><br/> <a href="/pl/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Edycja obiektów</a></p>
         </div>
 
 
@@ -68,22 +68,23 @@ mobile: true
           <img src="img/create-maps-apps.jpg" />
 
           <h3>Tworzenie map i aplikacji</h3>
-          <p>Twórz interaktywne mapy i aplikacje dostępne dla Twojej instytucji z każdego urządzenia w dowolnym miejscu i czasie.</p>
+          <p>Twórz interaktywne mapy i aplikacje dostepne dla Twojej instytucji z kazdego urzadzenia w dowolnym miejscu i czasie.</p>
 
 
             <p><a href="/pl/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Tworzenie pierwszej mapy</a> <br/>
 
-            <a href="/pl/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Tworzenie pierwszej aplikacji</a></p>
+            <a href="/pl/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Tworzenie pierwszej aplikacji</a><br/> <a href="/pl/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Konfiguracja wlasciwosci mapy i warstwy</a>
+			</p>
         </div>
 		<div class="clear"></div>
 		
        <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="img/share-maps-apps.jpg" />
 
-          <h3>Udostępnianie map i aplikacji</h3>
-          <p>Uaktywnij swoje dane poprzez udostępnienie map i aplikacji w swojej instytucji lub społeczności.</p>
+          <h3>Udostepnianie map i aplikacji</h3>
+          <p>Uaktywnij swoje dane poprzez udostepnienie map i aplikacji w swojej instytucji lub spolecznosci.</p>
 
-         <p><a href="/pl/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Dodawanie elementów</a> <br/><a href="/pl/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Udostępnianie elementów</a> <br/> <a href="/pl/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publikowanie hostowanych obiektów i kafli</a></p>
+         <p><a href="/pl/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Dodawanie elementów</a> <br/><a href="/pl/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Udostepnianie elementów</a> <br/> <a href="/pl/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publikowanie hostowanych obiektów i kafli</a></p>
          
         </div>
 
@@ -91,18 +92,18 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="img/admin-org.jpg" />
 
-          <h3>Administrowanie swoją instytucją</h3>
-          <p>Rozszerz zakres wykorzystania GIS poprzez skonfigurowanie ArcGIS Online dla swojej instytucji, zaproszenie użytkowników do przystąpienia do niej oraz zarządzanie zasobami.</p>
+          <h3>Administrowanie swoja instytucja</h3>
+          <p>Rozszerz zakres wykorzystania GIS poprzez skonfigurowanie ArcGIS Online dla swojej instytucji, zaproszenie uzytkowników do przystapienia do niej oraz zarzadzanie zasobami.</p>
           <p>
-            <a href="/pl/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Konfiguracja strony internetowej</a> <br/> <a href="/pl/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Zapraszanie użytkowników</a> <br/> <a href="/pl/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Przeglądanie statystyk instytucji</a></p>
+            <a href="/pl/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Konfiguracja strony internetowej</a> <br/> <a href="/pl/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Zapraszanie uzytkowników</a> <br/> <a href="/pl/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Przegladanie statystyk instytucji</a></p>
            
         </div>
 		<div class="clear"></div>
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
-          <h3>Aplikacje gotowe do użycia</h3>
-         <p>Skorzystaj z możliwości oferowanych przez gotowe do użycia aplikacje do zbierania informacji w terenie, panele operacyjne, pakiet Microsoft Office i program Sharepoint.</p>
+          <h3>Aplikacje gotowe do uzycia</h3>
+         <p>Skorzystaj z mozliwosci oferowanych przez gotowe do uzycia aplikacje do zbierania informacji w terenie, panele operacyjne, pakiet Microsoft Office i program Sharepoint.</p>
 		 <p>
 		 
 		 <a href="http://www.arcgis.com/features/apps/index.html" class="icon-right-arrow">&nbsp;&nbsp;Aplikacje ArcGIS</a>
@@ -112,7 +113,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
 
           <h3>Interfejsy programistyczne API</h3>
-          <p>Platforma ArcGIS udostępnia interfejsy API i zestawy SDK przeznaczone do tworzenia aplikacji dla instytucji i ogółu społeczności.</p>
+          <p>Platforma ArcGIS udostepnia interfejsy API i zestawy SDK przeznaczone do tworzenia aplikacji dla instytucji i ogólu spolecznosci.</p>
 		 
 		 <p><a href="https://developers.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS for Developers</a></p>
         </div>
@@ -127,14 +128,14 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
 	  	  	 <div class="imgFrame block">
-          <h3>Rozpoczęcie</h3>
-		  <p>Przewodniki służące pomocą w korzystaniu z platformy ArcGIS</p>
+          <h3>Wprowadzenie</h3>
+		  <p>Przewodniki sluzace pomoca w korzystaniu z platformy ArcGIS</p>
          <ul>
 		 <li><a href="http://pro.arcgis.com/pl/get-started/web/">Korzystanie z map</a>
 		 </li>
-		 <li><a href="http://pro.arcgis.com/pl/get-started/services/">Udostępnianie danych</a>
+		 <li><a href="http://pro.arcgis.com/pl/get-started/services/">Udostepnianie danych</a>
 		 </li>
-		 <li><a href="http://pro.arcgis.com/pl/get-started/organizations/">Administrowanie swoją instytucją</a>
+		 <li><a href="http://pro.arcgis.com/pl/get-started/organizations/">Administrowanie swoja instytucja</a>
 		 </li>
 		 
 		 </ul>
@@ -151,7 +152,7 @@ mobile: true
 		 <li>
 		 <a href="/pl/arcgis-online/reference/whats-new.htm" >&nbsp;Co nowego</a>
 		 </li>
-		 <li><a href="/pl/arcgis-online/reference/faq.htm">&nbsp;Często zadawane pytania</a>
+		 <li><a href="/pl/arcgis-online/reference/faq.htm">&nbsp;Czesto zadawane pytania</a>
 		 </li>
 		 </ul>
         
@@ -167,8 +168,8 @@ mobile: true
 		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
 		</video>
         
-        <p>Dowiedz się, jak używać wbudowanej przeglądarki map do tworzenia map.</p>
-        <a href="/pl/arcgis-online/reference/videos.htm" class="btn secondary">Więcej materiałów wideo</a>
+        <p>Dowiedz sie, jak uzywac wbudowanej przegladarki map do tworzenia map.</p>
+        <a href="/pl/arcgis-online/reference/videos.htm" class="btn secondary">Wiecej materialów wideo</a>
       </div>
     </section>	
 	
@@ -180,7 +181,7 @@ mobile: true
           <div id="blog">
             <!-- blog goes here -->
           </div>
-		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Więcej wpisów z blogu</a>
+		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Wiecej wpisów z blogu</a>
         </div>
 		 <br />
 		 
@@ -188,7 +189,7 @@ mobile: true
       <div class="panel">
         <h3>Na naszym forum</h3>
         <div id="forum"></div>
-        <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">Więcej wpisów z forum</a>
+        <a href="http://forums.arcgis.com/forums/30-ArcGIS-Online" class="btn secondary">Wiecej wpisów z forum</a>
       </div>
     </section>      
 	
@@ -218,4 +219,3 @@ mobile: true
 
 
   </script>
-

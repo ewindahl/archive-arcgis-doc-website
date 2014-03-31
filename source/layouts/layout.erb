@@ -1,9 +1,15 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9 ie8"> <![endif]-->
-<!--[if IE 9]>         <html class="ie ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<%
+readDirection="ltr" 
+if current_language == "ar" 
+	readDirection="rtl"
+end 
+%>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9" dir="<%=readDirection%>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html dir="<%=readDirection%>"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
 
@@ -43,10 +49,22 @@
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
+	
+	<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" /> 
+
+  <%= javascript_include_tag "sitecfg" %>
 
 	<%= javascript_include_tag "locale/l10NStrings" %>
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
+
+  <%= javascript_include_tag "signIn" %>
+
+   <!--- beg agol search -->
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+  <%= javascript_include_tag "agolsearch" %>
+   <!--- end agol search -->
+
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>
@@ -77,6 +95,8 @@
 			}
 		</script>
 	<% end %>
+
+   <link type="text/css" rel="stylesheet" href="/en/asset/css/common.css"/>
 	
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
@@ -127,11 +147,52 @@
             </nav>
             
             <%= link_to "Esri", "http://www.esri.com", id: "esri-logo" %>
-            
+
+<!--            
             <div id="lg-container" class="dropdown-navigation">
               <div id="lang-block"></div>
             </div>
-            
+  -->
+
+            <div id="lg-container" class="banner-navigation">
+
+              <div id="agolSearch" class="agol-search">
+                <form class="agol-search-form" method="GET" action="//www.arcgis.com/home/search.html">
+                  <input name="q" class="agol-search-input" placeholder="Search ArcGIS" type="text" value="">
+                  <!--
+                  <input class="agol-search-submit" type="submit" value="">
+                  -->
+                </form>
+                <span class="agol-icon-search"></span>
+              </div>
+
+              <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
+                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
+              </div>
+
+              <div id="logged-in-navigation" class="dropdown-navigation no-top dropdown-wrapper hide">
+                  <a id="A1" class="dropdown btn user-signin" href="#">user</a>
+                  <div class="dropdown-content">
+                      <div class="dropdown-menu">
+                          <ul class="myconsole">
+                              <li><a id="agolProfile" href="http://www.arcgis.com/home/user.html">My Profile</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul class="myconsole">
+                              <li><a id="agolHelp" href="http://www.arcgis.com/home/support.html">Help</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul>
+                              <li><a id="agolLogout" href="#">Sign Out</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="lang-block"></div>
+
+          </div>
+        
             <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
               <a href="#" class="dropdown btn small light icon icon-list-2"><%= t("site.nav.select") %></a>
               <div class="dropdown-content">
@@ -203,5 +264,12 @@
 
     <%= javascript_include_tag "drop-down" %>
     <%= javascript_include_tag "search/searchform.js" %>
+
+   <script>
+   $(function() {
+      $("#agolSearch").agolSearch();
+   });
+   </script>
+
   </body>
 </html>
