@@ -89,14 +89,13 @@ end
     <% #Add langselector .js if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
 	<% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>  
 		<% if current_language == "ar" %> 
-			<%= javascript_include_tag "locale/langSelector_ar" %>
 			<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
 			<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
 			<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
 			<link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
-		<% else %>
-			<%= javascript_include_tag "locale/langSelector" %>
+			<link type="text/css" rel="stylesheet" href="/css/print_l10n.css"/>
 		<% end %>
+		<%= javascript_include_tag "locale/langSelector" %>
 	<% end %>
    
    <!-- set dropdown/show home in footer -->
