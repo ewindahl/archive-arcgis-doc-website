@@ -184,7 +184,7 @@ jQuery(document).ready(function ($) {
 
               dbg ("calcPrefLang: "+prefAgol + "-" + prefSelector + "-" + prefBrowser + "-" + defaultv);
 
-              return prefAgol || prefSelector || prefBrowser || defaultv || "en";
+              return prefSelector || prefAgol || prefBrowser || defaultv || "en";
           },
 
           setPrefLang : function (lg) {

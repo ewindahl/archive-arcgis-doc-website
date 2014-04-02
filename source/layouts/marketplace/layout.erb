@@ -89,14 +89,13 @@ end
     <% #Add langselector .js if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
 	<% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>  
 		<% if current_language == "ar" %> 
-			<%= javascript_include_tag "locale/langSelector_ar" %>
 			<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
 			<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
 			<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
 			<link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
-		<% else %>
-			<%= javascript_include_tag "locale/langSelector" %>
+			<link type="text/css" rel="stylesheet" href="/css/print_l10n.css"/>
 		<% end %>
+		<%= javascript_include_tag "locale/langSelector" %>
 	<% end %>
    
    <!-- set dropdown/show home in footer -->
@@ -121,8 +120,6 @@ end
                 </div>
                 
                 <%= partial "_partial/site_header_dropdown" %>
-                <nav>
-                </nav>
                 
                 <form id="mkpSearchForm" action="#">
                   <input type="search" name="mkpSearch"  placeholder="<%= t("site.nav.mpSearch") %>">
@@ -130,13 +127,15 @@ end
 
 
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
+				
+			<div id="lg-container" class="dropdown-navigation">
+				<div id="lang-block"></div>
+			</div>
 
               <div id="logged-out-navigation" class="dropdown-navigation">
                 <a data-langlabel="sign-in" id="login-link" class="btn marketplace" href="#"><span class="profile-icon"></span><%= t("site.nav.sign_in") %></a>
               </div>
-		<div id="lg-container" class="dropdown-navigation">
-			<div id="lang-block"></div>
-		</div>
+		
               <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
                 <a id="login-link" class="dropdown btn marketplace" href="#"><%= t("site.nav.sign_in_user") %></a>
                 <div class="dropdown-content">
