@@ -4,20 +4,18 @@ layout: marketplace/layout
 title: Feedback - ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - feedback
-
+  
 js:
-  - sitecfg
-  - libs/jquery.cookie
   - app-feedback
-  - marketplace/init
 
 metatags:
   - <META name="robot" content="NOINDEX|NOFOLLOW">
 
+languageSelector: "No"  
+  
 mobile: true
 
 ---
@@ -57,7 +55,7 @@ mobile: true
           <label data-langlabel="regarding-the-page" for="regarding">Regarding the page: </label>
 		  <input type="text" id="regarding" name="fromURL">
 		  <label data-langlabel="email-address" for="email">Email address: </label>
-		  <input type="text" placeholder="johnsmith@esri.com (optional)" value="" name="userEmail" id="userEmail">
+		  <input type="text" placeholder="johnsmith@esri.com" value="" name="userEmail" id="userEmail">
 		  <label data-langlabel="feedback-spam-note" for="email">To help prevent automated spam, enter the numerals you see: </label>
 		  <input type="text" placeholder="1 2 3 4 5 6 7" value="" name="txtCaptchaInput" id="txtCaptchaInput">
 
@@ -65,10 +63,11 @@ mobile: true
 
         </fieldset>
         <!--<input type="hidden" value="https://developers.arcgis.com/en/thank-you" name="redirectUrl" id="redirect-url">-->
+		<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
         <input type="hidden" value="internal" name="source" id="source">
         <input type="hidden" value="" name="redirectUrl" id="redirectUrl">
         <input type="hidden" value="en" name="lg">
-        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" onClick="return validateFeedbackForm();" name="submitFeedback">
+        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" name="submitFeedback">
       </form>
     </div>
 
@@ -78,9 +77,26 @@ mobile: true
 
 <script>
 $(document).ready(function() {
-		document.getElementById('regarding').value = document.referrer;
-		document.getElementById('redirectUrl').value = "http://" + window.location.host + "/en/marketplace/thank-you/?referrer_url=" + document.referrer;
-		DrawCaptcha();
+    var winloc = window.location,
+        referrer = document.referrer;
+
+    $('#regarding').val (referrer);
+    $('#redirectUrl').val ("http://" + winloc.host + "/en/marketplace/thank-you/?referrer_url=" + referrer);
+
+    
+    doc.supportForm.DrawCaptcha();
+
+    var docCfg = docCfg || {},
+        urlLang = doc.l10n.getReferrerLang(),
+        curlang = doc.l10n.calcPrefLang (docCfg["langSelector"] || "all", urlLang);
+	
+	$('#feedback-form :submit').on ("click", function() {
+      return doc.supportForm.validateFeedbackForm(curlang);
+    });
+
+    if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) {   
+      doc.l10n.changeLabel (curlang);
+    }
 
 	});
 </script>

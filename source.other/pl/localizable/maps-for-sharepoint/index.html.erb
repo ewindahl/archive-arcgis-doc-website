@@ -1,29 +1,41 @@
----
-title: Esri Maps for SharePoint
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+---
+title: Esri Maps for SharePoint
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/ro/maps-for-sharepoint/">Esri Maps for SharePoint</a></h1>
-    </header> <nav>
+      <h1><a href="/pl/maps-for-sharepoint/">Esri Maps for SharePoint</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Sharepoint">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-sharepoint" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
+    </header>
+	<nav>
       <ul>
-        <li class='current'><a href="/ro/maps-for-sharepoint/">Strona główna</a></li>
-        <li><a href="/ro/maps-for-sharepoint/get-started/">Rozpocznij</a></li>
-        <li><a href="/ro/maps-for-sharepoint/esri-maps-web-part/">Esri Maps Web Part</a></li>
-        <li><a href="/ro/maps-for-sharepoint/arcgis-map-web-part/">ArcGIS Map Web Part</a></li>
+        <li class='current'><a href="/pl/maps-for-sharepoint/">Strona główna</a></li>
+        <li><a href="/pl/maps-for-sharepoint/get-started/">Wprowadzenie</a></li>
+        <li><a href="/pl/maps-for-sharepoint/esri-maps-web-part/">Esri Maps Web Part</a></li>
+        <li><a href="/pl/maps-for-sharepoint/arcgis-map-web-part/">ArcGIS Map Web Part</a></li>
 		<li><a href="http://forums.arcgis.com/forums/69-Esri-Maps-for-SharePoint/">Forum</a></li>
       </ul>
     </nav>
@@ -37,7 +49,7 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">Pobierz aplikację</h2>
-          <span id="appVersion"><strong>Wersja:</strong> 3.0</span> <span id="appReleased"><strong>Dostępna:</strong> lipiec 2013</span>
+          <span id="appVersion"><strong>Wersja:</strong> 3.0.1</span> <span id="appReleased"><strong>Dostępna:</strong> Październik 2013</span>
 
 
           <p>Dodatek Esri Maps for SharePoint wykorzystuje strukturę programów Microsoft SharePoint 2010 i 2013, dzięki czemu oferuje interaktywne i konfigurowalne składniki do tworzenia map, które pozwalają na uzyskanie geoprzestrzennego widoku danych instytucji. </p>
@@ -58,18 +70,17 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>Wymagania systemowe</h2>
 
-        <p>Dodatek Esri Maps for SharePoint wymaga posiadania konta, należącego do instytucji <a href="http://help.arcgis.com/ro/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> oraz programów Microsoft SharePoint 2010 lub 2013 w edycji Foundation, Server Standard bądź Server Enterprise.</p>
+        <p>Dodatek Esri Maps for SharePoint wymaga posiadania konta, należącego do instytucji <a href="http://help.arcgis.com/pl/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> oraz programów Microsoft SharePoint 2010 lub 2013 w edycji Foundation, Server Standard bądź Server Enterprise.</p>
 
 
-        <h3>Obsługiwane języki</h3>
-        <p></p>
-
-
- <a name="whatsNew"></a>        
+ <a name="whatsNew"></a>
+ 	<h2>Wersja 4.0 Beta jest już dostępna</h2>	
+ 	<p>Dodatek Esri Maps for SharePoint 4.0 Beta jest już dostępny na stronie <a href="http://betacommunity.esri.com">Esri Beta Community </a>. Wymagania systemowe, obsługiwane platformy, dokumentacja pomocy oraz pliki do pobrania znajdują się w sekcji Beta Opportunities dla dodatku Esri Maps for SharePoint. Dodatkowe informacje można znaleźć we wpisie na blogu: <a href="http://blogs.esri.com/esri/arcgis/2013/12/02/esri-maps-for-sharepoint-4-0-beta-released/">Dodatek Esri Maps for SharePoint w wersji beta jest już dostępny (Esri Maps for SharePoint beta released)</a>. </p>
+	
 		 <h2>Co nowego w wersji 3.0.1</h2>        
 		 <p>Esri Maps for SharePoint w wersji 3.0.1 został udostępniony w październiku 2013 roku. Wersja ta obejmuje następujące aktualizacje i ulepszenia:</p>        
 		 <ul>        
-		 <li>Obsługa 21 języków: arabski, chiński (uproszczony), duński, holenderski, estoński, francuski, niemiecki, hebrajski, włoski, japoński, koreański, łotewski, litewski, norweski, polski, portugalski (Brazylia), portugalski (Portugalia), rumuński, rosyjski, hiszpański i szwedzki.</li>	
+		 <li>Obsługa 21 języków: arabski, chiński (uproszczony), duński, holenderski, estoński, francuski, niemiecki, hebrajski, włoski, japoński, koreański, litewski, łotewski, norweski, polski, portugalski (Brazylia), portugalski (Portugalia), rumuński, rosyjski, hiszpański i szwedzki.</li>	
 		 <li>Obsługa niestandardowych typów lokalizacji komponentu Esri Maps Locate Workflow.</li>	
 		 <li>Geostatystyczna analiza lokalizacji.</li>	
 		     
@@ -80,7 +91,7 @@ metatags:
 		 <ul>        
 		 <li>Nowa nazwa produktu: Esri Maps for SharePoint</li>	
 		 <li>Obsługa w programach SharePoint 2010 i SharePoint 2013 (w lokalnych systemach)</li>	
-		 <li>Pierwsza wersja komponentu Esri Maps Web Part — opartego na języku JavaScript komponentu Web Part obsługiwanego w programach SharePoint 2010 i SharePoint 2013 (w lokalnych systemach).</li>	
+		 <li>Pierwsza wersja komponentu Esri Maps Web Part — opartego na języku JavaScript komponentu Web Part obsługiwanego w programach SharePoint 2010 i SharePoint 2013 (w lokalnych systemach).</li>	
 		 <li>Obsługa Portal for ArcGIS 10.2</li>	
 		 <li>Połączenia z zewnętrznymi źródłami danych za pośrednictwem usług łączności biznesowej programu SharePoint (BCS) (JavaScript Map Web Part)</li>	
 		 <li>Połączenia typu Web Part-to-Web Part (JavaScript Map Web Part)</li>	
@@ -91,23 +102,23 @@ metatags:
 		 <p>Dzięki Esri Maps Web Part możesz: 	
 		 <ul>	
 		 <li>dodawać mapy i usługi internetowe z ArcGIS, zarówno z ArcGIS Online, jak i Portal for ArcGIS;</li>	
-		 <li>udostępniać mapy i warstwy z ArcGIS w organizacji lub do użytku publicznego;</li>	
+		 <li>udostępniać mapy i warstwy z ArcGIS w instytucji lub do użytku publicznego;</li>	
 		 <li>wyświetlać listy programu SharePoint i łączyć się z zewnętrznymi źródłami danych za pośrednictwem usług łączności biznesowej programu SharePoint (BCS);</li>	
 		 <li>łączyć się z komponentami list i wykresów za pośrednictwem połączeń typu Web Part-to-Web Part;</li>	
 		 <li>nadawać elementom listy programu SharePoint wymiar przestrzenny (geokodować je);</li>	
 		 <li>interaktywnie konfigurować wygląd map, warstw i zmieniać inne ustawienia;</li>	
-		 <li>wybierać spośród map tła udostępnionych Twojej organizacji ArcGIS w postaci galerii map bazowych;</li>	
-		 <li>określać wygląd zbiorów danych (symbolizację), używając pojedynczego symbolu, granice klas lub wartości unikalne;</li>	
+		 <li>wybierać spośród map tła udostępnionych Twojej instytucji ArcGIS w postaci galerii map bazowych;</li>	
+		 <li>określać wygląd zbiorów danych (symbolizację), używając pojedynczego symbolu, granic klas lub wartości unikalnych;</li>	
 		 <li>wyświetlać obiekty punktowe przy użyciu grupowania lub map skupień; </li>	
-		 <li>konfigurować wygląd okien podręcznych; określać styl i pola okien podręcznych wyświetlanych po naprowdzeniu kursorana obiekt na mapie; </li>	
+		 <li>konfigurować wygląd okien podręcznych; określać styl i pola okien podręcznych wyświetlanych po umieszczeniu kursora na obiekcie na mapie; </li>	
 		 <li>wyświetlać w oknach podręcznych infografiki, które zapewniają bogate informacje kontekstowe o obszarach otaczających obiekty na mapie;</li>	
-		 <li>przeprowadzać analizy danych w oparciu o trasę;</li>	
-		 <li>interaktywnie wybierać i filtrować dane w obrębie obszarów ograniczonych okręgiem lub w oparciu o dany czas przejazdu;</li>	
+		 <li>przeprowadzać analizy danych na podstawie trasy;</li>	
+		 <li>interaktywnie wybierać i filtrować dane w obrębie obszarów ograniczonych okręgiem lub na podstawie danego czasu przejazdu;</li>	
 		 <li>interaktywnie uzyskiwać dodatkowe informacje kontekstowe oraz demograficzne powiązane z lokalizacjami na mapie.</li>	
 		 </ul>
 
 
-        <p> </p>
+        <p>&nbsp;</p>
 
       </div>
 
@@ -115,13 +126,13 @@ metatags:
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>Rozpocznij</h3>
+          <h3>Wprowadzenie</h3>
          <ul>
             <li><a href="#systemRequirements">Wymagania systemowe</a></li>
 	 <li><a href="#whatsNew">Co nowego</a></li>
 	 <li><a href="http://sharepoint.arcgis.com/SitePages/Disable%20Map%20Animation.aspx">Interaktywne przykłady (Silverlight)</a></li>
-	 <li><a href="http://resources.arcgis.com/ro/help/sharepoint/apiref/api_start.htm">Dokumentacja API (Silverlight)</a></li>
-	 <li><a href="http://resources.arcgis.com/ro/communities/sharepoint/01t800000009000000.htm">Pomoc dla komponentu ArcGIS for SharePoint 2.1.1</a></li>
+	 <li><a href="http://resources.arcgis.com/en/help/sharepoint/apiref/api_start.htm">Dokumentacja API (Silverlight)</a></li>
+	 <li><a href="http://resources.arcgis.com/en/communities/sharepoint/01t800000009000000.htm">Pomoc dla komponentu ArcGIS for SharePoint 2.1.1</a></li>
            </ul>
         </div>
 
@@ -139,7 +150,7 @@ metatags:
 
     </div>
 
-	<script src="/ro/asset/js/rssfeed.js" type="text/javascript"></script>
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({

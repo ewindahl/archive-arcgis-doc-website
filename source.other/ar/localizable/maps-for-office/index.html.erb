@@ -1,28 +1,38 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
 ---
-<div class="navigation-bar blue">
+title: Esri Maps for Office
+
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="section-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/maps-for-office/">Esri Maps for Office</a></h1>
+      <h1><a href="/ar/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="تعليمات" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/maps-for-office/">الصفحة الرئيسية</a></li>
-        <li><a href="/en/maps-for-office/help/">تعليمات</a></li>
+        <li class='current'><a href="/ar/maps-for-office/">الصفحة الرئيسية</a></li>
+        <li><a href="/ar/maps-for-office/help/">تعليمات</a></li>
         <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">المنتدى</a></li>
       </ul>
     </nav>
@@ -36,10 +46,10 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">تنزيل التطبيق</h2>
-          <span id="appVersion"><strong>الإصدار:</strong> 2.1</span> <span id="appReleased"><strong>التوفر:</strong> يوليو 2013</span>
+          <span id="appVersion"><strong>الإصدار:</strong> 2.1.2</span> <span id="appReleased"><strong>التوفر:</strong> خريف 2013</span>
 
 
-          <p>تتيح Esri Maps for Office سرعة إنشاء خرائط حركية تفاعلية من بيانات Excel والبدء في استكشافها بطريقة جديدة كليًا. كما تُمكّن المستخدم من كشف الأنماط والاتجاهات التي لا تظهر في البيانات الجدولية والرسوم البيانية. ويمكن مشاركة الخرائط مباشرةً من خلال عروض PowerPoint التقديمية أو بالنشر بنقرة واحدة إلى سحابة خرائط Esri في ArcGIS Online.</p>
+          <p>تتيح Esri Maps for Office سرعة إنشاء خرائط حركية تفاعلية من بيانات Excel والبدء في استكشافها بطريقة جديدة كليًا. كما تُمكّن المستخدم من كشف الأنماط والاتجاهات التي لا تظهر في البيانات الجدولية والرسوم البيانية. ويمكن مشاركة الخرائط مباشرةً من خلال عروض PowerPoint التقديمية أو بالنشر بنقرة واحدة إلى نظام خرائط Esri الأساسي في ArcGIS Online.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">احصل على Esri Maps for Office</a>
@@ -84,7 +94,7 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>متطلبات النظام</h2>
 
-        <p>تطلب Esri Maps for Office حسابًا يكون جزءًا من منظمة <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> Microsoft Office Excelأو PowerPoint 2010 أو Microsoft Office Excel أو PowerPoint 2013. وتشمل أنظمة التشغيل المدعومة ما يلي:</p>
+        <p>تطلب Esri Maps for Office حسابًا يكون جزءًا من منظمة <a href="http://help.arcgis.com/ar/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> Microsoft Office Excelأو PowerPoint 2010 أو Microsoft Office Excel أو PowerPoint 2013. وتشمل أنظمة التشغيل المدعومة ما يلي:</p>
 		<ul>
 		 <li>Windows XP (الحزمة الخدمية الثالثة) (32 بت)</li>
 		 <li>Windows 7 (32بت و 64 بت)</li>
@@ -97,16 +107,53 @@ metatags:
 
 
 
-        <h3>الدعم المُخطط للغات التالية</h3>
-        <p>العربية والإنجليزية والصينية والفرنسية والألمانية والإيطالية واليابانية والإسبانية والبرتغالية (البرازيل) والروسية</p>
-
+        <!-- 
+		<h3>Support for the following languages</h3>
+        <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
+		//-->
 
 
 
 
         <a name="whatsNew"></a>
         <h2>ما الجديد</h2>
-        <p>تم إطلاق الإصدار 2.1 من Esri Maps for Office في يوليو 2013. ويشمل التحسينات التالية:</p>
+        <p>تم إطلاق الإصدار 2.1.2 من Esri Maps for Office في نوفمبر 2013. ويشمل التحسينات التالية:</p>
+        <ul>
+		<li>إصلاح الأخطاء والتحسينات القابلة للاستخدام، بما في ذلك:
+			<ul>
+			<li>تحسينات أداة إثراء الطبقة، مثل: المزيد من استخدام الذاكرة الفعال لمعالجة طلبات إثراء أكبر ومؤشر تقدم مُحَسن.</li>
+			<li>إصلاح الخطأ الذي تسبب في تعطيل Excel بعد تثبيت Esri Maps. </li>
+			<li>إصلاح الخطأ الذي عرض صورًا غير صحيحة في جزء البحث.</li>
+			<li>إصلاح الخطأ الذي تسبب في فشل عمليات البحث عن نوع الموقع باللغات اليابانية والروسية والصينية.</li>
+			<li>إزالة السلاسل المٌعربة للحقائق الأساسية والثروة والسياسة والصحة في جزء البحث.</li>
+			</ul>
+        </ul>
+
+
+        <h3>الإصدارات السابقة</h3>
+		
+		<p>تم إطلاق الإصدار 2.1.1 في أكتوبر 2013. ويشمل التحسينات التالية:</p>
+        <ul>
+        <li>الإصدارات المُعربة الجديدة للغات 22 المدعومة:</li>
+			<ul>
+			<li>العربية والصينية (المبسطة) والدانماركية والهولندية والإنجليزية والإستونية والفرنسية والألمانية والعبرية والإيطالية واليابانية والكورية واللاتفية واللتوانية والنرويجية والبولندية والبرتغالية (البرازيل) والبرتغالية (البرتغال) والرومانية والروسية والأسبانية والسويدية.</li>
+			</ul>
+		<li>دعم العناصر المنبثقة في خرائط الويب</li>
+		<li>ترميز المعالم باستخدام الرمز من عنوان URL للبيانات الجدولية</li>
+		<li>إصلاح الأخطاء وتحسين استخدام المنتجات، بما في ذلك:
+			<ul>
+			<li>المعالجة المُحسنة لعمليات تسجيل دخول OAuth</li>
+			<li>العديد من رسائل الخطأ المفيدة في أداة إيجاد النقاط الفعالة</li>
+			<li>يمكن لأداة إيجاد النقاط الفعالة معالجة أسماء العمود التي بها مسافات</li>
+			<li>تدعم أداة التحديد الأن النطاقات للحجم "0"</li>
+			<li>مشاكل جزء المهمة التي تم إصلاحها</li>
+			<li>أخطاء رؤية المجموعة التي تم إصلاحها</li>
+			<li>الدعم المُحسن للمنظمات التي تستخدم SSL لجميع الاتصالات</li>
+			<li>تعمل المجموعات الأن عند استخدام الأعمدة المُضافة من أداة إثراء الطبقة</li>
+			</ul>
+        </ul>
+		
+        <p>تم إطلاق الإصدار 2.1 في يوليو 2013. ويشمل التحسينات التالية: </p>
         <ul>
         <li>تحليل النمط الإحصائي عبر أداة "النقطة الفعالة"</li>
 		<li>تحسينات تعزيز البيانات، بما في ذلك المزيد من مجموعات البيانات والقدرة على تحديد المتغيرات الفردية من مجموعات البيانات</li>
@@ -115,9 +162,7 @@ metatags:
 		<li>تحسينات واجهة المستخدم فيما يتعلق بالإنفوجرافكس وأداة "تحسين الطبقة"</li>
 		<li>دورة سير العمل المُحسّنة لترقية Maps for Office إلى أحدث إصدار</li>
         </ul>
-
-
-        <h3>الإصدار السابق</h3>
+		<br>
         <p>تم إطلاق الإصدار 2.0.2 في مايو 2013. وقد شَمِل التحسينات التالية:</p>
         <ul>
           <li>تحسين البيانات مع السياق الجغرافي باستخدام أداة "تحسين الطبقة"</li>
@@ -166,8 +211,6 @@ metatags:
  </div>
 
     </div>
-
- 
 
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">

@@ -1,27 +1,38 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
 ---
-<div class="navigation-bar blue">
+title: Esri Maps for Office
+
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="section-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/maps-for-office/">Esri Maps for Office</a></h1>
-    </header> <nav>
+      <h1><a href="/it/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
       <ul>
-        <li class='current'><a href="/en/maps-for-office/">Home</a></li>
-        <li><a href="/en/maps-for-office/help/">Guida</a></li>
+        <li class='current'><a href="/it/maps-for-office/">Home</a></li>
+        <li><a href="/it/maps-for-office/help/">Guida</a></li>
         <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">Forum</a></li>
       </ul>
     </nav>
@@ -35,10 +46,10 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">Scarica l'applicazione</h2>
-          <span id="appVersion"><strong>Versione:</strong> 2.1</span> <span id="appReleased"><strong>Disponibile:</strong> Luglio 2013</span>
+          <span id="appVersion"><strong>Versione:</strong> 2.1.2</span> <span id="appReleased"><strong>Disponibile:</strong> autunno 2013</span>
 
 
-          <p>Esri Maps for Office consente di creare rapidamente mappe interattive dinamiche dei dati di Excel e iniziare a esplorarle in un modo tutto nuovo. Grazie a Esri Maps for Office è possibile scoprire modelli e tendenze non evidenti in grafici e dati in formato tabulare. Le mappe possono essere condivise immediatamente tramite presentazioni di PowerPoint oppure tramite la funzione di pubblicazione semplificata in ArcGIS Online, il cloud per il mapping di Esri.</p>
+          <p>Esri Maps for Office consente di creare rapidamente mappe interattive dinamiche dei dati di Excel e iniziare a esplorarle in un modo tutto nuovo. Grazie a Esri Maps for Office è possibile scoprire modelli e tendenze non evidenti in grafici e dati in formato tabulare. Le mappe possono essere condivise immediatamente tramite presentazioni di PowerPoint oppure tramite la funzione di pubblicazione semplificata in ArcGIS Online, la piattaforma per il mapping di Esri.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Scarica Esri Maps for Office</a>
@@ -56,7 +67,10 @@ metatags:
           <h3>Creare mappe da fogli di calcolo </h3>
           <p>Esri Maps for Office consente di creare mappe dai dati di Excel. È possibile creare facilmente mappe termiche, di punti, di punti raggruppati interattive e con codifica a colori direttamente in Excel e ottenere subito una rappresentazione grafica dei dati.</p>
           <p>
-            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">Guarda il video</a> <video width="320" height="240" controls id="2457" class="mobileVideo"><source src="http://video.arcgis.com/download-video/2457/mp4/480"></video>
+            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guardare il video</a>
+			<video width="320" height="240" controls id="2457" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2457/mp4/480">
+			</video>
           </p>
         </div>
 
@@ -67,7 +81,10 @@ metatags:
           <h3>Migliorare i dati</h3>
           <p>Grazie alle numerose raccolte dati disponibili di Esri è possibile ottimizzare ulteriormente i dati aziendali. È infatti possibile aggiungere dati demografici e sullo stile di vita direttamente nei fogli di calcolo di Excel e ottenere maggiore contesto sulle località di interesse. Grazie alle infografiche popup inoltre è possibile visualizzare al volo ulteriori informazioni sulle località.</p>
           <p>
-           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">Guarda il video</a> <video width="320" height="240" controls id="2468" class="mobileVideo"><source src="http://video.arcgis.com/download-video/2468/mp4/480"></video>
+           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guardare il video</a>
+		   <video width="320" height="240" controls id="2468" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2468/mp4/480">
+			</video>
           </p>
         </div>
 
@@ -77,7 +94,7 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>Requisiti di sistema</h2>
 
-        <p>Per Esri Maps for Office è richiesto uno account che fa parte di un'organizzazione <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>, oltre a Microsoft Office Excel o PowerPoint 2010 oppure Microsoft Office Excel o PowerPoint 2013. I sistemi operativi supportati includono:</p>
+        <p>Per Esri Maps for Office è richiesto uno account che fa parte di un'organizzazione <a href="http://help.arcgis.com/it/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>, oltre a Microsoft Office Excel o PowerPoint 2010 oppure Microsoft Office Excel o PowerPoint 2013. I sistemi operativi supportati includono:</p>
 		<ul>
 		 <li>Windows XP (con SP3) (32 bit)</li>
 		 <li>Windows 7 (32 bit e 64 bit)</li>
@@ -90,16 +107,50 @@ metatags:
 
 
 
-        <h3>Supporto previsto per le seguenti lingue</h3>
-        <p>Arabo, inglese, cinese, francese, tedesco, italiano, giapponese, spagnolo, portoghese (Brasile) e russo</p>
-
+        <!--  		<h3>Support for the following languages</h3>         <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p> 		//-->
 
 
 
 
         <a name="whatsNew"></a>
         <h2>Novità</h2>
-        <p>Esri Maps for Office versione 2.1, rilasciato nel mese di luglio 2013, include le seguenti novità:</p>
+        <p>Esri Maps for Office versione 2.1.2, rilasciato nel mese di novembre 2013, include i seguenti miglioramenti:</p>
+        <ul>
+		<li>Correzioni di bug e miglioramenti di usabilità, tra cui:
+			<ul>
+			<li>Miglioramenti apportati allo strumento Migliora layer, tra cui: utilizzo più efficiente della memoria per gestire richieste più estese di miglioramento e un indicatore di stato ottimizzato.</li>
+			<li>Correzione di un bug che causava l'arresto anomalo di Excel dopo l'installazione di Esri Maps. </li>
+			<li>Correzione di un bug che causava la visualizzazione di immagini errate nel riquadro Cerca.</li>
+			<li>Correzione di un bug che impediva la ricerca di tipi di posizione personalizzati in giapponese, russo e cinese.</li>
+			<li>Stringhe localizzate per Info principali, Ricchezza, Politica e Sanità nel riquadro Cerca.</li>
+			</ul>
+        </ul>
+
+
+        <h3>Versioni precedenti</h3>
+		
+		<p>La versione 2.1.1, rilasciata nel mese di ottobre 2013, include i seguenti miglioramenti:</p>
+        <ul>
+        <li>Nuove versioni localizzate per 22 lingue supportate:</li>
+			<ul>
+			<li>arabo, cinese (semplificato), coreano, danese, ebraico, estone, francese, giapponese, inglese, italiano, lettone, lituano, norvegese, olandese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, spagnolo, svedese e tedesco</li>
+			</ul>
+		<li>Supporto per i popup nelle mappe Web</li>
+		<li>Rappresentazione simbolica delle feature utilizzando un'icona da un URL di attributo</li>
+		<li>Correzioni di bug e miglioramenti di usabilità in tutto il prodotto, tra cui:
+			<ul>
+			<li>Gestione migliorata degli account di accesso OAuth</li>
+			<li>Messaggi di errore più utili nello strumento Trova hot spot</li>
+			<li>Possibilità di utilizzare nomi di colonna contenenti spazi con lo strumento Trova hot spot</li>
+			<li>Supporto di buffer con dimensione "0" nello strumento Seleziona</li>
+			<li>Correzione di problemi relativi al riquadro attività</li>
+			<li>Correzione di bug relativi alla visibilità dei gruppi</li>
+			<li>Supporto migliorato per le organizzazioni che utilizzano SSL per tutte le connessioni</li>
+			<li>Corretto funzionamento del raggruppamento quando si utilizzano colonne aggiunte dallo strumento Aggiungi dati al layer</li>
+			</ul>
+        </ul>
+		
+        <p>La versione 2.1, rilasciata nel mese di luglio 2013, include i seguenti miglioramenti: </p>
         <ul>
         <li>Analisi dei modelli statistici tramite lo strumento Hot spot</li>
 		<li>Miglioramento dei dati inclusa l'aggiunta di altre raccolte di dati e la possibilità di selezionare singole variabili per le raccolte</li>
@@ -108,9 +159,7 @@ metatags:
 		<li>Miglioramenti apportati all'interfaccia utente per infografiche e strumento Migliora layer</li>
 		<li>Flusso di lavoro migliorato per l'aggiornamento di Maps for Office all'ultima versione</li>
         </ul>
-
-
-        <h3>Versione precedente</h3>
+		<br>
         <p>La versione 2.0.2, rilasciata nel mese di maggio 2013, include le seguenti novità:</p>
         <ul>
           <li>Aggiunta di contesto geografico ai dati grazie al nuovo strumento 'Migliora layer'</li>
@@ -129,7 +178,7 @@ metatags:
         </ul>
 
 
-        <p> </p>
+        <p>&nbsp;</p>
 
       </div>
 
@@ -160,8 +209,6 @@ metatags:
 
     </div>
 
- 
-
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
     $(window).load(function() {
@@ -178,4 +225,3 @@ L = 0, 1 (default is 0)
 */
 
   </script>
-

@@ -10,8 +10,10 @@ $(document).ready(function() {
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'];
    }
+   var dict = (window.localeJsonObj || {})[localedir];
+   
     var val = '<p id="plats">' +
-        '<span class="viewing">Viewing: </span>' +
+        '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
         '<a data-appname="collector" data-plat="android" data-prefix="/' + localedir +'/collector/android" href="/en/collector/" data-langlabel="android" class=""> Android</a>' +
         ' | ' +
         '<a data-appname="collector" data-plat="ios" data-prefix="/' + localedir +'/collector/ios" href="/en/collector/" data-langlabel="ios" class=""> iOS</a>' +

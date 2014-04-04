@@ -1,27 +1,38 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
 ---
-<div class="navigation-bar blue">
+title: Esri Maps for Office
+
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="section-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/maps-for-office/">Esri Maps for Office</a></h1>
-    </header> <nav>
+      <h1><a href="/pl/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
       <ul>
-        <li class='current'><a href="/en/maps-for-office/">Strona główna</a></li>
-        <li><a href="/en/maps-for-office/help/">Pomoc</a></li>
+        <li class='current'><a href="/pl/maps-for-office/">Strona główna</a></li>
+        <li><a href="/pl/maps-for-office/help/">Pomoc</a></li>
         <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">Forum</a></li>
       </ul>
     </nav>
@@ -35,10 +46,10 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">Pobierz aplikację</h2>
-          <span id="appVersion"><strong>Wersja:</strong> 2.1</span> <span id="appReleased"><strong>Data publikacji:</strong> Lipiec 2013</span>
+          <span id="appVersion"><strong>Wersja:</strong> 2.1.2</span> <span id="appReleased"><strong>Dostępna:</strong> Jesień 2013</span>
 
 
-          <p>Dodatek Esri Maps for Office umożliwia szybkie tworzenie dynamicznych, interaktywnych map z wykorzystaniem danych z programu Excel, dzięki czemu możesz rozpocząć ich przeglądanie w zupełnie nowy sposób. Dodatek Esri Maps for Office pozwala odkryć zależności i trendy, które nie są w oczywisty sposób widoczne w danych tabelarycznych i na wykresach. Mapy mogą być udostępniane bezpośrednio za pomocą prezentacji PowerPoint lub publikowania jednym kliknięciem do chmury map Esri na platformie ArcGIS Online.</p>
+          <p>Dodatek Esri Maps for Office umożliwia szybkie tworzenie dynamicznych, interaktywnych map z wykorzystaniem danych z programu Excel, dzięki czemu możesz rozpocząć ich przeglądanie w zupełnie nowy sposób. Dodatek Esri Maps for Office pozwala odkryć zależności i trendy, które nie są w oczywisty sposób widoczne w danych tabelarycznych i na wykresach. Mapy mogą być udostępniane bezpośrednio za pomocą prezentacji PowerPoint lub poprzez publikację na platformie mapowej firmy Esri, czyli w serwisie ArcGIS Online.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Pobierz dodatek Esri Maps for Office</a>
@@ -56,7 +67,10 @@ metatags:
           <h3>Mapuj swoje arkusze kalkulacyjne </h3>
           <p>Dowiedz się, jak mapować dane programu Excel przy użyciu dodatku Esri Maps for Office. W łatwy sposób możesz tworzyć interaktywne kartogramy, mapy punktowe, mapy zagęszczenia punktów oraz mapy skupień bezpośrednio w programie Excel, dzięki czemu zyskujesz wizualną reprezentację danych, umożliwiającą ich lepsze zrozumienie.</p>
           <p>
-            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge"> Zapoznaj się z materiałem wideo</a> <video width="320" height="240" controls id="2457" class="mobileVideo"><source src="http://video.arcgis.com/download-video/2457/mp4/480"></video>
+            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Zapoznaj się z materiałem wideo.</a>
+			<video width="320" height="240" controls id="2457" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2457/mp4/480">
+			</video>
           </p>
         </div>
 
@@ -67,7 +81,10 @@ metatags:
           <h3>Wzbogać swoje dane</h3>
           <p>Wykorzystaj bogactwo zbiorów danych firmy Esri w celu zwiększenia wartości danych biznesowych. Dodaj dane demograficzne i dane dotyczące stylu życia bezpośrednio do arkuszy kalkulacyjnych programu Excel i uzyskaj więcej informacji kontekstowych na temat miejsc, które są dla Ciebie ważne. Szybko eksploruj lokalizacje "w locie" za pomocą infografik podręcznych.</p>
           <p>
-           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge"> Zapoznaj się z materiałem wideo</a> <video width="320" height="240" controls id="2468" class="mobileVideo"><source src="http://video.arcgis.com/download-video/2468/mp4/480"></video>
+           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Zapoznaj się z materiałem wideo.</a>
+		   <video width="320" height="240" controls id="2468" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2468/mp4/480">
+			</video>
           </p>
         </div>
 
@@ -77,7 +94,7 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>Wymagania systemowe</h2>
 
-        <p>Dodatek Esri Maps for Office wymaga posiadania konta, należącego do instytucji <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> oraz programów Microsoft Office Excel lub PowerPoint 2010 lub Microsoft Office Excel lub PowerPoint 2013. Obsługiwane systemy operacyjne to:</p>
+        <p>Dodatek Esri Maps for Office wymaga posiadania konta należącego do instytucji <a href="http://help.arcgis.com/pl/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> oraz programów Microsoft Office Excel lub PowerPoint 2010 bądź Microsoft Office Excel lub PowerPoint 2013. Obsługiwane systemy operacyjne to:</p>
 		<ul>
 		 <li>Windows XP (koniecznie z dodatkiem SP3) (wersja 32-bitowa)</li>
 		 <li>Windows 7 (wersja 32-bitowa i 64-bitowa)</li>
@@ -86,20 +103,54 @@ metatags:
 		 <li>Windows Server 2008 R2</li>
 		 <li>Windows Server 2012</li>
 		</ul>
-		<p>Aby uzyskać dodatkowe informacje, w tym dane dotyczące wymaganej prędkości procesora, pamięci i miejsca na dysku twardym, zapoznaj się z tematem wymagania systemowe pakietu <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> i <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
+		<p>Aby uzyskać dodatkowe informacje, w tym dane dotyczące wymaganej prędkości procesora, ilości pamięci i miejsca na dysku twardym, zapoznaj się wymaganiami systemowymi pakietu <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> oraz <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
 
 
 
-        <h3>Planowana obsługa w następujących językach:</h3>
-        <p>Arabski, angielski, chiński, francuski, niemiecki, włoski, japoński, hiszpański, portugalski (Brazylia) i rosyjski</p>
-
+        <!--  		<h3>Support for the following languages</h3>         <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p> 		//-->
 
 
 
 
         <a name="whatsNew"></a>
         <h2>Co nowego</h2>
-        <p>Dodatek Esri Maps for Office w wersji 2.1 został opublikowany w lipcu 2013 roku. Obejmuje on następujące ulepszenia:</p>
+        <p>Dodatek Esri Maps for Office w wersji 2.1.2 został opublikowany w listopadzie 2013 r. i zawiera następujące udoskonalenia:</p>
+        <ul>
+		<li>Poprawki i udoskonalenia w zakresie obsługi, w tym:
+			<ul>
+			<li>Udoskonalenia narzędzia Wzbogać warstwę, takie jak: wydajniejsze użycie pamięci umożliwiające obsługę większych żądań wzbogacania oraz ulepszony wskaźnik postępu</li>
+			<li>Usunięcie błędu powodującego awarię programu Excel po zainstalowaniu dodatku Esri Maps </li>
+			<li>Usunięcie błędu powodującego wyświetlanie nieprawidłowych rastrów w panelu Wyszukaj</li>
+			<li>Usunięcie błędu powodującego niepowodzenie wyszukiwania niestandardowych typów lokalizacji w japońskiej, rosyjskiej oraz chińskiej wersji językowej</li>
+			<li>Skorygowane zlokalizowane ciągi w sekcjach Najważniejsze dane, Zamożność, Polityka i Zdrowie w panelu Wyszukaj</li>
+			</ul>
+        </ul>
+
+
+        <h3>Poprzednie wersje</h3>
+		
+		<p>Wersja 2.1.1 została opublikowana w październiku 2013 r. i zawiera następujące ulepszenia:</p>
+        <ul>
+        <li>Nowe wersje zlokalizowane dla 22 obsługiwanych języków:</li>
+			<ul>
+			<li>arabski, chiński (uproszczony), duński, holenderski, angielski, estoński, francuski, niemiecki, hebrajski, włoski, japoński, koreański, łotewski, litewski, norweski, polski, portugalski (Brazylia), portugalski (Portugalia), rumuński, rosyjski, hiszpański i szwedzki</li>
+			</ul>
+		<li>Obsługa okien podręcznych na mapach internetowych</li>
+		<li>Symbolizacja obiektów za pomocą ikony korzystającej z adresu URL atrybutu</li>
+		<li>Poprawki i udoskonalenia w zakresie obsługi dla całego produktu, w tym:
+			<ul>
+			<li>Udoskonalona obsługa loginów w protokole OAuth</li>
+			<li>Bardziej pomocne komunikaty o błędach narzędzia Znajdź lokalizacje hot spot</li>
+			<li>Narzędzie Znajdź lokalizacje hot spot obsługuje teraz nazwy kolumn zawierające spacje</li>
+			<li>Narzędzie Wybierz obsługuje teraz bufory o rozmiarze ”0”</li>
+			<li>Usunięcie problemów związanych z panelem zadań</li>
+			<li>Usunięcie błędów związanych z widocznością grup</li>
+			<li>Udoskonalenia w zakresie obsługi instytucji korzystających z protokołu SSL dla wszystkich połączeń</li>
+			<li>Funkcja Grupowanie działa teraz poprawnie podczas korzystania z kolumn dodanych z narzędzia Wzbogać warstwę</li>
+			</ul>
+        </ul>
+		
+        <p>Wersja 2.1. została opublikowana w lipcu 2013 r. i zawiera następujące ulepszenia: </p>
         <ul>
         <li>Analiza statystyczna zależności za pomocą narzędzia Znajdź lokalizacje hot spot</li>
 		<li>Ulepszenia wzbogacania danych, w tym większa liczba zbiorów danych oraz możliwość wyboru poszczególnych zmiennych ze zbiorów danych.</li>
@@ -108,10 +159,8 @@ metatags:
 		<li>Usprawnienia interfejsu użytkownika dla Infografik i narzędzia Wzbogać warstwę</li>
 		<li>Ulepszony schemat pracy do celów aktualizacji dodatku Maps for Office do najnowszej wersji</li>
         </ul>
-
-
-        <h3>Poprzednia wersja</h3>
-        <p>Wersja 2.0.2 została opublikowana w maju 2013 roku. Zawierała ona następujące ulepszenia:</p>
+		<br>
+        <p>Wersja 2.0.2 została opublikowana w maju 2013 r. i zawiera następujące ulepszenia:</p>
         <ul>
           <li>Wzbogać swoje dane kontekstem geograficznym za pomocą nowego narzędzia Wzbogać warstwę</li>
 		  <li>Wybierz obiekty na swojej mapie i znajdź najbliższe obiekty w innych warstwach </li>
@@ -129,7 +178,7 @@ metatags:
         </ul>
 
 
-        <p> </p>
+        <p>&nbsp;</p>
 
       </div>
 
@@ -137,7 +186,7 @@ metatags:
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>Rozpocznij</h3>
+          <h3>Wprowadzenie</h3>
           <ul>
            <li><a href="#whatsNew">Co nowego</a></li>
             <li><a href="#systemRequirements">Wymagania systemowe</a></li>
@@ -160,8 +209,6 @@ metatags:
 
     </div>
 
- 
-
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
     $(window).load(function() {
@@ -178,4 +225,3 @@ L = 0, 1 (default is 0)
 */
 
   </script>
-

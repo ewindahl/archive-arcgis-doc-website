@@ -1,27 +1,38 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
 ---
-<div class="navigation-bar blue">
+title: Esri Maps for Office
+
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="section-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/maps-for-office/">Esri Maps for Office</a></h1>
-    </header> <nav>
+      <h1><a href="/ro/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
       <ul>
-        <li class='current'><a href="/en/maps-for-office/">Prima pagină</a></li>
-        <li><a href="/en/maps-for-office/help/">Ajutor</a></li>
+        <li class='current'><a href="/ro/maps-for-office/">Prima pagină</a></li>
+        <li><a href="/ro/maps-for-office/help/">Ajutor</a></li>
         <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">Forum</a></li>
       </ul>
     </nav>
@@ -35,10 +46,10 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">Descărcaţi aplicaţia</h2>
-          <span id="appVersion"><strong>Versiune:</strong> 2.1</span> <span id="appReleased"><strong>Disponibilă din:</strong> iulie 2013</span>
+          <span id="appVersion"><strong>Versiune:</strong> 2.1.2</span> <span id="appReleased"><strong>Disponibilă din:</strong> Toamna 2013</span>
 
 
-          <p>Esri Maps for Office vă permite să creaţi rapid hărţi dinamice şi interactive pe baza datelor în format Excel şi să începeţi să exploraţi aceste hărţi într-un mod cu totul inedit. Esri Maps for Office vă permite să scoateţi la iveală modele şi tendinţe care nu sunt evidente în datele tabelare şi în diagrame. Hărţile pot fi partajate imediat prin intermediul prezentărilor PowerPoint sau prin publicarea lor printr-un singur clic în cloudul Esri pentru hărţi, ArcGIS Online.</p>
+          <p>Esri Maps for Office vă permite să creaţi rapid hărţi dinamice şi interactive pe baza datelor în format Excel şi să începeţi să exploraţi aceste hărţi într-un mod cu totul inedit. Esri Maps for Office vă permite să scoateţi la iveală modele şi tendinţe care nu sunt evidente în datele tabelare şi în diagrame. Hărţile pot fi partajate imediat prin intermediul prezentărilor PowerPoint sau prin publicarea lor printr-un singur clic în platforma Esri pentru hărţi, ArcGIS Online.</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Obţineţi Esri Maps for Office</a>
@@ -56,7 +67,10 @@ metatags:
           <h3>Transpuneţi pe hartă foile de calcul </h3>
           <p>Aflaţi cum să transpuneţi pe hartă datele Excel utilizând Esri Maps for Office. Puteţi să creaţi cu uşurinţă, direct în Excel, hărţi interactive codificate pe culori, de puncte simple, de puncte grupate sau de temperaturi Excel, obţinând astfel informaţii vizuale detaliate despre datele dvs.</p>
           <p>
-            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge"> Vizionaţi un videoclip</a> <video width="320" height="240" controls id="2457" class="mobileVideo"><source src="http://video.arcgis.com/download-video/2457/mp4/480"></video>
+            <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Vizionaţi un videoclip</a>
+			<video width="320" height="240" controls id="2457" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2457/mp4/480">
+			</video>
           </p>
         </div>
 
@@ -67,7 +81,10 @@ metatags:
           <h3>Îmbogăţiţi datele</h3>
           <p>Utilizaţi nenumăratele colecţii de date Esri pentru a adăuga valoare datelor dvs. de afaceri. Adăugaţi date demografice şi despre modul de viaţă direct în foile de calcul Excel şi obţineţi un context mai larg despre locaţiile importante pentru dvs. Exploraţi rapid şi pe parcurs locaţii utilizând grafice informative pop-up.</p>
           <p>
-           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge"> Vizionaţi un videoclip</a> <video width="320" height="240" controls id="2468" class="mobileVideo"><source src="http://video.arcgis.com/download-video/2468/mp4/480"></video>
+           <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Vizionaţi un videoclip</a>
+		   <video width="320" height="240" controls id="2468" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2468/mp4/480">
+			</video>
           </p>
         </div>
 
@@ -77,7 +94,7 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>Cerinţele de sistem</h2>
 
-        <p>Pentru Esri Maps for Office este necesar un cont care să facă parte dintr-o organizaţie <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>, precum şi de aplicaţia Microsoft Office Excel sau PowerPoint 2010 ori Microsoft Office Excel sau PowerPoint 2013. Printre sistemele de operare acceptate se numără:</p>
+        <p>Pentru Esri Maps for Office este necesar un cont care să facă parte dintr-o organizaţie <a href="http://help.arcgis.com/ro/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>, precum şi de aplicaţia Microsoft Office Excel sau PowerPoint 2010 ori Microsoft Office Excel sau PowerPoint 2013. Printre sistemele de operare acceptate se numără:</p>
 		<ul>
 		 <li>Windows XP (obligatoriu cu SP3) (32 de biţi)</li>
 		 <li>Windows 7 (32 şi 64 de biţi)</li>
@@ -90,16 +107,50 @@ metatags:
 
 
 
-        <h3>Asistenţă preconizată pentru următoarele limbi</h3>
-        <p>Arabă, engleză, chineză, franceză, germană, italiană, japoneză, spaniolă, portugheză (Brazilia) şi rusă</p>
-
+        <!--  		<h3>Support for the following languages</h3>         <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p> 		//-->
 
 
 
 
         <a name="whatsNew"></a>
         <h2>Ce este nou</h2>
-        <p>Esri Maps for Office versiunea 2.1 a fost lansată în iulie 2013. Aceasta include următoarele îmbunătăţiri:</p>
+        <p>Esri Maps for Office versiunea 2.1.2 a fost lansată în noiembrie 2013. Aceasta include următoarele îmbunătăţiri:</p>
+        <ul>
+		<li>Remedieri de defecte şi îmbunătăţiri ale caracterului utilizabil, printre care:
+			<ul>
+			<li>Îmbunătăţiri ale instrumentului Îmbogăţire strat tematic, precum: o utilizare mai eficientă a memoriei pentru a satisface solicitări de îmbunătăţire mai mari şi un indicator de progres îmbunătăţit.</li>
+			<li>A fost remediat un defect care provoca blocarea aplicaţiei Excel după instalarea Esri Maps. </li>
+			<li>A fost remediat un defect prin care erau afişate imagini incorecte în panoul Căutare.</li>
+			<li>A fost remediat un defect care determina eşuarea căutărilor după tipuri de locaţii particularizate în limbile japoneză, rusă şi chineză.</li>
+			<li>Au fost aranjate şirurile localizate pentru Date cheie, Avere, Politică şi Sănătate din panoul Căutare.</li>
+			</ul>
+        </ul>
+
+
+        <h3>Versiunile anterioare</h3>
+		
+		<p>Versiunea 2.1.1 a fost lansată în octombrie 2013. Aceasta a inclus următoarele îmbunătăţiri:</p>
+        <ul>
+        <li>Versiuni localizate noi pentru 22 de limbi suportate:</li>
+			<ul>
+			<li>arabă, chineză (simplificată), coreeană, daneză, ebraică, engleză, estoniană, franceză, germană, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă şi suedeză.</li>
+			</ul>
+		<li>Suport pentru ferestre pop up în hărţile web</li>
+		<li>Simbolizarea obiectelor spaţiale cu ajutorul unei pictograme dintr-un URL atribut</li>
+		<li>Remedieri de defecte şi îmbunătăţiri ale caracterului utilizabil în întregul produs, printre care:
+			<ul>
+			<li>Gestionare îmbunătăţită a autentificărilor OAuth</li>
+			<li>Mesaje de eroare mai utile pentru instrumentul Găsire hot spot-uri</li>
+			<li>Instrumentul Găsire hot spot-uri poate gestiona acum nume de coloane cu spaţii</li>
+			<li>Instrumentul Selectare suportă acum buffere de dimensiune „0”</li>
+			<li>Au fost remediate probleme în panoul de activităţi</li>
+			<li>Au fost remediate defecte de vizibilitate a grupurilor</li>
+			<li>A fost îmbunătăţit suportul pentru organizaţii care utilizează SSL pentru toate conexiunile</li>
+			<li>Gruparea funcţionează acum corect când se utilizează coloane adăugate din instrumentul Îmbogăţire strat tematic</li>
+			</ul>
+        </ul>
+		
+        <p>Versiunea 2.1 a fost lansată în iulie 2013. Aceasta a inclus următoarele îmbunătăţiri: </p>
         <ul>
         <li>Analiza modelelor statistice prin instrumentul Puncte de interes</li>
 		<li>Îmbunătăţiri aduse îmbogăţirii datelor, inclusiv colecţii de date suplimentare şi posibilitatea de a selecta variabile individuale din colecţiile de date</li>
@@ -108,9 +159,7 @@ metatags:
 		<li>Îmbunătăţiri aduse interfeţei cu utilizatorul la nivelul graficelor informative şi al instrumentului Îmbogăţire strat tematic</li>
 		<li>Flux de lucru îmbunătăţit pentru upgrade-ul Maps for Office la cea mai recentă versiune</li>
         </ul>
-
-
-        <h3>Versiunea anterioară</h3>
+		<br>
         <p>Versiunea 2.0.2 a fost lansată în mai 2013. Aceasta a inclus următoarele îmbunătăţiri:</p>
         <ul>
           <li>Îmbogăţirea datelor prin adăugarea unui context geografic utilizând instrumentul nou „Îmbogăţire strat tematic”</li>
@@ -129,7 +178,7 @@ metatags:
         </ul>
 
 
-        <p> </p>
+        <p>&nbsp;</p>
 
       </div>
 
@@ -159,8 +208,6 @@ metatags:
  </div>
 
     </div>
-
- 
 
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">

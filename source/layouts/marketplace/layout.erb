@@ -1,9 +1,15 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9 ie8"> <![endif]-->
-<!--[if IE 9]>         <html class="ie ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<%
+readDirection="ltr" 
+if current_language == "ar" 
+	readDirection="rtl"
+end 
+%>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9" dir="<%=readDirection%>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html dir="<%=readDirection%>"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
 
@@ -39,22 +45,28 @@
     <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-
+    <%= stylesheet_link_tag "screen" %>
     <% if current_page.data.css %>
       <% current_page.data.css.each do |stylesheet| %>
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
 
-    <link href="/css/marketplace.css" media="screen" rel="stylesheet" type="text/css" />
+  <link type="text/css" rel="stylesheet" href="/css/marketplace.css" /> 
+	<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" /> 
+
+  <%= javascript_include_tag "sitecfg" %>	
+	<%= javascript_include_tag "locale/l10NStrings" %>
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
-    <%= javascript_include_tag  "libs/kss", "libs/highlight.pack" %>
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>
       <% end %>
     <% end %>
+
+    <%= javascript_include_tag "marketplace/init" %>
+
     <% if current_page.data.mobile %>
       <meta name="viewport" content="width=device-width,initial-scale=1">
     <% else %>
@@ -72,11 +84,21 @@
       <% end %>
     <% end %>
 
-   <!-- Language Picker
+   <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
-   <%= javascript_include_tag "locale/l10NStrings" %>
-   <%= javascript_include_tag "locale/langSelector" %>-->
-
+    <% #Add langselector .js if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
+	<% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>  
+		<% if current_language == "ar" %> 
+			<%= javascript_include_tag "locale/langSelector_ar" %>
+			<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
+			<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
+			<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
+			<link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
+		<% else %>
+			<%= javascript_include_tag "locale/langSelector" %>
+		<% end %>
+	<% end %>
+   
    <!-- set dropdown/show home in footer -->
   <script>
     $(document).ready(function(){
@@ -85,21 +107,23 @@
   </script>
 
   </head>
-  <body>
+  <body class="<%= current_language %> marketplace">
     <div id="wrapper">
       <div id="page">
 
-        <header id="header">
+        <header id="header" class="">
           <div class="container relative-container">
               <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
+
                 <div class="logo-wrap">
                   <a id="site-logo" href="http://marketplace.arcgis.com/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
                   <span class="down-arrow" id="down-arrow"></span>
                 </div>
                 
                 <%= partial "_partial/site_header_dropdown" %>
-
-                <nav></nav>
+                <nav>
+                </nav>
+                
                 <form id="mkpSearchForm" action="#">
                   <input type="search" name="mkpSearch"  placeholder="<%= t("site.nav.mpSearch") %>">
                 </form>
@@ -107,16 +131,14 @@
 
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
 
-                <!--<div id="lg-container" class="dropdown-navigation">
-                  <div id="lang-block"></div>
-               </div> -->
-
               <div id="logged-out-navigation" class="dropdown-navigation">
-                <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#"><%= t("site.nav.sign_in") %></a>
+                <a data-langlabel="sign-in" id="login-link" class="btn marketplace" href="#"><span class="profile-icon"></span><%= t("site.nav.sign_in") %></a>
               </div>
-
+		<div id="lg-container" class="dropdown-navigation">
+			<div id="lang-block"></div>
+		</div>
               <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
-                <a id="login-link" class="dropdown btn small light" href="#"><%= t("site.nav.sign_in_user") %></a>
+                <a id="login-link" class="dropdown btn marketplace" href="#"><%= t("site.nav.sign_in_user") %></a>
                 <div class="dropdown-content">
                   <div class="dropdown-menu">
                     <ul class="myconsole">
@@ -132,7 +154,7 @@
 
               <nav class="right-nav">
                  <ul>
-                    <li><%= link_to t("site.nav.help"), t("paths.mphelp") %></li>
+                    <li><a href="<%= t("paths.mphelp") %>"><span class="help-icon"></span><%= t("site.nav.help") %></a></li>
                  </ul>
               </nav>
 
@@ -145,7 +167,7 @@
       </div>
     </div>
 
-    <footer id="footer">
+    <footer id="footer" class="">
       <div class="container">
         <div class="row">
           <nav>
@@ -165,5 +187,7 @@
     </footer>
 
     <%= javascript_include_tag "drop-down" %>
+    <%= javascript_include_tag "search/searchform.js" %>
+
   </body>
 </html>
