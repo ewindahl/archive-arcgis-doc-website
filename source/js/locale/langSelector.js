@@ -81,7 +81,7 @@ jQuery(document).ready(function ($) {
           "it": "it", "it-it": "it", "it-ch": "it",
           "ja" : "ja","ja-jp" : "ja",
           "ko": "ko",
-          /*"nl" : "nl",*/
+          "nl" : "nl", "nl-be" : "nl",
           "no": "no","no-no": "no",
           "pl": "pl",
           "pt-br": "pt-br",
@@ -95,7 +95,7 @@ jQuery(document).ready(function ($) {
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da","it","ko","no","pl","pt-br","pt-pt","ro","sv"],
+      lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","sv"],
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -165,7 +165,7 @@ jQuery(document).ready(function ($) {
           },
 
           setLangPref : function (lg) {
-              doc.cookieJar.setItem (prefLangCK, lg, Infinity, "/", ".arcgis.com");
+              doc.cookieJar.setItem (prefLangCK, lg, "", "/", ".arcgis.com");
           },
 
 
@@ -188,7 +188,7 @@ jQuery(document).ready(function ($) {
           },
 
           setPrefLang : function (lg) {
-              doc.cookieJar.setItem(prefLangCK, lg, Infinity, "/", ".arcgis.com", false);
+              doc.cookieJar.setItem(prefLangCK, lg, "", "/", ".arcgis.com", false);
           },
 
 
@@ -335,6 +335,12 @@ jQuery(document).ready(function ($) {
   var docCfg = (typeof docConfig != "undefined") ? docConfig : {"langSelector":"all"};
 
   dbg ("start: " + window.location.href);
+  
+  //If user clicked on English link from 404 page
+  
+  if (window.location.href.indexOf("lg=en") > 0){
+  	doc.l10n.setPrefLang("en");
+  }
 
   if (docCfg["doctype"] === void(0) || docCfg["doctype"] === "doc") {
 
