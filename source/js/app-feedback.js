@@ -293,22 +293,18 @@ doc.l10n = (function () {
             return true
         },
 		
-		pageNotFoundText : function (curlang, referrer) {
-			if(curlang != "en"){
-				//referrer =  referrer != "" ?  referrer : window.location.href;
+	pageNotFoundText : function (curlang, referrer) {
+		if(curlang != "en"){
+			var dict = (window.localeJsonObj || {})[curlang];
+			var pageNotFoundNote = dict['404-may-exist-in-english'],
+				englishURL = window.location.href + "?lg=en";
 				
-				var dict = (window.localeJsonObj || {})[curlang];
-				var pageNotFoundNote = dict['404-may-exist-in-english'],
-					englishURL = window.location.href + "?lg=en";
-					
-				
-				
-				pageNotFoundNote = pageNotFoundNote + "<p class='englishLink'><br/>" + dict['404-click-here-for-english'] + "</p>";
-				// Using getElementbyID as innerHTML is not working as expected with Jquery $("#404_note").innerHTML
-				document.getElementById('404_note').innerHTML = pageNotFoundNote;
-				$("#englishLink").attr("href",englishURL.replace ("/"+curlang+"/","/en/"));
-			}
+			// Using getElementbyID as innerHTML is not working as expected with Jquery $("#404_note").innerHTML, specifically on localized pages
+			document.getElementById('404_note').innerHTML = pageNotFoundNote;
+			document.getElementById('englishLinkNote').innerHTML = dict['404-click-here-for-english'];
+			$("#englishLink").attr("href",englishURL.replace ("/"+curlang+"/","/en/"));
 		}
+	}
 
 
     };    
