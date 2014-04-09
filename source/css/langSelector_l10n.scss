@@ -5,12 +5,12 @@
  
  #lgpicker a {
   direction: ltr;
+  
+  &[data-lang="ar"] {
+   direction: rtl;
+  }
  }
  
- #lgpicker a[data-lang="ar"] {
-  direction: rtl;
- }
-
  #lgarrow {
   padding-right: 16px;
  }
@@ -24,5 +24,10 @@
  #localeOptions {
   float: left;
   text-align: left;
+ }
+ 
+ .marketplace .dropdown-navigation {
+  margin-left: 0px;
+  margin-right: 20px;
  }
 }
