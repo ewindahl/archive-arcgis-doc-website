@@ -11,6 +11,10 @@ var smartbanner = {
 
             default_banner_cfg = this.get_l10n_strs(lang)
 
+            default_banner_cfg["daysHidden"] = 1
+
+            default_banner_cfg["daysReminder"] = 1
+
             $.smartbanner(default_banner_cfg)
 
         }
