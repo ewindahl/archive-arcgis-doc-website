@@ -104,7 +104,7 @@ agolLogout
     	}
 	    
 
-	    $.getJSON(portalHostname + "/sharing/rest/portals/self", params, function (data) {
+	    function successCallbackFn ( data, textStatus, jqXHR) {
       		var firstName = getUserDisplayName(data && data.user),        
               orgHostname = getOrgHostname (data),   
   	       		text = firstName || "SIGN IN";
@@ -117,12 +117,21 @@ agolLogout
     
           $(".myconsole").css ("display", "block");
   
-    	});
+    	}
+
+      if(navigator.userAgent.match(/msie/i)){
+        var queryParams = "f=json&token=" + token;
+        portalHostname = "https:" + portalHostname; //https was required to work with existing config in proxy
+        $.getJSON("/apps/proxy/proxy.php?" + portalHostname + "/sharing/rest/portals/self?" + queryParams, successCallbackFn);
+      }else{
+        $.getJSON(portalHostname + "/sharing/rest/portals/self", params, successCallbackFn);
+      }
 
       $("#agolLogout").on ("click", function() {
         cookie.jar.removeItem (ckKey, "/", ".arcgis.com");
         window.location.reload(true);
       });
+		
 
   /*	
         if (cookie.val["role"] && cookie.val["role"].indexOf ("admin")>=0) {
