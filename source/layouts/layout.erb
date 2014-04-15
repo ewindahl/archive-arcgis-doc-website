@@ -111,6 +111,10 @@ end
 	<% end %>
 	<%= javascript_include_tag "locale/langSelector" %>
    <% end %>
+   
+   <!--[if IE]>
+		<%= javascript_include_tag "libs/html5-placeholder-shim.js" %>
+	<![endif]-->
 
    <!-- set dropdown/show home in footer -->
   <script>
