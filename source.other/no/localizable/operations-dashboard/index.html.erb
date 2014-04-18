@@ -2,21 +2,19 @@
 title: Operations Dashboard for ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
-  - /en/asset/css/app-switch-1
   - colorbox/colorbox
 
 js:
   - libs/jquery.cookie
-  - /en/asset/js/app-collector-1
+  - /en/asset/js/operations-dashboard-1
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -25,6 +23,12 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/no/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="ops-dashboard" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -41,28 +45,21 @@ mobile: true
 <div class="container">
 
      <div class="column-16 tablet-column-24">
-        <header>
-          <h2 id="appTitle">Last ned appen</h2>
-          <span id="appVersion"><strong>Versjon:</strong> 10.2</span> <span id="appReleased"><strong>Utgitt:</strong> November 2013</span>
-
-          <p>Overv&aring;k aktiviteter og hendelser, spor medarbeidere som er ute i felten, og vurder statusen for og resultatet av det daglige arbeidet.</p>
-
-          <p>
-            <a class="btn primary" href="http://www.arcgis.com/home/item.html?id=ba47e0bf6cb84a6e9f77e9caf86b88eb">F&aring; Operations Dashboard</a>
-
-          </p>
+        <h3 class="gray">Overv&aring;k aktiviteter og hendelser, spor medarbeidere som er ute i felten, og vurder statusen for og resultatet av det daglige arbeidet.</h3>
+          
+          <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->	  
 
           <p>
-            <a id="appSysRequirements" href="#systemRequirements">Systemkrav</a> <a id="appWhatsNew" href="#whatsNew">Nyheter</a>
-          </p>
+            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">F&aring; Operations Dashboard</a>
 
-        </header>
+          </p>
         <hr />
-        <br />
-
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/no/operations-dashboard/dashboard-create-small.png" />
+          <img src="/en/operations-dashboard/dashboard-create-small.png" />
 
           <h3>Opprette og dele en arbeidsvisning</h3>
           <p>Med tre enkle trinn kan du opprette og dele arbeidsvisninger som inneholder kart, lister, diagrammer, m&aring;lere og mer, basert p&aring; geografiske data i sanntid definert i et webkart eller en webtjeneste.</p>
@@ -73,23 +70,57 @@ mobile: true
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/no/operations-dashboard/dashboard-monitor-small.png" />
+          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
 
           <h3>Overv&aring;ke og respondere p&aring; hendelser</h3>
           <p>Bruk arbeidsvisningene dine til &aring; fokusere p&aring; de aspektene av arbeidet som er viktige for deg. Overv&aring;k tjenester, leveranser, personer, kj&oslash;ret&oslash;y og mer, hvor som helst i verden, i fire trinn.</p>
           <p>
-            <a href="/no/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br /> <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Se en video</a>
+            <a href="/no/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br /> <!--<a href="http://resources.arcgis.com/no/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Se en video</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
           </p>
         </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-3.png" />
+
+          <h3>Overv&aring;k i nettleser</h3>
+          <p>Bruk arbeidsvisningen i nettleseren. Ingenting &aring; installere, bare &aring;pne en arbeidsvisning og hold deg oppdatert om arbeidet, ogs&aring; fra iPad-en.</p>
+          <p>
+            <a href="/no/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br /> <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
+          </p>
+        </div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-4.png" />
+
+          <h3>Utvikle tilleggsprogrammer</h3>
+          <p>Ta med din unike forretningslogikk til arbeidsvisningen ved &aring; bruke tilpassede widgeter, geoobjekthandlinger og kartverkt&oslash;y. </p>
+          <p>
+            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br />
+          </p>
+        </div>        
 
         <div class="clear"></div>
 
 
+	<a name="features" ></a>
+	<h2 class="divider">Funksjoner</h2>
+	<p>F&aring; en samlet oversikt over systemene og ressursene du administrerer. Overv&aring;k datafeeder i sanntid for store hendelser eller den daglige driften p&aring; datamaskinen eller nettbrettet. Opprett fokuserte administrative dashboard som integrerer kart, diagrammer og grafer.</p>
+	
+	<ul>
+	<li>Bruk kart med dynamiske datakilder, s&aring; kan du vise ting i sanntid.</li>
+	<li>Konfigurer diagrammer, m&aring;lere, histogrammer og mer for &aring; gi statistisk kontekst.</li>
+	<li>Opprett og del arbeidsvisninger som fokuserer p&aring; et bestemt behov.</li>
+	<li>Utform visninger som kan brukes p&aring; flere skjermer eller p&aring; enheter med &eacute;n skjerm.</li>
+	<li>Opprett tilpassede miniprogrammer og verkt&oslash;y som passer dine behov.</li>
+	</ul>
+
+
         <a name="systemRequirements"></a>
-        <h2>Systemkrav</h2>
+        <h2 class="divider">Systemkrav</h2>
 
         <p>Det finnes noen systemkrav til enheter du skal kj&oslash;re Operations Dashboard p&aring;, samt krav til dataene som brukes i selve programmet. Operations Dashboard st&oslash;ttes p&aring; en rekke spr&aring;k.</p>
 
@@ -109,7 +140,7 @@ mobile: true
         <h3>Maskinvarekrav</h3>
         <ul>
 			<li>Prosessorhastighet: 2.2 GHz eller h&oslash;yere; Hyper-Threading (HTT) eller Multi-core anbefales.</li>
-			<li>Prosessor: Intel Pentium 4-, Core Duo- eller Xeon-prosessor; minimum SSE2. Kj&oslash;r dette Microsoft-verkt&oslash;yet fra ledeteksten i Windows for &aring; kontrollere prosessoren.</li>
+			<li>Prosessor: Intel Pentium 4-, Core Duo- eller Xeon-prosessor; minimum SSE2. Kj&oslash;r verkt&oslash;yet Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a>  fra ledeteksten i Windows for &aring; kontrollere prosessoren.</li>
 			<li>Diskplass: 1,5 GB ledig diskplass.</li>
 			<li>Minne/RAM: 2 GB eller h&oslash;yere.</li>
 			<li>Visningsegenskaper: 24-biters fargedybde.</li>
@@ -126,28 +157,83 @@ mobile: true
 		<p>Du m&aring; ha en ArcGIS-organisasjonskonto for &aring; kunne bruke kartene dine i Operations Dashboard. Kartene dine kan inneholde data fra ArcGIS Online, Portal for ArcGIS og ArcGIS for Server. ArcGIS Online eller ArcGIS 10.1 for Server eller senere m&aring; v&aelig;re vert for datakildene.</p>
 
 		<h3>Utviklerkrav</h3>
-		<p>Du m&aring; ha <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2 for WPF</a> for &aring; tilpasse Operations Dashboard for ArcGIS.</p>
+		<p>Du m&aring; ha <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a> for &aring; tilpasse Operations Dashboard for ArcGIS.</p>
 
 	<h3>Spr&aring;k som st&oslash;ttes</h3>
-	<p>Arabisk, dansk, estisk, finsk, fransk, hebraisk, italiensk, japansk, kinesisk (forenklet) , koreansk, latvisk, litauisk, nederlandsk, norsk, polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk og tysk</p>
-	<p>Spr&aring;ket som brukes i appen, avhenger av spr&aring;kinnstillingen for operativsystemet.</p>
+	<p>Arabisk (<span class="icon-windows-8"/>), dansk, estisk, finsk, fransk, hebraisk (<span class="icon-windows-8"/>), italiensk, japansk, kinesisk (forenklet) , koreansk, latvisk, litauisk, nederlandsk, norsk, polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk, tyrkisk og tysk.</p>
+	<p>Spr&aring;ket som brukes i Windows-versjonen av appen, avhenger av spr&aring;kinnstillingen for operativsystemet. I nettleserversjonen brukes ArcGIS Online-profilen din til &aring; angi spr&aring;k.</p>
 
         <a name="whatsNew"></a>
-        <h2>Nyheter</h2>
-        <p>Operations Dashboard for ArcGIS versjon 10.2 ble utgitt i november 2013. Det inneholder f&oslash;lgende forbedringer:</p>
+        <h2 class="divider">Nyheter</h2>
+        <p>Operations Dashboard for ArcGIS versjon 10.2.2 ble utgitt i mars 2014. Den inneholder f&oslash;lgende forbedringer:</p>
         <ul>
-        <li>St&oslash;tte for bedriftsp&aring;logging.</li>
-        <li>St&oslash;tte for Portal for ArcGIS.</li>
-        <li>Forbedrede miniprogrammer for lister og m&aring;linger.</li>
-        <li>Sprettoppvinduer inkluderer bilder og diagrammer.</li>
-        <li>Forbedret proxy-st&oslash;tte.</li>
-        <li>St&oslash;tte for lokal tid.</li>
-        <li>Forbedret filtrering p&aring; tid og datoer.</li>
-        <li>Bruker ArcGIS Runtime SDK 10.2 for WPF.</li>
-        <li>ArcGIS Runtime SDK 10.2 for WPF kan brukes til utvikling av tillegg.</li>
-        <li>Oversatt til arabisk, dansk, estisk, finsk, fransk, hebraisk, italiensk, japansk, kinesisk (forenklet) , koreansk, latvisk, litauisk, nederlandsk, norsk, polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk og tysk.</li>
+        <li>Arbeidsvisningene kan vises i nettleseren.</li>
+        <li>Karttjenester kan vises som datakilder.</li>
+        <li>Respekterer oppdateringsintervallene som er stilt inn for datalagene.</li>
+        <li>Nye utvalgsverkt&oslash;y.</li>
+        <li>Listeminiprogramoppdateringer.</li>
+        <li>Bruker ArcGIS Runtime SDK 10.2.2 for WPF.</li>
+        <li>ArcGIS Runtime SDK 10.2.2 for WPF kan brukes til utvikling av tillegg.</li>
+        <li>Lokalisering til tyrkisk.</li>
         </ul>
-      
+        
+        <a name="sneakPeek"></a>
+	<h2 class="divider">Sniktitt</h2>
+	<p>I dag er Operations Dashboard en flott app &aring; overv&aring;ke driften med. Men det er mer i vente! Det f&oslash;lgende skisserer hvor vi &oslash;nsker &aring; ta dette programmet, og vi viser egenskaper vi vil bringe til hver av enhetene dine:</p>
+	
+	<table border="1" style="text-align:center">
+	  <caption>Planlagt funksjonalitet etter plattform.   <br/><span class="icon-check" style="color:black"></span>n&aring;, <span class="icon-check icon-green"/> snart, <span class="icon-check" style="color:lightgray"></span> senere<br/></caption>
+	  <tr><td></td>
+	    <th>Windows-skrivebordet</th>
+	    <th>Nettleser</th>
+	  </tr>
+	  <tr><th>Opprette arbeidsvisninger</th>
+	    <td><span class="icon-check"/></td>
+	    <td></td>
+	  </tr>
+	  <tr><th>Bruke arbeidsvisninger</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Arbeidsvisning med &eacute;n skjerm</span></td>
+	  </tr>
+	  <tr><th>Fungerer med Portal for ArcGIS</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Kan utvides</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Bruk karttjenester som datakilder</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>S&oslash;k i data</th>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Filtrer informasjon geografisk</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <!--<tr><th>Sketch on the map</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>-->
+	  <tr><th>Forbedret ikke-geografisk databruk (inkludert relaterte tabeller)</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>3D-visning</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Medarbeideradministrasjon</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	</table>
+	<p>Del <a href="http://ideas.arcgis.com/">ideene</a> dine og <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">send oss tilbakemelding</a>.</p>
+        
         <p>&nbsp;</p>
         
 
@@ -156,15 +242,14 @@ mobile: true
 
       <div class="column-8 tablet-column-24 blocks">
 
-        <div class="imgFrame block">
-          <h3>Komme i gang</h3>
-          <ul>
-           <li><a href="http://www.arcgis.com/home/item.html?id=ba47e0bf6cb84a6e9f77e9caf86b88eb">Installere det</a></li>
-            <li><a href="/no/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">Opprette og dele en arbeidsvisning</a></li>
-            <li><a href="/no/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Overv&aring;ke og respondere p&aring; aktiviteter og hendelser</a></li>
-            <li><a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/">Utvikle tilleggsprogrammer</a></li>
-
-          </ul>
+       <div class="imgFrame block">
+          <h3>Detaljer</h3>
+          
+	  <h4><a href="#features">Funksjoner</a></h4>
+	  <h4><a href="#systemRequirements">Systemkrav</a></h4>
+	  <h4><a href="#whatsNew">Nyheter</a></h4>
+	  <h4><a href="#sneakPeek">Sniktitt</a></h4>
+          
         </div>
 
         <br />
@@ -186,7 +271,7 @@ mobile: true
  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/ios/feed/',
+        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
         max: 5,
         layout: 0
       });
