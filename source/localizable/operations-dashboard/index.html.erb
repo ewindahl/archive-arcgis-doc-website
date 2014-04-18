@@ -128,11 +128,28 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">System requirements</h2>
 
-        <p>There are certain device requirements to run Operations Dashboard, as well as requirements on the data that is used within the app. Operations Dashboard is supported in a number of languages.</p>
+        <p>There are certain device requirements to run Operations Dashboard, as well as requirements on the data that is used within the app. </p>
 
 
-        <h3>Supported operating systems</h3>
-
+<script> 
+ function exp(strTag ,strAttribute){ 
+ var elem = document.getElementsByTagName(strTag); 
+ var elem1 =window.event.srcElement; 
+ for (var i=0;i<elem1.children.length;i++){ 
+ elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+ } 
+ for (var i =0;i<elem.length;i++) 
+ { 
+ if(elem[i].getAttribute(strAttribute)=="yes") 
+ { 
+ elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+ } 
+ } 
+ } 
+ </script> 
+ <h3>Windows app</h3>
+ <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Supported operating systems</div> 
+     <div exp1='yes' style="display:none;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro, and Windows 8.1 Enterprise (32 bit and 64 bit [EM64T])</li>
           <li>Windows 8, Windows 8 Pro, and Windows 8 Enterprise (32 bit and 64 bit [EM64T])</li>
@@ -141,9 +158,10 @@ mobile: true
 		<li>Windows Server 2008 R2 Standard, Enterprise, and Datacenter (64 bit [EM64T]) SP1</li>
 		<li>Windows Server 2008 Standard, Enterprise, and Datacenter (32 bit and 64 bit [EM64T]) SP2</li>
         </ul>
-
-
-        <h3>Hardware requirements</h3>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Hardware requirements</div>
+	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>CPU speed: 2.2 GHz or higher; Hyper-Threading (HTT) or Multi-core recommended.</li>
 			<li>Processor: Intel Pentium 4, Core Duo, or Xeon Processors; SSE2 minimum. Run the Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> utility from your Windows command prompt to check your processor.</li>
@@ -154,23 +172,69 @@ mobile: true
 			<li>Swap space: Determined by the operating system; 500 MB minimum.</li>
 			<li>Video/Graphics adapter: 64 MB RAM minimum, 256 MB RAM recommended; NVIDIA, ATI, and Intel chipsets supported. Accelerated graphics card driver. Shader Model 2.0 minimum. Be sure to use the latest available driver.</li>
 		</ul>
+</div>
+<div class="clear" style="padding:5px;"></div>
 
+<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Software requirements</div>
+	<div exp3='yes' style="display:none;padding:0 15px;">
+        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> or later is required. You must have administrative privileges on your machine to install it.</p>
+        </div>
+        <div class="clear" style="padding:5px;"></div>
+        
+<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Developer requirements</div>
+		<div exp4='yes' style="display:none;padding:0 15px;">
+	<p style="padding:0 15px">The <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> is required for customizing Operations Dashboard for ArcGIS. Microsoft Visual Studio 2012 or 2013 Professional, Premium, or Ultimate Edition is also required. </p>
 
-        <h3>Software requirements</h3>
-        <p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> is required. You must have administrative privileges on your machine to install it.</p>
+     </div> 
+     <div class="clear" style="padding:5px;"></div>
+     
+<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Supported languages</div>
+<div exp5='yes' style="display:none;padding:0 15px;">
+     	<p style="padding:0 15px">Arabic, Czech, Danish, Dutch, Estonian, Finnish, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, Swedish, and Turkish.</p>
+     	<p style="padding:0 15px">The language used in the Windows version of the app is determined by your operating system's language setting. If using an unsupported language setting, the app uses English.</p>
+</div>
+<div class="clear"></div>
 
+     <h3/>
+ <h3>Browser app</h3>
+<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Supported browsers</div>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
+ <ul style="padding:0 15px">
+ <li>Chrome version 19.0 and later</li>
+ <li>Firefox version 4.0 and later</li>
+ <li>Internet Explorer version 9.0 and later</li>
+ <li>Safari version 5.1 and later</li>
+ </ul> 
+ Tablet 
+ <ul style="padding:0 15px">
+ <li>Android 4.0 and later running Chrome</li>
+ <li>iOS 6.0 and later running Safari</li>
+ </ul>
+ Phone 
+ <p style="padding:0 15px">No smartphone browsers are currently supported.</p>
+ </div></div> 
+ <div class="clear" style="padding:5px;"></div>
+ <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Supported languages</div>
+ <div exp11='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">Czech, Danish, Dutch, Estonian, Finnish, French, German, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, Swedish, and Turkish.</p>
+      	<p style="padding:0 15px">In the browser version, your ArcGIS Online profile is used to set the language. If using an unsupported language setting, the app uses English.</p>
+</div>
+<div class="clear"></div>
+
+     <h3/>
         <h3>Data requirements</h3>
 		<p>To use your maps in Operations Dashboard, you must have an ArcGIS organizational account. Your maps can include data from ArcGIS Online, Portal for ArcGIS, and ArcGIS for Server. Data sources must be hosted on ArcGIS Online or ArcGIS 10.1 for Server or later.</p>
 
-		<h3>Developer requirements</h3>
-		<p>The <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a> is required for customizing Operations Dashboard for ArcGIS.</p>
-
-	<h3>Supported languages</h3>
-	<p>Arabic (<span class="icon-windows-8"/>), Czech, Danish, Dutch, Estonian, Finnish, French, German, Hebrew (<span class="icon-windows-8"/>), Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, Swedish, and Turkish.</p>
-	<p>The language used in the Windows version of the app is determined by your operating system's language setting. In the browser version, your ArcGIS Online profile is used to set the language.</p>
-
         <a name="whatsNew"></a>
         <h2 class="divider">What's new</h2>
+        <p>Operations Dashboard for ArcGIS 10.2.3 was released in April 2014. It includes the following enhancements:</p>
+        <ul>
+        <li>Search your data (<span class="icon-windows-8"/>).</li>
+        <li>Various bug fixes. </li>
+        <li>Uses ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
+        <li>Add-ins can be developed using ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
+        </ul>
+        
         <p>Operations Dashboard for ArcGIS 10.2.2 was released in March 2014. It includes the following enhancements:</p>
         <ul>
         <li>Operation views can be viewed in a browser.</li>
@@ -182,6 +246,7 @@ mobile: true
         <li>Add-ins can be developed using ArcGIS Runtime SDK 10.2.2 for WPF.</li>
         <li>Localization into Turkish.</li>
         </ul>
+        
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">Sneak Peek</h2>
@@ -216,7 +281,7 @@ mobile: true
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Search data</th>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Filter information spatially</th>
