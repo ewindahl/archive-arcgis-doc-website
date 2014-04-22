@@ -36,6 +36,8 @@
       	if(typeof $target !== "undefined") {
           label.css(calcPositionCss($target));
 		  label.css("margin-top","0em");
+		  label.css("font-style","italic");
+		  
           $(window).one("resize", function () { adjustToResizing(label); });
         }
       }
@@ -96,6 +98,7 @@
               ol[$this.val().length ? 'hide' : 'show']();
             }).triggerHandler('blur');
           $(window).one("resize", function () { adjustToResizing(ol); });
+		  adjustToResizing(ol);
         }
       });
     }
