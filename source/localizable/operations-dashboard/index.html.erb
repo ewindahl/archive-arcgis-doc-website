@@ -132,9 +132,9 @@ mobile: true
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -148,7 +148,7 @@ mobile: true
  } 
  </script> 
  <h3>Windows app</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Supported operating systems</div> 
+ <div class="icon-right-arrow" onclick="exp(event,'div','exp1');" style="display:inline;">Supported operating systems</div> 
      <div exp1='yes' style="display:none;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro, and Windows 8.1 Enterprise (32 bit and 64 bit [EM64T])</li>
@@ -160,7 +160,7 @@ mobile: true
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Hardware requirements</div>
+<div class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Hardware requirements</div>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>CPU speed: 2.2 GHz or higher; Hyper-Threading (HTT) or Multi-core recommended.</li>
@@ -175,20 +175,20 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Software requirements</div>
+<div class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Software requirements</div>
 	<div exp3='yes' style="display:none;padding:0 15px;">
         <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> or later is required. You must have administrative privileges on your machine to install it.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Developer requirements</div>
+<div class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Developer requirements</div>
 		<div exp4='yes' style="display:none;padding:0 15px;">
 	<p style="padding:0 15px">The <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> is required for customizing Operations Dashboard for ArcGIS. Microsoft Visual Studio 2012 or 2013 Professional, Premium, or Ultimate Edition is also required. </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Supported languages</div>
+<div class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Supported languages</div>
 <div exp5='yes' style="display:none;padding:0 15px;">
      	<p style="padding:0 15px">Arabic, Czech, Danish, Dutch, Estonian, Finnish, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, Swedish, and Turkish.</p>
      	<p style="padding:0 15px">The language used in the Windows version of the app is determined by your operating system's language setting. If using an unsupported language setting, the app uses English.</p>
@@ -197,7 +197,7 @@ mobile: true
 
      <h3/>
  <h3>Browser app</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Supported browsers</div>
+<div class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">Supported browsers</div>
 <div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
  <ul style="padding:0 15px">
  <li>Chrome version 19.0 and later</li>
@@ -214,7 +214,7 @@ mobile: true
  <p style="padding:0 15px">No smartphone browsers are currently supported.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Supported languages</div>
+ <div class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Supported languages</div>
  <div exp11='yes' style="display:none;padding:0 15px;">
       	<p style="padding:0 15px">Czech, Danish, Dutch, Estonian, Finnish, French, German, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, Swedish, and Turkish.</p>
       	<p style="padding:0 15px">In the browser version, your ArcGIS Online profile is used to set the language. If using an unsupported language setting, the app uses English.</p>
