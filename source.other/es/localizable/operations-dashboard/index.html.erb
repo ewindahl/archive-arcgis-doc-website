@@ -128,11 +128,28 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">Requisitos del sistema</h2>
 
-        <p>Existen algunos requisitos de dispositivo para ejecutar Operations Dashboard, as&iacute; como requisitos para los datos utilizados dentro de la aplicaci&oacute;n. Operations Dashboard admite varios idiomas.</p>
+        <p>Existen algunos requisitos de dispositivo para ejecutar Operations Dashboard, as&iacute; como requisitos para los datos utilizados dentro de la aplicaci&oacute;n. </p>
 
 
-        <h3>Sistemas operativos compatibles</h3>
-
+<script> 
+ function exp(strTag ,strAttribute){ 
+ var elem = document.getElementsByTagName(strTag); 
+ var elem1 =window.event.srcElement; 
+ for (var i=0;i<elem1.children.length;i++){ 
+ elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+ } 
+ for (var i =0;i<elem.length;i++) 
+ { 
+ if(elem[i].getAttribute(strAttribute)=="yes") 
+ { 
+ elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+ } 
+ } 
+ } 
+ </script> 
+ <h3>Aplicaci&oacute;n de Windows</h3>
+ <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Sistemas operativos compatibles</div> 
+     <div exp1='yes' style="display:none;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro y Windows 8.1 Enterprise (32 bit y 64 bit [EM64T])</li>
           <li>Windows 8, Windows 8 Pro y Windows 8 Enterprise (32 bit y 64 bit [EM64T])</li>
@@ -141,36 +158,83 @@ mobile: true
 		<li>Windows Server 2008 R2 Standard, Enterprise y Datacenter (64 bits [EM64T]) SP1</li>
 		<li>Windows Server 2008 Standard, Enterprise y Datacenter (32 bits y 64 bits [EM64T]) SP2</li>
         </ul>
-
-
-        <h3>Requisitos de hardware</h3>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisitos de hardware</div>
+	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
-			<li>Velocidad de CPU: 2,2 GHz o superior; se recomienda Hyper-Threading (HTT) o multin&uacute;cleo.</li>
+			<li>Velocidad de CPU: 2,2&nbsp;GHz o superior; se recomienda Hyper-Threading (HTT) o multin&uacute;cleo.</li>
 			<li>Procesador: Intel Pentium 4, Intel Core Duo o Xeon; SSE2 como m&iacute;nimo. Ejecute la utilidad <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> de Microsoft desde la ventana de comandos de Windows para comprobar su procesador.</li>
 			<li>Espacio en disco: 1,5 GB de espacio disponible en disco.</li>
 			<li>Memoria/RAM: 2 GB o m&aacute;s.</li>
 			<li>Propiedades de pantalla: profundidad de color de 24 bits.</li>
-			<li>Resoluci&oacute;n de pantalla: 1.024 x 768 o superior a tama&ntilde;o normal (96 ppp).</li>
-			<li>Espacio de intercambio: determinado por el sistema operativo; 500 MB como m&iacute;nimo.</li>
-			<li>Adaptador de v&iacute;deo/gr&aacute;ficos: 64 MB de RAM como m&iacute;nimo, se recomiendan 256 MB de RAM; se admiten chipsets NVIDIA, ATI e Intel. Controlador de tarjeta gr&aacute;fica acelerada. Shader Model 2.0 como m&iacute;nimo. Aseg&uacute;rese de utilizar el controlador m&aacute;s actualizado disponible.</li>
+			<li>Resoluci&oacute;n de pantalla: 1.024 x 768 o superior a tama&ntilde;o normal (96&nbsp;ppp).</li>
+			<li>Espacio de intercambio: determinado por el sistema operativo; 500&nbsp;MB como m&iacute;nimo.</li>
+			<li>Adaptador de v&iacute;deo/gr&aacute;ficos: 64&nbsp;MB de RAM como m&iacute;nimo, se recomiendan 256&nbsp;MB de RAM; se admiten chipsets NVIDIA, ATI e Intel. Controlador de tarjeta gr&aacute;fica acelerada. Shader Model 2.0 como m&iacute;nimo. Aseg&uacute;rese de utilizar el controlador m&aacute;s actualizado disponible.</li>
 		</ul>
+</div>
+<div class="clear" style="padding:5px;"></div>
 
+<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisitos de software</div>
+	<div exp3='yes' style="display:none;padding:0 15px;">
+        <p style="padding:0 15px">Se requiere <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> o una versi&oacute;n posterior. Para instalarlo debe tener permisos de administrador en su equipo.</p>
+        </div>
+        <div class="clear" style="padding:5px;"></div>
+        
+<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisitos de desarrollador</div>
+		<div exp4='yes' style="display:none;padding:0 15px;">
+	<p style="padding:0 15px">Se requiere <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> para la personalizaci&oacute;n de Operations Dashboard for ArcGIS. Tambi&eacute;n se requiere Microsoft Visual Studio 2012 o 2013 Professional, Premium o Ultimate Edition. </p>
 
-        <h3>Requisitos de software</h3>
-        <p>Se requiere <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>. Para instalarlo debe tener permisos de administrador en su equipo.</p>
+     </div> 
+     <div class="clear" style="padding:5px;"></div>
+     
+<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Idiomas compatibles</div>
+<div exp5='yes' style="display:none;padding:0 15px;">
+     	<p style="padding:0 15px">&Aacute;rabe, checo, dan&eacute;s, neerland&eacute;s, ingl&eacute;s, estonio, finland&eacute;s, franc&eacute;s, alem&aacute;n, hebreo, italiano, japon&eacute;s, coreano, let&oacute;n, lituano, noruego, polaco, portugu&eacute;s (Brasil), portugu&eacute;s (Portugal), rumano, ruso, chino simplificado, espa&ntilde;ol, sueco y turco.</p>
+     	<p style="padding:0 15px">El idioma utilizado en la versi&oacute;n de Windows de la aplicaci&oacute;n viene determinado por la configuraci&oacute;n de idioma del sistema operativo. Si se utiliza una configuraci&oacute;n de idioma no compatible, la aplicaci&oacute;n utiliza el ingl&eacute;s.</p>
+</div>
+<div class="clear"></div>
 
+     <h3/>
+ <h3>Aplicaci&oacute;n de navegador</h3>
+<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Navegadores compatibles</div>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Escritorio
+ <ul style="padding:0 15px">
+ <li>Chrome versi&oacute;n 19.0 y posterior</li>
+ <li>Firefox versi&oacute;n 4.0 y posterior</li>
+ <li>Internet Explorer versi&oacute;n 9.0 y posterior</li>
+ <li>Safari versi&oacute;n 5.1 y posterior</li>
+ </ul> 
+ Tableta 
+ <ul style="padding:0 15px">
+ <li>Android 4.0 y posterior ejecutando Chrome</li>
+ <li>iOS 6.0 y posterior ejecutando Safari</li>
+ </ul>
+ Tel&eacute;fono 
+ <p style="padding:0 15px">Actualmente no son compatibles los navegadores de smartphones.</p>
+ </div></div> 
+ <div class="clear" style="padding:5px;"></div>
+ <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Idiomas compatibles</div>
+ <div exp11='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">Checo, dan&eacute;s, neerland&eacute;s, ingl&eacute;s, estonio, finland&eacute;s, franc&eacute;s, alem&aacute;n, italiano, japon&eacute;s, coreano, let&oacute;n, lituano, noruego, polaco, portugu&eacute;s (Brasil), portugu&eacute;s (Portugal), rumano, ruso, chino simplificado, espa&ntilde;ol, sueco y turco.</p>
+      	<p style="padding:0 15px">En la versi&oacute;n del navegador se utiliza el perfil de ArcGIS Online para establecer el idioma. Si se utiliza una configuraci&oacute;n de idioma no compatible, la aplicaci&oacute;n utiliza el ingl&eacute;s.</p>
+</div>
+<div class="clear"></div>
+
+     <h3/>
         <h3>Requisitos de datos</h3>
 		<p>Para utilizar los mapas en Operations Dashboard, debe tener una cuenta de organizaci&oacute;n ArcGIS. Los mapas pueden incluir datos de ArcGIS Online, Portal for ArcGIS y ArcGIS for Server. Las fuentes de datos deben alojarse en ArcGIS Online o ArcGIS 10.1 for Server o posterior.</p>
 
-		<h3>Requisitos de desarrollador</h3>
-		<p>Se requiere <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a> para la personalizaci&oacute;n de Operations Dashboard for ArcGIS.</p>
-
-	<h3>Lenguajes compatibles</h3>
-	<p>&Aacute;rabe (<span class="icon-windows-8"/>), checo, dan&eacute;s, holand&eacute;s, ingl&eacute;s, estonio, finland&eacute;s, franc&eacute;s, alem&aacute;n, hebreo (<span class="icon-windows-8"/>), italiano, japon&eacute;s, coreano, let&oacute;n, lituano, noruego, polaco, portugu&eacute;s (Brasil), portugu&eacute;s (Portugal), rumano, ruso, chino simplificado, espa&ntilde;ol, sueco y turco.</p>
-	<p>El idioma utilizado en la versi&oacute;n de Windows de la aplicaci&oacute;n viene determinado por la configuraci&oacute;n de idioma del sistema operativo. En la versi&oacute;n del navegador se utiliza el perfil de ArcGIS Online para establecer el idioma.</p>
-
         <a name="whatsNew"></a>
         <h2 class="divider">Novedades</h2>
+        <p>Operations Dashboard for ArcGIS 10.2.3 se public&oacute; en abril de 2014. Incluye las siguientes mejoras:</p>
+        <ul>
+        <li>B&uacute;squeda de sus datos (<span class="icon-windows-8"/>).</li>
+        <li>Soluci&oacute;n de varios errores. </li>
+        <li>Utiliza ArcGIS Runtime SDK 10.2.3 para WPF (<span class="icon-windows-8"/>).</li>
+        <li>Los add-ins se pueden desarrollar utilizando ArcGIS Runtime SDK 10.2.3 para WPF (<span class="icon-windows-8"/>).</li>
+        </ul>
+        
         <p>Operations Dashboard for ArcGIS 10.2.2 se public&oacute; en marzo de 2014. Incluye las siguientes mejoras:</p>
         <ul>
         <li>Las vistas de operaciones se pueden ver en un navegador.</li>
@@ -182,6 +246,7 @@ mobile: true
         <li>Los add-ins se pueden desarrollar utilizando ArcGIS Runtime SDK 10.2.2 para WPF.</li>
         <li>Localizaci&oacute;n en turco.</li>
         </ul>
+        
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">De un vistazo</h2>
@@ -216,7 +281,7 @@ mobile: true
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Buscar datos</th>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Filtrar informaci&oacute;n espacialmente</th>

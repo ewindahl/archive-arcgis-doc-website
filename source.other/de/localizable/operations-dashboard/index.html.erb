@@ -128,11 +128,28 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">Systemanforderungen</h2>
 
-        <p>F&uuml;r die Ausf&uuml;hrung von Operations Dashboard m&uuml;ssen die Ger&auml;te sowie die Daten, die in der App verwendet werden, bestimmte Anforderungen erf&uuml;llen. Operations Dashboard wird in einer Vielzahl von Sprachen unterst&uuml;tzt.</p>
+        <p>F&uuml;r die Ausf&uuml;hrung von Operations Dashboard m&uuml;ssen die Ger&auml;te sowie die Daten, die in der App verwendet werden, bestimmte Anforderungen erf&uuml;llen. </p>
 
 
-        <h3>Unterst&uuml;tzte Betriebssysteme</h3>
-
+<script> 
+ function exp(strTag ,strAttribute){ 
+ var elem = document.getElementsByTagName(strTag); 
+ var elem1 =window.event.srcElement; 
+ for (var i=0;i<elem1.children.length;i++){ 
+ elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+ } 
+ for (var i =0;i<elem.length;i++) 
+ { 
+ if(elem[i].getAttribute(strAttribute)=="yes") 
+ { 
+ elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+ } 
+ } 
+ } 
+ </script> 
+ <h3>Windows-App</h3>
+ <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Unterst&uuml;tzte Betriebssysteme</div> 
+     <div exp1='yes' style="display:none;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro und Windows 8.1 Enterprise (32 Bit und 64 Bit [EM64T])</li>
           <li>Windows 8, Windows 8 Pro und Windows 8 Enterprise (32 Bit und 64 Bit [EM64T])</li>
@@ -141,36 +158,83 @@ mobile: true
 		<li>Windows Server 2008 R2 Standard, Enterprise und Datacenter (64 Bit [EM64T]) SP1</li>
 		<li>Windows Server 2008 Standard, Enterprise und Datacenter (32 Bit und 64 Bit [EM64T]) SP2</li>
         </ul>
-
-
-        <h3>Hardwareanforderungen</h3>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Hardwareanforderungen</div>
+	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>CPU-Geschwindigkeit: 2,2 GHz oder h&ouml;her; Hyper-Threading (HTT) oder Mehrkernprozessoren empfohlen.</li>
 			<li>Prozessor: Intel Pentium 4-, Core Duo- oder Xeon-Prozessoren; SSE2 (mindestens). F&uuml;hren Sie das Microsoft-Hilfsprogramm <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> &uuml;ber die Windows-Eingabeaufforderung aus, um Ihren Prozessor zu testen.</li>
 			<li>Festplattenspeicher: 1,5 GB verf&uuml;gbarer Speicherplatz.</li>
-			<li>Arbeitsspeicher/RAM: 2 GB oder mehr.</li>
-			<li>Anzeigeeigenschaften: 24 Bit Farbtiefe.</li>
+			<li>Arbeitsspeicher/RAM: 2&nbsp;GB oder mehr.</li>
+			<li>Anzeigeeigenschaften: 24&nbsp;Bit Farbtiefe.</li>
 			<li>Bildschirmaufl&ouml;sung: 1024 x 768 oder h&ouml;her bei Normalgr&ouml;&szlig;e (96 dpi).</li>
 			<li>Auslagerungsbereich: Abh&auml;ngig vom Betriebssystem, mindestens 500 MB.</li>
-			<li>Grafikkarte: mindestens 64 MB RAM, 256 MB RAM empfohlen. Chips&auml;tze von NVIDIA, ATI und Intel werden unterst&uuml;tzt. Treiber f&uuml;r Grafikkartenbeschleuniger. Min. Shader Model 2.0 erforderlich. Verwenden Sie stets die aktuellen Treiber.</li>
+			<li>Grafikkarte: mindestens 64&nbsp;MB RAM, 256&nbsp;MB RAM empfohlen. Chips&auml;tze von NVIDIA, ATI und Intel werden unterst&uuml;tzt. Treiber f&uuml;r Grafikkartenbeschleuniger. Min. Shader Model 2.0 erforderlich. Verwenden Sie stets die aktuellen Treiber.</li>
 		</ul>
+</div>
+<div class="clear" style="padding:5px;"></div>
 
+<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Softwareanforderungen</div>
+	<div exp3='yes' style="display:none;padding:0 15px;">
+        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework&nbsp;4.5</a> oder h&ouml;her erforderlich. Sie ben&ouml;tigen Administratorberechtigungen auf dem Computer, um es zu installieren.</p>
+        </div>
+        <div class="clear" style="padding:5px;"></div>
+        
+<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Entwickler-Anforderungen</div>
+		<div exp4='yes' style="display:none;padding:0 15px;">
+	<p style="padding:0 15px">F&uuml;r die Anpassung von Operations Dashboard for ArcGIS ist <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> erforderlich. Microsoft Visual Studio 2012 oder 2013 Professional, Premium oder Ultimate Edition ist ebenfalls erforderlich. </p>
 
-        <h3>Softwareanforderungen</h3>
-        <p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> ist erforderlich. Sie ben&ouml;tigen Administratorberechtigungen auf dem Computer, um es zu installieren.</p>
+     </div> 
+     <div class="clear" style="padding:5px;"></div>
+     
+<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Unterst&uuml;tzte Sprachen</div>
+<div exp5='yes' style="display:none;padding:0 15px;">
+     	<p style="padding:0 15px">Arabisch, D&auml;nisch, Deutsch, Estnisch, Finnisch, Franz&ouml;sisch, Hebr&auml;isch, Italienisch, Japanisch, Koreanisch, Lettisch, Litauisch, Niederl&auml;ndisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rum&auml;nisch, Russisch, Schwedisch, Spanisch, Tschechisch, T&uuml;rkisch und Vereinfachtes Chinesisch.</p>
+     	<p style="padding:0 15px">Die in der Windows-Version der App verwendete Sprache wird durch die Spracheinstellung des Betriebssystems festgelegt. Bei Verwendung einer nicht unterst&uuml;tzten Spracheinstellungen verwendet die App Englisch.</p>
+</div>
+<div class="clear"></div>
 
+     <h3/>
+ <h3>Browser-App</h3>
+<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Unterst&uuml;tzte Browser</div>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
+ <ul style="padding:0 15px">
+ <li>Chrome, Version 19.0 und h&ouml;her</li>
+ <li>Firefox, Version 4.0 und h&ouml;her</li>
+ <li>Internet Explorer, Version 9.0 und h&ouml;her</li>
+ <li>Safari, Version 5.1 und h&ouml;her</li>
+ </ul> 
+ Tablet 
+ <ul style="padding:0 15px">
+ <li>Android 4.0 und h&ouml;her, das Chrome ausf&uuml;hrt</li>
+ <li>iOS 6.0 und h&ouml;her, das Safari ausf&uuml;hrt</li>
+ </ul>
+ Telefon 
+ <p style="padding:0 15px">Derzeit werden keine Smartphone-Browser unterst&uuml;tzt.</p>
+ </div></div> 
+ <div class="clear" style="padding:5px;"></div>
+ <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Unterst&uuml;tzte Sprachen</div>
+ <div exp11='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">Tschechisch, D&auml;nisch, Niederl&auml;ndisch, Estnisch, Finnisch, Franz&ouml;sisch, Deutsch, Italienisch, Japanisch, Koreanisch, Lettisch, Litauisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rum&auml;nisch, Russisch, Spanisch, Schwedisch, T&uuml;rkisch und Vereinfachtes Chinesisch.</p>
+      	<p style="padding:0 15px">In der Browser-Version wird die Sprache anhand Ihres ArcGIS Online-Profils festgelegt. Bei Verwendung einer nicht unterst&uuml;tzten Spracheinstellung verwendet die App Englisch.</p>
+</div>
+<div class="clear"></div>
+
+     <h3/>
         <h3>Datenanforderungen</h3>
 		<p>Um die Karten in Operations Dashboard zu verwenden, m&uuml;ssen Sie &uuml;ber ein ArcGIS-Organisationskonto verf&uuml;gen. Ihre Karten k&ouml;nnen Daten aus ArcGIS Online, Portal for ArcGIS und ArcGIS for Server enthalten. Datenquellen m&uuml;ssen in ArcGIS Online oder ArcGIS 10.1 for Server oder h&ouml;her gehostet werden.</p>
 
-		<h3>Entwicklungsanforderungen</h3>
-		<p>F&uuml;r die Anpassung von Operations Dashboard for ArcGIS ist <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a> erforderlich.</p>
-
-	<h3>Unterst&uuml;tzte Sprachen</h3>
-	<p>Arabisch (<span class="icon-windows-8"/>), D&auml;nisch, Deutsch, Estnisch, Finnisch, Franz&ouml;sisch, Hebr&auml;isch (<span class="icon-windows-8"/>), Italienisch, Japanisch, Koreanisch, Lettisch, Litauisch, Niederl&auml;ndisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rum&auml;nisch, Russisch, Schwedisch, Spanisch, Tschechisch, T&uuml;rkisch und Vereinfachtes Chinesisch.</p>
-	<p>Die in der Windows-Version der App verwendete Sprache wird durch die Spracheinstellung des Betriebssystems festgelegt. In der Browser-Version wird die Sprache anhand Ihres ArcGIS Online-Profils festgelegt.</p>
-
         <a name="whatsNew"></a>
         <h2 class="divider">Neuheiten</h2>
+        <p>Operations Dashboard for ArcGIS 10.2.3 wurde im April 2014 ver&ouml;ffentlicht. Es enth&auml;lt die folgenden Verbesserungen:</p>
+        <ul>
+        <li>Durchsuchen von Daten (<span class="icon-windows-8"/>).</li>
+        <li>Verschiedene Bugfixes. </li>
+        <li>Verwendet ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
+        <li>Add-Ins k&ouml;nnen mit ArcGIS Runtime SDK 10.2.3 for WPF entwickelt werden (<span class="icon-windows-8"/>).</li>
+        </ul>
+        
         <p>Operations Dashboard for ArcGIS 10.2.2 wurde im M&auml;rz 2014 ver&ouml;ffentlicht. Es enth&auml;lt die folgenden Verbesserungen:</p>
         <ul>
         <li>Lagebild-Sichten k&ouml;nnen in einem Browser angezeigt werden.</li>
@@ -182,6 +246,7 @@ mobile: true
         <li>Add-Ins k&ouml;nnen mit ArcGIS Runtime SDK 10.2.2 for WPF entwickelt werden.</li>
         <li>Lokalisierung in die t&uuml;rkische Sprache.</li>
         </ul>
+        
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">Vorschau</h2>
@@ -216,7 +281,7 @@ mobile: true
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Suchen von Daten</th>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>R&auml;umliches Filtern von Informationen</th>
