@@ -6,6 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -13,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -28,9 +31,9 @@ mobile: true
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search Collector">
         <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="collector-android" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
+        <input type="hidden" name="platform" value="detect" />         
+        <input type="hidden" name="product" value="collector-android" />        
+		<input type="hidden" name="language" value="<%= current_language %>" />
       </form>
 
     </header>
@@ -122,7 +125,7 @@ mobile: true
 	<li>Utilize GPS para criar e atualizar dados do mapa.</li>
 	<li>Faça a coleta das feições de área, linhas e pontos.</li>
 	<li>Preencha formulários de mapas dinâmicos de fácil uso.</li>
-	<li>Localize lugares e obtenha direções.</li>
+	<li>Encontre lugares e obtenha direções.</li>
 	<li>Rastreie e informe áreas que você visitou.</li>
 	</ul>
 
@@ -142,6 +145,7 @@ mobile: true
           <li>Android 4.0 (Ice Cream Sandwich)<br/>ou posterior</li>
           <li>Processador Armv7</li>
           <li>Suporte OpenGL ES 2.0</li>
+          <li>Suporte para localização precisa (baseado em GPS e rede)</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
@@ -157,6 +161,7 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Quais as novidades</h2>
+        <p>O Collector for ArcGIS 10.2.3 foi lançado em Abril de 2014. Ele inclui várias correções de erros e melhorias.</p>
         <p>O Collector for ArcGIS 10.2.2 foi lançado em Março de 2014. Ele inclui as seguintes melhorias:</p>
         <ul>
         <li>Suporte para fluxo de trabalho offline</li>
