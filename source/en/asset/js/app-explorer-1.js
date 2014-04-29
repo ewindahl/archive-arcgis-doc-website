@@ -12,6 +12,7 @@ $(document).ready(function() {
       localedir =   docConfig['localedir'];
    }
    var dict = (window.localeJsonObj || {})[localedir];
+   var switcherEnablePaths = "use-maps";
 
     var val = '<p id="plats">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
@@ -97,12 +98,31 @@ $(document).ready(function() {
 			}
 		});
 	}
+	
+	function modHelpNavUrls (plt) {
+		$(".navigation-bar nav a[href]").each (function (i) {
+			var $ele = $(this),
+				href = $ele.attr("href");
+
+				parts = href.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = href.replace ("/"+prodIOSVal+"/", "/"+plt+"/");
+				$ele.attr ("href", newHref);
+				console.log(href);
+		});
+	}
 
 	if (!isHome) {
 		if (isForum) {
 			modForumUrls (plat);
 		} else {
-			$('.reference-content .page-title').after (val);
+			
+			if(window.location.pathname.match( /(\/use-maps\/)/)){
+				$('.reference-content .page-title').after (val);
+			}else{
+				modHelpNavUrls (plat);
+			}
 		}
 	} else {
 		modHomeUrls (plat);
