@@ -122,11 +122,28 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">系统要求</h2>
 
-        <p>需满足特定的设备要求才能运行 Operations Dashboard，对于在该应用程序中使用的数据也有一些要求。Operations Dashboard 支持多种语言。</p>
+        <p>需满足特定的设备要求才能运行 Operations Dashboard，对于在该应用程序中使用的数据也有一些要求。 </p>
 
 
-        <h3>支持的操作系统</h3>
-
+<script> 
+ function exp(strTag ,strAttribute){ 
+ var elem = document.getElementsByTagName(strTag); 
+ var elem1 =window.event.srcElement; 
+ for (var i=0;i<elem1.children.length;i++){ 
+ elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+ } 
+ for (var i =0;i<elem.length;i++) 
+ { 
+ if(elem[i].getAttribute(strAttribute)=="yes") 
+ { 
+ elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+ } 
+ } 
+ } 
+ </script> 
+ <h3>Windows 应用程序</h3>
+ <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>支持的操作系统</div> 
+     <div exp1='yes' style="display:none;">
         <ul>
           <li>Windows 8.1、Windows 8.1 专业版和 Windows 8.1 企业版（32 位和 64 位 [EM64T]）</li>
           <li>Windows 8、Windows 8 专业版和 Windows 8 企业版（32 位和 64 位 [EM64T]）</li>
@@ -135,9 +152,10 @@ mobile: true
 		<li>Windows Server 2008 R2 标准版、企业版和数据中心版（64 位 [EM64T]）SP1</li>
 		<li>Windows Server 2008 标准版、企业版和数据中心版（32 位和 64 位 [EM64T]）SP2</li>
         </ul>
-
-
-        <h3>硬件要求</h3>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>硬件要求</div>
+	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>CPU 速度：2.2 GHz 或更高；建议使用超线程 (HTT) 或多核。</li>
 			<li>处理器：Intel Pentium 4、Core Duo 或 Xeon 处理器；SSE2（最低版本）。从 Windows 命令提示符窗口运行 Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> 实用工具来检查处理器。</li>
@@ -148,23 +166,69 @@ mobile: true
 			<li>交换空间：取决于操作系统；最小为 500 MB。</li>
 			<li>视频/图形适配器：64 MB RAM（最低配置），建议使用 256 MB RAM 配置；支持 NVIDIA、ATI 和 INTEL 芯片组。加速显卡驱动程序。Shader Model 2.0（最低配置）。请务必使用最新的可用驱动程序。</li>
 		</ul>
+</div>
+<div class="clear" style="padding:5px;"></div>
 
+<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>软件要求</div>
+	<div exp3='yes' style="display:none;padding:0 15px;">
+        <p style="padding:0 15px">需要安装 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> 或更高版本。必须具有对计算机的管理权限才能进行安装。</p>
+        </div>
+        <div class="clear" style="padding:5px;"></div>
+        
+<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>开发人员要求</div>
+		<div exp4='yes' style="display:none;padding:0 15px;">
+	<p style="padding:0 15px">自定义 Operations Dashboard for ArcGIS 需要使用 <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a>。同时还需要 Microsoft Visual Studio 2012 或 2013 专业版、高级版或旗舰版。 </p>
 
-        <h3>软件要求</h3>
-        <p>需要安装 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>。必须具有对计算机的管理权限才能进行安装。</p>
+     </div> 
+     <div class="clear" style="padding:5px;"></div>
+     
+<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>支持的语言</div>
+<div exp5='yes' style="display:none;padding:0 15px;">
+     	<p style="padding:0 15px">阿拉伯语、捷克语、丹麦语、荷兰语、爱沙尼亚语、芬兰语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语、立陶宛语、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、中文（简体）、西班牙语、瑞典语和土耳其语。</p>
+     	<p style="padding:0 15px">Windows 版应用程序中使用的语言取决于操作系统的语言设置。如果使用不受支持的语言设置，则应用程序将使用英语。</p>
+</div>
+<div class="clear"></div>
 
+     <h3/>
+ <h3>浏览器应用程序</h3>
+<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>支持的浏览器</div>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
+ <ul style="padding:0 15px">
+ <li>Chrome 19.0 和更高版本</li>
+ <li>Firefox 4.0 和更高版本</li>
+ <li>Internet Explorer 9.0 和更高版本</li>
+ <li>Safari 5.1 和更高版本</li>
+ </ul> 
+ Tablet 
+ <ul style="padding:0 15px">
+ <li>在 Android 4.0 和更高版本中运行的 Chrome</li>
+ <li>在 iOS 6.0 和更高版本中运行的 Safari</li>
+ </ul>
+ 手机 
+ <p style="padding:0 15px">当前不支持智能手机浏览器。</p>
+ </div></div> 
+ <div class="clear" style="padding:5px;"></div>
+ <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>支持的语言</div>
+ <div exp11='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">捷克语，丹麦语，荷兰语，爱沙尼亚语，芬兰语，法语，德语，意大利语，日语，韩语，拉脱维亚语，立陶宛语，挪威语，波兰语，葡萄牙语（巴西），葡萄牙语（葡萄牙），罗马尼亚语，俄语，中文（简体），西班牙语，瑞典语和土耳其语。</p>
+      	<p style="padding:0 15px">在浏览器版本中，将使用您的 ArcGIS Online 配置文件来设置语言。如果使用不受支持的语言设置，则应用程序将使用英语。</p>
+</div>
+<div class="clear"></div>
+
+     <h3/>
         <h3>数据要求</h3>
 		<p>要在 Operations Dashboard 中使用地图，必须拥有 ArcGIS 组织帐户。地图可以包含来自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的数据。数据源必须托管在 ArcGIS Online 或 ArcGIS 10.1 for Server 或更高版本上。</p>
 
-		<h3>开发者要求</h3>
-		<p>自定义 Operations Dashboard for ArcGIS 需要使用 <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a>。</p>
-
-	<h3>受支持语言</h3>
-	<p>阿拉伯语 (<span class="icon-windows-8"/>)，捷克语，丹麦语，荷兰语，爱沙尼亚语，芬兰语，法语，德语，希伯来语 (<span class="icon-windows-8"/>)，意大利语，日语，韩语，拉脱维亚语，立陶宛语，挪威语，波兰语，葡萄牙语（巴西），葡萄牙语（葡萄牙），罗马尼亚语，俄语，中文（简体），西班牙语，瑞典语和土耳其语。</p>
-	<p>Windows 版应用程序中使用的语言取决于操作系统的语言设置。在浏览器版本中，将使用您的 ArcGIS Online 配置文件来设置语言。</p>
-
         <a name="whatsNew"></a>
         <h2 class="divider">新特性</h2>
+        <p>Operations Dashboard for ArcGIS 10.2.3 已于 2014 年 4 月发布。该版本包括以下增强：</p>
+        <ul>
+        <li>搜索数据 (<span class="icon-windows-8"/>)。</li>
+        <li>修复了若干缺陷。 </li>
+        <li>可使用 ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>)。</li>
+        <li>可使用 ArcGIS Runtime SDK 10.2.3 for WPF 开发加载项 (<span class="icon-windows-8"/>)。</li>
+        </ul>
+        
         <p>Operations Dashboard for ArcGIS 10.2.2 已于 2014 年 3 月发布。该版本包括以下增强：</p>
         <ul>
         <li>可在浏览器中查看操作视图。</li>
@@ -177,8 +241,9 @@ mobile: true
         <li>新增土耳其语的本地化版本。</li>
         </ul>
         
+        
         <a name="sneakPeek"></a>
-	<h2 class="divider">软件速览</h2>
+	<h2 class="divider">快速查看</h2>
 	<p>Operations Dashboard 现已成为监控操作的强大应用程序。但它并不仅限于此！以下内容将向您介绍此应用程序的发展方向以及展示将出现在设备中的各种功能：</p>
 	
 	<table border="1" style="text-align:center">
@@ -208,7 +273,7 @@ mobile: true
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>搜索数据</th>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>过滤空间信息</th>
@@ -248,7 +313,7 @@ mobile: true
 	  <h4><a href="#features">功能</a></h4>
 	  <h4><a href="#systemRequirements">系统要求</a></h4>
 	  <h4><a href="#whatsNew">新特性</a></h4>
-	  <h4><a href="#sneakPeek">软件速览</a></h4>
+	  <h4><a href="#sneakPeek">快速查看</a></h4>
           
         </div>
 
