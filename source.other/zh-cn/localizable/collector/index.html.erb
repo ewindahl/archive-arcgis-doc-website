@@ -6,6 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -13,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -84,9 +87,7 @@ mobile: true
           <h3>采集数据</h3>
           <p>创建对组织十分重要的数据，内容可从损失报告和服务请求到名胜古迹。轻松添加图像和视频并共享工作。</p>
           <p>
-            <a href="/zh-cn/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;查看详情</a><br />
-
-			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">观看视频</a>
+            <a href="/zh-cn/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;查看详情</a><br />EnterEnter			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge"> 观看视频</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
 			</video>
@@ -136,7 +137,7 @@ mobile: true
 
 
         <h3>数据要求</h3>
-        <p>要在 Collector 中使用您的地图，您必须拥有 ArcGIS 组织帐户。地图可以包含来自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的数据。</p>
+        <p>要在 Collector 中使用地图，必须拥有 ArcGIS 组织帐户。地图可以包含来自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的数据。</p>
 
 
         <h3>设备要求</h3>
@@ -145,6 +146,7 @@ mobile: true
           <li>Android 4.0 (Ice Cream Sandwich)<br/>或更高版本</li>
           <li>Armv7 处理器</li>
           <li>OpenGL ES 2.0 支持</li>
+          <li>精确位置（基于 GPS 和网络）支持</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
@@ -155,24 +157,25 @@ mobile: true
 
         <h3>受支持语言</h3>
         <p>阿拉伯语、捷克语、丹麦语、荷兰语、英语、爱沙尼亚语 (<span class="icon-android"/>)、芬兰语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语 (<span class="icon-android"/>)、立陶宛语 (<span class="icon-android"/>)、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、中文（简体）、西班牙语、瑞典语和土耳其语。</p>
-        <p>应用程序使用的语言取决于设备的语言设置。</p>
+        <p>应用程序所使用的语言取决于设备的语言设置。</p>
 
 
         <a name="whatsNew"></a>
         <h2 class="divider">新特性</h2>
+        <p>Collector for ArcGIS 10.2.3 已于 2014 年 4 月发布。该版本修复了若干缺陷并进行了多处改进。</p>
         <p>Collector for ArcGIS 10.2.2 已于 2014 年 3 月发布。该版本包括以下增强：</p>
         <ul>
         <li>已支持离线工作流</li>
         <li>更新了用户体验</li>
         <li>修复了若干缺陷并进行了多处改进</li>
         <li>支持更多语言</li>
-        <li>已解决以下 Android 问题：NIM098281，NIM096128，NIM098076</li>
+        <li>已解决以下 Android 问题：NIM098281、NIM096128、NIM098076</li>
         <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
         </ul>
 
 	<a name="sneakPeek"></a>
 	<h2 class="divider">快速查看</h2>
-	<p>现在，Collector 是采集和编辑外业数据的强大应用程序。但我们还有更多的设想有待实现！下面概括介绍了此应用程序的发展方向：</p>
+	<p>现在，Collector 是采集和编辑外业数据的强大应用程序。但它并不仅限于此！下面概括介绍了此应用程序的发展方向：</p>
 	
 	<ul>
 	  <li>更多用于计划离线外业操作的工具</li>
@@ -183,7 +186,7 @@ mobile: true
 	  <li>集成外围设备（激光测距仪、条形码扫描仪等）</li>
 	</ul>	
 	
-	<p>共享您的<a href="http://ideas.arcgis.com/">想法</a>，并<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">向我们发送反馈</a>。</p>
+	<p>请与我们分享您的<a href="http://ideas.arcgis.com/">看法</a>，并<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">向我们发送反馈</a>。</p>
 		
         <p>&nbsp;</p>
 
