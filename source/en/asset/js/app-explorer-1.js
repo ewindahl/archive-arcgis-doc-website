@@ -12,13 +12,14 @@ $(document).ready(function() {
       localedir =   docConfig['localedir'];
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   var switcherEnablePaths = "use-maps";
-
+   
     var val = '<p id="plats">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
         '<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir +'/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class=""> iPad</a>' +
         ' | ' +
-        '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir +'/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class=""> iPhone</a>'
+        '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir +'/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class=""> iPhone</a>' +
+        ' | ' +
+        '<a data-appname="explorer" data-plat="mac" data-prefix="/' + localedir +'/explorer/mac" href="/en/explorer/" data-langlabel="mac" class=""> Mac</a>'
         '</p>',
 
 		prodKey = "explorer",
