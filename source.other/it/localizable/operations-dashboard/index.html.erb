@@ -119,11 +119,28 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">Requisiti di sistema</h2>
 
-        <p>Operations Dashboard prevede requisiti specifici relativi ai dispositivi e ai dati utilizzati nell'applicazione. Operations Dashboard è disponibile in numerose lingue.</p>
+        <p>Operations Dashboard prevede requisiti specifici relativi ai dispositivi e ai dati utilizzati nell'applicazione. </p>
 
 
-        <h3>Sistemi operativi supportati</h3>
-
+<script> 
+ function exp(strTag ,strAttribute){ 
+ var elem = document.getElementsByTagName(strTag); 
+ var elem1 =window.event.srcElement; 
+ for (var i=0;i<elem1.children.length;i++){ 
+ elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+ } 
+ for (var i =0;i<elem.length;i++) 
+ { 
+ if(elem[i].getAttribute(strAttribute)=="yes") 
+ { 
+ elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+ } 
+ } 
+ } 
+ </script> 
+ <h3>App di Windows</h3>
+ <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Sistemi operativi supportati</div> 
+     <div exp1='yes' style="display:none;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro e Windows 8.1 Enterprise (32 bit e 64 bit [EM64T])</li>
           <li>Windows 8, Windows 8 Pro e Windows 8 Enterprise (32 bit e 64 bit [EM64T])</li>
@@ -132,9 +149,10 @@ mobile: true
 		<li>Windows Server 2008 R2 Standard, Enterprise e Datacenter (64 bit [EM64T]) SP1</li>
 		<li>Windows Server 2008 Standard, Enterprise e Datacenter (32 bit e 64 bit [EM64T]) SP2</li>
         </ul>
-
-
-        <h3>Requisiti hardware</h3>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisiti hardware</div>
+	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>Velocità CPU: 2,2 GHz o superiore; consigliata tecnologia hyper-threading (HTT) o multicore</li>
 			<li>Processore: Intel Pentium 4, Core Duo o Xeon; almeno SSE2 Per verificare il proprio processore, eseguire l'utilità Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> dal prompt dei comandi Windows.</li>
@@ -145,23 +163,69 @@ mobile: true
 			<li>Spazio di swapping: determinato dal sistema operativo; almeno 500 MB</li>
 			<li>Scheda video/grafica: almeno 64 MB di RAM; consigliati 256 MB di RAM; supportati chipset NVIDIA, ATI e INTEL Driver per schede grafiche accelerate Almeno Shader Model 2.0 Assicurarsi di utilizzare la versione di driver più recente disponibile.</li>
 		</ul>
+</div>
+<div class="clear" style="padding:5px;"></div>
 
+<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisiti software</div>
+	<div exp3='yes' style="display:none;padding:0 15px;">
+        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">È richiesto Microsoft .NET Framework 4.5</a> o versione successiva. Per installarlo, è necessario disporre di privilegi amministrativi nel computer in uso.</p>
+        </div>
+        <div class="clear" style="padding:5px;"></div>
+        
+<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisiti per gli sviluppatori</div>
+		<div exp4='yes' style="display:none;padding:0 15px;">
+	<p style="padding:0 15px">Per personalizzare Operations Dashboard for ArcGIS, è necessario <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a>. È inoltre necessario Microsoft Visual Studio 2012 o 2013 Professional, Premium o Ultimate Edition. </p>
 
-        <h3>Requisiti software</h3>
-        <p>È richiesto <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>. Per installarlo, è necessario disporre di privilegi amministrativi nel computer in uso.</p>
+     </div> 
+     <div class="clear" style="padding:5px;"></div>
+     
+<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Lingue supportate</div>
+<div exp5='yes' style="display:none;padding:0 15px;">
+     	<p style="padding:0 15px">Arabo, ceco, cinese semplificato, coreano, danese, ebraico, estone, finlandese, francese, giapponese, italiano, lettone, lituano, norvegese, olandese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, spagnolo, svedese, tedesco e turco.</p>
+     	<p style="padding:0 15px">La lingua utilizzata nella versione Windows dell'applicazione dipende dalla lingua impostata nel sistema operativo. Se si utilizza un'impostazione di lingua non supportata, per l'app verrà utilizzato l'inglese.</p>
+</div>
+<div class="clear"></div>
 
+     <h3/>
+ <h3>App di tipo browser</h3>
+<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Browser supportati</div>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
+ <ul style="padding:0 15px">
+ <li>Chrome 19.0 e versioni successive</li>
+ <li>Firefox 4.0 e versioni successive</li>
+ <li>Internet Explorer 9.0 e versioni successive</li>
+ <li>Safari 5.1 e versioni successive</li>
+ </ul> 
+ Tablet 
+ <ul style="padding:0 15px">
+ <li>Android 4.0 e versioni successive</li>
+ <li>iOS 6.0 e versioni successive con Safari in esecuzione</li>
+ </ul>
+ Telefono 
+ <p style="padding:0 15px">Al momento non sono supportati i browser per smartphone.</p>
+ </div></div> 
+ <div class="clear" style="padding:5px;"></div>
+ <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Lingue supportate</div>
+ <div exp11='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">Ceco, cinese semplificato, coreano, danese, estone, finlandese, francese, giapponese, italiano, lettone, lituano, norvegese, olandese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, spagnolo, svedese, tedesco e turco.</p>
+      	<p style="padding:0 15px">Nella versione browser la lingua è quella impostata nel profilo di ArcGIS Online. Se si utilizza un'impostazione di lingua non supportata, per l'app verrà utilizzato l'inglese.</p>
+</div>
+<div class="clear"></div>
+
+     <h3/>
         <h3>Requisiti per i dati</h3>
 		<p>Per utilizzare le mappe in Operations Dashboard, è necessario disporre di un account aziendale ArcGIS. Le mappe possono includere dati di ArcGIS Online, Portal for ArcGIS e ArcGIS for Server. Le origini dati devono essere ospitate su ArcGIS Online o su ArcGIS 10.1 for Server o versioni successive.</p>
 
-		<h3>Requisiti per gli sviluppatori</h3>
-		<p>Per personalizzare Operations Dashboard for ArcGIS, è necessario <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a>.</p>
-
-	<h3>Lingue supportate</h3>
-	<p>arabo (<span class="icon-windows-8"/>), ceco, cinese semplificato, coreano, danese, ebraico (<span class="icon-windows-8"/>), estone, finlandese, francese, giapponese, italiano, lettone, lituano, norvegese, olandese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, spagnolo, svedese, tedesco e turco.</p>
-	<p>La lingua utilizzata nella versione Windows dell'applicazione dipende dalla lingua impostata nel sistema operativo. Nella versione browser la lingua è quella impostata nel profilo di ArcGIS Online.</p>
-
         <a name="whatsNew"></a>
         <h2 class="divider">Novità</h2>
+        <p>La versione 10.2.3 di Operations Dashboard for ArcGIS, rilasciata ad aprile 2014, include i seguenti miglioramenti:</p>
+        <ul>
+        <li>Ricerca dei dati (<span class="icon-windows-8"/>)</li>
+        <li>Varie correzioni di bug </li>
+        <li>Utilizzo di ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>)</li>
+        <li>Sviluppo di componenti aggiuntivi con ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>)</li>
+        </ul>
+        
         <p>La versione 10.2.2 di Operations Dashboard for ArcGIS, rilasciata a marzo 2014, include i seguenti miglioramenti:</p>
         <ul>
         <li>Possibilità di utilizzare le viste operazioni in un browser</li>
@@ -173,6 +237,7 @@ mobile: true
         <li>Sviluppo di componenti aggiuntivi con ArcGIS Runtime SDK 10.2.2 for WPF</li>
         <li>Versione localizzata in turco</li>
         </ul>
+        
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">In anteprima</h2>
@@ -188,7 +253,7 @@ mobile: true
 	    <td><span class="icon-check"/></td>
 	    <td></td>
 	  </tr>
-	  <tr><th>Utilizzo di viste operazioni</th>
+	  <tr><th>Utilizzare viste operazioni</th>
 	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Viste operazioni per schermi singoli</span></td>
 	  </tr>
@@ -205,7 +270,7 @@ mobile: true
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Ricerca di dati</th>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Filtro delle informazioni in base ai dati spaziali</th>
