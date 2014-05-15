@@ -8,7 +8,7 @@ $(document).ready(function() {
 */
    var localedir = "en";
    if(window.docConfig !== undefined){
-      localedir =   docConfig['localedir'];
+      localedir =   docConfig['localedir'].toLowerCase();
    }
    var dict = (window.localeJsonObj || {})[localedir];
    
