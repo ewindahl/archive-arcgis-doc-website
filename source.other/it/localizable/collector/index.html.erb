@@ -6,6 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -13,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -83,7 +86,7 @@ mobile: true
           <p>
             <a href="/it/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />
 
-			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Guarda il video</a>
+			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Guardare il video</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
 			</video>
@@ -142,6 +145,7 @@ mobile: true
           <li>Android 4.0 (Ice Cream Sandwich)<br/>o versione successiva</li>
           <li>Processore Armv7</li>
           <li>Supporto per OpenGL ES 2.0</li>
+          <li>Supporto per la precisione della località (basata su GPS e rete)</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
@@ -151,12 +155,13 @@ mobile: true
 
 
         <h3>Lingue supportate</h3>
-        <p>arabo, ceco, cinese semplificato, coreano, danese, ebraico, estone (<span class="icon-android"/>), finlandese, francese, giapponese, inglese, italiano, lettone (<span class="icon-android"/>), lituano (<span class="icon-android"/>), norvegese, olandese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, spagnolo, svedese, tedesco e turco.</p>
+        <p>Arabo, ceco, cinese semplificato, coreano, danese, ebraico, estone (<span class="icon-android"/>), finlandese, francese, giapponese, inglese, italiano, lettone (<span class="icon-android"/>), lituano (<span class="icon-android"/>), norvegese, olandese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, spagnolo, svedese, tedesco e turco.</p>
         <p>La lingua utilizzata dall'applicazione dipende dalla lingua impostata nel dispositivo.</p>
 
 
         <a name="whatsNew"></a>
         <h2 class="divider">Novità</h2>
+        <p>Collector for ArcGIS 10.2.3, rilasciato ad aprile 2014, include miglioramenti e correzioni di diversi bug.</p>
         <p>Collector for ArcGIS 10.2.2, rilasciato a marzo 2014, include i seguenti miglioramenti:</p>
         <ul>
         <li>Supporto per flussi di lavoro offline</li>
