@@ -171,7 +171,7 @@ function genDisplay() {
                             displayFunc(o, gm.startN + i, new SERow(val), buf);
                         });
                         buf.push("</ul>");
-                        buf.push("<div class='clear'></div>");
+                        //buf.push("<div class='clear'></div>");
 
                         $("#gl-content").html(buf.join("")).removeClass().addClass("display" + gm.display);
                     } else {

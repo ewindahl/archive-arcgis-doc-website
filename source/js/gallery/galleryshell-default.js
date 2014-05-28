@@ -86,6 +86,7 @@ function genGalleryModel(hash, mdfL) {
 
         this.updateByHash = function (hash) {
             var o = this._parseHash(hash);
+			console.log(o);
 
             if (o.s) {
                 this.startN = parseInt(o.s, 10);
@@ -500,7 +501,23 @@ function createGalleryShell() {
                 this.display.update(this.gm);
             }
         },
-
+		resetCollection: function (gm,collectionMdf) {
+			//gm._setMdf("la-basemaps:100");
+			var valL = collectionMdf.split(":");
+			var mdf = gm.mdf;
+			if (valL.length === 2) {
+				if (mdf.hasOwnProperty(valL[0])) {
+					var binaryL = [];
+					for(i=1; i <= valL[1]; i++){
+						$("#filters input:checkbox[name="+valL[0]+"-"+i+"]").prop('checked',true);
+					}
+					mdf[valL[0]].state = binaryL.join("");
+				}
+			}
+			
+            this.display.update(this.gm);
+            
+        },
         _updateModelAndView: function (data) {
 
             var sedata = new SEData(data);
@@ -630,6 +647,20 @@ $(document).ready(function () {
         gShell.update(gModel);
         evt.stopImmediatePropagation();
         return false;
+    });
+	
+	$(".filter-label").bind("click", function (evt) {
+		resetSearch(evt) // need to work on it on 28th May
+        gModel.clearMDF();
+		var collectionMdf = $(this).attr("value");
+		gShell.resetCollection(gModel,collectionMdf);
+        gShell.updateHash(gModel);
+        gShell.updateDisplay(gModel);
+
+      // console.log($(this).attr("value"));
+
+        //evt.stopImmediatePropagation();
+        //return false;
     });
 
     window.onhashchange = function (evt) {
