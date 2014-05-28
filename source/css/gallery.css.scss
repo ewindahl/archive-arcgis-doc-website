@@ -13,23 +13,24 @@
 
 #gl-s-ctrl
 {
-    margin:0 0 20px 10px;
+    /*margin:0 0 20px 10px;
     width: 690px;
     height: 30px;
-    position:relative;
+    position:relative;*/
     /*margin-left: 45px;*/
 }
 #reference-index {
-    @include column(6);
-    /*position: fixed;
-    float:left;
-    width: 220px;
-    border-right: 1px solid #c1c1c1 ;
-    margin-top: -40px;
-    padding: 0 0 35px 0;*/
+    @include column(4);
+	background: #F7F8FA;
+	border: 1px solid #EEEFF2;
+	float: left;
+	position: relative;
+	padding: 0;
 }
 #reference-content {
-  @include column(18);
+  /*@include column(18);*/
+  display: block;
+   border-bottom: 1px solid #c1c1c1 ;
 	#rss {
     display:inline-block;
     margin-left: 1em;
@@ -48,15 +49,15 @@
 // of button that will fit in search box
 $search-icon-width: 30px;
 $search-icon-height: 30px;
-#gl-s-ctrl {
+#gallerySearchForm {
   position: relative;
   input[type="text"] {
-    position:absolute;
-    /*left: 100px;*/
+    /*position:absolute;
     height: 30px;
     color:#888;
 	line-height: 1;
-    /*margin-left: 45px;*/
+	cursor: pointer;*/
+	
   }
   input[type="submit"] {
     position:absolute;
@@ -73,8 +74,8 @@ $search-icon-height: 30px;
 {
     /*float:right;*/
     position:relative;
-    width:700px;
-    min-height: 150px;
+    /*width:700px;*/
+    /*min-height: 150px;*/
     /*margin: 0 50px 0 0;
     border: 0px solid #000;*/
 }
@@ -106,9 +107,9 @@ $search-icon-height: 30px;
 .filter-label
 {
   display:block;
-	font-family: $header-bold;
+	/*font-family: $header-bold;
 	font-size: $h5-size;
-	line-height:h5-lines;
+	line-height:h5-lines;*/
   margin: 30px 0 10px 10px;
 }
 
@@ -146,8 +147,13 @@ $search-icon-height: 30px;
 }
 
 #gl-pagenav {
-  position: relative;
-  margin: 10px 0 40px 0;
+  /*position: relative;
+  margin: 10px 0 40px 0;*/
+  margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 600px;
+	padding:5px
 
 }
 
@@ -214,10 +220,8 @@ $search-icon-height: 30px;
 
 
 #gl-content {
-  margin: 1em 0 0 0;
-  min-height: 500px;
-  width: 700px;
-  border-top:1px solid #c1c1c1;
+  margin: -2.5em 0 0 0;
+  /*margin: 1em 0 0 0;*/
 }
 
 #spinner {
@@ -234,8 +238,10 @@ $search-icon-height: 30px;
   float:left;
   margin: 12px 0px;
   border: 0px solid black;
-  height: 200px;
+  /*height: 200px;*/
+  height: 235px;
   overflow:hidden;
+  display:inline-block;
 }
 .display1 .item-contrib:hover {text-decoration:none;}
 .display1 .item-contrib {
@@ -267,7 +273,9 @@ $search-icon-height: 30px;
 
 .display1 .item-img {
   display:block;
-  height: 133px;
+  height: 190px;
+  width:286px;
+  /*height: 133px;
   width:200px;
   border: 1px solid #888;
   padding:5px;
@@ -347,8 +355,10 @@ $search-icon-height: 30px;
 }
 .display3 .item-img {
   display:block;
-  height: 133px;
-  width:200px;
+  /*height: 133px;
+  width:200px;*/
+  height: 190px;
+  width:286px;
   float:left;
   border: 1px solid #888;
   padding:5px;
@@ -467,4 +477,68 @@ $search-icon-height: 30px;
 	float: right;
 	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
 	cursor: pointer;
+}
+
+#gl-sbmt-btn {
+	display: none;
+	margin-right: $search-icon-width;
+	margin-top: 1/6*$search-icon-height;
+	float: right;
+	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
+	cursor: pointer;
+}
+
+
+#page .content {
+	max-width:none;
+}
+
+.navigation-bar .leader, .section-bar .leader {
+    margin-top: 2em;
+}
+
+#reference-index header {
+    background: none repeat scroll 0 0 #cccccc;
+    padding: 11px 8px 30px;
+}
+
+#reference-index h4 {
+    float:left;
+}
+
+.filter-misc {
+    float:right;
+}
+* {
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+	margin: 0;
+}
+
+/* Reference: http://www.thecssninja.com/css/css-tree-menu */
+/* Minimal css for clickable pure CSS collapsible tree menu */
+/* As specific as possible to prevent interference with other code */
+
+#menutree li {
+   list-style: none;          /* all list item li dots invisible */
+}
+
+li .filter-label + input[type=checkbox] {
+   opacity: 0;             /* checkboxes invisible and use no space */
+}                        /* display: none; is better but fails in ie8 */
+
+li .filter-label {
+	cursor: pointer;        /* cursor changes when you mouse over this class */
+}                         /* could add the many user-select: none; commands here */
+
+li .filter-label + input[type=checkbox] + ol > li
+{
+	display: none;         /* prevents sublists below unchecked labels from displaying */
+}
+
+li .filter-label + input[type=checkbox]:checked + ol > li
+{
+	display: block;         /* display submenu on click */
 }
