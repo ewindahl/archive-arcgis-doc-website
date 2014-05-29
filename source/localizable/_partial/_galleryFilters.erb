@@ -6,7 +6,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 %>
 <div id="reference-index">
 	<header>
-	<h4>Collections</h4>
+	<h4>Themes</h4>
 	<div class="filter-misc">
 		<div id="rss">
 		 <a target="_self" href="http://www.arcgis.com/sharing/search?q=(group:( 8cb0765d4f394cc097407068580188ad))&amp;f=rss" rel="nofollow">
@@ -20,6 +20,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 		<div id="filters">
 		<ol id="menutree">
 		<li>
+		<label id="allCollections" class="filter-label current" col="All">All</label>
          <%
             mfl = "["
             kv = "["
@@ -27,9 +28,9 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 			c = 0
             ref['filters'][0]['filter'].each { |k|
          %>
-               <label class="filter-label <%= k['metaname'] %>-filter" for="c<%= c %>" value="<%= k['metaname'] %>:<%=k["value"].length%>"><%= k['label'] %></label>
-			   <input type="checkbox" id="c<%= c %>" />
-			   <ol>
+               <label class="filter-label <%= k['metaname'] %>-filter" for="c<%= c %>" col="<%= k['metaname']%>:<%=k["value"].length%>"><%= k['label'] %></label>
+			   <!--<input type="checkbox" id="c<%= c %>" />-->
+			   <ol id="ol<%= c %>" >
                <%
                    i = 0
 				   k["value"].each { |sk| 
