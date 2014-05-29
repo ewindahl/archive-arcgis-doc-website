@@ -1,0 +1,115 @@
+---
+layout: marketplace/layout
+
+title: Sign Up - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">Regístrate para ser proveedor</h1>
+    </header>
+	<nav>&nbsp;</nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">Vende tu aplicación en ArcGIS Marketplace. Accede a la base de usuarios de SIG más grande del mundo. Te facilitamos que puedas conectar con usuarios, proporcionar pruebas gratuitas y generar oportunidades de venta. Como proveedor de la aplicación, te quedas con el 100 % de los ingresos generados por la venta de tu aplicación. Consulta los detalles en las <a href="/es/marketplace/provider/faq.htm">Preguntas frecuentes</a>. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">¿Ya eres partner de Esri?</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">Llega a un público más amplio listando tu solución en ArcGIS Marketplace. Inicia sesión en el <a href="http://partnerportal.esri.com/">Portal para partners de Esri</a> para saber qué necesitas para convertirte en proveedor.</p>
+
+      </section>
+
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">¿No eres partner? ¿Eres nuevo en Esri?</h2>
+		<p data-langlabel="provider-signup-note">Buscamos desarrolladores que quieran desarrollar grandes soluciones para nuestros usuarios. Cuéntanos algo sobre ti y qué haces, y te ayudaremos a empezar.</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="http://resources.arcgis.com/apps/contact-us/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="first-name" for="first-name">Primer nombre: </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">Apellido: </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">Dirección de correo electrónico: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Número de teléfono: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">Acerca de ti: </label>
+			  <textarea data-langlabel="comment" placeholder="I build apps that..." name="userComment" id="userComment"></textarea>
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">Para ayudarnos a evitar el spam automático, introduce los números que se indican: </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">Números: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="interno" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="en" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" data-langlabel="contact-us">Enviar</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>Gracias por tu interés en convertirte en proveedor de ArcGIS Marketplace. Nos pondremos en contacto contigo en los próximos días hábiles.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>

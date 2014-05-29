@@ -40,7 +40,8 @@ pageName: "404"
       </header>
 
       <section>
-        <p data-langlabel="404-note">The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem.</p>
+        <p id="404_note">The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem.</p>
+	<p id="englishLinkNote"></p>
       </section>
 
 	  <div class="popular-links">
@@ -105,7 +106,9 @@ $(document).ready(function() {
       return doc.supportForm.validateFeedbackForm(curlang);
     });
 	
+		
     if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) { 
+	  doc.l10n.pageNotFoundText (curlang);
       doc.l10n.changeLabel (curlang);
     }
 

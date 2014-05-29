@@ -2,11 +2,11 @@
 title: Collector for ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -14,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -26,12 +28,20 @@ mobile: true
   <div class="container">
     <header>
       <h1>Collector for ArcGIS</h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="collector-android" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/collector/">Prima pagină</a></li>
-        <li><a href="/en/collector/android/create-maps/create-maps.htm">Creare hărţi</a></li>
-        <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">Colectare date</a></li>
+        <li class='current'><a href="/ro/collector/">Prima pagină</a></li>
+        <li><a href="/ro/collector/android/create-maps/create-maps.htm">Creare hărţi</a></li>
+        <li><a href="/ro/collector/android/collect-data/collect-tutorial.htm">Colectare date</a></li>
         <li><a href="http://forums.arcgis.com/forums/224-Collector-for-ArcGIS">Forum</a></li>
       </ul>
     </nav>
@@ -42,20 +52,15 @@ mobile: true
 <div class="container">
 
       <div class="column-16 tablet-column-24">
-        <header>
 
-		  <h2 id="appTitle">Descărcaţi aplicaţia</h2>
-          <span id="appVersion"><strong>Versiune:</strong> 10.2</span> <span id="appReleased"><strong>Lansare:</strong> Noiembrie 2013</span>
+        <h3 class="gray">Utilizaţi propriul telefon smartphone sau propria tabletă pentru a colecta şi actualiza informaţii, indiferent dacă sunteţi sau nu online.</h3>
 
+	  <!--           <span id="appVersion"><strong>Version:</strong> 10.2.2</span>           <span id="appReleased"><strong>Released:</strong> March 2014</span> 	  -->
+	  
 
-          <p>Utilizaţi-vă telefonul smartphone pentru a colecta şi actualiza informaţii pe teren, jurnaliza locaţia curentă şi introduce datele pe care le capturaţi în activitatea dvs., astfel încât să puteţi lua decizii mai bine informaţi şi la timp.</p>
-
-          <p>
-             <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a> <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
-          </p>
-		 <p>
-            <a id="appSysRequirements" href="#systemRequirements">Cerinţe de sistem</a> <a id="appWhatsNew" href="#whatsNew">Ce este nou</a>
-          </p>
+        <p>
+	    <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a> <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
+        </p>
 
         </header>
         <hr />
@@ -68,7 +73,7 @@ mobile: true
           <h3>Creaţi şi partajaţi o hartă</h3>
           <p>Extindeţi ArcGIS pe teren şi îmbunătăţiţi precizia şi actualitatea datelor dvs. spaţiale. Creaţi şi partajaţi hărţi pentru colecţii de date în doi paşi.</p>
           <p>
-            <a href="/en/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+            <a href="/ro/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
@@ -77,22 +82,55 @@ mobile: true
           <img src="app-collector-data.jpg" />
 
           <h3>Colectaţi date</h3>
-          <p>Găsirea unor locuri de interes, calcularea distanţelor, crearea solicitărilor de service şi raportarea daunelor sunt numai câteva din capabilităţile unei hărţi pentru colectarea datelor. Creaţi date inteligente cu imagini şi videoclipuri şi partajaţi-le cu toată lumea în cinci paşi simpli.</p>
+          <p>Creaţi datele relevante pentru organizaţia dvs., din rapoarte de daune şi solicitări de service din locuri de interes istoric. Includeţi cu uşurinţă materiale foto şi video şi partajaţi-vă munca.</p>
           <p>
-            <a href="/en/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br />
+            <a href="/ro/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br />
 
-			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">Vizionaţi un videoclip</a>
+			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Vizionaţi un videoclip</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
 			</video>
           </p>
         </div>
+	<div class="clear"></div>
 
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-3.png" />
+
+          <h3>Lucraţi offline</h3>
+          <p>Lucrul pe teren vă duce în locuri în care nu sunt disponibile conexiuni de date. Luaţi-vă hărţile şi datele offline, colectaţi date şi sincronizaţi-vă la loc după ce vă reconectaţi.</p>
+          <p>
+            <a href="/ro/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br />
+          </p>
+        </div>
+        
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-4.png" />
+
+          <h3>Sprijiniţi-vă eforturile cu şabloane</h3>
+          <p>Domeniul dvs. lucrează cu seturi de date proprii. Descărcaţi şabloane pentru a crea structura de date de bază de care aveţi nevoie şi particularizaţi-o pentru lucrarea dvs. particulară.</p>
+          <p>
+            <a href="http://esri.maps.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;Vizualizaţi descărcări</a><br />
+          </p>
+        </div>
+        
         <div class="clear"></div>
 
+	<a name="features"></a>
+	<h2 class="divider">Caracteristici</h2>
+	<p>Colectţai şi actualizaţi date pe teren, jurnaliza locaţia curentă şi introduce datele pe care le capturaţi în activitatea dvs., astfel încât să puteţi lua decizii mai bine informaţi şi la timp. Utilizaţi hărţi oriunde pentru a vă plasa datele în spaţiu, faceţi observaţii şi reacţionaţi la evenimente. Veţi îmbunătăţi eficienţa agenţilor din teren şi precizia sistemului dvs. GIS.</p>
+	
+	<ul>
+	<li>Descărcaţi hărţi pe dispozitivul dvs. şi lucraţi offline.</li>
+	<li>Utilizaţi funcţia GPS pentru a crea şi actualiza date de hartă.</li>
+	<li>Colectaţi obiecte spaţiale punctuale, liniare şi de suprafaţă.</li>
+	<li>Completaţi formulare uşor de utilizat, specifice hărţilor.</li>
+	<li>Găsiţi locuri şi obţineţi indicaţii de deplasare.</li>
+	<li>Monitorizaţi şi raportaţi zonele vizitate.</li>
+	</ul>
 
         <a name="systemRequirements"></a>
-        <h2>Cerinţele de sistem</h2>
+        <h2 class="divider">Cerinţele de sistem</h2>
 
         <p>Pentru executarea Collector există anumite cerinţe de sistem, dar şi cerinţe în privinţa datelor utilizate în cadrul aplicaţiei. Collector oferă suport în mai multe limbi.</p>
 
@@ -107,36 +145,49 @@ mobile: true
           <li>Android 4.0 (Ice Cream Sandwich)<br/>sau o versiune ulterioară</li>
           <li>Procesor Armv7</li>
           <li>Suport OpenGL ES 2.0</li>
+          <li>Suport pentru localizare precisă (prin GPS şi prin reţea)</li>
         </ul></td>
-        <td valign="top"><h4 class="icon-apple">iPhone</h4>
+        <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS 6 sau ulterior</li>
+          <li>iOS 7</li>
+          <li>iPhone, iPad, iPod touch</li>
         </ul></td><tr></table>
 
 
         <h3>Limbi acceptate</h3>
-        <p>arabă, cehă, chineză simplificată, coreeană, daneză, ebraică, engleză, estoniană (<span class="icon-android"/>), finlandeză, franceză, germană, italiană, japoneză, letonă (<span class="icon-android"/>), lituaniană (<span class="icon-android"/>), norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă şi suedeză.</p>
-        <p>Limba utilizată de aplicaţie este determinată de setarea pentru limbă din telefonul dvs.</p>
+        <p>arabă, cehă, chineză simplificată, coreeană, daneză, ebraică, engleză, estoniană (<span class="icon-android"/>), finlandeză, franceză, germană, italiană, japoneză, letonă (<span class="icon-android"/>), lituaniană (<span class="icon-android"/>), norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză şi turcă.</p>
+        <p>Limba utilizată de aplicaţie este determinată de setarea pentru limbă din dispozitivul dvs.</p>
 
 
         <a name="whatsNew"></a>
-        <h2>Ce este nou</h2>
-        <p>Collector for ArcGIS versiunea 10.2 a fost lansată în noiembrie 2013 cu următoarele îmbunătăţiri:</p>
+        <h2 class="divider">Ce este nou</h2>
+        <p>Collector for ArcGIS 10.2.3 a fost lansat în aprilie 2014. Acesta include diferite îmbunătăţiri şi remedieri de buguri.</p>
+        <p>Operations for ArcGIS 10.2.2 a fost lansat în martie 2014. Acesta include următoarele îmbunătăţiri:</p>
         <ul>
+        <li>Suport pentru flux de lucru offline</li>
         <li>Experienţă pentru utilizator actualizată</li>
-        <li>Experienţă dedicată pentru tablete şi iPad</li>
-        <li>Suport pentru colectarea de linii şi poligoane</li>
-        <li>Transmisie GPS</li>
-        <li>Fluxuri de lucru pentru colectare îmbunătăţite</li>
-        <li>Îmbunătăţiri aduse răspunsului la atingere</li>
         <li>Diverse îmbunătăţiri şi remedieri de defecte</li>
-        <li>Suport pentru date de autentificare de companie</li>
         <li>Suport pentru alte limbi</li>
-        <li>Probleme Android rezolvate: NIM090003, NIM090935, NIM091973, NIM092424, NIM092833</li>
-        <li>Probleme iOS rezolvate: NIM094438, NIM094401</li>
+        <li>Probleme Android rezolvate: NIM098281, NIM096128, NIM098076</li>
+        <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
         </ul>
 
-        <p> </p>
+	<a name="sneakPeek"></a>
+	<h2 class="divider">Scurtă prezentare</h2>
+	<p>În prezent, Collector este o aplicaţie excelentă pentru colectarea şi editarea datelor pe teren. Însă multe alte lucruri urmează să îşi facă apariţia! Următoarele informaţii dezvăluie ce dorim să realizăm cu această aplicaţie în viitor:</p>
+	
+	<ul>
+	  <li>mai multe instrumente pentru planificarea operaţiunilor pe teren offline</li>
+	  <li>Formulare mai inteligente pentru colectarea datelor (inclusiv tabele corelate)</li>
+	  <li>Capacitate de căutare a datelor<li>
+	  <li>Colectare a datelor cu abateri<li>
+	  <li>Suport pentru colectare adhoc</li>
+	  <li>Integrare a dispozitivelor periferice (dispozitive de măsurare cu laser, scannere de coduri de bare etc.)</li>
+	</ul>	
+	
+	<p>Împărtăşiţi <a href="http://ideas.arcgis.com/">ideile</a> şi <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">trimiteţi-ne părerile dvs</a>.</p>
+		
+        <p>&nbsp;</p>
 
       </div>
 
@@ -144,13 +195,13 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>Începeţi</h3>
-          <ul>
-            <li><a href="/en/collector/android/collect-data/guided-tour.htm">Tur cu îndrumări</a></li>
-            <li><a href="/en/collector/android/create-maps/create-maps.htm">Creaţi şi partajaţi o hartă</a></li>
-            <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">Colectaţi date</a></li>
-
-          </ul>
+	  <h3>Detalii</h3>
+	          
+	  <h4><a href="#features">Caracteristici</a></h4>
+	  <h4><a href="#systemRequirements">Cerinţe de sistem</a></h4>
+	  <h4><a href="#whatsNew">Ce este nou</a></h4>
+	  <h4><a href="#sneakPeek">Scurtă prezentare</a></h4>
+	          
         </div>
 
         <br />
@@ -171,7 +222,7 @@ mobile: true
   <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/mobile/feed/',
+        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
         max: 5,
         layout: 0
       });

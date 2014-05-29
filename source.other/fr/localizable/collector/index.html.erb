@@ -2,11 +2,11 @@
 title: Collector for ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -14,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -26,12 +28,20 @@ mobile: true
   <div class="container">
     <header>
       <h1>Collector for ArcGIS</h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="collector-android" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/collector/">Accueil</a></li>
-        <li><a href="/en/collector/android/create-maps/create-maps.htm">Créer des cartes</a></li>
-        <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">Collecter des données</a></li>
+        <li class='current'><a href="/fr/collector/">Accueil</a></li>
+        <li><a href="/fr/collector/android/create-maps/create-maps.htm">Cr&eacute;er des cartes</a></li>
+        <li><a href="/fr/collector/android/collect-data/collect-tutorial.htm">Collecter des donn&eacute;es</a></li>
         <li><a href="http://forums.arcgis.com/forums/224-Collector-for-ArcGIS">Forum</a></li>
       </ul>
     </nav>
@@ -42,20 +52,19 @@ mobile: true
 <div class="container">
 
       <div class="column-16 tablet-column-24">
-        <header>
 
-		  <h2 id="appTitle">Télécharger l'application</h2>
-          <span id="appVersion"><strong>Version :</strong> 10.2</span><span id="appReleased"><strong>Date de sortie :</strong> Novembre 2013</span>
+        <h3 class="gray">Utilisez votre smartphone ou votre tablette pour collecter et mettre &agrave; jour les informations sur le terrain, que vous soyez connect&eacute; ou d&eacute;connect&eacute;.</h3>
 
+	  <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->
+	  
 
-          <p>Utilisez votre smartphone pour collecter et mettre à jour des informations sur le terrain, enregistrer votre localisation et utiliser les données que vous capturez de sorte à prendre des décisions informées et opportunes.</p>
-
-          <p>
-             <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a> <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
-          </p>
-		 <p>
-            <a id="appSysRequirements" href="#systemRequirements">Configurations requises</a> <a id="appWhatsNew" href="#whatsNew">Nouveautés</a>
-          </p>
+        <p>
+	    <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a>
+	    <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
+        </p>
 
         </header>
         <hr />
@@ -65,10 +74,11 @@ mobile: true
         <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="app-collector-map.jpg" />
 
-          <h3>Créer et partager une carte</h3>
-          <p>Offrez ArcGIS à votre personnel sur le terrain afin d'augmenter la précision et l'actualité de vos données spatiales. Créez et partagez des cartes pour la collecte de données en deux étapes.</p>
+          <h3>Cr&eacute;er et partager une carte</h3>
+          <p>Offrez ArcGIS &agrave; votre personnel sur le terrain afin d&apos;augmenter la pr&eacute;cision et l&apos;actualit&eacute; de vos donn&eacute;es spatiales. Cr&eacute;ez et partagez des cartes pour la collecte de donn&eacute;es en deux &eacute;tapes.</p>
           <p>
-            <a href="/en/collector/android/create-maps/create-maps.htm" class="icon-right-arrow"> Comment</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+            <a href="/fr/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
+            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
@@ -76,65 +86,116 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="app-collector-data.jpg" />
 
-          <h3>Collecter des données</h3>
-          <p>La recherche de points d'intérêt, le calcul de distances, la création de demandes d'intervention et la création de rapports sur les dommages sont quelques-unes des possibilités offertes par une carte pour la collecte de données. Créez des données intelligentes avec images et de la vidéo puis partagez-les avec le monde entier, en cinq étapes.</p>
+          <h3>Collecter des donn&eacute;es</h3>
+          <p>Cr&eacute;ez les donn&eacute;es qui comptent pour votre organisation, qu&apos;il s&apos;agisse de rapports sur les dommages, de demandes de services ou de sites historiques. Int&eacute;grez facilement des images et des vid&eacute;os et partagez votre travail.</p>
           <p>
-            <a href="/en/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow"> <br /><a href="/en/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">Comment</a> <a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge"> Visionner une vidéo</a>
+            <a href="/fr/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
+
+			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Visionner un clip vid&eacute;o</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
 			</video>
           </p>
         </div>
+	<div class="clear"></div>
 
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-3.png" />
+
+          <h3>Mode hors connexion</h3>
+          <p>Sur le terrain, vous &ecirc;tes amen&eacute; &agrave; travailler dans des zones sans connexion de donn&eacute;es. Utilisez vos cartes et donn&eacute;es en mode hors connexion, collectez des donn&eacute;es et resynchronisez-les une fois reconnect&eacute;.</p>
+          <p>
+            <a href="/fr/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
+          </p>
+        </div>
+        
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-4.png" />
+
+          <h3>D&eacute;marrer rapidement avec des mod&egrave;les</h3>
+          <p>Votre secteur d&apos;activit&eacute; poss&egrave;de ses propres jeux de donn&eacute;es courants. T&eacute;l&eacute;chargez des mod&egrave;les pour cr&eacute;er la structure de base dont vous avez besoin pour les donn&eacute;es, puis personnalisez-la en fonction de votre t&acirc;che sp&eacute;cifique.</p>
+          <p>
+            <a href="http://esri.maps.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;Consulter les t&eacute;l&eacute;chargements</a><br />
+          </p>
+        </div>
+        
         <div class="clear"></div>
 
+	<a name="features"></a>
+	<h2 class="divider">Fonctionnalit&eacute;s</h2>
+	<p>Collectez et mettez &agrave; jour les donn&eacute;es sur le terrain, enregistrez votre position actuelle et utilisez les donn&eacute;es que vous capturez afin de prendre des d&eacute;cisions inform&eacute;es et opportunes. 
+	Utilisez les cartes pour appliquer la r&eacute;alit&eacute; du terrain &agrave; vos donn&eacute;es, &eacute;mettre des observations et r&eacute;agir aux &eacute;v&eacute;nements. 
+	Vous am&eacute;liorerez l&apos;efficacit&eacute; de votre personnel sur le terrain et la pr&eacute;cision de vos donn&eacute;es SIG.</p>
+	
+	<ul>
+	<li>T&eacute;l&eacute;charger des cartes sur votre appareil et les utiliser en mode hors connexion</li>
+	<li>Utiliser le GPS pour cr&eacute;er et mettre &agrave; jour des donn&eacute;es cartographiques.</li>
+	<li>Collecter des points, des lignes et des entit&eacute;s surfaciques.</li>
+	<li>Renseigner des formulaires cartographiques faciles &agrave; utiliser.</li>
+	<li>Rechercher des sites et obtenir un itin&eacute;raire.</li>
+	<li>Suivre et signaler les zones visit&eacute;es.</li>
+	</ul>
 
         <a name="systemRequirements"></a>
-        <h2>Configuration du système</h2>
+        <h2 class="divider">Configuration du syst&egrave;me</h2>
 
-        <p>L'exécution de Collector implique certaines conditions en termes de périphériques, mais aussi de données utilisées dans l'application. Collector est pris en charge dans plusieurs langues.</p>
-
-
-        <h3>Conditions requises pour les données</h3>
-        <p>Pour pouvoir utiliser des cartes dans Collector, vous devez disposer d'un compte d'organisation ArcGIS. Vos cartes peuvent contenir des données provenant d'ArcGIS Online, de Portal for ArcGIS et d'ArcGIS for Server.</p>
+        <p>L&apos;ex&eacute;cution de Collector implique certaines conditions en termes de p&eacute;riph&eacute;riques, mais aussi de donn&eacute;es utilis&eacute;es dans l&apos;application. Collector est pris en charge dans plusieurs langues.</p>
 
 
-        <h3>Configurations des périphériques</h3>
+        <h3>Conditions requises pour les donn&eacute;es</h3>
+        <p>Pour pouvoir utiliser des cartes dans Collector, vous devez disposer d&apos;un compte d&apos;organisation ArcGIS. Vos cartes peuvent contenir des donn&eacute;es provenant d&apos;ArcGIS Online, de Portal for ArcGIS et d&apos;ArcGIS for Server.</p>
+
+
+        <h3>Configurations des p&eacute;riph&eacute;riques</h3>
         <table><tr><td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
         <ul>
-          <li><br/>Android 4.0 (Ice Cream Sandwich)ou une version ultérieure</li>
+          <li>Android&nbsp;4.0 (Ice Cream Sandwich)<br/>ou version ult&eacute;rieure</li>
           <li>Processeur Armv7</li>
-          <li>Prise en charge d'OpenGL ES 2.0</li>
+          <li>Prise en charge d&apos;OpenGL ES&nbsp;2.0</li>
+          <li>Prise en charge des emplacements pr&eacute;cis (bas&eacute;e sur le r&eacute;seau et GPS)</li>
         </ul></td>
-        <td valign="top"><h4 class="icon-apple">iPhone</h4>
+        <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS 6 ou version ultérieure</li>
+          <li>iOS&nbsp;7</li>
+          <li>iPhone, iPad, iPod Touch</li>
         </ul></td><tr></table>
 
 
         <h3>Langues prises en charge</h3>
-        <p>Arabe, anglais, chinois simplifié, danois, néerlandais, espagnol, estonien(<span class="icon-android"/>), français, finlandais, allemand, hébreu, italien, japonais, coréen, letton (<span class="icon-android"/>), lituanien (<span class="icon-android"/>), norvégien, polonais, portugais, portugais (Brésil), portugais (Portugal), roumain, russe, suédois et tchèque.</p>
-        <p>La langue utilisée par l'application est définie par la configuration de langue du téléphone.</p>
+        <p>Arabe, anglais, chinois simplifi&eacute;, danois, n&eacute;erlandais, espagnol, estonien(<span class="icon-android"/>), fran&ccedil;ais, finlandais, allemand, h&eacute;breu, italien, japonais, cor&eacute;en, letton (<span class="icon-android"/>), lituanien (<span class="icon-android"/>), norv&eacute;gien, polonais, portugais (Br&eacute;sil), portugais (Portugal), roumain, russe, su&eacute;dois, tch&egrave;que et turc.</p>
+        <p>La langue utilis&eacute;e par l&apos;application est d&eacute;finie par la configuration de langue de l&apos;appareil.</p>
 
 
         <a name="whatsNew"></a>
-        <h2>Nouveautés</h2>
-        <p>Collector for ArcGIS version 10.2, sortie en novembre 2013, présente les améliorations suivantes :</p>
+        <h2 class="divider">Nouveaut&eacute;s</h2>
+        <p>Collector for ArcGIS&nbsp;10.2.3 est disponible depuis avril&nbsp;2014. L&apos;application pr&eacute;sente les am&eacute;liorations et r&eacute;solutions de bogues suivantes&nbsp;:</p>
+        <p>Collector for ArcGIS&nbsp;10.2.2 est disponible depuis mars&nbsp;2014. L&apos;application pr&eacute;sente les am&eacute;liorations suivantes&nbsp;:</p>
         <ul>
-        <li>Expérience utilisateur mise à jour</li>
-        <li>Expérience tablette et iPad dédiée</li>
-        <li>Prise en charge de la collecte de lignes et de polygones</li>
-        <li>Mode continu GPS</li>
-        <li>Workflows de collecte améliorés</li>
-        <li>Améliorations apportées au comportement de toucher de carte</li>
-        <li>Diverses résolutions de bogues et améliorations</li>
-        <li>Prise en charge des identifiants de connexion d’entreprise</li>
-        <li>Prise en charge de langues supplémentaires</li>
-        <li>Problèmes liés à Android résolus : NIM090003, NIM090935, NIM091973, NIM092424, NIM092833</li>
-        <li>Problèmes liés à iOS résolus : NIM094438, NIM094401</li>
+        <li>Prise en charge des workflows en mode hors connexion</li>
+        <li>Exp&eacute;rience utilisateur mise &agrave; jour</li>
+        <li>Diverses r&eacute;solutions de bogues et am&eacute;liorations</li>
+        <li>Prise en charge de langues suppl&eacute;mentaires</li>
+        <li>Probl&egrave;mes li&eacute;s &agrave; Android r&eacute;solus&nbsp;: NIM098281, NIM096128, NIM098076</li>
+        <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
         </ul>
 
-        <p> </p>
+	<a name="sneakPeek"></a>
+	<h2 class="divider">Aper&ccedil;u furtif</h2>
+	<p>Aujourd&apos;hui, Collector est une formidable application de collecte et de mise &agrave; jour des donn&eacute;es sur le terrain. Mais ce n&apos;est pas termin&eacute; !
+	Voici d&apos;autres am&eacute;liorations pr&eacute;vues pour cette application&nbsp;:</p>
+	
+	<ul>
+	  <li>Davantage d&apos;outils de planification des op&eacute;rations hors connexion sur le terrain</li>
+	  <li>Formulaires de collecte de donn&eacute;es plus intelligents (notamment des tables li&eacute;es)</li>
+	  <li>Possibilit&eacute; d&apos;effectuer des recherches dans les donn&eacute;es<li>
+	  <li>Collecte de donn&eacute;es avec d&eacute;calages<li>
+	  <li>Prise en charge des collectes ad hoc</li>
+	  <li>Int&eacute;gration de p&eacute;riph&eacute;riques (t&eacute;l&eacute;m&egrave;tres &agrave; laser, scanners de codes barres, etc.)</li>
+	</ul>	
+	
+	<p>Partagez vos <a href="http://ideas.arcgis.com/">id&eacute;es</a> et <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">envoyez-nous vos commentaires</a>.</p>
+		
+        <p>&nbsp;</p>
 
       </div>
 
@@ -142,13 +203,13 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>Commencer</h3>
-          <ul>
-            <li><a href="/en/collector/android/collect-data/guided-tour.htm">Visite guidée</a></li>
-            <li><a href="/en/collector/android/create-maps/create-maps.htm">Créer et partager une carte</a></li>
-            <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">Collecter des données</a></li>
-
-          </ul>
+	  <h3>D&eacute;tails</h3>
+	          
+	  <h4><a href="#features">Entit&eacute;s</a></h4>
+	  <h4><a href="#systemRequirements">Configuration du syst&egrave;me</a></h4>
+	  <h4><a href="#whatsNew">Nouveaut&eacute;s</a></h4>
+	  <h4><a href="#sneakPeek">Aper&ccedil;u furtif</a></h4>
+	          
         </div>
 
         <br />
@@ -169,7 +230,7 @@ mobile: true
   <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/mobile/feed/',
+        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
         max: 5,
         layout: 0
       });

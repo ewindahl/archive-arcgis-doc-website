@@ -2,21 +2,19 @@
 title: Operations Dashboard for ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
-  - /en/asset/css/app-switch-1
   - colorbox/colorbox
 
 js:
   - libs/jquery.cookie
-  - /pl/asset/js/app-collector-1
+  - /en/asset/js/operations-dashboard-1
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -25,12 +23,18 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/pl/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="ops-dashboard" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
         <li class='current'><a href="/pl/operations-dashboard/">Strona główna</a></li>
         <li><a href="/pl/operations-dashboard/windows-desktop/author/create-a-map.htm">Tworzenie widoków</a></li>
-        <li><a href="/pl/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Użytkowanie widoków</a></li>
+        <li><a href="/pl/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Używanie widoków</a></li>
         <li><a href="http://forums.arcgis.com/forums/225-Operations-Dashboard-for-ArcGIS">Forum</a></li>
       </ul>
     </nav>
@@ -41,61 +45,102 @@ mobile: true
 <div class="container">
 
      <div class="column-16 tablet-column-24">
-        <header>
-          <h2 id="appTitle">Pobierz aplikację</h2>
-          <span id="appVersion"><strong>Wersja:</strong> 10.2</span> <span id="appReleased"><strong>Opublikowana:</strong> Listopad 2013</span>
-
-          <p>Monitoruj aktywność i zdarzenia, śledź pracowników w terenie oraz oceniaj status i realizację codziennych operacji.</p>
+        <h3 class="gray">Możesz monitorować aktywność i zdarzenia, śledzić pracowników w terenie oraz oceniać status i wydajność codziennych operacji.</h3>
+          
+          <!--           <span id="appVersion"><strong>Version:</strong> 10.2.2</span>           <span id="appReleased"><strong>Released:</strong> March 2014</span> 	  -->	  
 
           <p>
-            <a class="btn primary" href="http://www.arcgis.com/home/item.html?id=ba47e0bf6cb84a6e9f77e9caf86b88eb">Pobierz program Operations Dashboard</a>
+            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Pobierz program Operations Dashboard</a>
 
           </p>
-
-          <p>
-            <a id="appSysRequirements" href="#systemRequirements">Wymagania systemowe</a> <a id="appWhatsNew" href="#whatsNew">Co nowego</a>
-          </p>
-
-        </header>
         <hr />
-        <br />
-
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/pl/operations-dashboard/dashboard-create-small.png" />
+          <img src="/en/operations-dashboard/dashboard-create-small.png" />
 
-          <h3>Tworzenie i udostępnianie widoku operacyjnego</h3>
-          <p>W trzech etapach utworzysz i udostępnisz widoki operacyjne zawierające mapy, listy, wykresy, kontrolki i nie tylko, które bazują na aktualizowanych na bieżąco danych geograficznych zdefiniowanych na mapie lub w usłudze internetowej.</p>
+          <h3>Tworzenie i udostępnianie widoku operacyjnego</h3>
+          <p>W trzech etapach utworzysz i udostępnisz widoki operacyjne zawierające m.in. mapy, listy, wykresy i kontrolki, które bazują na aktualizowanych na bieżąco danych geograficznych zdefiniowanych na mapie lub w usłudze internetowej.</p>
           <p>
-            <a href="/pl/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow"> Dowiedz się, jak to zrobić</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+            <a href="/pl/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;Dowiedz się, jak to zrobić</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/pl/operations-dashboard/dashboard-monitor-small.png" />
+          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
 
-          <h3>Monitorowanie i reagowanie na wydarzenia</h3>
+          <h3>Monitorowanie i reagowanie na wydarzenia</h3>
           <p>Użyj widoku operacyjnego, aby koncentrować się na istotnych aspektach działań. W czterech etapach monitorujesz usługi, dostawy, osoby, pojazdy itd. znajdujące się w dowolnym miejscu na świecie.</p>
           <p>
-            <a href="/pl/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow"> Dowiedz się, jak to zrobić</a><br /> <!--<a href="http://resources.arcgis.com/pl/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge"> Zapoznaj się z materiałem wideo</a>
+            <a href="/pl/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Dowiedz się, jak to zrobić</a><br /> <!--<a href="http://resources.arcgis.com/pl/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Zapoznaj się z materiałem wideo</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
           </p>
         </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-3.png" />
+
+          <h3>Monitorowanie z użyciem przeglądarki</h3>
+          <p>Korzystaj z utworzonego widoku operacyjnego w przeglądarce. Nie musisz niczego instalować — po prostu otwórz dowolny widok operacyjny i uzyskuj najnowsze informacje na temat realizowanych operacji, nawet na iPadzie.</p>
+          <p>
+            <a href="/pl/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Dowiedz się, jak to zrobić</a><br /> <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
+          </p>
+        </div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-4.png" />
+
+          <h3>Tworzenie dodatków</h3>
+          <p>Utwórz własny widok operacyjny bazujący na unikalnej logice biznesowej Twojej instytucji — użyj niestandardowych widżetów, operacji na obiektach oraz narzędzi mapowych. </p>
+          <p>
+            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Dowiedz się, jak to zrobić</a><br />
+          </p>
+        </div>        
 
         <div class="clear"></div>
 
 
+	<a name="features" ></a>
+	<h2 class="divider">Charakterystyka</h2>
+	<p>Utworzysz wspólne widoki systemów i zasobów, którymi zarządzasz. Z użyciem komputera lub tabletu możesz monitorować źródła danych w czasie rzeczywistym zarówno w przypadku zdarzeń o dużej skali, jak i codziennych operacji. Utworzysz wyspecjalizowane, profesjonalne panele ze zintegrowanymi mapami, wykresami i diagramami.</p>
+	
+	<ul>
+	<li>Korzystanie z map z dynamicznymi źródłami danych do tworzenia widoków w czasie rzeczywistym.</li>
+	<li>Konfigurowanie diagramów, wskaźników, histogramów i wiele więcej, w celu zapewnienia kontekstu statystycznego.</li>
+	<li>Tworzenie i udostępnianie widoków operacyjnych, które są ukierunkowane na konkretne potrzeby.</li>
+	<li>Projektowanie widoków do użytku na kilku monitorach lub urządzeniach posiadających jeden ekran.</li>
+	<li>Tworzenie niestandardowych widżetów i narzędzi na własne potrzeby.</li>
+	</ul>
+
+
         <a name="systemRequirements"></a>
-        <h2>Wymagania systemowe</h2>
+        <h2 class="divider">Wymagania systemowe</h2>
 
-        <p>Aby uruchomić aplikację Operations Dashboard, należy spełniać określone wymagania wobec urządzenia oraz wymagania w zakresie danych używanych w aplikacji. Program Operations Dashboard obsługuje szereg różnych języków.</p>
+        <p>Aby uruchomić aplikację Operations Dashboard, należy spełnić określone wymagania dotyczące urządzenia oraz wymagania w zakresie danych używanych w aplikacji. </p>
 
 
-        <h3>Obsługiwane systemy operacyjne</h3>
-
+<script> 
+ function exp(strTag ,strAttribute){ 
+ var elem = document.getElementsByTagName(strTag); 
+ var elem1 =window.event.srcElement; 
+ for (var i=0;i<elem1.children.length;i++){ 
+ elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+ } 
+ for (var i =0;i<elem.length;i++) 
+ { 
+ if(elem[i].getAttribute(strAttribute)=="yes") 
+ { 
+ elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+ } 
+ } 
+ } 
+ </script> 
+ <h3>Aplikacja dla systemu Windows</h3>
+ <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Obsługiwane systemy operacyjne</div> 
+     <div exp1='yes' style="display:none;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro oraz Windows 8.1 Enterprise (wersja 32- i 64-bitowa [EM64T])</li>
           <li>Windows 8, Windows 8 Pro oraz Windows 8 Enterprise (wersja 32- i 64-bitowa [EM64T])</li>
@@ -104,51 +149,151 @@ mobile: true
 		<li>Windows Server 2008 R2 Standard, Enterprise oraz Datacenter (wersja 64-bitowa [EM64T]) SP1</li>
 		<li>Windows Server 2008 Standard, Enterprise oraz Datacenter (wersja 32- i 64-bitowa [EM64T]) SP2</li>
         </ul>
-
-
-        <h3>Wymagania sprzętowe</h3>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Wymagania sprzętowe</div>
+	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
-			<li>Szybkość procesora: 2.2 GHz lub szybszy; zalecana technologia Hyper-Threading (HTT) lub wersja z wieloma rdzeniami.</li>
-			<li>Procesor: Procesory Intel Pentium 4, Core Duo lub Xeon; co najmniej SSE2. Aby uzyskać informacje o procesorze, uruchom narzędzie firmy Microsoft z poziomu wiersza poleceń systemu Windows.</li>
-			<li>Przestrzeń dyskowa: 1.5 GB dostępnej przestrzeni dyskowej.</li>
+			<li>Szybkość procesora: 2,2 GHz lub szybszy; zalecana technologia Hyper-Threading (HTT) lub wersja z wieloma rdzeniami.</li>
+			<li>Procesor: Procesory Intel Pentium 4, Core Duo lub Xeon; co najmniej SSE2. Aby uzyskać informacje o procesorze, uruchom <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">narzędzie Coreinfo</a> firmy Microsoft z poziomu wiersza poleceń systemu Windows.</li>
+			<li>Przestrzeń dyskowa: 1,5 GB dostępnej przestrzeni dyskowej.</li>
 			<li>Pamięć/RAM: Co najmniej 2 GB.</li>
 			<li>Właściwości wyświetlania: 24-bitowa głębia kolorów.</li>
 			<li>Rozdzielczość ekranu: 1024x768 lub wyższa w przypadku normalnego rozmiaru (96 dpi).</li>
 			<li>Obszar wymiany: uzależniony od systemu operacyjnego; co najmniej 500 MB.</li>
 			<li>Karta wideo/graficzna: Minimum 64 MB RAM, zalecane 256 MB RAM; obsługa układów NVIDIA, ATI i Intel. Przyspieszany sprzętowo sterownik karty graficznej. Minimum Shader Model 2.0. Należy pamiętać o używaniu najnowszych sterowników.</li>
 		</ul>
+</div>
+<div class="clear" style="padding:5px;"></div>
 
+<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Wymagania dotyczące oprogramowania</div>
+	<div exp3='yes' style="display:none;padding:0 15px;">
+        <p style="padding:0 15px">Wymagany jest pakiet <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> lub nowszy. Aby go zainstalować należy posiadać na komputerze uprawnienia administratora.</p>
+        </div>
+        <div class="clear" style="padding:5px;"></div>
+        
+<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Wymagania wobec dewelopera</div>
+		<div exp4='yes' style="display:none;padding:0 15px;">
+	<p style="padding:0 15px">W celu dostosowania aplikacji Operations Dashboard do współpracy z produktami ArcGIS wymagany jest zestaw narzędzi <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a>. Wymagany jest również program Microsoft Visual Studio 2012 lub 2013 Professional, Premium bądź Ultimate Edition. </p>
 
-        <h3>Wymagania programowe</h3>
-        <p>Wymagany jest <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>. Aby zainstalować program należy posiadać na komputerze uprawnienia administratora.</p>
+     </div> 
+     <div class="clear" style="padding:5px;"></div>
+     
+<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Obsługiwane języki</div>
+<div exp5='yes' style="display:none;padding:0 15px;">
+     	<p style="padding:0 15px">angielski, arabski, chiński (uproszczony), czeski, duński, estoński, fiński, francuski, hebrajski, hiszpański, japoński, koreański, litewski, łotewski, niderlandzki, niemiecki, norweski, polski, portugalski (brazylijski), portugalski (portugalski), rosyjski, rumuński, szwedzki, turecki i włoski</p>
+     	<p style="padding:0 15px">Język aplikacji w wersji współpracującej z systemem Windows zależy od ustawień języka w systemie operacyjnym. Jeżeli skonfigurowany język nie jest obsługiwany, w aplikacji użyty zostaje język angielski.</p>
+</div>
+<div class="clear"></div>
 
+     <h3/>
+ <h3>Aplikacja dla przeglądarki</h3>
+<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Obsługiwane przeglądarki</div>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
+ <ul style="padding:0 15px">
+ <li>Chrome w wersji 19.0 lub nowszej</li>
+ <li>Firefox w wersji 4.0 lub nowszej</li>
+ <li>Internet Explorer w wersji 9.0 lub nowszej</li>
+ <li>Safari w wersji 5.1 lub nowszej</li>
+ </ul> 
+ Tablet 
+ <ul style="padding:0 15px">
+ <li>System Android 4.0 lub nowszy z przeglądarką Chrome</li>
+ <li>System iOS 6.0 lub nowszy z przeglądarką Safari</li>
+ </ul>
+ Telefon 
+ <p style="padding:0 15px">Przeglądarki na smartfony nie są obecnie obsługiwane.</p>
+ </div></div> 
+ <div class="clear" style="padding:5px;"></div>
+ <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Obsługiwane języki</div>
+ <div exp11='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">chiński (uproszczony), czeski, duński, estoński, fiński, francuski, hiszpański, holenderski, japoński, koreański, litewski, łotewski, niemiecki, norweski, polski, portugalski (brazylijski), portugalski (portugalski), rosyjski, rumuński, szwedzki, turecki i włoski</p>
+      	<p style="padding:0 15px">W wersji na przeglądarkę język jest określany na podstawie preferencji skonfigurowanej w profilu w serwisie ArcGIS Online. Jeżeli skonfigurowany język nie jest obsługiwany, językiem aplikacji jest angielski.</p>
+</div>
+<div class="clear"></div>
+
+     <h3/>
         <h3>Wymagania w zakresie danych</h3>
 		<p>Aby korzystać z map w aplikacji Operations Dashboard, należy posiadać konto instytucji ArcGIS. Mapy mogą zawierać dane z ArcGIS Online, Portal for ArcGIS i ArcGIS for Server. Konieczne jest hostowanie źródeł danych w serwisie ArcGIS Online lub za pomocą oprogramowania ArcGIS 10.1 for Server bądź nowszego.</p>
 
-		<h3>Wymagania wobec dewelopera</h3>
-		<p>Do dostosowania aplikacji Operations Dashboard do współpracy z produktami ArcGIS wymagany jest zestaw narzędzi <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2 for WPF.</a>.</p>
-
-	<h3>Obsługiwane języki</h3>
-	<p>angielski, arabski, chiński (uproszczony), czeski, duński, estoński, fiński, francuski, hebrajski, hiszpański, japoński, koreański, litewski, łotewski, niderlandzki, niemiecki, norweski, polski, portugalski (brazylijski), portugalski (portugalski), rosyjski, rumuński, szwedzki i włoski.</p>
-	<p>Język używany w aplikacji zależy od ustawień języka w systemie operacyjnym.</p>
-
         <a name="whatsNew"></a>
-        <h2>Co nowego</h2>
-        <p>Aplikacja Operations Dashboard for ArcGIS w wersji 10.2 została opublikowana w listopadzie 2013 r. i zawiera następujące udoskonalenia:</p>
+        <h2 class="divider">Co nowego</h2>
+        <p>Program Operations Dashboard for ArcGIS 10.2.3 został opublikowany w kwietniu 2014 r. i zawiera następujące ulepszenia:</p>
         <ul>
-        <li>Obsługa logowania korporacyjnego.</li>
-        <li>Obsługa Portal for ArcGIS</li>
-        <li>Udoskonalone widżety list i wskaźników.</li>
-        <li>Możliwość umieszczania obrazów i diagramów w oknach podręcznych.</li>
-        <li>Ulepszona obsługa serwerów proxy.</li>
-        <li>Obsługa czasu lokalnego.</li>
-        <li>Udoskonalone filtrowanie czasu i dat.</li>
-        <li>Korzystanie z zestawu narzędzi ArcGIS Runtime SDK 10.2 for WPF.</li>
-        <li>Możliwość tworzenia dodatków za pomocą zestawu narzędzi ArcGIS Runtime SDK 10.2 for WPF.</li>
-        <li>Dostępność w następujących wersjach językowych: angielski, arabski, chiński (uproszczony), czeski, duński, estoński, fiński, francuski, hebrajski, hiszpański, japoński, koreański, litewski, łotewski, niderlandzki, niemiecki, norweski, polski, portugalski (brazylijski), portugalski (portugalski), rosyjski, rumuński, szwedzki i włoski.</li>
+        <li>Wyszukiwanie danych (<span class="icon-windows-8"/>)</li>
+        <li>Naprawienie różnych błędów </li>
+        <li>Korzystanie ze środowiska ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>)</li>
+        <li>Możliwość tworzenia dodatków za pomocą środowiska ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>)</li>
         </ul>
-      
-        <p> </p>
+        
+        <p>Program Operations Dashboard for ArcGIS 10.2.2 został opublikowany w marcu 2014 r. i zawiera następujące ulepszenia:</p>
+        <ul>
+        <li>Możliwość korzystania z widoków operacyjnych w przeglądarce</li>
+        <li>Możliwość używania usług mapowych jako źródeł danych</li>
+        <li>Obsługa interwałów odświeżania określanych dla warstw</li>
+        <li>Nowe narzędzia selekcji</li>
+        <li>Aktualizacje widżetu Lista</li>
+        <li>Korzystanie ze środowiska ArcGIS Runtime SDK 10.2.2 for WPF</li>
+        <li>Możliwość tworzenia dodatków za pomocą środowiska ArcGIS Runtime SDK 10.2.2 for WPF</li>
+        <li>Lokalizacja interfejsu na język turecki</li>
+        </ul>
+        
+        
+        <a name="sneakPeek"></a>
+	<h2 class="divider">Wkrótce</h2>
+	<p>Już teraz aplikacja Operations Dashboard to doskonałe narzędzie do monitorowania operacji wykonywanych w instytucji. To jednak nie wszystko! Poniżej przedstawiono planowane ulepszenia aplikacji, z których będzie można korzystać na poszczególnych platformach sprzętowych:</p>
+	
+	<table border="1" style="text-align:center">
+	  <caption>Planowane funkcje dla poszczególnych platform. <br/> <span class="icon-check" style="color:black"></span> już teraz, <span class="icon-check icon-green"/> wkrótce, <span class="icon-check" style="color:lightgray"></span> w późniejszym terminie<br/></caption>
+	  <tr><td></td>
+	    <th>Komputer z systemem Windows</th>
+	    <th>Przeglądarka</th>
+	  </tr>
+	  <tr><th>Tworzenie widoków operacyjnych</th>
+	    <td><span class="icon-check"/></td>
+	    <td></td>
+	  </tr>
+	  <tr><th>Użytkowanie widoków operacyjnych</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Jednoekranowe widoki operacyjne</span></td>
+	  </tr>
+	  <tr><th>Współpraca z Portal for ArcGIS</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Stosowanie rozszerzeń</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Używanie usług mapowych jako źródeł danych</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Wyszukiwanie danych</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Przestrzenne filtrowanie informacji</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <!--<tr><th>Sketch on the map</th> 	    <td><span class="icon-check" style="color:lightgray"/></td> 	    <td><span class="icon-check" style="color:lightgray"/></td> 	  </tr>-->
+	  <tr><th>Rozbudowane korzystanie z danych nieprzestrzennych (w tym z tabel powiązanych)</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Widok 3D</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Zarządzanie pracownikami</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	</table>
+	<p>Podziel się <a href="http://ideas.arcgis.com/">pomysłami</a> i <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">prześlij nam swoją opinię</a>.</p>
+        
+        <p>&nbsp;</p>
         
 
       </div>
@@ -156,15 +301,14 @@ mobile: true
 
       <div class="column-8 tablet-column-24 blocks">
 
-        <div class="imgFrame block">
-          <h3>Wprowadzenie</h3>
-          <ul>
-           <li><a href="http://www.arcgis.com/home/item.html?id=ba47e0bf6cb84a6e9f77e9caf86b88eb">Instalacja</a></li>
-            <li><a href="/pl/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">Tworzenie i udostępnianie widoku operacyjnego</a></li>
-            <li><a href="/pl/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Monitorowanie aktywności i zdarzeń oraz reagowanie na nie</a></li>
-            <li><a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/">Tworzenie dodatków</a></li>
-
-          </ul>
+       <div class="imgFrame block">
+          <h3>Szczegóły</h3>
+          
+	  <h4><a href="#features">Charakterystyka</a></h4>
+	  <h4><a href="#systemRequirements">Wymagania systemowe</a></h4>
+	  <h4><a href="#whatsNew">Co nowego</a></h4>
+	  <h4><a href="#sneakPeek">Wkrótce</a></h4>
+          
         </div>
 
         <br />
@@ -186,7 +330,7 @@ mobile: true
  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/ios/feed/',
+        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
         max: 5,
         layout: 0
       });
