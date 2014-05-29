@@ -517,6 +517,25 @@ input[type="checkbox"] {
 	margin: 0;
 }
 
+#filters ol li label:hover {
+	background:none repeat scroll 0 0 #007AC2;
+	color: #FFFFFF
+}
+
+.current {
+    background: none repeat scroll 0 0 #007AC2;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+#filters ol li span input {
+	opacity: 0;
+}
+.ctrlbox input[type=checkbox]:checked + label
+{
+	font-weight:bolder;
+}
+
 /* Reference: http://www.thecssninja.com/css/css-tree-menu */
 /* Minimal css for clickable pure CSS collapsible tree menu */
 /* As specific as possible to prevent interference with other code */
@@ -533,12 +552,19 @@ li .filter-label {
 	cursor: pointer;        /* cursor changes when you mouse over this class */
 }                         /* could add the many user-select: none; commands here */
 
-li .filter-label + input[type=checkbox] + ol > li
+li .filter-label + ol > li
 {
 	display: none;         /* prevents sublists below unchecked labels from displaying */
 }
 
-li .filter-label + input[type=checkbox]:checked + ol > li
+/*li .filter-label + input[type=checkbox]:checked + ol > li
+{
+	display: block;
+}*/
+
+li .current + ol > li
 {
 	display: block;         /* display submenu on click */
 }
+
+
