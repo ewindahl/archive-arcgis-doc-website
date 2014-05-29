@@ -2,11 +2,11 @@
 title: Collector for ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -14,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -26,12 +28,20 @@ mobile: true
   <div class="container">
     <header>
       <h1>Collector for ArcGIS</h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+		<input type="hidden" name="product" value="collector-android" />          
+		<input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/collector/">Hjem</a></li>
-        <li><a href="/en/collector/android/create-maps/create-maps.htm">Opprette kart</a></li>
-        <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">Samle inn data</a></li>
+        <li class='current'><a href="/no/collector/">Hjem</a></li>
+        <li><a href="/no/collector/android/create-maps/create-maps.htm">Opprette kart</a></li>
+        <li><a href="/no/collector/android/collect-data/collect-tutorial.htm">Samle inn data</a></li>
         <li><a href="http://forums.arcgis.com/forums/224-Collector-for-ArcGIS">Forum</a></li>
       </ul>
     </nav>
@@ -42,20 +52,18 @@ mobile: true
 <div class="container">
 
       <div class="column-16 tablet-column-24">
-        <header>
 
-		  <h2 id="appTitle">Last ned appen</h2>
-          <span id="appVersion"><strong>Versjon:</strong> 10.2</span> <span id="appReleased"><strong>Utgitt</strong>: November 2013</span>
+        <h3 class="gray">Bruk smarttelefonen eller nettbrettet til &aring; samle inn og oppdatere informasjon i felten, i tilkoblet eller frakoblet modus.</h3>
 
+	  <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->
+	  
 
-          <p>Bruk smarttelefonen din til &aring; innhente og oppdatere informasjon ute i felten, logge gjeldende plassering og ta i bruk dataene du innhenter, slik at du kan ta mer velinformerte beslutninger til riktig tid.</p>
-
-          <p>
-             <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a> <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
-          </p>
-		 <p>
-            <a id="appSysRequirements" href="#systemRequirements">Systemkrav</a> <a id="appWhatsNew" href="#whatsNew">Dette er nytt</a>
-          </p>
+        <p>
+	    <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a> <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
+        </p>
 
         </header>
         <hr />
@@ -68,7 +76,7 @@ mobile: true
           <h3>Opprette og dele et kart</h3>
           <p>Utvid ArcGIS til medarbeiderne ute i felten, og f&aring; mer n&oslash;yaktige og oppdaterte geografiske data. Opprett og del kart for datainnsamling i to trinn.</p>
           <p>
-            <a href="/en/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+            <a href="/no/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
@@ -77,9 +85,9 @@ mobile: true
           <img src="app-collector-data.jpg" />
 
           <h3>Samle inn data</h3>
-          <p>Med et kart for datainnsamling kan du blant annet finne steder av interesse, beregne avstander, opprette tjenesteforesp&oslash;rsler og rapportere skader. Opprett intelligente data med bilder og video, og del dem med hele verden i fem trinn.</p>
+          <p>Opprett dataene som er viktige for din organisasjon, alt fra skademeldinger og foresp&oslash;rsler om tjenester til steder av historisk interesse. Inkluder bilder og videoer og del arbeidet ditt.</p>
           <p>
-            <a href="/en/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br />
+            <a href="/no/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br />
 
 			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Se en video</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
@@ -87,12 +95,45 @@ mobile: true
 			</video>
           </p>
         </div>
+	<div class="clear"></div>
 
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-3.png" />
+
+          <h3>Arbeide frakoblet</h3>
+          <p>Feltarbeid kan f&oslash;re deg til steder uten datatilkobling. Gj&oslash;r kart og data tilgjengelige i frakoblet modus, samle inn data og synkroniser dem s&aring; snart internettilgangen er gjenopprettet.</p>
+          <p>
+            <a href="/no/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;Vis meg hvordan</a><br />
+          </p>
+        </div>
+        
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-4.png" />
+
+          <h3>Hurtigstart med maler</h3>
+          <p>Bransjen din har sine egne vanlige datasett. Last ned maler for &aring; opprette den grunnleggende datastrukturen du trenger, og tilpass den til hver enkelt jobb.</p>
+          <p>
+            <a href="http://esri.maps.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;Vis nedlastinger</a><br />
+          </p>
+        </div>
+        
         <div class="clear"></div>
 
+	<a name="features"></a>
+	<h2 class="divider">Geoobjekter</h2>
+	<p>Samle inn og oppdater informasjon ute i felten, logg gjeldende plassering og ta i bruk dataene du samler inn, slik at du kan ta mer velinformerte beslutninger til riktig tid. Bruk kart overalt for &aring; forankre dataene dine i virkeligheten, gj&oslash;re observasjoner og reagere p&aring; hendelser. Effektiviteten til medarbeiderne i felten og n&oslash;yaktigheten til GIS-dataene dine forbedres.</p>
+	
+	<ul>
+	<li>Last ned kart til enheten din, og arbeid frakoblet.</li>
+	<li>Bruk GPS til &aring; opprette og oppdatere kartdata.</li>
+	<li>Samle inn punkter, linjer og omr&aring;deobjekter.</li>
+	<li>Fyll ut brukervennlige og kartdrevne skjemaer.</li>
+	<li>Finn steder og f&aring; veibeskrivelser.</li>
+	<li>Spor og rapporter omr&aring;der du har bes&oslash;kt.</li>
+	</ul>
 
         <a name="systemRequirements"></a>
-        <h2>Systemkrav</h2>
+        <h2 class="divider">Systemkrav</h2>
 
         <p>Det finnes noen systemkrav til enheter du skal kj&oslash;re Collector p&aring;, samt krav til dataene som brukes i selve appen. Collector st&oslash;ttes p&aring; en rekke spr&aring;k.</p>
 
@@ -107,35 +148,48 @@ mobile: true
           <li>Android 4.0 (Ice Cream Sandwich)<br/>eller senere</li>
           <li>Armv7-prosessor</li>
           <li>St&oslash;tte for OpenGL ES 2.0</li>
+          <li>St&oslash;tte for presis posisjonering (GPS- og nettverksbasert)</li>
         </ul></td>
-        <td valign="top"><h4 class="icon-apple">iPhone</h4>
+        <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS 6 eller nyere</li>
+          <li>iOS 7</li>
+          <li>iPhone, iPad, iPod touch</li>
         </ul></td><tr></table>
 
 
         <h3>Spr&aring;k som st&oslash;ttes</h3>
-        <p>Arabisk, dansk, engelsk, estisk (<span class="icon-android"/>), finsk, fransk, hebraisk, italiensk, japansk, kinesisk (forenklet), koreansk, latvisk (<span class="icon-android"/>), litauisk (<span class="icon-android"/>), nederlandsk , norsk , polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk og tysk.</p>
+        <p>Arabisk, dansk, engelsk, estisk (<span class="icon-android"/>), finsk, fransk, hebraisk, italiensk, japansk, kinesisk (forenklet), koreansk, latvisk (<span class="icon-android"/>), litauisk (<span class="icon-android"/>), nederlandsk , norsk , polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk, tyrkisk og tysk.</p>
         <p>Spr&aring;ket som brukes i appen, avhenger av spr&aring;kinnstillingen p&aring; enheten.</p>
 
 
         <a name="whatsNew"></a>
-        <h2>Nyheter</h2>
-        <p>Collector for ArcGIS versjon 10.2 ble utgitt i november med f&oslash;lgende forbedringer:</p>
+        <h2 class="divider">Nyheter</h2>
+        <p>Collector for ArcGIS 10.2.3 ble utgitt i april 2014. Inneholder ulike feilrettinger og forbedringer.</p>
+        <p>Collector for ArcGIS 10.2.2 ble utgitt i mars&nbsp;2014. Den inneholder f&oslash;lgende forbedringer:</p>
         <ul>
+        <li>St&oslash;tte for frakoblet arbeidsflyt</li>
         <li>Oppdatert brukeropplevelse</li>
-        <li>Egen nettbrett- og iPad-opplevelse</li>
-        <li>St&oslash;tte for innsamling av linjer og polygoner</li>
-        <li>GPS-str&oslash;mming</li>
-        <li>Forbedrede arbeidsflyter for innsamling</li>
-        <li>Forbedret ber&oslash;ringsfunksjonalitet for kart</li>
         <li>Diverse feilrettinger og forbedringer</li>
-        <li>St&oslash;tte for bedriftsp&aring;logging</li>
         <li>St&oslash;tte for flere spr&aring;k</li>
-        <li>Android-problemer som er l&oslash;st: NIM090003, NIM090935, NIM091973, NIM092424, NIM092833</li>
-        <li>iOS-problemer som er l&oslash;st: NIM094438, NIM094401</li>
+        <li>Android-problemer som er l&oslash;st: NIM098281, NIM096128, NIM098076</li>
+        <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
         </ul>
 
+	<a name="sneakPeek"></a>
+	<h2 class="divider">Sniktitt</h2>
+	<p>Collector er i dag en flott app for innsamling og redigering av data ute i felten. Men det kommer mer! Vi &oslash;nsker &aring; utvide appen med f&oslash;lgende:</p>
+	
+	<ul>
+	  <li>Flere verkt&oslash;y for planlegging av feltarbeid i frakoblet modus</li>
+	  <li>Smartere former for datainnsamling (inkludert relaterte tabeller)</li>
+	  <li>Funksjoner for datas&oslash;k<li>
+	  <li>Datainnsamling med forskyvninger<li>
+	  <li>St&oslash;tte for ad-hoc-innsamling</li>
+	  <li>Integrering av eksternt utstyr (laseravstandsm&aring;lere, strekkodelesere osv.)</li>
+	</ul>	
+	
+	<p>Del <a href="http://ideas.arcgis.com/">ideer</a> med oss og <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">send oss en tilbakemelding</a>.</p>
+		
         <p>&nbsp;</p>
 
       </div>
@@ -144,13 +198,13 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>Komme i gang</h3>
-          <ul>
-            <li><a href="/en/collector/android/collect-data/guided-tour.htm">Kort innf&oslash;ring</a></li>
-            <li><a href="/en/collector/android/create-maps/create-maps.htm">Opprette og dele et kart</a></li>
-            <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">Samle inn data</a></li>
-
-          </ul>
+	  <h3>Detaljer</h3>
+	          
+	  <h4><a href="#features">Geoobjekter</a></h4>
+	  <h4><a href="#systemRequirements">Systemkrav</a></h4>
+	  <h4><a href="#whatsNew">Nyheter</a></h4>
+	  <h4><a href="#sneakPeek">Sniktitt</a></h4>
+	          
         </div>
 
         <br />
@@ -171,7 +225,7 @@ mobile: true
   <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/mobile/feed/',
+        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
         max: 5,
         layout: 0
       });

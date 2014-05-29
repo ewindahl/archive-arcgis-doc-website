@@ -270,7 +270,7 @@ div.step ol{margin-left:45px;}
 }
 
 .usertext {
-    background: none repeat scroll 0 0 #F9F8F6;
+    /*background: none repeat scroll 0 0 #F9F8F6;*/
     padding: 0;
 }
 
@@ -674,12 +674,18 @@ section > h2 > img {
   float: right;
   margin-top: 20px;
   margin-right: 20px;
+  min-width: 200px;
 }
 
 
 .dropdown-navigation.no-top {
   margin-top: 0; 
 }
+
+.dropdown-navigation.no-right-margin {
+  margin-right: 0; 
+}
+
 
 .btn.user-signin {
   font-size: .8125em;
@@ -713,3 +719,10 @@ section > h2 > img {
   left:2px;
 }
 
+ul[purpose="ul"] .note-content p, ol[purpose="ol"] .note-content p {
+    font-size: 0.875em;
+}
+
+.note-content ul, .note-content ol {
+    font-size: 0.875em;
+}

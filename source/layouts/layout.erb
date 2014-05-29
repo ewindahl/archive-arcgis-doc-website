@@ -49,8 +49,6 @@ end
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
-	
-	<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" /> 
 
   <%= javascript_include_tag "sitecfg" %>
 
@@ -59,6 +57,11 @@ end
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
 
   <%= javascript_include_tag "signIn" %>
+
+   <!--- beg agol search -->
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+  <%= javascript_include_tag "agolsearch" %>
+   <!--- end agol search -->
 
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
@@ -95,19 +98,23 @@ end
 	
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
+   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" /> 
       
    <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
 	<% if current_language == "ar" %> 
-		<%= javascript_include_tag "locale/langSelector_ar" %>
 		<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
-	<% else %>
-		<%= javascript_include_tag "locale/langSelector" %>
+		<link type="text/css" rel="stylesheet" href="/css/print_l10n.css"/>
 	<% end %>
+	<%= javascript_include_tag "locale/langSelector" %>
    <% end %>
+   
+   <!--[if IE]>
+		<%= javascript_include_tag "libs/html5-placeholder-shim.js" %>
+	<![endif]-->
 
    <!-- set dropdown/show home in footer -->
   <script>
@@ -152,10 +159,17 @@ end
 
             <div id="lg-container" class="banner-navigation">
 
-              <div class="dropdown-navigation no-top">
+              <div id="agolSearch" class="agol-search">
+                <form class="agol-search-form" method="GET" action="//www.arcgis.com/home/search.html">
+                  <input name="q" class="agol-search-input" placeholder="Search ArcGIS" type="text" value="">
+                  <!--
+                  <input class="agol-search-submit" type="submit" value="">
+                  -->
+                </form>
+                <span class="agol-icon-search"></span>
               </div>
 
-              <div id="logged-out-navigation" class="dropdown-navigation no-top">
+              <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
                   <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
               </div>
 
@@ -253,5 +267,12 @@ end
 
     <%= javascript_include_tag "drop-down" %>
     <%= javascript_include_tag "search/searchform.js" %>
+
+   <script>
+   $(function() {
+      $("#agolSearch").agolSearch();
+   });
+   </script>
+
   </body>
 </html>

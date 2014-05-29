@@ -2,11 +2,11 @@
 title: Collector for ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -14,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -26,12 +28,20 @@ mobile: true
   <div class="container">
     <header>
       <h1>Collector for ArcGIS</h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="collector-android" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/collector/">الصفحة الرئيسية</a></li>
-        <li><a href="/en/collector/android/create-maps/create-maps.htm">إنشاء خرائط</a></li>
-        <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">تجميع البيانات</a></li>
+        <li class='current'><a href="/ar/collector/">الصفحة الرئيسية</a></li>
+        <li><a href="/ar/collector/android/create-maps/create-maps.htm">إنشاء خرائط</a></li>
+        <li><a href="/ar/collector/android/collect-data/collect-tutorial.htm">تجميع البيانات</a></li>
         <li><a href="http://forums.arcgis.com/forums/224-Collector-for-ArcGIS">المنتدى</a></li>
       </ul>
     </nav>
@@ -42,20 +52,19 @@ mobile: true
 <div class="container">
 
       <div class="column-16 tablet-column-24">
-        <header>
 
-		  <h2 id="appTitle">تنزيل التطبيق</h2>
-          <span id="appVersion"><strong>الإصدار:</strong> 10.2</span> <span id="appReleased"><strong>تاريخ الإصدار:</strong> نوفمبر 2013</span>
+        <h3 class="gray">استخدام الهواتف الذكية أو الأجهزة اللوحية لتجميع المعلومات داخل الحقل وتحديثها، ما إذا كانت متصلة أو غير متصلة.</h3>
 
+	  <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->
+	  
 
-          <p>استخدم الهاتف الذكي لتجميع المعلومات وتحديثها في الحقل، وقم بتسجيل موقعك الحالي، وضع البيانات التي تقوم بالتقاطها للعمل حتى يمكنك اتخاذ القرارات الأكثر استنارة وفي الوقت المناسب.</p>
-
-          <p>
-             <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a> <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
-          </p>
-		 <p>
-            <a id="appSysRequirements" href="#systemRequirements">متطلبات النظام</a> <a id="appWhatsNew" href="#whatsNew">ما الجديد</a>
-          </p>
+        <p>
+	    <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a>
+	    <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
+        </p>
 
         </header>
         <hr />
@@ -68,7 +77,8 @@ mobile: true
           <h3>إنشاء الخرائط ومشاركتها</h3>
           <p>قم بتمديد وصول ArcGIS إلى الحقل وقم بتحسين الدقة وعملة البيانات المكانية. إنشاء الخرائط ومشاركتها لتجميع البيانات في خطوتين.</p>
           <p>
-            <a href="/en/collector/android/create-maps/create-maps.htm" class="icon-right-arrow"> إظهار كيفية</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+            <a href="/ar/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;إظهار كيفية</a><br />
+            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
@@ -77,22 +87,57 @@ mobile: true
           <img src="app-collector-data.jpg" />
 
           <h3>تجميع البيانات</h3>
-          <p>يعتبر إيجاد أماكن الاهتمام وحساب المسافات وإنشاء طلبات الخدمة وتقرير التلفيات من الإمكانات القليلة للخريطة للقيام بتجميع البيانات. قم بإنشاء البيانات الذكية مع الصور والفيديوهات، ومشاركتها مع العالم في خمس خطوات.</p>
+          <p>إنشاء البيانات المرتبطة بالمؤسسة، من تقارير الضرر وطلبات الخدمة للأماكن التاريخية. تضمين الصور ومقاطع الفيديو ومشاركة عملك بسهولة.</p>
           <p>
-            <a href="/en/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow"> إظهار كيفية</a><br />
+            <a href="/ar/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;إظهار كيفية</a><br />
 
-			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge"> مشاهدة فيديو</a>
+			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;مشاهدة الفيديو</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
 			</video>
           </p>
         </div>
+	<div class="clear"></div>
 
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-3.png" />
+
+          <h3>العمل دون اتصال</h3>
+          <p>يحصل عمل الحقول على الأماكن بدون اتصال البيانات. جعل الخرائط والبيانات غير متصلة وتزامنها مرة أخرى بمجرد إعادة الاتصال.</p>
+          <p>
+            <a href="/ar/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;إظهار كيفية</a><br />
+          </p>
+        </div>
+        
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-4.png" />
+
+          <h3>الانتقال السريع - البدء بالقوالب</h3>
+          <p>للصناعة مجموعة البيانات الشائعة. تنزيل القوالب لإنشاء بنية البيانات الأساسية المطلوبة وتخصيصها للوظيفة المحددة.</p>
+          <p>
+            <a href="http://esri.maps.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;عرض عمليات التنزيل</a><br />
+          </p>
+        </div>
+        
         <div class="clear"></div>
 
+	<a name="features"></a>
+	<h2 class="divider">المعالم</h2>
+	<p>تجميع البيانات داخل الحقل وتحديثها وقم بتسجيل الموقع الحالي ووضع البيانات التي تقوم بالتقاطها للعمل لتتمكن من اتخاذ القرارات في الوقت المناسب. 
+	استخدم الخرائط في أي مكان للحصول على أدق البيانات وأخذ الملاحظات والاستجابة للأحداث. 
+	ستقوم بتحسين كفاءة قوى الحقل العاملة ودقة GIS الخاصة بك.</p>
+	
+	<ul>
+	<li>تنزيل الخرائط على الجهاز وقم بالعمل دون اتصال.</li>
+	<li>استخدام GPS لإنشاء بيانات الخريطة وتحديثها.</li>
+	<li>تجميع النقاط والخطوط ومعالم المنطقة.</li>
+	<li>تعبئة نماذج الخريطة سهلة الاستخدام.</li>
+	<li>إيجاد الأماكن والحصول على الاتجاهات.</li>
+	<li>تتبع المناطق التي تمت زيارتها والإبلاغ عنها.</li>
+	</ul>
 
         <a name="systemRequirements"></a>
-        <h2>متطلبات النظام</h2>
+        <h2 class="divider">متطلبات النظام</h2>
 
         <p>يوجد طلبات معينة للجهاز لتشغيل المُجمع، بالإضافة إلى المتطلبات الموجودة على البيانات التي تستخدم ضمن التطبيق. يتم دعم المُجمع بعدد من اللغات.</p>
 
@@ -107,36 +152,50 @@ mobile: true
           <li>Android 4.0 (Ice Cream Sandwich)<br/>أو الإصدار الأحدث</li>
           <li>معالج Armv7</li>
           <li>دعم OpenGL ES 2.0</li>
+          <li>دعم الموقع الأكثر تحديدًا (المستند إلى الشبكة وGPS)</li>
         </ul></td>
-        <td valign="top"><h4 class="icon-apple">iPhone</h4>
+        <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS 6 أو الإصدار الأحدث</li>
+          <li>iOS 7</li>
+          <li>iPhone وiPad وiPod</li>
         </ul></td><tr></table>
 
 
         <h3>اللغات المدعومة</h3>
-        <p>العربية والتشيكية والدانماركية والهولندية والإنجليزية والإستونية (<span class="icon-android"/>) والفنلندية والفرنسية والألمانية والعبرية والإيطالية واليابانية والكورية واللاتفية (<span class="icon-android"/>) واللتوانية (<span class="icon-android"/>) والنرويجية والبولندية والبرتغالية (البرازيل) والبرتغالية (البرتغال) والرومانية والروسية والصينية المبسطة والأسبانية والسويدية.</p>
-        <p>يتم تحديد اللغة التي يستخدمها التطبيق من خلال إعداد لغة الهاتف.</p>
+        <p>العربية والتشيكية والدانماركية والهولندية والإنجليزية والإستونية (<span class="icon-android"/>) والفنلندية والفرنسية والألمانية والعبرية والإيطالية واليابانية والكورية واللاتفية (<span class="icon-android"/>) واللتوانية (<span class="icon-android"/>) والنرويجية والبولندية والبرتغالية (البرازيل) والبرتغالية (البرتغال) والرومانية والروسية والصينية المبسطة والاسبانية والسويدية والتركية.</p>
+        <p>يتم تحديد اللغة التي يستخدمها التطبيق من خلال إعداد لغة الجهاز.</p>
 
 
         <a name="whatsNew"></a>
-        <h2>ما الجديد</h2>
-        <p>تم إصدار الإصدار Collector for ArcGIS 10.2 في نوفمبر 2013 مع وجود التعزيزات التالية:</p>
+        <h2 class="divider">ما الجديد</h2>
+        <p>يتم إصدار النسخة Collector for ArcGIS 10.2.3 في إبريل 2014. تتضمن أيضًا إصلاح الأخطاء والتحسينات.</p>
+        <p>تم إصدار النسخة 10.2.2 لـ Collector for ArcGIS في مارس 2014. يتضمن التعزيزات التالية:</p>
         <ul>
+        <li>دعم سير العمل غير المتصل</li>
         <li>خبرة المستخدم المُحدثة</li>
-        <li>خبرة iPad والأجهزة اللوحية المخصصة</li>
-        <li>دعم تجميع الخطوط والمضلعات</li>
-        <li>تدفق GPS</li>
-        <li>مسارات عمل المجموعة المُحسنة</li>
-        <li>تحسينات سلوكيات الضغط على الخريطة</li>
         <li>إصلاح الأخطاء السابقة وتحسينها</li>
-        <li>دعم عمليات تسجيل الدخول على المؤسسة</li>
         <li>الدعم للغات الإضافية</li>
-        <li>مشاكل Android المُعنونة: NIM090003 وNIM090935 وNIM091973 وNIM092424 وNIM092833</li>
-        <li>مشاكل iOS المُعنونة: NIM094438 وNIM094401</li>
+        <li>مشاكل Android المُعنونة: NIM098281 وNIM096128 وNIM098076</li>
+        <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
         </ul>
 
-        <p> </p>
+	<a name="sneakPeek"></a>
+	<h2 class="divider">نظرة خاطفة</h2>
+	<p>يعتبر المُجمّع اليوم تطبيق جيد لتجميع البيانات داخل الحقل وتحريرها. ولكن هناك المزيد!
+	نريد المخططات التفصيلية التالية في هذا التطبيق:</p>
+	
+	<ul>
+	  <li>المزيد من الأدوات لتخطيط عمليات الحقل غير المتصلة</li>
+	  <li>نماذج مجموعة البيانات الاذكى (بما في ذلك الجداول المرتبطة)</li>
+	  <li>إمكانية البحث عن البيانات<li>
+	  <li>مجموعة البيانات ذات الإزاحة<li>
+	  <li>دعم المجموعة المؤقتة</li>
+	  <li>تكامل الأجهزة الطرفية (محركات بحث تعمل بالليزر وأجهزة مسح الرمز الشريطي وما إلى ذلك)</li>
+	</ul>	
+	
+	<p>شارك <a href="http://ideas.arcgis.com/">الافكار</a>وأرسل <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">ملاحظاتك</a>.</p>
+		
+        <p>&nbsp;</p>
 
       </div>
 
@@ -144,13 +203,13 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>البدء</h3>
-          <ul>
-            <li><a href="/en/collector/android/collect-data/guided-tour.htm">جولة إرشادية</a></li>
-            <li><a href="/en/collector/android/create-maps/create-maps.htm">إنشاء الخرائط ومشاركتها</a></li>
-            <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">تجميع البيانات</a></li>
-
-          </ul>
+	  <h3>التفاصيل</h3>
+	          
+	  <h4><a href="#features">المعالم</a></h4>
+	  <h4><a href="#systemRequirements">متطلبات النظام</a></h4>
+	  <h4><a href="#whatsNew">ما الجديد</a></h4>
+	  <h4><a href="#sneakPeek">نظرة خاطفة</a></h4>
+	          
         </div>
 
         <br />
@@ -171,7 +230,7 @@ mobile: true
   <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/mobile/feed/',
+        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
         max: 5,
         layout: 0
       });
