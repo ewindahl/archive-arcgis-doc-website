@@ -302,7 +302,7 @@ function genGalleryModel(hash, mdfL) {
                             var vL = []
                             for (var i = 0, len = mdf[key].len; i < len; i++) {
                                 if (state.charAt(i) === "1") {
-                                    v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]:checked").val();
+                                    v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
 									console.log(v);
                                     if (v) {
                                         vL.push(key + ":" + v);
@@ -415,7 +415,7 @@ SERow.prototype.agolItemUrl = function (agolId) {
     return host + "/home/item.html?id=" + agolId;
 };
 SERow.prototype.agolImgUrl = function (agolId) {
-    var imgf = this.md("agol-thumbnail", null),
+		var imgf = (this.md("agol-large-thumbnail", null) != "None") ? this.md("agol-large-thumbnail", null) : this.md("agol-thumbnail", null),
 		imgurl = gcfg.emptyImgUrl,
 		host = gcfg.host || "http://www.arcgis.com";
 
@@ -532,28 +532,6 @@ function createGalleryShell() {
                 this.display.update(this.gm);
             }
         },
-		resetCollection: function (gm,collectionMdf,filterStatus) {
-		
-			var valL = collectionMdf.split(":");
-			var mdf = gm.mdf;
-			if (valL.length === 2) {
-				if (mdf.hasOwnProperty(valL[0])) {
-					var binaryL = [];
-					if(filterStatus >= 1){
-						//$("#filters input:checkbox").removeAttr('checked');
-						//$("#filters input:checkbox").removeAttr('checked');
-						for(i=1; i <= valL[1]; i++){
-							$("#filters input:checkbox[name="+valL[0]+"-"+i+"]").prop('checked',true);
-						}
-					}else {
-							$("#filters input:checkbox").removeAttr('checked');
-					}
-					mdf[valL[0]].state = binaryL.join("");
-				}
-			}
-            //this.display.update(this.gm);
-            
-        },
         _updateModelAndView: function (data) {
 
             var sedata = new SEData(data);
@@ -614,17 +592,14 @@ $(document).ready(function () {
 		var totalSelectedCheckBox = $('input[type=checkbox]').filter(':checked').length;
 		$(".filter-label").each(function (evt){
 				if($(this).hasClass('current') && totalSelectedCheckBox <= 0){
-					gShell.resetCollection(gModel,$(this).attr("col"),1);
+					//gShell.resetCollection(gModel,$(this).attr("col"),1);
 					gModel.updateCollection($(this).attr("col"));
 				}
 		});
 		gShell.update(gModel);
-		if(totalSelectedCheckBox <= 0) {
-			$("#filters input:checkbox").removeAttr('checked');
-		}
     });
 
-    $("#search").bind("click", function (evt) {
+    $("#search, #gl-search-btn").bind("click", function (evt) {
         gModel.updateQuery();
         gShell.update(gModel);
 
@@ -708,37 +683,20 @@ $(document).ready(function () {
 				
 		if($(this).hasClass('current') && $(this).attr('col') != "All"){
 			$(this).removeClass('current');
-			gShell.resetCollection(gModel,$(this).attr("col"),0);
+			gModel.updateCollection('All');
 			$("#allCollections").addClass('current');
 		}else{
 			$(".filter-label").each(function (evt){
 					$(this).removeClass('current');
 				});
 			$(this).addClass("current");
-			gShell.resetCollection(gModel,$(this).attr("col"),1);
+			gModel.updateCollection($(this).attr("col"));
 		}
-	
-		gModel.updateCollection($(this).attr("col"));
+			
 		gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
-		
-
-        //temp hack
-		/*if($(this).hasClass('current')){
-			$(this).removeClass('current');
-			//gShell.resetCollection(gModel,$(this).attr("value"),0);
-		}else{
-			$(".filter-label").each(function (evt){
-				$(this).removeClass('current')
-			});
-			$(this).addClass('current');
-			//gShell.resetCollection(gModel,$(this).attr("value"),1);
-		}*/
-        
+		        
         evt.stopImmediatePropagation();
-		
-		
-		
     });
 
     window.onhashchange = function (evt) {

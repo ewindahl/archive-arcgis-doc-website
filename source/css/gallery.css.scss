@@ -26,6 +26,9 @@
 	float: left;
 	position: relative;
 	padding: 0;
+	margin: 12px;
+	position: relative;
+	width: 286px;
 }
 #reference-content {
   /*@include column(18);*/
@@ -52,12 +55,7 @@ $search-icon-height: 30px;
 #gallerySearchForm {
   position: relative;
   input[type="text"] {
-    /*position:absolute;
-    height: 30px;
-    color:#888;
-	line-height: 1;
-	cursor: pointer;*/
-	
+ 	
   }
   input[type="submit"] {
     position:absolute;
@@ -69,6 +67,11 @@ $search-icon-height: 30px;
     margin: 1px 135px;
     width: $search-icon-width;
   }
+  input[type="search"] {
+	background-image: none;
+  }
+  
+  
 }
 #gl-display
 {
@@ -109,13 +112,14 @@ $search-icon-height: 30px;
   display:block;
 	/*font-family: $header-bold;
 	font-size: $h5-size;
-	line-height:h5-lines;*/
-  margin: 30px 0 10px 10px;
+	line-height:h5-lines;
+  margin: 30px 0 10px 10px;*/
+  padding: 6px;
 }
 
 .ctrlbox {
   display:block;
-  margin: 0.5em;
+  margin: 2px 0;
 	font-size: 0.85em;
 	line-height: 20px;
 	input[type="checkbox"] {
@@ -233,16 +237,26 @@ $search-icon-height: 30px;
   left: 300px;
 }
 
-.display1 .item {
+/*.display1 .item {
   position:relative;
   float:left;
   margin: 12px 0px;
   border: 0px solid black;
-  /*height: 200px;*/
   height: 235px;
   overflow:hidden;
   display:inline-block;
+}*/
+.display1 .item {
+	border: 0 solid black;
+	display: inline-block;
+	float: left;
+	height: 250px;
+	margin: 12px;
+	overflow: hidden;
+	position: relative;
+	width: 286px;
 }
+
 .display1 .item-contrib:hover {text-decoration:none;}
 .display1 .item-contrib {
   position:absolute;
@@ -472,11 +486,23 @@ $search-icon-height: 30px;
 /* Button that clears search input text */
 #gl-cl-btn {
 	display: none;
-	margin-right: $search-icon-width;
-	margin-top: 1/6*$search-icon-height;
+	/*margin-right: $search-icon-width;
+	margin-top: 1/6*$search-icon-height;*/
 	float: right;
 	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
 	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 36px;
+}
+
+#gl-search-btn {
+	float: right;
+	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
+	cursor: pointer;
+	position: absolute;
+	right: 0px;
+	top: 36px;
 }
 
 #gl-sbmt-btn {
@@ -529,12 +555,28 @@ input[type="checkbox"] {
 }
 
 #filters ol li span input {
-	opacity: 0;
+	/*opacity: 0;*/
 }
 .ctrlbox input[type=checkbox]:checked + label
 {
 	font-weight:bolder;
 }
+
+.ctrlbox > label
+{
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+}
+.ctrlbox > input {
+	display: none;
+}
+
+ul li {
+	padding: 0;
+}
+
+
 
 /* Reference: http://www.thecssninja.com/css/css-tree-menu */
 /* Minimal css for clickable pure CSS collapsible tree menu */
