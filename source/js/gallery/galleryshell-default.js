@@ -40,6 +40,7 @@ function genGalleryModel(hash, mdfL) {
 
         this.display = 1; //display type
 		this.clearAll = false;
+		this.col = "All"; //decoded value
 
         this.init = function (hash) {
             this._initMDF(mdfL);
@@ -86,6 +87,7 @@ function genGalleryModel(hash, mdfL) {
 
         this.updateByHash = function (hash) {
             var o = this._parseHash(hash);
+			console.log(o);
 
             if (o.s) {
                 this.startN = parseInt(o.s, 10);
@@ -109,6 +111,11 @@ function genGalleryModel(hash, mdfL) {
                 this.query = decodeURIComponent(o.q);
             } else {
                 this.query = "";
+            }
+			if (o.col) {
+                this.col = decodeURIComponent(o.col);
+            } else {
+                this.col = "";
             }
 
             if (o.md) {
@@ -158,6 +165,28 @@ function genGalleryModel(hash, mdfL) {
             this.query = $.trim($("#query").val());
             this.startN = 0;
 
+        }
+		
+		this.updateCollection = function (col) {
+            this.col = col;
+			
+			var valL = col.split(":");
+			var mdf = this.mdf;
+			for (var key in this.mdf) {
+				if (key == valL[0]) {
+					if (valL.length === 2) {
+						var binaryL = [];
+							for(i=1; i <= valL[1]; i++){
+								//$("#filters input:checkbox[name="+valL[0]+"-"+i+"]").prop('checked',true);
+								binaryL.push("1");
+							}
+						mdf[valL[0]].state = binaryL.join("");
+					}
+				}else{
+					mdf[key].state = "";
+				}
+			}
+			//console.log(mdf);
         }
 
         this.updateDisplayN = function (n) {
@@ -249,6 +278,7 @@ function genGalleryModel(hash, mdfL) {
             l.push("s=" + this.startN);
             l.push("n=" + this.numN);
             l.push("d=" + this.display);
+			l.push("col=" + this.col);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -272,7 +302,8 @@ function genGalleryModel(hash, mdfL) {
                             var vL = []
                             for (var i = 0, len = mdf[key].len; i < len; i++) {
                                 if (state.charAt(i) === "1") {
-                                    v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]:checked").val();
+                                    v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
+									console.log(v);
                                     if (v) {
                                         vL.push(key + ":" + v);
                                     }
@@ -384,7 +415,7 @@ SERow.prototype.agolItemUrl = function (agolId) {
     return host + "/home/item.html?id=" + agolId;
 };
 SERow.prototype.agolImgUrl = function (agolId) {
-    var imgf = this.md("agol-thumbnail", null),
+		var imgf = (this.md("agol-large-thumbnail", null) != "None") ? this.md("agol-large-thumbnail", null) : this.md("agol-thumbnail", null),
 		imgurl = gcfg.emptyImgUrl,
 		host = gcfg.host || "http://www.arcgis.com";
 
@@ -456,6 +487,7 @@ function createGalleryShell() {
                     $("#spinner").show();
                 },
                 success: function (data) {
+				console.log('success');
                     $("#spinner").hide();
                     this._updateModelAndView(data);
                     this.reloadCount += 1
@@ -500,7 +532,6 @@ function createGalleryShell() {
                 this.display.update(this.gm);
             }
         },
-
         _updateModelAndView: function (data) {
 
             var sedata = new SEData(data);
@@ -555,12 +586,20 @@ $(document).ready(function () {
         }
     });
 
-    $("#filters").bind("change", function (evt) {
+    $("#filters .ctrlbox").bind("change", function (evt) {
         gModel.updateByFilter();
-        gShell.update(gModel);
+
+		var totalSelectedCheckBox = $('input[type=checkbox]').filter(':checked').length;
+		$(".filter-label").each(function (evt){
+				if($(this).hasClass('current') && totalSelectedCheckBox <= 0){
+					//gShell.resetCollection(gModel,$(this).attr("col"),1);
+					gModel.updateCollection($(this).attr("col"));
+				}
+		});
+		gShell.update(gModel);
     });
 
-    $("#search").bind("click", function (evt) {
+    $("#search, #gl-search-btn").bind("click", function (evt) {
         gModel.updateQuery();
         gShell.update(gModel);
 
@@ -568,6 +607,14 @@ $(document).ready(function () {
         return false;
     });
 
+	$("#gallerySearchForm").bind("submit", function (evt) {
+        gModel.updateQuery();
+        gShell.update(gModel);
+
+        evt.stopImmediatePropagation();
+        return false;
+    });
+	
     $("#gl-pagenav").delegate("#pageX", "keydown", function (evt) {
         if (evt.keyCode == "13") {
             var x = parseInt($("#pageX").val(), 10);
@@ -630,6 +677,26 @@ $(document).ready(function () {
         gShell.update(gModel);
         evt.stopImmediatePropagation();
         return false;
+    });
+	
+	$(".filter-label").bind("click", function (evt) {
+				
+		if($(this).hasClass('current') && $(this).attr('col') != "All"){
+			$(this).removeClass('current');
+			gModel.updateCollection('All');
+			$("#allCollections").addClass('current');
+		}else{
+			$(".filter-label").each(function (evt){
+					$(this).removeClass('current');
+				});
+			$(this).addClass("current");
+			gModel.updateCollection($(this).attr("col"));
+		}
+			
+		gShell.update(gModel);
+		$("#filters input:checkbox").removeAttr('checked');
+		        
+        evt.stopImmediatePropagation();
     });
 
     window.onhashchange = function (evt) {
