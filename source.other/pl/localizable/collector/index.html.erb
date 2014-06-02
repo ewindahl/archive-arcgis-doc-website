@@ -6,6 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -13,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -104,7 +107,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="story-graphic-4.png" />
 
-          <h3>Szybki start dzięki szablonom</h3>
+          <h3>Rozpoczęcie pracy z użyciem szablonów</h3>
           <p>W większości branż używane są określone zestawy danych. Pobierz szablony, aby utworzyć podstawową strukturę danych, której potrzebujesz i dostosuj ją do konkretnego zadania.</p>
           <p>
             <a href="http://esri.maps.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;Wyświetl liczbę pobrań</a><br />
@@ -115,15 +118,15 @@ mobile: true
 
 	<a name="features"></a>
 	<h2 class="divider">Charakterystyka</h2>
-	<p>Gromadź i aktualizuj dane w terenie, twórz dziennik bieżącej lokalizacji i stosuj pozyskane dane w pracy, aby podejmować bardziej świadome i szybsze decyzje. Korzystaj z map w dowolnym miejscu i zwiększaj precyzję danych, dokonuj obserwacji i reaguj na wydarzenia. Pozwoli to na poprawienie efektywności pracowników terenowych oraz dokładności danych GIS.</p>
+	<p>Gromadź i aktualizuj dane w terenie, twórz dziennik bieżącej lokalizacji i stosuj pozyskane dane w pracy, aby podejmować bardziej świadome i szybsze decyzje. Możesz korzystać z map w dowolnym miejscu, zwiększając dokładność dodawanych danych, z uwzględnieniem obserwacji i wydarzeń. Pozwoli to na poprawienie efektywności pracowników terenowych oraz dokładności danych GIS.</p>
 	
 	<ul>
-	<li>Pobieranie map na urządzenie i praca w trybie offline.</li>
-	<li>Używanie systemu GPS do tworzenia i aktualizacji danych na mapie.</li>
-	<li>Dodawanie obiektów punktowych, liniowych i poligonowych.</li>
-	<li>Wypełnianie łatwych w użyciu formularzy map.</li>
+	<li>Pobieranie map na urządzenie i praca w trybie offline</li>
+	<li>Używanie systemu GPS do tworzenia i aktualizacji danych na mapie</li>
+	<li>Dodawanie obiektów punktowych, liniowych i poligonowych</li>
+	<li>Wypełnianie łatwych w użyciu formularzy map</li>
 	<li>Wyszukiwanie miejsc i wyznaczanie tras</li>
-	<li>Śledzenie i raportowanie odwiedzanych obszarów.</li>
+	<li>Śledzenie i raportowanie odwiedzanych obszarów</li>
 	</ul>
 
         <a name="systemRequirements"></a>
@@ -142,6 +145,7 @@ mobile: true
           <li>Android 4.0 (Ice Cream Sandwich)<br/>lub nowszy</li>
           <li>Procesor Armv7</li>
           <li>Obsługa interfejsu OpenGL ES 2.0</li>
+          <li>Obsługa wyznaczania precyzyjnych lokalizacji (w oparciu o system GPS i sieć)</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
@@ -157,19 +161,20 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Co nowego</h2>
+        <p>Aplikacja Collector for ArcGIS 10.2.3 została opublikowana w kwietniu 2014 r. Wprowadzono w niej poprawki i ulepszenia.</p>
         <p>Aplikacja Collector for ArcGIS 10.2.2 została opublikowana w marcu 2014 r. i zawiera następujące ulepszenia:</p>
         <ul>
         <li>Obsługa pracy w trybie offline</li>
         <li>Zaktualizowane środowisko użytkownika</li>
-        <li>Usunięcie wielu usterek i wprowadzenie poprawek</li>
+        <li>Usunięcie różnych usterek i wprowadzenie ulepszeń</li>
         <li>Obsługa dodatkowych języków</li>
         <li>Rozwiązanie problemów związanych z systemem Android: NIM098281, NIM096128, NIM098076</li>
         <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
         </ul>
 
 	<a name="sneakPeek"></a>
-	<h2 class="divider">Zapowiedź</h2>
-	<p>Obecnie aplikacja Collector to doskonałe narzędzie do gromadzenia i edycji danych w terenie. To jednak nie wszystko! Poniższa lista zawiera udoskonalenia, które chcielibyśmy wprowadzić do aplikacji:</p>
+	<h2 class="divider">Wkrótce</h2>
+	<p>Obecnie aplikacja Collector to świetne narzędzie do gromadzenia i edycji danych w terenie. To jednak nie wszystko! Poniższa lista podaje udoskonalenia, które planujemy wprowadzić do aplikacji:</p>
 	
 	<ul>
 	  <li>Więcej narzędzi do planowania zadań wykonywanych podczas pracy w trybie offline w terenie</li>
@@ -177,7 +182,7 @@ mobile: true
 	  <li>Możliwość wyszukiwania danych<li>
 	  <li>Dodawanie danych z użyciem przesunięć<li>
 	  <li>Obsługa tymczasowego dodawania</li>
-	  <li>Integracja urządzeń zewnętrznych (dalmierzy laserowych, skanerów kodów kreskowych itp.).</li>
+	  <li>Integracja urządzeń zewnętrznych (dalmierzy laserowych, skanerów kodów kreskowych itp.)</li>
 	</ul>	
 	
 	<p>Podziel się <a href="http://ideas.arcgis.com/">pomysłami</a> i <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">prześlij nam swoją opinię</a>.</p>
@@ -195,7 +200,7 @@ mobile: true
 	  <h4><a href="#features">Charakterystyka</a></h4>
 	  <h4><a href="#systemRequirements">Wymagania systemowe</a></h4>
 	  <h4><a href="#whatsNew">Co nowego</a></h4>
-	  <h4><a href="#sneakPeek">Zapowiedź</a></h4>
+	  <h4><a href="#sneakPeek">Wkrótce</a></h4>
 	          
         </div>
 

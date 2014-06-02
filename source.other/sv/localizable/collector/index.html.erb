@@ -6,6 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -13,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -123,7 +126,7 @@ mobile: true
 	<ul>
 	<li>H&auml;mta kartor till din enhet och arbeta offline.</li>
 	<li>Anv&auml;nd GPS f&ouml;r att skapa och uppdatera kartdata.</li>
-	<li>Samla in punkt-, linje- och omr&aring;desgeoobjekt.</li>
+	<li>Samla punkt-, linje- och omr&aring;desgeoobjekt.</li>
 	<li>Fyll i anv&auml;ndarv&auml;nliga och kartdrivna formul&auml;r.</li>
 	<li>S&ouml;k platser och h&auml;mta v&auml;gbeskrivningar</li>
 	<li>F&ouml;lj upp och rapportera omr&aring;den du har bes&ouml;kt.</li>
@@ -145,6 +148,7 @@ mobile: true
           <li>Android 4.0 (Ice Cream Sandwich)<br/>eller senare</li>
           <li>Armv7-processor</li>
           <li>St&ouml;d f&ouml;r OpenGL ES 2.0</li>
+          <li>St&ouml;d f&ouml;r noggrann best&auml;mning av platser (GPS och n&auml;tverksbaserat)</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
@@ -160,6 +164,7 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Nyheter</h2>
+        <p>Collector for ArcGIS 10.2.3 sl&auml;pptes i april 2014. Den h&auml;r versionen inneh&aring;ller l&ouml;sningar p&aring; olika fel och f&ouml;rb&auml;ttringar.</p>
         <p>Collector for ArcGIS 10.2.2 sl&auml;pptes i mars 2014. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
         <ul>
         <li>St&ouml;d f&ouml;r offlinearbetsfl&ouml;den</li>
