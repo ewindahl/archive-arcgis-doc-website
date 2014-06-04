@@ -291,8 +291,8 @@ $search-icon-height: 30px;
   width:286px;
   /*height: 133px;
   width:200px;
-  border: 1px solid #888;
-  padding:5px;
+  /*border: 1px solid #888;
+  padding:5px;*/
   -webkit-box-shadow: 0px 0px 4px #666;
   -moz-box-shadow: 0px 0px 4px #666;
   box-shadow: 0px 0px 4px #666;
@@ -431,12 +431,12 @@ $search-icon-height: 30px;
   -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 
   background-color: #ccc;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#d9d9d9));
-  background-image: -webkit-linear-gradient(top, #f1f1f1, #d9d9d9);
-  background-image:    -moz-linear-gradient(top, #f1f1f1, #d9d9d9);
-  background-image:     -ms-linear-gradient(top, #f1f1f1, #d9d9d9);
-  background-image:      -o-linear-gradient(top, #f1f1f1, #d9d9d9);
-  background-image:         linear-gradient(to bottom, #f1f1f1, #d9d9d9);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#007AC2));
+  background-image: -webkit-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:    -moz-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:     -ms-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:      -o-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:         linear-gradient(to bottom, #f1f1f1, #007AC2);
 
 }
 
@@ -457,14 +457,21 @@ $search-icon-height: 30px;
 }*/
 
 #gl-pagenav .btn.active, .btn:active {
+	background-color: #007AC2;
+    color: #FFFFFF;
 }
+.active{
+	background-color: #007AC2;
+    color: #FFFFFF;
+}
+
 #gl-pagenav .btn.disabled
 {
   /*display:none;*/
   border: 1px solid #B9b9b9;
   color: #c1c1c1;
   cursor: default;
-  background:#f1f1f1;
+  background:#007AC2;
 }
 
 #gl-content-ul li{
@@ -610,3 +617,64 @@ li .current + ol > li
 }
 
 
+
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

@@ -87,7 +87,6 @@ function genGalleryModel(hash, mdfL) {
 
         this.updateByHash = function (hash) {
             var o = this._parseHash(hash);
-			console.log(o);
 
             if (o.s) {
                 this.startN = parseInt(o.s, 10);
@@ -303,7 +302,6 @@ function genGalleryModel(hash, mdfL) {
                             for (var i = 0, len = mdf[key].len; i < len; i++) {
                                 if (state.charAt(i) === "1") {
                                     v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
-									console.log(v);
                                     if (v) {
                                         vL.push(key + ":" + v);
                                     }
@@ -410,9 +408,19 @@ SERow.prototype.val = function (key, dval) {
 SERow.prototype.agolId = function () {
     return this.md("agol-item-id", "");
 };
+SERow.prototype.agolItemType = function () {
+    var itemType = this.md("agol-itemtype", "");
+	
+	if (itemType !== "None") {
+        itemType  = (itemType.match(/application/gi)) ? "app" : "map";
+    }
+	return itemType;
+};
 SERow.prototype.agolItemUrl = function (agolId) {
-    var host = gcfg.host || "http://www.arcgis.com";
-    return host + "/home/item.html?id=" + agolId;
+	var itemType = this.agolItemType();
+    /*var host = gcfg.host || "http://www.arcgis.com";
+    return host + "/home/item.html?id=" + agolId;*/
+	return "item/?itemId=" + agolId;
 };
 SERow.prototype.agolImgUrl = function (agolId) {
 		var imgf = (this.md("agol-large-thumbnail", null) != "None") ? this.md("agol-large-thumbnail", null) : this.md("agol-thumbnail", null),
@@ -487,7 +495,6 @@ function createGalleryShell() {
                     $("#spinner").show();
                 },
                 success: function (data) {
-				console.log('success');
                     $("#spinner").hide();
                     this._updateModelAndView(data);
                     this.reloadCount += 1
