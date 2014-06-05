@@ -52,9 +52,10 @@ doc.itemDetails = (function(){
 			if(itemType == "app"){
 				iframeSrc = itemDetails.url;
 			} else if(itemType == "layers"){
-				iframeSrc = "http://www.arcgis.com/home/webmap/viewer.html?layers=" + itemDetails.id + "&useExisting=1";
+				//iframeSrc = "http://www.arcgis.com/home/webmap/viewer.html?layers=" + itemDetails.id + "&useExisting=1";
+				iframeSrc = itemDetails.url+ "?f=jsapi";
 			} else if (itemType == "tools"){
-				iframeSrc = itemDetails.url;
+				iframeSrc = "";
 			} else {
 				// Map
 				iframeSrc = "http://www.arcgis.com/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent="+itemDetails.extent.join();
@@ -90,18 +91,22 @@ doc.itemDetails = (function(){
 			$("#description").html(itemDetails.description);
 
 
-			if(itemType == "app" || itemType == "tools"){
+			if(itemType == "app"){
 				
 				$(".layers").hide();
 				$(".extent").hide();
 
 				var text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch App</a>";
-				if(itemType == "tools")
-					text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 
 				$("#downloadBtns").html(text);
 
-			}else{
+			} else if(itemType == "tools"){
+				$(".layers").hide();
+				$(".extent").hide();
+				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
+				text = "<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Download File</a>";
+				$("#downloadBtns").html(text);
+			} else {
 				if(itemDetails.extent.length > 0){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
 					$("#map-extent p").html(text);
@@ -136,17 +141,22 @@ doc.itemDetails = (function(){
 			var miscData = obj.getAJAXResponse(itemId,AGOLURL+"sharing/rest/content/items/"+itemId+"/data?f=json");
 			
 			if(!miscData.code){
+				
 				var layers = [];
 				layers.push("<ul>");
-				$.each( miscData.operationalLayers, function( key, value ) {
-					if(value.url){
-						layers.push("<li>"+value.title+"<br/><span style='margin-left: 1.5em;'><a href='" + value.url + "'>" + value.url + "</a></span></li>");
-					}
-				});
+				if(miscData.operationalLayers){
+					$.each( miscData.operationalLayers, function( key, value ) {
+						if(value.url){
+							layers.push("<li>"+value.title+"<br/><span style='margin-left: 1.5em;'><a href='" + value.url + "'>" + value.url + "</a></span></li>");
+						}
+					});
+				}
 
-				$.each( miscData.baseMap.baseMapLayers, function( key, value ) {
-					layers.push("<li>"+value.id+"<br/><span style='margin-left: 1.5em;'><a href='" + value.url + "'>" + value.url + "</a></span></li>");
-				});
+				if(miscData.baseMap){
+					$.each( miscData.baseMap.baseMapLayers, function( key, value ) {
+						layers.push("<li>"+value.id+"<br/><span style='margin-left: 1.5em;'><a href='" + value.url + "'>" + value.url + "</a></span></li>");
+					});
+				}
 				layers.push("</ul>");
 
 				$("#map-contents-layers").html(layers.join(""));
@@ -162,11 +172,13 @@ doc.itemDetails = (function(){
 			feed.push("<article>");
 
 			
-			data.comments.sort(function(a,b) {
+			if(data.comments){
+				data.comments.sort(function(a,b) {
 
-				return b.created - a.created;
+					return b.created - a.created;
 
-			})
+				})
+			}
 			
 			$.each( data.comments, function( key, value ) {
 				if(i < 5) {
@@ -257,7 +269,14 @@ $(document).ready(function() {
 	
 	if(!itemDetails.code){
 	
-		$("#mapIframe").attr("src", obj.getIframeSource());
+		if(obj.getIframeSource()){
+			$("#mapIframe").attr("src", obj.getIframeSource());
+		}else{
+			$("#mapIframe").hide();
+			$("#alternateToIframe").css("display","block")
+			$("#alternateToIframe").html("<p></p>")
+			//$("#alternateToIframe").html("<a href='"+itemDetails.url+"' target='_blank'><img src='"+AGOLURL+"sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a>");
+		}
 		obj.renderGeneralElementsValues();
 
 		//feed
