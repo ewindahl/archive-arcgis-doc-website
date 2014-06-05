@@ -88,13 +88,13 @@ function genDisplay() {
             
             buf.push("<li class='item'>");
             if (v.show) {
-                buf.push("<a href='" + targetUrl + "'  target='_blank' class='item-contrib " + v.css + " '>" + v.label + "</a>");
+                buf.push("<a href='" + targetUrl + "'  class='item-contrib " + v.css + " '>" + v.label + "</a>");
             }
 
-            buf.push("<a href='" + targetUrl + "' target='_blank'>");
+            buf.push("<a href='" + targetUrl + "'>");
             buf.push("<img class='item-img' src='" + imgurl + "' />");
             buf.push("</a>");
-            buf.push("<a class='item-title' href='" + targetUrl + "' target='_blank'>");
+            buf.push("<a class='item-title' href='" + targetUrl + "'>");
             buf.push(row.md("agol-item-title", "n/a"));
             buf.push("</a>");
 			buf.push("<span class='ownerName'>By "+row.md("agol-owner", "n/a")+"</span>");
