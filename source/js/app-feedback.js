@@ -48,26 +48,26 @@ doc.cookieJar = (function(){
 doc.l10n = (function () {
 
     var langList = {
-        "en": "en",
-        "en-us": "en",
-        "ar": "ar",
-        "da": "da",
-        "de" : "de",
-        "es": "es",
-        "fr": "fr",
-        "it": "it",
-        "ja" : "ja",
-        "ko": "ko",
-        "nl" : "nl",
-        "no": "no",
-        "pl": "pl",
-        "pt-br": "pt-br",
-        "pt-pt": "pt-pt",
-        "ro": "ro",
-        "ru": "ru",
-        "sv": "sv",
-        "zh-cn": "zh-cn"
-    },  
+          "en": "en",
+          "en-us": "en",
+          "ar": "ar", "ar-dz": "ar", "ar-bh": "ar", "ar-eg": "ar",  "ar-iq": "ar",  "ar-jo": "ar", "ar-kw": "ar", "ar-lb": "ar", "ar-ly": "ar", "ar-ma": "ar", "ar-om": "ar", "ar-qa": "ar", "ar-sa": "ar", "ar-sy": "ar", "ar-tn": "ar", "ar-ae": "ar",
+          "da": "da",
+          "de" : "de", "de-at" : "de", "de-de" : "de", "de-li" : "de", "de-ch" : "de",
+          "es": "es", "es-us": "es", "es-us": "es", "es-ar": "es", "es-bo": "es", "es-cl": "es", "es-co": "es", "es-cr": "es", "es-do": "es", "es-ec": "es", "es-sv": "es", "es-gt": "es", "es-hn": "es", "es-mx": "es", "es-pr": "es", "es-es": "es", "es-uy": "es", "es-ve": "es",		  
+          "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr",
+          "it": "it", "it-it": "it", "it-ch": "it",
+          "ja" : "ja","ja-jp" : "ja",
+          "ko": "ko",
+          "nl" : "nl", "nl-be" : "nl",
+          "no": "no","no-no": "no",
+          "pl": "pl",
+          "pt-br": "pt-br",
+          "pt-pt": "pt-pt",
+          "ro": "ro", "ro-mo": "ro",
+          "ru": "ru", "ru-mo": "ru",
+          "sv": "sv", "sv-fi": "sv", "sv-se": "sv",
+          "zh-cn": "zh-cn", "zh-hk": "zh-cn", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-cn"
+      },  
 
 
     //RC fully supported langs
@@ -75,29 +75,11 @@ doc.l10n = (function () {
     lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","ru","sv"],
 
     //all langs
-    lgPickerLabels = {
-        "en": "English",
-        "ar": "عربي",
-        "da": "Dansk",
-        "de": "Deutsch",
-        "es": "Español",
-        "fr": "Français",
-        "it": "Italiano",
-        "ja": "日本語",
-        "ko": "한국어",
-        "nl": "Nederlands",
-        "no": "Norsk",
-        "pl": "Polski",
-        "pt-br": "Português (Brasil)",
-        "pt-pt": "Português (Portugal)",
-        "ro": "Română",
-        "ru": "Русский",
-        "sv": "Svenska",
-        "zh-cn": "中文(简体)"
-    },
+    lgPickerLabels = GLangLabels;
 
     historyCK = "state404", 
     prefLangCK = "preflang";
+	esriAuthCK = "esri_auth";
 
     return {
         getReferrerLang : function () {
@@ -150,7 +132,8 @@ doc.l10n = (function () {
 
 
         getAgolPref : function () {
-            return null;
+            var ckObj =  $.parseJSON (doc.cookieJar.getItem (esriAuthCK));
+			return (ckObj)?ckObj.culture : null;
         },
 
         getSelectorPref : function () {
@@ -175,9 +158,9 @@ doc.l10n = (function () {
 
             defaultv = (typeof defaultv === "undefined") ? "en" : defaultv;
 
-            dbg ("calcPrefLang: "+prefAgol + "-" + prefSelector + "-" + prefBrowser + "-" + defaultv);
+            dbg ("calcPrefLang: "+prefSelector + "-" + prefAgol + "-" + prefBrowser + "-" + defaultv);
 
-            return prefAgol || prefSelector || prefBrowser || defaultv || "en";
+            return prefSelector || prefAgol || prefBrowser || defaultv || "en";
         },
 
         setPrefLang : function (lg) {
@@ -308,7 +291,20 @@ doc.l10n = (function () {
         hasENPage : function (url) {
             //implement defer interface
             return true
-        }
+        },
+		
+	pageNotFoundText : function (curlang, referrer) {
+		if(curlang != "en"){
+			var dict = (window.localeJsonObj || {})[curlang];
+			var pageNotFoundNote = dict['404-may-exist-in-english'],
+				englishURL = window.location.href + "?lg=en";
+				
+			// Using getElementbyID as innerHTML is not working as expected with Jquery $("#404_note").innerHTML, specifically on localized pages
+			document.getElementById('404_note').innerHTML = pageNotFoundNote;
+			document.getElementById('englishLinkNote').innerHTML = dict['404-click-here-for-english'];
+			$("#englishLink").attr("href",englishURL.replace ("/"+curlang+"/","/en/"));
+		}
+	}
 
 
     };    
@@ -318,21 +314,22 @@ doc.supportForm = (function() {
 
 	return {
 	/* Function for the form validation */
-		validateFeedbackForm : function(){
+		validateFeedbackForm : function(lg){
+			var dict = (window.localeJsonObj || {})[lg];
 				
 			if(document.getElementById('userFeedback').value == ""){
-				alert("Please enter the valid feedback!");
+				alert(dict['enter-valid-feedback']);
 				document.getElementById('userFeedback').focus();
 				return false;
 			}
 			if(document.getElementById('userEmail').value == ""){
-				alert("Please enter your Email address!");
+				alert(dict['enter-valid-email']);
 				document.getElementById('userEmail').focus();
 				return false;
 			}
 			
-			if(!ValidCaptcha()){
-				alert("Please enter the valid captcha value!");
+			if(!this.ValidCaptcha()){
+				alert(dict['enter-valid-captcha']);
 				document.getElementById('txtCaptchaInput').focus();
 				return false;
 			}
@@ -353,6 +350,7 @@ doc.supportForm = (function() {
 			var g = '10';  
 			var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
 			document.getElementById("txtCaptcha").innerHTML = code;
+			document.getElementById("txtHiddenCaptcha").value = code;
 		},
 
 		ValidCaptcha : function () { 
@@ -360,7 +358,7 @@ doc.supportForm = (function() {
 				return string.split(' ').join('');
 			};
 
-			var str1 = removeSpaces(document.getElementById('txtCaptcha').innerHTML);
+			var str1 = removeSpaces(document.getElementById('txtHiddenCaptcha').value);
 			var str2 = removeSpaces(document.getElementById('txtCaptchaInput').value);
 			return (str1 === str2);
 		},

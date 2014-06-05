@@ -269,6 +269,15 @@ div.step ol{margin-left:45px;}
 	background: none;
 }
 
+.usertext {
+    /*background: none repeat scroll 0 0 #F9F8F6;*/
+    padding: 0;
+}
+
+.usertext + .xref {
+    padding-left: 0.3125em;
+}
+
 /* End of imported classes (from old publisher)*/
 
 .logo-wrap {
@@ -526,7 +535,43 @@ table.lined-columns tbody th, table.lined-columns tbody td {
 	margin-bottom: 10px;
 }
 
-/* marketplace search box */
+/* ----- marketplace -------- */
+.marketplace .header-inner nav {
+  margin-left: 1em;
+}
+
+.marketplace #header .right-nav {
+  text-transform: uppercase;
+}
+
+.marketplace #header .right-nav {
+  float: right;
+  margin-top: 1.4em;
+  margin-right: 1em;
+}
+
+
+.marketplace .dropdown-navigation {
+  float: right;
+  margin-top: 20px;
+}
+
+.marketplace .section-bar.marketplace {
+  margin-bottom:3em;
+  background:url("/img/banner-marketplace.jpg") no-repeat center center #E7601F;
+  min-height:83px;color:white
+}
+
+.marketplace  #logged-in-navigation img {
+  position: relative;
+  top: 2px;
+  left: -4px;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+
 input[name="mkpSearch"] {
   display: inline;
   float: left;
@@ -542,4 +587,142 @@ input[name="mkpSearch"] {
 
 #footer li {
     list-style-position: outside;
+}
+
+
+/* --- search ---- */
+
+/*
+http://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-page-load
+*/
+
+/* when loading the page, do the fadein effect*/
+.fadein {
+    margin-top: 0px;
+    font-size: 21px;
+    text-align: center;
+
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+       -moz-animation: fadein 2s; /* Firefox */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.reference-content .question p {
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+section > h2 > img {
+	vertical-align: middle;
+}
+
+.webapp .webapp-caption {
+	font-style: italic;
+}
+
+.fig{
+    display: table;
+	margin-bottom:1.5em;
+	margin-top: 1.5em;
+	margin-left: 2.8em;
+}
+
+.fig-caption{
+	display: table-caption;
+	caption-side: bottom;
+	text-align:center;
+	font-style:italic;
+	font-size:.75em;
+	color: #8d8d8d;
+}
+
+
+/* banner: language selector, sign in, search*/
+
+.banner-navigation {
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  min-width: 200px;
+}
+
+
+.dropdown-navigation.no-top {
+  margin-top: 0; 
+}
+
+.dropdown-navigation.no-right-margin {
+  margin-right: 0; 
+}
+
+
+.btn.user-signin {
+  font-size: .8125em;
+  line-height: 1.84615em;
+  border-width: 1px;
+
+  text-shadow: none;
+
+  background: none;
+  color: #007ac2;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-transform: none;
+  padding: 0.3em 1.8em 0.2em !important;
+}
+
+.user-signin > img {
+  margin-right: 5px;
+}
+
+ .profile-icon {
+  background-image: url("/img/marketplace_sprite.png") !important;
+  background-position: -64px -81px;
+  position: absolute;
+  top: 7px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+
+  left:2px;
+}
+
+ul[purpose="ul"] .note-content p, ol[purpose="ol"] .note-content p {
+    font-size: 0.875em;
+}
+
+.note-content ul, .note-content ol {
+    font-size: 0.875em;
 }

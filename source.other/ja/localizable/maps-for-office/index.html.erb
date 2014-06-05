@@ -1,23 +1,33 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
 ---
-<div class="navigation-bar blue">
+title: Esri Maps for Office
+
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/ja/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -36,10 +46,10 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">アプリケーションのダウンロード</h2>
-          <span id="appVersion"><strong>バージョン: </strong>2.1</span> <span id="appReleased"><strong>公開時期:</strong></span> <span id="appReleased">2013 年 7 月</span>
+          <span id="appVersion"><strong>バージョン:</strong>2.1.3</span> <span id="appReleased"><strong>公開時期:</strong>2014 年春</span>
 
 
-          <p>Esri Maps for Office を使用すると、Excel データから動的で対話的なマップを作成し、まったく新しい方法でデータを調べることができます。Esri Maps for Office では、表形式のデータや図表ではわからなかったパターンや傾向を明らかにすることができます。マップは、PowerPoint プレゼンテーションを使用してすぐに共有したり、Esri のマッピング クラウドである ArcGIS Online に 1 クリックで公開したりすることができます。</p>
+          <p>Esri Maps for Office を使用すると、Excel データから動的で対話的なマップを作成するというまったく新しい方法でデータを調べることができます。Esri Maps for Office では、表形式のデータや図表ではわからなかったパターンや傾向を明らかにすることができます。マップは、PowerPoint プレゼンテーションを使用してすぐに共有したり、Esri のマッピング プラットフォームである ArcGIS Online に簡単に公開したりすることができます。</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Esri Maps for Office の取得</a>
@@ -55,7 +65,7 @@ metatags:
           <img src="map-your-data.jpg" />
 
           <h3>スプレッドシートのマッピング </h3>
-          <p>Esri Maps for Office を使用して Excel データをマッピングする方法について説明します。動的な色分け、ポイント、クラスタ化されたポイント、およびヒート マップを直接 Excel に作成して、データに関する視覚的なアイディアを簡単に得ることができます。</p>
+          <p>Esri Maps for Office を使用して Excel データをマッピングする方法について説明します。動的な色分け、ポイント、クラスタ化されたポイント、およびヒート マップを、簡単に直接 Excel に作成して、データに関する視覚的な洞察を得ることができます。</p>
           <p>
             <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2457/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;ビデオを見る</a>
 			<video width="320" height="240" controls id="2457" class="mobileVideo">
@@ -68,7 +78,7 @@ metatags:
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="enrich-data.jpg" />
 
-          <h3>データへの情報付加</h3>
+          <h3>データの情報付加</h3>
           <p>Esri の豊富なデータ コレクションを利用して、ビジネス データに付加価値を与えることができます。人口統計とライフスタイル データを直接 Excel スプレッドシートに追加して、重要な場所に関する情報をさらに多く得ることができます。ポップアップ インフォグラフィックスを使用してリアルタイムで簡単に場所を調べることができます。</p>
           <p>
            <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>--> <a href="http://video.arcgis.com/iframe/2468/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;ビデオを見る</a>
@@ -84,40 +94,97 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>システム要件</h2>
 
-        <p>Esri Maps for Office を使用するには、<a href="http://help.arcgis.com/ja/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> 組織サイトに所属しているアカウントと、Microsoft Office Excel/PowerPoint 2010 または Microsoft Office Excel/PowerPoint 2013 が必要です。サポートされているオペレーティング システムは次のとおりです。</p>
+        <p>Esri Maps for Office を使用するには、<a href="http://help.arcgis.com/ja/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> 組織サイトに所属しているアカウントと、Microsoft Office Excel/PowerPoint 2010 または Microsoft Office Excel/PowerPoint 2013 が必要です。次のオペレーティング システムがサポートされています。</p>
 		<ul>
 		 <li>Windows XP（SP3）（32 ビット）</li>
 		 <li>Windows 7（32 ビットおよび 64 ビット）</li>
 		 <li>Windows 8（32 ビットおよび 64 ビット）</li>
-		 <li>Windows Server 2003（SP2）および MSXML 6.0（32 ビット版 Office のみ）</li>
+		 <li>Windows Server 2003 SP2 および MSXML 6.0（32 ビット Office のみ）</li>
 		 <li>Windows Server 2008 R2</li>
 		 <li>Windows Server 2012</li>
 		</ul>
-		<p>必要なプロセッサ速度、メモリ、およびハード ディスク スペースなどの詳細については、<a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> および <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a> のシステム要件をご参照ください。</p>
+		<p>必要なプロセッサ速度、メモリ、ハード ディスク容量などの詳細については、<a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> と <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a> のシステム要件をご参照ください。</p>
 
 
 
-        <h3>サポートが予定されている言語</h3>
-        <p>アラビア語、英語、中国語、フランス語、ドイツ語、イタリア語、日本語、スペイン語、ポルトガル（ブラジル）語、およびロシア語</p>
-
+        <!-- 
+		<h3>Support for the following languages</h3>
+        <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
+		//-->
 
 
 
 
         <a name="whatsNew"></a>
         <h2>新機能</h2>
-        <p>Esri Maps for Office バージョン 2.1 は、2013 年 7 月にリリースされました。機能強化された点は次のとおりです。</p>
+        <p>Esri Maps for Office バージョン 2.1.3 は、2014 年の春にリリースされました。機能強化された点は次のとおりです。</p>
         <ul>
-        <li>[ホット スポット] ツールを使用した統計的パターン解析</li>
+        <li>カスタム ロールをサポート。</li>
+        <li>新しいサイレント インストール パラメータにより、大規模な配置を行うときの制御性が向上しました。</li>
+        <li>Maps for Office は、ArcGIS への接続性を確認して、必要なサービスが利用できない場合に通知を表示するようになりました。</li>
+		<li>バグ修正および操作性の改善:</li>
+			<ul>
+			<li>ホスト マップ サービスをカスタム位置情報として使用できます。</li>
+			<li>ローカライズ版のレイヤ表示設定の問題が修正されました。</li>
+			<li>古いバージョンの Visual Studio Tools for Office が原因でランダムに発生するクラッシュが解決されました。</li>
+			<li>カスタム ロケータは、データを追加するワークフロー内で、住所の代わりに名前で表示されるようになりました。</li>
+			<li>アンインストール時のレジストリ管理が向上しました。</li>
+			<li>ArcGIS から取得されるジオメトリのストレージが効率化されました。</li>
+			<li>ポータルへの接続時に、ArcGIS Online へのリクエストが作成されなくなりました。</li>
+			<li>小数点の記号のカンマが適切に処理されるようになりました。</li>
+			<li>情報が付加されたレイヤを、スタイル変更したり、新たに追加した列でグループ化できるようになりました。</li>
+			<li>情報が付加されたレイヤのポップアップに、正しい列見出しが表示されるようになりました。</li>
+			<li>インターネットに接続していないときに、クラッシュがする問題がなくなりました。</li>
+			<li>PowerPoint で Esri Maps for Office を使用するときに、組織のデフォルトのベースマップが使用されるようになりました。</li>
+			</ul>
+        </ul>
+
+
+        <h3>以前のバージョン</h3>
+        
+        <p>Esri Maps for Office バージョン 2.1.2 は、2013 年 11 月にリリースされました。機能強化された点は次のとおりです。</p>
+        <ul>
+		<li>バグ修正および操作性の改善:</li>
+			<ul>
+			<li>[レイヤへの情報追加] ツールの機能強化: メモリの使用が効率化され、より大規模な情報付加リクエストに対処できるようになりました。また、進捗状況を示すインジケータが改善されました。</li>
+			<li>Esri Maps をインストールした後に Excel がクラッシュするバグが修正されました。 </li>
+			<li>[検索] ペインに間違った画像が表示されるバグが修正されました。</li>
+			<li>日本語、ロシア語、および中国語でカスタム位置情報を検索できないバグが修正されました。</li>
+			<li>[検索] ペインでキー ファクト、資産、ポリシー、および医療のローカライズされた文字が消去されました。</li>
+			</ul>
+        </ul>
+		
+		<p>バージョン 2.1.1 は、2013 年 10月にリリースされました。機能強化された点は次のとおりです。</p>
+        <ul>
+        <li>22 言語のローカライズ版をサポート:</li>
+			<ul>
+			<li>アラビア語、中国語（簡体字）、デンマーク語、オランダ語、英語、エストニア語、フランス語、ドイツ語、ヘブライ語、イタリア語、日本語、韓国語、ラトビア語、リトアニア語、ノルウェー語、ポーランド語、ポルトガル語（ブラジル）、ポルトガル語（ポルトガル）、ルーマニア語、ロシア語、スペイン語、およびスウェーデン語。</li>
+			</ul>
+		<li>Web マップでのポップアップをサポート</li>
+		<li>属性 URL のアイコンを使用してフィーチャをシンボル化</li>
+		<li>製品全体のバグ修正および操作性の改善:
+			<ul>
+			<li>OAuth ログインの処理を改善</li>
+			<li>より便利になった [ホット スポットの検索] ツールのエラー メッセージ</li>
+			<li>[ホット スポットの検索] ツール で列名に空白を使用可能</li>
+			<li>[選択] ツールでサイズ「0（ゼロ）」のバッファをサポート</li>
+			<li>[タスク] ペインの問題を解決</li>
+			<li>グループの表示に関するバグを解決</li>
+			<li>すべての接続に SSL を使用する組織のサポートを改善</li>
+			<li>[レイヤへの情報付加] ツールから追加された列を使用するときに、分類が正常に動作するようになりました</li>
+			</ul>
+        </ul>
+		
+        <p>バージョン 2.1 は、2013 年 7 月にリリースされました。機能強化された点は次のとおりです。 </p>
+        <ul>
+        <li>[ホット スポットの検索] ツールを使用した統計的パターン解析</li>
 		<li>データ コレクションの追加などを含むデータへの情報付加機能の強化、およびデータ コレクションから変数を個別に選択する機能</li>
 		<li>OAuth+SAML を使用する際に、セキュリティ保護されたサイン インをサポート（AGOL）</li>
         <li>IWA および PKI を使用する際に、セキュリティ保護されたサイン インをサポート</li>
 		<li>インフォグラフィックスおよび [レイヤへの情報付加] ツールのユーザ インタフェースを改善</li>
 		<li>Maps for Office を最新バージョンにアップグレードする際のワークフローを改善</li>
         </ul>
-
-
-        <h3>以前のバージョン</h3>
+		<br>
         <p>バージョン 2.0.2 は、2013 年 5 月にリリースされました。機能強化された点は次のとおりです。</p>
         <ul>
           <li>新しい [レイヤへの情報付加] ツールを使用した、データへの地理情報の付加</li>
@@ -127,9 +194,9 @@ metatags:
 		  <li>ヒート マップおよびクラスタリングに新しい構成オプションを追加</li>
 		  <li>マップ凡例のクラス閾値をクリックして、マップでグループ化されたフィーチャをフィルタリングする機能を追加</li>
 		  <li>住所をジオコーディングする際のワークフローを改善</li>
+		  <li>ArcGIS Online の組織サイトでベースマップ ギャラリーをカスタマイズできるようになりました。</li>
 		  <li>ArcGIS Online 組織サイトからベースマップ ギャラリーをカスタマイズ可能</li>
-		  <li>[マップの挿入] ツールを使用する際、ArcGIS Online 組織サイトのデフォルトのベースマップを使用</li>
-		  <li>資産、ビジネス、政策、保健などの人気の高いカテゴリを使用して ArcGIS Online のデータ内を検索</li>
+		  <li>資産、ビジネス、ポリシー、医療などの人気の高いカテゴリを使用して ArcGIS Online のデータを検索</li>
 		  <li>場所名は、データの場所に基づくようになりました。たとえば、ジオコーディング ワークフローのラベルには、日本の県、米国の州、およびカナダの州が表示されます。</li>
 		  <li>Microsoft Office 2013 をサポート</li>
 		  <li>その他品質、操作性、およびカートグラフィックの機能強化</li>
@@ -144,7 +211,7 @@ metatags:
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>はじめに</h3>
+          <h3>基本操作</h3>
           <ul>
            <li><a href="#whatsNew">新機能</a></li>
             <li><a href="#systemRequirements">システム要件</a></li>
@@ -167,9 +234,7 @@ metatags:
 
     </div>
 
- 
-
-	<script src="/ja/asset/js/rssfeed.js" type="text/javascript"></script>
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({

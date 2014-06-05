@@ -1,0 +1,233 @@
+---
+title: Collector for ArcGIS
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - /en/asset/css/app-switch-1
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/app-collector-1
+  - libs/jquery.colorbox-min
+  - jquery.colorbox.init
+  - video-init
+
+metatags:
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1>Collector for ArcGIS</h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="collector-android" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/ja/collector/">ホーム</a></li>
+        <li><a href="/ja/collector/android/create-maps/create-maps.htm">マップの作成</a></li>
+        <li><a href="/ja/collector/android/collect-data/collect-tutorial.htm">データの収集</a></li>
+        <li><a href="http://forums.arcgis.com/forums/224-Collector-for-ArcGIS">フォーラム</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+      <div class="column-16 tablet-column-24">
+
+        <h3 class="gray">オンラインでもオフラインでも、スマートフォンまたはタブレットを使用して、現場で情報を収集および更新します。</h3>
+
+	  <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->
+	  
+
+        <p>
+	    <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a> <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
+        </p>
+
+        </header>
+        <hr />
+        <br />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="app-collector-map.jpg" />
+
+          <h3>マップの作成および共有</h3>
+          <p>ArcGIS の活用範囲をフィールド スタッフに拡大し、空間データの正確性と最新性を改善します。2 つの手順でデータ収集のためのマップを作成および共有します。</p>
+          <p>
+            <a href="/ja/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;使用方法</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="app-collector-data.jpg" />
+
+          <h3>データの収集</h3>
+          <p>被害報告や過去の対象地域に対するサービス リクエストから組織にとって重要なデータを作成します。画像およびビデオを簡単に追加して、データを共有します。</p>
+          <p>
+            <a href="/ja/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
+
+			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;ビデオを見る</a>
+			<video width="320" height="240" controls id="2194" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
+			</video>
+          </p>
+        </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-3.png" />
+
+          <h3>オフライン操作</h3>
+          <p>データに接続できない場所でも、現場作業を行えます。マップおよびデータをオフラインで取得し、データを収集します。再度オンラインになるとデータは同期されます。</p>
+          <p>
+            <a href="/ja/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
+          </p>
+        </div>
+        
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-4.png" />
+
+          <h3>テンプレートの即時利用</h3>
+          <p>各業界には、その業界で一般的に使用されるデータセットがあります。テンプレートをダウンロードして必要な基本データ構造を作成し、特定の業務に合わせてカスタマイズします。</p>
+          <p>
+            <a href="http://esri.maps.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;ダウンロードの表示</a><br />
+          </p>
+        </div>
+        
+        <div class="clear"></div>
+
+	<a name="features"></a>
+	<h2 class="divider">機能</h2>
+	<p>現場でのデータの収集や更新、現在地のログ記録、およびキャプチャしたデータの操作などを行えるため、より多くの情報を基にしてタイムリーな意志決定を行うことができます。データの現地調査、観測、イベントへの対応のために、マップをどこからでも利用できます。フィールド スタッフの効率性と GIS の正確性が改善されます。</p>
+	
+	<ul>
+	<li>マップをデバイスにダウンロードしてオフラインで操作します。</li>
+	<li>GPS を使用してマップ データを作成および更新します。</li>
+	<li>ポイント、ライン、およびエリア フィーチャを収集します。</li>
+	<li>マップと連動する使いやすいフォームに入力します。</li>
+	<li>場所を検索し、ルート案内を取得します。</li>
+	<li>訪問したエリアを記録および報告します。</li>
+	</ul>
+
+        <a name="systemRequirements"></a>
+        <h2 class="divider">システム要件</h2>
+
+        <p>Collector for ArcGIS を実行するためのデバイス要件は、次のとおりです。アプリケーション内で使用するデータについても要件があります。Collector for ArcGIS は、多数の言語でサポートされています。</p>
+
+
+        <h3>データ要件</h3>
+        <p>Collector for ArcGIS でマップを使用するには、ArcGIS の組織アカウントが必要です。マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。</p>
+
+
+        <h3>デバイス要件</h3>
+        <table><tr><td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+        <ul>
+          <li>Android 4.0（Ice Cream Sandwich）<br/>以降</li>
+          <li>Armv7 プロセッサ</li>
+          <li>OpenGL ES 2.0 のサポート</li>
+        </ul></td>
+        <td valign="top"><h4 class="icon-apple">iOS</h4>
+        <ul>
+          <li>iOS 7</li>
+          <li>iPhone、iPad、iPod touch</li>
+        </ul></td><tr></table>
+
+
+        <h3>サポートされている言語</h3>
+        <p>アラビア語、チェコ語、デンマーク語、オランダ語、英語、エストニア語(<span class="icon-android"/>)、フィンランド語、フランス語、ドイツ語、ヘブライ語、イタリア語、日本語、韓国語、ラトビア語(<span class="icon-android"/>)、リトアニア語(<span class="icon-android"/>)、ノルウェー語、ポーランド語、ポルトガル（ブラジル）語、ポルトガル（ポルトガル）語、ルーマニア語、ロシア語、スペイン語、スウェーデン語、およびトルコ語。</p>
+        <p>アプリケーションで使用される言語は、お使いのデバイスの言語設定によって決まります。</p>
+
+
+        <a name="whatsNew"></a>
+        <h2 class="divider">新機能</h2>
+        <p>Collector for ArcGIS 10.2.2 は、2014 年 3 月にリリースされました。機能強化された点は次のとおりです。</p>
+        <ul>
+        <li>オフライン ワークフローのサポート</li>
+        <li>ユーザ エクスペリエンスの向上</li>
+        <li>多数のバグ修正および機能改善</li>
+        <li>サポートされる言語を追加</li>
+        <li>Android の問題を解決:NIM098281、NIM096128、NIM098076</li>
+        <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
+        </ul>
+
+	<a name="sneakPeek"></a>
+	<h2 class="divider">追加予定の機能</h2>
+	<p>Collector for ArcGIS は、現場でのデータ収集や編集に最適なアプリケーションです。今後、さまざまな機能の追加が予定されています。このアプリケーションで、次のような機能を利用できるようになります。</p>
+	
+	<ul>
+	  <li>オフラインでの現場操作を計画するためのツール</li>
+	  <li>便利なデータ収集フォーム（関連テーブルを含む）</li>
+	  <li>データの検索機能<li>
+	  <li>オフセットを使用したデータ収集<li>
+	  <li>アドホックによる収集のサポート</li>
+	  <li>周辺機器（レーザ レンジ ファインダ、バーコード スキャナなど）との統合</li>
+	</ul>	
+	
+	<p><a href="http://ideas.arcgis.com/">アイデア</a>の共有と<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">フィードバックの送信</a></p>
+		
+        <p>&nbsp;</p>
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+	  <h3>詳細</h3>
+	          
+	  <h4><a href="#features">機能</a></h4>
+	  <h4><a href="#systemRequirements">システム要件</a></h4>
+	  <h4><a href="#whatsNew">新機能</a></h4>
+	  <h4><a href="#sneakPeek">追加予定の機能</a></h4>
+	          
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>Esri ブログ</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
+        max: 5,
+        layout: 0
+      });
+
+    });
+
+
+  </script>
+
+   <script src="/en/asset/js/app-collector-1.js" type="text/javascript"></script>

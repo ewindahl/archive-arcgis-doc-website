@@ -1,0 +1,293 @@
+---
+title: Operations Dashboard for ArcGIS
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/operations-dashboard-1
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ru/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="ops-dashboard" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/ru/operations-dashboard/">На главную</a></li>
+        <li><a href="/ru/operations-dashboard/windows-desktop/author/create-a-map.htm">Создание видов</a></li>
+        <li><a href="/ru/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Использование видов</a></li>
+        <li><a href="http://forums.arcgis.com/forums/225-Operations-Dashboard-for-ArcGIS">Форум</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <h3 class="gray">Приложение позволяет осуществлять мониторинг действий и событий, следить за работниками полевых бригад, а также оценивать состояние повседневных операций.</h3>
+          
+          <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->	  
+
+          <p>
+            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Получить Operations Dashboard</a>
+
+          </p>
+        <hr />
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/dashboard-create-small.png" />
+
+          <h3>Создание и &amp; публикация рабочего вида</h3>
+          <p>За три простых шага создайте и опубликуйте рабочие виды, включающие карты, списки, диаграммы, измерения и другую информацию, основанную на текущих географических данных с карты или веб-сервиса.</p>
+          <p>
+            <a href="/ru/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;Покажите мне как</a><br />
+            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
+
+          <h3>&amp; Отслеживание и реагирование на события</h3>
+          <p>Используйте рабочие виды, чтобы подчеркнуть аспекты операции, имеющие первостепенное значение. Отслеживайте сервисы, службу доставки, людей, транспорт и другие объекты во всех точках земного шара всего за четыре шага.</p>
+          <p>
+            <a href="/ru/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Покажите мне как</a><br />
+            <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
+			<a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Просмотреть видео</a>
+			<video width="320" height="240" controls id="2195" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
+			</video>
+          </p>
+        </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-3.png" />
+
+          <h3>Наблюдать в браузере</h3>
+          <p>Используйте рабочий вид в браузере. Ничего не надо инсталлировать, просто откройте рабочий вид, и вы будете всегда иметь самую свежую информацию о своих операциях, даже со своего iPad.</p>
+          <p>
+            <a href="/ru/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Покажите мне как</a><br />
+            <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
+          </p>
+        </div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-4.png" />
+
+          <h3>Разработка надстроек</h3>
+          <p>Обогатите рабочий вид своей собственной бизнес-логикой с помощью виджетов, действий с объектами и картографических инструментов. </p>
+          <p>
+            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Покажите мне как</a><br />
+          </p>
+        </div>        
+
+        <div class="clear"></div>
+
+
+	<a name="features" ></a>
+	<h2 class="divider">Возможности</h2>
+	<p>Соедините вместе управляемые вами системы и ресурсы. 
+	В режиме реального времени отслеживайте данные, формирующие масштабные события, наряду с каждодневными операциями, используя настольный ПК или планшетное устройство. 
+	Создавайте собственные рабочие панели, объединяющие карты, диаграммы и графики.</p>
+	
+	<ul>
+	<li>Используйте карты с динамическими источниками данных, обеспечивающими отображение в реальном времени.</li>
+	<li>Настраивайте диаграммы, шкалы, гистограммы и т.п. для статистического контекста.</li>
+	<li>Создавайте и публикуйте рабочие виды, нацеленные на решение определенных задач.</li>
+	<li>Создавайте изображения для отображения на нескольких или на одном мониторе.</li>
+	<li>Создавайте собственные виджеты и инструменты для ваших целей.</li>
+	</ul>
+
+
+        <a name="systemRequirements"></a>
+        <h2 class="divider">Системные требования</h2>
+
+        <p>Для запуска Operations Dashboard имеются определенные требования к устройству, а также требования к данным, использующимся в приложении. Operations Dashboard поддерживается на нескольких языках.</p>
+
+
+        <h3>Поддерживаемые операционные системы</h3>
+
+        <ul>
+          <li>Windows 8.1, Windows 8.1 Pro и Windows 8.1 Enterprise (32- и 64-разрядные [EM64T])</li>
+          <li>Windows 8, Windows 8 Pro и Windows 8 Enterprise (32- и 64-разрядные [EM64T])</li>
+		  <li>Windows 7 Ultimate, Enterprise, Professional и Home Premium (32- и 64-разрядные [EM64T]) SP1</li>
+		  <li>Windows Server 2012 Standard и Datacenter (64-разрядная [EM64T])</li>
+		<li>Windows Server 2008 R2 Standard, Enterprise и Datacenter (64-разрядные [EM64T]) SP1</li>
+		<li>Windows Server 2008 Standard, Enterprise и Datacenter (32- и 64-разрядные [EM64T]) SP2</li>
+        </ul>
+
+
+        <h3>Требования к аппаратному обеспечению:</h3>
+        <ul>
+			<li>Частота процессора: 2.2 ГГц или выше; рекомендуется технология Hyper-Threading (HTT) или Multi-core.</li>
+			<li>Процессор: Intel Pentium 4, Core Duo или Xeon; SSE2 (или выше) Для того, чтобы проверить процессор, из командной строки Windows запустите утилиту Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a>.</li>
+			<li>Пространство на диске: 1,5 ГБ свободного места на диске.</li>
+			<li>Память/RAM: 2 ГБ или выше.</li>
+			<li>Свойства отображения: глубина цвета 24 разряда.</li>
+			<li>Разрешение экрана: Для нормального размера (96 dpi) рекомендуется разрешение 1024x768 или выше.</li>
+			<li>Пространство для файла подкачки: определяется операционной системой; минимум 500 МБ.</li>
+			<li>Видео/графический адаптер: минимум 64 МБ RAM; рекомендуется 256 МБ RAM; поддерживаются чипсеты NVIDIA, ATI и INTEL. Драйвер видеокарты с ускорителем. Shader Model 2.0 минимум. Убедитесь, что вы используете новейший драйвер.</li>
+		</ul>
+
+
+        <h3>Требования к программному обеспечению</h3>
+        <p>Требуется <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>. Чтобы установить его, необходимы права администратора.</p>
+
+        <h3>Требования к данным</h3>
+		<p>Чтобы использовать карты в Operations Dashboard, необходима учетная запись организации. Ваши карты могут содержать данные с ArcGIS Online, Portal for ArcGIS и ArcGIS for Server. Источники данных должны быть размещены на ArcGIS Online или на ArcGIS for Server версии 10.1 или более новой.</p>
+
+		<h3>Требования для разработчиков</h3>
+		<p>Для настройки Operations Dashboard for ArcGIS необходимо программное обеспечение <a href="http://resources.arcgis.com/ru/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a>.</p>
+
+	<h3>Поддерживаемые языки</h3>
+	<p>Арабский (<span class="icon-windows-8"/>), чешский, датский, нидерландский, эстонский, финский, французский, немецкий, иврит (<span class="icon-windows-8"/>), итальянский, японский, корейский, латышский, литовский, норвежский, польский, португальский (Бразилия), португальский (Португалия), румынский, русский, упрощенный китайский, испанский, шведский и турецкий.</p>
+	<p>Язык, используемый в версии приложения для ОС Windows, определяется настройками языка вашей операционной системы. В версии для браузера задать язык можно в вашем профиле ArcGIS Online.</p>
+
+        <a name="whatsNew"></a>
+        <h2 class="divider">Что нового</h2>
+        <p>Operations Dashboard for ArcGIS версии 10.2.2 был выпущен в марте 2014 г. В него включены следующие усовершенствования:</p>
+        <ul>
+        <li>Возможность просмотра рабочих видов в браузере.</li>
+        <li>Возможность использования картографических сервисов как источников данных.</li>
+        <li>Учитывает заданные для слоев интервалы обновления.</li>
+        <li>Новые инструменты выборки.</li>
+        <li>Обновлен виджет Список (List).</li>
+        <li>Используется ArcGIS Runtime SDK 10.2.2 for WPF.</li>
+        <li>Надстройки могут быть разработаны с помощью ArcGIS Runtime SDK 10.2.2 for WPF.</li>
+        <li>Добавлен турецкий язык.</li>
+        </ul>
+        
+        <a name="sneakPeek"></a>
+	<h2 class="divider">Краткий обзор</h2>
+	<p>Теперь Operations Dashboard является мощным приложением для мониторинга ваших операций. Но это еще не все!
+	Ниже перечислены области применения этого приложения на ваших устройствах:</p>
+	
+	<table border="1" style="text-align:center">
+	  <caption>Планируемые функциональные возможности в зависимости от платформы. <br/>
+	  <span class="icon-check" style="color:black"></span> в настоящее время, <span class="icon-check icon-green"/> скоро, <span class="icon-check" style="color:lightgray"></span> позднее<br/></caption>
+	  <tr><td></td>
+	    <th>Windows Desktop</th>
+	    <th>Браузер</th>
+	  </tr>
+	  <tr><th>Создание рабочих видов</th>
+	    <td><span class="icon-check"/></td>
+	    <td></td>
+	  </tr>
+	  <tr><th>Использование рабочих видов</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Рабочие виды с одним дисплеем</span></td>
+	  </tr>
+	  <tr><th>Работа с Portal for ArcGIS</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Расширяемый</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Использование картографических сервисов как источников данных</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Поиск данных</th>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Отбор информации в пространстве</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <!--<tr><th>Sketch on the map</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>-->
+	  <tr><th>Усовершенствованное использование непространственных данных (включая связанные таблицы)</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>3D вид</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Управление полевыми работниками</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	</table>
+	<p>Делитесь вашими <a href="http://ideas.arcgis.com/">идеями</a> и <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">присылайте нам ваши отзывы</a>.</p>
+        
+        <p>&nbsp;</p>
+        
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+       <div class="imgFrame block">
+          <h3>Сведения</h3>
+          
+	  <h4><a href="#features">Возможности</a></h4>
+	  <h4><a href="#systemRequirements">Системные требования</a></h4>
+	  <h4><a href="#whatsNew">Что нового</a></h4>
+	  <h4><a href="#sneakPeek">Быстрый взгляд</a></h4>
+          
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>Из нашего Блога</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+<!--	<script src="/js/main.js" type="text/javascript"></script>-->
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>

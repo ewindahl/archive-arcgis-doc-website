@@ -1,0 +1,279 @@
+---
+title: Operations Dashboard for ArcGIS
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/operations-dashboard-1
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/pt-pt/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="ops-dashboard" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/pt-pt/operations-dashboard/">Página Inicial</a></li>
+        <li><a href="/pt-pt/operations-dashboard/windows-desktop/author/create-a-map.htm">Vistas de autor</a></li>
+        <li><a href="/pt-pt/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Vistas de Utilização</a></li>
+        <li><a href="http://forums.arcgis.com/forums/225-Operations-Dashboard-for-ArcGIS">Fórum</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <h3 class="gray">Monitorar actividade e eventos, acompanhar a sua força de trabalho no terreno, e avaliar o estado e performance das suas operações diariamente.</h3>
+          
+          <!--           <span id="appVersion"><strong>Version:</strong> 10.2.2</span>           <span id="appReleased"><strong>Released:</strong> March 2014</span> 	  -->	  
+
+          <p>
+            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Adquira o Painel Informativo de Operações</a>
+
+          </p>
+        <hr />
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/dashboard-create-small.png" />
+
+          <h3>Criar &amp; partilhar uma vista de operação</h3>
+          <p>Em três passos simples, crie e partilhe vistas de operação que incluem mapas, listas, gráficos e indicadores, e mais baseado em dados geográficos ao vivo definidos num mapa ou serviço web. </p>
+          <p>
+            <a href="/pt-pt/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;Mostre-me como</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
+
+          <h3>Monitorize &amp; responda a eventos</h3>
+          <p>Utilize a sua vista de operação para focar aspetos da operação que lhe interessem. Acompanhe serviços, entregas, pessoas, e mais, em qualquer parte do mundo, seguindo quatro passos.</p>
+          <p>
+            <a href="/pt-pt/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Mostre-me como</a><br /> <!--<a href="http://resources.arcgis.com/pt-pt/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Visualizar um vídeo</a>
+			<video width="320" height="240" controls id="2195" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
+			</video>
+          </p>
+        </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-3.png" />
+
+          <h3>Monitorar no browser</h3>
+          <p>Use a sua vista de operação num browser. Nada a instalar, apenas abra a vista de operação e mantenha actualizadas as suas operações, mesmo a partir do seu iPad.</p>
+          <p>
+            <a href="/pt-pt/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Mostre-me como</a><br /> <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
+          </p>
+        </div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-4.png" />
+
+          <h3>Desenvolver Add-ins</h3>
+          <p>Traga a sua lógica de negócios única para a vista de operação usando widgets personalizados, acções de elementos, e ferramentas de mapas. </p>
+          <p>
+            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Mostre-me como</a><br />
+          </p>
+        </div>        
+
+        <div class="clear"></div>
+
+
+	<a name="features" ></a>
+	<h2 class="divider">Elementos</h2>
+	<p>Junte uma visão comum dos sistemas e recursos que gere. Monitorize em tempo real feeds de dados de grandes eventos ou operações do dia-a-dia no seu desktop ou tablet. Criar Painéis Informativos executivos focados que integram mapas, tabelas, e gráficos.</p>
+	
+	<ul>
+	<li>Utilize mapas com fontes de dados dinâmicos para fornecer visualizações em tempo real.</li>
+	<li>Configure gráficos, medidores, histogramas e muito mais, para fornecer um contexto estatístico.</li>
+	<li>Criar e partilhe pontos de vista operacionais que estão focados numa necessidade específica.</li>
+	<li>Visualizações de Design para utilização em vários monitores ou em dispositivos com uma única visualização.</li>
+	<li>Crie widgets personalizados e ferramentas de forma a colmatar as suas necessidades.</li>
+	</ul>
+
+
+        <a name="systemRequirements"></a>
+        <h2 class="divider">Requisitos de sistema</h2>
+
+        <p>Existem certos requisitos de dispositivos para correr o Painel Informativo, bem como requisitos sobre os dados que são usados na aplicação. O Painel Informativo de Operações suporta diversos idiomas.</p>
+
+
+        <h3>Sistemas operativos suportados</h3>
+
+        <ul>
+          <li>Windows 8.1, Windows 8.1 Pro e Windows 8.1 Enterprise (32 bit e 64 bit [EM64T])</li>
+          <li>Windows 8, Windows 8 Pro e Windows 8 Enterprise (32 bit e 64 bit [EM64T])</li>
+		  <li>Windows 7 Ultimate, Enterprise, Professional e Home Premium (32 bit e 64 bit [EM64T]) SP1</li>
+		  <li>Windows Server 2012 Standard e Datacenter (64 bit [EM64T])</li>
+		<li>Windows Server 2008 R2 Standard, Enterprise e Datacenter (64 bit [EM64T]) SP1</li>
+		<li>Windows Server 2008 Standard, Enterprise e Datacenter (32 bit e 64 bit [EM64T]) SP2</li>
+        </ul>
+
+
+        <h3>Requisitos de hardware</h3>
+        <ul>
+			<li>Velocidade do CPU: 2.2 GHz ou superior; Hyper-Threading (HTT) ou Multi-core são recomendados.</li>
+			<li>Processador: Intel Pentium 4, Core Duo ou processadores Xeon; SSE2 no mínimo. Execute a aplicação <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> da Microsoft a partir do command prompt do seu Windows para verificar o seu processador.</li>
+			<li>Espaço em disco: 1,5 GB de espaço livre em disco.</li>
+			<li>Memória/RAM: 2 GB ou superior.</li>
+			<li>Propriedades de visualização: Profundidade de cor 24 bits.</li>
+			<li>Resolução de ecrã. 1024x768 ou superior em tamanho normal (96 dpi).</li>
+			<li>Espaço de swap: Definido pelo sistema operativo; 500 GB no mínimo.</li>
+			<li>Adaptador de Vídeo/Gráfico: 64 MB de RAM, no mínimo, 256 MB de RAM recomendados; chipsets NVIDIA, ATI e Intel suportados. Driver para placa de aceleração gráfica. Shader Modelo 2.0, no mínimo. Garanta que utiliza o driver mais recente.</li>
+		</ul>
+
+
+        <h3>Requisitos de software </h3>
+        <p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> é obrigatório. Tem de ter privilégios de administrador na sua organização para instalar.</p>
+
+        <h3>Requisitos de dados</h3>
+		<p>Para utilizar os seus mapas no Painel Informativo de Operações, tem de ter uma conta organizacional ArcGIS. Os seus mapas podem incluir dados do ArcGIS Online, Portal for ArcGIS e ArcGIS for Server. As fontes de dados devem ser alojadas no ArcGIS Online ou ArcGIS 10.1 for Server ou mais recente.</p>
+
+		<h3>Requisitos de desenvolvimento</h3>
+		<p>O <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a> é necessário para personalizar o Painel Informativo para ArcGIS.</p>
+
+	<h3>Idiomas suportados</h3>
+	<p>Arabe (<span class="icon-windows-8"/>), Checo, Dinamarquês, Holandês, Estoniano, Finlandês, Francês, Alemão, Hebraico (<span class="icon-windows-8"/>), Italiano, Japonês, Coreano, Letão, Lituano, Norueguês, Polaco, Português (Brasil), Portuguese (Portugal), Romeno, Russo, Chinês Simplificado, Espanhol, Sueco e Turco.</p>
+	<p>A linguagem utilizada na versão Windows da aplicação é determinada pela configuração de idoma do sistema operativo. Na versão do browser, o seu perfil ArcGIS Online é usado para determinar o idioma.</p>
+
+        <a name="whatsNew"></a>
+        <h2 class="divider">Quais as novidades?</h2>
+        <p>Painel Informativo para ArcGIS 10.2.2. foi lançado em Março de 2014. Ela inclui as seguintes melhorias: </p>
+        <ul>
+        <li>Visualizador de operações pode ser visto num browser.</li>
+        <li>Serviços de mapas podem ser usados ​​como fontes de dados.</li>
+        <li>Honra os Intervalos de actualizações definidos nas camadas. </li>
+        <li>Novas ferramentas de selecção. </li>
+        <li>Listar actualizações de widgets. </li>
+        <li>Usa o ArcGIS Runtime SDK 10.2.2 para WPF. </li>
+        <li>Os suplementos podem ser desenvolvidos usando o ArcGIS Runtime SDK 10.2.2 para WPF. </li>
+        <li>Localização para Turco.</li>
+        </ul>
+        
+        <a name="sneakPeek"></a>
+	<h2 class="divider">Sneak Peek</h2>
+	<p>Hoje o Painel Informativo é uma grande aplicação para monitorar as suas operações. Mas ainda há mais para vir! O seguinte descreve onde gostaríamos de levar esta aplicação, mostrando as capacidades que vamos levar a cada um dos aplicativos.</p>
+	
+	<table border="1" style="text-align:center">
+	  <caption>Funcionalidade planeada pela plataforma., <br/> <span class="icon-check" style="color:black"></span> actualmente, <span class="icon-check icon-green"/> em breve, <span class="icon-check" style="color:lightgray"></span> mais tarde <br/></caption>
+	  <tr><td></td>
+	    <th>Desktop Windows</th>
+	    <th>Navegador</th>
+	  </tr>
+	  <tr><th>Criar Vista de Operações</th>
+	    <td><span class="icon-check"/></td>
+	    <td></td>
+	  </tr>
+	  <tr><th>Use Vista de Operações</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Vista de operações com monitor único </span></td>
+	  </tr>
+	  <tr><th>Trabalhar com Portal for ArcGIS</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Extensível </th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Usa serviços de mapas como fontes de dados</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Pesquisa de dados</th>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Filtrar informações espacialmente</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <!--<tr><th>Sketch on the map</th> 	    <td><span class="icon-check" style="color:lightgray"/></td> 	    <td><span class="icon-check" style="color:lightgray"/></td> 	  </tr>-->
+	  <tr><th>Maior utilização de dados não espaciais (incluindo tabelas relacionadas)</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Vista 3D</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Gestão de força de trabalho</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	</table>
+	<p>Partilhe as suas <a href="http://ideas.arcgis.com/">ideias</a>, e <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">envie-nos o seu feedback</a>.</p>
+        
+        <p>&nbsp;</p>
+        
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+       <div class="imgFrame block">
+          <h3>Detalhes</h3>
+          
+	  <h4><a href="#features">Elementos</a></h4>
+	  <h4><a href="#systemRequirements">Requisitos de Sistema</a></h4>
+	  <h4><a href="#whatsNew">Quais as novidades?</a></h4>
+	  <h4><a href="#sneakPeek">Sneak Peek</a></h4>
+          
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>Do nosso blogue</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+<!--	<script src="/js/main.js" type="text/javascript"></script>-->
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>

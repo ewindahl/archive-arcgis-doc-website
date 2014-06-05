@@ -1,0 +1,285 @@
+---
+title: Operations Dashboard for ArcGIS
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/operations-dashboard-1
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ko/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="ops-dashboard" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/ko/operations-dashboard/">홈</a></li>
+        <li><a href="/ko/operations-dashboard/windows-desktop/author/create-a-map.htm">작성자 보기</a></li>
+        <li><a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">보기 사용</a></li>
+        <li><a href="http://forums.arcgis.com/forums/225-Operations-Dashboard-for-ArcGIS">포럼</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <h3 class="gray">활동 및 이벤트를 모니터링하고, 현장 인력을 추적하고, 일별 작업의 상태 및 성과를 평가할 수 있습니다.</h3>
+          
+          <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->	  
+
+          <p>
+            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Operations Dashboard 다운로드</a>
+
+          </p>
+        <hr />
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/dashboard-create-small.png" />
+
+          <h3>작업 보기 생성 및 공유</h3>
+          <p>간단한 3단계 작업을 거치면 맵 또는 웹 서비스에 정의된 실시간 지리 데이터를 기반으로 맵, 목록, 차트, 게이지 등이 포함된 작업 보기를 생성하고 공유할 수 있습니다.</p>
+          <p>
+            <a href="/ko/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;방법 표시</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
+
+          <h3>이벤트 모니터링 및 대응</h3>
+          <p>작업 보기를 사용하면 작업에서 관심 있는 부분을 중점적으로 확인할 수 있습니다. 4단계를 거쳐 전 세계 어디서든 서비스, 제공물, 사용자, 차량 등을 모니터링할 수 있습니다.</p>
+          <p>
+            <a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;방법 표시</a><br /> <!--<a href="http://resources.arcgis.com/ko/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">동영상 시청</a>
+			<video width="320" height="240" controls id="2195" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
+			</video>
+          </p>
+        </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-3.png" />
+
+          <h3>브라우저에서의 모니터링</h3>
+          <p>브라우저에서 작업 보기를 사용합니다. 설치할 사항이 없으면 작업 보기를 열어 작업을 계속 업데이트합니다(iPad에서도 가능).</p>
+          <p>
+            <a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;방법 표시</a><br /> <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
+          </p>
+        </div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-4.png" />
+
+          <h3>Add-In 개발</h3>
+          <p>사용자 정의 위젯, 피처 작업 및 맵 도구를 사용하여 고유한 비즈니스 논리를 사용자의 작업 보기로 가져옵니다. </p>
+          <p>
+            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;방법 표시</a><br />
+          </p>
+        </div>        
+
+        <div class="clear"></div>
+
+
+	<a name="features" ></a>
+	<h2 class="divider">피처</h2>
+	<p>사용자가 관리하는 시스템과 리소스의 공통 보기를 가져옵니다. 대형 이벤트 또는 일상적인 작업에 대한 실시간 데이터 피드를 데스크탑이나 태블릿 장치에서 모니터링합니다. 맵, 차트 및 그래프를 통합하는 집중된 실행 대시보드를 생성합니다.</p>
+	
+	<ul>
+	<li>동적 데이터 원본이 있는 맵을 사용하여 실시간 보기를 제공합니다.</li>
+	<li>차트, 게이지, 히스토그램 등을 구성하여 통계 컨텍스트를 제공합니다.</li>
+	<li>특정 요구 사항에 집중된 작업 보기를 생성하고 공유합니다.</li>
+	<li>여러 모니터에서 사용하거나 단일 디스플레이 장치에서 사용하도록 보기를 디자인합니다.</li>
+	<li>사용자의 요구 사항에 맞도록 사용자 정의 위젯과 도구를 생성합니다.</li>
+	</ul>
+
+
+        <a name="systemRequirements"></a>
+        <h2 class="divider">시스템 요구 사항</h2>
+
+        <p>Operations Dashboard 실행에 필요한 특정 장치 요구 사항과 앱 내에서 사용되는 데이터에 대한 요구 사항이 있습니다. Operations Dashboard는 여러 언어로 지원됩니다.</p>
+
+
+        <h3>지원되는 운영 체제</h3>
+
+        <ul>
+          <li>Windows 8.1, Windows 8.1 Pro 및 Windows 8.1 Enterprise(32비트/64비트[EM64T])</li>
+          <li>Windows 8, Windows 8 Pro 및 Windows 8 Enterprise(32비트/64비트[EM64T])</li>
+		  <li>Windows 7 Ultimate, Enterprise, Professional 및 Home Premium(32비트/64비트[EM64T]) SP1</li>
+		  <li>Windows Server 2012 Standard 및 Datacenter(64비트[EM64T])</li>
+		<li>Windows Server 2008 R2 Standard, Enterprise 및 Datacenter(64비트[EM64T]) SP1</li>
+		<li>Windows Server 2008 Standard, Enterprise 및 Datacenter(32비트/64비트[EM64T]) SP2</li>
+        </ul>
+
+
+        <h3>하드웨어 요구 사항</h3>
+        <ul>
+			<li>CPU 속도: 2.2GHz 이상, HTT(Hyper-Threading) 또는 다중 코어 권장</li>
+			<li>프로세서: Intel Pentium 4, Core Duo 또는 Xeon Processors(최소 SSE2). Windows 명령 프롬프트에서 <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> 유틸리티를 실행하여 프로세서를 확인합니다.</li>
+			<li>디스크 공간: 1.5GB의 사용 가능한 디스크 공간</li>
+			<li>메모리/RAM: 2GB 이상</li>
+			<li>디스플레이 등록정보: 24비트 색 농도</li>
+			<li>화면 해상도: 일반 크기(96dpi)에서 1024x768 이상</li>
+			<li>스왑 공간: 운영 체제에 의해 결정됨(최소 500MB)</li>
+			<li>비디오/그래픽 어댑터: 64MB RAM(최소), 256MB RAM(권장), NVIDIA, ATI 및 Intel 칩셋 지원됨. 그래픽 카드 드라이버 속도 향상. Shader Model 2.0 이상. 제공되는 최신 드라이버를 사용해야 합니다.</li>
+		</ul>
+
+
+        <h3>소프트웨어 요구 사항</h3>
+        <p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>가 필요합니다. 이 소프트웨어를 설치하려면 관리자 권한이 있어야 합니다.</p>
+
+        <h3>데이터 요구 사항</h3>
+		<p>Operations Dashboard에서 맵을 사용하려면 ArcGIS 기관 계정이 있어야 합니다. 맵에는 ArcGIS Online, Portal for ArcGIS, 및 ArcGIS for Server의 데이터가 포함될 수 있습니다. 데이터 원본은 ArcGIS Online 또는 ArcGIS 10.1 for Server 이상에서 호스팅되어야 합니다.</p>
+
+		<h3>개발자 요구 사항</h3>
+		<p><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a>는 Operations Dashboard for ArcGIS를 사용자 정의하는 데 필요합니다.</p>
+
+	<h3>지원되는 언어</h3>
+	<p>아랍어(<span class="icon-windows-8"/>), 체코어, 덴마크어, 독일어, 에스토니아어, 핀란드어, 프랑스어, 독일어, 히브리어(<span class="icon-windows-8"/>), 이탈리아어, 일본어, 한국어, 라트비아어, 리투아니아어, 노르웨이어, 폴란드어, 포르투갈어(브라질), 포르투갈어(포르투갈), 루마니아어, 러시아어, 중국어(간체), 스페인어, 스웨덴어 및 터키어.</p>
+	<p>앱의 Windows 버전에서 사용되는 언어는 운영 체제의 언어 설정에 따라 결정됩니다. 브라우저 버전에서 ArcGIS Online 프로필은 언어를 설정하는 데 사용됩니다.</p>
+
+        <a name="whatsNew"></a>
+        <h2 class="divider">새로운 기능</h2>
+        <p>Operations Dashboard for ArcGIS 10.2.2는 2014년 3월에 출시되었습니다. 향상된 기능은 다음과 같습니다.</p>
+        <ul>
+        <li>작업 보기를 브라우저에서 확인할 수 있습니다.</li>
+        <li>맵 서비스를 데이터 원본으로 사용할 수 있습니다.</li>
+        <li>레이어에 설정된 새로 고침 간격을 적용합니다.</li>
+        <li>새로운 선택 도구</li>
+        <li>목록 위젯 업데이트</li>
+        <li>ArcGIS Runtime SDK 10.2.2 for WPF를 사용합니다.</li>
+        <li>ArcGIS Runtime SDK 10.2.2 for WPF를 사용하여 Add-In을 개발할 수 있습니다.</li>
+        <li>터키어로 지역화됩니다.</li>
+        </ul>
+        
+        <a name="sneakPeek"></a>
+	<h2 class="divider">힌트 보기</h2>
+	<p>Operations Dashboard는 작업 모니터링에 뛰어난 앱입니다. 하지만 소개할 더 많은 기능이 있습니다. 각 장치에서 사용할 수 있는 이 앱의 기능은 다음과 같습니다.</p>
+	
+	<table border="1" style="text-align:center">
+	  <caption>플랫폼별 예정된 기능 <br/> <span class="icon-check" style="color:black"></span> 현재, <span class="icon-check icon-green"/> 곧, <span class="icon-check" style="color:lightgray"></span> 나중<br/></caption>
+	  <tr><td></td>
+	    <th>Windows 데스크탑</th>
+	    <th>브라우저</th>
+	  </tr>
+	  <tr><th>작업 보기 생성</th>
+	    <td><span class="icon-check"/></td>
+	    <td></td>
+	  </tr>
+	  <tr><th>작업 보기 사용</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* 단일 디스플레이 작업 보기</span></td>
+	  </tr>
+	  <tr><th>Portal for ArcGIS로 작업</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>확장 가능</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>데이터 원본으로 맵 서비스 사용</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>데이터 검색</th>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>정보를 공간적으로 필터링</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <!--<tr><th>Sketch on the map</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>-->
+	  <tr><th>강화된 비공간 데이터 사용(관련 표 포함)</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>3D 보기</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>인력 관리</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	</table>
+	<p><a href="http://ideas.arcgis.com/">아이디어</a>를 공유하고 <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">의견을 제공</a>해 주세요.</p>
+        
+        <p>&nbsp;</p>
+        
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+       <div class="imgFrame block">
+          <h3>세부정보</h3>
+          
+	  <h4><a href="#features">피처</a></h4>
+	  <h4><a href="#systemRequirements">시스템 요구 사항</a></h4>
+	  <h4><a href="#whatsNew">새로운 기능</a></h4>
+	  <h4><a href="#sneakPeek">힌트 보기</a></h4>
+          
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>Esri 블로그</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+<!--	<script src="/js/main.js" type="text/javascript"></script>-->
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>

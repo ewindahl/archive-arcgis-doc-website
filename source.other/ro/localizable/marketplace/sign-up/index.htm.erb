@@ -1,0 +1,115 @@
+﻿<Comment>
+layout: marketplace/layout
+
+title: Sign Up - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+</Comment>
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">Autentificaþi-vã pentru a fi furnizor</h1>
+    </header>
+	<nav>&nbsp;</nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">Comercializaþi-vã aplicaþia pe ArcGIS Marketplace. Obþineþi acces la cea mai mare bazã de utilizator GIS din lume. Noi vã ajutãm sã vã conectaþi uºor cu utilizatori, sã furnizaþi abonamente de evaluare gratuitã ºi sã generaþi clienþi potenþiali. În calitate de furnizor de aplicaþii, pãstraþi 100% din veniturile generate prin vânzarea aplicaþiilor dvs. Pentru detalii, consultaþi<a href="/en/marketplace/provider/faq.htm">Întrebãrile frecvente</a>. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">Sunteþi deja Partener Esri?</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">Beneficiaþi de o audienþã mai largã prin listarea soluþiei dvs. în ArcGIS Marketplace. Autentificaþi-vã la <a href="http://partnerportal.esri.com/">Portalul pentru parteneri Esri</a> pentru a afla de ce este nevoie pentru a deveni furnizor.</p>
+
+      </section>
+
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">Nu sunteþi partener? Sunteþi nou la Esri?</h2>
+		<p data-langlabel="provider-signup-note">Noi suntem în cãutare de dezvoltatori care doresc sã clãdeascã soluþii deosebite pentru utilizatorii noºtri. Spuneþi-ne cine sunteþi ºi cu ce vã ocupaþi, iar noi vã vom ajuta sã începeþi.</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="http://resources.arcgis.com/apps/contact-us/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="first-name" for="first-name">Prenume: </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">Nume de familie: </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">Adresã de e-mail: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Numãr de telefon: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">Despre dvs.: </label>
+			  <textarea data-langlabel="comment" placeholder="I build apps that..." name="userComment" id="userComment"></textarea>
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">Pentru a ajuta la prevenirea mesajelor spam automate, introduceþi cifrele furnizate: </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">Cifre: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="intern" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="ro" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" data-langlabel="contact-us">Trimitere</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p> </p>
+		<p data-langlabel="provider-signup-confirmation"><strong>Vã mulþumim pentru interesul manifestat pentru a deveni furnizor ArcGIS Marketplace. Vã vom contacta în urmãtoarele câteva zile lucrãtoare.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>

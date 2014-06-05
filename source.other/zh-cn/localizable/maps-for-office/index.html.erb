@@ -1,28 +1,38 @@
----
-title: Esri Maps for Office
-css: 
-- documentation
-- /en/asset/css/common
-- stat-page-specific
-- colorbox/colorbox
-
-js: 
-- libs/jquery.colorbox-min.js
-- jquery.colorbox.init.js
-- video-init
-
-metatags: 
-- <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
 ---
-<div class="navigation-bar blue">
+title: Esri Maps for Office
+
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="section-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/maps-for-office/">Esri Maps for Office</a></h1>
+      <h1><a href="/zh-cn/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/maps-for-office/">主页</a></li>
-        <li><a href="/en/maps-for-office/help/">帮助</a></li>
+        <li class='current'><a href="/zh-cn/maps-for-office/">主页</a></li>
+        <li><a href="/zh-cn/maps-for-office/help/">帮助</a></li>
         <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">论坛</a></li>
       </ul>
     </nav>
@@ -36,10 +46,10 @@ metatags:
         <header>
 
 		  <h2 id="appTitle">下载应用程序</h2>
-          <span id="appVersion"><strong>版本：</strong>2.1</span> <span id="appReleased"><strong>发布日期：</strong>2013 年 7 月</span>
+          <span id="appVersion"><strong>版本：</strong>2.1.3</span> <span id="appReleased"><strong>发布日期：</strong>2014 年春季</span>
 
 
-          <p>借助 Esri Maps for Office，您可快速创建 Excel 数据的动态交互式地图，并以全新的方式进行浏览。Esri Maps for Office 还可帮助您揭示表格数据和图表中隐含的模式和趋势。地图可通过 PowerPoint 演示文稿或将其一键发布至 Esri 的制图云 ArcGIS Online 中以共享。</p>
+          <p>借助 Esri Maps for Office，您可快速创建 Excel 数据的动态交互式地图，并以全新的方式进行浏览。Esri Maps for Office 还可帮助您揭示表格数据和图表中隐含的模式和趋势。地图可通过 PowerPoint 演示文稿或将其一键发布至 Esri 的制图平台 ArcGIS Online 中以共享。</p>
 
           <p>
              <a  class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">获取 Esri Maps for Office</a>
@@ -84,12 +94,12 @@ metatags:
         <a name="systemRequirements"></a>
         <h2>系统要求</h2>
 
-        <p>Esri Maps for Office 需要一个属于 <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> 组织的帐户和 Microsoft Office Excel/PowerPoint 2010 或 Microsoft Office Excel/PowerPoint 2013。受支持的操作系统包括：</p>
+        <p>Esri Maps for Office 需要一个属于 <a href="http://help.arcgis.com/zh-cn/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> 组织的帐户和 Microsoft Office Excel/PowerPoint 2010 或 Microsoft Office Excel/PowerPoint 2013。受支持的操作系统包括：</p>
 		<ul>
 		 <li>Windows XP（必须具有 SP3）（32 位）</li>
 		 <li>Windows 7（32 位和 64 位）</li>
 		 <li>Windows 8（32 位和 64 位）</li>
-		 <li>Windows Server 2003 SP2和 MSXML 6.0（仅限于 32 位 Office）</li>
+		 <li>Windows Server 2003 SP2 和 MSXML 6.0（仅限于 32 位 Office）</li>
 		 <li>Windows Server 2008 R2</li>
 		 <li>Windows Server 2012</li>
 		</ul>
@@ -97,16 +107,75 @@ metatags:
 
 
 
-        <h3>计划支持以下语言</h3>
-        <p>阿拉伯语、英语、中文、法语、德语、意大利语、日语、西班牙语、葡萄牙语（巴西）和俄语</p>
-
+        <!-- 
+		<h3>Support for the following languages</h3>
+        <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
+		//-->
 
 
 
 
         <a name="whatsNew"></a>
         <h2>新特性</h2>
-        <p>Esri Maps for Office 2.1 版已于 2013 年 7 月发布。该版本包括以下增强：</p>
+        <p>Esri Maps for Office 2.1.3 版已于 2014 年春季发布。该版本包括以下增强：</p>
+        <ul>
+        <li>支持自定义角色。</li>
+        <li>通过新的静默安装参数，可更好地控制大规模部署。</li>
+        <li>现在，Maps for Office 将检查与 ArcGIS 的连通性，并在所需服务不可用时向您发出通知。</li>
+		<li>软件漏洞修复和可用性改进，其中包括：</li>
+			<ul>
+			<li>将托管地图服务用作自定义位置类型的功能。</li>
+			<li>已更正本地化版本中的图层可见性问题。</li>
+			<li>已修复由较旧版本的 Visual Studio Tools for Office 造成的随机故障问题。</li>
+			<li>现可在添加数据工作流中使用名称而非&ldquo;地址&rdquo;显示自定义定位器。</li>
+			<li>更好的针对卸载的注册表管理。</li>
+			<li>更有效地存储从 ArcGIS 返回的几何。</li>
+			<li>连接到门户时，不再建立到 ArcGIS Online 的请求。</li>
+			<li>现可正确处理作为小数分隔符的逗号。</li>
+			<li>现可对丰富图层按新添加的列进行样式化并分组。</li>
+			<li>丰富图层的弹出窗口现可显示正确的列标题。</li>
+			<li>与 internet 断开连接后，不再发生崩溃。</li>
+			<li>Esri Maps for Office 在 PowerPoint 中现可支持组织默认底图。</li>
+			</ul>
+        </ul>
+
+
+        <h3>先前版本</h3>
+        
+        <p>Esri Maps for Office 2.1.2 版已于 2013 年 11 月发布。该版本包括以下增强：</p>
+        <ul>
+		<li>软件漏洞修复和可用性改进，其中包括：</li>
+			<ul>
+			<li>&ldquo;丰富图层&rdquo;工具改进，如：更具效率的内存利用率以处理较大型丰富请求，以及改进的进度指示器。</li>
+			<li>修复了在安装 Esri Maps 后导致 Excel 崩溃的软件漏洞。 </li>
+			<li>修复了在&ldquo;搜索&rdquo;窗格中显示错误影像的软件漏洞。</li>
+			<li>修复了在日语、俄语和中文中导致自定义位置类型查找失败的软件漏洞。</li>
+			<li>已清除&ldquo;搜索&rdquo;窗格中&ldquo;主要信息&rdquo;、&ldquo;财富&rdquo;、&ldquo;政策&rdquo;和&ldquo;健康&rdquo;中的本地化字符串。</li>
+			</ul>
+        </ul>
+		
+		<p>2.1.1 版本已于 2013 年 10 月发布。该版本包括以下增强：</p>
+        <ul>
+        <li>新的本地化版本支持 22 种语言：</li>
+			<ul>
+			<li>阿拉伯语、中文（简体）、丹麦语、荷兰语、英语、爱沙尼亚语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语、立陶宛语、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、西班牙语和瑞典语</li>
+			</ul>
+		<li>支持 web 地图中的弹出窗口</li>
+		<li>可使用属性 URL 中的图标符号化要素</li>
+		<li>所有产品的软件漏洞修复和可用性改进，其中包括：
+			<ul>
+			<li>OAuth 登录的改进处理</li>
+			<li>&ldquo;查找热点&rdquo;工具现具有更多有用的错误消息</li>
+			<li>&ldquo;查找热点&rdquo;工具现可处理带空格的列名</li>
+			<li>&ldquo;选择&rdquo;工具现支持大小为&ldquo;0&rdquo;的缓冲区</li>
+			<li>任务窗格问题已修复</li>
+			<li>组可见性软件漏洞已修复</li>
+			<li>改进了对使用所有连接的 SSL 的组织的支持</li>
+			<li>使用从&ldquo;丰富图层&rdquo;工具添加的列时，分组可正常工作</li>
+			</ul>
+        </ul>
+		
+        <p>2.1 版本已于 2013 年 7 月发布。该版本包括以下增强： </p>
         <ul>
         <li>使用&ldquo;热点&rdquo;工具的统计模式分析</li>
 		<li>数据丰富改进，其中包括更多的数据集合以及从数据集合中选择单个变量的功能</li>
@@ -115,9 +184,7 @@ metatags:
 		<li>&ldquo;信息图表&rdquo;和&ldquo;丰富图层&rdquo;工具的用户界面改进</li>
 		<li>改进了将 Maps for Office 升级为最新版本的工作流程</li>
         </ul>
-
-
-        <h3>先前版本</h3>
+		<br>
         <p>2.0.2 版本已于 2013 年 5 月发布。该版本包括以下增强：</p>
         <ul>
           <li>使用新的&ldquo;丰富图层&rdquo;工具丰富含地理环境的数据</li>
@@ -166,8 +233,6 @@ metatags:
  </div>
 
     </div>
-
- 
 
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">

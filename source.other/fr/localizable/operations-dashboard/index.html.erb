@@ -1,0 +1,293 @@
+---
+title: Operations Dashboard for ArcGIS
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/operations-dashboard-1
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/fr/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="ops-dashboard" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/fr/operations-dashboard/">Accueil</a></li>
+        <li><a href="/fr/operations-dashboard/windows-desktop/author/create-a-map.htm">Cr&eacute;er des vues</a></li>
+        <li><a href="/fr/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Utiliser des vues</a></li>
+        <li><a href="http://forums.arcgis.com/forums/225-Operations-Dashboard-for-ArcGIS">Forum</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <h3 class="gray">Surveillez les activit&eacute;s et les &eacute;v&eacute;nements, suivez votre personnel sur le terrain et &eacute;valuez le statut et les performances de vos op&eacute;rations quotidiennes.</h3>
+          
+          <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->	  
+
+          <p>
+            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Obtenir Operations Dashboard</a>
+
+          </p>
+        <hr />
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/dashboard-create-small.png" />
+
+          <h3>Cr&eacute;er et partager une vue des op&eacute;rations</h3>
+          <p>Vous pouvez, en trois &eacute;tapes faciles, cr&eacute;er et partager des vues d&apos;op&eacute;rations incluant des cartes, des listes, des diagrammes, des jauges, ainsi que d&apos;autres &eacute;l&eacute;ments bas&eacute;s sur les donn&eacute;es g&eacute;ographiques dynamiques d&eacute;finies dans une carte ou un service Web.</p>
+          <p>
+            <a href="/fr/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
+            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
+
+          <h3>Intervenir et surveiller des &eacute;v&eacute;nements</h3>
+          <p>Utilisez votre vue des op&eacute;rations pour vous concentrer sur des aspects de l&apos;op&eacute;ration qui sont importants &agrave; vos yeux. Surveiller les services, livraisons, personnes, v&eacute;hicules et autres, partout dans le monde, en quatre &eacute;tapes.</p>
+          <p>
+            <a href="/fr/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
+            <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
+			<a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Visionner un clip vid&eacute;o</a>
+			<video width="320" height="240" controls id="2195" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
+			</video>
+          </p>
+        </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-3.png" />
+
+          <h3>Surveiller dans le navigateur</h3>
+          <p>Utilisez votre vue des op&eacute;rations dans un navigateur. Vous n&apos;avez rien &agrave; installer, il vous suffit d&apos;ouvrir une vue des op&eacute;rations pour rester inform&eacute; sur vos op&eacute;rations, m&ecirc;me sur votre iPad.</p>
+          <p>
+            <a href="/fr/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
+            <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
+          </p>
+        </div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-4.png" />
+
+          <h3>Compl&eacute;ments de d&eacute;veloppement</h3>
+          <p>Introduisez votre propre logique m&eacute;tier dans votre vue des op&eacute;rations gr&acirc;ce &agrave; des widgets personnalis&eacute;s, des actions sur les entit&eacute;s et des outils pour les cartes. </p>
+          <p>
+            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Comment</a><br />
+          </p>
+        </div>        
+
+        <div class="clear"></div>
+
+
+	<a name="features" ></a>
+	<h2 class="divider">Fonctionnalit&eacute;s</h2>
+	<p>Composez une vue commune des syst&egrave;mes et ressources que vous g&eacute;rez. 
+	Surveillez les flux de donn&eacute;es en temps r&eacute;el pour les &eacute;v&eacute;nements &agrave; grande &eacute;chelle ou les op&eacute;rations quotidiennes sur votre ordinateur ou votre tablette. 
+	Cr&eacute;ez des tableaux de bord ex&eacute;cutifs d&eacute;di&eacute;s qui int&egrave;grent des cartes, des diagrammes et des graphiques.</p>
+	
+	<ul>
+	<li>Utiliser des cartes avec des sources de donn&eacute;es dynamiques pour offrir des vues en temps r&eacute;el.</li>
+	<li>Configurer des diagrammes, des jauges, des histogrammes et autres pour offrir un contexte statistique.</li>
+	<li>Cr&eacute;er et partager des vues d\&apos;exploitation centr&eacute;es sur un besoin pr&eacute;cis.</li>
+	<li>Concevoir des vues &agrave; utiliser sur des appareils &agrave; plusieurs &eacute;crans ou &agrave; &eacute;cran unique.</li>
+	<li>Cr&eacute;er des widgets et des outils personnalis&eacute;s qui r&eacute;pondent &agrave; vos besoins.</li>
+	</ul>
+
+
+        <a name="systemRequirements"></a>
+        <h2 class="divider">Configuration du syst&egrave;me</h2>
+
+        <p>L&apos;ex&eacute;cution d&apos;Operations Dashboard implique certaines conditions en termes de p&eacute;riph&eacute;riques, mais aussi de donn&eacute;es utilis&eacute;es dans l&apos;application. Operations Dashboard est pris en charge dans plusieurs langues.</p>
+
+
+        <h3>Syst&egrave;mes d&apos;exploitation pris en charge</h3>
+
+        <ul>
+          <li>Windows 8.1, Windows 8.1 Pro et Windows 8.1 Enterprise (32 bits et 64 bits [EM64T])</li>
+          <li>Windows 8, Windows 8 Pro et Windows 8 Enterprise (32 bits et 64 bits [EM64T])</li>
+		  <li>Windows 7 &Eacute;dition Int&eacute;grale, Entreprise, Professionnelle et Familiale Premium (32 et 64 bits [EM64T]) SP1</li>
+		  <li>Windows Server 2012 Standard et Datacenter (64 bits [EM64T])</li>
+		<li>Windows Server 2008 R2 Standard, Enterprise et Datacenter (64 bits [EM64T]) SP1</li>
+		<li>Windows Server 2008 Standard, Enterprise et Datacenter (32 bits et 64 bits [EM64T]) SP2</li>
+        </ul>
+
+
+        <h3>Configuration mat&eacute;rielle</h3>
+        <ul>
+			<li>Vitesse du processeur : 2,2 GHz ou plus ; processeur HyperThreading (HHT) ou multicœur recommand&eacute;.</li>
+			<li>Processeur : Intel Pentium 4, Intel Core Duo ou Xeon ; SSE2 minimum. Ex&eacute;cutez l&apos;utilitaire Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> &agrave; partir de l&apos;invite de commandes Windows pour v&eacute;rifier votre processeur.</li>
+			<li>Espace disque : 1,5 Go d&apos;espace disponible sur le disque.</li>
+			<li>M&eacute;moire/RAM : 2 Go ou plus.</li>
+			<li>Propri&eacute;t&eacute;s d&rsquo;affichage : profondeur des couleurs 24 bits.</li>
+			<li>R&eacute;solution d&apos;&eacute;cran : 1 024 x 768 recommand&eacute;e ou sup&eacute;rieure &agrave; une taille normale (96 ppp).</li>
+			<li>Espace m&eacute;moire d&apos;&eacute;change : d&eacute;termin&eacute; par le syst&egrave;me d&apos;exploitation, 500 Mo minimum.</li>
+			<li>Carte vid&eacute;o/graphique : m&eacute;moire vive de 64 Mo minimum, m&eacute;moire de 256 Mo minimum recommand&eacute;e. Les jeux de puces NVIDIA, ATI et Intel sont pris en charge. Pilote de carte graphique acc&eacute;l&eacute;r&eacute;. Shader Model 2.0 minimum. Veillez &agrave; utiliser le pilote le plus r&eacute;cent.</li>
+		</ul>
+
+
+        <h3>Configuration logicielle requise</h3>
+        <p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> est requis. Vous devez disposer des privil&egrave;ges d&apos;administration sur l&apos;ordinateur pour pouvoir l&apos;installer.</p>
+
+        <h3>Conditions requises pour les donn&eacute;es</h3>
+		<p>Pour pouvoir utiliser des cartes dans Operations Dashboard, vous devez disposer d&apos;un compte d&apos;organisation ArcGIS. Vos cartes peuvent contenir des donn&eacute;es provenant d&apos;ArcGIS Online, de Portal for ArcGIS et d&apos;ArcGIS for Server. Les sources de donn&eacute;es doivent &ecirc;tre h&eacute;berg&eacute;s sur ArcGIS Online ou ArcGIS 10.1 for Server, ou une version ult&eacute;rieure.</p>
+
+		<h3>Configuration requise pour les d&eacute;veloppeurs</h3>
+		<p><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a> est requis pour personnaliser Operations Dashboard for ArcGIS.</p>
+
+	<h3>Langues prises en charge</h3>
+	<p>Arabe (<span class="icon-windows-8"/>), anglais, chinois simplifi&eacute;, danois, n&eacute;erlandais, espagnol, estonien, fran&ccedil;ais, finlandais, allemand, h&eacute;breu (<span class="icon-windows-8"/>), italien, japonais, cor&eacute;en, letton, lituanien, norv&eacute;gien, polonais, portugais (Br&eacute;sil), portugais (Portugal), roumain, russe, su&eacute;dois et tch&egrave;que.</p>
+	<p>La langue utilis&eacute;e dans la version Windows de l&apos;application est d&eacute;finie par la configuration de langue du syst&egrave;me d&apos;exploitation. Dans la version navigateur, votre profil ArcGIS Online est utilis&eacute; pour d&eacute;finir la langue.</p>
+
+        <a name="whatsNew"></a>
+        <h2 class="divider">Nouveaut&eacute;s</h2>
+        <p>Operations Dashboard for ArcGIS 10.2.2 est disponible depuis mars 2014. L&apos;application pr&eacute;sente les am&eacute;liorations suivantes :</p>
+        <ul>
+        <li>Les vues des op&eacute;rations peuvent s&apos;afficher dans un navigateur.</li>
+        <li>Les services de carte peuvent &ecirc;tre utilis&eacute;s en tant que sources de donn&eacute;es.</li>
+        <li>Respecte les intervalles d&apos;actualisation d&eacute;finis sur les couches.</li>
+        <li>Nouveaux outils de s&eacute;lection.</li>
+        <li>Mises &agrave; jour des widgets de liste.</li>
+        <li>Utilise ArcGIS Runtime SDK 10.2.2 for WPF.</li>
+        <li>Les compl&eacute;ments peuvent &ecirc;tre d&eacute;velopp&eacute;s &agrave; l&apos;aide d&apos;ArcGIS Runtime SDK 10.2.2 for WPF.</li>
+        <li>Localisation en langue turque.</li>
+        </ul>
+        
+        <a name="sneakPeek"></a>
+	<h2 class="divider">Aper&ccedil;u furtif</h2>
+	<p>Operations Dashboard est actuellement une application fabuleuse pour surveiller vos op&eacute;rations. Mais ce n&apos;est pas termin&eacute; !
+	Voici un aper&ccedil;u des d&eacute;veloppements pr&eacute;vus pour cette application et des fonctionnalit&eacute;s qu&apos;elle offrira &agrave; vos p&eacute;riph&eacute;riques :</p>
+	
+	<table border="1" style="text-align:center">
+	  <caption>Fonctionnalit&eacute;s pr&eacute;vues par plate-forme. <br/>
+	  <span class="icon-check" style="color:black"></span> actuelles, <span class="icon-check icon-green"/> imminentes, <span class="icon-check" style="color:lightgray"></span> &agrave; venir<br/></caption>
+	  <tr><td></td>
+	    <th>Windows Desktop</th>
+	    <th>Navigateur</th>
+	  </tr>
+	  <tr><th>Cr&eacute;er des vues d&apos;op&eacute;rations</th>
+	    <td><span class="icon-check"/></td>
+	    <td></td>
+	  </tr>
+	  <tr><th>Utiliser des vues des op&eacute;rations</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Vue des op&eacute;rations &agrave; un seul affichage</span></td>
+	  </tr>
+	  <tr><th>Utiliser Portal for ArcGIS</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Extensible</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Utiliser les services de carte en tant que sources de donn&eacute;es</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Rechercher des donn&eacute;es</th>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Filtrer les informations spatialement</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <!--<tr><th>Sketch on the map</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>-->
+	  <tr><th>Utilisation am&eacute;lior&eacute;e des donn&eacute;es non spatiales (notamment les tables associ&eacute;es)</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Mode 3D</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Gestion du personnel</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	</table>
+	<p>Partagez vos <a href="http://ideas.arcgis.com/">id&eacute;es</a> et <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">envoyez-nous vos commentaires</a>.</p>
+        
+        <p>&nbsp;</p>
+        
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+       <div class="imgFrame block">
+          <h3>D&eacute;tails</h3>
+          
+	  <h4><a href="#features">Entit&eacute;s</a></h4>
+	  <h4><a href="#systemRequirements">Configuration du syst&egrave;me</a></h4>
+	  <h4><a href="#whatsNew">Nouveaut&eacute;s</a></h4>
+	  <h4><a href="#sneakPeek">Aper&ccedil;u furtif</a></h4>
+          
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>Sur notre blog</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+<!--	<script src="/js/main.js" type="text/javascript"></script>-->
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>

@@ -1,0 +1,28 @@
+---
+layout: false
+
+---
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="ROBOTS" content="NOINDEX,FOLLOW" >
+   </head>
+   <body bgcolor="white">
+<% base_url = "/" %>
+<% pages = sitemap.resources.find_all{|p| p.source_file.match(/\.html/) } %>
+
+<% pages.each do |p| %>
+	<% if not p.destination_path.match(/404\/|flist\/|feedback\/|thank-you\/|index-redirect/)
+	%>
+		<a href="<%= base_url + p.destination_path.gsub('index.html','') %>"><%= p.destination_path %></a>
+		<br/>
+	<% end %>
+<% end %>
+<a href="/flist/l10n.html">flist/l10n.html</a><br/>
+<a href="/en/collector/ios/create-maps/create-maps.htm">Collector - create maps(iOS)</a><br/>
+<a href="/en/collector/ios/collect-data/collect-tutorial.htm">Collector - collect data (iOS)</a><br/>
+<a href="/en/arcgis-app/ios/help/get-started-faqs.htm">ArcGIS App (iOS)</a><br/>
+<a href="/en/arcgis-app/windows-phone/help/get-started-faqs.htm">ArcGIS App (Windows Phone)</a><br/>
+
+</body>
+</html>

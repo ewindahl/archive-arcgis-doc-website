@@ -1,0 +1,96 @@
+
+.agol-search-form {
+	display: none;
+}
+
+.agol-search {
+	position: relative;
+	width: 0%;
+	min-width: 20px;
+	height: 20px;
+	float: right;
+	overflow: hidden;
+	-webkit-transition: width 0.3s;
+	-moz-transition: width 0.3s;
+	transition: width 0.3s;
+	-webkit-backface-visibility: hidden;
+
+	padding-top: 5px;
+	padding-left: 5px;
+	margin-top: 3px;
+}
+
+.agol-search-input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	margin: 0;
+	z-index: 10;
+
+	padding-top: 2px !important;
+	border: 0px solid #ccc !important;
+	height: inherit  !important;
+	line-height: inherit !important;
+
+}
+
+/*.agol-search-submit, */
+.agol-icon-search {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.agol-icon-search {
+	margin-right: 5px;
+
+	background-image: url("/img/ago_sprite_search.png") !important;
+	background-position: 0px 0px;
+	top: 6px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	z-index: 15;
+	float: right;
+
+}
+
+/*
+.agol-search-submit  {
+	width: 16px;
+	height: 16px;
+	background: #fff; 
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0); 
+    opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+
+}
+*/
+
+/* Open state */
+.agol-search.agol-search-open,
+.no-js .agol-search {
+	width: 100%;
+}
+
+.agol-search.agol-search-open .agol-icon-search,
+.no-js .agol-search .agol-icon-search {
+	color: #fff;
+	z-index: 11;
+}
+
+.agol-search.agol-search-open .agol-search-submit,
+.no-js .agol-search .agol-search-submit {
+	z-index: 90;
+}
