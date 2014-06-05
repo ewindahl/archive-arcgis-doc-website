@@ -97,6 +97,7 @@ function genDisplay() {
             buf.push("<a class='item-title' href='" + targetUrl + "' target='_blank'>");
             buf.push(row.md("agol-item-title", "n/a"));
             buf.push("</a>");
+			buf.push("<span class='ownerName'>By "+row.md("agol-owner", "n/a")+"</span>");
             buf.push("</li>");
 
         },
