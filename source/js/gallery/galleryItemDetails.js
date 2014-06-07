@@ -172,21 +172,23 @@ doc.itemDetails = (function(){
 			feed.push("<article>");
 
 			
-			if(data.comments){
+			if(data.comments.length > 0){
 				data.comments.sort(function(a,b) {
 
 					return b.created - a.created;
 
 				})
+						
+				$.each( data.comments, function( key, value ) {
+					if(i < 5) {
+						feed.push("<small><time>" + obj.formatDate(value.created) + " by <a href='"+AGOLURL+ "home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
+	            "<p>" + decodeURIComponent(value.comment) + "</p>");
+					}
+					i++;
+				});
+			} else {
+				feed.push("<p>No comments yet.<br/>Go ahead and get the conversation started.</p>");
 			}
-			
-			$.each( data.comments, function( key, value ) {
-				if(i < 5) {
-					feed.push("<small><time>" + obj.formatDate(value.created) + " by <a href='"+AGOLURL+ "home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
-            "<p>" + decodeURIComponent(value.comment) + "</p>");
-				}
-				i++;
-			});
 			feed.push("</article>");
 			
 

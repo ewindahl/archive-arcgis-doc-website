@@ -151,14 +151,12 @@ $search-icon-height: 30px;
 }
 
 #gl-pagenav {
-  /*position: relative;
-  margin: 10px 0 40px 0;*/
   margin-left: auto;
     margin-right: auto;
     position: relative;
     width: 600px;
-	padding:5px
-
+	padding:5px;
+	height:52px;
 }
 
 #gl-display-type {
@@ -237,15 +235,12 @@ $search-icon-height: 30px;
   left: 300px;
 }
 
-/*.display1 .item {
-  position:relative;
-  float:left;
-  margin: 12px 0px;
-  border: 0px solid black;
-  height: 235px;
-  overflow:hidden;
-  display:inline-block;
-}*/
+.gl-content-errMsg {
+    float: left;
+    margin-left: auto;
+    margin-right: auto !important;
+    margin-top: 10px;
+}
 .display1 .item {
 	border: 0 solid black;
 	display: inline-block;
@@ -622,63 +617,117 @@ li .current + ol > li
 
 
 
+/* Media query section end */
+@media only screen and (min-device-width:50px) and (max-width:320px){ body{ min-width:320px !important; } .container{ padding:0px; } #header{ background: none repeat scroll 0 0 white; /*border-bottom: 1px solid #EDEDED; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);*/ height: auto; min-height: 64px; padding-bottom: 0; } .header-inner{ width:40%; } .logo-wrap .down-arrow{ display:none; } #lg-container{ display:none; } .navigation-bar header h1, .section-bar header h1 { font-family: "Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif; font-size: 23px; line-height: 50px; text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25); } #reference-content{ } #gallerySearchForm input[type="search"] { background-image: none; display: none; } } 
+ @media only screen and (min-width:321px) and (max-width:480px){ body{ width:480px; } #reference-index{ width:480px; } #reference-content{ } } @media only screen and (min-width:481px) and (max-width:640px){ body{ width:640px; } #reference-content{ } }  
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-/* Styles */
+ @media only screen and (min-width:641px) and (max-width:768px){
+        body{
+            width:768px;
+        }	
+		
+		.navigation-bar header h1, .section-bar header h1{
+			font-size:1.875em;
+		}
+		
+		.navigation-bar input, .section-bar input{
+			margin-right: 12px;
+    		width: 260px;
+		}
+		
+		
+		#gl-search-btn {
+			color: #F4803A;
+			cursor: pointer;
+			float: right;
+			position: absolute;
+			right: 15px;
+			top: 36px;
+		}
+		
+		#mobile-navigation {
+    		display: inline-block;
+    		margin-right: 80px;
+		}
+    
+        .container .content{
+			width:670px;
+		}
+		
+		#gl-pagenav {
+			float: left;
+			height: 52px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 5px;
+			position: relative;
+		}
+		
+		#reference-index{
+			width:598px;
+			padding:0;	
+		}
 }
 
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 321px) {
-/* Styles */
+ 
+@media only screen and (min-width:769px) and (max-width:960px){ body{ width:960px; } #reference-content{ width:100%; } } 
+ @media only screen and (min-width:961px) and (max-width:1024px){ body{ width:1024px; } #reference-content{ } }  
+@media only screen and (min-width:1025px) and (max-width:1280px){ body{ width:1280px; } #reference-content{ width:100%px; } } 
+ @media only screen and (min-width:1281px) and (max-width:1366){ body{ width:1366px; } #reference-content{ width:100%; } } 
+ @media only screen and (min-width:1367px) and (max-width:1920px){ body{ width:1920px; } #reference-content{ width:100%; } } 
+/* Media query section end */
+
+
+/* New pagination style */
+.gl-pagination {
+            font-size: 80%;
+        }
+        
+/*.gl-pagination label {
+    text-decoration: none;
+	border: solid 1px #AAE;
+	color: #15B;
+	cursor:pointer;
+}*/
+
+.gl-pagination label {
+    /*display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;*/
+	
+	background: none repeat scroll 0 0 #F2F2F2;
+    border: 1px solid #EDEDED;
+    border-radius: 4px 4px 4px 4px;
+    color: #999999;
+    font-size: 1em;
+    line-height: 2.5em;
+    margin: 5px;
+    padding: 5px 10px;
+	display: inline;
+	cursor:pointer;
 }
 
-/* Smartphones (portrait) ----------- */
-@media only screen 
-and (max-width : 320px) {
-/* Styles */
+.gl-pagination ._pagination_link_current {
+    background: #26B;
+    color: #fff;
+	border: solid 1px #AAE;
+	cursor:none;
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-/* Styles */
+.gl-pagination .current.prev, .gl-pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
 }
 
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-/* Styles */
+.gl-pagination .disabled
+{
+  /*display:none;*/
+  background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #C1C1C1;
+    cursor: inherit;
 }
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-/* Styles */
-}
-
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-/* Styles */
-}
-
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-/* Styles */
-}
-
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-}
+/* End of new pagination style */

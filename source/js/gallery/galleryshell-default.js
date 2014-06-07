@@ -226,6 +226,10 @@ function genGalleryModel(hash, mdfL) {
             this.startN = Math.max(0, this.startN - this.numN);
         }
 
+        this.updatePagination = function (n) {
+            this.startN = n || 0;
+        }
+
         this._setMdf = function (val) {
             //val  = search-collection:110_search-category:100
             var mdf = this.mdf;
@@ -603,6 +607,7 @@ $(document).ready(function () {
 					gModel.updateCollection($(this).attr("col"));
 				}
 		});
+        gModel.updatePagination(0);
 		gShell.update(gModel);
     });
 
@@ -622,7 +627,7 @@ $(document).ready(function () {
         return false;
     });
 	
-    $("#gl-pagenav").delegate("#pageX", "keydown", function (evt) {
+    /*$("#gl-pagenav").delegate("#pageX", "keydown", function (evt) {
         if (evt.keyCode == "13") {
             var x = parseInt($("#pageX").val(), 10);
             if (!isNaN(x)) {
@@ -632,7 +637,7 @@ $(document).ready(function () {
             evt.stopImmediatePropagation();
             return false;
         }
-    });
+    });*/
 
 
     $("#display1, #display2, #display3").bind("click", function (evt) {
@@ -660,7 +665,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#gl-prev").bind("click", function (evt) {
+    /*$("#gl-prev").bind("click", function (evt) {
         if (!$(this).hasClass("disabled")) {
             gModel.dec();
             gShell.update(gModel);
@@ -676,7 +681,22 @@ $(document).ready(function () {
         }
         evt.stopImmediatePropagation();
         return false;
+    });*/
+
+    
+    $("#gl-pagenav").on("click", ".pagination_link", function (evt) {
+        if (!$(this).hasClass("_pagination_link_current") && !$(this).hasClass("disabled")) {
+            var startNumber = $(this).attr("value");
+
+            gModel.updatePagination(startNumber);
+            gShell.update(gModel);
+        }
+                
+        evt.stopImmediatePropagation();
+        return false;
+        
     });
+
 
     $("#gl-filter-clear").bind("click", function (evt) {
         resetSearch(evt)
@@ -700,7 +720,8 @@ $(document).ready(function () {
 			gModel.updateCollection($(this).attr("col"));
 		}
 			
-		gShell.update(gModel);
+		gModel.updatePagination(0);
+        gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
 		        
         evt.stopImmediatePropagation();
