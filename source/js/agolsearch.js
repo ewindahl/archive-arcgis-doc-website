@@ -45,7 +45,7 @@
 				return check;
 			}
 
-			console.info ("open");
+			// console.info ("open");
 			var self = this;
 
 			this.showBorder (true);
@@ -71,7 +71,7 @@
 		},
 
 		close: function () {
-			console.info ("close");
+			// console.info ("close");
 			this.showBorder (false);
 			this.inputEle.val ("");
 			this.inputEle.blur();
@@ -91,7 +91,7 @@
 			var ele = this;
 
 
-			console.info (ele);
+			// console.info (ele);
 			ui = new AGOLSearch ($(ele));
 		});
 	};
