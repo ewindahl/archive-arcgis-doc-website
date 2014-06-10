@@ -6,6 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -13,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -28,8 +31,8 @@ mobile: true
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search Collector">
         <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="collector-android" />          
+        <input type="hidden" name="platform" value="detect" />         
+		<input type="hidden" name="product" value="collector-android" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
 
@@ -50,7 +53,7 @@ mobile: true
 
       <div class="column-16 tablet-column-24">
 
-        <h3 class="gray">オンラインでもオフラインでも、スマートフォンまたはタブレットを使用して、現場で情報を収集および更新します。</h3>
+        <h3 class="gray">オンラインでもオフラインでも、スマートフォンまたはタブレットを使用して、現場で情報を収集および更新できます。</h3>
 
 	  <!--
           <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
@@ -71,7 +74,7 @@ mobile: true
           <img src="app-collector-map.jpg" />
 
           <h3>マップの作成および共有</h3>
-          <p>ArcGIS の活用範囲をフィールド スタッフに拡大し、空間データの正確性と最新性を改善します。2 つの手順でデータ収集のためのマップを作成および共有します。</p>
+          <p>ArcGIS の活用範囲をフィールドに拡大し、空間データの正確性と最新性を改善します。2 つの手順でデータ収集のためのマップを作成および共有します。</p>
           <p>
             <a href="/ja/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;使用方法</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
@@ -82,7 +85,7 @@ mobile: true
           <img src="app-collector-data.jpg" />
 
           <h3>データの収集</h3>
-          <p>被害報告や過去の対象地域に対するサービス リクエストから組織にとって重要なデータを作成します。画像およびビデオを簡単に追加して、データを共有します。</p>
+          <p>対象地域における損害報告や改善要求から組織にとって重要なデータを作成します。画像およびビデオを簡単に追加して、データを共有します。</p>
           <p>
             <a href="/ja/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
 
@@ -98,7 +101,7 @@ mobile: true
           <img src="story-graphic-3.png" />
 
           <h3>オフライン操作</h3>
-          <p>データに接続できない場所でも、現場作業を行えます。マップおよびデータをオフラインで取得し、データを収集します。再度オンラインになるとデータは同期されます。</p>
+          <p>データに接続できない場所でも、現場作業を行えます。マップおよびデータをオフラインで使用し、データを収集します。再度オンラインになるとデータは同期されます。</p>
           <p>
             <a href="/ja/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
           </p>
@@ -118,7 +121,7 @@ mobile: true
 
 	<a name="features"></a>
 	<h2 class="divider">機能</h2>
-	<p>現場でのデータの収集や更新、現在地のログ記録、およびキャプチャしたデータの操作などを行えるため、より多くの情報を基にしてタイムリーな意志決定を行うことができます。データの現地調査、観測、イベントへの対応のために、マップをどこからでも利用できます。フィールド スタッフの効率性と GIS の正確性が改善されます。</p>
+	<p>現場でのデータの収集や更新、現在地のログ記録、および取得したデータの操作などを行えるため、より多くの情報を基にしてタイムリーな意志決定を行うことができます。データの現地調査、観測、イベントへの対応のために、マップをどこからでも利用できます。フィールド スタッフの効率性と GIS の正確性が改善されます。</p>
 	
 	<ul>
 	<li>マップをデバイスにダウンロードしてオフラインで操作します。</li>
@@ -132,11 +135,11 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">システム要件</h2>
 
-        <p>Collector for ArcGIS を実行するためのデバイス要件は、次のとおりです。アプリケーション内で使用するデータについても要件があります。Collector for ArcGIS は、多数の言語でサポートされています。</p>
+        <p>Collector for ArcGIS を実行するためのデバイス要件は、次のとおりです。アプリケーション内で使用するデータについても要件があります。Collector for ArcGIS では、多数の言語がサポートされています。</p>
 
 
         <h3>データ要件</h3>
-        <p>Collector for ArcGIS でマップを使用するには、ArcGIS の組織アカウントが必要です。マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。</p>
+        <p>Collector for ArcGIS でマップを使用するには、ArcGIS 組織アカウントが必要です。マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。</p>
 
 
         <h3>デバイス要件</h3>
@@ -144,7 +147,8 @@ mobile: true
         <ul>
           <li>Android 4.0（Ice Cream Sandwich）<br/>以降</li>
           <li>Armv7 プロセッサ</li>
-          <li>OpenGL ES 2.0 のサポート</li>
+          <li>OpenGL ES 2.0 サポート</li>
+          <li>正確な位置のサポート（GPS およびネットワークを利用）</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
@@ -160,9 +164,10 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">新機能</h2>
+        <p>Collector for ArcGIS 10.2.3 は、2014 年 4 月にリリースされました。多数のバグ修正および機能改善が含まれています。</p>
         <p>Collector for ArcGIS 10.2.2 は、2014 年 3 月にリリースされました。機能強化された点は次のとおりです。</p>
         <ul>
-        <li>オフライン ワークフローのサポート</li>
+        <li>オフラインでのワークフローをサポート</li>
         <li>ユーザ エクスペリエンスの向上</li>
         <li>多数のバグ修正および機能改善</li>
         <li>サポートされる言語を追加</li>
@@ -183,7 +188,7 @@ mobile: true
 	  <li>周辺機器（レーザ レンジ ファインダ、バーコード スキャナなど）との統合</li>
 	</ul>	
 	
-	<p><a href="http://ideas.arcgis.com/">アイデア</a>の共有と<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">フィードバックの送信</a></p>
+	<p><a href="http://ideas.arcgis.com/">アイデア</a>を共有したり、<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">フィードバックを送信</a>します。</p>
 		
         <p>&nbsp;</p>
 

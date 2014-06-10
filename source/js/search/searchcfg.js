@@ -99,7 +99,7 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:ops-dashboard|product:arcgis-online"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:ops-dashboard|product:arcgis-online|product:explorer-ipad|product:explorer-iphone"
           }
       },
 	  {
@@ -143,6 +143,20 @@ var filterCfg = {
         q: {
           r:"",
           p:"(product:collector-ios)"
+        }
+      },
+	  {
+        k:"explorer-ipad",
+        q: {
+          r:"",
+          p:"(product:explorer-ipad)"
+        }
+      },
+	  {
+        k:"explorer-iphone",
+        q: {
+          r:"",
+          p:"(product:explorer-iphone)"
         }
       },
       {
