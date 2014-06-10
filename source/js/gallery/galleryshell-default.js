@@ -697,6 +697,19 @@ $(document).ready(function () {
         
     });
 
+    $("#gl-content").on("click", "#more-item", function (evt) {
+           var startNumber = $(this).attr("value");
+
+            gModel.updatePagination(startNumber);
+            gShell.update(gModel);
+           
+                       
+        evt.stopImmediatePropagation();
+        return false;
+        
+    });
+    
+
 
     $("#gl-filter-clear").bind("click", function (evt) {
         resetSearch(evt)

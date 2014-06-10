@@ -19,6 +19,10 @@ function genPageNav() {
 
             // GSA has browse limit of 1000 results
             if (gm.sedata.endI >= gm.maxN) {
+                // Disable more button
+                $("#more-item").hide();
+                
+
                 $("._pagination_link_next").addClass("disabled");
                  $("._pagination_link_last").addClass("disabled");
             } else {
@@ -80,6 +84,9 @@ function genPageNav() {
             
             if(settings.next) paginate.append(this.getLink(currentPage === totalPages ? totalPages : currentPage+1, 'next'));
             if(settings.last) paginate.append(this.getLink(totalPages-1, 'last'));
+
+            // More Item
+             $("#more-item").attr("value", (currentPage === totalPages) ? totalPages*settings.limit : (currentPage + 1)*settings.limit);
 
             return paginate;
         },
@@ -209,6 +216,7 @@ function genDisplay() {
                         $.each(gm.sedata.rowL, function (i, val) {
                             displayFunc(o, gm.startN + i, new SERow(val), buf);
                         });
+                        buf.push("<li class='item' id='more-item'><div class='item-img see-more'>There's more. Click to load the next page.</div></li>");
                         buf.push("</ul>");
                         //buf.push("<div class='clear'></div>");
 

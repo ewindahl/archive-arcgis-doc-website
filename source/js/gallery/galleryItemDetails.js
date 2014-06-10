@@ -70,6 +70,8 @@ doc.itemDetails = (function(){
 			$("#itemTitle").text(itemDetails.title);
 			$("#socialLinks a").each(function (){
 				var updatedHref = $(this).attr('href').replace('itemId-placeholder',itemDetails.id);
+				updatedHref = updatedHref.replace('item-title-placeholder',itemDetails.title);
+				
 				$(this).attr('href',updatedHref);
 			})
 
@@ -284,5 +286,13 @@ $(document).ready(function() {
 		//feed
 		obj.getAJAXResponse(itemId,AGOLURL+"sharing/rest/content/items/"+itemId+"/comments?f=json",true,"feed");
 	}
+
+	$("#gl-search-btn").bind("click", function (evt) {
+		window.location  = "/en/living-atlas/#q="+$("#q").val();
+	});
+		
+	$("#gallerySearchForm").bind("submit", function (evt) {
+	 window.location  = "/en/living-atlas/#q="+$("#q").val();
+	});
 
 });
