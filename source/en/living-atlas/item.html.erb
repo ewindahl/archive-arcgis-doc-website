@@ -18,9 +18,9 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/en/living-atlas/">Living Atlas of the World</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" placeholder="Search the Living Atlas">
-
+      <form id="gallerySearchForm" target="_top" method="Get">
+        <input type="search" id="q" name="q" class="leader" placeholder="Search the Living Atlas">
+		<h5 id="gl-search-btn" class="icon-search"></h5>
       </form>
     </header>
 	
@@ -43,10 +43,10 @@ mobile: true
 					<div id="socialLinks" class="social">
 					<!-- Need to derive actual sharing URLs for this item in these services -->
 					<!-- RSS feed for updates to item & comments? -->
-					<a class="icon-rss right" href="http://www.arcgis.com/sharing/rest/content/items/itemId-placeholder/comments?f=rss"> </a>			
-					<a class="icon-twitter right" href="http://www.arcgis.com/home/socialnetwork.html?t=US%252BWildfire%252BActivity%252BWeb%252BMap&n=tw&u=http://www.arcgis.com/home/item.html?id=itemId-placeholder"> </a>					
-					<a class="icon-google-plus right" href="https://plus.google.com/share?url=http://www.arcgis.com/home/item.html?id=itemId-placeholder"> </a>
-					<a class="icon-facebook right" href="http://www.arcgis.com/home/socialnetwork.html?t=US%252BWildfire%252BActivity%252BWeb%252BMap&n=fb&u=http://www.arcgis.com/home/item.html?id=itemId-placeholder"> </a>
+					<a class="icon-rss right" target="_blank" href="http://www.arcgis.com/sharing/rest/content/items/itemId-placeholder/comments?f=rss"> </a>			
+					<a class="icon-twitter right" target="_blank" href="http://www.arcgis.com/home/socialnetwork.html?t=item-title-placeholder&n=tw&u=http://www.arcgis.com/home/item.html?id=itemId-placeholder"> </a>					
+					<a class="icon-google-plus right" target="_blank" href="https://plus.google.com/share?url=http://www.arcgis.com/home/item.html?id=itemId-placeholder"> </a>
+					<a class="icon-facebook right" target="_blank" href="http://www.arcgis.com/home/socialnetwork.html?t=item-title-placeholder&n=fb&u=http://www.arcgis.com/home/item.html?id=itemId-placeholder"> </a>
 					
 					
 					</div>		
@@ -142,18 +142,3 @@ mobile: true
 		</div> 
 
 	<script src="/js/gallery.comments.js" type="text/javascript"></script>
- <script type="text/javascript">
-   /* $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://www.arcgis.com/sharing/rest/content/items/df8bcc10430f48878b01c96e907a1fc3/comments?f=rss',
-        max: 5,
-        layout: 1
-      });
-    });*/
-
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-
-  </script>
