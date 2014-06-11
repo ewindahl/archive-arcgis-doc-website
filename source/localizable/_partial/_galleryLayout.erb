@@ -41,12 +41,12 @@
              mdfL: <%=mfl%>,
              kv: <%=kv%>,
              contribkv : <%=ckv%>,
-             cntL: [15,30,45]
+             cntL: [15,30,45],
+		type:{"apps":"Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View", "layers":"Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service", "maps":"Web Map|CityEngine Web Scene|Web Scene", "tools":"Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service"}
          };
 
          $(document).ready(function (){
-
-            if($("#query").val().trim().length <= 0){
+            if($.trim($("#query").val().length) <= 0){
                $("#query").attr("value","<%=ref['view'][0]['searchmsg']%>");
             }
          });

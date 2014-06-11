@@ -41,6 +41,7 @@ function genGalleryModel(hash, mdfL) {
         this.display = 1; //display type
 		this.clearAll = false;
 		this.col = "All"; //decoded value
+        this.type = "All";
 
         this.init = function (hash) {
             this._initMDF(mdfL);
@@ -116,6 +117,11 @@ function genGalleryModel(hash, mdfL) {
             } else {
                 this.col = "";
             }
+            if (o.type) {
+                this.type = decodeURIComponent(o.type);
+            } else {
+                this.type = "All";
+            }
 
             if (o.md) {
                 this._setMdf(o.md);
@@ -186,6 +192,10 @@ function genGalleryModel(hash, mdfL) {
 				}
 			}
 			//console.log(mdf);
+        }
+
+        this.updateType = function (type) {
+            this.type = type;
         }
 
         this.updateDisplayN = function (n) {
@@ -282,6 +292,7 @@ function genGalleryModel(hash, mdfL) {
             l.push("n=" + this.numN);
             l.push("d=" + this.display);
 			l.push("col=" + this.col);
+            l.push("type=" + this.type);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -320,6 +331,40 @@ function genGalleryModel(hash, mdfL) {
                 return l.join(".");
             }
 
+
+            function _genPartialFieldsForGalleryType(galleryType) {
+                var l = [];
+                if(galleryType != "All"){
+                     var types = gcfg.type[galleryType];
+                     $.each(types.split("|"), function (i, val) {
+                        l.push("agol-itemtype:" + encodeURIComponent(val));
+                     });
+                     return l.join("|");
+                }
+                return false;
+
+                /*for (key in mdf) {
+                    if (mdf.hasOwnProperty(key)) {
+                        var state = mdf[key].state;
+                        if (state) {
+                            var vL = []
+                            for (var i = 0, len = mdf[key].len; i < len; i++) {
+                                if (state.charAt(i) === "1") {
+                                    v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
+                                    if (v) {
+                                        vL.push(key + ":" + v);
+                                    }
+                                }
+                            }
+                            if (vL.length) {
+                                l.push("(" + vL.join("|") + ")");
+                            }
+                        }
+                    }
+                }
+                return l.join(".");*/
+            }
+
             /** -- **/
 
             var l = [];
@@ -355,6 +400,15 @@ function genGalleryModel(hash, mdfL) {
             }
 
             var pfields = _genPartialFields(this.mdf);
+            var typePFields = _genPartialFieldsForGalleryType(this.type);
+
+            if (pfields && typePFields){
+                pfields = pfields+".("+typePFields+")";
+            } else if (typePFields){
+                pfields = typePFields;
+            }
+
+            
             if (pfields) {
                 l.push("partialfields=" + pfields);
             }
@@ -753,6 +807,29 @@ $(document).ready(function () {
         evt.stopImmediatePropagation();
     });
 
+    /* Show me section */
+    $(".showme-dropDown").bind("click", function (evt) {
+        $("#showMeFilters").toggle('slow');
+    });
+
+    $(".showme-filter-label").bind("click", function (evt) {
+                
+        $(".showme-filter-label").each(function (evt){
+                $(this).removeClass('current');
+            });
+        $(this).addClass("current");
+        gModel.updateType($(this).attr("type"));
+            
+        gModel.updatePagination(0);
+        gShell.update(gModel);
+        
+                
+        evt.stopImmediatePropagation();
+        return false;
+    });
+
+    /* End of show me section */
+
     window.onhashchange = function (evt) {
         var curHash = window.location.hash;
 
@@ -808,6 +885,15 @@ $(document).ready(function () {
            
            $(".filter-label").removeClass("current");
            $("."+col+"-filter").addClass("current");
+        }
+
+        if(getUrlVars()['type']){
+            var type = getUrlVars()['type'];
+           
+           $(".showme-filter-label").removeClass("current");
+           $("."+type+"-showme-filter").addClass("current");
+           $("#showMeFilters").css("display","block");
+
         }
     }
 

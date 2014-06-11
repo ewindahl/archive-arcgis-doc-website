@@ -174,7 +174,7 @@ doc.itemDetails = (function(){
 			feed.push("<article>");
 
 			
-			if(data.comments.length > 0){
+			if(data.comments && data.comments.length > 0){
 				data.comments.sort(function(a,b) {
 
 					return b.created - a.created;
