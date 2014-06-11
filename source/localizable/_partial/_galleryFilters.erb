@@ -20,7 +20,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 		<div id="filters">
 		<ol id="menutree">
 		<li>
-		<label id="allCollections" class="filter-label current" col="All">All</label>
+		<label id="allCollections" class="filter-label current All-filter" col="All">All</label>
          <%
             mfl = "["
             kv = "["
@@ -28,14 +28,15 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 			c = 0
             ref['filters'][0]['filter'].each { |k|
          %>
-               <label class="filter-label <%= k['metaname'] %>-filter" for="c<%= c %>" col="<%= k['metaname']%>:<%=k["value"].length%>"><%= k['label'] %></label>
-			   <!--<input type="checkbox" id="c<%= c %>" />-->
+               <label class="filter-label <%= k['metaname'] %>-filter" for="c<%= c %>" col="<%= k['metaname']%>:<%=k["value"].length%>"><%= k['label'] %>
+			   <span class="reset-filter">Reset</span>
+			   </label>
 			   <ol id="ol<%= c %>" >
                <%
                    i = 0
 				   k["value"].each { |sk| 
 				   if sk['metacontent'] != "None" %>
-                      <li><span class="ctrlbox <%= k['metaname'] %>-filter"><input type="checkbox" value="<%= sk['metacontent'] %>" name="<%= k['metaname'] %>-<%= sk['id'] %>" id="<%= k['metaname'] %>-<%= sk['id'] %>"><label for="<%= k['metaname'] %>-<%= sk['id'] %>"><%= sk['label'] %></label></span></li>
+                      <li><span class="ctrlbox <%= k['metaname'] %>-sub-filter sub-cat"><input type="checkbox" value="<%= sk['metacontent'] %>" name="<%= k['metaname'] %>-<%= sk['id'] %>" id="<%= k['metaname'] %>-<%= sk['id'] %>"><label for="<%= k['metaname'] %>-<%= sk['id'] %>"><%= sk['label'] %></label></span></li>
 				   <% end %>
                       <%
                           if k['metaname'] == "g-contributor"
