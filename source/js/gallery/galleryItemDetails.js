@@ -52,9 +52,9 @@ doc.itemDetails = (function(){
 			if(itemType == "app"){
 				iframeSrc = itemDetails.url;
 			} else if(itemType == "layers"){
-				//iframeSrc = "http://www.arcgis.com/home/webmap/viewer.html?layers=" + itemDetails.id + "&useExisting=1";
-				iframeSrc = itemDetails.url+ "?f=jsapi";
-			} else if (itemType == "tools"){
+				//iframeSrc = itemDetails.url+ "?f=jsapi";
+				iframeSrc = "";
+			} else if (itemType == "tools" || itemType == "webscene"){
 				iframeSrc = "";
 			} else {
 				// Map
@@ -98,7 +98,7 @@ doc.itemDetails = (function(){
 				$(".layers").hide();
 				$(".extent").hide();
 
-				var text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch App</a>";
+				var text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>View Full Screen</a>";
 
 				$("#downloadBtns").html(text);
 
@@ -106,14 +106,14 @@ doc.itemDetails = (function(){
 				$(".layers").hide();
 				$(".extent").hide();
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
-				text = "<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Add to ArcMap</a>";
+				text = "<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
 				$("#downloadBtns").html(text);
 			} else {
 				if(itemDetails.extent.length > 0){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
 					$("#map-extent p").html(text);
 
-					text = "<a href='"+ AGOLURL +"home/webmap/viewer.html?webmap=" + itemDetails.id + "' target='_blank' class='btn primary'>Add to My Map</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Add to ArcMap</a>";
+					text = "<a href='"+ AGOLURL +"home/webmap/viewer.html?webmap=" + itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
 					$("#downloadBtns").html(text);
 
 					this.renderLayers();
@@ -277,9 +277,8 @@ $(document).ready(function() {
 			$("#mapIframe").attr("src", obj.getIframeSource());
 		}else{
 			$("#mapIframe").hide();
-			$("#alternateToIframe").css("display","block")
-			$("#alternateToIframe").html("<p></p>")
-			//$("#alternateToIframe").html("<a href='"+itemDetails.url+"' target='_blank'><img src='"+AGOLURL+"sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a>");
+			$("#agol-thumbnail").css("display","block")
+			$("#agol-thumbnail").html("<a href='"+itemDetails.url+"' target='_blank'><img src='"+AGOLURL+"sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 		}
 		obj.renderGeneralElementsValues();
 
@@ -292,7 +291,8 @@ $(document).ready(function() {
 	});
 		
 	$("#gallerySearchForm").bind("submit", function (evt) {
-	 window.location  = "/en/living-atlas/#q="+$("#q").val();
+	 $(this).attr("action", "/en/living-atlas/#q="+$("#q").val());
+	 $(this).submit();
 	});
 
 });

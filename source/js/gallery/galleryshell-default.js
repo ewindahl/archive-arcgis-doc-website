@@ -333,7 +333,14 @@ function genGalleryModel(hash, mdfL) {
             //l.push("lr=lang_en");
             l.push("Oe=utf8");
             l.push("filter=0");
-            l.push("requiredfields=search-collection:" + gcfg.collection + ".search-category:" + gcfg.category);
+
+            // Additional category if any
+            if(gcfg.addlCategory && gcfg.addlCategory != ""){
+                l.push("requiredfields=search-collection:" + gcfg.collection + ".(search-category:" + gcfg.category + "|search-category:" + gcfg.addlCategory +")");
+            } else {
+                l.push("requiredfields=search-collection:" + gcfg.collection + ".search-category:" + gcfg.category);
+            }
+
 			// Sort by date
 			l.push("sort=date:D:S:d1");
 
@@ -603,10 +610,15 @@ $(document).ready(function () {
 		var totalSelectedCheckBox = $('input[type=checkbox]').filter(':checked').length;
 		$(".filter-label").each(function (evt){
 				if($(this).hasClass('current') && totalSelectedCheckBox <= 0){
-					//gShell.resetCollection(gModel,$(this).attr("col"),1);
 					gModel.updateCollection($(this).attr("col"));
 				}
 		});
+        if(totalSelectedCheckBox > 0){
+            //Expose Reset button
+            $(".current .reset-filter").css("display","block");
+        }else{
+            $(".current .reset-filter").css("display","none");
+        }
         gModel.updatePagination(0);
 		gShell.update(gModel);
     });
@@ -721,21 +733,22 @@ $(document).ready(function () {
 	
 	$(".filter-label").bind("click", function (evt) {
 				
-		if($(this).hasClass('current') && $(this).attr('col') != "All"){
+		/*if($(this).hasClass('current') && $(this).attr('col') != "All"){
 			$(this).removeClass('current');
 			gModel.updateCollection('All');
 			$("#allCollections").addClass('current');
-		}else{
+		}else{*/
 			$(".filter-label").each(function (evt){
 					$(this).removeClass('current');
 				});
 			$(this).addClass("current");
 			gModel.updateCollection($(this).attr("col"));
-		}
+		//}
 			
 		gModel.updatePagination(0);
         gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
+        $(".reset-filter").css("display","none");
 		        
         evt.stopImmediatePropagation();
     });
@@ -762,7 +775,9 @@ $(document).ready(function () {
         if (window.location.hash) {
             initval = window.location.hash;
         }
+        
         gModel = genGalleryModel(initval, mdfL);
+        housekeeping();
         gShell.init(gModel);
         gShell.update(gModel);
         if (gModel.query) { $("#gl-cl-btn").show(); }
@@ -785,6 +800,28 @@ $(document).ready(function () {
             evt.stopImmediatePropagation();
         }
         return false
+    }
+
+    function housekeeping(){
+        if(getUrlVars()['col']){
+            var col = getUrlVars()['col'].split(":")[0];
+           
+           $(".filter-label").removeClass("current");
+           $("."+col+"-filter").addClass("current");
+        }
+    }
+
+    function getUrlVars ()
+    {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
     }
 
 });
