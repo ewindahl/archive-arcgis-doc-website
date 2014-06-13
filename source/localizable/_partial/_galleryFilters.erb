@@ -7,6 +7,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 <div id="reference-index">
 	<header>
 	<h4>Themes</h4>
+	<span class="down-arrow tablet-theme-dropDown"></span>
 	<div class="filter-misc">
 		<div id="rss">
 		 <a target="_self" href="http://www.arcgis.com/sharing/search?q=(group:( 8cb0765d4f394cc097407068580188ad))&amp;f=rss" rel="nofollow">
@@ -14,9 +15,10 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 		 </a>
 		</div>
 	</div>
+	
 	</header>
   <!--<div><a href="#" id="gl-filter-clear">Clear All</a></div>-->
-	<nav>
+	<nav id="navFilters">
 		<div id="filters">
 		<ol id="menutree">
 		<li>
@@ -27,6 +29,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
             ckv = "["
 			c = 0
             ref['filters'][0]['filter'].each { |k|
+			if k['filterable'] != 'N'
          %>
                <label class="filter-label <%= k['metaname'] %>-filter" for="c<%= c %>" col="<%= k['metaname']%>:<%=k["value"].length%>"><%= k['label'] %>
 			   <span class="reset-filter">Reset</span>
@@ -54,6 +57,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 
          <% 
 		 c = c+1
+		 end
 		 }
             mfl += "]"
             kv += "]"
@@ -63,7 +67,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 		 </ol>
       </div> <!-- End of Filters -->
    </nav>
-   
+   <!--
 	<header>
 		<h4>Show Me</h4>
 		<span class="down-arrow showme-dropDown"></span>
@@ -78,5 +82,6 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 		<li><label class="showme-filter-label tools-showme-filter" type="tools">Tools</label></li>
 		</ol>
 	</nav>
+	-->
 </div>
 <% end %>

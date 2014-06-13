@@ -9,17 +9,19 @@
       kv = "{"
       ckv = "{"
       ref['filters'][0]['filter'].each { |k|
-         i = 0
+         if k['filterable'] != 'N' 
+			 i = 0
 
-         k["value"].each { |sk|
-           if k['metaname'] == "g-contributor"
-               ckv += "'" + sk['metacontent'] + "':'#{sk['itemlabel']}',"
-           end
-           kv += "'" + sk['metacontent'] + "':'#{sk['label']}',"
-           i = i+1
-         }
+			 k["value"].each { |sk|
+			   if k['metaname'] == "g-contributor"
+				   ckv += "'" + sk['metacontent'] + "':'#{sk['itemlabel']}',"
+			   end
+			   kv += "'" + sk['metacontent'] + "':'#{sk['label']}',"
+			   i = i+1
+			 }
 
-         mfl += "'" + k['metaname'] + ":#{i}',"
+			 mfl += "'" + k['metaname'] + ":#{i}',"
+		 end
       }
       mfl += "]"
       kv += "}"
