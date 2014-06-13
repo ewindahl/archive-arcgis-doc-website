@@ -251,8 +251,7 @@ function genGalleryModel(hash, mdfL) {
                     }
                 }
             });
-
-            this.startN = 0;
+            //this.startN = 0;
 
         }
 
@@ -665,6 +664,7 @@ $(document).ready(function () {
 		$(".filter-label").each(function (evt){
 				if($(this).hasClass('current') && totalSelectedCheckBox <= 0){
 					gModel.updateCollection($(this).attr("col"));
+                    $("#filters input:checkbox").removeAttr('checked');
 				}
 		});
         if(totalSelectedCheckBox > 0){
@@ -837,9 +837,10 @@ $(document).ready(function () {
 
     window.onhashchange = function (evt) {
         var curHash = window.location.hash;
-
+ 
         if (curHash) {
             var vdata = gModel.genViewData();
+ 
             if (vdata.hash) {
                 if ("#" + vdata.hash !== curHash) {
                     //debug("curHash=" + curHash);

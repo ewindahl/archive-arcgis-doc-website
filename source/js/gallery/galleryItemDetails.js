@@ -108,6 +108,13 @@ doc.itemDetails = (function(){
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 				text = "<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
 				$("#downloadBtns").html(text);
+
+			} else if(itemType == "webscene"){
+				$(".layers").hide();
+				$(".extent").hide();
+				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
+				var text = "<a href='" + AGOLURL + "apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
+				$("#downloadBtns").html(text);
 			} else {
 				if(itemDetails.extent.length > 0){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
@@ -184,7 +191,7 @@ doc.itemDetails = (function(){
 				$.each( data.comments, function( key, value ) {
 					if(i < 5) {
 						feed.push("<small><time>" + obj.formatDate(value.created) + " by <a href='"+AGOLURL+ "home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
-	            "<p>" + decodeURIComponent(value.comment) + "</p>");
+	            "<p>" + unescape(value.comment) + "</p>");
 					}
 					i++;
 				});
@@ -246,6 +253,8 @@ if(itemDetails && itemDetails.id){
 		itemType = "tools";
 	}else if(itemDetails.type.match(/Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View/gi)){
 		itemType = "app";
+	}else if(itemDetails.type.match(/Web Scene/gi)){
+		itemType = "webscene";
 	}
 
 	console.log(itemType);
