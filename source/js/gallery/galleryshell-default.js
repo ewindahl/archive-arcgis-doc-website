@@ -812,6 +812,11 @@ $(document).ready(function () {
         $("#showMeFilters").toggle('slow');
     });
 
+    // Tablet/movile view related
+    $(".tablet-theme-dropDown").bind("click", function (evt) {
+        $("#navFilters").toggle('slow');
+    });
+    
     $(".showme-filter-label").bind("click", function (evt) {
                 
         $(".showme-filter-label").each(function (evt){
