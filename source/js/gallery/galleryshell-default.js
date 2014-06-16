@@ -71,9 +71,11 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.genViewData = function () {
+            var opt = {featured:1}
             var o = {
                 hash: this._genHash(),
-                ajaxData: this._genAjaxData()
+                ajaxData: this._genAjaxData(),
+                ajaxFeaturedData: this._genAjaxData(opt)
             };
 
             return o;
@@ -303,7 +305,7 @@ function genGalleryModel(hash, mdfL) {
             return l.join("&");
         }
 
-        this._genAjaxData = function () {
+        this._genAjaxData = function (opt) {
 
             function _genPartialFields(mdf) {
                 var l = [];
@@ -342,26 +344,6 @@ function genGalleryModel(hash, mdfL) {
                 }
                 return false;
 
-                /*for (key in mdf) {
-                    if (mdf.hasOwnProperty(key)) {
-                        var state = mdf[key].state;
-                        if (state) {
-                            var vL = []
-                            for (var i = 0, len = mdf[key].len; i < len; i++) {
-                                if (state.charAt(i) === "1") {
-                                    v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
-                                    if (v) {
-                                        vL.push(key + ":" + v);
-                                    }
-                                }
-                            }
-                            if (vL.length) {
-                                l.push("(" + vL.join("|") + ")");
-                            }
-                        }
-                    }
-                }
-                return l.join(".");*/
             }
 
             /** -- **/
@@ -386,13 +368,11 @@ function genGalleryModel(hash, mdfL) {
             }
 
 			// Sort by date
-			//l.push("sort=date:D:S:d1");
+			l.push("sort=date:D:S:d1");
             //l.push("inmeta:la-featured1:1 AND inmeta:last-modified:2012-06-16..");
 
             /* public flags */
-            l.push("start=" + this.startN);
-
-            l.push("num=" + this.numN);
+            
 
 
             if (this.query) {
@@ -406,6 +386,16 @@ function genGalleryModel(hash, mdfL) {
                 pfields = pfields+".("+typePFields+")";
             } else if (typePFields){
                 pfields = typePFields;
+            }
+
+            if(opt && opt.featured){
+                 pfields = (pfields)?pfields+".(la-featured:yes)":"(la-featured:yes)";
+                 l.push("start=" + (this.fStartN) ? this.fStartN : this.startN);
+                l.push("num=" + (this.fNumN) ? this.fNumN : this.numN);
+            }else {
+                 pfields = (pfields)?pfields+".(-la-featured:yes)":"(-la-featured:yes)";
+                 l.push("start=" + this.startN);
+                l.push("num=" + this.numN);
             }
 
             
@@ -525,6 +515,7 @@ function createGalleryShell() {
         display: null,
         pageNav: null,
         reloadCount: 0,
+        featureddata:null,
 
         init: function (gm) {
             if (gm.query) {
@@ -532,6 +523,9 @@ function createGalleryShell() {
             }
 
             this._updateFilter(gm);
+
+            this.updateFeatured(gm);
+            this.updateNavigationNumber(gm);
 
 
         },
@@ -542,6 +536,46 @@ function createGalleryShell() {
                 window.location.hash = vdata.hash;
             }
 
+        },
+
+        updateFeatured: function (gm) {
+            this.gm = gm;
+
+            var vdata = gm.genViewData();
+
+            if (gm.query) {
+                $("#query").val(gm.query);
+            }
+
+                       
+            // Featured Item
+            $.ajax({
+                url: gm.tier.gallery,
+                dataType: "jsonp",
+                context: this,
+                data: vdata.ajaxFeaturedData,
+                timeout: 6000,
+                async: false,
+                beforeSend: function () {
+                    //$("#gl-content").empty();
+                    //$("#spinner").show();
+                },
+                success: function (data) {
+                    this._setFeaturedData(data);
+                },
+                error: function (xhr, status, err) {
+                    //$("#gl-content").html(gcfg.errorMsg);
+                    //$("#spinner").hide();
+                }
+            });
+
+        },
+
+        updateNavigationNumber: function (){
+            //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
+            var estN = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
+            var endI = (this.updateFeatured.endI)?this.updateFeatured.endI:0;
+            console.log(this.updateFeatured);
         },
 
         update: function (gm) {
@@ -557,7 +591,31 @@ function createGalleryShell() {
 
             this._updateFilter(gm);
 
-            debug(vdata.ajaxData);
+            
+           /* // Featured Item
+            $.ajax({
+                url: gm.tier.gallery,
+                dataType: "jsonp",
+                context: this,
+                data: vdata.ajaxFeaturedData,
+                timeout: 6000,
+                async: false,
+                beforeSend: function () {
+                    //$("#gl-content").empty();
+                    //$("#spinner").show();
+                },
+                success: function (data) {
+                    this._setFeaturedData(data);
+                },
+                error: function (xhr, status, err) {
+                    //$("#gl-content").html(gcfg.errorMsg);
+                    //$("#spinner").hide();
+                }
+            });*/
+
+
+
+            // REgular items
             $.ajax({
                 url: gm.tier.gallery,
                 dataType: "jsonp",
@@ -565,7 +623,7 @@ function createGalleryShell() {
                 data: vdata.ajaxData,
                 timeout: 6000,
                 beforeSend: function () {
-                    $("#gl-content").empty();
+                    //$("#gl-content").empty();
                     $("#spinner").show();
                 },
                 success: function (data) {
@@ -613,9 +671,18 @@ function createGalleryShell() {
                 this.display.update(this.gm);
             }
         },
+        _setFeaturedData: function (data){
+            this.featureddata = new SEData(data);
+        },
+
         _updateModelAndView: function (data) {
 
             var sedata = new SEData(data);
+
+            console.log(this.featureddata);
+
+            sedata.rowL = this.featureddata.rowL.concat(sedata.rowL);
+            console.log(this);
 
             this.gm.updateSEData(sedata);
 
