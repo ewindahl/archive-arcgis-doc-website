@@ -386,7 +386,8 @@ function genGalleryModel(hash, mdfL) {
             }
 
 			// Sort by date
-			l.push("sort=date:D:S:d1");
+			//l.push("sort=date:D:S:d1");
+            //l.push("inmeta:la-featured1:1 AND inmeta:last-modified:2012-06-16..");
 
             /* public flags */
             l.push("start=" + this.startN);
@@ -507,6 +508,15 @@ SERow.prototype.agolTargetUrl = function (itemURL) {
     }
 
 	return targetURL;
+};
+
+SERow.prototype.agolFeaturedItem = function () {
+    var featuredItem = this.md("la-featured", "");
+    
+    if (featuredItem !== "None") {
+        return featuredItem;
+    }
+    return false;
 };
 
 function createGalleryShell() {
