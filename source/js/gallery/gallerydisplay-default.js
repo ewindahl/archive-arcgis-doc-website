@@ -130,8 +130,13 @@ function genDisplay() {
             var imgurl = row.agolImgUrl(itemID);
             var v = obj._genContribInfo(row);
             var targetUrl = row.agolItemUrl(itemID);
-            
+
             buf.push("<li class='item'>");
+
+            if(row.agolFeaturedItem()){
+                buf.push("<span class='featured'>Featured</span>");
+            }
+            
             if (v.show) {
                 buf.push("<a href='" + targetUrl + "'  class='item-contrib " + v.css + " '>" + v.label + "</a>");
             }
