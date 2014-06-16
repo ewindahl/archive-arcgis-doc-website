@@ -390,8 +390,10 @@ function genGalleryModel(hash, mdfL) {
 
             if(opt && opt.featured){
                  pfields = (pfields)?pfields+".(la-featured:yes)":"(la-featured:yes)";
-                 l.push("start=" + (this.fStartN) ? this.fStartN : this.startN);
-                l.push("num=" + (this.fNumN) ? this.fNumN : this.numN);
+                 //l.push("start=" + (this.fStartN) ? this.fStartN : this.startN);
+                //l.push("num=" + (this.fNumN) ? this.fNumN : this.numN);
+                l.push("start=" + this.startN);
+                l.push("num=" + this.numN);
             }else {
                  pfields = (pfields)?pfields+".(-la-featured:yes)":"(-la-featured:yes)";
                  l.push("start=" + this.startN);
@@ -571,11 +573,22 @@ function createGalleryShell() {
 
         },
 
-        updateNavigationNumber: function (){
+        updateNavigationNumber: function (gm){
+            console.log(this.featureddata);
             //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
-            var estN = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
-            var endI = (this.updateFeatured.endI)?this.updateFeatured.endI:0;
-            console.log(this.updateFeatured);
+            /*var estN = (this.featureddata.estN)?this.featureddata.estN:0;
+            //var endI = (this.featureddata.endI)?this.featureddata.endI:0;
+            
+            if(estN > gm.numN){
+                gm.startN = 0;
+                gm.numN = 0;   
+            }else{
+                gm.numN = 0;   
+            }*/
+             
+
+           
+            //console.log(this.updateFeatured);
         },
 
         update: function (gm) {
@@ -675,14 +688,34 @@ function createGalleryShell() {
             this.featureddata = new SEData(data);
         },
 
+        mergeData: function(gm,sedata){
+            //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
+            var estN = (this.featureddata.estN)?this.featureddata.estN:0;
+            var endI = (this.featureddata.endI)?this.featureddata.endI:0;
+            
+            if(endI >= 30){
+                gm.startN = 0;
+                gm.numN = 0;
+                return this.featureddata.rowL;   
+            }else{
+                gm.numN = 0; 
+                return this.featureddata.rowL.concat(sedata.rowL);  
+            }
+             
+
+        },
+
         _updateModelAndView: function (data) {
 
             var sedata = new SEData(data);
 
             console.log(this.featureddata);
 
-            sedata.rowL = this.featureddata.rowL.concat(sedata.rowL);
-            console.log(this);
+
+            //console.log(this);
+            //if(this.featureddata){
+                sedata.rowL = this.mergeData(this.gm,sedata);
+            //}
 
             this.gm.updateSEData(sedata);
 
