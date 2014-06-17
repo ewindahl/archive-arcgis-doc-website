@@ -9,17 +9,19 @@
       kv = "{"
       ckv = "{"
       ref['filters'][0]['filter'].each { |k|
-         i = 0
+         if k['filterable'] != 'N' 
+			 i = 0
 
-         k["value"].each { |sk|
-           if k['metaname'] == "g-contributor"
-               ckv += "'" + sk['metacontent'] + "':'#{sk['itemlabel']}',"
-           end
-           kv += "'" + sk['metacontent'] + "':'#{sk['label']}',"
-           i = i+1
-         }
+			 k["value"].each { |sk|
+			   if k['metaname'] == "g-contributor"
+				   ckv += "'" + sk['metacontent'] + "':'#{sk['itemlabel']}',"
+			   end
+			   kv += "'" + sk['metacontent'] + "':'#{sk['label']}',"
+			   i = i+1
+			 }
 
-         mfl += "'" + k['metaname'] + ":#{i}',"
+			 mfl += "'" + k['metaname'] + ":#{i}',"
+		 end
       }
       mfl += "]"
       kv += "}"
@@ -32,6 +34,7 @@
              displayType: 1,
              collection: "<%=ref['search-collection']%>",
              category: "<%=ref['search-category']%>",
+			 addlCategory: "<%=ref['additional-category']%>",
              emptyImgUrl: "/img/caution.png",
              errorMsg: "<%=ref['view'][0]['errormsg']%>",
              searchMsg: "<%=ref['view'][0]['searchmsg']%>",
@@ -40,12 +43,12 @@
              mdfL: <%=mfl%>,
              kv: <%=kv%>,
              contribkv : <%=ckv%>,
-             cntL: [15,30,45]
+             cntL: [15,30,45],
+		type:{"apps":"Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View", "layers":"Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service", "maps":"Web Map|CityEngine Web Scene|Web Scene", "tools":"Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service"}
          };
 
          $(document).ready(function (){
-
-            if($("#query").val().trim().length <= 0){
+            if($.trim($("#query").val().length) <= 0){
                $("#query").attr("value","<%=ref['view'][0]['searchmsg']%>");
             }
          });

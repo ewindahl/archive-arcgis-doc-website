@@ -13,23 +13,27 @@
 
 #gl-s-ctrl
 {
-    margin:0 0 20px 10px;
+    /*margin:0 0 20px 10px;
     width: 690px;
     height: 30px;
-    position:relative;
+    position:relative;*/
     /*margin-left: 45px;*/
 }
 #reference-index {
-    @include column(6);
-    /*position: fixed;
-    float:left;
-    width: 220px;
-    border-right: 1px solid #c1c1c1 ;
-    margin-top: -40px;
-    padding: 0 0 35px 0;*/
+    @include column(4);
+	background: #F7F8FA;
+	border: 1px solid #EEEFF2;
+	float: left;
+	position: relative;
+	padding: 0;
+	margin: 12px;
+	position: relative;
+	width: 286px;
 }
 #reference-content {
-  @include column(18);
+  /*@include column(18);*/
+  display: block;
+   border-bottom: 1px solid #c1c1c1 ;
 	#rss {
     display:inline-block;
     margin-left: 1em;
@@ -48,15 +52,10 @@
 // of button that will fit in search box
 $search-icon-width: 30px;
 $search-icon-height: 30px;
-#gl-s-ctrl {
+#gallerySearchForm {
   position: relative;
   input[type="text"] {
-    position:absolute;
-    /*left: 100px;*/
-    height: 30px;
-    color:#888;
-	line-height: 1;
-    /*margin-left: 45px;*/
+ 	
   }
   input[type="submit"] {
     position:absolute;
@@ -68,13 +67,18 @@ $search-icon-height: 30px;
     margin: 1px 135px;
     width: $search-icon-width;
   }
+  input[type="search"] {
+	background-image: none;
+  }
+  
+  
 }
 #gl-display
 {
     /*float:right;*/
     position:relative;
-    width:700px;
-    min-height: 150px;
+    /*width:700px;*/
+    /*min-height: 150px;*/
     /*margin: 0 50px 0 0;
     border: 0px solid #000;*/
 }
@@ -106,15 +110,16 @@ $search-icon-height: 30px;
 .filter-label
 {
   display:block;
-	font-family: $header-bold;
+	/*font-family: $header-bold;
 	font-size: $h5-size;
 	line-height:h5-lines;
-  margin: 30px 0 10px 10px;
+  margin: 30px 0 10px 10px;*/
+  padding: 6px;
 }
 
 .ctrlbox {
   display:block;
-  margin: 0.5em;
+  margin: 2px 0;
 	font-size: 0.85em;
 	line-height: 20px;
 	input[type="checkbox"] {
@@ -146,9 +151,12 @@ $search-icon-height: 30px;
 }
 
 #gl-pagenav {
-  position: relative;
-  margin: 10px 0 40px 0;
-
+  margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 600px;
+	padding:5px;
+	height:52px;
 }
 
 #gl-display-type {
@@ -214,10 +222,8 @@ $search-icon-height: 30px;
 
 
 #gl-content {
-  margin: 1em 0 0 0;
-  min-height: 500px;
-  width: 700px;
-  border-top:1px solid #c1c1c1;
+  margin: -2.5em 0 0 0;
+  /*margin: 1em 0 0 0;*/
 }
 
 #spinner {
@@ -229,14 +235,23 @@ $search-icon-height: 30px;
   left: 300px;
 }
 
-.display1 .item {
-  position:relative;
-  float:left;
-  margin: 12px 0px;
-  border: 0px solid black;
-  height: 200px;
-  overflow:hidden;
+.gl-content-errMsg {
+    float: left;
+    margin-left: auto;
+    margin-right: auto !important;
+    margin-top: 10px;
 }
+.display1 .item {
+	border: 0 solid black;
+	display: inline-block;
+	float: left;
+	height: 250px;
+	margin: 12px;
+	overflow: hidden;
+	position: relative;
+	width: 286px;
+}
+
 .display1 .item-contrib:hover {text-decoration:none;}
 .display1 .item-contrib {
   position:absolute;
@@ -262,15 +277,17 @@ $search-icon-height: 30px;
   display: block;
   padding-top: 5px;
   text-align:left;
-  width: 200px;
+  width: 286px;
 }
 
 .display1 .item-img {
   display:block;
-  height: 133px;
+  height: 190px;
+  width:286px;
+  /*height: 133px;
   width:200px;
-  border: 1px solid #888;
-  padding:5px;
+  /*border: 1px solid #888;
+  padding:5px;*/
   -webkit-box-shadow: 0px 0px 4px #666;
   -moz-box-shadow: 0px 0px 4px #666;
   box-shadow: 0px 0px 4px #666;
@@ -347,8 +364,10 @@ $search-icon-height: 30px;
 }
 .display3 .item-img {
   display:block;
-  height: 133px;
-  width:200px;
+  /*height: 133px;
+  width:200px;*/
+  height: 190px;
+  width:286px;
   float:left;
   border: 1px solid #888;
   padding:5px;
@@ -407,12 +426,12 @@ $search-icon-height: 30px;
   -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 
   background-color: #ccc;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#d9d9d9));
-  background-image: -webkit-linear-gradient(top, #f1f1f1, #d9d9d9);
-  background-image:    -moz-linear-gradient(top, #f1f1f1, #d9d9d9);
-  background-image:     -ms-linear-gradient(top, #f1f1f1, #d9d9d9);
-  background-image:      -o-linear-gradient(top, #f1f1f1, #d9d9d9);
-  background-image:         linear-gradient(to bottom, #f1f1f1, #d9d9d9);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#007AC2));
+  background-image: -webkit-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:    -moz-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:     -ms-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:      -o-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:         linear-gradient(to bottom, #f1f1f1, #007AC2);
 
 }
 
@@ -433,14 +452,21 @@ $search-icon-height: 30px;
 }*/
 
 #gl-pagenav .btn.active, .btn:active {
+	background-color: #007AC2;
+    color: #FFFFFF;
 }
+.active{
+	background-color: #007AC2;
+    color: #FFFFFF;
+}
+
 #gl-pagenav .btn.disabled
 {
   /*display:none;*/
   border: 1px solid #B9b9b9;
   color: #c1c1c1;
   cursor: default;
-  background:#f1f1f1;
+  background:#007AC2;
 }
 
 #gl-content-ul li{
@@ -462,9 +488,822 @@ $search-icon-height: 30px;
 /* Button that clears search input text */
 #gl-cl-btn {
 	display: none;
+	/*margin-right: $search-icon-width;
+	margin-top: 1/6*$search-icon-height;*/
+	float: right;
+	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 36px;
+}
+
+#gl-search-btn {
+	float: right;
+	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
+	cursor: pointer;
+	position: absolute;
+	right: 0px;
+	top: 36px;
+}
+
+#gl-sbmt-btn {
+	display: none;
 	margin-right: $search-icon-width;
 	margin-top: 1/6*$search-icon-height;
 	float: right;
 	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
 	cursor: pointer;
+}
+
+
+#page .content {
+	max-width:none;
+}
+
+.navigation-bar .leader, .section-bar .leader {
+    margin-top: 2em;
+}
+
+#reference-index header {
+    background: none repeat scroll 0 0 #cccccc;
+    padding: 11px 8px 30px;
+}
+
+#reference-index h4 {
+    float:left;
+}
+
+.filter-misc {
+    float:right;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+	margin: 0;
+}
+
+#filters ol li label:hover {
+	background:none repeat scroll 0 0 #007AC2;
+	color: #FFFFFF
+}
+
+.current {
+    background: none repeat scroll 0 0 #007AC2;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+#filters ol li span input {
+	/*opacity: 0;*/
+}
+.ctrlbox input[type=checkbox]:checked + label
+{
+	font-weight:bolder;
+}
+
+.ctrlbox > label
+{
+	/*padding-top: 2px;*/
+	padding-bottom: 2px;
+	padding-left: 10px;
+}
+.ctrlbox > input {
+	/*display: none;*/
+}
+
+ul li {
+	padding: 0;
+}
+
+.ownerName {
+	color: #cccccc;
+}
+
+
+
+/* Reference: http://www.thecssninja.com/css/css-tree-menu */
+/* Minimal css for clickable pure CSS collapsible tree menu */
+/* As specific as possible to prevent interference with other code */
+
+#menutree li {
+   list-style: none;          /* all list item li dots invisible */
+}
+
+li .filter-label + input[type=checkbox] {
+   opacity: 0;             /* checkboxes invisible and use no space */
+}                        /* display: none; is better but fails in ie8 */
+
+li div.filter-label {
+	cursor: pointer;        /* cursor changes when you mouse over this class */
+}                         /* could add the many user-select: none; commands here */
+
+li .filter-label + ol > li
+{
+	display: none;         /* prevents sublists below unchecked labels from displaying */
+}
+
+/*li .filter-label + input[type=checkbox]:checked + ol > li
+{
+	display: block;
+}*/
+
+li .current + ol > li
+{
+	display: block;         /* display submenu on click */
+}
+
+
+
+/* Media query section start */
+@media only screen and (max-device-width:320px){
+	
+	.container{padding:0;}
+	
+	#header{
+		background:none repeat scroll 0 0 white;
+		height:auto;
+		min-height:64px;
+		padding-bottom:0;
+	}
+	
+	.navigation-bar, .section-bar{
+		width:100%;
+		padding-bottom:20px;	
+	}
+
+    #reference-index{
+		width:286px;
+	}
+
+	.header-inner{
+		width:100%
+	}
+	.logo-wrap .down-arrow{
+		display:none;}
+		
+	#lg-container{
+		display:none;
+	}
+	.navigation-bar header h1,.section-bar header h1{
+		font-family:"Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+		font-size:23px;line-height:50px;
+		text-shadow:0 -1px 1px rgba(0,0,0,0.25)
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+	}
+	
+	#gallerySearchForm input[type="search"]{
+		background-image:none;
+		
+	}
+	
+	#gl-search-btn{
+		right: 60px;
+    	top: 80px;	
+	}
+    
+    .tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+	
+}
+
+@media only screen and (max-width:320px){
+	
+.container{padding:0;}
+	
+	#header{
+		background:none repeat scroll 0 0 white;
+		height:auto;
+		min-height:64px;
+		padding-bottom:0;
+	}
+	
+	.navigation-bar, .section-bar{
+		width:100%;
+		padding-bottom:20px;	
+	}
+
+    #reference-index{
+		width:286px;
+	}
+
+	.header-inner{
+		width:100%
+	}
+	.logo-wrap .down-arrow{
+		display:none;}
+		
+	#lg-container{
+		/*display:none;*/
+	}
+	.navigation-bar header h1,.section-bar header h1{
+		font-family:"Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+		font-size:23px;line-height:50px;
+		text-shadow:0 -1px 1px rgba(0,0,0,0.25)
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+	}
+	
+	#gallerySearchForm input[type="search"]{
+		background-image:none;
+		
+	}
+	
+	#gl-search-btn{
+		right: 60px;
+    	top: 80px;	
+	}
+    
+    .tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+	
+	
+}
+
+@media only screen and (min-device-width:321px) and (max-device-width:480px){
+	#header{
+		width:100%;	
+	}
+	
+	.navigation-bar, .section-bar{
+		width:100%;	
+	}
+	
+	#reference-index{
+		width:92%;
+	}
+	
+	.navigation-bar header h1,.section-bar header h1{
+		font-family:"Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+		font-size: 1.5em;
+		line-height:50px;
+		text-shadow:0 -1px 1px rgba(0,0,0,0.25)
+	}
+
+	#reference-index header{
+		background:none repeat scroll 0 0 #EAEAEA;
+		border-bottom:1px solid #D8D8D8;
+		border-top:1px solid #D8D8D8;
+		padding:11px 8px 30px;
+	}
+	
+	.container{
+		padding:0;
+		width:100%;	
+	}
+	
+	#gl-pagenav{
+		display:none;
+		width:100%;	
+	}
+	
+	ul#gl-content-ul{
+		margin-left:30px;	
+	}
+	
+	.display1 .item {
+		border: 0 solid black;
+		display: inline-block;
+		float: left;
+		height: 260px;
+		margin: 12px;
+		overflow: hidden;
+		position: relative;
+		width: 270px;
+	}	
+	
+	.display1 .item-img {
+		box-shadow: 0 0 4px #666666;
+		display: block;
+		height: 190px;
+		width: 270px;
+	}
+
+    .banner-navigation{
+		display:none;	
+	}
+	
+	.toggle-dropdown{
+		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+		float:right;height:20px;position:relative;width:20px
+	}
+	
+	.toggle-dropdown .close{
+			background-position:0 0
+	}
+
+     #gl-search-btn{
+		display:none;	
+	}
+	
+	.tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+
+}
+
+@media only screen and (min-width:321px) and (max-width:480px){
+	
+	
+	
+	#header{
+		width:100%;	
+	}
+	
+	.navigation-bar, .section-bar{
+		width:100%;
+		padding-bottom:20px;	
+	}
+	
+	#reference-index{
+		width:92%;
+	}
+
+	#reference-index header{
+		background:none repeat scroll 0 0 #EAEAEA;
+		border-bottom:1px solid #D8D8D8;
+		border-top:1px solid #D8D8D8;
+		padding:11px 8px 30px;
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+	}
+	
+	.display1 .item {
+		border: 0 solid black;
+		display: inline-block;
+		float: left;
+		height: 260px;
+		margin: 12px;
+		overflow: hidden;
+		position: relative;
+		width: 270px;
+	}	
+	
+	.display1 .item-img {
+		box-shadow: 0 0 4px #666666;
+		display: block;
+		height: 190px;
+		width: 270px;
+	}
+
+    .banner-navigation{
+		display:none;	
+	}
+	
+	.toggle-dropdown{
+		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+		float:right;height:20px;position:relative;width:20px
+	}
+	
+	.toggle-dropdown .close{
+			background-position:0 0
+	}
+
+    #gl-search-btn{
+		display:none;
+
+	}
+	
+	.tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+
+}
+
+
+
+@media only screen and (min-device-width:481px) and (max-device-width:640px){
+	
+	body{
+		width:100% !important;	
+	}
+	
+	#header{
+		width:640px;	
+	}
+	
+	.navigation-bar, .section-bar{
+		width:640px;
+		padding-bottom:20px;	
+	}
+	
+	.banner-navigation {
+    	display: none;
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+		padding-bottom:20px;
+	}
+	 
+	#reference-index{
+            width:570px;
+    }
+	
+	#reference-index header{
+		background:none repeat scroll 0 0 #EAEAEA;border-bottom:1px solid #D8D8D8;
+		border-top:1px solid #D8D8D8;padding:11px 8px 30px
+	}
+	
+	.toggle-dropdown{
+		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+		float:right;height:20px;position:relative;width:20px
+	}
+	
+	.toggle-dropdown .close{
+			background-position:0 0
+	}
+	
+	.display1 .item {
+		border: 0 solid black;
+		display: inline-block;
+		float: left;
+		height: 260px;
+		margin: 12px;
+		overflow: hidden;
+		position: relative;
+		width: 192px;
+	}	
+	
+	.display1 .item-img {
+		box-shadow: 0 0 4px #666666;
+		display: block;
+		height: 150px;
+		width: 192px;
+	}
+	
+	#gl-search-btn{
+		right: 350px;
+    	top: 92px;	
+	}
+
+	.see-more {
+		background: none repeat scroll 0 0 #F2F2F2;
+		color: #999999;
+		cursor: pointer;
+		display: block;
+		height: 80px;
+		padding: 45px 0 !important;
+		text-align: center;
+		width: 270px;
+	}
+		
+}
+
+@media only screen and (min-width:481px) and (max-width:640px){
+	body {
+		width:100% !important;	
+	}
+	
+	#header{
+		width:640px;	
+	}
+	
+	.navigation-bar, .section-bar{
+		width:640px;
+		padding-bottom:20px;	
+	}
+	
+	.banner-navigation {
+    	display: none;
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+		
+	}
+	
+	#reference-index header{
+		background:none repeat scroll 0 0 #EAEAEA;border-bottom:1px solid #D8D8D8;
+		border-top:1px solid #D8D8D8;padding:11px 8px 30px;
+	}
+        
+    #reference-index{
+            width:564px;
+    }
+	
+	.display1 .item {
+		border: 0 solid black;
+		display: inline-block;
+		float: left;
+		height: 260px;
+		margin: 12px;
+		overflow: hidden;
+		position: relative;
+		width: 270px;
+	}	
+	
+	.display1 .item-img {
+		box-shadow: 0 0 4px #666666;
+		display: block;
+		height: 190px;
+		width: 270px;
+	}
+	
+	.toggle-dropdown{
+		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+		float:right;height:20px;position:relative;width:20px
+	}
+	
+	.toggle-dropdown .close{
+			background-position:0 0
+	}
+	
+	#gl-search-btn{
+		right: 350px;
+    	top: 92px;	
+	}
+	
+	.see-more {
+		background: none repeat scroll 0 0 #F2F2F2;
+		color: #999999;
+		cursor: pointer;
+		display: block;
+		height: 80px;
+		padding: 45px 0 !important;
+		text-align: center;
+		width: 270px;
+	}
+    
+}
+
+@media only screen and (min-width:641px) and (max-width:768px){
+	.navigation-bar header h1,.section-bar header h1{
+		font-size:1.875em
+		}
+		.navigation-bar input,.section-bar input{
+			margin-right:12px;
+			width:260px;
+		}
+		
+		#gl-search-btn{
+			color:#F4803A;
+			cursor:pointer;
+			float:right;
+			position:absolute;
+			right:15px;
+			top:36px;
+		}
+		
+		.navigation-bar, .section-bar{
+			width:768px;
+			padding-bottom:20px;	
+		}
+			
+			#mobile-navigation{
+				display:inline-block;
+				margin-right:80px;
+			}
+			.container .content{
+				width:670px;
+			}
+			
+			#gl-pagenav{
+				float:left;
+				height:52px;
+				margin-left:auto;
+				margin-right:auto;
+				padding:5px;
+				position:relative
+			}
+			
+			#reference-index{
+            	width:598px;
+    		}
+			
+			#reference-index{		
+				margin: 12px 12px 12px 60px;
+			}
+			
+			#reference-content{
+				margin-left: 60px;	
+			}
+			
+			#reference-index header{
+				background:none repeat scroll 0 0 #EAEAEA;
+				border-bottom:1px solid #D8D8D8;
+				border-top:1px solid #D8D8D8;
+				padding:11px 8px 30px;
+			}
+			
+			.toggle-dropdown{
+				background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+				float:right;height:20px;
+				position:relative;
+				width:20px}
+					
+			.toggle-dropdown .close{background-position:0 0}
+			
+			#gallerySearchForm{
+				float:left;	
+			}
+}
+
+@media only screen and (min-width:769px) and (max-width:960px){
+	
+	#reference-content{width:100%}
+	.container{
+		width:960px;
+		padding:0;
+	}
+
+}
+@media only screen and (min-width:961px) and (max-width:1024px){}
+@media only screen and (min-width:1025px) and (max-width:1280px){#reference-content{width:100%px}}
+@media only screen and (min-width:1281px) and (max-width:1366){#reference-content{width:100%}}
+@media only screen and (min-width:1367px) and (max-width:1920px){#reference-content{width:100%}}
+/* Media query section end */
+
+
+/* New pagination style */
+.gl-pagination {
+            font-size: 80%;
+        }
+        
+
+.gl-pagination label {
+    /*display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;*/
+	
+	background: none repeat scroll 0 0 #F2F2F2;
+    border: 1px solid #EDEDED;
+    border-radius: 4px 4px 4px 4px;
+    color: #999999;
+    font-size: 1em;
+    line-height: 2.5em;
+    margin: 5px;
+    padding: 5px 10px;
+	display: inline;
+	cursor:pointer;
+}
+
+.gl-pagination ._pagination_link_current {
+    background: #26B;
+    color: #fff;
+	border: solid 1px #AAE;
+	cursor:none;
+}
+
+.gl-pagination .current.prev, .gl-pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+
+.gl-pagination .disabled
+{
+  /*display:none;*/
+  background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #C1C1C1;
+    cursor: inherit;
+}
+/* End of new pagination style */
+
+.see-more {
+    background: none repeat scroll 0 0 #F2F2F2;
+    color: #999999;
+    display: block;
+    padding: 62px;
+    text-align: center;
+	cursor: pointer;
+}
+
+.reset-filter {
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    font-weight: 200;
+    position: relative;
+    text-align: center;
+    /*top: -5px;*/
+    width: 50px;
+	display: none
+}
+
+.showme-dropDown {
+    background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 rgba(0, 0, 0, 0);
+    border-radius: 18px;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    height: 18px;
+    margin-left: 13px;
+    overflow: hidden;
+    vertical-align: 17px;
+    width: 18px;
+}
+
+#showMeFilters label {
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.showme-filter-label {
+    display: block;
+    padding: 6px;
+}
+
+#showMeFilters {
+	display: none;
+}
+
+#showMeFilters ol li label:hover {
+	background:none repeat scroll 0 0 #007AC2;
+	color: #FFFFFF
+}
+
+#showMeFilters ol > li
+{
+	/*display: none; */
+}
+
+
+#showMeFilters ol > li .current
+{
+	display: block;         /* display submenu on click */
+}
+
+.featured {
+    background: none repeat scroll 0 0 orange;
+    color: #ffffff;
+    padding: 2px;
+    position: absolute;
 }

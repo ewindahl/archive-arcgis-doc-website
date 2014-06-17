@@ -2,55 +2,100 @@ function genPageNav() {
     var o = {
         update: function (gm) {
 
-            var pageI = gm.sedata.startI / gm.numN;
-            pageI = (pageI === 0) ? 0 : Math.floor(pageI) + 1;
-
-            var pageN = 0;
-            if (gm.maxN > 0) {
-                pageN = gm.maxN / gm.numN;
-                if (gm.maxN % gm.numN > 0) {
-                    pageN = Math.floor(pageN) + 1;
-                }
-            };
-
-            var pageStr = (typeof txtPage === "undefined") ? "Page" : txtPage;
-            var ofStr = (typeof txtOf === "undefined") ? "of" : txtOf;
-            var itemsStr = (typeof txtItems === "undefined") ? "items" : txtItems;
-
-            var txt = pageStr + " <input id='pageX' name='pageX' type='text' size='2' value='" + pageI + "'> " + ofStr + " " + pageN;
-            txt = txt + " (" + gm.sedata.startI + " - " + gm.sedata.endI + " of " + gm.sedata.estN + " " + itemsStr + ")";
-            if (gm.sedata.estN > 0) {
-                $(".gl-pnavinfo").html(txt);
-            } else {
-                $(".gl-pnavinfo").empty();
-            }
-
-            txt = pageStr + " " + pageI + " " + ofStr + " " + pageN;
-            txt = txt + " (" + gm.sedata.startI + " - " + gm.sedata.endI + " of " + gm.sedata.estN + " " + itemsStr + ")";
-            if (gm.sedata.estN > 0) {
-                $(".gl-pnavinfo-s").html(txt);
-            } else {
-                $(".gl-pnavinfo-s").empty();
+            if($("#gl-content-ul").length > 0){
+                $("#gl-pagenav").html(this.generateLinks(gm));
             }
 
             if (gm.sedata.startI - gm.numN < 0) {
-                $("#gl-prev").addClass("btn disabled");
+                $("._pagination_link_prev").addClass("disabled");
+                 $("._pagination_link_first").addClass("disabled");
             } else {
-                var $o = $("#gl-prev");
+                var $o = $("_pagination_link_prev");
                 if ($o.hasClass("disabled")) {
                     $o.toggleClass("disabled");
                 }
             }
 
-            if (gm.sedata.endI < gm.sedata.estN) {
-                var $o = $("#gl-next");
+
+            // GSA has browse limit of 1000 results
+            if (gm.sedata.endI >= gm.maxN) {
+                // Disable more button
+                $("#more-item").hide();
+                
+
+                $("._pagination_link_next").addClass("disabled");
+                 $("._pagination_link_last").addClass("disabled");
+            } else {
+                 var $o = $("._pagination_link_next");
                 if ($o.hasClass("disabled")) {
                     $o.toggleClass("disabled");
                 }
-            } else {
-                $("#gl-next").addClass("disabled");
+                var $o = $("._pagination_link_last");
+                if ($o.hasClass("disabled")) {
+                    $o.toggleClass("disabled");
+                }
             }
 
+           
+
+        },
+
+
+        generateLinks: function(gm)
+        {
+            
+            if(gm.maxN >= 1000){
+                gm.maxN = gm.maxN-gm.numN;
+            }
+            settings = {
+                                first           : '<<', 
+                                prev            : '<',
+                                next            : '>',
+                                last            : '>>',
+                                spread          : 2,
+                                total           : gm.maxN,
+                                index           : gm.sedata.startI-1 || 0,
+                                limit           : gm.numN,
+                            };
+                            
+            var paginate = $('<div class="gl-pagination"></div>');
+
+            var totalPages = Math.ceil(settings.total/settings.limit);
+            var visiblePages = settings.spread * 2 + 1;
+            var currentPage = Math.ceil(settings.index/settings.limit);
+            var start = 0, end = 0;
+
+
+            // get start and end page
+            if(totalPages <= visiblePages) { start = 0; end = totalPages; }
+            else if(currentPage < settings.spread){ start = 0; end = visiblePages; }
+            else if(currentPage > totalPages - settings.spread-1){ start = totalPages-visiblePages; end=totalPages; }
+            else{ start = currentPage-settings.spread; end=currentPage+settings.spread+1; }
+
+            paginate.html('');
+            
+           
+
+            // generate links
+            if(settings.first) paginate.append(this.getLink(0, 'first'));
+            if(settings.prev) paginate.append(this.getLink(currentPage === 0 ? 0 : currentPage-1, 'prev'));
+
+            for(var i=start; i<end; i++) paginate.append(this.getLink(i, i*settings.limit === settings.index ? 'current' : null));
+            
+            if(settings.next) paginate.append(this.getLink(currentPage === totalPages ? totalPages : currentPage+1, 'next'));
+            if(settings.last) paginate.append(this.getLink(totalPages-1, 'last'));
+
+            // More Item
+             $("#more-item").attr("value", (currentPage === totalPages) ? totalPages*settings.limit : (currentPage + 1)*settings.limit);
+
+            return paginate;
+        },
+
+        getLink: function(i, key){
+            
+            var _self = this;
+            var spanVal = i*settings.limit;
+            return $('<label value="' + spanVal + '" class="pagination_link' + (key ? ' _pagination_link_' + key : '') + '"></label>').html(settings[key] || (i+1));
         }
     };
 
@@ -85,18 +130,24 @@ function genDisplay() {
             var imgurl = row.agolImgUrl(itemID);
             var v = obj._genContribInfo(row);
             var targetUrl = row.agolItemUrl(itemID);
-            
+
             buf.push("<li class='item'>");
+
+            if(row.agolFeaturedItem()){
+                buf.push("<span class='featured'>Featured</span>");
+            }
+            
             if (v.show) {
-                buf.push("<a href='" + targetUrl + "'  target='_blank' class='item-contrib " + v.css + " '>" + v.label + "</a>");
+                buf.push("<a href='" + targetUrl + "'  class='item-contrib " + v.css + " '>" + v.label + "</a>");
             }
 
-            buf.push("<a href='" + targetUrl + "' target='_blank'>");
+            buf.push("<a href='" + targetUrl + "'>");
             buf.push("<img class='item-img' src='" + imgurl + "' />");
             buf.push("</a>");
-            buf.push("<a class='item-title' href='" + targetUrl + "' target='_blank'>");
+            buf.push("<a class='item-title' href='" + targetUrl + "'>");
             buf.push(row.md("agol-item-title", "n/a"));
             buf.push("</a>");
+			buf.push("<span class='ownerName'>By "+row.md("agol-owner", "n/a")+"</span>");
             buf.push("</li>");
 
         },
@@ -170,12 +221,17 @@ function genDisplay() {
                         $.each(gm.sedata.rowL, function (i, val) {
                             displayFunc(o, gm.startN + i, new SERow(val), buf);
                         });
+                        buf.push("<li class='item' id='more-item'><div class='item-img see-more'>There's more. Click to load the next page.</div></li>");
                         buf.push("</ul>");
-                        buf.push("<div class='clear'></div>");
+                        //buf.push("<div class='clear'></div>");
 
                         $("#gl-content").html(buf.join("")).removeClass().addClass("display" + gm.display);
                     } else {
-                        $("#gl-content").html(gcfg.nullMsg);
+                        var errMsg = [];
+                        errMsg.push("<div class='gl-content-errMsg'>")
+                        errMsg.push("<p>Sorry. No results found.</br>The Living Atlas doesn't contain any items that match that query.</p><p>To find content, try entering a new query or browse the themes of the atlas.</p>")
+                        errMsg.push("</div>");
+                        $("#gl-content").html(errMsg.join(""));
                     }
                 }
 
