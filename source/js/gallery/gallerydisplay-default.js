@@ -17,8 +17,8 @@ function genPageNav() {
             }
 
             var countMaxN = gm.maxN;
-            //if(gm.fMaxN > gm.maxN)
-              //  gm.maxN = gm.fMaxN;
+            if(gm.fMaxN > gm.maxN)
+                gm.maxN = gm.fMaxN;
 
             console.log( gm.maxN);
 
