@@ -209,6 +209,7 @@ function genGalleryModel(hash, mdfL) {
             this.query = $.trim($("#query").val());
             this.startN = 0;
             this.fStartN = 0;
+            this.fNumN = this.numN;
 
         }
 		
@@ -246,9 +247,9 @@ function genGalleryModel(hash, mdfL) {
                 this.startN = 0;
                 this.npp = 0;
                 this.fNumN = 30;
-                this.numN = this.numN;
+                this.numN = 0;
             }else{
-                this.fStartN = this.npp;
+                this.fStartN = n||this.npp;
                 this.fNumN = this.fNumN;
                 this.npp = this.npp + parseInt(n,10);
 
@@ -467,7 +468,7 @@ function genGalleryModel(hash, mdfL) {
                 //l.push("start=" + this.startN);
                 //l.push("num=" + this.numN);
             }else {
-                 pfields = (pfields)? pfields+"-(la-featured:yes)" : "-(la-featured:yes)";
+                 pfields = (pfields)? pfields+".(-la-featured:yes)" : "(-la-featured:yes)";
                  l.push("start=" + this.startN);
                 l.push("num=" + this.numN);
             }
@@ -720,16 +721,19 @@ function createGalleryShell() {
         _setFeaturedData: function (data,gm){
             this.featureddata = new SEData(data);
             this.gm.updateFSEData(this.featureddata);
+            this.numberofRegularItemsRequires = 0;
 
 
             if(this.featureddata){
-                var totalFeaturedItemPerPage =  this.featureddata.endI-(this.featureddata.startI);
+                var totalFeaturedItemPerPage =  this.featureddata.endI-(this.featureddata.startI-1);
+                //var totalFeaturedItemPerPage =  this.featureddata.endI;
                 var totalFeaturedResult = this.featureddata.estN;
-                if(totalFeaturedItemPerPage <= 30){
+                if(totalFeaturedItemPerPage < 30){
                     this.numberofRegularItemsRequires = 30 - totalFeaturedItemPerPage;
                 }
 
                 if(this.numberofRegularItemsRequires > 0){
+                    console.log("ss"+this.numberofRegularItemsRequires);
                     gm.numN = this.numberofRegularItemsRequires;
                     gm.fNumN = 0;
                 }else{
@@ -749,19 +753,8 @@ function createGalleryShell() {
                 var estN = (this.featureddata.estN)?this.featureddata.estN:0;
                 var endI = (this.featureddata.endI)?this.featureddata.endI:0;
 
-                //Do not merge
-                //console.log(estN +"<="+ gm.startN);
-                /*if(estN <= 30 || estN <= gm.startN){
-                    gm.fStartN = 0;
-                    gm.fNumN = 0;
-                }else if(endI >= 30){
-                    sedata.rowL = this.featureddata.rowL;   
-                }else{
-                    //gm.numN = 0; 
-                    sedata.rowL = this.featureddata.rowL.concat(sedata.rowL);  
-                }*/
+                 console.log(this.featureddata);
                 if( this.numberofRegularItemsRequires > 0){
-                    console.log(this.featureddata);
                     sedata.rowL = this.featureddata.rowL.concat(sedata.rowL); 
                 }else{
                     sedata.rowL = this.featureddata.rowL;
@@ -1104,5 +1097,13 @@ $(document).ready(function () {
     }
     return vars;
     }
+
+    $(window).scroll(function () {
+        if ($(document).height() <= $(window).scrollTop() + $(window).height()+400) {
+            //alert("End Of The Page");
+            
+            //gShell.update(gModel);
+        }
+    });
 
 });
