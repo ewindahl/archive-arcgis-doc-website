@@ -1,5 +1,5 @@
 var doc = {};
-var AGOLURL = 'https://www.arcgis.com/';
+var AGOLURL = '//www.arcgis.com/';
 
 doc.itemDetails = (function(){
 		
