@@ -31,7 +31,9 @@ function genGalleryModel(hash, mdfL) {
 
     function GalleryModel(mdfL) {
         this.startN = 0;
+        this.fStartN = 0;
         this.numN = gcfg.numN;
+        this.fNumN = gcfg.numN;
         this.maxN = 0;
         this.sedata = null;
         this.query = ""; //decoded value
@@ -42,6 +44,7 @@ function genGalleryModel(hash, mdfL) {
 		this.clearAll = false;
 		this.col = "All"; //decoded value
         this.type = "All";
+        this.npp = gcfg.numN;;
 
         this.init = function (hash) {
             this._initMDF(mdfL);
@@ -87,6 +90,12 @@ function genGalleryModel(hash, mdfL) {
             this.maxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
         }
 
+        this.updateFSEData = function (sedata) {
+            this.sedata = sedata;
+            this.fStartN = sedata.startI - 1;
+            this.fMaxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
+        }
+
 
         this.updateByHash = function (hash) {
             var o = this._parseHash(hash);
@@ -100,6 +109,15 @@ function genGalleryModel(hash, mdfL) {
                 this.startN = 0;
             }
 
+            if (o.fs) {
+                this.fStartN = parseInt(o.fs, 10);
+                if (isNaN (this.fStartN)) {
+                    this.fStartN = 0;
+                }
+            } else {
+                this.fStartN = 0;
+            }
+
             if (o.n) {
                 this.numN = parseInt(o.n, 10);
                 if (isNaN(this.numN)) {
@@ -107,6 +125,24 @@ function genGalleryModel(hash, mdfL) {
                 }
             } else {
                 this.numN = gcfg.numN;
+            }
+
+            if (o.fn) {
+                this.fNumN = parseInt(o.fn, 10);
+                if (isNaN(this.fNumN)) {
+                    this.fNumN = gcfg.numN;
+                }
+            } else {
+                this.fNumN = gcfg.numN;
+            }
+
+            if (o.npp) {
+                this.npp = parseInt(o.npp, 10);
+                if (isNaN(this.npp)) {
+                    this.npp = gcfg.numN;
+                }
+            } else {
+                this.npp = gcfg.numN;
             }
 
             if (o.q) {
@@ -166,11 +202,13 @@ function genGalleryModel(hash, mdfL) {
             }
 
             this.startN = 0;
+            this.fStartN = 0;
         }
 
         this.updateQuery = function () {
             this.query = $.trim($("#query").val());
             this.startN = 0;
+            this.fStartN = 0;
 
         }
 		
@@ -200,6 +238,31 @@ function genGalleryModel(hash, mdfL) {
             this.type = type;
         }
 
+        this.updateNpp = function (n) {
+            //this.npp = n || 30;
+            
+            if(n == 0){
+                this.fStartN = 0;
+                this.startN = 0;
+                this.npp = 0;
+                this.fNumN = 30;
+                this.numN = this.numN;
+            }else{
+                this.fStartN = this.npp;
+                this.fNumN = this.fNumN;
+                this.npp = this.npp + parseInt(n,10);
+
+                if(this.fNumN <= 0){
+                    this.startN = this.startN + this.numN;
+                    this.numN = n || this.numN;
+                }else{
+                    //this.fStartN = this.npp;
+                    //this.fNumN = this.fNumN;
+                }
+             }
+
+        }
+
         this.updateDisplayN = function (n) {
             var x = Math.max(1, n);
             x = Math.min(3, x);
@@ -216,6 +279,7 @@ function genGalleryModel(hash, mdfL) {
             }
 
             this.startN = 0;
+            this.fStartN = 0;
 
         }
 
@@ -228,18 +292,23 @@ function genGalleryModel(hash, mdfL) {
             x = (x - 1) * this.numN;
             x = Math.min(this.maxN, x);
             this.startN = Math.max(0, x);
+            this.fStartN = Math.max(0, x);
         }
 
         this.inc = function () {
             this.startN = Math.min(this.maxN, this.startN + this.numN);
+            this.fStartN = Math.min(this.fMaxN, this.fStartN + this.numN);
         }
 
         this.dec = function () {
             this.startN = Math.max(0, this.startN - this.numN);
+            this.fStartN = Math.max(0, this.fStartN - this.numN);
         }
 
         this.updatePagination = function (n) {
             this.startN = n || 0;
+            this.fStartN = n || 0;
+            this.fNumN = 30;
         }
 
         this._setMdf = function (val) {
@@ -294,6 +363,9 @@ function genGalleryModel(hash, mdfL) {
             l.push("d=" + this.display);
 			l.push("col=" + this.col);
             l.push("type=" + this.type);
+            l.push("fs=" + this.fStartN);
+            l.push("fn=" + this.fNumN);
+            l.push("npp=" + this.npp);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -389,13 +461,13 @@ function genGalleryModel(hash, mdfL) {
             }
 
             if(opt && opt.featured){
-                 pfields = (pfields)?pfields+".(la-featured:yes)":"(la-featured:yes)";
-                 //l.push("start=" + (this.fStartN) ? this.fStartN : this.startN);
-                //l.push("num=" + (this.fNumN) ? this.fNumN : this.numN);
-                l.push("start=" + this.startN);
-                l.push("num=" + this.numN);
+                 pfields = (pfields)? pfields + ".(la-featured:yes)" : "(la-featured:yes)";
+                 l.push("start=" + this.fStartN);
+                l.push("num=" + this.fNumN);
+                //l.push("start=" + this.startN);
+                //l.push("num=" + this.numN);
             }else {
-                 pfields = (pfields)?pfields+".(-la-featured:yes)":"(-la-featured:yes)";
+                 pfields = (pfields)? pfields+"-(la-featured:yes)" : "-(la-featured:yes)";
                  l.push("start=" + this.startN);
                 l.push("num=" + this.numN);
             }
@@ -518,6 +590,7 @@ function createGalleryShell() {
         pageNav: null,
         reloadCount: 0,
         featureddata:null,
+        numberofRegularItemsRequires:0,
 
         init: function (gm) {
             if (gm.query) {
@@ -526,9 +599,7 @@ function createGalleryShell() {
 
             this._updateFilter(gm);
 
-            this.updateFeatured(gm);
-            this.updateNavigationNumber(gm);
-
+            //this.updateFeatured(gm);
 
         },
 
@@ -540,7 +611,7 @@ function createGalleryShell() {
 
         },
 
-        updateFeatured: function (gm) {
+        updateGeneralItem: function (gm) {
             this.gm = gm;
 
             var vdata = gm.genViewData();
@@ -550,84 +621,6 @@ function createGalleryShell() {
             }
 
                        
-            // Featured Item
-            $.ajax({
-                url: gm.tier.gallery,
-                dataType: "jsonp",
-                context: this,
-                data: vdata.ajaxFeaturedData,
-                timeout: 6000,
-                async: false,
-                beforeSend: function () {
-                    //$("#gl-content").empty();
-                    //$("#spinner").show();
-                },
-                success: function (data) {
-                    this._setFeaturedData(data);
-                },
-                error: function (xhr, status, err) {
-                    //$("#gl-content").html(gcfg.errorMsg);
-                    //$("#spinner").hide();
-                }
-            });
-
-        },
-
-        updateNavigationNumber: function (gm){
-            console.log(this.featureddata);
-            //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
-            /*var estN = (this.featureddata.estN)?this.featureddata.estN:0;
-            //var endI = (this.featureddata.endI)?this.featureddata.endI:0;
-            
-            if(estN > gm.numN){
-                gm.startN = 0;
-                gm.numN = 0;   
-            }else{
-                gm.numN = 0;   
-            }*/
-             
-
-           
-            //console.log(this.updateFeatured);
-        },
-
-        update: function (gm) {
-            this.gm = gm;
-
-            var vdata = gm.genViewData();
-
-            if (gm.query) {
-                $("#query").val(gm.query);
-            }
-
-            this.updateHash(gm, vdata);
-
-            this._updateFilter(gm);
-
-            
-           /* // Featured Item
-            $.ajax({
-                url: gm.tier.gallery,
-                dataType: "jsonp",
-                context: this,
-                data: vdata.ajaxFeaturedData,
-                timeout: 6000,
-                async: false,
-                beforeSend: function () {
-                    //$("#gl-content").empty();
-                    //$("#spinner").show();
-                },
-                success: function (data) {
-                    this._setFeaturedData(data);
-                },
-                error: function (xhr, status, err) {
-                    //$("#gl-content").html(gcfg.errorMsg);
-                    //$("#spinner").hide();
-                }
-            });*/
-
-
-
             // REgular items
             $.ajax({
                 url: gm.tier.gallery,
@@ -647,6 +640,46 @@ function createGalleryShell() {
                 error: function (xhr, status, err) {
                     $("#gl-content").html(gcfg.errorMsg);
                     $("#spinner").hide();
+                }
+            });
+
+        },
+
+
+        update: function (gm) {
+            //this.updateFeatured(gm);
+            this.gm = gm;
+
+            var vdata = gm.genViewData();
+
+            if (gm.query) {
+                $("#query").val(gm.query);
+            }
+
+            this.updateHash(gm, vdata);
+
+            this._updateFilter(gm);
+
+            // Featured Item
+            $.ajax({
+                url: gm.tier.gallery,
+                dataType: "jsonp",
+                context: this,
+                data: vdata.ajaxFeaturedData,
+                timeout: 6000,
+                async: false,
+                beforeSend: function () {
+                    $("#gl-content").empty();
+                    $("#spinner").show();
+                },
+                success: function (data) {
+                    this._setFeaturedData(data, this.gm);
+                    this.updateGeneralItem(gm)
+                    //this._setFeaturedData(data, this.gm);
+                },
+                error: function (xhr, status, err) {
+                    //$("#gl-content").html(gcfg.errorMsg);
+                    //$("#spinner").hide();
                 }
             });
 
@@ -684,23 +717,61 @@ function createGalleryShell() {
                 this.display.update(this.gm);
             }
         },
-        _setFeaturedData: function (data){
+        _setFeaturedData: function (data,gm){
             this.featureddata = new SEData(data);
+            this.gm.updateFSEData(this.featureddata);
+
+
+            if(this.featureddata){
+                var totalFeaturedItemPerPage =  this.featureddata.endI-(this.featureddata.startI);
+                var totalFeaturedResult = this.featureddata.estN;
+                if(totalFeaturedItemPerPage <= 30){
+                    this.numberofRegularItemsRequires = 30 - totalFeaturedItemPerPage;
+                }
+
+                if(this.numberofRegularItemsRequires > 0){
+                    gm.numN = this.numberofRegularItemsRequires;
+                    gm.fNumN = 0;
+                }else{
+                    gm.numN = 0;
+                }
+            }
+
+            console.log(totalFeaturedItemPerPage+"-"+totalFeaturedResult+"-"+this.numberofRegularItemsRequires);
+
+
         },
 
         mergeData: function(gm,sedata){
-            //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
-            var estN = (this.featureddata.estN)?this.featureddata.estN:0;
-            var endI = (this.featureddata.endI)?this.featureddata.endI:0;
             
-            if(endI >= 30){
-                gm.startN = 0;
-                gm.numN = 0;
-                return this.featureddata.rowL;   
-            }else{
-                gm.numN = 0; 
-                return this.featureddata.rowL.concat(sedata.rowL);  
-            }
+            //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
+           if(this.featureddata){
+                var estN = (this.featureddata.estN)?this.featureddata.estN:0;
+                var endI = (this.featureddata.endI)?this.featureddata.endI:0;
+
+                //Do not merge
+                //console.log(estN +"<="+ gm.startN);
+                /*if(estN <= 30 || estN <= gm.startN){
+                    gm.fStartN = 0;
+                    gm.fNumN = 0;
+                }else if(endI >= 30){
+                    sedata.rowL = this.featureddata.rowL;   
+                }else{
+                    //gm.numN = 0; 
+                    sedata.rowL = this.featureddata.rowL.concat(sedata.rowL);  
+                }*/
+                if( this.numberofRegularItemsRequires > 0){
+                    console.log(this.featureddata);
+                    sedata.rowL = this.featureddata.rowL.concat(sedata.rowL); 
+                }else{
+                    sedata.rowL = this.featureddata.rowL;
+                }
+
+                
+            } 
+            //this.featureddata = null;
+            return sedata.rowL;
+            
              
 
         },
@@ -709,15 +780,19 @@ function createGalleryShell() {
 
             var sedata = new SEData(data);
 
-            console.log(this.featureddata);
-
-
-            //console.log(this);
-            //if(this.featureddata){
-                sedata.rowL = this.mergeData(this.gm,sedata);
-            //}
+            
 
             this.gm.updateSEData(sedata);
+
+            
+            this.gm.sedata.rowL = this.mergeData(this.gm,sedata);
+
+            //console.log(sedata);
+            //if(this.featureddata){
+                //sedata.rowL = this.mergeData(this.gm,sedata);
+            //}
+
+            
 
             if (this.display === null) {
                 this.display = genDisplay();
@@ -783,7 +858,8 @@ $(document).ready(function () {
         }else{
             $(".current .reset-filter").css("display","none");
         }
-        gModel.updatePagination(0);
+        //gModel.updatePagination(0);
+        gModel.updateNpp(0);
 		gShell.update(gModel);
     });
 
@@ -876,7 +952,8 @@ $(document).ready(function () {
     $("#gl-content").on("click", "#more-item", function (evt) {
            var startNumber = $(this).attr("value");
 
-            gModel.updatePagination(startNumber);
+            //gModel.updatePagination(startNumber);
+            gModel.updateNpp($(this).attr("value"));
             gShell.update(gModel);
            
                        
@@ -909,7 +986,8 @@ $(document).ready(function () {
 			gModel.updateCollection($(this).attr("col"));
 		//}
 			
-		gModel.updatePagination(0);
+		//gModel.updatePagination(0);
+        gModel.updateNpp(0);
         gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
         $(".reset-filter").css("display","none");
@@ -935,7 +1013,8 @@ $(document).ready(function () {
         $(this).addClass("current");
         gModel.updateType($(this).attr("type"));
             
-        gModel.updatePagination(0);
+        //gModel.updatePagination(0);
+        gModel.updateNpp(0);
         gShell.update(gModel);
         
                 

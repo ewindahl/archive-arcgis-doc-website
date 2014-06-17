@@ -16,6 +16,11 @@ function genPageNav() {
                 }
             }
 
+            var countMaxN = gm.maxN;
+            //if(gm.fMaxN > gm.maxN)
+              //  gm.maxN = gm.fMaxN;
+
+            console.log( gm.maxN);
 
             // GSA has browse limit of 1000 results
             if (gm.sedata.endI >= gm.maxN) {
@@ -86,7 +91,9 @@ function genPageNav() {
             if(settings.last) paginate.append(this.getLink(totalPages-1, 'last'));
 
             // More Item
-             $("#more-item").attr("value", (currentPage === totalPages) ? totalPages*settings.limit : (currentPage + 1)*settings.limit);
+             //$("#more-item").attr("value", (currentPage === totalPages) ? totalPages*settings.limit : (currentPage + 1)*settings.limit);
+
+            $("#more-item").attr("value", 30);
 
             return paginate;
         },
@@ -216,7 +223,7 @@ function genDisplay() {
                     }[gm.display];
 
 
-                    if (gm.sedata.estN > 0) {
+                    if (gm.sedata.rowL.length > 0) {
                         buf.push("<ul id='gl-content-ul'>");
                         $.each(gm.sedata.rowL, function (i, val) {
                             displayFunc(o, gm.startN + i, new SERow(val), buf);
