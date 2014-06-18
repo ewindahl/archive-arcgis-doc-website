@@ -91,7 +91,6 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.updateFSEData = function (sedata) {
-            console.log(sedata);
             this.sedata = sedata;
             this.fStartN = sedata.startI - 1;
             this.fMaxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
@@ -240,7 +239,7 @@ function genGalleryModel(hash, mdfL) {
             this.type = type;
         }
 
-        this.updateNpp = function (n) {
+        this.updateNpp = function (n,reset) {
             //this.npp = n || 30;
             
             if(n == 0){
@@ -252,7 +251,8 @@ function genGalleryModel(hash, mdfL) {
             }else{
                 //this.fStartN = n||this.npp;
                 this.fStartN = Math.min(this.maxN, this.fStartN + this.fNumN); //n + gcfg.numN;
-                this.fNumN = this.fNumN;
+                
+                this.fNumN = (reset)?n:this.fNumN;
                 this.npp = this.npp + parseInt(n,10);
 
                 if(this.fNumN <= 0){
@@ -742,7 +742,7 @@ function createGalleryShell() {
                 }
             }
 
-            console.log(totalFeaturedItemPerPage+"-"+totalFeaturedResult+"-"+this.numberofRegularItemsRequires);
+            //console.log(totalFeaturedItemPerPage+"-"+totalFeaturedResult+"-"+this.numberofRegularItemsRequires);
 
 
         },
@@ -1053,6 +1053,10 @@ $(document).ready(function () {
            $("."+type+"-showme-filter").addClass("current");
            $("#showMeFilters").css("display","block");
 
+        }
+
+        if(getUrlVars()['npp'] && getUrlVars()['npp'] > 0){
+            gModel.updateNpp(getUrlVars()['npp'],true);
         }
     }
 
