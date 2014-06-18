@@ -1,0 +1,1317 @@
+@import "arcgis/base";
+
+#gallery-body
+{
+    min-height: 100px;
+}
+
+#rc-content
+{
+    min-height: 700px;
+    position: relative;
+}
+
+#gl-s-ctrl
+{
+    /*margin:0 0 20px 10px;
+    width: 690px;
+    height: 30px;
+    position:relative;*/
+    /*margin-left: 45px;*/
+}
+#reference-index {
+    @include column(4);
+	background: #F7F8FA;
+	border: 1px solid #EEEFF2;
+	float: left;
+	position: relative;
+	padding: 0;
+	margin: 12px;
+	position: relative;
+	width: 286px;
+}
+#reference-content {
+  /*@include column(18);*/
+  display: block;
+   border-bottom: 1px solid #c1c1c1 ;
+	#rss {
+    display:inline-block;
+    margin-left: 1em;
+    overflow:hidden;
+    z-index:1000;
+    margin-top:-10px;
+    margin-bottom:10px;
+    a {
+      height:20px;
+      width:20px;
+      padding:5px;
+    }
+	}
+}
+// Need these variables to determine size
+// of button that will fit in search box
+$search-icon-width: 30px;
+$search-icon-height: 30px;
+#gallerySearchForm {
+  position: relative;
+  input[type="text"] {
+ 	
+  }
+  input[type="submit"] {
+    position:absolute;
+    left: 520px;
+    background: url("/img/orangeMag.gif") no-repeat scroll center center transparent;
+    border: medium none;
+    cursor: pointer;
+    height: $search-icon-height;
+    margin: 1px 135px;
+    width: $search-icon-width;
+  }
+  input[type="search"] {
+	background-image: none;
+  }
+  
+  
+}
+#gl-display
+{
+    /*float:right;*/
+    position:relative;
+    /*width:700px;*/
+    /*min-height: 150px;*/
+    /*margin: 0 50px 0 0;
+    border: 0px solid #000;*/
+}
+
+
+#gl-filter-ctrl-btn
+{
+    font-weight:bolder;
+    padding:5px 10px;
+    color:Black;
+    background-color:#f4f4f4;
+    border: 1px solid #c1c1c1 ;
+    position:absolute;
+    left:180px;
+    top:5px;
+}
+
+
+#gl-filter-clear
+{
+    float:right;
+	position:relative;
+	top:10px;
+    margin-right: 10px;
+    padding: 0 5px;
+	font-size: 0.85em;
+}
+
+.filter-label
+{
+  display:block;
+	/*font-family: $header-bold;
+	font-size: $h5-size;
+	line-height:h5-lines;
+  margin: 30px 0 10px 10px;*/
+  padding: 6px;
+}
+
+.ctrlbox {
+  display:block;
+  margin: 2px 0;
+	font-size: 0.85em;
+	line-height: 20px;
+	input[type="checkbox"] {
+		margin: 0.3em 1em;
+	}
+}
+
+#pageX {
+  padding:0 2px 0 2px;
+  width: 30px;
+}
+
+.displayn_selected:hover {
+  text-decoration:none;
+}
+
+.displayn_selected {
+  font-size:12px;
+  font-weight:bold;
+}
+
+.displaytype_selected:hover {
+  text-decoration:none;
+}
+
+.displaytype_selected {
+  font-size:12px;
+  font-weight:bold;
+}
+
+#gl-pagenav {
+  margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 600px;
+	padding:5px;
+	height:52px;
+}
+
+#gl-display-type {
+  /*position:relative;
+  float:left;
+  left: 490px;*/
+  font-size:11px;
+  text-align: right;
+  line-height: 1.75em;
+  margin-top: -1.75em;
+}
+
+#gl-display-shown {
+  /*position:relative;
+  float:left;
+  left: 490px;*/
+  font-size:11px;
+  text-align: right;
+  line-height: 1.75em;
+}
+#gl-display-shown .label {
+  font-weight:bold;
+  margin-right: 0.5em;
+}
+
+.gl-pnavinfo-s {
+  position:relative;
+  float:left;
+  font-size:11px;
+  margin-top: -1.25em;
+  margin-left: 1em;
+}
+
+
+#gl-display .gl-pnavinfo {
+  margin-left: 1em;
+}
+
+#gl-pagenav .gl-pnavinfo {
+  float:left;
+  position:relative;
+  margin-left:145px;
+  margin-bottom: 40px;
+  margin-right:15px;
+	font-size: 0.85em;
+}
+
+#gl-prevnext {
+  display:inline-block;
+  width: 110px;
+  margin-left: 70px;
+}
+
+#gl-prev {
+  float:left;
+  position:relative;
+  left:130px;
+}
+
+#gl-next {
+    float:left;
+}
+
+
+#gl-content {
+  margin: -2.5em 0 0 0;
+  /*margin: 1em 0 0 0;*/
+}
+
+#spinner {
+  display: none;
+  min-height: 400px;
+  min-width: 500;
+  position: absolute;
+  top: 250px;
+  left: 300px;
+}
+
+.more-spinner {
+  display: none;
+  min-height: 400px;
+  min-width: 500;
+  padding: 70px;
+  
+}
+
+.gl-content-errMsg {
+    float: left;
+    margin-left: auto;
+    margin-right: auto !important;
+    margin-top: 10px;
+}
+.display1 .item {
+	border: 0 solid black;
+	display: inline-block;
+	float: left;
+	height: 250px;
+	margin: 12px;
+	overflow: hidden;
+	position: relative;
+	width: 286px;
+}
+
+.display1 .item-contrib:hover {text-decoration:none;}
+.display1 .item-contrib {
+  position:absolute;
+  width:190px;
+  height:25px;
+  top:6px;
+  left: 23.5px;
+  color: #fff;
+  padding-left:10px;
+  font-family:'Avenir LT W01 65 Medium', sans-serif;
+  padding-top:5px;
+}
+.display1 .item-contrib.esri-banner {
+  background: url("/img/trans-bg-blue.png") repeat scroll 0 0 transparent;
+}
+.display1 .item-contrib.user-banner {
+  background: url("/img/trans-bg.png") repeat scroll 0 0 transparent;
+}
+.display1 .item-contrib.partner-banner {
+  background: url("/img/trans-bg-green.png") repeat scroll 0 0 transparent;
+}
+.display1 .item-title {
+  display: block;
+  padding-top: 5px;
+  text-align:left;
+  width: 286px;
+}
+
+.display1 .item-img {
+  display:block;
+  height: 190px;
+  width:286px;
+  /*height: 133px;
+  width:200px;
+  /*border: 1px solid #888;
+  padding:5px;*/
+  -webkit-box-shadow: 0px 0px 4px #666;
+  -moz-box-shadow: 0px 0px 4px #666;
+  box-shadow: 0px 0px 4px #666;
+}
+
+.display2 .item {
+  width: 100%;
+  position:relative;
+  float:left;
+  padding:10px 5px 10px 5px;
+  margin: 0px 0 0px 0;
+  border-bottom: 0px dotted #d1d1d1;
+  overflow:hidden;
+}
+
+.display2 .item-even {
+  background-color:#f0f0f0;
+}
+
+.display2 .item-idx {
+  padding: 0 5px 0 0;
+}
+
+.display2 .item-title {
+  padding-top: 5px;
+  text-align:left;
+  font-size:15px;
+}
+
+.display2 .item-type {
+  color:#777;
+  margin-left: 30px;
+  font-size: 14px;
+  font-family:monospace;
+}
+
+.display2 .item-stat {
+  text-align:left;
+  float:right;
+  width: 300px;
+  font-size:11px;
+  color:#777;
+}
+
+.display3 .item {
+  position:relative;
+  float:left;
+  margin: 15px 0 0px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #d4d4d4;
+  width: 650px;
+  overflow:hidden;
+}
+.display3 .item-contrib:hover{text-decoration:none;}
+.display3 .item-contrib {
+  position:absolute;
+  width:190px;
+  height:25px;
+  top:6px;
+  left: 23.5px;
+  color: #fff;
+  padding-left:10px;
+  font-family:'Avenir LT W01 65 Medium', sans-serif;
+  padding-top:5px;
+}
+.display3 .item-contrib.esri-banner {
+  background: url("/img/trans-bg-blue.png") repeat scroll 0 0 transparent;
+}
+.display3 .item-contrib.user-banner {
+  background: url("/img/trans-bg.png") repeat scroll 0 0 transparent;
+}
+.display3 .item-contrib.partner-banner {
+  background: url("/img/trans-bg-green.png") repeat scroll 0 0 transparent;
+}
+.display3 .item-img {
+  display:block;
+  /*height: 133px;
+  width:200px;*/
+  height: 190px;
+  width:286px;
+  float:left;
+  border: 1px solid #888;
+  padding:5px;
+}
+
+.display3 .item-info-wrap {
+  float:left;
+  width: 430px;
+}
+
+.display3 .item-title {
+  width: 400px;
+  display:inline-block;
+  margin: 0 0 0 10px;
+  font-size: large;
+  line-height:1.4em;
+}
+
+.display3 .item-snippet {
+  width: 400px;
+  display:inline-block;
+  margin: 10px 0 0 10px;
+}
+
+.display3 .item-type  {
+  font-family: monospace;
+  color:#777;
+  font-size:13px;
+ }
+
+.display3 .item-stat {
+  width: 400px;
+  display:inline-block;
+  margin: 10px 0 0 10px;
+  font-size:11px;
+  color:#777;
+
+}
+
+
+
+#gl-pagenav .btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 14px 6px;
+  color: #444;
+  font-size: 13px;
+  line-height: normal;
+  border: 1px solid #636C6C;
+
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+
+
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+
+  background-color: #ccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#007AC2));
+  background-image: -webkit-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:    -moz-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:     -ms-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:      -o-linear-gradient(top, #f1f1f1, #007AC2);
+  background-image:         linear-gradient(to bottom, #f1f1f1, #007AC2);
+
+}
+
+#gl-pagenav .btn:hover {
+  color: #000;
+  text-decoration: none;
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#aaaaaa));
+  background-image: -webkit-linear-gradient(top, #cccccc, #aaaaaa);
+  background-image:    -moz-linear-gradient(top, #cccccc, #aaaaaa);
+  background-image:     -ms-linear-gradient(top, #cccccc, #aaaaaa);
+  background-image:      -o-linear-gradient(top, #cccccc, #aaaaaa);
+  background-image:         linear-gradient(to bottom, #cccccc, #aaaaaa);
+
+}
+/*.btn:focus {
+  outline: 1px dotted #666;
+}*/
+
+#gl-pagenav .btn.active, .btn:active {
+	background-color: #007AC2;
+    color: #FFFFFF;
+}
+.active{
+	background-color: #007AC2;
+    color: #FFFFFF;
+}
+
+#gl-pagenav .btn.disabled
+{
+  /*display:none;*/
+  border: 1px solid #B9b9b9;
+  color: #c1c1c1;
+  cursor: default;
+  background:#007AC2;
+}
+
+#gl-content-ul li{
+   background: none;
+}
+
+#gl-pagenav input[type="text"]{
+  width:2em;
+  font-size: 1em;
+  display: inline;
+}
+
+#filters label {
+    font-size: 1.0em;
+	margin-bottom: 0em;
+	margin-top: 0em;
+}
+
+/* Button that clears search input text */
+#gl-cl-btn {
+	display: none;
+	/*margin-right: $search-icon-width;
+	margin-top: 1/6*$search-icon-height;*/
+	float: right;
+	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 36px;
+}
+
+#gl-search-btn {
+	float: right;
+	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
+	cursor: pointer;
+	position: absolute;
+	right: 0px;
+	top: 36px;
+}
+
+#gl-sbmt-btn {
+	display: none;
+	margin-right: $search-icon-width;
+	margin-top: 1/6*$search-icon-height;
+	float: right;
+	color: #f4803a; //orange that best matches color of search image icon img/orangeMag.gif
+	cursor: pointer;
+}
+
+
+#page .content {
+	max-width:none;
+}
+
+.navigation-bar .leader, .section-bar .leader {
+    margin-top: 2em;
+}
+
+#reference-index header {
+    background: none repeat scroll 0 0 #cccccc;
+    padding: 11px 8px 30px;
+}
+
+#reference-index h4 {
+    float:left;
+}
+
+.filter-misc {
+    float:right;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+	margin: 0;
+}
+
+#filters ol li label:hover {
+	background:none repeat scroll 0 0 #007AC2;
+	color: #FFFFFF
+}
+
+.current {
+    background: none repeat scroll 0 0 #007AC2;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+#filters ol li span input {
+	/*opacity: 0;*/
+}
+.ctrlbox input[type=checkbox]:checked + label
+{
+	font-weight:bolder;
+}
+
+.ctrlbox > label
+{
+	/*padding-top: 2px;*/
+	padding-bottom: 2px;
+	padding-left: 10px;
+}
+.ctrlbox > input {
+	/*display: none;*/
+}
+
+ul li {
+	padding: 0;
+}
+
+.ownerName {
+	color: #cccccc;
+}
+
+
+
+/* Reference: http://www.thecssninja.com/css/css-tree-menu */
+/* Minimal css for clickable pure CSS collapsible tree menu */
+/* As specific as possible to prevent interference with other code */
+
+#menutree li {
+   list-style: none;          /* all list item li dots invisible */
+}
+
+li .filter-label + input[type=checkbox] {
+   opacity: 0;             /* checkboxes invisible and use no space */
+}                        /* display: none; is better but fails in ie8 */
+
+li div.filter-label {
+	cursor: pointer;        /* cursor changes when you mouse over this class */
+}                         /* could add the many user-select: none; commands here */
+
+li .filter-label + ol > li
+{
+	display: none;         /* prevents sublists below unchecked labels from displaying */
+}
+
+/*li .filter-label + input[type=checkbox]:checked + ol > li
+{
+	display: block;
+}*/
+
+li .current + ol > li
+{
+	display: block;         /* display submenu on click */
+}
+
+
+
+/* Media query section start */
+@media only screen and (max-device-width:320px){
+	
+	.container{padding:0;}
+	
+	#header{
+		background:none repeat scroll 0 0 white;
+		height:auto;
+		min-height:64px;
+		padding-bottom:0;
+	}
+	
+	.navigation-bar, .section-bar{
+		width:100%;
+		padding-bottom:20px;	
+	}
+
+    #reference-index{
+		width:286px;
+	}
+
+	.header-inner{
+		width:100%
+	}
+	.logo-wrap .down-arrow{
+		display:none;}
+		
+	#lg-container{
+		display:none;
+	}
+	.navigation-bar header h1,.section-bar header h1{
+		font-family:"Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+		font-size:23px;line-height:50px;
+		text-shadow:0 -1px 1px rgba(0,0,0,0.25)
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+	}
+	
+	#gallerySearchForm input[type="search"]{
+		background-image:none;
+		
+	}
+	
+	#gl-search-btn{
+		right: 60px;
+    	top: 80px;	
+	}
+    
+    .tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+	
+}
+
+@media only screen and (max-width:320px){
+	
+.container{padding:0;}
+	
+	#header{
+		background:none repeat scroll 0 0 white;
+		height:auto;
+		min-height:64px;
+		padding-bottom:0;
+	}
+	
+	.navigation-bar, .section-bar{
+		width:100%;
+		padding-bottom:20px;	
+	}
+
+    #reference-index{
+		width:286px;
+	}
+
+	.header-inner{
+		width:100%
+	}
+	.logo-wrap .down-arrow{
+		display:none;}
+		
+	#lg-container{
+		/*display:none;*/
+	}
+	.navigation-bar header h1,.section-bar header h1{
+		font-family:"Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+		font-size:23px;line-height:50px;
+		text-shadow:0 -1px 1px rgba(0,0,0,0.25)
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+	}
+	
+	#gallerySearchForm input[type="search"]{
+		background-image:none;
+		
+	}
+	
+	#gl-search-btn{
+		right: 60px;
+    	top: 80px;	
+	}
+    
+    .tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+	
+	
+}
+
+@media only screen and (min-device-width:321px) and (max-device-width:480px){
+	#header{
+		width:100%;	
+	}
+	
+	.navigation-bar, .section-bar{
+		width:100%;	
+	}
+	
+	#reference-index{
+		width:92%;
+	}
+	
+	.navigation-bar header h1,.section-bar header h1{
+		font-family:"Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+		font-size: 1.5em;
+		line-height:50px;
+		text-shadow:0 -1px 1px rgba(0,0,0,0.25)
+	}
+
+	#reference-index header{
+		background:none repeat scroll 0 0 #EAEAEA;
+		border-bottom:1px solid #D8D8D8;
+		border-top:1px solid #D8D8D8;
+		padding:11px 8px 30px;
+	}
+	
+	.container{
+		padding:0;
+		width:100%;	
+	}
+	
+	#gl-pagenav{
+		display:none;
+		width:100%;	
+	}
+	
+	ul#gl-content-ul{
+		margin-left:30px;	
+	}
+	
+	.display1 .item {
+		border: 0 solid black;
+		display: inline-block;
+		float: left;
+		height: 260px;
+		margin: 12px;
+		overflow: hidden;
+		position: relative;
+		width: 270px;
+	}	
+	
+	.display1 .item-img {
+		box-shadow: 0 0 4px #666666;
+		display: block;
+		height: 190px;
+		width: 270px;
+	}
+
+    .banner-navigation{
+		display:none;	
+	}
+	
+	.toggle-dropdown{
+		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+		float:right;height:20px;position:relative;width:20px
+	}
+	
+	.toggle-dropdown .close{
+			background-position:0 0
+	}
+
+     #gl-search-btn{
+		display:none;	
+	}
+	
+	.tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+
+}
+
+@media only screen and (min-width:321px) and (max-width:480px){
+	
+	
+	
+	#header{
+		width:100%;	
+	}
+	
+	.navigation-bar, .section-bar{
+		width:100%;
+		padding-bottom:20px;	
+	}
+	
+	#reference-index{
+		width:92%;
+	}
+
+	#reference-index header{
+		background:none repeat scroll 0 0 #EAEAEA;
+		border-bottom:1px solid #D8D8D8;
+		border-top:1px solid #D8D8D8;
+		padding:11px 8px 30px;
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+	}
+	
+	.display1 .item {
+		border: 0 solid black;
+		display: inline-block;
+		float: left;
+		height: 260px;
+		margin: 12px;
+		overflow: hidden;
+		position: relative;
+		width: 270px;
+	}	
+	
+	.display1 .item-img {
+		box-shadow: 0 0 4px #666666;
+		display: block;
+		height: 190px;
+		width: 270px;
+	}
+
+    .banner-navigation{
+		display:none;	
+	}
+	
+	.toggle-dropdown{
+		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+		float:right;height:20px;position:relative;width:20px
+	}
+	
+	.toggle-dropdown .close{
+			background-position:0 0
+	}
+
+    #gl-search-btn{
+		display:none;
+
+	}
+	
+	.tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+
+}
+
+
+
+@media only screen and (min-device-width:481px) and (max-device-width:640px){
+	
+	body{
+		width:100% !important;	
+	}
+	
+	#header{
+		width:640px;	
+	}
+	
+	.navigation-bar, .section-bar{
+		width:640px;
+		padding-bottom:20px;	
+	}
+	
+	.banner-navigation {
+    	display: none;
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+		padding-bottom:20px;
+	}
+	 
+	#reference-index{
+            width:570px;
+    }
+	
+	#reference-index header{
+		background:none repeat scroll 0 0 #EAEAEA;border-bottom:1px solid #D8D8D8;
+		border-top:1px solid #D8D8D8;padding:11px 8px 30px
+	}
+	
+	.toggle-dropdown{
+		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+		float:right;height:20px;position:relative;width:20px
+	}
+	
+	.toggle-dropdown .close{
+			background-position:0 0
+	}
+	
+	.display1 .item {
+		border: 0 solid black;
+		display: inline-block;
+		float: left;
+		height: 260px;
+		margin: 12px;
+		overflow: hidden;
+		position: relative;
+		width: 192px;
+	}	
+	
+	.display1 .item-img {
+		box-shadow: 0 0 4px #666666;
+		display: block;
+		height: 150px;
+		width: 192px;
+	}
+	
+	#gl-search-btn{
+		right: 350px;
+    	top: 92px;	
+	}
+
+	.see-more {
+		background: none repeat scroll 0 0 #F2F2F2;
+		color: #999999;
+		cursor: pointer;
+		display: block;
+		height: 80px;
+		padding: 45px 0 !important;
+		text-align: center;
+		width: 270px;
+	}
+		
+}
+
+@media only screen and (min-width:481px) and (max-width:640px){
+	body {
+		width:100% !important;	
+	}
+	
+	#header{
+		width:640px;	
+	}
+	
+	.navigation-bar, .section-bar{
+		width:640px;
+		padding-bottom:20px;	
+	}
+	
+	.banner-navigation {
+    	display: none;
+	}
+	
+	.navigation-bar input, .section-bar input {
+		border: medium none;
+		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		float: left;
+		opacity: 0.75;
+		width: 250px;
+		margin-top:0 !important;
+		
+	}
+	
+	#reference-index header{
+		background:none repeat scroll 0 0 #EAEAEA;border-bottom:1px solid #D8D8D8;
+		border-top:1px solid #D8D8D8;padding:11px 8px 30px;
+	}
+        
+    #reference-index{
+            width:564px;
+    }
+	
+	.display1 .item {
+		border: 0 solid black;
+		display: inline-block;
+		float: left;
+		height: 260px;
+		margin: 12px;
+		overflow: hidden;
+		position: relative;
+		width: 270px;
+	}	
+	
+	.display1 .item-img {
+		box-shadow: 0 0 4px #666666;
+		display: block;
+		height: 190px;
+		width: 270px;
+	}
+	
+	.toggle-dropdown{
+		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+		float:right;height:20px;position:relative;width:20px
+	}
+	
+	.toggle-dropdown .close{
+			background-position:0 0
+	}
+	
+	#gl-search-btn{
+		right: 350px;
+    	top: 92px;	
+	}
+	
+	.see-more {
+		background: none repeat scroll 0 0 #F2F2F2;
+		color: #999999;
+		cursor: pointer;
+		display: block;
+		height: 80px;
+		padding: 45px 0 !important;
+		text-align: center;
+		width: 270px;
+	}
+    
+}
+
+@media only screen and (min-width:641px) and (max-width:768px){
+	.navigation-bar header h1,.section-bar header h1{
+		font-size:1.875em
+		}
+		.navigation-bar input,.section-bar input{
+			margin-right:12px;
+			width:260px;
+		}
+		
+		#gl-search-btn{
+			color:#F4803A;
+			cursor:pointer;
+			float:right;
+			position:absolute;
+			right:15px;
+			top:36px;
+		}
+		
+		.navigation-bar, .section-bar{
+			width:768px;
+			padding-bottom:20px;	
+		}
+			
+			#mobile-navigation{
+				display:inline-block;
+				margin-right:80px;
+			}
+			.container .content{
+				width:670px;
+			}
+			
+			#gl-pagenav{
+				float:left;
+				height:52px;
+				margin-left:auto;
+				margin-right:auto;
+				padding:5px;
+				position:relative
+			}
+			
+			#reference-index{
+            	width:598px;
+    		}
+			
+			#reference-index{		
+				margin: 12px 12px 12px 60px;
+			}
+			
+			#reference-content{
+				margin-left: 60px;	
+			}
+			
+			#reference-index header{
+				background:none repeat scroll 0 0 #EAEAEA;
+				border-bottom:1px solid #D8D8D8;
+				border-top:1px solid #D8D8D8;
+				padding:11px 8px 30px;
+			}
+			
+			.toggle-dropdown{
+				background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
+				float:right;height:20px;
+				position:relative;
+				width:20px}
+					
+			.toggle-dropdown .close{background-position:0 0}
+			
+			#gallerySearchForm{
+				float:left;	
+			}
+}
+
+@media only screen and (min-width:769px) and (max-width:960px){
+	
+	#reference-content{width:100%}
+	.container{
+		width:960px;
+		padding:0;
+	}
+
+}
+@media only screen and (min-width:961px) and (max-width:1024px){}
+@media only screen and (min-width:1025px) and (max-width:1280px){#reference-content{width:100%px}}
+@media only screen and (min-width:1281px) and (max-width:1366){#reference-content{width:100%}}
+@media only screen and (min-width:1367px) and (max-width:1920px){#reference-content{width:100%}}
+/* Media query section end */
+
+
+/* New pagination style */
+.gl-pagination {
+            font-size: 80%;
+        }
+        
+
+.gl-pagination label {
+    /*display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;*/
+	
+	background: none repeat scroll 0 0 #F2F2F2;
+    border: 1px solid #EDEDED;
+    border-radius: 4px 4px 4px 4px;
+    color: #999999;
+    font-size: 1em;
+    line-height: 2.5em;
+    margin: 5px;
+    padding: 5px 10px;
+	display: inline;
+	cursor:pointer;
+}
+
+.gl-pagination ._pagination_link_current {
+    background: #26B;
+    color: #fff;
+	border: solid 1px #AAE;
+	cursor:none;
+}
+
+.gl-pagination .current.prev, .gl-pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+
+.gl-pagination .disabled
+{
+  /*display:none;*/
+  background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #C1C1C1;
+    cursor: inherit;
+}
+/* End of new pagination style */
+
+.see-more {
+    background: none repeat scroll 0 0 #F2F2F2;
+    color: #999999;
+    display: block;
+    padding: 62px;
+    text-align: center;
+	cursor: pointer;
+}
+
+.reset-filter {
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    font-weight: 200;
+    position: relative;
+    text-align: center;
+    /*top: -5px;*/
+    width: 50px;
+	display: none
+}
+
+.showme-dropDown {
+    background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 rgba(0, 0, 0, 0);
+    border-radius: 18px;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    height: 18px;
+    margin-left: 13px;
+    overflow: hidden;
+    vertical-align: 17px;
+    width: 18px;
+}
+
+#showMeFilters label {
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.showme-filter-label {
+    display: block;
+    padding: 6px;
+}
+
+#showMeFilters {
+	display: none;
+}
+
+#showMeFilters ol li label:hover {
+	background:none repeat scroll 0 0 #007AC2;
+	color: #FFFFFF
+}
+
+#showMeFilters ol > li
+{
+	/*display: none; */
+}
+
+
+#showMeFilters ol > li .current
+{
+	display: block;         /* display submenu on click */
+}
+
+.featured {
+    background: none repeat scroll 0 0 orange;
+    color: #ffffff;
+    padding: 2px;
+    position: absolute;
+}
