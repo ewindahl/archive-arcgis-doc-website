@@ -91,6 +91,7 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.updateFSEData = function (sedata) {
+            console.log(sedata);
             this.sedata = sedata;
             this.fStartN = sedata.startI - 1;
             this.fMaxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
@@ -209,7 +210,7 @@ function genGalleryModel(hash, mdfL) {
             this.query = $.trim($("#query").val());
             this.startN = 0;
             this.fStartN = 0;
-            this.fNumN = this.numN;
+            this.fNumN = gcfg.numN;
 
         }
 		
@@ -246,10 +247,11 @@ function genGalleryModel(hash, mdfL) {
                 this.fStartN = 0;
                 this.startN = 0;
                 this.npp = 0;
-                this.fNumN = 30;
+                this.fNumN = gcfg.numN;
                 this.numN = 0;
             }else{
-                this.fStartN = n||this.npp;
+                //this.fStartN = n||this.npp;
+                this.fStartN = Math.min(this.maxN, this.fStartN + this.fNumN); //n + gcfg.numN;
                 this.fNumN = this.fNumN;
                 this.npp = this.npp + parseInt(n,10);
 
@@ -309,7 +311,7 @@ function genGalleryModel(hash, mdfL) {
         this.updatePagination = function (n) {
             this.startN = n || 0;
             this.fStartN = n || 0;
-            this.fNumN = 30;
+            this.fNumN = gcfg.numN;
         }
 
         this._setMdf = function (val) {
@@ -636,7 +638,6 @@ function createGalleryShell() {
                 success: function (data) {
                     $("#spinner").hide();
                     this._updateModelAndView(data);
-                    this.reloadCount += 1
                 },
                 error: function (xhr, status, err) {
                     $("#gl-content").html(gcfg.errorMsg);
@@ -670,10 +671,11 @@ function createGalleryShell() {
                 timeout: 6000,
                 async: false,
                 beforeSend: function () {
-                    $("#gl-content").empty();
+                    //$("#gl-content").empty();
                     $("#spinner").show();
                 },
                 success: function (data) {
+                    this.reloadCount += 1
                     this._setFeaturedData(data, this.gm);
                     this.updateGeneralItem(gm)
                     //this._setFeaturedData(data, this.gm);
@@ -726,14 +728,13 @@ function createGalleryShell() {
 
             if(this.featureddata){
                 var totalFeaturedItemPerPage =  this.featureddata.endI-(this.featureddata.startI-1);
-                //var totalFeaturedItemPerPage =  this.featureddata.endI;
+                
                 var totalFeaturedResult = this.featureddata.estN;
-                if(totalFeaturedItemPerPage < 30){
-                    this.numberofRegularItemsRequires = 30 - totalFeaturedItemPerPage;
+                if(totalFeaturedItemPerPage < gcfg.numN){
+                    this.numberofRegularItemsRequires = gcfg.numN - totalFeaturedItemPerPage;
                 }
 
                 if(this.numberofRegularItemsRequires > 0){
-                    console.log("ss"+this.numberofRegularItemsRequires);
                     gm.numN = this.numberofRegularItemsRequires;
                     gm.fNumN = 0;
                 }else{
@@ -753,7 +754,6 @@ function createGalleryShell() {
                 var estN = (this.featureddata.estN)?this.featureddata.estN:0;
                 var endI = (this.featureddata.endI)?this.featureddata.endI:0;
 
-                 console.log(this.featureddata);
                 if( this.numberofRegularItemsRequires > 0){
                     sedata.rowL = this.featureddata.rowL.concat(sedata.rowL); 
                 }else{
@@ -762,7 +762,6 @@ function createGalleryShell() {
 
                 
             } 
-            //this.featureddata = null;
             return sedata.rowL;
             
              
@@ -780,12 +779,6 @@ function createGalleryShell() {
             
             this.gm.sedata.rowL = this.mergeData(this.gm,sedata);
 
-            //console.log(sedata);
-            //if(this.featureddata){
-                //sedata.rowL = this.mergeData(this.gm,sedata);
-            //}
-
-            
 
             if (this.display === null) {
                 this.display = genDisplay();
@@ -816,6 +809,9 @@ $(document).ready(function () {
     $("#query").bind({
         "keydown": function (evt) {
             if (evt.keyCode == "13") {
+                $("#gl-content").empty();
+                $("#spinner").show();
+
                 gModel.updateQuery();
                 gShell.update(gModel);
             }
@@ -836,6 +832,8 @@ $(document).ready(function () {
     });
 
     $("#filters .ctrlbox").bind("change", function (evt) {
+        $("#gl-content").empty();
+        $("#spinner").show();
         gModel.updateByFilter();
 
 		var totalSelectedCheckBox = $('input[type=checkbox]').filter(':checked').length;
@@ -857,6 +855,9 @@ $(document).ready(function () {
     });
 
     $("#search, #gl-search-btn").bind("click", function (evt) {
+        $("#gl-content").empty();
+        $("#spinner").show();
+
         gModel.updateQuery();
         gShell.update(gModel);
 
@@ -864,26 +865,7 @@ $(document).ready(function () {
         return false;
     });
 
-	$("#gallerySearchForm").bind("submit", function (evt) {
-        gModel.updateQuery();
-        gShell.update(gModel);
-
-        evt.stopImmediatePropagation();
-        return false;
-    });
 	
-    /*$("#gl-pagenav").delegate("#pageX", "keydown", function (evt) {
-        if (evt.keyCode == "13") {
-            var x = parseInt($("#pageX").val(), 10);
-            if (!isNaN(x)) {
-                gModel.gotoPage(x);
-                gShell.update(gModel);
-            }
-            evt.stopImmediatePropagation();
-            return false;
-        }
-    });*/
-
 
     $("#display1, #display2, #display3").bind("click", function (evt) {
         gModel.updateDisplay(parseInt(evt.target.id.slice("display".length), 10));
@@ -898,49 +880,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#numn1, #numn2, #numn3").bind("click", function (evt) {
-        gModel.updateDisplayN(parseInt(evt.target.id.slice("numn".length), 10));
-        gShell.update(gModel);
-
-        //temp hack
-        $("#numn1, #numn2, #numn3").removeClass();
-        $("#" + evt.target.id).addClass("displayn_selected");
-
-        evt.stopImmediatePropagation();
-        return false;
-    });
-
-    /*$("#gl-prev").bind("click", function (evt) {
-        if (!$(this).hasClass("disabled")) {
-            gModel.dec();
-            gShell.update(gModel);
-        }
-        evt.stopImmediatePropagation();
-        return false;
-    });
-
-    $("#gl-next").bind("click", function (evt) {
-        if (!$(this).hasClass("disabled")) {
-            gModel.inc();
-            gShell.update(gModel);
-        }
-        evt.stopImmediatePropagation();
-        return false;
-    });*/
-
     
-    $("#gl-pagenav").on("click", ".pagination_link", function (evt) {
-        if (!$(this).hasClass("_pagination_link_current") && !$(this).hasClass("disabled")) {
-            var startNumber = $(this).attr("value");
-
-            gModel.updatePagination(startNumber);
-            gShell.update(gModel);
-        }
-                
-        evt.stopImmediatePropagation();
-        return false;
-        
-    });
 
     $("#gl-content").on("click", "#more-item", function (evt) {
            var startNumber = $(this).attr("value");
@@ -966,6 +906,9 @@ $(document).ready(function () {
     });
 	
 	$(".filter-label").bind("click", function (evt) {
+
+        $("#gl-content").empty();
+        $("#spinner").show();
 				
 		/*if($(this).hasClass('current') && $(this).attr('col') != "All"){
 			$(this).removeClass('current');
@@ -1015,6 +958,31 @@ $(document).ready(function () {
         return false;
     });
 
+    $(window).scroll(function () {
+        if ($(document).height() <= $(window).scrollTop() + $(window).height()+300) {
+
+
+
+
+            //alert("End Of The Page");
+             var countMaxN = gModel.maxN;
+            if(gModel.fMaxN > gModel.maxN)
+                gModel.maxN = gModel.fMaxN;
+
+            
+            // GSA has browse limit of 1000 results
+            if (gModel.sedata.endI < gModel.maxN) {
+                $(".more-spinner").css("display","block");
+                
+                gModel.updateNpp(30);
+                gShell.update(gModel);
+                               
+                
+                return false;
+            }
+        }
+    });
+
     /* End of show me section */
 
     window.onhashchange = function (evt) {
@@ -1058,6 +1026,9 @@ $(document).ready(function () {
         $("#query").val("");
         $("#gl-cl-btn").hide();
 
+        $("#gl-content").empty();
+        $("#spinner").show();
+
         if (gShell.reloadCount > 1) {
             gModel.updateQuery();
             gShell.update(gModel);
@@ -1097,13 +1068,5 @@ $(document).ready(function () {
     }
     return vars;
     }
-
-    $(window).scroll(function () {
-        if ($(document).height() <= $(window).scrollTop() + $(window).height()+400) {
-            //alert("End Of The Page");
-            
-            //gShell.update(gModel);
-        }
-    });
 
 });
