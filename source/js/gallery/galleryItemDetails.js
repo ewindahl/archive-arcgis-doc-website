@@ -227,7 +227,7 @@ doc.itemDetails = (function(){
 			month[10] = "November";
 			month[11] = "December";
 			
-			return month[date.getMonth()]+ " " + date.getDay() + ", " + date.getFullYear();
+			return month[date.getMonth()]+ " " + date.getDate() + ", " + date.getFullYear();
 		},
 	}
 
