@@ -31,7 +31,9 @@ function genGalleryModel(hash, mdfL) {
 
     function GalleryModel(mdfL) {
         this.startN = 0;
+        this.fStartN = 0;
         this.numN = gcfg.numN;
+        this.fNumN = gcfg.numN;
         this.maxN = 0;
         this.sedata = null;
         this.query = ""; //decoded value
@@ -42,6 +44,7 @@ function genGalleryModel(hash, mdfL) {
 		this.clearAll = false;
 		this.col = "All"; //decoded value
         this.type = "All";
+        this.npp = gcfg.numN;;
 
         this.init = function (hash) {
             this._initMDF(mdfL);
@@ -71,9 +74,11 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.genViewData = function () {
+            var opt = {featured:1}
             var o = {
                 hash: this._genHash(),
-                ajaxData: this._genAjaxData()
+                ajaxData: this._genAjaxData(),
+                ajaxFeaturedData: this._genAjaxData(opt)
             };
 
             return o;
@@ -83,6 +88,13 @@ function genGalleryModel(hash, mdfL) {
             this.sedata = sedata;
             this.startN = sedata.startI - 1;
             this.maxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
+        }
+
+        this.updateFSEData = function (sedata) {
+            console.log(sedata);
+            this.sedata = sedata;
+            this.fStartN = sedata.startI - 1;
+            this.fMaxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
         }
 
 
@@ -98,6 +110,15 @@ function genGalleryModel(hash, mdfL) {
                 this.startN = 0;
             }
 
+            if (o.fs) {
+                this.fStartN = parseInt(o.fs, 10);
+                if (isNaN (this.fStartN)) {
+                    this.fStartN = 0;
+                }
+            } else {
+                this.fStartN = 0;
+            }
+
             if (o.n) {
                 this.numN = parseInt(o.n, 10);
                 if (isNaN(this.numN)) {
@@ -105,6 +126,24 @@ function genGalleryModel(hash, mdfL) {
                 }
             } else {
                 this.numN = gcfg.numN;
+            }
+
+            if (o.fn) {
+                this.fNumN = parseInt(o.fn, 10);
+                if (isNaN(this.fNumN)) {
+                    this.fNumN = gcfg.numN;
+                }
+            } else {
+                this.fNumN = gcfg.numN;
+            }
+
+            if (o.npp) {
+                this.npp = parseInt(o.npp, 10);
+                if (isNaN(this.npp)) {
+                    this.npp = gcfg.numN;
+                }
+            } else {
+                this.npp = gcfg.numN;
             }
 
             if (o.q) {
@@ -164,11 +203,14 @@ function genGalleryModel(hash, mdfL) {
             }
 
             this.startN = 0;
+            this.fStartN = 0;
         }
 
         this.updateQuery = function () {
             this.query = $.trim($("#query").val());
             this.startN = 0;
+            this.fStartN = 0;
+            this.fNumN = gcfg.numN;
 
         }
 		
@@ -198,6 +240,32 @@ function genGalleryModel(hash, mdfL) {
             this.type = type;
         }
 
+        this.updateNpp = function (n) {
+            //this.npp = n || 30;
+            
+            if(n == 0){
+                this.fStartN = 0;
+                this.startN = 0;
+                this.npp = 0;
+                this.fNumN = gcfg.numN;
+                this.numN = 0;
+            }else{
+                //this.fStartN = n||this.npp;
+                this.fStartN = Math.min(this.maxN, this.fStartN + this.fNumN); //n + gcfg.numN;
+                this.fNumN = this.fNumN;
+                this.npp = this.npp + parseInt(n,10);
+
+                if(this.fNumN <= 0){
+                    this.startN = this.startN + this.numN;
+                    this.numN = n || this.numN;
+                }else{
+                    //this.fStartN = this.npp;
+                    //this.fNumN = this.fNumN;
+                }
+             }
+
+        }
+
         this.updateDisplayN = function (n) {
             var x = Math.max(1, n);
             x = Math.min(3, x);
@@ -214,6 +282,7 @@ function genGalleryModel(hash, mdfL) {
             }
 
             this.startN = 0;
+            this.fStartN = 0;
 
         }
 
@@ -226,18 +295,23 @@ function genGalleryModel(hash, mdfL) {
             x = (x - 1) * this.numN;
             x = Math.min(this.maxN, x);
             this.startN = Math.max(0, x);
+            this.fStartN = Math.max(0, x);
         }
 
         this.inc = function () {
             this.startN = Math.min(this.maxN, this.startN + this.numN);
+            this.fStartN = Math.min(this.fMaxN, this.fStartN + this.numN);
         }
 
         this.dec = function () {
             this.startN = Math.max(0, this.startN - this.numN);
+            this.fStartN = Math.max(0, this.fStartN - this.numN);
         }
 
         this.updatePagination = function (n) {
             this.startN = n || 0;
+            this.fStartN = n || 0;
+            this.fNumN = gcfg.numN;
         }
 
         this._setMdf = function (val) {
@@ -292,6 +366,9 @@ function genGalleryModel(hash, mdfL) {
             l.push("d=" + this.display);
 			l.push("col=" + this.col);
             l.push("type=" + this.type);
+            l.push("fs=" + this.fStartN);
+            l.push("fn=" + this.fNumN);
+            l.push("npp=" + this.npp);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -303,7 +380,7 @@ function genGalleryModel(hash, mdfL) {
             return l.join("&");
         }
 
-        this._genAjaxData = function () {
+        this._genAjaxData = function (opt) {
 
             function _genPartialFields(mdf) {
                 var l = [];
@@ -342,26 +419,6 @@ function genGalleryModel(hash, mdfL) {
                 }
                 return false;
 
-                /*for (key in mdf) {
-                    if (mdf.hasOwnProperty(key)) {
-                        var state = mdf[key].state;
-                        if (state) {
-                            var vL = []
-                            for (var i = 0, len = mdf[key].len; i < len; i++) {
-                                if (state.charAt(i) === "1") {
-                                    v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
-                                    if (v) {
-                                        vL.push(key + ":" + v);
-                                    }
-                                }
-                            }
-                            if (vL.length) {
-                                l.push("(" + vL.join("|") + ")");
-                            }
-                        }
-                    }
-                }
-                return l.join(".");*/
             }
 
             /** -- **/
@@ -386,13 +443,11 @@ function genGalleryModel(hash, mdfL) {
             }
 
 			// Sort by date
-			//l.push("sort=date:D:S:d1");
+			l.push("sort=date:D:S:d1");
             //l.push("inmeta:la-featured1:1 AND inmeta:last-modified:2012-06-16..");
 
             /* public flags */
-            l.push("start=" + this.startN);
-
-            l.push("num=" + this.numN);
+            
 
 
             if (this.query) {
@@ -406,6 +461,18 @@ function genGalleryModel(hash, mdfL) {
                 pfields = pfields+".("+typePFields+")";
             } else if (typePFields){
                 pfields = typePFields;
+            }
+
+            if(opt && opt.featured){
+                 pfields = (pfields)? pfields + ".(la-featured:yes)" : "(la-featured:yes)";
+                 l.push("start=" + this.fStartN);
+                l.push("num=" + this.fNumN);
+                //l.push("start=" + this.startN);
+                //l.push("num=" + this.numN);
+            }else {
+                 pfields = (pfields)? pfields+".(-la-featured:yes)" : "(-la-featured:yes)";
+                 l.push("start=" + this.startN);
+                l.push("num=" + this.numN);
             }
 
             
@@ -525,6 +592,8 @@ function createGalleryShell() {
         display: null,
         pageNav: null,
         reloadCount: 0,
+        featureddata:null,
+        numberofRegularItemsRequires:0,
 
         init: function (gm) {
             if (gm.query) {
@@ -533,6 +602,7 @@ function createGalleryShell() {
 
             this._updateFilter(gm);
 
+            //this.updateFeatured(gm);
 
         },
 
@@ -544,7 +614,42 @@ function createGalleryShell() {
 
         },
 
+        updateGeneralItem: function (gm) {
+            this.gm = gm;
+
+            var vdata = gm.genViewData();
+
+            if (gm.query) {
+                $("#query").val(gm.query);
+            }
+
+                       
+            // REgular items
+            $.ajax({
+                url: gm.tier.gallery,
+                dataType: "jsonp",
+                context: this,
+                data: vdata.ajaxData,
+                timeout: 6000,
+                beforeSend: function () {
+                    //$("#gl-content").empty();
+                    $("#spinner").show();
+                },
+                success: function (data) {
+                    $("#spinner").hide();
+                    this._updateModelAndView(data);
+                },
+                error: function (xhr, status, err) {
+                    $("#gl-content").html(gcfg.errorMsg);
+                    $("#spinner").hide();
+                }
+            });
+
+        },
+
+
         update: function (gm) {
+            //this.updateFeatured(gm);
             this.gm = gm;
 
             var vdata = gm.genViewData();
@@ -557,25 +662,27 @@ function createGalleryShell() {
 
             this._updateFilter(gm);
 
-            debug(vdata.ajaxData);
+            // Featured Item
             $.ajax({
                 url: gm.tier.gallery,
                 dataType: "jsonp",
                 context: this,
-                data: vdata.ajaxData,
+                data: vdata.ajaxFeaturedData,
                 timeout: 6000,
+                async: false,
                 beforeSend: function () {
-                    $("#gl-content").empty();
+                    //$("#gl-content").empty();
                     $("#spinner").show();
                 },
                 success: function (data) {
-                    $("#spinner").hide();
-                    this._updateModelAndView(data);
                     this.reloadCount += 1
+                    this._setFeaturedData(data, this.gm);
+                    this.updateGeneralItem(gm)
+                    //this._setFeaturedData(data, this.gm);
                 },
                 error: function (xhr, status, err) {
-                    $("#gl-content").html(gcfg.errorMsg);
-                    $("#spinner").hide();
+                    //$("#gl-content").html(gcfg.errorMsg);
+                    //$("#spinner").hide();
                 }
             });
 
@@ -613,11 +720,65 @@ function createGalleryShell() {
                 this.display.update(this.gm);
             }
         },
+        _setFeaturedData: function (data,gm){
+            this.featureddata = new SEData(data);
+            this.gm.updateFSEData(this.featureddata);
+            this.numberofRegularItemsRequires = 0;
+
+
+            if(this.featureddata){
+                var totalFeaturedItemPerPage =  this.featureddata.endI-(this.featureddata.startI-1);
+                
+                var totalFeaturedResult = this.featureddata.estN;
+                if(totalFeaturedItemPerPage < gcfg.numN){
+                    this.numberofRegularItemsRequires = gcfg.numN - totalFeaturedItemPerPage;
+                }
+
+                if(this.numberofRegularItemsRequires > 0){
+                    gm.numN = this.numberofRegularItemsRequires;
+                    gm.fNumN = 0;
+                }else{
+                    gm.numN = 0;
+                }
+            }
+
+            console.log(totalFeaturedItemPerPage+"-"+totalFeaturedResult+"-"+this.numberofRegularItemsRequires);
+
+
+        },
+
+        mergeData: function(gm,sedata){
+            
+            //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
+           if(this.featureddata){
+                var estN = (this.featureddata.estN)?this.featureddata.estN:0;
+                var endI = (this.featureddata.endI)?this.featureddata.endI:0;
+
+                if( this.numberofRegularItemsRequires > 0){
+                    sedata.rowL = this.featureddata.rowL.concat(sedata.rowL); 
+                }else{
+                    sedata.rowL = this.featureddata.rowL;
+                }
+
+                
+            } 
+            return sedata.rowL;
+            
+             
+
+        },
+
         _updateModelAndView: function (data) {
 
             var sedata = new SEData(data);
 
+            
+
             this.gm.updateSEData(sedata);
+
+            
+            this.gm.sedata.rowL = this.mergeData(this.gm,sedata);
+
 
             if (this.display === null) {
                 this.display = genDisplay();
@@ -648,6 +809,9 @@ $(document).ready(function () {
     $("#query").bind({
         "keydown": function (evt) {
             if (evt.keyCode == "13") {
+                $("#gl-content").empty();
+                $("#spinner").show();
+
                 gModel.updateQuery();
                 gShell.update(gModel);
             }
@@ -668,6 +832,8 @@ $(document).ready(function () {
     });
 
     $("#filters .ctrlbox").bind("change", function (evt) {
+        $("#gl-content").empty();
+        $("#spinner").show();
         gModel.updateByFilter();
 
 		var totalSelectedCheckBox = $('input[type=checkbox]').filter(':checked').length;
@@ -683,11 +849,15 @@ $(document).ready(function () {
         }else{
             $(".current .reset-filter").css("display","none");
         }
-        gModel.updatePagination(0);
+        //gModel.updatePagination(0);
+        gModel.updateNpp(0);
 		gShell.update(gModel);
     });
 
     $("#search, #gl-search-btn").bind("click", function (evt) {
+        $("#gl-content").empty();
+        $("#spinner").show();
+
         gModel.updateQuery();
         gShell.update(gModel);
 
@@ -695,26 +865,7 @@ $(document).ready(function () {
         return false;
     });
 
-	$("#gallerySearchForm").bind("submit", function (evt) {
-        gModel.updateQuery();
-        gShell.update(gModel);
-
-        evt.stopImmediatePropagation();
-        return false;
-    });
 	
-    /*$("#gl-pagenav").delegate("#pageX", "keydown", function (evt) {
-        if (evt.keyCode == "13") {
-            var x = parseInt($("#pageX").val(), 10);
-            if (!isNaN(x)) {
-                gModel.gotoPage(x);
-                gShell.update(gModel);
-            }
-            evt.stopImmediatePropagation();
-            return false;
-        }
-    });*/
-
 
     $("#display1, #display2, #display3").bind("click", function (evt) {
         gModel.updateDisplay(parseInt(evt.target.id.slice("display".length), 10));
@@ -729,54 +880,13 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#numn1, #numn2, #numn3").bind("click", function (evt) {
-        gModel.updateDisplayN(parseInt(evt.target.id.slice("numn".length), 10));
-        gShell.update(gModel);
-
-        //temp hack
-        $("#numn1, #numn2, #numn3").removeClass();
-        $("#" + evt.target.id).addClass("displayn_selected");
-
-        evt.stopImmediatePropagation();
-        return false;
-    });
-
-    /*$("#gl-prev").bind("click", function (evt) {
-        if (!$(this).hasClass("disabled")) {
-            gModel.dec();
-            gShell.update(gModel);
-        }
-        evt.stopImmediatePropagation();
-        return false;
-    });
-
-    $("#gl-next").bind("click", function (evt) {
-        if (!$(this).hasClass("disabled")) {
-            gModel.inc();
-            gShell.update(gModel);
-        }
-        evt.stopImmediatePropagation();
-        return false;
-    });*/
-
     
-    $("#gl-pagenav").on("click", ".pagination_link", function (evt) {
-        if (!$(this).hasClass("_pagination_link_current") && !$(this).hasClass("disabled")) {
-            var startNumber = $(this).attr("value");
-
-            gModel.updatePagination(startNumber);
-            gShell.update(gModel);
-        }
-                
-        evt.stopImmediatePropagation();
-        return false;
-        
-    });
 
     $("#gl-content").on("click", "#more-item", function (evt) {
            var startNumber = $(this).attr("value");
 
-            gModel.updatePagination(startNumber);
+            //gModel.updatePagination(startNumber);
+            gModel.updateNpp($(this).attr("value"));
             gShell.update(gModel);
            
                        
@@ -796,6 +906,9 @@ $(document).ready(function () {
     });
 	
 	$(".filter-label").bind("click", function (evt) {
+
+        $("#gl-content").empty();
+        $("#spinner").show();
 				
 		/*if($(this).hasClass('current') && $(this).attr('col') != "All"){
 			$(this).removeClass('current');
@@ -809,7 +922,8 @@ $(document).ready(function () {
 			gModel.updateCollection($(this).attr("col"));
 		//}
 			
-		gModel.updatePagination(0);
+		//gModel.updatePagination(0);
+        gModel.updateNpp(0);
         gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
         $(".reset-filter").css("display","none");
@@ -835,12 +949,38 @@ $(document).ready(function () {
         $(this).addClass("current");
         gModel.updateType($(this).attr("type"));
             
-        gModel.updatePagination(0);
+        //gModel.updatePagination(0);
+        gModel.updateNpp(0);
         gShell.update(gModel);
         
                 
         evt.stopImmediatePropagation();
         return false;
+    });
+
+    $(window).scroll(function () {
+        if ($(document).height() <= $(window).scrollTop() + $(window).height()+300) {
+
+
+
+
+            //alert("End Of The Page");
+             var countMaxN = gModel.maxN;
+            if(gModel.fMaxN > gModel.maxN)
+                gModel.maxN = gModel.fMaxN;
+
+            
+            // GSA has browse limit of 1000 results
+            if (gModel.sedata.endI < gModel.maxN) {
+                $(".more-spinner").css("display","block");
+                
+                gModel.updateNpp(30);
+                gShell.update(gModel);
+                               
+                
+                return false;
+            }
+        }
     });
 
     /* End of show me section */
@@ -885,6 +1025,9 @@ $(document).ready(function () {
     function resetSearch(evt) {
         $("#query").val("");
         $("#gl-cl-btn").hide();
+
+        $("#gl-content").empty();
+        $("#spinner").show();
 
         if (gShell.reloadCount > 1) {
             gModel.updateQuery();

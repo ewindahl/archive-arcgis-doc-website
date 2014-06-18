@@ -1,102 +1,10 @@
 function genPageNav() {
     var o = {
         update: function (gm) {
-
-            if($("#gl-content-ul").length > 0){
-                $("#gl-pagenav").html(this.generateLinks(gm));
-            }
-
-            if (gm.sedata.startI - gm.numN < 0) {
-                $("._pagination_link_prev").addClass("disabled");
-                 $("._pagination_link_first").addClass("disabled");
-            } else {
-                var $o = $("_pagination_link_prev");
-                if ($o.hasClass("disabled")) {
-                    $o.toggleClass("disabled");
-                }
-            }
-
-
-            // GSA has browse limit of 1000 results
-            if (gm.sedata.endI >= gm.maxN) {
-                // Disable more button
-                $("#more-item").hide();
-                
-
-                $("._pagination_link_next").addClass("disabled");
-                 $("._pagination_link_last").addClass("disabled");
-            } else {
-                 var $o = $("._pagination_link_next");
-                if ($o.hasClass("disabled")) {
-                    $o.toggleClass("disabled");
-                }
-                var $o = $("._pagination_link_last");
-                if ($o.hasClass("disabled")) {
-                    $o.toggleClass("disabled");
-                }
-            }
-
            
 
         },
-
-
-        generateLinks: function(gm)
-        {
-            
-            if(gm.maxN >= 1000){
-                gm.maxN = gm.maxN-gm.numN;
-            }
-            settings = {
-                                first           : '<<', 
-                                prev            : '<',
-                                next            : '>',
-                                last            : '>>',
-                                spread          : 2,
-                                total           : gm.maxN,
-                                index           : gm.sedata.startI-1 || 0,
-                                limit           : gm.numN,
-                            };
-                            
-            var paginate = $('<div class="gl-pagination"></div>');
-
-            var totalPages = Math.ceil(settings.total/settings.limit);
-            var visiblePages = settings.spread * 2 + 1;
-            var currentPage = Math.ceil(settings.index/settings.limit);
-            var start = 0, end = 0;
-
-
-            // get start and end page
-            if(totalPages <= visiblePages) { start = 0; end = totalPages; }
-            else if(currentPage < settings.spread){ start = 0; end = visiblePages; }
-            else if(currentPage > totalPages - settings.spread-1){ start = totalPages-visiblePages; end=totalPages; }
-            else{ start = currentPage-settings.spread; end=currentPage+settings.spread+1; }
-
-            paginate.html('');
-            
-           
-
-            // generate links
-            if(settings.first) paginate.append(this.getLink(0, 'first'));
-            if(settings.prev) paginate.append(this.getLink(currentPage === 0 ? 0 : currentPage-1, 'prev'));
-
-            for(var i=start; i<end; i++) paginate.append(this.getLink(i, i*settings.limit === settings.index ? 'current' : null));
-            
-            if(settings.next) paginate.append(this.getLink(currentPage === totalPages ? totalPages : currentPage+1, 'next'));
-            if(settings.last) paginate.append(this.getLink(totalPages-1, 'last'));
-
-            // More Item
-             $("#more-item").attr("value", (currentPage === totalPages) ? totalPages*settings.limit : (currentPage + 1)*settings.limit);
-
-            return paginate;
-        },
-
-        getLink: function(i, key){
-            
-            var _self = this;
-            var spanVal = i*settings.limit;
-            return $('<label value="' + spanVal + '" class="pagination_link' + (key ? ' _pagination_link_' + key : '') + '"></label>').html(settings[key] || (i+1));
-        }
+        
     };
 
     return o;
@@ -216,16 +124,22 @@ function genDisplay() {
                     }[gm.display];
 
 
-                    if (gm.sedata.estN > 0) {
+                    if (gm.sedata.rowL.length > 0) {
                         buf.push("<ul id='gl-content-ul'>");
                         $.each(gm.sedata.rowL, function (i, val) {
                             displayFunc(o, gm.startN + i, new SERow(val), buf);
                         });
-                        buf.push("<li class='item' id='more-item'><div class='item-img see-more'>There's more. Click to load the next page.</div></li>");
+                        //buf.push("<li class='item' id='more-item'><div class='item-img see-more'>There's more. Click to load the next page.</div></li>");
+                        buf.push("<li class='item more-spinner' style='display: none'><img alt='loading' src='/img/gallery/ajax-loader.gif'></li>");
                         buf.push("</ul>");
-                        //buf.push("<div class='clear'></div>");
-
-                        $("#gl-content").html(buf.join("")).removeClass().addClass("display" + gm.display);
+                        
+                        
+                        if($("#gl-content").length > 0){
+                            $(".more-spinner").css("display","none");
+                            $("#gl-content").append(buf.join(""));
+                        }else{
+                            $("#gl-content").html(buf.join("")).removeClass().addClass("display" + gm.display);
+                        }
                     } else {
                         var errMsg = [];
                         errMsg.push("<div class='gl-content-errMsg'>")
