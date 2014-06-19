@@ -120,8 +120,10 @@ doc.itemDetails = (function(){
 				var text = "<a href='" + AGOLURL + "apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
 				$("#downloadBtns").html(text);
 			} else {
-				$(".map-title").text(itemDetails.title);
-				$(".map-title").show();
+				if(itemType != "layers") {
+					$(".map-title").text(itemDetails.title);
+					$(".map-title").show();
+				}
 
 				if(itemDetails.extent.length > 0){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
