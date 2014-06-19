@@ -1,20 +1,19 @@
 var doc = {};
-var AGOLURL = '//www.arcgis.com/';
+var AGOLURL = (navigator.userAgent.match(/msie/i)) ?'https://www.arcgis.com/' : '//www.arcgis.com/';
 
 doc.itemDetails = (function(){
 		
 	return {
 
-		
 		getAJAXResponse : function(itemId,url,callType,callFor){
 			var result;
-			var restURL = url || AGOLURL + "/sharing/rest/content/items/" + itemId + "?f=json";
+			var restURL = url || AGOLURL + "sharing/rest/content/items/" + itemId + "?f=json";
 			var callType = callType || false;
 			var callBackFn = callBackFn || false
 			
 			$.ajax({
 					
-				url: restURL,
+				url: (navigator.userAgent.match(/msie/i)) ? "/apps/proxy/proxy.php?" + restURL : restURL ,
 				type: 'GET',
 				dataType: 'json',
 				async: callType,
@@ -48,7 +47,7 @@ doc.itemDetails = (function(){
 		
 				
 		getIframeSource : function(){
-			
+						
 			if(itemType == "app"){
 				iframeSrc = itemDetails.url;
 			} else if(itemType == "layers"){
@@ -58,7 +57,11 @@ doc.itemDetails = (function(){
 				iframeSrc = "";
 			} else {
 				// Map
-				iframeSrc = "http://www.arcgis.com/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent="+itemDetails.extent.join();
+				var extent=null;
+				if(itemDetails.extent)
+					extent = itemDetails.extent.join();
+
+				iframeSrc = "http://www.arcgis.com/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
 			}
 			
 			return iframeSrc;
@@ -87,7 +90,7 @@ doc.itemDetails = (function(){
 
 			$("#ratingsAndView").text("( "+itemDetails.numRatings+" ratings; "+itemDetails.numViews+" views)");
 
-			$("#mapBy").html("Map By <a href='" + AGOLURL+ "/home/user.html?user=" + itemDetails.owner + "'>" + itemDetails.owner + "</a>. Created " + this.formatDate(itemDetails.created) + ". Modified " + this.formatDate(itemDetails.modified) +".");
+			$("#mapBy").html(itemTypeLabel + " by <a target='_blank' href='" + AGOLURL+ "/home/user.html?user=" + itemDetails.owner + "'>" + itemDetails.owner + "</a>. Created " + this.formatDate(itemDetails.created) + ". Modified " + this.formatDate(itemDetails.modified) +".");
 
 			$("#snippet").html(itemDetails.snippet);
 			$("#description").html(itemDetails.description);
@@ -120,7 +123,15 @@ doc.itemDetails = (function(){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
 					$("#map-extent p").html(text);
 
-					text = "<a href='"+ AGOLURL +"home/webmap/viewer.html?webmap=" + itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
+					text = "<a href='"+ AGOLURL +"home/webmap/viewer.html?webmap=" + itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
+					
+					// Exclude open in ArcGIS for Desktop from demographics item
+					if(getUrlVars()['subType'] != "demographics"){
+						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
+					}
+
+					text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ obj.getIframeSource() +"' target='_blank' class='btn light'>View Full Screen</a>";
+
 					$("#downloadBtns").html(text);
 
 					this.renderLayers();
@@ -150,10 +161,12 @@ doc.itemDetails = (function(){
 			var miscData = obj.getAJAXResponse(itemId,AGOLURL+"sharing/rest/content/items/"+itemId+"/data?f=json");
 			
 			if(!miscData.code){
+				var isLayersExist = false;
 				
 				var layers = [];
 				layers.push("<ul>");
 				if(miscData.operationalLayers){
+					isLayersExist = true;
 					$.each( miscData.operationalLayers, function( key, value ) {
 						if(value.url){
 							layers.push("<li>"+value.title+"<br/><span style='margin-left: 1.5em;'><a href='" + value.url + "'>" + value.url + "</a></span></li>");
@@ -162,13 +175,18 @@ doc.itemDetails = (function(){
 				}
 
 				if(miscData.baseMap){
+					isLayersExist = true;
 					$.each( miscData.baseMap.baseMapLayers, function( key, value ) {
 						layers.push("<li>"+value.id+"<br/><span style='margin-left: 1.5em;'><a href='" + value.url + "'>" + value.url + "</a></span></li>");
 					});
 				}
 				layers.push("</ul>");
 
-				$("#map-contents-layers").html(layers.join(""));
+				if(isLayersExist){
+					$("#map-contents-layers").html(layers.join(""));
+				} else {
+					$(".layers").hide();
+				}
 			}
 		},
 
@@ -228,11 +246,8 @@ doc.itemDetails = (function(){
 			month[11] = "December";
 			
 			return month[date.getMonth()]+ " " + date.getDate() + ", " + date.getFullYear();
-		},
+		}
 	}
-
-
-
 })();
 
 
@@ -240,8 +255,10 @@ doc.itemDetails = (function(){
 
 var itemId = getUrlVars()['itemId'];
 var itemType = "map";
+var itemTypeLabel = "Map"
 var obj = doc.itemDetails;
 var itemDetails = obj.getItemInfo(itemId);
+//console.log(itemDetails);
 
 if(itemDetails && itemDetails.id){
 	var itemType 
@@ -249,15 +266,21 @@ if(itemDetails && itemDetails.id){
 
 	if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service/gi)){
 		itemType = "layers";
+		itemTypeLabel = "Map Layer";
 	} else if(itemDetails.type.match(/Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service/gi)) {
 		itemType = "tools";
+		itemTypeLabel = "Tool";
 	}else if(itemDetails.type.match(/Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View/gi)){
 		itemType = "app";
+		itemTypeLabel = "App";
 	}else if(itemDetails.type.match(/Web Scene/gi)){
 		itemType = "webscene";
+		itemTypeLabel = "Webscene";
 	}
 
-	console.log(itemType);
+}else{
+	$("#mapIframe").hide();
+	$(".container").html("Item details are not available right now. Please try again later!");
 }
 
 
@@ -279,7 +302,6 @@ function getUrlVars ()
 }
 
 $(document).ready(function() {
-	
 	if(!itemDetails.code){
 	
 		if(obj.getIframeSource()){

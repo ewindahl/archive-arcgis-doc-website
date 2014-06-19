@@ -39,6 +39,16 @@ function genDisplay() {
             var v = obj._genContribInfo(row);
             var targetUrl = row.agolItemUrl(itemID);
 
+            var itemTitle = row.md("agol-item-title", "n/a");
+            if (itemTitle.length > 40 ) {  
+                itemTitle = itemTitle.substr(0,40) + " ...";
+            }  
+
+            if(row.md("la-demographics") || row.md("la-lifeStyles")){
+                targetUrl = targetUrl + "&subType=demographics";
+            }
+
+
             buf.push("<li class='item'>");
 
             if(row.agolFeaturedItem()){
@@ -53,7 +63,7 @@ function genDisplay() {
             buf.push("<img class='item-img' src='" + imgurl + "' />");
             buf.push("</a>");
             buf.push("<a class='item-title' href='" + targetUrl + "'>");
-            buf.push(row.md("agol-item-title", "n/a"));
+            buf.push(itemTitle);
             buf.push("</a>");
 			buf.push("<span class='ownerName'>By "+row.md("agol-owner", "n/a")+"</span>");
             buf.push("</li>");

@@ -805,10 +805,21 @@ $(document).ready(function () {
 
 
     /** init event handler **/
-
+   
     $("#query").bind({
         "keydown": function (evt) {
             if (evt.keyCode == "13") {
+                $("#gl-content").empty();
+                $("#spinner").show();
+
+                gModel.updateQuery();
+                gShell.update(gModel);
+            }
+        },
+        "input": function (evt) {
+            //trigger after removing the search keyword
+            if($(this).val().length <= 0){
+                $("#gl-cl-btn").hide()
                 $("#gl-content").empty();
                 $("#spinner").show();
 
@@ -1018,7 +1029,7 @@ $(document).ready(function () {
         debug(ex.message);
     }
 
-    $("#gl-cl-btn").click(function (evt) {          
+    $("#gl-cl-btn").click(function (evt) {   
         return resetSearch(evt)
     });
 
@@ -1029,7 +1040,7 @@ $(document).ready(function () {
         $("#gl-content").empty();
         $("#spinner").show();
 
-        if (gShell.reloadCount > 1) {
+        if (gShell.reloadCount >= 1) {
             gModel.updateQuery();
             gShell.update(gModel);
             gShell.reloadCount = 0; // reset the ajax reload counter
