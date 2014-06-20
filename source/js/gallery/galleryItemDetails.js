@@ -120,10 +120,6 @@ doc.itemDetails = (function(){
 				var text = "<a href='" + AGOLURL + "apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
 				$("#downloadBtns").html(text);
 			} else {
-				if(itemType != "layers") {
-					$(".map-title").text(itemDetails.title);
-					$(".map-title").show();
-				}
 
 				if(itemDetails.extent.length > 0){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
@@ -136,7 +132,12 @@ doc.itemDetails = (function(){
 						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
 					}
 
-					text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ obj.getIframeSource() +"' target='_blank' class='btn light'>View Full Screen</a>";
+					if(itemType != "layers") {
+						$(".map-title").text(itemDetails.title);
+						$(".map-title").show();
+
+						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ obj.getIframeSource() +"' target='_blank' class='btn light'>View Full Screen</a>";
+					}
 
 					$("#downloadBtns").html(text);
 
