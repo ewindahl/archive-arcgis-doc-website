@@ -44,7 +44,8 @@ function genGalleryModel(hash, mdfL) {
 		this.clearAll = false;
 		this.col = "All"; //decoded value
         this.type = "All";
-        this.npp = gcfg.numN;;
+        this.npp = gcfg.numN;
+        this.subCat = 0;
 
         this.init = function (hash) {
             this._initMDF(mdfL);
@@ -167,6 +168,14 @@ function genGalleryModel(hash, mdfL) {
                 this._initMDF(gcfg.mdfL);
             }
 
+            if (o.subCat) {
+                this.subCat = o.subCat;
+            } else {
+                this.subCat = 0;
+            }
+
+            
+
             if (o.d) {
                 this.display = parseInt(o.d, 10);
                 if (isNaN(this.display)) {
@@ -237,6 +246,10 @@ function genGalleryModel(hash, mdfL) {
 
         this.updateType = function (type) {
             this.type = type;
+        }
+
+        this.updateSubCat = function (subCat) {
+            this.subCat = subCat;
         }
 
         this.updateNpp = function (n,reset) {
@@ -365,10 +378,11 @@ function genGalleryModel(hash, mdfL) {
             l.push("n=" + this.numN);
             l.push("d=" + this.display);
 			l.push("col=" + this.col);
-            l.push("type=" + this.type);
+            //l.push("type=" + this.type);
             l.push("fs=" + this.fStartN);
             l.push("fn=" + this.fNumN);
             l.push("npp=" + this.npp);
+            l.push("subCat=" + this.subCat);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -638,6 +652,7 @@ function createGalleryShell() {
                 success: function (data) {
                     $("#spinner").hide();
                     this._updateModelAndView(data);
+                    gm.queryStatus = "completed";
                 },
                 error: function (xhr, status, err) {
                     $("#gl-content").html(gcfg.errorMsg);
@@ -712,6 +727,11 @@ function createGalleryShell() {
 
                     }
                 }
+            }
+
+            if(gm.subCat <= 0){
+           //$("#filters .current").trigger('click');
+                $("#filters input:checkbox").removeAttr('checked');
             }
         },
 
@@ -857,8 +877,10 @@ $(document).ready(function () {
         if(totalSelectedCheckBox > 0){
             //Expose Reset button
             $(".current .reset-filter").css("display","block");
+            gModel.updateSubCat(1);
         }else{
             $(".current .reset-filter").css("display","none");
+            gModel.updateSubCat(0);
         }
         //gModel.updatePagination(0);
         gModel.updateNpp(0);
@@ -934,6 +956,7 @@ $(document).ready(function () {
 		//}
 			
 		//gModel.updatePagination(0);
+        gModel.updateSubCat(0);
         gModel.updateNpp(0);
         gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
@@ -980,10 +1003,10 @@ $(document).ready(function () {
             if(gModel.fMaxN > gModel.maxN)
                 gModel.maxN = gModel.fMaxN;
 
-            
             // GSA has browse limit of 1000 results
-            if (gModel.sedata.endI < gModel.maxN) {
+            if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.endI < gModel.maxN)) {
                 $(".more-spinner").css("display","block");
+                gModel.queryStatus = null;
                 
                 gModel.updateNpp(30);
                 gShell.update(gModel);
@@ -1055,6 +1078,12 @@ $(document).ready(function () {
            
            $(".filter-label").removeClass("current");
            $("."+col+"-filter").addClass("current");
+
+           
+           if (gModel.subCat > 0){
+                $(".current .reset-filter").css("display","block");
+           }
+           
         }
 
         if(getUrlVars()['type']){
@@ -1069,6 +1098,7 @@ $(document).ready(function () {
         if(getUrlVars()['npp'] && getUrlVars()['npp'] > 0){
             gModel.updateNpp(getUrlVars()['npp'],true);
         }
+
     }
 
     function getUrlVars ()

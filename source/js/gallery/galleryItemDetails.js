@@ -152,7 +152,7 @@ doc.itemDetails = (function(){
 			var tags = [];
 			tags.push("<ul>");
 			$.each( itemDetails.tags, function( key, value ) {
-				tags.push("<li><a href='" + AGOLURL + "home/search.html?t=content&q=tags:" + value + "'>" + value + "</a></li>");
+				tags.push("<li><a target='_blank' href='" + AGOLURL + "home/search.html?t=content&q=tags:" + value + "'>" + value + "</a></li>");
 			});
 			tags.push("</ul>");
 			$("#map-tags").html(tags.join(""));
@@ -175,7 +175,7 @@ doc.itemDetails = (function(){
 					isLayersExist = true;
 					$.each( miscData.operationalLayers, function( key, value ) {
 						if(value.url){
-							layers.push("<li>"+value.title+"<br/><span style='margin-left: 1.5em;'><a href='" + value.url + "'>" + value.url + "</a></span></li>");
+							layers.push("<li>"+value.title+"<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + value.url + "'>" + value.url + "</a></span></li>");
 						}
 					});
 				}
@@ -183,7 +183,7 @@ doc.itemDetails = (function(){
 				if(miscData.baseMap){
 					isLayersExist = true;
 					$.each( miscData.baseMap.baseMapLayers, function( key, value ) {
-						layers.push("<li>"+value.id+"<br/><span style='margin-left: 1.5em;'><a href='" + value.url + "'>" + value.url + "</a></span></li>");
+						layers.push("<li>"+value.id+"<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + value.url + "'>" + value.url + "</a></span></li>");
 					});
 				}
 				layers.push("</ul>");
@@ -214,7 +214,7 @@ doc.itemDetails = (function(){
 						
 				$.each( data.comments, function( key, value ) {
 					if(i < 5) {
-						feed.push("<small><time>" + obj.formatDate(value.created) + " by <a href='"+AGOLURL+ "home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
+						feed.push("<small><time>" + obj.formatDate(value.created) + " by <a target='_blank' href='"+AGOLURL+ "home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
 	            "<p>" + unescape(value.comment) + "</p>");
 					}
 					i++;
