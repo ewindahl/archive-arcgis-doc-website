@@ -62,9 +62,27 @@ doc.itemDetails = (function(){
 					extent = itemDetails.extent.join();
 
 				iframeSrc = "http://www.arcgis.com/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
+
+				var customURL = this.orgUserCustomURL();
+				if(customURL){
+					iframeSrc = customURL + "/home/webmap/viewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
+				}
+
+				
 			}
 			
 			return iframeSrc;
+		},
+
+		orgUserCustomURL : function(){
+						
+			var ckObj = this.getCookie('esri_auth');
+			
+			if(ckObj && ckObj.urlKey){
+				return "http://"+ckObj.urlKey + "." + ckObj.customBaseUrl;
+			}
+			
+			return false;
 		},
 
 
@@ -132,7 +150,7 @@ doc.itemDetails = (function(){
 						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
 					}
 
-					if(itemType != "layers") {
+					if(!this.orgUserCustomURL() && itemType != "layers") {
 						$(".map-title").text(itemDetails.title);
 						$(".map-title").show();
 
@@ -253,8 +271,28 @@ doc.itemDetails = (function(){
 			month[11] = "December";
 			
 			return month[date.getMonth()]+ " " + date.getDate() + ", " + date.getFullYear();
-		}
+		},
+
+		getCookie : function(cookieName){
+		
+			var cookieObj;
+			
+			if(!this.hasItem(cookieName)){ return null; }
+			
+			cookieName = unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(cookieName).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
+			if(cookieName != ""){
+				cookieObj = $.parseJSON(cookieName);
+			}
+			
+			
+			return cookieObj;
+		},
+		
+		hasItem: function (sKey) {
+            return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+        },
 	}
+	
 })();
 
 
@@ -265,6 +303,7 @@ var itemType = "map";
 var itemTypeLabel = "Map"
 var obj = doc.itemDetails;
 var itemDetails = obj.getItemInfo(itemId);
+var cookieName = "esri_auth";
 //console.log(itemDetails);
 
 if(itemDetails && itemDetails.id){
@@ -309,6 +348,7 @@ function getUrlVars ()
 }
 
 $(document).ready(function() {
+	
 	if(!itemDetails.code){
 	
 		if(obj.getIframeSource()){
