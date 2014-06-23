@@ -113,6 +113,20 @@ $(document).ready(function() {
 				console.log(href);
 		});
 	}
+	
+	function modContentLinks (plt) {
+		$(".reference-content a[href]").each (function (i) {
+			var $ele = $(this),
+				href = $ele.attr("href");
+
+				parts = href.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = href.replace ("/"+prodIOSVal+"/", "/"+plt+"/");
+				$ele.attr ("href", newHref);
+				console.log(href);
+		});
+	}
 
 	if (!isHome) {
 		if (isForum) {
@@ -123,6 +137,7 @@ $(document).ready(function() {
 				$('.reference-content .page-title').after (val);
 			}else{
 				modHelpNavUrls (plat);
+				modContentLinks (plat);
 			}
 		}
 	} else {
