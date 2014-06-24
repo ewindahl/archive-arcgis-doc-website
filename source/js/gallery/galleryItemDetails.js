@@ -49,7 +49,8 @@ doc.itemDetails = (function(){
 		getIframeSource : function(){
 						
 			if(itemType == "app"){
-				iframeSrc = itemDetails.url;
+				//iframeSrc = itemDetails.url;
+				iframeSrc = "";
 			} else if(itemType == "layers"){
 				//iframeSrc = itemDetails.url+ "?f=jsapi";
 				iframeSrc = "";
@@ -89,6 +90,15 @@ doc.itemDetails = (function(){
 		renderGeneralElementsValues : function(){
 			
 			$("#itemTitle").text(itemDetails.title);
+
+			/*meta tag section */
+			$(document).attr('title', itemDetails.title + "--Living Atlas of the World | ArcGIS");
+			$('meta[name=last-modified]').attr('content', this.formatDate(itemDetails.modified,"searchFriendly"));
+			$('meta[name=sub_category]').attr('content', "gallery-"+ itemType);
+			$('meta[name=sub_category_label]').attr('content', itemType);
+			$('meta[name=description]').attr('content', itemDetails.snippet);
+			
+			/* End of meta tag section */
 
 			$("#socialLinks a").each(function (){
 				var updatedHref = $(this).attr('href').replace('itemId-placeholder',itemDetails.id);
@@ -134,9 +144,14 @@ doc.itemDetails = (function(){
 			} else if(itemType == "webscene"){
 				$(".layers").hide();
 				$(".extent").hide();
+
+				var websceneTargetURL = AGOLURL + "apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id;
+
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
-				var text = "<a href='" + AGOLURL + "apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
+				var text = "<a href='" + websceneTargetURL + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
 				$("#downloadBtns").html(text);
+
+				$("#agol-thumbnail").html("<a href='" + websceneTargetURL + "' target='_blank'><img src='"+AGOLURL+"sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 			} else {
 
 				if(itemDetails.extent.length > 0){
@@ -251,7 +266,7 @@ doc.itemDetails = (function(){
 
 		},
 
-		formatDate : function(dateToBeFormatted){
+		formatDate : function(dateToBeFormatted,formatType){
 			
 			var date = new Date(dateToBeFormatted);
 			var newdate = new Date(date);
@@ -270,7 +285,11 @@ doc.itemDetails = (function(){
 			month[10] = "November";
 			month[11] = "December";
 			
-			return month[date.getMonth()]+ " " + date.getDate() + ", " + date.getFullYear();
+			if(formatType && formatType == "searchFriendly"){
+				return date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+			} else {
+				return month[date.getMonth()]+ " " + date.getDate() + ", " + date.getFullYear();
+			}
 		},
 
 		getCookie : function(cookieName){

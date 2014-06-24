@@ -46,6 +46,8 @@ function genDisplay() {
 
             if(row.md("la-demographics") || row.md("la-lifeStyles")){
                 targetUrl = targetUrl + "&subType=demographics";
+            } else if(row.md("storymaps-community")){
+                targetUrl = targetUrl + "&subType=storymaps";
             }
 
 
@@ -164,6 +166,9 @@ function genDisplay() {
                 $("#gl-content").html(gcfg.errorMsg);
 
             }
+
+            // Re-enable checkbox.
+            $('input[type=checkbox]').prop('disabled',false);
         }
     };
 
