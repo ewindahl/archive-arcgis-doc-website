@@ -1089,6 +1089,7 @@ $(document).ready(function () {
            
         }
 
+        /* This feature is not available as of now.. It was for show me section only*/
         if(getUrlVars()['type']){
             var type = getUrlVars()['type'];
            
@@ -1099,7 +1100,12 @@ $(document).ready(function () {
         }
 
         if(getUrlVars()['npp'] && getUrlVars()['npp'] > 0){
-            gModel.updateNpp(getUrlVars()['npp'],true);
+            //gModel.updateNpp(getUrlVars()['npp'],true);
+            gModel.startN = 0;
+            gModel.numN = 0;
+            gModel.fStartN = 0;
+            gModel.fNumN = 30;
+
         }
 
     }
