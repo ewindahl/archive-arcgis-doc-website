@@ -25,6 +25,7 @@ $(document).ready(function() {
 		prodKey = "explorer",
 		prodDVal = "ipad",
 		prodIOSVal = "iphone",
+		prodMacVal = "mac",
 		prodWPVal = "windows-phone",
 		homePath = "/en/explorer",
 		forumPath = "/en/explorer/forum"
@@ -38,8 +39,13 @@ $(document).ready(function() {
 		isHome = fldpath === homePath,
 		isForum = fldpath === forumPath;
 
-    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
-      plat = prodIOSVal;
+console.log(navigator.userAgent);
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
+      if(navigator.userAgent.match(/(iPhone)/gi)){
+		plat = prodIOSVal;
+	  }else if(navigator.userAgent.match(/(Macintosh)/gi)){
+		plat = prodMacVal;
+	  }
 
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
