@@ -867,6 +867,9 @@ $(document).ready(function () {
         $("#spinner").show();
         gModel.updateByFilter();
 
+        //Disable checkboxes until page is loaded completel
+        $('input[type=checkbox]').prop('disabled',true);
+
 		var totalSelectedCheckBox = $('input[type=checkbox]').filter(':checked').length;
 		$(".filter-label").each(function (evt){
 				if($(this).hasClass('current') && totalSelectedCheckBox <= 0){
