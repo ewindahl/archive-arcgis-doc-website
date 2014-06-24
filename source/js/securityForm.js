@@ -54,7 +54,7 @@ doc.securityConcernForm = (function() {
 			$.ajax({
 			        url: $('#securityConcernForm').attr('action'),
 			        type: 'POST',
-			        dataType: 'jsonp',
+			        /*dataType: 'jsonp',*/
                     cache: false,
                     data: {
                         name: $('#name').val(),
