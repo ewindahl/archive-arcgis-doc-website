@@ -14,6 +14,7 @@ end
     <meta charset="utf-8">
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta name="viewport" content="width=device-width">
 
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
 
@@ -73,7 +74,7 @@ end
     <% else %>
       <style>
         body {
-          min-width: 768px;
+          /*min-width: 768px;*/
         }
       </style>
     <% end%>
@@ -132,6 +133,7 @@ end
 			$(".container .column-8").css('width','33.333%');
 		});
 	</script>
+	<%= partial :"_partial/galleryLayout" %>
   </head>
   <body class="<%= current_language %>" >
     <div id="wrapper">
