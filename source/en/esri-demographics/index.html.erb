@@ -1,0 +1,194 @@
+---
+title: Esri Demographics
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - /en/asset/css/app-switch-1
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/arcgis-app-1
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Esri Demographics"><META name="last-modified" content="2014-7-2"><META name="product" content="arcgis-online; esri-demographics"><META name="sub_category" content="ArcGIS app"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS app"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/en/esri-demographics/">Esri Demographics</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Demographics">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="android-app" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/en/esri-demographics/">Home</a></li>
+        <li><a href="/en/esri-demographics/access/">Access</a></li>
+        <li><a href="/en/esri-demographics/data/">Data</a></li>
+        <li><a href="/en/esri-demographics/coverage/">Coverage</a></li>
+        <li><a href="/en/esri-demographics/reference/">Reference</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+      <div class="column-16 tablet-column-24">
+
+	<h3 class="gray">Esri demographics are available across the ArcGIS platform, offering a comprehensive set of global demographic and spending data for mapping and analysis purposes. </h3>
+	
+
+        </header>
+        <hr />
+        <br />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="" />
+
+          <h3>Access</h3>
+          <p>accessed Esri demographics through web maps and GeoEnrichment services.</p>
+          <p>
+            <a href="/en/esri-demographics/access/" class="icon-right-arrow">&nbsp;Learn more</a>
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="app-collector-map.jpg" />
+
+          <h3>Data</h3>
+          <p>Esri demographic data is available for the following geographic locations, including United States, Africa, Asia, Canada, Europe, North America, Oceania, and South America.</p>
+          <p>
+            <a href="/en/esri-demographics/data/" class="icon-right-arrow">&nbsp;Learn more</a>
+          </p>
+        </div>
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="app-collector-data.jpg" />
+
+          <h3>Coverage</h3>
+          <p>What map functionality is supported? How do I view more information about a feature? How do I edit an existing feature? Get answers to your questions on using the app.</p>
+          <p>
+            <a href="/en/esri-demographics/coverage/" class="icon-right-arrow">&nbsp;Learn more</a>
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="app-collector-map.jpg" />
+
+          <h3>Reference</h3>
+          <p>How do I make a map? What types of services and layers are supported? How do I open maps created in ArcMap? Get answers to your questions on bringing your data into the app.</p>
+          <p>
+            <a href="/en/esri-demographics/reference/" class="icon-right-arrow">&nbsp;Learn more</a>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+
+
+        <a name="systemRequirements"></a>
+        <h2 class="divider">System requirements</h2>
+
+        <p>The ArcGIS app requires certain device requirements to run, as well as having requirements on the data that is used within the app. The ArcGIS app is supported in a number of languages.</p>
+
+
+        <h3>Data requirements</h3>
+        <p>To use your data in the ArcGIS app, you must use ArcGIS.com or Portal for ArcGIS to create a map. In your map, use services from ArcGIS Server 9.3.1 or later.</p>
+
+
+        <h3>Device requirements</h3>
+        <table><tr><td valign="top"><h4 class="icon-android">Android</h4>
+        <ul>
+          <li>Android 2.3.3 or later</li>
+          <li>If using Android emulator: 4.0.3 system image with hardware acceleration</li>
+          <li>ARMv6 or ARMv7 processor</li>
+          <li>Hardware support for OpenGL ES 2.0</li>
+
+          <li>Recommended:
+              <ul><li>ARMv7 processor</li>
+              <li>1 GHz processor</li>
+              <li>512 MB of RAM</li>
+              <li>Screen resolution of 800x480</li>
+              <li>Hardware based (not software emulated) OpenGL ES 2.0 support</li>
+              <li>GPS</li>
+              <li>Camera</li></ul></li>
+          <li>Unsupported device: HTC Mytouch 3G</li>
+        </ul></td>
+        <td valign="top"><h4 class="icon-apple">iOS</h4>
+        <ul>
+          <li>iOS 5 or later</li>
+          <li>Supports: iPhone 3GS and later, iPad, iPod touch</li>
+        </ul></td><td valign="top"><h4 class="icon-purple icon-windows-8">Windows Phone</h4>
+        <ul>
+          <li>Windows Phone 7.5 (Mango) or later</li>
+        </ul></td><tr></table>
+
+        <h3>Supported languages</h3>
+        <p>Arabic (<span class="icon-android"/><span class="icon-apple"/>), Danish, Dutch, English, Estonian (<span class="icon-android"/>), French, German, Hebrew (<span class="icon-android"/><span class="icon-apple"/>), Italian, Japanese, Korean, Latvian (<span class="icon-android"/>), Lithuanian (<span class="icon-android"/>), Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian (<span class="icon-android"/><span class="icon-apple"/>), Russian, Simplified Chinese, Spanish, and Swedish.</p>
+        <p>The language used by the app is determined by your device's language setting.</p>
+
+
+
+        <p>&nbsp;</p>
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+          <h3>Get started</h3>
+          <ul>
+           <li><a href="">Option 1</a></li>
+           <li><a href="">Option 2</a></li>
+           <li><a href="">Option 3</a></li>
+
+
+          </ul>
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>From our blog</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/demographic-data/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>
