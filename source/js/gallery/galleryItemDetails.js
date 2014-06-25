@@ -130,16 +130,22 @@ doc.itemDetails = (function(){
 				$(".layers").hide();
 				$(".extent").hide();
 
-				var text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>View Full Screen</a>";
+				var text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch App</a>";
 
 				$("#downloadBtns").html(text);
 
 			} else if(itemType == "tools"){
 				$(".layers").hide();
 				$(".extent").hide();
+
+				var toolsTargetURL = AGOLURL + "sharing/content/items/" + itemDetails.id + "/item.pkinfo";
+
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
-				text = "<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
+				text = "<a href='" + toolsTargetURL + "' target='_blank' class='btn primary'>Open in ArcGIS for Desktop</a>";
 				$("#downloadBtns").html(text);
+
+				// thumbanail link update
+				$("#agol-thumbnail").html("<a href='" + toolsTargetURL + "' target='_blank'><img src='"+AGOLURL+"sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 
 			} else if(itemType == "webscene"){
 				$(".layers").hide();
@@ -238,31 +244,39 @@ doc.itemDetails = (function(){
             
 			feed.push("<article>");
 
-			
-			if(data.comments && data.comments.length > 0){
-				data.comments.sort(function(a,b) {
+			if (itemDetails.commentsEnabled) {
+				if(data.comments && data.comments.length > 0){
+					data.comments.sort(function(a,b) {
 
-					return b.created - a.created;
+						return b.created - a.created;
 
-				})
-						
-				$.each( data.comments, function( key, value ) {
-					if(i < 5) {
-						feed.push("<small><time>" + obj.formatDate(value.created) + " by <a target='_blank' href='"+AGOLURL+ "home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
-	            "<p>" + unescape(value.comment) + "</p>");
-					}
-					i++;
-				});
-			} else {
-				feed.push("<p>No comments yet.<br/>Go ahead and get the conversation started.</p>");
+					})
+							
+					$.each( data.comments, function( key, value ) {
+						if(i < 5) {
+							feed.push("<small><time>" + obj.formatDate(value.created) + " by <a target='_blank' href='"+AGOLURL+ "home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
+		            "<p>" + unescape(value.comment) + "</p>");
+						}
+						i++;
+					});
+				} else {
+					feed.push("<p>No comments yet.<br/>Go ahead and get the conversation started.</p>");
+				}
+
+				var addCommentBtn = AGOLURL+"home/signin.html?returnUrl=" + AGOLURL + "home/item.html?id="+itemId;
+				$("#addCommentBtn").attr('href',addCommentBtn);
+
+			}else{
+
+				feed.push("<p>No comments.<br/>Comments have been disabled for this item.</p>");
+				$("#addCommentBtn").hide();
 			}
 			feed.push("</article>");
 			
 
 			$("#comments").html(feed.join("\n"));
 
-			var addCommentBtn = AGOLURL+"home/signin.html?returnUrl=" + AGOLURL + "home/item.html?id="+itemId;
-			$("#addCommentBtn").attr('href',addCommentBtn);
+			
 
 		},
 
