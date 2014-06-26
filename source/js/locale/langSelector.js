@@ -100,7 +100,7 @@ jQuery(document).ready(function ($) {
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","sv"],
+      lgPartial = ["da", "fi", "he", "it","ko", "lt", "lv", "nl","no","pl","pt-br","pt-pt","ro","sv", "tr"],
 
       //all langs
       lgPickerLabels = GLangLabels,
