@@ -1,5 +1,5 @@
 ---
-title: Esri Demographics
+title: Esri Demographics - Coverage
 css:
   - documentation
   - /en/asset/css/common
@@ -34,10 +34,10 @@ mobile: true
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/esri-demographics/">Home</a></li>
+        <li><a href="/en/esri-demographics/">Home</a></li>
         <li><a href="/en/esri-demographics/access/">Access</a></li>
         <li><a href="/en/esri-demographics/data/">Data</a></li>
-        <li><a href="/en/esri-demographics/coverage/">Coverage</a></li>
+        <li class='current'><a href="/en/esri-demographics/coverage/">Coverage</a></li>
         <li><a href="/en/esri-demographics/reference/">Reference</a></li>
       </ul>
     </nav>
@@ -47,24 +47,21 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-      <div class="column-16 tablet-column-24">
+      <div class="">
 
-	<h3 class="gray">Esri demographics are available across the ArcGIS platform, offering a comprehensive set of global demographic and spending data for mapping and analysis purposes. </h3>
+	<h3 class="gray">The Esri Demographics Global Coverage Map illustrates the available coverage of Esri Demographics. </h3>
 	
-
-        </header>
         <hr />
-        <br />
-
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
 
         </div>
-
-			<iframe src="http://ladev.arcgis.com/databrowser/index.html" width="815" height="850" frameborder="0">
-				Error: Embedded data could not be displayed. 
+		<div>
+		<p>Click a country to reveal the details of the data available for that country, including available levels of geography, source, vintage, GeoEnrichment capabilities (where available), and ready-to-use web maps (where available). <a href="" class="btn primary" style="float:right;">View Fullscreen</a></p>
+			<iframe src="http://doc.arcgis.com/webapps/demographics-global-coverage/" width="100%" height="1000px;;" frameborder="0">
+				Error: Embedded Story Map could not be displayed. 
 			</iframe>
- 
+		</div>
         <div class="clear"></div>
 
 
@@ -72,47 +69,7 @@ mobile: true
       </div>
 
 
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>Get started</h3>
-          <ul>
-           <li><a href="">Access</a></li>
-           <li><a href="">Data</a></li>
-           <li><a href="">Coverage</a></li>
-           <li><a href="">Reference</a></li>
-
-
-          </ul>
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
-        </div>
-
- </div>
-
+     
     </div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/demographic-data/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-
-  </script>
