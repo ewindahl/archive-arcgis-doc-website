@@ -9,7 +9,7 @@ js:
   - gallery/galleryItemDetails
 
 metatags:
-  - <META name="description" content="ArcGIS app for smartphones and tablets Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="android-app,ios-app,win-phone-app"><META name="sub_category" content="ArcGIS app"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS app"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content=""><META name="last-modified" content=""><META name="product" content="living-atlas,arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="gallery"><META name="content_type_label" content="Gallery Item"><META name="sub_category_label" content=""><META name="search-category" content="gallery-itemtype"><META name="subject_label" content="ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Gallery Item"><META name="subject" content="ARCGIS ONLINE"><META name="content-language" content="en">
 
 mobile: true
 
@@ -28,8 +28,10 @@ mobile: true
 </div>
 
 <!-- Page Content -->
+<div class="map-container">
+  <div class="map-title"></div>
 		<iframe id="mapIframe" width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""></iframe>
-		
+</div>		
 		<div class="container">
 		<div class="row">	
 			<div class="column-10">
@@ -75,7 +77,7 @@ mobile: true
 				<p id="snippet"></p>	
 				<!-- Need to derive links below from item info -->
 				<p id="downloadBtns"></p>
-				<small>Usage of this map and its data may be restricted. See <a href="#constraints">Access and use constraints</a> for details. </small>
+				
 				
 				<hr />
 				
@@ -83,6 +85,11 @@ mobile: true
 				
 				<div id="description">
 				<!-- This comes directly from the description tag in the iteminfo.xml file -->
+				</div>
+				
+				<a name="constraints"></a><h3 class="leader divider">Access and use constraints</h3>
+				<div id="use-constraints">
+				<!-- This comes directly from the licenseinfo tag in the iteminfo.xml file -->
 				</div>
 				
 				<div class="layers">
@@ -103,10 +110,7 @@ mobile: true
 				</div>
 				</div>
 
-				<a name="constraints"></a><h3 class="leader divider">Access and use constraints</h3>
-				<div id="use-constraints">
-				<!-- This comes directly from the licenseinfo tag in the iteminfo.xml file -->
-				</div>
+				
 				
 								
 				<h3 class="leader divider">Tags</h3>

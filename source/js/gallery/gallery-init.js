@@ -71,7 +71,7 @@ function getTier(hostname) {
         tier: "dev",
         hostname: "resourcesdev.arcgis.com",
         search: "http://searchdev.esri.com/v3/index.cfm",
-        gallery: "http://searchdev.esri.com/v3/index.cfm"
+        gallery: "http://search.esri.com/v3/index.cfm"
     };
 
     if (hostname == "resourcesdev.arcgis.com") {

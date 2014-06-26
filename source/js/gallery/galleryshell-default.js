@@ -44,7 +44,8 @@ function genGalleryModel(hash, mdfL) {
 		this.clearAll = false;
 		this.col = "All"; //decoded value
         this.type = "All";
-        this.npp = gcfg.numN;;
+        this.npp = gcfg.numN;
+        this.subCat = 0;
 
         this.init = function (hash) {
             this._initMDF(mdfL);
@@ -91,7 +92,6 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.updateFSEData = function (sedata) {
-            console.log(sedata);
             this.sedata = sedata;
             this.fStartN = sedata.startI - 1;
             this.fMaxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
@@ -168,6 +168,14 @@ function genGalleryModel(hash, mdfL) {
                 this._initMDF(gcfg.mdfL);
             }
 
+            if (o.subCat) {
+                this.subCat = o.subCat;
+            } else {
+                this.subCat = 0;
+            }
+
+            
+
             if (o.d) {
                 this.display = parseInt(o.d, 10);
                 if (isNaN(this.display)) {
@@ -240,7 +248,11 @@ function genGalleryModel(hash, mdfL) {
             this.type = type;
         }
 
-        this.updateNpp = function (n) {
+        this.updateSubCat = function (subCat) {
+            this.subCat = subCat;
+        }
+
+        this.updateNpp = function (n,reset) {
             //this.npp = n || 30;
             
             if(n == 0){
@@ -252,7 +264,8 @@ function genGalleryModel(hash, mdfL) {
             }else{
                 //this.fStartN = n||this.npp;
                 this.fStartN = Math.min(this.maxN, this.fStartN + this.fNumN); //n + gcfg.numN;
-                this.fNumN = this.fNumN;
+                
+                this.fNumN = (reset)?n:this.fNumN;
                 this.npp = this.npp + parseInt(n,10);
 
                 if(this.fNumN <= 0){
@@ -365,10 +378,11 @@ function genGalleryModel(hash, mdfL) {
             l.push("n=" + this.numN);
             l.push("d=" + this.display);
 			l.push("col=" + this.col);
-            l.push("type=" + this.type);
+            //l.push("type=" + this.type);
             l.push("fs=" + this.fStartN);
             l.push("fn=" + this.fNumN);
             l.push("npp=" + this.npp);
+            l.push("subCat=" + this.subCat);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -638,6 +652,7 @@ function createGalleryShell() {
                 success: function (data) {
                     $("#spinner").hide();
                     this._updateModelAndView(data);
+                    gm.queryStatus = "completed";
                 },
                 error: function (xhr, status, err) {
                     $("#gl-content").html(gcfg.errorMsg);
@@ -713,6 +728,11 @@ function createGalleryShell() {
                     }
                 }
             }
+
+            if(gm.subCat <= 0){
+           //$("#filters .current").trigger('click');
+                $("#filters input:checkbox").removeAttr('checked');
+            }
         },
 
         updateDisplay: function () {
@@ -742,7 +762,7 @@ function createGalleryShell() {
                 }
             }
 
-            console.log(totalFeaturedItemPerPage+"-"+totalFeaturedResult+"-"+this.numberofRegularItemsRequires);
+            //console.log(totalFeaturedItemPerPage+"-"+totalFeaturedResult+"-"+this.numberofRegularItemsRequires);
 
 
         },
@@ -805,10 +825,21 @@ $(document).ready(function () {
 
 
     /** init event handler **/
-
+   
     $("#query").bind({
         "keydown": function (evt) {
             if (evt.keyCode == "13") {
+                $("#gl-content").empty();
+                $("#spinner").show();
+
+                gModel.updateQuery();
+                gShell.update(gModel);
+            }
+        },
+        "input": function (evt) {
+            //trigger after removing the search keyword
+            if($(this).val().length <= 0){
+                $("#gl-cl-btn").hide()
                 $("#gl-content").empty();
                 $("#spinner").show();
 
@@ -836,6 +867,9 @@ $(document).ready(function () {
         $("#spinner").show();
         gModel.updateByFilter();
 
+        //Disable checkboxes until page is loaded completel
+        $('input[type=checkbox]').prop('disabled',true);
+
 		var totalSelectedCheckBox = $('input[type=checkbox]').filter(':checked').length;
 		$(".filter-label").each(function (evt){
 				if($(this).hasClass('current') && totalSelectedCheckBox <= 0){
@@ -846,8 +880,10 @@ $(document).ready(function () {
         if(totalSelectedCheckBox > 0){
             //Expose Reset button
             $(".current .reset-filter").css("display","block");
+            gModel.updateSubCat(1);
         }else{
             $(".current .reset-filter").css("display","none");
+            gModel.updateSubCat(0);
         }
         //gModel.updatePagination(0);
         gModel.updateNpp(0);
@@ -923,6 +959,7 @@ $(document).ready(function () {
 		//}
 			
 		//gModel.updatePagination(0);
+        gModel.updateSubCat(0);
         gModel.updateNpp(0);
         gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
@@ -969,10 +1006,10 @@ $(document).ready(function () {
             if(gModel.fMaxN > gModel.maxN)
                 gModel.maxN = gModel.fMaxN;
 
-            
             // GSA has browse limit of 1000 results
-            if (gModel.sedata.endI < gModel.maxN) {
+            if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.endI < gModel.maxN)) {
                 $(".more-spinner").css("display","block");
+                gModel.queryStatus = null;
                 
                 gModel.updateNpp(30);
                 gShell.update(gModel);
@@ -1018,7 +1055,7 @@ $(document).ready(function () {
         debug(ex.message);
     }
 
-    $("#gl-cl-btn").click(function (evt) {          
+    $("#gl-cl-btn").click(function (evt) {   
         return resetSearch(evt)
     });
 
@@ -1029,7 +1066,7 @@ $(document).ready(function () {
         $("#gl-content").empty();
         $("#spinner").show();
 
-        if (gShell.reloadCount > 1) {
+        if (gShell.reloadCount >= 1) {
             gModel.updateQuery();
             gShell.update(gModel);
             gShell.reloadCount = 0; // reset the ajax reload counter
@@ -1044,8 +1081,15 @@ $(document).ready(function () {
            
            $(".filter-label").removeClass("current");
            $("."+col+"-filter").addClass("current");
+
+           
+           if (gModel.subCat > 0){
+                $(".current .reset-filter").css("display","block");
+           }
+           
         }
 
+        /* This feature is not available as of now.. It was for show me section only*/
         if(getUrlVars()['type']){
             var type = getUrlVars()['type'];
            
@@ -1054,6 +1098,16 @@ $(document).ready(function () {
            $("#showMeFilters").css("display","block");
 
         }
+
+        if(getUrlVars()['npp'] && getUrlVars()['npp'] > 0){
+            //gModel.updateNpp(getUrlVars()['npp'],true);
+            gModel.startN = 0;
+            gModel.numN = 0;
+            gModel.fStartN = 0;
+            gModel.fNumN = 30;
+
+        }
+
     }
 
     function getUrlVars ()
