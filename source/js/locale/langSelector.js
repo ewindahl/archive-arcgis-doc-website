@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/)/)){
 	return;
   }
   
@@ -77,10 +77,14 @@ jQuery(document).ready(function ($) {
           "da": "da",
           "de" : "de", "de-at" : "de", "de-de" : "de", "de-li" : "de", "de-ch" : "de",
           "es": "es", "es-us": "es", "es-us": "es", "es-ar": "es", "es-bo": "es", "es-cl": "es", "es-co": "es", "es-cr": "es", "es-do": "es", "es-ec": "es", "es-sv": "es", "es-gt": "es", "es-hn": "es", "es-mx": "es", "es-pr": "es", "es-es": "es", "es-uy": "es", "es-ve": "es",		  
-          "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr",
+          "fi": "fi", 
+		  "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr",
+		  "he": "he", 
           "it": "it", "it-it": "it", "it-ch": "it",
           "ja" : "ja","ja-jp" : "ja",
           "ko": "ko",
+		  "lt": "lt", 
+		  "lv": "lv", 
           "nl" : "nl", "nl-be" : "nl",
           "no": "no","no-no": "no",
           "pl": "pl",
@@ -89,6 +93,7 @@ jQuery(document).ready(function ($) {
           "ro": "ro", "ro-mo": "ro",
           "ru": "ru", "ru-mo": "ru",
           "sv": "sv", "sv-fi": "sv", "sv-se": "sv",
+		  "tr": "tr", 
           "zh-cn": "zh-cn", "zh-hk": "zh-cn", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-cn"
       },  
 
