@@ -32,7 +32,7 @@ mobile: true
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/sv/operations-dashboard/">Startsida</a></li>
+        <li class='current'><a href="/sv/operations-dashboard/">Hem</a></li>
         <li><a href="/sv/operations-dashboard/windows-desktop/author/create-a-map.htm">Skapa vyer</a></li>
         <li><a href="/sv/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Anv&auml;nda vyer</a></li>
         <li><a href="http://forums.arcgis.com/forums/225-Operations-Dashboard-for-ArcGIS">Forum</a></li>
@@ -96,7 +96,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="/en/operations-dashboard/story-graphic-4.png" />
 
-          <h3>Utveckla till&auml;gg</h3>
+          <h3>Utveckla add-ins</h3>
           <p>Till&auml;mpa din unika aff&auml;rslogik i &aring;tg&auml;rdsvyn med anpassade widgetar, geoobjekt&aring;tg&auml;rder och kartverktyg. </p>
           <p>
             <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Visa mig hur</a><br />
@@ -122,11 +122,28 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">Systemkrav</h2>
 
-        <p>Det finns vissa enhetskrav f&ouml;r att k&ouml;ra Operations Dashboard, och andra krav f&ouml;r data som ska anv&auml;ndas i appen. Operations Dashboard har st&ouml;d f&ouml;r flera olika spr&aring;k.</p>
+        <p>Det finns vissa enhetskrav f&ouml;r att k&ouml;ra Operations Dashboard, och andra krav f&ouml;r data som ska anv&auml;ndas i appen. </p>
 
 
-        <h3>Operativsystem som st&ouml;ds</h3>
-
+<script> 
+ function exp(strTag ,strAttribute){ 
+ var elem = document.getElementsByTagName(strTag); 
+ var elem1 =window.event.srcElement; 
+ for (var i=0;i<elem1.children.length;i++){ 
+ elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+ } 
+ for (var i =0;i<elem.length;i++) 
+ { 
+ if(elem[i].getAttribute(strAttribute)=="yes") 
+ { 
+ elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+ } 
+ } 
+ } 
+ </script> 
+ <h3>Windows-app</h3>
+ <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Operativsystem som st&ouml;ds</div> 
+     <div exp1='yes' style="display:none;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro och Windows 8.1 Enterprise (32 och 64 bitar [EM64T])</li>
           <li>Windows 8, Windows 8 Pro och Windows 8 Enterprise (32 och 64 bitar [EM64T])</li>
@@ -135,9 +152,10 @@ mobile: true
 		<li>Windows Server 2008 R2 Standard, Enterprise och Datacenter (64-bitars [EM64T]) SP1</li>
 		<li>Windows Server 2008 Standard, Enterprise och Datacenter (32- och 64-bitar [EM64T]) SP2</li>
         </ul>
-
-
-        <h3>Maskinvarukrav</h3>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Maskinvarukrav</div>
+	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>CPU-hastighet: 2,2 GHz eller h&ouml;gre, Hyper-Threading (HTT) eller flerk&auml;rnig processor rekommenderas.</li>
 			<li>Processor: Intel Pentium 4, Core Duo eller Xeon, minst SSE2. K&ouml;r verktyget Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> via kommandoraden i Windows f&ouml;r att kontrollera processorn.</li>
@@ -148,23 +166,69 @@ mobile: true
 			<li>Swap-utrymme: Avg&ouml;rs av operativsystemet, minst 500 MB.</li>
 			<li>Video-/grafikadapter: Minst 64 MB RAM, 256 MB RAM rekommenderas, chipset fr&aring;n NVIDIA, ATI och Intel st&ouml;ds. Accelererade drivrutiner f&ouml;r grafikkortet. Shader Model 2.0 eller h&ouml;gre. Se till att anv&auml;nda den senaste tillg&auml;ngliga drivrutinen.</li>
 		</ul>
+</div>
+<div class="clear" style="padding:5px;"></div>
 
+<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Programvarukrav</div>
+	<div exp3='yes' style="display:none;padding:0 15px;">
+        <p style="padding:0 15px">Du m&aring;ste ha <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> eller senare installerat. Du m&aring;ste ha administrat&ouml;rsbeh&ouml;righet p&aring; datorn f&ouml;r att installera programmet.</p>
+        </div>
+        <div class="clear" style="padding:5px;"></div>
+        
+<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Krav f&ouml;r utvecklare</div>
+		<div exp4='yes' style="display:none;padding:0 15px;">
+	<p style="padding:0 15px"><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> kr&auml;vs f&ouml;r att anpassa Operations Dashboard for ArcGIS. Microsoft Visual Studio 2012 eller 2013 Professional, Premium eller Ultimate Edition kr&auml;vs ocks&aring;. </p>
 
-        <h3>Programvarukrav</h3>
-        <p>Du m&aring;ste ha <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> installerat. Du m&aring;ste ha administrat&ouml;rsbeh&ouml;righet p&aring; datorn f&ouml;r att installera programmet.</p>
+     </div> 
+     <div class="clear" style="padding:5px;"></div>
+     
+<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Spr&aring;k</div>
+<div exp5='yes' style="display:none;padding:0 15px;">
+     	<p style="padding:0 15px">Arabiska, danska, estniska, finska, franska, hebreiska, italienska, japanska, kinesiska (f&ouml;renklad), koreanska, lettiska, litauiska, nederl&auml;ndska, norska, polska, portugisiska (Brasilien), portugisiska (Portugal), rum&auml;nska, ryska, spanska, svenska, tjeckiska, turkiska och tyska.</p>
+     	<p style="padding:0 15px">Vilket spr&aring;k som anv&auml;nds i Windows-versionen av appen avg&ouml;rs av operativsystemets spr&aring;kinst&auml;llning. Om en anv&auml;ndare anv&auml;nder en spr&aring;kinst&auml;llning som inte st&ouml;ds, anv&auml;nder appen engelska.</p>
+</div>
+<div class="clear"></div>
 
+     <h3/>
+ <h3>Webbl&auml;sarapp</h3>
+<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Webbl&auml;sare som st&ouml;ds</div>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Dator
+ <ul style="padding:0 15px">
+ <li>Chrome version 19.0 och senare</li>
+ <li>Firefox version 4.0 och senare</li>
+ <li>Internet Explorer version 9.0 och senare</li>
+ <li>Safari version 5.1 och senare</li>
+ </ul> 
+ Surfplatta 
+ <ul style="padding:0 15px">
+ <li>Android 4.0 och senare med Chrome</li>
+ <li>iOS 6.0 och senare med Safari</li>
+ </ul>
+ Telefon 
+ <p style="padding:0 15px">Inga webbl&auml;sare f&ouml;r smartphones st&ouml;ds f&ouml;r tillf&auml;llet.</p>
+ </div></div> 
+ <div class="clear" style="padding:5px;"></div>
+ <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Spr&aring;k</div>
+ <div exp11='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">Danska, estniska, finska, franska, italienska, japanska, kinesiska (f&ouml;renklad), koreanska, lettiska, litauiska, nederl&auml;ndska, norska, polska, portugisiska (Brasilien), portugisiska (Portugal), rum&auml;nska, ryska, spanska, svenska, tjeckiska, turkiska och tyska.</p>
+      	<p style="padding:0 15px">I webbl&auml;sarversionen &auml;r det din ArcGIS Online-profil som anv&auml;nds f&ouml;r att st&auml;lla in spr&aring;ket. Om en anv&auml;ndare anv&auml;nder en spr&aring;kinst&auml;llning som inte st&ouml;ds, anv&auml;nder appen engelska.</p>
+</div>
+<div class="clear"></div>
+
+     <h3/>
         <h3>Datakrav</h3>
 		<p>Du m&aring;ste ha ett ArcGIS-abonnemang f&ouml;r att anv&auml;nda dina kartor i Operations Dashboard. Kartorna kan inneh&aring;lla data fr&aring;n ArcGIS Online, Portal for ArcGIS och ArcGIS for Server. Datak&auml;llor m&aring;ste drifts&auml;ttas i ArcGIS Online eller ArcGIS 10.1 for Server eller senare.</p>
 
-		<h3>Krav f&ouml;r utvecklare</h3>
-		<p><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.2 for WPF</a> kr&auml;vs f&ouml;r att anpassa Operations Dashboard for ArcGIS.</p>
-
-	<h3>Spr&aring;k</h3>
-	<p>Arabiska (<span class="icon-windows-8"/>), danska, estniska, finska, franska, hebreiska (<span class="icon-windows-8"/>), italienska, japanska, kinesiska (f&ouml;renklad), koreanska, lettiska, litauiska, nederl&auml;ndska, norska, polska, portugisiska (Brasilien), portugisiska (Portugal), rum&auml;nska, ryska, spanska, svenska, tjeckiska, turkiska och tyska.</p>
-	<p>Vilket spr&aring;k som anv&auml;nds i Windows-versionen av appen avg&ouml;rs av operativsystemets spr&aring;kinst&auml;llning. I webbl&auml;sarversionen &auml;r det din ArcGIS Online-profil som anv&auml;nds f&ouml;r att st&auml;lla in spr&aring;ket.</p>
-
         <a name="whatsNew"></a>
         <h2 class="divider">Nyheter</h2>
+        <p>Operations Dashboard for ArcGIS 10.2.3 sl&auml;pptes i april 2014. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
+        <ul>
+        <li>S&ouml;k igenom dina data (<span class="icon-windows-8"/>).</li>
+        <li>L&ouml;sningar p&aring; olika fel. </li>
+        <li>Anv&auml;nder ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
+        <li>Det g&aring;r att utveckla add-ins med ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
+        </ul>
+        
         <p>Operations Dashboard for ArcGIS 10.2.2 sl&auml;pptes i mars 2014. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
         <ul>
         <li>Du kan visa &aring;tg&auml;rdsvyer i en webbl&auml;sare.</li>
@@ -173,9 +237,10 @@ mobile: true
         <li>Nya markeringsverktyg.</li>
         <li>Uppdateringar av listwidgeten.</li>
         <li>Anv&auml;nder ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>Det g&aring;r att utveckla till&auml;gg med ArcGIS Runtime SDK 10.2.2 for WPF.</li>
+        <li>Det g&aring;r att utveckla add-ins med ArcGIS Runtime SDK 10.2.2 for WPF.</li>
         <li>Lokalisering till turkiska.</li>
         </ul>
+        
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">F&ouml;rhandstitt</h2>
@@ -208,7 +273,7 @@ mobile: true
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>S&ouml;ka efter data</th>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Filtrera information geografiskt</th>
@@ -243,7 +308,7 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
        <div class="imgFrame block">
-          <h3>Information</h3>
+          <h3>Detaljer</h3>
           
 	  <h4><a href="#features">Funktioner</a></h4>
 	  <h4><a href="#systemRequirements">Systemkrav</a></h4>
