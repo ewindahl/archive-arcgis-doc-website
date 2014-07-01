@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/)/)){
 	return;
   }
   
@@ -74,13 +74,19 @@ jQuery(document).ready(function ($) {
           "en": "en",
           "en-us": "en",
           "ar": "ar", "ar-dz": "ar", "ar-bh": "ar", "ar-eg": "ar",  "ar-iq": "ar",  "ar-jo": "ar", "ar-kw": "ar", "ar-lb": "ar", "ar-ly": "ar", "ar-ma": "ar", "ar-om": "ar", "ar-qa": "ar", "ar-sa": "ar", "ar-sy": "ar", "ar-tn": "ar", "ar-ae": "ar",
-          "da": "da",
+          "cs": "cs",
+		  "da": "da",
           "de" : "de", "de-at" : "de", "de-de" : "de", "de-li" : "de", "de-ch" : "de",
           "es": "es", "es-us": "es", "es-us": "es", "es-ar": "es", "es-bo": "es", "es-cl": "es", "es-co": "es", "es-cr": "es", "es-do": "es", "es-ec": "es", "es-sv": "es", "es-gt": "es", "es-hn": "es", "es-mx": "es", "es-pr": "es", "es-es": "es", "es-uy": "es", "es-ve": "es",		  
-          "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr",
+		  "et": "et",
+          "fi": "fi", 
+		  "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr",
+		  "he": "he", 
           "it": "it", "it-it": "it", "it-ch": "it",
           "ja" : "ja","ja-jp" : "ja",
           "ko": "ko",
+		  "lt": "lt", 
+		  "lv": "lv", 
           "nl" : "nl", "nl-be" : "nl",
           "no": "no","no-no": "no",
           "pl": "pl",
@@ -89,13 +95,15 @@ jQuery(document).ready(function ($) {
           "ro": "ro", "ro-mo": "ro",
           "ru": "ru", "ru-mo": "ru",
           "sv": "sv", "sv-fi": "sv", "sv-se": "sv",
+		  "th": "th",
+		  "tr": "tr", 
           "zh-cn": "zh-cn", "zh-hk": "zh-cn", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-cn"
       },  
 
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da","it","ko","nl","no","pl","pt-br","pt-pt","ro","sv"],
+      lgPartial = ["cs", "da", "et", "fi", "he", "it","ko", "lt", "lv", "nl","no","pl","pt-br","pt-pt","ro","sv", "th", "tr"],
 
       //all langs
       lgPickerLabels = GLangLabels,
