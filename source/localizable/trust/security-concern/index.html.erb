@@ -17,17 +17,28 @@ metatags:
 mobile: true
 
 ---
-<div class="section-bar">
-  <div class="container feedback">
+<div class="navigation-bar blue">
+  <div class="container">
     <header>
-      <h1 data-langlabel=""><a href="/en/trust/">Trust ArcGIS</a></h1>
+      <h1><a href="/en/Trust/">Trust ArcGIS</a></h1>
+   <!--    <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>  -->
     </header>
-	<nav>
-     &nbsp;
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/en/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online System Status" href="/en/trust/system-status/">System Status</a></li>
+        <li><a title="ArcGIS Online Security" href="/en/trust/security/">Security</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/en/trust/privacy/">Privacy</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/en/trust/compliance/">Compliance</a></li>
+      </ul>
     </nav>
   </div>
 </div>
-
 <!-- Page Content -->
 <div class="container feedback">
 
@@ -35,36 +46,43 @@ mobile: true
 	  
   <div class="warning-signup">
       <header>
-        <h2 data-langlabel="">Responsible discloser vulnerability reporting policy</h2>
+        <h2 data-langlabel="">Vulnerability Reporting Policy</h2>
       </header>
 	  <section>
 		<p data-langlabel="">The ArcGIS.com security team acknowledges the valuable role that independent security researchers play in Internet security. We encourage responsible reporting of any vulnerabilities that may be found in our site or application. Esri is committed to working with the security community to verify and respond to any potential vulnerabilities that are reported to us. Esri will not bring a lawsuit or begin law enforcement investigation of you if this policy is followed.</p>
-	  
+
+<div style="padding-bottom:15px;">		
 	  <header>
 		<h3 data-langlabel="">Reporting a potential security vulnerability</h3>
 	  </header>
       
         <p data-langlabel="">Privately share details of the suspected vulnerability with Esri by submitting the form on this page with Vulnerability selected for Subject.</p>
-		
 		<p data-langlabel="">Provide full details of the suspected vulnerability so the ArcGIS.com security team may validate and reproduce the issue.</p>
-      
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
 	  <header>
-		<h3 data-langlabel="">ArcGIS.com does NOT permit the following types of security research</h3>
+		<h4 data-langlabel="">ArcGIS.com does <strong>not</strong> permit the following types of security research</h4>
 	  </header>
-	  
-		<p data-langlabel="">Causing, or attempting to cause, a Denial of Service (DoS) condition.</p>
-		<p data-langlabel="">Use automated security tools without Esri's explicit consent. Use of automated tools may result in investigative action or your IP(s) being blocked.</p>
-		<p data-langlabel="">Accessing, or attempting to access, data or information that does not belong to you.</p>
-		<p data-langlabel="">Destroying or corrupting, or attempting to destroy or corrupt, data or information that does not belong to you.</p>
+	  <ul>
+			<li data-langlabel="">Causing, or attempting to cause, a Denial of Service (DoS) condition.</li>
+		<li data-langlabel="">Use automated security tools without Esri's explicit consent. Use of automated tools may result in investigative action or your IP(s) being blocked.</li>
+		<li data-langlabel="">Accessing, or attempting to access, data or information that does not belong to you.</li>
+		<li data-langlabel="">Destroying or corrupting, or attempting to destroy or corrupt, data or information that does not belong to you.</li>  
+	  </ul>
+
 	 <header>
-	  <h3 data-langlabel="">The ArcGIS.com security team commitment</h3>
+	  <h4 data-langlabel="">The ArcGIS.com Security Team commitment</h4>
 	  </header>
-		<p data-langlabel="">To all security researchers who follow this ArcGIS.com Vulnerability Reporting Policy, the arcgis.com security team commits the following:</p>
-		<p data-langlabel="">To respond in a timely manner, acknowledging receipt of your report.</p>
-		<p data-langlabel="">To provide an estimated time frame for addressing this vulnerability.</p>
-		<p data-langlabel="">To notify the reporting individual when the vulnerability has been fixed.</p>
+		<p data-langlabel="">To all security researchers who follow this ArcGIS.com Vulnerability Reporting Policy, the ArcGIS.com Security Team commits the following:</p>
+		
+		<ul>
+		<li data-langlabel="">To respond in a timely manner, acknowledging receipt of your report.</li>
+		<li data-langlabel="">To provide an estimated time frame for addressing this vulnerability.</li>
+		<li data-langlabel="">To notify the reporting individual when the vulnerability has been fixed.</li>		
+		</ul>
+
 	  <header>
-	  <h3 data-langlabel="">No compensation</h3>
+	  <h4 data-langlabel="">No compensation</h4>
 	  </header>
 	    <p data-langlabel="">Esri does not compensate people for reporting a security vulnerability, and any requests for such compensation will be considered a violation of the conditions above. In such an event, Esri reserves all of its legal rights.</p>
 	 </section>
