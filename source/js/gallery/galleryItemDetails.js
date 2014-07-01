@@ -66,7 +66,7 @@ doc.itemDetails = (function(){
 
 				var customURL = this.orgUserCustomURL();
 				if(customURL){
-					iframeSrc = customURL + "/home/webmap/viewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
+					iframeSrc = customURL + "/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
 				}
 
 				
