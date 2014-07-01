@@ -179,7 +179,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "الصفحة التي تبحث عنها يبدو أنها غير متوفرة بـ عربي. ربما تكون متوفرة باللغة الإنجليزية.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>انقر هنا</a>  لترى هل يتوفر إصدار إنجليزي أم لا."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>انقر هنا</a>  لترى هل يتوفر إصدار إنجليزي أم لا.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "da": {
       "404-note": "Den side, du ser efter, kan ikke findes. Kontroll\\ér den URL, du har angivet, og prøv igen. Hvis du kom hertil fra et eksternt link, skal du kontakte os, så vi kan afhjælpe problemet. ", 
@@ -339,7 +343,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "Den side, du søger, findes tilsyneladende ikke på Dansk. Den findes muligvis på engelsk.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Klik her</a> for at se, om der er en engelsk version."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Klik her</a> for at se, om der er en engelsk version.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "de": {
       "404-note": "Die gesuchte Seite wurde nicht gefunden. Überprüfen Sie die eingegebene URL, und versuchen Sie es erneut. Wenn Sie über einen externen Link hierher umgeleitet wurden, wenden Sie sich an uns, um das Problem zu beheben. ", 
@@ -499,7 +507,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "Die gesuchte Seite existiert nicht in Deutsch. Die Seite liegt möglichweise in englischer Sprache vor.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Klicken Sie hier</a> um eine mögliche englische Version anzuzeigen"
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Klicken Sie hier</a> um eine mögliche englische Version anzuzeigen",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "en": {
       "404-note": "The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem. ", 
@@ -664,7 +676,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "The page you're looking for doesn't seem to exist in native-language.It may exist in English.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "es": {
       "404-note": "La página que busca no se ha podido encontrar. Compruebe la URL que ha introducido e inténtelo de nuevo. Si ha llegado a esta página desde un enlace externo, contacte con nosotros para que podamos dar solución al problema. ", 
@@ -824,7 +840,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "La página que busca no existe en Español. Quizá exista en inglés",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Haga clic aquí</a> para comprobar si está disponible la versión en inglés"
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Haga clic aquí</a> para comprobar si está disponible la versión en inglés",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "fr": {
       "404-note": "La page que vous recherchez est introuvable. Vérifiez l'URL que vous avez saisie et réessayez. Si vous avez été dirigé ici en cliquant sur un lien externe, contactez-nous pour que nous puissions résoudre le problème. ", 
@@ -984,7 +1004,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "La page que vous recherchez ne semble pas exister en Français. Elle peut exister en anglais.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Cliquez ici</a> Voir si une version anglaise est disponible"
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Cliquez ici</a> Voir si une version anglaise est disponible",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "it": {
       "404-note": "Impossibile trovare la pagina che si sta cercando. Controllare l'URL inserito e riprovare. Se si è stati rediretti qui da un collegamento esterno, contattare Esri per risolvere il problema. ", 
@@ -1144,7 +1168,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "La pagina cercata non esiste in Italiano. Può esistere in inglese.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Fai clic qui</a> per vedere se è disponibile una versione in inglese."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Fai clic qui</a> per vedere se è disponibile una versione in inglese.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "ja": {
       "404-note": "お探しのページが見つかりません。入力した URL を確認してから、もう一度お試しください。外部リンクをクリックしてこのページが表示された場合は、問題の解決のため Esri にご連絡ください。 ", 
@@ -1304,7 +1332,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "日本語のサイトにはお探しのページが存在しません . 英語のページが存在する可能性があります",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>こちらをクリック</a> 英語のページが存在するか見る"
+      "404-click-here-for-english": "<a href='#' id='englishLink'>こちらをクリック</a> 英語のページが存在するか見る",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "ko": {
       "404-note": "원하는 페이지를 찾을 수 없습니다. 입력한 URL을 확인한 후 다시 시도하세요. 외부 링크를 통해 여기로 이동한 경우 당사로 연락하면 문제를 해결해 드리겠습니다. ", 
@@ -1464,7 +1496,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "접속하려는 페이지가 다음 언어로 제공되지 않습니다. 한국어. 영어로는 제공될 수 있습니다.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>여기를 클릭하여</a> 영어 버전이 제공되는지 확인하십시오."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>여기를 클릭하여</a> 영어 버전이 제공되는지 확인하십시오.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "nl": {
       "404-note": "De pagina die u zoekt, werd niet gevonden. Controleer de URL die u hebt ingevoerd en probeer het opnieuw. Als u hierheen werd geleid vanaf een externe koppeling, neemt u contact met ons op zodat wij het probleem kunnen oplossen. ", 
@@ -1624,7 +1660,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "De pagina die u zoekt, lijkt niet te bestaan in het Nederlands. Hij bestaat misschien in het Engels.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Klik hier</a> om te zien of er een Engelse versie bestaat."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Klik hier</a> om te zien of er een Engelse versie bestaat.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "no": {
       "404-note": "Siden finnes ikke. Kontroller URL-en du har skrevet inn, og prøv på nytt. Hvis du ble overført hit fra en ekstern kobling, tar du kontakt med oss slik at vi kan løse problemet. ", 
@@ -1784,7 +1824,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "Siden du ser etter, finnes ikke på Norsk. Den kan finnes på engelsk.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Klikk her</a> for å se om det finnes en tilgjengelig versjon på engelsk."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Klikk her</a> for å se om det finnes en tilgjengelig versjon på engelsk.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "pl": {
       "404-note": "Nie można znaleźć szukanej strony. Sprawdź wprowadzony adres URL i spróbuj ponownie. Jeżeli przejście tutaj nastąpiło z  łącza zewnętrznego, skontaktuj się z nami, abyśmy mogli rozwiązać ten problem. ", 
@@ -1944,7 +1988,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "Strona, której szukasz, nie istnieje w Polski. Może być dostępna angielska wersja tej strony.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Kliknij tutaj,</a> aby sprawdzić, czy wersja angielska jest dostępna."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Kliknij tutaj,</a> aby sprawdzić, czy wersja angielska jest dostępna.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "pt-br": {
       "404-note": "A página que você está procurando não pode ser localizada. Verifique a URL que você've inseriu e tente novamente. Se você foi direcionado aqui a partir de um link externo, entre em contato conosco, assim podemos resolver o problema. ", 
@@ -2104,7 +2152,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "A página que você está procurando parece não existir em Portuguu00eas (Brasil). Pode existir em Inglês.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Clique aqui</a> para verificar se uma versão em Inglês está disponível."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Clique aqui</a> para verificar se uma versão em Inglês está disponível.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "pt-pt": {
       "404-note": "A página que procura não foi encontrada. Verifique o URL que introduziu e tente novamente. Se foi redirecionado a partir de uma ligação externa, por favor contacte-nos de forma a resolvermos o problema. ", 
@@ -2264,7 +2316,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "The page you're looking for doesn't seem to exist in Portuguuês (Portugal). It may exist in English.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Clique aqui</a> to see if an English version is available."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Clique aqui</a> to see if an English version is available.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "ro": {
       "404-note": "Pagina pe care o căutaţi nu a putut fi găsită. Verificaţi URL-ul introdus şi încercaţi din nou. Dacă aţi fost redirecţionat aici dintr-un link extern, contactaţi-ne pentru a putea remedia problema. ", 
@@ -2424,7 +2480,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "Pagina pe care o căutaţi nu pare să existe în Romu00e2nu0103. Este posibil să existe în limba engleză.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Faceţi clic aici</a> pentru a vedea dacă este disponibilă o versiune în limba engleză."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Faceţi clic aici</a> pentru a vedea dacă este disponibilă o versiune în limba engleză.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "ru": {
       "404-note": "Страница, которую вы ищите, не найдена. Проверьте указанный URL-адрес и повторите попытку. Если вы попали на эту страницу с внешней ссылки, свяжитесь с нами, чтобы мы могли устранить эту проблему. ", 
@@ -2584,7 +2644,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "Страница, которую вы ищете, не существует в русской версии. Возможно, она есть лишь на английском.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "sv": {
       "404-note": "Det gick inte att hitta sidan du söker. Kontrollera webbadressen du angav och försök igen. Om du blev hänvisad hit via en extern länk kontaktar du oss så att vi kan åtgärda problemet. ", 
@@ -2744,7 +2808,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "Sidan som du letade efter finns inte på Svenska. Den kan finnas på engelska.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Klicka här</a> om du vill se om en engelskspråkig version är tillgänglig."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Klicka här</a> om du vill se om en engelskspråkig version är tillgänglig.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "tr": {
       "404-note": "Aradığınız sayfa bulunamadı. Girdiğiniz URL'yi kontrol edin ve yeniden deneyin. Buraya harici bir bağlantıdan yönlendirildiyseniz, sorunu belirleyebilmemiz için bizimle iletişim kurun. ", 
@@ -2904,7 +2972,11 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "The page you're looking for doesn't seem to exist in native-language.It may exist in English.",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available."
+      "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available.",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }, 
    "zh-cn": {
       "404-note": "无法找到您所查找的页面。请检查输入的 URL 并重试。如果是通过外部链接直接跳转到此处，请联系我们以便及时修复该问题。 ", 
@@ -3064,6 +3136,10 @@ var localeJsonObj = {
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
       "windows-phone": " Windows Phone",
       "404-may-exist-in-english": "您所查看的中文页面不存在, 中文(简体). 该页面可能存在英文版",
-      "404-click-here-for-english": "<a href='#' id='englishLink'>点击此处</a> 查看英文版本是否可用"
+      "404-click-here-for-english": "<a href='#' id='englishLink'>点击此处</a> 查看英文版本是否可用",
+	  "explorer-ipad": "Explorer (iPad)",
+	  "explorer-ipad-ht": "Explorer (iPad)",
+	  "explorer-iphone": "Explorer (iPhone)",
+	  "explorer-iphone-ht": "Explorer (iPhone)"
    }
 };
