@@ -1,7 +1,7 @@
 <!doctype html>
 <%
 readDirection="ltr" 
-if current_language == "ar" 
+if current_language == "ar" or current_language == "he"
 	readDirection="rtl"
 end 
 %>
@@ -103,7 +103,7 @@ end
       
    <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
-	<% if current_language == "ar" %> 
+	<% if current_language == "ar" or current_language == "he" %> 
 		<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
