@@ -39,7 +39,6 @@ $(document).ready(function() {
 		isHome = fldpath === homePath,
 		isForum = fldpath === forumPath;
 
-console.log(navigator.userAgent);
     if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
       if(navigator.userAgent.match(/(iPhone)/gi)){
 		plat = prodIOSVal;
@@ -116,21 +115,21 @@ console.log(navigator.userAgent);
 				fld = parts.pop(),
 				newHref = href.replace ("/"+prodIOSVal+"/", "/"+plt+"/");
 				$ele.attr ("href", newHref);
-				console.log(href);
 		});
 	}
 	
 	function modContentLinks (plt) {
-		$(".reference-content a[href]").each (function (i) {
+		$(".reference-content a[href], .column-16 a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
 				parts = href.split("/");
 				fname = parts.pop(),
 				fld = parts.pop(),
-				newHref = href.replace ("/"+prodIOSVal+"/", "/"+plt+"/");
+				newHref = href.replace (prodIOSVal+"/", plt+"/");
+				newHref = newHref.replace (prodDVal+"/", plt+"/");
 				$ele.attr ("href", newHref);
-				console.log(href);
+				
 		});
 	}
 
@@ -148,6 +147,7 @@ console.log(navigator.userAgent);
 		}
 	} else {
 		modHomeUrls (plat);
+		modContentLinks (plat);
 	}
 
 	$("#plats a[data-appname]").each (function (i) {
