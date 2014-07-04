@@ -834,6 +834,9 @@ $(document).ready(function () {
 
                 gModel.updateQuery();
                 gShell.update(gModel);
+
+                evt.stopImmediatePropagation();
+                return false;
             }
         },
         "input": function (evt) {
