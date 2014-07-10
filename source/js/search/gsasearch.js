@@ -129,7 +129,7 @@ app.QueryStatement = Backbone.Model.extend ({
                         function (x) {return x.length>0}).join (".");
     };
 
-    function addFilter (fldtype) {
+    function addFilter (fldtype, col) {
       dbg ("genFields: "+fldtype);
 
       var l = _.map (app.filterCfg, function (ele) {
@@ -139,9 +139,17 @@ app.QueryStatement = Backbone.Model.extend ({
           if (fldtype == "requiredfields") {
             return ("r" in v.q) ? v.q["r"] : ""  
           } else {
-            return ("p" in v.q) ? v.q["p"] : ""  
+            if(self.get ("collection") === "forums" || col === "forums"){
+              //console.log(v.q["pForums"]);
+              return ("pForums" in v.q) ? v.q["pForums"] : ""  
+            } else {
+              return ("p" in v.q) ? v.q["p"] : ""  
+            }
+            
           }
       });
+
+      
 
       return l;
     };
@@ -169,6 +177,20 @@ app.QueryStatement = Backbone.Model.extend ({
       return [v];
     }
 
+    function addForums () {
+      //return [""];
+      var forumsKW = "";
+
+      if(self.get ("collection") == "all" && self.get ("collection") != "forums") {
+        //addFilter("partialfields","forums")[1]
+        if(addFilter("partialfields","forums")[1]){
+          forumsKW = '|'+addFilter("partialfields","forums")[1]; 
+        }
+      }
+
+      return forumsKW;
+    }
+
     var vDefaults = {
       "event": "search.renderSearch",
 
@@ -191,10 +213,10 @@ app.QueryStatement = Backbone.Model.extend ({
                     "start" : this.get ("p") * increment
                   }, 
                   {
-                    "requiredfields": andStmt (addFilter ("requiredfields"))
+                    //"requiredfields": andStmt (addFilter ("requiredfields"))
                   }, 
                   { 
-                    "partialfields": andStmt (addFilter ("partialfields"), addLanguage())
+                    "partialfields": "("+andStmt (addFilter ("requiredfields"), addFilter ("partialfields"), (self.get ("collection") != "forums")?addLanguage():"") + addForums() + ")"
                   }
                 );
 
