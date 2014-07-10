@@ -15,7 +15,7 @@
             type: "GET",
             dataType: "json",
             crossDomain: true,
-            url : "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + url
+            url : "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent (url)
           }).done (function(feed) {
             if (feed) {
               $.fn.rssFeed.format (node, feed, opts.max)
@@ -48,6 +48,11 @@
       return entrydatestr;
     }    
 
+    function cleanText (s) {
+      s = s.replace (/&lt;!--[\s\S]*--&gt;/gmi, "");
+      return s;
+    }
+
     var max = narticles,
         data = feed.responseData.feed.entries,
         buf = [];
@@ -57,7 +62,7 @@
       buf.push ("<article>"+
             "<h4><a href='" + item.link + "'>" + item.title + "</a></h4>"+
             "<small><time>"+ formatTheDate (item.publishedDate) +"</time></small>"+
-            "<p>" + item.contentSnippet + " <a href='" +item.link + "'>Continue reading →</a>"  + "</p>" +
+            "<p>" + cleanText (item.contentSnippet) + " <a href='" +item.link + "'>Continue reading →</a>"  + "</p>" +
             "</article>");
     }
     $(node).html(buf.join ("\n"));      
