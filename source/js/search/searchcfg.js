@@ -166,13 +166,13 @@ var filterCfg = {
           p:"(product:explorer-iphone)"
         }
       },
-	  /*{
+	  {
         k:"explorer-mac",
         q: {
           r:"",
           p:"(product:explorer-mac)"
         }
-      },*/
+      },
 	  {
         k:"arcgis-geoplanner",
         q: {
