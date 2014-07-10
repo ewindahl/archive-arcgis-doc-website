@@ -1,7 +1,7 @@
 <!doctype html>
 <%
 readDirection="ltr" 
-if current_language == "ar" 
+if current_language == "ar" or current_language == "he"
 	readDirection="rtl"
 end 
 %>
@@ -14,12 +14,13 @@ end
     <meta charset="utf-8">
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta name="viewport" content="width=device-width">
 
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
 
     <script>
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-215788-63']);
+      _gaq.push(['_setAccount', 'UA-215788-73']);
       _gaq.push(['_setDomainName', 'arcgis.com']);
       _gaq.push(['_trackPageview']);
 
@@ -73,7 +74,7 @@ end
     <% else %>
       <style>
         body {
-          min-width: 768px;
+          /*min-width: 768px;*/
         }
       </style>
     <% end%>
@@ -102,7 +103,7 @@ end
       
    <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
-	<% if current_language == "ar" %> 
+	<% if current_language == "ar" or current_language == "he" %> 
 		<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
@@ -132,6 +133,7 @@ end
 			$(".container .column-8").css('width','33.333%');
 		});
 	</script>
+	<%= partial :"_partial/galleryLayout" %>
   </head>
   <body class="<%= current_language %>" >
     <div id="wrapper">
