@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-7-8"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ru">
 
 mobile: true
 
@@ -61,7 +61,7 @@ mobile: true
         <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="/en/operations-dashboard/dashboard-create-small.png" />
 
-          <h3>Создание и публикация рабочего вида</h3>
+          <h3>Создание и &amp; публикация рабочего вида</h3>
           <p>За три простых шага создайте и опубликуйте рабочие виды, включающие карты, списки, диаграммы, измерения и другую информацию, основанную на текущих географических данных с карты или веб-сервиса.</p>
           <p>
             <a href="/ru/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;Покажите мне как</a><br />
@@ -73,7 +73,7 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
 
-          <h3>Отслеживание и реагирование на события</h3>
+          <h3>&amp; Отслеживание и реагирование на события</h3>
           <p>Используйте рабочие виды, чтобы подчеркнуть аспекты операции, имеющие первостепенное значение. Отслеживайте сервисы, службу доставки, людей, транспорт и другие объекты во всех точках земного шара всего за четыре шага.</p>
           <p>
             <a href="/ru/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Покажите мне как</a><br />
@@ -132,9 +132,9 @@ mobile: true
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -148,19 +148,19 @@ mobile: true
  } 
  </script> 
  <h3>Windows для приложения</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Поддерживаемые операционные системы</div> 
-     <div exp1='yes' style="display:none;">
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Поддерживаемые операционные системы</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro и Windows 8.1 Enterprise (32- и 64-разрядные [EM64T])</li>
           <li>Windows 8, Windows 8 Pro и Windows 8 Enterprise (32- и 64-разрядные [EM64T])</li>
 		  <li>Windows 7 Ultimate, Enterprise, Professional и Home Premium (32- и 64-разрядные [EM64T]) SP1</li>
 		  <li>Windows Server 2012 Standard и Datacenter (64-разрядная [EM64T])</li>
 		<li>Windows Server 2008 R2 Standard, Enterprise и Datacenter (64-разрядные [EM64T]) SP1</li>
-		<li>Windows Server 2008 Standard, Enterprise и Datacenter (32-разрядная и 64-разрядная (EM64T)) SP2</li>
+		<li>Windows Server 2008 Standard, Enterprise и Datacenter (32- и 64-разрядные [EM64T]) SP2</li>
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Требования к аппаратному обеспечению</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Требования к аппаратному обеспечению</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>Частота процессора: 2.2 ГГц или выше; рекомендуется технология Hyper-Threading (HTT) или Multi-core.</li>
@@ -175,29 +175,29 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Требования к программному обеспечению</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Требования к программному обеспечению</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
         <p style="padding:0 15px">Требуется <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>, или более поздняя. Чтобы установить его, необходимы права администратора.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Требования разработчиков</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Требования разработчика</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
 	<p style="padding:0 15px">Для настройки Operations Dashboard for ArcGIS необходимо программное обеспечение <a href="http://resources.arcgis.com/ru/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a>. Также требуется Microsoft Visual Studio 2012 или 2013 Professional, Premium или Ultimate Edition. </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Поддерживаемые языки</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Поддерживаемые языки</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">Арабский, чешский, датский, нидерландский, эстонский, финский, французский, немецкий, иврит, итальянский, японский, корейский, латышский, литовский, норвежский, польский, португальский (Бразилия), португальский (Португалия), румынский, русский, упрощенный китайский, испанский, шведский и турецкий.</p>
+     	<p style="padding:0 15px">Английский, арабский, датский, иврит, испанский, итальянский, китайский (упрощенный), корейский, латвийский, литовский, немецкий, нидерландский, норвежский, польский, португальский, португальский (бразильский), румынский, русский, турецкий, финский, французский, чешский, шведский, эстонский и японский.</p>
      	<p style="padding:0 15px">Язык, используемый в версии приложения для ОС Windows, определяется настройками языка вашей операционной системы. Если в настройках используется неподдерживаемый язык, приложение будет работать на английском языке.</p>
 </div>
 <div class="clear"></div>
 
      <h3/>
  <h3>Браузер для приложения</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Поддерживаемые браузеры</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">Поддерживаемые браузеры</a>
 <div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
  <ul style="padding:0 15px">
  <li>Google Chrome (начиная с версии 19.0)</li>
@@ -207,16 +207,16 @@ mobile: true
  </ul> 
  Планшет 
  <ul style="padding:0 15px">
- <li>Android начиная с версии 4.0, использующий Chrome</li>
+ <li>Android, начиная с версии 4.0, использующий Chrome, начиная с версии 19.0</li>
  <li>iOS, начиная с версии 6.0, использующий Safari</li>
  </ul>
  Телефон (Phone) 
  <p style="padding:0 15px">Браузеры смартфонов в настоящее время поддерживается.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Поддерживаемые языки</div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Поддерживаемые языки</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Арабский, чешский, датский, нидерландский, эстонский, финский, французский, немецкий, иврит, итальянский, японский, корейский, латвийский, литовский, норвежский, польский, португальский, португальский (бразильский), румынский, русский, китайский (упрощенный), испанский, шведский и турецкий.</p>
+      	<p style="padding:0 15px">Английский, датский, испанский, итальянский, китайский (упрощенный), корейский, латвийский, литовский, немецкий, нидерландский, норвежский, польский, португальский, португальский (бразильский), румынский, русский, турецкий, финский, французский, чешский, шведский, эстонский и японский.</p>
       	<p style="padding:0 15px">В версии для браузера задать язык можно в вашем профиле ArcGIS Online. Если в настройках используется неподдерживаемый язык, приложение будет работать на английском языке.</p>
 </div>
 <div class="clear"></div>
@@ -227,25 +227,18 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Что нового</h2>
-        <p>Operations Dashboard for ArcGIS версии 10.2.3 был выпущен в апреле 2014 г. В него включены следующие усовершенствования:</p>
-        <ul>
-        <li>Поиск по вашим данным (<span class="icon-windows-8"/>).</li>
-        <li>&ndash; Исправление различных ошибок. </li>
-        <li>Используется ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        <li>Надстройки могут быть разработаны с помощью ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        </ul>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
+	        <p>Operations Dashboard for ArcGIS версии 10.2.3 был обновлен в июле 2014 г., в него включены несколько усовершенствований, а также исправлен ряд ошибок.</p>
+                </td>
+	        <td valign="top"><h4 class="icon-browser">Браузер</h4>
+	        <p>Браузер приложения Operations Dashboard for ArcGIS был обновлен в июле 2014 г. В него включены следующие усовершенствования:</p>
+	        <ul>
+	          <li>Возможность выполнять действия с несколькими объектами.<li>
+	          <li>Возможность использования картографических сервисов как источников данных.</li>
+	          <li>Исправлены различные ошибки и введены усовершенствования.</li>
+        </ul></td><tr></table>
         
-        <p>Operations Dashboard for ArcGIS версии 10.2.2 был выпущен в марте 2014 г. В него включены следующие усовершенствования:</p>
-        <ul>
-        <li>Возможность просмотра рабочих видов в браузере.</li>
-        <li>Возможность использования картографических сервисов как источников данных.</li>
-        <li>Учитывает заданные для слоев интервалы обновления.</li>
-        <li>Новые инструменты выборки.</li>
-        <li>Обновлен виджет Список (List).</li>
-        <li>Используется ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>Надстройки могут быть разработаны с помощью ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>Добавлен турецкий язык.</li>
-        </ul>
+        
         
         
         <a name="sneakPeek"></a>
@@ -274,11 +267,11 @@ mobile: true
 	  </tr>
 	  <tr><th>Расширяемый</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Использование картографических сервисов как источников данных</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	  </tr>
 	  <tr><th>Поиск данных</th>
 	    <td><span class="icon-check"/></td>
