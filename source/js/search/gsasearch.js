@@ -129,7 +129,7 @@ app.QueryStatement = Backbone.Model.extend ({
                         function (x) {return x.length>0}).join (".");
     };
 
-    function addFilter (fldtype, col) {
+    function addFilter (fldtype) {
       dbg ("genFields: "+fldtype);
 
       var l = _.map (app.filterCfg, function (ele) {
@@ -139,8 +139,7 @@ app.QueryStatement = Backbone.Model.extend ({
           if (fldtype == "requiredfields") {
             return ("r" in v.q) ? v.q["r"] : ""  
           } else {
-            if(self.get ("collection") === "forums" || col === "forums"){
-              //console.log(v.q["pForums"]);
+            if(self.get ("collection") === "forums"){
               return ("pForums" in v.q) ? v.q["pForums"] : ""  
             } else {
               return ("p" in v.q) ? v.q["p"] : ""  
@@ -148,8 +147,6 @@ app.QueryStatement = Backbone.Model.extend ({
             
           }
       });
-
-      
 
       return l;
     };
@@ -177,20 +174,6 @@ app.QueryStatement = Backbone.Model.extend ({
       return [v];
     }
 
-    function addForums () {
-      //return [""];
-      var forumsKW = "";
-
-      if(self.get ("collection") == "all" && self.get ("collection") != "forums") {
-        //addFilter("partialfields","forums")[1]
-        if(addFilter("partialfields","forums")[1]){
-          forumsKW = '|'+addFilter("partialfields","forums")[1]; 
-        }
-      }
-
-      return forumsKW;
-    }
-
     var vDefaults = {
       "event": "search.renderSearch",
 
@@ -208,15 +191,21 @@ app.QueryStatement = Backbone.Model.extend ({
       "num" : increment
     };
 
+    if (self.get ("collection") == "forums") {
+      vDefaults.site = "forums_jive";
+    }
+
+    console.log(vDefaults)
+
     v = _.extend (
                   { "q" : this.get ("q"), 
                     "start" : this.get ("p") * increment
                   }, 
                   {
-                    //"requiredfields": andStmt (addFilter ("requiredfields"))
+                    "requiredfields": andStmt (addFilter ("requiredfields"))
                   }, 
                   { 
-                    "partialfields": "("+andStmt (addFilter ("requiredfields"), addFilter ("partialfields"), (self.get ("collection") != "forums")?addLanguage():"") + addForums() + ")"
+                    "partialfields": andStmt (addFilter ("partialfields"), (self.get ("collection") != "forums")?addLanguage():"")
                   }
                 );
 
@@ -834,6 +823,3 @@ app.SearchRouter = Backbone.Router.extend({
  
     }
 });
-
-
-
