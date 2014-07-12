@@ -99,7 +99,8 @@ end
 	
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
-   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" /> 
+   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+   <!--[if lt IE 9]><script type="text/javascript" src="/js/html5shiv-printshiv.js"></script><![endif]-->
       
    <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
