@@ -23,6 +23,7 @@ var _agolHost = "//www.arcgis.com",
         "searchUrl" : 	_searchHost + "/v3/index.cfm",
 
 		"searchIfc" : "forums_jive_ifce",//arcgis_doc_ifce",
-	  	"searchView" : "forums_jive_vw" //arcgis_doc_vw"
+	  	"searchView" : "forums_jive_vw", //arcgis_doc_vw"
+	  	"includeForumResult" : true
 
 	};
