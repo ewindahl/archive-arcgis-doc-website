@@ -55,7 +55,7 @@ var filterCfg = {
       {
         k:"all",
         q: {
-            r:"search-collection:help|search-collection:forums", 
+            r:"search-collection:help", 
             p:""
         }
       }, 
@@ -69,8 +69,9 @@ var filterCfg = {
       {
         k:"forums",
         q:{
-          r:"search-collection:forums",
-		  p:""
+          r:"",
+          s:"forums_jive",
+		      pForums:""
         }
       },
       /* 
@@ -99,14 +100,16 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:ops-dashboard|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:esri-demographics|product:arcgis-geoplanner"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:ops-dashboard|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:esri-demographics|product:arcgis-geoplanner",
+            pForums:"keywords:app|keywords:android|keywords:ios|keywords:windows phone|keywords:collector|keywords:maps for office|keywords:maps for sharepoint"
           }
       },
 	  {
         k:"arcgis-online",
         q: {
           r:"",
-          p:"(product:arcgis-online)"
+          p:"(product:arcgis-online)",
+          pForums:"(keywords:Arcgis Online|keywords:Online)"
         }
       }, 
       {
@@ -191,7 +194,8 @@ var filterCfg = {
         k:"esri-maps-sharepoint",
         q: {
           r:"",
-          p:"(product:esri-maps-sharepoint)"
+          p:"(product:esri-maps-sharepoint)",
+          pForums:"(keywords:sharepoint|keywords:maps for sharepoint)"
         }
       },
       /*{
@@ -205,7 +209,8 @@ var filterCfg = {
         k:"ops-dashboard",
         q: {
           r:"",
-          p:"(product:ops-dashboard)"
+          p:"(product:ops-dashboard)",
+          pForums:"(keywords:operations|keywords:dashboard)"
         }
       },
 

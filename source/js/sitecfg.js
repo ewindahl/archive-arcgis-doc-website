@@ -5,7 +5,7 @@ var host = "http://marketplacedevext.arcgis.com",
 
 var _agolHost = "//www.arcgis.com",
 	_mkpHost = "//marketplace.arcgis.com",
-    _searchHost = "//searchdev.esri.com",
+    _searchHost = "//searchstg.esri.com",
 
     sitecfg = {
 	  	"debug" : false,
@@ -22,7 +22,8 @@ var _agolHost = "//www.arcgis.com",
 
         "searchUrl" : 	_searchHost + "/v3/index.cfm",
 
-		"searchIfc" : "arcgis_doc_ifce",
-	  	"searchView" : "arcgis_doc_vw"
+		"searchIfc" : "forums_jive_ifce",//arcgis_doc_ifce",
+	  	"searchView" : "forums_jive_vw", //arcgis_doc_vw"
+	  	"includeForumResult" : true
 
 	};

@@ -15,19 +15,19 @@ if (!String.prototype.format) {
     };
 }
 
-var app = {};
+var fApp = {};
 
 //todo: this should be update to use core.js later
 //      bad name
-app.langRsrc = GLangLabels;
+fApp.langRsrc = GLangLabels;
 
 //todo: all these cfg code should be refactor and move to a place that's site-specific
 
-app.cfg = {
+fApp.cfg = {
     getLang: function () {
       var txt = "";
 
-      //todo: redo/refactor this code app.util.query2kv
+      //todo: redo/refactor this code fApp.util.query2kv
       txt = $.trim(window.location.search);
       if (txt.indexOf ("?")===0) {
         txt = txt.substring(1);
@@ -48,7 +48,7 @@ app.cfg = {
           langL = langv.split ("_"),
           lg = langL[0];
           
-      return (lg in app.langRsrc) ? lg : "en"     
+      return (lg in fApp.langRsrc) ? lg : "en"     
     },
 
     getInc: function () {
@@ -57,7 +57,7 @@ app.cfg = {
 };
 
 //todo: defined in searchcfg.js
-app.filterCfgDefaults = (function(winloc){
+fApp.filterCfgDefaults = (function(winloc){
   var query = decodeURIComponent(window.location.search),
       r = filterCfgDefaults["default"];
 
@@ -69,7 +69,7 @@ app.filterCfgDefaults = (function(winloc){
 })(window.location)
 
 //defined in searchcfg.js
-app.filterCfg = (function(winloc) {
+fApp.filterCfg = (function(winloc) {
   var query = decodeURIComponent(window.location.search),
       r = filterCfg["default"];
 
@@ -80,20 +80,20 @@ app.filterCfg = (function(winloc) {
   return r || [];
 })(window.location);
 
-app.rsrc = (function (lang){
+fApp.rsrc = (function (lang){
               return _.defaults (localeJsonObj[lang], localeJsonObj["en"]);
-            })(app.cfg.getLang());
+            })(fApp.cfg.getLang());
 
 
 
 //--- gsa query engine
 
-app.tmplt = {};
+fApp.tmplt = {};
 
-app.QueryStatement = Backbone.Model.extend ({
+fApp.QueryStatement = Backbone.Model.extend ({
 
   defaults: {
-    cfg: app.cfg,
+    cfg: fApp.cfg,
 
     q: "", 
     p: 0,
@@ -112,11 +112,11 @@ app.QueryStatement = Backbone.Model.extend ({
             product : "any",
             n: "" + this.get ("cfg").getInc()
           }, 
-          app.filterCfgDefaults);
+          fApp.filterCfgDefaults);
   },
 
-  genAjaxData : function (callType) {
-    var increment = app.cfg.getInc(),
+  genAjaxData : function () {
+    var increment = fApp.cfg.getInc(),
         self = this;
 
     dbg ("QueryStatement.genAjaxData");
@@ -132,7 +132,7 @@ app.QueryStatement = Backbone.Model.extend ({
     function addFilter (fldtype) {
       dbg ("genFields: "+fldtype);
 
-      var l = _.map (app.filterCfg, function (ele) {
+      var l = _.map (fApp.filterCfg, function (ele) {
          var k = ele.k,
              v = _.findWhere (ele.v, {k:self.get (k)}) || {q:{}};
 
@@ -160,7 +160,7 @@ app.QueryStatement = Backbone.Model.extend ({
 
       if (langL.length >=1) {
           var lg = langL[0].toLowerCase();
-          baseLang = (lg in app.langRsrc) ? lg : "en" 
+          baseLang = (lg in fApp.langRsrc) ? lg : "en" 
       }
 
       if (baseLang !== "en") {
@@ -188,17 +188,18 @@ app.QueryStatement = Backbone.Model.extend ({
 
       "q" : "",
       "start" : 0,
-      "num" : (callType && callType== "forumsPanel") ? 3 : increment
+      "num" : increment
     };
 
     if (self.get ("collection") == "forums") {
       vDefaults.site = "forums_jive";
     }
 
+    //console.log(vDefaults)
 
     v = _.extend (
                   { "q" : this.get ("q"), 
-                    "start" : (callType && callType== "forumsPanel") ? 0 : this.get ("p") * increment
+                    "start" : this.get ("p") * increment
                   }, 
                   {
                     "requiredfields": andStmt (addFilter ("requiredfields"))
@@ -242,10 +243,10 @@ app.QueryStatement = Backbone.Model.extend ({
 });
 
 
-app.QueryResult = Backbone.Model.extend ({
+fApp.QueryResult = Backbone.Model.extend ({
 
   defaults: {
-    cfg: app.cfg,
+    cfg: fApp.cfg,
 
     data: null,
 
@@ -275,37 +276,7 @@ app.QueryResult = Backbone.Model.extend ({
 
 });
 
-app.FQueryResult = Backbone.Model.extend ({
-
-  defaults: {
-    cfg: app.cfg,
-
-    data: null,
-
-    status: -1, //-1: init, 0:fail, 1: succ
-    ts: -1 //timestamp: force update event to happen
-  },
-
-  getResultN: function () {
-    var n = 0;
-
-    if (this.get("status")) {
-        var data = this.get ("data");
-        n = parseInt (data.res?data.res.m:"0", 10);      
-    }
-    
-    return n;
-  },
-
-  
-  getRes: function () {
-    var data = this.get ("data");
-    return data ? data.res: []; 
-  }
-
-});
-
-app.SearchBoxView = Backbone.View.extend ({
+fApp.SearchBoxView = Backbone.View.extend ({
 
   events: {
     "submit #gsaSearchForm" : "search" 
@@ -342,14 +313,14 @@ app.SearchBoxView = Backbone.View.extend ({
 
 
 //tchen: correct?
-app.tmplt.filter = _.template('<div><header><h4><%= header %></a></header></h4>' +
+fApp.tmplt.filter = _.template('<div><header><h4><%= header %></a></header></h4>' +
                           '<ul>' +
                           '<%= filters %>' +
                           '</ul>');
 
-app.tmplt.filterItem = _.template ('<li class="<%= liClass %>"><a data-fkey="<%= key %>" data-fval="<%= value %>" title="<%= hovertext %>" href="#"><%= label %></a></li>');
+fApp.tmplt.filterItem = _.template ('<li class="<%= liClass %>"><a data-fkey="<%= key %>" data-fval="<%= value %>" title="<%= hovertext %>" href="#"><%= label %></a></li>');
 
-app.SearchFilterView = Backbone.View.extend ({
+fApp.SearchFilterView = Backbone.View.extend ({
 
   events: {
     "click a[data-fkey]" : "choose" 
@@ -372,28 +343,28 @@ app.SearchFilterView = Backbone.View.extend ({
 
       function genFilterItem (filterKey, item) {
         var data = {
-          label: app.util.getLabel (item["k"]),
-          hovertext: app.util.getLabel (item["k"]+"-ht"),
+          label: fApp.util.getLabel (item["k"]),
+          hovertext: fApp.util.getLabel (item["k"]+"-ht"),
           liClass: item["k"] === self.model.get (filterKey) ? "current": "",
           key: filterKey,
           value: item["k"]
         };
 
-        return app.tmplt.filterItem (data);        
+        return fApp.tmplt.filterItem (data);        
       };
 
       data = {
-        header: app.util.getLabel (cfg["l"]),
+        header: fApp.util.getLabel (cfg["l"]),
         filters: _.map (cfg["v"], 
                         function (x) {return genFilterItem(cfg["k"], x);}).join ("")
       };
 
-      return app.tmplt.filter (data);
+      return fApp.tmplt.filter (data);
     } 
    
     this.$el.empty();
 
-    var sl = _.map (app.filterCfg, genFilterHtml);
+    var sl = _.map (fApp.filterCfg, genFilterHtml);
 
     this.$el.html (sl.join (""));
     
@@ -416,7 +387,7 @@ app.SearchFilterView = Backbone.View.extend ({
 
     this.model.set (v, {silent:true});
 
-    //app.router.query (this.model.toUrl());
+    //fApp.router.query (this.model.toUrl());
     window.location = "./" + this.model.toUrl();
 
     return false;
@@ -424,9 +395,9 @@ app.SearchFilterView = Backbone.View.extend ({
   }
 });
 
-//app.SearchLangView ({model:app.qStmt, el: $("#searchLang")});
+//fApp.SearchLangView ({model:fApp.qStmt, el: $("#searchLang")});
 
-app.SearchLangView = Backbone.View.extend({
+fApp.SearchLangView = Backbone.View.extend({
 
   events: {
     "click a[data-langkey]" : "choose" 
@@ -449,7 +420,7 @@ app.SearchLangView = Backbone.View.extend({
 
     if (langL.length >=1) {
         var lg = langL[0].toLowerCase();
-        baseLang = (lg in app.langRsrc) ? lg : "en" 
+        baseLang = (lg in fApp.langRsrc) ? lg : "en" 
     }
 
     this.$el.empty();
@@ -460,7 +431,7 @@ app.SearchLangView = Backbone.View.extend({
           cls0 =  (langL.length>1) ? "" : selected,
           cls1 =  (langL.length>1) ? selected : "";
 
-      this.$el.html (s.format (baseLang, app.langRsrc[baseLang], app.rsrc["english"],
+      this.$el.html (s.format (baseLang, fApp.langRsrc[baseLang], fApp.rsrc["english"],
                                cls0, cls1));
     }
     
@@ -488,7 +459,7 @@ app.SearchLangView = Backbone.View.extend({
 
 });
 
-app.SRStatView = Backbone.View.extend({
+fApp.SRStatView = Backbone.View.extend({
 
   initialize: function() {
     dbg ("srstatview.init");
@@ -503,24 +474,24 @@ app.SRStatView = Backbone.View.extend({
         status = mdl.get ("status"),
         resultN = mdl.getResultN(),
         pageN = mdl.getPageN(),
-        p = app.qStmt.get ("p");
+        p = fApp.qStmt.get ("p");
 
     this.$el.empty();
     
     if (status) {
       if (resultN <=0) {
-        this.$el.html (app.util.getLabel("results_zero"));
+        this.$el.html (fApp.util.getLabel("results_zero"));
       } else {
-        this.$el.html (app.util.getLabel("results_n").format(resultN, p+1, pageN));
+        this.$el.html (fApp.util.getLabel("results_n").format(resultN, p+1, pageN));
       }
     } else {
-      this.$el.html (app.util.getLabel("tryagain"));
+      this.$el.html (fApp.util.getLabel("tryagain"));
     }
     return this;
   }
 });
 
-app.SRPagerView = Backbone.View.extend({
+fApp.SRPagerView = Backbone.View.extend({
 
   initialize: function () {
     dbg ("srpagerview.init");
@@ -541,8 +512,8 @@ app.SRPagerView = Backbone.View.extend({
     
     if (status) {
       var i = 0,
-          p = app.qStmt.get ("p"),
-          q = app.qStmt.get ("q"),
+          p = fApp.qStmt.get ("p"),
+          q = fApp.qStmt.get ("q"),
           url = "";
           
 
@@ -551,20 +522,20 @@ app.SRPagerView = Backbone.View.extend({
 
 
       if (begI>0) {
-        url = app.qStmt.toUrl (p-1), 
+        url = fApp.qStmt.toUrl (p-1), 
         className = "";
         buf.push ("<li><a "+ className +" href='"+ url +"'>" + "&lt;" + "</a></li>");
       }
 
       for (i=begI; i<endI; i++) {
-        var url = app.qStmt.toUrl (i), 
+        var url = fApp.qStmt.toUrl (i), 
             className = (p === i)? "class='current'" : "";
 
         buf.push ("<li><a "+ className +" href='"+ url +"'>" + (i+1) + "</a></li>");
       }
 
       if (endI < pageN) {
-        url = app.qStmt.toUrl (p+1), 
+        url = fApp.qStmt.toUrl (p+1), 
         className = "";
         buf.push ("<li><a "+ className +" href='"+ url +"'>" + "&gt;" + "</a></li>");
       }  
@@ -581,7 +552,7 @@ app.SRPagerView = Backbone.View.extend({
 });
 
 
-app.SRListView = Backbone.View.extend ({
+fApp.SRListView = Backbone.View.extend ({
 
     template: _.template('<div class="result"><h4 class="no-trailer"><a class="searchTitle" href="<%= url %>"><%= t %></a></h4>' +
                      '<p class="resultMeta"><%= mdType %><%= mdTpc %><%= dateTpc %></p>' + 
@@ -687,7 +658,7 @@ app.SRListView = Backbone.View.extend ({
 
 
 // Forum panel view
-app.ForumListView = Backbone.View.extend ({
+fApp.ForumListView = Backbone.View.extend ({
 
     template: _.template('<h4 class="no-trailer"><a class="searchTitle" href="<%= url %>"><%= t %></a></h4>' +
                      '<p class="item-snippet1"><%= txt %></p></div>'),
@@ -700,13 +671,12 @@ app.ForumListView = Backbone.View.extend ({
 
     render: function() {
       dbg ("ForumListView.render");
-
+console.log("test")
       var res = this.model.getRes();
 
       this.$el.empty();
 
       //dbg (res);
-      console.log(res)
 
       if (res) { 
         var rL = $.isArray (res.r) ? res.r : [res.r],
@@ -727,9 +697,6 @@ app.ForumListView = Backbone.View.extend ({
           }, this));
 
         this.$el.html (l.join (""));
-      }
-      if(this.$el.is(':empty')) {
-          $("#forumPanel").hide()
       }  
 
       return this;
@@ -739,8 +706,8 @@ app.ForumListView = Backbone.View.extend ({
 // End of Forum panel view
 
 //todo: maybe should be in core.js?
-app.util = {};
-app.util.query2kv = function (txt) {
+fApp.util = {};
+fApp.util.query2kv = function (txt) {
   dbg ("query2kv: -"+txt+"-");
 
   txt = $.trim(txt);
@@ -759,7 +726,7 @@ app.util.query2kv = function (txt) {
     }, r);
   }
    
-  qDefaults  = app.qStmt.getQueryDefaults();
+  qDefaults  = fApp.qStmt.getQueryDefaults();
 
   r = _.pick (r, _.keys (qDefaults));
   r = _.defaults (r, qDefaults);
@@ -771,16 +738,16 @@ app.util.query2kv = function (txt) {
   return r;
 }
 
-app.util.getLabel = function (key) {  
-  return app.rsrc[key] || "undefined";
+fApp.util.getLabel = function (key) {  
+  return fApp.rsrc[key] || "undefined";
 } 
 
-app.util.changeL10NLabel = function () {
+fApp.util.changeL10NLabel = function () {
   //this is copy from langSelector.js
   //once refactor is done, this should get fold back into core lib.
-  var dict = app.rsrc;
+  var dict = fApp.rsrc;
 
-  if (app.cfg.getLang() !== "en" && dict) {
+  if (fApp.cfg.getLang() !== "en" && dict) {
       $("*[data-langlabel]").each (function(i) {
           var o = $(this),
               txt = dict[o.attr("data-langlabel")];
@@ -796,13 +763,13 @@ app.util.changeL10NLabel = function () {
 
 }
 
-app.doSearch = function () {
+fApp.doSearch = function () {
   dbg ("doSearch");
 
   $.ajax ({
     url: sitecfg["searchUrl"],
     dataType: "jsonp",
-    data: app.qStmt.genAjaxData(),
+    data: fApp.qStmt.genAjaxData(),
     timeout: 5000,
 
     beforeSend: function () {
@@ -834,12 +801,12 @@ app.doSearch = function () {
     
     if (data) {
             
-      app.qStmt.set ({
+      fApp.qStmt.set ({
         status:1,
         ts: Date.now()
       });
 
-      app.qResult.set({
+      fApp.qResult.set({
         data: data,
         status:1,
         ts: Date.now()        
@@ -847,12 +814,12 @@ app.doSearch = function () {
 
     } else {
       //TODO ???
-      app.qStmt.set ({
+      fApp.qStmt.set ({
         status: 0,
         ts: Date.now()
       });
 
-      app.qResult.set({
+      fApp.qResult.set({
         status: 0,
         ts: Date.now()        
       });
@@ -866,96 +833,12 @@ app.doSearch = function () {
 
     $("#spinner").hide();
 
-    app.qStmt.set ({
+    fApp.qStmt.set ({
       status:0,
       ts: Date.now()
     });
     
-    app.qResult.set({
-      status:0,
-      ts: Date.now()        
-    });
-
-    return null;
-  });
-};
-
-app.doForumSearch = function () {
-  dbg ("doSearch");
-
-  $.ajax ({
-    url: sitecfg["searchUrl"],
-    dataType: "jsonp",
-    data: app.qStmt.genAjaxData("forumsPanel"),
-    timeout: 5000,
-
-    beforeSend: function () {
-      //TODO replace with defer
-      $("#spinner").show();
-    }
-  })
-  .then(function(data, status, jqxhr) {
-    var dom = $.parseXML(data.content);
-    if (dom) {
-      return getXMLData (dom.documentElement);
-    } else {
-      //TODO handle err?
-      dbg ("ajax: empty dom")
-      return null;
-    }
-
-  }, function(jqxhr, status, err) {
-    dbg ("ajax: failed");
-    //TODO handle err?
-    return null;
-  })
-  .then (function() {
-    dbg ("doSearch: succ");
-
-    $("#spinner").hide();
-    data = Array.prototype.slice.call (arguments,0)[0];
-    //dbg (data);
-    
-    if (data) {
-            
-      app.qStmt.set ({
-        status:1,
-        ts: Date.now()
-      });
-
-      app.fqResult.set({
-        data: data,
-        status:1,
-        ts: Date.now()        
-      });
-
-    } else {
-      //TODO ???
-      app.qStmt.set ({
-        status: 0,
-        ts: Date.now()
-      });
-
-      app.fqResult.set({
-        status:0,
-        ts: Date.now()        
-      });
-
-    }
-
-    return data;
-
-  }, function(){
-    dbg ("doSearch: fail");
-
-    $("#spinner").hide();
-
-    app.qStmt.set ({
-      status:0,
-      ts: Date.now()
-    });
-   
-    app.fqResult.set({
+    fApp.qResult.set({
       status:0,
       ts: Date.now()        
     });
@@ -964,13 +847,13 @@ app.doForumSearch = function () {
   });
 };
 
-app.SearchRouter = Backbone.Router.extend({
+fApp.SearchRouter = Backbone.Router.extend({
     routes: {
-      "*q*": "query"
+      "*q*": "fQuery"
     },
 
 
-    query: function (query) {
+    fQuery: function (query) {
       dbg ("searchRouter.query: " + query);
 
 
@@ -982,21 +865,9 @@ app.SearchRouter = Backbone.Router.extend({
       
       //this.navigate ("./"+query, {trigger:false, replace:true});
 
-      app.qStmt.set (_.extend (app.util.query2kv(query), {status:-1, ts:0}), {silent:true});
-      app.doSearch ();
-      
+      fApp.qStmt.set (_.extend (fApp.util.query2kv(query), {status:-1, ts:0}), {silent:true});
 
-      if(sitecfg["includeForumResult"]){
-        var queryStrings = app.util.query2kv(query);
-        var origCollection =  queryStrings.collection;
-        queryStrings.collection = "forums"
-        app.qStmt.set (_.extend (queryStrings, {status:-1, ts:0}), {silent:true});
-        app.doForumSearch()
-
-        // change collection value back 
-        queryStrings.collection = origCollection;
-        app.qStmt.set (_.extend (queryStrings, {status:-1, ts:0}), {silent:true});
-      }
+      fApp.doSearch ();
  
     }
 });
