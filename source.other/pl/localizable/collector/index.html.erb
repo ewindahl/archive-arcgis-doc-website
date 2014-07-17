@@ -6,7 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
-
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -14,11 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
-
-
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2014-7-7"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="pl"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -84,7 +84,7 @@ mobile: true
           <h3>Gromadzenie danych</h3>
           <p>Twórz dane istotne dla własnej instytucji, korzystając z raportów dotyczących szkód oraz żądań usług dotyczących miejsc o wartości historycznej. Możesz łatwo załączać zdjęcia oraz filmy wideo i udostępniać swoją pracę.</p>
           <p>
-            <a href="/pl/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Dowiedz się, jak to zrobić</a><br />
+            <a href="/pl/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp; Dowiedz się, jak to zrobić</a><br />
 
 			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Zapoznaj się z materiałem wideo</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
@@ -100,7 +100,7 @@ mobile: true
           <h3>Praca w trybie offline</h3>
           <p>Praca w terenie wiąże się z wykonywaniem zadań w miejscach niezapewniających dostępu do sieci. Pracuj z mapami i danymi w trybie offline, gromadź informacje i synchronizuj zmiany, gdy połączenie z siecią będzie możliwe.</p>
           <p>
-            <a href="/pl/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;Dowiedz się, jak to zrobić</a><br />
+            <a href="/pl/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp; Dowiedz się, jak to zrobić</a><br />
           </p>
         </div>
         
@@ -117,7 +117,7 @@ mobile: true
         <div class="clear"></div>
 
 	<a name="features"></a>
-	<h2 class="divider">Charakterystyka</h2>
+	<h2 class="divider">Obiekty</h2>
 	<p>Gromadź i aktualizuj dane w terenie, twórz dziennik bieżącej lokalizacji i stosuj pozyskane dane w pracy, aby podejmować bardziej świadome i szybsze decyzje. Możesz korzystać z map w dowolnym miejscu, zwiększając dokładność dodawanych danych, z uwzględnieniem obserwacji i wydarzeń. Pozwoli to na poprawienie efektywności pracowników terenowych oraz dokładności danych GIS.</p>
 	
 	<ul>
@@ -140,16 +140,16 @@ mobile: true
 
 
         <h3>Wymagania wobec urządzenia</h3>
-        <table><tr><td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+        <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
         <ul>
-          <li>Android 4.0 (Ice Cream Sandwich)<br/>lub nowszy</li>
+          <li>Android 4.0 (Ice Cream Sandwich) lub nowszy</li>
           <li>Procesor Armv7</li>
           <li>Obsługa interfejsu OpenGL ES 2.0</li>
           <li>Obsługa wyznaczania precyzyjnych lokalizacji (w oparciu o system GPS i sieć)</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS 7</li>
+          <li>iOS w wersji 7 lub nowszej</li>
           <li>iPhone, iPad, iPod touch</li>
         </ul></td><tr></table>
 
@@ -161,27 +161,25 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Co nowego</h2>
-        <p>Aplikacja Collector for ArcGIS 10.2.3 została opublikowana w kwietniu 2014 r. Wprowadzono w niej poprawki i ulepszenia.</p>
-        <p>Aplikacja Collector for ArcGIS 10.2.2 została opublikowana w marcu 2014 r. i zawiera następujące ulepszenia:</p>
+        <p>Aplikacja Collector for ArcGIS 10.2.4 została opublikowana w lipcu 2014 r. i zawiera następujące ulepszenia:</p>
         <ul>
-        <li>Obsługa pracy w trybie offline</li>
-        <li>Zaktualizowane środowisko użytkownika</li>
+        <li>Wyszukiwanie obiektów na mapie</li>
+        <li>Przełączanie lokalnych map bazowych</li>
         <li>Usunięcie różnych usterek i wprowadzenie ulepszeń</li>
-        <li>Obsługa dodatkowych języków</li>
-        <li>Rozwiązanie problemów związanych z systemem Android: NIM098281, NIM096128, NIM098076</li>
-        <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
+        <!--<li>Support for additional languages</li>-->
+        <li>Usunięcie problemu: NIM102088</li>
         </ul>
+        <p>Tryb pracy offline w aplikacji Collector jest obsługiwany od marca 2014 r. (wersja 10.2.2).</p>
 
 	<a name="sneakPeek"></a>
-	<h2 class="divider">Wkrótce</h2>
+	<h2 class="divider">Zapowiedź</h2>
 	<p>Obecnie aplikacja Collector to świetne narzędzie do gromadzenia i edycji danych w terenie. To jednak nie wszystko! Poniższa lista podaje udoskonalenia, które planujemy wprowadzić do aplikacji:</p>
 	
 	<ul>
 	  <li>Więcej narzędzi do planowania zadań wykonywanych podczas pracy w trybie offline w terenie</li>
 	  <li>Ulepszone inteligentne formularze dodawania danych (w tym także tabele powiązane)</li>
-	  <li>Możliwość wyszukiwania danych<li>
 	  <li>Dodawanie danych z użyciem przesunięć<li>
-	  <li>Obsługa tymczasowego dodawania</li>
+	  <li>Obsługa bezpośredniego dodawania obiektów</li>
 	  <li>Integracja urządzeń zewnętrznych (dalmierzy laserowych, skanerów kodów kreskowych itp.)</li>
 	</ul>	
 	
@@ -197,10 +195,10 @@ mobile: true
         <div class="imgFrame block">
 	  <h3>Szczegóły</h3>
 	          
-	  <h4><a href="#features">Charakterystyka</a></h4>
+	  <h4><a href="#features">Obiekty</a></h4>
 	  <h4><a href="#systemRequirements">Wymagania systemowe</a></h4>
 	  <h4><a href="#whatsNew">Co nowego</a></h4>
-	  <h4><a href="#sneakPeek">Wkrótce</a></h4>
+	  <h4><a href="#sneakPeek">Zapowiedź</a></h4>
 	          
         </div>
 
