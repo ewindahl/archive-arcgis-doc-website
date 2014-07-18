@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-7-8"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="it">
 
 mobile: true
 
@@ -72,7 +72,7 @@ mobile: true
           <h3>Monitorare e rispondere a eventi</h3>
           <p>È possibile utilizzare la vista operazioni per focalizzare l'attenzione su aspetti dell'operazione di maggiore interesse. Consente di monitorare servizi, consegne, persone, veicoli e altro, dovunque nel mondo, in quattro semplici passi.</p>
           <p>
-            <a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br /> <!--<a href="http://resources.arcgis.com/it/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp; Guarda il video</a>
+            <a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br /> <!--<a href="http://resources.arcgis.com/it/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guarda il video</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
@@ -123,9 +123,9 @@ mobile: true
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -139,8 +139,8 @@ mobile: true
  } 
  </script> 
  <h3>App di Windows</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Sistemi operativi supportati</div> 
-     <div exp1='yes' style="display:none;">
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Sistemi operativi supportati</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro e Windows 8.1 Enterprise (32 bit e 64 bit [EM64T])</li>
           <li>Windows 8, Windows 8 Pro e Windows 8 Enterprise (32 bit e 64 bit [EM64T])</li>
@@ -151,7 +151,7 @@ mobile: true
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisiti hardware</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Requisiti hardware</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>Velocità CPU: 2,2 GHz o superiore; consigliata tecnologia hyper-threading (HTT) o multicore</li>
@@ -166,29 +166,29 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisiti software</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Requisiti software</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
-        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">È richiesto Microsoft .NET Framework 4.5</a> o versione successiva. Per installarlo, è necessario disporre di privilegi amministrativi nel computer in uso.</p>
+        <p style="padding:0 15px">È necessario <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> o versione successiva. Per installarlo, è necessario disporre di privilegi amministrativi nel computer in uso.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Requisiti per gli sviluppatori</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Requisiti per gli sviluppatori</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
 	<p style="padding:0 15px">Per personalizzare Operations Dashboard for ArcGIS, è necessario <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a>. È inoltre necessario Microsoft Visual Studio 2012 o 2013 Professional, Premium o Ultimate Edition. </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Lingue supportate</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Lingue supportate</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">Arabo, ceco, cinese semplificato, coreano, danese, ebraico, estone, finlandese, francese, giapponese, italiano, lettone, lituano, norvegese, olandese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, spagnolo, svedese, tedesco e turco.</p>
+     	<p style="padding:0 15px">Arabo, ceco, danese, olandese, inglese, estone, finlandese, francese, tedesco, ebraico, italiano, giapponese, coreano, lettone, lituano, norvegese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, cinese semplificato, spagnolo, svedese e turco.</p>
      	<p style="padding:0 15px">La lingua utilizzata nella versione Windows dell'applicazione dipende dalla lingua impostata nel sistema operativo. Se si utilizza un'impostazione di lingua non supportata, per l'app verrà utilizzato l'inglese.</p>
 </div>
 <div class="clear"></div>
 
      <h3/>
  <h3>App di tipo browser</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Browser supportati</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">Browser supportati</a>
 <div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
  <ul style="padding:0 15px">
  <li>Chrome 19.0 e versioni successive</li>
@@ -198,16 +198,16 @@ mobile: true
  </ul> 
  Tablet 
  <ul style="padding:0 15px">
- <li>Android 4.0 e versioni successive</li>
+ <li>Android 4.0 e versioni successive con Chrome 19.0 e versioni successive</li>
  <li>iOS 6.0 e versioni successive con Safari in esecuzione</li>
  </ul>
  Telefono 
  <p style="padding:0 15px">Al momento non sono supportati i browser per smartphone.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Lingue supportate</div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Lingue supportate</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Ceco, cinese semplificato, coreano, danese, estone, finlandese, francese, giapponese, italiano, lettone, lituano, norvegese, olandese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, spagnolo, svedese, tedesco e turco.</p>
+      	<p style="padding:0 15px">Ceco, danese, olandese, inglese, estone, finlandese, francese, tedesco, italiano, giapponese, coreano, lettone, lituano, norvegese, polacco, portoghese (Brasile), portoghese (Portogallo), rumeno, russo, cinese semplificato, spagnolo, svedese e turco.</p>
       	<p style="padding:0 15px">Nella versione browser la lingua è quella impostata nel profilo di ArcGIS Online. Se si utilizza un'impostazione di lingua non supportata, per l'app verrà utilizzato l'inglese.</p>
 </div>
 <div class="clear"></div>
@@ -218,25 +218,18 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Novità</h2>
-        <p>La versione 10.2.3 di Operations Dashboard for ArcGIS, rilasciata ad aprile 2014, include i seguenti miglioramenti:</p>
-        <ul>
-        <li>Ricerca dei dati (<span class="icon-windows-8"/>)</li>
-        <li>Varie correzioni di bug </li>
-        <li>Utilizzo di ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>)</li>
-        <li>Sviluppo di componenti aggiuntivi con ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>)</li>
-        </ul>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
+	        <p>Operations Dashboard for ArcGIS 10.2.3 è stato aggiornato nel mese di luglio 2014. Include la correzione di diversi bug e vari miglioramenti.</p>
+                </td>
+	        <td valign="top"><h4 class="icon-browser">Browser</h4>
+	        <p>L'app browser per Operations Dashboard for ArcGIS è stata aggiornata nel mese di luglio 2014. Include le seguenti novità:</p>
+	        <ul>
+	          <li>Possibilità di eseguire azioni su più feature.<li>
+	          <li>Possibilità di utilizzare i map service come origini dati</li>
+	          <li>Correzioni di diversi bug e miglioramenti.</li>
+        </ul></td><tr></table>
         
-        <p>La versione 10.2.2 di Operations Dashboard for ArcGIS, rilasciata a marzo 2014, include i seguenti miglioramenti:</p>
-        <ul>
-        <li>Possibilità di utilizzare le viste operazioni in un browser</li>
-        <li>Possibilità di utilizzare i map service come origini dati</li>
-        <li>Rispetto degli intervalli di aggiornamento impostati sui layer</li>
-        <li>Nuovi strumenti di selezione</li>
-        <li>Aggiornamenti del widget elenco</li>
-        <li>Utilizzo di ArcGIS Runtime SDK 10.2.2 for WPF</li>
-        <li>Sviluppo di componenti aggiuntivi con ArcGIS Runtime SDK 10.2.2 for WPF</li>
-        <li>Versione localizzata in turco</li>
-        </ul>
+        
         
         
         <a name="sneakPeek"></a>
@@ -244,7 +237,7 @@ mobile: true
 	<p>Operations Dashboard è una straordinaria applicazione per il monitoraggio delle operazioni. Ma a breve includerà altre funzionalità, tra cui quelle descritte di seguito in dettaglio per i vari dispositivi:</p>
 	
 	<table border="1" style="text-align:center">
-	  <caption>Funzionalità previste per piattaforma <br/> <span class="icon-check" style="color:black"></span> disponibile, <span class="icon-check icon-green"/> disponibile a breve, <span class="icon-check" style="color:lightgray"></span> disponibile più avanti<br/></caption>
+	  <caption>Funzionalità previste per piattaforma. <br/> <span class="icon-check" style="color:black"></span> attuale, <span class="icon-check icon-green"/> disponibile a breve, <span class="icon-check" style="color:lightgray"></span> disponibile in futuro<br/></caption>
 	  <tr><td></td>
 	    <th>Desktop Windows</th>
 	    <th>Browser</th>
@@ -263,11 +256,11 @@ mobile: true
 	  </tr>
 	  <tr><th>Estensibile</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Utilizzo di map service come origini dati</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	  </tr>
 	  <tr><th>Ricerca di dati</th>
 	    <td><span class="icon-check"/></td>
