@@ -21,7 +21,9 @@ $(document).ready(function() {
 
 		prodKey = "operations-dashboard",
 		prodDVal = "windows-desktop",
-		prodWebVal = "Web",
+		prodWebVal = "web",
+		prodDSearchMetaProd = "ops-dashboard",
+		prodWebSearchMetaProd = "ops-dashboard-browser",
 		homePath = "/en/operations-dashboard",
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
@@ -46,11 +48,33 @@ $(document).ready(function() {
 				$ele.attr ("href", newHref);
 			}
 		})
+		
+		// Update product meta value in search form
+		if(plat == prodWebVal){
+			$('#helpSearchForm input[name=product]').attr("value",prodWebSearchMetaProd);
+		}
 
+	}
+	
+	function modContentLinks (plt) {
+		$(".navigation-bar nav a[href], .reference-content a[href]").each (function (i) {
+			var $ele = $(this),
+				href = $ele.attr("href");
+
+				parts = href.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
+				$ele.attr ("href", newHref);
+		});
 	}
 
 	if (!isHome) {
-		$('.reference-content .page-title').after (val);
+		if(window.location.pathname.match( /(\/user\/)/)){
+			$('.reference-content .page-title').after (val);
+		}else{
+			modContentLinks (plat);
+		}
 	} else {
 		modHomeUrls (plat);
 	}
