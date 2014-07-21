@@ -12,18 +12,20 @@ $(document).ready(function() {
       localedir =   docConfig['localedir'];
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   var switcherEnablePaths = "use-maps";
-
+   
     var val = '<p id="plats">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
         '<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir +'/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class=""> iPad</a>' +
         ' | ' +
-        '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir +'/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class=""> iPhone</a>'
+        '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir +'/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class=""> iPhone</a>' +
+        ' | ' +
+        '<a data-appname="explorer" data-plat="mac" data-prefix="/' + localedir +'/explorer/mac" href="/en/explorer/" data-langlabel="mac" class=""> Mac</a>'
         '</p>',
 
 		prodKey = "explorer",
 		prodDVal = "ipad",
 		prodIOSVal = "iphone",
+		prodMacVal = "mac",
 		prodWPVal = "windows-phone",
 		homePath = "/en/explorer",
 		forumPath = "/en/explorer/forum"
@@ -37,8 +39,12 @@ $(document).ready(function() {
 		isHome = fldpath === homePath,
 		isForum = fldpath === forumPath;
 
-    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
-      plat = prodIOSVal;
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
+      if(navigator.userAgent.match(/(iPhone)/gi)){
+		plat = prodIOSVal;
+	  }else if(navigator.userAgent.match(/(Macintosh)/gi)){
+		plat = prodMacVal;
+	  }
 
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
@@ -109,7 +115,21 @@ $(document).ready(function() {
 				fld = parts.pop(),
 				newHref = href.replace ("/"+prodIOSVal+"/", "/"+plt+"/");
 				$ele.attr ("href", newHref);
-				console.log(href);
+		});
+	}
+	
+	function modContentLinks (plt) {
+		$(".reference-content a[href], .column-16 a[href]").each (function (i) {
+			var $ele = $(this),
+				href = $ele.attr("href");
+
+				parts = href.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = href.replace (prodIOSVal+"/", plt+"/");
+				newHref = newHref.replace (prodDVal+"/", plt+"/");
+				$ele.attr ("href", newHref);
+				
 		});
 	}
 
@@ -122,10 +142,12 @@ $(document).ready(function() {
 				$('.reference-content .page-title').after (val);
 			}else{
 				modHelpNavUrls (plat);
+				modContentLinks (plat);
 			}
 		}
 	} else {
 		modHomeUrls (plat);
+		modContentLinks (plat);
 	}
 
 	$("#plats a[data-appname]").each (function (i) {

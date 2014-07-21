@@ -49,7 +49,7 @@
     }    
 
     function cleanText (s) {
-      s = s.replace (/&lt;!--[\s\S]*--&gt;/gmi, "");
+      s = s.replace (/&lt;!--[\s\S]*][\s](--&gt;)?/gmi, "");
       return s;
     }
 
