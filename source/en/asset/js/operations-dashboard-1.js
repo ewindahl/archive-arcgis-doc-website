@@ -74,6 +74,10 @@ $(document).ready(function() {
 			$('.reference-content .page-title').after (val);
 		}else{
 			modContentLinks (plat);
+			// Update product meta value in search form
+			if(plat == prodWebVal){
+				$('#helpSearchForm input[name=product]').attr("value",prodWebSearchMetaProd);
+			}
 		}
 	} else {
 		modHomeUrls (plat);
