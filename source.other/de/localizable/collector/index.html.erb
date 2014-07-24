@@ -6,7 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
-
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -14,11 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
-
-
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2014-7-7"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="de"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -147,16 +147,16 @@ mobile: true
 
 
         <h3>Ger&auml;teanforderungen</h3>
-        <table><tr><td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+        <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
         <ul>
-          <li>Android 4.0 (Ice Cream Sandwich)<br/>oder h&ouml;her</li>
+          <li>Android 4.0 (Ice Cream Sandwich)oder h&ouml;her</li>
           <li>Armv7-Prozessor</li>
           <li>Unterst&uuml;tzung f&uuml;r OpenGL ES 2.0</li>
           <li>Unterst&uuml;tzung f&uuml;r exakte Ortung (GPS- und netzbasiert)</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS 7</li>
+          <li>iOS 7 oder h&ouml;her</li>
           <li>iPhone, iPad, iPod Touch</li>
         </ul></td><tr></table>
 
@@ -168,16 +168,15 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Neuheiten</h2>
-        <p>Collector for ArcGIS 10.2.3 wurde im April 2014 ver&ouml;ffentlicht. Es enth&auml;lt verschiedene Bugfixes und Verbesserungen.</p>
-        <p>Collector for ArcGIS 10.2.2 wurde im M&auml;rz 2014 ver&ouml;ffentlicht. Es enth&auml;lt die folgenden Verbesserungen:</p>
+        <p>Collector for ArcGIS 10.2.4 wurde im Juli 2014 ver&ouml;ffentlicht. Es enth&auml;lt die folgenden Verbesserungen:</p>
         <ul>
-        <li>Unterst&uuml;tzung von Offline-Workflows</li>
-        <li>H&ouml;here Benutzerfreundlichkeit</li>
+        <li>Suchen nach Features in der Karte</li>
+        <li>Wechseln zwischen lokalen Grundkarten</li>
         <li>Verschiedene Bugfixes und Verbesserungen</li>
-        <li>Unterst&uuml;tzung f&uuml;r zus&auml;tzliche Sprachen</li>
-        <li>Behobene Probleme bei Android: NIM098281, NIM096128, NIM098076</li>
-        <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
+        <!--<li>Support for additional languages</li>-->
+        <li>Behobene Probleme: NIM102088</li>
         </ul>
+        <p>Unterst&uuml;tzung von Offline-Workflows in Collector seit M&auml;rz 2014 (Version 10.2.2).</p>
 
 	<a name="sneakPeek"></a>
 	<h2 class="divider">Vorschau</h2>
@@ -187,9 +186,8 @@ mobile: true
 	<ul>
 	  <li>Weitere Werkzeuge f&uuml;r die Planung von Offline-Vorg&auml;ngen im Au&szlig;endienst</li>
 	  <li>Intelligentere Datenerfassungsformulare (einschlie&szlig;lich zugeh&ouml;riger Tabellen)</li>
-	  <li>Funktionen zum Durchsuchen von Daten<li>
 	  <li>Datenerfassung mit Versatz<li>
-	  <li>Unterst&uuml;tzung f&uuml;r Adhoc-Erfassung</li>
+	  <li>Unterst&uuml;tzung der Adhoc-Erfassung</li>
 	  <li>Integration von Peripherieger&auml;ten (Lasermessger&auml;te, Barcode-Scanner usw.)</li>
 	</ul>	
 	
@@ -207,7 +205,7 @@ mobile: true
 	          
 	  <h4><a href="#features">Features</a></h4>
 	  <h4><a href="#systemRequirements">Systemanforderungen</a></h4>
-	  <h4><a href="#whatsNew">Neue Funktionalit&auml;t</a></h4>
+	  <h4><a href="#whatsNew">Neuheiten</a></h4>
 	  <h4><a href="#sneakPeek">Vorschau</a></h4>
 	          
         </div>
