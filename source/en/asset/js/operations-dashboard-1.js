@@ -65,7 +65,9 @@ $(document).ready(function() {
 				fname = parts.pop(),
 				fld = parts.pop(),
 				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
-				$ele.attr ("href", newHref);
+				if(href.match( /(\/user\/)/)){
+					$ele.attr ("href", newHref);
+				}
 		});
 	}
 
