@@ -86,6 +86,10 @@ $(document).ready(function() {
 			    $ele.attr("href", newHref);
 			}
 		})
+		
+		// Update product meta value in search form
+		$('#helpSearchForm input[name=product]').attr("value","explorer-" + plat);
+		
 
 	}
 
@@ -143,6 +147,8 @@ $(document).ready(function() {
 			}else{
 				modHelpNavUrls (plat);
 				modContentLinks (plat);
+				// Update product meta value in search form
+				$('#helpSearchForm input[name=product]').attr("value","explorer-" + plat);
 			}
 		}
 	} else {

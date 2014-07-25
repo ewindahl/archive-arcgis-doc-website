@@ -6,7 +6,7 @@ css:
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
-
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -14,11 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
-
-
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2014-7-7"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="fr"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -147,16 +147,16 @@ mobile: true
 
 
         <h3>Configurations des p&eacute;riph&eacute;riques</h3>
-        <table><tr><td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+        <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
         <ul>
-          <li>Android&nbsp;4.0 (Ice Cream Sandwich)<br/>ou version ult&eacute;rieure</li>
+          <li>Android&nbsp;4.0 (Ice Cream Sandwich)ou version ult&eacute;rieure</li>
           <li>Processeur Armv7</li>
           <li>Prise en charge d&apos;OpenGL ES&nbsp;2.0</li>
           <li>Prise en charge des emplacements pr&eacute;cis (bas&eacute;e sur le r&eacute;seau et GPS)</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS&nbsp;7</li>
+          <li>iOS&nbsp;7 ou version ult&eacute;rieure</li>
           <li>iPhone, iPad, iPod Touch</li>
         </ul></td><tr></table>
 
@@ -168,16 +168,15 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Nouveaut&eacute;s</h2>
-        <p>Collector for ArcGIS&nbsp;10.2.3 est disponible depuis avril&nbsp;2014. L&apos;application pr&eacute;sente les am&eacute;liorations et r&eacute;solutions de bogues suivantes&nbsp;:</p>
-        <p>Collector for ArcGIS&nbsp;10.2.2 est disponible depuis mars&nbsp;2014. L&apos;application pr&eacute;sente les am&eacute;liorations suivantes&nbsp;:</p>
+        <p>Collector for ArcGIS&nbsp;10.2.4 est disponible depuis juillet&nbsp;2014. L&apos;application pr&eacute;sente les am&eacute;liorations suivantes&nbsp;:</p>
         <ul>
-        <li>Prise en charge des workflows en mode hors connexion</li>
-        <li>Exp&eacute;rience utilisateur mise &agrave; jour</li>
+        <li>Rechercher des entit&eacute;s sur votre carte</li>
+        <li>Passer d&apos;un fond de carte local &agrave; l&apos;autre</li>
         <li>Diverses r&eacute;solutions de bogues et am&eacute;liorations</li>
-        <li>Prise en charge de langues suppl&eacute;mentaires</li>
-        <li>Probl&egrave;mes li&eacute;s &agrave; Android r&eacute;solus&nbsp;: NIM098281, NIM096128, NIM098076</li>
-        <!-- <li>iOS issues addressed: N/A at 10.2.2</li> -->
+        <!--<li>Support for additional languages</li>-->
+        <li>Probl&egrave;mes r&eacute;solus&nbsp;: NIM102088</li>
         </ul>
+        <p>Prise en charge du workflow hors connexion pour Collector &agrave; compter de mars&nbsp;2014 (version&nbsp;10.2.2).</p>
 
 	<a name="sneakPeek"></a>
 	<h2 class="divider">Aper&ccedil;u furtif</h2>
@@ -187,7 +186,6 @@ mobile: true
 	<ul>
 	  <li>Davantage d&apos;outils de planification des op&eacute;rations hors connexion sur le terrain</li>
 	  <li>Formulaires de collecte de donn&eacute;es plus intelligents (notamment des tables li&eacute;es)</li>
-	  <li>Possibilit&eacute; d&apos;effectuer des recherches dans les donn&eacute;es<li>
 	  <li>Collecte de donn&eacute;es avec d&eacute;calages<li>
 	  <li>Prise en charge des collectes ad hoc</li>
 	  <li>Int&eacute;gration de p&eacute;riph&eacute;riques (t&eacute;l&eacute;m&egrave;tres &agrave; laser, scanners de codes barres, etc.)</li>
