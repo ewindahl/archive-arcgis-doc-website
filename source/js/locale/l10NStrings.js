@@ -204,7 +204,9 @@ var localeJsonObj = {
       "we-are-sorry": "نتقدم بالاعتذار  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "cs": {
       "404-click-here-for-english": "Chcete-li zjistit, zda je k dispozici verze v angličtině,<a href='#' id='englishLink'>klikněte sem</a>.", 
@@ -382,7 +384,9 @@ var localeJsonObj = {
       "we-are-sorry": "Omlouváme se  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "da": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Klik her</a> for at se, om der findes en dansk version.", 
@@ -560,7 +564,9 @@ var localeJsonObj = {
       "we-are-sorry": "Vi beklager  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "de": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Klicken Sie hier</a>, um festzustellen, ob eine englische Version verfügbar ist.", 
@@ -738,7 +744,9 @@ var localeJsonObj = {
       "we-are-sorry": "Es tut uns leid  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "en": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available.", 
@@ -916,7 +924,9 @@ var localeJsonObj = {
       "we-are-sorry": "We're sorry  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "es": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Haga clic aquí</a> para ver si hay una versión en inglés.", 
@@ -1094,7 +1104,9 @@ var localeJsonObj = {
       "we-are-sorry": "Lo sentimos  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "et": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Klikkige siin</a>, et vaadata, kas ingliskeelne versioon on saadaval.", 
@@ -1272,7 +1284,9 @@ var localeJsonObj = {
       "we-are-sorry": "Vabandust  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "fi": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Napsauttamalla tätä</a> voit tutkia, onko englanninkielinen versio käytettävissä.", 
@@ -1450,7 +1464,9 @@ var localeJsonObj = {
       "we-are-sorry": "Olemme pahoillamme  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "fr": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Cliquez ici</a> pour consulter une version en anglais, si elle est disponible.", 
@@ -1628,7 +1644,9 @@ var localeJsonObj = {
       "we-are-sorry": "Désolé  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "he": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>לחץ כאן</a> לראות אם יש גרסה אנגלית זמינה.", 
@@ -1806,7 +1824,9 @@ var localeJsonObj = {
       "we-are-sorry": "מצטערים  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "it": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Fare clic qui</a> per verificare la disponibilità di una versione in lingua inglese.", 
@@ -1984,7 +2004,9 @@ var localeJsonObj = {
       "we-are-sorry": "Spiacenti  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "ja": {
       "404-click-here-for-english": "英語版が利用できるかを確認するには、<a href='#' id='englishLink'>ここをクリック</a>します。", 
@@ -2162,7 +2184,9 @@ var localeJsonObj = {
       "we-are-sorry": "申し訳ございません  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "ko": {
       "404-click-here-for-english": "영어 버전이 제공되는지 확인하려면 <a href='#' id='englishLink'>여기를 클릭</a>하세요.", 
@@ -2340,7 +2364,9 @@ var localeJsonObj = {
       "we-are-sorry": "죄송합니다.  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "lt": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Spustelėkite čia</a>, kad pamatytumėte, ar yra versija anglų k.", 
@@ -2518,7 +2544,9 @@ var localeJsonObj = {
       "we-are-sorry": "Atsiprašome  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "lv": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Noklikšķiniet šeit</a>, lai apskatītos, vai nav pieejama versija angļu valodā.", 
@@ -2696,7 +2724,9 @@ var localeJsonObj = {
       "we-are-sorry": "Mēs atvainojamies  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "nl": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Klik hier</a> om te controleren of er een Engelse versie beschikbaar is.", 
@@ -2874,7 +2904,9 @@ var localeJsonObj = {
       "we-are-sorry": "Het spijt ons  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "no": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Klikk her</a> for å se om det finnes en engelsk versjon.", 
@@ -3052,7 +3084,9 @@ var localeJsonObj = {
       "we-are-sorry": "Vi beklager!  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "pl": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Kliknij tutaj</a>, aby sprawdzić, czy dostępna jest wersja w języku angielskim.", 
@@ -3230,7 +3264,9 @@ var localeJsonObj = {
       "we-are-sorry": "Przepraszamy  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "pt-br": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Clique aqui</a> para verificar se uma versão em Inglês está disponível.", 
@@ -3408,7 +3444,9 @@ var localeJsonObj = {
       "we-are-sorry": "'re Desculpe  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "pt-pt": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Clique aqui</a> para verificar se está disponível uma versão em inglês.", 
@@ -3586,7 +3624,9 @@ var localeJsonObj = {
       "we-are-sorry": "Lamentamos  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "ro": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Faceţi clic aici</a> pentru a vedea dacă este disponibilă o versiune în limba engleză.", 
@@ -3764,7 +3804,9 @@ var localeJsonObj = {
       "we-are-sorry": "Ne pare rău  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "ru": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Щелкните здесь</a>, чтобы узнать, доступна ли версия на английском языке.", 
@@ -3942,7 +3984,9 @@ var localeJsonObj = {
       "we-are-sorry": "Сожалеем  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "sv": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Klicka här</a> om du vill se om en engelsk version finns tillgänglig.", 
@@ -4120,7 +4164,9 @@ var localeJsonObj = {
       "we-are-sorry": "Vi beklagar  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "th": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>คลิกที่นี่</a> หากว่าสามารถดูในเวอร์ชั่นภาษาอังกฤษ", 
@@ -4298,7 +4344,9 @@ var localeJsonObj = {
       "we-are-sorry": "พวกเราขอโทษ  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "tr": {
       "404-click-here-for-english": "İngilizce sürüm olup olmadığını görmek için <a href='#' id='englishLink'>buraya tıklayın</a>.", 
@@ -4476,7 +4524,9 @@ var localeJsonObj = {
       "we-are-sorry": "Üzgünüz  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }, 
    "zh-cn": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>单击此处</a>查看英语版本是否可用。", 
@@ -4654,6 +4704,8 @@ var localeJsonObj = {
       "we-are-sorry": "非常抱歉  ", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+	  "discussions": "Discussions", 
+      "discussions-ht": "Discussions on Geonet"
    }
 };

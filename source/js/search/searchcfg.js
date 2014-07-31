@@ -67,7 +67,7 @@ var filterCfg = {
         }
       },
       {
-        k:"forums",
+        k:"discussions",
         q:{
           r:"",
           s:"forums_jive",
