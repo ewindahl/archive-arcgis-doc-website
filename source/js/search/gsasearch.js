@@ -139,7 +139,7 @@ app.QueryStatement = Backbone.Model.extend ({
           if (fldtype == "requiredfields") {
             return ("r" in v.q) ? v.q["r"] : ""  
           } else {
-            if(self.get ("collection") === "forums"){
+            if(self.get ("collection") === "discussions"){
               return ("pForums" in v.q) ? v.q["pForums"] : ""  
             } else {
               return ("p" in v.q) ? v.q["p"] : ""  
@@ -191,7 +191,7 @@ app.QueryStatement = Backbone.Model.extend ({
       "num" : (callType && callType== "forumsPanel") ? 3 : increment
     };
 
-    if (self.get ("collection") == "forums") {
+    if (self.get ("collection") == "discussions") {
       vDefaults.site = "forums_jive";
     }
 
@@ -204,7 +204,7 @@ app.QueryStatement = Backbone.Model.extend ({
                     "requiredfields": andStmt (addFilter ("requiredfields"))
                   }, 
                   { 
-                    "partialfields": andStmt (addFilter ("partialfields"), (self.get ("collection") != "forums")?addLanguage():"")
+                    "partialfields": andStmt (addFilter ("partialfields"), (self.get ("collection") != "discussions")?addLanguage():"")
                   }
                 );
 
@@ -689,8 +689,8 @@ app.SRListView = Backbone.View.extend ({
 // Forum panel view
 app.ForumListView = Backbone.View.extend ({
 
-    template: _.template('<h4 class="no-trailer"><a class="searchTitle" href="<%= url %>"><%= t %></a></h4>' +
-                     '<p class="item-snippet1"><%= txt %></p></div>'),
+    template: _.template('<h6 class="no-trailer"><a class="searchTitle" href="<%= url %>"><%= t %></a></h4>' +
+                     '<p class="item-snippet1-right-pane"><%= txt %></p></div>'),
 
     initialize: function () {
       dbg ("ForumListView.init");
@@ -705,9 +705,7 @@ app.ForumListView = Backbone.View.extend ({
 
       this.$el.empty();
 
-      //dbg (res);
-      console.log(res)
-
+      
       if (res) { 
         var rL = $.isArray (res.r) ? res.r : [res.r],
             l = _.map (rL, _.bind (function (x) {
@@ -728,9 +726,11 @@ app.ForumListView = Backbone.View.extend ({
 
         this.$el.html (l.join (""));
       }
-      if(this.$el.is(':empty')) {
+      
+      //if no Geonet result OR discussions filter is selected, hide the right pane (Geonet result)  
+      if(this.$el.is(':empty') || (app.qStmt.get("collection") === "discussions")) {
           $("#forumPanel").hide()
-      }  
+      }
 
       return this;
     }
@@ -989,7 +989,7 @@ app.SearchRouter = Backbone.Router.extend({
       if(sitecfg["includeForumResult"]){
         var queryStrings = app.util.query2kv(query);
         var origCollection =  queryStrings.collection;
-        queryStrings.collection = "forums"
+        queryStrings.collection = "discussions"
         app.qStmt.set (_.extend (queryStrings, {status:-1, ts:0}), {silent:true});
         app.doForumSearch()
 
