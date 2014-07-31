@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-7-8"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="zh-cn">
 
 mobile: true
 
@@ -107,7 +107,7 @@ mobile: true
 
 
 	<a name="features" ></a>
-	<h2 class="divider">功能</h2>
+	<h2 class="divider">要素</h2>
 	<p>将系统和所管理的资源整合为一个普通视图。通过桌面或平板设备监控大规模事件或日常操作的实时数据源。创建整合了地图、图表和图形的专用执行仪表盘。</p>
 	
 	<ul>
@@ -126,9 +126,9 @@ mobile: true
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -142,8 +142,8 @@ mobile: true
  } 
  </script> 
  <h3>Windows 应用程序</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>支持的操作系统</div> 
-     <div exp1='yes' style="display:none;">
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">支持的操作系统</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8.1、Windows 8.1 专业版和 Windows 8.1 企业版（32 位和 64 位 [EM64T]）</li>
           <li>Windows 8、Windows 8 专业版和 Windows 8 企业版（32 位和 64 位 [EM64T]）</li>
@@ -154,7 +154,7 @@ mobile: true
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>硬件要求</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">硬件要求</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>CPU 速度：2.2 GHz 或更高；建议使用超线程 (HTT) 或多核。</li>
@@ -169,30 +169,30 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>软件要求</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">软件要求</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
         <p style="padding:0 15px">需要安装 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> 或更高版本。必须具有对计算机的管理权限才能进行安装。</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>开发人员要求</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">开发者要求</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
 	<p style="padding:0 15px">自定义 Operations Dashboard for ArcGIS 需要使用 <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a>。同时还需要 Microsoft Visual Studio 2012 或 2013 专业版、高级版或旗舰版。 </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>支持的语言</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">受支持语言</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">阿拉伯语、捷克语、丹麦语、荷兰语、爱沙尼亚语、芬兰语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语、立陶宛语、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、中文（简体）、西班牙语、瑞典语和土耳其语。</p>
+     	<p style="padding:0 15px">阿拉伯语，捷克语，丹麦语，荷兰语，英语，爱沙尼亚语，芬兰语，法语，德语，希伯来语，意大利语，日语，韩语，拉脱维亚语，立陶宛语，挪威语，波兰语，葡萄牙语（巴西），葡萄牙语（葡萄牙），罗马尼亚语，俄语，中文（简体），西班牙语，瑞典语和土耳其语。</p>
      	<p style="padding:0 15px">Windows 版应用程序中使用的语言取决于操作系统的语言设置。如果使用不受支持的语言设置，则应用程序将使用英语。</p>
 </div>
 <div class="clear"></div>
 
      <h3/>
  <h3>浏览器应用程序</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>支持的浏览器</div>
-<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">支持的浏览器</a>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> 桌面
  <ul style="padding:0 15px">
  <li>Chrome 19.0 和更高版本</li>
  <li>Firefox 4.0 和更高版本</li>
@@ -201,16 +201,16 @@ mobile: true
  </ul> 
  Tablet 
  <ul style="padding:0 15px">
- <li>在 Android 4.0 和更高版本中运行的 Chrome</li>
+ <li>在 Android 4.0 和更高版本中运行 Chrome 19.0 和更高版本</li>
  <li>在 iOS 6.0 和更高版本中运行的 Safari</li>
  </ul>
- 手机 
+ 电话 
  <p style="padding:0 15px">当前不支持智能手机浏览器。</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>支持的语言</div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">受支持语言</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">捷克语，丹麦语，荷兰语，爱沙尼亚语，芬兰语，法语，德语，意大利语，日语，韩语，拉脱维亚语，立陶宛语，挪威语，波兰语，葡萄牙语（巴西），葡萄牙语（葡萄牙），罗马尼亚语，俄语，中文（简体），西班牙语，瑞典语和土耳其语。</p>
+      	<p style="padding:0 15px">捷克语，丹麦语，荷兰语，英语，爱沙尼亚语，芬兰语，法语，德语，意大利语，日语，韩语，拉脱维亚语，立陶宛语，挪威语，波兰语，葡萄牙语（巴西），葡萄牙语（葡萄牙），罗马尼亚语，俄语，中文（简体），西班牙语，瑞典语和土耳其语。</p>
       	<p style="padding:0 15px">在浏览器版本中，将使用您的 ArcGIS Online 配置文件来设置语言。如果使用不受支持的语言设置，则应用程序将使用英语。</p>
 </div>
 <div class="clear"></div>
@@ -221,29 +221,22 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">新特性</h2>
-        <p>Operations Dashboard for ArcGIS 10.2.3 已于 2014 年 4 月发布。该版本包括以下增强：</p>
-        <ul>
-        <li>搜索数据 (<span class="icon-windows-8"/>)。</li>
-        <li>修复了若干缺陷。 </li>
-        <li>可使用 ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>)。</li>
-        <li>可使用 ArcGIS Runtime SDK 10.2.3 for WPF 开发加载项 (<span class="icon-windows-8"/>)。</li>
-        </ul>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
+	        <p>Operations Dashboard for ArcGIS 10.2.3 已于 2014 年 7 月进行更新，此次更新修复了若干缺陷并进行了多处改进。</p>
+                </td>
+	        <td valign="top"><h4 class="icon-browser">浏览器</h4>
+	        <p>Operations Dashboard for ArcGIS 的浏览器应用程序已于 2014 年 7 月进行更新。该版本包括以下增强：</p>
+	        <ul>
+	          <li>对多个要素执行要素操作。<li>
+	          <li>地图服务可用作数据源。</li>
+	          <li>修复了若干缺陷并进行了多处改进。</li>
+        </ul></td><tr></table>
         
-        <p>Operations Dashboard for ArcGIS 10.2.2 已于 2014 年 3 月发布。该版本包括以下增强：</p>
-        <ul>
-        <li>可在浏览器中查看操作视图。</li>
-        <li>地图服务可用作数据源。</li>
-        <li>支持图层的刷新间隔设置。</li>
-        <li>新的选择工具。</li>
-        <li>列表微件更新。</li>
-        <li>可使用 ArcGIS Runtime SDK 10.2.2 for WPF。</li>
-        <li>可使用 ArcGIS Runtime SDK 10.2.2 for WPF 开发加载项。</li>
-        <li>新增土耳其语的本地化版本。</li>
-        </ul>
+        
         
         
         <a name="sneakPeek"></a>
-	<h2 class="divider">快速查看</h2>
+	<h2 class="divider">抢先预览</h2>
 	<p>Operations Dashboard 现已成为监控操作的强大应用程序。但它并不仅限于此！以下内容将向您介绍此应用程序的发展方向以及展示将出现在设备中的各种功能：</p>
 	
 	<table border="1" style="text-align:center">
@@ -266,11 +259,11 @@ mobile: true
 	  </tr>
 	  <tr><th>可扩展</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>使用地图服务作为数据源</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	  </tr>
 	  <tr><th>搜索数据</th>
 	    <td><span class="icon-check"/></td>
@@ -310,10 +303,10 @@ mobile: true
        <div class="imgFrame block">
           <h3>详细信息</h3>
           
-	  <h4><a href="#features">功能</a></h4>
+	  <h4><a href="#features">要素</a></h4>
 	  <h4><a href="#systemRequirements">系统要求</a></h4>
 	  <h4><a href="#whatsNew">新特性</a></h4>
-	  <h4><a href="#sneakPeek">快速查看</a></h4>
+	  <h4><a href="#sneakPeek">抢先预览</a></h4>
           
         </div>
 
