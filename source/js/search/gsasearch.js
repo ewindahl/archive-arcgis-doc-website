@@ -188,7 +188,7 @@ app.QueryStatement = Backbone.Model.extend ({
 
       "q" : "",
       "start" : 0,
-      "num" : (callType && callType== "forumsPanel") ? 3 : increment
+      "num" : (callType && callType== "forumsPanel") ? 5 : increment
     };
 
     if (self.get ("collection") == "discussions") {
