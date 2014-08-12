@@ -1,0 +1,91 @@
+---
+title: Trust
+css:
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - video-init
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - sitecfg.js
+
+metatags:
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="nl">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/nl/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/nl/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online-systeemstatus" href="/nl/trust/system-status/">Systeemstatus</a></li>
+        <li><a title="ArcGIS Online-beveiliging" href="/nl/trust/security/">Beveiliging</a></li>
+        <li><a title="ArcGIS Online-privacy" href="/nl/trust/privacy/">Privacy</a></li>
+        <li><a title="ArcGIS Online-privacy" href="/nl/trust/compliance/">Naleving</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="column-16 tablet-column-24">
+    <h3 class="gray">ArcGIS Online is ontworpen als een beveiligd systeem met beheerde toegang</h3>
+    <hr />
+    <div id="collectorMapFeature" class="column-12 phone-column-24">
+      <img src="img/features-security-data-ownership.jpg" alt="Eigendom van beveiligingsgegevens" />
+    </div>
+    <div id="collectorDataFeature" class="column-12 phone-column-24">
+      <p>Op Trust.ArcGIS.com vindt u alle gewenste informatie over beveiliging, privacy en naleving. Zoek: </p>
+      <ul>
+        <li>Servicebeschikbaarheid, informatie over systeemprestaties en statusgeschiedenis van ArcGIS Online</li>
+        <li>Beveiligingsupdates en huidige waarschuwingen</li>
+        <li>Productbeveiligingsinformatie voor ArcGIS Online</li>
+        <li>Best practices voor beveiliging voor uw organisatie</li>
+        <li>Privacy- en nalevingsinformatie</li>
+      </ul>
+      <p>Trust.ArcGIS.com werd geïnspireerd door gesprekken met onze klanten. Wat zou u hier willen zien? Als u suggesties hebt, kunt u deze op <a href="http://ideas.arcgis.com">ArcGIS Ideas</a> plaatsen.</p>
+    </div>
+    <div class="clear"></div>
+
+    <div style="text-align:center; padding-top:150px;">
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+    <div>
+      <a href="/nl/trust/system-status/" class="btn tertiary" style="width:100%;text-align:center;" >Systeemstatus controleren</a>
+    </div>
+    <br/>
+    <div class="imgFrame block">
+      <h3 class="icon-announcement">Waarschuwingen en aankondigingen</h3>
+      <p>Op 6 juni 2014 ontving ArcGIS Online de FISMA Low Authority to Operate (ATO) van de Amerikaanse overheid. Deze FISMA-accreditatie garandeert dat ArcGIS Online uitvoerig beoordeeld is door een externe beoordelaar op het voldoen aan strenge veiligheidseisen, zoals bepaald door het Amerikaanse National Institute of Standards and Technology (NIST) Special Publication 800-53. <a href="http://www.esri.com/esri-news/releases/14-2qtr/esri-mapping-platform-secured-for-federal-agencys-use">Meer lezen...</a></p>
+    </div>
+    <br />
+    <div class="panel">
+      <h4>"Esri verbindt zich ertoe om de beveiliging van het kaartplatform permanent te verbeteren en het klantenvertrouwen te versterken via accreditaties zoals FISMA."</h4>
+      <p>Michael Young, Principal Security Architect, Esri</p>
+
+    </div>
+    <br/>
+    <div class="" style="text-align:center;">
+      <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/nl/trust/security-concern/"> Een beveiligingsprobleem rapporteren</a>  </h4>
+    </div>
+  </div>
+
+ </div>
+
+  <!-- <script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>   <script type="text/javascript">     $(window).load(function() {       $('#blog').rssFeed({         url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',         max: 2,         layout: 0       });       });     </script>  -->

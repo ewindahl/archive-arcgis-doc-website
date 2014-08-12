@@ -1,0 +1,158 @@
+---
+title: 报告安全问题
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/zh-cn/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/zh-cn/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online 系统状态" href="/zh-cn/trust/system-status/">系统状态</a></li>
+        <li><a title="ArcGIS Online 安全性" href="/zh-cn/trust/security/">安全性</a></li>
+        <li><a title="ArcGIS Online 隐私" href="/zh-cn/trust/privacy/">隐私</a></li>
+        <li><a title="ArcGIS Online 隐私" href="/zh-cn/trust/compliance/">兼容性</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">报告安全问题</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">请将包括您特定问题的详细信息在内的所有可用信息填入右边的表单中。您的联系人详细信息将用于跟进您所提供的信息。请从主题下拉菜单中选择适合的主题。</p>
+		<ul>
+			<li data-langlabel="">漏洞 - 报告在站点或应用程序中发现的漏洞。</li>
+			<li data-langlabel="">来自 Esri 的可疑电子邮件 - 如果您相信自己已成为来自 Esri 电子邮件地址的可能的钓鱼攻击的目标，或已接收到来自 Esri 的其他可疑电子邮件。</li>
+			<li data-langlabel="">隐私问题 - 如果您有关于应用程序或组织的隐私问题。</li>
+			<li data-langlabel="">其他 - 针对所有其他有关安全、隐私或合规性的问题。</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">漏洞报告策略</h3>
+	  </header>
+      
+        <p data-langlabel="">ArcGIS.com 安全团队确认独立安全研究人员在 Internet 安全性方面扮演着颇具价值的角色。我们鼓励对可能在站点或应用程序中发现的所有漏洞进行负责任的报告。Esri 承诺将与安全社区密切合作，对任何报告给我们的潜在漏洞进行验证和响应。只要您遵循本策略，Esri 绝不会向您提起诉讼或启动执法调查。</p>
+	  <header>
+		<h4 data-langlabel="">ArcGIS.com <strong>禁止</strong>以下类型的安全研究</h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">导致或试图导致拒绝服务 (DoS) 条件。</li>
+		<li data-langlabel="">未经 Esri 明确同意下使用自动安全工具。使用自动工具可能导致调查行为或是您的 IP 受拦截。</li>
+		<li data-langlabel="">访问或尝试访问不属于您的数据或信息。</li>
+		<li data-langlabel="">破坏或损坏，或试图破坏或损坏不属于您的数据或信息。</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">ArcGIS.com 安全团队承诺</h4>
+	  </header>
+		<p data-langlabel="">所有遵循此 ArcGIS.com 漏洞报告策略的安全研究人员，ArcGIS.com 安全团队做出以下承诺：</p>
+		
+		<ul>
+		<li data-langlabel="">及时响应并确认收到您的报告。</li>
+		<li data-langlabel="">提供解决此漏洞的预计时间。</li>
+		<li data-langlabel="">漏洞修复后，通知报告人员。</li>		
+		</ul>
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">名称： </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">电子邮件地址： </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">电话号码： </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">组织<span class="optional">（可选）：</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">主题: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option> <option value="Vulnerability">漏洞</option> <option value="Suspicious E-mail from Esri">来自 Esri 的可疑电子邮件</option> <option value="Privacy Issue">隐私问题</option> <option value="audi">其他</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">描述： </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">为防止自动接收垃圾邮件，请输入提供的数字： </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">数字： <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="内部" name="source" id="source">
+
+			  <input value="详细" name="resultType" id="resultType" type="hidden">
+			  <input value="安全问题" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="zh-cn" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">提交</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>感谢您报告此问题。我们将在未来几个工作日内调查并处理您的问题。</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>提交过程中出错。请稍候重新提交您的问题。</h4></p>
+	  </div>
+
+	  <strong><span style="display:none;" id="referPageLink">返回<a id="feedback-referring-link" href="">引用页面</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">提交</a>其他安全问题</span></strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+

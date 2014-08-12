@@ -1,0 +1,165 @@
+---
+title: Sicherheitsproblem melden
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/de/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/de/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online-Systemstatus" href="/de/trust/system-status/">Systemstatus</a></li>
+        <li><a title="ArcGIS Online-Sicherheit" href="/de/trust/security/">Sicherheit</a></li>
+        <li><a title="ArcGIS Online-Datenschutz" href="/de/trust/privacy/">Datenschutz</a></li>
+        <li><a title="ArcGIS Online Datenschutz" href="/de/trust/compliance/">Konformität</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">Sicherheitsproblem melden</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">Bitte füllen Sie das Formular auf der rechten Seite mit den entsprechenden Angaben aus und geben Sie alle erforderlichen Details zu Ihrem konkreten Anliegen an. Ihre Kontaktdaten werden für die weitere Bearbeitung Ihrer Angaben verwendet. Bitte wählen Sie das zutreffende Thema im Dropdown-Menü „Thema“ aus.</p>
+		<ul>
+			<li data-langlabel="">Sicherheitslücke – eine auf unserer Seite oder in unserer Anwendung gefundene Sicherheitslücke melden</li>
+			<li data-langlabel="">Verdächtige E-Mail von Esri – wenn Sie denken, dass Sie Ziel einer möglichen Phishing-Attacke von einer Esri-E-Mail-Adresse geworden sind oder eine sonstige verdächtige E-Mail von Esri erhalten haben.</li>
+			<li data-langlabel="">Datenschutzproblem – wenn Sie ein Problem mit dem Datenschutz haben, der unsere Anwendung oder Organisation betrifft.</li>
+			<li data-langlabel="">Sonstiges – für alle sonstigen Anliegen in Sachen Sicherheit, Datenschutz oder Konformität.</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">Richtlinie zur Meldung von Sicherheitsrisiken</h3>
+	  </header>
+      
+        <p data-langlabel="">Das Sicherheitsteam bei ArcGIS.com weiß um die wertvolle Rolle, die unabhängigen Sicherheitsspezialisten bei der Internetsicherheit zukommt. Wir fördern die verantwortungsbewusste Berichterstattung über jegliche Sicherheitsrisiken, die auf unserer Webseite oder in unseren Anwendungen gefunden werden. Esri ist bestrebt, mit der Sicherheitsgemeinschaft an der Überprüfung und Behebung möglicher Sicherheitslücken zu arbeiten, auf die wir aufmerksam gemacht werden. Esri wird weder Klage gegen Sie erheben noch polizeiliche Ermittlungen einleiten lassen, wenn Sie diese Richtlinie befolgen.</p>
+	  <header>
+		<h4 data-langlabel="">ArcGIS.com erlaubt <strong>keine</strong> Sicherheitsforschung der folgenden Typen:</h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">Verursachen oder versuchtes Verursachen eines Denial-of-Service-Zustands (DoS)</li>
+		<li data-langlabel="">Verwendung automatischer Sicherheitswerkzeuge ohne ausdrückliche Genehmigung von Esri. Die Verwendung automatischer Werkzeuge kann ermittlerische Maßnahmen oder die Blockierung Ihrer IP-Adresse(n) nach sich ziehen.</li>
+		<li data-langlabel="">Zugriff oder versuchter Zugriff auf Daten oder Informationen, die Ihnen nicht gehören</li>
+		<li data-langlabel="">Zerstörung oder Beschädigung bzw. versuchte Zerstörung oder Beschädigung von Daten oder Informationen, die Ihnen nicht gehören</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">Selbstverpflichtung des Sicherheitsteams von ArcGIS.com</h4>
+	  </header>
+		<p data-langlabel="">Allen Sicherheitsspezialisten gegenüber, die diese Richtlinie zur Meldung von Sicherheitsrisiken auf ArcGIS.com befolgen, verpflichtet sich das ArcGIS.com-Sicherheitsteam zu Folgendem:</p>
+		
+		<ul>
+		<li data-langlabel="">Rechtzeitige Bestätigung des Eingangs Ihres Berichts</li>
+		<li data-langlabel="">Bereitstellung einer zeitlichen Aufwandsschätzung zur Behebung dieser Sicherheitslücke</li>
+		<li data-langlabel="">Benachrichtigung der meldenden Person, sobald die Sicherheitslücke behoben wurde</li>		
+		</ul>
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">Name: </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">E-Mail-Adresse: </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Telefonnummer: </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">Organisation <span class="optional">(optional):</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">Thema: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option>
+				  <option value="Vulnerability">Sicherheitslücke</option>
+				  <option value="Suspicious E-mail from Esri">Verdächtige E-Mail von Esri</option>
+				  <option value="Privacy Issue">Datenschutzproblem</option>
+				  <option value="audi">Andere</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">Beschreibung: </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">Geben Sie die angezeigten Ziffern ein, um automatisierten Spam zu verhindern: </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">Ziffern: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="intern" name="source" id="source">
+
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Sicherheitsproblem" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="de" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Senden</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>Vielen Dank, dass Sie uns auf dieses Problem aufmerksam machen. Wir werden es untersuchen und Ihr Anliegen innerhalb der nächsten Tage bearbeiten.</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>Bei der Übermittlung ist ein Fehler aufgetreten. Bitte reichen Sie Ihr Anliegen zu einem späteren Zeitpunkt erneut ein.</h4></p>
+	  </div>
+
+	  <strong>
+			<span style="display:none;" id="referPageLink">Kehren Sie zur <a id="feedback-referring-link" href="">verweisenden Seite</a> zurück.</span>
+			<span style="display:none;" id="resubmit">Ein weiteres Sicherheitsproblem <a id="resubmit" href="" target="_self">melden</a></span>
+	  </strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+

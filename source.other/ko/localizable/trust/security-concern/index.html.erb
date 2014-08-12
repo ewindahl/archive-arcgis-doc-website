@@ -1,0 +1,158 @@
+---
+title: 보안 우려 사항 보고
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ko/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/ko/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online 시스템 상태" href="/ko/trust/system-status/">시스템 상태</a></li>
+        <li><a title="ArcGIS Online 보안" href="/ko/trust/security/">보안</a></li>
+        <li><a title="ArcGIS Online 개인 정보 보호" href="/ko/trust/privacy/">개인 정보 보호</a></li>
+        <li><a title="ArcGIS Online 개인 정보 보호" href="/ko/trust/compliance/">규정 준수</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">보안 우려 사항 보고</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">구체적인 우려 사항에 대한 자세한 정보를 포함하여 해당되는 모든 정보를 오른쪽 양식에 입력하세요. 귀하의 연락처 정보는 귀하가 제공한 정보에 대한 후속 조치를 취하는 데 사용됩니다. 제목 드롭다운 메뉴에서 해당되는 제목을 선택하세요.</p>
+		<ul>
+			<li data-langlabel="">취약점 - Esri 사이트 또는 응용프로그램에서 발견된 취약점을 보고합니다.</li>
+			<li data-langlabel="">Esri의 의심스러운 이메일 - Esri 이메일 주소가 피싱 공격의 대상이라고 생각되거나, Esri에서 다른 의심스러운 전자 메일 통신을 받은 경우</li>
+			<li data-langlabel="">개인 정보 보호 문제 - Esri 응용프로그램 또는 기관과 관련된 개인 정보 보호 문제가 있는 경우</li>
+			<li data-langlabel="">기타 - 그 밖의 모든 보안, 개인 정보 보호 또는 규정 준수 관련 우려 사항</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">취약점 보고 정책</h3>
+	  </header>
+      
+        <p data-langlabel="">ArcGIS.com 보안 팀은 인터넷 보안에서 독립된 보안 조사 기관의 중요한 역할을 인식하고 있습니다. Esri 사이트나 응용프로그램에서 발견될 수 있는 모든 취약점을 책임감 있게 보고해 주시기 바랍니다. Esri는 보안 커뮤니티와 협력하여 보고된 잠재적 취약점을 확인하고 신속하게 대응할 수 있도록 최선을 다하고 있습니다. Esri에서는 이 정책을 준수할 경우 소송을 제기하거나 법적 조사에 착수하지 않습니다.</p>
+	  <header>
+		<h4 data-langlabel="">ArcGIS.com에서는 다음과 같은 유형의 보안 조사를 허용하지 않습니다.</h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">DoS(서비스 거부) 조건을 유발하거나 유발하려는 시도</li>
+		<li data-langlabel="">Esri의 명시적 동의 없이 자동화된 보안 도구 사용. 자동화된 도구를 사용할 경우 수사를 받거나 IP가 차단될 수 있습니다.</li>
+		<li data-langlabel="">귀하의 소유가 아닌 데이터나 정보에 대한 액세스 또는 액세스 시도</li>
+		<li data-langlabel="">귀하의 소유가 아닌 데이터나 정보의 삭제/손상 또는 삭제/손상 시도</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">ArcGIS.com 보안 팀의 약속</h4>
+	  </header>
+		<p data-langlabel="">본 ArcGIS.com 취약점 정책을 준수하는 모든 보안 조사 기관에게 ArcGIS.com 보안 팀은 다음 사항을 약속합니다.</p>
+		
+		<ul>
+		<li data-langlabel="">보고를 받은 후 적시에 대응</li>
+		<li data-langlabel="">해당 취약점을 해결하는 데 소요되는 예상 기간 제공</li>
+		<li data-langlabel="">취약점이 해결된 경우 보고한 개인에게 알림</li>		
+		</ul>
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">이름: </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">이메일 주소: </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">전화 번호: </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">기관<span class="optional">(선택 사항):</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">제목: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option> <option value="Vulnerability">취약점</option> <option value="Suspicious E-mail from Esri">Esri의 의심스러운 이메일</option> <option value="Privacy Issue">개인 정보 보호 문제</option> <option value="audi">기타</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">설명: </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">자동화된 스팸을 방지하기 위해 제공된 숫자를 입력하세요. </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">숫자: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="내부" name="source" id="source">
+
+			  <input value="자세한 정보 표시" name="resultType" id="resultType" type="hidden">
+			  <input value="보안 우려 사항" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="ko" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">제출</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>이 문제를 보고해 주셔서 감사합니다. 며칠(영업일 기준) 이내에 귀하의 우려 사항을 조사하여 해결해 드리겠습니다.</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>제출하는 동안 오류가 발생했습니다. 우려 사항을 나중에 다시 제출하세요.</h4></p>
+	  </div>
+
+	  <strong><span style="display:none;" id="referPageLink"><a id="feedback-referring-link" href="">참조 페이지</a>로 돌아가기</span> <span style="display:none;" id="resubmit">다른 보안 우려 사항 <a id="resubmit" href="" target="_self">제출</a></span></strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+
