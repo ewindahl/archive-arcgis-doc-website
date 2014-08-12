@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/)/)){
   return;
   }
   
@@ -365,7 +365,7 @@ jQuery(document).ready(function ($) {
   // Generic = full +partial | all = full+partial+others
   docCfg.langSelector = "generic";  
 
-  if(winloc.pathname.match( /(\/location-analytics\/)/)){
+  if(winloc.pathname.match( /(\/location-analytics\/|\/trust\/)/)){
     docCfg.langSelector = "all";
   }
   
