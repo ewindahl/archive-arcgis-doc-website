@@ -1,0 +1,158 @@
+---
+title: Raportaţi o problemă de securitate
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ro/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/ro/trust/">Trust</a></li>
+        <li><a title="Stare sistem ArcGIS Online" href="/ro/trust/system-status/">Stare sistem</a></li>
+        <li><a title="Securitate ArcGIS Online" href="/ro/trust/security/">Securitate</a></li>
+        <li><a title="Confidenţialitate ArcGIS Online" href="/ro/trust/privacy/">Confidenţialitate</a></li>
+        <li><a title="Confidenţialitatea ArcGIS Online" href="/ro/trust/compliance/">Conformitate</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">Raportaţi o problemă de securitate</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">Completaţi formularul din partea dreaptă cu toate informaţiile aplicabile, inclusiv detalii suficiente ale problemei în cauză. Detaliile dvs. de contact vor fi utilizate în vederea aprofundării informaţiilor furnizate. Selectaţi subiectul aplicabil din meniul derulant de subiecte.</p>
+		<ul>
+			<li data-langlabel="">Vulnerabilitate - raportaţi o vulnerabilitate constatată în site-ul sau aplicaţia noastră.</li>
+			<li data-langlabel="">E-mail suspect de la Esri - în cazul în care credeţi că aţi fost ţinta unui posibil atac de tip phishing de la o adresă de e-mail a Esri sau dacă aţi primit altă corespondenţă prin e-mail suspectă de la Esri.</li>
+			<li data-langlabel="">Problemă de confidenţialitate - dacă aveţi o problemă de confidenţialitate legată de aplicaţia sau organizaţia noastră.</li>
+			<li data-langlabel="">Altele - pentru orice altă problemă legată de securitate, confidenţialitate sau conformitate.</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">Politica de raportare a vulnerabilităţii</h3>
+	  </header>
+      
+        <p data-langlabel="">Echipa de securitate a ArcGIS.com recunoaşte rolul important pe care cercetătorii independenţi în domeniul securităţii în joacă în securitatea pe Internet. Noi încurajăm raportarea responsabilă a oricărei vulnerabilităţi care ar putea fi întâlnite în site-ul sau aplicaţia noastră. Este se angajează să colaboreze cu comunitatea din domeniul securităţii pentru a verifica şi răspunde oricărei potenţiale vulnerabilităţi care ne este raportată. Esri nu vă va da în judecată şi nici nu va iniţia vreo urmărire legală împotriva dvs. dacă respectaţi această politică.</p>
+	  <header>
+		<h4 data-langlabel="">ArcGIS.com <strong>nu</strong> permite următoarele tipuri de verificări de securitate</h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">Provocarea sau încercarea de provocare a unei stări de tip Denial of Service (DoS).</li>
+		<li data-langlabel="">Utilizarea unor instrumente de securitate automatizate fără consimţământul explicit al Esri. Utilizarea unor instrumente automatizate poate conduce la acţiuni de investigare sau blocarea IP-urilor dvs.</li>
+		<li data-langlabel="">Accesarea sau încercarea de accesare a unor date sau informaţii care nu vă aparţin.</li>
+		<li data-langlabel="">Distrugerea sau coruperea sau încercarea de distrugere sau corupere a unor date sau informaţii care nu vă aparţin.</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">Angajamentul Echipei de securitate ArcGIS.com</h4>
+	  </header>
+		<p data-langlabel="">Faţă de toţi cercetătorii din domeniul securităţii care respectă această Politică de raportarea a vulnerabilităţii ArcGIS.com, Echipa de securitate a ArcGIS.com se angajează:</p>
+		
+		<ul>
+		<li data-langlabel="">să răspundă repede, confirmând primirea raportului dvs.,</li>
+		<li data-langlabel="">să furnizeze o estimare a duratei de timp pentru tratarea acestei vulnerabilităţi,</li>
+		<li data-langlabel="">să înştiinţeze autorul raportului în momentul remedierii vulnerabilităţii.</li>		
+		</ul>
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">Nume: </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">Adresă de e-mail: </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Număr de telefon: </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">Organizaţie <span class="optional">(opţional):</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">Subiect: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option> <option value="Vulnerability">Vulnerabilitate</option> <option value="Suspicious E-mail from Esri">E-mail suspect de la Esri</option> <option value="Privacy Issue">Problemă de confidenţialitate</option> <option value="audi">Altele</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">Descriere: </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">Pentru a ajuta la prevenirea mesajelor spam automate, introduceţi cifrele furnizate: </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">Cifre: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="intern" name="source" id="source">
+
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Problemă de securitate" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="ro" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Trimitere</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>Vă mulţumim pentru raportarea acestei probleme. Vom investiga şi trata problema raportată în următoarele câteva zile lucrătoare.</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>A survenit o eroare în timpul trimiterii. Trimiteţi din nou problema mai târziu.</h4></p>
+	  </div>
+
+	  <strong><span style="display:none;" id="referPageLink">Revenire la <a id="feedback-referring-link" href="">pagina de referinţă</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Trimitere</a> altă problemă de securitate</span></strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+
