@@ -1,0 +1,158 @@
+---
+title: Rapporter en sikkerhetsbekymring
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/no/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/no/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online systemstatus" href="/no/trust/system-status/">Systemstatus</a></li>
+        <li><a title="ArcGIS Online-sikkerhet" href="/no/trust/security/">Sikkerhet</a></li>
+        <li><a title="ArcGIS Online-personvern" href="/no/trust/privacy/">Personvern</a></li>
+        <li><a title="ArcGIS Online-personvern" href="/no/trust/compliance/">Samsvar</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">Rapporter en sikkerhetsbekymring</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">Fyll ut skjemaet til h&oslash;yre med all relevant informasjon, inkludert tilstrekkelige opplysninger om din spesifikke bekymring. Kontaktopplysningene dine vil bli brukt til &aring; f&oslash;lge opp den informasjonen du har oppgitt. Velg det aktuelle emnet fra rullegardinmenyen med emner.</p>
+		<ul>
+			<li data-langlabel="">S&aring;rbarhet &ndash; rapporter en s&aring;rbarhet p&aring; nettstedet eller i et program.</li>
+			<li data-langlabel="">Mistenkelig e-post fra Esri &ndash; hvis du tror du har mottatt et mulig nettfiskeangrep fra en Esri e-postadresse eller har mottatt annen mistenkelig e-postkorrespondanse fra Esri.</li>
+			<li data-langlabel="">Personvernproblem &ndash; hvis du har en personvernbekymring knyttet til v&aring;rt program eller v&aring;r organisasjon.</li>
+			<li data-langlabel="">Annet &ndash; for alle andre bekymringer om sikkerhet, personvern eller samsvar.</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">Retningslinjer for s&aring;rbarhetsrapportering</h3>
+	  </header>
+      
+        <p data-langlabel="">ArcGIS.com-sikkerhetsteamet erkjenner den verdifulle rollen som uavhengige sikkerhetsforskere spiller innen Internett-sikkerhet. Vi oppfordrer til ansvarlig rapportering av eventuelle s&aring;rbarheter som kan finnes p&aring; v&aring;rt nettsted eller i et program. Esri er forpliktet til &aring; samarbeide med sikkerhetsmilj&oslash;et for &aring; verifisere og svare p&aring; eventuelle s&aring;rbarheter som er rapportert til oss. Esri vil ikke g&aring; til s&oslash;ksm&aring;l eller p&aring;begynne politietterforskning av deg hvis disse retningslinjene er fulgt.</p>
+	  <header>
+		<h4 data-langlabel="">ArcGIS.com tillater <strong>ikke</strong> f&oslash;lgende typer sikkerhetsforskning</h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">For&aring;rsake eller fors&oslash;ke &aring; for&aring;rsake en Denial of Service (DoS) tilstand.</li>
+		<li data-langlabel="">Bruk av automatiske sikkerhetsverkt&oslash;y uten Esris eksplisitt samtykke. Bruk av automatiserte verkt&oslash;y kan f&oslash;re til etterforskning eller at din(e) IP(er) blir blokkert.</li>
+		<li data-langlabel="">Tilgang eller fors&oslash;k p&aring; &aring; f&aring; tilgang til data eller informasjon som ikke tilh&oslash;rer deg.</li>
+		<li data-langlabel="">&Oslash;delegge eller fors&oslash;k p&aring; &aring; &oslash;delegge data eller informasjon som ikke tilh&oslash;rer deg.</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">ArcGIS.com-sikkerhetsteamets forpliktelse</h4>
+	  </header>
+		<p data-langlabel="">Til alle sikkerhetsforskere som f&oslash;lger disse retningslinjene for s&aring;rbarhetsrapportering fra ArcGIS.com, forplikter ArcGIS.coms sikkerhetsteam seg til f&oslash;lgende:</p>
+		
+		<ul>
+		<li data-langlabel="">&Aring; svare innen rimelig tid, og erkjenne mottak av rapporten din.</li>
+		<li data-langlabel="">&Aring; gi en estimert tidsramme for n&aring;r dette sikkerhetsproblemet kan h&aring;ndteres.</li>
+		<li data-langlabel="">&Aring; varsle den som rapporterer om n&aring;r s&aring;rbarheten er blitt fikset.</li>		
+		</ul>
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">Navn: </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">E-postadresse: </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Telefonnummer: </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">Organisasjon <span class="optional">(valgfritt):</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">Emne: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option> <option value="Vulnerability">S&aring;rbarhet</option> <option value="Suspicious E-mail from Esri">Mistenkelig e-post fra Esri</option> <option value="Privacy Issue">Personvernproblem</option> <option value="audi">Annet</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">Beskrivelse: </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">For &aring; unng&aring; automatisk s&oslash;ppelpost skriver du inn tallene som vises: </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">Tall: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="intern" name="source" id="source">
+
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Sikkerhetsbekymring" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="no" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Send inn</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>Takk for at du rapporterer dette problemet. Vi unders&oslash;ker bekymringen din og tar kontakt i l&oslash;pet av de neste virkedagene.</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>Det oppstod en feil under innsendingen. Send din bekymring p&aring; et senere tidspunkt.</h4></p>
+	  </div>
+
+	  <strong><span style="display:none;" id="referPageLink">G&aring; tilbake til <a id="feedback-referring-link" href="">henvisende side</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Send inn</a> en annen sikkerhetsbekymring</span></strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+
