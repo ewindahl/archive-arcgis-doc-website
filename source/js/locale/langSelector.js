@@ -105,6 +105,7 @@ jQuery(document).ready(function ($) {
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
       lgPartial = ["da", "it","ko", "nl","no","pl","pt-br","pt-pt","ro","sv"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "th", "tr"],
+	  lgTrustSite = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn'],
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -224,6 +225,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "generic":
                   lgList = lgPickFull.concat(lgPartial);
+                  break;
+				case "trust":
+                  lgList = lgTrustSite;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -365,8 +369,10 @@ jQuery(document).ready(function ($) {
   // Generic = full +partial | all = full+partial+others
   docCfg.langSelector = "generic";  
 
-  if(winloc.pathname.match( /(\/location-analytics\/|\/trust\/)/)){
+  if(winloc.pathname.match( /(\/location-analytics\/)/)){
     docCfg.langSelector = "all";
+  }else if (winloc.pathname.match( /(\/trust\/)/)){
+	docCfg.langSelector = "trust";
   }
   
 
