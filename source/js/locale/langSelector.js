@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/)/)){
   return;
   }
   
@@ -105,6 +105,7 @@ jQuery(document).ready(function ($) {
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
       lgPartial = ["da", "it","ko", "nl","no","pl","pt-br","pt-pt","ro","sv"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "th", "tr"],
+	  lgTrustSite = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn'],
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -224,6 +225,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "generic":
                   lgList = lgPickFull.concat(lgPartial);
+                  break;
+				case "trust":
+                  lgList = lgTrustSite;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -367,6 +371,8 @@ jQuery(document).ready(function ($) {
 
   if(winloc.pathname.match( /(\/location-analytics\/)/)){
     docCfg.langSelector = "all";
+  }else if (winloc.pathname.match( /(\/trust\/)/)){
+	docCfg.langSelector = "trust";
   }
   
 

@@ -1,0 +1,165 @@
+---
+title: Güvenlikle İlgili Şüphe Bildirimi
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/tr/Trust/">ArcGIS'e Güvenin</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/tr/trust/">Güven</a></li>
+        <li><a title="ArcGIS Online System Status" href="/tr/trust/system-status/">Sistem Durumu</a></li>
+        <li><a title="ArcGIS Online Security" href="/tr/trust/security/">Güvenlik</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/tr/trust/privacy/">Gizlilik</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/tr/trust/compliance/">Uyum</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">Güvenlikle İlgili Şüphe Bildirimi</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">Sağ taraftaki formu, şüpheniz hakkında yeterli ayrıntıyı da kapsayan geçerli bilgilerin tümüyle doldurun. Sağladığınız bilgiler çerçevesinde yapılacak izleme işlemleri için başvuru bilgileriniz kullanılır. Konu açılır menüsünden uygun konu başlığını seçin.</p>
+		<ul>
+			<li data-langlabel="">Güvenlik Açığı - sitemizde veya uygulamamızda bulunan bir güvenlik açığını bildirin.</li>
+			<li data-langlabel="">Esri'den Gelen Şüpheli E-posta - Bir Esri e-posta adresinden olası bir kimlik avı saldırısına uğradığınızı düşünüyorsanız veya Esri'den başka şüpheli e-postalar aldıysanız.</li>
+			<li data-langlabel="">Gizlilik Sorunu - Uygulamamızla veya kuruluşumuzla ilgili bir gizlilik şüpheniz varsa.</li>
+			<li data-langlabel="">Diğer - Diğer güvenlik, gizlilik veya uyumla ilgili tüm konular için.</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">Güvenlik Açığı Raporlama Politikası</h3>
+	  </header>
+      
+        <p data-langlabel="">ArcGIS.com güvenlik ekibi, İnternet güvenliğinde bağımsız güvenlik araştırmacılarının oynadığı değerli role dikkat çekmektedir. Sitemizde veya uygulamamızda bulunabilecek herhangi bir güvenlik açığının sorumlu biçimde bildirilmesini destekleriz. Esri, kendisine bildirilen olası herhangi bir güvenlik açığını doğrulamak ve düzeltmek amacıyla güvenlik topluluğuyla birlikte çalışmayı taahhüt eder. Esri, bu politika esaslarına uyulduğu takdirde, size karşı dava açmaz veya hakkınızda yasal soruşturma başlatmaz.</p>
+	  <header>
+		<h4 data-langlabel="">ArcGIS.com, aşağıdaki güvenlik araştırma türlerine izin <strong>vermez</strong></h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">Hizmet Reddi (DoS) koşuluna neden olma veya neden olmaya teşebbüs etme.</li>
+		<li data-langlabel="">Esri'nin açık izni olmadan otomatik güvenlik araçları kullanma. Otomatik araçların kullanılması, hakkınızda soruşturma açılmasına veya IP adres(ler)inizin engellenmesine neden olabilir.</li>
+		<li data-langlabel="">Size ait olmayan verilere veya bilgilere erişme veya erişmeye çalışma.</li>
+		<li data-langlabel="">Size ait olmayan verileri veya bilgileri yok etme veya bozma veya yok etmeye veya bozmaya çalışma.</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">ArcGIS.com Güvenlik Ekibi taahhüdü</h4>
+	  </header>
+		<p data-langlabel="">ArcGIS.com Güvenlik Ekibi, bu ArcGIS.com Güvenlik Açığı Bildirimi Politikasını uygulayan tüm güvenlik araştırmacıları için aşağıdakileri taahhüt eder:</p>
+		
+		<ul>
+		<li data-langlabel="">Raporunuzun alındığını bildirerek, zamanında yanıt vermek.</li>
+		<li data-langlabel="">Bu güvenlik açığını gidermek için gereken tahmini bir zaman planı sağlamak.</li>
+		<li data-langlabel="">Güvenlik açığının ne zaman giderildiğini raporu gönderen kişiye bildirmek.</li>		
+		</ul>
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">Adı: </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">Elektronik Posta adresi: </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Telefon Numarası: </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">Kuruluş <span class="optional">(isteğe bağlı):</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">Konu: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option>
+				  <option value="Vulnerability">Güvenlik Açığı</option>
+				  <option value="Suspicious E-mail from Esri">Esri Kaynaklı Şüpheli E-posta</option>
+				  <option value="Privacy Issue">Gizlilik Sorunu</option>
+				  <option value="audi">Diğer</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">Tanım: </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">Otomatik istenmeyen elektronik postayı önlemek için verilen rakamları yazın: </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">Rakamlar: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="dahili" name="source" id="source">
+
+			  <input value="ayrıntılı" name="resultType" id="resultType" type="hidden">
+			  <input value="Güvenlikle İlgili Şüphe" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="tr" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Gönder</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>Bu sorunu bildirdiğiniz için teşekkür ederiz. Bildirdiğiniz şüpheli durumu önümüzdeki birkaç iş günü içinde araştırarak çözeceğiz.</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>Gönderme işlemi sırasında bir hata oluştu. Bildiriminizi daha sonra yeniden yapmayı deneyin.</h4></p>
+	  </div>
+
+	  <strong>
+			<span style="display:none;" id="referPageLink"><a id="feedback-referring-link" href="">Başvuru sayfasına</a> geri dön</span>
+			<span style="display:none;" id="resubmit">Başka bir güvenlik sorunu <a id="resubmit" href="" target="_self">gönder</a></span>
+	  </strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+
