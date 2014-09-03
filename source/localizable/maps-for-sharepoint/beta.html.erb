@@ -55,11 +55,10 @@ mobile: true
 
           <p>Esri Maps for SharePoint leverages the Microsoft SharePoint 2010, 2013 and Online framework to offer interactive and configurable mapping components that can give you a geospatial view of your organization's data. </p>
 
-          <p>
+       <!--   <p>
              <a  class="btn primary" href="http://betacommunity.esri.com">Get Esri Maps for SharePoint</a>
-
-          </p>
-
+          </p>-->
+<p>Esri Maps for SharePoint 4.0 Beta 2 is available on the <a href="http://betacommunity.esri.com">Esri Beta Community</a>. System requirements, supported platforms, help documentation, and the download can be found in the Esri Maps for SharePoint beta community. </p>
         </header>
         <hr />
         <br />
@@ -96,20 +95,31 @@ mobile: true
         </div>
 		<br/>
         <div class="clear"></div>
-        <div class="clear"></div>
 
 
         <a name="systemRequirements"></a>
         <h2>System requirements</h2>
-
-        <p>Esri Maps for SharePoint requires an <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm">ArcGIS Online</a> organization or Portal for ArcGIS account and either Microsoft SharePoint 2010, 2013, or Online.</p>
-
+		<p>
+		<ul>
+<li>Microsoft SharePoint Server or Foundation 2010 or 2013 or SharePoint Online (Office 365).</li>
+<li>An <a href="http://doc.arcgis.com/en/arcgis-online/reference/get-started.htm">ArcGIS account</a> (ArcGIS Online or Portal for ArcGIS).</li>
+<li>Secure store service—For SharePoint 2010 and 2013 (excluding Foundation), the OAuth app id and secret are stored in the Secure Store Service. Ensure the Secure Store Service is started and an encryption key exists. For additional details, see <a href="http://technet.microsoft.com/en-us/library/ee806866(v=office.15).aspx#section1">Configure the Secure Store Service in SharePoint 2013</a> or <a href="http://technet.microsoft.com/en-us/library/ee806866(v=office.14).aspx">Configure the Secure Store Service (SharePoint Server 2010)</a>. See the steps below to access the Secure Store Service and generate a new key.</li>
+<ol>
+<li>On the <strong>Central Administration</strong> home page, in the <strong>Application Management</strong> section, click <strong>Manage service applications</strong>.</li>
+<li>Click the <strong>Secure Store Service</strong> link.</li>
+<li>Click <strong>Generate New Key</strong>.</li></ol>
+<li>SharePoint Online requirements:</li>
+<ul>
+<li>Map App—access to the site collection where it is installed is required.</li>
+<li>Workflow App—full web control is required.</li>
+</ul>
+</ul>
+</p>
+     
 
  <a name="whatsNew"></a>
- 	<h2>4.0 Beta 2</h2>	
- 	<p>Esri Maps for SharePoint 4.0 Beta 2 is available on the <a href="http://betacommunity.esri.com">Esri Beta Community</a>. System requirements, supported platforms, help documentation, and the download can be found in the Esri Maps for SharePoint beta opportunity. For additional information, see our blog post: <a href="http://blogs.esri.com/esri/arcgis/2013/12/02/esri-maps-for-sharepoint-4-0-beta-released/">Esri Maps for SharePoint beta released</a>. </p>
-	
-	 <h2>What's new 4.0 Beta 2</h2>        
+ 	<h2>New features</h2>	
+ 		      
 		 <p>Esri Maps for SharePoint version 4.0 Beta 2 includes the following updates and enhancements:</p>        
 		 <ul>        
 		 <li>Support for working in a disconnected environment</li>
@@ -119,28 +129,6 @@ mobile: true
 		 <li>Print tool</li>
 		 <li>Measure tool</li>	
 		 </ul>
-		 
-		 <h2>What's new 3.0.1</h2>        
-		 <p>Esri Maps for SharePoint version 3.0.1 was released in October 2013. It includes the following updates and enhancements:</p>        
-		 <ul>        
-		 <li>Localization support for 21 languages: Arabic, Chinese (Simplified), Danish, Dutch, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian,  Norwegian, Polish, Portuguese, Portuguese (Brazilian),
-Romanian, Russian, Spanish, and Swedish.</li>	
-		 <li>Support for custom location types in the Esri Maps Locate workflow.</li>	
-		 <li>Geostatistical hot spot analysis.</li>	
-		     
-		 </ul>
-		       
-		 <h2>What's new 3.0</h2>        
-		 <p>Esri Maps for SharePoint version 3.0 was released in July 2013. It includes the following updates and enhancements:</p>        
-		 <ul>        
-		 <li>New product name—Esri Maps for SharePoint</li>	
-		 <li>Support for SharePoint 2010 and SharePoint 2013 (on-premises)</li>	
-		 <li>Initial release of Esri Maps Web Part—JavaScript-based web part supported in SharePoint 2010 and SharePoint 2013 (on-premises).</li>	
-		 <li>Portal for ArcGIS 10.2 support</li>	
-		 <li>External data connectivity via SharePoint Business Connectivity Services (BCS) (JavaScript Map Web Part)</li>	
-		 <li>Web Part-to-Web Part connections (JavaScript Map Web Part)</li>	
-		  </ul>
-
       </div>
 
 
