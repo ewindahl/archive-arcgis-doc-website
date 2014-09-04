@@ -47,6 +47,9 @@ mobile: true
     <hr />
     <div id="collectorMapFeature" class="column-12 phone-column-24">
       <img src="img/features-security-data-ownership.jpg" alt="Security data ownership" />
+	      <div style="padding-top:30px; text-align: center;">
+      <a href="/en/trust/system-status/" class="btn tertiary" style="width:75%;text-align:center; " >Check System Status</a>
+    </div>
     </div>
     <div id="collectorDataFeature" class="column-12 phone-column-24">
       <p>Trust.ArcGIS.com is your go to resource for security, privacy, and compliance information. Find: </p>
@@ -58,47 +61,56 @@ mobile: true
         <li>Privacy and compliance information</li>
       </ul>
       <p>Trust.ArcGIS.com is inspired by conversations with our customers. What would you like to see here? If you have suggestions, please post them to <a href="http://ideas.arcgis.com">ArcGIS Ideas</a>.</p>
-    </div>
-    <div class="clear"></div>
 
-    <div style="text-align:center; padding-top:150px;">
-      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
-    </div>
-  </div>
-  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
-    <div>
-      <a href="/en/trust/system-status/" class="btn tertiary" style="width:100%;text-align:center;" >Check System Status</a>
-    </div>
-    <br/>
-    <div class="imgFrame block">
-      <h3 class="icon-announcement">Alerts and Announcements</h3>
-      <p>On June 6, 2014, ArcGIS Online received the government's FISMA low Authority to Operate (ATO). The FISMA accreditation process assures that ArcGIS Online has been rigorously reviewed by a third-party assessor for alignment with stringent security requirements as provided by the National Institute of Standards and Technology (NIST) Special Publication 800-53. <a href="http://www.esri.com/esri-news/releases/14-2qtr/esri-mapping-platform-secured-for-federal-agencys-use">Continue reading...</a></p>
-    </div>
-    <br />
-    <div class="panel">
+	
+ </div>
+
+    <div class="clear"></div>
+    <div class="" style="text-align:center; padding-top:75px;">
       <h4>"Esri is committed to continually advance the security of its mapping platform and solidify customer trust through accreditations such as FISMA."</h4>
       <p>Michael Young, Principal Security Architect, Esri</p>
 
     </div>
+    <div style="text-align:center; padding-top:45px;">
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+
     <br/>
-    <div class="" style="text-align:center;">
+	        <!-- Blog Feed -->
+        <div class="imgFrame block">
+          <h3 class="icon-announcement">Alerts &amp; Announcements &nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS Blog"><img src="img/rss.png" /></a></h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+		  <div style="text-align:right;">
+		  <a class="btn transparent" href="/en/trust/security-concern/">View All Alerts</a> 
+		  </div>
+        </div><br/>
+		  		    <div class="" style="text-align:center;">
       <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/en/trust/security-concern/"> Report a Security Concern</a>  </h4>
     </div>
+    <br />
+
   </div>
 
  </div>
 
-  <!-- <script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-  <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',
-        max: 2,
+        url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
+        max: 5,
         layout: 0
       });
-
-
     });
 
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
 
-  </script>  -->
+  </script>
+
