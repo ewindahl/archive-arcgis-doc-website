@@ -1,0 +1,158 @@
+---
+title: Zgłoś problem związany z bezpieczeństwem
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/pl/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online — Zaufanie" href="/pl/trust/">Zaufanie</a></li>
+        <li><a title="ArcGIS Online — Stan systemu" href="/pl/trust/system-status/">Stan systemu</a></li>
+        <li><a title="ArcGIS Online — Bezpieczeństwo" href="/pl/trust/security/">Bezpieczeństwo</a></li>
+        <li><a title="ArcGIS Online — Prywatność" href="/pl/trust/privacy/">Prywatność</a></li>
+        <li><a title="ArcGIS Online — Prywatność" href="/pl/trust/compliance/">Zgodność</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">Zgłoś problem związany z bezpieczeństwem</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">Prosimy o wypełnienie znajdującego się po prawej stronie formularza. Należy podać wszystkie stosowne informacje, w tym szczegółowy opis zgłaszanego problemu. Podane dane kontaktowe zostaną użyte do przesłania informacji zwrotnej na temat zgłoszenia. Prosimy o dokonanie wyboru tematu z listy rozwijanej.</p>
+		<ul>
+			<li data-langlabel="">Luka — zgłoszenie luki znalezionej na jednej ze stron lub w aplikacji</li>
+			<li data-langlabel="">Podejrzana wiadomość e-mail od firmy Esri — zgłoszenie otrzymania wiadomości sugerującej potencjalny atak phishingowy z adresu e-mail firmy Esri lub innej podejrzanej korespondencji od firmy Esri</li>
+			<li data-langlabel="">Problem związany z poufnością — zgłoszenie zastrzeżenia dotyczącego poufności informacji w kontekście instytucji lub używanej aplikacji</li>
+			<li data-langlabel="">Inne — wszelkie inne zastrzeżenia w zakresie bezpieczeństwa, poufności informacji lub zgodności</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">Zasady zgłaszania luk</h3>
+	  </header>
+      
+        <p data-langlabel="">Zespół ds. bezpieczeństwa witryny ArcGIS.com ma świadomość jak cenna dla zapewnienia bezpieczeństwa w Internecie jest pomoc w postaci niezależnych analiz zabezpieczeń. Zachęcamy do odpowiedzialnego zgłaszania wszelkich luk i niedociągnięć odnalezionych na naszych stronach bądź w naszych aplikacjach. Firma Esri jest zaangażowana we współpracę ze społecznością zajmującą się kwestiami bezpieczeństwa, co umożliwia weryfikację i reagowanie przesłanych zgłoszeń dotyczących luk i niedociągnięć. Firma Esri nie wniesie do sądu wniosku o rozpoczęcie postępowania ani nie zwróci się z prośbą o podjęcie śledztwa przeciwko osobom przestrzegającym przedstawionych zasad.</p>
+	  <header>
+		<h4 data-langlabel=""><strong>Niedozwolone</strong> są następujące formy analizy zabezpieczeń witryny ArcGIS.com:</h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">Przeprowadzanie lub podejmowanie prób przeprowadzenia ataków typu denial of service (DoS)</li>
+		<li data-langlabel="">Korzystanie ze zautomatyzowanych narzędzi do kontroli zabezpieczeń bez wyraźniej zgody firmy Esri. Konsekwencją zastosowania zautomatyzowanych narzędzi do kontroli bezpieczeństwa może być podjęcie śledztwa lub zablokowanie adresów IP używanych przez daną osobę.</li>
+		<li data-langlabel="">Uzyskiwanie dostępu lub podejmowanie prób uzyskania dostępu do danych bądź informacji należących do innych osób</li>
+		<li data-langlabel="">Niszczenie lub powodowanie uszkodzenia bądź podejmowanie prób zniszczenia lub uszkodzenia danych albo informacji należących do innych osób</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">Zobowiązania zespołu ds. bezpieczeństwa witryny ArcGIS.com</h4>
+	  </header>
+		<p data-langlabel="">Wobec wszystkich osób dokonujących analiz zabezpieczeń zgodnie z niniejszymi Zasadami zgłaszania luk w witrynie ArcGIS.com, zespół ds. bezpieczeństwa witryny ArcGIS.com przyjmuje następujące zobowiązania:</p>
+		
+		<ul>
+		<li data-langlabel="">Reagowanie na zgłoszenia i potwierdzanie ich otrzymania w rozsądnych ramach czasowych</li>
+		<li data-langlabel="">Podanie przybliżonego czasu, jaki zajmie usunięcie danej luki lub niedociągnięcia</li>
+		<li data-langlabel="">Powiadomienie zgłaszającego o usunięciu luki lub niedociągnięcia</li>		
+		</ul>
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">Nazwa: </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">Adres e-mail: </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Nr telefonu: </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">Instytucja <span class="optional">(opcjonalne):</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">Temat: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option> <option value="Vulnerability">Luka</option> <option value="Suspicious E-mail from Esri">Podejrzana wiadomość e-mail od firmy Esri</option> <option value="Privacy Issue">Problem związany z poufnością</option> <option value="audi">Inne</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">Opis: </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">W celu ochrony przed automatycznym rozsyłaniem spamu, wpisz podane cyfry: </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">Cyfry: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="wewnętrzne" name="source" id="source">
+
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Problem związany z bezpieczeństwem" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="pl" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Prześlij</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>Dziękujemy za zgłoszenie problemu. Zweryfikujemy przesłane zgłoszenie i skontaktujemy się z Tobą w ciągu kilku kolejnych dni roboczych.</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>Podczas przesyłania wystąpił błąd. Prosimy o ponowne przesłanie zgłoszenia później.</h4></p>
+	  </div>
+
+	  <strong><span style="display:none;" id="referPageLink">Wróć do <a id="feedback-referring-link" href="">strony, z której nastąpiło przekierowanie</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Prześlij</a> kolejne zgłoszenie problemu związanego z bezpieczeństwem</span></strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+

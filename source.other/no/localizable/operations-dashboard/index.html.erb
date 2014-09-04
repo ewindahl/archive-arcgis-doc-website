@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-7-8"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="no">
 
 mobile: true
 
@@ -126,9 +126,9 @@ mobile: true
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -142,8 +142,8 @@ mobile: true
  } 
  </script> 
  <h3>Windows-app</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Operativsystemer som st&oslash;ttes</div> 
-     <div exp1='yes' style="display:none;">
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Operativsystemer som st&oslash;ttes</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro og Windows 8.1 Enterprise (32-biters og 64-biters [EM64T])</li>
           <li>Windows 8, Windows 8 Pro og Windows 8 Enterprise (32-biters og 64-biters [EM64T])</li>
@@ -154,7 +154,7 @@ mobile: true
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Maskinvarekrav</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Maskinvarekrav</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>Prosessorhastighet: 2.2 GHz eller h&oslash;yere; Hyper-Threading (HTT) eller Multi-core anbefales.</li>
@@ -169,29 +169,29 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Programvarekrav</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Programvarekrav</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
         <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> eller senere er p&aring;krevd. Du m&aring; ha administratorrettigheter p&aring; maskinen for &aring; kunne installere det.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Utviklerkrav</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Utviklerkrav</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
 	<p style="padding:0 15px">Du m&aring; ha <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.3.2 for WPF</a> for &aring; tilpasse Operations Dashboard for ArcGIS. Microsoft Visual Studio 2012 eller 2013 Professional, Premium eller Ultimate Edition er ogs&aring; p&aring;krevd. </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Spr&aring;k som st&oslash;ttes</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Spr&aring;k som st&oslash;ttes</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">Arabisk, dansk, estisk, finsk, fransk, hebraisk, italiensk, japansk, kinesisk (forenklet) , koreansk, latvisk, litauisk, nederlandsk, norsk, polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk, tyrkisk og tysk.</p>
+     	<p style="padding:0 15px">Arabisk, dansk, engelsk, estisk, finsk, fransk, hebraisk, italiensk, japansk, kinesisk (forenklet), koreansk, latvisk, litauisk, nederlandsk , norsk , polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk, tyrkisk og tysk.</p>
      	<p style="padding:0 15px">Spr&aring;ket som brukes i Windows-versjonen av appen, avhenger av spr&aring;kinnstillingen for operativsystemet. Hvis du bruker en spr&aring;kinnstilling som ikke st&oslash;ttes, bruker appen engelsk.</p>
 </div>
 <div class="clear"></div>
 
      <h3/>
  <h3>Nettleser-app</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Nettlesere som st&oslash;ttes</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">St&oslash;ttede nettlesere</a>
 <div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Skrivebord
  <ul style="padding:0 15px">
  <li>Chrome versjon 19.0 og senere</li>
@@ -201,16 +201,16 @@ mobile: true
  </ul> 
  Nettbrett 
  <ul style="padding:0 15px">
- <li>Android 4.0 og senere med Chrome</li>
+ <li>Android 4.0 og nyere som kj&oslash;rer Chrome versjon 19.0 eller nyere</li>
  <li>iOS 6.0 og senere med Safari</li>
  </ul>
  Telefon 
  <p style="padding:0 15px">Det er for &oslash;yeblikket ikke st&oslash;tte for nettlesere p&aring; smarttelefon.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Spr&aring;k som st&oslash;ttes</div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Spr&aring;k som st&oslash;ttes</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Dansk, estisk, finsk, fransk, italiensk, japansk, kinesisk (forenklet) , koreansk, latvisk, litauisk, nederlandsk, norsk, polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk, tyrkisk og tysk.</p>
+      	<p style="padding:0 15px">Dansk, engelsk, estisk, finsk, fransk, italiensk, japansk, kinesisk (forenklet) , koreansk, latvisk, litauisk, nederlandsk, norsk, polsk, portugisisk (Brasil), portugisisk (Portugal), rumensk, russisk, spansk, svensk, tsjekkisk, tyrkisk og tysk.</p>
       	<p style="padding:0 15px">I nettleserversjonen brukes ArcGIS Online-profilen din til &aring; angi spr&aring;k. Hvis du bruker en spr&aring;kinnstilling som ikke st&oslash;ttes, bruker appen engelsk.</p>
 </div>
 <div class="clear"></div>
@@ -221,30 +221,23 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Nyheter</h2>
-        <p>Operations Dashboard for ArcGIS 10.2.3 ble utgitt i april 2014. Den inneholder f&oslash;lgende forbedringer:</p>
-        <ul>
-        <li>S&oslash;k i dataene dine (<span class="icon-windows-8"/>).</li>
-        <li>Ulike feilrettinger. </li>
-        <li>Bruker ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        <li>ArcGIS Runtime SDK 10.2.2 for WPF kan brukes til utvikling av tillegg (<span class="icon-windows-8"/>).</li>
-        </ul>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
+	        <p>Operations Dashboard for ArcGIS 10.2.3 ble oppdatert med feilrettinger og forbedringer i juli 2014.</p>
+                </td>
+	        <td valign="top"><h4><img src="icon-browser.png" style="margin-right:4px">Nettleser</h4>
+	        <p>Nettleserapplikasjonen for Operations Dashboard for ArcGIS ble oppdater i juli 2014. Den inneholder f&oslash;lgende forbedringer:</p>
+	        <ul>
+	          <li>Geoobjektshandlinger p&aring; flere geoobjekter.<li>
+	          <li>Karttjenester kan vises som datakilder.</li>
+	          <li>Diverse feilrettinger og forbedringer.</li>
+        </ul></td><tr></table>
         
-        <p>Operations Dashboard for ArcGIS versjon 10.2.2 ble utgitt i mars 2014. Den inneholder f&oslash;lgende forbedringer:</p>
-        <ul>
-        <li>Arbeidsvisningene kan vises i nettleseren.</li>
-        <li>Karttjenester kan vises som datakilder.</li>
-        <li>Respekterer oppdateringsintervallene som er stilt inn for datalagene.</li>
-        <li>Nye utvalgsverkt&oslash;y.</li>
-        <li>Listeminiprogramoppdateringer.</li>
-        <li>Bruker ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>ArcGIS Runtime SDK 10.2.2 for WPF kan brukes til utvikling av tillegg.</li>
-        <li>Lokalisering til tyrkisk.</li>
-        </ul>
+        
         
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">Sniktitt</h2>
-	<p>I dag er Operations Dashboard en flott app &aring; overv&aring;ke driften med. Men det er mer i vente! Det f&oslash;lgende skisserer hvor vi &oslash;nsker &aring; ta dette programmet, og vi viser egenskaper vi vil bringe til hver av enhetene dine:</p>
+	<p>Operations Dashboard er allerede i dag en utmerket app til &aring; f&oslash;lge med p&aring; driften. Men det er mer i vente! Det f&oslash;lgende skisserer hvor vi &oslash;nsker &aring; ta dette programmet, og vi viser egenskaper vi vil bringe til hver av enhetene dine:</p>
 	
 	<table border="1" style="text-align:center">
 	  <caption>Planlagt funksjonalitet etter plattform. <br/> <span class="icon-check" style="color:black"></span> n&aring;, <span class="icon-check icon-green"/> snart, <span class="icon-check" style="color:lightgray"></span> senere<br/></caption>
@@ -266,11 +259,11 @@ mobile: true
 	  </tr>
 	  <tr><th>Kan utvides</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Bruk karttjenester som datakilder</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	  </tr>
 	  <tr><th>S&oslash;k i data</th>
 	    <td><span class="icon-check"/></td>

@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-7-8"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="sv">
 
 mobile: true
 
@@ -126,9 +126,9 @@ mobile: true
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -142,8 +142,8 @@ mobile: true
  } 
  </script> 
  <h3>Windows-app</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Operativsystem som st&ouml;ds</div> 
-     <div exp1='yes' style="display:none;">
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Operativsystem som st&ouml;ds</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro och Windows 8.1 Enterprise (32 och 64 bitar [EM64T])</li>
           <li>Windows 8, Windows 8 Pro och Windows 8 Enterprise (32 och 64 bitar [EM64T])</li>
@@ -154,7 +154,7 @@ mobile: true
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Maskinvarukrav</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Maskinvarukrav</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>CPU-hastighet: 2,2 GHz eller h&ouml;gre, Hyper-Threading (HTT) eller flerk&auml;rnig processor rekommenderas.</li>
@@ -169,29 +169,29 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Programvarukrav</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Programvarukrav</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
         <p style="padding:0 15px">Du m&aring;ste ha <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> eller senare installerat. Du m&aring;ste ha administrat&ouml;rsbeh&ouml;righet p&aring; datorn f&ouml;r att installera programmet.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Krav f&ouml;r utvecklare</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Krav f&ouml;r utvecklare</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
 	<p style="padding:0 15px"><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> kr&auml;vs f&ouml;r att anpassa Operations Dashboard for ArcGIS. Microsoft Visual Studio 2012 eller 2013 Professional, Premium eller Ultimate Edition kr&auml;vs ocks&aring;. </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Spr&aring;k</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Spr&aring;k</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">Arabiska, danska, estniska, finska, franska, hebreiska, italienska, japanska, kinesiska (f&ouml;renklad), koreanska, lettiska, litauiska, nederl&auml;ndska, norska, polska, portugisiska (Brasilien), portugisiska (Portugal), rum&auml;nska, ryska, spanska, svenska, tjeckiska, turkiska och tyska.</p>
+     	<p style="padding:0 15px">Arabiska, danska, engelska, estniska, finska, franska, hebreiska, italienska, japanska, kinesiska (f&ouml;renklad), koreanska, lettiska, litauiska, nederl&auml;ndska, norska, polska, portugisiska (Brasilien), portugisiska (Portugal), rum&auml;nska, ryska, spanska, svenska, tjeckiska, turkiska och tyska.</p>
      	<p style="padding:0 15px">Vilket spr&aring;k som anv&auml;nds i Windows-versionen av appen avg&ouml;rs av operativsystemets spr&aring;kinst&auml;llning. Om en anv&auml;ndare anv&auml;nder en spr&aring;kinst&auml;llning som inte st&ouml;ds, anv&auml;nder appen engelska.</p>
 </div>
 <div class="clear"></div>
 
      <h3/>
  <h3>Webbl&auml;sarapp</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Webbl&auml;sare som st&ouml;ds</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">Webbl&auml;sare som st&ouml;ds</a>
 <div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Dator
  <ul style="padding:0 15px">
  <li>Chrome version 19.0 och senare</li>
@@ -201,16 +201,16 @@ mobile: true
  </ul> 
  Surfplatta 
  <ul style="padding:0 15px">
- <li>Android 4.0 och senare med Chrome</li>
+ <li>Android 4.0 och senare med Chrome version 19.0 och senare</li>
  <li>iOS 6.0 och senare med Safari</li>
  </ul>
  Telefon 
  <p style="padding:0 15px">Inga webbl&auml;sare f&ouml;r smartphones st&ouml;ds f&ouml;r tillf&auml;llet.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Spr&aring;k</div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Spr&aring;k</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Danska, estniska, finska, franska, italienska, japanska, kinesiska (f&ouml;renklad), koreanska, lettiska, litauiska, nederl&auml;ndska, norska, polska, portugisiska (Brasilien), portugisiska (Portugal), rum&auml;nska, ryska, spanska, svenska, tjeckiska, turkiska och tyska.</p>
+      	<p style="padding:0 15px">Danska, engelska, estniska, finska, franska, italienska, japanska, kinesiska (f&ouml;renklad), koreanska, lettiska, litauiska, nederl&auml;ndska, norska, polska, portugisiska (Brasilien), portugisiska (Portugal), rum&auml;nska, ryska, spanska, svenska, tjeckiska, turkiska och tyska.</p>
       	<p style="padding:0 15px">I webbl&auml;sarversionen &auml;r det din ArcGIS Online-profil som anv&auml;nds f&ouml;r att st&auml;lla in spr&aring;ket. Om en anv&auml;ndare anv&auml;nder en spr&aring;kinst&auml;llning som inte st&ouml;ds, anv&auml;nder appen engelska.</p>
 </div>
 <div class="clear"></div>
@@ -221,25 +221,18 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Nyheter</h2>
-        <p>Operations Dashboard for ArcGIS 10.2.3 sl&auml;pptes i april 2014. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
-        <ul>
-        <li>S&ouml;k igenom dina data (<span class="icon-windows-8"/>).</li>
-        <li>L&ouml;sningar p&aring; olika fel. </li>
-        <li>Anv&auml;nder ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        <li>Det g&aring;r att utveckla add-ins med ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        </ul>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
+	        <p>Operations Dashboard for ArcGIS 10.2.3 uppdaterades i juli 2014 med l&ouml;sningar p&aring; olika fel och f&ouml;rb&auml;ttringar.</p>
+                </td>
+	        <td valign="top"><h4><img src="icon-browser.png" style="margin-right:4px">Webbl&auml;sare</h4>
+	        <p>Webbl&auml;sarappen f&ouml;r Operations Dashboard for ArcGIS uppdaterades i juli 2014. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
+	        <ul>
+	          <li>Geoobjekt&aring;tg&auml;rder f&ouml;r flera geoobjekt.<li>
+	          <li>Karttj&auml;nster g&aring;r att anv&auml;nda som datak&auml;llor.</li>
+	          <li>L&ouml;sningar p&aring; olika fel och f&ouml;rb&auml;ttringar.</li>
+        </ul></td><tr></table>
         
-        <p>Operations Dashboard for ArcGIS 10.2.2 sl&auml;pptes i mars 2014. Den h&auml;r versionen inneh&aring;ller f&ouml;ljande f&ouml;rb&auml;ttringar:</p>
-        <ul>
-        <li>Du kan visa &aring;tg&auml;rdsvyer i en webbl&auml;sare.</li>
-        <li>Karttj&auml;nster g&aring;r att anv&auml;nda som datak&auml;llor.</li>
-        <li>F&ouml;ljer nu uppdateringsintervall som st&auml;llts in f&ouml;r lager.</li>
-        <li>Nya markeringsverktyg.</li>
-        <li>Uppdateringar av listwidgeten.</li>
-        <li>Anv&auml;nder ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>Det g&aring;r att utveckla add-ins med ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>Lokalisering till turkiska.</li>
-        </ul>
+        
         
         
         <a name="sneakPeek"></a>
@@ -266,11 +259,11 @@ mobile: true
 	  </tr>
 	  <tr><th>Utbyggbart</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Anv&auml;nda karttj&auml;nster som datak&auml;llor</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	  </tr>
 	  <tr><th>S&ouml;ka efter data</th>
 	    <td><span class="icon-check"/></td>
@@ -308,7 +301,7 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
        <div class="imgFrame block">
-          <h3>Detaljer</h3>
+          <h3>Information</h3>
           
 	  <h4><a href="#features">Funktioner</a></h4>
 	  <h4><a href="#systemRequirements">Systemkrav</a></h4>

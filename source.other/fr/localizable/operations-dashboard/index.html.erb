@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-7-8"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="fr">
 
 mobile: true
 
@@ -119,7 +119,7 @@ mobile: true
 	<ul>
 	<li>Utiliser des cartes avec des sources de donn&eacute;es dynamiques pour offrir des vues en temps r&eacute;el.</li>
 	<li>Configurer des diagrammes, des jauges, des histogrammes et autres pour offrir un contexte statistique.</li>
-	<li>Cr&eacute;er et partager des vues d&apos;exploitation centr&eacute;es sur un besoin pr&eacute;cis.</li>
+	<li>Cr&eacute;er et partager des vues d\&apos;exploitation centr&eacute;es sur un besoin pr&eacute;cis.</li>
 	<li>Concevoir des vues &agrave; utiliser sur des appareils &agrave; plusieurs &eacute;crans ou &agrave; &eacute;cran unique.</li>
 	<li>Cr&eacute;er des widgets et des outils personnalis&eacute;s qui r&eacute;pondent &agrave; vos besoins.</li>
 	</ul>
@@ -132,9 +132,9 @@ mobile: true
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -148,19 +148,19 @@ mobile: true
  } 
  </script> 
  <h3>Application&nbsp;Windows</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Syst&egrave;mes d&apos;exploitation pris en charge</div> 
-     <div exp1='yes' style="display:none;">
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Syst&egrave;mes d&apos;exploitation pris en charge</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro et Windows 8.1 Enterprise (32 bits et 64 bits [EM64T])</li>
           <li>Windows 8, Windows 8 Pro et Windows 8 Enterprise (32 bits et 64 bits [EM64T])</li>
 		  <li>Windows 7 &Eacute;dition Int&eacute;grale, Entreprise, Professionnelle et Familiale Premium (32 et 64 bits [EM64T]) SP1</li>
 		  <li>Windows Server 2012 Standard et Datacenter (64 bits [EM64T])</li>
 		<li>Windows Server 2008 R2 Standard, Enterprise et Datacenter (64 bits [EM64T]) SP1</li>
-		<li>Windows Server&nbsp;2008 Standard, Entreprise et Datacenter (32&nbsp;et&nbsp;64&nbsp;bits [EM64T]) SP2</li>
+		<li>Windows Server 2008 Standard, Enterprise et Datacenter (32 bits et 64 bits [EM64T]) SP2</li>
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Configuration mat&eacute;rielle requise</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Configuration mat&eacute;rielle requise</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>Vitesse du processeur : 2,2 GHz ou plus ; processeur HyperThreading (HHT) ou multicœur recommand&eacute;.</li>
@@ -175,29 +175,29 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Configuration logicielle requise</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Configuration logicielle requise</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
         <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework&nbsp;4.5</a> ou une version ult&eacute;rieure est requise. Vous devez disposer des privil&egrave;ges d&apos;administration sur l&apos;ordinateur pour pouvoir l&apos;installer.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Configuration requise pour les d&eacute;veloppeurs</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Configuration requise pour les d&eacute;veloppeurs</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px"><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> est requis pour personnaliser Operations Dashboard for ArcGIS. Microsoft Visual Studio&nbsp;2012 ou&nbsp;2013 Professional, Premium ou Ultimate Edition est &eacute;galement requis. </p>
+	<p style="padding:0 15px"><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK&nbsp;10.2.3 for WPF</a> est requis pour personnaliser Operations Dashboard for ArcGIS. Microsoft Visual Studio&nbsp;2012 ou&nbsp;2013 Professional, Premium ou Ultimate Edition est &eacute;galement requis. </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Langues prises en charge</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Langues prises en charge</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">Arabe, chinois simplifi&eacute;, danois, n&eacute;erlandais, espagnol, estonien, fran&ccedil;ais, finlandais, allemand, h&eacute;breu, italien, japonais, cor&eacute;en, letton, lituanien, norv&eacute;gien, polonais, portugais (Br&eacute;sil), portugais (Portugal), roumain, russe, su&eacute;dois, tch&egrave;que et turc.</p>
+     	<p style="padding:0 15px">Arabe, anglais, chinois simplifi&eacute;, danois, n&eacute;erlandais, espagnol, estonien, fran&ccedil;ais, finlandais, allemand, h&eacute;breu, italien, japonais, cor&eacute;en, letton, lituanien, norv&eacute;gien, polonais, portugais (Br&eacute;sil), portugais (Portugal), roumain, russe, su&eacute;dois, tch&egrave;que et turc.</p>
      	<p style="padding:0 15px">La langue utilis&eacute;e dans la version Windows de l&apos;application est d&eacute;finie par la configuration de langue du syst&egrave;me d&apos;exploitation. Si vous utilisez un param&egrave;tre de langue non pris en charge, l&apos;application utilise l&apos;anglais.</p>
 </div>
 <div class="clear"></div>
 
      <h3/>
  <h3>Application de navigateur</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Navigateurs pris en charge</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">Navigateurs pris en charge</a>
 <div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
  <ul style="padding:0 15px">
  <li>Chrome, versions&nbsp;19.0 et ult&eacute;rieures</li>
@@ -207,16 +207,16 @@ mobile: true
  </ul> 
  Tablette 
  <ul style="padding:0 15px">
- <li>Android, version&nbsp;4.0 et ult&eacute;rieures ex&eacute;cutant Chrome</li>
+ <li>Android, version&nbsp;4.0 et ult&eacute;rieures ex&eacute;cutant Chrome version&nbsp;19.0 et ult&eacute;rieures</li>
  <li>iOS, versions&nbsp;6.0 et ult&eacute;rieures ex&eacute;cutant Safari</li>
  </ul>
  Phone 
  <p style="padding:0 15px">Actuellement, les navigateurs install&eacute;s sur des smartphones ne sont pas pris en charge.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Langues prises en charge</div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Langues prises en charge</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Chinois simplifi&eacute;, danois, n&eacute;erlandais, espagnol, estonien, fran&ccedil;ais, finlandais, allemand, italien, japonais, cor&eacute;en, letton, lituanien, norv&eacute;gien, polonais, portugais (Br&eacute;sil), portugais (Portugal), roumain, russe, su&eacute;dois, tch&egrave;que et turc.</p>
+      	<p style="padding:0 15px">Anglais, chinois simplifi&eacute;, danois, n&eacute;erlandais, espagnol, estonien, fran&ccedil;ais, finlandais, allemand, italien, japonais, cor&eacute;en, letton, lituanien, norv&eacute;gien, polonais, portugais (Br&eacute;sil), portugais (Portugal), roumain, russe, su&eacute;dois, tch&egrave;que et turc.</p>
       	<p style="padding:0 15px">Dans la version navigateur, votre profil ArcGIS Online est utilis&eacute; pour d&eacute;finir la langue. Si vous utilisez un param&egrave;tre de langue non pris en charge, l&apos;application utilise l&apos;anglais.</p>
 </div>
 <div class="clear"></div>
@@ -227,25 +227,18 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Nouveaut&eacute;s</h2>
-        <p>Operations Dashboard for ArcGIS&nbsp;10.2.3 est disponible depuis avril&nbsp;2014. L&apos;application pr&eacute;sente les am&eacute;liorations suivantes&nbsp;:</p>
-        <ul>
-        <li>Recherche de vos donn&eacute;es (<span class="icon-windows-8"/>).</li>
-        <li>Correction de divers bogues. </li>
-        <li>Utilisation d&apos;ArcGIS Runtime SDK&nbsp;10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        <li>Les compl&eacute;ments peuvent &ecirc;tre d&eacute;velopp&eacute;s &agrave; l&apos;aide d&apos;ArcGIS Runtime SDK&nbsp;10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        </ul>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Fen&ecirc;tres</h4>
+	        <p>Operations Dashboard for ArcGIS&nbsp;10.2.3 a &eacute;t&eacute; mis &agrave; jour en juillet&nbsp;2014 avec les am&eacute;liorations et r&eacute;solutions de bogues suivantes&nbsp;:</p>
+                </td>
+	        <td valign="top"><h4><img src="icon-browser.png" style="margin-right:4px">Navigateur</h4>
+	        <p>L&apos;application de navigateur pour Operations Dashboard for ArcGIS a &eacute;t&eacute; mise &agrave; jour en juillet&nbsp;2014. L&apos;application pr&eacute;sente les am&eacute;liorations suivantes&nbsp;:</p>
+	        <ul>
+	          <li>Actions sur plusieurs entit&eacute;s.<li>
+	          <li>Les services de carte peuvent &ecirc;tre utilis&eacute;s en tant que sources de donn&eacute;es.</li>
+	          <li>Diverses r&eacute;solutions de bogues et am&eacute;liorations.</li>
+        </ul></td><tr></table>
         
-        <p>Operations Dashboard for ArcGIS 10.2.2 est disponible depuis mars 2014. L&apos;application pr&eacute;sente les am&eacute;liorations suivantes :</p>
-        <ul>
-        <li>Les vues des op&eacute;rations peuvent s&apos;afficher dans un navigateur.</li>
-        <li>Les services de carte peuvent &ecirc;tre utilis&eacute;s en tant que sources de donn&eacute;es.</li>
-        <li>Respecte les intervalles d&apos;actualisation d&eacute;finis sur les couches.</li>
-        <li>Nouveaux outils de s&eacute;lection.</li>
-        <li>Mises &agrave; jour des widgets de liste.</li>
-        <li>Utilise ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>Les compl&eacute;ments peuvent &ecirc;tre d&eacute;velopp&eacute;s &agrave; l&apos;aide d&apos;ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>Localisation en langue turque.</li>
-        </ul>
+        
         
         
         <a name="sneakPeek"></a>
@@ -274,11 +267,11 @@ mobile: true
 	  </tr>
 	  <tr><th>Extensible</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Utiliser les services de carte en tant que sources de donn&eacute;es</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	  </tr>
 	  <tr><th>Rechercher des donn&eacute;es</th>
 	    <td><span class="icon-check"/></td>
