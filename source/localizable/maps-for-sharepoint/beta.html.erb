@@ -58,7 +58,7 @@ mobile: true
        <!--   <p>
              <a  class="btn primary" href="http://betacommunity.esri.com">Get Esri Maps for SharePoint</a>
           </p>-->
-<p>Esri Maps for SharePoint 4.0 Beta 2 is available on the <a href="http://betacommunity.esri.com">Esri Beta Community</a>. System requirements, supported platforms, help documentation, and the download can be found in the Esri Maps for SharePoint beta community. </p>
+<p>Esri Maps for SharePoint 4.0 Beta 2 is available on the <a href="http://betacommunity.esri.com">Esri Beta Community</a>. </p>
         </header>
         <hr />
         <br />
@@ -114,6 +114,7 @@ mobile: true
 <li>Map App—access to the site collection where it is installed is required.</li>
 <li>Workflow App—full web control is required.</li>
 </ul>
+<li>Portal for ArcGIS 10.3—To successfully run the Esri Maps Locate Workflow in Portal 10.3, you must configure the geocoder service according to the section "If the service is not from a federated server and requires credentials" in the "Configure utility services" topic in your Portal for ArcGIS 10.3 documentation.</li>
 </ul>
 </p>
      
@@ -124,15 +125,30 @@ mobile: true
 		 <p>Esri Maps for SharePoint version 4.0 Beta 2 includes the following updates and enhancements:</p>        
 		 <ul>        
 		 <li>Support for working in a disconnected environment</li>
-		 <li>Extensibility – create custom tools and behaviors for the Esri Maps Web Part</li>
+		 <li>Extensibility – create custom tools and behaviors for the JavaScript-based Esri Maps Web Part</li>
 		 <li>Editing – add, modify, and delete features</li>
-		 <li>Map Contents/Legend configuration</li>
+		 <li>Map Contents configuration options</li>
 		 <li>Print tool</li>
 		 <li>Measure tool</li>	
 		 </ul>
-      </div>
-
-
+     
+	  
+	   <a name="KnownIssues"></a>
+<h2>Known issues</h2>	
+<ul>
+	 <li>Hovering the mouse over the SharePoint Ribbon refreshes the Map Web Part (SharePoint issue). </li>
+		 <li>Heat maps fail to draw for SharePoint Lists in an Esri Maps Web Part on German and French site collection.</li>
+		 <li>Existing map web parts are not persisted when upgrading to 4.0 Beta 2 (by design).</li>
+		 <li>Map Web Part does not respect size/dimensions set in Properties pane.</li>
+		 <li>Layer transparency settings are not persisted in the map.</li>
+		 <li>Layer pop-up settings are not persisted in the map.</li>
+	     <li>If the map contains heat map or clustering layers, sharing the map fails.</li>
+		 <li>Adding the Esri Maps Location field in SharePoint 2010 using IE 8 standards document mode fails to show radio button. Workaround – set Document Mode to IE 9 IE 10 standards.</li>
+		 <li>Portal 10.2.1 and above – When running the Locate Workflow, the fields may not display in the page to “Choose the columns with location information.” If this occurs, ensure that the geocoding service on the Portal is shared with “Everyone.”</li>
+		 <li>Portal 10.3 geocoders must be configured according to the section "If the service is not from a federated server and requires credentials" in the "Configure utility services" topic in your Portal for ArcGIS 10.3 documentation.</li>
+		 <li>The first time you run the Locate workflow on a SharePoint list it fails for all list items. This only occurs for the first run of the Locate workflow on the first SharePoint list. Workaround - Configure a new Locate workflow using a different name on the same list. The new workflow will succeed.</li>
+	   </ul>
+	    </div>
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
