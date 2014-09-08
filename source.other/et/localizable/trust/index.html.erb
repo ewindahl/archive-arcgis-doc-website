@@ -1,0 +1,91 @@
+---
+title: Usaldus
+css:
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - video-init
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - sitecfg.js
+
+metatags:
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="et">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/et/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online'i usaldus" href="/et/trust/">Usaldus</a></li>
+        <li><a title="ArcGIS Online'i süsteemi olek" href="/et/trust/system-status/">Süsteemi olek</a></li>
+        <li><a title="ArcGIS Online'i turvalisus" href="/et/trust/security/">Turvalisus</a></li>
+        <li><a title="ArcGIS Online'i privaatsus" href="/et/trust/privacy/">Privaatsus</a></li>
+        <li><a title="ArcGIS Online'i privaatsus" href="/et/trust/compliance/">Nõuetele vastavus</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="column-16 tablet-column-24">
+    <h3 class="gray">ArcGIS Online on kujundatud kontrollitud juurdepääsuga turvalise süsteemina</h3>
+    <hr />
+    <div id="collectorMapFeature" class="column-12 phone-column-24">
+      <img src="img/features-security-data-ownership.jpg" alt="Turbeandmete omandiõigus" />
+    </div>
+    <div id="collectorDataFeature" class="column-12 phone-column-24">
+      <p>Veebisaidi trust.ArcGIS.com kaudu leiate turvalisuse, privaatsuse ja nõuetele vastavuse kohta käiva teabe. Siit leiate: </p>
+      <ul>
+        <li>ArcGIS Online'i teenuse kättesaadavuse, süsteemi jõudluse ning oleku ajaloo teabe;</li>
+        <li>turbevärskendused ja kehtivad teatised;</li>
+        <li>ArcGIS Online'i turbeteabe;</li>
+        <li>turbekonfiguratsiooni head tavad oma ettvõtte jaoks;</li>
+        <li>privaatsuse ja nõuetele vastavusega seotud teabe.</li>
+      </ul>
+      <p>Veebisaidi trust.ArcGIS.com kujundust mõjutavad klientidega peetavad vestlused. Mida soovite siin näha? Kui teil on ettepanekuid, postitage need saidile <a href="http://ideas.arcgis.com">ArcGIS ideed</a>.</p>
+    </div>
+    <div class="clear"></div>
+
+    <div style="text-align:center; padding-top:150px;">
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+    <div>
+      <a href="/et/trust/system-status/" class="btn tertiary" style="width:100%;text-align:center;" >Kontrolli süsteemi olekut</a>
+    </div>
+    <br/>
+    <div class="imgFrame block">
+      <h3 class="icon-announcement">Teadaanded</h3>
+      <p>6. juunil 2014 sai ArcGIS Online USA valitsuselt FISMA alusel madala tegutsemisloa (ATO). FISMA akrediteerimisprotsess kinnitab, et ArcGIS Online'i on põhjalikult läbi vaadanud sõltumatu hindaja, kes kontrollis süsteemi vastavust Riikliku Standardite ja Tehnoloogia Instituudi (NIST) eriväljaandes 800-53 toodud rangetele turvanõuetele. <a href="http://www.esri.com/esri-news/releases/14-2qtr/esri-mapping-platform-secured-for-federal-agencys-use">Loe edasi...</a></p>
+    </div>
+    <br />
+    <div class="panel">
+      <h4>„Esri on pühendunud oma kaardistusplatvormi turvalisuse pidevale arendamisele ja akrediteerimiste (nt FISMA) kaudu tarbijate usalduse suurendamisele.”</h4>
+      <p>Michael Young, Esri vastutav turbearhitekt</p>
+
+    </div>
+    <br/>
+    <div class="" style="text-align:center;">
+      <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/et/trust/security-concern/"> Teata turbeprobleemist</a>  </h4>
+    </div>
+  </div>
+
+ </div>
+
+  <!-- <script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>   <script type="text/javascript">     $(window).load(function() {       $('#blog').rssFeed({         url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',         max: 2,         layout: 0       });       });     </script>  -->
