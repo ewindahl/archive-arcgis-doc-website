@@ -22,7 +22,7 @@ mobile: true
     <header>
       <h1><a href="/ru/Trust/">Trust ArcGIS</a></h1>
        <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="search" name="q" class="leader" placeholder="Поиск Trust ArcGIS">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />
         <input type="hidden" name="language" value="<%= current_language %>" />
@@ -47,7 +47,10 @@ mobile: true
     <hr />
     <div id="collectorMapFeature" class="column-12 phone-column-24">
       <img src="img/features-security-data-ownership.jpg" alt="Владение данными безопасности" />
+    <div style="padding-top:30px; text-align: center;">
+      <a href="/ru/trust/system-status/" class="btn tertiary" style="width:80%;text-align:center;" >Проверить состояние системы</a>
     </div>
+	  </div>
     <div id="collectorDataFeature" class="column-12 phone-column-24">
       <p>Trust.ArcGIS.com &ndash; ваш ресурс информации о безопасности, конфиденциальности и соответствии законодательству. См.: </p>
       <ul>
@@ -60,27 +63,25 @@ mobile: true
       <p>Trust.ArcGIS.com получает вдохновение от бесед со своими клиентами. Что бы вы хотели здесь увидеть? Если у вас имеются предложения, направляйте их в <a href="http://ideas.arcgis.com">ArcGIS Ideas</a>.</p>
     </div>
     <div class="clear"></div>
+    <div class="" style="text-align:center; padding-top:75px;">
+	<h4>&quot;Esri стремится постоянно совершенствовать безопасность своих картографических платформ и укреплять доверие клиентов посредством аккредитаций в таких органах, как FISMA.&quot;</h4>
+      <p>Майкл Янг, главный архитектор по безопасности, Esri</p>
 
-    <div style="text-align:center; padding-top:150px;">
+    </div>
+    <div style="text-align:center; padding-top:45px;">
       <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
     </div>
   </div>
   <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
-    <div>
-      <a href="/ru/trust/system-status/" class="btn tertiary" style="width:100%;text-align:center;" >Проверить состояние системы</a>
-    </div>
-    <br/>
     <div class="imgFrame block">
-      <h3 class="icon-announcement">Предупреждения и объявления</h3>
-      <p>6 июня 2014 года ArcGIS Online получила разрешение на эксплуатацию FISMA. Юридическая аккредитация FISMA подтверждает, что ArcGIS Online досконально проанализирован сторонней организацией на предмет строгого соответствия требованиям Специальной публикации 800-53 Национального института стандартов и технологий (National Institute of Standards and Technology (NIST). <a href="http://www.esri.com/esri-news/releases/14-2qtr/esri-mapping-platform-secured-for-federal-agencys-use">далее...</a></p>
-    </div>
-    <br />
-    <div class="panel">
-      <h4>&quot;Esri стремится постоянно совершенствовать безопасность своих картографических платформ и укреплять доверие клиентов посредством аккредитаций в таких органах, как FISMA.&quot;</h4>
-      <p>Майкл Янг, главный архитектор по безопасности, Esri</p>
 
-    </div>
-    <br/>
+          <h3 class="icon-announcement">Предупреждения и &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS Blog"><img src="img/rss.png" /></a>
+		 <br/>объявления </h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+	  </div>
+    <br />
     <div class="" style="text-align:center;">
       <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/ru/trust/security-concern/"> Сообщить о проблемах с безопасностью</a>  </h4>
     </div>
@@ -88,17 +89,20 @@ mobile: true
 
  </div>
 
-  <!-- <script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-  <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',
-        max: 2,
+        url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
+        max: 5,
         layout: 0
       });
-
-
     });
 
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
 
-  </script>  -->
+  </script>
+
