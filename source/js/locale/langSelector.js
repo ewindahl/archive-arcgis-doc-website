@@ -152,7 +152,7 @@ jQuery(document).ready(function ($) {
           },
 
           isPageAvailable : function (lg,langSelector) {
-              if(langSelector != "all" && lgPickFull.concat(lgPartial).indexOf(lg) >= 0){
+              if(langSelector != "all" && lgPickFull.concat(lgPartial).concat(lgOthers).indexOf(lg) >= 0){
                 return true;
               }else if(langSelector === "all"){ 
                 return true;
