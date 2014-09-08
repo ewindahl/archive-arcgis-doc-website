@@ -105,7 +105,7 @@ jQuery(document).ready(function ($) {
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
       lgPartial = ["da", "it","ko", "nl","no","pl","pt-br","pt-pt","ro","sv"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "th", "tr"],
-	  lgTrustSite = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn'],
+	  lgTrustSite = ['en', 'de', 'es', 'et', 'fr', 'ja', 'lt', 'lv', 'pl', 'ru', 'zh-cn'],
 
       //all langs
       lgPickerLabels = GLangLabels,
