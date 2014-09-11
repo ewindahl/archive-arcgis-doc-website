@@ -1,0 +1,77 @@
+---
+title: Living Atlas of the World
+css:
+  - gallery
+
+js:
+  - gallery/gallery-init
+  - search/jxon
+  - gallery/galleryshell-default
+  - gallery/gallerydisplay-default
+
+
+metatags:
+  - <META name="robot" content="NOINDEX,NOFOLLOW">
+
+gallery_data_path: //blaster/N/DesktopHelp/rc/living-atlas-agol=en.xml
+expanded_gallery: true
+---
+
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/en/living-atlas/">Living Atlas of the World</a></h1>
+	  <form target="_top" id="gallerySearchForm" autocomplete="off">
+        <input type="search" placeholder="" id="query" class="leader" name="q">
+        <h5 id="gl-cl-btn" class="icon-cancel"></h5>
+		<h5 id="gl-search-btn" class="icon-search"></h5>
+		<!--<input type="submit" value="" id="search1">-->
+      </form>
+	  
+	  <!--<div id="gl-s-ctrl">
+      <input type="search" value="" autocomplete="off" name="query" id="query">
+	  
+    </div>-->
+    </header>
+  </div>
+</div>
+
+<div class="container content">
+  
+  <%= partial :"_partial/galleryFilters" %>
+    <div id="reference-content">
+
+   <!-- 
+    <div id="rss">
+     <a target="_self" href="http://www.arcgis.com/sharing/search?q=(group:( 8cb0765d4f394cc097407068580188ad))&amp;f=rss" rel="nofollow">
+      <img src="/img/gallery/rss-icon.png" alt="RSS">
+     </a>
+    </div>-->
+
+    <div id="gl-display">
+     <div id="spinner" style="display: none;">
+    <img alt="loading" src="/img/gallery/ajax-loader.gif">
+     </div>
+<!--
+      <div id="gl-display-type">Display: <a id="display2" href="#">List</a> | <a id="display1" class="displaytype_selected" href="#">Thumbnail</a> | <a id="display3" href="#">Detail</a></div>
+
+     <div id="gl-display-shown"><span>Show: </span><a href="#" id="numn1">15</a> | <a href="#" class="displayn_selected" id="numn2">30</a> | <a href="#" id="numn3">45</a> items</div>
+  
+     <div class="gl-pnavinfo-s"></div> -->
+     
+     <!-- Result area -->
+     <div id="gl-content" class="display1">
+     </div>
+     <!-- End of Result -->
+
+     
+    </div>
+      <div class="clear"></div>
+    </div> <!-- End of reference content -->
+	
+	 <!--
+	 <div id="gl-pagenav">
+     </div> -->
+
+    
+</div>
