@@ -21,18 +21,18 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/arcgis-app/">Web AppBuilder for ArcGIS</a></h1>
+      <h1><a href="/en/web-appbuilder/">Web AppBuilder for ArcGIS</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search Web AppBuilder ">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="android-app" />          
+        <input type="hidden" name="product" value="web-appbuider" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/en/arcgis-app/">Home</a></li>
+        <li class='current'><a href="/en/web-appbuilder/">Home</a></li>
         <li><a href="/en/web-appbuilder/create-apps/">Create Apps</a></li>
         <li><a href="/en/web-appbuilder/manage-apps/">Manage Apps</a></li>
         <li><a href="/en/web-appbuilder/extend-apps/">Extend Apps</a></li>
@@ -46,79 +46,57 @@ mobile: true
 
       <div class="column-16 tablet-column-24">
 
-	<h3 class="gray">Build powerful GIS apps that run on any device. No coding required.</h3>
+	       <h3 class="gray">Build powerful GIS apps that run on any device. No coding required.</h3>
 	
-		  <!-- <span id="appVersion"><strong>Version:</strong> <span class="icon-android"/><span class="icon-apple"/> 10.1.2, <span class="icon-purple icon-windows-8"/> 10.1.3</span> -->
-		  <!--<span id="appVersion"><strong>Version:</strong> 10.1.2 </span>-->
-          <!--<span id="appVersion"><strong>Version:</strong> <span class="icon-android"> 2.0.5,</span> <span class="icon-apple"> 10.1.2,</span> <span class="icon-purple icon-windows-8"> 10.1.2</span></span>-->
-          <!-- <span id="appReleased"><strong>Released:</strong> <span class="icon-android"> December 2012,</span> <span class="icon-apple"> September 2012,</span> <span class="icon-purple icon-windows-8"> May 2013</span></span> -->
-
-
-          <!-- <p>
-             <a href="https://play.google.com/store/apps/details?id=com.esri.android.client"><img src="img/android-app.png" /></a>
-             <a href="http://www.amazon.com/gp/product/B007OWF3BI/ref=mas_pm_ArcGIS"><img src="img/android-amazon-app.png" /></a>
-             <a href="https://itunes.apple.com/us/app/arcgis/id379687930"><img src="img/ios-app.jpg" /></a>
-             <a href="http://www.windowsphone.com/en-us/store/app/arcgis/7cb003be-990a-e011-9264-00237de2db9e"><img src="img/winphone-app.png" /></a>
-          </p> -->
-		     <!--  <p>
-            <a id="appSupportedBrowsers" href="#supportedBrowsers">Supported Browsers</a>
-            <a id="applicense" href="#license">Licensing</a>
-          </p> -->
-         <!--  <p>
-            <a id="appSysRequirements" href="#systemRequirements">System requirements</a>
-            <a id="appWhatsNew" href="#whatsNew">What's New</a>
-          </p> -->
-          
-
         </header>
         <hr />
         <br />
 
 
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/app-collector-data.jpg" />
+      <div id="firstApp" class="column-12 phone-column-24">
+          <img src="img/builder-firstapp.png" />
+          <p></p>
 
           <h3>Five minutes to your first app</h3>
-          <p></p>
+          
           <p>
             <a href="/en/web-appbuilder/create-apps/make-first-app.htm" class="icon-right-arrow">&nbsp;Show me how</a>
           </p>
         </div>
 
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/app-collector-map.jpg" />
-
-          <h3>Hosted custom templates</h3>
-          <p>How do I make a map? What types of services and layers are supported? How do I open maps created in ArcMap? Get answers to your questions on bringing your data into the app.</p>
-          <p>
-            <a href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm" class="icon-right-arrow">&nbsp;Show me how</a>
-          </p>
-        </div>
-
-
-
-        <div class="clear"></div>
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/app-collector-data.jpg" />
+        <div id="easyConfig" class="column-12 phone-column-24">
+          <img src="img/builder-widgets.png" />
+          <p></p>
 
           <h3>Easy configuration</h3>
-          <p>What map functionality is supported? How do I view more information about a feature? How do I edit an existing feature? Get answers to your questions on using the app.</p>
+         <!--  <p>Just a few clicks away to configure the look-and-feel of the app and widgets.</p> -->
           <p>
-            <a href="/en/arcgis-app/android/help/use-the-app-faqs.htm" class="icon-right-arrow">&nbsp;Using widgets</a>
-            <a href="/en/arcgis-app/android/help/use-the-app-faqs.htm" class="icon-right-arrow">&nbsp;Using JSON</a>
+            <a href="/en/web-appbuilder/create-apps/themes-tab.htm" class="icon-right-arrow">&nbsp;Configure app</a>
+            <a href="/en/web-appbuilder/create-apps/widget-attribute-table.htm" class="icon-right-arrow">&nbsp;Configure widgets</a>
           </p>
         </div>
 
+      <div class="clear"></div>
 
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/app-collector-map.jpg" />
+        <div id="customTemplates" class="column-12 phone-column-24">
+          <img src="img/builder-template.png" />
+          <p></p>
+
+          <h3>Export templates</h3>
+          <p>Create custom web app template for your organization, hosted by ArcGIS Online or Portal for ArcGIS.</p>
+          <p>
+            <a href="/en/web-appbuilder/manage-apps/export-as-template.htm" class="icon-right-arrow">&nbsp;Show me how</a>
+          </p>
+        </div>
+
+        <div id="customize" class="column-12 phone-column-24">
+          <img src="img/builder-customize-encinitas.png" />
+          <p></p>
 
           <h3>Build widgets & themes</h3>
-          <p>How do I make a map? What types of services and layers are supported? How do I open maps created in ArcMap? Get answers to your questions on bringing your data into the app.</p>
+          <p>Customize and extend the app by creating your own widgets and themes.</p>
           <p>
-            <a href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm" class="icon-right-arrow">&nbsp;Get answers</a>
+            <a href="/en/web-appbuilder/extend-apps/developer-s-guide-overview.htm" class="icon-right-arrow">&nbsp;Show me how</a>
           </p>
         </div>
 
@@ -138,8 +116,9 @@ mobile: true
         <a name="license"></a>
         <h2 class="divider">License</h2>
 
-        <p>To use Web Appbuilder, you must have ArcGIS organizational account.
+        <p>To use Web Appbuilder, you must have an ArcGIS organizational account.
 
+        <a name="features"></a>
         <h2 class="divider">Key Features</h2>
         <ul>
           <li>Create HTML/JavaScript apps that run on any device.</li>
@@ -149,91 +128,9 @@ mobile: true
           <li>Create custom app templates.</li>
         </ul>
         
-         <h3>Supported languages</h3>
-        <p>Danish, Dutch, English, Estonian, French, German, Italian, Japanese, Korean, Latvian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, and Swedish.</p>
+        <h3>Supported languages</h3>
+        <p>Chinese (Simplified Han), Czech, Danish, Dutch, English, Estonian, Finnish, French, German,Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, Swedish, Thai, and Turkish. Arabic and Hebrew are not supported at beta.</p>
         <p>The language used by the app is determined by your device's language setting.</p>
-
-       <!--  <h3>What's new</h3>
-        <table><tr><td valign="top"><h4 class="icon-android">Android</h4>
-        <ul>
-          <li>Android 2.3.3 or later</li>
-          <li>If using Android emulator: 4.0.3 system image with hardware acceleration</li>
-          <li>ARMv6 or ARMv7 processor</li>
-          <li>Hardware support for OpenGL ES 2.0</li>
-
-          <li>Recommended:
-              <ul><li>ARMv7 processor</li>
-              <li>1 GHz processor</li>
-              <li>512 MB of RAM</li>
-              <li>Screen resolution of 800x480</li>
-              <li>Hardware based (not software emulated) OpenGL ES 2.0 support</li>
-              <li>GPS</li>
-              <li>Camera</li></ul></li>
-          <li>Unsupported device: HTC Mytouch 3G</li>
-        </ul></td>
-        <td valign="top"><h4 class="icon-apple">iOS</h4>
-        <ul>
-          <li>iOS 5 or later</li>
-          <li>Supports: iPhone 3GS and later, iPad, iPod touch</li>
-        </ul></td><td valign="top"><h4 class="icon-purple icon-windows-8">Windows Phone</h4>
-        <ul>
-          <li>Windows Phone 7.5 (Mango) or later</li>
-        </ul></td><tr></table> -->
-
-       <!--  <h3>Supported languages</h3>
-        <p>Arabic (<span class="icon-android"/><span class="icon-apple"/>), Danish, Dutch, English, Estonian (<span class="icon-android"/>), French, German, Hebrew (<span class="icon-android"/><span class="icon-apple"/>), Italian, Japanese, Korean, Latvian (<span class="icon-android"/>), Lithuanian (<span class="icon-android"/>), Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian (<span class="icon-android"/><span class="icon-apple"/>), Russian, Simplified Chinese, Spanish, and Swedish.</p>
-        <p>The language used by the app is determined by your device's language setting.</p> -->
-
-
-
-
-
-
-     <!--   <a name="whatsNew"></a>
-        <h2 class="divider">What's new</h2>
-        <table><tr>
-			<td valign="top"><h4 class="icon-android">Android</h4>
-				<p>Version 10.1.2 was released in September 2013, including:
-				<ul>
-					<li>Expanded support for scale dependency on layers</li>
-					<li>Support for overriding editing in the map</li>
-					<li>Support for layer filters in the map</li>
-					<li>New layer support: WMS, OpenStreetMap</li>
-					<li>Federated security</li>
-					<li>Various bug fixes</li>
-					<li>Fixed HTML links on pop-ups (NIM077005)</li>
-					<li>Removed support for Android 2.2</li>
-        		</ul>
-        		<p> See <a data-modlink="false" href="/en/arcgis-app/android/help/what-s-new.htm">What's new in Android</a> for previous versions.</p>
-			</td>
-		    <td valign="top"><h4 class="icon-apple">iOS</h4>
-		    	<p>Version 10.1.2 was released in August 2013, including:
-				<ul>
-					<li>Expanded support for scale dependency on layers</li>
-					<li>Support for overriding editing in the map</li>
-					<li>Support for layer filters in the map</li>
-					<li>Federated security</li>
-					<li>Localized into additional languages</li>
-					<li>Fixed posting attachments with add only permissions (NIM084199)</li>
-					<li>Fixed crash with uploaded shapefiles (NIM085622)</li>
-					<li>Fixed predefined queries for 10.1 secure services (NIM083799)</li>
-        		</ul>
-        		<p>See <a data-modlink="false" href="/en/arcgis-app/ios/help/what-s-new.htm">What's new in iOS</a> for previous versions.</p>
-		    </td>
-		    <td valign="top"><h4 class="icon-purple icon-windows-8">Windows Phone</h4>
-		        <p>Version 10.1.3 was released in January 2014 with various bug fixes.</p>
-		    	<p>Version 10.1.2 was released in May 2013, including:
-		    	<ul>
-					<li>Windows Phone 8 support</li>
-					<li>Support for additional types of secure layers</li>
-					<li>Localized into additional languages</li>
-					<li>Various bug fixes</li>
-        		</ul>
-        		<p> See <a data-modlink="false" href="/en/arcgis-app/windows-phone/help/what-s-new.htm">What's new in Windows Phone</a> for details and previous versions.</p>
-			</td>
-		<tr></table>
-
-        <p>&nbsp;</p> -->
 
       </div> 
 
@@ -242,12 +139,11 @@ mobile: true
 
         <div class="imgFrame block">
           <h3>Details</h3>
-          <ul>
-           <li><a href="/en/arcgis-app/android/help/get-started-faqs.htm">Supported Browsers</a></li>
-            <li><a href="/en/arcgis-app/android/help/use-the-app-faqs.htm">License</a></li>
-            <li><a href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm">Key Features</a></li>
+          
+          <h4><a href="#features">Key Features</a></h4>
+          <h4><a href="#supportedBrowsers">Supported Browsers</a></h4>
+          <h4><a href="#license">License</a></h4>
 
-          </ul>
         </div>
 
         <br />
