@@ -1,0 +1,106 @@
+---
+title: 信頼性
+css:
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - video-init
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - sitecfg.js
+
+metatags:
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="ja">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ja/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Trust ArcGIS の検索">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online の信頼性" href="/ja/trust/">信頼性</a></li>
+        <li><a title="ArcGIS Online のシステム ステータス" href="/ja/trust/system-status/">システム ステータス</a></li>
+        <li><a title="ArcGIS Online のセキュリティ" href="/ja/trust/security/">セキュリティ</a></li>
+        <li><a title="ArcGIS Online のプライバシー" href="/ja/trust/privacy/">プライバシー</a></li>
+        <li><a title="ArcGIS Online のプライバシー" href="/ja/trust/compliance/">コンプライアンス</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="column-16 tablet-column-24">
+    <h3 class="gray">ArcGIS Online は、アクセスが制御された安全なシステムとして設計されています。</h3>
+    <hr />
+    <div id="collectorMapFeature" class="column-12 phone-column-24">
+      <img src="img/features-security-data-ownership.jpg" alt="セキュリティ データの所有権" />
+    <div style="padding-top:30px; text-align: center;">
+      <a href="/ja/trust/system-status/" class="btn tertiary" style="width:75%;text-align:center;" >システム ステータスの確認</a>
+    </div>
+	  </div>
+    <div id="collectorDataFeature" class="column-12 phone-column-24">
+      <p>Trust.ArcGIS.com は、セキュリティ、プライバシー、およびコンプライアンスに関する情報リソースにアクセスできる場所です。次のような情報があります。 </p>
+      <ul>
+        <li>ArcGIS Online サービスの可用性、システム パフォーマンス情報、およびステータスの履歴</li>
+        <li>セキュリティの更新および現在のアラート情報</li>
+        <li>ArcGIS Online の製品セキュリティに関する情報</li>
+        <li>組織サイトのセキュリティのベスト プラクティス</li>
+        <li>プライバシーおよびコンプライアンス情報</li>
+      </ul>
+      <p>Trust.ArcGIS.com は、これまでのお客様との対話から多くのヒントを得ています。このサイトでどのような情報をご覧になりたいですか？ご意見がありましたら、<a href="http://ideas.arcgis.com">ArcGIS Ideas</a>にご投稿ください。</p>
+
+    </div>
+    <div class="clear"></div>
+    <div class="" style="text-align:center; padding-top:75px;">
+      <h4>「Esri は、Esri マッピング プラットフォームのセキュリティを継続して向上させ、FISMA などの認定を通してお客様からの信頼を強固にするよう継続して取り組んで参ります。」</h4>
+      <p>Michael Young、主任セキュリティ アーキテクト、Esri</p>
+    </div>
+    <div style="text-align:center; padding-top:45px;">
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+    <div class="imgFrame block">
+          <h3 class="icon-announcement">アラートおよび通知 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS Blog"><img src="img/rss.png" /></a></h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+          </div>
+    <br />
+
+    <div class="" style="text-align:center;">
+      <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/ja/trust/security-concern/"> セキュリティ上の問題の報告</a>  </h4>
+    </div>
+  </div>
+
+ </div>
+
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>
