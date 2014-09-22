@@ -99,7 +99,7 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder"
           }
       },
 	  {
@@ -110,6 +110,13 @@ var filterCfg = {
         }
       }, 
       {
+        k:"arcgis-open-data",
+        q: {
+          r:"",
+          p:"(product:arcgis-open-data)"
+        }
+      }, 
+	  {
         k:"android-app",
         q: {
           r:"",
@@ -227,6 +234,13 @@ var filterCfg = {
         q: {
           r:"",
           p:"(product:ops-dashboard)"
+        }
+      },
+	  {
+        k:"web-appbuilder",
+        q: {
+          r:"",
+          p:"(product:web-appbuilder)"
         }
       },
 
