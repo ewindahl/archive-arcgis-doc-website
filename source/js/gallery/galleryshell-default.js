@@ -1110,6 +1110,8 @@ $(document).ready(function () {
             gModel.fNumN = 30;
 
         }
+		// For safari back button issue.
+		window.onunload = function(){};
 
     }
 

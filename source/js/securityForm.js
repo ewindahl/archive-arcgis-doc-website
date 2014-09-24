@@ -45,6 +45,10 @@ doc.securityConcernForm = (function() {
 				$('#txtCaptchaInput').focus();
 				return false;
 			}
+			
+			if($('#subject').val() != ""){
+				$('#datablock').val("Security Concern:" + $('#subject').val());
+			}
 
 			this.submission();
 		},
@@ -67,7 +71,7 @@ doc.securityConcernForm = (function() {
                         fname: window.location.origin + $("#fname").val(),
                         submit: true
                     },
-                    timeout: 1000,
+                    timeout: 2000,
 					beforeSend: function() {
 						$("#form-fields").hide();
 						$("#spinner").show();
