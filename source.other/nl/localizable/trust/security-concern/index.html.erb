@@ -1,0 +1,158 @@
+---
+title: Een beveiligingsprobleem rapporteren
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/nl/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/nl/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online-systeemstatus" href="/nl/trust/system-status/">Systeemstatus</a></li>
+        <li><a title="ArcGIS Online-beveiliging" href="/nl/trust/security/">Beveiliging</a></li>
+        <li><a title="ArcGIS Online-privacy" href="/nl/trust/privacy/">Privacy</a></li>
+        <li><a title="ArcGIS Online-privacy" href="/nl/trust/compliance/">Naleving</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">Een beveiligingsprobleem rapporteren</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">Vul het formulier rechts in met alle relevante informatie, inclusief voldoende gegevens over uw specifieke probleem. Uw contactgegevens worden gebruikt om de informatie die u hebt opgegeven, op te volgen. Selecteer het toepasselijke onderwerp in de vervolgkeuzelijst Onderwerp.</p>
+		<ul>
+			<li data-langlabel="">Zwakte: een zwakke plek in onze site of applicatie rapporteren.</li>
+			<li data-langlabel="">Verdachte e-mail van Esri: als u vermoedt dat u bent benaderd door een mogelijk phishing-aanval vanaf een e-mailadres van Esri of als u andere verdachte e-mails van Esri hebt ontvangen.</li>
+			<li data-langlabel="">Privacyprobleem: als u een privacyprobleem hebt dat betrekking heeft op onze applicatie of organisatie.</li>
+			<li data-langlabel="">Overige: alle andere problemen met betrekking tot beveiliging, privacy of naleving.</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">Beleid voor het rapporteren van zwakke plekken</h3>
+	  </header>
+      
+        <p data-langlabel="">Het ArcGIS.com-beveiligingsteam erkent dat onafhankelijke veiligheidsonderzoekers een belangrijke rol spelen in internetbeveiliging. Wij stimuleren mensen om op een verantwoorde manier zwakke plekken in onze site of applicatie te rapporteren. Esri verbindt zich ertoe samen te werken met de veiligheidsgemeenschap om alle potentiële zwakke plekken die aan ons worden gerapporteerd, te controleren en te beantwoorden. Esri zal geen rechtszaak aanspannen of een onderzoek naar de rechtshandhaving instellen als de regels van dit beleid worden gevolgd.</p>
+	  <header>
+		<h4 data-langlabel="">De volgende typen beveiligingsonderzoek zijn <strong>niet</strong> toegestaan door ArcGIS.com</h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">Het veroorzaken van een DoS-aanval (Denial-of-Service) of pogingen daartoe.</li>
+		<li data-langlabel="">Het gebruiken van geautomatiseerde beveiligingstools zonder de expliciete toestemming van Esri. Het gebruik van geautomatiseerde tools kan leiden tot een onderzoek of het blokkeren van uw IP-adres(sen).</li>
+		<li data-langlabel="">Het openen van data of informatie die u niet toebehoort, of pogingen daartoe.</li>
+		<li data-langlabel="">Het vernietigen of beschadigen van data of informatie die u niet toebehoort, of pogingen daartoe.</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">De verbintenis van het ArcGIS.com-beveiligingsteam</h4>
+	  </header>
+		<p data-langlabel="">Het ArcGIS.com-beveiligingsteam verbindt zich ertoe het volgende te doen voor alle veiligheidsonderzoekers die het Beleid voor het rapporteren van zwakke plekken van ArcGIS.com naleven:</p>
+		
+		<ul>
+		<li data-langlabel="">Tijdig reageren en de ontvangst van uw rapport bevestigen.</li>
+		<li data-langlabel="">Een vermoedelijk tijdsbestek opgeven waarin het beveiligingsprobleem zal worden opgelost.</li>
+		<li data-langlabel="">De persoon die het probleem heeft gerapporteerd, informeren wanneer het beveiligingsprobleem is opgelost.</li>		
+		</ul>
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">Naam: </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">E-mailadres: </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Telefoonnummer: </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">Organisatie <span class="optional">(optioneel):</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">Onderwerp: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option> <option value="Vulnerability">Zwakte</option> <option value="Suspicious E-mail from Esri">Verdachte e-mail van Esri</option> <option value="Privacy Issue">Privacyprobleem</option> <option value="audi">Overige</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">Beschrijving: </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">Voer de cijfers in die u ziet om geautomatiseerde spam te helpen voorkomen: </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">Cijfers: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="internal" name="source" id="source">
+
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Beveiligingsprobleem" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="en" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Verzenden</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>Dank u dat u dit probleem hebt gerapporteerd. Wij zullen het binnen de eerstvolgende werkdagen onderzoeken.</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>Er is een fout opgetreden tijdens het verzenden. Verzend uw probleem later opnieuw.</h4></p>
+	  </div>
+
+	  <strong><span style="display:none;" id="referPageLink">Terug naar de <a id="feedback-referring-link" href="">verwijzende pagina</a></span> <span style="display:none;" id="resubmit">Een ander beveiligingsprobleem <a id="resubmit" href="" target="_self">verzenden</a></span></strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+

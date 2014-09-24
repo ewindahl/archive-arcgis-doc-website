@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-9-23"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ro">
 
 mobile: true
 
@@ -33,8 +33,8 @@ mobile: true
 	<nav>
       <ul>
         <li class='current'><a href="/ro/operations-dashboard/">Prima pagină</a></li>
-        <li><a href="/ro/operations-dashboard/windows-desktop/author/create-a-map.htm">Vizualizări pentru autor</a></li>
-        <li><a href="/ro/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Vizualizări pentru utilizator</a></li>
+        <li><a href="/ro/operations-dashboard/windows-desktop/author/create-a-map.htm">Crearea vederilor</a></li>
+        <li><a href="/ro/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Utilizarea vederilor</a></li>
         <li><a href="http://forums.arcgis.com/forums/225-Operations-Dashboard-for-ArcGIS">Forum</a></li>
       </ul>
     </nav>
@@ -104,7 +104,7 @@ mobile: true
 
 
 	<a name="features" ></a>
-	<h2 class="divider">Caracteristici</h2>
+	<h2 class="divider">Obiecte spaţiale</h2>
 	<p>Constituiţi o imagine de ansamblu a sistemelor şi resurselor pe care le administraţi. Monitorizaţi în timp real feeduri de date pentru evenimente la scară mare sau pentru operaţiunile de zi cu zi pe desktop sau tabletă. Creaţi panouri de comandă executive specializate care să integreze hărţi, diagrame şi grafice.</p>
 	
 	<ul>
@@ -123,9 +123,9 @@ mobile: true
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -139,8 +139,8 @@ mobile: true
  } 
  </script> 
  <h3>Aplicaţia Windows</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Sisteme de operare suportate</div> 
-     <div exp1='yes' style="display:none;">
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Sisteme de operare suportate</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8,1 Windows 8.1 Pro şi Windows 8.1 Enterprise (pe 32 de biţi 64 de biţi [EM64T])</li>
           <li>Windows 8 Windows 8 Pro şi Windows 8 Enterprise (pe 32 de biţi 64 de biţi [EM64T])</li>
@@ -151,7 +151,7 @@ mobile: true
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Cerinţe hardware</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Cerinţe hardware</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>Frecvenţă procesor: 2.2 GHz sau mai mare; Hyper-Threading (HTT) sau Multi-core este recomandat.</li>
@@ -166,20 +166,20 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Cerinţe software</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Cerinţe software</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
         <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>  sau o versiune ulterioară este obligatorie. Pentru a-l instala, trebuie să aveţi pe maşină privilegii administrative.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Cerinţe pentru dezvoltatori</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Cerinţe pentru dezvoltator</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
 	<p style="padding:0 15px"><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> este obligatoriu pentru a particulariza Operations Dashboard for ArcGIS. Microsoft Visual Studio 2012 sau 2013 Professional, Premium sau Ultimate Edition este, de asemenea, obligatoriu. </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Limbi acceptate</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Limbi acceptate</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
      	<p style="padding:0 15px">arabă, chineză simplificată, cehă, coreeană, daneză, ebraică, engleză, estoniană, finlandeză, franceză, germană, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză şi turcă.</p>
      	<p style="padding:0 15px">Limba utilizată în versiunea Windows a aplicaţiei este determinată de setarea pentru limbă a sistemului dvs. de operare. În cazul utilizării unei setări pentru limbă neacceptate, aplicaţia utilizează limba engleză.</p>
@@ -188,7 +188,7 @@ mobile: true
 
      <h3/>
  <h3>Aplicaţia pentru browser</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Browsere acceptate</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">Browsere suportate</a>
 <div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
  <ul style="padding:0 15px">
  <li>Chrome versiunea 19.0 şi versiuni ulterioare</li>
@@ -198,16 +198,16 @@ mobile: true
  </ul> 
  Tabletă 
  <ul style="padding:0 15px">
- <li>Android 4.0 şi versiuni ulterioare care execută Chrome</li>
+ <li>Android 4.0 şi versiunile ulterioare care rulează Chrome versiunea 19.0 şi ulterioare</li>
  <li>iOS 6.0 şi versiuni ulterioare care execută Safari</li>
  </ul>
  Telefon 
  <p style="padding:0 15px">În prezent, nu este suportat niciun browser de telefoane smartphone.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>Limbi acceptate</div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Limbi acceptate</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Cehă, coreeană, daneză, engleză, estoniană, finlandeză, franceză, germană, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză şi turcă.</p>
+      	<p style="padding:0 15px">Cehă, coreeană, daneză, engleză, estoniană, finlandeză, franceză, germană, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză thailandeză şi turcă.</p>
       	<p style="padding:0 15px">În versiunea pentru browser, pentru setarea limbii este utilizat profilul dvs. ArcGIS Online. În cazul utilizării unei setări pentru limbă neacceptate, aplicaţia utilizează limba engleză.</p>
 </div>
 <div class="clear"></div>
@@ -218,25 +218,18 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Ce este nou</h2>
-        <p>Operations Dashboard for ArcGIS 10.2.3 a fost lansată în aprilie 2014. Aceasta include următoarele îmbunătăţiri:</p>
-        <ul>
-        <li>Căutare în datele proprii (<span class="icon-windows-8"/>).</li>
-        <li>Diverse remedieri de buguri. </li>
-        <li>Utilizează ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        <li>Se pot dezvolta componente add-in cu ajutorul ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        </ul>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
+	        <p>Operations Dashboard for ArcGIS 10.2.3 a fost actualizat în iulie 2014 cu diverse remedieri şi îmbunătăţiri.</p>
+                </td>
+	        <td valign="top"><h4><img src="icon-browser.png" style="margin-right:4px"/>Browser</h4>
+	        <p>Aplicaţia browser pentru Operations Dashboard for ArcGIS a fost actualizată în septembrie 2014. Ea include următoarele îmbunătăţiri:</p>
+	        <ul>
+	          <li>Aspect şi funcţionare actualizate pentru widgeturile de indicatoare, indicatoare de măsură şi diagrame</li>
+	          <li>Localizare în limba thailandeză</li>
+	          <li>Diverse îmbunătăţiri şi remedieri de defecte</li>
+        </ul></td><tr></table>
         
-        <p>Operations Dashboard for ArcGIS 10.2.2 a fost lansat în martie 2014. Acesta include următoarele îmbunătăţiri:</p>
-        <ul>
-        <li>Vizualizările operaţionale pot fi afişate într-un browser.</li>
-        <li>Servicii de hărţi pot fi utilizate ca surse de date.</li>
-        <li>Se respectă intervalele de reîmprospătare setate în straturile tematice.</li>
-        <li>Noi instrumente de selectare.</li>
-        <li>Sunt listate actualizări de widgeturi.</li>
-        <li>Utilizează ArcGIS Runtime SDK 10.2.3 for WPF.</li>
-        <li>Se pot dezvolta componente add-in cu ajutorul ArcGIS Runtime SDK 10.2.2 for WPF.</li>
-        <li>Localizare în limba turcă.</li>
-        </ul>
+        
         
         
         <a name="sneakPeek"></a>
@@ -263,19 +256,19 @@ mobile: true
 	  </tr>
 	  <tr><th>Capacitate de extindere</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Utilizare a serviciilor de hărţi drept surse de date</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	  </tr>
 	  <tr><th>Căutare date</th>
 	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>Filtrare spaţială a informaţiilor</th>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <!--<tr><th>Sketch on the map</th> 	    <td><span class="icon-check" style="color:lightgray"/></td> 	    <td><span class="icon-check" style="color:lightgray"/></td> 	  </tr>-->
 	  <tr><th>Utilizare îmbunătăţită a datelor nespaţiale (inclusiv tabele corelate)</th>
@@ -304,8 +297,8 @@ mobile: true
        <div class="imgFrame block">
           <h3>Detalii</h3>
           
-	  <h4><a href="#features">Caracteristici</a></h4>
-	  <h4><a href="#systemRequirements">Cerinţe de sistem</a></h4>
+	  <h4><a href="#features">Obiecte spaţiale</a></h4>
+	  <h4><a href="#systemRequirements">Cerinţele de sistem</a></h4>
 	  <h4><a href="#whatsNew">Ce este nou</a></h4>
 	  <h4><a href="#sneakPeek">Scurtă prezentare</a></h4>
           

@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-1-15"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-9-23"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ar">
 
 mobile: true
 
@@ -53,7 +53,7 @@ mobile: true
 	  -->	  
 
           <p>
-            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">الحصول على لوحة معلومات العمليات</a>
+            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">الحصول على Operations Dashboard</a>
 
           </p>
         <hr />
@@ -128,13 +128,13 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">متطلبات النظام</h2>
 
-        <p>يتعين وجود متطلبات معينة للجهاز لتشغيل لوحة بيانات المعلومات، بالإضافة إلى المتطلبات الموجودة على البيانات التي تستخدم ضمن التطبيق. </p>
+        <p>يتعين وجود متطلبات معينة للجهاز لتشغيل Operations Dashboard، بالإضافة إلى المتطلبات الموجودة على البيانات التي تستخدم ضمن التطبيق. </p>
 
 
 <script> 
- function exp(strTag ,strAttribute){ 
+ function exp(e,strTag ,strAttribute){ 
  var elem = document.getElementsByTagName(strTag); 
- var elem1 =window.event.srcElement; 
+ var elem1 = e.target;
  for (var i=0;i<elem1.children.length;i++){ 
  elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
  } 
@@ -148,19 +148,19 @@ mobile: true
  } 
  </script> 
  <h3>تطبيقات Windows</h3>
- <div onclick="exp('div','exp1');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>أنظمة التشغيل المدعومة</div> 
-     <div exp1='yes' style="display:none;">
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">أنظمة التشغيل المدعومة</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8.1 وWindows 8.1 وWindows 8.1 Enterprise (الإصدار 32 بت و64 بت [EM64T])</li>
           <li>Windows 8 وWindows 8 وWindows 8 Enterprise (الإصدار 32 بت و64 بت [EM64T])</li>
 		  <li>Windows 7 Ultimate وEnterprise وProfessional وHome Premium الإصداريين (32 و64 بت [EM64T])SP1</li>
 		  <li>Windows Server 2012 Standard وDatacenter الإصدار (64 بت [EM64T])</li>
 		<li>Windows Server 2008 R2 Standard و Enterprise و Datacenter (64 بت [EM64T]) SP1</li>
-		<li>Windows Server 2008 الإصدارات القياسية والمؤسسية ومركز البيانات (الإصدار 32 و64 بت [EM64T]) SP2</li>
+		<li>Windows Server 2008 Standard و Enterprise و Datacenter (32 بت و64 بت [EM64T]) SP2</li>
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
-<div onclick="exp('div','exp2');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>متطلبات الجهاز</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">متطلبات الجهاز</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>سرعة وحدة المعالجة المركزية: 2.2 جيجا هيرتز أو أحدث، ويوصي بتوازي تشغيل مؤشرات الترابط أو متعدد الأسس.</li>
@@ -175,29 +175,29 @@ mobile: true
 </div>
 <div class="clear" style="padding:5px;"></div>
 
-<div onclick="exp('div','exp3');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>متطلبات البرنامج</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">متطلبات البرنامج</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
         <p style="padding:0 15px">يتطلب وجود<a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework الإصدار 4.5</a> أو أحدث. يجب الحصول على امتيازات إدارية في الجهاز لتثبيته.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
-<div onclick="exp('div','exp4');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>متطلبات المطور</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">‎متطلبات المُطوّر</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px">يتطلب <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> لتخصيص Operations Dashboard for ArcGIS. يتطلب وجود Microsoft Visual Studio 2012 أو 2013 الإصدارات Professional أو Premium أو Ultimate. </p>
+	<p style="padding:0 15px">يجب وجود <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> لتخصيص Operations Dashboard for ArcGIS. يتطلب وجود Microsoft Visual Studio 2012 أو 2013 الإصدارات Professional أو Premium أو Ultimate. </p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
-<div onclick="exp('div','exp5');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>اللغات المدعومة</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">اللغات المدعومة</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">العربية والتشيكية والدانماركية والهولندية والإستونية والفنلندية والفرنسية والألمانية والعبرية والإيطالية واليابانية والكورية واللاتفية واللتوانية والنرويجية والبولندية والبرتغالية (البرازيل) والبرتغالية (البرتغال) والرومانية والروسية والصينية المبسطة والأسبانية والسويدية والتركية.</p>
+     	<p style="padding:0 15px">العربية والتشيكية والدانماركية والهولندية والإنجليزية والإستونية والفنلندية والفرنسية والألمانية والعبرية والإيطالية واليابانية والكورية واللاتفية واللتوانية والنرويجية والبولندية والبرتغالية (البرازيل) والبرتغالية (البرتغال) والرومانية والروسية والصينية المبسطة والاسبانية والسويدية والتركية.</p>
      	<p style="padding:0 15px">يتم تحديد اللغة المُستخدمة في إصدار Windows للتطبيق من قبل إعدادات لغة نظام التشغيل. عند استخدام إعدادات اللغة غير المدعومة، سيقوم التطبيق باستخدام اللغة الإنجليزية.</p>
 </div>
 <div class="clear"></div>
 
      <h3/>
  <h3>تطبيق المستعرض</h3>
-<div onclick="exp('div','exp10');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>المستعرضات المدعومة</div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">المستعرضات المدعومة</a>
 <div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
  <ul style="padding:0 15px">
  <li>Chrome الإصدار 19.0 والأحدث</li>
@@ -207,50 +207,43 @@ mobile: true
  </ul> 
  لوحي 
  <ul style="padding:0 15px">
- <li>Android 4.0 وأحدث Chrome قيد التشغيل</li>
+ <li>يُشغّل Android 4.0 والإصدار الأحدث الإصدار 19.0 والأحدث من Chrome</li>
  <li>iOS الإصدار 6.0 وأحدث Safari قيد التشغيل</li>
  </ul>
  الهواتف 
  <p style="padding:0 15px">لا يتم دعم أي من مستعرضات الهواتف الذكية حاليًا.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <div onclick="exp('div','exp11');" style="display:inline;"><font face=Webdings color=#0075BB>4</font>اللغات المدعومة</div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">اللغات المدعومة</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">العربية والتشيكية والدانماركية والهولندية والإستونية والفنلندية والفرنسية والألمانية والإيطالية واليابانية والكورية واللاتفية واللتوانية والنرويجية والبولندية والبرتغالية (البرازيل) والبرتغالية (البرتغال) والرومانية والروسية والصينية المبسطة والأسبانية والسويدية والتركية.</p>
+      	<p style="padding:0 15px">التشيكية والدانماركية والهولندية والإنجليزية والإستونية والفنلندية والفرنسية والألمانية والإيطالية واليابانية والكورية واللاتفية واللتوانية والنرويجية والبولندية والبرتغالية (البرازيل) والبرتغالية (البرتغال) والرومانية والروسية والصينية المبسطة والأسبانية والسويدية والتايلاندية والتركية.</p>
       	<p style="padding:0 15px">في إصدار المستعرض، يتم استخدام الملف التعريفي ArcGIS Online لتعيين اللغة. عند استخدام إعدادات اللغة غير المدعومة، سيقوم التطبيق باستخدام اللغة الإنجليزية.</p>
 </div>
 <div class="clear"></div>
 
      <h3/>
         <h3>متطلبات البيانات</h3>
-		<p>لاستخدام الخرائط في لوحة بيانات المعلومات، يتعين عليك أن يكون لديك حساب في المنظمة. تشتمل الخرائط الخاصة بك على بيانات من ArcGIS Online، و Portal for ArcGIS، و ArcGIS for Server. يتعين استضافة مصادر البيانات على ArcGIS Online أو ArcGIS 10.1 for Server أو الإصدار الأحدث.</p>
+		<p>لاستخدام الخرائط في Operations Dashboard، يتعين أن يكون لديك حساب في المنظمة. تشتمل الخرائط الخاصة بك على بيانات من ArcGIS Online، و Portal for ArcGIS، و ArcGIS for Server. يتعين استضافة مصادر البيانات على ArcGIS Online أو ArcGIS 10.1 for Server أو الإصدار الأحدث.</p>
 
         <a name="whatsNew"></a>
         <h2 class="divider">ما الجديد</h2>
-        <p>يتم إصدار لوحة معلومات العمليات لـ ArcGIS 10.2.3 في إبريل 2014. تتضمن التعزيزات التالية:</p>
-        <ul>
-        <li>البحث عن البيانات (<span class="icon-windows-8"/>).</li>
-        <li>إصلاحات الأخطاء المتنوعة. </li>
-        <li>استخدامات ArcGIS Runtime SDK 10.2.3 for WPF(<span class="icon-windows-8"/>).</li>
-        <li>يمكن تطوير الوظائف الإضافية باستخدام ArcGIS Runtime SDK 10.2.3 for WPF (<span class="icon-windows-8"/>).</li>
-        </ul>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
+	        <p>تم تحديث Operations Dashboard for ArcGIS الإصدار 10.2.3 في يوليو 2014 بالعديد من التحسينات وإصلاح العديد من الأخطاء.</p>
+                </td>
+	        <td valign="top"><h4><img src="icon-browser.png" style="margin-right:4px"/>مستعرض</h4>
+	        <p>تم تحديث تطبيق المستعرض Operations Dashboard for ArcGIS في سبتمبر 2014. وتتضمن التحسينات التالية:</p>
+	        <ul>
+	          <li>شكل وأسلوب عرض المُؤشر وجهاز القياس وعناصر واجهة استخدام المُخطط</li>
+	          <li>تم التعريب إلى التايلاندية</li>
+	          <li>إصلاح الأخطاء السابقة وتحسينها</li>
+        </ul></td><tr></table>
         
-        <p>يتم إصدار لوحة معلومات العمليات لـ ArcGIS 10.2.2 في مارس 2014. تتضمن التعزيزات التالية:</p>
-        <ul>
-        <li>يمكن عرض عمليات عرض العملية في المستعرض.</li>
-        <li>يمكن استخدام خدمات الخريطة بصفتها مصادر للبيانات.</li>
-        <li>يتم تعيين تحديث الفواصل على الطبقات.</li>
-        <li>أدوات التحديد الجديدة</li>
-        <li>عمليات تحديث قائمة عناصر واجهة الاستخدام.</li>
-        <li>استخدامات ArcGIS Runtime SDK 10.2.2 لـ WPF.</li>
-        <li>يمكن تطوير الوظائف الإضافية باستخدام ArcGIS Runtime SDK 10.2.2 لـ WPF.</li>
-        <li>التعريب إلى التركية.</li>
-        </ul>
+        
         
         
         <a name="sneakPeek"></a>
-	<h2 class="divider">نظرة خاطفة</h2>
-	<p>تعتبر لوحة معلومات العمليات الآن تطبيق جيد لمراقبة العمليات. ولكن هناك المزيد!
+	<h2 class="divider">نظرة سريعة</h2>
+	<p>تعتبر Operations Dashboard الآن تطبيق جيد لمراقبة العمليات. ولكن هناك المزيد!
 	سيتم إحضار المخططات التفصيلية التالية التي تريدها في هذا التطبيق و:ذلك إظهار الإمكانات على الأجهزة:</p>
 	
 	<table border="1" style="text-align:center">
@@ -274,19 +267,19 @@ mobile: true
 	  </tr>
 	  <tr><th>قابل للمد</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>استخدام خدمات الخريطة بصفتها مصادر البيانات</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/></td>
 	  </tr>
 	  <tr><th>بيانات البحث</th>
 	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>تنقية المعلومات مكانيًا</th>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <!--<tr><th>Sketch on the map</th>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
@@ -321,7 +314,7 @@ mobile: true
 	  <h4><a href="#features">المعالم</a></h4>
 	  <h4><a href="#systemRequirements">متطلبات النظام</a></h4>
 	  <h4><a href="#whatsNew">ما الجديد</a></h4>
-	  <h4><a href="#sneakPeek">نظرة خاطفة</a></h4>
+	  <h4><a href="#sneakPeek">نظرة سريعة</a></h4>
           
         </div>
 
