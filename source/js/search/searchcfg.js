@@ -16,13 +16,13 @@ v.q.p = partialfields
 var filterCfgDefaults = {
 
     "marketplace" : {
-      "collection" : "help", 
+      "collection" : "help"
     },
 
     //for apps
     "default" : {
       "collection" : "all", 
-      "product" : "any",      
+      "product" : "any"      
     }
 };
 
@@ -70,9 +70,9 @@ var filterCfg = {
         k:"forums",
         q:{
           r:"search-collection:forums",
-		  p:""
+  		  p:""
         }
-      },
+      }
       /* 
       {
         k:"videos",
@@ -249,7 +249,7 @@ var filterCfg = {
           r:"",
           p:"(product:web-appbuilder)"
         }
-      },
+      }
 
     ]
   }
