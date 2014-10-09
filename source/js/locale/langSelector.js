@@ -152,9 +152,11 @@ jQuery(document).ready(function ($) {
           },
 
           isPageAvailable : function (lg,langSelector) {
-              if(langSelector != "all" && lgPickFull.concat(lgPartial).indexOf(lg) >= 0){
+			  if(langSelector === "all"){
                 return true;
-              }else if(langSelector === "all"){ 
+              }else if(langSelector === "generic" && lgPickFull.concat(lgPartial).indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "trust" && lgTrustSite.indexOf(lg) >= 0){ 
                 return true;
               }else{
                 return false;
