@@ -103,9 +103,10 @@ jQuery(document).ready(function ($) {
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da", "it","ko", "nl","no","pl","pt-br","pt-pt","ro","sv"],
-      lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "th", "tr"],
+      lgPartial = ["da", "it","ko", "no","pl","pt-br","pt-pt","ro","sv"],
+      lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
 	  lgTrustSite = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn'],
+	  lgAGOL = lgPickFull.concat(lgPartial).concat(['nl']),
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -157,6 +158,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "generic" && lgPickFull.concat(lgPartial).indexOf(lg) >= 0){ 
                 return true;
               }else if(langSelector === "trust" && lgTrustSite.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "agol" && lgAGOL.indexOf(lg) >= 0){ 
                 return true;
               }else{
                 return false;
@@ -230,6 +233,9 @@ jQuery(document).ready(function ($) {
                   break;
 				case "trust":
                   lgList = lgTrustSite;
+                  break;
+				case "agol":
+                  lgList = lgAGOL;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -375,6 +381,8 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "all";
   }else if (winloc.pathname.match( /(\/trust\/)/)){
 	docCfg.langSelector = "trust";
+  }else if (winloc.pathname.match( /(\/arcgis-online\/)/)){
+	docCfg.langSelector = "agol";
   }
   
 
