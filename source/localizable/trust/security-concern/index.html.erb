@@ -88,14 +88,11 @@ mobile: true
 		</ul>
       
     <div class="dropdown-navigation dropdown-wrapper regular">
-      <a href="#" class="dropdown btn small light"> Participating Security Researchers - 2014 </a>
+      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Participating Security Researchers</span>
       <div class="dropdown-content">
         <div class="dropdown-menu">
-          <p>We would like to thank the following security researchers for participating in our responsible reporting program:</p>
-          <ul>
-            <li>Smit B. Shah (@smitshah92)</li>
-            <li>Roberto S. Liverani</li>
-          </ul>
+          <p data-langlabel="trust-researchers-desc">We would like to thank the following security researchers for participating in our responsible reporting program:</p>
+          <%= partial :"_partial/security_names" %>
         </div>
       </div>
     </div>
