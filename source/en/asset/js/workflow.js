@@ -14,7 +14,8 @@ $(window).ready (function () {
 			},
 
 			isDev : function (ns) {
-				return ns.substring (ns.length-3) === "dev";	
+				//return ns.substring (ns.length-3) === "dev";	
+				return true;
 			},
 			
 			isStg : function (ns) {
@@ -44,6 +45,7 @@ $(window).ready (function () {
 */
 				var devA = "DEV"; //"<a target='_blank' href='" + devUrl +"'>DEV</a>";
 				var stgA = "STG"; //"<a target='_blank' href='" + stgUrl +"'>STG</a>";
+				var uatA = "UAT"; //"<a target='_blank' href='" + stgUrl +"'>STG</a>";
 				var prdA = "PRD"; //"<a target='_blank' href='" + prdUrl +"'>PRD</a>";
 
 
@@ -55,7 +57,13 @@ $(window).ready (function () {
 								"<span id='cur'>DEV -> " + stgA + "</span>", 
 								"<span>" + stgA + " -> " + prdA + "</span>",
 								exetime , data.stg2prdtime);
-											
+								
+					if(window.location.pathname.match(/\/arcgis-online\//)){
+						ui.genTimeTbl (buf, data, 
+								"<span id='cur'>DEV -> " + uatA + "</span>", 
+								"",
+								data.dev2stgtime);
+					}
 				} else if (util.isStg(ns)) {
 					buf.push ("You are currently viewing topics on <b>STG</b>. ");
 					buf.push ("<br/>The last updates for this module were: <br>");
@@ -72,13 +80,18 @@ $(window).ready (function () {
 
 			genTimeTbl: function (buf, data, h0, h1, v0, v1) {
 				buf.push ("<ul id='timetbl'><li>" + h0 + ":  "+ v0 + "</li>");
-				buf.push ("                 <li>" + h1 + ":  "+ v1 +"</li></ul>");
+				if(h1 != ""){
+					buf.push ("                 <li>" + h1 + ":  "+ v1 +"</li></ul>");
+				}
 
 			},
 
 			gensubmitRequest: function (buf, ns, href) {
 				if (util.isDev(ns)) {
-					buf.push ("&nbsp;&nbsp;<a href='" + href + "'>Submit a DEV -> STG publication update request</a><br/>");						
+					buf.push ("&nbsp;&nbsp;<a href='" + href + "'>Submit a DEV -> STG publication update request</a><br/>");	
+					if(window.location.pathname.match(/\/arcgis-online\//)){
+						buf.push ("&nbsp;&nbsp;<a href='" + href + "&tier=uat'>Submit a DEV -> UAT publication update request</a><br/>");
+					}				
 				} else if (util.isStg (ns)) {
 					buf.push ("&nbsp;&nbsp;<a href='" + href + "'>Submit a STG -> PRD publication update request</a><br/>");
 				} else {
