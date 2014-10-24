@@ -4,7 +4,7 @@ $(window).ready (function () {
 	var util = {
 			genWebApi: function (hostname, webcall) {
 				var url=        "http://jules.esri.com:8080/webtask_arcgisweb/";
-				//var url_debug = "http://jules.esri.com:8080/webtask_debug/";
+				//var url = "http://jules.esri.com:8080/webtask_debug/";
 				return url + webcall;				
 			}, 
 
@@ -14,12 +14,56 @@ $(window).ready (function () {
 			},
 
 			isDev : function (ns) {
-				//return ns.substring (ns.length-3) === "dev";	
-				return true;
+				return ns.substring (ns.length-3) === "dev";	
 			},
 			
 			isStg : function (ns) {
 				return ns.substring (ns.length-3)  === "stg";	
+			},
+			
+			isUat : function (ns) {
+				return ns.substring (ns.length-3)  === "uat";	
+			},
+			uatNs : function (ns) {
+				return ns.substring (0,ns.length-3) + "uat";
+			}
+		},
+
+		ds = {
+			ajaxCall : function (url, wsNS, wsUploadModule){
+				
+				$.getJSON (url, function (data) {
+
+					var buf = [];
+
+					if (typeof data.error == "undefined") {
+						var doneId = data.doneid;
+						var todoId = data.todoid;
+
+						ui.displayWorkflowStatus (buf, wsNS, data);
+						
+						buf.push ("Last Request: " + data.reqtime);
+						
+						if (todoId == '0' ) {
+						
+							var href = wsUploadModule + wsNS + window.location.pathname;
+							ui.gensubmitRequest (buf, wsNS, href);
+						} 
+						
+						if (typeof data.debug != "undefined") {
+							buf.push (data.debug + "<br/>");
+						}
+					} else {
+						buf.push ("Please click on another topic and try again<br/>");
+
+						if (typeof data.debug != "undefined") {
+							buf.push (data.debug + "<br/>");
+						}						
+					}
+
+					$("#task").append(ui.genUI (buf.join("")));
+
+				});
 			}
 		},
 
@@ -58,12 +102,12 @@ $(window).ready (function () {
 								"<span>" + stgA + " -> " + prdA + "</span>",
 								exetime , data.stg2prdtime);
 								
-					if(window.location.pathname.match(/\/arcgis-online\//)){
+					/*if(window.location.pathname.match(/\/arcgis-online\//)){
 						ui.genTimeTbl (buf, data, 
 								"<span id='cur'>DEV -> " + uatA + "</span>", 
 								"",
 								data.dev2stgtime);
-					}
+					}*/
 				} else if (util.isStg(ns)) {
 					buf.push ("You are currently viewing topics on <b>STG</b>. ");
 					buf.push ("<br/>The last updates for this module were: <br>");
@@ -71,6 +115,14 @@ $(window).ready (function () {
 								"<span>" + devA + " -> STG</span>", 
 								"<span id='cur'>STG -> " + prdA + "</span>",
 								data.dev2stgtime, exetime);	
+												
+				}  else if (util.isUat(ns)) {
+					
+					//buf.push ("<br/>The last update for this module was: <br>");
+					ui.genTimeTbl (buf, data, 
+								"<span id='cur'>DEV -> " + uatA + "</span>", 
+								"",
+								data.exetime);
 												
 				} else {
 					buf.push ("<span id='err'>Programmer Error</span><br>");
@@ -88,12 +140,11 @@ $(window).ready (function () {
 
 			gensubmitRequest: function (buf, ns, href) {
 				if (util.isDev(ns)) {
-					buf.push ("&nbsp;&nbsp;<a href='" + href + "'>Submit a DEV -> STG publication update request</a><br/>");	
-					if(window.location.pathname.match(/\/arcgis-online\//)){
-						buf.push ("&nbsp;&nbsp;<a href='" + href + "&tier=uat'>Submit a DEV -> UAT publication update request</a><br/>");
-					}				
+					buf.push ("&nbsp;&nbsp;<a href='" + href + "'>Submit a DEV -> STG publication update request</a><br/><br/>");	
 				} else if (util.isStg (ns)) {
 					buf.push ("&nbsp;&nbsp;<a href='" + href + "'>Submit a STG -> PRD publication update request</a><br/>");
+				}  else if (util.isUat (ns)) {
+					buf.push ("&nbsp;&nbsp;<a href='" + href + "&tier=uat'>Submit a DEV -> UAT publication update request</a><br/><br/>");
 				} else {
 					buf.push ("<span id='err'>Programmer Error</span><br>");
 				}
@@ -125,39 +176,19 @@ $(window).ready (function () {
 			//var url = "http://jules.esri.com:8080/webtask_debug/ws.py?action=uploadmodule&reqkey=/rcdev/en/help/main/10.1/0154000002np000000&callback=?";
 			//var url = "http://jules.esri.com:8080/webtask_debug/ws.py?action=init&reqkey=/rcdev/en/help/main/10.1/016w0000002r000000&callback=?";
 			var url = wsInit + wsNS + window.location.pathname + "&callback=?";
+			
+			
+			ds.ajaxCall (url, wsNS, wsUploadModule);
+			
+			if(util.isDev(wsNS) && window.location.pathname.match(/\/arcgis-online\//)){
+				wsNS = util.uatNs(wsNS);
+				var url = wsInit + wsNS + window.location.pathname + "&callback=?";
+
+				ds.ajaxCall (url, wsNS, wsUploadModule);
+			}
 
 			
-			$.getJSON (url, function (data) {
-
-				var buf = [];
-
-				if (typeof data.error == "undefined") {
-					var doneId = data.doneid;
-					var todoId = data.todoid;
-
-					ui.displayWorkflowStatus (buf, wsNS, data);
-					
-					buf.push ("Last Request: " + data.reqtime);
-					
-					if (todoId == '0' ) {
-						var href = wsUploadModule + wsNS + window.location.pathname;
-						ui.gensubmitRequest (buf, wsNS, href);
-					} 
-					
-					if (typeof data.debug != "undefined") {
-						buf.push (data.debug + "<br/>");
-					}
-				} else {
-					buf.push ("Please click on another topic and try again<br/>");
-
-					if (typeof data.debug != "undefined") {
-						buf.push (data.debug + "<br/>");
-					}						
-				}
-
-				$("#task").html(ui.genUI (buf.join("")));
-
-			});
+			
 
 		})
 
@@ -173,4 +204,3 @@ $(window).ready (function () {
 	})
 
 });
-
