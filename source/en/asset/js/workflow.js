@@ -31,11 +31,9 @@ $(window).ready (function () {
 
 		ds = {
 			ajaxCall : function (url, wsNS, wsUploadModule){
-				
 				$.getJSON (url, function (data) {
 
 					var buf = [];
-
 					if (typeof data.error == "undefined") {
 						var doneId = data.doneid;
 						var todoId = data.todoid;
@@ -165,9 +163,13 @@ $(window).ready (function () {
 
 
 	$("#wfbtn").on ("click", function (evt) {
+		$("#task").empty();
 		var $vpanel =$("#wfpanel");
 
-		$vpanel.on ("open.wfpanel", function () {
+		if (!$vpanel.data("view")) {
+			$vpanel.slideDown('slow');
+			$vpanel.data("view", true);
+			
 			var hostname = window.location.hostname,
 				wsInit = util.genWebApi (hostname, "ws.py?action=init&reqkey=/"),
 				wsUploadModule = util.genWebApi (hostname, "ws.py?action=uploadmodule&reqkey=/"),
@@ -186,16 +188,6 @@ $(window).ready (function () {
 
 				ds.ajaxCall (url, wsNS, wsUploadModule);
 			}
-
-			
-			
-
-		})
-
-		if (!$vpanel.data("view")) {
-			$vpanel.slideDown('slow');
-			$vpanel.data("view", true);
-			$vpanel.trigger ("open.wfpanel");
 
 		}  else {
 			$vpanel.slideUp('fast');
