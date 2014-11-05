@@ -117,7 +117,7 @@ $(document).ready(function() {
 				parts = href.split("/");
 				fname = parts.pop(),
 				fld = parts.pop(),
-				newHref = href.replace ("/"+prodIOSVal+"/", "/"+plt+"/");
+				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
 				$ele.attr ("href", newHref);
 		});
 	}
