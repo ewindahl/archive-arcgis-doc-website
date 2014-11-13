@@ -18,7 +18,9 @@ end
 
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
 
-    <script>
+    <%= javascript_include_tag "sitecfg" %>
+
+	<script>
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-215788-73']);
       _gaq.push(['_setDomainName', 'arcgis.com']);
@@ -29,6 +31,15 @@ end
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+	  
+	  <% if current_page.data.require_login %>
+        (function(){
+          var cookieRegex = /esri_auth=/;
+          if(!cookieRegex.test(document.cookie)){
+            window.location = sitecfg["agolSignin"] + "?returnUrl=" + window.location.href;
+          }
+        })();
+      <% end %>
 
     </script>
 
@@ -50,8 +61,6 @@ end
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
-
-  <%= javascript_include_tag "sitecfg" %>
 
 	<%= javascript_include_tag "locale/l10NStrings" %>
 
