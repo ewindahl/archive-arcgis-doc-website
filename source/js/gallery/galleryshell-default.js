@@ -1035,7 +1035,7 @@ $(document).ready(function () {
                 if ("#" + vdata.hash !== curHash) {
                     //debug("curHash=" + curHash);
                     gModel.updateByHash(curHash);
-                    gShell.update(gModel);
+                    //gShell.update(gModel);
                     if (gModel.query) { $("#gl-cl-btn").show(); }
                 }
             }
@@ -1110,6 +1110,8 @@ $(document).ready(function () {
             gModel.fNumN = 30;
 
         }
+		// For safari back button issue.
+		window.onunload = function(){};
 
     }
 

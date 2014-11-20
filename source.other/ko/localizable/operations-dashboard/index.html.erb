@@ -14,7 +14,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-7-8"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ko">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-9-23"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ko">
 
 mobile: true
 
@@ -87,7 +87,7 @@ mobile: true
           <img src="/en/operations-dashboard/story-graphic-3.png" />
 
           <h3>브라우저에서 모니터링</h3>
-          <p>브라우저에서 작업 보기를 사용합니다. 설치할 사항이 없으면 작업 보기를 열어 iPad에서도 작업 업데이트를 유지합니다.</p>
+          <p>브라우저에서 작업 보기를 사용합니다. 따로 설치할 필요 없이 단지 작업 보기를 열기만하면 작업을 업데이트 할 수 있습니다. 이는iPad에서도 가능합니다.</p>
           <p>
             <a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;방법 표시</a><br /> <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
           </p>
@@ -157,8 +157,8 @@ mobile: true
 <a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">하드웨어 요구 사항</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
-			<li>CPU 속도: 2.2GHz 이상, HTT(하이퍼스레딩) 또는 멀티코어 권장</li>
-			<li>프로세서: Intel Pentium 4, Core Duo 또는 Xeon 프로세서, 최소 SSE2. Windows 명령 프롬프트에서 Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> 유틸리티를 실행하여 프로세서를 확인하세요.</li>
+			<li>CPU 속도: 2.2GHz 이상, HTT(하이퍼 스레딩) 또는 멀티 코어 권장</li>
+			<li>프로세서: Intel Pentium 4, Core Duo 또는 Xeon 프로세서, 최소 SSE2 Windows 명령 프롬프트에서 Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> 유틸리티를 실행하여 프로세서를 확인하세요.</li>
 			<li>디스크 공간: 1.5GB의 사용 가능한 디스크 공간</li>
 			<li>메모리/RAM: 2GB 이상</li>
 			<li>디스플레이 등록정보: 24비트 색 농도</li>
@@ -224,19 +224,20 @@ mobile: true
         <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
 	        <p>Operations Dashboard for ArcGIS 10.2.3은 여러 버그 수정 및 기능 개선으로 2014년 6월에 출시되었습니다.</p>
                 </td>
-	        <td valign="top"><h4><img src="icon-browser.png" style="margin-right:4px">브라우저</h4>
-	        <p>Operations Dashboard for ArcGIS용 브라우저 앱은 2014년 6월에 업데이트되었습니다. 향상된 기능은 다음과 같습니다.</p>
+	        <td valign="top"><h4><img src="icon-browser.png" style="margin-right:4px"/>브라우저</h4>
+	        <p>Operations Dashboard for ArcGIS용 브라우저 앱은 2014년 9월에 업데이트되었습니다. 향상된 기능은 다음과 같습니다.</p>
 	        <ul>
-	          <li>다중 피처에서 피처 작업<li>
-	          <li>맵 서비스는 데이터 원본으로 사용될 수 있습니다.</li>
-	          <li>다양한 버그 수정 및 개선.</li>
+	          <li>업데이트된 지시자, 게이지 및 차트 위젯의 모양과 느낌</li>
+	          <li>맵 뷰어를 이용하여 레이어에 추가된 레이블들을 지원</li>
+	          <li>태국어로 현지화</li>
+	          <li>다양한 버그 수정 및 개선</li>
         </ul></td><tr></table>
         
         
         
         
         <a name="sneakPeek"></a>
-	<h2 class="divider">사용 힌트 보기</h2>
+	<h2 class="divider">미리 보기</h2>
 	<p>현재 Operations Dashboard는 작업을 모니터링하는 데 뛰어난 앱입니다. 하지만 향상된 기능은 더욱 많습니다. 아래에서는 각 장치로 가져올 기능을 표시하여 이 앱을 어디서 사용할 수 있는지 설명합니다.</p>
 	
 	<table border="1" style="text-align:center">
@@ -270,14 +271,18 @@ mobile: true
 	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <tr><th>정보를 공간적으로 필터링</th>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
 	  </tr>
 	  <!--<tr><th>Sketch on the map</th>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>-->
-	  <tr><th>개선된 비공간 데이터 사용(관련 테이블 포함)</th>
+	  <tr><th>비공간 데이터를 외부 원본 데이터로서 사용</th>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>관련 테이블 지원</th>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>
@@ -306,7 +311,7 @@ mobile: true
 	  <h4><a href="#features">특징</a></h4>
 	  <h4><a href="#systemRequirements">시스템 요구 사항</a></h4>
 	  <h4><a href="#whatsNew">새로운 기능</a></h4>
-	  <h4><a href="#sneakPeek">사용 힌트 보기</a></h4>
+	  <h4><a href="#sneakPeek">미리 보기</a></h4>
           
         </div>
 

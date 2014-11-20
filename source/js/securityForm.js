@@ -45,6 +45,10 @@ doc.securityConcernForm = (function() {
 				$('#txtCaptchaInput').focus();
 				return false;
 			}
+			
+			if($('#subject').val() != ""){
+				$('#datablock').val("Security Concern:" + $('#subject').val());
+			}
 
 			this.submission();
 		},
@@ -67,7 +71,7 @@ doc.securityConcernForm = (function() {
                         fname: window.location.origin + $("#fname").val(),
                         submit: true
                     },
-                    timeout: 1000,
+                    timeout: 2000,
 					beforeSend: function() {
 						$("#form-fields").hide();
 						$("#spinner").show();
@@ -138,5 +142,22 @@ doc.securityConcernForm = (function() {
 
 	};
 })();
+
+$(document).ready(function() {
+	var loc = window.location,
+                path = loc.pathname,
+                lg = path.split ("/")[1].toLowerCase();
+	
+	var dict = (window.localeJsonObj || {})[lg];
+  if (dict) {
+	  $("*[data-langlabel]").each (function(i) {
+		  var o = $(this),
+			  txt = dict[o.attr("data-langlabel")];
+		  if (txt) {
+			  o.html (txt);
+		  }
+	  });                
+  }
+});
 
 
