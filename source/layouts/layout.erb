@@ -117,6 +117,14 @@ end
    <!--[if IE]>
 		<%= javascript_include_tag "libs/html5-placeholder-shim.js" %>
 	<![endif]-->
+	
+	<!--[if lt IE 11]>
+	<script>
+		$(document).ready(function(){
+			$(".hideOnIE").hide();
+		});
+	</script>
+	<![endif]-->
 
    <!-- set dropdown/show home in footer -->
   <script>
