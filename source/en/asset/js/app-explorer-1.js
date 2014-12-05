@@ -51,6 +51,8 @@ $(document).ready(function() {
 		plat = prodIOSVal;
 	  }else if(navigator.userAgent.match(/(Macintosh)/gi)){
 		plat = prodMacVal;
+	  }else if(navigator.userAgent.match(/(iPad)/gi)){
+		plat = prodIpadVal;
 	  }
 
       if (!isHome) {
