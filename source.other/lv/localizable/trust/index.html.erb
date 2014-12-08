@@ -1,0 +1,91 @@
+---
+title: Uzticamība
+css:
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - video-init
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - sitecfg.js
+
+metatags:
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="lv">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/lv/Trust/">Uzticamība ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online uzticamība" href="/lv/trust/">Uzticamība</a></li>
+        <li><a title="ArcGIS Online sistēmas statuss" href="/lv/trust/system-status/">Sistēmas statuss</a></li>
+        <li><a title="ArcGIS Online drošība" href="/lv/trust/security/">Drošība</a></li>
+        <li><a title="ArcGIS Online konfidencialitāte" href="/lv/trust/privacy/">Konfidencialitāte</a></li>
+        <li><a title="ArcGIS Online konfidencialitāte" href="/lv/trust/compliance/">Atbilstība</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="column-16 tablet-column-24">
+    <h3 class="gray">ArcGIS Online ir izstrādāta kā droša sistēma ar kontrolētu piekļuvi</h3>
+    <hr />
+    <div id="collectorMapFeature" class="column-12 phone-column-24">
+      <img src="img/features-security-data-ownership.jpg" alt="Drošības datu īpašums" />
+    </div>
+    <div id="collectorDataFeature" class="column-12 phone-column-24">
+      <p>Trust.ArcGIS.com ir jūsu drošības, konfidencialitātes un atbilstības informācijas resurss. Atrast: </p>
+      <ul>
+        <li>ArcGIS Online pakalpojumu pieejamība, sistēmas veiktspējas informācija un statusa vēsture</li>
+        <li>Drošības atjauninājumi un aktuālie brīdinājumi</li>
+        <li>ArcGIS Online produktu drošības informācija</li>
+        <li>Vislabākā drošības prakse jūsu organizācijai</li>
+        <li>Konfidencialitātes un atbilstības informācija</li>
+      </ul>
+      <p>Trust.ArcGIS.com ir veidota, iedvesmojoties no saziņas ar mūsu klientiem. Ko vēlaties šeit redzēt? Ja jums ir ierosinājumi, publicējiet tos vietnē <a href="http://ideas.arcgis.com">ArcGIS Ideas</a>.</p>
+    </div>
+    <div class="clear"></div>
+
+    <div style="text-align:center; padding-top:150px;">
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+    <div>
+      <a href="/lv/trust/system-status/" class="btn tertiary" style="width:100%;text-align:center;" >Pārbaudīt sistēmas statusu</a>
+    </div>
+    <br/>
+    <div class="imgFrame block">
+      <h3 class="icon-announcement">Brīdinājumi un paziņojumi</h3>
+      <p>2014. gada 6. jūnijā ArcGIS Online ieguva atbilstību valsts standartiem FISMA Low līmeņa standartu Authority to Operate (ATO). FISMA akreditācijas process garantē, ka programmu ArcGIS Online ir rūpīgi pārskatījis trešās puses vērtētājs, lai konstatētu atbilstību visstingrākajām drošības prasībām, kā tas ir noteikts Nacionālā standartu un tehnoloģijas institūta (National Institute of Standards and Technology — NIST) īpašajā publikācijā 800-53. <a href="http://www.esri.com/esri-news/releases/14-2qtr/esri-mapping-platform-secured-for-federal-agencys-use">Turpināt lasīt...</a></p>
+    </div>
+    <br />
+    <div class="panel">
+      <h4>“Esri apņemas turpināt uzlabot savas izstrādātās kartēšanas platformas drošību un nostiprināt klientu uzticamību, izmantojot tādus atzinumus kā FISMA.”</h4>
+      <p>Maikls Jangs (Michael Young), Esri galvenais drošības izstrādes arhitekts</p>
+
+    </div>
+    <br/>
+    <div class="" style="text-align:center;">
+      <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/lv/trust/security-concern/"> Ziņot par drošības problēmu</a>  </h4>
+    </div>
+  </div>
+
+ </div>
+
+  <!-- <script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>   <script type="text/javascript">     $(window).load(function() {       $('#blog').rssFeed({         url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',         max: 2,         layout: 0       });       });     </script>  -->

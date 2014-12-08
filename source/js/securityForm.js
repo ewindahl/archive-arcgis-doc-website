@@ -143,4 +143,21 @@ doc.securityConcernForm = (function() {
 	};
 })();
 
+$(document).ready(function() {
+	var loc = window.location,
+                path = loc.pathname,
+                lg = path.split ("/")[1].toLowerCase();
+	
+	var dict = (window.localeJsonObj || {})[lg];
+  if (dict) {
+	  $("*[data-langlabel]").each (function(i) {
+		  var o = $(this),
+			  txt = dict[o.attr("data-langlabel")];
+		  if (txt) {
+			  o.html (txt);
+		  }
+	  });                
+  }
+});
+
 

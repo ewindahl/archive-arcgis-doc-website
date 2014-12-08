@@ -117,6 +117,14 @@ end
    <!--[if IE]>
 		<%= javascript_include_tag "libs/html5-placeholder-shim.js" %>
 	<![endif]-->
+	
+	<!--[if lt IE 11]>
+	<script>
+		$(document).ready(function(){
+			$(".hideOnIE").hide();
+		});
+	</script>
+	<![endif]-->
 
    <!-- set dropdown/show home in footer -->
   <script>
@@ -181,11 +189,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </div>
 
               <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
-                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
+                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span><%= t("site.nav.sign_in") %></a>
               </div>
 
               <div id="logged-in-navigation" class="dropdown-navigation no-top dropdown-wrapper hide">
-                  <a id="A1" class="dropdown btn user-signin" href="#">user</a>
+                  <a id="A1" class="dropdown btn user-signin" href="#"><%= t("site.nav.sign_in_user") %></a>
                   <div class="dropdown-content">
                       <div class="dropdown-menu">
                           <ul class="myconsole">
@@ -193,11 +201,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                           </ul>
                           <hr class="myconsole" />
                           <ul class="myconsole">
-                              <li><a id="agolHelp" href="http://www.arcgis.com/home/support.html">Help</a></li>
+                              <li><a id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a></li>
                           </ul>
                           <hr class="myconsole" />
                           <ul>
-                              <li><a id="agolLogout" href="#">Sign Out</a></li>
+                              <li><a id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a></li>
                           </ul>
                       </div>
                   </div>
