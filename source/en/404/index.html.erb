@@ -40,7 +40,8 @@ pageName: "404"
       </header>
 
       <section>
-        <p data-langlabel="404-note">The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem.</p>
+        <p id="404_note">The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem.</p>
+	<p id="englishLinkNote"></p>
       </section>
 
 	  <div class="popular-links">
@@ -50,7 +51,7 @@ pageName: "404"
             <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
             <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
             <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
-            <li><a data-langlabel="help" href="http://www.arcgis.com/features/help.html">Help</a></li>
+            <li><a data-langlabel="help" href="/en/arcgis-online/">Help</a></li>
         </ul>
       </div>
     </div>
@@ -105,7 +106,9 @@ $(document).ready(function() {
       return doc.supportForm.validateFeedbackForm(curlang);
     });
 	
+		
     if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) { 
+	  doc.l10n.pageNotFoundText (curlang);
       doc.l10n.changeLabel (curlang);
     }
 

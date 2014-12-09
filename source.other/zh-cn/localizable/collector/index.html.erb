@@ -2,11 +2,11 @@
 title: Collector for ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
   - /en/asset/css/app-switch-1
   - colorbox/colorbox
+  - jquery.smartbanner
 
 js:
   - libs/jquery.cookie
@@ -14,9 +14,11 @@ js:
   - libs/jquery.colorbox-min
   - jquery.colorbox.init
   - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2013-5-28"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2014-10-27"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="zh-cn"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -26,13 +28,21 @@ mobile: true
   <div class="container">
     <header>
       <h1>Collector for ArcGIS</h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="collector-android" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
     </header>
 	<nav>
       <ul>
         <li class='current'><a href="/zh-cn/collector/">主页</a></li>
         <li><a href="/zh-cn/collector/android/create-maps/create-maps.htm">创建地图</a></li>
         <li><a href="/zh-cn/collector/android/collect-data/collect-tutorial.htm">采集数据</a></li>
-        <li><a href="http://forums.arcgis.com/forums/224-Collector-for-ArcGIS">论坛</a></li>
+        <li><a href="https://geonet.esri.com/community/gis/applications/collector-for-arcgis">论坛</a></li>
       </ul>
     </nav>
   </div>
@@ -42,20 +52,18 @@ mobile: true
 <div class="container">
 
       <div class="column-16 tablet-column-24">
-        <header>
 
-		  <h2 id="appTitle">下载应用程序</h2>
-          <span id="appVersion"><strong>版本：</strong>10.2</span> <span id="appReleased"><strong>发布日期：</strong>2013 年 11 月</span>
+        <h3 class="gray">在线或离线状态下使用智能手机或平板电脑采集和更新外业信息。</h3>
 
+	  <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->
+	  
 
-          <p>在外业工作中，使用智能手机采集并更新信息，记录当前位置并采用捕获的数据，以便制定更明智且及时的决策。</p>
-
-          <p>
-             <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" /></a> <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.jpg" /></a>
-          </p>
-		 <p>
-            <a id="appSysRequirements" href="#systemRequirements">系统要求</a> <a id="appWhatsNew" href="#whatsNew">新特性</a>
-          </p>
+        <p>
+	    <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a> <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" style="margin:10px; vertical-align:middle"/></a>
+        </p>
 
         </header>
         <hr />
@@ -65,10 +73,10 @@ mobile: true
         <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="app-collector-map.jpg" />
 
-          <h3>创建并共享地图</h3>
-          <p>将 ArcGIS 的应用范围扩展到外业工作中，并提高了空间数据的准确性和流通性。通过两个步骤即可创建和共享数据采集地图。</p>
+          <h3>创建和共享地图</h3>
+          <p>将 ArcGIS 的应用范围扩展到外业工作中，并提高空间数据的精度和流动性。通过两个步骤即可创建并共享数据采集地图。</p>
           <p>
-            <a href="/zh-cn/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;详情介绍</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+            <a href="/zh-cn/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;查看详情</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
@@ -77,63 +85,103 @@ mobile: true
           <img src="app-collector-data.jpg" />
 
           <h3>采集数据</h3>
-          <p>查找感兴趣地点、计算距离、创建服务请求和报告损失情况只是数据采集地图功能的其中一部分。通过五个步骤即可创建带有图像和视频的智能数据，并在世界范围内共享该数据。</p>
+          <p>创建对组织十分重要的数据，内容可从损失报告和服务请求到名胜古迹。轻松添加图像和视频并共享工作。</p>
           <p>
-            <a href="/zh-cn/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;详情介绍</a><br />Enter			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">观看视频</a>
+            <a href="/zh-cn/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;查看详情</a><br />EnterEnter			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge"> 观看视频</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
 			</video>
           </p>
         </div>
+	<div class="clear"></div>
 
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-3.png" />
+
+          <h3>离线</h3>
+          <p>外业工作地点不具有数据连接。离线使用地图和数据、采集数据并在重新连接后进行同步。</p>
+          <p>
+            <a href="/zh-cn/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;查看详情</a><br />
+          </p>
+        </div>
+        
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-4.png" />
+
+          <h3>通过模板进行开发</h3>
+          <p>您的行业具有自己的常用数据集。下载模板以创建所需的基本数据结构，并针对特定作业进行自定义。</p>
+          <p>
+            <a href="http://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;查看下载</a><br />
+          </p>
+        </div>
+        
         <div class="clear"></div>
 
+	<a name="features"></a>
+	<h2 class="divider">特色</h2>
+	<p>采集并更新外业数据，记录当前位置并采用捕获的数据，以便制定更明智且及时的决策。可在任意地点使用地图来采集实际地表数据、执行观测以及响应事件。提高了外业工作的效率和 GIS 的准确性。</p>
+	
+	<ul>
+	<li>将地图下载到您的设备并实现离线工作。</li>
+	<li>使用 GPS 创建并更新地图数据。</li>
+	<li>采集点、线和面要素。</li>
+	<li>填写易于使用的地图驱动表单。</li>
+	<li>查找地点并获取路径。</li>
+	<li>追踪并报告您所访问的区域。</li>
+	</ul>
 
         <a name="systemRequirements"></a>
-        <h2>系统要求</h2>
+        <h2 class="divider">系统要求</h2>
 
-        <p>运行 Collector 具有的特定设备要求，以及在应用程序中所使用数据的要求。Collector 支持多种语言。</p>
+        <p>需满足特定的设备要求才能运行 Collector，对于在该应用程序中使用的数据也有一些要求。Collector 支持多种语言。</p>
 
 
         <h3>数据要求</h3>
-        <p>要在 Collector 中使用您的地图，您必须具有 ArcGIS 组织帐户。您的地图可包含来自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的数据。</p>
+        <p>要在 Collector 中使用地图，必须拥有 ArcGIS 组织帐户。地图可以包含来自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的数据。</p>
 
 
         <h3>设备要求</h3>
-        <table><tr><td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+        <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
         <ul>
-          <li>Android 4.0 (Ice Cream Sandwich)<br/> 或更高版本</li>
-          <li>Armv7 处理器</li>
+          <li>Android 4.0 (Ice Cream Sandwich) 或更高版本</li>
+          <li>Armv7 或 x86 处理器</li>
           <li>OpenGL ES 2.0 支持</li>
+          <li>精确位置（基于 GPS 和网络）支持</li>
         </ul></td>
-        <td valign="top"><h4 class="icon-apple">iPhone</h4>
+        <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
-          <li>iOS 6 或更高版本</li>
+          <li>iOS 7 或更高版本</li>
+          <li>iPhone，iPad，iPod touch</li>
         </ul></td><tr></table>
 
 
         <h3>受支持语言</h3>
-        <p>阿拉伯语、捷克语、丹麦语、荷兰语、英语、爱沙尼亚语 (<span class="icon-android"/>)、芬兰语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语 (<span class="icon-android"/>)、立陶宛语 (<span class="icon-android"/>)、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、简体中文、西班牙语和瑞典语。</p>
-        <p>应用程序所使用的语言取决于您手机的语言设置。</p>
+        <p>阿拉伯语、捷克语、丹麦语、荷兰语、英语、爱沙尼亚语 (<span class="icon-android"/>)、芬兰语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语 (<span class="icon-android"/>)、立陶宛语 (<span class="icon-android"/>)、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、中文（简体）、西班牙语、瑞典语、泰语和土耳其语。</p>
+        <p>应用程序所使用的语言取决于设备的语言设置。</p>
 
 
         <a name="whatsNew"></a>
-        <h2>新特性</h2>
-        <p>Collector for ArcGIS 10.2 版已于 2013 年 11 月发布，并具有以下增强功能：</p>
+        <h2 class="divider">新特性</h2>
+        <p>Collector for ArcGIS 10.2.7 已于 2014 年 10 月发布。该版本包括以下增强：</p>
         <ul>
-        <li>更新的用户体验</li>
-        <li>专有平板电脑和 iPad 体验</li>
-        <li>支持采集线和面</li>
-        <li>GPS 流模式</li>
-        <li>改进的采集工作流</li>
-        <li>改进的地图点击行为</li>
-        <li>多处软件漏洞修复与改善</li>
-        <li>支持企业登录</li>
-        <li>支持其他语言</li>
-        <li>已解决的 Android 问题：NIM090003、NIM090935、NIM091973、NIM092424 和 NIM092833</li>
-        <li>已解决的 iOS 问题：NIM094438、NIM094401</li>
+          <li>支持 iPhone 6 和 iPhone 6 Plus</li>
+          <li>修复了若干缺陷并进行了多处改进，其中包括 NIM102100、NIM104542、BUG-000081246、BUG-000082006、BUG-000082039、BUG-000082043、BUG-000082435、BUG-000082634</li>
         </ul>
 
+	<a name="sneakPeek"></a>
+	<h2 class="divider">抢先预览</h2>
+	<p>现在，Collector 是采集和编辑外业数据的强大应用程序。但它并不仅限于此！下面概括介绍了此应用程序的发展方向：</p>
+	
+	<ul>
+	  <li>更多用于计划离线外业操作的工具</li>
+	  <li>更智能的数据采集表单（包括关联的表）</li>
+	  <li>按偏移执行数据采集</li>
+	  <li>支持特定采集</li>
+	  <li>集成外围设备（激光测距仪、条形码扫描仪等）</li>
+	</ul>	
+	
+	<p>请与我们分享您的<a href="http://ideas.arcgis.com/">看法</a>，并<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">向我们发送反馈</a>。</p>
+		
         <p>&nbsp;</p>
 
       </div>
@@ -142,13 +190,13 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-          <h3>入门</h3>
-          <ul>
-            <li><a href="/zh-cn/collector/android/collect-data/guided-tour.htm">向导式浏览</a></li>
-            <li><a href="/zh-cn/collector/android/create-maps/create-maps.htm">创建并共享地图</a></li>
-            <li><a href="/zh-cn/collector/android/collect-data/collect-tutorial.htm">采集数据</a></li>
-
-          </ul>
+	  <h3>详细信息</h3>
+	          
+	  <h4><a href="#features">特色</a></h4>
+	  <h4><a href="#systemRequirements">系统要求</a></h4>
+	  <h4><a href="#whatsNew">新特性</a></h4>
+	  <h4><a href="#sneakPeek">抢先预览</a></h4>
+	          
         </div>
 
         <br />
@@ -169,7 +217,7 @@ mobile: true
   <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/mobile/feed/',
+        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
         max: 5,
         layout: 0
       });

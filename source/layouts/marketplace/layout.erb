@@ -1,9 +1,15 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9 ie8"> <![endif]-->
-<!--[if IE 9]>         <html class="ie ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<%
+readDirection="ltr" 
+if current_language == "ar" 
+	readDirection="rtl"
+end 
+%>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9" dir="<%=readDirection%>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html dir="<%=readDirection%>"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
 
@@ -13,7 +19,7 @@
 
     <script>
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-215788-63']);
+      _gaq.push(['_setAccount', 'UA-215788-73']);
       _gaq.push(['_setDomainName', 'arcgis.com']);
       _gaq.push(['_trackPageview']);
 
@@ -46,8 +52,9 @@
       <% end %>
     <% end %>
 
-	<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" /> 
-	
+  <link type="text/css" rel="stylesheet" href="/css/marketplace.css" /> 
+
+  <%= javascript_include_tag "sitecfg" %>	
 	<%= javascript_include_tag "locale/l10NStrings" %>
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
@@ -56,6 +63,9 @@
         <%= javascript_include_tag javascript %>
       <% end %>
     <% end %>
+
+    <%= javascript_include_tag "marketplace/init" %>
+
     <% if current_page.data.mobile %>
       <meta name="viewport" content="width=device-width,initial-scale=1">
     <% else %>
@@ -73,20 +83,41 @@
       <% end %>
     <% end %>
 
-   <!-- Language Picker
+   <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
-   <%= javascript_include_tag "locale/langSelector" %>-->
-   <%= javascript_include_tag "locale/l10NStrings" %>
-
+   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->   
+   
+    <% #Add langselector .js if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
+	<% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>  
+		<% if current_language == "ar" %> 
+			<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
+			<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
+			<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
+			<link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
+			<link type="text/css" rel="stylesheet" href="/css/print_l10n.css"/>
+		<% end %>
+		<%= javascript_include_tag "locale/langSelector" %>
+	<% end %>
+   
    <!-- set dropdown/show home in footer -->
   <script>
     $(document).ready(function(){
-      $($("#dropDown a").get (3)).addClass ("current selected");
+      $($("#dropDown a").get (5)).addClass ("current selected");
     });
   </script>
 
   </head>
   <body class="<%= current_language %> marketplace">
+  <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WVT7QT');</script>
+<!-- End Google Tag Manager -->
     <div id="wrapper">
       <div id="page">
 
@@ -100,8 +131,6 @@
                 </div>
                 
                 <%= partial "_partial/site_header_dropdown" %>
-                <nav>
-                </nav>
                 
                 <form id="mkpSearchForm" action="#">
                   <input type="search" name="mkpSearch"  placeholder="<%= t("site.nav.mpSearch") %>">
@@ -109,17 +138,17 @@
 
 
                 <a href="http://www.esri.com/" id="esri-logo">Esri</a>
-
-                <!--<div id="lg-container" class="dropdown-navigation">
-                  <div id="lang-block"></div>
-               </div> -->
+				
+			<div id="lg-container" class="dropdown-navigation">
+				<div id="lang-block"></div>
+			</div>
 
               <div id="logged-out-navigation" class="dropdown-navigation">
-                <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#"><%= t("site.nav.sign_in") %></a>
+                <a data-langlabel="sign-in" id="login-link" class="btn marketplace" href="#"><span class="profile-icon"></span><%= t("site.nav.sign_in") %></a>
               </div>
-
+		
               <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
-                <a id="login-link" class="dropdown btn small light" href="#"><%= t("site.nav.sign_in_user") %></a>
+                <a id="login-link" class="dropdown btn marketplace" href="#"><%= t("site.nav.sign_in_user") %></a>
                 <div class="dropdown-content">
                   <div class="dropdown-menu">
                     <ul class="myconsole">
@@ -135,7 +164,7 @@
 
               <nav class="right-nav">
                  <ul>
-                    <li><%= link_to t("site.nav.help"), t("paths.mphelp") %></li>
+                    <li><a href="<%= t("paths.mphelp") %>"><span class="help-icon"></span><%= t("site.nav.help") %></a></li>
                  </ul>
               </nav>
 

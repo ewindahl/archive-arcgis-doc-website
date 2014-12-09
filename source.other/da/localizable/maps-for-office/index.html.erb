@@ -13,15 +13,21 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="da">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
+<div class="section-bar blue">
   <div class="container">
     <header>
       <h1><a href="/da/maps-for-office/">Esri Maps for Office</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="esri-maps-office" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -40,7 +46,7 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Hent app'en</h2>
-          <span id="appVersion"><strong>Version:</strong> 2.1.1</span> <span id="appReleased"><strong>Tilg&aelig;ngelig:</strong> Efter&aring;ret 2013</span>
+          <span id="appVersion"><strong>Version:</strong> 2.1.4</span> <span id="appReleased"><B>Tilg&aelig;ngelig:</B> For&aring;ret 2014</span>
 
 
           <p>Esri Maps for Office g&oslash;r det muligt at oprette dynamiske, interaktive kort ud fra dine Excel-data og udforske dem p&aring; en helt ny m&aring;de. Med Esri Maps for Office kan du finde m&oslash;nstre og tendenser, som ikke fremg&aring;r af tabeldata og diagrammer. Kort kan deles med det samme via PowerPoint-pr&aelig;sentationer eller ved publicering med et enkelt klik til Esris kortl&aelig;gningsplatform ArcGIS Online.</p>
@@ -88,7 +94,7 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2>Systemkrav</h2>
 
-        <p>Esri Maps for Office kr&aelig;ver en konto, der er en del af en <a href="http://help.arcgis.com/da/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>-organisation og Microsoft Office Excel eller PowerPoint 2010 eller Microsoft Office Excel eller PowerPoint 2013. De underst&oslash;ttede styresystemer omfatter:</p>
+        <p>Esri Maps for Office kr&aelig;ver en konto, der er en del af en <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>-organisation og Microsoft Office Excel eller PowerPoint 2010 eller Microsoft Office Excel eller PowerPoint 2013. De underst&oslash;ttede styresystemer omfatter:</p>
 		<ul>
 		 <li>Windows XP (skal have SP3) (32-bit)</li>
 		 <li>Windows 7 (32-bit og 64-bit)</li>
@@ -111,29 +117,69 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2>Nyheder</h2>
-        <p>Esri Maps for Office version 2.1.1 blev frigivet i oktober 2013. Den indeholder f&oslash;lgende forbedringer:</p>
+        <p>Esri Maps for Office version 2.1.4 blev frigivet i for&aring;ret 2014. Den indeholder f&oslash;lgende forbedringer:</p>
+        <ul>
+        <li>Sikkerhedsopdateringer.</li>
+        </ul>
+
+
+        <h3>Tidligere versioner</h3>
+        
+        <p>Esri Maps for Office version 2.1.3 blev frigivet i for&aring;ret 2014. Den indeholdt f&oslash;lgende forbedringer:</p>
+        <ul>
+        <li>Support til brugerdefinerede roller.</li>
+        <li>Nye uoverv&aring;gede Installer-parametre muligg&oslash;r bedre kontrol med st&oslash;rre installationer.</li>
+        <li>Maps for Office kontrollerer nu for forbindelse til ArcGIS og giver dig besked, hvis n&oslash;dvendige tjenester er utilg&aelig;ngelige.</li>
+		<li>Fejlrettelser og forbedret anvendelighed, herunder:</li>
+			<ul>
+			<li>Mulighed for at bruge &quot;hosted&quot; korttjenester som brugerdefinerede stedtyper.</li>
+			<li>Problemer med lagsynlighed i lokaliserede versioner er blevet l&oslash;st.</li>
+			<li>Problemer med vilk&aring;rlige nedbrud for&aring;rsaget af &aelig;ldre versioner af Visual Studio Tools for Office er blevet l&oslash;st.</li>
+			<li>Brugerdefinerede lokatorer vises nu med deres navn i stedet for med &quot;adresse&quot; under Tilf&oslash;j dataworkflow.</li>
+			<li>Bedre registreringsadministration ved afinstallation.</li>
+			<li>Mere effektiv lagring af geometrier fra ArcGIS.</li>
+			<li>Hvis der er oprettet forbindelse til en portal, foretages der ikke l&aelig;ngere foresp&oslash;rgsler til ArcGIS Online.</li>
+			<li>Kommaer som decimaladskillere h&aring;ndteres nu korrekt.</li>
+			<li>Berigede lag kan nu formateres og grupperes p&aring; basis af de nyligt tilf&oslash;jede kolonner.</li>
+			<li>Pop-up-vinduer for berigede lag viser nu korrekte kolonneoverskrifter.</li>
+			<li>Hvis der ikke er forbindelse til internettet, forekommer der ikke l&aelig;ngere nedbrud.</li>
+			<li>Esri Maps for Office i PowerPoint tager nu h&oslash;jde for organisationens standardbaggrundskort.</li>
+			</ul>
+        </ul>
+
+
+        <p>Esri Maps for Office version 2.1.2 blev frigivet i november 2013. Den indeholdt f&oslash;lgende forbedringer:</p>
+        <ul>
+		<li>Fejlrettelser og forbedret anvendelighed, herunder:</li>
+			<ul>
+			<li>Forbedringer af Berig lag-v&aelig;rkt&oslash;jet som f.eks.: mere effektiv hukommelsesanvendelse til h&aring;ndtering af foresp&oslash;rgsler om berigelse og en forbedret statusindikator.</li>
+			<li>Rettelse af en fejl, der bevirkede, at Excel gik ned efter installation af Esri Maps. </li>
+			<li>Rettelse af en fejl, der medf&oslash;rte visning af ukorrekte billeder i s&oslash;gevinduet.</li>
+			<li>Rettelse af en fejl, der bevirkede, at brugerdefinerede s&oslash;gninger efter stedtype mislykkedes p&aring; japansk, russisk og kinesisk.</li>
+			<li>Har ryddet op i lokale strenge i forbindelse med Vigtige fakta, Velstand, Politik og Helbred i s&oslash;gevinduet.</li>
+			</ul>
+        </ul>
+		
+		<p>Version 2.1.1 blev frigivet i oktober 2013. Den indeholdt f&oslash;lgende forbedringer:</p>
         <ul>
         <li>Nye lokaliserede versioner til 22 underst&oslash;ttede sprog:</li>
 			<ul>
 			<li>Arabisk, kinesisk (forenklet), dansk, hollandsk, engelsk, estisk, fransk, tysk, hebr&aelig;isk, italiensk, japansk, koreansk, lettisk, litauisk, norsk, polsk, portugisisk (Brasilien), portugisisk (Portugal), rum&aelig;nsk, russisk, spansk og svensk.</li>
 			</ul>
 		<li>Support til pop-ups i webkort</li>
-		<li>Symbolis&eacute;r objekter ved hj&aelig;lp af et ikon fra en attribut med URL</li>
+		<li>Symbolisering af objekter med et ikon fra en attribut-URL</li>
 		<li>Fejlrettelser og forbedret anvendelighed i hele produktet, herunder:
 			<ul>
 			<li>Forbedret h&aring;ndtering af OAuth-logins</li>
-			<li>Mere nyttige fejlmeddelelser i v&aelig;rkt&oslash;jet Find hotspots</li>
+			<li>Flere nyttige meddelelser i v&aelig;rkt&oslash;jet Find hotspots</li>
 			<li>V&aelig;rkt&oslash;jet Find hotspots kan nu h&aring;ndtere kolonnenavne med mellemrum</li>
 			<li>V&aelig;lg-v&aelig;rkt&oslash;jet underst&oslash;tter nu buffere med st&oslash;rrelsen &quot;0&quot;</li>
 			<li>Problemer rettet i opgavevinduet</li>
 			<li>Fejl rettet i gruppesynlighed</li>
-			<li>Forbedret st&oslash;tte til organisationer, som bruger SSL til alle forbindelser </li>
+			<li>Forbedret st&oslash;tte til organisationer, som bruger SSL til alle forbindelser</li>
 			<li>Gruppering fungerer nu korrekt ved anvendelse af kolonner, der er tilf&oslash;jet fra v&aelig;rkt&oslash;jet Berig lag</li>
 			</ul>
         </ul>
-
-
-        <h3>Tidligere versioner</h3>
 		
         <p>Version 2.1 blev frigivet i juli 2013. Den indeholder f&oslash;lgende forbedringer: </p>
         <ul>

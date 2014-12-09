@@ -2,21 +2,19 @@
 title: Operations Dashboard for ArcGIS
 css:
   - documentation
-  - screen
   - /en/asset/css/common
   - stat-page-specific
-  - /en/asset/css/app-switch-1
   - colorbox/colorbox
 
 js:
   - libs/jquery.cookie
-  - /en/asset/js/app-collector-1
+  - /en/asset/js/operations-dashboard-1
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="ops-dashboard"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2014-9-23"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="da">
 
 mobile: true
 
@@ -25,6 +23,12 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/da/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="ops-dashboard" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
     </header>
 	<nav>
       <ul>
@@ -41,61 +45,105 @@ mobile: true
 <div class="container">
 
      <div class="column-16 tablet-column-24">
-        <header>
-          <h2 id="appTitle">Hent app'en</h2>
-          <span id="appVersion"><strong>Version:</strong> 10.2</span> <span id="appReleased"><strong>Frigivet:</strong> November 2013</span>
-
-          <p>Overv&aring;g aktiviteter og begivenheder, spor din arbejdsstyrke i marken, og vurd&eacute;r status p&aring; og resultatet af dine daglige opgaver.</p>
-
-          <p>
-            <a class="btn primary" href="http://www.arcgis.com/home/item.html?id=ba47e0bf6cb84a6e9f77e9caf86b88eb">Hent Operations Dashboard</a>
-
-          </p>
+        <h3 class="gray">Overv&aring;g aktiviteter og begivenheder, spor din arbejdsstyrke i marken, og vurd&eacute;r status p&aring; og resultatet af dine daglige opgaver.</h3>
+          
+          <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->	  
 
           <p>
-            <a id="appSysRequirements" href="#systemRequirements">Systemkrav</a> <a id="appWhatsNew" href="#whatsNew">Nyheder</a>
-          </p>
+            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Hent Operations Dashboard</a>
 
-        </header>
+          </p>
         <hr />
-        <br />
-
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/da/operations-dashboard/dashboard-create-small.png" />
+          <img src="/en/operations-dashboard/dashboard-create-small.png" />
 
-          <h3>Opret og del et operationelt view</h3>
-          <p>Ved hj&aelig;lp af tre lette trin kan du oprette og dele handlingsvisninger, der omfatter kort, lister, diagrammer, m&aring;linger m.m., som er baseret p&aring; live-geografiske data, der er defineret i et webkort eller en webtjeneste.</p>
+          <h3>Opret og del en handlingsvisning</h3>
+          <p>Ved hj&aelig;lp af tre lette trin kan du oprette og dele handlingsvisninger, der omfatter kort, lister, diagrammer, m&aring;linger m.m., som er baseret p&aring; live-geografiske data, der er defineret i et kort eller en webtjeneste.</p>
           <p>
-            <a href="/da/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;Vis mig hvordan</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+            <a href="/da/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;Vis hvordan</a><br /> <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/da/operations-dashboard/dashboard-monitor-small.png" />
+          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
 
           <h3>Overv&aring;g og reag&eacute;r p&aring; begivenheder</h3>
-          <p>Brug dit operationelle view til at fokusere p&aring; de aspekter ved en operation, som har betydning for dig. Overv&aring;g tjenester, leveringer, mennesker, k&oslash;ret&oslash;jer m.m. hvor som helst i verden &ndash; i fire trin.</p>
+          <p>Brug din handlingsvisning til at fokusere p&aring; de aspekter ved en operation, som har betydning for dig. Overv&aring;g tjenester, leveringer, mennesker, k&oslash;ret&oslash;jer m.m. hvor som helst i verden &ndash; i fire trin.</p>
           <p>
-            <a href="/da/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Vis mig hvordan</a><br /> <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Se en video</a>
+            <a href="/da/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Vis mig hvordan</a><br /> <!--<a href="http://resources.arcgis.com/da/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> --> <a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Se en video</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
           </p>
         </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-3.png" />
+
+          <h3>Overv&aring;g i en browser</h3>
+          <p>Brug din handlingsvisning i en browser. Der er ikke noget at installere, du skal blot &aring;bne en handlingsvisning og blive opdateret p&aring; dine opgaver, endda fra din iPad.</p>
+          <p>
+            <a href="/da/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Vis hvordan</a><br /> <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
+          </p>
+        </div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="/en/operations-dashboard/story-graphic-4.png" />
+
+          <h3>Udvikle add-ins</h3>
+          <p>Bring din egen, unikke forretningslogik ind i din handlingsvisning ved hj&aelig;lp af brugerdefinerede widgets, objekthandlinger og kortv&aelig;rkt&oslash;jer. </p>
+          <p>
+            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Vis hvordan</a><br />
+          </p>
+        </div>        
 
         <div class="clear"></div>
 
 
+	<a name="features" ></a>
+	<h2 class="divider">Objekter</h2>
+	<p>Sammens&aelig;t en f&aelig;lles visning af de systemer og ressourcer, du administrerer. Overv&aring;g data feeds i realtid vedr&oslash;rende store begivenheder eller de daglige aktiviteter p&aring; din desktop- eller tablet-enhed. Opret fokuserede ledelses-dashboards, der integrerer kort, diagrammer og grafer.</p>
+	
+	<ul>
+	<li>Brug kort med dynamiske datakilder til at levere visninger i realtid.</li>
+	<li>Konfigur&eacute;r diagrammer, m&aring;linger, histogrammer m.m. for at formidle statistisk kontekst.</li>
+	<li>Opret og del operative visninger med henblik p&aring; et specifikt behov.</li>
+	<li>Design visninger til brug p&aring; flere sk&aelig;rme eller p&aring; enkeltvisnings-enheder.</li>
+	<li>Opret brugerdefinerede widgets og v&aelig;rkt&oslash;jer, der passer til dine behov.</li>
+	</ul>
+
+
         <a name="systemRequirements"></a>
-        <h2>Systemkrav</h2>
+        <h2 class="divider">Systemkrav</h2>
 
-        <p>Der er visse enhedskrav, der skal opfyldes for at k&oslash;re Operations Dashboard, og der er ogs&aring; krav til de data, der anvendes i applikationen. Operations Dashboard underst&oslash;ttes p&aring; en r&aelig;kke sprog.</p>
+        <p>Der er visse enhedskrav, der skal opfyldes for at k&oslash;re Operations Dashboard, og der er ogs&aring; krav til de data, der anvendes i app'en. </p>
 
 
-        <h3>Underst&oslash;ttede operativsystemer</h3>
-
+<script> 
+ function exp(e,strTag ,strAttribute){ 
+ var elem = document.getElementsByTagName(strTag); 
+ var elem1 = e.target;
+ for (var i=0;i<elem1.children.length;i++){ 
+ elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+ } 
+ for (var i =0;i<elem.length;i++) 
+ { 
+ if(elem[i].getAttribute(strAttribute)=="yes") 
+ { 
+ elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+ } 
+ } 
+ } 
+ </script> 
+ <h3>Windows-app</h3>
+  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Underst&oslash;ttede operativsystemer</a>
+     <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
           <li>Windows 8.1, Windows 8.1 Pro og Windows 8.1 Enterprise (32 bit og 64 bit [EM64T])</li>
           <li>Windows 8, Windows 8 Pro og Windows 8 Enterprise (32 bit og 64 bit [EM64T])</li>
@@ -104,12 +152,13 @@ mobile: true
 		<li>Windows Server 2008 R2 Standard, Enterprise og Datacenter (64 bit [EM64T]) SP1</li>
 		<li>Windows Server 2008 Standard, Enterprise og Datacenter (32 bit og 64 bit [EM64T]) SP2</li>
         </ul>
-
-
-        <h3>Hardwarekrav</h3>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Hardwarekrav</a>
+	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
 			<li>CPU-hastighed: 2,2 GHz eller st&aelig;rkere; Hyper-Threading (HTT) eller Multi-core anbefales.</li>
-			<li>Processor: Intel Pentium 4-, Core Duo- eller Xeon-processor; SSE2 som minimum. K&oslash;r dette Microsoft-hj&aelig;lpeprogram fra en Windows-kommandolinje for at kontrollere processoren.</li>
+			<li>Processor: Intel Pentium 4-, Core Duo- eller Xeon-processor; SSE2 som minimum. K&oslash;r Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a>-hj&aelig;lpeprogrammet fra en Windows-kommandolinje for at kontrollere processoren.</li>
 			<li>Diskplads: 1,5 GB ledig diskplads.</li>
 			<li>Hukommelse/RAM: 2 GB eller mere.</li>
 			<li>Sk&aelig;rmegenskaber: 24-bit farvedybde.</li>
@@ -117,37 +166,137 @@ mobile: true
 			<li>Plads til swap-fil: Bestemmes af operativsystemet; 500 MB som minimum.</li>
 			<li>Video-/grafikadapter: 64 MB RAM som minimum, 256 MB RAM anbefales; NVIDIA, ATI og Intel-chipset underst&oslash;ttes. Accelerated-grafikdrivere. Shader Model 2.0 som minimum. S&oslash;rg for at have den nyeste tilg&aelig;ngelige driver.</li>
 		</ul>
+</div>
+<div class="clear" style="padding:5px;"></div>
 
+<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Softwarekrav</a>
+	<div exp3='yes' style="display:none;padding:0 15px;">
+        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> eller senere er p&aring;kr&aelig;vet. Du skal have administratorrettigheder p&aring; din maskine for at installere komponenten.</p>
+        </div>
+        <div class="clear" style="padding:5px;"></div>
+        
+<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Krav i forbindelse med udvikling</a>
+		<div exp4='yes' style="display:none;padding:0 15px;">
+	<p style="padding:0 15px">Der kr&aelig;ves <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.3 for WPF</a> for at tilpasse Operations Dashboard for ArcGIS. Microsoft Visual Studio 2012 eller 2013 Professional, Premium eller Ultimate Edition kr&aelig;ves ogs&aring; </p>
 
-        <h3>Softwarekrav</h3>
-        <p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> er p&aring;kr&aelig;vet. Du skal have administratorrettigheder p&aring; din maskine for at installere komponenten.</p>
+     </div> 
+     <div class="clear" style="padding:5px;"></div>
+     
+<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Underst&oslash;ttede sprog</a>
+<div exp5='yes' style="display:none;padding:0 15px;">
+     	<p style="padding:0 15px">Arabisk, tjekkisk, dansk, hollandsk, engelsk, estisk, finsk, fransk, tysk, hebraisk, italiensk, japansk, koreansk, lettisk, litauisk, norsk, polsk, portugisisk (Brasilien), portugisisk (Portugal), rum&aelig;nsk, russisk, forenklet kinesisk, spansk, svensk og tyrkisk.</p>
+     	<p style="padding:0 15px">Det sprog, der anvendes af Windows-versionen af app'en, bestemmes af dit operativsystems sprogindstilling. Hvis du benytter en sprogindstilling, der ikke underst&oslash;ttes, bruger app'en engelsk.</p>
+</div>
+<div class="clear"></div>
 
+     <h3/>
+ <h3>Browser-app</h3>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">Underst&oslash;ttede browsere</a>
+<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Pc
+ <ul style="padding:0 15px">
+ <li>Chrome version 19.0 og nyere</li>
+ <li>Firefox version 4.0 og nyere</li>
+ <li>Internet Explorer version 9.0 og nyere</li>
+ <li>Safari version 5.1 og nyere</li>
+ </ul> 
+ Tablet 
+ <ul style="padding:0 15px">
+ <li>Android 4.0 og nyere, der k&oslash;rer Chrome version 19.0 og nyere</li>
+ <li>iOS 6.0 og nyere, der k&oslash;rer Safari</li>
+ </ul>
+ Telefon 
+ <p style="padding:0 15px">Der underst&oslash;ttes ingen smartphone-browsere i &oslash;jeblikket.</p>
+ </div></div> 
+ <div class="clear" style="padding:5px;"></div>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Underst&oslash;ttede sprog</a>
+ <div exp11='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">Tjekkisk, dansk, hollandsk, engelsk, estisk, finsk, fransk, tysk, italiensk, japansk, koreansk, lettisk, litauisk, norsk, polsk, portugisisk (Brasilien), portugisisk (Portugal), rum&aelig;nsk, russisk, forenklet kinesisk, spansk, svensk, thai og tyrkisk.</p>
+      	<p style="padding:0 15px">I browserversionen bruges din ArcGIS Online-profil til at indstille sproget. Hvis du benytter en sprogindstilling, der ikke underst&oslash;ttes, bruger app'en engelsk.</p>
+</div>
+<div class="clear"></div>
+
+     <h3/>
         <h3>Datakrav</h3>
 		<p>For at bruge dine kort i Operations Dashboard skal du have en ArcGIS-organisationskonto. Dine kort kan indeholde data fra ArcGIS Online, Portal for ArcGIS og ArcGIS for Server. Datakilder skal v&aelig;re &quot;hosted&quot; p&aring; ArcGIS Online eller ArcGIS 10.1 for Server eller nyere.</p>
 
-		<h3>Krav i forbindelse med udvikling</h3>
-		<p>Der kr&aelig;ves <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2 for WPF</a> for at kunne tilpasse Operations Dashboard for ArcGIS.</p>
-
-	<h3>Underst&oslash;ttede sprog</h3>
-	<p>Arabisk, tjekkisk, dansk, hollandsk, estisk, finsk, fransk, tysk, hebraisk, italiensk, japansk, koreansk, lettisk, litauisk, norsk, polsk, portugisisk (Brasilien), portugisisk (Portugal), rum&aelig;nsk, russisk, forenklet kinesisk, spansk og svensk.</p>
-	<p>Det sprog, der anvendes af app'en, bestemmes af din telefons sprogindstilling.</p>
-
         <a name="whatsNew"></a>
-        <h2>Nyheder</h2>
-        <p>Operations Dashboard for ArcGIS version 10.2 blev frigivet i november 2013. Den indeholder f&oslash;lgende forbedringer:</p>
-        <ul>
-        <li>Underst&oslash;ttelse af enterprise logins</li>
-        <li>Underst&oslash;ttelse af Portal for ArcGIS</li>
-        <li>Forbedrede liste- og m&aring;ler-widgets.</li>
-        <li>Pop-up-vinduer indeholder billeder og diagrammer.</li>
-        <li>Forbedret proxy-underst&oslash;ttelse.</li>
-        <li>Underst&oslash;ttelse af lokal tid.</li>
-        <li>Forbedret filtrering p&aring; tid og dato.</li>
-        <li>Benytter ArcGIS Runtime SDK 10.2 for WPF.</li>
-        <li>Tilf&oslash;jelsesprogrammer kan udvikles ved hj&aelig;lp af ArcGIS Runtime SDK 10.2 for WPF.</li>
-        <li>Overs&aelig;ttelse til arabisk, tjekkisk, dansk, hollandsk, estisk, finsk, fransk, tysk, hebraisk, italiensk, japansk, koreansk, lettisk, litauisk, norsk, polsk, portugisisk (Brasilien), portugisisk (Portugal), rum&aelig;nsk, russisk, forenklet kinesisk, spansk og svensk.</li>
-        </ul>
-      
+        <h2 class="divider">Nyheder</h2>
+        <table><tr><td valign="top" ><h4 class="icon-windows-8">Windows</h4>
+	        <p>Operations Dashboard for ArcGIS 10.2.3 blev opdateret i juli 2014 med forskellige fejlrettelser og forbedringer.</p>
+                </td>
+	        <td valign="top"><h4><img src="icon-browser.png" style="margin-right:4px"/>Browser</h4>
+	        <p>Browser-app'en til Operations Dashboard for ArcGIS blev opdateret i september 2014. Den indeholder f&oslash;lgende forbedringer:</p>
+	        <ul>
+	          <li>Opdateret &quot;look and feel&quot; for indikator-, m&aring;ler og diagram-widgets</li>
+	          <li>Underst&oslash;tter m&aelig;rkater f&oslash;jet til lag vha. kortviseren</li>
+	          <li>Lokaliseret til thai</li>
+	          <li>Forskellige fejlrettelser og forbedringer</li>
+        </ul></td><tr></table>
+        
+        
+        
+        
+        <a name="sneakPeek"></a>
+	<h2 class="divider">Smugkig</h2>
+	<p>I dag er Operations Dashboard en glimrende app til overv&aring;gning af dine opgaver. Men der kommer mere! Det f&oslash;lgende skitserer, i hvilken retning vi gerne vil udvikle denne app, og vi viser nogle af de funktioner, vi gerne vil bringe til enhver af dine enheder:</p>
+	
+	<table border="1" style="text-align:center">
+	  <caption>Planlagt funktionalitet efter platform. <br/> <span class="icon-check" style="color:black"></span> aktuel, <span class="icon-check icon-green"/> snart, <span class="icon-check" style="color:lightgray"></span> senere<br/></caption>
+	  <tr><td></td>
+	    <th>Windows Desktop</th>
+	    <th>Browser</th>
+	  </tr>
+	  <tr><th>Opret handlingsvisninger</th>
+	    <td><span class="icon-check"/></td>
+	    <td></td>
+	  </tr>
+	  <tr><th>Brug handlingsvisninger</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Handlingsvisninger p&aring; enkelt sk&aelig;rm</span></td>
+	  </tr>
+	  <tr><th>Arbejde med Portal for ArcGIS</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Kan udvides</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Bruge korttjenester som datakilder</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	  </tr>
+	  <tr><th>S&oslash;ge efter data</th>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Filtrere oplysninger geografisk</th>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <!--<tr><th>Sketch on the map</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>-->
+	  <tr><th>Brug ikke-rumlige data som eksterne datakilder</th>
+	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check icon-green"/></td>
+	  </tr>
+	  <tr><th>Underst&oslash;t relaterede tabeller</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>3D-visning</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr><th>Administration af arbejdsstyrke</th>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	</table>
+	<p>Del dine <a href="http://ideas.arcgis.com/">id&eacute;er</a>, og <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">send os din tilbagemelding</a>.</p>
+        
         <p>&nbsp;</p>
         
 
@@ -156,15 +305,14 @@ mobile: true
 
       <div class="column-8 tablet-column-24 blocks">
 
-        <div class="imgFrame block">
-          <h3>Kom i gang</h3>
-          <ul>
-           <li><a href="http://www.arcgis.com/home/item.html?id=ba47e0bf6cb84a6e9f77e9caf86b88eb">Install&eacute;r applikationen</a></li>
-            <li><a href="/da/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">Opret og del et operationelt view.</a></li>
-            <li><a href="/da/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Overv&aring;g og reag&eacute;r p&aring; aktiviteter og begivenheder</a></li>
-            <li><a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/">Udvikle add-ins</a></li>
-
-          </ul>
+       <div class="imgFrame block">
+          <h3>Detajler</h3>
+          
+	  <h4><a href="#features">Objekter</a></h4>
+	  <h4><a href="#systemRequirements">Systemkrav</a></h4>
+	  <h4><a href="#whatsNew">Nyheder</a></h4>
+	  <h4><a href="#sneakPeek">Smugkig</a></h4>
+          
         </div>
 
         <br />
@@ -186,7 +334,7 @@ mobile: true
  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/ios/feed/',
+        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
         max: 5,
         layout: 0
       });

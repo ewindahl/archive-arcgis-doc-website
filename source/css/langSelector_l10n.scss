@@ -1,26 +1,33 @@
-.ar {
+.ar, .he {
  #lgpicker.show {
   text-align: right;
  }
  
  #lgpicker a {
   direction: ltr;
+  
+  &[data-lang="ar"] {
+   direction: rtl;
+  }
  }
  
- #lgpicker a[data-lang="ar"] {
-  direction: rtl;
- }
-
  #lgarrow {
   padding-right: 16px;
  }
  
  #lang-block {
   float: left;
+  margin-left: 1em;
+  margin-right: 0;
  }
  
  #localeOptions {
   float: left;
   text-align: left;
+ }
+ 
+ .marketplace .dropdown-navigation {
+  margin-left: 0px;
+  margin-right: 20px;
  }
 }

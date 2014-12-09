@@ -13,7 +13,7 @@
 
     <script>
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-215788-63']);
+      _gaq.push(['_setAccount', 'UA-215788-73']);
       _gaq.push(['_setDomainName', 'arcgis.com']);
       _gaq.push(['_trackPageview']);
 
@@ -44,9 +44,14 @@
       <% end %>
     <% end %>
 
+  <%= javascript_include_tag "sitecfg" %>
+
    <%= javascript_include_tag "locale/l10NStrings" %>
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
+
+  <%= javascript_include_tag "signIn" %>
+
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>
@@ -71,6 +76,15 @@
 
   </head>
   <body class="<%= current_language %>" >
+  <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WVT7QT');</script>
+<!-- End Google Tag Manager -->
     <div id="wrapper">
       <div id="page">
 
@@ -89,11 +103,47 @@
             </nav>
             
             <%= link_to "Esri", "http://www.esri.com", id: "esri-logo" %>
-            
+
+<!--            
             <div id="lg-container" class="dropdown-navigation">
               <div id="lang-block"></div>
             </div>
-            
+   -->         
+
+<!--
+              <div id="lg-container" class="banner-navigation">
+
+              <div class="dropdown-navigation no-top">
+              </div>
+
+              <div id="logged-out-navigation" class="dropdown-navigation no-top">
+                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
+              </div>
+
+              <div id="logged-in-navigation" class="dropdown-navigation no-top dropdown-wrapper hide">
+                  <a id="A1" class="dropdown btn user-signin" href="#">user</a>
+                  <div class="dropdown-content">
+                      <div class="dropdown-menu">
+                          <ul class="myconsole">
+                              <li><a id="agolProfile" href="http://www.arcgis.com/home/user.html">My Profile</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul class="myconsole">
+                              <li><a id="agolHelp" href="http://www.arcgis.com/home/support.html">Help</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul>
+                              <li><a id="agolLogout" href="#">Sign Out</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="lang-block"></div>
+
+          </div>
+-->
+
             <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
               <a href="#" class="dropdown btn small light icon icon-list-2"><%= t("site.nav.select") %></a>
               <div class="dropdown-content">
@@ -142,12 +192,14 @@
                   <div id="lang-block"></div>
                </div> -->
 
+<!--
               <div id="logged-out-navigation" class="dropdown-navigation">
-                <a data-langlabel="sign-in" id="login-link" class="btn small light" href="#"><%= t("site.nav.sign_in") %></a>
+                <a data-langlabel="sign-in" id="login-link" class="btn marketplace" href="#">
+                  <span class="profile-icon"><%= t("site.nav.sign_in") %></a>
               </div>
 
               <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
-                <a id="login-link" class="dropdown btn small light" href="#"><%= t("site.nav.sign_in_user") %></a>
+                <a id="login-link" class="dropdown btn marketplace" href="#"><%= t("site.nav.sign_in_user") %></a>
                 <div class="dropdown-content">
                   <div class="dropdown-menu">
                     <ul class="myconsole">
@@ -160,10 +212,11 @@
                   </div>
                 </div>
               </div>
-
+-->
               <nav class="right-nav">
                  <ul>
-                    <li><%= link_to t("site.nav.help"), t("paths.mphelp") %></li>
+
+                    <li><a href="<%= t("paths.mphelp") %>"><span class="help-icon"></span><%= t("site.nav.help") %></a></li>
                  </ul>
               </nav>
 
@@ -233,7 +286,7 @@ $(document).ready(function(){
     $("*[data-skin='app']").remove();
     $("body").addClass ("marketplace");
 
-    $($("#dropDown a").get (3)).addClass ("current selected");
+    $($("#dropDown a").get (5)).addClass ("current selected");
 
   } else {
     $("*[data-skin='marketplace']").remove();

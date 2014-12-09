@@ -11,30 +11,26 @@ $(document).ready(function() {
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'];
    }
-
+   var dict = (window.localeJsonObj || {})[localedir];
+   
     var val = '<p id="plats">' +
-        '<span class="viewing">Viewing: </span>' +
-        '<a data-appname="explorer" data-plat="android" data-prefix="/' + localedir +'/explorer/android" href="/en/explorer/" data-langlabel="android" class=""> Android</a>' +
-        ' | ' +
+        '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
         '<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir +'/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class=""> iPad</a>' +
         ' | ' +
-        '<a data-appname="explorer" data-plat="windows" data-prefix="/' + localedir +'/explorer/windows" href="/en/explorer/" data-langlabel="windows-phone" class=""> Windows Phone</a>' +
+        '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir +'/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class=""> iPhone</a>' +
+        ' | ' +
+        '<a data-appname="explorer" data-plat="mac" data-prefix="/' + localedir +'/explorer/mac" href="/en/explorer/" data-langlabel="mac" class=""> Mac</a>'
         '</p>',
 
 		prodKey = "explorer",
-		prodDVal = "android",
-      prodIOSVal = "ipad",
-      prodWPVal = "windows-phone",
+		prodDVal = "ipad",
+		prodIOSVal = "iphone",
+		prodMacVal = "mac",
+		prodWPVal = "windows-phone",
 		homePath = "/en/explorer",
 		forumPath = "/en/explorer/forum"
 
-    fnameFilter = {
-        "create-a-map.htm": "", "connect-to-a-mobile-content-server.htm": "", "get-started-faqs.htm": "",
-        "publishing-maps-to-your-arcgis-server.htm": "", "understanding-the-map-format.htm": "",
-        "uploading-the-map-to-the-mobile-content-server.htm": "", "use-the-app-faqs.htm": "",
-        "what-s-new.htm": "", "work-with-my-data-faqs.htm": ""
-    },
-
+    
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
 		fname = parts.pop(),
@@ -43,18 +39,22 @@ $(document).ready(function() {
 		isHome = fldpath === homePath,
 		isForum = fldpath === forumPath;
 
-    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
-      plat = prodIOSVal;
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
+      if(navigator.userAgent.match(/(iPhone)/gi)){
+		plat = prodIOSVal;
+	  }else if(navigator.userAgent.match(/(Macintosh)/gi)){
+		plat = prodMacVal;
+	  }
 
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
       }
-    } else if (!($.cookie (prodKey)) && (navigator.userAgent.match(/(windows phone)/gi))){
+    }/* else if (!($.cookie (prodKey)) && (navigator.userAgent.match(/(windows phone)/gi))){
       plat = prodWPVal;
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
       }
-    }
+    }*/
 
    function UASpecificRedirect (plat, pathname) {
 
@@ -86,6 +86,10 @@ $(document).ready(function() {
 			    $ele.attr("href", newHref);
 			}
 		})
+		
+		// Update product meta value in search form
+		$('#helpSearchForm input[name=product]').attr("value","explorer-" + plat);
+		
 
 	}
 
@@ -104,15 +108,52 @@ $(document).ready(function() {
 			}
 		});
 	}
+	
+	function modHelpNavUrls (plt) {
+		$(".navigation-bar nav a[href]").each (function (i) {
+			var $ele = $(this),
+				href = $ele.attr("href");
+
+				parts = href.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
+				$ele.attr ("href", newHref);
+		});
+	}
+	
+	function modContentLinks (plt) {
+		$(".reference-content a[href], .column-16 a[href]").each (function (i) {
+			var $ele = $(this),
+				href = $ele.attr("href");
+
+				parts = href.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = href.replace (prodIOSVal+"/", plt+"/");
+				newHref = newHref.replace (prodDVal+"/", plt+"/");
+				$ele.attr ("href", newHref);
+				
+		});
+	}
 
 	if (!isHome) {
 		if (isForum) {
 			modForumUrls (plat);
 		} else {
-			$('.reference-content .page-title').after (val);
+			
+			if(window.location.pathname.match( /(\/use-maps\/)/)){
+				$('.reference-content .page-title').after (val);
+			}else{
+				modHelpNavUrls (plat);
+				modContentLinks (plat);
+				// Update product meta value in search form
+				$('#helpSearchForm input[name=product]').attr("value","explorer-" + plat);
+			}
 		}
 	} else {
 		modHomeUrls (plat);
+		modContentLinks (plat);
 	}
 
 	$("#plats a[data-appname]").each (function (i) {
@@ -129,9 +170,9 @@ $(document).ready(function() {
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
 		}
 
-		if (!fnameFilter.hasOwnProperty (fname)) {
+		/*if (!fnameFilter.hasOwnProperty (fname)) {
 			url = prefix + "/" + "help";
-		}
+		}*/
 
 		$ele.attr ("href", url);
 		//console.log(url);

@@ -1,0 +1,113 @@
+---
+title: Trust
+css:
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - video-init
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - sitecfg.js
+
+metatags:
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="de">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/de/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Trust ArcGIS durchsuchen...">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online Trust" href="/de/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online-Systemstatus" href="/de/trust/system-status/">Systemstatus</a></li>
+        <li><a title="ArcGIS Online-Sicherheit" href="/de/trust/security/">Sicherheit</a></li>
+        <li><a title="ArcGIS Online-Datenschutz" href="/de/trust/privacy/">Datenschutz</a></li>
+        <li><a title="ArcGIS Online-Datenschutz" href="/de/trust/compliance/">Compliance</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="column-16 tablet-column-24">
+    <h3 class="gray">ArcGIS Online wurde als sicheres System mit kontrolliertem Zugriff entwickelt.</h3>
+    <hr />
+    <div id="collectorMapFeature" class="column-12 phone-column-24">
+      <img src="img/features-security-data-ownership.jpg" alt="Eigentumsrechte an Sicherheitsdaten" />
+	  
+	      <div style="padding-top:30px; text-align: center;">
+      <a href="/de/trust/system-status/" class="btn tertiary" style="width:75%;text-align:center;" >Systemstatus pr&uuml;fen</a>
+    </div>
+	  
+	  
+    </div>
+    <div id="collectorDataFeature" class="column-12 phone-column-24">
+      <p>Trust.ArcGIS.com ist Ihre Anlaufstelle f&uuml;r Sicherheits-, Datenschutz- und Compliance-Informationen. Hier finden Sie: </p>
+      <ul>
+        <li>ArcGIS Online-Serviceverf&uuml;gbarkeit, Angaben zu System-Performance und Statusverlauf</li>
+        <li>Sicherheitsupdates und aktuelle Warnungen</li>
+        <li>Informationen zur Produktsicherheit f&uuml;r ArcGIS Online</li>
+        <li>Sicherheitsempfehlungen f&uuml;r Ihre Organisation</li>
+        <li>Informationen zu Datenschutz und Compliance</li>
+      </ul>
+      <p>Trust.ArcGIS.com wurde durch Gespr&auml;che mit unseren Kunden inspiriert. Was w&uuml;rden Sie hier gern sehen wollen? Ihre Vorschl&auml;ge nehmen wir gern auf <a href="http://ideas.arcgis.com">ArcGIS Ideas</a> entgegen.</p>
+    </div>
+    <div class="clear"></div>
+    <div class="" style="text-align:center; padding-top:75px;">
+      <h4>&bdquo;Esri ist bestrebt, die Sicherheit seiner Mapping-Plattform fortlaufend zu verbessern und das Kundenvertrauen durch Genehmigungsverfahren wie dem der FISMA zu festigen.&ldquo;</h4>
+      <p>Michael Young, Leitender Sicherheitsingenieur, Esri</p>
+
+    </div>
+    <div style="text-align:center; padding-top:45px;">
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+
+
+	        <!-- Blog Feed -->
+        <div class="imgFrame block">
+          <h3 class="icon-announcement">Warnungen und &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS Blog"><img src="img/rss.png" /></a>
+		  <br/>Ank&uuml;ndigungen </h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+
+        </div><br/>
+    <div class="" style="text-align:center;">
+      <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/de/trust/security-concern/"> Sicherheitsproblem melden</a>  </h4>
+    </div>
+  </div>
+
+ </div>
+
+
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>

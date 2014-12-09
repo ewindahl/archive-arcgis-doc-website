@@ -4,5 +4,6 @@
   <li><%= link_to t("site.nav.plans"), t("paths.plans"), "data-langlabel" => "plans" %></li>
   <li><%= link_to t("site.nav.gallery"), t("paths.gallery"), "data-langlabel" => "gallery" %></li>
   <li><%= link_to t("site.nav.map"), t("paths.map"), "data-langlabel" => "map" %></li>
-  <li><%= link_to t("site.nav.help"), t("paths.help"), "data-langlabel" => "help" %></li>
+  <li><%= link_to t("site.nav.scene"), t("paths.scene"), "data-langlabel" => "scene", "class" => "hideOnIE" %></li>
+  <li><%= link_to t("site.nav.help"), t("paths.help").gsub(/\/en\//,"/"+current_language+"/"), "data-langlabel" => "help" %></li>
 </ul>

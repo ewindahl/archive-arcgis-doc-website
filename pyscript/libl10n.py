@@ -1,5 +1,5 @@
 langs = [
-"ar", "da", "de", "es", "fr", "it", 
-"ja", "ko", "nl", "no", "pl", "pt-br", "pt-pt", 
-"ro", "ru", "sv", "zh-cn"
+"ar", "da", "cs", "de", "es", "et", "fi", "fr", "he", "it", 
+"ja", "ko", "lt", "lv", "nl", "no", "pl", "pt-br", "pt-pt", 
+"ro", "ru", "sv", "th", "tr", "zh-cn"
 ]
