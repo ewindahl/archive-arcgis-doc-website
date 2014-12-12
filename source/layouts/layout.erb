@@ -80,11 +80,7 @@ end
     <% end%>
 
 	<!--- search MD -->
-	<% if current_page.data.metatags %>
-      <% current_page.data.metatags.each do |v| %>
-        <%= v %>
-      <% end %>
-    <% end %>
+	<%= add_meta_tags(current_page.path) %>
 
 	<!-- Handle Marketplace 404 issue -->
 	<% if current_page.data.pageName and current_page.data.pageName == "404" %> 

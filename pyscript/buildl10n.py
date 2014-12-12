@@ -64,10 +64,16 @@ def doBuild (lg, srcRoot, buildDir):
    print "copy {0} -> {1}".format (srcd, dstd)
    shutil.copytree(srcd, dstd)
 
+   #copy metatags
+   srcd = op.join (srcRoot, "metatags")
+   dstd = op.join (dstRoot, "metatags")
+   print "copy {0} -> {1}".format (srcd, dstd)
+   shutil.copytree(srcd, dstd)
+
    #build
    os.chdir (dstRoot)
    print "cd ", os.getcwd()
-   bundle = "bundle.bat" if platform.system() == "Windows" else "bundle" 
+   bundle = "bundle.bat" if platform.system() == "Windows" else "bundle"
    print subprocess.check_call([bundle, "exec", "middleman", "build"])
 
    #copy result
@@ -105,7 +111,7 @@ def main():
 
       except:
          print traceback.format_exc()
-   
+
    flistl10n.generateL10nFlist()
 
 main()

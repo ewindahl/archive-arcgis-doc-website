@@ -77,11 +77,7 @@ end
     <% end%>
 
 	<!--- search MD -->
-	<% if current_page.data.metatags %>
-      <% current_page.data.metatags.each do |v| %>
-        <%= v %>
-      <% end %>
-    <% end %>
+	<%= add_meta_tags(current_page.path) %>
 
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
