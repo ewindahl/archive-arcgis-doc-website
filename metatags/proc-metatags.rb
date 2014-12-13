@@ -147,11 +147,11 @@ module Metatags
 		end
 		
 		doc_meta_xml = xml_from_file(lang_metaFile)
-		app_meta_xml = doc_meta_xml.xpath("/metatags/#{siteapp}/*")
+		app_meta_xml = doc_meta_xml.xpath("/metatags/collection[@name='#{siteapp}']/*")
 		
 		if app_meta_xml.length == 0
 			doc_meta_xml = xml_from_file(en_metaFile)
-			app_meta_xml = doc_meta_xml.xpath("/metatags/#{siteapp}/*")
+			app_meta_xml = doc_meta_xml.xpath("/metatags/collection[@name='#{siteapp}']/*")
 			if app_meta_xml.length == 0
 				puts "WARNING: No default metatags exist for #{siteapp} in #{en_metaFile}"
 				return JSON.parse("{}")
@@ -164,7 +164,7 @@ module Metatags
 	def meta_xml2json(meta_xml)
 		meta_json = JSON.parse("{}")
 		meta_xml.each{ 
-			|tag| meta_json[tag.name] = tag.text.to_s
+			|tag| meta_json[tag["key"]] = tag.text.to_s
 		}
 		return meta_json
 	end
