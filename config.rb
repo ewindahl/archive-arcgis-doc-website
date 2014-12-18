@@ -1,8 +1,10 @@
 # Middleman Config
 require "arcgis-framework"
+require "metatags/proc-metatags"
 
 activate :i18n, :mount_at_root => false
 activate :directory_indexes
+activate :metatags
 
 set :css_dir, 'css'
 set :js_dir, 'js'
