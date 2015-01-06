@@ -26,6 +26,7 @@ $(document).ready(function() {
 		prodDVal = "android",
       prodIOSVal = "ios",
       prodWPVal = "windows-phone",
+	  prodWPMetaInitVal = "win-phone",
 		homePath = "/en/arcgis-app",
 		forumPath = "/en/arcgis-app/forum"
 
@@ -114,6 +115,8 @@ $(document).ready(function() {
 		}
 	} else {
 		modHomeUrls (plat);
+		// Update product meta value in search form
+		$('#helpSearchForm input[name=product]').attr("value", plat.replace(prodWPVal,prodWPMetaInitVal) + "-"+ "app");
 	}
 
 	$("#plats a[data-appname]").each (function (i) {

@@ -72,6 +72,8 @@ $(document).ready(function() {
 		$('.reference-content .page-title').after (val);
 	} else {
 		modHomeUrls (plat);
+		// Update product meta value in search form
+		$('#helpSearchForm input[name=product]').attr("value", "collector-" + plat);
 	}
 
 
