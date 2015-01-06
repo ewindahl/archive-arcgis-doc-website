@@ -34,6 +34,27 @@ $(document).ready(function() {
 
     
 
+	if(!($.cookie (prodKey)) && !(navigator.userAgent.match(/Windows NT/gi))) {
+      plat = prodWebVal;
+      if (!isHome) {
+         UASpecificRedirect (plat, pathname);
+      }
+    }
+
+   function UASpecificRedirect (plat, pathname) {
+
+			var parts = pathname.split("/");
+				fname = parts.pop(),
+				fld = parts.pop(),
+				newHref = pathname.replace ("/"+prodDVal+"/", "/"+plat+"/");
+
+			if (pathname.indexOf (homePath) === 0 ) {
+				window.location.replace(newHref);
+            $.cookie (prodKey, plat, {expires: new Date(2020,1,1), path:"/"});
+			}
+
+	}
+	
 	function modHomeUrls (plat) {
 		$("a[href]").each (function (i) {
 			var $ele = $(this),
