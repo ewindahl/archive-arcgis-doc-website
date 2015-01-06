@@ -117,7 +117,7 @@ module Metatags
 	def meta_json2html(meta_json)
 		meta_html = ""
 		meta_json.keys.each{
-			|k| meta_html = meta_html + "<meta name='#{k}' content='#{meta_json[k]}'>"
+			|k| meta_html = meta_html + "<meta name=\"#{k}\" content=\"#{meta_json[k]}\">"
 		}
 		return meta_html
 	end
