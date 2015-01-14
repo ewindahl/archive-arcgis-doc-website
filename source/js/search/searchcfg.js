@@ -65,7 +65,8 @@ var filterCfg = {
             r:"search-collection:help",
             p:""
         }
-      },
+      }
+	  /* ,
       {
         k:"forums",
         q:{
@@ -73,7 +74,7 @@ var filterCfg = {
   		  p:""
         }
       }
-      /* 
+      
       {
         k:"videos",
         q:{
