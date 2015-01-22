@@ -20,22 +20,24 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/fr/arcgis-online/">Aide</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
+      <h1><a href="/fr/arcgis-online/">Aide d'ArcGIS Online</a></h1>
+      <!--Commented this part out. Search bar on Header-->
+	  <!--<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
+        <input type="hidden" name="language" value="en>" />
+      </form>-->
     </header>
 	<nav>
       <ul>
-        <li class='current'><a title="Aide d'ArcGIS Online" href="/fr/arcgis-online/">Principale</a></li>
-        <li><a title="Utiliser des cartes" href="/fr/arcgis-online/use-maps/">Utiliser</a></li>
-        <li><a title="Créer des cartes et des applications" href="/fr/arcgis-online/create-maps/">Créer</a></li>		
-        <li><a title="Partager des cartes et des applications" href="/fr/arcgis-online/share-maps/">Partager</a></li>
+        <li class='current'><a title="Aide d'ArcGIS Online" href="/fr/arcgis-online/">Accueil</a></li>
+        <li><a title="Utiliser des cartes et des scènes" href="/fr/arcgis-online/use-maps/">Utiliser</a></li>
+        <li><a title="Créer des cartes, des scènes et des applications" href="/fr/arcgis-online/create-maps/">Créer</a></li>		
+        <li><a title="Partager des cartes, des scènes et des applications" href="/fr/arcgis-online/share-maps/">Partager</a></li>
 		<li><a title="Administrer votre organisation" href="/fr/arcgis-online/administer/">Administrer</a></li>
-		<li><a href="/fr/arcgis-online/reference/">Référence</a></li>
+		<li><a title="Référence" href="/fr/arcgis-online/reference/">Référence</a></li>
+		<li><a title="Applications prêtes à l'emploi" href="/fr/arcgis-online/apps/arcgis-apps.htm">Applications</a></li>
 	</ul>
     </nav>
   </div>
@@ -44,170 +46,195 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-     <div class="column-16 tablet-column-24">
+    <div class="column-16 tablet-column-24" style="width: 66.666%;">
 
-
-    <h3 class="gray">Utilisez et créez des cartes et applications interactives et partagez-les avec le reste de votre organisation. Découvrez comment.</h3>
-	
-	<hr />
-	
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/perform-analysis.jpg" />
-
-          <h3>Utiliser des cartes</h3>
-         
- 
-         <p>Utilisez des cartes pour explorer, comprendre et mesurer les données géographiques.</p>
-
-      
-         <p><a href="/fr/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Afficher les données</a>
-		<br/>
-         <a href="/fr/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Effectuer une analyse</a><br/>
-         <a href="/fr/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Modification des entités</a></p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/create-maps-apps.jpg" />
-
-          <h3>Créer des cartes et des applications</h3>
-          <p>Créez des cartes et applications interactives auxquelles les membres de votre organisation peuvent accéder sur n'importe quel appareil, où qu'ils soient et à tout moment.</p>
-
-
-            <p><a href="/fr/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Créer votre première carte</a>
-			    <br/>
-
-            <a href="/fr/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Concevoir votre première application</a><br/>
-			<a href="/fr/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Définir les propriétés de la carte et de la couche</a>
-			</p>
-        </div>
-		<div class="clear"></div>
-		
-       <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/share-maps-apps.jpg" />
-
-          <h3>Partager des cartes et applications</h3>
-          <p>Rendez vos données opérationnelles en partageant des cartes et applications au sein de votre organisation ou communauté.</p>
-
-         <p><a href="/fr/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Ajouter des éléments</a>
-         <br/><a href="/fr/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Partager des éléments</a>
-         <br/>
-	<a href="/fr/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publier des entités et des tuiles hébergées</a></p>
-         
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/admin-org.jpg" />
-
-          <h3>Administrer votre organisation</h3>
-          <p>Etendez l'utilisation de votre SIG en configurant ArcGIS Online pour votre organisation, en invitant des membres à participer et en gérant les ressources.</p>
-          <p>
-            <a href="/fr/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Configurer le site Web</a>
-               <br/> <a href="/fr/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Inviter des membres</a>
-               <br/>
-            <a href="/fr/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Afficher les statistiques de l'organisation</a></p>
-           
-        </div>
-		<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>Applications prêtes à l'emploi</h3>
-         <p>En savoir plus sur les applications prêtes à l'emploi qui sont incluses avec ArcGIS Online.</p>
-		 <p>
-		 <a href="http://doc.arcgis.com/en/collector/" class="icon-right-arrow">&nbsp;&nbsp;Collector for ArcGIS</a><br/>
-		 <a href="http://doc.arcgis.com/en/explorer/" class="icon-right-arrow">&nbsp;&nbsp;Explorer for ArcGIS</a><br/>
-		  <a href="http://doc.arcgis.com/en/operations-dashboard/" class="icon-right-arrow">&nbsp;&nbsp;Operations Dashboard for ArcGIS</a></br><a href="http://doc.arcgis.com/en/maps-for-office/" class="icon-right-arrow">&nbsp;&nbsp;Esri Maps for Office</a><br/>
-		 <a href="http://doc.arcgis.com/en/maps-for-sharepoint/" class="icon-right-arrow">&nbsp;&nbsp;Esri Maps for SharePoint</a> <br/>
-		   <a href="http://doc.arcgis.com/en/arcgis-app/" class="icon-right-arrow">&nbsp;&nbsp;Application ArcGIS pour smartphones et tablettes</a>
-		
-		 </p>
-        </div>	
-	
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>Applications configurables</h3>
-          <p>Apprenez à utiliser les modèles configurables pour créer des applications adaptées à votre organisation et à la communauté.</p>
-		 <p><a href="http://links.esri.com/configurableapps" class="icon-right-arrow">&nbsp;&nbsp; Applications configurables Esri</a><br>
-		 <a href="http://storymaps.arcgis.com/" class="icon-right-arrow">&nbsp;&nbsp; Cartes de narration</a></br>
-		 <a href="http://solutions.arcgis.com/" class="icon-right-arrow">&nbsp;&nbsp; Solutions ArcGIS</a><br></p>
-		 
-        </div>
-        <div class="clear"></div>
-          <div id="collectorDataFeature" class="column-12 phone-column-24">
-	     <h3>Ressources supplémentaires</h3>
-		          <p>Découvrez plus d'applications, de cartes et d'outils pour votre organisation.</p>
-				 <p><a href="https://marketplace.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Marketplace</a></br> 
-				 <a href="http://doc.arcgis.com/en/open-data" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Open Data</a></br>
-				 <a href="http://doc.arcgis.com/en/living-atlas" class="icon-right-arrow">&nbsp;&nbsp; Atlas mondial dynamique</a></br>
-				 <a href="https://developers.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS pour les développeurs</a>
-				
-			 </p></div>
-        <div class="clear"></div>
+<div class="agol-search-box">
+         <form target="_top" id="helpSearchForm" class="agolhomesearchForm">
+                
+        <input type="search" placeholder="Search ArcGIS Online Help" class="leader" name="q">
+        <input type="hidden" value="help" name="collection">
+        <input type="hidden" value="arcgis-online" name="product">  
+        <input type="hidden" value="fr" name="language">
+      </form>  
         
-        
-        <p>&nbsp;</p>
-
       </div>
+        <!--<input type="search" name="q" class="leader" placeholder="Search Help">
+        <input type="hidden" name="collection" value="help">
+        <input type="hidden" name="product" value="arcgis-online">          
+        <input type="hidden" name="language" value="en">
+      </form>-->
 
-
-      <div class="column-8 tablet-column-24 blocks">
-
-	  	  	 <div class="imgFrame block">
-          <h3>Commencer</h3>
-		  <p>Amusez-vous avec ArcGIS Online tout en apprenant à :</p>
-		  
-		     <table><tr><td>
-		          <ul>
-		            <li>Explorer une carte</li>
-		            <li>Créer une carte</li>
-		            <li>Ajouter une couche à partir d'un fichier</li>
-		            <li>Configurer les fenêtres contextuelles</li>
-		            <li>Créer une carte Web</li>
-		          </ul></td>
-		          <td valign="top">
-		          <ul><a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online" class="btn secondary">Commencer maintenant</a>
-		            
-        </ul></td><tr></table>
+                
+	<hr>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class=	"playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="247" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+		</video>
+	</section>
     
-		 
-		<p>Découvrez d'autres cours pratiques sur <a href="http://learn.arcgis.com">Apprendre à utiliser ArcGIS</a><br>
-		 Vous recherchez une formation ? Trouvez des <a href="http://www.esri.com/training/main/arcgis-online-training">cours sur ArcGIS Online</a></p>
-        </div>
-	
+  </div> 
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="253" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+      <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
+       <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+        </video>
+    
+  </div>
+  
+  <div class="clear"></div>
+
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/fr/arcgis-online/use-maps/use-maps.htm" class="">Utiliser des cartes et des scènes</a></h3>
+    </section>
+  </div> 
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/fr/arcgis-online/create-maps/create-maps-and-apps.htm" class="">Créer des cartes, des scènes et des applications</a></h3>
+    </section>  
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+   <h3><a href="/fr/arcgis-online/share-maps/share-maps-apps.htm" class="">Partager vos éléments</a></h3>
+  </div>
+  <div class="clear"></div>  
+   
+  <br>
+  
+  <div class="clear"></div>
+<br>
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+		</video>
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
+         <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+    
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
+	<video width="320" height="240" class="mobileVideo" id="1340" controls="">
+    <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+       </video>
+    </section>
+  </div>
+  <div class="clear"></div>
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/fr/arcgis-online/use-maps/perform-analysis.htm">Effectuer une analyse</a></h3>
+     
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/fr/arcgis-online/share-maps/hosted-web-layers.htm">Publier des couches Web hébergées</a></h3>
+      
+    </section>
+    </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/fr/arcgis-online/administer/admin-org.htm">Administrer votre organisation</a></h3>
+      
+    </section>
+ </div>
+   <div class="clear"></div>
+<hr>
+<br/>
+
+  <div>
+    
+<div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/fr/" target="_blank">Support technique Esri</a></h4>
+      <p>Contactez le support via la discussion en ligne, le courrier électronique ou par téléphone.</p>
+    </section>
+    
+  </div> 
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+    <section class="support-option">
+      <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">Idées au sujet d\'ArcGIS</a></h4>
+      <p>Envoyez votre retour sur le logiciel.</p>
+    </section>
+    
+  </div>
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+   <h4 class="icon-comment icon-blue"><a href="http://GeoNet.esri.com/" target="_blank">Forums ArcGIS</a></h4>
+      <p>Participez aux discussions sur GeoNet.</p>
+    
+  </div>
+  <!--<div class="row">-->
+
+  
+</div>
+</div>
+
+
+ <div class="column-8 tablet-column-24 blocks">
+	 <div class="imgFrame block">
+          <h3>Vous ne connaissez pas ArcGIS Online ?</h3>
+
+			<p><a  class="btn secondary" href="http://learn.arcgis.com/fr/projects/get-started-with-arcgis-online/">Découvrez les cours pratiques</a></p>
+			<a href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  Regarder une présentation vidéo</a><br/><br/>
+			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">   Rechercher des cours de formation</a>
+      </div>	
 		 <br />
-	  
-	 
-	  		 	  	 <div class="greyFrame">
-          <h3>Détails</h3>
-         <ul>
-		<li><a href="/fr/arcgis-online/reference/what-is-agol.htm" >&nbsp;Présentation d'ArcGIS Online</a></li>
+		 <br />
+		 
+	 <div class="greyFrame">
+          <h3>Référence rapide</h3>
+         <ul>   <li><a href="/fr/arcgis-online/reference/troubleshoot-account.htm">&nbsp;Résoudre les problèmes de connexion</a></li>
 		<li><a href="/fr/arcgis-online/reference/whats-new.htm" >&nbsp;Nouveautés</a></li>
 		<li><a href="/fr/arcgis-online/reference/faq.htm">&nbsp;Forum aux questions</a></li>
-		<li><a href="http://doc.arcgis.com/fr/trust/">&nbsp;Trust ArcGIS</a></li>
-		 
+		<li><a href="/fr/arcgis-online/reference/videos.htm">&nbsp;Vidéos</a></li>
+		<li><a href="/fr/trust/system-status/">&nbsp;État du système</a></li>
+        </ul>
+		</div>
 		
-        
-        </div>
-	
-		 <br />
-	
-	<section id="video-column">
-      <div class="panel">
-        <h3>Créer une carte</h3>
-        <a class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00"><img src="http://video.arcgis.com/thumbs/2011/04/253/making-a-map-d8a9f082b28f88c07545280c2934907a.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
-		<video width="320" height="240" controls id="2194" class="mobileVideo">
-		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
-		</video>
-        
-        <p>Apprenez à utiliser la visionneuse de carte intégrée pour créer des cartes.</p>
-        <a href="/fr/arcgis-online/reference/videos.htm" class="btn secondary">Plus de vidéos</a>
-      </div>
-    </section>	
-	
-	<br />
-		
+		<br />
+		<br />
+
 <!-- Blog Feed -->
         <div class="greyFrame">
           <h3>Sur notre blog</h3>
@@ -216,22 +243,15 @@ mobile: true
           </div>
 		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Plus de billets de blog</a>
         </div>
-		 <br />
-		 
-     <section id="forum-container">
-      <div class="panel">
-        <h3>Discussion sur GeoNet</h3>
-        <div id="forum"></div>
-        <a href="https://geonet.esri.com/discussion/create.jspa?containerType=14&containerID=2055" class="btn secondary">En commencer une</a>&nbsp; <a href="https://geonet.esri.com/community/gis/arcgis-online/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="btn light">En savoir plus</a>
-      </div>
-    </section>      
-	
-		
-
-	
+		 <br />  
+        
+		 <br />  
  </div>
 
-    </div>
+<div>
+
+</div>
+
 	
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
   <script type="text/javascript">

@@ -20,22 +20,24 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/ro/arcgis-online/">Ajutor</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
+      <h1><a href="/ro/arcgis-online/">Ajutorul ArcGIS Online</a></h1>
+      <!--Commented this part out. Search bar on Header-->
+	  <!--<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
+        <input type="hidden" name="language" value="en>" />
+      </form>-->
     </header>
 	<nav>
       <ul>
         <li class='current'><a title="Ajutor ArcGIS Online" href="/ro/arcgis-online/">Pagina principală</a></li>
-        <li><a title="Utilizarea hărţilor" href="/ro/arcgis-online/use-maps/">Utilizare</a></li>
-        <li><a title="Crearea hărţilor şi aplicaţiilor" href="/ro/arcgis-online/create-maps/">Creare</a></li>		
-        <li><a title="Partajarea hărţilor şi aplicaţiilor" href="/ro/arcgis-online/share-maps/">Partajare</a></li>
+        <li><a title="Utilizarea hărţilor şi scenelor" href="/ro/arcgis-online/use-maps/">Utilizare</a></li>
+        <li><a title="Crearea hărţilor, scenelor şi aplicaţiilor" href="/ro/arcgis-online/create-maps/">Creare</a></li>		
+        <li><a title="Partajarea hărţilor, scenelor şi aplicaţiilor" href="/ro/arcgis-online/share-maps/">Partajare</a></li>
 		<li><a title="Administrarea organizaţiei" href="/ro/arcgis-online/administer/">Administrare</a></li>
-		<li><a href="/ro/arcgis-online/reference/">Referinţă</a></li>
+		<li><a title="Referinţă" href="/ro/arcgis-online/reference/">Referinţă</a></li>
+		<li><a title="Aplicaţii pregătite pentru utilizare" href="/ro/arcgis-online/apps/arcgis-apps.htm">Aplicaţii</a></li>
 	</ul>
     </nav>
   </div>
@@ -44,149 +46,195 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-     <div class="column-16 tablet-column-24">
+    <div class="column-16 tablet-column-24" style="width: 66.666%;">
 
-
-    <h3 class="gray">Utilizaţi şi creaţi hărţi şi aplicaţii interactive şi partajaţi-le cu restul organizaţiei. Descoperiţi cum.</h3>
-	
-	<hr />
-	
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/perform-analysis.jpg" />
-
-          <h3>Utilizarea hărţilor</h3>
-         
- 
-         <p>Utilizaţi hărţi pentru a explora, înţelege şi cuantifica date geografice.</p>
-
-      
-         <p><a href="/ro/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Vizualizarea datelor</a> <br/> <a href="/ro/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Efectuarea unei analize</a><br/> <a href="/ro/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Editarea obiectelor spaţiale</a></p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/create-maps-apps.jpg" />
-
-          <h3>Crearea hărţilor şi aplicaţiilor</h3>
-          <p>Construiţi hărţi şi aplicaţii interactive pe care organizaţia dvs. să le poată accesa de pe orice dispozitiv, oriunde şi oricând.</p>
-
-
-            <p><a href="/ro/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Crearea primei voastre hărţi</a> <br/>
-
-            <a href="/ro/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Crearea primei dvs. aplicaţii</a><br/> <a href="/ro/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Setarea proprietăţilor pentru o hartă şi un strat tematic</a>
-			</p>
-        </div>
-		<div class="clear"></div>
-		
-       <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/share-maps-apps.jpg" />
-
-          <h3>Partajare hărţi şi aplicaţii</h3>
-          <p>Puneţi datele la lucru partajând hărţi şi aplicaţii în organizaţia sau comunitatea dvs.</p>
-
-         <p><a href="/ro/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Adăugarea elementelor</a> <br/><a href="/ro/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Partajarea elementelor</a> <br/> <a href="/ro/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Publicarea obiectelor spaţiale şi segmentelor tile găzduite</a></p>
-         
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/admin-org.jpg" />
-
-          <h3>Administrarea organizaţiei</h3>
-          <p>Extindeţi utilizarea sistemului dvs. GIS prin configurarea ArcGIS Online pentru organizaţia dvs., invitând membri să se înscrie şi administrând resurse.</p>
-          <p>
-            <a href="/ro/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Configurarea site-ului web</a> <br/> <a href="/ro/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Invitarea membrilor</a> <br/> <a href="/ro/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Vizualizarea statisticilor despre organizaţie</a></p>
-           
-        </div>
-		<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>Aplicaţii gata de utilizat</h3>
-         <p>Aflaţi mai multe despre aplicaţiile gata de utilizat incluse cu ArcGIS Online.</p>
-		 <p>
-		 <a href="http://doc.arcgis.com/en/collector/" class="icon-right-arrow">&nbsp;&nbsp;Collector for ArcGIS</a><br/> <a href="http://doc.arcgis.com/en/explorer/" class="icon-right-arrow">&nbsp;&nbsp;Explorer for ArcGIS</a><br/> <a href="http://doc.arcgis.com/en/operations-dashboard/" class="icon-right-arrow">&nbsp;&nbsp;Operations Dashboard for ArcGIS</a></br><a href="http://doc.arcgis.com/en/maps-for-office/" class="icon-right-arrow">&nbsp;&nbsp;Esri Maps for Office</a><br/> <a href="http://doc.arcgis.com/en/maps-for-sharepoint/" class="icon-right-arrow">&nbsp;&nbsp;Esri Maps for SharePoint</a> <br/> <a href="http://doc.arcgis.com/en/arcgis-app/" class="icon-right-arrow">&nbsp;&nbsp;Aplicaţia ArcGIS pentru telefoane smartphone şi tablete</a>
-		
-		 </p>
-        </div>	
-	
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>Aplicaţii configurabile</h3>
-          <p>Aflaţi cum puteţi utiliza şabloane configurabile pentru a crea aplicaţii pentru organizaţia şi comunitate dvs.</p>
-		 <p><a href="http://links.esri.com/configurableapps" class="icon-right-arrow">&nbsp;&nbsp; Aplicaţii configurabile Esri</a><br> <a href="http://storymaps.arcgis.com/" class="icon-right-arrow">&nbsp;&nbsp; Hărţi informative</a></br> <a href="http://solutions.arcgis.com/" class="icon-right-arrow">&nbsp;&nbsp; Soluţii ArcGIS</a><br></p>
-		 
-        </div>
-        <div class="clear"></div>
-          <div id="collectorDataFeature" class="column-12 phone-column-24">
-	     <h3>Resurse suplimentare</h3>
-		          <p>Descoperiţi mai multe aplicaţii, hărţi şi instrumente pentru organizaţia dvs.</p>
-				 <p><a href="https://marketplace.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Marketplace</a></br> <a href="http://doc.arcgis.com/en/open-data" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Open Data</a></br> <a href="http://doc.arcgis.com/en/living-atlas" class="icon-right-arrow">&nbsp;&nbsp; Atlasul actualizat al lumii</a></br> <a href="https://developers.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS for Developers</a>
-				
-			 </p></div>
-        <div class="clear"></div>
+<div class="agol-search-box">
+         <form target="_top" id="helpSearchForm" class="agolhomesearchForm">
+                
+        <input type="search" placeholder="Search ArcGIS Online Help" class="leader" name="q">
+        <input type="hidden" value="help" name="collection">
+        <input type="hidden" value="arcgis-online" name="product">  
+        <input type="hidden" value="ro" name="language">
+      </form>  
         
-        
-        <p>&nbsp;</p>
-
       </div>
+        <!--<input type="search" name="q" class="leader" placeholder="Search Help">
+        <input type="hidden" name="collection" value="help">
+        <input type="hidden" name="product" value="arcgis-online">          
+        <input type="hidden" name="language" value="en">
+      </form>-->
 
-
-      <div class="column-8 tablet-column-24 blocks">
-
-	  	  	 <div class="imgFrame block">
-          <h3>Începeţi</h3>
-		  <p>Distraţi-vă cu ArcGIS Online în timp ce învăţaţi cum să:</p>
-		  
-		     <table><tr><td>
-		          <ul>
-		            <li>Exploraţi o hartă</li>
-		            <li>Creaţi o harăt</li>
-		            <li>Adăugaţi un strat tematic dintr-un fişier</li>
-		            <li>Configuraţi ferestre pop-up</li>
-		            <li>Creaţi o aplicaţie web</li>
-		          </ul></td>
-		          <td valign="top">
-		          <ul><a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online" class="btn secondary">Începeţi acum!</a>
-		            
-        </ul></td><tr></table>
-    
-		 
-		<p>Discoperiţi alte lecţii practice în cadrul secţiunii <a href="http://learn.arcgis.com">Învăţaţi ArcGIS</a><br> Căutaţi instruire? Găsiţi <a href="http://www.esri.com/training/main/arcgis-online-training">cursuri pentru ArcGIS Online</a></p>
-        </div>
-	
-		 <br />
-	  
-	 
-	  		 	  	 <div class="greyFrame">
-          <h3>Detalii</h3>
-         <ul>
-		<li><a href="/ro/arcgis-online/reference/what-is-agol.htm" >&nbsp;Ce este ArcGIS Online?</a></li>
-		<li><a href="/ro/arcgis-online/reference/whats-new.htm" >&nbsp;Ce este nou?</a></li>
-		<li><a href="/ro/arcgis-online/reference/faq.htm">&nbsp;Întrebări frecvente</a></li>
-		<li><a href="http://doc.arcgis.com/en/trust/">&nbsp;Trust ArcGIS</a></li>
-		 
-		
-        
-        </div>
-	
-		 <br />
-	
-	<section id="video-column">
-      <div class="panel">
-        <h3>Crearea unei hărţi</h3>
-        <a class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00"><img src="http://video.arcgis.com/thumbs/2011/04/253/making-a-map-d8a9f082b28f88c07545280c2934907a.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
-		<video width="320" height="240" controls id="2194" class="mobileVideo">
-		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
+                
+	<hr>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class=	"playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="247" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
-        
-        <p>Învăţaţi cum să utilizaţi aplicaţia de vizualizare a hărţilor încorporată pentru a crea hărţi.</p>
-        <a href="/ro/arcgis-online/reference/videos.htm" class="btn secondary">Mai multe videoclipuri</a>
-      </div>
-    </section>	
-	
-	<br />
+	</section>
+    
+  </div> 
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="253" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+      <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
+       <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+        </video>
+    
+  </div>
+  
+  <div class="clear"></div>
+
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/ro/arcgis-online/use-maps/use-maps.htm" class="">Utilizarea hărţilor şi scenelor</a></h3>
+    </section>
+  </div> 
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/ro/arcgis-online/create-maps/create-maps-and-apps.htm" class="">Crearea hărţilor, scenelor şi aplicaţiilor</a></h3>
+    </section>  
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+   <h3><a href="/ro/arcgis-online/share-maps/share-maps-apps.htm" class="">Partajare de elemente proprii</a></h3>
+  </div>
+  <div class="clear"></div>  
+   
+  <br>
+  
+  <div class="clear"></div>
+<br>
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+		</video>
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
+         <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+    
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
+	<video width="320" height="240" class="mobileVideo" id="1340" controls="">
+    <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+       </video>
+    </section>
+  </div>
+  <div class="clear"></div>
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ro/arcgis-online/use-maps/perform-analysis.htm">Efectuarea analizelor</a></h3>
+     
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ro/arcgis-online/share-maps/hosted-web-layers.htm">Publicarea straturilor tematice web găzduite</a></h3>
+      
+    </section>
+    </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ro/arcgis-online/administer/admin-org.htm">Administrarea organizaţiei</a></h3>
+      
+    </section>
+ </div>
+   <div class="clear"></div>
+<hr>
+<br/>
+
+  <div>
+    
+<div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/ro/" target="_blank">Asistenţă tehnică Esri</a></h4>
+      <p>Contactaţi Asistenţa prin chat, e-mail sau telefon.</p>
+    </section>
+    
+  </div> 
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+    <section class="support-option">
+      <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">Idei ArcGIS</a></h4>
+      <p>Trimiteţi feedback despre software.</p>
+    </section>
+    
+  </div>
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+   <h4 class="icon-comment icon-blue"><a href="http://GeoNet.esri.com/" target="_blank">Forumuri ArcGIS</a></h4>
+      <p>Alăturaţi-vă discuţiilor de pe Geonet.</p>
+    
+  </div>
+  <!--<div class="row">-->
+
+  
+</div>
+</div>
+
+
+ <div class="column-8 tablet-column-24 blocks">
+	 <div class="imgFrame block">
+          <h3>Sunteţi un utilizator ArcGIS Online nou?</h3>
+
+			<p><a  class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Descoperiţi lecţiile interactive</a></p>
+			<a href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  Vizionaţi un tur video</a><br/><br/>
+			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">   Găsiţi cursuri de instruire</a>
+      </div>	
+		 <br />
+		 <br />
+		 
+	 <div class="greyFrame">
+          <h3>Referinţe rapide</h3>
+         <ul>   <li><a href="/ro/arcgis-online/reference/troubleshoot-account.htm">&nbsp;Depanaţi probleme cu autentificarea</a></li>
+		<li><a href="/ro/arcgis-online/reference/whats-new.htm" >&nbsp;Ce este nou</a></li>
+		<li><a href="/ro/arcgis-online/reference/faq.htm">&nbsp;Întrebări frecvente</a></li>
+		<li><a href="/ro/arcgis-online/reference/videos.htm">&nbsp;Videoclipuri</a></li>
+		<li><a href="/ro/trust/system-status/">&nbsp;Stare sistem</a></li>
+        </ul>
+		</div>
 		
+		<br />
+		<br />
+
 <!-- Blog Feed -->
         <div class="greyFrame">
           <h3>De pe blogul nostru</h3>
@@ -195,22 +243,15 @@ mobile: true
           </div>
 		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Mai multe postări de pe blog</a>
         </div>
-		 <br />
-		 
-     <section id="forum-container">
-      <div class="panel">
-        <h3>Discuţii despre GeoNet</h3>
-        <div id="forum"></div>
-        <a href="https://geonet.esri.com/discussion/create.jspa?containerType=14&containerID=2055" class="btn secondary">Iniţiere una</a>&nbsp; <a href="https://geonet.esri.com/community/gis/arcgis-online/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="btn light">Citiţi mai mult</a>
-      </div>
-    </section>      
-	
-		
-
-	
+		 <br />  
+        
+		 <br />  
  </div>
 
-    </div>
+<div>
+
+</div>
+
 	
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
   <script type="text/javascript">
