@@ -114,15 +114,16 @@ agolLogout
 
           $("#agolProfile").attr ("href", "//" + orgHostname + sitecfg["agolProfile"]);
           $("#agolHelp").attr ("href", "//" + orgHostname + sitecfg["agolHelp"]);
+		  $("#agolLogout").attr ("href", sitecfg["agolSignout"] + "?redirect_uri="+encodeURIComponent(window.location.href));
     
           $(".myconsole").css ("display", "block");
   
     	});
 
-      $("#agolLogout").on ("click", function() {
+      /*$("#agolLogout").on ("click", function() {
         cookie.jar.removeItem (ckKey, "/", ".arcgis.com");
         window.location.reload(true);
-      });
+      });*/
 
   /*	
         if (cookie.val["role"] && cookie.val["role"].indexOf ("admin")>=0) {
