@@ -145,19 +145,18 @@ var filterCfg = {
           p:"(product:collector-android)"
         }
       },
-
-      {
-        k:"data-appl",
-        q: {
-          r:"",
-          p:"(product:data-appl)"
-        }
-      },
 	  {
         k:"collector-ios",
         q: {
           r:"",
           p:"(product:collector-ios)"
+        }
+      },
+	  {
+        k:"data-appl",
+        q: {
+          r:"",
+          p:"(product:data-appl)"
         }
       },
 	  {
