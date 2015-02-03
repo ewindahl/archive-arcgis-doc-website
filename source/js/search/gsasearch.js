@@ -169,6 +169,19 @@ app.QueryStatement = Backbone.Model.extend ({
       return [v];
     }
 
+    function addVersion () {
+      //return [""];
+      var version = self.get ("version"),
+          v = '';
+
+      if (version && version.length >=1) {
+          // Related GSA params doesn't like '.'. '.' need to be replaced with an encoded value
+      v = '(version:{0})'.format (version.replace(/\./g,"%2E"));
+      }
+
+      return [v];
+    }
+
     var vDefaults = {
       "event": "search.renderSearch",
 
@@ -191,7 +204,7 @@ app.QueryStatement = Backbone.Model.extend ({
                     "start" : this.get ("p") * increment
                   }, 
                   {
-                    "requiredfields": andStmt (addFilter ("requiredfields"))
+                    "requiredfields": andStmt (addFilter ("requiredfields"), addVersion())
                   }, 
                   { 
                     "partialfields": andStmt (addFilter ("partialfields"), addLanguage())
@@ -373,6 +386,10 @@ app.SearchFilterView = Backbone.View.extend ({
 
     v[fkey] = fval;
     v["p"] = 0;
+
+    if(fval != this.model.get ('product')){
+      this.model.set("version","");
+    }
 
     this.model.set (v, {silent:true});
 
