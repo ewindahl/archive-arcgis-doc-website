@@ -110,6 +110,7 @@ app.QueryStatement = Backbone.Model.extend ({
             p : "0",
             language : "en",
             product : "any",
+		   version : "",
             n: "" + this.get ("cfg").getInc()
           }, 
           app.filterCfgDefaults);
