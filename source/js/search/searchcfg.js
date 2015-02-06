@@ -16,13 +16,13 @@ v.q.p = partialfields
 var filterCfgDefaults = {
 
     "marketplace" : {
-      "collection" : "help", 
+      "collection" : "help"
     },
 
     //for apps
     "default" : {
       "collection" : "all", 
-      "product" : "any",      
+      "product" : "any"      
     }
 };
 
@@ -65,15 +65,16 @@ var filterCfg = {
             r:"search-collection:help",
             p:""
         }
-      },
+      }
+	  /* ,
       {
         k:"forums",
         q:{
           r:"search-collection:forums",
-		  p:""
+  		  p:""
         }
-      },
-      /* 
+      }
+      
       {
         k:"videos",
         q:{
@@ -144,19 +145,18 @@ var filterCfg = {
           p:"(product:collector-android)"
         }
       },
-
-      {
-        k:"data-appl",
-        q: {
-          r:"",
-          p:"(product:data-appl)"
-        }
-      },
 	  {
         k:"collector-ios",
         q: {
           r:"",
           p:"(product:collector-ios)"
+        }
+      },
+	  {
+        k:"data-appl",
+        q: {
+          r:"",
+          p:"(product:data-appl)"
         }
       },
 	  {
@@ -249,7 +249,7 @@ var filterCfg = {
           r:"",
           p:"(product:web-appbuilder)"
         }
-      },
+      }
 
     ]
   }

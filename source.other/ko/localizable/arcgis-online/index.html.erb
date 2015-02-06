@@ -20,22 +20,23 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/ko/arcgis-online/">도움말</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
+      <h1><a href="/ko/arcgis-online/">ArcGIS Online 도움말</a></h1>
+      <!--Commented this part out. Search bar on Header--> <!--<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
+        <input type="hidden" name="language" value="en>" />
+      </form>-->
     </header>
 	<nav>
       <ul>
-        <li class='current'><a title="ArcGIS Online 도움말" href="/ko/arcgis-online/">기본</a></li>
-        <li><a title="맵 사용" href="/ko/arcgis-online/use-maps/">사용</a></li>
-        <li><a title="맵 및 앱 생성" href="/ko/arcgis-online/create-maps/">생성</a></li>		
-        <li><a title="맵 및 앱 공유" href="/ko/arcgis-online/share-maps/">공유</a></li>
+        <li class='current'><a title="ArcGIS Online 도움말" href="/ko/arcgis-online/">홈</a></li>
+        <li><a title="맵 및 씬 사용" href="/ko/arcgis-online/use-maps/">사용</a></li>
+        <li><a title="맵, 씬 및 앱 생성" href="/ko/arcgis-online/create-maps/">생성</a></li>		
+        <li><a title="맵, 씬 및 앱 공유" href="/ko/arcgis-online/share-maps/">공유</a></li>
 		<li><a title="기관 관리" href="/ko/arcgis-online/administer/">관리</a></li>
-		<li><a href="/ko/arcgis-online/reference/">참조</a></li>
+		<li><a title="참조" href="/ko/arcgis-online/reference/">참조</a></li>
+		<li><a title="즉시 사용 가능한 앱" href="/ko/arcgis-online/apps/arcgis-apps.htm">앱</a></li>
 	</ul>
     </nav>
   </div>
@@ -44,184 +45,219 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-     <div class="column-16 tablet-column-24">
+    <div class="column-16 tablet-column-24" style="width: 66.666%;">
 
-
-    <h3 class="gray">대화형 맵과 앱을 제작, 사용하고 기관의 다른 구성원과 공유하세요. 방법 찾기</h3>
-	
-	<hr />
-	
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/perform-analysis.jpg" />
-
-          <h3>맵 사용</h3>
-         
- 
-         <p>지리 데이터를 탐색, 이해, 측정하는 데 맵을 사용하세요.</p>
-
-      
-         <p><a href="/ko/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;데이터 보기</a> <br/> <a href="/ko/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">분석 수행</a><br/> <a href="/ko/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">피처 편집</a></p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/create-maps-apps.jpg" />
-
-          <h3>맵 및 앱 생성</h3>
-          <p>모든 장치, 장소, 시간에서 기관 구성원 누구나 접근할 수 있는 대화형 맵과 앱을 구성하세요.</p>
-
-
-            <p><a href="/ko/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;첫 번째 맵 만들기</a> <br/>
-
-            <a href="/ko/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">첫 번째 앱 만들기</a><br/> <a href="/ko/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">맵 및 레이어 등록정보 설정</a>
-			</p>
-        </div>
-		<div class="clear"></div>
-		
-       <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/share-maps-apps.jpg" />
-
-          <h3>맵 및 앱 공유</h3>
-          <p>맵과 앱의 공유를 통해 기관이나 커뮤니티에 업무를 위한 데이터를 전달해보세요.</p>
-
-         <p><a href="/ko/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;항목 추가</a> <br/><a href="/ko/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">항목 공유</a> <br/> <a href="/ko/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">호스팅 피처 및 타일 발행</a></p>
-         
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/admin-org.jpg" />
-
-          <h3>기관 관리</h3>
-          <p>구성원 초대, 리소스 관리, 기관을 위한 ArcGIS Online 구성을 통해 GIS 활용을 확장해보세요.</p>
-          <p>
-            <a href="/ko/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;웹 사이트 구성</a> <br/> <a href="/ko/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">  구성원 초대</a> <br/> <a href="/ko/arcgis-online/administer/view-status.htm" class="icon-right-arrow">  기관 현황 보기</a></p>
-           
-        </div>
-		<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>즉시 사용 가능한 앱</h3>
-         <p>ArcGIS Online에 함께 포함된 앱에 대해 더 알아보기</p>
-		 <p>
-		 <a href="http://doc.arcgis.com/en/collector/" class="icon-right-arrow">&nbsp;&nbsp;  Collector for ArcGIS</a><br/> <a href="http://doc.arcgis.com/en/explorer/" class="icon-right-arrow">  Explorer for ArcGIS</a><br/> <a href="http://doc.arcgis.com/en/operations-dashboard/" class="icon-right-arrow">  Operations Dashboard for ArcGIS</a></br><a href="http://doc.arcgis.com/en/maps-for-office/" class="icon-right-arrow">  Esri Maps for Office</a><br/> <a href="http://doc.arcgis.com/en/maps-for-sharepoint/" class="icon-right-arrow">  Esri Maps for SharePoint</a> <br/> <a href="http://doc.arcgis.com/en/arcgis-app/" class="icon-right-arrow">스마트폰 및 태블릿용 ArcGIS 앱</a>
-		
-		 </p>
-        </div>	
-	
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>구성 가능한 앱</h3>
-          <p>기관과 커뮤니티에 대한 앱을 생성하려면 구성 가능한 템플릿을 사용하는 방법을 참조하세요.</p>
-		 <p><a href="http://links.esri.com/configurableapps" class="icon-right-arrow">&nbsp;&nbsp; Esri 구성 가능한 앱</a><br> <a href="http://storymaps.arcgis.com/" class="icon-right-arrow">스토리 맵</a></br> <a href="http://solutions.arcgis.com/" class="icon-right-arrow">ArcGIS 솔루션</a><br></p>
-		 
-        </div>
-        <div class="clear"></div>
-          <div id="collectorDataFeature" class="column-12 phone-column-24">
-	     <h3>추가 리소스</h3>
-		          <p>기관에 대한 더 많은 앱, 맵 및 도구를 찾아보세요.</p>
-				 <p><a href="https://marketplace.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Marketplace</a></br> <a href="http://doc.arcgis.com/en/open-data" class="icon-right-arrow">ArcGIS Open Data</a></br> <a href="http://doc.arcgis.com/en/living-atlas" class="icon-right-arrow">Living Atlas of the World</a></br> <a href="https://developers.arcgis.com" class="icon-right-arrow">ArcGIS for Developers</a>
-				
-			 </p></div>
-        <div class="clear"></div>
+<div class="agol-search-box">
+         <form target="_top" id="helpSearchForm" class="agolhomesearchForm">
+                
+        <input type="search" placeholder="Search ArcGIS Online Help" class="leader" name="q">
+        <input type="hidden" value="help" name="collection">
+        <input type="hidden" value="arcgis-online" name="product">  
+        <input type="hidden" value="ko" name="language">
+      </form>  
         
-        
-        <p>&nbsp;</p>
-
       </div>
+        <!--<input type="search" name="q" class="leader" placeholder="Search Help">
+        <input type="hidden" name="collection" value="help">
+        <input type="hidden" name="product" value="arcgis-online">          
+        <input type="hidden" name="language" value="en">
+      </form>-->
 
-
-      <div class="column-8 tablet-column-24 blocks">
-
-	  	  	 <div class="imgFrame block">
-          <h3>시작하기</h3>
-		  <p>ArcGIS Online을 통해 다음 방법에 대해 알아보며 즐거운 시간을 보내세요.</p>
-		  
-		     <table><tr><td>
-		          <ul>
-		            <li>맵 탐색</li>
-		            <li>맵 생성</li>
-		            <li>파일에서 레이어 추가</li>
-		            <li>팝업 구성</li>
-		            <li>웹 앱 만들기</li>
-		          </ul></td>
-		          <td valign="top">
-		          <ul><a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online" class="btn secondary">지금 시작</a>
-		            
-        </ul></td><tr></table>
+                
+	<hr>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class=	"playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="247" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+		</video>
+	</section>
     
+  </div> 
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="253" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">--> <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
+       <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+        </video>
+    
+  </div>
+  
+  <div class="clear"></div>
+
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/ko/arcgis-online/use-maps/use-maps.htm" class="">맵 및 씬 사용</a></h3>
+    </section>
+  </div> 
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/ko/arcgis-online/create-maps/create-maps-and-apps.htm" class="">맵, 씬 및 앱 생성</a></h3>
+    </section>  
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+   <h3><a href="/ko/arcgis-online/share-maps/share-maps-apps.htm" class="">항목 공유</a></h3>
+  </div>
+  <div class="clear"></div>  
+   
+  <br>
+  
+  <div class="clear"></div>
+<br>
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+		</video>
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
+         <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+    
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
+	<video width="320" height="240" class="mobileVideo" id="1340" controls="">
+    <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+       </video>
+    </section>
+  </div>
+  <div class="clear"></div>
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ko/arcgis-online/use-maps/perform-analysis.htm">분석 수행</a></h3>
+     
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ko/arcgis-online/share-maps/hosted-web-layers.htm">호스팅 웹 레이어 발행</a></h3>
+      
+    </section>
+    </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ko/arcgis-online/administer/admin-org.htm">기관 관리</a></h3>
+      
+    </section>
+ </div>
+   <div class="clear"></div>
+<hr>
+<br/>
+
+  <div>
+    
+<div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/ko/" target="_blank">Esri 기술 지원</a></h4>
+      <p>채팅, 이메일 또는 전화를 통해 지원 부서에 문의하세요.</p>
+    </section>
+    
+  </div> 
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+    <section class="support-option">
+      <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">ArcGIS Ideas</a></h4>
+      <p>소프트웨어에 대한 피드백을 제출하세요.</p>
+    </section>
+    
+  </div>
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+   <h4 class="icon-comment icon-blue"><a href="http://GeoNet.esri.com/" target="_blank">ArcGIS 포럼</a></h4>
+      <p>Geonet에서 토론에 참여해 보세요.</p>
+    
+  </div>
+  <!--<div class="row">-->
+
+  
+</div>
+</div>
+
+
+ <div class="column-8 tablet-column-24 blocks">
+	 <div class="imgFrame block">
+          <h3>ArcGIS Online을 처음 사용하십니까?</h3>
+
+			<p><a  class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">실습 검색</a></p>
+			<a href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  비디오 투어 시청</a><br/><br/> <a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">교육 과정 찾기</a>
+      </div>	
+		 <br /> <br />
 		 
-		<p><a href="http://learn.arcgis.com">ArcGIS 학습</a>에서 다른 실무 교육 찾기<br> 강의를 찾습니까? <a href="http://www.esri.com/training/main/arcgis-online-training">ArcGIS Online 코스</a> 찾기</p>
-        </div>
-	
-		 <br />
-	  
-	 
-	  		 	  	 <div class="greyFrame">
-          <h3>세부정보</h3>
-         <ul>
-		<li><a href="/ko/arcgis-online/reference/what-is-agol.htm" >&nbsp;ArcGIS Online이란?</a></li>
+	 <div class="greyFrame">
+          <h3>빠른 참조</h3>
+         <ul>   <li><a href="/ko/arcgis-online/reference/troubleshoot-account.htm">&nbsp;로그인 문제 해결</a></li>
 		<li><a href="/ko/arcgis-online/reference/whats-new.htm" >&nbsp;새로운 기능</a></li>
 		<li><a href="/ko/arcgis-online/reference/faq.htm">&nbsp;자주 묻는 질문</a></li>
-		<li><a href="http://doc.arcgis.com/en/trust/">&nbsp;Trust ArcGIS</a></li>
-		 
+		<li><a href="/ko/arcgis-online/reference/videos.htm">&nbsp;비디오</a></li>
+		<li><a href="/ko/trust/system-status/">&nbsp;시스템 상태</a></li>
+        </ul>
+		</div>
 		
-        
-        </div>
-	
-		 <br />
-	
-	<section id="video-column">
-      <div class="panel">
-        <h3>맵 생성</h3>
-        <a class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00"><img src="http://video.arcgis.com/thumbs/2011/04/253/making-a-map-d8a9f082b28f88c07545280c2934907a.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
-		<video width="320" height="240" controls id="2194" class="mobileVideo">
-		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
-		</video>
-        
-        <p>맵 제작을 위한 빌트인 맵 뷰어 사용법 알아보기</p>
-        <a href="/ko/arcgis-online/reference/videos.htm" class="btn secondary">기타 비디오</a>
-      </div>
-    </section>	
-	
-	<br />
-		
+		<br /> <br />
+
 <!-- Blog Feed -->
         <div class="greyFrame">
           <h3>Esri 블로그</h3>
           <div id="blog">
             <!-- blog goes here -->
           </div>
-		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">더 많은 블로그 포스트</a>
+		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">기타 블로그 게시물</a>
         </div>
-		 <br />
-		 
-     <section id="forum-container">
-      <div class="panel">
-        <h3>GeoNet에서의 토론</h3>
-        <div id="forum"></div>
-        <a href="https://geonet.esri.com/discussion/create.jspa?containerType=14&containerID=2055" class="btn secondary">토론 시작</a> <a href="https://geonet.esri.com/community/gis/arcgis-online/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="btn light">자세한 내용 보기</a>
-      </div>
-    </section>      
-	
-		
-
-	
+		 <br />  
+        
+		 <br />  
  </div>
 
-    </div>
+<div>
+
+</div>
+
 	
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
   <script type="text/javascript">
     $(window).load(function() {
-      $('#blog').rssFeed({
+      $('#블로그').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',
         max: 2,
         layout: 0
       });
 	  
-	  $("#forum").rssFeed({
+	  $("#포럼").rssFeed({
 			url:"https://geonet.esri.com/community/gis/arcgis-online/view-browse-feed.jspa?browseSite=place-content&browseViewID=placeContent&userID=2188&containerType=14&containerID=2055&filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D", 
 			max: 3,        
 			layout: 1
