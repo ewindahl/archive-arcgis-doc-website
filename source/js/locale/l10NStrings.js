@@ -853,7 +853,9 @@ var localeJsonObj = {
       "collector-ios-ht": "Collector for ArcGIS (iOS)", 
       "community-analyst": "Community Analyst", 
       "community-analyst-ht": "Community Analyst", 
-      "data-appl": "Data Appliance", 
+      "community-maps": "Community Maps",
+		"community-maps-ht": "Community Maps",
+		"data-appl": "Data Appliance", 
       "data-appl-ht": "Data Appliance for ArcGIS", 
       "detail": "Detail", 
       "developer-summit": "Developer Summit ", 
@@ -1002,7 +1004,8 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+		"windows-phone": " Windows Phone"
    }, 
    "es": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Haga clic aquí</a> para ver si hay una versión en inglés.", 
