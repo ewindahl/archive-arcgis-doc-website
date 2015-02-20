@@ -153,6 +153,13 @@ var filterCfg = {
         }
       },
 	  {
+        k:"community-maps",
+        q: {
+          r:"",
+          p:"(product:community-maps)"
+        }
+      },
+	  {
         k:"data-appl",
         q: {
           r:"",
