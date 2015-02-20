@@ -106,7 +106,7 @@ agolLogout
 
 	    var proxyURL = (navigator.userAgent.match(/msie/i)) ? "/apps/proxy/proxy.php?" : "";
 		 
-		 $.getJSON(proxyURL + portalHostname + "/sharing/rest/portals/self?Duration=0", params, function (data) {
+		 $.getJSON(proxyURL + "https:"+portalHostname + "/sharing/rest/portals/self?Duration=0", params, function (data) {
       		var firstName = getUserDisplayName(data && data.user),        
               orgHostname = getOrgHostname (data),   
   	       		text = firstName || "SIGN IN";
