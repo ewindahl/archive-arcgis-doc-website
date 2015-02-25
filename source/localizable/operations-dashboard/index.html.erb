@@ -10,7 +10,6 @@ js:
   - libs/jquery.cookie
   - /en/asset/js/operations-dashboard-1
   - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
   - video-init
 
 metatags:
@@ -78,7 +77,7 @@ mobile: true
           <p>
             <a href="/en/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
             <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
+			<a title="Monitor and respond to events" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
@@ -216,7 +215,7 @@ mobile: true
  <div class="clear" style="padding:5px;"></div>
  <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Supported languages</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, Swedish, Thai, Turkish, and Vietnamese.</p>
+      	<p style="padding:0 15px">Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, Swedish, Thai, Turkish, and Vietnamese.</p>
       	<p style="padding:0 15px">In the browser version, your ArcGIS Online profile is used to set the language. If using an unsupported language setting, the app uses English.</p>
 </div>
 <div class="clear"></div>
@@ -224,6 +223,7 @@ mobile: true
      <h3/>
         <h3>Data requirements</h3>
 		<p>To use your maps in Operations Dashboard, you must have an ArcGIS organizational account. Your maps can include data from ArcGIS Online, Portal for ArcGIS, and ArcGIS for Server. Data sources must be hosted on ArcGIS Online or ArcGIS 10.1 for Server or later.</p>
+		<p>If shared publicly, an operation view can be viewed in the browser app without signing in.</p>
 
         <a name="whatsNew"></a>
         <h2 class="divider">What's new</h2>
@@ -240,15 +240,12 @@ mobile: true
 	        </ul>
                 </td>
 	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>Browser</h4>
-	        <p>The browser app for Operations Dashboard for ArcGIS was updated in December 2014. It includes the following enhancements:</p>
+	        <p>The browser app for Operations Dashboard for ArcGIS was updated in February 2015. It includes the following enhancements:</p>
 	        <ul>
-	          <li>Ability to filter information spatially</li>
-	          <li>Support for stand-alone tables as external data sources</li>
-	          <li>Image refresh setting in feature details widget</li>
-	          <li>Enabled expanding widgets to full screen</li>
-	          <li>Incorporated into Portal for ArcGIS 10.3</li>
-	          <li>Localized into Vietnamese</li>
-	          <li>Various bug fixes and improvements, including NIM100001 and NIM100040</li>
+	          <li>Support for viewing publicly shared operation views without signing in</li>
+	          <li>Enabled expanding more widget types to full screen</li>
+	          <li>Localized into Greek</li>
+	          <li>Various bug fixes and improvements, including BUG-000084352</li>
         </ul></td><tr></table>
         
         
@@ -256,11 +253,11 @@ mobile: true
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">Sneak peek</h2>
-	<p>Today Operations Dashboard is a great app for monitoring your operations. But there is more to come!
-	The following outlines where we'd like to take this app, showing capabilities we'll bring to each of your devices:</p>
+	<p>Today, Operations Dashboard is a great app for monitoring your operations. But there is more to come!
+	The following table outlines where we'd like to take this app, showing capabilities we'll bring to each of your devices:</p>
 	
 	<table border="1" style="text-align:center">
-	  <caption>Planned functionality by platform <br/>
+	  <caption>Functionality by platform <br/>
 	  <span class="icon-check" style="color:black"></span> current, <span class="icon-check icon-green"/> soon, <span class="icon-check" style="color:lightgray"></span> later<br/></caption>
 	  <tr><td></td>
 	    <th>Windows Desktop</th>
