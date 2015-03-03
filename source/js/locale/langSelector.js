@@ -106,7 +106,7 @@ jQuery(document).ready(function ($) {
       lgPartial = ["da", "it","ko", "no","pl","pt-br","pt-pt","ro","sv"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
 	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "da", "it","ko", "no","pl","pt-br","pt-pt","ro","sv", "cs", "et", "fi", "lt", "lv", "tr"],
-	  lgAGOL = lgPickFull.concat(lgPartial).concat(['nl']),
+	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar', "da", "it","ko", "no","pl","pt-br","pt-pt","ro","nl"],
     lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn']
     lgMicro = ['en', 'de', 'es', 'ja', 'ko']
 

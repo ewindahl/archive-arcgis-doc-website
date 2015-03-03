@@ -330,12 +330,13 @@ doc.supportForm = (function() {
 				document.getElementById('userFeedback').focus();
 				return false;
 			}
+            /*
 			if(document.getElementById('userEmail').value == ""){
 				alert(dict['enter-valid-email']);
 				document.getElementById('userEmail').focus();
 				return false;
 			}
-			
+			*/
 			if(!this.ValidCaptcha()){
 				alert(dict['enter-valid-captcha']);
 				document.getElementById('txtCaptchaInput').focus();
