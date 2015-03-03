@@ -166,7 +166,14 @@ var filterCfg = {
           p:"(product:community-analyst)"
         }
       },
-	    {
+		{
+        k:"community-maps",
+        q: {
+          r:"",
+          p:"(product:community-maps)"
+        }
+      },
+	   {
         k:"data-appl",
         q: {
           r:"",
