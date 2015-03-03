@@ -100,7 +100,7 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce"
           }
       },
 	  {
@@ -139,34 +139,48 @@ var filterCfg = {
         }
       },
       {
+        k:"bus-analyst-online",
+        q: {
+          r:"",
+          p:"(product:bus-analyst-online)"
+        }
+      },
+      {
         k:"collector-android",
         q: {
           r:"",
           p:"(product:collector-android)"
         }
       },
-	  {
+	   {
         k:"collector-ios",
         q: {
           r:"",
           p:"(product:collector-ios)"
         }
       },
-	  {
+      {
+        k:"community-analyst",
+        q: {
+          r:"",
+          p:"(product:community-analyst)"
+        }
+      },
+		{
         k:"community-maps",
         q: {
           r:"",
           p:"(product:community-maps)"
         }
       },
-	  {
+	   {
         k:"data-appl",
         q: {
           r:"",
           p:"(product:data-appl)"
         }
       },
-	  {
+	    {
         k:"esri-demographics",
         q: {
           r:"",
@@ -216,10 +230,52 @@ var filterCfg = {
         }
       },
       {
+        k:"esri-maps-cognos",
+        q: {
+          r:"",
+          p:"(product:esri-maps-cognos)"
+        }
+      },
+      {
+        k:"esri-maps-cognos-mobile",
+        q: {
+          r:"",
+          p:"(product:esri-maps-cognos-mobile)"
+        }
+      },
+      {
+        k:"esri-maps-dynamics",
+        q: {
+          r:"",
+          p:"(product:esri-maps-dynamics)"
+        }
+      },
+      {
+        k:"esri-maps-micro",
+        q: {
+          r:"",
+          p:"(product:esri-maps-micro)"
+        }
+      },
+      {
         k:"esri-maps-office",
         q: {
           r:"",
           p:"(product:esri-maps-office)"
+        }
+      },
+      {
+        k:"esri-maps-salesforce",
+        q: {
+          r:"",
+          p:"(product:esri-maps-salesforce)"
+        }
+      },
+      {
+        k:"esri-maps-sapbobj",
+        q: {
+          r:"",
+          p:"(product:esri-maps-sapbobj)"
         }
       },
       {
