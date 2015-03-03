@@ -12,7 +12,7 @@ js:
   - sitecfg.js
 
 metatags:
-  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="cs">
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="cs">
 
 mobile: true
 
@@ -47,9 +47,12 @@ mobile: true
     <hr />
     <div id="collectorMapFeature" class="column-12 phone-column-24">
       <img src="img/features-security-data-ownership.jpg" alt="Vlastnictví bezpečnostních dat" />
+	      <div style="padding-top:30px; text-align: center;">
+      <a href="/cs/trust/system-status/" class="btn tertiary" style="width:75%;text-align:center; " >Kontrola stavu systému</a>
+    </div>
     </div>
     <div id="collectorDataFeature" class="column-12 phone-column-24">
-      <p>Web Trust.ArcGIS.com je zdrojem informací ohledně zabezpečení, ochrany osobních údajů a dodržování standardů. Můžete zde nalézt: </p>
+      <p>Web Trust.ArcGIS.com je zdrojem informací ohledně zabezpečení, ochrany osobních údajů a dodržování standardů. Najít: </p>
       <ul>
         <li>Dostupnost služeb ArcGIS Online, informace o výkonu systému a historii stavů</li>
         <li>Bezpečnostní aktualizace a aktuální upozornění</li>
@@ -58,47 +61,56 @@ mobile: true
         <li>Informace o soukromí a dodržování standardů</li>
       </ul>
       <p>Web Trust.ArcGIS.com je inspirován konverzací s našimi zákazníky. Co byste zde rádi viděli? Máte-li jakékoli návrhy, zašlete je na web <a href="http://ideas.arcgis.com">ArcGIS Ideas</a>.</p>
-    </div>
-    <div class="clear"></div>
 
-    <div style="text-align:center; padding-top:150px;">
-      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
-    </div>
-  </div>
-  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
-    <div>
-      <a href="/cs/trust/system-status/" class="btn tertiary" style="width:100%;text-align:center;" >Kontrola stavu systému</a>
-    </div>
-    <br/>
-    <div class="imgFrame block">
-      <h3 class="icon-announcement">Upozornění a oznámení</h3>
-      <p>Dne 6. června 2014 obdržela služba ArcGIS Online vládní akreditaci FISMA Low Authority to Operate (ATO). Proces akreditace FISMA zaručuje, že služba ArcGIS Online byla důkladně přezkoumána posuzovatelem třetí strany z hlediska souladu se striktními požadavky na zabezpečení uvedenými ve zvláštní publikaci 800-53 poskytované institutem NIST (National Institute of Standards and Technology). <a href="http://www.esri.com/esri-news/releases/14-2qtr/esri-mapping-platform-secured-for-federal-agencys-use">Číst dále…</a></p>
-    </div>
-    <br />
-    <div class="panel">
+	
+ </div>
+
+    <div class="clear"></div>
+    <div class="" style="text-align:center; padding-top:75px;">
       <h4>„Společnost Esri se zavazuje, že bude soustavně zlepšovat svou mapovací platformu a upevňovat důvěru zákazníků prostřednictvím akreditací, jako je FISMA.“</h4>
       <p>Michael Young, hlavní architekt zabezpečení, Esri</p>
 
     </div>
+    <div style="text-align:center; padding-top:45px;">
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+
     <br/>
-    <div class="" style="text-align:center;">
+	        <!-- Blog Feed -->
+        <div class="imgFrame block">
+          <h3 class="icon-announcement">Upozornění a oznámení &nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="Blog ArcGIS"><img src="img/rss.png" /></a></h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+		  <div style="text-align:right;">
+		  <a class="btn transparent" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/">Zobrazit všechna upozornění</a> 
+		  </div>
+        </div><br/>
+		  		    <div class="" style="text-align:center;">
       <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/cs/trust/security-concern/"> Nahlášení problému se zabezpečením</a>  </h4>
     </div>
+    <br />
+
   </div>
 
  </div>
 
-  <!-- <script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-  <script type="text/javascript">
+	<script src="/cs/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',
-        max: 2,
+        url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
+        max: 5,
         layout: 0
       });
-
-
     });
 
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
 
-  </script>  -->
+  </script>
+
