@@ -12,7 +12,7 @@ js:
   - sitecfg.js
 
 metatags:
-  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="fi">
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="fi">
 
 mobile: true
 
@@ -47,6 +47,9 @@ mobile: true
     <hr />
     <div id="collectorMapFeature" class="column-12 phone-column-24">
       <img src="img/features-security-data-ownership.jpg" alt="Suojaustietojen omistajuus" />
+	      <div style="padding-top:30px; text-align: center;">
+      <a href="/fi/trust/system-status/" class="btn tertiary" style="width:75%;text-align:center; " >Tarkista j&auml;rjestelm&auml;n tila</a>
+    </div>
     </div>
     <div id="collectorDataFeature" class="column-12 phone-column-24">
       <p>Trust.ArcGIS.com on resurssi, josta l&ouml;yd&auml;t tietosuojaan, yksityisyyteen ja lainmukaisuuteen liittyvi&auml; tietoja. Etsi: </p>
@@ -58,47 +61,55 @@ mobile: true
         <li>Yksityisyys- ja lainmukaisuustiedot</li>
       </ul>
       <p>Asiakaskeskustelut ovat vaikuttaneet Trust.ArcGIS.com-sivuston toteutukseen. Mit&auml; haluat n&auml;hd&auml; t&auml;ss&auml;? Jos sinulla on ehdotuksia, l&auml;het&auml; ne <a href="http://ideas.arcgis.com">ArcGIS Ideas</a> -sivustoon.</p>
-    </div>
-    <div class="clear"></div>
 
-    <div style="text-align:center; padding-top:150px;">
-      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
-    </div>
-  </div>
-  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
-    <div>
-      <a href="/fi/trust/system-status/" class="btn tertiary" style="width:100%;text-align:center;" >Tarkista j&auml;rjestelm&auml;n tila</a>
-    </div>
-    <br/>
-    <div class="imgFrame block">
-      <h3 class="icon-announcement">Ilmoitukset</h3>
-      <p>6.6.2014 ArcGIS Online vastaanotti hallituksen FISMA Low -toimivaltuuden (ATO). FISMA-valtuutusprosessi varmistaa, ett&auml; kolmannen osapuolen aksessori on tarkistanut ArcGIS Onlinen perusteellisesti ja ett&auml; se on NIST (National Institute of Standards and Technology) -instituutin toimittaman erikoisjulkaisun 800-53 tiukkojen suojausvaatimusten mukainen. <a href="http://www.esri.com/esri-news/releases/14-2qtr/esri-mapping-platform-secured-for-federal-agencys-use">Jatka lukemista...</a></p>
-    </div>
-    <br />
-    <div class="panel">
+	
+ </div>
+
+    <div class="clear"></div>
+    <div class="" style="text-align:center; padding-top:75px;">
       <h4>&quot;Esri on sitoutunut kehitt&auml;m&auml;&auml;n jatkuvasti kartoitusalustan suojausta ja vahvistamaan asiakkaiden luottamusta valtuutusten, kuten FISMAn, kautta.&quot;</h4>
       <p>Michael Young, p&auml;&auml;suojausarkkitehti, Esri</p>
 
     </div>
-    <br/>
-    <div class="" style="text-align:center;">
-      <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/fi/trust/security-concern/"> Raportoi tietosuojaongelmasta</a>  </h4>
+    <div style="text-align:center; padding-top:45px;">
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
     </div>
+  </div>
+  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+
+    <br/> <!-- Blog Feed -->
+        <div class="imgFrame block">
+          <h3 class="icon-announcement">Ilmoitukset &nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS-blogi"><img src="img/rss.png" /></a></h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+		  <div style="text-align:right;">
+		  <a class="btn transparent" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/">Kaikkien ilmoitusten tarkastelu</a> 
+		  </div>
+        </div><br/>
+		  		    <div class="" style="text-align:center;">
+      <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/fi/trust/security-concern/"> Raportoi suojausongelmasta</a>  </h4>
+    </div>
+    <br />
+
   </div>
 
  </div>
 
-  <!-- <script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-  <script type="text/javascript">
+	<script src="/fi/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',
-        max: 2,
+        url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
+        max: 5,
         layout: 0
       });
-
-
     });
 
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
 
-  </script>  -->
+  </script>
+
