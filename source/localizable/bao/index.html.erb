@@ -7,9 +7,9 @@ css:
   - colorbox/colorbox
 
 js:
-  - 1.0/ui/jquery.colorbox.min
-  - 1.0/ui/jquery.colorbox.init
-  - 1.0/ui/video.init
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
 
 
 metatags:
@@ -70,7 +70,7 @@ mobile: true
           <p>This video shows you how to use the Color-Coded Maps tool to select one of the thousands of data variables available in Business Analyst Online, and visualize the data on a map.</p>
           <p>
             <!-- <a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch the video</a> -->
-			<a href="http://video.arcgis.com/iframe/3010/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch the video</a>
+			<a title="Create Color-Coded Maps" href="http://video.arcgis.com/iframe/3010/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch the video</a>
 			<video width="320" height="240" controls id="3010" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/3010/mp4/480">
 			</video>
@@ -85,7 +85,7 @@ mobile: true
           <p>Business Analyst Online provides direct access to the content shared on an Esri-hosted solution, such as ArcGIS Online, or your on-premises solution such as Portal for ArcGIS.</p>
           <p>
            <!-- <a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch the video</a> -->
-			<a href="http://video.arcgis.com/iframe/3007/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch the video</a>
+			<a title="Add Maps from ArcGIS Online" href="http://video.arcgis.com/iframe/3007/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch the video</a>
 			<video width="320" height="240" controls id="3012" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/3012/mp4/480">
 			</video>
@@ -182,7 +182,7 @@ mobile: true
 
     </div>
 
-	<script src="/js/1.0/ui/rssfeed.js" type="text/javascript"></script>
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({

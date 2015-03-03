@@ -67,8 +67,8 @@ $(document).ready(function () {
 		parts = pathname.split("/"),
 		fname = parts.pop(),
 		fldpath = parts.join("/"),
-		plat = doc.cookieJar.getItem(prodKey) || prodDVal,
-		useMapPlat = doc.cookieJar.getItem(prodKeyUseMaps) || prodDValUseMaps,
+		plat = $.cookie (prodKey) || prodDVal,
+		useMapPlat = $.cookie(prodKeyUseMaps) || prodDValUseMaps,
 		isHome = fldpath === homePath;
 
     function modHomeUrls(plat) {
@@ -106,7 +106,7 @@ $(document).ready(function () {
 	}
 	
 	function updateSearchForm (){
-		var prdPlat = doc.cookieJar.getItem(prodKeyUseMaps) || prodDValUseMaps;
+		var prdPlat = $.cookie(prodKeyUseMaps) || prodDValUseMaps;
 		var searchProdMeta = (prdPlat === prodDValUseMaps) ? defaultSearchProdMeta : defaultSearchProdMeta + "-mobile";
 		
 		$('#helpSearchForm input[name=product]').attr("value",searchProdMeta);
@@ -154,7 +154,7 @@ $(document).ready(function () {
         var $ele = $(this),
 			url = $ele.attr("href");
 
-        doc.cookieJar.setItem($ele.data("appname"), $ele.data("plat"), Infinity, "/", "arcgis.com");
+        $.cookie ($ele.data ("appname"), $ele.data ("plat"), {expires: new Date(2020,1,1), path:"/"});
 
         if (isHome) {
             modHomeUrls($ele.data("plat"));
