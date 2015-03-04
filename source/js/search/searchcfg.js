@@ -65,7 +65,8 @@ var filterCfg = {
             r:"search-collection:help",
             p:""
         }
-      },
+      }
+	  /* ,
       {
         k:"forums",
         q:{
@@ -73,7 +74,7 @@ var filterCfg = {
   		  p:""
         }
       }
-      /* 
+      
       {
         k:"videos",
         q:{
@@ -144,19 +145,25 @@ var filterCfg = {
           p:"(product:collector-android)"
         }
       },
-
-      {
-        k:"data-appl",
-        q: {
-          r:"",
-          p:"(product:data-appl)"
-        }
-      },
 	  {
         k:"collector-ios",
         q: {
           r:"",
           p:"(product:collector-ios)"
+        }
+      },
+	  {
+        k:"community-maps",
+        q: {
+          r:"",
+          p:"(product:community-maps)"
+        }
+      },
+	  {
+        k:"data-appl",
+        q: {
+          r:"",
+          p:"(product:data-appl)"
         }
       },
 	  {
