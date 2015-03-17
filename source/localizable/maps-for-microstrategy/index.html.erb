@@ -195,11 +195,20 @@ mobile: true
  <hr />
 <a name="supportedEnvironments"></a>
         <h2>Supported environments</h2>
-        <p>Esri Maps for MicroStrategy is deployed as a plug-in to MicroStrategy Web Universal. The Esri Maps for MicroStrategy plug-in contains a custom widget that enables you to display data on a map in a MicroStrategy Report Services Document or Report.</p>
+         <p>Esri Maps for MicroStrategy has two components:</p>
+		<ul>
+			<li>
+			<p>Esri Maps for MicroStrategy server plug-in, which is deployed to both the MicroStrategy Web server and the MicroStrategy Mobile server (if using Esri Maps for MicroStrategy Mobile)
+			</p>
+			</li>
+			<li>
+			<p>Esri Maps for MicroStrategy Mobile, which is delivered as an iOS client framework that uses MicroStrategy Mobile SDK for iOS and other third-party development tools to build a custom iOS app.</p> 
+			</li>
+		</ul>
 
-<p>For the Esri Maps for MicroStrategy plug-in to operate properly, Esri assumes an operational configuration of MicroStrategy Web Universal 9.4.0 or 9.4.1. MicroStrategy recommends using certified configurations over the supported configurations.</p>
+<p>Deploying the server plug-in to your web server allows your organization to integrate your MicroStrategy business intelligence (BI) data with the ArcGIS platform. Deploying the server plug-in to your organization’s mobile server allows Esri Maps for MicroStrategy Mobile app users to access map-enabled documents on their iPads.</p>
 
-<p>For more information, see the release notes provided with your MicroStrategy installation media.</p>
+<p>Before the mobile app can be deployed and used, the Esri Maps for MicroStrategy Mobile iOS client framework must first be compiled. Because an Apple developer license is required to compile the mobile app, it is recommended that you secure the services of a developer in your organization.</p>
 		
 		<!-- script for collapsible headings -->
 		<script> 
@@ -219,12 +228,27 @@ mobile: true
 		 } 
 		 </script> 
 		 
-		<!-- Operating systems -->
+		<!-- EM4M server plug-in expanding arrow -->
 		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Operating systems</a>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>
 		</h3>
 			<div exp1='yes' style="display:none;padding:0 15px;">
-				<p>It is expected that the Esri Maps for MicroStrategy plug-in will operate in any certified configuration of MicroStrategy Web Universal 9.4.0 or 9.4.1. The following list outlines the operating systems on which Esri has focused its testing efforts for both the JSP server (MicroStrategy Web Universal) and ASP.NET server (MicroStrategy Web) configurations. If you would like to see the operating system of your MicroStrategy configuration added to this list, contact Esri Technical Support.</p>
+			
+		<!-- MicroStrategy Web Universal versions -->
+			<h4>MicroStrategy Web Universal versions</h4>
+			
+				<p>For Esri Maps for MicroStrategy to operate properly, the Esri Maps for MicroStrategy server plug-in 2.0 requires an operational configuration of these supported versions of MicroStrategy Web Universal:</p>
+				<ul>
+					<li>9.5</li>
+					<li>9.4.1</li>
+					<li>9.4.0</li>
+				</ul>				
+				
+				<p>MicroStrategy recommends using certified configurations over the supported configurations</p>
+			
+			<!-- Operating systems subhead for EM4M -->
+			<h4>Operating systems</h4>
+				<p>The following list outlines the operating systems on which Esri has focused its testing efforts for both the JSP server (MicroStrategy Web Universal) and ASP.NET server (MicroStrategy Web) configurations. If you would like to see the operating system of your MicroStrategy configuration added to this list, contact Esri Technical Support.</p>
 	
 			<ul>
 				<li>Windows Server 2003 Standard Edition R2 Service Pack 2 (x64)</li>
@@ -233,122 +257,144 @@ mobile: true
 				<li>Red Hat Enterprise Linux Advanced Platform 5.x (x86-64)</li>
 				<li>Red Hat Enterprise Linux 6.2.x (x86-64)</li>
 				<li>SUSE Linux Enterprise Server 11.2.x</li>
-			</ul>		
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
+			</ul>	
 		
-		<!-- Web browsers -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Web browsers</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-				<p>Esri does not test all combinations of web browsers (and the underlying client operating systems) certified by MicroStrategy. Rather, a subset of certified web browsers is selected, and testing is performed on the most recent operating systems. Not all selected browsers are tested on all identified operating systems.</p>
+<!-- Web application servers subhead for EM4M -->
+		<h4>Web application servers</h4>
+		<p>The following table outlines the Web application servers on which Esri has focused its testing efforts for both the JSP server (MicroStrategy Web Universal) and ASP.NET server (MicroStrategy Web) configurations. If you would like to see the web application server used by your MicroStrategy configuration, contact Esri Technical Support. 
+		<p>
+				<table width="400" border="1" align="left">
+					<tr align="left">
+					<th scope="col">Web application server</th>
+					<th scope="col">Tested version</th>
+					</tr>
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Apache Tomcat</td>
+						<td align="left" valign="top">7.0.x | 6.0.x</td>
+						</tr>
+						
+						<tr align="left" valign="top">
+						<td align="left" valign="top">IBM WebSphere Portal</td>
+						<td align="left" valign="top">7.x</td>
+					</tr>
+						
+					<tbody  style="font-size:14px"> 
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Microsoft Internet Information Services</td>
+						<td align="left" valign="top">7.0.x | 6.x</td>
+					</tr>
+					
+			
+				</tbody>
+				</table>
+		</p>
+			<div class="clear" style="padding:10px;"></div>
 
-				<p>Esri has not performed any client browser testing on platforms other than Windows. This is because web browsers on operating systems such as Mac OS and Red Hat Enterprise Linux are listed as supported by MicroStrategy, but not certified. It is expected, however, that the Esri Maps for MicroStrategy plug-in will function as expected on non-Windows clients if one of the web browsers listed below is used. If this is not your experience, contact Esri Technical Support to ask that your particular configuration be tested.</p>
+		
+		<!-- Web browsers subhead for EM4M -->
+			<h4>Web browsers</h4>
+			<p>Esri does not test all combinations of web browsers (and the underlying client operating systems) certified by MicroStrategy. Rather, a subset of certified web browsers is selected, and testing is performed on the most recent operating systems. Not all selected browsers are tested on all identified operating systems.</p>
 
-				<p>The following table shows a subset of the web browsers certified by MicroStrategy. "Full" indicates a full test run was performed by Esri. "Limited" indicates testing was limited in scope. Web browsers not listed in this table were not tested.</p>
-				
-				<table border="1" style="text-align:center">
+				<p>Esri has not performed any client browser testing on platforms other than Windows. It is expected, however, that the Esri Maps for MicroStrategy plug-in will function as expected on non-Windows clients if one of the web browsers listed below is used. If this is not your experience, contact Esri Technical Support to ask that your particular configuration be tested.</p>
 
-					<tr  style="font-size:14px">
-					<th>Browser name</th>
-					<th>Browser version</th>
-					<th>MicroStrategy 9.4.1</th>
-					<th>MicroStrategy 9.4.0</th>
+				<p>The following browsers have been tested:</p>
+				<p>
+				<table width="400" border="1" align="left">
+					<tr align="left">
+					<th scope="col">Browser name</th>
+					<th scope="col">Tested version</th>
 					</tr>
 
 					<tbody  style="font-size:14px"> 
-					<tr>
-					<td rowspan="3" colspan="1">Internet Explorer</td>
-					<td rowspan="1" colspan="1">10.x</td>
-					<td rowspan="1" colspan="1">Full</td>
-					<td rowspan="1" colspan="1">Full</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">9.x</td>
-					<td rowspan="1" colspan="1">Full</td>
-					<td rowspan="1" colspan="1">Full</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">8.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="7" colspan="1">Mozilla Firefox</td>
-					<td rowspan="1" colspan="1">22.x</td>
-					<td rowspan="1" colspan="1">Full</td>
-					<td rowspan="1" colspan="1">Full</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">19.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">18.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">17.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">13.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<tr>
-					<td rowspan="1" colspan="1">12.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">11.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Internet Explorer</td>
+						<td align="left" valign="top">10.x | 9.x</td>
 					</tr>
 					
-					<tr>
-					<td rowspan="7" colspan="1">Google Chrome</td>
-					<td rowspan="1" colspan="1">28.x</td>
-					<td rowspan="1" colspan="1">Full</td>
-					<td rowspan="1" colspan="1">Full</td>
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Mozilla Firefox</td>
+						<td align="left" valign="top">22.x</td>
 					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">25.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
+									
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Google Chrome</td>
+						<td align="left" valign="top">28.x</td>
 					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">24.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">23.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">19.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<tr>
-					<td rowspan="1" colspan="1">18.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">17.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
+					
 				</tbody>
 				</table>
+				</p>
+								</div>
+			
+		<div class="clear" style="padding:5px;"></div>
+		
+		<!-- Esri Maps for MicroStrategy Mobile -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
+				<!-- Developer prerequisites subhead for EM4MM section -->
+				<h4>Developer prerequisites</h4>
+				<p>To compile and distribute the mobile app, you must have:</p>
+
+				<ul>
+				<li>A Mac OS machine running OS X version 10.8.4 or later and 4G RAM or greater</li>
+				<li>An Apple developer license. For more information, see the  <a href="https://developer.apple.com/programs/ios/">Apple iOS developer program</a></li>
+				<li>Created a distribution certificate and provisioning profile to run the app across numerous devices. See: </li>
+					<ul>
+					<li><a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html">About App Distribution</a></li>
+					<li><a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/TestingYouriOSApp/TestingYouriOSApp.html/apple_ref/doc/uid/TP40012582-CH8-SW1">Beta Testing Your iOS App</a></li>
+					</ul>
+				</ul>
+
+				<p>You must also have the following installed:</p>
+				<ul>
+				<li>MicroStrategy Mobile SDK for iOS</li>
+				<li>Xcode</li>
+				<li>iOS SDK</li>
+				</ul>
+				<p><b>Note:</b> Xcode is free once you are registered as an Apple Developer.</p>
+				<p>See the table below for guidance on what to install for your version of MicroStrategy Mobile SDK for iOS:</p>
+				<p>
+				<table width="400" border="1" align="left">
+
+					<tr align="left" style="font-size:14px">
+					<th scope="col">MicroStrategy Mobile SDK for iOS</th>
+					<th scope="col">Esri Maps for MicroStrategy Mobile iOS client framework</th>
+					<th scope="col">Xcode</th>
+					<th scope="col">iOS SDK</th>
+					</tr>
+
+					<tbody style="font-size:14px"> 
+					
+					<tr align="left" valign="top">
+						<td>9.5</td>
+						<td>Esri Maps for MicroStrategy Mobile iOS client framework 2.0 Patch 1</td>
+						<td>6.0</td>
+						<td>8</td>
+					</tr>
+					
+					<tr align="left" valign="top">
+						<td>9.4.1 update 4</td>
+						<td>2.0</td>
+						<td>5.1.0</td>
+						<td>7.1</td>
+					</tr>
+					
+				</tbody>
+				</table>
+				</p>
+				<p>For more information, about:</p>
+				<ul>
+				<li>Compiling the app using the Esri Maps for MicroStrategy Mobile iOS client framework, see <a href="/en/maps-for-microstrategy/install-and-configure/pdf/EM4MSTR_Mobile_Admin_Guide.pdf">Esri Maps for MicroStrategy Mobile Administrator’s guide</a></li>
+				<li>MicroStrategy Mobile SDK for iOS, see the <a href="https://lw.microstrategy.com/msdz/MSDZ_World2015/docs/projects/MobileSDK/output/vvitarello/HTML5/default.htm">MicroStrategy Mobile SDK for iOS documentation</a></li>
+				</ul>
 				
+				<!-- Mobile users subhead for EM4MM section -->
+				<h4>Mobile app user device</h4>
+				<ul>
+				<li>iPad device running iOS 8.x</li>
+				</ul>
 			</div>
 			
 		<!-- Support -->	
