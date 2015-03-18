@@ -9,11 +9,11 @@ var _searchHost = "//searchdev.esri.com",
 	trialUrl = "//learndev.arcgis.com";
 	
 if(window.location.hostname.match( /(docstg.arcgis.com)/)) {
-	searchHost = "//searchstg.esri.com";
+	_searchHost = "//searchstg.esri.com";
 	_agolHost = "//qaext.arcgis.com";
 	trialUrl = "https://learnstg.arcgis.com";
 } else if(window.location.hostname.match( /(doc.arcgis.com)/)) {
-	searchHost = "//search.esri.com";
+	_searchHost = "//search.esri.com";
 	_agolHost = "//www.arcgis.com";
 	trialUrl = "https://learn.arcgis.com";
 }
