@@ -8,9 +8,9 @@ css:
   - colorbox/colorbox
 
 js:
-  - 1.0/ui/jquery.colorbox.min
-  - 1.0/ui/jquery.colorbox.init
-  - 1.0/ui/video.init
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
 
 metatags:
   - <META name="description" content="Esri Maps for Dynamics CRM Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-dynamics-crm"><META name="sub_category" content="Esri Maps for Dynamics CRM"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for Dynamics CRM"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
@@ -70,7 +70,7 @@ mobile: true
           <p>Storing spatial information with your records is a good idea. Maps will load more quickly, and records won't have to be geocoded each time they are drawn on the map. Watch this video to learn how to spatially enable your records using the Locate workflow.</p>
           <p>
             <!--<a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch a video</a>-->
-			<a href="http://video.arcgis.com/iframe/2882/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
+			<a title="Spatially enable your CRM data" href="http://video.arcgis.com/iframe/2882/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
 			<video width="320" height="240" controls id="2457" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2882/mp4/480">
 			</video>
@@ -85,7 +85,7 @@ mobile: true
           <p>Esri Maps for Dynamics CRM allows you to bring the many benefits of the ArcGIS mapping platform into your CRM system. This video shows you how to design and use custom map charts.</p>
           <p>
            <!--<a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch a video</a>-->
-		   <a href="http://video.arcgis.com/iframe/2911/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
+		   <a title="Design and use map charts" href="http://video.arcgis.com/iframe/2911/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
 		   <video width="320" height="240" controls id="2468" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2911/mp4/480">
 			</video>
@@ -168,7 +168,7 @@ mobile: true
 
     </div>
 
-	<script src="/js/1.0/ui/rssfeed.js" type="text/javascript"></script>
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
