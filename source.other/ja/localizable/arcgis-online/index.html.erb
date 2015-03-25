@@ -20,22 +20,23 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/ja/arcgis-online/">ヘルプ</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
+      <h1><a href="/ja/arcgis-online/">ArcGIS Online ヘルプ</a></h1>
+      <!--Commented this part out. Search bar on Header--> <!--<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
+        <input type="hidden" name="language" value="en>" />
+      </form>-->
     </header>
 	<nav>
       <ul>
-        <li class='current'><a title="ArcGIS Online ヘルプ" href="/ja/arcgis-online/">メイン</a></li>
-        <li><a title="マップの使用" href="/ja/arcgis-online/use-maps/">使用</a></li>
-        <li><a title="マップとアプリケーションの作成" href="/ja/arcgis-online/create-maps/">作成</a></li>		
-        <li><a title="マップとアプリケーションの共有" href="/ja/arcgis-online/share-maps/">共有</a></li>
+        <li class='current'><a title="ArcGIS Online ヘルプ" href="/ja/arcgis-online/">ホーム</a></li>
+        <li><a title="マップおよびシーンの使用" href="/ja/arcgis-online/use-maps/">使用</a></li>
+        <li><a title="マップ、シーン、およびアプリケーションの作成" href="/ja/arcgis-online/create-maps/">作成</a></li>		
+        <li><a title="マップ、シーン、およびアプリケーションの共有" href="/ja/arcgis-online/share-maps/">共有</a></li>
 		<li><a title="組織サイトの管理" href="/ja/arcgis-online/administer/">管理</a></li>
-		<li><a href="/ja/arcgis-online/reference/">リファレンス</a></li>
+		<li><a title="リファレンス" href="/ja/arcgis-online/reference/">リファレンス</a></li>
+		<li><a title="すぐに使用できるアプリケーション" href="/ja/arcgis-online/apps/arcgis-apps.htm">アプリケーション</a></li>
 	</ul>
     </nav>
   </div>
@@ -44,149 +45,191 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-     <div class="column-16 tablet-column-24">
+    <div class="column-16 tablet-column-24" style="width: 66.666%;">
 
-
-    <h3 class="gray">対話型マップとアプリケーションを作成および使用して、それらを組織サイト内のユーザと共有します。その方法を見てみましょう。</h3>
-	
-	<hr />
-	
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/perform-analysis.jpg" />
-
-          <h3>マップの使用</h3>
-         
- 
-         <p>マップを使用して、地理データを探索、理解、計測できます。</p>
-
-      
-         <p><a href="/ja/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;データの表示</a> <br/> <a href="/ja/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;解析の実行</a><br/> <a href="/ja/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">フィーチャの編集</a></p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/create-maps-apps.jpg" />
-
-          <h3>マップとアプリケーションの作成</h3>
-          <p>組織が任意のデバイスで時間や場所を問わずアクセスできる対話型マップとアプリケーションを作成します。</p>
-
-
-            <p><a href="/ja/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;はじめてのマップ作成</a> <br/>
-
-            <a href="/ja/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">はじめてのアプリケーション作成</a><br/> <a href="/ja/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">マップとレイヤ プロパティの設定</a>
-			</p>
-        </div>
-		<div class="clear"></div>
-		
-       <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/share-maps-apps.jpg" />
-
-          <h3>マップとアプリケーションの共有</h3>
-          <p>マップとアプリケーションを組織サイトまたはコミュニティで共有することで、データを活用できます。</p>
-
-         <p><a href="/ja/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;アイテムの追加</a> <br/><a href="/ja/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">アイテムの共有</a> <br/> <a href="/ja/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">ホスト フィーチャおよびタイトルの公開</a></p>
-         
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/admin-org.jpg" />
-
-          <h3>組織サイトの管理</h3>
-          <p>組織サイトの ArcGIS Online を構成し、メンバーを招待し、リソースを管理して、GIS の使用範囲を拡大します。</p>
-          <p>
-            <a href="/ja/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Web サイトの構成</a> <br/> <a href="/ja/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">メンバーの招待</a> <br/> <a href="/ja/arcgis-online/administer/view-status.htm" class="icon-right-arrow">組織サイトの統計情報の表示</a></p>
-           
-        </div>
-		<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>すぐに使用できるアプリケーション</h3>
-         <p>ArcGIS Online に含まれている、すぐに使用できるアプリケーションの詳細</p>
-		 <p>
-		 <a href="http://doc.arcgis.com/en/collector/" class="icon-right-arrow">&nbsp;&nbsp;Collector for ArcGIS</a><br/> <a href="http://doc.arcgis.com/en/explorer/" class="icon-right-arrow">Explorer for ArcGIS</a><br/> <a href="http://doc.arcgis.com/en/operations-dashboard/" class="icon-right-arrow">Operations Dashboard for ArcGIS</a></br><a href="http://doc.arcgis.com/en/maps-for-office/" class="icon-right-arrow">Esri Maps for Office</a><br/> <a href="http://doc.arcgis.com/en/maps-for-sharepoint/" class="icon-right-arrow">Esri Maps for SharePoint</a> <br/> <a href="http://doc.arcgis.com/en/arcgis-app/" class="icon-right-arrow">スマートフォンおよびタブレット用 ArcGIS アプリケーション</a>
-		
-		 </p>
-        </div>	
-	
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>構成可能なアプリケーション</h3>
-          <p>構成可能なテンプレートを使用して組織およびコミュニティ向けのアプリケーションを作成する方法について説明します。</p>
-		 <p><a href="http://links.esri.com/configurableapps" class="icon-right-arrow">&nbsp;&nbsp; Esri の構成可能なアプリケーション</a><br> <a href="http://storymaps.arcgis.com/" class="icon-right-arrow">ストーリー マップ</a></br> <a href="http://solutions.arcgis.com/" class="icon-right-arrow">ArcGIS ソリューション</a><br></p>
-		 
-        </div>
-        <div class="clear"></div>
-          <div id="collectorDataFeature" class="column-12 phone-column-24">
-	     <h3>参考資料</h3>
-		          <p>組織で使用できるさらに多くのアプリケーション、マップおよびツールを発見します。</p>
-				 <p><a href="https://marketplace.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Marketplace</a></br> <a href="http://doc.arcgis.com/en/open-data" class="icon-right-arrow">ArcGIS Open Data</a></br> <a href="http://doc.arcgis.com/en/living-atlas" class="icon-right-arrow">ワールド リビング アトラス</a></br> <a href="https://developers.arcgis.com" class="icon-right-arrow">ArcGIS for Developers</a>
-				
-			 </p></div>
-        <div class="clear"></div>
+<div class="agol-search-box">
+         <form target="_top" id="helpSearchForm" class="agolhomesearchForm">
+                
+        <input type="search" placeholder="Search ArcGIS Online Help" class="leader" name="q">
+        <input type="hidden" value="help" name="collection">
+        <input type="hidden" value="arcgis-online" name="product">  
+        <input type="hidden" value="ja" name="language">
+      </form>  
         
-        
-        <p>&nbsp;</p>
-
       </div>
+        <!--<input type="search" name="q" class="leader" placeholder="Search Help">
+        <input type="hidden" name="collection" value="help">
+        <input type="hidden" name="product" value="arcgis-online">          
+        <input type="hidden" name="language" value="en">
+      </form>-->
 
-
-      <div class="column-8 tablet-column-24 blocks">
-
-	  	  	 <div class="imgFrame block">
-          <h3>基本操作</h3>
-		  <p>次のレッスンで ArcGIS Online の操作を学習しましょう。</p>
-		  
-		     <table><tr><td>
-		          <ul>
-		            <li>マップの操作</li>
-		            <li>マップの作成</li>
-		            <li>ファイルのレイヤの追加</li>
-		            <li>ポップアップの構成</li>
-		            <li>Web マップの作成</li>
-		          </ul></td>
-		          <td valign="top">
-		          <ul><a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online" class="btn secondary">いますぐ始める</a>
-		            
-        </ul></td><tr></table>
+                
+	<hr>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class=	"playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="247" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+		</video>
+	</section>
     
+  </div> 
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="253" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">--> <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
+       <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+        </video>
+    
+  </div>
+  
+  <div class="clear"></div>
+
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/ja/arcgis-online/use-maps/use-maps.htm" class="">マップおよびシーンの使用</a></h3>
+    </section>
+  </div> 
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/ja/arcgis-online/create-maps/create-maps-and-apps.htm" class="">マップ、シーン、およびアプリケーションの作成</a></h3>
+    </section>  
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+   <h3><a href="/ja/arcgis-online/share-maps/share-maps-apps.htm" class="">アイテムの共有</a></h3>
+  </div>
+  <div class="clear"></div>  
+   
+  <br>
+  
+  <div class="clear"></div>
+<br>
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+		</video>
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
+         <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+    
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
+	<video width="320" height="240" class="mobileVideo" id="1340" controls="">
+    <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+       </video>
+    </section>
+  </div>
+  <div class="clear"></div>
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ja/arcgis-online/use-maps/perform-analysis.htm">解析の実行</a></h3>
+     
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ja/arcgis-online/share-maps/hosted-web-layers.htm">ホスト Web レイヤの公開</a></h3>
+      
+    </section>
+    </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ja/arcgis-online/administer/admin-org.htm">組織サイトの管理</a></h3>
+      
+    </section>
+ </div>
+   <div class="clear"></div>
+<hr>
+<br/>
+
+  <div>
+    
+<div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/ja/" target="_blank">Esri テクニカル サポート</a></h4>
+      <p>チャット、電子メール、または電話でサポート チームに問い合わせます。</p>
+    </section>
+    
+  </div> 
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+    <section class="support-option">
+      <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">ArcGIS Ideas</a></h4>
+      <p>ソフトウェアについてのフィードバックを送信します。</p>
+    </section>
+    
+  </div>
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+   <h4 class="icon-comment icon-blue"><a href="http://GeoNet.esri.com/" target="_blank">ArcGIS フォーラム</a></h4>
+      <p>Geonet のディスカッションに参加します。</p>
+    
+  </div>
+  <!--<div class="row">-->
+
+  
+</div>
+</div>
+
+
+ <div class="column-8 tablet-column-24 blocks">
+	 <div class="imgFrame block">
+          <h3>ArcGIS Online を初めてお使いの方</h3>
+
+			<p><a  class="btn secondary" href="http://learn.arcgis.com/ja/projects/get-started-with-arcgis-online/">ハンズオン レッスンのご案内</a></p>
+			<a href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  ビデオ ツアーを見る</a><br/><br/> <a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">トレーニング コースを検索</a>
+      </div>	
+		 <br /> <br />
 		 
-		<p><a href="http://learn.arcgis.com">Learn ArcGIS</a> でその他のハンズオン レッスンが公開されています。<br> トレーニングをお探しの場合は、<a href="http://www.esri.com/training/main/arcgis-online-training">ArcGIS Online のコース</a>をご確認ください。</p>
-        </div>
-	
-		 <br />
-	  
-	 
-	  		 	  	 <div class="greyFrame">
-          <h3>詳細</h3>
-         <ul>
-		<li><a href="/ja/arcgis-online/reference/what-is-agol.htm" >&nbsp;ArcGIS Online とは</a></li>
+	 <div class="greyFrame">
+          <h3>クイック リファレンス</h3>
+         <ul>   <li><a href="/ja/arcgis-online/reference/troubleshoot-account.htm">&nbsp;サイン インの問題のトラブルシューティング</a></li>
 		<li><a href="/ja/arcgis-online/reference/whats-new.htm" >&nbsp;新機能</a></li>
 		<li><a href="/ja/arcgis-online/reference/faq.htm">&nbsp;よくあるご質問（FAQ）</a></li>
-		<li><a href="http://doc.arcgis.com/ja/trust/">&nbsp;Trust ArcGIS</a></li>
-		 
+		<li><a href="/ja/arcgis-online/reference/videos.htm">&nbsp;ビデオ</a></li>
+		<li><a href="/ja/trust/system-status/">&nbsp;システム ステータス</a></li>
+        </ul>
+		</div>
 		
-        
-        </div>
-	
-		 <br />
-	
-	<section id="video-column">
-      <div class="panel">
-        <h3>マップの作成</h3>
-        <a class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00"><img src="http://video.arcgis.com/thumbs/2011/04/253/making-a-map-d8a9f082b28f88c07545280c2934907a.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
-		<video width="320" height="240" controls id="2194" class="mobileVideo">
-		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
-		</video>
-        
-        <p>組み込みマップ ビューアを使用してマップを作成する方法の説明。</p>
-        <a href="/ja/arcgis-online/reference/videos.htm" class="btn secondary">その他のビデオ</a>
-      </div>
-    </section>	
-	
-	<br />
-		
+		<br /> <br />
+
 <!-- Blog Feed -->
         <div class="greyFrame">
           <h3>ブログ</h3>
@@ -195,22 +238,15 @@ mobile: true
           </div>
 		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">その他のブログ記事</a>
         </div>
-		 <br />
-		 
-     <section id="forum-container">
-      <div class="panel">
-        <h3>GeoNet のディスカッション</h3>
-        <div id="forum"></div>
-        <a href="https://geonet.esri.com/discussion/create.jspa?containerType=14&containerID=2055" class="btn secondary">ディスカッションを作成</a>&nbsp; <a href="https://geonet.esri.com/community/gis/arcgis-online/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="btn light">ディスカッションを見る</a>
-      </div>
-    </section>      
-	
-		
-
-	
+		 <br />  
+        
+		 <br />  
  </div>
 
-    </div>
+<div>
+
+</div>
+
 	
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
   <script type="text/javascript">
