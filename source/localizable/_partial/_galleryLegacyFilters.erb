@@ -1,0 +1,36 @@
+<%
+if current_page.data.gallery_data_path and current_page.data.expanded_gallery
+   require 'xmlsimple'
+   contents = File.read(current_page.data.gallery_data_path)
+   ref =  XmlSimple.xml_in(contents, { 'ForceArray' => true })
+%>
+<div id="reference-index">
+      <div><a href="#" id="gl-filter-clear">Clear All</a></div>
+      <nav>
+        <div id="filters">
+           <%
+              mfl = "["
+              kv = "["
+              ref['filters'][0]['filter'].each { |k|
+           %>
+                 <span class="filter-label"><%= k['label'] %></span>
+                 <%
+                 i = 0
+
+                 k["value"].each { |sk| %>
+                    <span class="ctrlbox"><input type="checkbox" value="<%= sk['metacontent'] %>" name="<%= k['metaname'] %>-<%= sk['id'] %>"><%= sk['label'] %></span>
+                 <%
+                    kv += "'" + sk['metacontent'] + ":#{sk['label']}',"
+                    i = i+1
+                 }
+
+                 mfl += "'" + k['metaname'] + ":#{i}',"
+                 %>
+           <% }
+              mfl += "]"
+              kv += "]"
+           %>
+        </div> <!-- End of Filters -->
+      </nav>
+    </div>
+<% end %>
