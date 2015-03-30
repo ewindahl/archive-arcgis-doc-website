@@ -7,6 +7,7 @@ $(document).ready (function (){
         lang = $("#helpSearchForm > input[name='language']").val() || "en",
         plat = $("#helpSearchForm > input[name='platform']").val() || "",
         soln = $("#helpSearchForm > input[name='solution']").val() || "",
+        version = $("#helpSearchForm > input[name='version']").val() || "",
     	query = "/search/?";
 
     if (plat === "detect") {
@@ -37,6 +38,9 @@ $(document).ready (function (){
 
     if (soln) {
         query = query + "&solution=" + encodeURIComponent(soln);
+    }
+    if (version) {
+        query = query + "&version=" + encodeURIComponent(version);
     }
 
     query = query + "&language=" + encodeURIComponent(lang);
