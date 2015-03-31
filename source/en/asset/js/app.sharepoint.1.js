@@ -8,9 +8,9 @@ $(document).ready(function() {
    
     var val = '<p id="plats">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="sharepoint" data-plat="on-premises" data-prefix="/' + localedir +'/maps-for-sharepoint/on-premises" href="/en/maps-for-sharepoint/" data-langlabel="sharepoint-on-premises" class=""> SharePoint On-Premises</a>' +
+        '<a data-appname="sharepoint" data-plat="foundation-server" data-prefix="/' + localedir +'/maps-for-sharepoint/foundation-server" href="/en/maps-for-sharepoint/" data-langlabel="sharepoint-foundation-server" class=""> Foundation/Server</a>' +
         ' | ' +
-        '<a data-appname="sharepoint" data-plat="online" data-prefix="/' + localedir +'/maps-for-sharepoint/online" href="/en/maps-for-sharepoint/" data-langlabel="sharepoint-online" class=""> SharePoint Online</a>' +
+        '<a data-appname="sharepoint" data-plat="office-365" data-prefix="/' + localedir +'/maps-for-sharepoint/office-365" href="/en/maps-for-sharepoint/" data-langlabel="sharepoint-office-365" class=""> Office 365</a>' +
         '</p>',
 		  
 		noSwitcherFileList = {
@@ -18,7 +18,7 @@ $(document).ready(function() {
 		},
 
 		prodKey = "sharepoint",
-      prodDVal = "on-premises",
+      prodDVal = "foundation-server",
 		homePath = "/en/maps-for-sharepoint",
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
@@ -63,11 +63,10 @@ $(document).ready(function() {
 			}else{
 				modContentUrls (plat);
 				// Update product meta value in search form
-				$('#helpSearchForm input[name=product]').attr("value","sharepoint-" + plat);
+				//$('#helpSearchForm input[name=product]').attr("value","esri-maps-sharepoint-" + plat);
 			}
 	} else {
 		modHomeUrls (plat);
-		$('#helpSearchForm input[name=product]').attr("value", "sharepoint-" + plat);
 		// Update product meta value in search form
 	}
 	
