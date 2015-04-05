@@ -20,22 +20,24 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/ru/arcgis-online/">Справка</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online">
+      <h1><a href="/ru/arcgis-online/">Справка ArcGIS Online</a></h1>
+      <!--Commented this part out. Search bar on Header-->
+	  <!--<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
+        <input type="hidden" name="language" value="en>" />
+      </form>-->
     </header>
 	<nav>
       <ul>
         <li class='current'><a title="Справка ArcGIS Online" href="/ru/arcgis-online/">Главная</a></li>
         <li><a title="Использование карт" href="/ru/arcgis-online/use-maps/">Использование</a></li>
-        <li><a title="Создание карт и приложений" href="/ru/arcgis-online/create-maps/">Создание</a></li>		
-        <li><a title="Общий доступ к картам и приложениям" href="/ru/arcgis-online/share-maps/">Общий доступ</a></li>
+        <li><a title="Создание карт, сцен и приложений" href="/ru/arcgis-online/create-maps/">Создание</a></li>		
+        <li><a title="Общий доступ к картам, сценам и приложениям" href="/ru/arcgis-online/share-maps/">Общий доступ</a></li>
 		<li><a title="Администрирование вашей организации" href="/ru/arcgis-online/administer/">Администрирование</a></li>
-		<li><a href="/ru/arcgis-online/reference/">Справочная информация</a></li>
+		<li><a title="Пространственная привязка" href="/ru/arcgis-online/reference/">Пространственная привязка</a></li>
+		<li><a title="Готовые к использованию приложения" href="/ru/arcgis-online/apps/arcgis-apps.htm">Приложения</a></li>
 	</ul>
     </nav>
   </div>
@@ -44,170 +46,195 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-     <div class="column-16 tablet-column-24">
+    <div class="column-16 tablet-column-24" style="width: 66.666%;">
 
-
-    <h3 class="gray">Используйте и создавайте интерактивные карты и приложения и делитесь ими с другими участниками вашей организации. Узнайте, как это сделать.</h3>
-	
-	<hr />
-	
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/perform-analysis.jpg" />
-
-          <h3>Использование карт</h3>
-         
- 
-         <p>Используйте карты для измерения, анализа и понимания географических данных.</p>
-
-      
-         <p><a href="/ru/arcgis-online/use-maps/view-maps.htm" class="icon-right-arrow">&nbsp;&nbsp;Просмотр данных</a>
-		<br/>
-         <a href="/ru/arcgis-online/use-maps/perform-analysis.htm" class="icon-right-arrow">&nbsp;&nbsp;Выполнение анализа</a><br/>
-         <a href="/ru/arcgis-online/use-maps/edit-features.htm" class="icon-right-arrow">&nbsp;&nbsp;Редактирование объектов</a></p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/create-maps-apps.jpg" />
-
-          <h3>Создание карт и приложений</h3>
-          <p>Создавайте интерактивные карты и приложения, доступ к которым ваша организация может получить в любое время из любой точки мира и с любого устройства.</p>
-
-
-            <p><a href="/ru/arcgis-online/create-maps/make-your-first-map.htm" class="icon-right-arrow">&nbsp;&nbsp;Создание вашей первой карты</a>
-			    <br/>
-
-            <a href="/ru/arcgis-online/create-maps/make-your-first-app.htm" class="icon-right-arrow">&nbsp;&nbsp;Создание вашего первого приложения</a><br/>
-			<a href="/ru/arcgis-online/create-maps/set-properties.htm" class="icon-right-arrow">&nbsp;&nbsp;Задание свойств карты и слоя</a>
-			</p>
-        </div>
-		<div class="clear"></div>
-		
-       <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/share-maps-apps.jpg" />
-
-          <h3>Общий доступ к картам и приложениям</h3>
-          <p>Предоставьте доступ к вашим данным и приложениям в пределах вашей организации или сообщества.</p>
-
-         <p><a href="/ru/arcgis-online/share-maps/add-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Добавление элементов</a>
-         <br/><a href="/ru/arcgis-online/share-maps/share-items.htm" class="icon-right-arrow">&nbsp;&nbsp;Общий доступ к элементам</a>
-         <br/>
-	<a href="/ru/arcgis-online/share-maps/hosted-web-layers.htm" class="icon-right-arrow">&nbsp;&nbsp;Публикация размещенных объектов и листов карт</a></p>
-         
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/admin-org.jpg" />
-
-          <h3>Администрирование организации</h3>
-          <p>Расширьте возможности ГИС, настроив ArcGIS Online для вашей организации, пригласив пользователей и управляя всеми ресурсами.</p>
-          <p>
-            <a href="/ru/arcgis-online/administer/configure-site.htm" class="icon-right-arrow">&nbsp;&nbsp;Настроить веб-сайт</a>
-               <br/> <a href="/ru/arcgis-online/administer/invite-users.htm" class="icon-right-arrow">&nbsp;&nbsp;Приглашение участников</a>
-               <br/>
-            <a href="/ru/arcgis-online/administer/view-status.htm" class="icon-right-arrow">&nbsp;&nbsp;Просмотр статистики организации</a></p>
-           
-        </div>
-		<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>Готовые к использованию приложения</h3>
-         <p>Более подробно о готовых к использованию приложениях ArcGIS Online.</p>
-		 <p>
-		 <a href="http://doc.arcgis.com/en/collector/" class="icon-right-arrow">&nbsp;&nbsp;Collector for ArcGIS</a><br/>
-		 <a href="http://doc.arcgis.com/en/explorer/" class="icon-right-arrow">&nbsp;&nbsp;Explorer for ArcGIS</a><br/>
-		  <a href="http://doc.arcgis.com/en/operations-dashboard/" class="icon-right-arrow">&nbsp;&nbsp;Operations Dashboard for ArcGIS</a></br><a href="http://doc.arcgis.com/en/maps-for-office/" class="icon-right-arrow">&nbsp;&nbsp;Esri Maps for Office</a><br/>
-		 <a href="http://doc.arcgis.com/en/maps-for-sharepoint/" class="icon-right-arrow">&nbsp;&nbsp;Esri Maps for SharePoint</a> <br/>
-		   <a href="http://doc.arcgis.com/en/arcgis-app/" class="icon-right-arrow">&nbsp;&nbsp;Приложение ArcGIS для смартфонов и планшетов</a>
-		
-		 </p>
-        </div>	
-	
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-
-          <h3>Настраиваемые приложения</h3>
-          <p>Научитесь использовать настраиваемые шаблоны для создания приложений для вашей организации и сообщества.</p>
-		 <p><a href="http://links.esri.com/configurableapps" class="icon-right-arrow">&nbsp;&nbsp; Настраиваемые приложения Esri</a><br>
-		 <a href="http://storymaps.arcgis.com/" class="icon-right-arrow">&nbsp;&nbsp; Карты историй</a></br>
-		 <a href="http://solutions.arcgis.com/" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Solutions</a><br></p>
-		 
-        </div>
-        <div class="clear"></div>
-          <div id="collectorDataFeature" class="column-12 phone-column-24">
-	     <h3>Дополнительные ресурсы</h3>
-		          <p>Изучайте больше приложений, карт и инструментов для вашей организации.</p>
-				 <p><a href="https://marketplace.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Marketplace</a></br> 
-				 <a href="http://doc.arcgis.com/en/open-data" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS Open Data</a></br>
-				 <a href="http://doc.arcgis.com/en/living-atlas" class="icon-right-arrow">&nbsp;&nbsp; Живой атлас мира</a></br>
-				 <a href="https://developers.arcgis.com" class="icon-right-arrow">&nbsp;&nbsp; ArcGIS for Developers</a>
-				
-			 </p></div>
-        <div class="clear"></div>
+<div class="agol-search-box">
+         <form target="_top" id="helpSearchForm" class="agolhomesearchForm">
+                
+        <input type="search" placeholder="Search ArcGIS Online Help" class="leader" name="q">
+        <input type="hidden" value="help" name="collection">
+        <input type="hidden" value="arcgis-online" name="product">  
+        <input type="hidden" value="ru" name="language">
+      </form>  
         
-        
-        <p>&nbsp;</p>
-
       </div>
+        <!--<input type="search" name="q" class="leader" placeholder="Search Help">
+        <input type="hidden" name="collection" value="help">
+        <input type="hidden" name="product" value="arcgis-online">          
+        <input type="hidden" name="language" value="en">
+      </form>-->
 
-
-      <div class="column-8 tablet-column-24 blocks">
-
-	  	  	 <div class="imgFrame block">
-          <h3>Начало работы</h3>
-		  <p>Порадуйтесь следующим возможностям ArcGIS Online:</p>
-		  
-		     <table><tr><td>
-		          <ul>
-		            <li>Изучение карты</li>
-		            <li>Создание карты</li>
-		            <li>Добавление слоя из файла</li>
-		            <li>Настроить всплывающие окна</li>
-		            <li>Создать веб-приложение</li>
-		          </ul></td>
-		          <td valign="top">
-		          <ul><a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online" class="btn secondary">Начните прямо сейчас</a>
-		            
-        </ul></td><tr></table>
-    
-		 
-		<p>Откройте для себя другие практические уроки в разделе <a href="http://learn.arcgis.com">Learn ArcGIS</a><br>
-		 Ищете обучение? Найдите <a href="http://www.esri.com/training/main/arcgis-online-training">курсы ArcGIS Online</a></p>
-        </div>
-	
-		 <br />
-	  
-	 
-	  		 	  	 <div class="greyFrame">
-          <h3>Сведения</h3>
-         <ul>
-		<li><a href="/ru/arcgis-online/reference/what-is-agol.htm" >&nbsp;Что такое ArcGIS Online?</a></li>
-		<li><a href="/ru/arcgis-online/reference/whats-new.htm" >&nbsp;Что нового?</a></li>
-		<li><a href="/ru/arcgis-online/reference/faq.htm">&nbsp;Часто задаваемые вопросы</a></li>
-		<li><a href="http://doc.arcgis.com/ru/trust/">&nbsp;Trust ArcGIS</a></li>
-		 
-		
-        
-        </div>
-	
-		 <br />
-	
-	<section id="video-column">
-      <div class="panel">
-        <h3>Создание карты</h3>
-        <a class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00"><img src="http://video.arcgis.com/thumbs/2011/04/253/making-a-map-d8a9f082b28f88c07545280c2934907a.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
-		<video width="320" height="240" controls id="2194" class="mobileVideo">
-		  <source src="http://video.arcgis.com/download-video/253/mp4/480">
+                
+	<hr>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class=	"playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="247" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
-        
-        <p>Узнайте, как использовать встроенный вьюер карт для создания карт.</p>
-        <a href="/ru/arcgis-online/reference/videos.htm" class="btn secondary">Другие видеоролики</a>
-      </div>
-    </section>	
-	
-	<br />
+	</section>
+    
+  </div> 
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="253" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+      <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
+       <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+        </video>
+    
+  </div>
+  
+  <div class="clear"></div>
+
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/ru/arcgis-online/use-maps/use-maps.htm" class="">Использование карт и сцен</a></h3>
+    </section>
+  </div> 
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a href="/ru/arcgis-online/create-maps/create-maps-and-apps.htm" class="">Создание карт, сцен и приложений</a></h3>
+    </section>  
+  </div>
+  
+  <div class="column-8">
+  <!--<div class="row">-->
+   <h3><a href="/ru/arcgis-online/share-maps/share-maps-apps.htm" class="">Открывать общий доступ к вашим элементам</a></h3>
+  </div>
+  <div class="clear"></div>  
+   
+  <br>
+  
+  <div class="clear"></div>
+<br>
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
+		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+		</video>
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
+         <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+         </video>
+    </section>
+    
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
+	<video width="320" height="240" class="mobileVideo" id="1340" controls="">
+    <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
+       </video>
+    </section>
+  </div>
+  <div class="clear"></div>
+  
+<div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ru/arcgis-online/use-maps/perform-analysis.htm">Выполнение анализа</a></h3>
+     
+    </section>
+
+  </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ru/arcgis-online/share-maps/hosted-web-layers.htm">Опубликовать размещенные веб-слои</a></h3>
+      
+    </section>
+    </div>
+  <div class="column-8">
+  <!--<div class="row">-->
+    <section class="support-option">
+      <h3><a class="" href="/ru/arcgis-online/administer/admin-org.htm">Администрируйте вашу организацию</a></h3>
+      
+    </section>
+ </div>
+   <div class="clear"></div>
+<hr>
+<br/>
+
+  <div>
+    
+<div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/ru/" target="_blank">Техническая поддержка Esri</a></h4>
+      <p>Свяжитесь с поддержкой Esri через чат, по телефону или по email.</p>
+    </section>
+    
+  </div> 
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+    <section class="support-option">
+      <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">ArcGIS Ideas</a></h4>
+      <p>Отправьте отзыв о программном обеспечении.</p>
+    </section>
+    
+  </div>
+  <div class="column-8 phone-column-24" style="width: 33.333%;">
+
+   <h4 class="icon-comment icon-blue"><a href="http://GeoNet.esri.com/" target="_blank">Форумы ArcGIS</a></h4>
+      <p>Присоединитесь к обсуждению на GeoNet.</p>
+    
+  </div>
+  <!--<div class="row">-->
+
+  
+</div>
+</div>
+
+
+ <div class="column-8 tablet-column-24 blocks">
+	 <div class="imgFrame block">
+          <h3>Новое в ArcGIS Online?</h3>
+
+			<p><a  class="btn secondary" href="http://learn.arcgis.com/ru/projects/get-started-with-arcgis-online/">Обратите внимание на практические уроки</a></p>
+			<a href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  Посмотрите видеоролик</a><br/><br/>
+			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">   Найдите учебные курсы</a>
+      </div>	
+		 <br />
+		 <br />
+		 
+	 <div class="greyFrame">
+          <h3>Краткий справочник</h3>
+         <ul>   <li><a href="/ru/arcgis-online/reference/troubleshoot-account.htm">&nbsp;Устранение проблем входа</a></li>
+		<li><a href="/ru/arcgis-online/reference/whats-new.htm" >&nbsp;Что нового</a></li>
+		<li><a href="/ru/arcgis-online/reference/faq.htm">&nbsp;Часто задаваемые вопросы</a></li>
+		<li><a href="/ru/arcgis-online/reference/videos.htm">&nbsp;Видео</a></li>
+		<li><a href="/ru/trust/system-status/">&nbsp;Состояние системы</a></li>
+        </ul>
+		</div>
 		
+		<br />
+		<br />
+
 <!-- Blog Feed -->
         <div class="greyFrame">
           <h3>Из нашего Блога</h3>
@@ -216,22 +243,15 @@ mobile: true
           </div>
 		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Другие сообщения в блоге</a>
         </div>
-		 <br />
-		 
-     <section id="forum-container">
-      <div class="panel">
-        <h3>Обсуждения на GeoNet</h3>
-        <div id="forum"></div>
-        <a href="https://geonet.esri.com/discussion/create.jspa?containerType=14&containerID=2055" class="btn secondary">Начать обсуждение</a>&nbsp; <a href="https://geonet.esri.com/community/gis/arcgis-online/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="btn light">Читать еще...</a>
-      </div>
-    </section>      
-	
-		
-
-	
+		 <br />  
+        
+		 <br />  
  </div>
 
-    </div>
+<div>
+
+</div>
+
 	
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
   <script type="text/javascript">

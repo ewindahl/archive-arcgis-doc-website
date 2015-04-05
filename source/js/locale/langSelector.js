@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/)/)){
   return;
   }
   
@@ -103,9 +103,12 @@ jQuery(document).ready(function ($) {
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da", "it","ko", "nl","no","pl","pt-br","pt-pt","ro","sv"],
-      lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "th", "tr"],
-	  lgTrustSite = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn'],
+      lgPartial = ["da", "it","ko", "no","pl","pt-br","pt-pt","ro"],
+      lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
+	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "da", "it","ko", "no","pl","pt-br","pt-pt","ro","sv", "cs", "et", "fi", "lt", "lv", "tr"],
+	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar', "da", "it","ko", "no","pl","pt-br","pt-pt","ro","nl"],
+    lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn']
+    lgMicro = ['en', 'de', 'es', 'ja', 'ko']
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -152,9 +155,18 @@ jQuery(document).ready(function ($) {
           },
 
           isPageAvailable : function (lg,langSelector) {
-              if(langSelector != "all" && lgPickFull.concat(lgPartial).indexOf(lg) >= 0){
+
+			  if(langSelector === "all"){
                 return true;
-              }else if(langSelector === "all"){ 
+              }else if(langSelector === "generic" && lgPickFull.concat(lgPartial).indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "trust" && lgTrustSite.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "agol" && lgAGOL.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "cognos" && lgCognos.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "micro" && lgMicro.indexOf(lg) >= 0){ 
                 return true;
               }else{
                 return false;
@@ -226,8 +238,17 @@ jQuery(document).ready(function ($) {
                 case "generic":
                   lgList = lgPickFull.concat(lgPartial);
                   break;
-				case "trust":
+				        case "trust":
                   lgList = lgTrustSite;
+                  break;
+				        case "agol":
+                  lgList = lgAGOL;
+                  break;
+                case "cognos":
+                  lgList = lgCognos;
+                  break;
+                case "micro":
+                  lgList = lgMicro;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -372,7 +393,13 @@ jQuery(document).ready(function ($) {
   if(winloc.pathname.match( /(\/location-analytics\/)/)){
     docCfg.langSelector = "all";
   }else if (winloc.pathname.match( /(\/trust\/)/)){
-	docCfg.langSelector = "trust";
+    docCfg.langSelector = "trust";
+  }else if (winloc.pathname.match( /(\/arcgis-online\/)/)){
+    docCfg.langSelector = "agol";
+  }else if (winloc.pathname.match( /(\/maps-for-cognos\/)/)){
+    docCfg.langSelector = "cognos";
+  }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
+    docCfg.langSelector = "micro";
   }
   
 

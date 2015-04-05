@@ -15,7 +15,11 @@ $(document).ready(function() {
    
     var val = '<p id="plats">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir +'/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class=""> iPad</a>' +
+        '<a data-appname="explorer" data-plat="android-phone" data-prefix="/' + localedir +'/explorer/android-phone" href="/en/explorer/" data-langlabel="android-phone" class=""> Android phone</a>' +
+        ' | ' +
+		'<a data-appname="explorer" data-plat="android-tablet" data-prefix="/' + localedir +'/explorer/android-tablet" href="/en/explorer/" data-langlabel="android-tablet" class=""> Android tablet</a>' +
+        ' | ' +
+		'<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir +'/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class=""> iPad</a>' +
         ' | ' +
         '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir +'/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class=""> iPhone</a>' +
         ' | ' +
@@ -23,9 +27,12 @@ $(document).ready(function() {
         '</p>',
 
 		prodKey = "explorer",
-		prodDVal = "ipad",
+		prodDVal = "android-phone",
+		prodIpadVal = "ipad",
 		prodIOSVal = "iphone",
 		prodMacVal = "mac",
+		prodAndroidPhoneVal = "android-phone",
+		prodAndroidTabletVal = "android-tablet",
 		prodWPVal = "windows-phone",
 		homePath = "/en/explorer",
 		forumPath = "/en/explorer/forum"
@@ -44,17 +51,23 @@ $(document).ready(function() {
 		plat = prodIOSVal;
 	  }else if(navigator.userAgent.match(/(Macintosh)/gi)){
 		plat = prodMacVal;
+	  }else if(navigator.userAgent.match(/(iPad)/gi)){
+		plat = prodIpadVal;
 	  }
 
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
       }
-    }/* else if (!($.cookie (prodKey)) && (navigator.userAgent.match(/(windows phone)/gi))){
-      plat = prodWPVal;
+    } else if (!($.cookie (prodKey)) && (navigator.userAgent.match(/(Android)/gi))){
+      if(navigator.userAgent.match(/(Mobile)/gi)){
+		plat = prodAndroidPhoneVal;
+	  }else{
+		plat = prodAndroidTabletVal;
+	  }
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
       }
-    }*/
+    }
 
    function UASpecificRedirect (plat, pathname) {
 
@@ -79,6 +92,7 @@ $(document).ready(function() {
 				fname = parts.pop(),
 				fld = parts.pop(),
 				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/"),
+				newHref = newHref.replace ("/"+prodIpadVal+"/", "/"+plt+"/"); // Temporary, Once links on erb are fixed, we can remove this
 				keeplink = $ele.data ("modlink") === false;
 
 			if (!keeplink && href.indexOf (homePath) === 0 ) {
@@ -117,7 +131,7 @@ $(document).ready(function() {
 				parts = href.split("/");
 				fname = parts.pop(),
 				fld = parts.pop(),
-				newHref = href.replace ("/"+prodIOSVal+"/", "/"+plt+"/");
+				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
 				$ele.attr ("href", newHref);
 		});
 	}
@@ -130,8 +144,8 @@ $(document).ready(function() {
 				parts = href.split("/");
 				fname = parts.pop(),
 				fld = parts.pop(),
-				newHref = href.replace (prodIOSVal+"/", plt+"/");
-				newHref = newHref.replace (prodDVal+"/", plt+"/");
+				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
+				newHref = newHref.replace (prodIpadVal+"/", plt+"/"); // Temporary, Once links on erb are fixed, we can remove this
 				$ele.attr ("href", newHref);
 				
 		});
