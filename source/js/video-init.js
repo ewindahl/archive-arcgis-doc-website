@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-    if ((navigator.userAgent.match(/(iPhone|iPod|iPad|Android|blackberry)/gi))) {
+	 
+	 if ((navigator.userAgent.match(/(iPhone|iPod|iPad|Android|blackberry)/gi))) {
         // Remove css class "cboxElement", else it will open video on light box.
         $("a.cboxElement").removeClass('cboxElement');
 
