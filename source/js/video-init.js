@@ -16,8 +16,13 @@ $(document).ready(function() {
             //hide the clicked link/image
             $(this).css("display", "none");
 
-            // Display the HTML5 Video
-            $("#" + videoId).css("display", "block");
+				//Create HTML5 video below the clicked link/image if it does not already exist
+				if ($('#' + videoId).length == 0) {
+					generateVideo(videoId, this);
+				} else {
+					$("#" + videoId).css("display", "block");
+				}
+
             videoControl(videoId, tempUrl, this);
         });
 
@@ -33,6 +38,14 @@ $(document).ready(function() {
                 // Add back the original url in case if user will click on Video link again.
                 $(obj).attr('href', tempUrl);
             });
+				
+				// Prevent multiple video play
+				$('audio,video').bind('play', function() {
+					activated = this;
+					$('audio,video').each(function() {
+						if(this != activated) this.pause();
+					});
+				});
             //
         }
     } else {
@@ -54,5 +67,18 @@ $(document).ready(function() {
             current: "({current} of {total})"
         });
     }
+	 
+	 function generateVideo(videoId, obj) {
+		var source = document.createElement("source");
+		source.src = "http://video.arcgis.com/download-video/" + videoId + "/mp4/480";
+		source.type = "video/mp4";
+		var video = document.createElement("video");
+		video.appendChild(source);
+		video.setAttribute("height", "240");
+		video.setAttribute("id", videoId);
+		video.setAttribute("width", "320");
+		video.setAttribute("controls", "");
+		$(obj).after(video);
+	}
 
 });
