@@ -12,13 +12,12 @@ js:
   - libs/jquery.cookie
   - /en/asset/js/app-collector-1
   - libs/jquery.colorbox-min
-  - jquery.colorbox.init
   - video-init
   - libs/jquery.smartbanner
   - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2014-10-27"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ru"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2015-1-29"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ru"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -91,7 +90,7 @@ mobile: true
           <p>
             <a href="/ru/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Покажите мне как</a><br />
 
-			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Просмотреть видео</a>
+			<a title="Сбор данных" href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Просмотреть видео</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
 			</video>
@@ -112,8 +111,8 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="story-graphic-4.png" />
 
-          <h3>Используйте готовые шаблоны</h3>
-          <p>Наборы данных специфичны для каждой отрасли производства. Загрузите и настройте готовые шаблоны для создания базовой структуры данных, характерных для вашей отрасли.</p>
+          <h3>Немедленное начало работы с шаблонами</h3>
+          <p>Наборы данных специфичны для каждой отрасли производства. Загрузить шаблоны для создания требуемой вам базовой структуры данных и настройте её для вашей конкретной работы.</p>
           <p>
             <a href="http://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;Просмотреть загрузки</a><br />
           </p>
@@ -123,7 +122,9 @@ mobile: true
 
 	<a name="features"></a>
 	<h2 class="divider">Возможности</h2>
-	<p>Соберите и актуализируйте данные в поле, запишите ваше текущее местоположение и передайте данные, чтобы обеспечить принятие обоснованных и своевременных решений. Используйте карты в любом месте для проверки точности ваших данных, проведения наблюдений и реагирования на события. Вы увеличите эффективность работы полевой команды и точность своей ГИС-системы.</p>
+	<p>Соберите и актуализируйте данные в поле, запишите ваше текущее местоположение и передайте данные, чтобы обеспечить принятие обоснованных и своевременных решений. 
+	Используйте карты в любом месте для проверки точности ваших данных, проведения наблюдений и реагирования на события. 
+	Вы увеличите эффективность работы полевой команды и точность своей ГИС-системы.</p>
 	
 	<ul>
 	<li>Загрузите карты на ваше устройство и работайте автономно.</li>
@@ -131,7 +132,7 @@ mobile: true
 	<li>Соберите точечные, линейные и площадные объекты.</li>
 	<li>Заполните лёгкие в использовании, управляемые картой формы.</li>
 	<li>Найдите местоположения и получите маршрут.</li>
-	<li>Отслеживайте и получайте отчеты по области интереса.</li>
+	<li>Отслеживайте и описывайте области, которые посетили.</li>
 	</ul>
 
         <a name="systemRequirements"></a>
@@ -166,7 +167,7 @@ mobile: true
 
         <a name="whatsNew"></a>
         <h2 class="divider">Что нового</h2>
-        <p>Collector for ArcGIS версии 10.3 был выпущен в январе 2015. Он включает следующие улучшения:</p>
+        <p>Collector for ArcGIS версии 10.3 был выпущен в январе 2015 для Android и в марте 2015 для iOS. Она включает следующую новую функциональность:</p>
         <ul>
           <li>Возможность просмотра и редактирования связанных записей</li>
           <li>Поддержка открепления дополнительных данных, включая следующее:
@@ -182,19 +183,21 @@ mobile: true
 
 	<a name="sneakPeek"></a>
 	<h2 class="divider">Краткий обзор</h2>
-	<p>В настоящее время Collector представляет собой великолепное приложение для сбора и редактирования данных в полевых условиях. Но это еще не все! Ниже описывается, где мы могли бы с успехом применить данное приложение:</p>
+	<p>В настоящее время Collector представляет собой великолепное приложение для сбора и редактирования данных в полевых условиях. Но это еще не все!
+	Ниже описывается, где мы могли бы с успехом применить данное приложение:</p>
 	
 	<ul>
-	  <li>Дополнительные инструменты для планирования полевых операций в автономном режиме</li>
+	  <li>Поддержка для Windows и Windows Phone</li>
 	  <li>Интеллектуальные формы сбора данных</li>
+	  <li>Поддержка для внешних GNSS ресиверов</li>
+	  <li>Дополнительные инструменты для планирования полевых операций в автономном режиме</li>
 	  <li>Сбор данных со смещением</li>
-	  <li>Поддержка однократного (ad hoc) сбора данных</li>
 	  <li>Интеграция периферийных устройств (лазерных дальномеров, сканеров штрих-кодов и т.д.)</li>
 	</ul>	
 	
 	<p>Делитесь вашими <a href="http://ideas.arcgis.com/">идеями</a> и <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">присылайте нам ваши отзывы</a>.</p>
 		
-        <p>&nbsp;</p>
+        <p> </p>
 
       </div>
 
@@ -202,7 +205,7 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
-	  <h3>Сведения</h3>
+	  <h3>Подробности</h3>
 	          
 	  <h4><a href="#features">Возможности</a></h4>
 	  <h4><a href="#systemRequirements">Системные требования</a></h4>
