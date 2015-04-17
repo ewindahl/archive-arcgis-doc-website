@@ -104,7 +104,9 @@ agolLogout
     	}
 	    
 
-	    $.getJSON(portalHostname + "/sharing/rest/portals/self", params, function (data) {
+	    var proxyURL = (navigator.userAgent.match(/msie/i)) ? "/apps/proxy/proxy.php?" : "";
+		 
+		 $.getJSON(proxyURL + "https:"+portalHostname + "/sharing/rest/portals/self?Duration=0", params, function (data) {
       		var firstName = getUserDisplayName(data && data.user),        
               orgHostname = getOrgHostname (data),   
   	       		text = firstName || "SIGN IN";
@@ -114,15 +116,21 @@ agolLogout
 
           $("#agolProfile").attr ("href", "//" + orgHostname + sitecfg["agolProfile"]);
           $("#agolHelp").attr ("href", "//" + orgHostname + sitecfg["agolHelp"]);
+		  $("#agolLogout").attr ("href", "https://" + orgHostname + sitecfg["agolSignout"]+"?redirect_uri=https:"+sitecfg["portalHostname"] + sitecfg["agolSignout"]+"?redirect_uri="+encodeURIComponent(window.location.href));
     
           $(".myconsole").css ("display", "block");
+			
+			if(data.subscriptionInfo && (data.subscriptionInfo.type.toLowerCase() === "trial" && data.subscriptionInfo.state.toLowerCase() === "active")){
+				var trialDownloadString = (window.localeJsonObj['docConfig'] && window.localeJsonObj[docConfig['locale']]['trial-downloads'])?window.localeJsonObj[docConfig['locale']]['trial-downloads'] : "Trial Downloads";
+				$(".myconsole li:last").before('<li><a href="' + sitecfg["trialDownloadUrl"] + '">' + trialDownloadString +'</a></li>');
+		  }
   
     	});
 
-      $("#agolLogout").on ("click", function() {
+      /*$("#agolLogout").on ("click", function() {
         cookie.jar.removeItem (ckKey, "/", ".arcgis.com");
         window.location.reload(true);
-      });
+      });*/
 
   /*	
         if (cookie.val["role"] && cookie.val["role"].indexOf ("admin")>=0) {

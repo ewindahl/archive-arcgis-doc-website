@@ -1,0 +1,169 @@
+---
+title: Turbeprobleemist teatamine
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - securityForm
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/et/Trust/">Trust ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li class='current'><a title="ArcGIS Online'i usaldus" href="/et/trust/">Usaldus</a></li>
+        <li><a title="ArcGIS Online'i süsteemi olek" href="/et/trust/system-status/">Süsteemi olek</a></li>
+        <li><a title="ArcGIS Online'i turvalisus" href="/et/trust/security/">Turvalisus</a></li>
+        <li><a title="ArcGIS Online'i privaatsus" href="/et/trust/privacy/">Privaatsus</a></li>
+        <li><a title="ArcGIS Online'i privaatsus" href="/et/trust/compliance/">Nõuetele vastavus</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="container feedback">
+
+  <div class="row main">
+	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="">Turbeprobleemist teatamine</h2>
+      </header>
+	  <section>
+		<p data-langlabel="">Täitke paremal olev vorm. Pange kirja kogu vajalik teave, sh teie konkreetse probleemi üksikasjad. Kontaktandmeid kasutatakse teie toodud teabe lähemalt uurimiseks. Valige teema rippmenüüst sobiv teema.</p>
+		<ul>
+			<li data-langlabel="">Nõrkus – teatage meie saidilt või rakendusest leitud nõrkusest.</li>
+			<li data-langlabel="">Kahtlane Esri e-mail – kui arvate, et olite Esri e-maili aadressilt pärineva võimaliku andmepüügirünnaku sihtmärgiks või olete saanud Esrilt muid kahtlaseid e-maile.</li>
+			<li data-langlabel="">Privaatsusprobleem – kui teil on meie rakenduse või ettevõttega seotud privaatsusprobleem.</li>
+			<li data-langlabel="">Muu – kõik muud turvalisuse, privaatsuse või nõuetele vastavusega seotud probleemid.</li>
+		</ul>
+		
+<div style="padding-bottom:15px;">		
+
+  </div>   
+	  <hr style="padding-bottom:20px;"/>
+	  	  <header>
+		<h3 data-langlabel="">Nõrkusest teatamise poliitika</h3>
+	  </header>
+      
+        <p data-langlabel="">ArcGIS.com-i turbemeeskond tunnustab iseseisvate turvaaukude otsijate olulist rolli Interneti turvalisuse tagamisel. Soovime, et saaksime pädevat teavet meie saidil või rakenduses leiduvate nõrkuste kohta. Esri soovib teha koostööd turbevaldkonna kogukonnaga, et kontrollida meile teatatud võimalikke nõrkusi ja neile reageerida. Selle poliitika järgimisel ei esita Esri teie vastu hagi ega taotle teie vastu uurimise alustamist.</p>
+	  <header>
+		<h4 data-langlabel="">ArcGIS.com <strong>ei</strong> luba turvaaukude otsimiseks teha järgmist</h4>
+	  </header>
+	  <ul>
+			<li data-langlabel="">Põhjustada või üritada põhjustada teenusetõkestamise (DoS) rünnakuid.</li>
+		<li data-langlabel="">Kasutada ilma Esri selge nõusolekuta automaatseid turbetööriistu. Automaatsete tööriistade kasutamine võib kaasa tuua uurimise või teie IP(-de) blokeerimise.</li>
+		<li data-langlabel="">Juurde pääseda või üritada juurde pääseda andmetele või teabele, mis teile ei kuulu.</li>
+		<li data-langlabel="">Hävitada või rikkuda või üritada hävitada või rikkuda andmeid või teavet, mis teile ei kuulu.</li>  
+	  </ul>
+
+	 <header>
+	  <h4 data-langlabel="">ArcGIS.com-i turbemeeskonna lubadus</h4>
+	  </header>
+		<p data-langlabel="">ArcGIS.com-i turbemeeskond lubab kõigile turvaaukude otsijatele, kes järgivad ArcGIS.com-i nõrkusest teatamise poliitikat järgmist.</p>
+		
+		<ul>
+		<li data-langlabel="">Vastata aegsasti ning kinnitada teie teate kättesaamist.</li>
+		<li data-langlabel="">Anda hinnangulise ajavahemiku, mis kulub nõrkuse lahendamiseks.</li>
+		<li data-langlabel="">Teavitada teate saatnud isikut nõrkuse parandamisest.</li>		
+		</ul>
+		
+		<div class="dropdown-navigation dropdown-wrapper regular">
+      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Participating Security Researchers</span>
+      <div class="dropdown-content">
+        <div class="dropdown-menu">
+          <p data-langlabel="trust-researchers-desc">We would like to thank the following security researchers for participating in our responsible reporting program:</p>
+          <%= partial :"_partial/security_names" %>
+        </div>
+      </div>
+    </div>
+	
+	 </section>
+	 
+  </div> 
+
+    <div class="contact-form-signup">
+		
+		<div id="form-fields">
+		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+						
+			<fieldset id="security-form-fieldset">
+
+			  <label data-langlabel="" for="name">Nimi: </label>
+			  <input type="text" autocomplete="off" id="name" name="name">
+			  <label data-langlabel="email-address" for="email-address">E-maili aadress: </label>
+			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Telefoninumber: </label>
+			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+			  <label data-langlabel="" for="organization">Ettevõte <span class="optional">(valikuline):</span> </label>
+			  <input type="text" autocomplete="off" id="organization" name="organization">
+			  <label data-langlabel="" for="subject">Teema: </label>
+			  <select id="subject" autocomplete="off" name="subject">
+				  <option value="" style="display:none;"></option> <option value="Vulnerability">Nõrkus</option> <option value="Suspicious E-mail from Esri">Kahtlane Esri e-mail</option> <option value="Privacy Issue">Privaatsusprobleem</option> <option value="audi">Muu</option>
+			  </select>
+
+			  <label data-langlabel="" for="description">Kirjeldus: </label>
+			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+			  <label data-langlabel="feedback-spam-note" for="spam">Automaatse rämpsposti tõkestamiseks sisestage kuvatavad numbrid: </label>
+			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+			  <label data-langlabel="numerals" for="captchaValue">Numbrid: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			  <input type="hidden" value="sisemine" name="source" id="source">
+
+			  <input value="paljusõnaline" name="resultType" id="resultType" type="hidden">
+			  <input value="Turbeprobleem" name="datablock" id="datablock" type="hidden">
+			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+
+			  <input type="hidden" value="et" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Saada</a>
+			
+		  </form>
+		</div>
+
+	  <div id="submission-confirmation" style="display:none;">	
+		<p data-langlabel=""><h4>Täname, et teatasite probleemist. Uurime probleemi ja tegeleme sellega järgmise paari tööpäeva jooksul.</h4></p>
+	  </div>
+	  <div id="submission-error" style="display:none;">	
+		<p data-langlabel=""><h4>Saatmisel esines tõrge. Saatke probleem hiljem uuesti.</h4></p>
+	  </div>
+
+	  <strong><span style="display:none;" id="referPageLink">Naase <a id="feedback-referring-link" href="">viitavale lehele</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Saada</a> uus turbeprobleem</span></strong>
+
+    </div>
+
+  </div> <!-- end of row main -->
+
+<script>
+$(document).ready(function() {
+
+	$('#submit').on ("click", function() {
+      return doc.securityConcernForm.validateForm();
+    });
+    doc.securityConcernForm.DrawCaptcha();
+});
+</script>
+
+</div>
+
