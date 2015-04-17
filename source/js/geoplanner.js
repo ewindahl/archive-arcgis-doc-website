@@ -8,7 +8,7 @@ $(document).ready(function() {
 		} else {
 			$.ajax({
 				type: "GET",
-				url: "/apps/proxy/proxy.php?" + sitecfg.esriHostname + "/shared/services/index.cfm?event=location.getCountryByIp",
+				url: "/apps/shared/services/index.cfm?event=location.getCountryByIp",
 				dataType: "json", 
 				// Remove the comments below to test for outside of U.S.
 				//data: "address=4.18.32.72",
