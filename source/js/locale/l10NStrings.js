@@ -228,7 +228,20 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "esri-maps-salesforce": "Maps for Salesforce", 
+      "esri-maps-salesforce-ht": "Esri Maps for Salesforce",
+      "esri-maps-sapbobj" : "Maps for SAP BusinessObjects",
+      "esri-maps-sapbobj-ht" : "Esri Maps for SAP BusinessObjects",
+      "esri-maps-cognos" : "Maps for IBM Cognos (Desktop)",
+      "esri-maps-cognos-ht" : "Esri Maps for IBM Cognos (Desktop)",
+      "esri-maps-cognos-mobile" : "Maps for IBM Cognos (Mobile)",
+      "esri-maps-cognos-mobile-ht" : "Esri Maps for IBM Cognos (Mobile)",
+      "install-onwindows": "Install on Windows",
+      "install-on-linux": "Install on Linux and UNIX",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
+
    }, 
    "cs": {
       "404-click-here-for-english": "Chcete-li zjistit, zda je k dispozici verze v angličtině,<a href='#' id='englishLink'>klikněte sem</a>.", 
@@ -825,7 +838,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "install-onwindows": "Installation unter Windows",
+      "install-on-linux": "Installation unter Lunix und UNIX",
+      "desktop": "Desktop",
+      "mobile": "Mobil"
    }, 
    "en": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available.", 
@@ -1024,7 +1041,19 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-		"windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "esri-maps-salesforce": "Maps for Salesforce", 
+      "esri-maps-salesforce-ht": "Esri Maps for Salesforce",
+      "esri-maps-sapbobj" : "Maps for SAP BusinessObjects",
+      "esri-maps-sapbobj-ht" : "Esri Maps for SAP BusinessObjects",
+      "esri-maps-cognos" : "Maps for IBM Cognos (Desktop)",
+      "esri-maps-cognos-ht" : "Esri Maps for IBM Cognos (Desktop)",
+      "esri-maps-cognos-mobile" : "Maps for IBM Cognos (Mobile)",
+      "esri-maps-cognos-mobile-ht" : "Esri Maps for IBM Cognos (Mobile)",
+      "install-onwindows": "Install on Windows",
+      "install-on-linux": "Install on Linux and UNIX",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
    }, 
    "es": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Haga clic aquí</a> para ver si hay una versión en inglés.", 
@@ -1223,7 +1252,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "install-onwindows": "Install on Windows",
+      "install-on-linux": "Install on Linux and UNIX",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
    }, 
    "et": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Klikkige siin</a>, et vaadata, kas ingliskeelne versioon on saadaval.", 
@@ -1820,7 +1853,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "install-onwindows": "Installation sous Windows",
+      "install-on-linux": "Installation sous Linux et UNIX",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
    }, 
    "he": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>לחץ כאן</a> לראות אם יש גרסה אנגלית זמינה.", 
@@ -2417,7 +2454,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "install-onwindows": "Windows 上でのインストール",
+      "install-on-linux": "Linux および Unix 上でのインストール",
+      "desktop": "デスクトップ",
+      "mobile": "モバイル"
    }, 
    "ko": {
       "404-click-here-for-english": "영어 버전이 제공되는지 확인하려면 <a href='#' id='englishLink'>여기를 클릭</a>하세요.", 
@@ -2616,7 +2657,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "install-onwindows": "Windows에 설치",
+      "install-on-linux": "Linux와 UNIX에 설치",
+      "desktop": "데스크톱",
+      "mobile": "모바일"
    }, 
    "lt": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Spustelėkite čia</a>, kad pamatytumėte, ar yra versija anglų k.", 
@@ -4407,7 +4452,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "install-onwindows": "Установка на Windows",
+      "install-on-linux": "Установка на Linux и UNIX",
+      "desktop": "настольном компьютере",
+      "mobile": "мобильном устройстве"
    }, 
    "sv": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Klicka här</a> om du vill se om en engelsk version finns tillgänglig.", 
@@ -5402,7 +5451,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": " Windows Phone"
+      "windows-phone": " Windows Phone",
+      "install-onwindows": "在 Windows 上安装",
+      "install-on-linux": "在 Linux 和 UNIX 上安装",
+      "desktop": "桌面",
+      "mobile": "移动"
    }, 
    "zh-hk": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Click here</a> to see if an English version is available.", 
