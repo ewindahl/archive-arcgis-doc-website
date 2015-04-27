@@ -15,6 +15,8 @@ js:
 metatags:
   - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2015-01-06"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="en">
 
+dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
+  
 mobile: true
 
 ---
@@ -52,7 +54,7 @@ mobile: true
 	  -->	  
 
           <p>
-            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Get Operations Dashboard</a>
+            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">Get Operations Dashboard</a>
 
           </p>
         <hr />
@@ -356,5 +358,8 @@ mobile: true
 N = # of article shown (default is 2)
 L = 0, 1 (default is 0)
 */
+$("#dashboardDownloadLink").click(function (){
+	window.location = "<%=data.page.dashboardDownloadLink%>";
+})
 
   </script>
