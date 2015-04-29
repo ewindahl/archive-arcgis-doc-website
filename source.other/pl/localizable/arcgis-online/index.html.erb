@@ -1,5 +1,5 @@
----
-title: ArcGIS Online &mdash; Pomoc
+﻿---
+title: ArcGIS Online — Pomoc
 css:
   - stat-page-specific
   - colorbox/colorbox
@@ -8,7 +8,6 @@ js:
   - video-init
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
   - sitecfg.js
 
 metatags:
@@ -20,21 +19,22 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/pl/arcgis-online/">ArcGIS Online &mdash; Pomoc</a></h1>
-      <!--Commented this part out. Search bar on Header--> <!--<form id="helpSearchForm" target="_top">
+      <h1><a href="/pl/arcgis-online/">ArcGIS Online — Pomoc</a></h1>
+      <!--Commented this part out. Search bar on Header-->
+	  <!--<form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="en>" />
-      </form>-->
+      </form>--&gt;
     </header>
 	<nav>
       <ul>
-        <li class='current'><a title="ArcGIS Online &mdash; Pomoc" href="/pl/arcgis-online/">Strona gł&oacute;wna</a></li>
-        <li><a title="Korzystanie z map i scen" href="/pl/arcgis-online/use-maps/">Używanie</a></li>
-        <li><a title="Tworzenie map, scen i aplikacji" href="/pl/arcgis-online/create-maps/">Tworzenie</a></li>		
-        <li><a title="Udostępnianie map, scen i aplikacji" href="/pl/arcgis-online/share-maps/">Udostępnianie</a></li>
-		<li><a title="Administrowanie instytucją" href="/pl/arcgis-online/administer/">Administrowanie</a></li>
+        <li class='current'><a title="ArcGIS Online — Pomoc" href="/pl/arcgis-online/">Strona główna</a></li>
+        <li><a title="Korzystanie z map i scen" href="/pl/arcgis-online/use-maps/">Użyj</a></li>
+        <li><a title="Tworzenie map, scen i aplikacji" href="/pl/arcgis-online/create-maps/">Utwórz</a></li>		
+        <li><a title="Udostępnianie map, scen i aplikacji" href="/pl/arcgis-online/share-maps/">Udostępnij</a></li>
+		<li><a title="Zarządzanie instytucją" href="/pl/arcgis-online/administer/">Zarządzaj</a></li>
 		<li><a title="Odnośniki" href="/pl/arcgis-online/reference/">Odnośniki</a></li>
 		<li><a title="Aplikacje gotowe do użycia" href="/pl/arcgis-online/apps/arcgis-apps.htm">Aplikacje</a></li>
 	</ul>
@@ -53,7 +53,7 @@ mobile: true
         <input type="search" placeholder="Search ArcGIS Online Help" class="leader" name="q">
         <input type="hidden" value="help" name="collection">
         <input type="hidden" value="arcgis-online" name="product">  
-        <input type="hidden" value="pl" name="language">
+        <input type="hidden" value="en" name="language">
       </form>  
         
       </div>
@@ -69,7 +69,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class=	"playbtn"></a>
+		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" title="Korzystanie z map i scen" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="247" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
@@ -79,7 +79,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" title="Tworzenie map, scen i aplikacji" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="253" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
          </video>
@@ -87,7 +87,8 @@ mobile: true
   </div>
   
   <div class="column-8">
-  <!--<div class="row">--> <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+  <!--<div class="row">-->
+      <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" title="Udostępnianie elementów" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
        <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
         </video>
@@ -100,20 +101,20 @@ mobile: true
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a href="/pl/arcgis-online/use-maps/use-maps.htm" class="">Korzystanie z map i scen</a></h3>
+      <h3><a href="/pl/arcgis-online/use-maps/use-maps.htm" class="">Korzystanie z map i scen</a></h3>
     </section>
   </div> 
   
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a href="/pl/arcgis-online/create-maps/create-maps-and-apps.htm" class="">Tworzenie map, scen i aplikacji</a></h3>
+      <h3><a href="/pl/arcgis-online/create-maps/create-maps-and-apps.htm" class="">Tworzenie map, scen i aplikacji</a></h3>
     </section>  
   </div>
   
   <div class="column-8">
   <!--<div class="row">-->
-   <h3><a href="/pl/arcgis-online/share-maps/share-maps-apps.htm" class="">Udostępnianie element&oacute;w</a></h3>
+   <h3><a href="/pl/arcgis-online/share-maps/share-maps-apps.htm" class="">Udostępnianie elementów</a></h3>
   </div>
   <div class="clear"></div>  
    
@@ -124,7 +125,7 @@ mobile: true
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="Wykonywanie analiz" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
@@ -134,7 +135,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="Publikacja hostowanych warstw internetowych" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
          <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
          </video>
@@ -144,7 +145,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="Zarządzanie instytucją" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
 	<video width="320" height="240" class="mobileVideo" id="1340" controls="">
     <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
        </video>
@@ -163,14 +164,14 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a class="" href="/pl/arcgis-online/share-maps/hosted-web-layers.htm">Publikowanie hostowanych warstw internetowych</a></h3>
+      <h3><a class="" href="/pl/arcgis-online/share-maps/hosted-web-layers.htm">Publikacja hostowanych warstw internetowych</a></h3>
       
     </section>
     </div>
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a class="" href="/pl/arcgis-online/administer/admin-org.htm">Administrowanie instytucją</a></h3>
+      <h3><a class="" href="/pl/arcgis-online/administer/admin-org.htm">Zarządzanie instytucją</a></h3>
       
     </section>
  </div>
@@ -183,8 +184,8 @@ mobile: true
 <div class="column-8 phone-column-24">
 
     <section class="support-option">
-      <h4 class="icon-help icon-red"><a href="http://support.esri.com/pl/" target="_blank">Pomoc techniczna firmy Esri</a></h4>
-      <p>Kontakt z pomocą techniczną za pomocą czatu, poczty e-mail lub telefonu.</p>
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">Wsparcie techniczne firmy Esri</a></h4>
+      <p>Kontaktuj się z działem wsparcia przez czat, e-mail lub telefon.</p>
     </section>
     
   </div> 
@@ -192,14 +193,14 @@ mobile: true
 
     <section class="support-option">
       <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">ArcGIS Ideas</a></h4>
-      <p>Prześlij opinię na temat oprogramowania.</p>
+      <p>Przesyłaj swoje opinie o oprogramowaniu.</p>
     </section>
     
   </div>
   <div class="column-8 phone-column-24" style="width: 33.333%;">
 
    <h4 class="icon-comment icon-blue"><a href="http://GeoNet.esri.com/" target="_blank">Forum ArcGIS</a></h4>
-      <p>Dołącz do dyskusji na forum GeoNet.</p>
+      <p>Dołącz do dyskusji w społeczności GeoNet.</p>
     
   </div>
   <!--<div class="row">-->
@@ -211,16 +212,18 @@ mobile: true
 
  <div class="column-8 tablet-column-24 blocks">
 	 <div class="imgFrame block">
-          <h3>Zaczynasz pracę z usługą ArcGIS Online?</h3>
+          <h3>Jesteś nowym użytkownikiem usługi ArcGIS Online?</h3>
 
-			<p><a  class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Zapoznaj się z lekcjami</a></p>
-			<a href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  Obejrzyj przewodnik wideo</a><br/><br/> <a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">   Wyszukaj szkolenia</a>
+			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Zapoznaj się z praktycznymi lekcjami</a></p>
+			<a title="Rozpocznij pracę z usługą ArcGIS Online" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png"> Obejrzyj przewodnik wideo</a><br/><br/>
+			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png"> Znajdź kursy szkoleniowe</a>
       </div>	
-		 <br /> <br />
+		 <br />
+		 <br />
 		 
 	 <div class="greyFrame">
-          <h3>Wskaz&oacute;wki</h3>
-         <ul>   <li><a href="/pl/arcgis-online/reference/troubleshoot-account.htm">&nbsp;Rozwiązywanie problem&oacute;w związanych z logowaniem</a></li>
+          <h3>Wskazówki</h3>
+         <ul>   <li><a href="/pl/arcgis-online/reference/troubleshoot-account.htm">&nbsp;Rozwiązywanie problemów z logowaniem</a></li>
 		<li><a href="/pl/arcgis-online/reference/whats-new.htm" >&nbsp;Co nowego</a></li>
 		<li><a href="/pl/arcgis-online/reference/faq.htm">&nbsp;Często zadawane pytania</a></li>
 		<li><a href="/pl/arcgis-online/reference/videos.htm">&nbsp;Wideo</a></li>
@@ -228,7 +231,8 @@ mobile: true
         </ul>
 		</div>
 		
-		<br /> <br />
+		<br />
+		<br />
 
 <!-- Blog Feed -->
         <div class="greyFrame">
@@ -236,7 +240,7 @@ mobile: true
           <div id="blog">
             <!-- blog goes here -->
           </div>
-		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Więcej wpis&oacute;w z blogu</a>
+		  <a href="http://blogs.esri.com/esri/arcgis/category/arcgis-online/" class="btn secondary">Więcej wpisów z blogu</a>
         </div>
 		 <br />  
         

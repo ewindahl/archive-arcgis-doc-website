@@ -1,4 +1,4 @@
----
+﻿---
 title: Hjelp for ArcGIS Online
 css:
   - stat-page-specific
@@ -8,7 +8,6 @@ js:
   - video-init
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
   - sitecfg.js
 
 metatags:
@@ -21,22 +20,23 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/no/arcgis-online/">Hjelp for ArcGIS Online</a></h1>
-      <!--Commented this part out. Search bar on Header--> <!--<form id="helpSearchForm" target="_top">
+      <!--Commented this part out. Search bar on Header-->
+	  <!--<form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
         <input type="hidden" name="language" value="en>" />
-      </form>-->
+      </form>--&gt;
     </header>
 	<nav>
       <ul>
         <li class='current'><a title="Hjelp for ArcGIS Online" href="/no/arcgis-online/">Hjem</a></li>
-        <li><a title="Bruke kart og scener" href="/no/arcgis-online/use-maps/">Bruke</a></li>
-        <li><a title="Opprett kart, scener og programmer" href="/no/arcgis-online/create-maps/">Opprette</a></li>		
-        <li><a title="Dele kart, scener og programmer" href="/no/arcgis-online/share-maps/">Dele</a></li>
-		<li><a title="Administrere organisasjonen" href="/no/arcgis-online/administer/">Administrere</a></li>
+        <li><a title="Bruke kart og scener" href="/no/arcgis-online/use-maps/">Bruk</a></li>
+        <li><a title="Opprette kart, scener og programmer" href="/no/arcgis-online/create-maps/">Opprett</a></li>		
+        <li><a title="Dele kart, scener og programmer" href="/no/arcgis-online/share-maps/">Del</a></li>
+		<li><a title="Administrere organisasjonen" href="/no/arcgis-online/administer/">Administrer</a></li>
 		<li><a title="Referanse" href="/no/arcgis-online/reference/">Referanse</a></li>
-		<li><a title="Ferdige apper/programmer" href="/no/arcgis-online/apps/arcgis-apps.htm">Apper/programmer</a></li>
+		<li><a title="Ferdige apper/programmer" href="/no/arcgis-online/apps/arcgis-apps.htm">Apper</a></li>
 	</ul>
     </nav>
   </div>
@@ -53,7 +53,7 @@ mobile: true
         <input type="search" placeholder="Search ArcGIS Online Help" class="leader" name="q">
         <input type="hidden" value="help" name="collection">
         <input type="hidden" value="arcgis-online" name="product">  
-        <input type="hidden" value="no" name="language">
+        <input type="hidden" value="en" name="language">
       </form>  
         
       </div>
@@ -69,7 +69,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class=	"playbtn"></a>
+		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" title="Bruke kart og scener" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="247" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
@@ -79,7 +79,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" title="Opprette kart, scener og programmer" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="253" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
          </video>
@@ -87,7 +87,8 @@ mobile: true
   </div>
   
   <div class="column-8">
-  <!--<div class="row">--> <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+  <!--<div class="row">-->
+      <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" title="Dele elementene dine" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
        <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
         </video>
@@ -100,20 +101,20 @@ mobile: true
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a href="/no/arcgis-online/use-maps/use-maps.htm" class="">Bruke kart og scener</a></h3>
+      <h3><a href="/no/arcgis-online/use-maps/use-maps.htm" class="">Bruk kart og scener</a></h3>
     </section>
   </div> 
   
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a href="/no/arcgis-online/create-maps/create-maps-and-apps.htm" class="">Opprette kart, scener og programmer</a></h3>
+      <h3><a href="/no/arcgis-online/create-maps/create-maps-and-apps.htm" class="">Opprett kart, scener og apper</a></h3>
     </section>  
   </div>
   
   <div class="column-8">
   <!--<div class="row">-->
-   <h3><a href="/no/arcgis-online/share-maps/share-maps-apps.htm" class="">Dele elementene dine</a></h3>
+   <h3><a href="/no/arcgis-online/share-maps/share-maps-apps.htm" class="">Del elementene dine</a></h3>
   </div>
   <div class="clear"></div>  
    
@@ -124,7 +125,7 @@ mobile: true
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="Utføre analyser" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
@@ -134,7 +135,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="Publisere hostede weblag" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
          <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
          </video>
@@ -144,7 +145,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="Administrere organisasjonen" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
 	<video width="320" height="240" class="mobileVideo" id="1340" controls="">
     <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
        </video>
@@ -155,7 +156,7 @@ mobile: true
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a class="" href="/no/arcgis-online/use-maps/perform-analysis.htm">Utf&oslash;re analyser</a></h3>
+      <h3><a class="" href="/no/arcgis-online/use-maps/perform-analysis.htm">Utfør analyse</a></h3>
      
     </section>
 
@@ -163,14 +164,14 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a class="" href="/no/arcgis-online/share-maps/hosted-web-layers.htm">Publisere hostede weblag</a></h3>
+      <h3><a class="" href="/no/arcgis-online/share-maps/hosted-web-layers.htm">Publiser vertsbaserte weblag</a></h3>
       
     </section>
     </div>
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a class="" href="/no/arcgis-online/administer/admin-org.htm">Administrere organisasjonen</a></h3>
+      <h3><a class="" href="/no/arcgis-online/administer/admin-org.htm">Administrer organisasjonen</a></h3>
       
     </section>
  </div>
@@ -183,8 +184,8 @@ mobile: true
 <div class="column-8 phone-column-24">
 
     <section class="support-option">
-      <h4 class="icon-help icon-red"><a href="http://support.esri.com/no/" target="_blank">Teknisk st&oslash;tte fra Esri</a></h4>
-      <p>Kontakt brukerst&oslash;tten via chat, e-post eller telefon.</p>
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">Teknisk støtte for Esri</a></h4>
+      <p>Kontakt brukerstøtten via chat, e-post eller telefon.</p>
     </section>
     
   </div> 
@@ -192,14 +193,14 @@ mobile: true
 
     <section class="support-option">
       <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">ArcGIS Ideas</a></h4>
-      <p>Send inn tilbakemeldinger p&aring; programvaren.</p>
+      <p>Send inn tilbakemeldinger på programvaren.</p>
     </section>
     
   </div>
   <div class="column-8 phone-column-24" style="width: 33.333%;">
 
    <h4 class="icon-comment icon-blue"><a href="http://GeoNet.esri.com/" target="_blank">ArcGIS-forumer</a></h4>
-      <p>Delta i diskusjonene p&aring; Geonet.</p>
+      <p>Delta i diskusjonene på Geonet.</p>
     
   </div>
   <!--<div class="row">-->
@@ -213,26 +214,29 @@ mobile: true
 	 <div class="imgFrame block">
           <h3>Er du nybegynner i ArcGIS Online?</h3>
 
-			<p><a  class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Finn praktiske leksjoner</a></p>
-			<a href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  Se en videoomvisning</a><br/><br/> <a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png"> Finn l&aelig;ringskurs</a>
+			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Finn praktiske leksjoner</a></p>
+			<a title="Komme i gang med ArcGIS Online" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png"> Se en videoomvisning</a><br/><br/>
+			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png"> Finn kurs</a>
       </div>	
-		 <br /> <br />
+		 <br />
+		 <br />
 		 
 	 <div class="greyFrame">
           <h3>Hurtigreferanse</h3>
-         <ul>   <li><a href="/no/arcgis-online/reference/troubleshoot-account.htm">&nbsp;Feils&oslash;ke p&aring;loggingsproblemer</a></li>
+         <ul>   <li><a href="/no/arcgis-online/reference/troubleshoot-account.htm">&nbsp;Feilsøk påloggingsproblemer</a></li>
 		<li><a href="/no/arcgis-online/reference/whats-new.htm" >&nbsp;Nyheter</a></li>
-		<li><a href="/no/arcgis-online/reference/faq.htm">&nbsp;Vanlige sp&oslash;rsm&aring;l</a></li>
+		<li><a href="/no/arcgis-online/reference/faq.htm">&nbsp;Vanlige spørsmål</a></li>
 		<li><a href="/no/arcgis-online/reference/videos.htm">&nbsp;Videoer</a></li>
 		<li><a href="/no/trust/system-status/">&nbsp;Systemstatus</a></li>
         </ul>
 		</div>
 		
-		<br /> <br />
+		<br />
+		<br />
 
 <!-- Blog Feed -->
         <div class="greyFrame">
-          <h3>Fra bloggen v&aring;r</h3>
+          <h3>Fra bloggen vår</h3>
           <div id="blog">
             <!-- blog goes here -->
           </div>
