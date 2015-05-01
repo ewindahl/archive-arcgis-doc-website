@@ -8,7 +8,6 @@ js:
   - video-init
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
   - sitecfg.js
 
 metatags:
@@ -21,7 +20,8 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/zh-cn/arcgis-online/">ArcGIS Online 帮助</a></h1>
-      <!--Commented this part out. Search bar on Header--> <!--<form id="helpSearchForm" target="_top">
+      <!--Commented this part out. Search bar on Header-->
+	  <!--<form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />          
@@ -30,13 +30,13 @@ mobile: true
     </header>
 	<nav>
       <ul>
-        <li class='current'><a title="ArcGIS Online 帮助" href="/zh-cn/arcgis-online/">主页</a></li>
+        <li class='current'><a title="ArcGIS online 帮助" href="/zh-cn/arcgis-online/">Home</a></li>
         <li><a title="使用地图和场景" href="/zh-cn/arcgis-online/use-maps/">使用</a></li>
-        <li><a title="创建地图、场景和应用程序" href="/zh-cn/arcgis-online/create-maps/">创建</a></li>		
+        <li><a title="创建地图、场景和应用程序" href="/zh-cn/arcgis-online/create-maps/">Create</a></li>		
         <li><a title="共享地图、场景和应用程序" href="/zh-cn/arcgis-online/share-maps/">共享</a></li>
-		<li><a title="管理您的组织" href="/zh-cn/arcgis-online/administer/">管理</a></li>
-		<li><a title="参考资料" href="/zh-cn/arcgis-online/reference/">参考</a></li>
-		<li><a title="即用型应用程序" href="/zh-cn/arcgis-online/apps/arcgis-apps.htm">应用程序</a></li>
+		<li><a title="管理您的组织" href="/zh-cn/arcgis-online/administer/">Administer</a></li>
+		<li><a title="参考" href="/zh-cn/arcgis-online/reference/">Reference</a></li>
+		<li><a title="即用型应用程序" href="/zh-cn/arcgis-online/apps/arcgis-apps.htm">Apps</a></li>
 	</ul>
     </nav>
   </div>
@@ -60,7 +60,7 @@ mobile: true
         <!--<input type="search" name="q" class="leader" placeholder="Search Help">
         <input type="hidden" name="collection" value="help">
         <input type="hidden" name="product" value="arcgis-online">          
-        <input type="hidden" name="language" value="en">
+        <input type="hidden" name="language" value="zh-cn">
       </form>-->
 
                 
@@ -69,7 +69,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class=	"playbtn"></a>
+		<a href="http://video.arcgis.com/iframe/247/000000/width/960/0/00:00:00" title="使用地图和场景" class="videoLink colorbox-evlarge cboxElement"><img src="img/perform-analysis.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="247" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
@@ -79,7 +79,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+		<a href="http://video.arcgis.com/iframe/253/000000/width/960/0/00:00:00" title="创建地图、场景和应用程序" class="videoLink colorbox-evlarge cboxElement"><img src="img/create-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="253" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
          </video>
@@ -87,7 +87,8 @@ mobile: true
   </div>
   
   <div class="column-8">
-  <!--<div class="row">--> <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+  <!--<div class="row">-->
+      <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" title="共享项目" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
        <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
         </video>
@@ -124,7 +125,7 @@ mobile: true
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="执行分析" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
@@ -134,7 +135,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="发布托管 Web 图层" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
          <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
          </video>
@@ -144,7 +145,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="管理您的组织" href="http://video.arcgis.com/iframe/1340/000000/width/960/0/00:00:00"><img src="img/admin-org.jpg"><img class="playbtn" src="/img/playbtn.png"></a>
 	<video width="320" height="240" class="mobileVideo" id="1340" controls="">
     <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
        </video>
@@ -183,7 +184,7 @@ mobile: true
 <div class="column-8 phone-column-24">
 
     <section class="support-option">
-      <h4 class="icon-help icon-red"><a href="http://support.esri.com/zh-cn/" target="_blank">Esri 技术支持</a></h4>
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">Esri 技术支持</a></h4>
       <p>通过聊天、电子邮件或电话联系 Esri 支持部门。</p>
     </section>
     
@@ -191,7 +192,7 @@ mobile: true
   <div class="column-8 phone-column-24" style="width: 33.333%;">
 
     <section class="support-option">
-      <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">ArcGIS 构想</a></h4>
+      <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">ArcGIS Ideas</a></h4>
       <p>提交您对软件的反馈。</p>
     </section>
     
@@ -213,22 +214,25 @@ mobile: true
 	 <div class="imgFrame block">
           <h3>您是 ArcGIS Online 的初学者？</h3>
 
-			<p><a  class="btn secondary" href="http://learn.arcgis.com/zh-cn/projects/get-started-with-arcgis-online/">探索实践课程</a></p>
-			<a href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  观看视频演示</a><br/><br/> <a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png"></a>…查找培训课程</a>
+			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">探索实践课程</a></p>
+			<a title="ArcGIS Online 入门" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  观看视频演示</a><br/><br/>
+			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">   查找培训课程</a>
       </div>	
-		 <br /> <br />
+		 <br />
+		 <br />
 		 
 	 <div class="greyFrame">
           <h3>快速参考</h3>
          <ul>   <li><a href="/zh-cn/arcgis-online/reference/troubleshoot-account.htm">&nbsp;解决登录问题</a></li>
 		<li><a href="/zh-cn/arcgis-online/reference/whats-new.htm" >&nbsp;新特性</a></li>
-		<li><a href="/zh-cn/arcgis-online/reference/faq.htm">&nbsp;常见问题</a></li>
+		<li><a href="/zh-cn/arcgis-online/reference/faq.htm">&nbsp;常见问题解答</a></li>
 		<li><a href="/zh-cn/arcgis-online/reference/videos.htm">&nbsp;视频</a></li>
 		<li><a href="/zh-cn/trust/system-status/">&nbsp;系统状态</a></li>
         </ul>
 		</div>
 		
-		<br /> <br />
+		<br />
+		<br />
 
 <!-- Blog Feed -->
         <div class="greyFrame">
