@@ -1053,7 +1053,11 @@ var localeJsonObj = {
       "install-onwindows": "Install on Windows",
       "install-on-linux": "Install on Linux and UNIX",
       "desktop": "Desktop",
-      "mobile": "Mobile"
+      "mobile": "Mobile",
+		"navigator-ipad": "Navigator (iPad)",
+		"navigator-ipad-ht": "Navigator for ArcGIS (iPad)",
+		"navigator-iphone": "Navigator (iPhone)",
+		"navigator-iphone-ht": "Navigator for ArcGIS (iPhone)",
    }, 
    "es": {
       "404-click-here-for-english": "<a href='#' id='englishLink'>Haga clic aquí</a> para ver si hay una versión en inglés.", 
