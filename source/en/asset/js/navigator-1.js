@@ -14,8 +14,7 @@ $(document).ready(function() {
         '</p>',
 
 		prodKey = "navigator",
-		prodDVal = "iphone",
-		prodIpadVal = "ipad",
+		prodDVal = "ipad",
 		prodIOSVal = "iphone",
 		homePath = "/en/navigator"
 
@@ -28,8 +27,8 @@ $(document).ready(function() {
 		isHome = fldpath === homePath;
 
     if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
-      if(navigator.userAgent.match(/(iPad)/gi)){
-			plat = prodIpadVal;
+      if(navigator.userAgent.match(/(iPhone)/gi)){
+			plat = prodIOSVal;
 		}
 
       if (!isHome) {
@@ -88,6 +87,7 @@ $(document).ready(function() {
 	}
 
 	if (!isHome) {
+		$('.reference-content .page-title').after (val);
 		modContentLinks (plat);
 		// Update product meta value in search form
 		$('#helpSearchForm input[name=product]').attr("value","navigator-" + plat);
