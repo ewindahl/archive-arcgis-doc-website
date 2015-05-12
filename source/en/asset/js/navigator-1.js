@@ -58,10 +58,10 @@ $(document).ready(function() {
 				parts = href.split("/");
 				fname = parts.pop(),
 				fld = parts.pop(),
-				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/"),
+				newHref = href.replace (prodDVal+"/", plt+"/"),
 				keeplink = $ele.data ("modlink") === false;
 
-			if (!keeplink && href.indexOf (homePath) === 0 ) {
+			if (!keeplink) {
 			    $ele.attr("href", newHref);
 			}
 		})
