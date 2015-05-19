@@ -75,9 +75,8 @@ $(document).ready(function() {
 	function modContentLinks (plt) {
 		$(".reference-content a[href], .column-16 a[href], .navigation-bar nav a[href]").each (function (i) {
 			var $ele = $(this),
-				href = $ele.attr("href");
-
-				parts = href.split("/");
+				href = $ele.attr("href"),
+				parts = href.split("/"),
 				fname = parts.pop(),
 				fld = parts.pop(),
 				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
@@ -88,9 +87,6 @@ $(document).ready(function() {
 
 	if (!isHome) {
 		$('.reference-content .page-title').after (val);
-		modContentLinks (plat);
-		// Update product meta value in search form
-		$('#helpSearchForm input[name=product]').attr("value","navigator-" + plat);
 	} else {
 		modHomeUrls (plat);
 	}
