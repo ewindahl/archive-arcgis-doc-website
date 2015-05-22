@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
           "sv": "sv", "sv-fi": "sv", "sv-se": "sv",
           "th": "th",
           "tr": "tr", 
-          "zh-cn": "zh-cn", "zh-hk": "zh-cn", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-cn"
+          "zh-cn": "zh-cn", "zh-hk": "zh-hk", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-tw"
       },  
 
 
@@ -106,7 +106,7 @@ jQuery(document).ready(function ($) {
       lgPartial = ["da", "it","ko", "no","pl","pt-br","pt-pt","ro"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
 	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "da", "it","ko", "no","pl","pt-br","pt-pt","ro","sv", "cs", "et", "fi", "lt", "lv", "tr"],
-	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar', "da", "it","ko", "no","pl","pt-br","pt-pt","ro","nl"],
+	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "da", "it","ko", "no","pl","pt-br","pt-pt","ro","nl"],
     lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn']
     lgMicro = ['en', 'de', 'es', 'ja', 'ko']
 
