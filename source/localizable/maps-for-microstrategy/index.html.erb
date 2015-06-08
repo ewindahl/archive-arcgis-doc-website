@@ -161,7 +161,22 @@ mobile: true
 <hr />
 <a name="whatsNew"></a>
 <h2>What's new</h2>
-<p>Esri Maps for MicroStrategy 2.0.1 provides critical bug fixes.</p>
+<p>Esri Maps for MicroStrategy offers significant updates and enhancements for document designers,  analysts, and architects. Here are some highlights.</p>
+
+<ul>
+<li>New Esri Maps for MicroStrategy Mobile app</li>
+<li>New tool for automatic map generation: Location Architect</li>
+<li>Support for disconnected Portal for ArcGIS deployments</li>
+<li>New drawing tools for triggering configured selectors and links</li>
+<li>Filter features that are displayed on the map using the Filter layer tool</li>
+<li>Measure area, distance, and X,Y coordinates using the Measure tool</li>
+<li>Geocode addresses and find routes using the Get route tool</li>
+<li>Configure Infographics and other map tools and settings</li>
+<li>Change the map extent using an overview map and other navigation tools</li>
+<li>Specify the WKID of X,Y coordinates when adding point data to the map</li>
+<li>Configure multiple styles for a layer</li>
+<li><b>Esri Maps for MicroStrategy 2.0.1 provides critical bug fixes</b></li>
+</ul>
 
 <!-- Supported environments section -->
  <hr />
@@ -170,17 +185,17 @@ mobile: true
           <p>Esri Maps for MicroStrategy has two components:</p>
 		<ul>
 			<li>
-			<p>Esri Maps for MicroStrategy server plug-in, which is deployed to both the MicroStrategy Web server and the MicroStrategy Mobile server (if using Esri Maps for MicroStrategy Mobile)
+			<p><a href="#em4mstr" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>, which is deployed to both the MicroStrategy Web server and the MicroStrategy Mobile server (if using Esri Maps for MicroStrategy Mobile)
 			</p>
 			</li>
 			<li>
-			<p>Esri Maps for MicroStrategy Mobile, which is delivered as an iOS client framework that uses MicroStrategy Mobile SDK for iOS and other third-party development tools to build a custom iOS app.</p> 
+			<p><a href="#em4mm" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>, which is delivered as an iOS client framework that uses MicroStrategy Mobile SDK for iOS and other third-party development tools to build a custom iOS app.</p> 
 			</li>
 		</ul>
 
 <p>Deploying the server plug-in to your web server allows your organization to integrate your MicroStrategy business intelligence (BI) data with the ArcGIS platform. Deploying the server plug-in to your organization’s mobile server allows Esri Maps for MicroStrategy Mobile app users to access map-enabled documents on their iPads.</p>
 
-<p>Before the mobile app can be deployed and used, the Esri Maps for MicroStrategy Mobile iOS client framework must first be compiled. Because an Apple developer license is required to compile the mobile app, it is recommended that you secure the services of a developer in your organization.</p>
+<p>Before the mobile app can be shared and used, the Esri Maps for MicroStrategy Mobile iOS client framework must first be compiled. Because an Apple developer license is required to compile the mobile app, it is recommended that you secure the services of a developer in your organization.</p>
 		
 		<!-- script for collapsible headings -->
 		<script> 
@@ -202,17 +217,17 @@ mobile: true
 		 
 		<!-- EM4M server plug-in expanding arrow -->
 		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>
+		<a name="em4mstr" class="icon-right-arrow" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>
 		</h3>
 			<div exp1='yes' style="display:none;padding:0 15px;">
 			
-		<!-- MicroStrategy Web Universal versions -->
-			<h4>MicroStrategy Web Universal versions</h4>
+		<!-- MicroStrategy Web versions -->
+			<h4>MicroStrategy Web versions</h4>
 			
-				<p>For Esri Maps for MicroStrategy to operate properly, the Esri Maps for MicroStrategy server plug-in 2.0 requires an operational configuration of these supported versions of MicroStrategy Web Universal:</p>
+				<p>For Esri Maps for MicroStrategy to operate properly, the Esri Maps for MicroStrategy server plug-in requires an operational configuration of these supported versions of MicroStrategy Web:</p>
 				<ul>
-					<li>10.0</li>
-					<li>9.5.1</li>
+					<li>MicroStrategy 10</li>
+					<li>MicroStrategy 9.5.1</li>
 				</ul>				
 				
 				<p>MicroStrategy recommends using certified configurations over the supported configurations</p>
@@ -220,7 +235,7 @@ mobile: true
 		
 <!-- Web application servers subhead for EM4M -->
 		<h4>Web application servers</h4>
-		<p>The following table outlines the Web application servers on which Esri has focused its testing efforts for both the JSP server (MicroStrategy Web Universal) and ASP.NET server (MicroStrategy Web) configurations. If you would like to see the web application server used by your MicroStrategy configuration, contact Esri Technical Support. 
+		<p>The following table outlines the Web application servers on which Esri has focused its testing efforts for both the JSP server and ASP.NET server configurations. If you would like to see the web application server used by your MicroStrategy configuration, contact Esri Technical Support. 
 		<p>
 				<table width="400" border="1" align="left">
 					<tr align="left">
@@ -244,7 +259,7 @@ mobile: true
 						
 					<tr align="left" valign="top">
 						<td align="left" valign="top">Microsoft Internet Information Services</td>
-						<td align="left" valign="top">7.x</td>
+						<td align="left" valign="top">8.x | 7.x</td>
 					</tr>
 					
 			
@@ -292,7 +307,7 @@ mobile: true
 		
 	<!-- Esri Maps for MicroStrategy Mobile -->
 		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>
+		<a name="em4mm" class="icon-right-arrow" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>
 		</h3>
 			<div exp2='yes' style="display:none;padding:0 15px;">
 				<!-- Developer prerequisites subhead for EM4MM section - no table -->
@@ -302,7 +317,7 @@ mobile: true
 				<li>A Mac OS machine running OS X version 10.8.4 or later and 4G RAM or greater</li>
 				<li>Xcode IDE 6.x</li>
 				<li>iOS SDK 8.x</li>
-				<li>MicroStrategy 10.0 Mobile client. See the <a href="https://software.microstrategy.com/Download/index.aspx" target="_blank">MicroStrategy download site</a></li>
+				<li>MicroStrategy 10 Mobile client. See the <a href="https://software.microstrategy.com/Download/index.aspx" target="_blank">MicroStrategy download site</a></li>
 				</ul>
 			
 			<p>For more information, about:</p>
@@ -326,9 +341,9 @@ mobile: true
 		</h3>
 			<div exp3='yes' style="display:none;padding:0 15px;">
 			
-			<p>MicroStrategy Web Universal requires several third-party components to be configured in order to function properly. These components include an application server, web server, and Java Development Kit. MicroStrategy Technical Support aids in the deployment of MicroStrategy Web Universal with these components. Esri Technical Support aids in the deployment (and use) of the Esri Maps for MicroStrategy plug-in within an operational configuration of MicroStrategy Web Universal.</p>
+			<p>MicroStrategy Web requires several third-party components to be configured in order to function properly. These components include an application server, web server, and Java Development Kit. MicroStrategy Technical Support aids in the deployment of MicroStrategy Web  with these components. Esri Technical Support aids in the deployment (and use) of the Esri Maps for MicroStrategy plug-in within an operational configuration of MicroStrategy Web .</p>
 
-			<p>Esri Technical Support analysts are not experts in all possible configurations of MicroStrategy Web Universal. Similarly, MicroStrategy Technical Support engineers are not experts in all the third-party components required for an operational configuration of MicroStrategy Web Universal. If you are experiencing a problem configuring MicroStrategy Web Universal, it is often more efficient to obtain help from MicroStrategy Technical Support. Similarly, if you are if you are experiencing a configuration problem with third-party components, it is more efficient to get help from the third party's support organization. In cases where a problem is deemed to be in the Esri Maps for MicroStrategy plug-in, Esri Technical Support can be available to work with MicroStrategy Technical Support and third-party vendors or their consultants.</p>			
+			<p>Esri Technical Support analysts are not experts in all possible configurations of MicroStrategy Web. Similarly, MicroStrategy Technical Support engineers are not experts in all the third-party components required for an operational configuration of MicroStrategy. If you are experiencing a problem configuring MicroStrategy, it is often more efficient to obtain help from MicroStrategy Technical Support. Similarly, if you are if you are experiencing a configuration problem with third-party components, it is more efficient to get help from the third party's support organization. In cases where a problem is deemed to be in the Esri Maps for MicroStrategy plug-in, Esri Technical Support can be available to work with MicroStrategy Technical Support and third-party vendors or their consultants.</p>			
 			</div>
 			
 		<div class="clear"></div>
