@@ -28,7 +28,7 @@ Follow the [installation instructions](https://github.com/ArcGIS/arcgis-solution
 ## Working with branches
 * Working on a new branch for the first time:
 	* `git fetch ArcGIS`
-	* `git checkout -b branch-name ArcGIS/branch-name`
+	* `git checkout branch-name`  (if branch name doesn't exist for some reason use `git checkout -b branch-name ArcGIS/branch-name`)
 
 
 * Day to day sync with ArcGIS main repo:
