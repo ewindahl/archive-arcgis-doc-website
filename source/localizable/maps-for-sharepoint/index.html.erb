@@ -12,7 +12,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2015-06-08"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="sharepoint-4.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2015-06-16"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="sharepoint-4.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -104,6 +104,25 @@ mobile: true
 	<a name="whatsNew"></a>
  	<h2>What's new</h2>	
  	<p>Esri Maps for SharePoint 4.0 release is now available. Many aspects of installation and configuration have changed in this release; please review the System Requirements and Configuration help topics carefully.</p>
+	
+			<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+
 		<h3>4.0 updates</h3>
 		<p>Esri Maps for SharePoint 4.0 includes the following new features:
 			<ul>
@@ -118,14 +137,18 @@ mobile: true
 				<li>Esri Maps Location field is now built with JavaScript (instead of Silverlight) and enables viewing on mobile devices</li>
 				<li>Esri Maps Location field provides a search box to look up addresses, places, and coordinates</li>
 				<li>Use the coordinate system of your choice with the Esri Maps Location field and easily overlay other GIS datasets that are in your local coordinate system</li>
-				<li>Extensibility: Create custom tools, behaviours, and custom symbol sets for the Esri Maps Web Part</li>
+				<li>Extensibility: Create custom tools, behaviors, and custom symbol sets for the Esri Maps Web Part</li>
 				<li>Better error handling and various bug fixes</li>
 				<li>Various user interface improvements, creating a new look and feel</li>
 			</ul>
 		</p>
 		<p><strong>Important:</strong> Because of <a href="HTTP://BLOGS.ESRI.COM/ESRI/ARCGIS/2014/02/21/ESRIS-ROADMAP-FOR-WEB-DEVELOPERS/">web technology trends</a>, the ArcGIS Maps Silverlight web part will be deprecated after the Esri Maps for SharePoint v4.0 release. The Esri Maps JavaScript web part contains many enhanced features not available in the ArcGIS Maps Silverlight web part. It is recommended that you use the Esri Maps JavaScript web part in place of the ArcGIS Maps Silverlight web part—you will no longer be able to add new ArcGIS Map Silverlight web parts to site pages. To continue using your existing ArcGIS Maps Silverlight web parts, upgrade all sites containing the ArcGIS Maps Silverlight web part to Esri Maps for SharePoint 4.0 and save the pages. You'll then be able continue using the ArcGIS Maps Silverlight web parts seamlessly.</p></p>
 	
-		 <h3>3.0.1 updates</h3>        
+
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">3.0.1 updates</a>
+		</h3>
+		<div exp1='yes' style="display:none;padding:0 15px;">
 		 <p>Esri Maps for SharePoint version 3.0.1 was released in October 2013. It includes the following updates and enhancements:</p>        
 			 <ul>        
 				 <li>Localization support for 21 languages: Arabic, Chinese (Simplified), Danish, Dutch, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian,  Norwegian, Polish, Portuguese, Portuguese (Brazilian),
@@ -133,8 +156,12 @@ mobile: true
 				 <li>Support for custom location types in the Esri Maps Locate workflow.</li>	
 				 <li>Geostatistical hot spot analysis.</li>	
 			 </ul>
+		</div>
 		       
-		 <h3>3.0 updates</h3>        
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">3.0 updates</a>
+		</h3>
+		<div exp2='yes' style="display:none;padding:0 15px;">
 		 <p>Esri Maps for SharePoint version 3.0 was released in July 2013. It includes the following updates and enhancements:</p>        
 			 <ul>        
 				 <li>New product name—Esri Maps for SharePoint</li>	
@@ -164,6 +191,8 @@ mobile: true
 				 <li>Interactively select and filter data within ring-based or drive-time distances.</li>	
 				 <li>Interactively retrieve additional demographic and contextual information associated with mapped locations.</li>	
 			 </ul>
+		</div>
+
 			 
 <!-- Supported environments section -->
 	<hr />
@@ -270,7 +299,7 @@ mobile: true
 			<td rowspan="1" colspan="1"><p>Internet Explorer 9</p></td>
 			<td rowspan="1" colspan="1"><p>Full</p></td>
 			<td rowspan="1" colspan="1"><p>Full</p></td>
-			<td rowspan="1" colspan="1"><p>LImited (as per <a href="https://support.office.com/en-us/article/Office-365-system-requirements-719254c0-2671-4648-9c84-c6a3d4f3be45?CorrelationId=2526bbae-9d9f-497d-bb09-036433a33852&ui=en-US&rs=en-US&ad=US">Microsoft</a>)</p></td>
+			<td rowspan="1" colspan="1"><p>Limited (as per <a href="https://support.office.com/en-us/article/Office-365-system-requirements-719254c0-2671-4648-9c84-c6a3d4f3be45?CorrelationId=2526bbae-9d9f-497d-bb09-036433a33852&ui=en-US&rs=en-US&ad=US">Microsoft</a>)</p></td>
 		</tr>
 		<tr class="align-middle">
 			<td rowspan="1" colspan="1"><p>Internet Explorer 8</p></td>
