@@ -1,6 +1,24 @@
  <!DOCTYPE html>
   <head>
     <title>Redirect</title>
+	 <script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-215788-73']);
+		_gaq.push(['_setDomainName', 'arcgis.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		
+		if(location.search.split('s=')[1] == "la"){
+			window.location.href = "/en/location-analytics/";
+		}
+
+	 </script>
+	 
     <meta http-equiv="refresh" content="0;URL='http://www.arcgis.com/about/'" />
   </head>
   <body>
