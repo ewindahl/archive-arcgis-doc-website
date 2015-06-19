@@ -84,7 +84,8 @@ var filterCfg = {
       {
         k:"blogs",
         q:{
-          r:"search-collection:blogs"
+          r:"search-collection:blogs",
+          sort:"date:D:S:d1" //sort by date descending
         }
       }
       
