@@ -4,6 +4,9 @@ $(document).ready(function() {
     timeout: 0,
     manualSpeed: 200,
     slides: '> .slide',
-    pager: '> .cycle-pager'
+    pager: '> .cycle-pager',
+    prev: '> .prev',
+    next: '> .next',
+    allowWrap: false
   });
 });

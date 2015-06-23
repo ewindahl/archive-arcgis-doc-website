@@ -277,6 +277,40 @@ h1 {
       }
     }
   }
+  .prev, .next {
+    position: absolute;
+    display: block;
+    height: 44px;
+    width: 33px;
+    background: url('../img/carousel-arrows.png');
+    &.disabled {
+      cursor: default;
+    }
+  }
+  .prev {
+    background-position: 0 -44px;
+    position: absolute;
+    left: -30px;
+    top: 40%;
+    &:hover,:focus {
+      background-position: -26px -44px;
+    }
+    &.disabled {
+      background-position: -52px -44px;
+    }
+  }
+  .next {
+    background-position: 0 0;
+    position: absolute;
+    right: -30px;
+    top: 40%;
+    &:hover,:focus {
+      background-position: -26px 0;
+    }
+    &.disabled {
+      background-position: -52px 0;
+    }
+  }
   &.white {
     .item-content {
       background-color: #fff;
