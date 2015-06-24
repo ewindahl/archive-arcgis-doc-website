@@ -25,7 +25,7 @@
     height: 340px;
     header {
       @include column(8);
-      @include leader(2);
+      @include leader(1.5);
     }
     .banner-image {
       @include column(16);
@@ -525,13 +525,16 @@ h1 {
       @include column(8);
       .content {
         @include box-shadow(rgba(0,0,0,0.30) 0px 1px 4px);
-        height: 250px;
+        height: 200px;
         overflow: hidden;
         border-top: 3px solid #007ac2;
         padding: 1.5em;
         img {
           max-width: 100%;
           padding-bottom: 1em;
+        }
+        a {
+          @include adjust-font-size-to(14px);
         }
       }
     }
@@ -553,9 +556,9 @@ h1 {
         background-color: #2e92cd;
         border: 0;
         color: $white;
+        height: 250px;
         a {
           color: $white;
-          @include adjust-font-size-to(14px);
         }
       }
     }
