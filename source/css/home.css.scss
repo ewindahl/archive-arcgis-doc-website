@@ -1,5 +1,8 @@
 @import "features";
 
+#page {
+  padding-bottom: 262px;
+}
 #home-banner {
   background: image-url("banner.jpg", false, true) no-repeat center center #007ac2;
   color: $white;
@@ -18,13 +21,19 @@
   }
   &.living-atlas {
     background-size: cover;
+    background: image-url("/en/living-atlas/img/banner.jpg", false, true) no-repeat center center #007ac2;
+    height: 340px;
     header {
       @include column(8);
       @include leader(2);
-      @include trailer(4);
+    }
+    .banner-image {
+      @include column(16);
+
     }
     .container {
       position: relative;
+      height: 340px;
     }
     h1 {
       @include adjust-font-size-to(50px);
@@ -247,10 +256,71 @@ h1 {
   @include column(18);
   @include post(6);
 }
-#categories, #getstarted {
+#categories {
   @include column(24);
+  @include trailer(1.5);
 }
+#getstarted {
+  @include leader(1.5);
+  @include trailer(1.5);
+  .gs-intro {
+    @include column(16);
+    @include pre(4);
+    @include post(4);
+    text-align: center;
+  }
+  .gs-item {
+    @include column(12);
+    img {
+      float:left;
+    }
+    .item-content {
+      margin-left: 120px;
+      margin-right: 20px;
+    }
+  }
+}
+#appbanner {
+  @include leader(1.5);
+  @include trailer(1.5);
+  .app {
+    @include column(12);
+    text-align: center;
+    color: $white;
+  }
+}
+#success-stories {
+  @include leader(1.5);
+  @include trailer(1.5);
+  .ss-intro {
+    @include column(16);
+    @include pre(4);
+    @include post(4);
+    text-align: center;
+  }
+  .ss-items {
+    @include column(24);
+    padding: 0;
+    text-align: center;
+    .ss-item {
+      width: 20%;
+      box-sizing: border-box;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      padding: 1em;
+      margin: 0 -2px;
+      img {
+        padding-bottom: 0.5em;
+      }
+    }
+  }
+}
+#blogfeed, #geonetfeed {
+  @include leader(1.5);
+  @include trailer(1.5);
 
+}
 .slideshow {
   width:100%;
   @include leader(1);
@@ -266,6 +336,9 @@ h1 {
         display: block;
         color: #4d4d4d;
         height: 100%;
+      }
+      img {
+        padding-top: 1.5em;
       }
       .item-desc {
         padding: 0.5em 1em;
@@ -352,10 +425,52 @@ h1 {
   }
 }
 .color-background {
-  &.blue {
-    background-color: #3852a3;
+  &.black {
+    background-color: #242728;
   }
   &.off-white {
     background-color: #f7f7f7;
+  }
+  &.dk-gray {
+    background-color: #555b5d;
+  }
+}
+
+.blogitems {
+  .blogitem {
+    @include column(8);
+    .content {
+      @include box-shadow(rgba(0,0,0,0.30) 0px 1px 3px);
+      height: 300px;
+      overflow: hidden;
+    }
+  }
+}
+.thin-banner {
+  @include column(24);
+  @include leader(1);
+  @include trailer(1);
+  h3 {
+    @include adjust-font-size-to(24px);
+    line-height: 1em;
+    margin-bottom: 0;
+  }
+  text-align: center;
+  a {
+    color: $white;
+    .icon-twitter {
+      color: $blue;
+      background-color: $white;
+      height: 50px;
+      width: 50px;
+      display: inline-block;
+      @include border-radius(25px);
+      vertical-align: middle;
+      margin-left: 0.5em;
+      &::before{
+        top: 14px;
+        position: relative;
+      }
+    }
   }
 }

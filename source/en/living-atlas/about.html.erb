@@ -7,6 +7,7 @@ js:
   - libs/jquery.cycle2.min
   - slideshow
 
+mobile: true
 ---
 <div id="home-banner" class="navigation-bar living-atlas">
   <div class="container">
@@ -14,6 +15,9 @@ js:
       <h1>Living Atlas of the World</h1>
       <a class="btn primary"href="#">Get started</a>
     </header>
+    <div class="banner-image">
+      <img src="/en/living-atlas/img/banner-laptops.png" alt="" />
+    </div>
     <div class="clear"></div>
     <nav>
       <ul>
@@ -41,7 +45,7 @@ js:
           <div class="item">
             <div class="item-content">
               <a href="#">
-                <img src="http://placehold.it/120x120/" alt="" />
+                <img src="/en/living-atlas/img/categories-imagery.png" alt="" />
                 <div class="item-desc">
                   <h3>Imagery</h3>
                   <p><%= lorem.sentences 2 %></p>
@@ -52,7 +56,7 @@ js:
           <div class="item">
             <div class="item-content">
               <a href="#">
-                <img src="http://placehold.it/120x120/" alt="" />
+                <img src="/en/living-atlas/img/categories-basemaps.png" alt="" />
                 <div class="item-desc">
                   <h3>Basemaps</h3>
                   <p><%= lorem.sentences 2 %></p>
@@ -63,7 +67,7 @@ js:
           <div class="item">
             <div class="item-content">
               <a href="#">
-                <img src="http://placehold.it/120x120/" alt="" />
+                <img src="/en/living-atlas/img/categories-demographics.png" alt="" />
                 <div class="item-desc">
                   <h3>Demographics and Lifestyle</h3>
                   <p><%= lorem.sentences 2 %></p>
@@ -74,7 +78,7 @@ js:
           <div class="item">
             <div class="item-content">
               <a href="#">
-                <img src="http://placehold.it/120x120/" alt="" />
+                <img src="/en/living-atlas/img/categories-boundaries.png" alt="" />
                 <div class="item-desc">
                   <h3>Boundaries and Places</h3>
                   <p><%= lorem.sentences 2 %></p>
@@ -87,9 +91,9 @@ js:
           <div class="item">
             <div class="item-content">
               <a href="#">
-                <img src="http://placehold.it/120x120/" alt="" />
+                <img src="/en/living-atlas/img/categories-earth.png" alt="" />
                 <div class="item-desc">
-                  <h3>Missing Title</h3>
+                  <h3>Earth</h3>
                   <p><%= lorem.sentences 2 %></p>
                 </div>
               </a>
@@ -98,9 +102,20 @@ js:
           <div class="item">
             <div class="item-content">
               <a href="#">
-                <img src="http://placehold.it/120x120/" alt="" />
+                <img src="/en/living-atlas/img/categories-history.png" alt="" />
                 <div class="item-desc">
-                  <h3>Missing Title</h3>
+                  <h3>History</h3>
+                  <p><%= lorem.sentences 2 %></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-content">
+              <a href="">
+                <img src="/en/living-atlas/img/categories-landscape.png" alt="" />
+                <div class="item-desc">
+                  <h3>Landscape</h3>
                   <p><%= lorem.sentences 2 %></p>
                 </div>
               </a>
@@ -109,20 +124,9 @@ js:
           <div class="item">
             <div class="item-content">
               <a href="#">
-                <img src="http://placehold.it/120x120/" alt="" />
+                <img src="/en/living-atlas/img/categories-transportation.png" alt="" />
                 <div class="item-desc">
-                  <h3>Missing Title</h3>
-                  <p><%= lorem.sentences 2 %></p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-content">
-              <a href="#">
-                <img src="http://placehold.it/120x120/" alt="" />
-                <div class="item-desc">
-                  <h3>Missing Title</h3>
+                  <h3>Transportation</h3>
                   <p><%= lorem.sentences 2 %></p>
                 </div>
               </a>
@@ -136,8 +140,122 @@ js:
   <div class="color-background off-white">
     <div class="container">
       <section id="getstarted">
-
+        <div class="gs-intro">
+          <h2>Get Started</h2>
+          <p><%= lorem.sentences 3 %></p>
+        </div>
+        <div class="gs-item">
+          <img src="/en/living-atlas/img/get-started-use.png" alt="" />
+          <div class="item-content">
+            <h4>Use</h4>
+            <p><%= lorem.sentences 5 %></p>
+          </div>
+        </div>
+        <div class="gs-item">
+          <img src="/en/living-atlas/img/get-started-contribute.png" alt="" />
+          <div class="item-content">
+            <h4>Contribute</h4>
+            <p><%= lorem.sentences 5 %></p>
+          </div>
+        </div>
+        <div class="clear"></div>
       </section>
+    </div>
+  </div>
+  <div class="color-background black">
+    <div class="container">
+      <section id="appbanner">
+        <div class="app">
+          <h3>Nominate your maps, apps, and layers for inclusion in the Living Atlas.</h3>
+          <a href="#" class="btn secondary">Living Atlas Contributor App</a>
+        </div>
+        <div class="app">
+          <h3>Share your local authoritative data with the larger GIS community.</h3>
+          <a href="#" class="btn secondary">Community Maps Contributor App</a>
+        </div>
+        <div class="clear"></div>
+      </section>
+    </div>
+  </div>
+  <div class="color-background">
+    <div class="container">
+      <section id="success-stories">
+        <div class="ss-intro">
+          <h2>Success Stories</h2>
+          <p><%= lorem.sentences 3 %></p>
+        </div>
+        <div class="ss-items">
+          <div class="ss-item">
+            <a href="#">
+              <img src="/en/living-atlas/img/success-westminster.png" alt="" />
+              <p><%= lorem.sentence %></p>
+            </a>
+          </div>
+          <div class="ss-item">
+            <a href="#">
+              <img src="/en/living-atlas/img/success-carson.png" alt="" />
+              <p><%= lorem.sentence %></p>
+            </a>
+          </div>
+          <div class="ss-item">
+            <a href="#">
+              <img src="/en/living-atlas/img/success-community.png" alt="" />
+              <p><%= lorem.sentence %></p>
+            </a>
+          </div>
+          <div class="ss-item">
+            <a href="#">
+              <img src="/en/living-atlas/img/success-swamp.png" alt="" />
+              <p><%= lorem.sentence %></p>
+            </a>
+          </div>
+          <div class="ss-item">
+            <a href="#">
+              <img src="/en/living-atlas/img/success-fairfax.png" alt="" />
+              <p><%= lorem.sentence %></p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="color-background off-white">
+    <div class="container">
+      <section id="blogfeed">
+        <header >
+          <h2 class="divider">From our Blog</h2>
+
+        </header>
+        <div class="feeditems">
+          <div class="feeditem">
+            div
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="color-background">
+    <div class="container">
+      <section id="geonetfeed">
+        <header >
+          <h2 class="divider">Discussions on GeoNet</h2>
+
+        </header>
+        <div class="feeditems">
+          <div class="feeditem">
+            div
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="color-background dk-gray">
+    <div class="container">
+      <div class="thin-banner">
+        <h3><a href="#">Connect with the Living Atlas <span class="icon-twitter"></span></a></h3>
+      </div>
     </div>
   </div>
 </main>
