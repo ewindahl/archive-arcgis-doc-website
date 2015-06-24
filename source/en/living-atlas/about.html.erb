@@ -221,32 +221,101 @@ mobile: true
   </div>
   <div class="color-background off-white">
     <div class="container">
-      <section id="blogfeed">
-        <header >
-          <h2 class="divider">From our Blog</h2>
-
-        </header>
-        <div class="feeditems">
-          <div class="feeditem">
-            div
+      <section id="blogfeed" class="feed-section">
+        <header>
+          <h2>From our Blog</h2>
+          <div class="more-links">
+            <a href="#">More Blog posts</a>
           </div>
-
+        </header>
+        <div class="feeditems white" id="blog">
+          <div class="feeditem">
+            <div class="content">
+              Test
+            </div>
+          </div>
+          <div class="feeditem">
+            <div class="content">
+              Test
+            </div>
+          </div>
+          <div class="feeditem">
+            <div class="content">
+              Test
+            </div>
+          </div>
         </div>
       </section>
     </div>
   </div>
   <div class="color-background">
     <div class="container">
-      <section id="geonetfeed">
-        <header >
-          <h2 class="divider">Discussions on GeoNet</h2>
-
-        </header>
-        <div class="feeditems">
-          <div class="feeditem">
-            div
+      <section id="geonetfeed" class="feed-section">
+        <header>
+          <h2>Discussions on GeoNet</h2>
+          <div class="more-links">
+            <a href="#">Start one</a>
+            <a href="#">Read more</a>
           </div>
-
+        </header>
+        <div class="feeditems off-white" id="forum">
+          <div class="feeditem">
+            <div class="content">
+              Test
+            </div>
+          </div>
+          <div class="feeditem">
+            <div class="content">
+              Test
+            </div>
+          </div>
+          <div class="feeditem">
+            <div class="content">
+              Test
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="color-background blue">
+    <div class="container">
+      <section id="videofeed" class="feed-section blue">
+        <header>
+          <h2>From our Videos</h2>
+          <div class="more-links">
+            <a href="#">More videos</a>
+          </div>
+        </header>
+        <div class="feeditems blue">
+          <div class="feeditem">
+            <div class="content">
+              <img src="http://placehold.it/400x200" alt="" />
+              <h5>Living Atlas of the World: Contributor App</h5>
+              <a href="">Watch the video <span class="icon-play"></span></a>
+            </div>
+          </div>
+          <div class="feeditem">
+            <div class="content">
+              <img src="http://placehold.it/400x200" alt="" />
+              <h5>Use Living Atlas maps</h5>
+              <a href="">Watch the video <span class="icon-play"></span></a>
+            </div>
+          </div>
+          <div class="feeditem">
+            <div class="content">
+              <img src="http://placehold.it/400x200" alt="" />
+              <h5>Living Atlas Community Webinar - April 2015</h5>
+              <a href="">Watch the video <span class="icon-play"></span></a>
+            </div>
+          </div>
+          <div class="feeditem">
+            <div class="content">
+              <img src="http://placehold.it/400x200" alt="" />
+              <h5>Living Atlas Community Webinar - March 2015</h5>
+              <a href="">Watch the video <span class="icon-play"></span></a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -259,3 +328,21 @@ mobile: true
     </div>
   </div>
 </main>
+
+<script src="/en/asset/js/rssfeed2.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(window).load(function() {
+    $('#blog').rssFeed({
+      url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',
+      max: 3,
+      layout: 0
+    });
+
+  $("#forum").rssFeed({
+    url:"https://geonet.esri.com/community/gis/arcgis-online/view-browse-feed.jspa?browseSite=place-content&browseViewID=placeContent&userID=2188&containerType=14&containerID=2055&filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D",
+    max: 3,
+    layout: 1
+    });
+
+  });
+</script>
