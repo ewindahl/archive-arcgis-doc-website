@@ -62,7 +62,7 @@ doc.itemDetails = (function(){
 				if(itemDetails.extent)
 					extent = itemDetails.extent.join();
 
-				iframeSrc = "http://www.arcgis.com/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
+				iframeSrc = AGOLURL + "home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
 
 				var customURL = this.orgUserCustomURL();
 				if(customURL){
