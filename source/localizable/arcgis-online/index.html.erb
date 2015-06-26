@@ -15,6 +15,7 @@ metatags:
 
 mobile: true
 
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
@@ -268,6 +269,10 @@ mobile: true
 		  });
 
     });
+	 
+	 if(window.location.pathname.match( /(\/arcgis-online\/)/)){
+		$("#help-nav").attr("class", "active");
+	 }
 
 
   </script>
