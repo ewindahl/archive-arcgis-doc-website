@@ -2,10 +2,13 @@
 title: Living Atlas of the World
 css:
   - home
+  - colorbox/colorbox
 
 js:
   - libs/jquery.cycle2.min
   - slideshow
+  - libs/jquery.colorbox-min.js
+  - video-init
 
 mobile: true
 ---
@@ -13,7 +16,7 @@ mobile: true
   <div class="container">
     <header>
       <h1>Living Atlas of the World</h1>
-      <a class="btn primary"href="#">Get started</a>
+      <a class="btn primary"href="#categories">Start Exploring</a>
     </header>
     <div class="banner-image">
       <img src="/en/living-atlas/img/banner-laptops.png" alt="" />
@@ -22,8 +25,8 @@ mobile: true
     <nav>
       <ul>
         <li class="current"> <a href="../living-atlas/about/"> Home </a> </li>
-        <li> <a href="../living-atlas/use/"> Use </a> </li>
-        <li> <a href="../living-atlas/contribute/"> Contribute </a> </li>
+        <li> <a href="/en/living-atlas/use/"> Use </a> </li>
+        <li> <a href="/en/living-atlas/contribute/"> Contribute </a> </li>
       </ul>
     </nav>
   </div>
@@ -31,13 +34,14 @@ mobile: true
 <main>
   <div class="container">
     <section id="about">
-      <h2>Use the living Atlas of the World to Enhance your Valuable Work</h2>
+      <h2>Beautiful and Authoritative Maps on Thousands of Topics</h2>
       <p>
-        <%= lorem.sentences 10 %>
+        The Living Atlas is the foremost collection of authoritative, ready-to-use global geographic information ever assembled. The vast array of themed content in the Living Atlas enables the exploration of people and places throughout the world, as well as the natural and man-made influences that impact them. Experience the benefit of on-demand access to valuable maps, data layers, tools, services, and apps to help you achieve your goals. Always changing and evolving, like our world, the Living Atlas houses information that impacts lives.
       </p>
     </section>
     <section id="categories">
-      <h3 class="divider">Categories</h3>
+      <h2 class="divider">Categories</h2>
+	  <p>The Living Atlas contains maps and data on thousands of topics. Combine this information with your own work to create new maps and applications.</p>
       <div class="slideshow off-white centered-text top-border">
         <a href="#" class="prev"></a>
         <a href="#" class="next"></a>
@@ -48,7 +52,7 @@ mobile: true
                 <img src="/en/living-atlas/img/categories-imagery.png" alt="" />
                 <div class="item-desc">
                   <h3>Imagery</h3>
-                  <p><%= lorem.sentences 2 %></p>
+                  <p>Detailed imagery for the world that illustrates both historical information and the present state of our planet.</p>
                 </div>
               </a>
             </div>
@@ -59,7 +63,7 @@ mobile: true
                 <img src="/en/living-atlas/img/categories-basemaps.png" alt="" />
                 <div class="item-desc">
                   <h3>Basemaps</h3>
-                  <p><%= lorem.sentences 2 %></p>
+                  <p>Beautiful, detailed maps of varying style that provide reference for our world and context for your work.</p>
                 </div>
               </a>
             </div>
@@ -70,7 +74,7 @@ mobile: true
                 <img src="/en/living-atlas/img/categories-demographics.png" alt="" />
                 <div class="item-desc">
                   <h3>Demographics and Lifestyle</h3>
-                  <p><%= lorem.sentences 2 %></p>
+                  <p>Demographic and lifestyle maps and data for the United States and more than 120 other countries.</p>
                 </div>
               </a>
             </div>
@@ -81,7 +85,53 @@ mobile: true
                 <img src="/en/living-atlas/img/categories-boundaries.png" alt="" />
                 <div class="item-desc">
                   <h3>Boundaries and Places</h3>
-                  <p><%= lorem.sentences 2 %></p>
+                  <p>Boundaries typically help define where people live and work, and these layers contain data ranging from a neighborhood all the way to a continental scale.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="item">
+            <div class="item-content">
+              <a href="#">
+                <img src="/en/living-atlas/img/categories-landscape.png" alt="" />
+                <div class="item-desc">
+                  <h3>Landscape</h3>
+                  <p>This landscape data covers both our natural and man-made environments, and can be used for land use planning and management.</p>				
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-content">
+              <a href="#">
+                <img src="/en/living-atlas/img/categories-community.png" alt="" />
+                <div class="item-desc">
+                  <h3>Community Maps</h3>
+                  <p>Through the Community Maps Program, you can share your GIS data to advance the coverage and quality of the maps available.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-content">
+              <a href="#">
+                <img src="/en/living-atlas/img/categories-transportation.png" alt="" />
+                <div class="item-desc">
+                  <h3>Transportation</h3>
+                  <p>A collection of maps and layers that reveal how people move between places.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-content">
+              <a href="">
+                <img src="/en/living-atlas/img/categories-urban.png" alt="" />
+                <div class="item-desc">
+                  <h3>Urban Systems</h3>
+                  <p>Over half the world’s population now lives in cities, and these layers allow analysis of the effect this is having on the world.</p>
                 </div>
               </a>
             </div>
@@ -93,8 +143,8 @@ mobile: true
               <a href="#">
                 <img src="/en/living-atlas/img/categories-earth.png" alt="" />
                 <div class="item-desc">
-                  <h3>Earth</h3>
-                  <p><%= lorem.sentences 2 %></p>
+                  <h3>Earth Observations</h3>
+                  <p>From severe weather to earthquakes and fires, this is a collection of our planet’s systems and current conditions.</p>				
                 </div>
               </a>
             </div>
@@ -104,35 +154,14 @@ mobile: true
               <a href="#">
                 <img src="/en/living-atlas/img/categories-history.png" alt="" />
                 <div class="item-desc">
-                  <h3>History</h3>
-                  <p><%= lorem.sentences 2 %></p>
+                  <h3>Historical Maps</h3>
+                  <p>Physical, political and cultural aspects of our world can be found in these historical maps.</p>				
                 </div>
               </a>
             </div>
           </div>
-          <div class="item">
-            <div class="item-content">
-              <a href="">
-                <img src="/en/living-atlas/img/categories-landscape.png" alt="" />
-                <div class="item-desc">
-                  <h3>Landscape</h3>
-                  <p><%= lorem.sentences 2 %></p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="item-content">
-              <a href="#">
-                <img src="/en/living-atlas/img/categories-transportation.png" alt="" />
-                <div class="item-desc">
-                  <h3>Transportation</h3>
-                  <p><%= lorem.sentences 2 %></p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+
+        </div>		
         <div class="cycle-pager"></div>
       </div>
     </section>
@@ -142,20 +171,20 @@ mobile: true
       <section id="getstarted">
         <div class="gs-intro">
           <h2>Get Started</h2>
-          <p><%= lorem.sentences 3 %></p>
+          <p>Participating in the Living Atlas is accomplished in two ways- using content and contributing content. The well-ordered, thematic gallery is makes it easy to discover items of interest and on-demand accessibility, from a variety of devices, enables use where and when you need it.  Two contribution applications make contributing a straight-forward process.</p>
         </div>
         <div class="gs-item">
           <img src="/en/living-atlas/img/get-started-use.png" alt="" />
           <div class="item-content">
             <h4>Use</h4>
-            <p><%= lorem.sentences 5 %></p>
+            <p>Collections, organized by theme, make exploring and discovering ready to use maps and layers efficient and straightforward. Use these maps, data layers, tools, services, and apps to enhance your everyday work.</p>
           </div>
         </div>
         <div class="gs-item">
           <img src="/en/living-atlas/img/get-started-contribute.png" alt="" />
           <div class="item-content">
             <h4>Contribute</h4>
-            <p><%= lorem.sentences 5 %></p>
+            <p>The Living Atlas is a collaborative effort between GIS users, Esri, and its partners around the world. Whether it’s contributing authoritative data or nominating your maps and apps, there is a way for you to get involved.</p>
           </div>
         </div>
         <div class="clear"></div>
@@ -167,11 +196,11 @@ mobile: true
       <section id="appbanner">
         <div class="app">
           <h3>Nominate your maps, apps, and layers for inclusion in the Living Atlas.</h3>
-          <a href="#" class="btn secondary">Living Atlas Contributor App</a>
+          <a href="http://livingatlas.arcgis.com/contribute/" class="btn secondary" target="_blank">Living Atlas Contributor App</a>
         </div>
         <div class="app">
-          <h3>Share your local authoritative data with the larger GIS community.</h3>
-          <a href="#" class="btn secondary">Community Maps Contributor App</a>
+          <h3>Share your local, authoritative data with the larger GIS community.</h3>
+          <a href="https://communitymaps.arcgis.com/home/login.html" class="btn secondary" target="_blank">Community Maps Contributor App</a>
         </div>
         <div class="clear"></div>
       </section>
@@ -182,38 +211,38 @@ mobile: true
       <section id="success-stories">
         <div class="ss-intro">
           <h2>Success Stories</h2>
-          <p><%= lorem.sentences 3 %></p>
+          <p>Many communities and organizations have benefited from using the Living Atlas of the World. From nominating apps to contributing data, these stories showcase ways to get involved and take advantage of the benefits.</p>
         </div>
         <div class="ss-items">
           <div class="ss-item">
-            <a href="#">
+            <a href="http://www.esri.com/software/arcgis/community-maps-program/~/media/Files/Pdfs/library/casestudies/westminster-colorado.pdf" class="colorbox-evlarge cboxElement">
               <img src="/en/living-atlas/img/success-westminster.png" alt="" />
-              <p><%= lorem.sentence %></p>
+              <p>The city of Westminster, Colorado saves time with Esri's Community Maps Program.</p>
             </a>
           </div>
           <div class="ss-item">
-            <a href="#">
+            <a href="http://www.esri.com/news/arcnews/spring11articles/colleges-and-universities-participate-in-community-maps-program.html" target="_blank">
               <img src="/en/living-atlas/img/success-carson.png" alt="" />
-              <p><%= lorem.sentence %></p>
+              <p>The city of Carson and Cal State Dominguez Hills partner to create detailed campus basemap.</p>
             </a>
           </div>
           <div class="ss-item">
-            <a href="#">
+            <a href="http://video.arcgis.com/iframe/3126/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement">
               <img src="/en/living-atlas/img/success-community.png" alt="" />
-              <p><%= lorem.sentence %></p>
+              <p>The Federal User Community and the Living Atlas.</p>
             </a>
+		<video width="320" height="240" class="mobileVideo" id="247" controls="">
+		<source src="http://video.arcgis.com/watch/3126/the-living-atlas"></source>
+		</video>
           </div>
           <div class="ss-item">
-            <a href="#">
-              <img src="/en/living-atlas/img/success-swamp.png" alt="" />
-              <p><%= lorem.sentence %></p>
-            </a>
-          </div>
-          <div class="ss-item">
-            <a href="#">
+            <a href="http://video.arcgis.com/iframe/3792/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement">
               <img src="/en/living-atlas/img/success-fairfax.png" alt="" />
-              <p><%= lorem.sentence %></p>
+              <p>Fairfax County, Virginia contributed to Esri’s Community Maps Program to more quickly and easily create web apps.</p>
             </a>
+		<video width="320" height="240" class="mobileVideo" id="247" controls="">
+		<source src="http://video.arcgis.com/watch/3792/brendan-ford_comma_-fairfax-county"></source>
+		</video>
           </div>
         </div>
       </section>
@@ -225,7 +254,7 @@ mobile: true
         <header>
           <h2>From our Blog</h2>
           <div class="more-links">
-            <a href="#">More Blog posts</a>
+            <a href="http://blogs.esri.com/esri/arcgis/tag/living-atlas/">More Blog posts</a>
           </div>
         </header>
         <div class="feeditems white" id="blog">
@@ -254,8 +283,8 @@ mobile: true
         <header>
           <h2>Discussions on GeoNet</h2>
           <div class="more-links">
-            <a href="#">Start one</a>
-            <a href="#">Read more</a>
+           <!-- <a href="#">Start one</a>  -->
+            <a href="https://geonet.esri.com/groups/livingatlas/">Read more</a>
           </div>
         </header>
         <div class="feeditems off-white" id="forum">
@@ -333,13 +362,14 @@ mobile: true
 <script type="text/javascript">
   $(window).load(function() {
     $('#blog').rssFeed({
-      url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',
+      url:'http://blogs.esri.com/esri/arcgis/tag/living-atlas/feed/',
       max: 3,
       layout: 0
     });
 
   $("#forum").rssFeed({
-    url:"https://geonet.esri.com/community/gis/arcgis-online/view-browse-feed.jspa?browseSite=place-content&browseViewID=placeContent&userID=2188&containerType=14&containerID=2055&filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D",
+    url:"
+	 	https://geonet.esri.com/groups/feeds/allcontent?socialGroup=1215,
     max: 3,
     layout: 1
     });
