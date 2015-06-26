@@ -711,7 +711,7 @@ section > h2 > img {
 }
 
  .profile-icon {
-  background-image: url("/img/marketplace_sprite.png") !important;
+  background-image: url("/img/ago_sprite_search.png") !important;
   background-position: -64px -81px;
   position: absolute;
   top: 7px;
@@ -742,6 +742,9 @@ ul ol li {
 	display:none;
 }
 
+#header {
+	min-height: auto;
+}
 
 #header nav {
 	text-decoration: none;
@@ -751,12 +754,12 @@ ul ol li {
     border-bottom: 3px solid #007ac2;
     font-family: "Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
 }
-#header nav a:hover, .banner-navigation a:hover{
+#header nav a:hover, #logged-out-navigation a:hover, #logged-in-navigation a:hover, #lg-container a:hover{
     border-bottom: 3px solid #007ac2;
     color: #007ac2;
 }
 
-#header nav li a, .banner-navigation a {
+#header nav li a, #logged-out-navigation a, #logged-in-navigation a, #lg-container a {
     color: #323232;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -764,21 +767,16 @@ ul ol li {
 	 font-family: "Avenir LT W01 35 Light",Arial,Helvetica,sans-serif;
     font-size: 1em;
     letter-spacing: normal;
-    padding: 0 0 13px;
+    padding: 0 0 10px;
     text-decoration: none;
 }
 
-#header #logged-out-navigation a.btn, #webmap-header #logged-out-navigation a.btn {
-    text-transform: none;
-}
-#header #logged-out-navigation a.btn, .esri #header-controls #logged-out-navigation a#login-link {
-    padding-bottom: 8px !important;
-}
-#header .btn.user-signin, #header .dropdown.btn.user-signin {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    box-shadow: none;
+#header .btn.user-signin, #header .dropdown.btn.user-signin, #header .btn.marketplace, #header .dropdown.btn.marketplace {
     color: #323232;
-    padding: 0.2em 1.6em !important;
-	 border-width: 1px;
-    font-size: 16px;
+    padding: 0 1.6em !important;
 }
+
+#lgarrow.arrow-down {
+    background: transparent url("/img/ago_sprite_search.png") no-repeat scroll 75% 36%;
+}
+
