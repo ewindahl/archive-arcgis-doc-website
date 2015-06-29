@@ -108,7 +108,8 @@ jQuery(document).ready(function ($) {
 	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "da", "it","ko", "no","pl","pt-br","pt-pt","ro","sv", "cs", "et", "fi", "lt", "lv", "tr"],
 	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro","nl"],
     lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn']
-    lgMicro = ['en', 'de', 'es', 'ja', 'ko']
+    lgMicro = ['en', 'de', 'es', 'ja', 'ko'],
+	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"]
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -167,6 +168,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "cognos" && lgCognos.indexOf(lg) >= 0){ 
                 return true;
               }else if(langSelector === "micro" && lgMicro.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){ 
                 return true;
               }else{
                 return false;
@@ -249,6 +252,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "micro":
                   lgList = lgMicro;
+                  break;
+					 case "marketplace":
+                  lgList = lgMarketplace;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -400,6 +406,8 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
+  }else if (winloc.pathname.match( /(\/marketplace\/)/)){
+    docCfg.langSelector = "marketplace";
   }
   
 
