@@ -287,15 +287,15 @@ var filterCfg = {
       {
         k:"esri-maps-sharepoint",
         q: {
-          r:"",
-          p:"(product:esri-maps-sharepoint)"
+          r:"(product:esri-maps-sharepoint)",
+          p:""
         }
       },
 	  {
-        k:"esri-maps-sharepoint-beta",
+        k:"esri-maps-sharepoint-office365",
         q: {
           r:"",
-          p:"(product:esri-maps-sharepoint-beta)"
+          p:"(product:esri-maps-sharepoint-office365)"
         }
       },
       {
