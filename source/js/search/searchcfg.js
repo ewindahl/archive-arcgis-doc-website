@@ -55,7 +55,7 @@ var filterCfg = {
       {
         k:"all",
         q: {
-            r:"search-collection:help|search-collection:forums", 
+            r:"search-collection:help|search-collection:blogs", 
             p:""
         }
       }, 
@@ -66,28 +66,29 @@ var filterCfg = {
             p:""
         }
       },
-      {
+      /*{
         k:"forums",
         q:{
           r:"search-collection:forums",
   		  p:""
         }
       }
-      /* 
+       
       {
         k:"videos",
         q:{
           r:"search-collection:videos"
         }
-      },
+      },*/
 
       {
         k:"blogs",
         q:{
-          r:"search-collection:blogs"
+          r:"search-collection:blogs",
+          sort:"date:D:S:d1" //sort by date descending
         }
       }
-      */
+      
     ]
   },
 
