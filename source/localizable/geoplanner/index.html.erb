@@ -56,7 +56,7 @@ mobile: true
 
 		
           <p>
-             <a  class="btn primary" href="/en/geoplanner/trial/" >Try GeoPlanner</a>
+             <a  class="btn primary" name="TryButton_Top" id="TryButton_Top" href="/en/geoplanner/trial/" >Try GeoPlanner</a>
           </p>
 		<br/>
 		</div>
@@ -112,7 +112,7 @@ mobile: true
 		<div class="greyFrame">
 	          <h3 style="display:inline;">Start creating and sharing planning designs. </h3>
 			<div style="display:inline;">
-             <a class="btn primary right" href="/en/geoplanner/trial/" style="margin-top: 5px;">Try GeoPlanner </a>
+             <a class="btn primary right" name="TryButton_Middle" id="TryButton_Middle" href="/en/geoplanner/trial/" style="margin-top: 5px;">Try GeoPlanner </a>
 			</div>
 		</div>
 		</div>
@@ -249,7 +249,7 @@ mobile: true
 		<div class="greyFrame">
 	          <h3 style="display:inline;">Start creating and sharing planning designs. </h3>
 			<div style="display:inline;">
-             <a class="btn primary right" href="/en/geoplanner/trial/" style="margin-top: 5px;">Try GeoPlanner </a>
+             <a class="btn primary right" name="TryButton_Bottom" id="TryButton_Bottom" href="/en/geoplanner/trial/" style="margin-top: 5px;">Try GeoPlanner </a>
 			</div>
 		</div>
 		</div>
@@ -274,8 +274,14 @@ mobile: true
 		  });
 
     });
-
-
+	 
+	 // video tracker
+	$(document).bind("cbox_complete", function(){
+		 var href = $.colorbox.element().attr("href");
+		 if (href) {
+			  _gaq.push(["_trackPageview", href]);
+		 }
+	});
   </script>
 
    
