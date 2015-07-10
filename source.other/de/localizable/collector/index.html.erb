@@ -12,13 +12,12 @@ js:
   - libs/jquery.cookie
   - /en/asset/js/app-collector-1
   - libs/jquery.colorbox-min
-  - jquery.colorbox.init
   - video-init
   - libs/jquery.smartbanner
   - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2014-10-27"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="de"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2015-1-29"><META name="product" content="collector-android,collector-ios"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="de"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -91,7 +90,7 @@ mobile: true
           <p>
             <a href="/de/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Vorgehensweise</a><br />
 
-			<a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Sehen Sie dazu ein Video an</a>
+			<a title="Erfassen von Daten" href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Sehen Sie dazu ein Video an</a>
 			<video width="320" height="240" controls id="2194" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
 			</video>
@@ -160,24 +159,18 @@ mobile: true
 
 
         <h3>Unterstützte Sprachen</h3>
-        <p>Arabisch, Dänisch, Deutsch, Englisch, Estnisch (<span class="icon-android"/>), Finnisch, Französisch, Hebräisch, Italienisch, Japanisch, Koreanisch, Lettisch (<span class="icon-android"/>), Litauisch (<span class="icon-android"/>), Niederländisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rumänisch, Russisch, Schwedisch, Spanisch, Thailändisch, Tschechisch, Türkisch und Vereinfachtes Chinesisch.</p>
+        <p>Arabisch, Chinesisch (vereinfacht), Dänisch, Deutsch, Englisch, Estnisch (<span class="icon-android"/>), Finnisch, Französisch, Griechisch, Hebräisch, Italienisch, Japanisch, Koreanisch, Lettisch (<span class="icon-android"/>), Litauisch (<span class="icon-android"/>), Niederländisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rumänisch, Russisch, Schwedisch, Spanisch, Thailändisch, Tschechisch,Türkisch und Vietnamesisch.</p>
         <p>Die von der App verwendete Sprache wird durch die Spracheinstellung des Geräts festgelegt.</p>
 
 
         <a name="whatsNew"></a>
         <h2 class="divider">Neuheiten</h2>
-        <p>Collector for ArcGIS 10.3 wurde im Januar 2015 veröffentlicht. Es enthält die folgenden Verbesserungen:</p>
+        <p>Collector for ArcGIS 10.3.1 wurde im Juni 2015 veröffentlicht. Es enthält folgende Verbesserungen:</p>
         <ul>
-          <li>Anzeigen und Bearbeiten von zugehörigen Datensätzen</li>
-          <li>Unterstützung für die Offline-Bearbeitung zusätzlicher Daten. Dazu zählen:
-	    <ul>
-	      <li>Gehostete Kachel-Layer</li>
-	      <li>Editierbare versionierten Daten (aus ArcGIS 10.3 for Server oder höher)</li>
-	      <li>Layer mit Editor-Tracking</li>
-	      <li>Layer mit eingeschränkten Feature-Service-Funktionen, einschließlich "Add-only"- und "Update-Only"-Bearbeitung</li>
-	    </ul>
-          </li>
-          <li>Verschiedene Bugfixes und Verbesserungen, darunter NIM101011, NIM101989, NIM102096, NIM103498, NIM103525, NIM103549, NIM103836, NIM104130, und BUG-000083110</li>
+          <li><span class="icon-android"/>- Erfassen der tatsächlichen Positionsgenauigkeit mit kompatiblen Geräten</li>
+          <li>Erfassen sekundärer Features ohne Angabe der zugehörigen primären Features</li>
+          <li>Lokalisierung in die vietnamesische und griechische Sprache</li>
+          <li>Verschiedene Bugfixes und Verbesserungen, darunter BUG000086242, BUG000084156, BUG000086496, BUG000082997</li>
         </ul>
 
 	<a name="sneakPeek"></a>
@@ -185,10 +178,11 @@ mobile: true
 	<p>Heute ist Collector eine großartige Anwendung für die Erfassung und Bearbeitung von Daten im Außendienst. Aber das war noch nicht alles! Die folgenden Funktionen sind für diese App geplant:</p>
 	
 	<ul>
-	  <li>Weitere Werkzeuge für die Planung von Offline-Vorgängen im Außendienst</li>
+	  <li>Unterstützung für Windows und Windows Phone</li>
 	  <li>Intelligente Formulare für die Datenerfassung</li>
+	  <li>Unterstützung für externe GNSS-Empfänger</li>
+	  <li>Weitere Werkzeuge für die Planung von Offline-Vorgängen im Außendienst</li>
 	  <li>Datenerfassung mit Versatz</li>
-	  <li>Unterstützung der Adhoc-Erfassung</li>
 	  <li>Integration von Peripheriegeräten (Lasermessgeräte, Barcode-Scanner usw.)</li>
 	</ul>	
 	
