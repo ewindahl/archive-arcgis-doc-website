@@ -1050,6 +1050,8 @@ var localeJsonObj = {
       "esri-maps-cognos-ht" : "Esri Maps for IBM Cognos (Desktop)",
       "esri-maps-cognos-mobile" : "Maps for IBM Cognos (Mobile)",
       "esri-maps-cognos-mobile-ht" : "Esri Maps for IBM Cognos (Mobile)",
+      "living-atlas" : "Living Atlas",
+      "living-atlas-ht" : "Living Atlas of the World",
       "install-onwindows": "Install on Windows",
       "install-on-linux": "Install on Linux and UNIX",
       "desktop": "Desktop",
