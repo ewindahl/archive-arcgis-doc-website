@@ -139,7 +139,9 @@ app.QueryStatement = Backbone.Model.extend ({
 
           if (fldtype == "requiredfields") {
             return ("r" in v.q) ? v.q["r"] : ""  
-          } else {
+          } else if (fldtype == "sort") {
+            return ("sort" in v.q) ? v.q["sort"] : ""  
+          }else {
             return ("p" in v.q) ? v.q["p"] : ""  
           }
       });
@@ -209,6 +211,9 @@ app.QueryStatement = Backbone.Model.extend ({
                   }, 
                   { 
                     "partialfields": andStmt (addFilter ("partialfields"), addLanguage())
+                  }, 
+                  { 
+                    "sort": andStmt (addFilter ("sort"))
                   }
                 );
 
