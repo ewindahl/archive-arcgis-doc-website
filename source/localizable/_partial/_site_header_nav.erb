@@ -1,9 +1,9 @@
 <ul>
-  <li><a data-langlabel="home" href="http://www.arcgis.com" class="home hide"><%= t("site.nav.home") %></a></li>
-  <li><%= link_to t("site.nav.features"), t("paths.features"), "data-langlabel" => "features" %></li>
-  <li><%= link_to t("site.nav.plans"), t("paths.plans"), "data-langlabel" => "plans" %></li>
-  <li><%= link_to t("site.nav.gallery"), t("paths.gallery"), "data-langlabel" => "gallery" %></li>
-  <li><%= link_to t("site.nav.map"), t("paths.map"), "data-langlabel" => "map" %></li>
-  <li><%= link_to t("site.nav.scene"), t("paths.scene"), "data-langlabel" => "scene", "class" => "hideOnIE" %></li>
-  <li><%= link_to t("site.nav.help"), t("paths.help").gsub(/\/en\//,"/"+current_language+"/"), "data-langlabel" => "help" %></li>
+  <li><a data-langlabel="home" href="http://www.arcgis.com" class="home hide" id="nav-home"><%= t("site.nav.home") %></a></li>
+  <li><%= link_to t("site.nav.features"), t("paths.features"), "id" => "nav-features", "data-langlabel" => "features" %></li>
+  <li><%= link_to t("site.nav.plans"), t("paths.plans"), "id" => "nav-plans", "data-langlabel" => "plans" %></li>
+  <li><%= link_to t("site.nav.gallery"), t("paths.gallery"), "id" => "nav-gallery", "data-langlabel" => "gallery" %></li>
+  <li><%= link_to t("site.nav.map"), t("paths.map"), "id" => "nav-map", "data-langlabel" => "map" %></li>
+  <li><%= link_to t("site.nav.scene"), t("paths.scene"), "data-langlabel" => "scene", "id" => "nav-scene", "class" => "hideOnIE" %></li>
+  <li><%= link_to t("site.nav.help"), t("paths.help").gsub(/\/en\//,"/"+current_language+"/"), "id" => "nav-help", "data-langlabel" => "help" %></li>
 </ul>
