@@ -30,11 +30,11 @@ mobile: true
     </header>
   <nav>
       <ul>
-        <li class='current'><a title="ArcGIS Online – Trust" href="/cs/trust/">Trust</a></li>
-        <li><a title="ArcGIS Online – Stav systému" href="/cs/trust/system-status/">Stav systému</a></li>
-        <li><a title="ArcGIS Online – Zabezpečení" href="/cs/trust/security/">Zabezpečení</a></li>
-        <li><a title="ArcGIS Online – Soukromí" href="/cs/trust/privacy/">Soukromí</a></li>
-        <li><a title="ArcGIS Online – Soukromí" href="/cs/trust/compliance/">Dodržování standardů</a></li>
+        <li class='current'><a title="ArcGIS Online Trust" href="/cs/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online System Status" href="/cs/trust/system-status/">Stav systému</a></li>
+        <li><a title="ArcGIS Online Security" href="/cs/trust/security/">Zabezpečení</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/cs/trust/privacy/">Soukromí</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/cs/trust/compliance/">Dodržování standardů</a></li>
       </ul>
     </nav>
   </div>
@@ -46,7 +46,7 @@ mobile: true
 	  
   <div class="warning-signup">
       <header>
-        <h2 data-langlabel="">Nahlášení problému se zabezpečením</h2>
+        <h2 data-langlabel=""> Nahlášení problému se zabezpečením</h2>
       </header>
 	  <section>
 		<p data-langlabel="">Vyplňte formulář vpravo a uveďte všechny relevantní informace včetně podrobného popisu vašeho problému. Vaše kontaktní údaje použijeme k tomu, abychom se s vámi mohli spojit v návaznosti na uvedené informace. V rozbalovací nabídce Předmět zvolte povahu problému.</p>
@@ -86,17 +86,17 @@ mobile: true
 		<li data-langlabel="">informovat o předpokládaném časovém rámci nutném pro vyřešení konkrétního ohrožení zabezpečení,</li>
 		<li data-langlabel="">informovat osoby, které ohrožení zabezpečení nahlásily, o jeho vyřešení.</li>		
 		</ul>
-		
-		<div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Participating Security Researchers</span>
+      
+    <div class="dropdown-navigation dropdown-wrapper regular">
+      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Podílející se bezpečnostní specialisté</span>
       <div class="dropdown-content">
         <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">We would like to thank the following security researchers for participating in our responsible reporting program:</p>
+          <p data-langlabel="trust-researchers-desc">Chtěli bychom poděkovat následujícím bezpečnostním specialistům za účast v našem programu zodpovědného za hlášení:</p>
           <%= partial :"_partial/security_names" %>
         </div>
       </div>
     </div>
-	
+      
 	 </section>
 	 
   </div> 
@@ -110,19 +110,19 @@ mobile: true
 
 			  <label data-langlabel="" for="name">Název: </label>
 			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">E-mailová adresa: </label>
+			  <label data-langlabel="email-address" for="email-address">E-mailová adresa:</label>
 			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">Telefonní číslo: </label>
+			  <label data-langlabel="phone-number" for="phone-number">Telefonní číslo:</label>
 			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
 			  <label data-langlabel="" for="organization">Organizace <span class="optional">(volitelné):</span> </label>
 			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">Předmět: </label>
+			  <label data-langlabel="" for="subject">Předmět:</label>
 			  <select id="subject" autocomplete="off" name="subject">
 				  <option value="" style="display:none;"></option>
 				  <option value="Vulnerability">Slabina v zabezpečení</option>
 				  <option value="Suspicious E-mail from Esri">Podezřelý e-mail zaslaný společností Esri</option>
 				  <option value="Privacy Issue">Problém s ochranou osobních údajů</option>
-				  <option value="audi">Jiný</option>
+				  <option value="audi">Jiné</option>
 			  </select>
 
 			  <label data-langlabel="" for="description">Popis: </label>
@@ -135,10 +135,9 @@ mobile: true
 			  <input type="hidden" value="internal" name="source" id="source">
 
 			  <input value="verbose" name="resultType" id="resultType" type="hidden">
-			  <input value="Problém se zabezpečením" name="datablock" id="datablock" type="hidden">
+			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
 			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-
-			  <input type="hidden" value="en" name="lg">
+			  <input type="hidden" value="cs" name="lg">
 			
 			</fieldset>
 			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Odeslat</a>

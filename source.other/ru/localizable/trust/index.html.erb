@@ -12,7 +12,7 @@ js:
   - sitecfg.js
 
 metatags:
-  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="ru">
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="ru">
 
 mobile: true
 
@@ -22,7 +22,7 @@ mobile: true
     <header>
       <h1><a href="/ru/Trust/">Trust ArcGIS</a></h1>
        <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Поиск Trust ArcGIS">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="arcgis-online" />
         <input type="hidden" name="language" value="<%= current_language %>" />
@@ -31,10 +31,10 @@ mobile: true
   <nav>
       <ul>
         <li class='current'><a title="ArcGIS Online Trust" href="/ru/trust/">Trust</a></li>
-        <li><a title="Состояние системы ArcGIS Online" href="/ru/trust/system-status/">Состояние системы</a></li>
-        <li><a title="Безопасность ArcGIS Online" href="/ru/trust/security/">Безопасность</a></li>
-        <li><a title="Конфиденциальность ArcGIS Online" href="/ru/trust/privacy/">Конфиденциальность</a></li>
-        <li><a title="Конфиденциальность ArcGIS Online" href="/ru/trust/compliance/">Соответствие требованиям</a></li>
+        <li><a title="ArcGIS Online System Status" href="/ru/trust/system-status/">Статус ArcGIS Online</a></li>
+        <li><a title="ArcGIS Online Security" href="/ru/trust/security/">Безопасность</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/ru/trust/privacy/">Конфиденциальность</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/ru/trust/compliance/">Соответствие требованиям</a></li>
       </ul>
     </nav>
   </div>
@@ -43,48 +43,56 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
   <div class="column-16 tablet-column-24">
-    <h3 class="gray">ArcGIS Online является надежной и безопасной системой с контролируемым доступом</h3>
+    <h3 class="gray">ArcGIS – надежная и безопасная платформа</h3>
     <hr />
     <div id="collectorMapFeature" class="column-12 phone-column-24">
-      <img src="img/features-security-data-ownership.jpg" alt="Владение данными безопасности" />
-    <div style="padding-top:30px; text-align: center;">
-      <a href="/ru/trust/system-status/" class="btn tertiary" style="width:80%;text-align:center;" >Проверить состояние системы</a>
+      <img src="img/features-security-data-ownership.jpg" alt="Security data ownership" />
+	      <div style="padding-top:30px; text-align: center;">
+      <a href="/ru/trust/system-status/" class="btn tertiary" style="width:75%;text-align:center; " >Проверить состояние системы</a>
     </div>
-	  </div>
+    </div>
     <div id="collectorDataFeature" class="column-12 phone-column-24">
-      <p>Trust.ArcGIS.com &ndash; ваш ресурс информации о безопасности, конфиденциальности и соответствии законодательству. См.: </p>
+      <p>Trust.ArcGIS.com – ваш ресурс информации о безопасности, конфиденциальности и соответствии законодательству.Найти:</p>
       <ul>
-        <li>Доступность сервисов ArcGIS Online, информация о производительности системы и история состояний</li>
+        <li>Доступность сервисов ArcGIS Online, информация о производительности системы и история статусов</li>
         <li>Обновления безопасности и текущие предупреждения</li>
-        <li>Информация о безопасности продукта ArcGIS Online.</li>
+        <li>Информация о безопасности платформы ArcGIS Online.</li>
         <li>Меры по обеспечению безопасности для вашей организации</li>
         <li>Информация о конфиденциальности и соответствии нормативным требованиям</li>
       </ul>
-      <p>Trust.ArcGIS.com получает вдохновение от бесед со своими клиентами. Что бы вы хотели здесь увидеть? Если у вас имеются предложения, направляйте их в <a href="http://ideas.arcgis.com">ArcGIS Ideas</a>.</p>
-    </div>
+      <p>Trust.ArcGIS.com получает вдохновение от бесед со своими клиентами.Что бы вы хотели здесь увидеть?Если у вас имеются предложения, направляйте их в <a href="http://ideas.arcgis.com">ArcGIS Ideas</a>.</p>
+
+	
+ </div>
+
     <div class="clear"></div>
     <div class="" style="text-align:center; padding-top:75px;">
-	<h4>&quot;Esri стремится постоянно совершенствовать безопасность своих картографических платформ и укреплять доверие клиентов посредством аккредитаций в таких органах, как FISMA.&quot;</h4>
+      <h4>&quot;Соответствие FedRAMP Moderate Revision 4 является подтвержденным независимыми экспертами, сильным усовершенствованием безопасности платформы ArcGIS.&quot;</h4>
       <p>Майкл Янг, главный архитектор по безопасности, Esri</p>
 
     </div>
     <div style="text-align:center; padding-top:45px;">
-      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+      <a href="http://cloud.cio.gov/fedramp"><img src="img/fedramp.png"/></a><a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
     </div>
   </div>
   <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
-    <div class="imgFrame block">
 
-          <h3 class="icon-announcement">Предупреждения и &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS Blog"><img src="img/rss.png" /></a>
-		 <br/>объявления </h3>
+    <br/>
+	        <!-- Blog Feed -->
+        <div class="imgFrame block">
+          <h3 class="icon-announcement">Предупреждения & объявления &nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS Blog"><img src="img/rss.png" /></a></h3>
           <div id="blog">
             <!-- blog goes here -->
           </div>
-	  </div>
-    <br />
-    <div class="" style="text-align:center;">
-      <h4><a style="color:orange;" class ="icon-alert icon-orange" href="/ru/trust/security-concern/"> Сообщить о проблемах с безопасностью</a>  </h4>
+		  <div style="text-align:right;">
+		  <a class="btn transparent" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/">См. все предупреждения</a> 
+		  </div>
+        </div><br/>
+		  		    <div class="" style="text-align:center;">
+      <h4><a style="color:orange;" class="icon-alert icon-orange" href="/ru/trust/security-concern/"> Сообщить о проблемах с безопасностью</a>  </h4>
     </div>
+    <br />
+
   </div>
 
  </div>
@@ -94,7 +102,7 @@ mobile: true
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
-        max: 5,
+        max: 3,
         layout: 0
       });
     });
@@ -105,3 +113,4 @@ L = 0, 1 (default is 0)
 */
 
   </script>
+
