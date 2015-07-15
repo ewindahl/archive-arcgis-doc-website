@@ -1,12 +1,11 @@
 @import "features";
 
+#page {
+  padding-bottom: 262px;
+}
 #home-banner {
-  background: image-url("banner.jpg", false, true) no-repeat center center #329a40;
+  background: image-url("banner.jpg", false, true) no-repeat center center #007ac2;
   color: $white;
-  height: 380px;
-  @include respond-to($laptop) {
-    height:257px;
-  }
   @include respond-to($tablet-tall) {
     height:auto;
   }
@@ -18,6 +17,31 @@
     @include opacity(0.85);
     &:hover{
       @include opacity(1);
+    }
+  }
+  &.living-atlas {
+    background-size: cover;
+    background: image-url("/en/living-atlas/img/banner.jpg", false, true) no-repeat center center #007ac2;
+    height: 340px;
+    header {
+      @include column(8);
+      @include leader(1.5);
+    }
+    .banner-image {
+      @include column(16);
+
+    }
+    .container {
+      position: relative;
+      height: 340px;
+    }
+    h1 {
+      @include adjust-font-size-to(50px);
+      line-height: 1.25em;
+    }
+    nav {
+      position: absolute;
+      bottom:0;
     }
   }
 }
@@ -92,7 +116,7 @@
   @include respond-to($desktop) {
     @include column-width(10);
   }
-  
+
   @include respond-to($laptop) {
     @include leader(2 );
     @include post(0);
@@ -226,5 +250,317 @@ h1 {
   @include respond-to($tablet-tall) {
     padding-top:2em;
     margin-bottom:0;
+  }
+}
+#about {
+  @include column(18);
+  @include post(6);
+}
+#categories {
+  @include column(24);
+  @include trailer(2);
+}
+#getstarted {
+  @include leader(2);
+  @include trailer(2);
+  .gs-intro {
+    @include column(16);
+    @include pre(4);
+    @include post(4);
+    text-align: center;
+  }
+  .gs-item {
+    @include column(12);
+    img {
+      float:left;
+    }
+    .item-content {
+      margin-left: 120px;
+      margin-right: 20px;
+    }
+  }
+}
+#appbanner {
+  @include leader(2);
+  @include trailer(2);
+  .app {
+    @include column(12);
+    text-align: center;
+    color: $white;
+  }
+}
+#success-stories {
+  @include leader(2);
+  @include trailer(2);
+  .ss-intro {
+    @include column(16);
+    @include pre(4);
+    @include post(4);
+    text-align: center;
+  }
+  .ss-items {
+    @include column(24);
+    padding: 0;
+    text-align: center;
+    .ss-item {
+      width: 20%;
+      box-sizing: border-box;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      padding: 1em;
+      margin: 0 -2px;
+      img {
+        padding-bottom: 0.5em;
+      }
+    }
+  }
+}
+#blogfeed, #geonetfeed, #videofeed {
+  @include leader(2);
+  @include trailer(2);
+
+}
+.slideshow {
+  width:100%;
+  @include leader(1);
+ .slide {
+    .item {
+      @include column(6);
+    }
+    .item-content {
+      @include box-shadow(rgba(0,0,0,0.30) 0px 1px 3px);
+      height: 300px;
+      overflow: hidden;
+      > a {
+        display: block;
+        color: #4d4d4d;
+        height: 100%;
+      }
+      img {
+        padding-top: 1.5em;
+      }
+      .item-desc {
+        padding: 0.5em 1em;
+        h3 {
+          @include adjust-font-size-to(24px);
+          line-height: 1.2em;
+          margin-bottom: 0.2em;
+        }
+      }
+    }
+  }
+  .prev, .next {
+    position: absolute;
+    display: block;
+    height: 44px;
+    width: 33px;
+    background: url('../img/carousel-arrows.png');
+    &.disabled {
+      cursor: default;
+    }
+  }
+  .prev {
+    background-position: 0 -44px;
+    position: absolute;
+    left: -30px;
+    top: 40%;
+    &:hover,:focus {
+      background-position: -26px -44px;
+    }
+    &.disabled {
+      background-position: -52px -44px;
+    }
+  }
+  .next {
+    background-position: 0 0;
+    position: absolute;
+    right: -30px;
+    top: 40%;
+    &:hover,:focus {
+      background-position: -26px 0;
+    }
+    &.disabled {
+      background-position: -52px 0;
+    }
+  }
+  &.white {
+    .item-content {
+      background-color: #fff;
+    }
+  }
+  &.off-white {
+    .item-content {
+      background-color: #f7f7f7;
+    }
+  }
+  &.long {
+    .item-content {
+      height: 400px;
+    }
+  }
+  &.centered-text {
+    text-align: center;
+  }
+  &.top-border {
+    .item-content {
+      border-top: 2px solid #007ac2;
+    }
+  }
+
+  .cycle-pager {
+    text-align: center;
+    @include adjust-font-size-to(42px);
+    span {
+      padding: 0.125em;
+      color: rgba(0,0,0,0.1);
+      cursor: pointer;
+      &.cycle-pager-active {
+        color: $blue;
+      }
+      &:hover,:focus {
+        color: #00B9F2;
+      }
+    }
+  }
+}
+.color-background {
+  &.black {
+    background-color: #242728;
+  }
+  &.off-white {
+    background-color: #f7f7f7;
+  }
+  &.dk-gray {
+    background-color: #555b5d;
+  }
+  &.blue {
+    background-color: #007ac2;
+  }
+}
+
+
+.thin-banner {
+  @include column(24);
+  @include leader(1);
+  @include trailer(1);
+  h3 {
+    @include adjust-font-size-to(24px);
+    line-height: 1em;
+    margin-bottom: 0;
+  }
+  text-align: center;
+  a {
+    color: $white;
+    .icon-twitter {
+      color: $blue;
+      background-color: $white;
+      height: 50px;
+      width: 50px;
+      display: inline-block;
+      @include border-radius(25px);
+      vertical-align: middle;
+      margin-left: 0.5em;
+      &::before{
+        top: 14px;
+        position: relative;
+      }
+    }
+  }
+}
+.feed-section {
+  header {
+    @include padding-trailer(0.25);
+    border-bottom: 1px solid #e5e5e5;
+    &::after {
+      clear:both;
+      display: table;
+      content: " ";
+    }
+    h2 {
+      margin-bottom: 0;
+      line-height: 1em;
+      @include column(12);
+      padding: 0;
+    }
+    .more-links {
+      @include column(12);
+      text-align: right;
+      padding: 0;
+      a {
+        margin-left: 1em;
+        @include adjust-font-size-to(14px);
+        &::after {
+          display: inline-block;
+          height: 16px;
+          width: 16px;
+          content: " ";
+          background: url('/en/living-atlas/img/circle-arrow.png');
+          margin-left: 5px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  &.blue {
+    header {
+      border-color: #3395ce;
+      color: $white;
+      a {
+        color: $white;
+        &::after {
+          background: url('/en/living-atlas/img/circle-arrow-rev.png');
+        }
+      }
+    }
+  }
+  .feeditems {
+    &::after {
+      clear:both;
+      display: table;
+      content: " ";
+    }
+    @include leader(1);
+    .feeditem {
+      @include column(8);
+      .content {
+        @include box-shadow(rgba(0,0,0,0.30) 0px 1px 4px);
+        height: 200px;
+        overflow: hidden;
+        border-top: 3px solid #007ac2;
+        padding: 1.5em;
+        img {
+          max-width: 100%;
+          padding-bottom: 1em;
+        }
+        a {
+          @include adjust-font-size-to(14px);
+        }
+      }
+    }
+    &.white {
+      .content {
+        background-color: $white;
+      }
+    }
+    &.off-white {
+      .content {
+        background-color: #f7f7f7;
+      }
+    }
+    &.blue {
+      .feeditem {
+        @include column(6);
+      }
+      .content {
+        background-color: #2e92cd;
+        border: 0;
+        color: $white;
+        height: 250px;
+        a {
+          color: $white;
+        }
+      }
+    }
   }
 }
