@@ -10,12 +10,13 @@ js:
   - libs/jquery.cookie
   - /en/asset/js/operations-dashboard-1
   - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
   - video-init
 
 metatags:
   - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2015-01-06"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="es">
 
+dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
+  
 mobile: true
 
 ---
@@ -53,7 +54,7 @@ mobile: true
 	  -->	  
 
           <p>
-            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Obtener Operations Dashboard</a>
+            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">Obtener Operations Dashboard</a>
 
           </p>
         <hr />
@@ -78,7 +79,7 @@ mobile: true
           <p>
             <a href="/es/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;¿Cómo hacerlo?</a><br />
             <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Ver un vídeo</a>
+			<a title="Monitor and respond to events" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Ver un vídeo</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
@@ -89,8 +90,8 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="/en/operations-dashboard/story-graphic-3.png" />
 
-          <h3>Supervisar en el navegador</h3>
-          <p>Utilice su vista de operaciones en un navegador. No es necesario instalar nada, solo tiene que abrir una vista de operaciones y mantenerse al tanto de su progreso, incluso desde su iPad.</p>
+          <h3>Supervise en el navegador</h3>
+          <p>Utilice su vista de operaciones en un navegador. No es necesario instalar nada, solo tiene que abrir una vista de operaciones y mantenerla actualizada, incluso desde su iPad.</p>
           <p>
             <a href="/es/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;¿Cómo hacerlo?</a><br />
             <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
@@ -100,10 +101,10 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="/en/operations-dashboard/story-graphic-4.png" />
 
-          <h3>Desarrollar Add-ins</h3>
+          <h3>Amplíe una vista de operaciones</h3>
           <p>Incluya su lógica empresarial única a su vista de operaciones utilizando widgets personalizados, acciones de entidades y herramientas de mapas. </p>
           <p>
-            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;¿Cómo hacerlo?</a><br />
+            <a href="/es/operations-dashboard/windows-desktop/author/custom-addins.htm" class="icon-right-arrow">&nbsp;¿Cómo hacerlo?</a><br />
           </p>
         </div>        
 
@@ -111,8 +112,8 @@ mobile: true
 
 
 	<a name="features" ></a>
-	<h2 class="divider">Entidades</h2>
-	<p>Cree una vista común de los sistemas y recursos que administra. Supervise fuentes de datos en tiempo real para eventos de gran escala o las operaciones cotidianas en su dispositivo de sobremesa o tablet. Cree paneles ejecutivos específicos que integren mapas, diagramas y gráficos.</p>
+	<h2 class="divider">Características</h2>
+	<p>Cree una vista común de los sistemas y recursos que administra.Supervise fuentes de datos en tiempo real para eventos de gran escala o las operaciones cotidianas en su dispositivo de sobremesa o tablet.Cree paneles ejecutivos específicos que integren mapas, diagramas y gráficos.</p>
 	
 	<ul>
 	<li>Use mapas con fuentes de datos dinámicas para proporcionar vistas en tiempo real.</li>
@@ -149,12 +150,12 @@ mobile: true
   <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Sistemas operativos compatibles</a>
      <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
-          <li>Windows 8.1, Windows 8.1 Pro y Windows 8.1 Enterprise (32 bit y 64 bit [EM64T])</li>
-          <li>Windows 8, Windows 8 Pro y Windows 8 Enterprise (32 bit y 64 bit [EM64T])</li>
-		  <li>Windows 7 Ultimate, Enterprise, Professional y Home Premium (32 bits y 64 bits [EM64T]) SP1</li>
+          <li>Windows 8.1, Windows 8.1 Pro y Windows 8.1 Enterprise (64 bits [EM64T])</li>
+          <li>Windows 8, Windows 8 Pro y Windows 8 Enterprise (64 bits [EM64T])</li>
+		  <li>Windows 7 Ultimate, Enterprise, Professional y Home Premium (64 bits [EM64T]) SP1</li>
 		  <li>Windows Server 2012 Standard y Datacenter (64 bits [EM64T])</li>
 		<li>Windows Server 2008 R2 Standard, Enterprise y Datacenter (64 bits [EM64T]) SP1</li>
-		<li>Windows Server 2008 Standard, Enterprise y Datacenter (32 bits y 64 bits [EM64T]) SP2</li>
+		<li>Windows Server 2008 Standard, Enterprise y Datacenter (64 bits [EM64T]) SP2</li>
         </ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
@@ -181,14 +182,14 @@ mobile: true
         
 <a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Requisitos de desarrollador</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px">Se requiere <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a> para la personalización de Operations Dashboard for ArcGIS. También se requiere Microsoft Visual Studio 2012 o 2013 Professional, Premium o Ultimate. </p>
+	<p style="padding:0 15px">Es necesario <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> o <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a> para personalizar Operations Dashboard for ArcGIS. Para usar ArcGIS Runtime SDK for WPF, es necesario también Microsoft Visual Studio 2012 o 2013 Professional, Premium o Ultimate.</p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
 <a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Idiomas compatibles</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">Árabe, checo, danés, holandés, inglés, estonio, finlandés, francés, alemán, hebreo, italiano, japonés, coreano, letón, lituano, noruego, polaco, portugués (Brasil), portugués (Portugal), rumano, ruso, chino simplificado, español, sueco, tailandés y turco.</p>
+     	<p style="padding:0 15px">alemán, árabe, checo, chino simplificado, coreano, danés, español, estonio, finlandés, francés, griego, hebreo, holandés, inglés, italiano, japonés, letón, lituano, noruego, polaco, portugués (Brasil), portugués (Portugal), rumano, ruso, sueco, tailandés, turco y vietnamita.</p>
      	<p style="padding:0 15px">El idioma utilizado en la versión de Windows de la aplicación viene determinado por la configuración de idioma del sistema operativo. Si se utiliza una configuración de idioma no compatible, la aplicación utiliza el inglés.</p>
 </div>
 <div class="clear"></div>
@@ -203,7 +204,7 @@ mobile: true
  <li>Internet Explorer versión 9.0 y posterior</li>
  <li>Safari versión 5.1 y posterior</li>
  </ul> 
- Tableta 
+ Tablet 
  <ul style="padding:0 15px">
  <li>Android 4.0 y posterior con Chrome versión 19.0 y posteriores</li>
  <li>iOS 6.0 y posterior ejecutando Safari</li>
@@ -212,9 +213,14 @@ mobile: true
  <p style="padding:0 15px">Actualmente no son compatibles los navegadores de smartphones.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Idiomas compatibles</a>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp12');" style="display:inline;">Requisitos de desarrollador</a>
+ <div exp12='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">Es necesario <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> para personalizar Operations Dashboard for ArcGIS.</p>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Idiomas compatibles</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Checo, danés, neerlandés, inglés, estonio, finlandés, francés, alemán, griego, italiano, japonés, coreano, letón, lituano, noruego, polaco, portugués (Brasil), portugués (Portugal), rumano, ruso, chino simplificado, español, sueco, tailandés, turco y vietnamita.</p>
+      	<p style="padding:0 15px">alemán, checo, chino simplificado, chino tradicional, coreano, danés, español, estonio, finlandés, francés, griego, holandés, inglés, italiano, japonés, letón, lituano, noruego, polaco, portugués (Brasil), portugués (Portugal), rumano, ruso, sueco, tailandés, turco y vietnamita.</p>
       	<p style="padding:0 15px">En la versión del navegador se utiliza el perfil de ArcGIS Online para establecer el idioma. Si se utiliza una configuración de idioma no compatible, la aplicación utiliza el inglés.</p>
 </div>
 <div class="clear"></div>
@@ -227,22 +233,23 @@ mobile: true
         <a name="whatsNew"></a>
         <h2 class="divider">Novedades</h2>
         <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>Operations Dashboard for ArcGIS 10.3 se publicó en enero de 2015. Incluye lo siguiente:</p>
+	        <p>Operations Dashboard for ArcGIS 10.3.1 se publicó en julio de 2015. Incluye lo siguiente:</p>
 	        <ul>
-	          <li>Capacidad para filtrar información espacialmente</li>
-	          <li>Compatibilidad con tablas independientes como fuentes de datos externas</li>
-	          <li>Ajuste de actualización de imágenes en widget de detalles de las entidades</li>
-	          <li>Localizado al tailandés</li>
-	          <li>Varias correcciones de errores y mejoras, como NIM093876, NIM098864, NIM099167, NIM099471, NIM100316, NIM100385, NIM100527, NIM100801, NIM101153, NIM101987, NIM102275, NIM102487, NIM102751, NIM102978, NIM103026, BUG-000081941, BUG-000082011, BUG-000082326 y ENH-000081122</li>
+	          <li>Extensible mediante ArcGIS API for JavaScript</li>
+	          <li>Traducido al vietnamita y griego</li>
+                  <li>Cumple con los estándares federales de procesamiento de la información (FIPS)</li>
+	          <li>Varias correcciones de errores y mejoras, que incluyen el NIM104511</li>
 	        </ul>
                 </td>
 	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>Navegador</h4>
-	        <p>La aplicación de navegador de Operations Dashboard for ArcGIS se actualizó en marzo de 2015. Incluye las siguientes mejoras:</p>
+	        <p>La aplicación de navegador de Operations Dashboard for ArcGIS se actualizó en julio de 2015. Incluye las siguientes mejoras:</p>
 	        <ul>
-	          <li>Compatibilidad con las vistas de operaciones compartidas públicamente sin iniciar sesión</li>
-	          <li>Capacidad para expandir más tipos de widgets a pantalla completa</li>
-	          <li>Localizado al griego</li>
-	          <li>Varias correcciones de errores y mejoras, que incluyen el BUG-000084352</li>
+	          <li>Extensible mediante ArcGIS API for JavaScript</li>
+                  <li>Permite utilizar el tema oscuro</li>
+                  <li>Permite utilizar sugerencias en la herramienta de mapa Buscar lugares</li>
+                  <li>Unidad de medida predeterminada según el perfil del usuario</li>
+	          <li>Traducido al chino tradicional</li>
+	          <li>Varias correcciones de errores y mejoras, que incluyen BUG-000085800, BUG-000086399, BUG-000085999, BUG-000086586 y NIM101460</li>
         </ul></td><tr></table>
         
         
@@ -256,7 +263,7 @@ mobile: true
 	  <caption>Funcionalidad por plataforma <br/>
 	  <span class="icon-check" style="color:black"></span> ahora, <span class="icon-check icon-green"/> próximamente, <span class="icon-check" style="color:lightgray"></span> más adelante<br/></caption>
 	  <tr><td></td>
-	    <th>Escritorio de Windows</th>
+	    <th>Escritorio en Windows</th>
 	    <th>Navegador</th>
 	  </tr>
 	  <tr><th>Crear vistas de operaciones</th>
@@ -269,11 +276,11 @@ mobile: true
 	  </tr>
 	  <tr><th>Trabajar con Portal for ArcGIS</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Portal for ArcGIS 10.3 y posterior</span></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Portal for ArcGIS 10.3 o posterior</span></td>
 	  </tr>
 	  <tr><th>Extensible</th>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Compatibilidad en ArcGIS Online</span></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Extensible mediante ArcGIS API for JavaScript</span><br/><span style="font-size:12px">* Compatibilidad en ArcGIS Online</span></td>
 	  </tr>
 	  <tr><th>Utilizar servicios de mapa fuentes de datos</th>
 	    <td><span class="icon-check"/></td>
@@ -321,7 +328,7 @@ mobile: true
        <div class="imgFrame block">
           <h3>Detalles</h3>
           
-	  <h4><a href="#features">Características</a></h4>
+	  <h4><a href="#features">Entidades</a></h4>
 	  <h4><a href="#systemRequirements">Requisitos del sistema</a></h4>
 	  <h4><a href="#whatsNew">Novedades</a></h4>
 	  <h4><a href="#sneakPeek">Avance de novedades</a></h4>
@@ -357,5 +364,8 @@ mobile: true
 N = # of article shown (default is 2)
 L = 0, 1 (default is 0)
 */
+$("#dashboardDownloadLink").click(function (){
+	window.location = "<%=data.page.dashboardDownloadLink%>";
+})
 
   </script>
