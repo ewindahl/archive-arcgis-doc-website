@@ -1347,7 +1347,10 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": "Windows Phone"
+      "windows-phone": "Windows Phone",
+		"nav-mycontent": "My Content",
+		"nav-groups": "Groups",
+		"nav-myorg": "My Organization"
    }, 
    "es": {
       "3DAnalyst": "Disponible con una licencia de 3D Analyst.", 
