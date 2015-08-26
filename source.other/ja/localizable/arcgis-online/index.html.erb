@@ -15,6 +15,7 @@ metatags:
 
 mobile: true
 
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
@@ -32,11 +33,11 @@ mobile: true
       <ul>
         <li class='current'><a title="ArcGIS Online ヘルプ" href="/ja/arcgis-online/">ホーム</a></li>
         <li><a title="マップとシーンの使用" href="/ja/arcgis-online/use-maps/">使用</a></li>
-        <li><a title="マップ、シーン、およびアプリケーションの作成" href="/ja/arcgis-online/create-maps/">作成</a></li>		
-        <li><a title="マップ、シーン、およびアプリケーションの共有" href="/ja/arcgis-online/share-maps/">共有</a></li>
+        <li><a title="マップ、シーン、およびアプリの作成" href="/ja/arcgis-online/create-maps/">作成</a></li>		
+        <li><a title="マップ、シーン、およびアプリの共有" href="/ja/arcgis-online/share-maps/">共有</a></li>
 		<li><a title="組織サイトの管理" href="/ja/arcgis-online/administer/">管理</a></li>
 		<li><a title="参考" href="/ja/arcgis-online/reference/">リファレンス</a></li>
-		<li><a title="すぐに使用できるアプリケーション" href="/ja/arcgis-online/apps/arcgis-apps.htm">アプリケーション</a></li>
+		<li><a title="すぐに使用できるアプリ" href="/ja/arcgis-online/apps/arcgis-apps.htm">アプリ</a></li>
 	</ul>
     </nav>
   </div>
@@ -185,7 +186,7 @@ mobile: true
 
     <section class="support-option">
       <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">Esri テクニカル サポート</a></h4>
-      <p>チャット、電子メール、または電話でサポート チームに問い合わせます。</p>
+      <p>チャット、電子メール、または電話でサポートに問い合わせます。</p>
     </section>
     
   </div> 
@@ -193,14 +194,14 @@ mobile: true
 
     <section class="support-option">
       <h4 class="icon-light-bulb icon-orange"><a href="http://ideas.arcgis.com/" target="_blank">ArcGIS Ideas</a></h4>
-      <p>ソフトウェアについてのフィードバックを送信します。</p>
+      <p>ソフトウェアのフィードバックを送信します。</p>
     </section>
     
   </div>
   <div class="column-8 phone-column-24" style="width: 33.333%;">
 
    <h4 class="icon-comment icon-blue"><a href="http://GeoNet.esri.com/" target="_blank">ArcGIS フォーラム</a></h4>
-      <p>Geonet のディスカッションに参加します。</p>
+      <p>GeoNet での議論に参加します。</p>
     
   </div>
   <!--<div class="row">-->
@@ -212,9 +213,9 @@ mobile: true
 
  <div class="column-8 tablet-column-24 blocks">
 	 <div class="imgFrame block">
-          <h3>ArcGIS Online を初めてお使いの方</h3>
+          <h3>ArcGIS Online を初めてお使いの場合</h3>
 
-			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">実践的なレッスンの検索</a></p>
+			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">レッスンの検索</a></p>
 			<a title="ArcGIS Online の概要" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">ビデオ ツアーの視聴</a><br/><br/>
 			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">トレーニング コースの検索</a>
       </div>	
@@ -224,7 +225,7 @@ mobile: true
 	 <div class="greyFrame">
           <h3>クイック リファレンス</h3>
          <ul>   <li><a href="/ja/arcgis-online/reference/troubleshoot-account.htm">&nbsp;サイン インに関するトラブルシューティング</a></li>
-		<li><a href="/ja/arcgis-online/reference/whats-new.htm" >&nbsp;新機能</a></li>
+		<li><a href="/ja/arcgis-online/reference/whats-new.htm" >&nbsp;新しい機能</a></li>
 		<li><a href="/ja/arcgis-online/reference/faq.htm">&nbsp;よくあるご質問 (FAQ)</a></li>
 		<li><a href="/ja/arcgis-online/reference/videos.htm">&nbsp;ビデオ</a></li>
 		<li><a href="/ja/trust/system-status/">&nbsp;システム ステータス</a></li>
@@ -268,6 +269,10 @@ mobile: true
 		  });
 
     });
+	 
+	 if(window.location.pathname.match( /(\/arcgis-online\/)/)){
+		$("#help-nav").attr("class", "active");
+	 }
 
 
   </script>
