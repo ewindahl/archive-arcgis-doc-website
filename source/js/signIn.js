@@ -124,6 +124,16 @@ agolLogout
 				var trialDownloadString = (window.localeJsonObj['docConfig'] && window.localeJsonObj[docConfig['locale']]['trial-downloads'])?window.localeJsonObj[docConfig['locale']]['trial-downloads'] : "Trial Downloads";
 				$(".myconsole li:last").before('<li><a href="' + sitecfg["trialDownloadUrl"] + '">' + trialDownloadString +'</a></li>');
 		  }
+
+      if(data.subscriptionInfo){
+        // Org account
+        $(".public-and-org-only, .org-only").removeClass("hide")
+        $(".anonymous-only, .anonymous-and-public-only").addClass("hide")
+      } else {
+        //public account
+        $(".public-and-org-only").removeClass("hide")
+        $(".anonymous-only").addClass("hide")
+      }
   
     	});
 
