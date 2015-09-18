@@ -9,11 +9,10 @@ css:
 js:
   - libs/jquery.cookie
   - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2015-08-21"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="sharepoint-4.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ru">
 
 mobile: true
 
@@ -25,7 +24,8 @@ mobile: true
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Sharepoint">
         <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="esri-maps-sharepoint" />          
+        <input type="hidden" name="product" value="esri-maps-sharepoint" /> 
+<input type="hidden" name="version" value="sharepoint-4.0" />		
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
 
@@ -33,10 +33,10 @@ mobile: true
 	<nav>
       <ul>
         <li class='current'><a href="/ru/maps-for-sharepoint/">На главную</a></li>
-        <li><a href="/ru/maps-for-sharepoint/get-started/">Начало работы</a></li>
-        <li><a href="/ru/maps-for-sharepoint/esri-maps-web-part/">Esri Maps Web Part</a></li>
+        <li><a href="/ru/maps-for-sharepoint/foundation-server/install-and-configure/">Установка и настройка</a></li>
+        <li><a href="/ru/maps-for-sharepoint/foundation-server/esri-maps-web-part/">Esri Maps Web Part</a></li>
         <li><a href="/ru/maps-for-sharepoint/arcgis-map-web-part/">ArcGIS Map Web Part</a></li>
-		<li><a href="http://forums.arcgis.com/forums/69-Esri-Maps-for-SharePoint/">Форум</a></li>
+		<li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics">GeoNet</a></li>
       </ul>
     </nav>
   </div>
@@ -49,91 +49,322 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Загрузка приложения</h2>
-          <span id="appVersion"><strong>Версия:</strong> 3.0.1</span> <span id="appReleased"><strong>Доступные:</strong> Октябрь 2013</span>
+          <span id="appVersion"><strong>Версия:</strong> 4.1</span>
+          <span id="appReleased"><strong>Доступно:</strong> Осень 2015</span>
 
-
-          <p>Esri Maps for SharePoint использует Microsoft SharePoint 2010 и 2013 для предоставления интерактивных и настраиваемых картографических компонентов, которые обеспечат ясную геопространственную организацию данных вашего предприятия. </p>
+          <p>Esri Maps for SharePoint использует рабочую среду Microsoft SharePoint 2010 и 2013 и онлайн-платформу SharePoint для предоставления интерактивных и настраиваемых картографических компонентов, которые обеспечат ясную геопространственную организацию данных вашего предприятия. </p>
 
           <p>
-             <a  class="btn primary" href="http://www.esri.com/apps/products/download/#Esri_Maps_for_SharePoint">Получить Esri Maps for SharePoint</a>
-
+             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download-maps-for-sharepoint">Получить локальную версию Esri Maps for SharePoint</a> &nbsp;  &nbsp;  &nbsp; <a class="btn primary" href="https://store.office.com/search.aspx?productgroup=SharePoint&qu=esri">Получить онлайн-версию Esri Maps for SharePoint</a> 
           </p>
 
         </header>
         <hr />
         <br />
 
+<!-- features top row -->
+		<!-- Enable mapping -->
+		<div id="enablemapping" class="column-12 phone-column-24">
+		  <a title="Включение картографирования в SharePoint" class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/2906/000000/width/960/0/00:00:00" style="max-width: 325px"><img src="m4sp1.png"><img class="playbtn" src="/img/playbtn.png"></a>
 
+          <h3>Включение картографирования в SharePoint</h3>
+          <p>Добавьте динамические карты на сайт SharePoint для визуального анализа данных.</p>
+          <p>
+           <a href="/ru/maps-for-sharepoint/foundation-server/esri-maps-web-part/add-esri-maps-web-part-to-a-page.htm" class="icon-right-arrow">&nbsp;Подробнее</a>
+			<br/>
+			<a title="Включение картографирования в SharePoint" href="http://video.arcgis.com/iframe/2906/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Просмотреть видео</a>
+			<video width="320" height="240" controls id="2906" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2906/mp4/480">
+			</video>
+          </p>
+        </div>
+
+		<!-- Share maps -->
+        <div id="sharemaps" class="column-12 phone-column-24">
+          <a title="Публикация карт SharePoint" class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/2907/000000/width/960/0/00:00:00" style="max-width: 325px"><img src="m4sp2.png"><img class="playbtn" src="/img/playbtn.png"></a>
+
+          <h3>Публикация карт SharePoint</h3>
+          <p>Узнайте, как предоставить общий доступ к картам, построенным по данным SharePoint. Опубликуйте карту на ArcGIS Online для ее совместного использования.</p>
+          <p>
+			<a href="/ru/maps-for-sharepoint/foundation-server/esri-maps-web-part/share-a-layer-on-arcgis.htm" class="icon-right-arrow">&nbsp;Подробнее</a>
+			<br/>
+		   <a title="Публикация карт SharePoint" href="http://video.arcgis.com/iframe/2907/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Просмотреть видео</a>
+		<video width="320" height="240" controls id="2907" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2907/mp4/480">
+			</video>
+          </p>
+        </div>
+		<br/>
+        <div class="clear"></div>
         <div class="clear"></div>
 
 
-        <a name="systemRequirements"></a>
-        <h2>Системные требования</h2>
-
-        <p>Для Esri Maps for SharePoint необходима учетная запись, являющаяся частью организации <a href="http://help.arcgis.com/ru/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>, и Microsoft SharePoint 2010 или 2013 версии Foundation, Server Standard или Server Enterprise.</p>
-
-
- <a name="whatsNew"></a>
- 	<h2>Выпущена версия 4.0 Beta</h2>	
- 	<p>Esri Maps for SharePoint 4.0 Beta доступна в <a href="http://betacommunity.esri.com">Esri Beta Community</a>. Системные требования, поддерживаемые платформы, справочная документация и пакеты для загрузки можно найти в сообществе пользователей бета-версий Esri Maps for SharePoint. Дополнительные сведения см. в нашем блоге: <a href="http://blogs.esri.com/esri/arcgis/2013/12/02/esri-maps-for-sharepoint-4-0-beta-released/">Выпущена бета-версия Esri Maps for SharePoint</a>. </p>
+<!-- What's new section -->
+	<hr />
+	<a name="whatsNew"></a>
+ 	<h2>Что нового</h2>	
+ 	<p>В настоящий момент доступна версия Esri Maps for SharePoint 4.1.</p>
 	
-		 <h2>Что нового в версии 3.0.1</h2>        
+			<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+		 
+		<h3>Обновление 4.1</h3>
+		<p>Esri Maps for SharePoint версии 4.1 содержит следующие обновления и усовершенствования:
+			<ul>
+				<li>Поддержка локализации на следующих языках: арабский, китайский (упрощенное письмо), чешский, датский, нидерландский, английский, эстонский, финский, немецкий, французский, греческий, иврит, итальянский, японский, корейский, латвийский, литовский, норвежский, польский, португальский, португальский (бразильский), румынский, русский, испанский, тайский, турецкий и вьетнамский.
+				<p><strong>Примечание:</strong> Веб-часть ArcGIS Map построена на базе Silverlight 3.1, поэтому может не поддерживать все указанные выше языки.</p>
+				</li>
+				<li>Исправлены различные ошибки и введены усовершенствования.</li>
+			</ul>
+		</p>
+		<p><strong>Важно:</strong>В соответствии с <a href="HTTP://BLOGS.ESRI.COM/ESRI/ARCGIS/2014/02/21/ESRIS-ROADMAP-FOR-WEB-DEVELOPERS/">тенденциями в области веб-технологий</a>, после выхода этой версии, веб-часть ArcGIS Maps Silverlight будет изъята, как устаревшая. Веб-часть Esri Maps JavaScript содержит множество усовершенствований, которые недоступны в ArcGIS Maps Silverlight. Рекомендуется использовать веб-компонент Esri Maps JavaScript вместо ArcGIS Maps Silverlight – вы больше не сможете добавлять веб-части ArcGIS Map Silverlight на страницы сайта. Для продолжения использования веб-частей ArcGIS Maps Silverlight, обновите все сайты, содержащие ArcGIS Maps Silverlight до Esri Maps for SharePoint 4.0 и сохраните страницы. После этого вы сможете продолжить использование веб-частей ArcGIS Maps Silverlight.</p></p>
+		 
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Обновление 4.0</a>
+		</h3>
+		<div exp1='yes' style="display:none;padding:0 15px;">
+		<p>Esri Maps for SharePoint 4.0 был выпущен в июле 2015 и содержит следующие новые функции. В этом выпуске изменены многие аспекты установки и настройки; внимательно изучите разделы справки Системные требования и Настройка.
+			<ul>
+				<li>Поддержка SharePoint Online</li>
+				<li>Позволяет гостевым пользователям просматривать Esri Maps Web Part с ограниченным функционалом, без использования учетной записи</li>
+				<li>Поддержка Portal for ArcGIS 10.3 и 10.3.1</li>
+				<li>Работа с наиболее распространенными конфигурациями Portal for ArcGIS (OAuth, SAML, IWA, PKI, LDAP)</li>
+				<li>Работа с Portal for ArcGIS в автономной среде</li>
+				<li>Поддержка обогащения географических данных</li>
+				<li>В Esri Maps Web Part добавлены новые инструменты – печать, измерение, редактирование (добавление, изменение и удаление объектов), фильтр слоев и автообновление слоев SharePoint</li>
+				<li>Новые опции настройки Содержания карты для Esri Maps Web Part</li>
+				<li>Поле Esri Maps Location теперь построено на JavaScript (вместо Silverlight) и обеспечивает возможность просмотра на мобильных устройствах</li>
+				<li>Поле Esri Maps Location содержит окно поиска для адресов, наименований местности и координат</li>
+				<li>Используйте с полем Esri Maps Location систему координат по вашему выбору и легко накладывайте другие наборы ГИС-данных, имеющие вашу локальную систему координат</li>
+				<li>Возможности для расширения: создание пользовательских инструментов, поведения и пользовательских наборов символов для Esri Maps Web Part</li>
+				<li>Улучшена обработка различных ошибок</li>
+				<li>Изменен пользовательский интерфейс, который стал более привлекательным и удобным</li>
+			</ul>
+		</p>
+		<p><strong>Важно:</strong>В соответствии с <a href="HTTP://BLOGS.ESRI.COM/ESRI/ARCGIS/2014/02/21/ESRIS-ROADMAP-FOR-WEB-DEVELOPERS/">тенденциями в области веб-технологий</a>, после выхода Esri Maps for SharePoint v4.0, веб-часть ArcGIS Maps Silverlight будет изъята, как устаревшая. Веб-часть Esri Maps JavaScript содержит множество усовершенствований, которые недоступны в ArcGIS Maps Silverlight. Рекомендуется использовать веб-компонент Esri Maps JavaScript вместо ArcGIS Maps Silverlight – вы больше не сможете добавлять веб-части ArcGIS Map Silverlight на страницы сайта. Для продолжения использования веб-частей ArcGIS Maps Silverlight, обновите все сайты, содержащие ArcGIS Maps Silverlight до Esri Maps for SharePoint 4.0 и сохраните страницы. После этого вы сможете продолжить использование веб-частей ArcGIS Maps Silverlight.</p></p>
+		</div>
+	
+
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Обновление 3.0.1</a>
+		</h3>
+		<div exp2='yes' style="display:none;padding:0 15px;">
 		 <p>Версия Esri Maps for SharePoint 3.0.1 была выпущена в октябре 2013 г. Она содержит следующие обновления и улучшения:</p>        
-		 <ul>        
-		 <li>Поддержка локализации для 21 языка: Арабский, китайский (упрощенное письмо), датский, нидерландский, эстонский, французский, немецкий, иврит, итальянский, японский, корейский, латвийский, литовский, норвежский, польский, португальский, португальский (бразильский), румынский, русский, испанский и шведский.</li>	
-		 <li>Поддержка пользовательских типов местоположения в рабочем процессе поиска местоположений Esri Maps Locate.</li>	
-		 <li>Геостатистический анализ горячих точек.</li>	
-		     
-		 </ul>
+			 <ul>        
+				 <li>Поддержка локализации на 21 языке: арабский, китайский (упрощенное письмо), датский, голландский, эстонский, немецкий, французский, иврит, итальянский, японский, корейский, латвийский, литовский, норвежский, польский, португальский, португальский (бразильский), румынский, русский, испанский и шведский.</li>	
+				 <li>Поддержка пользовательских типов местоположения в рабочем процессе Esri Maps Locate.</li>	
+				 <li>Геостатистический анализ горячих точек.</li>	
+			 </ul>
+		</div>
 		       
-		 <h2>Что нового в версии 3.0</h2>        
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Обновление 3.0</a>
+		</h3>
+		<div exp3='yes' style="display:none;padding:0 15px;">
 		 <p>Версия Esri Maps for SharePoint 3.0 была выпущена в июле 2013 г. Она содержит следующие обновления и улучшения:</p>        
-		 <ul>        
-		 <li>Новое имя продукта – Esri Maps for SharePoint</li>	
-		 <li>Поддержка SharePoint 2010 и SharePoint 2013 (в локальном режиме)</li>	
-		 <li>Первый выпуск Esri Maps Web Part – базирующийся на JavaScript веб-компонент, поддерживаемый в SharePoint 2010 и SharePoint 2013 (в локальном режиме).</li>	
-		 <li>Поддержка Portal for ArcGIS 10.2</li>	
-		 <li>Подключение к внешним данным (External data connectivity) через сервисы SharePoint Business Connectivity Services (BCS) (JavaScript Map Web Part)</li>	
-		 <li>Подключения Web Part-to-Web Part (JavaScript Map Web Part)</li>	
-		 <li>Обновление для поддержки ArcGIS for Silverlight v3.1 и ArcGIS Extensibility v3.1 SDKs (только для Silverlight Map Web Part)</li>        
-		 </ul>
+			 <ul>        
+				 <li>Новое имя продукта – Esri Maps for SharePoint</li>	
+				 <li>Поддержка SharePoint 2010 и SharePoint 2013 (в локальном режиме)</li>	
+				 <li>Первый выпуск Esri Maps Web Part – базирующийся на JavaScript веб-компонент, поддерживаемый в SharePoint 2010 и SharePoint 2013 (в локальном режиме).</li>	
+				 <li>Поддержка Portal for ArcGIS 10.2</li>	
+				 <li>Подключение к внешним данным через сервисы SharePoint Business Connectivity Services (BCS) (JavaScript Map Web Part)</li>	
+				 <li>Подключения Web Part-to-Web Part (JavaScript Map Web Part)</li>	
+				 <li>Обновление для поддержки ArcGIS for Silverlight v3.1 и ArcGIS Extensibility v3.1 SDKs (только для Silverlight Map Web Part)</li>        
+			 </ul>
 
 		  
-		 <p>С помощью Esri Maps Web Part вы сможете делать следующее: 	
-		 <ul>	
-		 <li>Добавлять веб-карты и сервисы из ArcGIS, либо с ArcGIS Online, либо из Portal for ArcGIS.</li>	
-		 <li>Предоставлять доступ к картам и слоям ArcGIS для сотрудников организации.</li>	
-		 <li>Отображать списки SharePoint и подключаться к внешним источникам данных через Business Connectivity Services (BCS).</li>	
-		 <li>Подключаться к модулям List и Chart через подключения Web Part-to-Web Part.</li>	
-		 <li>Определять пространственное положение (геокодировать) элементы из списка SharePoint.</li>	
-		 <li>Интерактивно настраивать внешний вид карты, слоев и другие параметры.</li>	
-		 <li>Выбирать фоновые карты из галереи базовых карт вашей организации ArcGIS.</li>	
-		 <li>Настраивать отображение наборов данных (присваивать символы), с применением простых символов, символов границ классов или уникальных значений.</li>	
-		 <li>Отображать точечные объекты с помощью кластеров или карт интенсивности. </li>	
-		 <li>Настраивать отображение всплывающих окон. Настраивать стиль всплывающих окон и поля, информация из которых отображается при задержании курсора над объектом на карте. </li>	
-		 <li>Просматривать во всплывающих окнах инфографику, которая обеспечивает расширенную контекстную информацию о зонах, окружающих объекты на карте.</li>	
-		 <li>Выполнять анализ маршрута по имеющимся данным.</li>	
-		 <li>Интерактивно выбирать и фильтровать данные в пределах указанного радиуса или на основе времени в пути.</li>	
-		 <li>Интерактивно получать дополнительную демографическую и контекстную информацию, связанную с местоположениями на карте.</li>	
-		 </ul>
+		 <p>С помощью Esri Maps Web Part вы сможете делать следующее:
+			 <ul>	
+				 <li>Добавлять веб-карты и сервисы из ArcGIS, либо с ArcGIS Online, либо из Portal for ArcGIS.</li>	
+				 <li>Предоставлять доступ к картам и слоям ArcGIS для сотрудников организации.</li>	
+				 <li>Отображать списки SharePoint и подключаться к внешним источникам данных через Business Connectivity Services (BCS).</li>	
+				 <li>Подключаться к модулям List и Chart через подключения Web Part-to-Web Part.</li>	
+				 <li>Определять пространственное положение (геокодировать) элементы из списка SharePoint.</li>	
+				 <li>Интерактивно настраивать внешний вид карты, слоев и другие параметры.</li>	
+				 <li>Выбирать фоновые карты из галереи базовых карт вашей организации ArcGIS.</li>	
+				 <li>Настраивать отображение наборов данных (присваивать символы), с применением простых символов, символов границ классов или уникальных значений.</li>	
+				 <li>Отображать точечные объекты с помощью кластеров или карт интенсивности. </li>	
+				 <li>Настраивать отображение всплывающих окон. Настраивать стиль всплывающих окон и поля, информация из которых отображается при задержании курсора над объектом на карте. </li>	
+				 <li>Просматривать во всплывающих окнах инфографику, которая обеспечивает расширенную контекстную информацию о зонах, окружающих объекты на карте.</li>	
+				 <li>Выполнять анализ маршрута по имеющимся данным.</li>	
+				 <li>Интерактивно выбирать и фильтровать данные в пределах указанного радиуса или на основе времени в пути.</li>	
+				 <li>Интерактивно получать дополнительную демографическую и контекстную информацию, связанную с местоположениями на карте.</li>	
+			 </ul>
+		</div>
 
+			 
+<!-- Supported environments section -->
+	<hr />
+	<a name="supportedEnvironments"></a>
+        <h2>Поддерживаемые среды</h2>
+        <p>Esri Maps for SharePoint разворачивается как надстройка для Microsoft SharePoint. Для нормальной работы Esri Maps for SharePoint, Esri предлагает рабочую конфигурацию Microsoft SharePoint. Esri Maps for SharePoint поддерживается для работы с Microsoft SharePoint 2010 Server and Foundation и Microsoft SharePoint 2013 Server and Foundation. Esri протестировал Esri Maps for SharePoint только в программных средах, сертифицированных или поддерживаемых Microsoft SharePoint; не все поддерживаемые SharePoint среды были проверены или сертифицированы. Более подробно см. в разделе <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Политика Esri по поддержке сред</a>.
+		
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+		 
+		<!-- Sys Reqs -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Системные требования</a>
+		</h3>
+			<div exp1='yes' style="display:none;padding:0 15px;">
+			<p>Обратитесь к разделу системных требований для Microsoft SharePoint:
+			<ul>
+				<li><a href="https://technet.microsoft.com/en-us/library/cc262485(office.14).aspx">Программные и аппаратные требования (SharePoint Server 2010)</a></li>
+				<li><a href="https://technet.microsoft.com/en-us/library/cc262485(v=office.15).aspx">Программные и аппаратные требования для SharePoint Server 2013</a></li>
+				<li><a href="https://technet.microsoft.com/en-us/library/jj819267.aspx">Онлайн сервисы SharePoint</a></li>
+			</ul>	
+			</p>
+			</div>
+			
+		<div class="clear" style="padding:5px;"></div>
 
-        <p> </p>
+		<!-- Req'd SW -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Требуемое ПО</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
+			<p>Для Esri Maps for SharePoint необходима учетная запись организации ArcGIS Online или Portal for ArcGIS, и Microsoft SharePoint 2010 или 2013 версии Foundation, Server Standard или Server Enterprise.</p>
+
+			<p>Перед установкой Esri Maps for SharePoint необходимо установить и настроить на вашей системе несколько программных компонентов. Подробные сведения см. в:</p>
+				<ul>
+					<li><a href="http://doc.arcgis.com/en/maps-for-sharepoint/foundation-server/install-and-configure/system-requirements.htm">Системные требования SharePoint Server или Foundation</a></li>
+					<li><a href="http://doc.arcgis.com/en/maps-for-sharepoint/office-365/install-and-configure/system-requirements.htm">Системные требования SharePoint Online</a></li>
+				</ul>
+			</div>
+		
+		<!-- Operating Systems -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Операционные системы</a>
+		</h3>
+			<div exp3='yes' style="display:none;padding:0 15px;">
+			<p>Esri Maps for SharePoint поддерживается для SharePoint 2010 и SharePoint 2013 в следующих операционных системах. Чтобы определить, какие версии из этих операционных систем активно поддерживаются, см. информацию о поддерживаемых средах Microsoft SharePoint:
+			<ul>
+				<li>Windows Server 2012</li>
+				<li>Windows Server 2008 R2 SP1</li>
+				<li>Windows Server 2008 R2</li>
+			</ul>
+			</p>
+			</div>
+
+		<!-- Languages-->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp4')">Поддерживаемые языки</a>
+		</h3>
+			<div exp4='yes' style="display:none;padding:0 15px;">
+			<p>Esri Maps for SharePoint доступен на следующих языках:</p>
+			<p>Арабский, китайский (упрощенный), чешский, датский, нидерландский, английский, эстонский, финский, французский, немецкий, греческий, иврит, итальянский, японский, корейский, латвийский, литовский, норвежский, польский, португальский, португальский (бразильский), румынский, русский, испанский, тайский, турецкий и вьетнамский.</p>
+			<p>Язык, используемый в версии приложения для ОС Windows, определяется настройками языка для группы Корневые сайты. Если используемый язык не поддерживается, приложение будет работать на английском языке.</p>
+			<p>Примечание: Веб-часть ArcGIS Map построена на базе Silverlight 3.1, поэтому может не поддерживать все указанные выше языки.</p>
+			</div>
+
+				
+		<!-- Browsers-->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp5')">Браузеры</a>
+		</h3>
+			<div exp5='yes' style="display:none;padding:0 15px;">
+			<p>Esri Maps for SharePoint поддерживается в следующих браузерах:</p>
+	<table>
+	<colgroup width="*"></colgroup>
+	<colgroup width="*"></colgroup>
+	<colgroup width="*"></colgroup>
+	<colgroup width="*"></colgroup>
+	<thead>
+		<tr align="left">
+			<th>Название браузера</th>
+			<th>SharePoint 2010</th>
+			<th>SharePoint 2013</th>
+			<th>SharePoint Online</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="1" colspan="1"><p>Internet Explorer 11</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+		</tr>
+		<tr class="align-middle">
+			<td rowspan="1" colspan="1"><p>Internet Explorer 10</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+		</tr>
+		<tr class="align-middle">
+			<td rowspan="1" colspan="1"><p>Internet Explorer 9</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Ограничено (в соответствии с <a href="https://support.office.com/en-us/article/Office-365-system-requirements-719254c0-2671-4648-9c84-c6a3d4f3be45?CorrelationId=2526bbae-9d9f-497d-bb09-036433a33852&ui=en-US&rs=en-US&ad=US">Microsoft</a>)</p></td>
+		</tr>
+		<tr class="align-middle">
+			<td rowspan="1" colspan="1"><p>Internet Explorer 8</p></td>
+			<td rowspan="1" colspan="1"><p>Не поддерживается</p></td>
+			<td rowspan="1" colspan="1"><p>Не поддерживается</p></td>
+			<td rowspan="1" colspan="1"><p>Не поддерживается</p></td>
+		</tr>
+		<tr class="align-middle">
+			<td rowspan="1" colspan="1"><p>Google Chrome*</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+		</tr>
+		<tr class="align-middle">
+			<td rowspan="1" colspan="1"><p>Mozilla Firefox*</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+			<td rowspan="1" colspan="1"><p>Полностью</p></td>
+		</tr>
+	</tbody>
+	</table>
+</p>
+<p>* последняя выпущенная версия</p>			</div>
+        <p>&nbsp;</p>
 
       </div>
 
-
+	  
+<!-- Sidebars -->
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
           <h3>Начало работы</h3>
          <ul>
-            <li><a href="#systemRequirements">Системные требования</a></li>
+            <li><a href="#supportedEnvironments">Поддерживаемые среды</a></li>
 	 <li><a href="#whatsNew">Что нового</a></li>
-	 <li><a href="http://sharepoint.arcgis.com/SitePages/Disable%20Map%20Animation.aspx">Интерактивные примеры (Silverlight)</a></li>
-	 <li><a href="http://resources.arcgis.com/en/help/sharepoint/apiref/api_start.htm">Справка API (Silverlight)</a></li>
-	 <li><a href="http://resources.arcgis.com/en/communities/sharepoint/01t800000009000000.htm">Справка ArcGIS for SharePoint 2.1.1</a></li>
-           </ul>
+	 <li>Справка для предыдущих версий:
+	 <ul>
+	 <li><a href="/ru/maps-for-sharepoint/3.0.1/get-started/included-files.htm">Esri Maps for SharePoint 3.0.1</a></li>
+         </ul> </li> </ul>
         </div>
 
         <br />
@@ -150,8 +381,7 @@ mobile: true
 
     </div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
