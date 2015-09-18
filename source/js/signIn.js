@@ -115,7 +115,7 @@ agolLogout
 	        $("#logged-in-navigation > a").html (avatar+"<span>"+ text +"</span>");
 
           $("#agolProfile").attr ("href", "//" + orgHostname + sitecfg["agolProfile"]);
-          $("#agolHelp").attr ("href", "//" + orgHostname + sitecfg["agolHelp"]);
+          $("#agolHelp").attr ("href", sitecfg["agolHelp"]);
 		  $("#agolLogout").attr ("href", "https://" + orgHostname + sitecfg["agolSignout"]+"?redirect_uri=https:"+sitecfg["portalHostname"] + sitecfg["agolSignout"]+"?redirect_uri="+encodeURIComponent(window.location.href));
     
           $(".myconsole").css ("display", "block");
