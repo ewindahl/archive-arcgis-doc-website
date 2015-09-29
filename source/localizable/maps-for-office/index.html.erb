@@ -12,7 +12,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2015-07-08"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2015-09-29"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
@@ -66,16 +66,18 @@ mobile: true
 		  
 			<h3>Map your Excel data</h3>
 			<p>Make interactive maps of your spreadsheet data right in Excel. With a few clicks create color-coded, point, clustered-point, and heat maps and gain visual insights about your data.</p>
-			<p>&gt; Link to topic</p>
+			<p>&gt; <a href="http://doc.arcgis.com/en/maps-for-office/design-and-use/add-a-map-to-excel.htm">Learn more</a></p>
 		</div>
 
 		<!-- Analyze data -->
         <div id="em4oSecondFeature" class="column-12 phone-column-24">
-			<img src="Analyze-your-data.png" alt="Analyze your Excel data on a map" />
-			<h3>Analyze your Excel data on maps</h3>
-			<p>Uncover patterns and trends that are not evident in tabular data and charts. Find statistically significant hot and cold spots within your data. Perform spatial searches using drive times or rings to find nearby records of interest.</p>
-			<p>&gt; Link to topic</p>
+			<!-- REPLACE IMAGE > PPT -->
+			<img src="Analyze-your-data.png" alt="Add a map to PowerPoint" />
+			<h3>Add dynamic maps to PowerPoint</h3>
+			<p>Add maps from your ArcGIS organization to PowerPoint to create stunning, dynamic presentations.</p>
+			<p>&gt; <a href="http://doc.arcgis.com/en/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">Learn more</a></p>
 		</div>
+        <div class="clear"></div>
 
 <!-- features second row -->
 		<!-- Enrich your data -->
@@ -84,7 +86,7 @@ mobile: true
 
 			<h3>Enrich your business spreadsheets</h3>
 			<p>Add Esri's demographics and lifestyle data directly to Excel spreadsheets and get more context about the locations that are important to you. Quickly explore locatyions on-the-fly using pop-up infographics.</p>
-			<p>&gt; Link to topic</p>
+			<p>&gt; <a href="http://dev.arcgis.com/en/maps-for-office/design-and-use/enrich-your-data.htm">Learn more</a></p>
 		</div>
 
 		<!-- Share maps -->
@@ -92,7 +94,7 @@ mobile: true
 			<img src="Share-your-data.png" alt="Share maps on ArcGIS" />
 			<h3>Share your maps from Excel</h3>
 			<p>Share your maps using either ArcGIS Online or Portal for ArcGIS, or insert them in emails, PowerPoint presentations, or Word documents.</p>
-			<p>&gt; Link to topic</p>
+			<p>&gt; <a href="http://dev.arcgis.com/en/maps-for-office/design-and-use/share-a-map-on-arcgis.htm">Learn more</a></p>
         </div>
 	<div class="clear"></div> 
 
@@ -139,7 +141,7 @@ mobile: true
 		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">3.1 updates</a>
 		</h3>
 		<div exp1='yes' style="display:none;padding:0 15px;">
-		 <p>Esri Maps for SharePoint version 3.1 was released in June 2015. It included the following enhancements:</p>        
+		 <p>Esri Maps for SharePoint version 3.1 was released in June 2015. It included the following updates and enhancements:</p>        
 			 <ul>        
 				 <li>Localization support for 27 languages: Arabic, Chinese (simplified), Czech, Danish, Dutch, Estonian, Finnish, French, German, Greek, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazilian), Portuguese (Portugal), Romanian, Russian, Spanish, Swedish, Thai, Turkish, and Vietnamese</li>	
 				 <li>Multiple bug fixes and workflow improvements.</li>	
@@ -167,16 +169,78 @@ mobile: true
 	<hr />
 	<a id="supportedEnvironments"></a>
         <h2>Supported environments</h2>
+		<p>Esri Maps for Office is deployed as an add-on to Microsoft Excel and Microsoft PowerPoint. For Esri Maps for Office to operate properly, Esri assumes an operation configuration of these applications. Esri tests Esri Maps for Office only in software environments certified of supported by Microsoft Excel or PowerPoint; not all Excel or PowerPoint-supported environments have been tested or certified. For more information, see the <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Esri supported environment policy</a>.</p>
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
 
-        <p>Esri Maps for Office requires an account that is part of an <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> organization and Microsoft Office Excel or PowerPoint 2010 or Microsoft Office Excel or PowerPoint 2013. The supported operating systems include:</p>
-		<ul>
-		 <li>Windows 7 (32-bit and 64-bit)</li>
-		 <li>Windows 8 (32-bit and 64-bit)</li>
-		 <li>Windows 8.1 (32-bit and 64-bit)</li>
-		 <li>Windows Server 2008 R2</li>
-		 <li>Windows Server 2012</li>
-		</ul>
-		<p>For additional information including the required processor speed, memory, and hard disk space, see the system requirements for <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a> and <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a>.</p>
+		<!-- Sys Reqs -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">System requirements</a>
+		</h3>
+			<div exp1='yes' style="display:none;padding:0 15px;">
+			<p>Esri Maps for Office requires an account that is part of an ArcGIS organization and Microsoft Office Excel or PowerPoint (Microsoft Office 2010, 2013, or 2016).</p>
+			<p>For additional information, including the required processor speed, memory, and hard disk space, see the system requirements for:
+			<ul>
+				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
+				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
+				<li><a href="https://products.office.com/en-ca/office-system-requirements#SUITES" target="_blank">Microsoft Office 2016</a></li>
+			</ul>	
+			</p>
+			</div>
+			
+		<div class="clear" style="padding:5px;"></div>
+
+		<!-- Req'd SW -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Required software</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
+			<p>Esri Maps for Office requires an <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> organizational subscription or an on-premises Portal for ArcGIS deployment. It is assumed that the authentication method used to access the platform has been properly configured by the ArcGIS administrator.</p>
+
+			<p>In addition, the following software must be installed and configured on your system:</p>
+				<ul>
+					<li>Microsoft Office 2010, 2013, or 2016</li>
+					<li>Internet Explorer 9, 10, or 11*</li>
+					<li>Microsoft Windows. Supported versions:
+						<ul>
+							<li>Windows 7 (32 bit and 64 bit)</li>
+							<li>Windows 8 (32 bit and 64 bit)</li>
+							<li>Windows 8.1 (32 bit and 64 bit)</li>
+							<li>Windows 10 (32 bit and 64 bit)</li>
+							<li>Windows Server 2008 R2</li>
+							<li>Windows Server 2012</li>
+							<li>Windows Server 2012 R2</li>
+						</ul>
+					</li>
+				</ul>
+			<p>* Esri Maps for Office uses JavaScript within a web browser to display maps. Because Microsoft Excel requires the use of Internet Explorer (IE) to display web content, there is no option to use another browser. Functionality within the app requires the use of IE9 or later; older versions are not supported.</p>
+			</div>
+			
+		<!-- Supported languages -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Supported languages</a>
+		</h3>
+			<div exp3='yes' style="display:none;padding:0 15px;">
+			<p>Esri Maps for Office is available in the following languages:</p>
+			<p>Arabic, Chinese (simplified), Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, Swedish, Thai, Turkish, and Vietnamese.</p>
+			<p>The language used in the Windows version of the app is determined by the user's locale. If you are using an unsupported language, the app uses English.</p>
+			</div>
+
         <p>&nbsp;</p>
 	</div>
 	
