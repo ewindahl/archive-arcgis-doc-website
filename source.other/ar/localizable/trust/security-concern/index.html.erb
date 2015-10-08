@@ -31,10 +31,10 @@ mobile: true
   <nav>
       <ul>
         <li class='current'><a title="ArcGIS Online Trust" href="/ar/trust/">الثقة</a></li>
-        <li><a title="حالة نظام ArcGIS Online" href="/ar/trust/system-status/">حالة النظام</a></li>
-        <li><a title="أمان ArcGIS Online" href="/ar/trust/security/">أمان</a></li>
-        <li><a title="خصوصية ArcGIS" href="/ar/trust/privacy/">خصوصية</a></li>
-        <li><a title="خصوصية ArcGIS Online" href="/ar/trust/compliance/">التوافق</a></li>
+        <li><a title="ArcGIS Online System Status" href="/ar/trust/system-status/">حالة النظام</a></li>
+        <li><a title="ArcGIS Online Security" href="/ar/trust/security/">الأمان</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/ar/trust/privacy/">الخصوصية</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/ar/trust/compliance/">التوافق</a></li>
       </ul>
     </nav>
   </div>
@@ -71,7 +71,7 @@ mobile: true
 	  </header>
 	  <ul>
 			<li data-langlabel="">هذا بسبب شرط قطع الخدمة (DoS).</li>
-		<li data-langlabel="">Use automated security tools without Esri's explicit consent. يُمكن أن يتسبب استخدام الأدوات التلقائية في التحقيق في الإجراء أو حظر عناوين IP.</li>
+		<li data-langlabel="">استخدام أداوات الأمان التلقائية بدون موافقة صريحة من Esri. يُمكن أن يتسبب استخدام الأدوات التلقائية في التحقيق في الإجراء أو حظر عناوين IP.</li>
 		<li data-langlabel="">الوصول، أو محاولة الوصول، إلى البيانات أو المعلومات التي لا تخصك.</li>
 		<li data-langlabel="">تدمير أو فشل، أو محاولة تدمير أو فشل، البيانات أو المعلومات التي لا تخصك.</li>  
 	  </ul>
@@ -86,6 +86,17 @@ mobile: true
 		<li data-langlabel="">لتوفير إطار زمني مُقدر لعنونة الثغرة الأمنية.</li>
 		<li data-langlabel="">لإخبار الأفراد عند إصلاح الثغرة الامنية.</li>		
 		</ul>
+      
+    <div class="dropdown-navigation dropdown-wrapper regular">
+      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> مشاركة باحثي التأمين
+      <div class="dropdown-content">
+        <div class="dropdown-menu">
+          <p data-langlabel="trust-researchers-desc">نود أن نشكر باحثي الأمان التاليين للمشاركة في برنامج التقارير المسئول:</p>
+          <%= partial :"_partial/security_names" %>
+        </div>
+      </div>
+    </div>
+      
 	 </section>
 	 
   </div> 
@@ -97,15 +108,15 @@ mobile: true
 						
 			<fieldset id="security-form-fieldset">
 
-			  <label data-langlabel="" for="name">الاسم: </label>
+			  <label data-langlabel="" for="name">الاسم:</label>
 			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">عنوان البريد الإلكتروني: </label>
+			  <label data-langlabel="email-address" for="email-address">عنوان البريد الإلكتروني:</label>
 			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">رقم الهاتف: </label>
+			  <label data-langlabel="phone-number" for="phone-number">رقم الهاتف:</label>
 			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
-			  <label data-langlabel="" for="organization">المؤسسة <span class="optional">(اختياريًا):</span> </label>
+			  <label data-langlabel="" for="organization">المؤسسة <span class="optional">(اختياريًا): </label>
 			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">الموضوع: </label>
+			  <label data-langlabel="" for="subject">الموضوع:</label>
 			  <select id="subject" autocomplete="off" name="subject">
 				  <option value="" style="display:none;"></option>
 				  <option value="Vulnerability">ثغرة أمنية</option>
@@ -116,18 +127,17 @@ mobile: true
 
 			  <label data-langlabel="" for="description">الوصف: </label>
 			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">للمساعدة في منع وصول رسائل البريد العشوائي، أدخل الأرقام المتاحة: </label>
+			  <label data-langlabel="feedback-spam-note" for="spam">للمساعدة في منع وصول رسائل البريد العشوائي، أدخل الأرقام المتاحة:</label>
 			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-			  <label data-langlabel="numerals" for="captchaValue">أرقام: <strong><span id="txtCaptcha" class=""></span></strong></label>
+			  <label data-langlabel="numerals" for="captchaValue">أرقام: <strong><span id="txtCaptcha" class=""></strong></label>
 
 			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="داخلي" name="source" id="source">
+			  <input type="hidden" value="internal" name="source" id="source">
 
-			  <input value="مطوّل" name="resultType" id="resultType" type="hidden">
-			  <input value="مشكلة الامان" name="datablock" id="datablock" type="hidden">
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
 			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-
-			  <input type="hidden" value="لغة إنجليزية" name="lg">
+			  <input type="hidden" value="ar" name="lg">
 			
 			</fieldset>
 			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">ارسال</a>
@@ -143,9 +153,9 @@ mobile: true
 	  </div>
 
 	  <strong>
-			<span style="display:none;" id="referPageLink">تفضل بالرجوع إلى <a id="feedback-referring-link" href="">صفحة الإرجاع</a></span>
-			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">إرسال</a> مشكلة أمان أخرى</span>
-	  </strong>
+			<span style="display:none;" id="referPageLink">الرجوع إلى <a id="feedback-referring-link" href="">صفحة الإشارة</a>
+			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">إرسال</a> مشكلة امان أخرى</span>
+	  </strong></span>
 
     </div>
 

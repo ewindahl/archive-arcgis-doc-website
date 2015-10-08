@@ -76,15 +76,15 @@ jQuery(document).ready(function ($) {
           "ar": "ar", "ar-dz": "ar", "ar-bh": "ar", "ar-eg": "ar",  "ar-iq": "ar",  "ar-jo": "ar", "ar-kw": "ar", "ar-lb": "ar", "ar-ly": "ar", "ar-ma": "ar", "ar-om": "ar", "ar-qa": "ar", "ar-sa": "ar", "ar-sy": "ar", "ar-tn": "ar", "ar-ae": "ar",
           "cs": "cs",
           "da": "da",
-          "de" : "de", "de-at" : "de", "de-de" : "de", "de-li" : "de", "de-ch" : "de",
+          "de" : "de", "de-at" : "de", "de-de" : "de", "de-li" : "de", "de-lu" : "de", "de-ch" : "de",
           "es": "es", "es-us": "es", "es-us": "es", "es-ar": "es", "es-bo": "es", "es-cl": "es", "es-co": "es", "es-cr": "es", "es-do": "es", "es-ec": "es", "es-sv": "es", "es-gt": "es", "es-hn": "es", "es-mx": "es", "es-pr": "es", "es-es": "es", "es-uy": "es", "es-ve": "es",      
           "et": "et",
           "fi": "fi", 
-          "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr",
+          "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr", "fr-mc": "fr",
           "he": "he", 
           "it": "it", "it-it": "it", "it-ch": "it",
           "ja" : "ja","ja-jp" : "ja",
-          "ko": "ko",
+          "ko": "ko", "ko-kp" : "ko", "ko-kr" : "ko",
           "lt": "lt", 
           "lv": "lv", 
           "nl" : "nl", "nl-be" : "nl",
@@ -93,22 +93,23 @@ jQuery(document).ready(function ($) {
           "pt-br": "pt-br",
           "pt-pt": "pt-pt",
           "ro": "ro", "ro-mo": "ro",
-          "ru": "ru", "ru-mo": "ru",
+          "ru": "ru", "ru-mo": "ru", "ru-ru": "ru", "ru-md": "ru",
           "sv": "sv", "sv-fi": "sv", "sv-se": "sv",
           "th": "th",
           "tr": "tr", 
-          "zh-cn": "zh-cn", "zh-hk": "zh-cn", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-cn"
+          "zh-cn": "zh-cn", "zh-hk": "zh-hk", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-tw"
       },  
 
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
-      lgPartial = ["da", "it","ko", "no","pl","pt-br","pt-pt","ro"],
+      lgPartial = ["it","ko", "pl","pt-br","pt-pt","ro"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
-	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "da", "it","ko", "no","pl","pt-br","pt-pt","ro","sv", "cs", "et", "fi", "lt", "lv", "tr"],
-	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar', "da", "it","ko", "no","pl","pt-br","pt-pt","ro","nl"],
+	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
+	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro","nl"],
     lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn']
-    lgMicro = ['en', 'de', 'es', 'ja', 'ko']
+    lgMicro = ['en', 'de', 'es', 'ja', 'ko'],
+	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"]
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -167,6 +168,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "cognos" && lgCognos.indexOf(lg) >= 0){ 
                 return true;
               }else if(langSelector === "micro" && lgMicro.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){ 
                 return true;
               }else{
                 return false;
@@ -249,6 +252,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "micro":
                   lgList = lgMicro;
+                  break;
+					 case "marketplace":
+                  lgList = lgMarketplace;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -400,6 +406,8 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
+  }else if (winloc.pathname.match( /(\/marketplace\/)/)){
+    docCfg.langSelector = "marketplace";
   }
   
 
