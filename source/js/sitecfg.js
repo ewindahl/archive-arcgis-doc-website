@@ -29,7 +29,7 @@ if(window.location.hostname.match( /(docstg.arcgis.com)/)) {
 
 		"agolSignin" : 	_agolHost + "/home/signin.html",
 		"agolProfile" :  "/home/user.html",
-		"agolHelp" :  	 "/home/support.html",
+		"agolHelp" :  	 "/en/arcgis-online/",
 		"agolSignout" :  "/sharing/rest/oauth2/signout",
 		"trialDownloadUrl": trialUrl + "/en/trial/",
 

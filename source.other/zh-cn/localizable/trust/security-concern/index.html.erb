@@ -33,8 +33,8 @@ mobile: true
         <li class='current'><a title="ArcGIS Online Trust" href="/zh-cn/trust/">Trust</a></li>
         <li><a title="ArcGIS Online 系统状态" href="/zh-cn/trust/system-status/">系统状态</a></li>
         <li><a title="ArcGIS Online 安全性" href="/zh-cn/trust/security/">安全性</a></li>
-        <li><a title="ArcGIS Online 隐私" href="/zh-cn/trust/privacy/">隐私</a></li>
-        <li><a title="ArcGIS Online 隐私" href="/zh-cn/trust/compliance/">兼容性</a></li>
+        <li><a title="ArcGIS Online 隐私策略" href="/zh-cn/trust/privacy/">隐私性</a></li>
+        <li><a title="ArcGIS Online 合规性" href="/zh-cn/trust/compliance/">合规性</a></li>
       </ul>
     </nav>
   </div>
@@ -86,17 +86,17 @@ mobile: true
 		<li data-langlabel="">提供解决此漏洞的预计时间。</li>
 		<li data-langlabel="">漏洞修复后，通知报告人员。</li>		
 		</ul>
-		
-		<div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Participating Security Researchers</span>
+      
+    <div class="dropdown-navigation dropdown-wrapper regular">
+      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> 参与安全研究人员</span>
       <div class="dropdown-content">
         <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">We would like to thank the following security researchers for participating in our responsible reporting program:</p>
+          <p data-langlabel="trust-researchers-desc">感谢以下安全研究人员参与我们的负责报告计划:</p>
           <%= partial :"_partial/security_names" %>
         </div>
       </div>
     </div>
-	
+      
 	 </section>
 	 
   </div> 
@@ -108,9 +108,9 @@ mobile: true
 						
 			<fieldset id="security-form-fieldset">
 
-			  <label data-langlabel="" for="name">名称： </label>
+			  <label data-langlabel="" for="name">名称: </label>
 			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">电子邮件地址： </label>
+			  <label data-langlabel="email-address" for="email-address">电子邮件地址：</label>
 			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
 			  <label data-langlabel="phone-number" for="phone-number">电话号码： </label>
 			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
@@ -118,22 +118,25 @@ mobile: true
 			  <input type="text" autocomplete="off" id="organization" name="organization">
 			  <label data-langlabel="" for="subject">主题: </label>
 			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option> <option value="Vulnerability">漏洞</option> <option value="Suspicious E-mail from Esri">来自 Esri 的可疑电子邮件</option> <option value="Privacy Issue">隐私问题</option> <option value="audi">其他</option>
+				  <option value="" style="display:none;"></option>
+				  <option value="Vulnerability">漏洞</option>
+				  <option value="Suspicious E-mail from Esri">来自 Esri 的可疑电子邮件</option>
+				  <option value="Privacy Issue">隐私问题</option>
+				  <option value="audi">其他</option>
 			  </select>
 
-			  <label data-langlabel="" for="description">描述： </label>
+			  <label data-langlabel="" for="description">描述: </label>
 			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">为防止自动接收垃圾邮件，请输入提供的数字： </label>
+			  <label data-langlabel="feedback-spam-note" for="spam">为防止自动接收垃圾邮件，请输入提供的数字：</label>
 			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-			  <label data-langlabel="numerals" for="captchaValue">数字： <strong><span id="txtCaptcha" class=""></span></strong></label>
+			  <label data-langlabel="numerals" for="captchaValue">数字：<strong><span id="txtCaptcha" class=""></span></strong></label>
 
 			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="内部" name="source" id="source">
+			  <input type="hidden" value="internal" name="source" id="source">
 
-			  <input value="详细" name="resultType" id="resultType" type="hidden">
-			  <input value="安全问题" name="datablock" id="datablock" type="hidden">
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
 			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-
 			  <input type="hidden" value="zh-cn" name="lg">
 			
 			</fieldset>
@@ -149,7 +152,10 @@ mobile: true
 		<p data-langlabel=""><h4>提交过程中出错。请稍候重新提交您的问题。</h4></p>
 	  </div>
 
-	  <strong><span style="display:none;" id="referPageLink">返回<a id="feedback-referring-link" href="">引用页面</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">提交</a>其他安全问题</span></strong>
+	  <strong>
+			<span style="display:none;" id="referPageLink">返回<a id="feedback-referring-link" href="">引用页面</a></span>
+			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">提交</a>其他安全问题</span>
+	  </strong>
 
     </div>
 
