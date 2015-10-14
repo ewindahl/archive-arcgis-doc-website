@@ -129,6 +129,10 @@ agolLogout
         // Org account
         $(".public-and-org-only, .org-only").removeClass("hide")
         $(".anonymous-only, .anonymous-and-public-only").addClass("hide")
+
+        if (!($.cookie ("esri_auth_extn"))) { // have to make sure set cookie is matching with the current logged in user account || 
+          $.cookie ("esri_auth_extn", JSON.stringify(data.subscriptionInfo), {domain: '.arcgis.com', path:"/"});
+        }
       } else {
         //public account
         $(".public-and-org-only").removeClass("hide")
