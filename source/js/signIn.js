@@ -130,13 +130,19 @@ agolLogout
         $(".public-and-org-only, .org-only").removeClass("hide")
         $(".anonymous-only, .anonymous-and-public-only").addClass("hide")
 
-        if (!($.cookie ("esri_auth_extn"))) { // have to make sure set cookie is matching with the current logged in user account || 
+        data.subscriptionInfo.accountId = cookie.val.accountId;
+        var isCookieChanged = ($.cookie ("esri_auth_extn") && JSON.parse($.cookie ("esri_auth_extn")).accountId != cookie.val.accountId) ? true : false
+        if (!($.cookie ("esri_auth_extn")) || isCookieChanged) {
           $.cookie ("esri_auth_extn", JSON.stringify(data.subscriptionInfo), {domain: '.arcgis.com', path:"/"});
         }
       } else {
         //public account
         $(".public-and-org-only").removeClass("hide")
         $(".anonymous-only").addClass("hide")
+
+        if ($.cookie ("esri_auth_extn")) {
+          $.removeCookie ("esri_auth_extn", {domain: '.arcgis.com', path:"/"});
+        }
       }
   
     	});
@@ -160,7 +166,9 @@ agolLogout
   	
     $("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
 
-    // $("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]);
+    if ($.cookie ("esri_auth_extn")) {
+      $.removeCookie ("esri_auth_extn", {domain: '.arcgis.com', path:"/"});
+    }
   }
 
 
