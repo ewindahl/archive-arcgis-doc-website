@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/)/)){
   return;
   }
   
@@ -109,7 +109,8 @@ jQuery(document).ready(function ($) {
 	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro","nl"],
     lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn']
     lgMicro = ['en', 'de', 'es', 'ja', 'ko'],
-	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"]
+	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
+   lgNavigator = lgPickFull.concat(lgPartial).concat('el')
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -170,6 +171,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "micro" && lgMicro.indexOf(lg) >= 0){ 
                 return true;
               }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "navigator" && lgNavigator.indexOf(lg) >= 0){ 
                 return true;
               }else{
                 return false;
@@ -252,6 +255,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "micro":
                   lgList = lgMicro;
+                  break;
+                case "navigator":
+                  lgList = lgNavigator;
                   break;
 					 case "marketplace":
                   lgList = lgMarketplace;
@@ -408,8 +414,9 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "micro";
   }else if (winloc.pathname.match( /(\/marketplace\/)/)){
     docCfg.langSelector = "marketplace";
+  }else if (winloc.pathname.match( /(\/navigator\/)/)){
+    docCfg.langSelector = "navigator";
   }
-  
 
   dbg ("start: " + window.location.href);
   
