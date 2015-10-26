@@ -114,7 +114,7 @@ $(document).ready(function() {
 		var parentObj = $(this).parentsUntil( ".card" )
 		parentObj.find(".dropdown-wrapper .dropdown-selected").text(versionLabel)
 		parentObj.find(".download-link").attr("data-filename", fileName)
-		parentObj.find(".download-link").attr("data-folder", fileName)
+		parentObj.find(".download-link").attr("data-folder", folderName)
 	});
 
 	
@@ -124,17 +124,7 @@ $(document).ready(function() {
 			$(this).find (".dropdown-selected").removeClass("dropdown")
 		}
 		$(this).find("ul li a").first().trigger("click")
-		/*if (fileName && fileName != ""){
-			$(this).find(".dropdown-wrapper .dropdown-selected").attr("filename", fileName)
-			$(this).find(".dropdown-wrapper .dropdown-selected").attr("foldername", folderName)
-			$(this).find(".dropdown-wrapper .dropdown-selected").text(versionLabel)
-			$(this).find(".dropdown-selected")
-		}*/
 	});
-
-
-	
-
 
 
 	if(dload.methods.loginType() == "public"){
