@@ -103,10 +103,36 @@ $(document).ready(function() {
 		loginHref = sitecfg["agolSignin"]+"?returnUrl=" + redirect + "?dload=",
 		dloadObj = dload.methods;
 
+	// UI Manipulation
+	// On select version drop down item
+	$(".downloads .card .dropdown-item").click(function (){
+		
+		var fileName = $(this).attr("data-app-file")
+		var folderName = $(this).attr("data-app-folder")
+		var versionLabel = $(this).text()
+
+		var parentObj = $(this).parentsUntil( ".card" )
+		parentObj.find(".dropdown-wrapper .dropdown-selected").text(versionLabel)
+		parentObj.find(".download-link").attr("data-filename", fileName)
+		parentObj.find(".download-link").attr("data-folder", folderName)
+	});
+
+	
+	$(".downloads .card").each(function () {
+		if($(this).find("ul li a").length == 1){
+			//Remove dropdown icon
+			$(this).find (".dropdown-selected").removeClass("dropdown")
+		}
+		$(this).find("ul li a").first().trigger("click")
+	});
+
+
 	if(dload.methods.loginType() == "public"){
 		// disable Org specific download buttons
 		$(".secured-org .download-link").addClass("disabled")
 	}
+
+
 
 	
 	// Org Account Tokenized downloads.
