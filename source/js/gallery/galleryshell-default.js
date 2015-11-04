@@ -31,9 +31,7 @@ function genGalleryModel(hash, mdfL) {
 
     function GalleryModel(mdfL) {
         this.startN = 0;
-        this.fStartN = 0;
         this.numN = gcfg.numN;
-        this.fNumN = gcfg.numN;
         this.maxN = 0;
         this.sedata = null;
         this.query = ""; //decoded value
@@ -110,15 +108,6 @@ function genGalleryModel(hash, mdfL) {
                 this.startN = 0;
             }
 
-            if (o.fs) {
-                this.fStartN = parseInt(o.fs, 10);
-                if (isNaN (this.fStartN)) {
-                    this.fStartN = 0;
-                }
-            } else {
-                this.fStartN = 0;
-            }
-
             if (o.n) {
                 this.numN = parseInt(o.n, 10);
                 if (isNaN(this.numN)) {
@@ -126,24 +115,6 @@ function genGalleryModel(hash, mdfL) {
                 }
             } else {
                 this.numN = gcfg.numN;
-            }
-
-            if (o.fn) {
-                this.fNumN = parseInt(o.fn, 10);
-                if (isNaN(this.fNumN)) {
-                    this.fNumN = gcfg.numN;
-                }
-            } else {
-                this.fNumN = gcfg.numN;
-            }
-
-            if (o.npp) {
-                this.npp = parseInt(o.npp, 10);
-                if (isNaN(this.npp)) {
-                    this.npp = gcfg.numN;
-                }
-            } else {
-                this.npp = gcfg.numN;
             }
 
             if (o.q) {
@@ -211,15 +182,11 @@ function genGalleryModel(hash, mdfL) {
             }
 
             this.startN = 0;
-            this.fStartN = 0;
         }
 
         this.updateQuery = function () {
             this.query = $.trim($("#query").val());
             this.startN = 0;
-            this.fStartN = 0;
-            this.fNumN = gcfg.numN;
-
         }
 		
 		this.updateCollection = function (col) {
@@ -252,33 +219,6 @@ function genGalleryModel(hash, mdfL) {
             this.subCat = subCat;
         }
 
-        this.updateNpp = function (n,reset) {
-            //this.npp = n || 30;
-            
-            if(n == 0){
-                this.fStartN = 0;
-                this.startN = 0;
-                this.npp = 0;
-                this.fNumN = gcfg.numN;
-                this.numN = 0;
-            }else{
-                //this.fStartN = n||this.npp;
-                this.fStartN = Math.min(this.maxN, this.fStartN + this.fNumN); //n + gcfg.numN;
-                
-                this.fNumN = (reset)?n:this.fNumN;
-                this.npp = this.npp + parseInt(n,10);
-
-                if(this.fNumN <= 0){
-                    this.startN = this.startN + this.numN;
-                    this.numN = n || this.numN;
-                }else{
-                    //this.fStartN = this.npp;
-                    //this.fNumN = this.fNumN;
-                }
-             }
-
-        }
-
         this.updateDisplayN = function (n) {
             var x = Math.max(1, n);
             x = Math.min(3, x);
@@ -295,8 +235,6 @@ function genGalleryModel(hash, mdfL) {
             }
 
             this.startN = 0;
-            this.fStartN = 0;
-
         }
 
         this.updateDisplay = function (n) {
@@ -308,23 +246,18 @@ function genGalleryModel(hash, mdfL) {
             x = (x - 1) * this.numN;
             x = Math.min(this.maxN, x);
             this.startN = Math.max(0, x);
-            this.fStartN = Math.max(0, x);
         }
 
         this.inc = function () {
             this.startN = Math.min(this.maxN, this.startN + this.numN);
-            this.fStartN = Math.min(this.fMaxN, this.fStartN + this.numN);
         }
 
         this.dec = function () {
             this.startN = Math.max(0, this.startN - this.numN);
-            this.fStartN = Math.max(0, this.fStartN - this.numN);
         }
 
         this.updatePagination = function (n) {
             this.startN = n || 0;
-            this.fStartN = n || 0;
-            this.fNumN = gcfg.numN;
         }
 
         this._setMdf = function (val) {
@@ -375,13 +308,6 @@ function genGalleryModel(hash, mdfL) {
             var l = [];
 
             l.push("s=" + this.startN);
-            l.push("n=" + this.numN);
-            l.push("d=" + this.display);
-			l.push("col=" + this.col);
-            //l.push("type=" + this.type);
-            l.push("fs=" + this.fStartN);
-            l.push("fn=" + this.fNumN);
-            l.push("npp=" + this.npp);
             l.push("subCat=" + this.subCat);
 
             if (this.query) {
@@ -461,8 +387,8 @@ function genGalleryModel(hash, mdfL) {
             //l.push("inmeta:la-featured1:1 AND inmeta:last-modified:2012-06-16..");
 
             /* public flags */
-            
-
+            l.push("start=" + this.startN);
+            l.push("num=" + this.numN);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -477,19 +403,7 @@ function genGalleryModel(hash, mdfL) {
                 pfields = typePFields;
             }
 
-            if(opt && opt.featured){
-                 pfields = (pfields)? pfields + ".(la-featured:yes)" : "(la-featured:yes)";
-                 l.push("start=" + this.fStartN);
-                l.push("num=" + this.fNumN);
-                //l.push("start=" + this.startN);
-                //l.push("num=" + this.numN);
-            }else {
-                 pfields = (pfields)? pfields+".(-la-featured:yes)" : "(-la-featured:yes)";
-                 l.push("start=" + this.startN);
-                l.push("num=" + this.numN);
-            }
-
-            
+                       
             if (pfields) {
                 l.push("partialfields=" + pfields);
             }
@@ -628,7 +542,7 @@ function createGalleryShell() {
 
         },
 
-        updateGeneralItem: function (gm) {
+        /*updateGeneralItem: function (gm) {
             this.gm = gm;
 
             var vdata = gm.genViewData();
@@ -660,7 +574,7 @@ function createGalleryShell() {
                 }
             });
 
-        },
+        },*/
 
 
         update: function (gm) {
@@ -690,14 +604,15 @@ function createGalleryShell() {
                     $("#spinner").show();
                 },
                 success: function (data) {
+                    $("#spinner").hide();
+                    this._updateModelAndView(data);
                     this.reloadCount += 1
-                    this._setFeaturedData(data, this.gm);
-                    this.updateGeneralItem(gm)
+                    gm.queryStatus = "completed";
                     //this._setFeaturedData(data, this.gm);
                 },
                 error: function (xhr, status, err) {
-                    //$("#gl-content").html(gcfg.errorMsg);
-                    //$("#spinner").hide();
+                    $("#gl-content").html(gcfg.errorMsg);
+                    $("#spinner").hide();
                 }
             });
 
@@ -740,64 +655,16 @@ function createGalleryShell() {
                 this.display.update(this.gm);
             }
         },
-        _setFeaturedData: function (data,gm){
-            this.featureddata = new SEData(data);
-            this.gm.updateFSEData(this.featureddata);
-            this.numberofRegularItemsRequires = 0;
-
-
-            if(this.featureddata){
-                var totalFeaturedItemPerPage =  this.featureddata.endI-(this.featureddata.startI-1);
-                
-                var totalFeaturedResult = this.featureddata.estN;
-                if(totalFeaturedItemPerPage < gcfg.numN){
-                    this.numberofRegularItemsRequires = gcfg.numN - totalFeaturedItemPerPage;
-                }
-
-                if(this.numberofRegularItemsRequires > 0){
-                    gm.numN = this.numberofRegularItemsRequires;
-                    gm.fNumN = 0;
-                }else{
-                    gm.numN = 0;
-                }
-            }
-
-            //console.log(totalFeaturedItemPerPage+"-"+totalFeaturedResult+"-"+this.numberofRegularItemsRequires);
-
-
-        },
-
-        mergeData: function(gm,sedata){
-            
-            //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
-           if(this.featureddata){
-                var estN = (this.featureddata.estN)?this.featureddata.estN:0;
-                var endI = (this.featureddata.endI)?this.featureddata.endI:0;
-
-                if( this.numberofRegularItemsRequires > 0){
-                    sedata.rowL = this.featureddata.rowL.concat(sedata.rowL); 
-                }else{
-                    sedata.rowL = this.featureddata.rowL;
-                }
-
-                
-            } 
-            return sedata.rowL;
-            
-             
-
-        },
 
         _updateModelAndView: function (data) {
 
             var sedata = new SEData(data);
-
             
 
             this.gm.updateSEData(sedata);
 
             
-            this.gm.sedata.rowL = this.mergeData(this.gm,sedata);
+            //this.gm.sedata.rowL = this.mergeData(this.gm,sedata);
 
 
             if (this.display === null) {
@@ -889,7 +756,6 @@ $(document).ready(function () {
             gModel.updateSubCat(0);
         }
         //gModel.updatePagination(0);
-        gModel.updateNpp(0);
 		gShell.update(gModel);
     });
 
@@ -925,7 +791,6 @@ $(document).ready(function () {
            var startNumber = $(this).attr("value");
 
             //gModel.updatePagination(startNumber);
-            gModel.updateNpp($(this).attr("value"));
             gShell.update(gModel);
            
                        
@@ -963,7 +828,6 @@ $(document).ready(function () {
 			
 		//gModel.updatePagination(0);
         gModel.updateSubCat(0);
-        gModel.updateNpp(0);
         gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
         $(".reset-filter").css("display","none");
@@ -990,7 +854,6 @@ $(document).ready(function () {
         gModel.updateType($(this).attr("type"));
             
         //gModel.updatePagination(0);
-        gModel.updateNpp(0);
         gShell.update(gModel);
         
                 
@@ -1006,15 +869,15 @@ $(document).ready(function () {
 
             //alert("End Of The Page");
              var countMaxN = gModel.maxN;
-            if(gModel.fMaxN > gModel.maxN)
-                gModel.maxN = gModel.fMaxN;
+            //if(gModel.fMaxN > gModel.maxN)
+             //   gModel.maxN = gModel.fMaxN;
 
             // GSA has browse limit of 1000 results
             if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.endI < gModel.maxN)) {
                 $(".more-spinner").css("display","block");
                 gModel.queryStatus = null;
                 
-                gModel.updateNpp(30);
+                gModel.inc();
                 gShell.update(gModel);
                                
                 
@@ -1034,6 +897,7 @@ $(document).ready(function () {
             if (vdata.hash) {
                 if ("#" + vdata.hash !== curHash) {
                     //debug("curHash=" + curHash);
+                    //$("#gl-content").empty();
                     gModel.updateByHash(curHash);
                     //gShell.update(gModel);
                     if (gModel.query) { $("#gl-cl-btn").show(); }
@@ -1044,13 +908,14 @@ $(document).ready(function () {
 
     /** init page **/
     try {
-        var initval = "#s=0&n=" + gcfg.numN + "&d=1&filter=0";
+        var initval = "#s=0&n=" + gcfg.numN + "&filter=0";
         if (window.location.hash) {
             initval = window.location.hash;
         }
         
         gModel = genGalleryModel(initval, mdfL);
         housekeeping();
+        gModel.startN = 0;
         gShell.init(gModel);
         gShell.update(gModel);
         if (gModel.query) { $("#gl-cl-btn").show(); }
@@ -1102,14 +967,6 @@ $(document).ready(function () {
 
         }
 
-        if(getUrlVars()['npp'] && getUrlVars()['npp'] > 0){
-            //gModel.updateNpp(getUrlVars()['npp'],true);
-            gModel.startN = 0;
-            gModel.numN = 0;
-            gModel.fStartN = 0;
-            gModel.fNumN = 30;
-
-        }
 		// For safari back button issue.
 		window.onunload = function(){};
 
