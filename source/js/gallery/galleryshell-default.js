@@ -361,6 +361,43 @@ function genGalleryModel(hash, mdfL) {
 
             }
 
+            function getAgolPrefRegion () {
+                var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
+                return (ckObj)?ckObj.region : null;
+            }
+
+            function getIPBasedRegion (apiURL) {
+                var regionCode=null;
+              $.ajax({
+                    type: "GET",
+                    url: apiURL,
+                    dataType: "json",
+                    async: false, 
+                    success: function(msg){
+                        if (msg.status == 0){
+                                regionCode = msg.data.country
+                        }
+                    },
+                    error:function(xhr, status, err){
+                        console.log(err)
+                    }
+                });
+              return regionCode;
+            }
+
+            function _genPartialFieldsForGroup(tierObj) {
+                var region = getAgolPrefRegion () || getIPBasedRegion (tierObj.ipLookupAPI)
+                console.log(region);
+                var agolGroups = (region) ? regionToGroup[region.toLowerCase()] + "," + regionToGroup['wo'] : regionToGroup['wo']
+
+                var l = [];
+                 $.each(agolGroups.split(","), function (i, val) {
+                    l.push("agol-group-id:" + val);
+                 });
+                
+                return l.join("|");
+            }
+
             /** -- **/
 
             var l = [];
@@ -396,11 +433,16 @@ function genGalleryModel(hash, mdfL) {
 
             var pfields = _genPartialFields(this.mdf);
             var typePFields = _genPartialFieldsForGalleryType(this.type);
+            var regionPFields = _genPartialFieldsForGroup(this.tier);
 
             if (pfields && typePFields){
                 pfields = pfields+".("+typePFields+")";
             } else if (typePFields){
                 pfields = typePFields;
+            }
+
+            if (regionPFields){
+                pfields = pfields + ".("+regionPFields+")";
             }
 
                        

@@ -2,46 +2,9 @@ $(document).ready(function () {
     var hostname = window.location.hostname,
         tier = getTier(hostname);
 
-    if ($('#featured-sp .w-content').length > 0) {
-        $('#featured-sp .w-content').before('<ul id="nav">').cycle({
-            pager: '#nav',
-            timeout: 15000,
-            pause: true,
-            pagerAnchorBuilder: function (idx, slide) {
-                return '<li><div class="ft-tab"><div class="ft-headtab"><a href="#"></a></div></div></li>';
-            }
-        });
-    }
+    
 
-    if ($('#gallery-cont').length > 0) {
-        $('#gallery-cont')
-            .cycle({
-                fx: 'scrollHorz',
-                sync: true,
-                timeout: 0,
-                prev: '#glprev',
-                next: '#glnext'
-            });
-    }
-
-    if ($('#newsticker').length > 0) {
-        $('#newsticker').cycle({
-            fx: 'fade',
-            speed: 600,
-            pause: 1
-        });
-    }
-
-/*
-    if ($('.colorbox-iframe').length > 0) {
-        $('.colorbox-iframe').colorbox({ iframe: true, scrolling: false, innerWidth: "716", innerHeight: "420", maxWidth: "90%", maxHeight: "90%" });
-    }
-*/
-
-    if ($('.colorbox-iframe').length > 0) {
-        $('.colorbox-iframe').colorbox({ iframe: true, scrolling: false, innerWidth: "970", innerHeight: "560", maxWidth: "90%", maxHeight: "90%" });
-    }
-
+   
     if ($("#q").length > 0) {
         $("#q").focus(function () {
             if ($(this).val() == $(this)[0].defaultValue) {
@@ -67,30 +30,26 @@ $(document).ready(function () {
 
 
 function getTier(hostname) {
-    var devTier = {
+    var tierObj = {
         tier: "dev",
-        hostname: "resourcesdev.arcgis.com",
         search: "//searchdev.esri.com/v3/index.cfm",
-        gallery: "//search.esri.com/v3/index.cfm"
+        gallery: "//search.esri.com/v3/index.cfm",
+        ipLookupAPI: "/apps/shared/services/index.cfm?event=location.getCountryByIp",
+        agolAuthCookie: "esri_auth"
     };
 
-    if (hostname == "docdev.arcgis.com") {
-        return devTier;
-    } else if (hostname == "docstg.arcgis.com") {
-        return {
-            tier: "stg",
-            hostname: "resourcesstg.arcgis.com",
-            search: "//searchstg.esri.com/v3/index.cfm",
-            gallery: "//searchstg.esri.com/v3/index.cfm"
-        }
+   if (hostname == "docstg.arcgis.com") {
+        tierObj.tier = "stg",
+        tierObj.search = "//searchstg.esri.com/v3/index.cfm",
+        tierObj.gallery = "//searchstg.esri.com/v3/index.cfm"
+        return tierObj
     } else if (hostname == "doc.arcgis.com") {
-        return {
-            tier: "prd",
-            hostname: "resources.arcgis.com",
-            search: "//search.esri.com/v3/index.cfm",
-            gallery: "//search.esri.com/v3/index.cfm"
-        }
+        tierObj.tier = "prd",
+        tierObj.search = "//search.esri.com/v3/index.cfm",
+        tierObj.gallery = "//search.esri.com/v3/index.cfm"
     } else {
-        return devTier;
-    } 
+        tierObj.ipLookupAPI = "http://docdev.arcgis.com" + "/apps/shared/services/index.cfm?event=location.getCountryByIp";
+    }
+
+    return tierObj 
 }
