@@ -73,11 +73,9 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.genViewData = function () {
-            var opt = {featured:1}
             var o = {
                 hash: this._genHash(),
                 ajaxData: this._genAjaxData(),
-                ajaxFeaturedData: this._genAjaxData(opt)
             };
 
             return o;
@@ -87,12 +85,6 @@ function genGalleryModel(hash, mdfL) {
             this.sedata = sedata;
             this.startN = sedata.startI - 1;
             this.maxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
-        }
-
-        this.updateFSEData = function (sedata) {
-            this.sedata = sedata;
-            this.fStartN = sedata.startI - 1;
-            this.fMaxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
         }
 
 
@@ -322,7 +314,7 @@ function genGalleryModel(hash, mdfL) {
 
         this._genAjaxData = function (opt) {
 
-            function _genPartialFields(mdf) {
+            function _genTags(mdf) {
                 var l = [];
 
                 for (key in mdf) {
@@ -334,12 +326,12 @@ function genGalleryModel(hash, mdfL) {
                                 if (state.charAt(i) === "1") {
                                     v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
                                     if (v) {
-                                        vL.push(key + ":" + v);
+                                        vL.push("tags" + ":" + v);
                                     }
                                 }
                             }
                             if (vL.length) {
-                                l.push("(" + vL.join("|") + ")");
+                                l.push("(" + vL.join(" OR ") + ")");
                             }
                         }
                     }
@@ -348,7 +340,7 @@ function genGalleryModel(hash, mdfL) {
             }
 
 
-            function _genPartialFieldsForGalleryType(galleryType) {
+            /*function _genPartialFieldsForGalleryType(galleryType) {
                 var l = [];
                 if(galleryType != "All"){
                      var types = gcfg.type[galleryType];
@@ -359,23 +351,23 @@ function genGalleryModel(hash, mdfL) {
                 }
                 return false;
 
-            }
+            }*/
 
             function getAgolPrefRegion () {
                 var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
                 return (ckObj)?ckObj.region : null;
             }
 
-            function getIPBasedRegion (apiURL) {
-                var regionCode=null;
+            function getIPBasedRegion (tierObj) {
+                var regionCode="wo";
               $.ajax({
                     type: "GET",
-                    url: apiURL,
+                    url: tierObj.agolRestApi + "portals/self",
                     dataType: "json",
                     async: false, 
                     success: function(msg){
                         if (msg.status == 0){
-                                regionCode = msg.data.country
+                                regionCode = msg.ipCntryCode
                         }
                     },
                     error:function(xhr, status, err){
@@ -385,74 +377,92 @@ function genGalleryModel(hash, mdfL) {
               return regionCode;
             }
 
-            function _genPartialFieldsForGroup(tierObj) {
-                var region = getAgolPrefRegion () || getIPBasedRegion (tierObj.ipLookupAPI)
+            function getGroupIds (tierObj, regionCode) {
+                //single group
+                //var ownerName = (regionCode == "wo") ? "esri" : "Esri_cy_" + regionCode;
+
+                //Multiple Grop
+                var ownerName = (regionCode != "wo") ? "(esri OR Esri_cy_" + regionCode +")" : "esri" + regionCode;
+                
+                var groupIds = null;
+              $.ajax({
+                    type: "GET",
+                    url: tierObj.agolRestApi + "community/groups?",
+                    data: {"q":"tags:gallery AND owner:" + ownerName, },
+                    dataType: "json",
+                    async: false, 
+                    success: function(msg){
+                        if (msg.status == 0){
+                            msg.results
+                            var l = [];
+                            for (i = 0, len = msg.results.length; i < len; i++) {
+                                l.push(msg.results[i]->id);
+                            }
+                            groupIds = l.join(",");
+                        }
+                    },
+                    error:function(xhr, status, err){
+                        console.log(err)
+                    }
+                });
+              return groupIds;
+            }
+
+            function _getRegionalGroups(tierObj) {
+                var region = getAgolPrefRegion () || getIPBasedRegion (tierObj)
                 console.log(region);
-                var agolGroups = (region) ? regionToGroup[region.toLowerCase()] + "," + regionToGroup['wo'] : regionToGroup['wo']
+                var groupIds = getGroupIds (tierObj, region.toLowerCase())
 
                 var l = [];
-                 $.each(agolGroups.split(","), function (i, val) {
-                    l.push("agol-group-id:" + val);
+                 $.each(groupIds.split(","), function (i, val) {
+                    l.push('group:"' + val +'"');
                  });
                 
-                return l.join("|");
+                return l.join(" OR ");
             }
 
             /** -- **/
 
             var l = [];
+            var qry = [];
+           
 
-            /* internal flags */
-            l.push("callback=?");
-            l.push("format=jsonp");
-            l.push("event=search.renderSearch");
-            l.push("interfaceName=resourcesbeta");
-            l.push("searchViewname=resourcesbeta_gallery");
-            //l.push("lr=lang_en");
-            l.push("Oe=utf8");
-            l.push("filter=0");
-
-            // Additional category if any
-            if(gcfg.addlCategory && gcfg.addlCategory != ""){
-                l.push("requiredfields=search-collection:" + gcfg.collection + ".(search-category:" + gcfg.category + "|search-category:" + gcfg.addlCategory +")");
-            } else {
-                l.push("requiredfields=search-collection:" + gcfg.collection + ".search-category:" + gcfg.category);
-            }
-
-			// Sort by date
-			l.push("sort=date:D:S:d1");
-            //l.push("inmeta:la-featured1:1 AND inmeta:last-modified:2012-06-16..");
-
-            /* public flags */
+			l.push("f=json");
+            // Sort by date
+			l.push("sortField=modified");
+            l.push("sortOrder=desc");
             l.push("start=" + this.startN);
             l.push("num=" + this.numN);
 
             if (this.query) {
-                l.push("q=" + encodeURIComponent(this.query));
+                //l.push("q=" + encodeURIComponent(this.query));
+                qry.push(encodeURIComponent(this.query));
             }
 
-            var pfields = _genPartialFields(this.mdf);
-            var typePFields = _genPartialFieldsForGalleryType(this.type);
-            var regionPFields = _genPartialFieldsForGroup(this.tier);
+            //groups
+            var groups = _getRegionalGroups(tierObj)
+            qry.push("(" + groups + ")");
+
+            var tags = _genTags(this.mdf);
+            if (tags) {
+                qry.push("(" + tags + ")");
+            }
+            /*var typePFields = _genPartialFieldsForGalleryType(this.type);
 
             if (pfields && typePFields){
                 pfields = pfields+".("+typePFields+")";
             } else if (typePFields){
                 pfields = typePFields;
-            }
+            }*/
 
-            if (regionPFields){
-                pfields = pfields + ".("+regionPFields+")";
-            }
+            
 
                        
-            if (pfields) {
-                l.push("partialfields=" + pfields);
-            }
+            
 
-            l.push("getfields=*");
 
-            return l.join("&");
+
+            return l.join("&") + "q=" + qry.join(" ");
         }
 
 
@@ -463,17 +473,18 @@ function genGalleryModel(hash, mdfL) {
 
 function SEData(data) {
 
-    this.hasError = data.haserror;
-    this.errMsg = data.errormessage;
+    //this.hasError = data.haserror;
+    //this.errMsg = data.errormessage;
 
+    //var jxon = getXMLData($.parseXML(data.content).documentElement);
     var jxon = getXMLData($.parseXML(data.content).documentElement);
 
-    this.estN = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["m"]);
-    this.startI = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["@sn"]);
-    this.endI = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["@en"]);
+    this.estN = (typeof data === "undefined") ? 0 : parseInt (data.total);
+    this.startI = (typeof data === "undefined") ? 0 : parseInt (data.start);
+    this.endI = (typeof data === "undefined") ? 0 : parseInt (data.num);
 
-    this.rowL = (typeof jxon.res === "undefined") ? [] :
-                      ((jxon.res.r instanceof Array) ? jxon.res["r"] : [jxon.res["r"]]);
+    this.rowL = (typeof data.result === "undefined") ? [] :
+                      ((data.results instanceof Array) ? data["results"] : [data["results"]]);
 
 
 
@@ -547,14 +558,7 @@ SERow.prototype.agolTargetUrl = function (itemURL) {
 	return targetURL;
 };
 
-SERow.prototype.agolFeaturedItem = function () {
-    var featuredItem = this.md("la-featured", "");
-    
-    if (featuredItem !== "None") {
-        return featuredItem;
-    }
-    return false;
-};
+
 
 function createGalleryShell() {
     var shell = {
@@ -635,7 +639,7 @@ function createGalleryShell() {
 
             // Featured Item
             $.ajax({
-                url: gm.tier.gallery,
+                url: gm.tier.agolRestApi + "search" ,
                 dataType: "jsonp",
                 context: this,
                 data: vdata.ajaxFeaturedData,

@@ -36,6 +36,7 @@ function getTier(hostname) {
         gallery: "//search.esri.com/v3/index.cfm",
         ipLookupAPI: "/apps/shared/services/index.cfm?event=location.getCountryByIp",
         agolAuthCookie: "esri_auth"
+        agolRestApi: "http://www.arcgis.com/sharing/rest/"
     };
 
    if (hostname == "docstg.arcgis.com") {
