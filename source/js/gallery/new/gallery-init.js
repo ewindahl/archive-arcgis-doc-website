@@ -35,7 +35,7 @@ function getTier(hostname) {
         search: "//searchdev.esri.com/v3/index.cfm",
         gallery: "//search.esri.com/v3/index.cfm",
         ipLookupAPI: "/apps/shared/services/index.cfm?event=location.getCountryByIp",
-        agolAuthCookie: "esri_auth"
+        agolAuthCookie: "esri_auth",
         agolRestApi: "http://www.arcgis.com/sharing/rest/"
     };
 
