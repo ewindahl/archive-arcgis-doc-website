@@ -337,13 +337,25 @@ var itemTypeLabel = "Map"
 var obj = doc.itemDetails;
 var itemDetails = obj.getItemInfo(itemId);
 var cookieName = "esri_auth";
-//console.log(itemDetails);
+
+if(getUrlVars()['ls'] && getUrlVars()['ls'] == "t"){
+	window.opener.location.reload(false);
+	window.close();
+}
 
 if(itemDetails && itemDetails.id){
 	var itemType 
-	//itemType  = (itemDetails.type.match(/application/gi)) ? "app" : "map";
 
-	if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service/gi)){
+	if(itemDetails.type.match(/Requires Subscription|Requires Credits/gi)){
+		if(!$.cookie('esri_auth')){
+			var agolSigninURL = (sitecfg)?sitecfg.agolSignin:AGOLURL+"/home/signin.html";
+			agolSigninURL += "?returnUrl=" + encodeURIComponent(window.location.href + "&ls=t");
+			
+			//Sing in requires
+			window.open(agolSigninURL, "", "width=800, height=800");
+			//myPopupWindow.isPopup = true;
+		}
+	} else if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service/gi)){
 		itemType = "layers";
 		itemTypeLabel = "Map Layer";
 	} else if(itemDetails.type.match(/Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service/gi)) {
