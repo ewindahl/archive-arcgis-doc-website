@@ -92,7 +92,7 @@ function genGalleryModel(hash, mdfL) {
         this.updateSEData = function (sedata) {
             this.sedata = sedata;
             this.startN = sedata.startI - 1;
-            this.maxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
+            this.maxN = sedata.estN; //gsa: only return first 1000
         }
 
 
@@ -854,7 +854,8 @@ $(document).ready(function () {
 	
 	$(".filter-label").bind("click", function (evt) {
 
-        $("#gl-content").empty();
+        gModel.startN = 0;
+		  $("#gl-content").empty();
         $("#spinner").show();
 				
 		/*if($(this).hasClass('current') && $(this).attr('col') != "All"){
@@ -889,6 +890,10 @@ $(document).ready(function () {
     });
     
     $(".showme-filter-label").bind("click", function (evt) {
+		 
+		 gModel.startN = 0;
+		 $("#gl-content").empty();
+       $("#spinner").show();
                 
         $(".showme-filter-label").each(function (evt){
                 $(this).removeClass('current');
@@ -907,24 +912,14 @@ $(document).ready(function () {
     $(window).scroll(function () {
         if ($(document).height() <= $(window).scrollTop() + $(window).height()+300) {
 
-
-
-
-            //alert("End Of The Page");
-             var countMaxN = gModel.maxN;
-            //if(gModel.fMaxN > gModel.maxN)
-             //   gModel.maxN = gModel.fMaxN;
-
             // GSA has browse limit of 1000 results
-            if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.endI < gModel.maxN)) {
+            if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.rowL.length >= gModel.numN)) {
                 $(".more-spinner").css("display","block");
                 gModel.queryStatus = null;
                 
                 gModel.inc();
-                console.log(countMaxN)
                 gShell.update(gModel);
                                
-                
                 return false;
             }
         }

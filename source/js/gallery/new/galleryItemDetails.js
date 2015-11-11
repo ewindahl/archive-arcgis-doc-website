@@ -414,7 +414,7 @@ $(document).ready(function() {
 	});
 		
 	$("#gallerySearchForm").bind("submit", function (evt) {
-	 $(this).attr("action", "/en/living-atlas/#q="+$("#q").val());
+	 $(this).attr("action", "/en/living-atlas/agol-api-gallery/#q="+$("#q").val());
 	 $(this).submit();
 	});
 
