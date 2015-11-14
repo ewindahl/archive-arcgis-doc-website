@@ -41,7 +41,7 @@ function genDisplay() {
             var itemTitle = row.data["title"] || "n/a"
             if (itemTitle.length > 40 ) {  
                 itemTitle = itemTitle.substr(0,40) + " ...";
-            }  
+            }
 
             if(col && col == "demographics"){
                 targetUrl = targetUrl + "&subType=demographics";
@@ -49,9 +49,13 @@ function genDisplay() {
                 targetUrl = targetUrl + "&subType=storymaps";
             }
 
+            if(row.isLoginRequires()){
+                if(!$.cookie('esri_auth')){
+                    targetUrl = getTier(window.location.hostname).agolHost + "home/signin.html?returnUrl="+encodeURIComponent(targetUrl);
+                }
+            }
 
             buf.push("<li class='item'>");
-
                         
             if (v.show) {
                 buf.push("<a href='" + targetUrl + "'  class='item-contrib " + v.css + " '>" + v.label + "</a>");

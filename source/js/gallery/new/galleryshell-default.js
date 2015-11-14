@@ -360,7 +360,7 @@ function genGalleryModel(hash, mdfL) {
                 var regionCode="WO";
               $.ajax({
                     type: "GET",
-                    url: tierObj.agolRestApi + "portals/self",
+                    url: tierObj.agolHost + "sharing/rest/portals/self",
                     data: {"f":"json"},
                     dataType: "json",
                     async: false, 
@@ -396,7 +396,7 @@ function genGalleryModel(hash, mdfL) {
                 var groupIds = null;
               $.ajax({
                     type: "GET",
-                    url: tierObj.agolRestApi + 'community/groups',
+                    url: tierObj.agolHost + 'sharing/rest/community/groups',
                     data: {'f':'json', 'q':'tags:"gallery" AND owner:' + ownerName },
                     dataType: "json",
                     async: false, 
@@ -526,13 +526,22 @@ SERow.prototype.agolItemType = function () {
     }
 	return itemType;
 };
+SERow.prototype.isLoginRequires = function () {
+    var typeKeywords = this.data["typeKeywords"] || false;
+    
+    if (typeKeywords) {
+        typeKeywords  = (typeKeywords.indexOf("Requires Subscription") >=0 || typeKeywords.indexOf("Requires Credits") >=0) ? true : false;
+    }
+    
+    return typeKeywords;
+};
 SERow.prototype.agolItemUrl = function (agolId) {
-	return "../item-agol/?itemId=" + agolId;
+	return "http://" + window.location.hostname + "/en/living-atlas/item-agol/?itemId=" + agolId;
 };
 SERow.prototype.agolImgUrl = function (agolId) {
 		var imgf = (this.data["largeThumbnail"] && this.data["largeThumbnail"] != "") ? this.data["largeThumbnail"] : this.data["thumbnail"],
 		imgurl = gcfg.emptyImgUrl,
-		host = gcfg.host || "http://www.arcgis.com";
+		host = getTier(window.location.hostname).agolHost || "http://www.arcgis.com";
 
     if (imgf !== "None") {
         imgurl = host + "/sharing/content/items/" + agolId + "/info/" + imgf;
@@ -632,7 +641,7 @@ function createGalleryShell() {
 
             
             $.ajax({
-                url: gm.tier.agolRestApi + "search" ,
+                url: gm.tier.agolHost + "sharing/rest/search" ,
                 dataType: "json",
                 context: this,
                 data: vdata.ajaxData,

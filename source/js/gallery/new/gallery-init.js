@@ -32,24 +32,16 @@ $(document).ready(function () {
 function getTier(hostname) {
     var tierObj = {
         tier: "dev",
-        search: "//searchdev.esri.com/v3/index.cfm",
-        gallery: "//search.esri.com/v3/index.cfm",
-        ipLookupAPI: "/apps/shared/services/index.cfm?event=location.getCountryByIp",
         agolAuthCookie: "esri_auth",
-        agolRestApi: "http://www.arcgis.com/sharing/rest/"
+        agolHost: "//devext.arcgis.com/"
     };
 
    if (hostname == "docstg.arcgis.com") {
         tierObj.tier = "stg",
-        tierObj.search = "//searchstg.esri.com/v3/index.cfm",
-        tierObj.gallery = "//searchstg.esri.com/v3/index.cfm"
-        return tierObj
+        tierObj.agolHost = "//qaext.arcgis.com/"
     } else if (hostname == "doc.arcgis.com") {
         tierObj.tier = "prd",
-        tierObj.search = "//search.esri.com/v3/index.cfm",
-        tierObj.gallery = "//search.esri.com/v3/index.cfm"
-    } else {
-        tierObj.ipLookupAPI = "http://docdev.arcgis.com" + "/apps/shared/services/index.cfm?event=location.getCountryByIp";
+        tierObj.agolHost = "//www.arcgis.com/"
     }
 
     return tierObj 
