@@ -75,6 +75,14 @@ function genGalleryModel(hash, mdfL) {
         this.genViewData = function () {
             var o = {
                 hash: this._genHash(),
+                //ajaxData: this._genAjaxData(),
+            };
+
+            return o;
+        }
+
+        this.genAJaxParamData = function () {
+            var o = {
                 ajaxData: this._genAjaxData(),
             };
 
@@ -84,7 +92,7 @@ function genGalleryModel(hash, mdfL) {
         this.updateSEData = function (sedata) {
             this.sedata = sedata;
             this.startN = sedata.startI - 1;
-            this.maxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
+            this.maxN = sedata.estN; //gsa: only return first 1000
         }
 
 
@@ -241,7 +249,7 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.inc = function () {
-            this.startN = Math.min(this.maxN, this.startN + this.numN);
+            this.startN = Math.min(this.maxN, (this.startN+1) + this.numN);
         }
 
         this.dec = function () {
@@ -326,7 +334,10 @@ function genGalleryModel(hash, mdfL) {
                                 if (state.charAt(i) === "1") {
                                     v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
                                     if (v) {
-                                        vL.push("tags" + ":" + v);
+                                        $.each(v.split(" or "), function(k, sv){
+                                          vL.push('tags' +  ':"' + sv + '"');
+                                        });
+                                        
                                     }
                                 }
                             }
@@ -340,35 +351,21 @@ function genGalleryModel(hash, mdfL) {
             }
 
 
-            /*function _genPartialFieldsForGalleryType(galleryType) {
-                var l = [];
-                if(galleryType != "All"){
-                     var types = gcfg.type[galleryType];
-                     $.each(types.split("|"), function (i, val) {
-                        l.push("agol-itemtype:" + encodeURIComponent(val));
-                     });
-                     return l.join("|");
-                }
-                return false;
-
-            }*/
-
             function getAgolPrefRegion () {
                 var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
                 return (ckObj)?ckObj.region : null;
             }
 
             function getIPBasedRegion (tierObj) {
-                var regionCode="wo";
+                var regionCode="WO";
               $.ajax({
                     type: "GET",
-                    url: tierObj.agolRestApi + "portals/self",
+                    url: tierObj.agolHost + "sharing/rest/portals/self",
+                    data: {"f":"json"},
                     dataType: "json",
                     async: false, 
                     success: function(msg){
-                        if (msg.status == 0){
-                                regionCode = msg.ipCntryCode
-                        }
+                        regionCode = msg.ipCntryCode
                     },
                     error:function(xhr, status, err){
                         console.log(err)
@@ -377,29 +374,38 @@ function genGalleryModel(hash, mdfL) {
               return regionCode;
             }
 
-            function getGroupIds (tierObj, regionCode) {
+            function getGroupIds (tierObj, groupType) {
                 //single group
-                //var ownerName = (regionCode == "wo") ? "esri" : "Esri_cy_" + regionCode;
-
-                //Multiple Grop
-                var ownerName = (regionCode != "wo") ? "(esri OR Esri_cy_" + regionCode +")" : "esri" + regionCode;
+					 var regionCode = getAgolPrefRegion () || getIPBasedRegion (tierObj)
+					 
+					 $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
+					 					 
+					 /*
+					 grouptype == all   then region+world
+					 grouptype == "regional" then regional Only
+					 grouptype == "world" then world only.*/
+					 
+					 if(groupType == "regional"){
+						 ownerName = "(Esri_cy_" + regionCode +")"
+					 } else if(groupType == "world") {
+						 ownerName = "(esri)"
+					 }else{
+						 ownerName = "(esri OR Esri_cy_" + regionCode +")"
+					 }
                 
                 var groupIds = null;
               $.ajax({
                     type: "GET",
-                    url: tierObj.agolRestApi + "community/groups?",
-                    data: {"q":"tags:gallery AND owner:" + ownerName, },
+                    url: tierObj.agolHost + 'sharing/rest/community/groups',
+                    data: {'f':'json', 'q':'tags:"gallery" AND owner:' + ownerName },
                     dataType: "json",
                     async: false, 
                     success: function(msg){
-                        if (msg.status == 0){
-                            msg.results
-                            var l = [];
-                            for (i = 0, len = msg.results.length; i < len; i++) {
-                                l.push(msg.results[i]->id);
-                            }
-                            groupIds = l.join(",");
+                        var l = [];
+                        for (i = 0, len = msg.results.length; i < len; i++) {
+                            l.push(msg.results[i].id);
                         }
+                        groupIds = l.join(",");
                     },
                     error:function(xhr, status, err){
                         console.log(err)
@@ -408,17 +414,20 @@ function genGalleryModel(hash, mdfL) {
               return groupIds;
             }
 
-            function _getRegionalGroups(tierObj) {
-                var region = getAgolPrefRegion () || getIPBasedRegion (tierObj)
-                console.log(region);
-                var groupIds = getGroupIds (tierObj, region.toLowerCase())
+            function _getRegionalGroups(tierObj, groupType) {
+                //var region = getAgolPrefRegion () || getIPBasedRegion (tierObj)
+					 
+                var groupIds = getGroupIds (tierObj, groupType)
 
                 var l = [];
-                 $.each(groupIds.split(","), function (i, val) {
-                    l.push('group:"' + val +'"');
-                 });
-                
-                return l.join(" OR ");
+                if(groupIds) {
+                    $.each(groupIds.split(","), function (i, val) {
+                        l.push('group:"' + val +'"');
+                    });
+                    
+                    return l.join(" OR ");
+                }
+                return ""
             }
 
             /** -- **/
@@ -439,13 +448,15 @@ function genGalleryModel(hash, mdfL) {
                 qry.push(encodeURIComponent(this.query));
             }
 
-            //groups
-            var groups = _getRegionalGroups(tierObj)
+            //var typePFields = _genPartialFieldsForGalleryType(this.type);
+								
+				//groups
+            var groups = _getRegionalGroups(this.tier, this.type)
             qry.push("(" + groups + ")");
 
             var tags = _genTags(this.mdf);
             if (tags) {
-                qry.push("(" + tags + ")");
+                qry.push(tags);
             }
             /*var typePFields = _genPartialFieldsForGalleryType(this.type);
 
@@ -455,14 +466,7 @@ function genGalleryModel(hash, mdfL) {
                 pfields = typePFields;
             }*/
 
-            
-
-                       
-            
-
-
-
-            return l.join("&") + "q=" + qry.join(" ");
+            return l.join("&") + "&q=" + qry.join(" ");
         }
 
 
@@ -477,68 +481,67 @@ function SEData(data) {
     //this.errMsg = data.errormessage;
 
     //var jxon = getXMLData($.parseXML(data.content).documentElement);
-    var jxon = getXMLData($.parseXML(data.content).documentElement);
+    //var jxon = getXMLData($.parseXML(data.content).documentElement);
 
     this.estN = (typeof data === "undefined") ? 0 : parseInt (data.total);
     this.startI = (typeof data === "undefined") ? 0 : parseInt (data.start);
     this.endI = (typeof data === "undefined") ? 0 : parseInt (data.num);
 
-    this.rowL = (typeof data.result === "undefined") ? [] :
+    this.rowL = (typeof data.results === "undefined") ? [] :
                       ((data.results instanceof Array) ? data["results"] : [data["results"]]);
-
 
 
 };
 SEData.prototype.getRow = function (i) {
     return new SERow(this.rowL[i]);
+
+    
 };
 
 
 function SERow(data) {
     this.data = data;
-    this._md = (function (md) {
-        var r = {};
-        /* should limit the key set - only use subset*/
-        if (md) {
-            var i = md.length,
-                v = null;
-
-            while (i--) {
-                v = md[i];
-                r[v["@n"]] = v["@v"];
-            }
-        }
-        return r;
-    })(data["mt"]);
+    
+    //return this.data
 
 }
-SERow.prototype.md = function (key, dval) {
+/*SERow.prototype.md = function (key, dval) {
     return (this._md.hasOwnProperty(key) ? this._md[key] : dval) || dval;
 };
 SERow.prototype.val = function (key, dval) {
     return this.data.hasOwnProperty(key) ? this.data[key] : dval;
 };
+SERow.prototype.id = function () {
+    return "test"
+    return this.md("id", "");
+};*/
 SERow.prototype.agolId = function () {
-    return this.md("agol-item-id", "");
+    return this.data["id"];
 };
 SERow.prototype.agolItemType = function () {
-    var itemType = this.md("agol-itemtype", "");
+    var itemType = this.data["type"] || "None";
 	
 	if (itemType !== "None") {
-        itemType  = (itemType.match(/application/gi)) ? "app" : "map";
+        itemType  = (itemType.match(/Application/gi)) ? "app" : "map";
     }
 	return itemType;
 };
+SERow.prototype.isLoginRequires = function () {
+    var typeKeywords = this.data["typeKeywords"] || false;
+    
+    if (typeKeywords) {
+        typeKeywords  = (typeKeywords.indexOf("Requires Subscription") >=0 || typeKeywords.indexOf("Requires Credits") >=0) ? true : false;
+    }
+    
+    return typeKeywords;
+};
 SERow.prototype.agolItemUrl = function (agolId) {
-	var itemType = this.agolItemType();
-    /*var host = gcfg.host || "http://www.arcgis.com";
-    return host + "/home/item.html?id=" + agolId;*/
-	return "item/?itemId=" + agolId;
+	return "http://" + window.location.hostname + "/en/living-atlas/item-agol/?itemId=" + agolId;
 };
 SERow.prototype.agolImgUrl = function (agolId) {
-		var imgf = (this.md("agol-large-thumbnail", null) != "None") ? this.md("agol-large-thumbnail", null) : this.md("agol-thumbnail", null),
+		var imgf = (this.data["largeThumbnail"] && this.data["largeThumbnail"] != "") ? this.data["largeThumbnail"] : this.data["thumbnail"],
 		imgurl = gcfg.emptyImgUrl,
-		host = gcfg.host || "http://www.arcgis.com";
+		host = getTier(window.location.hostname).agolHost || "http://www.arcgis.com";
 
     if (imgf !== "None") {
         imgurl = host + "/sharing/content/items/" + agolId + "/info/" + imgf;
@@ -549,7 +552,7 @@ SERow.prototype.agolImgUrl = function (agolId) {
 };
 
 SERow.prototype.agolTargetUrl = function (itemURL) {
-    var targetURL = this.md("agol-target-url", null);
+    var targetURL = this.data["url"] || null;
 
     if (targetURL == "None" || targetURL == null) {
         targetURL = itemURL ;
@@ -566,8 +569,6 @@ function createGalleryShell() {
         display: null,
         pageNav: null,
         reloadCount: 0,
-        featureddata:null,
-        numberofRegularItemsRequires:0,
 
         init: function (gm) {
             if (gm.query) {
@@ -627,26 +628,26 @@ function createGalleryShell() {
             //this.updateFeatured(gm);
             this.gm = gm;
 
-            var vdata = gm.genViewData();
+            var vHashdata = gm.genViewData();
+            var vdata = gm.genAJaxParamData();
 
             if (gm.query) {
                 $("#query").val(gm.query);
             }
 
-            this.updateHash(gm, vdata);
+            this.updateHash(gm, vHashdata);
 
             this._updateFilter(gm);
 
-            // Featured Item
+            
             $.ajax({
-                url: gm.tier.agolRestApi + "search" ,
-                dataType: "jsonp",
+                url: gm.tier.agolHost + "sharing/rest/search" ,
+                dataType: "json",
                 context: this,
-                data: vdata.ajaxFeaturedData,
-                timeout: 6000,
-                async: false,
+                data: vdata.ajaxData,
+                timeout: 10000,
+                //async: false,
                 beforeSend: function () {
-                    //$("#gl-content").empty();
                     $("#spinner").show();
                 },
                 success: function (data) {
@@ -749,6 +750,8 @@ $(document).ready(function () {
                 gShell.update(gModel);
 
                 evt.stopImmediatePropagation();
+                //$("#search, #gl-search-btn").trigger('click');
+
                 return false;
             }
         },
@@ -761,6 +764,7 @@ $(document).ready(function () {
 
                 gModel.updateQuery();
                 gShell.update(gModel);
+                evt.stopImmediatePropagation();
             }
         },
         "focus": function (evt) {
@@ -814,6 +818,8 @@ $(document).ready(function () {
 
         evt.stopImmediatePropagation();
         return false;
+
+        
     });
 
 	
@@ -857,7 +863,8 @@ $(document).ready(function () {
 	
 	$(".filter-label").bind("click", function (evt) {
 
-        $("#gl-content").empty();
+        gModel.startN = 0;
+		  $("#gl-content").empty();
         $("#spinner").show();
 				
 		/*if($(this).hasClass('current') && $(this).attr('col') != "All"){
@@ -892,6 +899,10 @@ $(document).ready(function () {
     });
     
     $(".showme-filter-label").bind("click", function (evt) {
+		 
+		 gModel.startN = 0;
+		 $("#gl-content").empty();
+       $("#spinner").show();
                 
         $(".showme-filter-label").each(function (evt){
                 $(this).removeClass('current');
@@ -910,23 +921,14 @@ $(document).ready(function () {
     $(window).scroll(function () {
         if ($(document).height() <= $(window).scrollTop() + $(window).height()+300) {
 
-
-
-
-            //alert("End Of The Page");
-             var countMaxN = gModel.maxN;
-            //if(gModel.fMaxN > gModel.maxN)
-             //   gModel.maxN = gModel.fMaxN;
-
             // GSA has browse limit of 1000 results
-            if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.endI < gModel.maxN)) {
+            if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.rowL.length >= gModel.numN)) {
                 $(".more-spinner").css("display","block");
                 gModel.queryStatus = null;
                 
                 gModel.inc();
                 gShell.update(gModel);
                                
-                
                 return false;
             }
         }
@@ -939,7 +941,8 @@ $(document).ready(function () {
  
         if (curHash) {
             var vdata = gModel.genViewData();
- 
+            
+
             if (vdata.hash) {
                 if ("#" + vdata.hash !== curHash) {
                     //debug("curHash=" + curHash);
@@ -954,7 +957,7 @@ $(document).ready(function () {
 
     /** init page **/
     try {
-        var initval = "#s=0&n=" + gcfg.numN + "&filter=0";
+        var initval = "#s=0&n=" + gcfg.numN;
         if (window.location.hash) {
             initval = window.location.hash;
         }
@@ -990,8 +993,9 @@ $(document).ready(function () {
     }
 
     function housekeeping(){
-        if(getUrlVars()['col']){
-            var col = getUrlVars()['col'].split(":")[0];
+        if(getUrlVars()['md']){
+            var col = getUrlVars()['md'].split(":")[0];
+				gModel.col = col;
            
            $(".filter-label").removeClass("current");
            $("."+col+"-filter").addClass("current");

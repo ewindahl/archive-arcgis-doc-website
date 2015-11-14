@@ -1,5 +1,6 @@
 var doc = {};
-var AGOLURL = (navigator.userAgent.match(/msie/i)) ?'https://www.arcgis.com/' : '//www.arcgis.com/';
+var agolHost = (sitecfg)?sitecfg.portalHostname : "//www.arcgis.com/"
+var AGOLURL = (navigator.userAgent.match(/msie/i)) ?'https:' + agolHost : agolHost;
 
 doc.itemDetails = (function(){
 		
@@ -7,7 +8,7 @@ doc.itemDetails = (function(){
 
 		getAJAXResponse : function(itemId,url,callType,callFor){
 			var result;
-			var restURL = url || AGOLURL + "sharing/rest/content/items/" + itemId + "?f=json";
+			var restURL = url || AGOLURL + "/sharing/rest/content/items/" + itemId + "?f=json";
 			var callType = callType || false;
 			var callBackFn = callBackFn || false
 			
@@ -62,7 +63,7 @@ doc.itemDetails = (function(){
 				if(itemDetails.extent)
 					extent = itemDetails.extent.join();
 
-				iframeSrc = AGOLURL + "home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
+				iframeSrc = AGOLURL + "/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
 
 				var customURL = this.orgUserCustomURL();
 				if(customURL){
@@ -138,37 +139,37 @@ doc.itemDetails = (function(){
 				$(".layers").hide();
 				$(".extent").hide();
 
-				var toolsTargetURL = AGOLURL + "sharing/content/items/" + itemDetails.id + "/item.pkinfo";
+				var toolsTargetURL = AGOLURL + "/sharing/content/items/" + itemDetails.id + "/item.pkinfo";
 
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 				text = "<a href='" + toolsTargetURL + "' target='_blank' class='btn primary'>Open in ArcGIS for Desktop</a>";
 				$("#downloadBtns").html(text);
 
 				// thumbanail link update
-				$("#agol-thumbnail").html("<a href='" + toolsTargetURL + "' target='_blank'><img src='"+AGOLURL+"sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
+				$("#agol-thumbnail").html("<a href='" + toolsTargetURL + "' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 
 			} else if(itemType == "webscene"){
 				$(".layers").hide();
 				$(".extent").hide();
 
-				var websceneTargetURL = AGOLURL + "apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id;
+				var websceneTargetURL = AGOLURL + "/apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id;
 
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 				var text = "<a href='" + websceneTargetURL + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
 				$("#downloadBtns").html(text);
 
-				$("#agol-thumbnail").html("<a href='" + websceneTargetURL + "' target='_blank'><img src='"+AGOLURL+"sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
+				$("#agol-thumbnail").html("<a href='" + websceneTargetURL + "' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 			} else {
 
 				if(itemDetails.extent.length > 0){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
 					$("#map-extent p").html(text);
 
-					text = "<a href='"+ AGOLURL +"home/webmap/viewer.html?webmap=" + itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
+					text = "<a href='"+ AGOLURL +"/home/webmap/viewer.html?webmap=" + itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
 					
 					// Exclude open in ArcGIS for Desktop from demographics item
 					if(getUrlVars()['subType'] != "demographics"){
-						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + AGOLURL + "sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
+						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + AGOLURL + "/sharing/content/items/"+itemDetails.id + "/item.pkinfo' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
 					}
 
 					if(!this.orgUserCustomURL() && itemType != "layers") {
@@ -192,7 +193,7 @@ doc.itemDetails = (function(){
 			var tags = [];
 			tags.push("<ul>");
 			$.each( itemDetails.tags, function( key, value ) {
-				tags.push("<li><a target='_blank' href='" + AGOLURL + "home/search.html?t=content&q=tags:" + value + "'>" + value + "</a></li>");
+				tags.push("<li><a target='_blank' href='" + AGOLURL + "/home/search.html?t=content&q=tags:" + value + "'>" + value + "</a></li>");
 			});
 			tags.push("</ul>");
 			$("#map-tags").html(tags.join(""));
@@ -204,7 +205,7 @@ doc.itemDetails = (function(){
 		
 		renderLayers : function(){
 			
-			var miscData = obj.getAJAXResponse(itemId,AGOLURL+"sharing/rest/content/items/"+itemId+"/data?f=json");
+			var miscData = obj.getAJAXResponse(itemId,AGOLURL+"/sharing/rest/content/items/"+itemId+"/data?f=json");
 			
 			if(!miscData.code){
 				var isLayersExist = false;
@@ -254,7 +255,7 @@ doc.itemDetails = (function(){
 							
 					$.each( data.comments, function( key, value ) {
 						if(i < 5) {
-							feed.push("<small><time>" + obj.formatDate(value.created) + " by <a target='_blank' href='"+AGOLURL+ "home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
+							feed.push("<small><time>" + obj.formatDate(value.created) + " by <a target='_blank' href='"+AGOLURL+ "/home/user.html?user=" + value.owner + "'>" + value.owner + "</a>" + "</time></small>" +
 		            "<p>" + unescape(value.comment) + "</p>");
 						}
 						i++;
@@ -263,7 +264,7 @@ doc.itemDetails = (function(){
 					feed.push("<p>No comments yet.<br/>Go ahead and get the conversation started.</p>");
 				}
 
-				var addCommentBtn = AGOLURL+"home/signin.html?returnUrl=" + AGOLURL + "home/item.html?id="+itemId;
+				var addCommentBtn = AGOLURL+"/home/signin.html?returnUrl=" + AGOLURL + "/home/item.html?id="+itemId;
 				$("#addCommentBtn").attr('href',addCommentBtn);
 
 			}else{
@@ -337,12 +338,25 @@ var itemTypeLabel = "Map"
 var obj = doc.itemDetails;
 var itemDetails = obj.getItemInfo(itemId);
 var cookieName = "esri_auth";
-//console.log(itemDetails);
+
+/*if(getUrlVars()['ls'] && getUrlVars()['ls'] == "t"){
+	window.opener.location.reload(false);
+	window.close();
+}*/
 
 if(itemDetails && itemDetails.id){
 	var itemType 
-	//itemType  = (itemDetails.type.match(/application/gi)) ? "app" : "map";
 
+	/*if(itemDetails.type.match(/Requires Subscription|Requires Credits/gi)){
+		if(!$.cookie('esri_auth')){
+			var agolSigninURL = (sitecfg)?sitecfg.agolSignin:AGOLURL+"/home/signin.html";
+			agolSigninURL += "?returnUrl=" + encodeURIComponent(window.location.href + "&ls=t");
+			
+			//Sing in requires
+			window.open(agolSigninURL, "", "width=800, height=800");
+			//myPopupWindow.isPopup = true;
+		}
+	} else */
 	if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service/gi)){
 		itemType = "layers";
 		itemTypeLabel = "Map Layer";
@@ -389,12 +403,12 @@ $(document).ready(function() {
 		}else{
 			$("#mapIframe").hide();
 			$("#agol-thumbnail").css("display","block")
-			$("#agol-thumbnail").html("<a href='"+itemDetails.url+"' target='_blank'><img src='"+AGOLURL+"sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
+			$("#agol-thumbnail").html("<a href='"+itemDetails.url+"' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 		}
 		obj.renderGeneralElementsValues();
 
 		//feed
-		obj.getAJAXResponse(itemId,AGOLURL+"sharing/rest/content/items/"+itemId+"/comments?f=json",true,"feed");
+		obj.getAJAXResponse(itemId,AGOLURL+"/sharing/rest/content/items/"+itemId+"/comments?f=json",true,"feed");
 	}
 
 	$("#gl-search-btn").bind("click", function (evt) {
@@ -402,7 +416,7 @@ $(document).ready(function() {
 	});
 		
 	$("#gallerySearchForm").bind("submit", function (evt) {
-	 $(this).attr("action", "/en/living-atlas/#q="+$("#q").val());
+	 $(this).attr("action", "/en/living-atlas/agol-api-gallery/#q="+$("#q").val());
 	 $(this).submit();
 	});
 

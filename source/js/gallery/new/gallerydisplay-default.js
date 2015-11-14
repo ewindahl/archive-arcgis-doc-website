@@ -17,7 +17,7 @@ function genDisplay() {
         _genContribInfo: function (row) {
             var v = { show: false };
 
-            if (gcfg.contrib === 1) {
+            /*if (gcfg.contrib === 1) {
                 var contributor = row.md("g-contributor", "");
                 v.show = true;
                 if (contributor.length > 0) {
@@ -28,35 +28,35 @@ function genDisplay() {
                     v.css = "";
                     v.label = "";
                 }
-            }
+            }*/
 
             return v;
         },
-
-        display1: function (obj, i, row, buf) {
+		  
+        display1: function (obj, i, row, buf, col) {
             var itemID = row.agolId();
             var imgurl = row.agolImgUrl(itemID);
             var v = obj._genContribInfo(row);
             var targetUrl = row.agolItemUrl(itemID);
-
-            var itemTitle = row.md("agol-item-title", "n/a");
+            var itemTitle = row.data["title"] || "n/a"
             if (itemTitle.length > 40 ) {  
                 itemTitle = itemTitle.substr(0,40) + " ...";
-            }  
+            }
 
-            if(row.md("la-demographics") || row.md("la-lifeStyles")){
+            if(col && col == "demographics"){
                 targetUrl = targetUrl + "&subType=demographics";
-            } else if(row.md("storymaps-community")){
+            } else if(col == "storymaps"){
                 targetUrl = targetUrl + "&subType=storymaps";
             }
 
+            if(row.isLoginRequires()){
+                if(!$.cookie('esri_auth')){
+                    targetUrl = getTier(window.location.hostname).agolHost + "home/signin.html?returnUrl="+encodeURIComponent(targetUrl);
+                }
+            }
 
             buf.push("<li class='item'>");
-
-            if(row.agolFeaturedItem()){
-                buf.push("<span class='featured'>Featured</span>");
-            }
-            
+                        
             if (v.show) {
                 buf.push("<a href='" + targetUrl + "'  class='item-contrib " + v.css + " '>" + v.label + "</a>");
             }
@@ -67,12 +67,12 @@ function genDisplay() {
             buf.push("<a class='item-title' href='" + targetUrl + "'>");
             buf.push(itemTitle);
             buf.push("</a>");
-			buf.push("<span class='ownerName'>By "+row.md("agol-owner", "n/a")+"</span>");
+			buf.push("<span class='ownerName'>By "+row.data["owner"]+"</span>");
             buf.push("</li>");
 
         },
 
-        display2: function (obj, i, row, buf) {
+        display2: function (obj, i, row, buf, col) {
             var itemID = row.agolId();
             var targetUrl = row.agolItemUrl(itemID);
 
@@ -93,7 +93,7 @@ function genDisplay() {
 
         },
 
-        display3: function (obj, i, row, buf) {
+        display3: function (obj, i, row, buf, col) {
             var itemID = row.agolId();
             var imgurl = row.agolImgUrl(itemID);
             var v = obj._genContribInfo(row);
@@ -139,7 +139,7 @@ function genDisplay() {
                     if (gm.sedata.rowL.length > 0) {
                         buf.push("<ul id='gl-content-ul'>");
                         $.each(gm.sedata.rowL, function (i, val) {
-                            displayFunc(o, gm.startN + i, new SERow(val), buf);
+                            displayFunc(o, gm.startN + i, new SERow(val), buf, gm.col);
                         });
                         //buf.push("<li class='item' id='more-item'><div class='item-img see-more'>There's more. Click to load the next page.</div></li>");
                         buf.push("<li class='item more-spinner' style='display: none'><img alt='loading' src='/img/gallery/ajax-loader.gif'></li>");

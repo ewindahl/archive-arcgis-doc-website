@@ -38,8 +38,14 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
                <%
                    i = 0
 				   k["value"].each { |sk| 
-				   if sk['metacontent'] != "None" %>
-                      <li><span class="ctrlbox <%= k['metaname'] %>-sub-filter sub-cat"><input type="checkbox" value="<%= sk['metacontent'] %>" name="<%= k['metaname'] %>-<%= sk['id'] %>" id="<%= k['metaname'] %>-<%= sk['id'] %>"><label for="<%= k['metaname'] %>-<%= sk['id'] %>"><%= sk['label'] %></label></span></li>
+				   if sk['metacontent'] != "None" 
+						displaySubFilter = "showSubFilter"
+						if sk['label'] == "None"
+							displaySubFilter = "hideSubFilter"
+						end
+						
+					%>
+                      <li><span class="ctrlbox <%= displaySubFilter %> <%= k['metaname'] %>-sub-filter sub-cat"><input type="checkbox" value="<%= sk['metacontent'] %>" name="<%= k['metaname'] %>-<%= sk['id'] %>" id="<%= k['metaname'] %>-<%= sk['id'] %>"><label for="<%= k['metaname'] %>-<%= sk['id'] %>"><%= sk['label'] %></label></span></li>
 				   <% end %>
                       <%
                           if k['metaname'] == "g-contributor"
@@ -67,21 +73,18 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 		 </ol>
       </div> <!-- End of Filters -->
    </nav>
-   <!--
+   
 	<header>
-		<h4>Show Me</h4>
+		<h4>Area</h4>
 		<span class="down-arrow showme-dropDown"></span>
 	</header>
 	<nav id="showMe">
 		<div id="showMeFilters">
 		<ol id="menutree">
 		<li><label id="allFilters" class="showme-filter-label current all-showme-filter" type="All">All</label></li>
-		<li><label class="showme-filter-label apps-showme-filter" type="apps">Apps</label></li>
-		<li><label class="showme-filter-label layers-showme-filter" type="layers">Layers</label></li>
-		<li><label class="showme-filter-label maps-showme-filter" type="maps">Maps</label></li>
-		<li><label class="showme-filter-label tools-showme-filter" type="tools">Tools</label></li>
+		<li><label class="showme-filter-label regional-showme-filter" id="countryName" type="regional">United States</label></li>
+		<li><label class="showme-filter-label world-showme-filter" type="world">World</label></li>
 		</ol>
 	</nav>
-	-->
 </div>
 <% end %>
