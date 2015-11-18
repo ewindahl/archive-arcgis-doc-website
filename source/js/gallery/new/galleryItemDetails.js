@@ -63,12 +63,12 @@ doc.itemDetails = (function(){
 				if(itemDetails.extent)
 					extent = itemDetails.extent.join();
 
-				iframeSrc = AGOLURL + "/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
+				iframeSrc = AGOLURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
 
 				var customURL = this.orgUserCustomURL();
-				if(customURL){
-					iframeSrc = customURL + "/home/webmap/embedViewer.html?webmap=" + itemDetails.id + "&extent=" + extent;
-				}
+				/*if(customURL){
+					iframeSrc = customURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
+				}*/
 
 				
 			}
@@ -347,17 +347,17 @@ var cookieName = "esri_auth";
 if(itemDetails && itemDetails.id){
 	var itemType 
 
-	/*if(itemDetails.type.match(/Requires Subscription|Requires Credits/gi)){
+	if(itemDetails.typeKeywords.indexOf("Requires Subscription") >=0 || itemDetails.typeKeywords.indexOf("Requires Credits") >=0){
 		if(!$.cookie('esri_auth')){
 			var agolSigninURL = (sitecfg)?sitecfg.agolSignin:AGOLURL+"/home/signin.html";
 			agolSigninURL += "?returnUrl=" + encodeURIComponent(window.location.href + "&ls=t");
+			window.location.href = agolSigninURL
 			
 			//Sing in requires
-			window.open(agolSigninURL, "", "width=800, height=800");
+			//window.open(agolSigninURL, "", "width=800, height=800");
 			//myPopupWindow.isPopup = true;
 		}
-	} else */
-	if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service/gi)){
+	} else if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service/gi)){
 		itemType = "layers";
 		itemTypeLabel = "Map Layer";
 	} else if(itemDetails.type.match(/Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service/gi)) {
