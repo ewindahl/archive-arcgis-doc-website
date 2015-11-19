@@ -23,6 +23,7 @@ $(document).ready(function() {
 
 	var dload = {};
 
+	setTimeout(function(){
 	dload.methods = (function(){
 		var accountCookieObj = ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false,
 		 accountExtnCookieObj = ($.cookie('esri_auth_extn')) ? JSON.parse($.cookie('esri_auth_extn')) : false;
@@ -82,6 +83,7 @@ $(document).ready(function() {
 	  		}
 		}
 	})();
+
 
 	function getUrlVars ()
 	{
@@ -184,5 +186,5 @@ $(document).ready(function() {
 			$('a[data-filename="' + downloadFileName + '"]').click();
 		}
 	}
-	
+	}, 1000);
 });
