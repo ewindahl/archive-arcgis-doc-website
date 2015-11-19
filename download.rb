@@ -65,13 +65,27 @@ module Download
 				}
 			end
 
-			retValue = "<ul>"
-			#if isMultiVersions(prodObj) == true
-			prodObj.send("versions".to_sym).each {|k,v|
-				retValue = retValue + '<li><a href="#" class="dropdown-item" data-app-folder="' + v['foldername'] + '" data-app-file="' + v['filename'] + '">' + k.to_s + '</a></li>'
-			}
-
-			retValue = retValue + "</ul>"
+			retValue = ""
+			if isMultiVersions(prodObj)
+				retValue = "<div class='dropdown-wrapper '>
+                          Version <span class='dropdown dropdown-selected' filename='' foldername='' href='#'></span>
+                          <div class='dropdown-content'>
+                            <div class='dropdown-menu'>
+				<ul>"
+				#if isMultiVersions(prodObj) == true
+				prodObj.send("versions".to_sym).each {|k,v|
+					retValue = retValue + '<li><a href="#" class="dropdown-item" data-app-folder="' + v['foldername'] + '" data-app-file="' + v['filename'] + '">' + k.to_s + '</a></li>'
+				}
+				retValue = retValue + "</ul>
+				</div></div></div>
+				<a class='btn orange download-link' data-folder='' data-filename=''>Download</a>"
+			else
+				prodObj.send("versions".to_sym).each {|k,v|
+					retValue = retValue + '
+					Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#">' + k.to_s + '</span><br/>
+					<a href="#" class="btn orange download-link" data-folder="' + v['foldername'] + '" data-filename="' + v['filename'] + '">Download</a>'
+				}
+			end
 
 
 

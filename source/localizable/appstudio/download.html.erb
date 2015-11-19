@@ -15,7 +15,7 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/appstudio/download/">Download</a></h1>
+      <h1><a href="/en/appstudio/download/">AppStudio for ArcGIS Desktop Edition</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search AppStudio for ArcGIS">
         <input type="hidden" name="collection" value="help" />
@@ -39,8 +39,8 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-    <h2>AppStudio for ArcGIS Desktop Edition<h2>
-    <h4 class="gray">In addition of creating and building native apps, AppStudio for ArcGIS (Desktop Edition) allows you to do advanced customization or development work on your apps.</h4>
+    <h4 class="gray trailer">In addition to creating and building native apps, AppStudio for ArcGIS Desktop Edition allows you to do advanced customization or development work on your apps.</h4>
+	 
 
 
     <div class="download-section container">
@@ -54,16 +54,15 @@ mobile: true
                         <h4>AppStudio-Windows-x64</h4>
                         <p class="small-grey">192 MB</p>
 
-                        <div class="dropdown-wrapper ">
+                        <!--<div class="dropdown-wrapper ">
                           Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#"></span>
                           <div class="dropdown-content">
                             <div class="dropdown-menu">
                               <%= generateVersionDropDown("appstudio~secured~windows64") %>
                             </div>
                           </div>
-                        </div>
-                        
-                        <a class="btn orange download-link" data-folder="" data-filename="">Download</a>
+                        </div>-->
+								<%= generateVersionDropDown("appstudio~secured~windows64") %>
                     </div>
                 </div>
             </div>
@@ -75,15 +74,7 @@ mobile: true
                     <div class="text">
                         <h4>AppStudio-Windows-x86</h4>
                         <p class="small-grey">182.9 MB</p>
-                        <div class="dropdown-wrapper ">
-                          Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#"></span>
-                          <div class="dropdown-content">
-                            <div class="dropdown-menu">
-                              <%= generateVersionDropDown("appstudio~secured~windows86") %>
-                            </div>
-                          </div>
-                        </div>
-                        <a class="btn orange download-link" data-folder="" data-filename="">Download</a>
+                        <%= generateVersionDropDown("appstudio~secured~windows86") %>
                     </div>
                 </div>
             </div>
@@ -95,15 +86,7 @@ mobile: true
                     <div class="text">
                         <h4>AppStudio-Mac</h4>
                         <p class="small-grey">480.5 MB</p>
-                        <div class="dropdown-wrapper ">
-                          Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#"></span>
-                          <div class="dropdown-content">
-                            <div class="dropdown-menu">
-                              <%= generateVersionDropDown("appstudio~secured~mac") %>
-                            </div>
-                          </div>
-                        </div>
-                        <a class="btn orange download-link" data-folder="" data-filename="">Download</a>
+                        <%= generateVersionDropDown("appstudio~secured~mac") %>
                     </div>
                 </div>
             </div>
@@ -115,23 +98,14 @@ mobile: true
                     <div class="text">
                         <h4>AppStudio-Linux</h4>
                         <p class="small-grey">136.7 MB</p>
-                        <div class="dropdown-wrapper ">
-                          Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#"></span>
-                          <div class="dropdown-content">
-                            <div class="dropdown-menu">
-                              <%= generateVersionDropDown("appstudio~secured~linux") %>
-                            </div>
-                          </div>
-                        </div>
-                        <a class="btn orange download-link" data-folder="" data-filename="">Download</a>
+                        <%= generateVersionDropDown("appstudio~secured~linux") %>
                     </div>
                 </div>
             </div>
         </div>
         <p>&nbsp;</p>
         <div id="player" class="header leader trailer">
-            <h2>AppStudio Player</h2>
-            <h4 class="gray trailer">Using AppStudio Player to preview apps on your devices even before building!</h4>
+            <h4 class="gray trailer">Use AppStudio Player to preview apps on your devices before you build!</h4>
         </div>
         <div class="row downloads">
             <div class="column-6 tablet-column-23">
@@ -224,7 +198,9 @@ mobile: true
 .download-section.container .downloads .card .icon {
     display: flex;
 }
-
+.download-section.container .downloads .card .icon {
+    display: -ms-flexbox;
+}
 .download-section.container .downloads .card .text {
     min-height: 100px;
     padding-top: 55px;
