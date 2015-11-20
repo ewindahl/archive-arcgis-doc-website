@@ -357,7 +357,9 @@ if(itemDetails && itemDetails.id){
 			//window.open(agolSigninURL, "", "width=800, height=800");
 			//myPopupWindow.isPopup = true;
 		}
-	} else if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template | Geodata Service | Globe Service/gi)){
+	}
+
+	if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template |Geodata Service|Globe Service|Vector Tile Service/gi)){
 		itemType = "layers";
 		itemTypeLabel = "Map Layer";
 	} else if(itemDetails.type.match(/Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service/gi)) {
