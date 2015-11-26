@@ -15,6 +15,7 @@ metatags:
 
 mobile: true
 
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
@@ -88,7 +89,7 @@ mobile: true
   
   <div class="column-8">
   <!--<div class="row">-->
-      <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" title="Открывать общий доступ к вашим элементам" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
+      <a href="http://video.arcgis.com/iframe/1341/000000/width/960/0/00:00:00" title="Публикация своих продуктов" class="videoLink colorbox-evlarge cboxElement"><img src="img/share-maps-apps.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
 		<video width="320" height="240" class="mobileVideo" id="1341" controls="">
        <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
         </video>
@@ -114,7 +115,7 @@ mobile: true
   
   <div class="column-8">
   <!--<div class="row">-->
-   <h3><a href="/ru/arcgis-online/share-maps/share-maps-apps.htm" class="">Открывать общий доступ к вашим элементам</a></h3>
+   <h3><a href="/ru/arcgis-online/share-maps/share-maps-apps.htm" class="">Публикация своих продуктов</a></h3>
   </div>
   <div class="clear"></div>  
    
@@ -125,7 +126,7 @@ mobile: true
 <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" title="Выполнить анализ" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="Выполнение анализа" href="http://video.arcgis.com/iframe/3689/000000/width/960/0/00:00:00"><img src="img/perform-analysis.png"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" class="mobileVideo" id="3689" controls="">
 		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
 		</video>
@@ -135,7 +136,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <a class="videoLink colorbox-evlarge cboxElement" title="Опубликовать размещенные веб-слои" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
+      <a class="videoLink colorbox-evlarge cboxElement" title="Публикация размещенных веб-слоев" href="http://video.arcgis.com/iframe/3956/000000/width/960/0/00:00:00"><img src="img/publish-hosted-web-layers.png"><img class="playbtn" src="/img/playbtn.png"></a>
 		<video width="320" height="240" class="mobileVideo" id="1342" controls="">
          <source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
          </video>
@@ -164,14 +165,14 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a class="" href="/ru/arcgis-online/share-maps/hosted-web-layers.htm">Опубликовать размещенные веб-слои</a></h3>
+      <h3><a class="" href="/ru/arcgis-online/share-maps/hosted-web-layers.htm">Публикация размещенных веб-слоев</a></h3>
       
     </section>
     </div>
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a class="" href="/ru/arcgis-online/administer/admin-org.htm">Администрируйте вашу организацию</a></h3>
+      <h3><a class="" href="/ru/arcgis-online/administer/admin-org.htm">Администрирование организации</a></h3>
       
     </section>
  </div>
@@ -214,8 +215,8 @@ mobile: true
 	 <div class="imgFrame block">
           <h3>Новое в ArcGIS Online?</h3>
 
-			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Обратите внимание на практические уроки</a></p>
-			<a title="Начало работы с ArcGIS Online" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png"> Посмотрите видеоролик</a><br/><br/>
+			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Изучите уроки</a></p>
+			<a title="Начало работы с ArcGIS Online" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  Посмотрите видеоролик</a><br/><br/>
 			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png"> Найдите учебные курсы</a>
       </div>	
 		 <br />
@@ -268,6 +269,10 @@ mobile: true
 		  });
 
     });
+	 
+	 if(window.location.pathname.match( /(\/arcgis-online\/)/)){
+		$("#help-nav").attr("class", "active");
+	 }
 
 
   </script>

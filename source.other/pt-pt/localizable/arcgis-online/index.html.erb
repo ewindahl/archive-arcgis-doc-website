@@ -1,5 +1,5 @@
 ---
-title: ArcGIS Online Help
+title: Ajuda do ArcGIS Online
 css:
   - stat-page-specific
   - colorbox/colorbox
@@ -14,6 +14,7 @@ metatags:
   - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2014-07-09"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="pt-pt">
 
 mobile: true
+
 
 ---
 <div class="navigation-bar blue">
@@ -214,9 +215,9 @@ mobile: true
 	 <div class="imgFrame block">
           <h3>Novo para ArcGIS Online?</h3>
 
-			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Descubra aulas hands-on </a></p>
+			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Descobrir lições</a></p>
 			<a title="Comece com ArcGIS Online" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  Watch a video tour</a><br/><br/>
-			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">   Encontrar cursos de formação</a>
+			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png"> Encontrar cursos de formação</a>
       </div>	
 		 <br />
 		 <br />
@@ -268,6 +269,10 @@ mobile: true
 		  });
 
     });
+	 
+	 if(window.location.pathname.match( /(\/arcgis-online\/)/)){
+		$("#help-nav").attr("class", "active");
+	 }
 
 
   </script>

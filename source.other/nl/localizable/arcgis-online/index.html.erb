@@ -15,6 +15,7 @@ metatags:
 
 mobile: true
 
+
 ---
 <div class="navigation-bar blue">
   <div class="container">
@@ -171,7 +172,7 @@ mobile: true
   <div class="column-8">
   <!--<div class="row">-->
     <section class="support-option">
-      <h3><a class="" href="/nl/arcgis-online/administer/admin-org.htm">AUw organisatie beheren</a></h3>
+      <h3><a class="" href="/nl/arcgis-online/administer/admin-org.htm">Uw organisatie beheren</a></h3>
       
     </section>
  </div>
@@ -214,7 +215,7 @@ mobile: true
 	 <div class="imgFrame block">
           <h3>Nieuw bij ArcGIS Online?</h3>
 
-			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Ontdek praktische lessen</a></p>
+			<p><a class="btn secondary" href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Lessen ontdekken</a></p>
 			<a title="Aan de slag met ArcGIS Online" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png"> Bekijk een video-rondleiding</a><br/><br/>
 			<a href="http://www.esri.com/training/main/arcgis-online-training"><img src="img/training.png">   Zoek opleidingen</a>
       </div>	
@@ -224,9 +225,9 @@ mobile: true
 	 <div class="greyFrame">
           <h3>Beknopte informatie</h3>
          <ul>   <li><a href="/nl/arcgis-online/reference/troubleshoot-account.htm">&nbsp;Problemen met aanmelden oplossen</a></li>
-		<li><a href="/nl/arcgis-online/reference/whats-new.htm" >&nbsp;Wat is er nieuw?</a></li>
+		<li><a href="/nl/arcgis-online/reference/whats-new.htm" >&nbsp;Wat is er nieuw</a></li>
 		<li><a href="/nl/arcgis-online/reference/faq.htm">&nbsp;Veelgestelde vragen</a></li>
-		<li><a href="/nl/arcgis-online/reference/videos.htm">&nbsp;Video&apos;s</a></li>
+		<li><a href="/nl/arcgis-online/reference/videos.htm">&nbsp;Video's</a></li>
 		<li><a href="/nl/trust/system-status/">&nbsp;Systeemstatus</a></li>
         </ul>
 		</div>
@@ -268,6 +269,10 @@ mobile: true
 		  });
 
     });
+	 
+	 if(window.location.pathname.match( /(\/arcgis-online\/)/)){
+		$("#help-nav").attr("class", "active");
+	 }
 
 
   </script>
