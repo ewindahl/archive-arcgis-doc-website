@@ -158,6 +158,7 @@ $(document).ready(function() {
 
 		} else {
 			window.location = loginHref + fileName;
+			return false;
 		}
 	});
 
@@ -174,6 +175,7 @@ $(document).ready(function() {
 			}
 		} else {
 			window.location = loginHref + fileName;
+			return false;
 		}
 
 	});
