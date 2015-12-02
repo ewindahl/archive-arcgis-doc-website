@@ -261,6 +261,7 @@ jQuery(document).ready(function ($) {
                   break;
                 case "navigator":
                   lgList = lgNavigator;
+                  break;
                 case "sharepoint":
                   lgList = lgSharepoint;
                   break;
