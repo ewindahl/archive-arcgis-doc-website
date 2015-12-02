@@ -107,10 +107,11 @@ jQuery(document).ready(function ($) {
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
 	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
 	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro","nl"],
-    lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn']
-    lgMicro = ['en', 'de', 'es', 'ja', 'ko'],
+    lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn'],
+    lgMicro = ['en', 'de'],
 	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
-   lgNavigator = lgPickFull.concat(lgPartial).concat('el')
+   lgNavigator = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', "it", "ko", "pt-pt", 'el'],
+   lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -173,6 +174,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){ 
                 return true;
               }else if(langSelector === "navigator" && lgNavigator.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "sharepoint" && lgSharepoint.indexOf(lg) >= 0){ 
                 return true;
               }else{
                 return false;
@@ -258,6 +261,8 @@ jQuery(document).ready(function ($) {
                   break;
                 case "navigator":
                   lgList = lgNavigator;
+                case "sharepoint":
+                  lgList = lgSharepoint;
                   break;
 					 case "marketplace":
                   lgList = lgMarketplace;
@@ -416,6 +421,8 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "marketplace";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
+  }else if (winloc.pathname.match( /(\/maps-for-sharepoint\/)/)){
+    docCfg.langSelector = "sharepoint";
   }
 
   dbg ("start: " + window.location.href);
