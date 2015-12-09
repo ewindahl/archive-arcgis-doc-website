@@ -45,7 +45,7 @@ mobile: true
 <div class="container">
 
     <div class="column-16 tablet-column-24">
-        <h3 class="gray">Allows anyone to easily and quickly view 3D maps.</h3>
+        <h3 class="gray">Allows anyone to easily and quickly view 3D maps</h3>
 
 	<!--
           <span id="appVersion"><strong>Version:</strong> 10.2</span>
@@ -62,10 +62,10 @@ mobile: true
         <div id="earthHome1" class="column-12 phone-column-24">
           <img src="/en/arcgis-earth/earth-home-1.png" />
 
-          <h3>Go around the world</h3>
-          <p>Zoom from the view of the globe to the rooftop of your house. Explore terrains, oceans, and mountains anywhere in the world.</p>
+          <h3>Navigate ArcGIS Earth</h3>
+          <p>Use mouse, keyboard, or touch screen to explore terrains, oceans, and mountains anywhere in the world.</p>
           <p>
-            <a href="/en/arcgis-earth/use/get-started.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
+            <a href="/en/arcgis-earth/use/navigation-controls.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
 			<!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
 
           </p>
@@ -74,8 +74,8 @@ mobile: true
 	<div id="earthHome2" class="column-12 phone-column-24">
           <img src="/en/arcgis-earth/earth-home-2.png" />
 
-          <h3>See you data on the globe</h3>
-          <p>Whether it's property sites or planning designs, and the third dimension and see details you might miss in 2D. Instantly open KMLs, shapefiles, or web services and view them in 3D. </p>
+          <h3>View KMLs/KMZs and ArcGIS services</h3>
+          <p>Simply drag and drop files or URLS into ArcGIS Earth to instantly open KMLs, shapefiles, or ArcGIS services and view them in 3D. </p>
           <p>
             <a href="/en/arcgis-earth/use/guided-tour.htm#GUID-842F174D-8054-470E-9003-89058960FCB5" class="icon-right-arrow">&nbsp;Show me how</a><br /><br/>
           </p>
@@ -85,8 +85,8 @@ mobile: true
         <div id="earthHome3" class="column-12 phone-column-24">
 	          <img src="/en/arcgis-earth/earth-home-3.png" />
 
-	  <h3>Sketch, measure,  analyze</h3>
-	  <p>Draw point, line, or polygon placemarks to highlight information. Measure distance and areas in 3D. Add annotations and contextual data to understand the full picture. </p>
+	  <h3>Draw and measure on the Earth</h3>
+	  <p>Draw point, line, or polygon placemarks to highlight information. Measure distance and areas in 3D. </p>
 	  <p>
 	    <a href="/en/arcgis-earth/use/guided-tour.htm#GUID-E43D99A4-25E5-4ED6-9553-3353FEFC6D67" class="icon-right-arrow">&nbsp;Show me how</a><br />
 	    <!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
@@ -95,10 +95,8 @@ mobile: true
 
 	<div id="earthHome4" class="column-12 phone-column-24">
           <img src="/en/arcgis-earth/earth-home-4.png" />
-	  <h3>Communicate progress</h3>
-	  <p>
-		  Report project status and present work to stakeholders or clients in compelling and interactive 3D. Email the view in one-click or save it as an image to share with others.</p>
-      </p>
+	  <h3>Share maps</h3>
+	  <p>You can share the screenshot of  current Earth view by saving it as an image, emailing it, or printing it out.</p>
 	  <p>
 	    <a href="/en/arcgis-earth/use/guided-tour.htm#GUID-5C448693-1DC3-4929-9EC8-4BD097CAE344" class="icon-right-arrow">&nbsp;Show me how</a><br />
 	    <!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
@@ -122,7 +120,7 @@ mobile: true
         <a name="systemRequirements"></a>
         <h2 class="divider">System requirements</h2>
 
-        <p> The requirements for the target machine or device to which you deploy your ArcGIS Earth are listed here.</p>
+        <p> ArcGIS Earth is a desktop application built on the <a href="https://developers.arcgis.com/net/desktop/guide/system-requirements.htm#ESRI_SECTION1_F2655B7F48F7464DB86CC7756706296D">ArcGIS Runtime SDK for .NET</a> and shares the same requirements for deployment targets as other applications built with the Runtime SDK.</p>
 
 
         <h3>Supported platforms</h3>
@@ -137,6 +135,14 @@ mobile: true
           <li>Windows 2008 R2 SP1 Standard, Enterprise, and Datacenter (64bit [EM64T])</li>
           <li>Windows Server 2008 SP2 Standard, Enterprise, and Datacenter (32 bit and 64 bit [EM64T])</li>
         </ul>
+		
+		<h3>DirectX</h3>
+		<p>ArcGIS Earth uses <a href="http://en.wikipedia.org/WIKI/DIRECTX">DirectX</a> to provide high-performance map rendering. DirectX provides support for hardware and software rendering of graphics, and is provided by the <a href="https://developers.arcgis.com/net/desktop/guide/system-requirements.htm#ESRI_SECTION2_254FB8C139314E42BB3E5EEA32C049F2">supported Windows platforms</a>.</p>
+        <ul>
+          <li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ff476876">Direct3D feature level</a> 9_3</li>
+          <li>Default: DirectX 11 hardware support</li>
+          <li>Falls back to DirectX 11 software rendering if hardware support is not available</li>
+        </ul>
 
 
         <h3>Hardware requirements</h3>
@@ -145,12 +151,12 @@ mobile: true
           <li>Processor:  Intel Pentium 4, Intel Core Duo, or Xeon Processors;  SSE2 minimum;  Run this
 <xref href="HTTP://TECHNET.MICROSOFT.COM/EN-US/SYSINTERNALS/CC835722">Microsoft utility</xref>
  from your Windows command prompt to check your processor.</li>
-          <li>Disk Space:  1.5 GB available disk space.</li>
-          <li>Memory / RAM:  2 GB or higher.</li>
-          <li>Display:  24-bit color depth.</li>
-          <li> Screen Resolution:  1024 x 768 recommended or higher at normal size (96 dpi).</li>
-          <li>Swap Space:  Determined by the operating system; 500 MB minimum.  ArcGIS Runtime will create cache files when used; additional disk space may be required.</li>
-          <li>Video / Graphics Adapter: 64 MB RAM minimum, 256 MB RAM recommended; NVIDIA, ATI, and Intel chipsets supported； Accelerated graphics card driver； Shader Model 2.0 minimum.  Be sure to use the latest available driver.</li>
+          <li>Disk Space: 1.5 GB available disk space.</li>
+          <li>Memory / RAM: 2 GB or higher.</li>
+          <li>Display: 24-bit color depth.</li>
+          <li> Screen Resolution: 1024 x 768 recommended or higher at normal size (96 dpi).</li>
+          <li>Swap Space: Determined by the operating system; 500 MB minimum.  ArcGIS Runtime will create cache files when used; additional disk space may be required.</li>
+          <li>Video / Graphics Adapter: 64 MB RAM minimum, 256 MB RAM recommended; NVIDIA, ATI, and Intel chipsets supported； Accelerated graphics card driver；Shader Model 2.0 minimum.  Be sure to use the latest available driver.</li>
         </ul>
 
 	<p>Share your <a href="http://ideas.arcgis.com/">ideas</a>, and <a href="http://support.esri.com/en/">send us your feedback</a>.</p>
@@ -165,7 +171,7 @@ mobile: true
 
         <div class="imgFrame block">
 	  <h3>Details</h3>
-
+	  <h4><a href="http://video.esri.com/watch/4646/arcgis-earth">Quick introduction Video</a></h4>
 	  <h4><a href="#features">Features</a></h4>
 	  <h4><a href="#systemRequirements">System requirements</a></h4>
 
