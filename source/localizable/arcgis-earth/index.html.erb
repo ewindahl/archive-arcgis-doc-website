@@ -53,7 +53,7 @@ mobile: true
 	-->
 
           <p>
-            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">Get ArcGIS Earth</a>
+            <a class="btn primary icon-windows-8" id="arcgisEarthDownloadLink" href="#">Get ArcGIS Earth</a>
 
           </p>
         <hr />
@@ -201,6 +201,12 @@ mobile: true
         max: 5,
         layout: 0
       });
+		
+		$("#arcgisEarthDownloadLink").click(function (){
+			window.open("//go.esri.com/l/82202/2015-12-07/nv11n", "mywindow", "location=0, titlebar=no, width=600, height=600");
+			return false;
+		});
+	 
     });
 
 /*
