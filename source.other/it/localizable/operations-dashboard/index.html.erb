@@ -79,7 +79,7 @@ mobile: true
           <p>
             <a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />
             <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a title="Monitor and respond to events" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guardare il video</a>
+			<a title="Monitorare e rispondere ad eventi" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
@@ -150,9 +150,10 @@ mobile: true
   <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Sistemi operativi supportati</a>
      <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
+          <li>Windows 10 Pro e Windows 10 Enterprise (32 bit e 64 bit [EM64T])</li>
           <li>Windows 8.1, Windows 8.1 Pro e Windows 8.1 Enterprise (32 bit e 64 bit [EM64T])</li>
           <li>Windows 8, Windows 8 Pro e Windows 8 Enterprise (32 bit e 64 bit [EM64T])</li>
-		  <li>Windows 7 Ultimate, Enterprise, Professional ed Home Premium (32 bit e 64 bit [EM64T]) SP1</li>
+		  <li>Windows 7 Ultimate, Enterprise, Professional, e Home Premium (32 bit e 64 bit [EM64T]) SP1</li>
 		  <li>Windows Server 2012 Standard e Datacenter (64 bit [EM64T])</li>
 		<li>Windows Server 2008 R2 Standard, Enterprise e Datacenter (64 bit [EM64T]) SP1</li>
 		<li>Windows Server 2008 Standard, Enterprise e Datacenter (32 bit e 64 bit [EM64T]) SP2</li>
@@ -202,6 +203,7 @@ mobile: true
  <li>Chrome 19.0 e versioni successive</li>
  <li>Firefox 4.0 e versioni successive</li>
  <li>Internet Explorer 9.0 e versioni successive</li>
+ <li>Microsoft Edge versione 20.0 e successive</li>
  <li>Safari 5.1 e versioni successive</li>
  </ul> 
  Tablet 
@@ -233,18 +235,15 @@ mobile: true
         <a name="whatsNew"></a>
         <h2 class="divider">Novità</h2>
         <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>Operations Dashboard for ArcGIS 10.3.1 è stato rilasciato nel mese di ottobre 2015. Include quanto segue:</p>
+	        <p>La versione di Operations Dashboard for ArcGIS 10.3.2, rilasciata a novembre 2015. Include quanto segue:</p>
 	        <ul>
-	          <li>Estensibile con ArcGIS API for JavaScript</li>
-	          <li>Localizzazione in vietnamita e greco</li>
-                  <li>Conforme agli standard Federal Information Processing Standard (FIPS)</li>
-	          <li>Correzioni di diversi bug e miglioramenti, tra cui NIM104511</li>
+	         <li>Correzione di diversi bug e miglioramenti, tra cui BUG-000084019, BUG-000084387, BUG-000086562, BUG-000089887 e BUG-000089919</li>
 	        </ul>
                 </td>
 	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>Browser</h4>
-	        <p>L'app browser per Operations Dashboard for ArcGIS è stata aggiornata nel mese di settembre 2015. include i seguenti miglioramenti:</p>
+	        <p>L'app browser per Operations Dashboard for ArcGIS è stata aggiornata nel mese di novembre 2015. include i seguenti miglioramenti:</p>
 	        <ul>
-	          <li>Correzioni di diversi bug e miglioramenti, tra cui BUG-000089303, NIM103161 e NIM100396</li>
+	          <li>Correzioni di diversi bug e miglioramenti, tra cui BUG-000088087 e BUG-000089045</li>
         </ul></td><tr></table>
         
         
@@ -345,8 +344,7 @@ mobile: true
     </div>
 
 <!--	<script src="/js/main.js" type="text/javascript"></script>-->
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
@@ -361,6 +359,7 @@ L = 0, 1 (default is 0)
 */
 $("#dashboardDownloadLink").click(function (){
 	window.location = "<%=data.page.dashboardDownloadLink%>";
+	return false;
 })
 
   </script>
