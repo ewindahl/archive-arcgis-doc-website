@@ -1481,6 +1481,8 @@ var localeJsonObj = {
       "arcgis-desc": "The mapping platform for your organization", 
       "arcgis-desktop": "ArcGIS Desktop", 
       "arcgis-desktop-ht": "10.3 Prerelease. Includes ArcMap, ArcCatalog, ArcGlobe, ArcScene and their extensions.", 
+      "arcgis-earth": "ArcGIS Earth", 
+      "arcgis-earth-ht": "ArcGIS Earth", 
       "arcgis-for-desktop": "ArcGIS for Desktop", 
       "arcgis-for-desktop-desc": "A complete professional GIS", 
       "arcgis-for-developers": "ArcGIS for Developers", 
