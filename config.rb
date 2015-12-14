@@ -1,8 +1,11 @@
 # Middleman Config
 require "arcgis-framework"
+require "builder"
+require "download"
 
 activate :i18n, :mount_at_root => false
 activate :directory_indexes
+activate :download
 
 set :css_dir, 'css'
 set :js_dir, 'js'

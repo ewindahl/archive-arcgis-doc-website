@@ -17,11 +17,14 @@ $(document).ready(function() {
         '<a data-appname="collector" data-plat="android" data-prefix="/' + localedir +'/collector/android" href="/en/collector/" data-langlabel="android" class=""> Android</a>' +
         ' | ' +
         '<a data-appname="collector" data-plat="ios" data-prefix="/' + localedir +'/collector/ios" href="/en/collector/" data-langlabel="ios" class=""> iOS</a>' +
+		   ' | ' +
+        '<a data-appname="collector" data-plat="windows" data-prefix="/' + localedir + '/collector/windows" href="/en/collector/" data-langlabel="windows" class=""> Windows</a>' +
         '</p>',
 
 		prodKey = "collector",
       prodDVal = "android",
       prodIOSVal = "ios",
+		prodWindowsVal = "windows",
 		homePath = "/en/collector",
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
@@ -32,6 +35,11 @@ $(document).ready(function() {
 
     if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
       plat = prodIOSVal;
+      if (!isHome) {
+         UASpecificRedirect (plat, pathname);
+      }
+    } else if(!($.cookie (prodKey)) && (navigator.userAgent.match(/Windows NT/gi))) {
+      plat = prodWindowsVal;
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
       }
