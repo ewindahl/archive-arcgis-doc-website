@@ -84,7 +84,8 @@ var filterCfg = {
       {
         k:"blogs",
         q:{
-          r:"search-collection:blogs"
+          r:"search-collection:blogs",
+          sort:"date:D:S:d1" //sort by date descending
         }
       }
       
@@ -99,7 +100,7 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce|product:appstudio"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:collector-windows|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce|product:appstudio|product:navigator-iphone|product:navigator-ipad|product:living-atlas"
           }
       },
 	  {
@@ -166,6 +167,13 @@ var filterCfg = {
         }
       },
       {
+        k:"collector-windows",
+        q: {
+          r:"",
+          p:"(product:collector-windows)"
+        }
+      },
+		{
         k:"community-analyst",
         q: {
           r:"",
@@ -236,6 +244,13 @@ var filterCfg = {
         }
       },
       {
+        k:"living-atlas",
+        q: {
+          r:"",
+          p:"(product:living-atlas)"
+        }
+      },
+      {
         k:"esri-maps-cognos",
         q: {
           r:"",
@@ -287,15 +302,29 @@ var filterCfg = {
       {
         k:"esri-maps-sharepoint",
         q: {
-          r:"",
-          p:"(product:esri-maps-sharepoint)"
+          r:"(product:esri-maps-sharepoint)",
+          p:""
         }
       },
 	  {
-        k:"esri-maps-sharepoint-beta",
+        k:"esri-maps-sharepoint-office365",
         q: {
           r:"",
-          p:"(product:esri-maps-sharepoint-beta)"
+          p:"(product:esri-maps-sharepoint-office365)"
+        }
+      },
+		{
+        k:"navigator-ipad",
+        q: {
+          r:"",
+          p:"(product:navigator-ipad)"
+        }
+      },
+		{
+        k:"navigator-iphone",
+        q: {
+          r:"",
+          p:"(product:navigator-iphone)"
         }
       },
       {

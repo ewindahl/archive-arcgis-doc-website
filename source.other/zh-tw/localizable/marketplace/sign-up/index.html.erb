@@ -1,0 +1,119 @@
+---
+layout: marketplace/layout
+
+title: 註冊 - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+  - marketplace/init
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">註冊成為供應商</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">在 ArcGIS Marketplace 銷售您的應用程式。 接觸到世界上最大的 GIS 使用者群。 我們會使您輕鬆地聯繫使用者、提供免費試用，並發掘潛在客戶。 做為應用程式供應商，您可以保留銷售應用程式的全部營收。 有關詳細資訊，請檢視<a href="/zh-tw/marketplace/provider/faq.htm">常見問題集</a>。 </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">已經是 Esri 合作夥伴？</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">透過在 ArcGIS Marketplace 列出您的解決方案，以接觸到更廣泛的目標群眾。 登入 <a href="http://partnerportal.esri.com/">Esri Partner Portal</a>，以瞭解成為供應商的條件。</p>
+
+      </section>
+
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">尚未成為合作夥伴？ Esri 的新使用者？</h2>
+		<p data-langlabel="provider-signup-note">我們正在尋找希望為我們的使用者建立傑出解決方案的開發人員。 請自我介紹，我們將協助您開始。</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="http://resources.arcgis.com/apps/contact-us/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="first-name" for="first-name">名字： </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">姓氏： </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">電子郵件位址： </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">電話號碼： </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">關於您： </label>
+			  <textarea data-langlabel="comment" placeholder="I build apps that..." name="userComment" id="userComment"></textarea>
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">為防止自動發送的垃圾郵件，請輸入以下數字： </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">數字：<strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="internal" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="zh-tw" name="lg">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" data-langlabel="contact-us">提交</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>感謝您有意成為 ArcGIS Marketplace 供應商。 我們將在接下來的幾個工作日內與您聯絡。</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>
+

@@ -13,7 +13,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for MicroStrategy Home page."><META name="last-modified" content="2014-12-01"><META name="product" content="esri-maps-micro"><META name="sub_category" content="Maps for MicroStrategy"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for MicroStrategy"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,BUSINESS,BI,MAPPING"><META name="version" content="micro-1.0,micro-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,BUSINESS,BI,MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="Esri Maps for MicroStrategy Home page."><META name="last-modified" content="2015-11-15"><META name="product" content="esri-maps-micro"><META name="sub_category" content="Maps for MicroStrategy"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for MicroStrategy"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,BUSINESS,BI,MAPPING"><META name="version" content="micro-1.0,micro-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,BUSINESS,BI,MAPPING, MICROSTRATEGY"><META name="content-language" content="en">
 
 mobile: true
 
@@ -26,18 +26,18 @@ mobile: true
                     <input type="search" name="q" class="leader" placeholder="Search Esri Maps for MicroStrategy" data-langlabel="search-esri-maps-micro">
                     <input type="hidden" name="collection" value="help" />
                     <input type="hidden" name="product" value="esri-maps-micro" />          
-					<input type="hidden" name="version" value="micro-2.0" />
+					<input type="hidden" name="version" value="micro-2.0.1" />
                     <input type="hidden" name="language" value="en" />
       </form>
     </header>
 	<nav>
       <ul>
         <li class='current'><a href="/en/maps-for-microstrategy/">Home</a></li>
-        <li><a href="/en/maps-for-microstrategy/install-and-configure/">Install and Configure</a></li>
-        <li><a href="/en/maps-for-microstrategy/design-and-use-map/">Design and Use Maps</a></li>
+        <li><a href="/en/maps-for-microstrategy/install-and-configure/">Install</a></li>
+        <li><a href="/en/maps-for-microstrategy/design-and-use-map/">Design and Use</a></li>
 		<li><a href="/en/maps-for-microstrategy/build-a-model/">Build a Model</a></li>
-		<li><a href="/en/maps-for-microstrategy/use-maps-mobile/">Use Maps on Mobile</a></li>
-        <li><a href="http://forums.arcgis.com/forums/233-Esri-Maps-for-MicroStrategy">Forum</a></li>
+		<li><a href="/en/maps-for-microstrategy/use-maps-mobile/">Mobile</a></li>
+        <li><a href="http://forums.arcgis.com/forums/233-Esri-Maps-for-MicroStrategy">GeoNet</a></li>
       </ul>
     </nav>
   </div>
@@ -50,8 +50,8 @@ mobile: true
         <header>
 
 		  <h2 id="appTitle">Get the app</h2>
-          <span id="appVersion"><strong>Version:</strong> 2.0</span>
-          <span id="appReleased"><strong>Available:</strong> December 2014</span>
+          <span id="appVersion"><strong>Version:</strong> 2.0.2</span>
+          <span id="appReleased"><strong>Available:</strong> November 2015</span>
 
 
           <p>Enrich your MicroStrategy Report Services documents with live dynamic maps, allowing you to analyze your business data visually and interactively. Esri Maps for MicroStrategy is designed to seamlessly integrate into the everyday workflows familiar to MicroStrategy designers and analysts, without the need for custom coding or GIS experience. Create rich maps that interact with other datasets in your documents and reports, and combine published geographic data with MicroStrategy business data for easier analysis. </p>
@@ -187,19 +187,30 @@ mobile: true
 <li>Change the map extent using an overview map and other navigation tools</li>
 <li>Specify the WKID of X,Y coordinates when adding point data to the map</li>
 <li>Configure multiple styles for a layer</li>
-</ul>
+<li>Critical bug fixes</li>
+<li>Additional support for Express Mode</li>
+<li>Software available in English, Japanese, and German</li>
 
-	 
+</ul>
 
 <!-- Supported environments section -->
  <hr />
 <a name="supportedEnvironments"></a>
         <h2>Supported environments</h2>
-        <p>Esri Maps for MicroStrategy is deployed as a plug-in to MicroStrategy Web Universal. The Esri Maps for MicroStrategy plug-in contains a custom widget that enables you to display data on a map in a MicroStrategy Report Services Document or Report.</p>
+          <p>Esri Maps for MicroStrategy has two components:</p>
+		<ul>
+			<li>
+			<p><a href="#em4mstr" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>, which is deployed to both the MicroStrategy Web server and the MicroStrategy Mobile server (if using Esri Maps for MicroStrategy Mobile)
+			</p>
+			</li>
+			<li>
+			<p><a href="#em4mm" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>, which is delivered as an iOS client framework that uses MicroStrategy Mobile SDK for iOS and other third-party development tools to build a custom iOS app.</p> 
+			</li>
+		</ul>
 
-<p>For the Esri Maps for MicroStrategy plug-in to operate properly, Esri assumes an operational configuration of MicroStrategy Web Universal 9.4.0 or 9.4.1. MicroStrategy recommends using certified configurations over the supported configurations.</p>
+<p>Deploying the server plug-in to your web server allows your organization to integrate your MicroStrategy business intelligence (BI) data with the ArcGIS platform. Deploying the server plug-in to your organization’s mobile server allows Esri Maps for MicroStrategy Mobile app users to access map-enabled documents on their iPads.</p>
 
-<p>For more information, see the release notes provided with your MicroStrategy installation media.</p>
+<p>Before the mobile app can be shared and used, the Esri Maps for MicroStrategy Mobile iOS client framework must first be compiled. It is recommended that you secure the services of a developer in your organization to compile the Esri Maps for MicroStrategy Mobile app.</p>
 		
 		<!-- script for collapsible headings -->
 		<script> 
@@ -219,138 +230,124 @@ mobile: true
 		 } 
 		 </script> 
 		 
-		<!-- Operating systems -->
+		<!-- EM4M server plug-in expanding arrow -->
 		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Operating systems</a>
+		<a name="em4mstr" class="icon-right-arrow" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>
 		</h3>
 			<div exp1='yes' style="display:none;padding:0 15px;">
-				<p>It is expected that the Esri Maps for MicroStrategy plug-in will operate in any certified configuration of MicroStrategy Web Universal 9.4.0 or 9.4.1. The following list outlines the operating systems on which Esri has focused its testing efforts for both the JSP server (MicroStrategy Web Universal) and ASP.NET server (MicroStrategy Web) configurations. If you would like to see the operating system of your MicroStrategy configuration added to this list, contact Esri Technical Support.</p>
-	
-			<ul>
-				<li>Windows Server 2003 Standard Edition R2 Service Pack 2 (x64)</li>
-				<li>Windows Server 2008 Enterprise Edition R2 Service Pack 1 (x64)</li>
-				<li>Windows Server 2012 Standard (x64)</li>
-				<li>Red Hat Enterprise Linux Advanced Platform 5.x (x86-64)</li>
-				<li>Red Hat Enterprise Linux 6.2.x (x86-64)</li>
-				<li>SUSE Linux Enterprise Server 11.2.x</li>
-			</ul>		
-			</div>
 			
-		<div class="clear" style="padding:5px;"></div>
-		
-		<!-- Web browsers -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Web browsers</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-				<p>Esri does not test all combinations of web browsers (and the underlying client operating systems) certified by MicroStrategy. Rather, a subset of certified web browsers is selected, and testing is performed on the most recent operating systems. Not all selected browsers are tested on all identified operating systems.</p>
-
-				<p>Esri has not performed any client browser testing on platforms other than Windows. This is because web browsers on operating systems such as Mac OS and Red Hat Enterprise Linux are listed as supported by MicroStrategy, but not certified. It is expected, however, that the Esri Maps for MicroStrategy plug-in will function as expected on non-Windows clients if one of the web browsers listed below is used. If this is not your experience, contact Esri Technical Support to ask that your particular configuration be tested.</p>
-
-				<p>The following table shows a subset of the web browsers certified by MicroStrategy. "Full" indicates a full test run was performed by Esri. "Limited" indicates testing was limited in scope. Web browsers not listed in this table were not tested.</p>
+		<!-- MicroStrategy Web versions -->
+			<h4>MicroStrategy Web versions</h4>
+			
+				<p>For Esri Maps for MicroStrategy to operate properly, the Esri Maps for MicroStrategy server plug-in requires an operational configuration of these supported versions of MicroStrategy Web:</p>
+				<ul>
+					<li>MicroStrategy 10.1</li>
+					<li>MicroStrategy 10.0</li>
+				</ul>				
 				
-				<table border="1" style="text-align:center">
+				<p>MicroStrategy recommends using certified configurations over the supported configurations</p>
+		
+		
+<!-- Web application servers subhead for EM4M -->
+		<h4>Web application servers</h4>
+		<p>The following table outlines the Web application servers on which Esri has focused its testing efforts for both the JSP server and ASP.NET server configurations. If you would like to see the web application server used by your MicroStrategy configuration, contact <a href="http://support.esri.com/" target="_blank">Esri Technical Support</a></li>. 
+		<p>
+				<table width="400" border="1" align="left">
+					<tr align="left">
+					<th scope="col">Web application server</th>
+					<th scope="col">Tested version</th>
+					</tr>
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Apache Tomcat</td>
+						<td align="left" valign="top">7.0.x</td>
+						</tr>
+						
+						<tr align="left" valign="top">
+						<td align="left" valign="top">IBM WebSphere</td>
+						<td align="left" valign="top">7.0.x</td>
+					</tr>
+					
+					<tr align="left" valign="top">
+						<td align="left" valign="top">JBoss Application Server</td>
+						<td align="left" valign="top">6.2.x</td>
+					</tr>
+						
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Microsoft Internet Information Services</td>
+						<td align="left" valign="top">8.x | 7.x</td>
+					</tr>
+					
+			
+				</tbody>
+				</table>
+		</p>
+			<div class="clear" style="padding:10px;"></div>
+		
+		<!-- Web browsers subhead for EM4M -->
+			<h4>Web browsers</h4>
+			<p>Esri does not test all combinations of web browsers (and the underlying client operating systems) certified by MicroStrategy. Rather, a subset of certified web browsers is selected, and testing is performed on the most recent operating systems. Not all selected browsers are tested on all identified operating systems.</p>
 
-					<tr  style="font-size:14px">
-					<th>Browser name</th>
-					<th>Browser version</th>
-					<th>MicroStrategy 9.4.1</th>
-					<th>MicroStrategy 9.4.0</th>
+				<p>Esri has not performed any client browser testing on platforms other than Windows. It is expected, however, that the Esri Maps for MicroStrategy plug-in will function as expected on non-Windows clients if one of the web browsers listed below is used. If this is not your experience, contact <a href="http://support.esri.com/" target="_blank">Esri Technical Support</a> to ask that your particular configuration be tested.</p>
+
+				<p>The following browsers have been tested:</p>
+				<p>
+				<table width="400" border="1" align="left">
+					<tr align="left">
+					<th scope="col">Browser name</th>
+					<th scope="col">Tested version</th>
 					</tr>
 
 					<tbody  style="font-size:14px"> 
-					<tr>
-					<td rowspan="3" colspan="1">Internet Explorer</td>
-					<td rowspan="1" colspan="1">10.x</td>
-					<td rowspan="1" colspan="1">Full</td>
-					<td rowspan="1" colspan="1">Full</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">9.x</td>
-					<td rowspan="1" colspan="1">Full</td>
-					<td rowspan="1" colspan="1">Full</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">8.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="7" colspan="1">Mozilla Firefox</td>
-					<td rowspan="1" colspan="1">22.x</td>
-					<td rowspan="1" colspan="1">Full</td>
-					<td rowspan="1" colspan="1">Full</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">19.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">18.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">17.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">13.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<tr>
-					<td rowspan="1" colspan="1">12.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">11.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Internet Explorer</td>
+						<td align="left" valign="top">11.x | 10.x | 9.x</td>
 					</tr>
 					
-					<tr>
-					<td rowspan="7" colspan="1">Google Chrome</td>
-					<td rowspan="1" colspan="1">28.x</td>
-					<td rowspan="1" colspan="1">Full</td>
-					<td rowspan="1" colspan="1">Full</td>
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Mozilla Firefox</td>
+						<td align="left" valign="top">27.x</td>
 					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">25.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
+									
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Google Chrome</td>
+						<td align="left" valign="top">33.x</td>
 					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">24.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">23.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">19.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<tr>
-					<td rowspan="1" colspan="1">18.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
-					<tr>
-					<td rowspan="1" colspan="1">17.x</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					<td rowspan="1" colspan="1">&nbsp;</td>
-					</tr>
+					
 				</tbody>
 				</table>
-				
-			</div>
+				</p>
+								</div>
 			
+		<div class="clear" style="padding:5px;"></div>
+		
+	<!-- Esri Maps for MicroStrategy Mobile -->
+		<h3>
+		<a name="em4mm" class="icon-right-arrow" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
+				<!-- Developer prerequisites subhead for EM4MM section - no table -->
+				<h4>Developer machine</h4>
+			<p>To support the creation of the custom mobile app, the developer system must meet the following requirements:</p>	
+				<ul>
+				<li>A Mac OS machine running OS X version 10.8.4 or later and 4G RAM or greater</li>
+				<li>Xcode IDE 6.x</li>
+				<li>iOS SDK 8.x</li>
+				<li>MicroStrategy 10.1 Mobile client (see the <a href="https://software.microstrategy.com/Download/index.aspx" target="_blank">MicroStrategy download site</a>)</li>
+				</ul>
+			
+			<p>For more information, about:</p>
+				<ul>
+				<li>Compiling the app using the Esri Maps for MicroStrategy Mobile iOS client framework, see <a href="/en/maps-for-microstrategy/install-and-configure/overview.htm">Esri Maps for MicroStrategy Mobile Administrator’s guide</a></li>
+				<li>MicroStrategy Mobile SDK for iOS, see the <a href="https://lw.microstrategy.com/msdz/MSDZ_World2015/docs/projects/MobileSDK/output/vvitarello/HTML5/default.htm#topics/iOS/iOS_What_Can_You_Do_with_the_Mobile_SDK.htm" target="_blank">MicroStrategy Developer Zone</a></li>
+				</ul>
+				
+				<!-- Mobile users subhead for EM4MM section -->
+				<h4>Mobile app user device</h4>
+				<ul>
+				<li>iPad device running iOS 8.x</li>
+				</ul>
+			</div>	
+		
 		<!-- Support -->	
 		<div class="clear" style="padding:5px;"></div>
 	
@@ -359,9 +356,9 @@ mobile: true
 		</h3>
 			<div exp3='yes' style="display:none;padding:0 15px;">
 			
-			<p>MicroStrategy Web Universal requires several third-party components to be configured in order to function properly. These components include an application server, web server, and Java Development Kit. MicroStrategy Technical Support aids in the deployment of MicroStrategy Web Universal with these components. Esri Technical Support aids in the deployment (and use) of the Esri Maps for MicroStrategy plug-in within an operational configuration of MicroStrategy Web Universal.</p>
+			<p>MicroStrategy Web requires several third-party components to be configured in order to function properly. These components include an application server, web server, and Java Development Kit. MicroStrategy Technical Support aids in the deployment of MicroStrategy Web  with these components. <a href="http://support.esri.com/" target="_blank">Esri Technical Support</a> aids in the deployment (and use) of the Esri Maps for MicroStrategy plug-in within an operational configuration of MicroStrategy Web.</p>
 
-			<p>Esri Technical Support analysts are not experts in all possible configurations of MicroStrategy Web Universal. Similarly, MicroStrategy Technical Support engineers are not experts in all the third-party components required for an operational configuration of MicroStrategy Web Universal. If you are experiencing a problem configuring MicroStrategy Web Universal, it is often more efficient to obtain help from MicroStrategy Technical Support. Similarly, if you are if you are experiencing a configuration problem with third-party components, it is more efficient to get help from the third party's support organization. In cases where a problem is deemed to be in the Esri Maps for MicroStrategy plug-in, Esri Technical Support can be available to work with MicroStrategy Technical Support and third-party vendors or their consultants.</p>			
+			<p>Esri Technical Support analysts are not experts in all possible configurations of MicroStrategy Web. Similarly, MicroStrategy Technical Support engineers are not experts in all the third-party components required for an operational configuration of MicroStrategy. If you are experiencing a problem configuring MicroStrategy, it is often more efficient to obtain help from MicroStrategy Technical Support. Similarly, if you are if you are experiencing a configuration problem with third-party components, it is more efficient to get help from the third party's support organization. In cases where a problem is deemed to be in the Esri Maps for MicroStrategy plug-in, Esri Technical Support can be available to work with MicroStrategy Technical Support and third-party vendors or their consultants.</p>			
 			</div>
 			
 		<div class="clear"></div>

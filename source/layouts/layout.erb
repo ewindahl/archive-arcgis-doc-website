@@ -3,7 +3,12 @@
 readDirection="ltr" 
 if current_language == "ar" or current_language == "he"
 	readDirection="rtl"
-end 
+end
+
+pardotTrackingCode = "4008"
+if request.path.include? "/trust/"
+  pardotTrackingCode = "4024"
+end  
 %>
 <!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="<%=readDirection%>"> <![endif]-->
 <!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="<%=readDirection%>"> <![endif]-->
@@ -40,6 +45,11 @@ end
           }
         })();
       <% end %>
+		
+		<% if current_page.data.loop11 %>
+		var loop11_key = "13faf97dbc6c903ff5e96f7167fce84e4494a9ae";
+		document.write(unescape("%3cscript src='//cdn.loop11.com/my/loop11.js' type='text/javascript'%3e%3c/script%3e"));
+      <% end %>
 
     </script>
 
@@ -65,6 +75,7 @@ end
 	<%= javascript_include_tag "locale/l10NStrings" %>
 
     <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
+    <%= javascript_include_tag "libs/jquery.cookie" %>
 
   <%= javascript_include_tag "signIn" %>
 
@@ -206,7 +217,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <div class="dropdown-content">
                       <div class="dropdown-menu">
                           <ul class="myconsole">
-                              <li><a id="agolProfile" href="http://www.arcgis.com/home/user.html">My Profile</a></li>
+                              <li><a id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a></li>
                           </ul>
                           <hr class="myconsole" />
                           <ul class="myconsole">
@@ -295,12 +306,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <%= javascript_include_tag "drop-down" %>
     <%= javascript_include_tag "search/searchform.js" %>
+    <%= javascript_include_tag "/cdn/js/sitewide.js" %>
+    <%= javascript_include_tag "/cdn/js/link-modifier.js" %>
+
 
    <script>
    $(function() {
       $("#agolSearch").agolSearch();
    });
    </script>
+
+   <script type="text/javascript"> 
+   piAId = '83202'; piCId = '<%= pardotTrackingCode %>';
+  (function() { function async_load(){
+  var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
+  '.pardot.com/pd.js';
+  var c = document.getElementsByTagName('script')[0];
+  c.parentNode.insertBefore(s, c);
+  } if(window.attachEvent) { window.attachEvent('onload', async_load); } else { window.addEventListener('load', async_load, false); }
+  })();
+  </script>
 
   </body>
 </html>
