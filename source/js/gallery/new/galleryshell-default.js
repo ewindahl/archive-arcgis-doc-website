@@ -533,9 +533,9 @@ function genGalleryModel(hash, mdfL) {
                 qry.push(tags);
             }
 
-            if(this.userAccountType() == "org") {
+            /*if(this.userAccountType() == "org") {
                 qry.push("orgid=" + this.userSessionObj.accountId);
-            }
+            }*/
 
             var typePFields = _genQueryFieldsForGalleryType(this.type);
             if (typePFields){
@@ -643,7 +643,9 @@ SERow.prototype.agolImgUrl = function (agolId) {
 		imgurl = gcfg.emptyImgUrl,
 		host = getTier(window.location.hostname).agolHost || "http://www.arcgis.com";
 
-    if (imgf !== "None") {
+    if(imgf == null){
+        imgurl = "http://static.arcgis.com/images/desktopapp.png";
+    }else if (imgf !== "None") {
         imgurl = host + "/sharing/content/items/" + agolId + "/info/" + imgf;
         //console.info(imgurl);
     }
