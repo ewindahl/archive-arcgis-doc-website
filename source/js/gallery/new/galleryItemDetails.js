@@ -55,7 +55,7 @@ doc.itemDetails = (function(){
 			} else if(itemType == "layers"){
 				//iframeSrc = itemDetails.url+ "?f=jsapi";
 				iframeSrc = "";
-			} else if (itemType == "tools" || itemType == "webscene"){
+			} else if (itemType == "tools" || itemType == "webscene" || itemType == "files"){
 				iframeSrc = "";
 			} else {
 				// Map
@@ -65,10 +65,14 @@ doc.itemDetails = (function(){
 
 				iframeSrc = AGOLURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
 
-				var customURL = this.orgUserCustomURL();
-				/*if(customURL){
+				/*var customURL = this.orgUserCustomURL();
+				if(customURL){
 					iframeSrc = customURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
 				}*/
+
+				if(token){
+					iframeSrc = iframeSrc + "&token="+token
+				}
 
 				
 			}
@@ -86,6 +90,11 @@ doc.itemDetails = (function(){
 			
 			return false;
 		},
+
+		getToken : function () {
+            var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
+            return (ckObj)?ckObj.token : null;
+        },
 
 
 		renderGeneralElementsValues : function(){
@@ -120,13 +129,36 @@ doc.itemDetails = (function(){
 
 			$("#ratingsAndView").text("( "+itemDetails.numRatings+" ratings; "+itemDetails.numViews+" views)");
 
+            if(contentType.hasOwnProperty('label')){
+                   $("<span class='premium-content'><img class='esri-premium-icon' src='" + contentType['img'] + "' title='"+contentType['title']+"'>"+contentType['label']+"</span>").insertBefore("#mapBy");
+            }
+
 			$("#mapBy").html(itemTypeLabel + " by <a target='_blank' href='" + AGOLURL+ "/home/user.html?user=" + itemDetails.owner + "'>" + itemDetails.owner + "</a>. Created " + this.formatDate(itemDetails.created) + ". Modified " + this.formatDate(itemDetails.modified) +".");
 
 			$("#snippet").html(itemDetails.snippet);
 			$("#description").html(itemDetails.description);
 
+			if(itemType == "files"){
+				
+				$(".layers").hide();
+				$(".extent").hide();
 
-			if(itemType == "app"){
+				
+				var fileUrl = AGOLURL+"/sharing/content/items/"+itemId+"/"+agolDataFolder+"/"
+				var text = "<a href='"+ (itemDetails.url || fileUrl) +"' target='_blank' class='btn primary'>Open File</a>";
+
+				$("#downloadBtns").html(text);
+
+				var additionalText = "<p>";
+				if(itemDetails.type.match(/Image/)) {
+					//$("#description").append("File URL: https:" + fileUrl);	
+					additionalText = additionalText + "File URL: https:" + fileUrl + "<br/>"
+				}
+				additionalText = additionalText + "File Size: " + fileSizeFormat(itemDetails.size);
+				additionalText = additionalText + "</p>";
+				$("#description").append(additionalText);
+
+			} else if(itemType == "app"){
 				
 				$(".layers").hide();
 				$(".extent").hide();
@@ -155,7 +187,7 @@ doc.itemDetails = (function(){
 				var websceneTargetURL = AGOLURL + "/apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id;
 
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
-				var text = "<a href='" + websceneTargetURL + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
+				var text = "<a href='" + websceneTargetURL + "' target='_blank' class='btn primary'>Open in Scene Viewer</a>";
 				$("#downloadBtns").html(text);
 
 				$("#agol-thumbnail").html("<a href='" + websceneTargetURL + "' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
@@ -338,6 +370,9 @@ var itemTypeLabel = "Map"
 var obj = doc.itemDetails;
 var itemDetails = obj.getItemInfo(itemId);
 var cookieName = "esri_auth";
+var contentType = {};
+var agolDataFolder = "info";
+var token = obj.getToken();
 
 /*if(getUrlVars()['ls'] && getUrlVars()['ls'] == "t"){
 	window.opener.location.reload(false);
@@ -346,6 +381,7 @@ var cookieName = "esri_auth";
 
 if(itemDetails && itemDetails.id){
 	var itemType 
+	var tierObj = getTier(window.location.hostname);
 
 	if(itemDetails.typeKeywords.indexOf("Requires Subscription") >=0 || itemDetails.typeKeywords.indexOf("Requires Credits") >=0){
 		if(!$.cookie('esri_auth')){
@@ -357,25 +393,41 @@ if(itemDetails && itemDetails.id){
 			//window.open(agolSigninURL, "", "width=800, height=800");
 			//myPopupWindow.isPopup = true;
 		}
+
+		if (itemDetails.typeKeywords.indexOf("Requires Subscription") >=0) {
+	        contentType['label']  = "Subscriber Content";
+	        contentType['title']  = "Requires being Signed In with an ArcGIS Online Subscription";
+	        contentType['img']  = tierObj.agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
+	    } else if (itemDetails.typeKeywords.indexOf("Requires Credits") >=0) {
+	        contentType['label']  = "Premium Content";
+	        contentType['title']  = "Requires being Signed In with an ArcGIS Online Subscription and Consumes Credits";
+	        contentType['img']  = tierObj.agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
+	    }
 	}
 
-	if(itemDetails.type.match(/Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template |Geodata Service|Globe Service|Vector Tile Service/gi)){
+	
+	if($.inArray(itemDetails.type, galleryTypeList["document"]) >= 0){
+		itemType = "files";
+		itemTypeLabel = "Files";
+		agolDataFolder = "data"
+	} else if($.inArray(itemDetails.type, galleryTypeList["layers"]) >= 0){
 		itemType = "layers";
 		itemTypeLabel = "Map Layer";
-	} else if(itemDetails.type.match(/Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service/gi)) {
+	} else if($.inArray(itemDetails.type, galleryTypeList["tool"]) >= 0) {
 		itemType = "tools";
 		itemTypeLabel = "Tool";
-	}else if(itemDetails.type.match(/Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View/gi)){
+	}else if($.inArray(itemDetails.type, galleryTypeList["apps"]) >= 0){
 		itemType = "app";
 		itemTypeLabel = "App";
-	}else if(itemDetails.type.match(/Web Scene/gi)){
+	}else if($.inArray(itemDetails.type, galleryTypeList["scenes"]) >= 0){
 		itemType = "webscene";
 		itemTypeLabel = "Webscene";
 	}
 
+
 }else{
 	$("#mapIframe").hide();
-	$(".container").html("Item details are not available right now. Please try again later!");
+	$(".item-details").html("<p>&nbsp;</p><div class='alert'>Item details are not available right now. Please try again later!</div>");
 }
 
 
@@ -396,21 +448,40 @@ function getUrlVars ()
     return vars;
 }
 
+function fileSizeFormat(fileSize) {
+    var i = -1;
+	var returnVal
+    var units = ['kb', 'mb', 'gb'];
+	 
+	 if(fileSize > 0){
+	
+		do {
+	        fileSize = fileSize / 1024;
+	        i++;
+	    } while (fileSize > 1024);
+		returnVal = Math.max(fileSize, 0.1).toFixed(1) + " " + units[i];
+	 }
+    return returnVal
+}
+
 $(document).ready(function() {
 	
-	if(!itemDetails.code){
-	
+	if(!itemDetails.error){
 		if(obj.getIframeSource()){
 			$("#mapIframe").attr("src", obj.getIframeSource());
 		}else{
 			$("#mapIframe").hide();
 			$("#agol-thumbnail").css("display","block")
-			$("#agol-thumbnail").html("<a href='"+itemDetails.url+"' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
+			var fileUrl = AGOLURL+"/sharing/content/items/"+itemId+"/"+agolDataFolder+"/"
+			$("#agol-thumbnail").html("<a href='"+(itemDetails.url || fileUrl)+"' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/"+agolDataFolder+"/"+(itemDetails.largeThumbnail || itemDetails.thumbnail || itemDetails.name)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 		}
 		obj.renderGeneralElementsValues();
 
 		//feed
 		obj.getAJAXResponse(itemId,AGOLURL+"/sharing/rest/content/items/"+itemId+"/comments?f=json",true,"feed");
+	}else{
+		$("#mapIframe").hide();
+		$(".item-details").html("<p>&nbsp;</p><div class='alert'>Item details are not available right now. Please try again later!</div>");
 	}
 
 	$("#gl-search-btn").bind("click", function (evt) {

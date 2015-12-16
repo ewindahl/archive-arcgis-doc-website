@@ -42,11 +42,16 @@ function genGalleryModel(hash, mdfL) {
 		this.clearAll = false;
 		this.col = "All"; //decoded value
         this.type = "All";
+        this.area = "All";
         this.npp = gcfg.numN;
         this.subCat = 0;
+        this.agolHost = getTier(window.location.hostname).agolHost;
+        this.userSessionObj = ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : {};
+        //this.userToken = this.getToken ();
 
         this.init = function (hash) {
             this._initMDF(mdfL);
+            this.getAgolHost ();
             if (hash) {
                 this.updateByHash(hash);
             }
@@ -80,6 +85,19 @@ function genGalleryModel(hash, mdfL) {
 
             return o;
         }
+
+        this.getToken = function () {
+            return (this.userSessionObj.token)?this.userSessionObj.token : null;
+        }
+
+        this.getAgolHost = function () {
+            this.agolHost = (this.userSessionObj.urlKey)?"https://"+this.userSessionObj.urlKey+ "." +this.userSessionObj.customBaseUrl : this.agolHost;
+        }
+
+        this.userAccountType = function () {
+            return (this.userSessionObj.urlKey)?"org" : "public";
+        }
+
 
         this.genAJaxParamData = function () {
             var o = {
@@ -131,6 +149,12 @@ function genGalleryModel(hash, mdfL) {
                 this.type = decodeURIComponent(o.type);
             } else {
                 this.type = "All";
+            }
+
+            if (o.area) {
+                this.area = decodeURIComponent(o.area);
+            } else {
+                this.area = "All";
             }
 
             if (o.md) {
@@ -213,6 +237,10 @@ function genGalleryModel(hash, mdfL) {
 
         this.updateType = function (type) {
             this.type = type;
+        }
+
+        this.updateArea = function (area) {
+            this.area = area;
         }
 
         this.updateSubCat = function (subCat) {
@@ -309,6 +337,8 @@ function genGalleryModel(hash, mdfL) {
 
             l.push("s=" + this.startN);
             l.push("subCat=" + this.subCat);
+            l.push("type=" + this.type);
+            l.push("area=" + this.area);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -350,18 +380,18 @@ function genGalleryModel(hash, mdfL) {
                 return l.join(".");
             }
 
-
             function getAgolPrefRegion () {
                 var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
                 return (ckObj)?ckObj.region : null;
             }
 
-            function getIPBasedRegion (tierObj) {
+            function getIPBasedRegion (agolHost) {
                 var regionCode="WO";
               $.ajax({
                     type: "GET",
-                    url: tierObj.agolHost + "sharing/rest/portals/self",
-                    data: {"f":"json"},
+                    url: "/apps/proxy/sm-proxy.php?" + agolHost + "/sharing/rest/portals/self?f=json",
+                    //data: {"f":"json"},
+                    data: {},
                     dataType: "json",
                     async: false, 
                     success: function(msg){
@@ -374,20 +404,20 @@ function genGalleryModel(hash, mdfL) {
               return regionCode;
             }
 
-            function getGroupIds (tierObj, groupType) {
+            function getGroupIds (agolHost, areaType) {
                 //single group
-					 var regionCode = getAgolPrefRegion () || getIPBasedRegion (tierObj)
+					 var regionCode = getAgolPrefRegion () || getIPBasedRegion (agolHost)
 					 
 					 $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
+
 					 					 
 					 /*
 					 grouptype == all   then region+world
 					 grouptype == "regional" then regional Only
 					 grouptype == "world" then world only.*/
-					 
-					 if(groupType == "regional"){
+					 if(areaType == "regional"){
 						 ownerName = "(Esri_cy_" + regionCode +")"
-					 } else if(groupType == "world") {
+					 } else if(areaType == "world") {
 						 ownerName = "(esri)"
 					 }else{
 						 ownerName = "(esri OR Esri_cy_" + regionCode +")"
@@ -396,7 +426,7 @@ function genGalleryModel(hash, mdfL) {
                 var groupIds = null;
               $.ajax({
                     type: "GET",
-                    url: tierObj.agolHost + 'sharing/rest/community/groups',
+                    url: agolHost + '/sharing/rest/community/groups',
                     data: {'f':'json', 'q':'tags:"gallery" AND owner:' + ownerName },
                     dataType: "json",
                     async: false, 
@@ -414,10 +444,9 @@ function genGalleryModel(hash, mdfL) {
               return groupIds;
             }
 
-            function _getRegionalGroups(tierObj, groupType) {
+            function _getRegionalGroups(agolHost, areaType) {
                 //var region = getAgolPrefRegion () || getIPBasedRegion (tierObj)
-					 
-                var groupIds = getGroupIds (tierObj, groupType)
+                var groupIds = getGroupIds (agolHost, areaType)
 
                 var l = [];
                 if(groupIds) {
@@ -428,6 +457,49 @@ function genGalleryModel(hash, mdfL) {
                     return l.join(" OR ");
                 }
                 return ""
+            }
+
+            function _genQueryFieldsForGalleryType(galleryType) {
+                var l = [];
+                var returnQuery = "";
+                if(galleryType != "All"){
+                     //exclude all other types like arcgis.com is doing
+
+                     var nl = [];
+                     $.each(galleryTypeList, function (i, val) {
+                        if(i != galleryType) {
+                            $.each(val, function (j, sVal) {
+                                nl.push('-type:"' + sVal + '"');
+                            });
+                        }
+                     });
+                     if (nl.length) {
+                        returnQuery = nl.join(" ");
+                     }
+
+                     // Get the selected types
+                     var types = galleryTypeList[galleryType];
+
+                     $.each(types, function (i, val) {
+                        l.push('type:"' + val + '"');
+                     });
+
+                     if (l.length) {
+                        //return "(" + l.join(" OR ") + ")";
+                        returnQuery = returnQuery + ' (typeKeywords:"' + galleryType + '" OR ' + l.join(" OR ") + ')';
+                     }
+
+
+
+
+                     /*if (l.length) {
+                        returnQuery = returnQuery + " " + nl.join(" ");
+                     }*/
+
+                     return returnQuery;
+                }
+                return false;
+
             }
 
             /** -- **/
@@ -443,6 +515,8 @@ function genGalleryModel(hash, mdfL) {
             l.push("start=" + this.startN);
             l.push("num=" + this.numN);
 
+
+
             if (this.query) {
                 //l.push("q=" + encodeURIComponent(this.query));
                 qry.push(encodeURIComponent(this.query));
@@ -451,20 +525,30 @@ function genGalleryModel(hash, mdfL) {
             //var typePFields = _genPartialFieldsForGalleryType(this.type);
 								
 				//groups
-            var groups = _getRegionalGroups(this.tier, this.type)
+            var groups = _getRegionalGroups(this.agolHost, this.area)
             qry.push("(" + groups + ")");
 
             var tags = _genTags(this.mdf);
             if (tags) {
                 qry.push(tags);
             }
-            /*var typePFields = _genPartialFieldsForGalleryType(this.type);
 
-            if (pfields && typePFields){
-                pfields = pfields+".("+typePFields+")";
-            } else if (typePFields){
-                pfields = typePFields;
+            if(this.userAccountType() == "org") {
+                qry.push("orgid=" + this.userSessionObj.accountId);
+            }
+
+            var typePFields = _genQueryFieldsForGalleryType(this.type);
+            if (typePFields){
+                qry.push(typePFields)
+            }
+
+            if (this.getToken()){
+                l.push("token=" + this.getToken());
+            }/* else {
+                qry.push('-type:"Service" AND -type: "Feature Collection" AND -type : "Shapefile"');
+                
             }*/
+
 
             return l.join("&") + "&q=" + qry.join(" ");
         }
@@ -534,6 +618,22 @@ SERow.prototype.isLoginRequires = function () {
     }
     
     return typeKeywords;
+};
+SERow.prototype.ContentType = function () {
+    var typeKeywords = this.data["typeKeywords"] || false;
+    var contentType = {};
+    
+    if (typeKeywords.indexOf("Requires Subscription") >=0) {
+        contentType['label']  = "Subscriber Content";
+        contentType['title']  = "Requires being Signed In with an ArcGIS Online Subscription";
+        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
+    } else if (typeKeywords.indexOf("Requires Credits") >=0) {
+        contentType['label']  = "Premium Content";
+        contentType['title']  = "Requires being Signed In with an ArcGIS Online Subscription and Consumes Credits";
+        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
+    }
+    
+    return contentType;
 };
 SERow.prototype.agolItemUrl = function (agolId) {
 	return "http://" + window.location.hostname + "/en/living-atlas/item-agol/?itemId=" + agolId;
@@ -641,7 +741,7 @@ function createGalleryShell() {
 
             
             $.ajax({
-                url: gm.tier.agolHost + "sharing/rest/search" ,
+                url: gm.agolHost + "/sharing/rest/search" ,
                 dataType: "json",
                 context: this,
                 data: vdata.ajaxData,
@@ -889,8 +989,11 @@ $(document).ready(function () {
     });
 
     /* Show me section */
-    $(".showme-dropDown").bind("click", function (evt) {
-        $("#showMeFilters").toggle('slow');
+    $("#areaDropDown").bind("click", function (evt) {
+        $("#menutreeArea").toggle('slow');
+    });
+    $("#typeDropDown").bind("click", function (evt) {
+        $("#menutreeType").toggle('slow');
     });
 
     // Tablet/movile view related
@@ -898,13 +1001,33 @@ $(document).ready(function () {
         $("#navFilters").toggle('slow');
     });
     
-    $(".showme-filter-label").bind("click", function (evt) {
+    $("#menutreeArea .showme-filter-label").bind("click", function (evt) {
 		 
 		 gModel.startN = 0;
 		 $("#gl-content").empty();
        $("#spinner").show();
                 
-        $(".showme-filter-label").each(function (evt){
+        $("#menutreeArea .showme-filter-label").each(function (evt){
+                $(this).removeClass('current');
+            });
+        $(this).addClass("current");
+        gModel.updateArea($(this).attr("type"));
+            
+        //gModel.updatePagination(0);
+        gShell.update(gModel);
+        
+                
+        evt.stopImmediatePropagation();
+        return false;
+    });
+
+    $("#menutreeType .showme-filter-label").bind("click", function (evt) {
+         
+         gModel.startN = 0;
+         $("#gl-content").empty();
+       $("#spinner").show();
+                
+        $("#menutreeType .showme-filter-label").each(function (evt){
                 $(this).removeClass('current');
             });
         $(this).addClass("current");
@@ -1007,13 +1130,20 @@ $(document).ready(function () {
            
         }
 
-        /* This feature is not available as of now.. It was for show me section only*/
         if(getUrlVars()['type']){
             var type = getUrlVars()['type'];
+
+           $("#menutreeType .showme-filter-label").removeClass("current");
+           $("#menutreeType ."+type+"-showme-filter").addClass("current");
+           $("#menutreeType").css("display","block");
+        }
+
+        if(getUrlVars()['area']){
+            var area = getUrlVars()['area'];
            
-           $(".showme-filter-label").removeClass("current");
-           $("."+type+"-showme-filter").addClass("current");
-           $("#showMeFilters").css("display","block");
+           $("#menutreeArea .showme-filter-label").removeClass("current");
+           $("#menutreeArea ."+area+"-showme-filter").addClass("current");
+           $("#menutreeArea").css("display","block");
 
         }
 

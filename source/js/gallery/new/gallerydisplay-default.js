@@ -51,7 +51,7 @@ function genDisplay() {
 
             if(row.isLoginRequires()){
                 if(!$.cookie('esri_auth')){
-                    targetUrl = getTier(window.location.hostname).agolHost + "home/signin.html?returnUrl="+encodeURIComponent(targetUrl);
+                    targetUrl = getTier(window.location.hostname).agolHost + "/home/signin.html?returnUrl="+encodeURIComponent(targetUrl);
                 }
             }
 
@@ -67,7 +67,12 @@ function genDisplay() {
             buf.push("<a class='item-title' href='" + targetUrl + "'>");
             buf.push(itemTitle);
             buf.push("</a>");
-			buf.push("<span class='ownerName'>By "+row.data["owner"]+"</span>");
+            buf.push("<span class='ownerName'>By "+row.data["owner"]+"</span>");
+
+			var itemType = row.ContentType();
+            if(itemType.hasOwnProperty('label')){
+                buf.push("<span class='premiumItem'><img class='esri-premium-icon' src='" + itemType['img'] + "' title='"+itemType['title']+"'>"+itemType['label']+"</span>");
+            }
             buf.push("</li>");
 
         },
