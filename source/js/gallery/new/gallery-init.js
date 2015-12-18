@@ -127,10 +127,16 @@ var conuntryCodeMapping = {
 }
 
 var galleryTypeList = {
-    "document" : ["Image", "Layout", "Desktop Style", "Project Template", "PDF"],
+    "document" : ["Image", "Layout", "Desktop Style", "Project Template", "PDF", "Document Link"],
     "tool" : ["Raster function template", "Geodata Service", "Workflow Manager Package", "Rule Package", "Operations Dashboard Add In", "Workflow Manager Service"],
     "apps" : ["Code Sample", "Web Mapping Application", "Mobile Application", "Application", "Desktop Application Template", "Desktop Application", "Operation View", "Operations Dashboard Extension"],
     "scenes" : ["Web Scene"],
-    "layers": ["Scene Service", "Feature Collection", "Layer", "Explorer Layer", "Tile Package", "Vector Tile Package", "Scene Package", "Layer Package", "Feature Service", "Stream Service", "Map Service", "Vector Tile Service", "Image Service", "WMS", "KML", "OGC", "Geodata Service", "Globe Service", "CSV", "Shapefile", "GeoJson", "Service Definition", "File Geodatabase", "CAD Drawing"],
-    "maps": ["Project Package", "Windows Mobile Package", "Map Package", "Basemap Package", "Mobile Basemap Package", "Mobile Map Package", "Pro Map", "Project Package", "Web Map", "CityEngine Web Scene", "Map Document", "Globe Document", "Scene Document", "Published Map", "Explorer Map", "ArcPad Package", "Map Template"]
+    "layers": ["Scene Service", "Feature Collection", "Layer", "Explorer Layer", "Tile Package", "Vector Tile Package", "Scene Package", "Layer Package", "Feature Service", "Stream Service", "Map Service", "Vector Tile Service", "Image Service", "WMS", "KML", "OGC", "Globe Service", "CSV", "Shapefile", "GeoJson", "Service Definition", "File Geodatabase", "CAD Drawing"],
+    "maps": ["Project Package", "Windows Mobile Package", "Map Package", "Basemap Package", "Mobile Basemap Package", "Mobile Map Package", "Pro Map", "Web Map", "CityEngine Web Scene", "Map Document", "Globe Document", "Scene Document", "Published Map", "Explorer Map", "ArcPad Package", "Map Template"]
+}
+
+var galleryTypeExcludeList = {
+    "document" : ["Image Service", "Layer"],
+    "scenes" : ["CityEngine Web Scene"],
+    "maps": ["Web Mapping Application"]
 }

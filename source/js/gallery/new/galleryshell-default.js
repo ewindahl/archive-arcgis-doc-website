@@ -466,8 +466,8 @@ function genGalleryModel(hash, mdfL) {
                      //exclude all other types like arcgis.com is doing
 
                      var nl = [];
-                     $.each(galleryTypeList, function (i, val) {
-                        if(i != galleryType) {
+                     $.each(galleryTypeExcludeList, function (i, val) {
+                        if(i == galleryType) {
                             $.each(val, function (j, sVal) {
                                 nl.push('-type:"' + sVal + '"');
                             });
@@ -486,7 +486,7 @@ function genGalleryModel(hash, mdfL) {
 
                      if (l.length) {
                         //return "(" + l.join(" OR ") + ")";
-                        returnQuery = returnQuery + ' (typeKeywords:"' + galleryType + '" OR ' + l.join(" OR ") + ')';
+                        returnQuery = returnQuery + ' (typekeywords:"' + galleryType + '" OR ' + l.join(" OR ") + ')';
                      }
 
 

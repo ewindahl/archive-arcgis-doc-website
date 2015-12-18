@@ -184,7 +184,7 @@ doc.itemDetails = (function(){
 				$(".layers").hide();
 				$(".extent").hide();
 
-				var websceneTargetURL = AGOLURL + "/apps/CEWebViewer/viewer.html?3dWebScene="+itemDetails.id;
+				var websceneTargetURL = AGOLURL + "/home/webscene/viewer.html?webscene="+itemDetails.id;
 
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 				var text = "<a href='" + websceneTargetURL + "' target='_blank' class='btn primary'>Open in Scene Viewer</a>";
@@ -409,7 +409,9 @@ if(itemDetails && itemDetails.id){
 	if($.inArray(itemDetails.type, galleryTypeList["document"]) >= 0){
 		itemType = "files";
 		itemTypeLabel = "Files";
-		agolDataFolder = "data"
+		if(itemDetails.type == "Image"){
+			agolDataFolder = "data"
+		}
 	} else if($.inArray(itemDetails.type, galleryTypeList["layers"]) >= 0){
 		itemType = "layers";
 		itemTypeLabel = "Map Layer";
