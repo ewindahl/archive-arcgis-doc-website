@@ -75,13 +75,29 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
    </nav>
    
 	<header>
-		<h4>Area</h4>
-		<span class="down-arrow showme-dropDown"></span>
+		<h4>Type</h4>
+		<span id="typeDropDown" class="down-arrow showme-dropDown"></span>
 	</header>
 	<nav id="showMe">
 		<div id="showMeFilters">
-		<ol id="menutree">
-		<li><label id="allFilters" class="showme-filter-label current all-showme-filter" type="All">All</label></li>
+		<ol id="menutreeType">
+		<li><label id="allFilters" class="showme-filter-label current All-showme-filter" type="All">All</label></li>
+		<li><label class="showme-filter-label maps-showme-filter" type="maps">Maps</label></li>
+		<li><label class="showme-filter-label layers-showme-filter" type="layers">Layers</label></li>
+		<li><label class="showme-filter-label scenes-showme-filter" type="scenes">Scenes</label></li>
+		<li><label class="showme-filter-label apps-showme-filter" type="apps">Apps</label></li>
+		<li><label class="showme-filter-label tool-showme-filter" type="tool">Tools</label></li>
+		<li><label class="showme-filter-label document-showme-filter" type="document">Files</label></li>
+		</ol>
+	</nav>
+	<header>
+		<h4>Area</h4>
+		<span id="areaDropDown" class="down-arrow showme-dropDown"></span>
+	</header>
+	<nav id="showMe">
+		<div id="showMeFilters"> <!--used -->
+		<ol id="menutreeArea">
+		<li><label id="allFilters" class="showme-filter-label current All-showme-filter" type="All">All</label></li>
 		<li><label class="showme-filter-label regional-showme-filter" id="countryName" type="regional">United States</label></li>
 		<li><label class="showme-filter-label world-showme-filter" type="world">World</label></li>
 		</ol>
