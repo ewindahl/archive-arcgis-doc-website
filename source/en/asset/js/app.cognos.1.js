@@ -51,8 +51,8 @@ $(document).ready(function () {
             "install-and-configure-em4c-dispatcher.htm": "", "install-and-configure-em4c-gateway.htm": "", "install-and-configure-em4c-server-and-em4c-dispatcher.htm": "",
             "install-and-configure-em4c-server.htm": "", "install-and-configure-on-a-single-computer.htm": "", "installation-options.htm": "", "installation-sequence-for-server-components.htm": "",
             "items-added-to-a-map-enabled-report.htm": "", "required-ibm-cognos-capabilities.htm": "", "supported-arcgis-authentication-methods.htm": "", "supported-environments.htm": "",
-            "test-the-configuration.htm": "", "uninstall-esri-maps-for-ibm-cognos.htm": "", "upgrade-esri-maps-for-ibm-cognos.htm": "","report-formats.htm": "","create-the-esri-maps-capability.htm": ""*/
-			"configure-microsoft-internet-information-services-7-x-or-8-x.htm":""
+            "test-the-configuration.htm": "", "uninstall-esri-maps-for-ibm-cognos.htm": "", "upgrade-esri-maps-for-ibm-cognos.htm": "","report-formats.htm": "","create-the-esri-maps-capability.htm": ""
+			"configure-microsoft-internet-information-services-7-x-or-8-x.htm":""*/
         },
 
 		
