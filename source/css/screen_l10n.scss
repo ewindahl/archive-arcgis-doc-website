@@ -1,3 +1,5 @@
+@import "arcgis/base/_config";
+
 [dir="rtl"] {
  fieldset label, .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12, .column-13, .column-14, .column-15, .column-16, .column-17, .column-18, .column-19, .column-20, .column-21, .column-22, .column-23, .column-24, .feature .feature-text, .feature .feature-block, #header .header-inner, #footer nav, #footer-legal, .navigation-bar nav, .section-bar nav, .navigation-bar header, .section-bar header, #gallery .gallerydiv {
   float: right;
@@ -554,5 +556,55 @@ html[dir="rtl"].ie8 {
 .ja {
  dfn, ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
   font-style: normal;
+ }
+}
+
+.cs, .lt, .lv, .pl, .ro, .tr, .vi {
+ #{headers(all)} {
+  font-family: $body-font;
+  
+  &.bold {
+   font-family: $body-font;
+  }
+ }
+ 
+ dl dt {
+  font-family: $body-font;
+ }
+ 
+ table .halo {
+  font-family: $body-font;
+ }
+ 
+ .btn {
+  font-family: $body-font;
+ }
+ 
+ .feature {
+  .feature-text h2 {
+   font-family: $body-font;
+  }
+  
+  .call-to-action {
+   font-family: $body-font;
+  }
+ }
+ 
+ #header nav li a {
+  font-family: $body-font;
+ }
+ 
+ .navigation-bar header h1 {
+  font-family: $body-font;
+ }
+ 
+ .step-by-step{
+  li:before{
+   font-family: $body-font;
+  }
+  
+  header{
+   font-family: $body-font;
+  }
  }
 }
