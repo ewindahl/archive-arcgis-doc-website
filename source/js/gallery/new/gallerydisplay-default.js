@@ -61,17 +61,17 @@ function genDisplay() {
                 buf.push("<a href='" + targetUrl + "'  class='item-contrib " + v.css + " '>" + v.label + "</a>");
             }
 
-            buf.push("<a href='" + targetUrl + "'>");
+            buf.push("<a target='_blank' href='" + targetUrl + "'>");
             buf.push("<img class='item-img' src='" + imgurl + "' />");
             buf.push("</a>");
-            buf.push("<a class='item-title' href='" + targetUrl + "'>");
+            buf.push("<a class='item-title' target='_blank' href='" + targetUrl + "'>");
             buf.push(itemTitle);
             buf.push("</a>");
             buf.push("<span class='ownerName'>By "+row.data["owner"]+"</span>");
 
 			var itemType = row.ContentType();
             if(itemType.hasOwnProperty('label')){
-                buf.push("<span class='premiumItem'><img class='esri-premium-icon' src='" + itemType['img'] + "' title='"+itemType['title']+"'>"+itemType['label']+"</span>");
+                buf.push("<span class='premiumItem'><img class='esri-premium-icon' src='" + itemType['img'] + "' title='"+itemType['title']+"'></span>");
             }
             buf.push("</li>");
 

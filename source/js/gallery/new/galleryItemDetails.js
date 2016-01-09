@@ -65,13 +65,13 @@ doc.itemDetails = (function(){
 
 				iframeSrc = AGOLURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
 
-				/*var customURL = this.orgUserCustomURL();
+				var customURL = this.orgUserCustomURL();
 				if(customURL){
 					iframeSrc = customURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
-				}*/
+				}
 
 				if(token){
-					iframeSrc = iframeSrc + "&token="+token
+					iframeSrc = iframeSrc;// + "&token="+token
 				}
 
 				

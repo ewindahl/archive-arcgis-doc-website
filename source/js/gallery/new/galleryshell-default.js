@@ -47,6 +47,8 @@ function genGalleryModel(hash, mdfL) {
         this.subCat = 0;
         this.agolHost = getTier(window.location.hostname).agolHost;
         this.userSessionObj = ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : {};
+        this.groupIds = null;
+        this.regionCode = "WO";
         //this.userToken = this.getToken ();
 
         this.init = function (hash) {
@@ -317,7 +319,12 @@ function genGalleryModel(hash, mdfL) {
                 }
             });
             return o;
-        }
+        },
+
+        this._getAgolPrefRegion = function () {
+                var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
+                return (ckObj)?ckObj.region : null;
+        },
 
         this._genHash = function () {
             //s=startN&n=numN&filter=0&q=query&md=mdf
@@ -380,73 +387,7 @@ function genGalleryModel(hash, mdfL) {
                 return l.join(".");
             }
 
-            function getAgolPrefRegion () {
-                var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
-                return (ckObj)?ckObj.region : null;
-            }
-
-            function getIPBasedRegion (agolHost) {
-                var regionCode="WO";
-              $.ajax({
-                    type: "GET",
-                    url: "/apps/proxy/sm-proxy.php?" + agolHost + "/sharing/rest/portals/self?f=json",
-                    //data: {"f":"json"},
-                    data: {},
-                    dataType: "json",
-                    async: false, 
-                    success: function(msg){
-                        regionCode = msg.ipCntryCode
-                    },
-                    error:function(xhr, status, err){
-                        console.log(err)
-                    }
-                });
-              return regionCode;
-            }
-
-            function getGroupIds (agolHost, areaType) {
-                //single group
-					 var regionCode = getAgolPrefRegion () || getIPBasedRegion (agolHost)
-					 
-					 $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
-
-					 					 
-					 /*
-					 grouptype == all   then region+world
-					 grouptype == "regional" then regional Only
-					 grouptype == "world" then world only.*/
-					 if(areaType == "regional"){
-						 ownerName = "(Esri_cy_" + regionCode +")"
-					 } else if(areaType == "world") {
-						 ownerName = "(esri)"
-					 }else{
-						 ownerName = "(esri OR Esri_cy_" + regionCode +")"
-					 }
-                
-                var groupIds = null;
-              $.ajax({
-                    type: "GET",
-                    url: agolHost + '/sharing/rest/community/groups',
-                    data: {'f':'json', 'q':'tags:"gallery" AND owner:' + ownerName },
-                    dataType: "json",
-                    async: false, 
-                    success: function(msg){
-                        var l = [];
-                        for (i = 0, len = msg.results.length; i < len; i++) {
-                            l.push(msg.results[i].id);
-                        }
-                        groupIds = l.join(",");
-                    },
-                    error:function(xhr, status, err){
-                        console.log(err)
-                    }
-                });
-              return groupIds;
-            }
-
-            function _getRegionalGroups(agolHost, areaType) {
-                //var region = getAgolPrefRegion () || getIPBasedRegion (tierObj)
-                var groupIds = getGroupIds (agolHost, areaType)
+            function _getRegionalGroups(groupIds) {
 
                 var l = [];
                 if(groupIds) {
@@ -525,7 +466,7 @@ function genGalleryModel(hash, mdfL) {
             //var typePFields = _genPartialFieldsForGalleryType(this.type);
 								
 				//groups
-            var groups = _getRegionalGroups(this.agolHost, this.area)
+            var groups = _getRegionalGroups(this.groupIds)
             qry.push("(" + groups + ")");
 
             var tags = _genTags(this.mdf);
@@ -726,44 +667,93 @@ function createGalleryShell() {
         },*/
 
 
+        updateRicky: function (){
+            
+                
+        },
         update: function (gm) {
             //this.updateFeatured(gm);
             this.gm = gm;
+            var gs = this
 
-            var vHashdata = gm.genViewData();
-            var vdata = gm.genAJaxParamData();
+            $.ajax({
+                type: "GET",
+                url: "/apps/proxy/sm-proxy.php?" + gm. agolHost + "/sharing/rest/portals/self?f=json",
+                //data: {"f":"json"},
+                data: {},
+                dataType: "json"
+            }).done(function (msg){
+                regionCode = gm._getAgolPrefRegion() || msg.ipCntryCode;
+                if(regionCode == "WO"){
+                   $("#countryName").hide()
+                }else{
+                   $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
+                }
+                                         
+                 /*
+                 grouptype == all   then region+world
+                 grouptype == "regional" then regional Only
+                 grouptype == "world" then world only.*/
+                 if(this.region == "regional"){
+                     ownerName = "(Esri_cy_" + regionCode +")"
+                 } else if(this.region == "world") {
+                     ownerName = "(esri)"
+                 }else{
+                     ownerName = "(esri OR Esri_cy_" + regionCode +")"
+                 }
+                
+              $.ajax({
+                    type: "GET",
+                    url: gm.agolHost + '/sharing/rest/community/groups',
+                    data: {'f':'json', 'q':'tags:"gallery" AND owner:' + ownerName },
+                    dataType: "json",
+                }).done(function (msg){
 
-            if (gm.query) {
-                $("#query").val(gm.query);
-            }
+                var l = [];
+                for (i = 0, len = msg.results.length; i < len; i++) {
+                    l.push(msg.results[i].id);
+                }
+                gm.groupIds = l.join(",");
 
-            this.updateHash(gm, vHashdata);
 
-            this._updateFilter(gm);
+                // Main ajax call details
+                var vHashdata = gm.genViewData();
+                var vdata = gm.genAJaxParamData();
+
+                if (gm.query) {
+                    $("#query").val(gm.query);
+                }
+
+                gs.updateHash(gm, vHashdata);
+
+                gs._updateFilter(gm);
 
             
-            $.ajax({
-                url: gm.agolHost + "/sharing/rest/search" ,
-                dataType: "json",
-                context: this,
-                data: vdata.ajaxData,
-                timeout: 10000,
-                //async: false,
-                beforeSend: function () {
-                    $("#spinner").show();
-                },
-                success: function (data) {
-                    $("#spinner").hide();
-                    this._updateModelAndView(data);
-                    this.reloadCount += 1
-                    gm.queryStatus = "completed";
-                    //this._setFeaturedData(data, this.gm);
-                },
-                error: function (xhr, status, err) {
-                    $("#gl-content").html(gcfg.errorMsg);
-                    $("#spinner").hide();
-                }
-            });
+                $.ajax({
+                    url: gm.agolHost + "/sharing/rest/search" ,
+                    dataType: "json",
+                    context: gs,
+                    data: vdata.ajaxData,
+                    //timeout: 10000,
+                    //async: false,
+                    beforeSend: function () {
+                        $("#spinner").show();
+                    },
+                    success: function (data) {
+                        $("#spinner").hide();
+                        gs._updateModelAndView(data);
+                        gs.reloadCount += 1
+                        gm.queryStatus = "completed";
+                        //this._setFeaturedData(data, this.gm);
+                    },
+                    error: function (xhr, status, err) {
+                        $("#gl-content").html(gcfg.errorMsg);
+                        $("#spinner").hide();
+                    }
+                });
+
+            }); //end of done
+        }); // End of 2nd done
 
         },
 
