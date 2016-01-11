@@ -694,9 +694,9 @@ function createGalleryShell() {
                  grouptype == all   then region+world
                  grouptype == "regional" then regional Only
                  grouptype == "world" then world only.*/
-                 if(this.region == "regional"){
+                 if(gm.area == "regional"){
                      ownerName = "(Esri_cy_" + regionCode +")"
-                 } else if(this.region == "world") {
+                 } else if(gm.area == "world") {
                      ownerName = "(esri)"
                  }else{
                      ownerName = "(esri OR Esri_cy_" + regionCode +")"

@@ -70,10 +70,7 @@ doc.itemDetails = (function(){
 					iframeSrc = customURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
 				}
 
-				if(token){
-					iframeSrc = iframeSrc;// + "&token="+token
-				}
-
+				
 				
 			}
 			
