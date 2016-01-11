@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr"> <!--<![endif]-->
+ 
+<head>
+    <meta charset="utf-8">
+    <title>Find Location&mdash;Business Analyst | ArcGIS</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'en',
+        localedir: 'en',
+        langSelector: 'none'
+      };
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="/js/libs/html5shiv.js?1357673785" type="text/javascript"></script>
+      <script src="/js/libs/selectivizr.js" type="text/javascript"></script>
+
+      <style>
+        #wrapper {
+          min-width: 960px;
+        }
+      </style>
+    <![endif]-->
+
+    <!--[if lt IE 11]>
+    <script>
+      $(document).ready(function(){
+        $(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+
+   <link rel="stylesheet" href="//fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css" rel="stylesheet" type="text/css"/>
+   <link rel="shortcut icon" href="/img/favicon.ico">
+   <link href="/css/screen.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/screen_l10n.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/documentation.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/documentation_l10n.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/en/asset/css/codehilight.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/codehilight_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/en/asset/css/common.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/common_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+   <link type="text/css" rel="stylesheet" href="/css/print_l10n.css" media="print" />
+   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
+
+   <!--- search MD -->
+   <META name="description" content="Find Location helps you find an address or latitude and longitude coordinates and allows you to add rings, drive time, walk time and bands."><META name="last-modified" content="2015-11-11"><META name="product" content="bus-analyst-online"><META name="sub_category" content="Business Analyst Online"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Business Analyst Online"><META name="search-category" content="help-general"><META name="subject_label" content="BUSINESS,LOCATION ANALYTICS,ANALYSIS,BUSINESS ANALYST"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="BUSINESS,LOCATION ANALYTICS,ANALYSIS,BUSINESS ANALYST"><META name="content-language" content="en">
+   <!--- search MD -->
+
+     <script type="text/javascript">
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-215788-73']);
+     _gaq.push(['_setDomainName', 'arcgis.com']);
+     _gaq.push(['_trackPageview']);
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+   </script>
+
+   <script src="/js/sitecfg.js" type="text/javascript"></script>
+
+   <script src="/en/asset/js/jquery.1.9.1.min.js" type="text/javascript"></script>
+   <script src="/js/libs/jquery.cookie.js" type="text/javascript"></script>
+   <link href="/en/asset/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/en/asset/js/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="/en/asset/js/video-init.js" type="text/javascript"></script>
+
+    <script src="/js/signIn.js" type="text/javascript"></script>
+
+    <!--- Language Picker -->
+   <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
+   <link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
+   <script src="/js/locale/l10NStrings.js" type="text/javascript"></script>
+   <script src="/js/locale/langSelector.js" type="text/javascript"></script>
+   <!--- Language Picker -->
+
+   <!--- beg agol search -->
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch_l10n.css" />
+   <script src="/js/agolsearch.js"></script>
+
+   <!--- end agol search -->
+   <!--[if IE]>
+   <script src="/js/libs/html5-placeholder-shim.js"></script>
+   <![endif]-->
+
+   
+
+   
+
+   
+
+
+</head>
+   <!--
+      pub: GUID-5F7E4199-150E-4551-89E4-9DD81A0323F1=10 
+      tpc: GUID-88D65CAE-EBE6-49C7-B685-FF0BA53FADC8=11
+      -->
+    
+  <body class="en doc">
+  <!-- Google Tag Manager -->
+     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+    'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WVT7QT');</script>
+
+    <!-- End Google Tag Manager -->
+   
+     <div id="wrapper">
+        <div id="page">
+           <!--googleoff: all-->
+           
+    <header id="header">
+      <div class="container relative-container">
+        <div class="header-inner">
+          <div class="logo-wrap"><a href="http://www.arcgis.com" data-langlabel="arcgis-logo-text" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
+          <nav id="dropDown">
+              <a href="http://www.arcgis.com" class="current selected">
+                <h4 data-langlabel="arcgis">ArcGIS Online</h4>
+                <p>The mapping platform for your organization</p>
+              </a>
+              <a href="http://desktop.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-desktop">ArcGIS for Desktop</h4>
+                <p>A complete professional GIS</p>
+              </a>
+               <a href="http://server.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-server">ArcGIS for Server</h4>
+                <p>GIS in your enterprise</p>
+              </a>
+              <a href="https://developers.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-developers">ArcGIS for Developers</h4>
+                <p>Tools to build location-aware apps</p>
+              </a>
+              <a href="http://solutions.arcgis.com/">
+                <h4 data-langlabel="arcgis-solutions">ArcGIS Solutions</h4>
+                <p>Free template maps and apps for your industry</p>
+              </a>
+              <a href="http://marketplace.arcgis.com/">
+                <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
+                <p>Get apps and data for your organization</p>
+              </a>
+          </nav>
+          <nav>
+            <ul>
+              <li><a id="nav-features" data-langlabel="features" href="http://www.arcgis.com/features/features.html" class="anonymous-and-public-only">Features</a></li>
+              <li><a id="nav-plans" data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html" class="anonymous-and-public-only">Plans</a></li>
+              <li><a id="nav-gallery" data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+              <li><a id="nav-map" data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+              <li><a id="nav-scene" data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+              <li><a id="nav-help" data-langlabel="help" href="/en/arcgis-online/" class="anonymous-only">Help</a></li>
+              <li><a id="nav-groups" data-langlabel="nav-groups" href="http://www.arcgis.com/home/groups.html" class="public-and-org-only hide">Groups</a></li>
+              <li><a id="nav-mycontent" data-langlabel="nav-mycontent" href="http://www.arcgis.com/home/content.html" class="public-and-org-only hide">My Content</a></li>
+              <li><a id="nav-myorg" data-langlabel="nav-myorg" href="http://www.arcgis.com/home/organization.html" class="org-only hide">My Organization</a></li>
+            </ul>
+          </nav>
+          <a id="esri-logo" href="http://esri.com">Esri</a>
+
+          <div id="lg-container" class="banner-navigation">
+
+            <div id="agolSearch" class="agol-search">
+              <form class="agol-search-form" method="GET" action="//www.arcgis.com/home/search.html">
+                <input name="q" class="agol-search-input" placeholder="Search ArcGIS" type="text" value="">
+              </form>
+              <span class="agol-icon-search"></span>
+            </div>
+
+              <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
+                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
+              </div>
+
+              <div id="logged-in-navigation" class="dropdown-navigation no-top dropdown-wrapper hide">
+                  <a id="A1" class="dropdown btn user-signin" href="#">user</a>
+                  <div class="dropdown-content">
+                      <div class="dropdown-menu">
+                          <ul class="myconsole">
+                              <li><a id="agolProfile" href="#">My Profile</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul class="myconsole">
+                              <li><a id="agolHelp" href="#">Help</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul>
+                              <li><a id="agolLogout" href="#">Sign Out</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="lang-block"></div>
+
+          </div>
+
+          <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
+            <a data-langlabel="select-a-page" href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
+            <div class="dropdown-content">
+             <div class="dropdown-menu">
+              <ul>
+              <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html" class="anonymous-and-public-only">Features</a></li>
+              <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html" class="anonymous-and-public-only">Plans</a></li>
+              <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html ">Gallery</a></li>
+              <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html ">Map</a></li>
+              <li><a data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+              <li><a data-langlabel="help" href="/en/arcgis-online/" class="anonymous-only">Help</a></li>
+              <li><a data-langlabel="nav-groups" href="http://www.arcgis.com/home/groups.html" class="public-and-org-only hide">Groups</a></li>
+              <li><a data-langlabel="nav-mycontent" href="http://www.arcgis.com/home/content.html" class="public-and-org-only hide">My Content</a></li>
+              <li><a data-langlabel="nav-myorg" href="http://www.arcgis.com/home/organization.html" class="org-only hide">My Organization</a></li>
+              </ul>
+             </div>
+            </div>
+          </div>
+
+        </div>
+       </div>
+    </header>
+    
+           <div class="navigation-bar">
+              <div class="container">
+                 <header>
+                    <h1><a href="/en/bao">Business Analyst</a></h1>
+                    <form id="helpSearchForm" target="_top">
+                        <input type="search" name="q" class="leader" placeholder="Business Analyst Online">
+                        <input type="hidden" name="collection" value="help" />
+                        <input type="hidden" name="product" value="bus-analyst-online" />
+                        <input type="hidden" name="version" value="" />
+                        <input type="hidden" name="language" value="en" />
+                        </form>
+                 </header>
+                 <nav class='navigation-bar-nav'><ul><li  ><a href="/en/bao/" target="_top" title="Business Analyst">Home</a></li><li class="current" ><a href="/en/bao/help/welcome.htm" target="_top" title="Help">Help</a></li><li  ><a href="/en/bao/mobile/welcome-mobile.htm" target="_top" title="Business Analyst Online Mobile">Mobile</a></li><li  ><a href="https://geonet.esri.com/community/business-and-commercial/content/" target="_top" title="Forum">Forum</a></li></ul></nav>
+              </div>
+           </div>
+           <!--googleon: all-->
+
+           <div class="container">
+              <div class="row">
+
+              <!--googleoff: all-->
+
+                 <aside class="reference-index">
+                    <nav><div data-collapsed="true"><header><h4 class="section-title">Get started</h4></header><ul><li><a href="/en/bao/help/enterprise-login.htm">Enterprise login</a></li><li><a href="/en/bao/help/navigate-the-map.htm">Navigate the map</a></li><li><a href="/en/bao/help/search.htm">Search</a></li><li><a href="/en/bao/help/select-tool.htm">Select tool</a></li><li><a href="/en/bao/help/set-preferences.htm">Set  Preferences</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Use Data and Reports</h4></header><ul><li><a href="/en/bao/help/reports.htm">Reports</a></li><li><a href="/en/bao/help/data.htm">Data</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Create maps from data</h4></header><ul><li><a href="/en/bao/help/color-coded-maps.htm">Color-Coded Maps</a></li><li><a href="/en/bao/help/smart-map-search.htm">Smart Map Search</a></li><li><a href="/en/bao/help/business-and-faciilties-search.htm">Business and Facilities Search</a></li><li><a href="/en/bao/help/web-maps.htm">Web Maps</a></li><li><a href="/en/bao/help/data-browser.htm">Data Browser</a></li><li><a href="/en/bao/help/create-a-custom-variable.htm">Create a custom variable</a></li><li><a href="/en/bao/help/more-maps.htm">More Maps</a></li></ul></div><div data-collapsed="false"><header><h4 class="section-title">Define areas for reports</h4></header><ul><li class="current"><a href="/en/bao/help/find-location.htm">Find Location</a></li><li><a href="/en/bao/help/select-geography.htm">Select Geography</a></li><li><a href="/en/bao/help/draw-polygon.htm">Draw Polygon</a></li><li><a href="/en/bao/help/import-file.htm">Import File</a></li><li><a href="/en/bao/help/my-content.htm">My Content</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Create reports</h4></header><ul><li><a href="/en/bao/help/create-standard-reports.htm">Create Standard Reports</a></li><li><a href="/en/bao/help/create-comparison-reports.htm">Create Comparison Reports</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">References</h4></header><ul><li><a href="/en/bao/help/essential-vocabulary.htm">Essential Vocabulary</a></li><li><a href="/en/bao/help/calculation-estimates-for-user-created-areas.htm">Calculation estimates for user-created areas</a></li></ul></div></nav>
+                 </aside>
+
+              <!--googleon: all-->
+                 <!-- BEGPAGECONTENT -->
+                 <section class="reference-content">
+                    <div class="toc"><h5>In this topic</h5><ol><li><a href="#ESRI_SECTION1_243C23F6CE48438FB2CAE6812492063B">Rings</a></li><li><a href="#ESRI_SECTION1_58E891D8C6334263B6F8E6444A39AEE4">Drive Time</a></li><li><a href="#ESRI_SECTION1_F2E39735F3D44A7F9262BDB3260AF922">Walk Time</a></li><li><a href="#ESRI_SECTION1_943D9AC5F254417894982E501D9FD793">Bands</a></li><li><a href="#ESRI_SECTION1_84BB898532CB43F188752E1EA9ABED29">Other site menu options</a></li></ol></div>
+
+                    <h1 class="divider page-title">Find Location</h1>
+                    
+<section class="section1 padded-anchor" id="GUID-5B5299E7-EB62-42BC-95A5-E2072782EADC" purpose="section1"><h2>
+</h2><p id="GUID-898DC4AD-5C91-4353-BBCD-92B6B6DA9E51">You can enter an address or lat/long coordinates to find a location on the map. With this location you can add rings, drive time, walk time and bands.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-A2237BC8-2927-4B45-A728-7C9E0D670D74"><ol><li purpose="step" id="ESRI_STEP_C197F3E82634409B8276CEAA912FDD12"><span purpose="cmd" id="GUID-73E0A304-A5F3-4539-8E77-13F798DAEEA4">To access Find Location, click <span class="uicontrol">Maps</span>, <span class="uicontrol">Define Areas for Reports</span>  and <span class="uicontrol">Find Location</span>.</span><div class="stepresult" purpose="stepresult"><p id="GUID-C326FB8E-002D-435C-8D16-8AD537352A9E">The <span class="uicontrol">Find Location</span> dialog box opens on the left.</p></div></li><li purpose="step" id="GUID-1D860D15-593F-4DA2-B6C8-442B1BB771E9"><span purpose="cmd" id="GUID-7E525D8D-3B7E-4C8F-9C3A-7C04C70B0EDA">Type an address. <figure class="fig" href="#"><img src="GUID-F4E66345-8695-40F7-9E40-A054F9966CCF-web.png" alt="Type an address" title="Type an address"></figure></span><div class="substeps" id="ESRI_SUBSTEPS_C5520B78981B46AB942175D2755E222F" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_32A5E390DAEB4471BD76B5E2A458197C"><span purpose="cmd" id="GUID-1EC70714-EE64-4AE1-9ACC-F843A9789B77">To enter lat/long coordinates, click <span class="uicontrol">or enter a Lat/Long</span>. <figure class="fig" href="#"><img src="GUID-B555B700-278B-432B-A8AC-C085FF63ECFD-web.png" alt="Enter latitude and longitude" title="Enter latitude and longitude"></figure></span></li><li purpose="substep" id="ESRI_SUBSTEP_298715D2ECE84B60A47EDB1D7DBDB635"><span purpose="cmd" id="GUID-74B3DF9F-EC08-4D1B-925E-89E139B24A48">Enter the Lat/Long coordinates.</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_4D2184936EBD4CAA88E3632469310764"><span purpose="cmd" id="GUID-21E94D96-8C1E-4482-A7C9-389357004B2D">As an option, you can name your location. <figure class="fig" href="#"><img src="GUID-97120224-5439-40FE-B2C2-D8AB4D7792A7-web.png" alt="Name your location" title="Name your location"></figure></span></li><li purpose="step" id="ESRI_STEP_7D5D9EA253C7405E9D6C1BB1EA5BA02B"><span purpose="cmd" id="GUID-CCB9E9F6-4CD0-438E-BAE0-38719C27A2DD">Click <span class="uicontrol">Go</span>.</span></li><div class="stepinfo" purpose="stepinfo"> A pin is placed on the map indicating the location with a dialog box providing the address and options to add rings, drive time or walk time; move the point or delete the point. Naming the site is optional. If a site name is not entered then the address is used as the site name by default.<p id="GUID-BD97210C-859F-4192-AF62-EA9A995CA9BB">The dialog box for the point can be minimized or closed using the buttons on the upper right corner.</p></div></ol></div></section></section>
+<section class="section1 padded-anchor" id="ESRI_SECTION1_243C23F6CE48438FB2CAE6812492063B" purpose="section1"><h2>Rings</h2><p id="GUID-01C3BE41-FE59-412C-8F32-3001D6669CC4">Rings are circles
+generated on the map around the point. You can choose up to three
+rings and indicate the radius of the rings around the
+point. Report data is summarized for the area contained within
+each ring.
+ The limit for ring size is 1,000 miles. Rings can be in miles or kilometers and the default is 1, 3, and 5.</p><aside class="note" id="GUID-E49C2F56-4ED1-448E-AFA8-E59E8B4EC124"><h5 class="icon-light-bulb">Tip:</h5><div class="note-content"><p id="GUID-BCDA4461-C01D-48A2-A395-77495EED0006">You can use non-whole numbers such as .1, .3 and .5 for ring sizes. Using small ring sizes in dense urban areas like New York City, New York is useful while using these in sparsely populated areas provides results that may be hard to interpret.</p></div></aside><section class="wfsteps padded-anchor" purpose="wfsteps"><h4>Add rings</h4><div class="steps" id="ESRI_STEPS_9ACD89F435AF4EC5AA4EE4EB2357551F"><ol><li purpose="step" id="ESRI_STEP_C38C6EABAB9A473DB6A8F21BD21405F2"><span purpose="cmd" id="GUID-E8962D9E-6223-4C59-AAC6-78FD3CAE0488">Click  <span class="uicontrol">Add rings, drive time or walk time</span>.</span></li><li purpose="step" id="ESRI_STEP_C0DD694852804BC989F482C391429E06"><span purpose="cmd" id="GUID-AC948968-B1D1-44D2-B732-A25C0EA24081">Click <span class="uicontrol">Rings</span>.</span></li><li purpose="step" id="ESRI_STEP_A63C72B73EDB4E8EB9800F3F14DCAC2A"><span purpose="cmd" id="GUID-E48B7318-72E5-4769-BCF5-32BD334DCA4A">You can set the radius or use the defaults and check the <a class="xref xref" href="#guid-88d65cae-ebe6-49c7-b685-ff0ba53fadc8">Use bands</a> check box.</span></li><li purpose="step" id="ESRI_STEP_532A741064EE47AA9CBF4D30971B8153"><span purpose="cmd" id="GUID-A7FDB29A-6B23-4BF4-8E13-E3C125EAB1C8">Click <span class="uicontrol">Apply</span>.</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_58E891D8C6334263B6F8E6444A39AEE4" purpose="section1"><h2>Drive Time</h2><p id="GUID-DA28E091-3E72-4D41-83BE-EF3010D6FD01">A drive time represents how long it takes to drive to a
+specific location. These areas represent the distance traveled from
+the site in a given time. For example, a store's 10-minute drive
+time area defines the area in which drivers can reach the point in
+10 minutes or less. Travel time considers the
+posted speed limits per street segments.
+The limit for drive-time size is 300 minutes and distance limit is 300 miles. The default is 5, 10, and 15. Additionally, you can select miles to find out the distance drive time.  For example, you can find a 10 mile drive time from a point.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4>Add drive time
+</h4><div class="steps" id="ESRI_STEPS_639DEFE5DFCE40E1847105BC9ED887C5"><ol><li purpose="step" id="ESRI_STEP_02BD2AB6EE764E8DA1FFC376BF1DD8FF"><span purpose="cmd" id="GUID-BBA17306-7F58-4F42-ABAE-C0CCC97D392A">Click  <span class="uicontrol">Add rings, drive time or walk time</span>.</span><div class="info" purpose="info"><p id="GUID-E66CDCCB-C674-4400-9681-95AB33851509">Click <span class="uicontrol">Drive Time</span>.</p></div></li><li purpose="step" id="ESRI_STEP_48208986ECB04A73B8C032B306555D47"><span purpose="cmd" id="GUID-66D0AA64-9B27-449C-8A3E-BFA8FA6D883B">You can set the radius or use the defaults and check the <a class="xref xref" href="#guid-88d65cae-ebe6-49c7-b685-ff0ba53fadc8">Use bands</a> check box.</span></li><li purpose="step" id="ESRI_STEP_E6A35D4C5BE540FE879B94B296586331"><span purpose="cmd" id="GUID-CB758E6B-C3A1-4738-B9F7-2AF3C6A90A7E">You can select drive time choices and traffic, click <a class="xref xref" href="#guid-88d65cae-ebe6-49c7-b685-ff0ba53fadc8">More options</a>.</span><div class="info" purpose="info"></div></li><li purpose="step" id="ESRI_STEP_EA49DD98EA7246DE98EB4CA7966B3F20"><span purpose="cmd" id="GUID-8EA5FA8B-A55B-4C7C-AB87-266B73FE225F">Click <span class="uicontrol">Apply</span>.</span></li></ol></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_39B1E7334CA1400697687E5E4AF41F59" purpose="section2"><h3>More options for drive time</h3><p id="GUID-D0748C89-07DD-43E4-A9E3-FF295FC3330A">When using drive time, you can customize your search with options for selecting the type of drive time, selecting driving toward or away from the facility and selections for live traffic. Defaults can be set in <a class="xref xref" href="/en/bao/help/set-preferences.htm#ESRI_CONTEXT_6B5DCCC27DAD4968B1A0DF8990DCBA2B">Preferences</a>.</p><ul purpose="ul" id="UL_7180AAC7E87C47B4ABC4826EB23C46A4"><li purpose="li" id="LI_85B19E79E7D54617B8213ED7DB67647B">Select your driving mode using the <span class="uicontrol">Driving Time</span> drop-down menu. You can choose from: <ul purpose="ul" id="UL_CBFD22C487A3441C928EA4A0537590E3"><li purpose="li" id="LI_F603CEF5B1744C6AAC12E08D0C197055">Driving Time — Models the movement of cars and other similar small automobiles,
+such as pickup trucks, and finds solutions that optimize travel
+time. Travel obeys one-way roads, avoids illegal turns, and follows
+other rules that are specific to cars. Dynamic travel speeds based
+on traffic are used where it is available when you specify a start
+time.
+</li><li purpose="li" id="LI_8DED594FF4714B6FAC7229108D8A654A">Rural Driving Time — Models the movement of cars and other similar small automobiles,
+such as pickup trucks, and finds solutions that optimize travel
+time. Travel obeys one-way roads, avoids illegal turns, and follows
+other rules that are specific to cars, but does not discourage
+travel on unpaved roads. Dynamic travel speeds based on traffic are
+used where it is available when you specify a start time.
+</li><li purpose="li" id="LI_F97FC7DB0F5F44BB92077D1580EB5976">Trucking Time — Models basic truck travel by preferring designated truck routes and
+finds solutions that optimize travel time. Routes must obey one-way
+roads, avoid illegal turns, and so on.
+</li></ul></li><li purpose="li" id="LI_C7BE483AE42B4FF2954A38831EB87EA0">Select traveling away or toward a facility.</li><li purpose="li" id="LI_E873BEA8FA494B3DAF3DD449C50507EF">Use Traffic allows you to select live traffic for your map and reports. Using <span class="uicontrol">Live Traffic</span>, you can set current live traffic or a later time with the scroll bar. Live traffic provides comprehensive street data with historical, live and predictive traffic information. Viewing traffic or performing analyses in areas with live traffic
+data can take into account changing traffic conditions based on
+current and past observations. Using <span class="uicontrol">Traffic based on typical conditions for</span>   allows you to select a day and time. To learn more, see <a class="xref xref" href="http://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Network Analysis Coverage</a>.<aside class="note" id="GUID-A810E02F-66A6-4FAE-804B-DAC250D44558"><h5 class="icon-notebook">Note:</h5><div class="note-content"><p id="GUID-1B8E6EE9-27CD-4899-8D98-B34BF68DF310">Live traffic is not available for all countries.</p></div></aside></li></ul></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_F2E39735F3D44A7F9262BDB3260AF922" purpose="section1"><h2>Walk Time</h2><p id="GUID-E36AA4A8-6A57-40CE-A5E0-5FE16D6C660C">A walk time represents how long it takes to walk to a location. These areas represent the distance traveled by walking from the site in a given time. The default is 5, 10, and 15 minutes. Walk time follows paths and roads that allow pedestrian traffic. The walking speed is five kilometers per hour.
+</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4>Add walk time
+</h4><div class="steps" id="ESRI_STEPS_FB00DF138D3E45E8858174FBF195635B"><ol><li purpose="step" id="ESRI_STEP_16D46E5B6FAC44DFB74FD15961EB9A6B"><span purpose="cmd" id="GUID-C3F89E8E-1811-4ABB-8FF2-042857E0AA6B">Click  <span class="uicontrol">Add rings, drive time or walk time</span>.</span><div class="info" purpose="info"><p id="GUID-BC242443-730B-4A52-A2CD-F190E8B2DAB9">Click <span class="uicontrol">Walk Time</span>.</p></div></li><li purpose="step" id="ESRI_STEP_60C462439577481FA199B167AE728EC9"><span purpose="cmd" id="GUID-BB8549F9-FFC6-4766-AEE4-31E9F188E32F">You can set the radius or use the defaults and check the Use bands check box.</span></li><li purpose="step" id="ESRI_STEP_3B9D5E879F124E77B8D285BAF20EDD4C"><span purpose="cmd" id="GUID-55E8CEEC-A102-41CF-8D64-23DE5080CE6B">Click <span class="uicontrol">Apply</span>.</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_943D9AC5F254417894982E501D9FD793" purpose="section1"><h2>Bands</h2><p id="GUID-ECB64ED1-95B9-45E8-81A9-49C3BEC1D5B4">Bands are study areas with no overlap. They provide
+the traditional ring study area but without duplication of
+overlapping areas. These are useful for understanding the
+incremental market changes as you move away from a center location.
+For example, specifying  values of 5, 10, and 15 miles results in reports being generated for data from 0–5, 5–10, and 10–15
+mile bands from the center.
+These also calculate the differences in areas in reports.  Using drive time bands with 5, 10 and 15 miles results in reports being generated for data from 0-5, 5-10 and 10-15 mile bands from the center.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4>Add bands
+</h4><div class="steps" id="ESRI_STEPS_17DCC9968BF6482192B97FB162624B11"><ol><li purpose="step" id="ESRI_STEP_85A64E1669684CB49DD9BF5748BBD9A4"><span purpose="cmd" id="GUID-A26B694A-69C8-4F50-8823-FC2FD980100E">Click  <span class="uicontrol">Add rings, drive time or walk time </span>.</span></li><li purpose="step" id="ESRI_STEP_14D18B45C99346F7ACA575E1F8B61448"><span purpose="cmd" id="GUID-E6CE70BF-165E-430A-A4FE-237202297837">Select rings, drive time or walk time and check the  <span class="uicontrol">Use bands</span> check box.</span></li><li purpose="step" id="ESRI_STEP_2220AFFFA3C64C7FB1BC6F8BF0449BAA"><span purpose="cmd" id="GUID-8300A2EE-4330-45DC-9134-61ABA83D88B0">Click <span class="uicontrol">Apply</span>.</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_84BB898532CB43F188752E1EA9ABED29" purpose="section1"><h2>Other site menu options</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_EDFCC47D3A7F477C93061CDF22193A69" purpose="section2"><h3>Move this point</h3><p id="GUID-BCC1EA7D-7D88-4464-BB84-3C750133251F">This allows you to move the point on the map.
+</p><p id="GUID-788C892E-0587-440D-9B44-B66F737D3A73">Click <span class="uicontrol">Move this point</span>.</p><p id="GUID-7AFEBF31-967F-4B48-881E-70B97FB7321D">You can now drag the pin to move it to another location on the map.</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_0257E1117D8C4EEEB643337FF88DC9F5" purpose="section2"><h3>Delete this point</h3><p id="GUID-32FFE50F-5951-4492-9D43-019B96800BD0">This allows you to delete the point on the map.</p><p id="GUID-EF131D19-AB0A-4BEA-8205-46A97813C75D">Click <span class="uicontrol">Delete this point</span>.</p><p id="GUID-A9AF28C7-6769-4A10-ABCF-B080DB453941">The point is deleted from the map.</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_9AEB045B8BC34398894087894CA1318F" purpose="section2"><h3>Get reports</h3><p id="GUID-0D44778A-F850-4F56-BFC8-D7F43E83A761">Once you've added rings, drive time or walk time, you can create reports for the location you have
+created.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_F85D67D1CC9B4A759B07FBB2A9600F52"><ol><li purpose="step" id="ESRI_STEP_9B7CD13C10894E3287ACD526C09BC3D4"><span purpose="cmd" id="GUID-7B5FE478-2052-4659-894D-2039B2A88939">Click <span class="uicontrol">Get Reports</span>.</span></li><li purpose="step" id="ESRI_STEP_3B64D57547974A77AA0388CF744072BD"><span purpose="cmd" id="GUID-8E5D57B5-DADC-4FF5-B071-73445D05B315">Select the report from the <span class="uicontrol">Select Report</span> drop-down menu.</span></li><li purpose="step" id="ESRI_STEP_4895EAB5D34B40A9B10E2FF1E598BE7E"><span purpose="cmd" id="GUID-F28F583B-F503-4201-A61E-249001F10FFB">Select the report format from the <span class="uicontrol">Format</span> drop-down menu.</span></li><li purpose="step" id="ESRI_STEP_08E7EDF97B144FDD95CA4F6C6DDCE220"><span purpose="cmd" id="GUID-5B2CB0D9-345F-47DC-9C33-1FBD84025BD4">Click <span class="uicontrol">Run Report</span>.</span><div class="stepresult" purpose="stepresult"><p id="GUID-E94CCD09-1EDD-46B3-8F13-D6819FE8592D">When the report is ready, click <span class="uicontrol">Open Report</span>.</p></div></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_EFF163E71BD64C36BF6D6B94C667AC87" purpose="section2"><h3>Edit site
+</h3><p id="GUID-D0085FA1-CBEF-43FE-A6E0-C0C6DA99DD02">You can edit the rings, drive time and walk time for the site.</p><p id="GUID-906A912C-CE1E-4DF4-84FF-6C7EFDD37053">Click <span class="uicontrol">Site</span> to make edits.</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_4F5C4C701A12416D8EDB37D19B248D41" purpose="section2"><h3>Colors</h3><p id="GUID-C763BB7F-ACB8-4264-A60C-6D2A70BE5DFB">Once you have created a ring or drive time for your site,
+you can change the site colors. The fill and border color,
+transparency, and thickness options can be set.
+</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_8294D0CA09F14F089AB0F0EF793759D3"><ol><li purpose="step" id="ESRI_STEP_9648B008C14E499C8304113467D259AF"><span purpose="cmd" id="GUID-FA20FB2B-28A9-4B06-A461-B1567F5BDE65">To change the fill, click <span class="uicontrol">Fill</span>. </span><div class="info" purpose="info"><p id="GUID-63720FCD-CC89-4D10-9C30-1D5438868E22">Fill is selected by default.</p></div></li><li purpose="step" id="ESRI_STEP_B34E7B2B06674C068BD8431E67A61B11"><span purpose="cmd" id="GUID-7D94B40A-A5B0-4D8A-B738-B0FE1440CC1F">To change fill, follow these steps:</span><ul purpose="choices" id="ESRI_CHOICES_20BC87EEFD774A46A2A6401ECF9269B2"><li purpose="choice" id="ESRI_CHOICE_60A197C8D4894ED2918CD95783A8737A">To change the color, click the color picker and a
+color selection palette appears. Continue until you have changed
+all the colors you want to change.
+</li><li purpose="choice" id="ESRI_CHOICE_FE8C996C53FC4EE693EE419B9C83825D">To change the transparency, use the <span class="uicontrol">Transparency</span> slider. Slide it to the left to decrease the transparency percentage or
+to the right to increase the transparency percentage.</li><li purpose="choice" id="ESRI_CHOICE_75E31CE3C06F4981A9F57EBDE2794178">Check the <span class="uicontrol">No Fill</span> check box for no fill.</li><li purpose="choice" id="ESRI_CHOICE_4DEA737C78EA484480A13BF9D6BB35B4">To reset the fill and border settings to the original
+values, click <span class="uicontrol">Reset</span>.</li><li purpose="choice" id="ESRI_CHOICE_81F7BFB059D8480A9D9C7A9A9CED0422">To save your edits for only the site being edited, click <span class="uicontrol">OK</span>.</li><li purpose="choice" id="ESRI_CHOICE_2630751353EE443EA98184F8AF9E783B">To save your edits for all future sites of the same type, click
+<span class="uicontrol">Save in Preferences</span>. <p id="GUID-F8FEE775-FA43-42D4-8B8A-301457FB483D">The <span class="uicontrol">Preferences</span> dialog box appears with the Find Location tab
+opened and your color changes made.</p><p id="GUID-4C073377-7557-476D-8849-3A9906A2C77B">If you want your changes to be saved in Preferences, click <span class="uicontrol">Save</span>.
+If not, click <span class="uicontrol">Cancel</span>. If you save your changes in Preferences, the
+next time a site of the same type is created, opened, or edited, it
+will display the newly saved changes. To reset the fill and border
+settings to the original values, click <span class="uicontrol">Restore Defaults</span>.</p></li></ul></li><li purpose="step" id="ESRI_STEP_92993935B9004A31A3D12E80518D968B"><span purpose="cmd" id="GUID-464A18C9-F19C-44AD-9C68-A6825F626241">To change the colors for border, follow these steps: </span><ul purpose="choices" id="ESRI_CHOICES_DB0CD32DF51745B8A13330B20D73B4A5"><li purpose="choice" id="ESRI_CHOICE_56A7F50E1FC44DCAB67048E4F7FE4233">To change the color, click the color picker and a
+color selection palette appears. Continue until you have changed
+all the colors you want to change.
+</li><li purpose="choice" id="ESRI_CHOICE_8AF3D3D9458947039881EB6BC1B0BBEA">To change the border, click <span class="uicontrol">Border</span>.</li><li purpose="choice" id="ESRI_CHOICE_7302D385664E4AC7BA6C6421066B1ECA">To change the transparency and thickness, use the appropriate
+slider.
+Slide the line to the left to decrease the percentage or to the
+right to increase the percentage.</li><li purpose="choice" id="ESRI_CHOICE_6870E902E16E49F38163D1DC235A1751">Check the <span class="uicontrol">No Border</span> check box for no borders.</li><li purpose="choice" id="ESRI_CHOICE_6CA6785C5CE4460CBAB08E0CBF1D3C7E">To reset the fill and border settings to the original
+values, click <span class="uicontrol">Reset</span>.</li><li purpose="choice" id="ESRI_CHOICE_6AE079337CB54F2FB07329EA76E1624C">To save your edits for only the site being edited, click <span class="uicontrol">OK</span>.</li><li purpose="choice" id="ESRI_CHOICE_FF6703BD1BB54D5D980BC72870CE3270">To save your edits for all future sites of the same type, click
+<span class="uicontrol">Save in Preferences</span>. <p id="GUID-4E9F00DD-4669-4AC1-9C7F-742306337426">The <span class="uicontrol">Preferences</span> dialog box appears with the Find Location tab
+opened and your color changes made.</p><p id="GUID-C12116EB-66F9-44E4-901B-43FFC053613F">If you want your changes to be saved in Preferences, click <span class="uicontrol">Save</span>.
+If not, click <span class="uicontrol">Cancel</span>. If you save your changes in Preferences, the
+next time a site of the same type is created, opened, or edited, it
+will display the newly saved changes. To reset the fill and border
+settings to the original values, click <span class="uicontrol">Restore Defaults</span>.</p></li></ul></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_1AF9ECCFDA344C3198D1A23789FB79C9" purpose="section2"><h3>Symbol</h3><p id="GUID-80682F4D-E4DF-4518-BEBA-132A852A08DC">You can edit the symbol by choosing from the available symbols provided or import a custom symbol.</p><p id="GUID-8486FF35-274D-40BA-9E2C-C65136D941A0">To choose a symbol, click the arrow to access the drop-down menu.
+You can select from available symbols or import your own custom
+symbol. Change the symbol size with the size slider.
+</p><aside class="note" id="GUID-9DA9AA62-A23F-44A6-A42B-1FCDEF85B641"><h5 class="icon-notebook">Note:</h5><div class="note-content"><p id="GUID-904F028D-E2DD-44CD-BC98-9CAD6D7CA73A">Symbols in GIF, PNG, and JPG file formats can be uploaded with a limit of 1 MB. The recommended size of the image is 450x280 pixels or less.</p></div></aside></section><section class="section2 padded-anchor" id="ESRI_SECTION2_CE810D2402924D3DBDA3EA2C218B3B4A" purpose="section2"><h3>Clear</h3><p id="GUID-3FB34867-DF0E-400C-BF9A-AF1BD0AA4B7A">This option clears the site from the map but doesn't delete
+it.
+</p><p id="GUID-9EFDA626-AD62-48A1-8267-1E1C36A6B6B2">Click <span class="uicontrol">Clear</span>.</p></section></section>
+
+                 </section>
+                 <!-- ENDPAGECONTENT -->
+                 <footer class="feedback">
+                  <a data-langlabel="feedback-on-this-topic" href="/en/feedback/">Feedback on this topic?</a>
+               </footer>
+              </div>
+           </div>
+
+        </div>
+     </div>
+     <!--googleoff: all-->
+     
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <nav>
+        <h4 data-langlabel="arcgis">Arc<span>GIS</span></h4>
+        <ul>
+          <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
+          <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html">Features</a></li>
+          <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
+          <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+          <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+          <li><a data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+          <li><a data-langlabel="help" href="/en/arcgis-online/">Help</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <h4 data-langlabel="arcgis-platform">ArcGIS Platform</h4>
+        <ul>
+          <li><a data-langlabel="arcgis" href="http://www.arcgis.com/">ArcGIS Online</a></li>
+          <li><a data-langlabel="arcgis-for-desktop" href="http://desktop.arcgis.com/">ArcGIS for Desktop</a></li>
+          <li><a data-langlabel="arcgis-for-server" href="http://server.arcgis.com/">ArcGIS for Server</a></li>
+          <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+          <li><a data-langlabel="arcgis-solutions" href="http://solutions.arcgis.com/">ArcGIS Solutions</a></li>
+          <li><a data-langlabel="arcgis-marketplace" href="http://marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <h4 data-langlabel="about-esri">About Esri</h4>
+        <ul>
+          <li><a data-langlabel="about-us" href="http://www.esri.com/about-esri/">About Us</a></li>
+          <li><a data-langlabel="careers" href="http://www.esri.com/careers/">Careers</a></li>
+          <li><a data-langlabel="insiders-blog" href="http://blogs.esri.com/esri/esri-insider/">Insiders Blog</a></li>
+          <li><a data-langlabel="user-conference" href="http://www.esri.com/events/user-conference/index.html">User Conference</a></li>
+          <li><a data-langlabel="developer-summit" href="http://www.esri.com/events/devsummit/index.html">Developer Summit</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <a id="esri-logo-footer" href="http://esri.com">Esri</a>
+        <section id="footer-social-nav">
+                <a class="icon-twitter" href="https://twitter.com/Esri/"></a>
+                <a class="icon-facebook" href="https://www.facebook.com/esrigis/"></a>
+                <a class="icon-github" href="http://esri.github.com/"></a>
+                <a class="icon-email" href="http://www.esri.com/about-esri/contact/"></a>
+        </section>
+      </nav>
+      <small id="footer-legal">&copy; Copyright 2015 Environmental Systems Research Institute, Inc. | <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy">Privacy</a> | <a data-langlabel="legal" href="http://www.esri.com/legal/software-license">Legal</a></small>
+    </div>
+
+  </div>
+</footer>
+
+         
+    <!--[if gt IE 8]><!-->
+    <!--<![endif]-->
+
+   <script src="/js/drop-down.js" type="text/javascript"></script>
+   <script src="/en/asset/js/init.js" type="text/javascript"></script>
+   <script src="/en/asset/js/jqcollapsible.js" type="text/javascript"></script>
+   <script src="/js/search/searchform.js" type="text/javascript"></script>
+   <script src="/cdn/js/link-modifier.js" type="text/javascript"></script>
+   <script src="/cdn/js/sitewide.js" type="text/javascript"></script>
+
+   <script>
+   $(function() {
+      $("#agolSearch").agolSearch();
+   });
+   </script>
+
+    <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"> piAId = '83202'; piCId = '4008';
+(function() { function async_load(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
+'.pardot.com/pd.js';
+var c = document.getElementsByTagName('script')[0];
+c.parentNode.insertBefore(s, c);
+} if(window.attachEvent) { window.attachEvent('onload', async_load); } else { window.addEventListener('load', async_load, false); }
+})(); </script>
+   
+   </body>
+
+   </html>
+   

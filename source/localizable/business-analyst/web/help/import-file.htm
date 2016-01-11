@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr"> <!--<![endif]-->
+ 
+<head>
+    <meta charset="utf-8">
+    <title>Import File&mdash;Business Analyst | ArcGIS</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'en',
+        localedir: 'en',
+        langSelector: 'none'
+      };
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="/js/libs/html5shiv.js?1357673785" type="text/javascript"></script>
+      <script src="/js/libs/selectivizr.js" type="text/javascript"></script>
+
+      <style>
+        #wrapper {
+          min-width: 960px;
+        }
+      </style>
+    <![endif]-->
+
+    <!--[if lt IE 11]>
+    <script>
+      $(document).ready(function(){
+        $(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+
+   <link rel="stylesheet" href="//fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css" rel="stylesheet" type="text/css"/>
+   <link rel="shortcut icon" href="/img/favicon.ico">
+   <link href="/css/screen.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/screen_l10n.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/documentation.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/documentation_l10n.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/en/asset/css/codehilight.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/codehilight_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/en/asset/css/common.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/common_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+   <link type="text/css" rel="stylesheet" href="/css/print_l10n.css" media="print" />
+   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
+
+   <!--- search MD -->
+   <META name="description" content="You can import shapefiles of polygons and points, and Excel files containing address information."><META name="last-modified" content="2015-11-11"><META name="product" content="bus-analyst-online"><META name="sub_category" content="Business Analyst Online"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Business Analyst Online"><META name="search-category" content="help-general"><META name="subject_label" content="BUSINESS,LOCATION ANALYTICS,ANALYSIS,BUSINESS ANALYST"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="BUSINESS,LOCATION ANALYTICS,ANALYSIS,BUSINESS ANALYST"><META name="content-language" content="en">
+   <!--- search MD -->
+
+     <script type="text/javascript">
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-215788-73']);
+     _gaq.push(['_setDomainName', 'arcgis.com']);
+     _gaq.push(['_trackPageview']);
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+   </script>
+
+   <script src="/js/sitecfg.js" type="text/javascript"></script>
+
+   <script src="/en/asset/js/jquery.1.9.1.min.js" type="text/javascript"></script>
+   <script src="/js/libs/jquery.cookie.js" type="text/javascript"></script>
+   <link href="/en/asset/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/en/asset/js/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="/en/asset/js/video-init.js" type="text/javascript"></script>
+
+    <script src="/js/signIn.js" type="text/javascript"></script>
+
+    <!--- Language Picker -->
+   <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
+   <link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
+   <script src="/js/locale/l10NStrings.js" type="text/javascript"></script>
+   <script src="/js/locale/langSelector.js" type="text/javascript"></script>
+   <!--- Language Picker -->
+
+   <!--- beg agol search -->
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch_l10n.css" />
+   <script src="/js/agolsearch.js"></script>
+
+   <!--- end agol search -->
+   <!--[if IE]>
+   <script src="/js/libs/html5-placeholder-shim.js"></script>
+   <![endif]-->
+
+   
+
+   
+
+   
+
+
+</head>
+   <!--
+      pub: GUID-5F7E4199-150E-4551-89E4-9DD81A0323F1=10 
+      tpc: GUID-E856DEBE-6500-408C-90D5-BE8180EF501E=10
+      -->
+    
+  <body class="en doc">
+  <!-- Google Tag Manager -->
+     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+    'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WVT7QT');</script>
+
+    <!-- End Google Tag Manager -->
+   
+     <div id="wrapper">
+        <div id="page">
+           <!--googleoff: all-->
+           
+    <header id="header">
+      <div class="container relative-container">
+        <div class="header-inner">
+          <div class="logo-wrap"><a href="http://www.arcgis.com" data-langlabel="arcgis-logo-text" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
+          <nav id="dropDown">
+              <a href="http://www.arcgis.com" class="current selected">
+                <h4 data-langlabel="arcgis">ArcGIS Online</h4>
+                <p>The mapping platform for your organization</p>
+              </a>
+              <a href="http://desktop.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-desktop">ArcGIS for Desktop</h4>
+                <p>A complete professional GIS</p>
+              </a>
+               <a href="http://server.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-server">ArcGIS for Server</h4>
+                <p>GIS in your enterprise</p>
+              </a>
+              <a href="https://developers.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-developers">ArcGIS for Developers</h4>
+                <p>Tools to build location-aware apps</p>
+              </a>
+              <a href="http://solutions.arcgis.com/">
+                <h4 data-langlabel="arcgis-solutions">ArcGIS Solutions</h4>
+                <p>Free template maps and apps for your industry</p>
+              </a>
+              <a href="http://marketplace.arcgis.com/">
+                <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
+                <p>Get apps and data for your organization</p>
+              </a>
+          </nav>
+          <nav>
+            <ul>
+              <li><a id="nav-features" data-langlabel="features" href="http://www.arcgis.com/features/features.html" class="anonymous-and-public-only">Features</a></li>
+              <li><a id="nav-plans" data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html" class="anonymous-and-public-only">Plans</a></li>
+              <li><a id="nav-gallery" data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+              <li><a id="nav-map" data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+              <li><a id="nav-scene" data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+              <li><a id="nav-help" data-langlabel="help" href="/en/arcgis-online/" class="anonymous-only">Help</a></li>
+              <li><a id="nav-groups" data-langlabel="nav-groups" href="http://www.arcgis.com/home/groups.html" class="public-and-org-only hide">Groups</a></li>
+              <li><a id="nav-mycontent" data-langlabel="nav-mycontent" href="http://www.arcgis.com/home/content.html" class="public-and-org-only hide">My Content</a></li>
+              <li><a id="nav-myorg" data-langlabel="nav-myorg" href="http://www.arcgis.com/home/organization.html" class="org-only hide">My Organization</a></li>
+            </ul>
+          </nav>
+          <a id="esri-logo" href="http://esri.com">Esri</a>
+
+          <div id="lg-container" class="banner-navigation">
+
+            <div id="agolSearch" class="agol-search">
+              <form class="agol-search-form" method="GET" action="//www.arcgis.com/home/search.html">
+                <input name="q" class="agol-search-input" placeholder="Search ArcGIS" type="text" value="">
+              </form>
+              <span class="agol-icon-search"></span>
+            </div>
+
+              <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
+                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
+              </div>
+
+              <div id="logged-in-navigation" class="dropdown-navigation no-top dropdown-wrapper hide">
+                  <a id="A1" class="dropdown btn user-signin" href="#">user</a>
+                  <div class="dropdown-content">
+                      <div class="dropdown-menu">
+                          <ul class="myconsole">
+                              <li><a id="agolProfile" href="#">My Profile</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul class="myconsole">
+                              <li><a id="agolHelp" href="#">Help</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul>
+                              <li><a id="agolLogout" href="#">Sign Out</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="lang-block"></div>
+
+          </div>
+
+          <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
+            <a data-langlabel="select-a-page" href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
+            <div class="dropdown-content">
+             <div class="dropdown-menu">
+              <ul>
+              <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html" class="anonymous-and-public-only">Features</a></li>
+              <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html" class="anonymous-and-public-only">Plans</a></li>
+              <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html ">Gallery</a></li>
+              <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html ">Map</a></li>
+              <li><a data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+              <li><a data-langlabel="help" href="/en/arcgis-online/" class="anonymous-only">Help</a></li>
+              <li><a data-langlabel="nav-groups" href="http://www.arcgis.com/home/groups.html" class="public-and-org-only hide">Groups</a></li>
+              <li><a data-langlabel="nav-mycontent" href="http://www.arcgis.com/home/content.html" class="public-and-org-only hide">My Content</a></li>
+              <li><a data-langlabel="nav-myorg" href="http://www.arcgis.com/home/organization.html" class="org-only hide">My Organization</a></li>
+              </ul>
+             </div>
+            </div>
+          </div>
+
+        </div>
+       </div>
+    </header>
+    
+           <div class="navigation-bar">
+              <div class="container">
+                 <header>
+                    <h1><a href="/en/bao">Business Analyst</a></h1>
+                    <form id="helpSearchForm" target="_top">
+                        <input type="search" name="q" class="leader" placeholder="Business Analyst Online">
+                        <input type="hidden" name="collection" value="help" />
+                        <input type="hidden" name="product" value="bus-analyst-online" />
+                        <input type="hidden" name="version" value="" />
+                        <input type="hidden" name="language" value="en" />
+                        </form>
+                 </header>
+                 <nav class='navigation-bar-nav'><ul><li  ><a href="/en/bao/" target="_top" title="Business Analyst">Home</a></li><li class="current" ><a href="/en/bao/help/welcome.htm" target="_top" title="Help">Help</a></li><li  ><a href="/en/bao/mobile/welcome-mobile.htm" target="_top" title="Business Analyst Online Mobile">Mobile</a></li><li  ><a href="https://geonet.esri.com/community/business-and-commercial/content/" target="_top" title="Forum">Forum</a></li></ul></nav>
+              </div>
+           </div>
+           <!--googleon: all-->
+
+           <div class="container">
+              <div class="row">
+
+              <!--googleoff: all-->
+
+                 <aside class="reference-index">
+                    <nav><div data-collapsed="true"><header><h4 class="section-title">Get started</h4></header><ul><li><a href="/en/bao/help/enterprise-login.htm">Enterprise login</a></li><li><a href="/en/bao/help/navigate-the-map.htm">Navigate the map</a></li><li><a href="/en/bao/help/search.htm">Search</a></li><li><a href="/en/bao/help/select-tool.htm">Select tool</a></li><li><a href="/en/bao/help/set-preferences.htm">Set  Preferences</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Use Data and Reports</h4></header><ul><li><a href="/en/bao/help/reports.htm">Reports</a></li><li><a href="/en/bao/help/data.htm">Data</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Create maps from data</h4></header><ul><li><a href="/en/bao/help/color-coded-maps.htm">Color-Coded Maps</a></li><li><a href="/en/bao/help/smart-map-search.htm">Smart Map Search</a></li><li><a href="/en/bao/help/business-and-faciilties-search.htm">Business and Facilities Search</a></li><li><a href="/en/bao/help/web-maps.htm">Web Maps</a></li><li><a href="/en/bao/help/data-browser.htm">Data Browser</a></li><li><a href="/en/bao/help/create-a-custom-variable.htm">Create a custom variable</a></li><li><a href="/en/bao/help/more-maps.htm">More Maps</a></li></ul></div><div data-collapsed="false"><header><h4 class="section-title">Define areas for reports</h4></header><ul><li><a href="/en/bao/help/find-location.htm">Find Location</a></li><li><a href="/en/bao/help/select-geography.htm">Select Geography</a></li><li><a href="/en/bao/help/draw-polygon.htm">Draw Polygon</a></li><li class="current"><a href="/en/bao/help/import-file.htm">Import File</a></li><li><a href="/en/bao/help/my-content.htm">My Content</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Create reports</h4></header><ul><li><a href="/en/bao/help/create-standard-reports.htm">Create Standard Reports</a></li><li><a href="/en/bao/help/create-comparison-reports.htm">Create Comparison Reports</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">References</h4></header><ul><li><a href="/en/bao/help/essential-vocabulary.htm">Essential Vocabulary</a></li><li><a href="/en/bao/help/calculation-estimates-for-user-created-areas.htm">Calculation estimates for user-created areas</a></li></ul></div></nav>
+                 </aside>
+
+              <!--googleon: all-->
+                 <!-- BEGPAGECONTENT -->
+                 <section class="reference-content">
+                    <div class="toc"><h5>In this topic</h5><ol><li><a href="#ESRI_SECTION1_C2CD07DF433B40ED9A065C6C0AC874A0">Import an Excel file</a></li><li><a href="#ESRI_SECTION1_FC1C37A2FF1D41AD8A3076A00F0FBA1C">Import a polygonal shapefile</a></li><li><a href="#ESRI_SECTION1_D72FAD7965DC464FAE2A33D051AE50F9">Import a point shapefile</a></li><li><a href="#ESRI_SECTION1_D9B58E1D8E2D43B1A7E409645AC111E9">Trouble importing a shapefile?</a></li></ol></div>
+
+                    <h1 class="divider page-title">Import File</h1>
+                    
+    <section class="section1 padded-anchor" id="GUID-4EAD1CB0-E61B-4E2F-B20F-63C4652FF37A" purpose="section1"><h2>      </h2><p id="GUID-C2641C06-193A-4F9B-A222-FCA2C9710337">Import File allows you to import shapefiles of polygons and
+points, and Excel files containing address information. You can
+import Excel files with a maximum file size limit
+of 1 MB. Shapefiles can be imported with a maximum of a file size limit of 3 MB. Shapefiles must be a single zipped file containing
+.shp and .prj files.</p><p id="GUID-DC06E350-23AF-49BF-97A5-D3B29BF0A6BF">There is a limit of importing 100 records when importing shapefiles. When there are more than 100 records, the first 100 will be imported. Files containing more than 1,000 records can't be imported.</p><p id="GUID-070413E5-A4E4-4AD2-B4A7-DD157600DD7D">When importing Excel or point shapefiles, you can choose styles to best visualize the information on the map. These can be visualized as a sequence of colors, such as light-to-dark, or as graduated circles, such as from small-to-large. For example, you can use colors or circles to show population. You can also use unique symbols, import custom symbols and create heat maps. Heat maps are useful when many of the points on the map are close
+together and difficult to distinguish.
+  </p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="GUID-07B9B8BB-28C9-4680-94E1-625A8E482DD1" purpose="context">        </section><div class="steps" id="GUID-CF55D5F9-3433-4365-96B6-94EDA1EA16EC"><ol>          <li purpose="step" id="GUID-01BC9FE6-2E0E-46AA-B05A-084E8B360B98">            <span purpose="cmd" id="GUID-3B5FD00E-C938-4F9F-8554-8EF7FA016056">To access Import Files,
+click <span class="uicontrol">Maps</span>, <span class="uicontrol">Define Areas for Reports</span> and click <span class="uicontrol">Import File</span>.
+
+</span>            <div class="stepresult" purpose="stepresult">              <p id="GUID-BD36A7E6-7E88-414D-B458-62D4CE468A19">Import File appears on the left.
+</p>            </div>          </li>          <li purpose="step" id="ESRI_STEP_3278B4BA4C954A57A824F1032A5A5A62">            <span purpose="cmd" id="GUID-FA7F3B12-EA2D-4237-B700-429337C6DB3F">In Select a file to import, click <span class="uicontrol">Browse</span> to choose the file that you want to import.
+</span>            <div class="stepresult" purpose="stepresult">              <p id="GUID-6993C1E9-839E-46FE-8250-788D05274155">Once selected, the file name appears in the <span class="uicontrol">Select file to import</span> text box.
+</p>            </div>          </li>          <li purpose="step" id="ESRI_STEP_E8FE5A467B6A4BD7A1B2A2C793AFE2AB">            <span purpose="cmd" id="GUID-2AB498E1-12ED-40FB-B7C6-21B4C0837279">Click <span class="uicontrol">Import</span>.
+</span>            <div class="stepresult" purpose="stepresult">              <p id="GUID-5103D1FF-F68A-4B73-A3F4-B282E19E8DB9">The next steps will vary depending on the type of file that you've imported. You can import an Excel file, a polygonal shapefile or a point shapefile.</p>            </div>          </li>        </ol></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_C2CD07DF433B40ED9A065C6C0AC874A0" purpose="section1"><h2>Import an Excel file</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_E82D38A9FFBF4878ACE8CDF04B05BFAC" purpose="context"></section><div class="steps" id="ESRI_STEPS_7175F61537A844AD8D7C9BE08BCC828B"><ol>          <li purpose="step" id="ESRI_STEP_1BD4EC8F011F487AA421AA159C98476C">            <span purpose="cmd" id="GUID-E0657BA0-7FF4-4FBF-B503-4AF2AF1A97E0">After importing the Excel file, confirm the column headings that will be extracted from the
+selected file. You can choose from Address, City, State, ZIP Code and/or Latitude and Longitude.
+</span>          </li>          <li purpose="step" id="ESRI_STEP_1C5F0EB34D864788AAEC99D12FC47DCF">            <span purpose="cmd" id="GUID-7002F818-3606-4066-9F46-6A68EB9D2B04">Click <span class="uicontrol">Next</span>.
+</span>          </li>          <li purpose="step" id="ESRI_STEP_F6BF35E2B7914DB9A505C8400ACC95E0">            <span purpose="cmd" id="GUID-E7A762BC-5979-42BE-AC73-174B91CBE4F0">If any corrections are needed for invalid
+addresses, you can make them here.
+</span>            <ul purpose="choices" id="ESRI_CHOICES_4F65E1BC05254DD5A6DC4995A14004E3">              <li purpose="choice" id="ESRI_CHOICE_84EC93D6DC6F4E3485C3E0BE201D6662">You can fix the matches one at a time, use fix all to make corrections or ignore the point.</li>              <li purpose="choice" id="ESRI_CHOICE_245DCEAB0B00409EA62909FDBBBCE144">You can fix all of the matches.
+Using the edit link next to the invalid addresses, you can correct these and click <span class="uicontrol">Find Again</span>. </li>              <li purpose="choice" id="ESRI_CHOICE_16AA3C38EDA6494D990B43DAAD9EF803">If you don't want to make any corrections, click <span class="uicontrol">Add matches to map</span>.
+</li>            </ul>            <div class="stepresult" purpose="stepresult">              <p id="GUID-1A334036-D32A-4E4F-B814-2539755A6C14">The locations successfully found appear on the map.</p>            </div>          </li>          
+          
+          
+          <li purpose="step" id="ESRI_STEP_361D7D2594BC416DB6E8E7A4EF8760D7">            <span purpose="cmd" id="GUID-C89E2630-B449-4A54-8B43-FF2434B7A532">You can choose a style for this layer. You can choose from:</span>            <div class="info" purpose="info">              <ul purpose="ul" id="UL_DB97C51327074FEF90A705E7374CBDF0">                <li purpose="li" id="LI_25A9E72678C845539E26609ABC9654BF">Location (Single Symbol) — Showing data on a map with a single symbol shows the distribution  and may reveal patterns. For example, mapping of list of restaurant locations, you would likely see the restaurants together in a business district.<p id="GUID-F0AC7D9C-35E8-4578-87F9-1DD4DAAF9A12">To choose a symbol, click the arrow to access the drop-down menu. You can select from available symbols or import your own custom symbol. Change the symbol size with the size slider. <figure class="fig" href="#"><img src="GUID-6F315E3F-4B1F-440E-A6F9-98A9009DAA79-web.png" alt="Choose a symbol for the layer" title="Choose a symbol for the layer"></figure></p><aside class="note" id="GUID-CD2B97A0-A826-4C62-AB66-365FDC367E9E"><h5 class="icon-notebook">Note:</h5><div class="note-content"><p id="GUID-91B199DC-FC45-4B44-A73A-DAF570634D1A">Symbols in GIF, PNG, and JPG file formats can be uploaded with a
+limit of 1 MB. The recommended size of the image is 450x280 pixels
+or less.
+</p></div></aside></li>                <li purpose="li" id="LI_9D2FB8C3FF324B20B5486DD54152C9A9">Type (Unique Symbols) — Use unique symbols to show different kinds of things rather than counts of numerical measurements. For example, you can
+use different colors to represent restaurant cuisine types. Ideally, your layer would show fewer than 10 categories;
+more categories than that become hard to distinguish by color
+alone. As a default, if your data has more than 10 categories, the
+10 most common will be shown and the remaining ones will be grouped
+together into an 
+
+<span class="uicontrol">Others</span> category. <p id="GUID-12213005-DF82-495C-98BC-3C25A4FCED6F">Click <span class="uicontrol">Options</span> to choose the style for the symbols and set the color ramp, change the attribute or edit the symbols individually. Changes appear in the legend.</p></li>                <li purpose="li" id="LI_B995D73C5B6E4F9BBEA01659750918B3">Counts and Amounts (Color) — If you have numeric data, you can distinguish features
+based on a color gradient. There are different kinds of color
+gradients that you can use, for example, a simple light-to-dark
+color scheme can show low-to-high data values for age or income.
+<p id="GUID-6D810AF9-EB67-43F7-AFC9-CB7F75C3885C">Click <span class="uicontrol">Options</span> to choose the style for the symbols, change the attribute and adjust the graph. Click <span class="uicontrol">Classify data</span> to adjust the method and breaks.  Changes appear in the legend.</p></li>                <li purpose="li" id="LI_BF7710B3127142F796556CF7384F37D4">Counts and Amounts (Size) — This  uses an orderable sequence of different sizes to
+represent your numerical data or ranked categories. These proportional
+symbol maps use an intuitive logic that larger symbols equate to
+larger numbers. You can adjust the size of the symbols for clarification. For example, you could use graduated symbols to
+show sales or number of employees. <p id="GUID-BA068FB6-31E4-4630-A446-7F750E0B8213">Click <span class="uicontrol">Options</span> to choose the style for the symbols, change the attribute and adjust the graph and clusters. Click <span class="uicontrol">Classify data</span> to adjust the method and breaks.  Changes appear in the legend.</p></li>                <li purpose="li" id="LI_AF0CEA1FB111418AA2F8A58F9C07EB55">Heat Map — Heat maps can be used when mapping the location of point features.
+These are useful when many of the points on the map are close
+together and aren't easily distinguished. Heat maps use the
+points in the layer to calculate and display the relative density
+of points on the map as smoothly varying sets of colors ranging
+from cool (low density of points) to hot (many points). It is best
+to avoid heat maps if you have only a few point features; instead,
+map the actual points. 
+
+<p id="GUID-5BFDAE6F-31EB-4BB9-9A81-38C4D6947403">Click <span class="uicontrol">Options</span> to change the color bar.  You can also move the <span class="uicontrol">Area of Influence</span> slider to adjust the clusters.  Changes appear in the legend.</p><p id="GUID-6DBDAAD2-5583-4449-AF55-9FCD5B0A6312">Using the Select tool, you can <a class="xref xref" href="/en/bao/help/select-tool.htm#ESRI_SECTION1_37D783C6A6E94F8A8F9FE01E797A9863">select heat map polygons</a> to create reports or <a class="xref xref" href="/en/bao/help/select-tool.htm#LI_1350538BF1124D0BA701AA9EC3C0E016">select underlying point data to create</a> rings, drive time or walk time.</p></li>              </ul>            </div>          </li>          <li purpose="step" id="ESRI_STEP_AD7F9883C6FE47FFB5D468879F64CCFC">            <span purpose="cmd" id="GUID-74E50F4E-4A99-46D9-A40B-0EF8FCC851B2">You can  use the drop-down menu to select the label column from the Excel file. This is optional.</span>          </li>          <li purpose="step" id="ESRI_STEP_B083D941AE7B4B6EBEB7281E8152AAA8">            <span purpose="cmd" id="GUID-1B21CFC3-B1E8-440C-8583-0D3A03E6ACD9">Check  <span class="uicontrol">Open labels for all points</span> if you want a
+label open for each location after importing. By default, this is
+unchecked.
+</span>          </li><li purpose="step" id="ESRI_STEP_BEC7D03F93984342A4333D7D0B8FAE39">            <span purpose="cmd" id="GUID-059AA765-DA8B-49AC-AA27-6BF27572C8B4">Click <span class="uicontrol">Next</span>.
+</span>            <ul purpose="choices" id="ESRI_CHOICES_6D0B835F170D4E5EA10D66E166610852">              <li purpose="choice" id="ESRI_CHOICE_CD452CEE402F42D4B50FFBD97BEBBAC6">Click <span class="uicontrol">Yes, add rings</span> to create <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_243C23F6CE48438FB2CAE6812492063B">rings</a>, <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_58E891D8C6334263B6F8E6444A39AEE4">drive time</a> or <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_F2E39735F3D44A7F9262BDB3260AF922">walk time</a> for the points on the map. Click the <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_943D9AC5F254417894982E501D9FD793">use bands</a> check box to add bands. If you use drive time, you can select <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION2_39B1E7334CA1400697687E5E4AF41F59">More options</a> to access more capabilities. You can   create a maximum of 100 rings, drive times and walk times at one time. Click <span class="uicontrol">Apply</span>.</li>              <li purpose="choice" id="ESRI_CHOICE_527162BABB194D11B6993A19BE8A8A74">Click <span class="uicontrol">No, save as layer</span> and enter the layer name in the <span class="uicontrol">Save Layer</span> dialog box. </li>            </ul>          </li>          <li purpose="step" id="ESRI_STEP_E3095E8FD88A43A59843B6326C6C5EB0">            <span purpose="cmd" id="GUID-2FC9A939-3EFD-46AE-B84F-54ADB6706663">Your sites are saved in My Content. </span>            <div class="info" purpose="info"></div>            <ul purpose="choices" id="ESRI_CHOICES_88CB9921F3414B30BF345D4DBBFF9D92">              <li purpose="choice" id="ESRI_CHOICE_D31E8AC8004C48528B2046095D4B2CB4">You can <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION2_9AEB045B8BC34398894087894CA1318F">get reports</a> for your site by clicking <span class="uicontrol">Get Reports</span>.</li>              <li purpose="choice" id="ESRI_CHOICE_5CA89EAC36854B518CEA88E454A48AAE">You can access your sites in <a class="xref xref" href="/en/bao/help/my-content.htm">My Content</a> by clicking <span class="uicontrol">Organize Sites</span>.</li>              <li purpose="choice" id="ESRI_CHOICE_BE50D7833BEB40F995E7ADA88880214C">You can click <span class="uicontrol">I'm Done</span> to close the panel.</li>            </ul>          </li>        </ol></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_28087F015247489288E6B20B7370ECF2" purpose="section2"><h3>Change selections</h3><p id="GUID-77ED77FC-7DEA-49F0-A9AE-C1E06B01F3CB">The Change selections link allows you to indicate the points in your Excel file to display on the map.  Once displayed, you can create <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_243C23F6CE48438FB2CAE6812492063B">rings</a>, <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_58E891D8C6334263B6F8E6444A39AEE4">drive times</a> or <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_F2E39735F3D44A7F9262BDB3260AF922">walk time</a>.</p><p id="GUID-2BAFBC97-0A8A-4292-83AA-150C327F18F5">In the <span class="uicontrol">Confirm selections</span> dialog box, you can select the points in the following ways:<ul purpose="ul" id="UL_320A7209DEC44645B23636E72F60C91D"><li purpose="li" id="LI_4ED3F403522242068A9EC9DF951409E6">First 100</li><li purpose="li" id="LI_08DCABEAE9FF4AAE9848BE62CA64AB13">Displayed on map</li><li purpose="li" id="LI_F6CDE6000B424BB0B648119833717837">All</li><li purpose="li" id="LI_491C757AFD9049D7AE296098C1B8D443">Use search to narrow the spreadsheet entries</li><li purpose="li" id="LI_B2ACC2C472A545B4B2F40D5AFBF95B09">Click individual check boxes</li></ul></p></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_FC1C37A2FF1D41AD8A3076A00F0FBA1C" purpose="section1"><h2>Import a polygonal shapefile</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_BCD85D0DEC3E497C950D49F5D58FD71E" purpose="context">          <p id="GUID-6FB12A8D-A29A-4648-BA8C-CF1E918D489F">After importing your polygonal shapefile, the <span class="uicontrol">Properties</span> dialog box appears.</p>        </section><div class="steps" id="ESRI_STEPS_126B00FCAD5E46CFAAC33C3FCBB57020"><ol>          <li purpose="step" id="ESRI_STEP_BF1B93B7BDCC41F89429AD5A8EC28C98">            <span purpose="cmd" id="GUID-8FBA5AE5-944C-460A-A9B9-D5A1A011EA6B">To create sites, select <span class="uicontrol">Multiple sites</span> or <span class="uicontrol">Single site</span>.
+<figure class="fig" href="#"><img src="GUID-F4B7167B-3F75-4BF6-B1BC-9F5E99DFFADD-web.png" alt="Select single or multiple sites" title="Select single or multiple sites"></figure></span>            <div class="info" purpose="info">              <p id="GUID-DD78A19E-6E73-4658-8C08-8A7196DE0DF8">If the imported shapefile doesn't contain multiple shapes then <span class="uicontrol">Multiple sites</span> will be disabled.</p>            </div>          </li>          <li purpose="step" id="ESRI_STEP_97B779BE125C4F0488BC4C7376A5B80F">            <span purpose="cmd" id="GUID-25BD5F3C-59E3-407E-8C86-AB232F61EEC0">Use the <span class="uicontrol">Edit a site name</span> text box to change the site name.</span>          </li>          <li purpose="step" id="ESRI_STEP_5AA8ADF625B1449D96EBB515F7FD08D0">            <span purpose="cmd" id="GUID-3E112118-37BF-4793-A046-30FDD81C9AEE">Check  <span class="uicontrol">Open labels for all points</span> if you want a
+label open for each location after importing. By default, this is
+unchecked.
+</span>          </li>          <li purpose="step" id="ESRI_STEP_C8366339739C40A380CC2AC05E6CE4DD">            <span purpose="cmd" id="GUID-27CF7869-21B0-418E-85EB-7C2ABD65F7A6">To change the colors for fill, click the color picker and select the color. To change the color transparency, use the slider. Click <span class="uicontrol">No fill</span> 
+ to remove the fill for the site on the map.</span>          </li>          <li purpose="step" id="ESRI_STEP_9C7FB7CD44FC4652AF67716B5816CAAB">            <span purpose="cmd" id="GUID-99B86268-9053-4A68-B144-B08CC344CF6A">To change the colors for the border, click the color picker and select the color. To change the color transparency, use the slider. Click <span class="uicontrol">No border</span> 
+ to remove the borders for the site on the map.</span>          </li>          <li purpose="step" id="ESRI_STEP_8847D6EA409C4F47A1D74569B625A58F">            <span purpose="cmd" id="GUID-B774A2C6-D1E2-4F79-85EA-EC1FA287D73E">Click <span class="uicontrol">Next</span>.</span>          </li>          <li purpose="step" id="ESRI_STEP_750271EA27424AA0A770749258166D0C">            <span purpose="cmd" id="GUID-194F46A4-CBF7-42F5-8481-8AE057544CC9">Your sites are saved in My Content.</span>            <ul purpose="choices" id="ESRI_CHOICES_5C36739AD79A413AB1AF2B454DC4B9F4">              <li purpose="choice" id="ESRI_CHOICE_3A72626BE9AC479C8B2C4713A294A339">You can <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION2_9AEB045B8BC34398894087894CA1318F">get reports</a> for your site by clicking <span class="uicontrol">Get Reports</span>.</li>              <li purpose="choice" id="ESRI_CHOICE_59EFBE4F7DC44790BAE8D0E5DC274EBB">You can access your sites in <a class="xref xref" href="/en/bao/help/my-content.htm">My Content</a> by clicking <span class="uicontrol">Organize Sites</span>.</li>              <li purpose="choice" id="ESRI_CHOICE_8A1468BC4E8D4C0F8EFC6587C6B2372E">You can click <span class="uicontrol">Done</span> to close the panel.</li>            </ul>          </li>        </ol></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_D72FAD7965DC464FAE2A33D051AE50F9" purpose="section1"><h2>Import a point shapefile</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_6B296BBA000C457BAD7B5B747F0400D5" purpose="context">          
+        </section><div class="steps" id="ESRI_STEPS_66DC0694CF8548C39D9EE3125B5B6E18"><ol>          
+          <li purpose="step" id="ESRI_STEP_BB2B9EDF10364F149F4296FCD3CFE451">            <span purpose="cmd" id="GUID-F218F8F4-37D9-42B6-B07D-CAABDFB3E021">You can choose a style for this layer. You can choose from:</span>            <div class="info" purpose="info">              <ul purpose="ul" id="UL_3FEADA546C8C41B38FE6E7A3FCEF59CB">                <li purpose="li" id="LI_37481456623A49928BAF70E156B1EA74">Location (Single Symbol) — Showing data on a map with a single symbol shows the distribution  and may reveal patterns. For example, mapping of list of restaurant locations, you would likely see the restaurants together in a business district.<p id="GUID-00CE5449-69C3-4BDB-BE83-BE422ADCD7AE">To choose a symbol, click the arrow to access the drop-down menu. You can select from available symbols or import your own custom symbol. Change the symbol size with the size slider. <figure class="fig" href="#"><img src="GUID-6F315E3F-4B1F-440E-A6F9-98A9009DAA79-web.png" alt="Choose a symbol for the layer" title="Choose a symbol for the layer"></figure></p><aside class="note" id="GUID-5681A0C6-DFFB-41FE-8776-76FD62747AB2"><h5 class="icon-notebook">Note:</h5><div class="note-content"><p id="GUID-8861C97F-FC66-4062-8A60-B0A8B5A00D7A">Symbols in GIF, PNG, and JPG file formats can be uploaded with a
+limit of 1 MB. The recommended size of the image is 450x280 pixels
+or less.
+</p></div></aside></li>                <li purpose="li" id="LI_46E33917452C4C8FBB295661911797A9">Type (Unique Symbols) — Use unique symbols to show different kinds of things rather than counts of numerical measurements. For example, you can
+use different colors to represent restaurant cuisine types. Ideally, your layer would show fewer than 10 categories;
+more categories than that become hard to distinguish by color
+alone. As a default, if your data has more than 10 categories, the
+10 most common will be shown and the remaining ones will be grouped
+together into an 
+
+<span class="uicontrol">Others</span> category. <p id="GUID-F1AE41B3-863E-42C5-8334-98715A15F5B2">Click <span class="uicontrol">Options</span> to choose the style for the symbols and set the color ramp, change the attribute or edit the symbols individually. Changes appear in the legend.</p></li>                <li purpose="li" id="LI_C78A2C0FEB304569A3779B04DD2835B7">Counts and Amounts (Color) — If you have numeric data, you can distinguish features
+based on a color gradient. There are different kinds of color
+gradients that you can use, for example, a simple light-to-dark
+color scheme can show low-to-high data values for age or income.
+<p id="GUID-CD1904FA-941E-41BE-A093-8D6427B158D9">Click <span class="uicontrol">Options</span> to choose the style for the symbols, change the attribute and adjust the graph. Click <span class="uicontrol">Classify data</span> to adjust the method and breaks.  Changes appear in the legend.</p></li>                <li purpose="li" id="LI_CF565128835B47719096A4B3C0D1252B">Counts and Amounts (Size) — This  uses an orderable sequence of different sizes to
+represent your numerical data or ranked categories. These proportional
+symbol maps use an intuitive logic that larger symbols equate to
+larger numbers. You can adjust the size of the symbols for clarification. For example, you could use graduated symbols to
+show sales or number of employees. <p id="GUID-12FE2D71-B377-4D6A-B577-6CAB2DC08C44">Click <span class="uicontrol">Options</span> to choose the style for the symbols, change the attribute and adjust the graph and clusters. Click <span class="uicontrol">Classify data</span> to adjust the method and breaks.  Changes appear in the legend.</p></li>                <li purpose="li" id="LI_A6B52508369B4112A27ABF6602CF77E5">Heat Map — Heat maps can be used when mapping the location of point features.
+These are useful when many of the points on the map are close
+together and aren't easily distinguished. Heat maps use the
+points in the layer to calculate and display the relative density
+of points on the map as smoothly varying sets of colors ranging
+from cool (low density of points) to hot (many points). It is best
+to avoid heat maps if you have only a few point features; instead,
+map the actual points. 
+
+<p id="GUID-C547547C-1A51-4793-87B6-A34265444D2D">Click <span class="uicontrol">Options</span> to change the color bar.  You can also move the <span class="uicontrol">Area of Influence</span> slider to adjust the clusters.  Changes appear in the legend.</p><p id="GUID-8C1E11BF-8EED-478F-93CB-5F149CA9AC8F">Using the Select tool, you can <a class="xref xref" href="/en/bao/help/select-tool.htm#ESRI_SECTION1_37D783C6A6E94F8A8F9FE01E797A9863">select heat map polygons</a> to create reports or <a class="xref xref" href="/en/bao/help/select-tool.htm#LI_1350538BF1124D0BA701AA9EC3C0E016">select underlying point data to create</a> rings, drive time or walk time.</p></li>              </ul>            </div>          </li>          
+          <li purpose="step" id="ESRI_STEP_63F5B461F63E46E195139810EDF65C7B">            <span purpose="cmd" id="GUID-12B8EE16-CE31-4854-8BDE-1EDA996D7D2E">Use the drop-down menu to select the name column from the shapefile.</span>          </li>          <li purpose="step" id="ESRI_STEP_8C877725B1354FC6A309F292E6231C41">            <span purpose="cmd" id="GUID-E4A58061-4596-4DAF-8A8C-E139D5D9CDAC">Check  <span class="uicontrol">Open labels for all points</span> if you want a
+label open for each location after importing. By default, this is
+unchecked.
+</span>          </li><li purpose="step" id="ESRI_STEP_0B05264B38594B6DB9D79B882E1CCC1F">            <span purpose="cmd" id="GUID-8F2E9B5B-2527-4A9D-9C7B-E2D5A48FABF5">Click <span class="uicontrol">Next</span>.
+</span>            <ul purpose="choices" id="ESRI_CHOICES_D087813C457F4592B604E614B73D28AA">              <li purpose="choice" id="ESRI_CHOICE_D4F7E594E157416BBB01B6D19A1A8B6D">Click <span class="uicontrol">Yes, add rings</span> to create <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_243C23F6CE48438FB2CAE6812492063B">rings</a>, <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_58E891D8C6334263B6F8E6444A39AEE4">drive time</a> or <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_F2E39735F3D44A7F9262BDB3260AF922">walk time</a> for the points on the map. Click the <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_943D9AC5F254417894982E501D9FD793">use bands</a> check box to add bands. If you use drive time, you can select <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION2_39B1E7334CA1400697687E5E4AF41F59">More options</a> to access more capabilities. You can   create a maximum of 100 rings, drive times and bands at one time. Click <span class="uicontrol">Apply</span>.</li>              <li purpose="choice" id="ESRI_CHOICE_4921284B75BE41AB946A930729B184C8">Click <span class="uicontrol">No, save as layer</span> and enter the layer name in the <span class="uicontrol">Save Layer</span> dialog box.</li>            </ul>          </li>          <li purpose="step" id="ESRI_STEP_DA3B8E982DCC47E79F13EF56D83E207B">            <span purpose="cmd" id="GUID-5DC476E3-8A5B-46FA-BE40-8ECBE08B45ED">Your sites are saved in My Content.</span>            <ul purpose="choices" id="ESRI_CHOICES_337BE3B70AAF4A81B3A7DA0FFED2DF2E">              <li purpose="choice" id="ESRI_CHOICE_319B6E9238CC425B90B6BBD29023CDD0">You can <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION2_9AEB045B8BC34398894087894CA1318F">get reports</a> for your site by clicking <span class="uicontrol">Get Reports</span>.</li>              <li purpose="choice" id="ESRI_CHOICE_4CB41A09B0BE412589B564394D164773">You can access your sites in <a class="xref xref" href="/en/bao/help/my-content.htm">My Content</a> by clicking <span class="uicontrol">Organize Sites</span>.</li>              <li purpose="choice" id="ESRI_CHOICE_D66390FABBBB4483BDB721AACC399B09">You can click <span class="uicontrol">I'm Done</span> to close the panel.</li>            </ul>          </li>        </ol></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_D9B58E1D8E2D43B1A7E409645AC111E9" purpose="section1"><h2>Trouble importing a shapefile?</h2><p id="GUID-7C236F78-06AE-484C-8F56-AEA36A49D158">Here are some tips for importing shapefiles.</p><ul purpose="ul" id="UL_C006B5D790D3446B94A45702F7337FCD">        <li purpose="li" id="LI_631D5EDB7E104F43B7397F09A61B8757">You can import standard compressed archive .zip files; other compression formats aren't supported at this time.</li>        <li purpose="li" id="LI_52F12E73AA28413B8B4B303E03E2B094">Files containing more than 1,000 features can't be imported.</li>        <li purpose="li" id="LI_1C61F93D5F154513A1457CA24080C1D0">The shapefile must be less than 3 MB in size.</li>        <li purpose="li" id="LI_01CBE76B472C4CE9B56D50C0A50DA222">The ZIP archive must contain the .shp, .shx, .dbf and .prj files that comprise the shapefile.</li>        <li purpose="li" id="LI_0ED91FBBAC88423E9A74118FF8A5138F">There should only be one shapefile in a ZIP archive.</li>        <li purpose="li" id="LI_40FCDE12AA984492A0D5640D07C794E0">The files must be stored directly in the root (the central directory) of the ZIP archive, not in the directories within the archive. If your ZIP file viewer shows path information, the path should be blank.</li>        <li purpose="li" id="LI_F68AE5E3844740829B7C1F4953A951B7">You can't import shapefiles containing multi patch or multipoint geometries.</li>        <li purpose="li" id="LI_F184785097704854B9BB882C13C78681">The shapefile should contain valid geometries. Currently, self-intersections in polygon shapefiles aren't supported. If you have ArcGIS for Desktop, you can use the <a target="_blank" class="xref xref" href="HTTP://RESOURCES.ARCGIS.COM/EN/HELP/MAIN/10.2/#/REPAIR_GEOMETRY/00170000003V000000/">Repair Geometry tool</a> to correct invalid geometries in shapefiles.</li>        <li purpose="li" id="LI_1CABE831189D4941BEB802D3EF349EED">The shapefile must have an accompanying .prj file in which the coordinate system of the data is defined. If you have ArcGIS for Desktop, you can define the coordinate system of a shapefile, which creates an appropriate .prj file for the shapefile. You need to know the appropriate coordinate system to choose for your data. See <a target="_blank" class="xref xref" href="HTTP://RESOURCES.ARCGIS.COM/EN/HELP/MAIN/10.2/INDEX.HTML#/BY_SELECTING_AN_EXISTING_COORDINATE_SYSTEM/00560000000R000000/">defining the coordinate system for a shapefile by selecting an existing coordinate system</a> for more information.</li>      </ul></section>  
+
+                 </section>
+                 <!-- ENDPAGECONTENT -->
+                 <footer class="feedback">
+                  <a data-langlabel="feedback-on-this-topic" href="/en/feedback/">Feedback on this topic?</a>
+               </footer>
+              </div>
+           </div>
+
+        </div>
+     </div>
+     <!--googleoff: all-->
+     
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <nav>
+        <h4 data-langlabel="arcgis">Arc<span>GIS</span></h4>
+        <ul>
+          <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
+          <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html">Features</a></li>
+          <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
+          <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+          <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+          <li><a data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+          <li><a data-langlabel="help" href="/en/arcgis-online/">Help</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <h4 data-langlabel="arcgis-platform">ArcGIS Platform</h4>
+        <ul>
+          <li><a data-langlabel="arcgis" href="http://www.arcgis.com/">ArcGIS Online</a></li>
+          <li><a data-langlabel="arcgis-for-desktop" href="http://desktop.arcgis.com/">ArcGIS for Desktop</a></li>
+          <li><a data-langlabel="arcgis-for-server" href="http://server.arcgis.com/">ArcGIS for Server</a></li>
+          <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+          <li><a data-langlabel="arcgis-solutions" href="http://solutions.arcgis.com/">ArcGIS Solutions</a></li>
+          <li><a data-langlabel="arcgis-marketplace" href="http://marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <h4 data-langlabel="about-esri">About Esri</h4>
+        <ul>
+          <li><a data-langlabel="about-us" href="http://www.esri.com/about-esri/">About Us</a></li>
+          <li><a data-langlabel="careers" href="http://www.esri.com/careers/">Careers</a></li>
+          <li><a data-langlabel="insiders-blog" href="http://blogs.esri.com/esri/esri-insider/">Insiders Blog</a></li>
+          <li><a data-langlabel="user-conference" href="http://www.esri.com/events/user-conference/index.html">User Conference</a></li>
+          <li><a data-langlabel="developer-summit" href="http://www.esri.com/events/devsummit/index.html">Developer Summit</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <a id="esri-logo-footer" href="http://esri.com">Esri</a>
+        <section id="footer-social-nav">
+                <a class="icon-twitter" href="https://twitter.com/Esri/"></a>
+                <a class="icon-facebook" href="https://www.facebook.com/esrigis/"></a>
+                <a class="icon-github" href="http://esri.github.com/"></a>
+                <a class="icon-email" href="http://www.esri.com/about-esri/contact/"></a>
+        </section>
+      </nav>
+      <small id="footer-legal">&copy; Copyright 2015 Environmental Systems Research Institute, Inc. | <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy">Privacy</a> | <a data-langlabel="legal" href="http://www.esri.com/legal/software-license">Legal</a></small>
+    </div>
+
+  </div>
+</footer>
+
+         
+    <!--[if gt IE 8]><!-->
+    <!--<![endif]-->
+
+   <script src="/js/drop-down.js" type="text/javascript"></script>
+   <script src="/en/asset/js/init.js" type="text/javascript"></script>
+   <script src="/en/asset/js/jqcollapsible.js" type="text/javascript"></script>
+   <script src="/js/search/searchform.js" type="text/javascript"></script>
+   <script src="/cdn/js/link-modifier.js" type="text/javascript"></script>
+   <script src="/cdn/js/sitewide.js" type="text/javascript"></script>
+
+   <script>
+   $(function() {
+      $("#agolSearch").agolSearch();
+   });
+   </script>
+
+    <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"> piAId = '83202'; piCId = '4008';
+(function() { function async_load(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
+'.pardot.com/pd.js';
+var c = document.getElementsByTagName('script')[0];
+c.parentNode.insertBefore(s, c);
+} if(window.attachEvent) { window.attachEvent('onload', async_load); } else { window.addEventListener('load', async_load, false); }
+})(); </script>
+   
+   </body>
+
+   </html>
+   

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr"> <!--<![endif]-->
+ 
+<head>
+    <meta charset="utf-8">
+    <title>Navigate the map&mdash;Business Analyst | ArcGIS</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'en',
+        localedir: 'en',
+        langSelector: 'none'
+      };
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="/js/libs/html5shiv.js?1357673785" type="text/javascript"></script>
+      <script src="/js/libs/selectivizr.js" type="text/javascript"></script>
+
+      <style>
+        #wrapper {
+          min-width: 960px;
+        }
+      </style>
+    <![endif]-->
+
+    <!--[if lt IE 11]>
+    <script>
+      $(document).ready(function(){
+        $(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+
+   <link rel="stylesheet" href="//fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css" rel="stylesheet" type="text/css"/>
+   <link rel="shortcut icon" href="/img/favicon.ico">
+   <link href="/css/screen.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/screen_l10n.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/documentation.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/documentation_l10n.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/en/asset/css/codehilight.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/codehilight_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/en/asset/css/common.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/common_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+   <link type="text/css" rel="stylesheet" href="/css/print_l10n.css" media="print" />
+   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
+
+   <!--- search MD -->
+   <META name="description" content="You can get information on  changing the country, the  tool palette and   the Zoom tool."><META name="last-modified" content="2015-11-11"><META name="product" content="bus-analyst-online"><META name="sub_category" content="Business Analyst Online"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Business Analyst Online"><META name="search-category" content="help-general"><META name="subject_label" content="BUSINESS,LOCATION ANALYTICS,ANALYSIS,BUSINESS ANALYST"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="BUSINESS,LOCATION ANALYTICS,ANALYSIS,BUSINESS ANALYST"><META name="content-language" content="en">
+   <!--- search MD -->
+
+     <script type="text/javascript">
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-215788-73']);
+     _gaq.push(['_setDomainName', 'arcgis.com']);
+     _gaq.push(['_trackPageview']);
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+   </script>
+
+   <script src="/js/sitecfg.js" type="text/javascript"></script>
+
+   <script src="/en/asset/js/jquery.1.9.1.min.js" type="text/javascript"></script>
+   <script src="/js/libs/jquery.cookie.js" type="text/javascript"></script>
+   <link href="/en/asset/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/en/asset/js/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="/en/asset/js/video-init.js" type="text/javascript"></script>
+
+    <script src="/js/signIn.js" type="text/javascript"></script>
+
+    <!--- Language Picker -->
+   <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
+   <link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
+   <script src="/js/locale/l10NStrings.js" type="text/javascript"></script>
+   <script src="/js/locale/langSelector.js" type="text/javascript"></script>
+   <!--- Language Picker -->
+
+   <!--- beg agol search -->
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch_l10n.css" />
+   <script src="/js/agolsearch.js"></script>
+
+   <!--- end agol search -->
+   <!--[if IE]>
+   <script src="/js/libs/html5-placeholder-shim.js"></script>
+   <![endif]-->
+
+   
+
+   
+
+   
+
+
+</head>
+   <!--
+      pub: GUID-5F7E4199-150E-4551-89E4-9DD81A0323F1=10 
+      tpc: GUID-67D75BAF-7EBB-4A52-B808-66F6447B0A4B=10
+      -->
+    
+  <body class="en doc">
+  <!-- Google Tag Manager -->
+     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+    'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WVT7QT');</script>
+
+    <!-- End Google Tag Manager -->
+   
+     <div id="wrapper">
+        <div id="page">
+           <!--googleoff: all-->
+           
+    <header id="header">
+      <div class="container relative-container">
+        <div class="header-inner">
+          <div class="logo-wrap"><a href="http://www.arcgis.com" data-langlabel="arcgis-logo-text" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
+          <nav id="dropDown">
+              <a href="http://www.arcgis.com" class="current selected">
+                <h4 data-langlabel="arcgis">ArcGIS Online</h4>
+                <p>The mapping platform for your organization</p>
+              </a>
+              <a href="http://desktop.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-desktop">ArcGIS for Desktop</h4>
+                <p>A complete professional GIS</p>
+              </a>
+               <a href="http://server.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-server">ArcGIS for Server</h4>
+                <p>GIS in your enterprise</p>
+              </a>
+              <a href="https://developers.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-developers">ArcGIS for Developers</h4>
+                <p>Tools to build location-aware apps</p>
+              </a>
+              <a href="http://solutions.arcgis.com/">
+                <h4 data-langlabel="arcgis-solutions">ArcGIS Solutions</h4>
+                <p>Free template maps and apps for your industry</p>
+              </a>
+              <a href="http://marketplace.arcgis.com/">
+                <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
+                <p>Get apps and data for your organization</p>
+              </a>
+          </nav>
+          <nav>
+            <ul>
+              <li><a id="nav-features" data-langlabel="features" href="http://www.arcgis.com/features/features.html" class="anonymous-and-public-only">Features</a></li>
+              <li><a id="nav-plans" data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html" class="anonymous-and-public-only">Plans</a></li>
+              <li><a id="nav-gallery" data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+              <li><a id="nav-map" data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+              <li><a id="nav-scene" data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+              <li><a id="nav-help" data-langlabel="help" href="/en/arcgis-online/" class="anonymous-only">Help</a></li>
+              <li><a id="nav-groups" data-langlabel="nav-groups" href="http://www.arcgis.com/home/groups.html" class="public-and-org-only hide">Groups</a></li>
+              <li><a id="nav-mycontent" data-langlabel="nav-mycontent" href="http://www.arcgis.com/home/content.html" class="public-and-org-only hide">My Content</a></li>
+              <li><a id="nav-myorg" data-langlabel="nav-myorg" href="http://www.arcgis.com/home/organization.html" class="org-only hide">My Organization</a></li>
+            </ul>
+          </nav>
+          <a id="esri-logo" href="http://esri.com">Esri</a>
+
+          <div id="lg-container" class="banner-navigation">
+
+            <div id="agolSearch" class="agol-search">
+              <form class="agol-search-form" method="GET" action="//www.arcgis.com/home/search.html">
+                <input name="q" class="agol-search-input" placeholder="Search ArcGIS" type="text" value="">
+              </form>
+              <span class="agol-icon-search"></span>
+            </div>
+
+              <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
+                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
+              </div>
+
+              <div id="logged-in-navigation" class="dropdown-navigation no-top dropdown-wrapper hide">
+                  <a id="A1" class="dropdown btn user-signin" href="#">user</a>
+                  <div class="dropdown-content">
+                      <div class="dropdown-menu">
+                          <ul class="myconsole">
+                              <li><a id="agolProfile" href="#">My Profile</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul class="myconsole">
+                              <li><a id="agolHelp" href="#">Help</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul>
+                              <li><a id="agolLogout" href="#">Sign Out</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="lang-block"></div>
+
+          </div>
+
+          <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
+            <a data-langlabel="select-a-page" href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
+            <div class="dropdown-content">
+             <div class="dropdown-menu">
+              <ul>
+              <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html" class="anonymous-and-public-only">Features</a></li>
+              <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html" class="anonymous-and-public-only">Plans</a></li>
+              <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html ">Gallery</a></li>
+              <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html ">Map</a></li>
+              <li><a data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+              <li><a data-langlabel="help" href="/en/arcgis-online/" class="anonymous-only">Help</a></li>
+              <li><a data-langlabel="nav-groups" href="http://www.arcgis.com/home/groups.html" class="public-and-org-only hide">Groups</a></li>
+              <li><a data-langlabel="nav-mycontent" href="http://www.arcgis.com/home/content.html" class="public-and-org-only hide">My Content</a></li>
+              <li><a data-langlabel="nav-myorg" href="http://www.arcgis.com/home/organization.html" class="org-only hide">My Organization</a></li>
+              </ul>
+             </div>
+            </div>
+          </div>
+
+        </div>
+       </div>
+    </header>
+    
+           <div class="navigation-bar">
+              <div class="container">
+                 <header>
+                    <h1><a href="/en/bao">Business Analyst</a></h1>
+                    <form id="helpSearchForm" target="_top">
+                        <input type="search" name="q" class="leader" placeholder="Business Analyst Online">
+                        <input type="hidden" name="collection" value="help" />
+                        <input type="hidden" name="product" value="bus-analyst-online" />
+                        <input type="hidden" name="version" value="" />
+                        <input type="hidden" name="language" value="en" />
+                        </form>
+                 </header>
+                 <nav class='navigation-bar-nav'><ul><li  ><a href="/en/bao/" target="_top" title="Business Analyst">Home</a></li><li class="current" ><a href="/en/bao/help/welcome.htm" target="_top" title="Help">Help</a></li><li  ><a href="/en/bao/mobile/welcome-mobile.htm" target="_top" title="Business Analyst Online Mobile">Mobile</a></li><li  ><a href="https://geonet.esri.com/community/business-and-commercial/content/" target="_top" title="Forum">Forum</a></li></ul></nav>
+              </div>
+           </div>
+           <!--googleon: all-->
+
+           <div class="container">
+              <div class="row">
+
+              <!--googleoff: all-->
+
+                 <aside class="reference-index">
+                    <nav><div data-collapsed="false"><header><h4 class="section-title">Get started</h4></header><ul><li><a href="/en/bao/help/enterprise-login.htm">Enterprise login</a></li><li class="current"><a href="/en/bao/help/navigate-the-map.htm">Navigate the map</a></li><li><a href="/en/bao/help/search.htm">Search</a></li><li><a href="/en/bao/help/select-tool.htm">Select tool</a></li><li><a href="/en/bao/help/set-preferences.htm">Set  Preferences</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Use Data and Reports</h4></header><ul><li><a href="/en/bao/help/reports.htm">Reports</a></li><li><a href="/en/bao/help/data.htm">Data</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Create maps from data</h4></header><ul><li><a href="/en/bao/help/color-coded-maps.htm">Color-Coded Maps</a></li><li><a href="/en/bao/help/smart-map-search.htm">Smart Map Search</a></li><li><a href="/en/bao/help/business-and-faciilties-search.htm">Business and Facilities Search</a></li><li><a href="/en/bao/help/web-maps.htm">Web Maps</a></li><li><a href="/en/bao/help/data-browser.htm">Data Browser</a></li><li><a href="/en/bao/help/create-a-custom-variable.htm">Create a custom variable</a></li><li><a href="/en/bao/help/more-maps.htm">More Maps</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Define areas for reports</h4></header><ul><li><a href="/en/bao/help/find-location.htm">Find Location</a></li><li><a href="/en/bao/help/select-geography.htm">Select Geography</a></li><li><a href="/en/bao/help/draw-polygon.htm">Draw Polygon</a></li><li><a href="/en/bao/help/import-file.htm">Import File</a></li><li><a href="/en/bao/help/my-content.htm">My Content</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Create reports</h4></header><ul><li><a href="/en/bao/help/create-standard-reports.htm">Create Standard Reports</a></li><li><a href="/en/bao/help/create-comparison-reports.htm">Create Comparison Reports</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">References</h4></header><ul><li><a href="/en/bao/help/essential-vocabulary.htm">Essential Vocabulary</a></li><li><a href="/en/bao/help/calculation-estimates-for-user-created-areas.htm">Calculation estimates for user-created areas</a></li></ul></div></nav>
+                 </aside>
+
+              <!--googleon: all-->
+                 <!-- BEGPAGECONTENT -->
+                 <section class="reference-content">
+                    <div class="toc"><h5>In this topic</h5><ol><li><a href="#ESRI_SECTION1_4B96DA2ADC7F4159A8BF054D03800C72">Change the country</a></li><li><a href="#GUID-69BF2DDE-E588-4325-B923-1F575FDE1403"> Tool palette
+</a></li><li><a href="#ESRI_SECTION1_1EECF407F245466D826EDDA6F0ED35A6">Zoom tool</a></li></ol></div>
+
+                    <h1 class="divider page-title">Navigate the map</h1>
+                    
+    <p id="GUID-7A88EDEF-CF2D-4FEC-AE22-99FEB01861DE">When navigating the map, you can use these tools to view different countries, access features with the tool palette and zoom in and out for better viewing.
+
+</p>    <section class="section1 padded-anchor" id="ESRI_SECTION1_4B96DA2ADC7F4159A8BF054D03800C72" purpose="section1"><h2>Change the country</h2><p id="GUID-34D5921F-C6B6-404F-98DB-44394EB8F96E">You can search for countries and select the country you want to view on the map. Once selected, the country appears on the map for this session.  The country drop-down menu is located on the upper right of the application and is available on any screen. <figure class="fig" href="#"><img src="GUID-8DAC2E0D-0F1B-4609-8DF2-D3F35AA12CE3-web.png" alt="Country drop-down menu" title="Country drop-down menu"></figure></p><p id="GUID-49B065FF-84FB-41B6-854F-72BF88D4D60A">Use  <span class="uicontrol">Country Options</span> in <a class="xref xref" href="/en/bao/help/set-preferences.htm#ESRI_SECTION2_7978F4520A984BD897C2BE8178317B7E">Preferences</a> to set your country default. </p><p id="GUID-FD4360B0-841A-4051-8B76-BEEB4279D435">You can select advanced  data sources from local providers that offer additional variables and lower levels of geography  for Germany, France, Spain, India, Australia and South Korea. To access the data source, click on the settings icon. <img purpose="img" placement="inline" alt="Click for data source options" title="Click for data source options" src="GUID-95C66DD7-F23F-4855-B5DF-C7CD3C5E5810-web.png"> The data source default can be set in <a class="xref xref" href="/en/bao/help/set-preferences.htm#ESRI_STEP_444BD488CF8747A28201469212E59171">Preferences</a>. <aside class="note" id="GUID-09A65CA8-820B-4163-B0A6-301E53791496"><h5 class="icon-notebook">Note:</h5><div class="note-content"><p id="GUID-4D196E46-9D79-4323-BDCB-6E0945D7996E">Because the levels of geography are different across different data sources, standard geography sites created in one data source will only be available in the data source it was created in.</p></div></aside></p><p id="GUID-9E7501F8-E875-4ED1-B2D6-A1D4A1C7E0DD">You can search for countries with the following:<ul purpose="ul" id="UL_F05EFCACF93F4C389F88BB5DDF9453F0"><li purpose="li" id="LI_72024E2CBB554B69872A9ED48AB2A236">Search <figure class="fig" href="#"><img src="GUID-5B478C3F-315E-45C7-B9C2-D0384C30FD06-web.png" alt="Search countries" title="Search countries"></figure></li><li purpose="li" id="LI_69D6E620EA2A4F34A9B4CDF8F4BF897E">Alphabetical search <figure class="fig" href="#"><img src="GUID-60922AF9-9AC0-4FF0-9588-0F709731951C-web.png" alt="Alphabetical search for countries" title="Alphabetical search for countries"></figure></li><li purpose="li" id="LI_09E2B57A348E4DAEBC90A0BE89A1B10B">Show All <figure class="fig" href="#"><img src="GUID-837EFBDF-5316-41FC-9B5F-3B20F5CEE9EA-web.png" alt="Show all countries" title="Show all countries"></figure></li><li purpose="li" id="LI_6A91503D212C46BC8398374DDBBE992A">Continent search <figure class="fig" href="#"><img src="GUID-369C05AE-EB7B-4CF2-9A27-265A1A64EA25-web.png" alt="Continent search" title="Continent search"></figure></li></ul></p></section>    <section class="section1 padded-anchor" id="GUID-69BF2DDE-E588-4325-B923-1F575FDE1403" purpose="section1"><h2> Tool palette
+</h2><p id="GUID-1EED0A82-6AB8-47DA-BC06-DA84965482C2">The <span class="uicontrol">Tool palette</span> contains tools available for all workflows.</p><figure class="fig" href="#"><img src="GUID-AB03A6E0-D97E-44B8-A425-6D509D21335A-web.bmp" alt="Tool palette" title="Tool palette"></figure><p id="GUID-6208DB68-7CA3-40DF-931E-53C551DA35A5">        <span class="uicontrol">Pin</span> defines a point on the map and
+is used to create a site for analysis. You can
+add <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_243C23F6CE48438FB2CAE6812492063B">rings</a>, <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_243C23F6CE48438FB2CAE6812492063B">drive time</a> or <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION1_F2E39735F3D44A7F9262BDB3260AF922">walk time</a> and <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION2_EDFCC47D3A7F477C93061CDF22193A69">move</a> or <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION2_0257E1117D8C4EEEB643337FF88DC9F5">delete the point</a>. Use <a class="xref xref" href="/en/bao/help/find-location.htm#ESRI_SECTION2_39B1E7334CA1400697687E5E4AF41F59">More options </a> to select drive time types, traveling toward or away from a facility and traffic options.</p><p id="GUID-A63DF608-BC4E-496C-B122-C796511C24B0">        <span class="uicontrol">Pan and select</span> allows you to pan the map and select features on the map to create
+reports. To use the Pan tool, click and hold the left mouse button and
+drag to pan the map. <a class="xref xref" href="/en/bao/help/select-tool.htm">Select</a> allows you to view detailed information of map features, select and
+combine features on the map and create a report.
+</p><p id="GUID-FA4B7EBC-275A-4ECB-B26D-FB1DA0A26A57">        <span class="uicontrol">Zoom in</span> creates a closer view of an area on the map. Quickly zoom in by
+clicking and drawing a box around the area.
+</p><p id="GUID-2AFC42CB-2D4E-42FF-A037-A8E817FC9199">        <span class="uicontrol">Zoom out</span> creates a zoomed-out view of an area on the map. Quickly zoom out
+by clicking and drawing a box around the area.
+</p><p id="GUID-A7CCFF74-8508-4EAC-ACD2-27082347E1C3">        <span class="uicontrol">Measure distance and area</span> allows you to measure the distance between points of interest on
+the map. Use the grids to measure with accuracy.
+</p><p id="GUID-BC2F659E-7077-4E1C-8A06-43EC88476AF9">        <span class="uicontrol">Add text or shapes</span> allows you to create text, shapes, drawings and images on the map.<ul purpose="ul" id="UL_64421F0A09AB42DF833DABB0DFA20028"><li purpose="li" id="LI_5AAE11BE9AEE4C90B3F54D46102A75C4">Text—Place text on the map and select the font, size and color. Use bold, italic and underline. Use the check box to preview the text before adding it to the map. Click <span class="uicontrol">Add text</span> to add text to the map.</li><li purpose="li" id="LI_91003F557F614483948560DD6BC2DA53">Shape—Select a shape and drag it to the map. You can also click or drag on the map to add it. Choose the fill and border.</li><li purpose="li" id="LI_F609A1A94DA04EAEB3EE25BE579A1422">Draw—Use the polygon or freehand tool for your drawing. Choose the fill and border.</li><li purpose="li" id="LI_E092A5AAF76A494EAA02280D47B868EB">Image—Use <span class="uicontrol">Browse</span> to locate the image to import. You can use PNG, JPG and GIF files. The recommended image file size is 20 KB.</li></ul></p><p id="GUID-C0BF9BA3-C046-4617-B612-E1F61BC64818">        <span class="uicontrol">Clear map</span> allows you to clear items on the map. Use the dialog box to select
+items you want to clear. The sites are cleared from the map and are
+accessible in
+<a class="xref xref" href="/en/bao/help/my-content.htm">My Content</a>.</p><p id="GUID-DCB4DC19-98F8-48CA-B44B-C6EBA4E75F85">        <span class="uicontrol">Share map to ArcGIS Online</span> allows you to share sites, layers and maps in ArcGIS Online. Enter the title  and check the checkbox to include organizations  or groups to share.  By default, it will be stored in <a class="xref xref" href="http://doc.arcgis.com/en/arcgis-online/">ArcGIS Online</a>.</p><p id="GUID-62595710-FDF4-4598-A8DA-E34DBAE07856">        <span class="uicontrol">Create PDF or image</span> allows you to take a screen capture of a map and save it as a PDF or
+save the current view as an image file. PDFs are saved in
+<a class="xref xref" href="/en/bao/help/my-content.htm">My Content</a>.</p><p id="GUID-CE78EC48-6116-4408-B070-41AEACE29249">        <span class="uicontrol">Map legend</span> provides information about the map you're viewing. This feature can also be accessed in <a class="xref xref" href="/en/bao/help/my-content.htm">My Content</a>.</p></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_1EECF407F245466D826EDDA6F0ED35A6" purpose="section1"><h2>Zoom tool</h2><p id="GUID-8BCA8B52-B6E7-4727-B02C-EC923EE04305">The Zoom tool allows you to zoom in and out of a map area. Click
+the plus sign to zoom in and the minus sign to zoom out. </p><figure class="fig" href="#"><img src="GUID-61F44FD2-07B9-41A8-BB3D-E2A2CAE27290-web.png" alt="Zoom tool" title="Zoom tool"></figure><p id="GUID-BB3B02A2-11AC-49A6-A1A7-693970026C74">When hovering the pointer over the Zoom tool, pop-ups appear indicating the level of zoom.
+You can choose from Block Groups, Census Tracts, ZIP Codes,
+Counties and States. You can click any of these to zoom to the
+respective map level. </p><p id="GUID-E51AD071-56F4-4BF1-98F6-548F42B15358">Click <span class="uicontrol">Home</span>  to view the default extent of the map.  This can be the zoom to location you've set in <span class="uicontrol">Preferences</span> or the country default extent if you have changed the country setting in <span class="uicontrol">Preferences</span>.</p><figure class="fig" href="#"><img src="GUID-3E7256CE-E6DA-4D57-B2BD-854F33C96C0B-web.png" alt="Home button" title="Home button"></figure><p id="GUID-6050BD34-1F46-4BCC-81E5-F414E57E3609">Click <span class="uicontrol">Find my location</span> to zoom to your current location on the map.</p><figure class="fig" href="#"><img src="GUID-DF510659-9CAD-46F1-AA17-ED088F093F1E-web.png" alt="Crosshair button" title="Crosshair button"></figure></section>  
+
+                 </section>
+                 <!-- ENDPAGECONTENT -->
+                 <footer class="feedback">
+                  <a data-langlabel="feedback-on-this-topic" href="/en/feedback/">Feedback on this topic?</a>
+               </footer>
+              </div>
+           </div>
+
+        </div>
+     </div>
+     <!--googleoff: all-->
+     
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <nav>
+        <h4 data-langlabel="arcgis">Arc<span>GIS</span></h4>
+        <ul>
+          <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
+          <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html">Features</a></li>
+          <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
+          <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+          <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+          <li><a data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+          <li><a data-langlabel="help" href="/en/arcgis-online/">Help</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <h4 data-langlabel="arcgis-platform">ArcGIS Platform</h4>
+        <ul>
+          <li><a data-langlabel="arcgis" href="http://www.arcgis.com/">ArcGIS Online</a></li>
+          <li><a data-langlabel="arcgis-for-desktop" href="http://desktop.arcgis.com/">ArcGIS for Desktop</a></li>
+          <li><a data-langlabel="arcgis-for-server" href="http://server.arcgis.com/">ArcGIS for Server</a></li>
+          <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+          <li><a data-langlabel="arcgis-solutions" href="http://solutions.arcgis.com/">ArcGIS Solutions</a></li>
+          <li><a data-langlabel="arcgis-marketplace" href="http://marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <h4 data-langlabel="about-esri">About Esri</h4>
+        <ul>
+          <li><a data-langlabel="about-us" href="http://www.esri.com/about-esri/">About Us</a></li>
+          <li><a data-langlabel="careers" href="http://www.esri.com/careers/">Careers</a></li>
+          <li><a data-langlabel="insiders-blog" href="http://blogs.esri.com/esri/esri-insider/">Insiders Blog</a></li>
+          <li><a data-langlabel="user-conference" href="http://www.esri.com/events/user-conference/index.html">User Conference</a></li>
+          <li><a data-langlabel="developer-summit" href="http://www.esri.com/events/devsummit/index.html">Developer Summit</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <a id="esri-logo-footer" href="http://esri.com">Esri</a>
+        <section id="footer-social-nav">
+                <a class="icon-twitter" href="https://twitter.com/Esri/"></a>
+                <a class="icon-facebook" href="https://www.facebook.com/esrigis/"></a>
+                <a class="icon-github" href="http://esri.github.com/"></a>
+                <a class="icon-email" href="http://www.esri.com/about-esri/contact/"></a>
+        </section>
+      </nav>
+      <small id="footer-legal">&copy; Copyright 2015 Environmental Systems Research Institute, Inc. | <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy">Privacy</a> | <a data-langlabel="legal" href="http://www.esri.com/legal/software-license">Legal</a></small>
+    </div>
+
+  </div>
+</footer>
+
+         
+    <!--[if gt IE 8]><!-->
+    <!--<![endif]-->
+
+   <script src="/js/drop-down.js" type="text/javascript"></script>
+   <script src="/en/asset/js/init.js" type="text/javascript"></script>
+   <script src="/en/asset/js/jqcollapsible.js" type="text/javascript"></script>
+   <script src="/js/search/searchform.js" type="text/javascript"></script>
+   <script src="/cdn/js/link-modifier.js" type="text/javascript"></script>
+   <script src="/cdn/js/sitewide.js" type="text/javascript"></script>
+
+   <script>
+   $(function() {
+      $("#agolSearch").agolSearch();
+   });
+   </script>
+
+    <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"> piAId = '83202'; piCId = '4008';
+(function() { function async_load(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
+'.pardot.com/pd.js';
+var c = document.getElementsByTagName('script')[0];
+c.parentNode.insertBefore(s, c);
+} if(window.attachEvent) { window.attachEvent('onload', async_load); } else { window.addEventListener('load', async_load, false); }
+})(); </script>
+   
+   </body>
+
+   </html>
+   

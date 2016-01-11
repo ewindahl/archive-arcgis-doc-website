@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr"> <!--<![endif]-->
+ 
+<head>
+    <meta charset="utf-8">
+    <title>Data&mdash;Business Analyst | ArcGIS</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'en',
+        localedir: 'en',
+        langSelector: 'none'
+      };
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="/js/libs/html5shiv.js?1357673785" type="text/javascript"></script>
+      <script src="/js/libs/selectivizr.js" type="text/javascript"></script>
+
+      <style>
+        #wrapper {
+          min-width: 960px;
+        }
+      </style>
+    <![endif]-->
+
+    <!--[if lt IE 11]>
+    <script>
+      $(document).ready(function(){
+        $(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+
+   <link rel="stylesheet" href="//fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css" rel="stylesheet" type="text/css"/>
+   <link rel="shortcut icon" href="/img/favicon.ico">
+   <link href="/css/screen.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/screen_l10n.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/documentation.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/documentation_l10n.css?1360627920" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/en/asset/css/codehilight.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/codehilight_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/en/asset/css/common.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/common_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+   <link type="text/css" rel="stylesheet" href="/css/print_l10n.css" media="print" />
+   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
+
+   <!--- search MD -->
+   <META name="description" content="Esri's business, consumer spending, and demographic data
+encompasses a wide variety of datasets that are updated quarterly,
+semiannually, annually, and decennially in the case of U.S. Census
+data."><META name="last-modified" content="2015-11-11"><META name="product" content="bus-analyst-online"><META name="sub_category" content="Business Analyst Online"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Business Analyst Online"><META name="search-category" content="help-general"><META name="subject_label" content="BUSINESS,LOCATION ANALYTICS,ANALYSIS,BUSINESS ANALYST"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="BUSINESS,LOCATION ANALYTICS,ANALYSIS,BUSINESS ANALYST"><META name="content-language" content="en">
+   <!--- search MD -->
+
+     <script type="text/javascript">
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-215788-73']);
+     _gaq.push(['_setDomainName', 'arcgis.com']);
+     _gaq.push(['_trackPageview']);
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+   </script>
+
+   <script src="/js/sitecfg.js" type="text/javascript"></script>
+
+   <script src="/en/asset/js/jquery.1.9.1.min.js" type="text/javascript"></script>
+   <script src="/js/libs/jquery.cookie.js" type="text/javascript"></script>
+   <link href="/en/asset/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+   <link href="/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/en/asset/js/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="/en/asset/js/video-init.js" type="text/javascript"></script>
+
+    <script src="/js/signIn.js" type="text/javascript"></script>
+
+    <!--- Language Picker -->
+   <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
+   <link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
+   <script src="/js/locale/l10NStrings.js" type="text/javascript"></script>
+   <script src="/js/locale/langSelector.js" type="text/javascript"></script>
+   <!--- Language Picker -->
+
+   <!--- beg agol search -->
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+   <link rel="stylesheet" type="text/css" href="/css/agolsearch_l10n.css" />
+   <script src="/js/agolsearch.js"></script>
+
+   <!--- end agol search -->
+   <!--[if IE]>
+   <script src="/js/libs/html5-placeholder-shim.js"></script>
+   <![endif]-->
+
+   
+
+   
+
+   
+
+
+</head>
+   <!--
+      pub: GUID-5F7E4199-150E-4551-89E4-9DD81A0323F1=10 
+      tpc: GUID-C90019C3-61B2-4219-9ADA-7D47FFC815FA=13
+      -->
+    
+  <body class="en doc">
+  <!-- Google Tag Manager -->
+     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+    'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WVT7QT');</script>
+
+    <!-- End Google Tag Manager -->
+   
+     <div id="wrapper">
+        <div id="page">
+           <!--googleoff: all-->
+           
+    <header id="header">
+      <div class="container relative-container">
+        <div class="header-inner">
+          <div class="logo-wrap"><a href="http://www.arcgis.com" data-langlabel="arcgis-logo-text" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
+          <nav id="dropDown">
+              <a href="http://www.arcgis.com" class="current selected">
+                <h4 data-langlabel="arcgis">ArcGIS Online</h4>
+                <p>The mapping platform for your organization</p>
+              </a>
+              <a href="http://desktop.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-desktop">ArcGIS for Desktop</h4>
+                <p>A complete professional GIS</p>
+              </a>
+               <a href="http://server.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-server">ArcGIS for Server</h4>
+                <p>GIS in your enterprise</p>
+              </a>
+              <a href="https://developers.arcgis.com/">
+                <h4 data-langlabel="arcgis-for-developers">ArcGIS for Developers</h4>
+                <p>Tools to build location-aware apps</p>
+              </a>
+              <a href="http://solutions.arcgis.com/">
+                <h4 data-langlabel="arcgis-solutions">ArcGIS Solutions</h4>
+                <p>Free template maps and apps for your industry</p>
+              </a>
+              <a href="http://marketplace.arcgis.com/">
+                <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
+                <p>Get apps and data for your organization</p>
+              </a>
+          </nav>
+          <nav>
+            <ul>
+              <li><a id="nav-features" data-langlabel="features" href="http://www.arcgis.com/features/features.html" class="anonymous-and-public-only">Features</a></li>
+              <li><a id="nav-plans" data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html" class="anonymous-and-public-only">Plans</a></li>
+              <li><a id="nav-gallery" data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+              <li><a id="nav-map" data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+              <li><a id="nav-scene" data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+              <li><a id="nav-help" data-langlabel="help" href="/en/arcgis-online/" class="anonymous-only">Help</a></li>
+              <li><a id="nav-groups" data-langlabel="nav-groups" href="http://www.arcgis.com/home/groups.html" class="public-and-org-only hide">Groups</a></li>
+              <li><a id="nav-mycontent" data-langlabel="nav-mycontent" href="http://www.arcgis.com/home/content.html" class="public-and-org-only hide">My Content</a></li>
+              <li><a id="nav-myorg" data-langlabel="nav-myorg" href="http://www.arcgis.com/home/organization.html" class="org-only hide">My Organization</a></li>
+            </ul>
+          </nav>
+          <a id="esri-logo" href="http://esri.com">Esri</a>
+
+          <div id="lg-container" class="banner-navigation">
+
+            <div id="agolSearch" class="agol-search">
+              <form class="agol-search-form" method="GET" action="//www.arcgis.com/home/search.html">
+                <input name="q" class="agol-search-input" placeholder="Search ArcGIS" type="text" value="">
+              </form>
+              <span class="agol-icon-search"></span>
+            </div>
+
+              <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
+                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span>Sign In</a>
+              </div>
+
+              <div id="logged-in-navigation" class="dropdown-navigation no-top dropdown-wrapper hide">
+                  <a id="A1" class="dropdown btn user-signin" href="#">user</a>
+                  <div class="dropdown-content">
+                      <div class="dropdown-menu">
+                          <ul class="myconsole">
+                              <li><a id="agolProfile" href="#">My Profile</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul class="myconsole">
+                              <li><a id="agolHelp" href="#">Help</a></li>
+                          </ul>
+                          <hr class="myconsole" />
+                          <ul>
+                              <li><a id="agolLogout" href="#">Sign Out</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="lang-block"></div>
+
+          </div>
+
+          <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
+            <a data-langlabel="select-a-page" href="#" class="dropdown btn small light icon icon-list-2">Select <span>a Page</span></a>
+            <div class="dropdown-content">
+             <div class="dropdown-menu">
+              <ul>
+              <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html" class="anonymous-and-public-only">Features</a></li>
+              <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html" class="anonymous-and-public-only">Plans</a></li>
+              <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html ">Gallery</a></li>
+              <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html ">Map</a></li>
+              <li><a data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+              <li><a data-langlabel="help" href="/en/arcgis-online/" class="anonymous-only">Help</a></li>
+              <li><a data-langlabel="nav-groups" href="http://www.arcgis.com/home/groups.html" class="public-and-org-only hide">Groups</a></li>
+              <li><a data-langlabel="nav-mycontent" href="http://www.arcgis.com/home/content.html" class="public-and-org-only hide">My Content</a></li>
+              <li><a data-langlabel="nav-myorg" href="http://www.arcgis.com/home/organization.html" class="org-only hide">My Organization</a></li>
+              </ul>
+             </div>
+            </div>
+          </div>
+
+        </div>
+       </div>
+    </header>
+    
+           <div class="navigation-bar">
+              <div class="container">
+                 <header>
+                    <h1><a href="/en/bao">Business Analyst</a></h1>
+                    <form id="helpSearchForm" target="_top">
+                        <input type="search" name="q" class="leader" placeholder="Business Analyst Online">
+                        <input type="hidden" name="collection" value="help" />
+                        <input type="hidden" name="product" value="bus-analyst-online" />
+                        <input type="hidden" name="version" value="" />
+                        <input type="hidden" name="language" value="en" />
+                        </form>
+                 </header>
+                 <nav class='navigation-bar-nav'><ul><li  ><a href="/en/bao/" target="_top" title="Business Analyst">Home</a></li><li class="current" ><a href="/en/bao/help/welcome.htm" target="_top" title="Help">Help</a></li><li  ><a href="/en/bao/mobile/welcome-mobile.htm" target="_top" title="Business Analyst Online Mobile">Mobile</a></li><li  ><a href="https://geonet.esri.com/community/business-and-commercial/content/" target="_top" title="Forum">Forum</a></li></ul></nav>
+              </div>
+           </div>
+           <!--googleon: all-->
+
+           <div class="container">
+              <div class="row">
+
+              <!--googleoff: all-->
+
+                 <aside class="reference-index">
+                    <nav><div data-collapsed="true"><header><h4 class="section-title">Get started</h4></header><ul><li><a href="/en/bao/help/enterprise-login.htm">Enterprise login</a></li><li><a href="/en/bao/help/navigate-the-map.htm">Navigate the map</a></li><li><a href="/en/bao/help/search.htm">Search</a></li><li><a href="/en/bao/help/select-tool.htm">Select tool</a></li><li><a href="/en/bao/help/set-preferences.htm">Set  Preferences</a></li></ul></div><div data-collapsed="false"><header><h4 class="section-title">Use Data and Reports</h4></header><ul><li><a href="/en/bao/help/reports.htm">Reports</a></li><li class="current"><a href="/en/bao/help/data.htm">Data</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Create maps from data</h4></header><ul><li><a href="/en/bao/help/color-coded-maps.htm">Color-Coded Maps</a></li><li><a href="/en/bao/help/smart-map-search.htm">Smart Map Search</a></li><li><a href="/en/bao/help/business-and-faciilties-search.htm">Business and Facilities Search</a></li><li><a href="/en/bao/help/web-maps.htm">Web Maps</a></li><li><a href="/en/bao/help/data-browser.htm">Data Browser</a></li><li><a href="/en/bao/help/create-a-custom-variable.htm">Create a custom variable</a></li><li><a href="/en/bao/help/more-maps.htm">More Maps</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Define areas for reports</h4></header><ul><li><a href="/en/bao/help/find-location.htm">Find Location</a></li><li><a href="/en/bao/help/select-geography.htm">Select Geography</a></li><li><a href="/en/bao/help/draw-polygon.htm">Draw Polygon</a></li><li><a href="/en/bao/help/import-file.htm">Import File</a></li><li><a href="/en/bao/help/my-content.htm">My Content</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">Create reports</h4></header><ul><li><a href="/en/bao/help/create-standard-reports.htm">Create Standard Reports</a></li><li><a href="/en/bao/help/create-comparison-reports.htm">Create Comparison Reports</a></li></ul></div><div data-collapsed="true"><header><h4 class="section-title">References</h4></header><ul><li><a href="/en/bao/help/essential-vocabulary.htm">Essential Vocabulary</a></li><li><a href="/en/bao/help/calculation-estimates-for-user-created-areas.htm">Calculation estimates for user-created areas</a></li></ul></div></nav>
+                 </aside>
+
+              <!--googleon: all-->
+                 <!-- BEGPAGECONTENT -->
+                 <section class="reference-content">
+                    <div class="toc"><h5>In this topic</h5><ol><li><a href="#ESRI_SECTION1_E94E44C08A9E40FF9904E92A34A908F9">What kind of data is included in Business Analyst? How often is the data updated? </a></li><li><a href="#ESRI_SECTION1_E9C6259B621545128B366298631BB6E3">What is Esri 2015/2020 Updated Demographic Data?</a></li><li><a href="#ESRI_SECTION1_8C8F525EE582405D9790493866AE0AB1"> How accurate is the Esri Updated Demographic Data and  what distinguishes it from other vendors?</a></li><li><a href="#ESRI_SECTION1_D4CD9E9DA82D479BBBD5A4BB89F4BEE0">What is Census 2010?</a></li><li><a href="#ESRI_SECTION1_AA6E00E4ACF640F09ADDC3A3B40643B3">What is the ACS?</a></li></ol></div>
+
+                    <h1 class="divider page-title">Data</h1>
+                    
+    <section class="section1 padded-anchor" id="ESRI_SECTION1_E94E44C08A9E40FF9904E92A34A908F9" purpose="section1"><h2>What kind of data is included in Business Analyst? How often is the data updated? </h2><p id="GUID-B127696C-1CB9-4696-89E8-35F429F5B303">Esri's business, consumer spending, and demographic data
+encompasses a wide variety of datasets that are updated quarterly,
+semiannually, annually, and decennially in the case of U.S. Census
+data. For more details on the data included with your Business
+Analyst subscription and when it is updated, see the <a target="_blank" class="xref xref" href="http://www.esri.com/library/fliers/pdfs/esri-data-fact-sheet.pdf">Esri Data Fact Sheet</a>.</p><p id="GUID-8E0DD1E4-C71C-46DF-BD59-F9219859DFED">To learn about the data available, visit <a target="_blank" class="xref xref" href="HTTP://DOC.ARCGIS.COM/EN/ESRI-DEMOGRAPHICS/DATA/US-INTRO.HTM">Introduction to Esri demographic data</a>.</p></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_E9C6259B621545128B366298631BB6E3" purpose="section1"><h2>What is Esri 2015/2020 Updated Demographic Data?</h2><p id="GUID-505AF7A0-5D11-4A3E-8E58-B844BA3D5DC4">Esri is proud to offer 2015/2020 Updated Demographic Data. The 2015/2020 data release contains the following data:</p><ul purpose="ul" id="UL_FE44A445B7E748E2840400B93D94CA43">        <li purpose="li" id="LI_85EB231C355E42F2847E066430EFAAB5">2015/2020 population, households, and housing by tenure</li>        <li purpose="li" id="LI_0872D4DF17D24894AB5D271C28FBD14A">2015/2020 Population by Age and Sex</li>        <li purpose="li" id="LI_EB0DD576C6A142BD9592102234603562">2015/2020 Population by Single Year Age and Sex</li>        <li purpose="li" id="LI_BDEC54A4F46E4EA8875EE2E6989F4D90">2015 Population by Age and Sex and Race</li>        <li purpose="li" id="LI_115E748B8B82428D941A4DEF9672F043">2015/2020 Population by Race and Hispanic Origin</li>        <li purpose="li" id="LI_4FFC03F23BC14426829B84ED439C7686">2015 Population by Industry and Occupation</li>        <li purpose="li" id="LI_ED4804D6CE5746529DD01A45A07CFD98">2015 Population by Educational Attainment</li>        <li purpose="li" id="LI_ECDDC25FC21C49E09EA97D92BA8E3C11">2015 Population by Marital Status</li>        <li purpose="li" id="LI_1EB7D7C6DD8C45BF96286225352ACB12">2015/2020 Household Income</li>        <li purpose="li" id="LI_AFDE7BD04DE344D3AD2FF7BC52E7F513">2015/2020 Household Income by Age of Householder</li>        <li purpose="li" id="LI_3F1DD4EA98EE4DBE8B924935444608BD">2015 Disposable Income and Disposable Income by Age of Householder</li>        <li purpose="li" id="LI_B7E38B3DC8984DF7A97E71E9F597993D">2015 Net Worth and Net Worth by Age of Householder</li>        <li purpose="li" id="LI_3B59C112AA3648B28B4AD52F439CA8C1">2015/2020 Home Value</li>      </ul><p id="GUID-0B1E86DB-4920-4CA9-9BCF-25ABD0853443"> Esri's 2015 Updated Demographic data was built on 2010 geography. The exceptions include CBSAs which are current as of February 2013, DMAs which are the 2014-2015 markets defined by The Nielsen Company, and ZIP Codes which reflect the USPS's Q3 2014 inventory. Congressional District data represents the 114th Congress.</p><p id="GUID-FE7C513B-EDB8-402E-A4E5-BAA0E750D793"> Esri's 2015/2020 Updated Demographic data is available on the following reports: Age 50+ Profile, Age by Sex by Race Profile, Age by Sex Profile, Demographic and Income Profile, Demographic and Income Comparison Profile, Detailed Age Profile, Disposable Income Profile, Executive Summary, Graphic Profile, Household Income Profile, Housing Profile, Market Profile, and the Net Worth Profile. The Tapestry Area Segmentation Profile (2013) has been retired. Please use the Tapestry Area Segmentation Profile (2015) which represents the next generation in <a target="_blank" class="xref xref" href="HTTP://DOC.ARCGIS.COM/EN/ESRI-DEMOGRAPHICS/DATA/TAPESTRY-SEGMENTATION.HTM">Tapestry Segmentation</a>. </p><p id="GUID-A4ECE498-F2AE-4C4F-9093-377DB4B0ED3F">For more information about geography changes associated with Census 2010, click  <a target="_blank" class="xref xref" href="HTTP://DOC.ARCGIS.COM/EN/ESRI-DEMOGRAPHICS/REFERENCE/CENSUS-GEOGRAPHY.HTM">here</a>.</p><p id="GUID-E490DC69-F1B3-444F-B7E7-AD76C4D40B98">To read the Methodology statements for the Esri Updated Demographic Datasets, click  <a target="_blank" class="xref xref" href="HTTP://DOC.ARCGIS.COM/EN/ESRI-DEMOGRAPHICS/DATA/UPDATED-DEMOGRAPHICS.HTM">here</a>.</p></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_8C8F525EE582405D9790493866AE0AB1" purpose="section1"><h2> How accurate is the Esri Updated Demographic Data and  what distinguishes it from other vendors?</h2><p id="GUID-8007DABD-0883-4CCE-8685-BD470CDF0C6D"> Esri has a team of demographers, statisticians,
+and economists who use a wide variety of public and private data
+sources to develop a uniquely accurate and detailed picture of
+local population, economic, housing, and business characteristics.
+Using Geographic Information System tools and our strong
+demographic estimating experience, Esri captures the effects of
+significant events that occur between decennial Censuses.
+</p><p id="GUID-54BBC7A6-66DF-40EE-8680-FE743B0BF8B0">The  release of each decennial census enables data
+vendors to evaluate the accuracy of their annual demographic
+estimates by benchmarking against census results. Data vendors
+could also learn how their estimates compare to other providers. In
+2011, Esri took advantage of this once-a-decade opportunity and
+commissioned an independent study to obtain an unbiased answer
+about its data accuracy. This blind study was conducted by four
+credentialed researchers and experts in small area forecasts and
+measures of forecast accuracy. Data from
+each of the five major data vendors, including Esri, was
+benchmarked against results from Census 2010 for the entire US at four
+geography levels. This study proves that
+Esri's demographic update methodologies produce the industry's most
+accurate demographic data. Users can be confident that Esri's
+Updated Demographics data will provide them with the best possible
+analysis results. To learn more about the Vendor Accuracy Study
+and to read the excerpted report, visit <a target="_blank" class="xref xref" href="HTTP://WWW.ESRI.COM/ACCURACY"> www.esri.com/accuracy</a>.</p><p id="GUID-4BAC9D94-4A07-4DC5-AE4C-7D036F9AF84B">Esri offers a full catalog of over 15,000 variables for up to 11 levels of geography, creating an incredibly detailed picture of the U.S. population. For a full list of the data offered by Esri and information about methodologies and sources, click <a target="_blank" class="xref xref" href="HTTP://WWW.ESRI.COM/DATA/ESRI_DATA">here</a>.</p></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_D4CD9E9DA82D479BBBD5A4BB89F4BEE0" purpose="section1"><h2>What is Census 2010?</h2><p id="GUID-2DF5C7A6-41CD-49E5-8075-9123EC4381E4"> The U.S. Census takes place every 10 years. It is mandated by the constitution and counts every resident in the United States. Census data is used to distribute federal funds to local communities and determine the number of seats each state has in the U.S. House of Representatives. It is used by businesses and local and state governments to analyze the underlying demographics of an area.</p><p id="GUID-3DA2EE39-39D7-490C-9981-BD1ABEE65915"> Data derived from Census 2010 will be different
+than data from past years. The most significant change is due to
+the Census Bureau's omission of the long form. The short census
+questionnaire provides only the complete counts of population,
+households, and housing units plus the following characteristics:
+sex, age, race, Hispanic origin, household relationship, occupancy,
+and tenure. Every other variable was previously collected from the
+sample long form. Now, data about income, education, employment,
+language, migration, citizenship, marital status, and housing
+characteristics, such as value and rent, will be obtained from the
+American Community Survey (ACS), which is separate from Census
+2010.</p><p id="GUID-2CDCF379-2D9F-4208-9B76-4CA1388C306C"> A decennial Census also brings a change in
+geography. For more information about the Census 2010 Geography,
+please see <a target="_blank" class="xref xref" href="HTTP://HELP.ARCGIS.COM/EN/ESRI_DATA/GEOGRAPHY_CHANGES/INDEX.HTML"> Census 2010 Geography
+Release</a>.</p></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_AA6E00E4ACF640F09ADDC3A3B40643B3" purpose="section1"><h2>What is the ACS?</h2><p id="GUID-9DAB33AA-23A3-4945-9045-907552C43A19"> In 2010, the Census Bureau changed how it collects decennial census data. The Census Bureau has eliminated the traditional long form and opted to only release decennial census data collected from the short form. The American Community Survey (ACS) is the replacement for census sample data, or long form. Data on income, education, employment, language, migration, citizenship, marital status, and housing characteristics, such as value and rent, will now be obtained from the ACS rather than the decennial census sample.</p><p id="GUID-27B3C2ED-AF27-477A-B6BD-10F912F920F7"> The ACS provides data that is updated more frequently than the decennial census data. The ACS collects and produces population and housing information every year instead of every 10 years. ACS represents continuous measurement or a rolling sample design. A small percent of the population is sampled every month. The monthly samples are combined and averaged to produce one-, three- or five-year databases. The Census 2000 sample represented approximately 1 in 6 households and one point in time, April 1, 2000. ACS represents approximately 1 in 40 households. ACS' much smaller sample sizes affect data reporting and produce much larger sampling errors.</p><p id="GUID-1BA62D58-B16B-4286-ACA0-1025A40816C0"> Each ACS estimate will be reported with a Margin of Error (MOE). The MOE is a measure of the variability of the estimate due to sampling error. The MOE enables data users to measure the range of uncertainty around each estimate. This range can be calculated with 90 percent confidence by taking the estimate +/- the MOE. For example, if the ACS reports an estimate of 100 +/- 20, then there is a 90 percent chance that the value for the total population falls between 80 and 120. The larger the MOE, the lower the precision of the estimate and the less confidence one should have that the estimate is close to the true population value.</p><p id="GUID-5B30029E-FBEB-4344-82F9-70DC39E89225"> For more information about ACS, please visit <a target="_blank" class="xref xref" href="HTTP://WWW.ESRI.COM/SOFTWARE/AMERICAN-COMMUNITY-SURVEY/INDEX.HTML">www.esri.com/acs</a>.</p></section>  
+
+                 </section>
+                 <!-- ENDPAGECONTENT -->
+                 <footer class="feedback">
+                  <a data-langlabel="feedback-on-this-topic" href="/en/feedback/">Feedback on this topic?</a>
+               </footer>
+              </div>
+           </div>
+
+        </div>
+     </div>
+     <!--googleoff: all-->
+     
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <nav>
+        <h4 data-langlabel="arcgis">Arc<span>GIS</span></h4>
+        <ul>
+          <li><a data-langlabel="home" href="http://www.arcgis.com/">Home</a></li>
+          <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html">Features</a></li>
+          <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
+          <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+          <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+          <li><a data-langlabel="scene" href="http://www.arcgis.com/home/webscene/viewer.html" class="hideOnIE">Scene</a></li>
+          <li><a data-langlabel="help" href="/en/arcgis-online/">Help</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <h4 data-langlabel="arcgis-platform">ArcGIS Platform</h4>
+        <ul>
+          <li><a data-langlabel="arcgis" href="http://www.arcgis.com/">ArcGIS Online</a></li>
+          <li><a data-langlabel="arcgis-for-desktop" href="http://desktop.arcgis.com/">ArcGIS for Desktop</a></li>
+          <li><a data-langlabel="arcgis-for-server" href="http://server.arcgis.com/">ArcGIS for Server</a></li>
+          <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+          <li><a data-langlabel="arcgis-solutions" href="http://solutions.arcgis.com/">ArcGIS Solutions</a></li>
+          <li><a data-langlabel="arcgis-marketplace" href="http://marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <h4 data-langlabel="about-esri">About Esri</h4>
+        <ul>
+          <li><a data-langlabel="about-us" href="http://www.esri.com/about-esri/">About Us</a></li>
+          <li><a data-langlabel="careers" href="http://www.esri.com/careers/">Careers</a></li>
+          <li><a data-langlabel="insiders-blog" href="http://blogs.esri.com/esri/esri-insider/">Insiders Blog</a></li>
+          <li><a data-langlabel="user-conference" href="http://www.esri.com/events/user-conference/index.html">User Conference</a></li>
+          <li><a data-langlabel="developer-summit" href="http://www.esri.com/events/devsummit/index.html">Developer Summit</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <a id="esri-logo-footer" href="http://esri.com">Esri</a>
+        <section id="footer-social-nav">
+                <a class="icon-twitter" href="https://twitter.com/Esri/"></a>
+                <a class="icon-facebook" href="https://www.facebook.com/esrigis/"></a>
+                <a class="icon-github" href="http://esri.github.com/"></a>
+                <a class="icon-email" href="http://www.esri.com/about-esri/contact/"></a>
+        </section>
+      </nav>
+      <small id="footer-legal">&copy; Copyright 2015 Environmental Systems Research Institute, Inc. | <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy">Privacy</a> | <a data-langlabel="legal" href="http://www.esri.com/legal/software-license">Legal</a></small>
+    </div>
+
+  </div>
+</footer>
+
+         
+    <!--[if gt IE 8]><!-->
+    <!--<![endif]-->
+
+   <script src="/js/drop-down.js" type="text/javascript"></script>
+   <script src="/en/asset/js/init.js" type="text/javascript"></script>
+   <script src="/en/asset/js/jqcollapsible.js" type="text/javascript"></script>
+   <script src="/js/search/searchform.js" type="text/javascript"></script>
+   <script src="/cdn/js/link-modifier.js" type="text/javascript"></script>
+   <script src="/cdn/js/sitewide.js" type="text/javascript"></script>
+
+   <script>
+   $(function() {
+      $("#agolSearch").agolSearch();
+   });
+   </script>
+
+    <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"> piAId = '83202'; piCId = '4008';
+(function() { function async_load(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
+'.pardot.com/pd.js';
+var c = document.getElementsByTagName('script')[0];
+c.parentNode.insertBefore(s, c);
+} if(window.attachEvent) { window.attachEvent('onload', async_load); } else { window.addEventListener('load', async_load, false); }
+})(); </script>
+   
+   </body>
+
+   </html>
+   
