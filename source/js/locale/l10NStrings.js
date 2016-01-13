@@ -1538,6 +1538,8 @@ var localeJsonObj = {
       "appstudio-ht": "AppStudio for ArcGIS", 
       "arcgis": "ArcGIS Online", 
       "arcgis-desc": "The mapping platform for your organization", 
+      "arcgis-earth": "ArcGIS Earth", 
+      "arcgis-earth-ht": "ArcGIS Earth", 
       "arcgis-desktop": "ArcMap", 
       "arcgis-desktop-ht": "Includes ArcMap, ArcCatalog, ArcGlobe, ArcScene and their extensions.", 
       "arcgis-for-desktop": "ArcGIS for Desktop", 
