@@ -344,8 +344,8 @@ var filterCfg = {
 	  {
         k:"ops-dashboard",
         q: {
-          r:"",
-          p:"(product:ops-dashboard)"
+          r:"(product:ops-dashboard)",
+          p:""
         }
       },
 	  {
