@@ -1,0 +1,166 @@
+---
+title: Справка ArcGIS Open Data
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="ArcGIS Open Data Help Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-open-data"><META name="sub_category" content="ArcGIS Open Data"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Open Data"><META name="search-category" content="help-general"><META name="subject_label" content="OPEN DATA, ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="OPEN DATA, ARCGIS ONLINE"><META name="content-language" content="ru">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ru/open-data/">ArcGIS Open Data</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Open Data Help">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-open-data" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/ru/open-data/">Главная</a></li>
+        <li><a href="/ru/open-data/consumer/">Для клиентов</a></li>
+        <li><a href="/ru/open-data/provider/">Для поставщиков</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <header>
+
+		  <h2 id="appTitle">Что такое ArcGIS Open Data?</h2>
+
+          <p>Open Data позволяет организациям использовать платформу ArcGIS для предоставления широкой аудитории открытого доступа к своим данным. Организации могут оформить веб-сайт по своему вкусу, а также выбрать группы Open Data для публикации определенных элементов. Аудитория может использовать сайты Open Data для поиска по теме или расположению, загружать данные в различных форматах и просматривать их на интерактивной карте или в таблице.</p>
+
+
+
+        </header>
+        <hr />
+        <br />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="img/consumer.jpg" />
+
+          <h3>Для клиентов </h3>
+          <p>Работайте с данными на диаграммах, таблицах и картах, чтобы больше знать о вашем сообществе. Вы можете выполнять поиск, изучение и загрузку данных, а также публиковать ссылки на интересные наборы данных.</p>
+          <p>
+
+			<a href="/ru/open-data/consumer/" class="icon-right-arrow">&nbsp;Как это сделать?</a>
+           </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="img/producer.jpg" />
+
+          <h3>Для поставщиков</h3>
+          <p>Настройте внешний вид веб-сайта и получите доступ ко множеству достоверных данных, которые можно опубликовать. Вы можете разрешить поиск, просмотр и загрузку ваших данных во множество форматов.</p>
+          <p>
+            <a href="/ru/open-data/provider/" class="icon-right-arrow">&nbsp;Как это сделать?</a>
+               <br/>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+
+<br/>
+<div>
+	         <a name="features"></a>
+        <h2 class="divider">Возможности</h2>
+
+        <p>Создавайте и делитесь созданными вами данными, с помощью известных рабочих процессов для создания сайта Open Data.</p>
+		<ul>
+			<li>Внедрите Open Data в вашей организации или группе.</li>
+			<li>Создавайте пользовательские сайты для ваших данных.</li>
+			<li>Вы можете разрешить глобальный поиск по всем организациям или группам.</li>
+			<li>Предоставьте поддержку для пространственных и непространственных таблиц.</li>
+			<li>Изучение данных можно выполнять с помощью интерактивных фильтров.</li>
+			<li>Публикуйте ссылки на отфильтрованные наборы данных.</li>
+
+		</ul>
+         <p>&nbsp;</p>
+        <div class="clear"></div>
+		<a name="dataRequirements"></a>
+        <h2 class="divider">Требования к данным</h2>
+        <p>ArcGIS Open Data в настоящее время работает с данными размещенных векторных слоёв, сервисов объектов ArcGIS Server, и картографических сервисов ArcGIS Server, сервисов изображений ArcGIS Server, файлов-CSV, размещенных таблиц. ArcGIS Open Data в ограниченном режиме поддерживает внешние URL-ссылки, веб-карты и другие документы (например, Word и PDF).</p>
+
+        <p>&nbsp;</p>
+
+         <a name="whatsNew"></a>
+        <h2 class="divider">Что нового</h2>
+		<p>Обновление Open Data произошло в июле 2015 года и включало следующие изменения в характеристиках и функциональности: </p>
+		
+		<ul>
+			<li>Визуализации гридов плотности для больших наборов данных (GeoHash).</li>
+			<li>Поддержку формальных метаданных из ArcGIS Online.</li>
+			<li>Вход при помощи учетной записи ArcGIS Online.</li>
+			<li>Добавление пользовательских и администраторских комментариев для наборов данных.</li>
+		</ul>
+
+        <p>&nbsp;</p>
+		
+         <a name="SneakPeek"></a>
+        <h2 class="divider">Краткий обзор</h2>
+		<p>Версия ArcGIS Open Data только появилась, и мы планируем сделать много интересного:</p>
+		
+		<ul>
+			<li>Статистическая информация для ваших данных, чтобы отслеживать число загрузок и подробности просмотров.</li>
+			<li>Расширенные возможности администрирования для набора данных и сбора данных.</li>
+			<li>Улучшенные средства поиска и фильтрации наборов данных.</li>
+		</ul>
+		        <p>&nbsp;</p>
+		<p>Поделитесь своими <a class="" href="http://ideas.arcgis.com">идеями</a> по использованию ArcGIS Open Data.</p>
+        <p>&nbsp;</p>
+ 
+      </div>
+</div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+	          <div class="imgFrame block">
+	  <h3>Подробности</h3>
+	          
+	  <h4><a href="#features">Возможности</a></h4>
+	  <h4><a href="#dataRequirements">Требования к данным</a></h4>
+	  <h4><a href="#whatsNew">Что нового</a></h4>
+	  <h4><a href="#SneakPeek">Краткий обзор</a></h4>
+	          
+        </div>
+
+        <br />
+		
+        <div class="greyFrame">
+          <h3 class="icon-orange icon-light-bulb">Сайт ArcGIS Ideas</h3>
+         <p>Поделитесь своими идеями по использованию ArcGIS Open Data. Опубликуйте ваше мнение или проголосуйте за предложенные идеи.</p> <br/>
+         <p>Вы провайдер и вам нужны идеи? Посмотрите, что хотят пользователи. Пригласите соавторов к сотрудничеству над выработкой идей.</p></br>
+         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
+        </div>
+
+        <br />
+
+
+ </div>
+
+    </div>
+
+
