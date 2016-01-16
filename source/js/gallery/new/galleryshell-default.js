@@ -576,6 +576,12 @@ SERow.prototype.ContentType = function () {
     
     return contentType;
 };
+SERow.prototype.getType = function () {
+    return this.data["type"] || "None";
+};
+SERow.prototype.getTypeKeywords = function () {
+    return this.data["typeKeywords"] || "None";
+};
 SERow.prototype.agolItemUrl = function (agolId) {
 	return "http://" + window.location.hostname + "/en/living-atlas/item-agol/?itemId=" + agolId;
 };

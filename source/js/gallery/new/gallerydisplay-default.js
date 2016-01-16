@@ -17,20 +17,110 @@ function genDisplay() {
         _genContribInfo: function (row) {
             var v = { show: false };
 
-            /*if (gcfg.contrib === 1) {
-                var contributor = row.md("g-contributor", "");
-                v.show = true;
-                if (contributor.length > 0) {
-                    v.css = contributor + "-banner";
-                    gcfg.contribkv = gcfg.contribkv || {"esri":"Esri Maps & Apps", "partner":"Partner Maps & Apps", "user":"User Maps & Apps" }
-                    v.label = gcfg.contribkv[contributor];
-                } else {
-                    v.css = "";
-                    v.label = "";
-                }
-            }*/
-
             return v;
+        },
+
+        _getDisplayName: function(itemType,typeKeywords) {
+          var typeKeywords = typeKeywords || [],
+            displayName = itemType;
+
+          if (itemType === "Feature Service" || itemType === "Feature Collection") {
+            displayName = $.inArray("Table", typeKeywords) > -1 ? "Table" : "Feature Layer";
+          } else if (itemType === "Image Service") {
+            displayName = $.inArray("Elevation 3D Layer", typeKeywords) > -1 ? "Elevation Layer" : "Imagery Layer";
+          } else if (itemType === "Scene Service") {
+            displayName = "Scene Layer";
+          } else if (itemType === "Stream Service") {
+            displayName = "Feature Layer";
+          } else if (itemType === "Microsoft Powerpoint") {
+            // Unfortunately this was named incorrectly on server side, changing it there would result
+            // in some issues
+            displayName = "Microsoft PowerPoint";
+          } else if (itemType === "GeoJson") {
+            // Unfortunately this was named incorrectly on server side, changing it there would result
+            // in some issues
+            displayName = "GeoJSON";
+          } else if (itemType === "Globe Service") {
+            displayName = "Globe Layer";
+          } else if (itemType === "Vector Tile Service") {
+            displayName = "Tile Layer";
+          } else if (itemType === "Map Service") {
+            if ($.inArray("Hosted Service", typeKeywords) > -1 || $.inArray("Tiled", typeKeywords) > -1) {
+              displayName = "Tile Layer";
+            } else {
+              displayName = "Map Image Layer";
+            }
+          }
+
+          return displayName;
+        },
+
+        _getIconUrl: function (type,typeKeywords) {
+            
+          var itemType = (type)? type.toLowerCase() : "",
+            typeKeywords = typeKeywords || [],
+            imgDir = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/",
+            size = "16",  //for now we only support 16x16 pixel images
+            isHosted = false,
+            isTable = false,
+            imgName;
+
+
+          if (itemType.indexOf("service") > 0 || itemType === "feature collection" || itemType === "kml" || itemType === "wms" || itemType === "wmts") {
+            isHosted = $.inArray("Hosted Service", typeKeywords) > -1;
+            if (itemType === "feature service" || itemType === "feature collection" || itemType === "kml") {
+              isTable = $.inArray("Table", typeKeywords) > -1;
+              imgName = isTable ? "table" : (isHosted ? "featureshosted" : "features");
+            } else if (itemType === "map service" || itemType === "wms" || itemType === "wmts") {
+              imgName = (isHosted || $.inArray("Tiled", typeKeywords) > -1) ? "maptiles" : "mapimages";
+            } else if (itemType === "scene service") {
+              imgName = "sceneweblayer";
+            } else if (itemType === "image service") {
+              imgName = $.inArray("Elevation 3D Layer", typeKeywords) > -1 ? "elevationlayer" : "imagery";
+            } else if (itemType === "stream service") {
+              imgName = "streamlayer";
+            } else if (itemType === "vector tile service") {
+              imgName = "vectortile";
+            } else {
+              imgName = "layers";
+            }
+          } else
+          if (itemType == "web map" || itemType == "cityengine web scene") {
+            imgName = "maps";
+          } else  if (itemType == "web scene") {
+            imgName = $.inArray("ViewingMode-Local", typeKeywords) > -1 ? "webscenelocal": "websceneglobal";
+          } else if (itemType == "web mapping application" || itemType == "mobile application" || itemType == "application" ||
+            itemType == "operation view" || itemType == "desktop application") {
+            imgName = "apps";
+          } else 
+          if (itemType === "map document" || itemType === "map package" || itemType === "published map" || itemType === "scene document" ||
+            itemType === "globe document" || itemType === "basemap package" || itemType === "mobile basemap package" || itemType === "mobile map package" ||
+            itemType === "project package" || itemType === "project template" || itemType === "pro map" || itemType === "layout" ||
+            (itemType === "layer" && $.inArray("ArcGIS Pro", typeKeywords) > -1) || (itemType === "explorer map" && $.inArray("Explorer Document", typeKeywords))) {
+            imgName = "mapsgray";
+          } else if (itemType === "service definition" || itemType === "csv" || itemType === "shapefile" || itemType === "cad drawing" || itemType === "geojson") {
+            imgName = "datafiles";
+          } else if (itemType === "explorer add in" || itemType === "desktop add in" || itemType === "windows viewer add in" || itemType === "windows viewer configuration") {
+            imgName = "appsgray";
+          } else if (itemType === "rule package" || itemType === "file geodatabase" || itemType === "csv collection" || itemType === "kml collection" ||
+            itemType === "windows mobile package" || itemType === "map template" || itemType === "desktop application template" ||
+            itemType === "arcpad package" || itemType === "code sample" || itemType === "form" || itemType === "document link" || itemType === "tile package" || itemType === "vector tile package" || itemType === "scene package" ||
+            itemType === "operations dashboard add in" || itemType === "rules package" || itemType === "image" || itemType === "workflow manager package" ||
+            itemType === "desktop style" || (itemType === "explorer map" && $.inArray("Explorer Mapping Application", typeKeywords) > -1 || $.inArray("Document", typeKeywords) > -1)) {
+            imgName = "datafilesgray";
+          } else if (itemType === "geocoding service" || itemType === "network analysis service" || itemType === "geoprocessing service" ||
+            itemType === "geodata service" || itemType === "geometry service" || itemType === "geoprocessing package" ||
+            itemType === "locator package" || itemType === "geoprocessing sample" || itemType === "workflow manager service" || itemType === "raster function template") {
+            imgName = "toolsgray";
+          } else if (itemType === "layer" || itemType === "layer package" || itemType === "explorer layer") {
+            imgName = "layersgray";
+          } else if (itemType === "task file") {
+            imgName = "taskfile";
+          } else {
+            imgName = "maps";
+          }
+
+          return (imgName) ? imgDir + imgName + size + ".png" : null;
         },
 		  
         display1: function (obj, i, row, buf, col) {
@@ -38,7 +128,10 @@ function genDisplay() {
             var imgurl = row.agolImgUrl(itemID);
             var v = obj._genContribInfo(row);
             var targetUrl = row.agolItemUrl(itemID);
-            var itemTitle = row.data["title"] || "n/a"
+            var itemTitle = row.data["title"] || "n/a";
+            var typeIconPath = obj._getIconUrl (row.getType(), row.getTypeKeywords())
+            var typeDisplayName = obj._getDisplayName (row.getType(),row.getTypeKeywords())
+            
             if (itemTitle.length > 40 ) {  
                 itemTitle = itemTitle.substr(0,40) + " ...";
             }
@@ -69,7 +162,12 @@ function genDisplay() {
             buf.push("</a>");
             buf.push("<span class='ownerName'>By "+row.data["owner"]+"</span>");
 
-			var itemType = row.ContentType();
+           //console.log(typeIconPath);
+            if(typeIconPath){
+                buf.push("<span class='itemTypeIcon'><img class='grid-item-icon' src='" + typeIconPath + "' title='" + typeDisplayName + "'></span>");
+            }
+
+            var itemType = row.ContentType();
             if(itemType.hasOwnProperty('label')){
                 buf.push("<span class='premiumItem'><img class='esri-premium-icon' src='" + itemType['img'] + "' title='"+itemType['title']+"'></span>");
             }
