@@ -534,6 +534,10 @@ table.lined-columns tbody th, table.lined-columns tbody td {
 	margin-bottom: 10px;
 }
 
+.marketplace #header  {
+  min-height: auto;
+}
+
 /* ----- marketplace -------- */
 .marketplace .header-inner nav {
   margin-left: 1em;
@@ -557,7 +561,7 @@ table.lined-columns tbody th, table.lined-columns tbody td {
 
 .marketplace .section-bar.marketplace {
   margin-bottom:3em;
-  background:url("/img/banner-marketplace.jpg") no-repeat center center #E7601F;
+  background:url("/img/banner-marketplace.jpg") no-repeat center center;
   min-height:83px;color:white
 }
 
@@ -707,7 +711,7 @@ section > h2 > img {
 }
 
  .profile-icon {
-  background-image: url("/img/marketplace_sprite.png") !important;
+  background-image: url("/img/ago_sprite_search.png") !important;
   background-position: -64px -81px;
   position: absolute;
   top: 7px;
@@ -737,3 +741,42 @@ ul ol li {
 .archive #wfbtn{
 	display:none;
 }
+
+#header {
+	min-height: auto;
+}
+
+#header nav {
+	text-decoration: none;
+	text-transform: none;
+}
+#header nav a.active {
+    border-bottom: 3px solid #007ac2;
+    font-family: "Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
+}
+#header nav a:hover, #logged-out-navigation a:hover, #logged-in-navigation a:hover, #lg-container a:hover{
+    border-bottom: 3px solid #007ac2;
+    /*color: #007ac2;*/
+}
+
+#header nav li a, #logged-out-navigation a, #logged-in-navigation a, #lg-container a {
+    color: #323232;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	 
+	 font-family: "Avenir LT W01 35 Light",Arial,Helvetica,sans-serif;
+    font-size: 1em;
+    letter-spacing: normal;
+    padding: 0 0 10px;
+    text-decoration: none;
+}
+
+#header .btn.user-signin, #header .dropdown.btn.user-signin, #header .btn.marketplace, #header .dropdown.btn.marketplace {
+    color: #323232;
+    padding: 0 1.6em !important;
+}
+
+#lgarrow.arrow-down {
+    background: transparent url("/img/ago_sprite_search.png") no-repeat scroll 75% 36%;
+}
+

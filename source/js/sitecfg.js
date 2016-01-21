@@ -7,18 +7,21 @@ var _searchHost = "//searchdev.esri.com",
 	_agolHost = "//devext.arcgis.com",
 	_mkpHost = "//marketplace.arcgis.com",
 	_esriHost = "http://dev.esri.com",
-	trialUrl = "//learndev.arcgis.com";
+	trialUrl = "//learndev.arcgis.com",
+	_downloadUrl = "https://downloadsdev.arcgis.com/dms/rest/update/secured/";
 	
 if(window.location.hostname.match( /(docstg.arcgis.com)/)) {
 	_searchHost = "//searchstg.esri.com";
 	_agolHost = "//qaext.arcgis.com";
 	trialUrl = "https://learnstg.arcgis.com";
 	_esriHost = "http://cmsqa.esri.com";
+	_downloadUrl = "https://downloadsqa.arcgis.com/dms/rest/update/secured/";
 } else if(window.location.hostname.match( /(doc.arcgis.com)/)) {
 	_searchHost = "//search.esri.com";
 	_agolHost = "//www.arcgis.com";
 	trialUrl = "https://learn.arcgis.com";
 	_esriHost = "http://www.esri.com";
+	_downloadUrl = "https://downloads.arcgis.com/dms/rest/update/secured/";
 }
 
 
@@ -29,7 +32,7 @@ if(window.location.hostname.match( /(docstg.arcgis.com)/)) {
 
 		"agolSignin" : 	_agolHost + "/home/signin.html",
 		"agolProfile" :  "/home/user.html",
-		"agolHelp" :  	 "/home/support.html",
+		"agolHelp" :  	 "/en/arcgis-online/",
 		"agolSignout" :  "/sharing/rest/oauth2/signout",
 		"trialDownloadUrl": trialUrl + "/en/trial/",
 
@@ -38,7 +41,8 @@ if(window.location.hostname.match( /(docstg.arcgis.com)/)) {
 		"mkpSearch" : 	_mkpHost + "/search.html",
 
         "searchUrl" : 	_searchHost + "/v3/index.cfm",
-		  "esriHostname" : _esriHost,
+		"esriHostname" : _esriHost,
+		"securedDownloadUrl" : _downloadUrl,
 
 		"searchIfc" : "arcgis_doc_ifce",
 	  	"searchView" : "arcgis_doc_vw"

@@ -1,0 +1,267 @@
+---
+title: Collector for ArcGIS
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - /en/asset/css/app-switch-1
+  - colorbox/colorbox
+  - jquery.smartbanner
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/app-collector-1
+  - libs/jquery.colorbox-min
+  - video-init
+  - libs/jquery.smartbanner
+  - smartbanner.init
+
+metatags:
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2015-12-08"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="zh-hk"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
+
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1>Collector for ArcGIS</h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="collector-android" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/zh-hk/collector/">首頁</a></li>
+        <li><a href="/zh-hk/collector/android/create-maps/create-maps.htm">建立地圖</a></li>
+        <li><a href="/zh-hk/collector/android/collect-data/collect-tutorial.htm">採集資料</a></li>
+        <li><a href="https://geonet.esri.com/community/gis/applications/collector-for-arcgis">論壇</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+      <div class="column-16 tablet-column-24">
+
+        <h3 class="gray">在線或離綫狀態下使用智慧型手機或平板電腦來採集和更新現場中的資訊。</h3>
+
+	  <!--
+          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	  -->
+	  
+
+        <p>
+	    <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a>
+	    <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" style="margin:10px; vertical-align:middle"/></a>
+	    <a href="https://www.microsoft.com/store/apps/9wzdncrdg7lk"><img src="https://cmsresources.windowsphone.com/devcenter/common/resources/images/badgegenerator/English_wstore_black_258x67.png" alt="Download from Windows Store" style="margin:10px; vertical-align:middle; height:40px"/></a>
+        </p>
+
+        </header>
+        <hr />
+        <br />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="app-collector-map.jpg" />
+
+          <h3>建立和分享地圖</h3>
+          <p>將 ArcGIS 的接觸範圍擴大到現場並提升空間資料的準確性和即時性。透過兩個步驟即可建立和分享資料採集的地圖。</p>
+          <p>
+            <a href="/zh-hk/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;詳情介紹</a><br />
+            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
+          </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="app-collector-data.jpg" />
+
+          <h3>採集資料</h3>
+          <p>建立對組織而言十分重要的資料，內容可從損失報告和服務請求到歷史景點的地點。輕鬆包含影像及影片並分享您的作品。</p>
+          <p>
+            <a href="/zh-hk/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;詳情介紹</a><br />
+
+			<a title="採集資料" href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;觀看影片</a>
+			<video width="320" height="240" controls id="2194" class="mobileVideo">
+			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
+			</video>
+          </p>
+        </div>
+	<div class="clear"></div>
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-3.png" />
+
+          <h3>離線使用</h3>
+          <p>現場作品可讓您親臨現場，而且不需要資料連線。讓您的地圖和資料離線、採集資料並在重新連線之後恢復同步。</p>
+          <p>
+            <a href="/zh-hk/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;詳情介紹</a><br />
+          </p>
+        </div>
+        
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="story-graphic-4.png" />
+
+          <h3>使用樣板快速開始</h3>
+          <p>您的產業擁有專屬的共同資料集。下載樣板以建立您需要的基本資料結構，並針對特定工作進行自訂。</p>
+          <p>
+            <a href="http://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;檢視下載</a><br />
+          </p>
+        </div>
+        
+        <div class="clear"></div>
+
+	<a name="features"></a>
+	<h2 class="divider">特性</h2>
+	<p>收集和更新現場中的資訊、記錄目前位置並採用擷取的資料，以便制定更明智且及時的決策。隨時隨地使用地圖進行資料的地面實況調查、進行觀察和回應事件。提升現場工作人員的效率和 GIS 的精確性。</p>
+	
+	<ul>
+	<li>將地圖下載到您的裝置和實現離線工作。</li>
+	<li>使用 GPS 以建立和更新地圖資料。</li>
+	<li>採集點、線和區域圖徵。</li>
+	<li>填寫易於使用的地圖導向表格。</li>
+	<li>尋找地點和圖徵。</li>
+	<li>追蹤和回報您造訪的區域。</li>	
+	<li>整合 <a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-apple"/>)。</li>
+	</ul>
+
+        <a name="systemRequirements"></a>
+        <h2 class="divider">系統要求</h2>
+
+        <p>需要特定裝置要求才能執行 Collector，而且在應用程式內使用資料也有某些要求。Collector 支援多種語言。</p>
+
+
+        <h3>資料需求</h3>
+        <p>若要在 Collector 中使用您的地圖，則必須擁有 ArcGIS 組織帳號。您的地圖可包含來自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的資料。</p>
+
+
+        <h3>裝置要求</h3>
+        <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
+        <ul>
+          <li>Android 4.0 (Ice Cream Sandwich) 或更高版本</li>
+          <li>ARMv7 或 x86 處理器</li>
+          <li>OpenGL ES 2.0 支援</li>
+          <li>精確位置 (基於 GPS 和網路) 支援</li>
+        </ul></td>
+        <td valign="top"><h4 class="icon-apple">iOS</h4>
+        <ul>
+          <li>iOS 8 或更高版本</li>
+          <li>iPhone、iPad、iPod touch</li>
+        </ul></td>
+        <td valign="top"><h4 class="icon-windows-8">Windows</h4>
+        <ul>
+          <li>Windows 10 或更高版本（平板電腦和 PC）</li>
+        </ul></td></tr>
+        </table>
+
+
+        <h3>支援的語言</h3>
+        <p>阿拉伯語、捷克語、丹麥語、荷蘭語、英語、愛沙尼亞語 (<span class="icon-android"/>)、芬蘭語、法語、德語、希獵語、希伯來語、義大利語、日語、韓語、拉脫維亞語 (<span class="icon-android"/>)、立陶宛語 (<span class="icon-android"/>)、挪威語、波蘭語、葡萄牙語 (巴西)、葡萄牙語 (葡萄牙)、羅馬尼亞語、俄語、簡體中文、西班牙語、瑞典語、泰語、繁體中文、土耳其語和越南語。</p>
+        <p>應用程式使用的語言取決於您的裝置語言設定。</p>
+        <p>在 Windows 上使用 Collector 時，目前僅支援英語。</p>
+
+        <a name="whatsNew"></a>
+        <h2 class="divider">新功能</h2>
+        <table><tr><td valign="top"><h4 class="icon-apple">iOS</h4>
+	        <p>Collector for ArcGIS 10.3.6 已於 2015 年 12 月發行。它包括以下增強功能：</p>
+	        <ul>
+	          <li>支援篩選圖徵類型和編碼值</li>
+	          <li>配置相片解析度的能力</li>
+	          <li>僅支援同步期間的推送編輯</li>
+	          <li>本地化為繁體中文</li>
+	          <li>各種錯誤修正和增強功能，包括 <a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA4OTAwNg==">BUG-000089006</a>、<a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5MTM0OQ==">BUG-000091349</a> 和 <a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5MTM2NA==">BUG-000091364</a></li>
+	        </ul>
+                </td>
+	        <td valign="top"><h4 class="icon-android">Android</h4>
+	        <p>Collector for ArcGIS 10.3.6 已於 2015 年 12 月發行。它包括以下增強功能：</p>
+	        <ul>
+	          <li>支援篩選圖徵類型和編碼值</li>
+	          <li>僅支援同步期間的推送編輯</li>
+	          <li>本地化為繁體中文</li>
+	          <li>各種錯誤修正和增強功能，包括 <a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA4NjgxMQ==">BUG-000086811</a>、<a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5MTQ4MQ==">BUG-000091481</a> 和 <a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5MTkxNQ==">BUG-000091915</a></li>
+            </ul></td>
+            <td valign="top"><h4 class="icon-windows-8">Windows</h4>
+	        <p>Collector for ArcGIS 於 2015 年 12 月，首次以 10.3.5 版在 Windows 上發行。</p>
+	        </td>
+	</tr></table>
+
+	<a name="sneakPeek"></a>
+	<h2 class="divider">搶先預覽</h2>
+	<p>目前，Collector 已成为在現場採集和編輯資料的絕佳應用程式。但它不僅限於此！
+	
+	<table><tr><td valign="top"><h4>開發中</h4>
+	<p>我們目前正致力於新增這些功能：</p>
+	<ul>
+		<li>支援外部 GNSS 接收器</li>
+		<li>支援 Windows 10 Mobile</li>
+		<li>整合 <a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-android"/>)</li>
+	</ul>
+	</td>
+	<td valign="top"><h4>已規畫</h4>
+	<p>我們計畫稍後新增這些功能：</p>
+	<ul>
+		  <li>更聰明的資料採集形式</li>
+		  <li>規劃離線現場作業的工具</li>
+		  <li>按偏移執行資料採集</li>
+		  <li>整合週邊設備 (雷射範圍尋找器、條碼掃描器等)</li>
+	</ul>
+	</td></tr></table>
+
+	<p>分享您的<a href="http://ideas.arcgis.com/">想法</a>並告訴我們<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">您的意見反饋</a>。</p>
+		
+        <p>&nbsp;</p>
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+	  <h3>詳細資訊</h3>
+	          
+	  <h4><a href="#features">特性</a></h4>
+	  <h4><a href="#systemRequirements">系統要求</a></h4>
+	  <h4><a href="#whatsNew">新功能</a></h4>
+	  <h4><a href="#sneakPeek">搶先預覽</a></h4>
+	          
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>部落格</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
+        max: 5,
+        layout: 0
+      });
+
+    });
+
+
+  </script>
+
+   <script src="/en/asset/js/app-collector-1.js" type="text/javascript"></script>
