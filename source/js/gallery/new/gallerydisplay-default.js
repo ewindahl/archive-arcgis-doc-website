@@ -257,8 +257,9 @@ function genDisplay() {
                         }
                     } else {
                         var errMsg = [];
+                        var msg = (gm.type == "All")? "<p>Sorry. No results found.</br>The Living Atlas doesn't contain any items that match that query.</p><p>To find content, try entering a new query or browse the themes of the atlas.</p>":"<p>Sorry. No results found.</br>Choose 'All' under Themes to view Living Atlas items.</p>"
                         errMsg.push("<div class='gl-content-errMsg'>")
-                        errMsg.push("<p>Sorry. No results found.</br>The Living Atlas doesn't contain any items that match that query.</p><p>To find content, try entering a new query or browse the themes of the atlas.</p>")
+                        errMsg.push(msg)
                         errMsg.push("</div>");
                         $("#gl-content").html(errMsg.join(""));
                     }

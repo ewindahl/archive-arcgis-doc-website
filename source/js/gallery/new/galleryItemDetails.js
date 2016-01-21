@@ -66,11 +66,11 @@ doc.itemDetails = (function(){
 				iframeSrc = AGOLURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
 
 				var customURL = this.orgUserCustomURL();
-				if(customURL){
-					iframeSrc = customURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent;
-				}
+				/*if(customURL){
+					iframeSrc = customURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent + "&preventId=true";
+				}*/
 
-				
+
 				
 			}
 			
@@ -393,11 +393,11 @@ if(itemDetails && itemDetails.id){
 
 		if (itemDetails.typeKeywords.indexOf("Requires Subscription") >=0) {
 	        contentType['label']  = "Subscriber Content";
-	        contentType['title']  = "Requires being Signed In with an ArcGIS Online Subscription";
+	        contentType['title']  = "Included with your ArcGIS Online subscription.";
 	        contentType['img']  = tierObj.agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
 	    } else if (itemDetails.typeKeywords.indexOf("Requires Credits") >=0) {
 	        contentType['label']  = "Premium Content";
-	        contentType['title']  = "Requires being Signed In with an ArcGIS Online Subscription and Consumes Credits";
+	        contentType['title']  = "Included with your ArcGIS Online subscription and consumes credits.";
 	        contentType['img']  = tierObj.agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
 	    }
 	}
