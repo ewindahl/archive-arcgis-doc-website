@@ -70,25 +70,25 @@ function getTier(hostname) {
     var devTier = {
         tier: "dev",
         hostname: "resourcesdev.arcgis.com",
-        search: "http://searchdev.esri.com/v3/index.cfm",
-        gallery: "http://search.esri.com/v3/index.cfm"
+        search: "//searchdev.esri.com/v3/index.cfm",
+        gallery: "//search.esri.com/v3/index.cfm"
     };
 
-    if (hostname == "resourcesdev.arcgis.com") {
+    if (hostname == "docdev.arcgis.com") {
         return devTier;
-    } else if (hostname == "resourcesstg.arcgis.com") {
+    } else if (hostname == "docstg.arcgis.com") {
         return {
             tier: "stg",
             hostname: "resourcesstg.arcgis.com",
-            search: "http://searchstg.esri.com/v3/index.cfm",
-            gallery: "http://search.esri.com/v3/index.cfm"
+            search: "//searchstg.esri.com/v3/index.cfm",
+            gallery: "//searchstg.esri.com/v3/index.cfm"
         }
-    } else if (hostname == "resources.arcgis.com") {
+    } else if (hostname == "doc.arcgis.com") {
         return {
             tier: "prd",
             hostname: "resources.arcgis.com",
-            search: "http://search.esri.com/v3/index.cfm",
-            gallery: "http://search.esri.com/v3/index.cfm"
+            search: "//search.esri.com/v3/index.cfm",
+            gallery: "//search.esri.com/v3/index.cfm"
         }
     } else {
         return devTier;

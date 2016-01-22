@@ -7,12 +7,13 @@ css:
 js:
   - video-init
   - libs/jquery.cookie
+  - /en/asset/js/appstudio-1
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - sitecfg.js
 
 metatags:
-  - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="app-studio"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="ko">
+  - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="appstudio,appstudio-browser"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="ko">
 
 mobile: true
 
@@ -20,7 +21,7 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/ko/appstudio/">AppStudio for ArcGIS(베타)</a></h1>
+      <h1><a href="/ko/appstudio/">AppStudio for ArcGIS Desktop Edition</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search AppStudio for ArcGIS">
         <input type="hidden" name="collection" value="help" />
@@ -35,7 +36,9 @@ mobile: true
         <li><a href="/ko/appstudio/create-apps/">앱 생성</a></li>
        <!-- <li><a href="/ko/appstudio/manage-apps/">Manage Apps</a></li>  -->
         <li><a href="/ko/appstudio/extend-apps/">앱 확장</a></li>
-		<li><a href="https://betacommunity.esri.com/project/forum/default.html?cap=5E0BCBB972004AC7A67F93442531EF0F">포럼</a></li>
+		<!-- <li><a href="https://earlyadopter.esri.com/project/forum/default.html?cap=5E0BCBB972004AC7A67F93442531EF0F">Forum</a></li> -->
+		<li><a href="/ko/appstudio/community/">커뮤니티</a></li>
+        <li><a href="/ko/appstudio/download/">다운로드</a></li>		
       </ul>
     </nav>
   </div>
@@ -49,7 +52,7 @@ mobile: true
 
     <h3 class="gray">AppStudio for ArcGIS는 맵을 Mac, iOS, Android, Windows 및 Linux용 모바일 앱으로 변환하는 획기적인 도구입니다.</h3>
   
-	<a href="http://beta.esri.com/community/" class="btn primary icon-storage">베타 버전 다운로드</a>
+	<a href="http://doc.arcgis.com/en/appstudio/download/" class="btn primary icon-storage">Desktop 버전 가져오기</a>
   
     <hr />
 
@@ -74,7 +77,7 @@ mobile: true
 		  <p>내 기관 내에서 자신이 만든 앱을 배포하고 보호할 수 있습니다.</p>
 	       
           <p>
-            <a href="/ko/appstudio/create-apps/whatisappstudio.htm#ESRI_SECTION1_FE63E486A16B4260A0B9D2802784E616" class="icon-right-arrow">&nbsp;방법 보기</a>
+            <a href="/ko/appstudio/create-apps/guidedtour.htm" class="icon-right-arrow">&nbsp;방법 보기</a>
           </p>
         </div>
 
@@ -127,7 +130,7 @@ mobile: true
         <a name="systemrequirements"></a>
         <h2 class="divider">시스템 요구 사항</h2>
 		
-          <p>앱 내에서 사용되는 데이터에 대한 요구 사항과 더불어 AppStudio for ArcGIS 및 Player를 실행하는 데에는 특정한 기기 요구 사항이 있습니다.</p>
+          <p>앱 내에서 사용되는 데이터에 대한 <!--and browser-->요구 사항과 더불어 AppStudio for ArcGIS와 Player를 실행하는 데에는 특정한 기기 요구 사항이 있습니다.</p>
           <p>	
 
           <h3>데이터 요구 사항</h3>
@@ -137,28 +140,34 @@ mobile: true
           <h3>기기 요구 사항</h3>
           <p>지원되는 운영 체제의 최소 버전은 다음과 같습니다.</p>
           <p>
-		  	  
-          <h4>AppStudio for ArcGIS</h4>
+          <!-- <h4>AppStudio for ArcGIS in a browser</h4>
+        <ul>
+          <li>Chrome</li>
+		  <li>Firefox</li>
+          <li>IE 10</li>
+          <li>Safari 7</li>
+        </ul> -->		  	  
+          <h4>AppStudio For ArcGIS(데스크톱)</h4>
         <ul>
           <li>Windows 7</li>
-          <li>OSX 10.8</li>
-          <li>Ubuntu 12.04 </li>
-
+          <li>OSX 10.10</li>
+          <li>Ubuntu 14.04 </li>
         </ul>
           <h4>AppStudio Player</h4>		
         <ul>
           <li>Windows 7</li>
-          <li>OSX 10.8</li>
-          <li>Ubuntu 12.04 </li>
+          <li>OSX 10.10</li>
+          <li>Ubuntu 14.04 </li>
           <li>Android 4.1(Jelly Bean)</li>
 		  <li>iOS 8</li>
         </ul>
         
         <h3>지원되는 언어</h3> 
-        <p>제공 예정</p>
+        <p>아랍어, 체코어, 덴마크어, 네덜란드어, 영어, 에스토니아어, 핀란드어, 프랑스어, 독일어, 그리스어, 히브리어, 이탈리아어, 일본어, 한국어, 라트비아어, 리투아니아어, 노르웨이어, 폴란드어, 포르투갈어(브라질), 포르투갈어(포르투갈), 루마니아어, 러시아어, 중국어(간체), 스페인어, 스웨덴어, 태국어, 터키어와 베트남어를 지원합니다.</p>
+        <p>AppStudio for ArcGIS와 AppStudio Player에서 사용되는 언어는 기기의 언어 설정에 따라 결정됩니다.</p>
 		
         <h3>ArcGIS Runtime SDK</h3>
-        <p>AppStudio에서는 ArcGIS Runtime SDK 10.2.5 for Qt를 지원합니다.</p>
+        <p>AppStudio에서는 ArcGIS Runtime SDK 10.2.7 for Qt를 지원합니다.</p>
 
 
         <p><a href="http://ideas.arcgis.com/">아이디어</a>를 공유하고 <a href="http://support.esri.com/en/">피드백을 보내 주세요</a>.</p>
@@ -175,7 +184,8 @@ mobile: true
         <div class="imgFrame block">
           <h3>AppStudio를 처음 사용하시나요?</h3>
   
-		  <h4><a href="http://video.arcgis.com/iframe/4274/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  비디오 보기</a></h4>  
+		  <h4><a href="http://video.arcgis.com/iframe/4274/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png"> 비디오 보기</a></h4>
+		  <h4><a href="http://video.arcgis.com/series/232/appstudio-for-arcgis">비디오 찾아보기</a></h4> 		  
           <h4><a href="#features">특징</a></h4>
           <h4><a href="#systemrequirements">시스템 요구 사항</a></h4>
 
@@ -197,7 +207,8 @@ mobile: true
 </div>
 
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script> <script type="text/javascript">
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+<script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/appstudio/feed/',

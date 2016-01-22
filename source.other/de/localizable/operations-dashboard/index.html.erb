@@ -10,12 +10,13 @@ js:
   - libs/jquery.cookie
   - /en/asset/js/operations-dashboard-1
   - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2015-01-06"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="de">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2015-10-07"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="de">
 
+dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
+  
 mobile: true
 
 ---
@@ -53,7 +54,7 @@ mobile: true
 	  -->	  
 
           <p>
-            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Abrufen von Operations Dashboard</a>
+            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">Abrufen von Operations Dashboard</a>
 
           </p>
         <hr />
@@ -78,7 +79,7 @@ mobile: true
           <p>
             <a href="/de/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Vorgehensweise</a><br />
             <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Sehen Sie dazu ein Video an</a>
+			<a title="Überwachen und Reagieren auf Ereignisse" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Video ansehen</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
@@ -90,7 +91,7 @@ mobile: true
           <img src="/en/operations-dashboard/story-graphic-3.png" />
 
           <h3>Überwachen im Browser</h3>
-          <p>Verwenden Sie die Lagebild-Sicht in einem Browser. Es ist keine Installation erforderlich, öffnen Sie einfach eine Lagebild-Sicht und bleiben Sie auf dem neuesten Stand, selbst auf dem iPad.</p>
+          <p>Verwenden Sie die Lagebild-Sicht in einem Browser. Es ist keine Installation erforderlich: Öffnen Sie einfach eine Lagebild-Sicht und bleiben Sie auf dem neuesten Stand – auch mobil auf dem iPad.</p>
           <p>
             <a href="/de/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Vorgehensweise</a><br />
             <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
@@ -100,10 +101,10 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="/en/operations-dashboard/story-graphic-4.png" />
 
-          <h3>Entwickeln von Add-Ins</h3>
-          <p>Übertragen Sie Ihre einzigartige Geschäftslogik mithilfe von benutzerdefinierten Widgets, Feature-Aktionen und Kartenwerkzeugen in Ihre Lagebild-Sicht. </p>
+          <h3>Erweitern einer Lagebild-Sicht</h3>
+          <p>Übertragen Sie Ihre ganz spezifische Geschäftslogik mithilfe von benutzerdefinierten Widgets, Feature-Aktionen und Kartenwerkzeugen in Ihre Lagebild-Sicht. </p>
           <p>
-            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Vorgehensweise</a><br />
+            <a href="/de/operations-dashboard/windows-desktop/author/custom-addins.htm" class="icon-right-arrow">&nbsp;Vorgehensweise</a><br />
           </p>
         </div>        
 
@@ -112,12 +113,12 @@ mobile: true
 
 	<a name="features" ></a>
 	<h2 class="divider">Features</h2>
-	<p>Erstellen Sie eine gemeinsame Sicht auf die Systeme und Ressourcen, die Sie verwalten. Überwachen Sie in Echtzeit Daten-Feeds für umfangreiche Ereignisse oder tägliche Vorgänge auf Ihrem Desktop oder Tablet-Gerät. Erstellen Sie fokussierte Dashboards für die Geschäftsleitung mit integrierten Karten, Diagrammen und Grafiken.</p>
+	<p>Erstellen Sie eine gemeinsame Sicht auf die Systeme und Ressourcen, die Sie verwalten.Überwachen Sie in Echtzeit Daten-Feeds für Großereignisse oder tägliche operative Abläufe auf Ihrem Desktop oder Tablet-Gerät. Erstellen Sie fokussierte Dashboards für die Geschäftsleitung mit integrierten Karten, Diagrammen und Grafiken.</p>
 	
 	<ul>
 	<li>Verwenden Sie Karten mit dynamischen Datenquellen, um Echtzeitansichten bereitzustellen.</li>
 	<li>Konfigurieren Sie Diagramme, Skalen, Histogramme usw., um statistischen Kontext bereitzustellen.</li>
-	<li>Erstellen Sie Lagebild-Sichten, die auf ein bestimmtes Bedürfnis fokussiert sind, und geben Sie sie frei.</li>
+	<li>Erstellen und veröffentlichen Sie Lagebild-Sichten, die auf ganz spezifische Anforderungen zugeschnitten sind.</li>
 	<li>Entwerfen Sie Sichten für die Verwendung auf mehreren Monitoren oder Geräten mit nur einem Display.</li>
 	<li>Erstellen Sie benutzerdefinierte Widgets und Werkzeuge, die Ihren Bedürfnisse gerecht werden.</li>
 	</ul>
@@ -149,6 +150,7 @@ mobile: true
   <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Unterstützte Betriebssysteme</a>
      <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
+          <li>Windows 10 Pro und Windows 10 Enterprise (32 Bit und 64 Bit [EM64T])</li>
           <li>Windows 8.1, Windows 8.1 Pro und Windows 8.1 Enterprise (32 Bit und 64 Bit [EM64T])</li>
           <li>Windows 8, Windows 8 Pro und Windows 8 Enterprise (32 Bit und 64 Bit [EM64T])</li>
 		  <li>Windows 7 Ultimate, Enterprise, Professional und Home Premium (32 Bit und 64 Bit [EM64T]) SP1</li>
@@ -161,34 +163,34 @@ mobile: true
 <a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Hardwareanforderungen</a>
 	<div exp2='yes' style="display:none;padding:0 15px;">
         <ul>
-			<li>CPU-Geschwindigkeit: 2,2 GHz oder höher; Hyper-Threading Technology (HTT) oder Mehrkernprozessoren empfohlen.</li>
-			<li>Prozessor: Intel Pentium 4-, Core Duo- oder Xeon-Prozessoren; SSE2 (mindestens). Führen Sie das Microsoft-Hilfsprogramm <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> über die Windows-Eingabeaufforderung aus, um Ihren Prozessor zu testen.</li>
-			<li>Festplattenspeicher: 1,5 GB verfügbarer Speicherplatz.</li>
-			<li>Arbeitsspeicher/RAM: 2 GB oder mehr.</li>
-			<li>Anzeigeeigenschaften: 24 Bit Farbtiefe.</li>
-			<li>Bildschirmauflösung: 1024 x 768 oder höher bei Normalgröße (96 dpi).</li>
-			<li>Auslagerungsbereich: Abhängig vom Betriebssystem, mindestens 500 MB.</li>
-			<li>Grafikkarte: mindestens 64 MB RAM, 256 MB RAM empfohlen. Chipsätze von NVIDIA, ATI und Intel werden unterstützt. Treiber für Grafikkartenbeschleuniger. Min. Shader Model 2.0 erforderlich. Verwenden Sie stets die aktuellen Treiber.</li>
+			<li>CPU-Geschwindigkeit: 2,2 GHz oder höher; Hyper-Threading Technology (HTT) oder Multi-Core-Prozessoren empfohlen</li>
+			<li>Prozessor: Intel Pentium 4-, Core Duo- oder Xeon-Prozessoren; SSE2 (mindestens) Führen Sie das Microsoft-Hilfsprogramm <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> über die Windows-Eingabeaufforderung aus, um Ihren Prozessor zu testen.</li>
+			<li>Festplattenspeicher: 1,5 GB verfügbarer Speicherplatz</li>
+			<li>Arbeitsspeicher/RAM: 2 GB oder mehr</li>
+			<li>Anzeigeeigenschaften: 24 Bit Farbtiefe</li>
+			<li>Bildschirmauflösung: 1024 x 768 oder höher bei Normalgröße (96 dpi)</li>
+			<li>Auslagerungsbereich: abhängig vom Betriebssystem, mindestens 500 MB</li>
+			<li>Grafikkarte: mindestens 64 MB RAM, 256 MB RAM empfohlen. Chipsätze von NVIDIA, ATI und Intel werden unterstützt. Treiber für Grafikkartenbeschleuniger. Mind. Shader Model 2.0 erforderlich. Verwenden Sie stets die aktuellen Treiber.</li>
 		</ul>
 </div>
 <div class="clear" style="padding:5px;"></div>
 
 <a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Softwareanforderungen</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
-        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> oder höher ist erforderlich. Sie benötigen Administratorberechtigungen auf dem Computer, um es zu installieren.</p>
+        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> oder höher ist erforderlich. Sie benötigen Administratorberechtigungen auf dem Computer, um es zu installieren.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
 <a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Entwickler-Anforderungen</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px">Für die Anpassung von Operations Dashboard for ArcGIS ist <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a> erforderlich. Microsoft Visual Studio 2012 oder 2013 Professional, Premium oder Ultimate ist ebenfalls erforderlich. </p>
+	<p style="padding:0 15px">Für die Anpassung von Operations Dashboard for ArcGIS ist <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> oder <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a> erforderlich. Um ArcGIS Runtime SDK for WPF zu verwenden, ist Microsoft Visual Studio 2012 oder 2013 Professional, Premium oder Ultimate ebenfalls erforderlich.</p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
 <a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Unterstützte Sprachen</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">Arabisch, Dänisch, Deutsch, Englisch, Estnisch, Finnisch, Französisch, Hebräisch, Italienisch, Japanisch, Koreanisch, Lettisch, Litauisch, Niederländisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rumänisch, Russisch, Schwedisch, Spanisch, Thailändisch, Türkisch und Vereinfachtes Chinesisch.</p>
+     	<p style="padding:0 15px">Arabisch, Chinesisch (vereinfacht), Dänisch, Deutsch, Englisch, Estnisch, Finnisch, Französisch, Griechisch, Hebräisch, Italienisch, Japanisch, Koreanisch, Lettisch, Litauisch, Niederländisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rumänisch, Russisch, Schwedisch, Spanisch, Thailändisch, Tschechisch, Türkisch und Vietnamesisch.</p>
      	<p style="padding:0 15px">Die in der Windows-Version der App verwendete Sprache wird durch die Spracheinstellung des Betriebssystems festgelegt. Bei Verwendung einer nicht unterstützten Spracheinstellung verwendet die App Englisch.</p>
 </div>
 <div class="clear"></div>
@@ -201,20 +203,26 @@ mobile: true
  <li>Chrome, Version 19.0 und höher</li>
  <li>Firefox, Version 4.0 und höher</li>
  <li>Internet Explorer, Version 9.0 und höher</li>
+ <li>Microsoft Edge Version 20.0 und höher</li>
  <li>Safari, Version 5.1 und höher</li>
  </ul> 
  Tablet 
  <ul style="padding:0 15px">
- <li>Android 4.0 und höher mit Chrome 19.0 und höher</li>
+ <li>Android 4.0 und höher mit Chrome 19.0 und höher</li>
  <li>iOS 6.0 und höher, das Safari ausführt</li>
  </ul>
  Telefon 
  <p style="padding:0 15px">Derzeit werden keine Smartphone-Browser unterstützt.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Unterstützte Sprachen</a>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp12');" style="display:inline;">Entwickler-Anforderungen</a>
+ <div exp12='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px">Für die Anpassung von Operations Dashboard for ArcGIS ist <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> erforderlich.</p>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Unterstützte Sprachen</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Tschechisch, Dänisch, Niederländisch, Englisch, Estnisch, Finnisch, Französisch, Deutsch, Griechisch, Italienisch, Japanisch, Koreanisch, Lettisch, Litauisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rumänisch, Russisch, Vereinfachtes Chinesisch, Spanisch, Schwedisch, Thailändisch, Türkisch und Vietnamesisch.</p>
+      	<p style="padding:0 15px">Chinesisch (traditionell), Chinesisch (vereinfacht), Dänisch, Deutsch, Englisch, Estnisch, Finnisch, Französisch, Griechisch, Italienisch, Japanisch, Koreanisch, Lettisch, Litauisch, Niederländisch, Norwegisch, Polnisch, Portugiesisch (Brasilien), Portugiesisch (Portugal), Rumänisch, Russisch, Schwedisch, Spanisch, Thailändisch, Tschechisch, Türkisch und Vietnamesisch.</p>
       	<p style="padding:0 15px">In der Browser-Version wird die Sprache anhand Ihres ArcGIS Online-Profils festgelegt. Bei Verwendung einer nicht unterstützten Spracheinstellung verwendet die App Englisch.</p>
 </div>
 <div class="clear"></div>
@@ -225,24 +233,17 @@ mobile: true
 		<p>Öffentlich freigegebene Lagebild-Sichten können in der Browser-App angezeigt werden, ohne angemeldet sein zu müssen.</p>
 
         <a name="whatsNew"></a>
-        <h2 class="divider">Neuheiten</h2>
+        <h2 class="divider">Neuerungen</h2>
         <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>Operations Dashboard for ArcGIS 10.3 wurde im Januar 2015 veröffentlicht. Es enthält Folgendes:</p>
+	        <p>Operations Dashboard for ArcGIS 10.3.2 wurde im November 2015 veröffentlicht. Es umfasst die folgenden Komponenten:</p>
 	        <ul>
-	          <li>Funktionen zum räumlichen Filtern von Informationen</li>
-	          <li>Unterstützung für Standalone-Tabellen als externe Datenquellen</li>
-	          <li>Bildaktualisierungseinstellung im Feature-Detail-Widget</li>
-	          <li>Lokalisierung in die thailändische Sprache</li>
-	          <li>Verschiedene Bugfixes und Verbesserungen, darunter NIM093876, NIM098864, NIM099167, NIM099471, NIM100316, NIM100385, NIM100527, NIM100801, NIM101153, NIM101987, NIM102275, NIM102487, NIM102751, NIM102978, NIM103026, BUG-000081941, BUG-000082011, BUG-000082326 und ENH-000081122</li>
+	         <li>Verschiedene Bugfixes und Verbesserungen, darunter BUG-000084019, BUG-000084387, BUG-000086562, BUG-000089887 und BUG-000089919</li>
 	        </ul>
                 </td>
 	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>Browser</h4>
-	        <p>Die Browser-App für Operations Dashboard for ArcGIS wurde im März 2015 aktualisiert. Sie umfasst die folgenden Verbesserungen:</p>
+	        <p>Die Browser-App für Operations Dashboard for ArcGIS wurde im November 2015 aktualisiert. Sie enthält folgende Verbesserungen:</p>
 	        <ul>
-	          <li>Unterstützung der Anzeige freigegebener Lagebild-Sichten, ohne angemeldet sein zu müssen</li>
-	          <li>Aktivierter Vollbildmodus für mehr Widget-Typen</li>
-	          <li>Lokalisierung in die griechische Sprache</li>
-	          <li>Verschiedene Bugfixes und Verbesserungen, darunter BUG-000084352</li>
+	          <li>Verschiedene Bugfixes und Verbesserungen, darunter BUG-000088087 und BUG-000089045</li>
         </ul></td><tr></table>
         
         
@@ -250,13 +251,13 @@ mobile: true
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">Vorschau</h2>
-	<p>Heute ist Operations Dashboard eine großartige App zum Überwachen Ihrer Vorgänge. Aber das war noch nicht alles! In der folgenden Tabelle wird umrissen, welche Neuerungen wir für diese App planen, und es werden Funktionen vorgestellt, die auf verschiedenen Geräten möglich sein werden:</p>
+	<p>Operations Dashboard ist eine großartige App zum Überwachen Ihrer Vorgänge. Aber das war noch nicht alles! In der folgenden Tabelle wird umrissen, welche Neuerungen wir für diese App planen, und es werden Funktionen vorgestellt, die auf verschiedenen Geräten möglich sein werden:</p>
 	
 	<table border="1" style="text-align:center">
 	  <caption>Funktionalität nach Plattform <br/>
 	  <span class="icon-check" style="color:black"></span> aktuell, <span class="icon-check icon-green"/> in Kürze, <span class="icon-check" style="color:lightgray"></span> zu einem späteren Zeitpunkt<br/></caption>
 	  <tr><td></td>
-	    <th>Windows-Desktop</th>
+	    <th>Windows Desktop</th>
 	    <th>Browser</th>
 	  </tr>
 	  <tr><th>Erstellen von Lagebild-Sichten</th>
@@ -269,11 +270,11 @@ mobile: true
 	  </tr>
 	  <tr><th>Verwenden mit Portal for ArcGIS</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Portal for ArcGIS 10.3 und höher</span></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Portal for ArcGIS 10.3 oder höher</span></td>
 	  </tr>
 	  <tr><th>Erweiterbar</th>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Unterstützt in ArcGIS Online</span></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Erweiterbar mit ArcGIS API for JavaScript</span><br/><span style="font-size:12px">* Unterstützt in ArcGIS Online</span></td>
 	  </tr>
 	  <tr><th>Verwenden von Karten-Services als Datenquellen</th>
 	    <td><span class="icon-check"/></td>
@@ -323,7 +324,7 @@ mobile: true
           
 	  <h4><a href="#features">Features</a></h4>
 	  <h4><a href="#systemRequirements">Systemanforderungen</a></h4>
-	  <h4><a href="#whatsNew">Neuheiten</a></h4>
+	  <h4><a href="#whatsNew">Neuerungen</a></h4>
 	  <h4><a href="#sneakPeek">Vorschau</a></h4>
           
         </div>
@@ -343,8 +344,7 @@ mobile: true
     </div>
 
 <!--	<script src="/js/main.js" type="text/javascript"></script>-->
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
@@ -357,5 +357,9 @@ mobile: true
 N = # of article shown (default is 2)
 L = 0, 1 (default is 0)
 */
+$("#dashboardDownloadLink").click(function (){
+	window.location = "<%=data.page.dashboardDownloadLink%>";
+	return false;
+})
 
   </script>

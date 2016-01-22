@@ -10,12 +10,13 @@ js:
   - libs/jquery.cookie
   - /en/asset/js/operations-dashboard-1
   - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2015-01-06"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ro">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2015-10-07"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ro">
 
+dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
+  
 mobile: true
 
 ---
@@ -53,7 +54,7 @@ mobile: true
 	  -->	  
 
           <p>
-            <a class="btn primary icon-windows-8" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Obţinere Operations Dashboard</a>
+            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">Obţinere Operations Dashboard</a>
 
           </p>
         <hr />
@@ -78,7 +79,7 @@ mobile: true
           <p>
             <a href="/ro/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br />
             <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Vizionaţi un videoclip</a>
+			<a title="Monitorizaţi şi răspundeţi la evenimente" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
 			<video width="320" height="240" controls id="2195" class="mobileVideo">
 			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
 			</video>
@@ -90,7 +91,7 @@ mobile: true
           <img src="/en/operations-dashboard/story-graphic-3.png" />
 
           <h3>Monitorizaţi în browser</h3>
-          <p>Utilizaţi perspectiva operaţională într-un browser. Nu aveţi nimic de instalat &mdash; este suficient să deschideţi o perspectivă operaţională şi veţi putea rămâne la curent cu operaţiunile dvs., chiar şi de pe iPad.</p>
+          <p>Utilizaţi perspectiva operaţională într-un browser. Nu aveţi nimic de instalat - este suficient să deschideţi o perspectivă operaţională şi veţi putea rămâne la curent cu operaţiunile dvs., chiar şi de pe iPad.</p>
           <p>
             <a href="/ro/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br />
             <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
@@ -100,10 +101,10 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="/en/operations-dashboard/story-graphic-4.png" />
 
-          <h3>Componente add-in pentru dezvoltare</h3>
+          <h3>Extindere vizualizare de operaţie</h3>
           <p>Implementaţi-vă propriile procese de lucru în perspectiva operaţională, folosind widgeturi personalizate, acţiuni asupra obiectelor spaţiale şi instrumente pentru hărţi. </p>
           <p>
-            <a href="http://resources.arcgis.com/en/help/runtime-wpf/concepts/#/Welcome_to_the_help_for_developing_Operations_Dashboard_for_ArcGIS_add_ins/0170000000np000000/" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br />
+            <a href="/ro/operations-dashboard/windows-desktop/author/custom-addins.htm" class="icon-right-arrow">&nbsp;Arată-mi cum</a><br />
           </p>
         </div>        
 
@@ -149,6 +150,7 @@ mobile: true
   <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Sisteme de operare acceptate</a>
      <div exp1='yes' style="display:none;padding:0 15px;">
         <ul>
+          <li>Windows 10 Pro şi Windows 10 Enterprise (32 de biţi şi 64 de biţi [EM64T])</li>
           <li>Windows 8,1 Windows 8.1 Pro şi Windows 8.1 Enterprise (pe 32 de biţi 64 de biţi [EM64T])</li>
           <li>Windows 8 Windows 8 Pro şi Windows 8 Enterprise (pe 32 de biţi 64 de biţi [EM64T])</li>
 		  <li>Windows 7 Ultimate, Enterprise, Professional şi Home Premium (pe 32 de biţi 64 de biţi [EM64T]) SP1</li>
@@ -175,20 +177,20 @@ mobile: true
 
 <a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Cerinţe software</a>
 	<div exp3='yes' style="display:none;padding:0 15px;">
-        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> sau o versiune ulterioară este obligatorie. Pentru a-l instala, trebuie să aveţi pe maşină privilegii administrative.</p>
+        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a>  sau o versiune ulterioară este obligatorie. Pentru a-l instala, trebuie să aveţi pe maşină privilegii administrative.</p>
         </div>
         <div class="clear" style="padding:5px;"></div>
         
 <a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Cerinţe pentru dezvoltator</a>
 		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px"><a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a> este obligatoriu pentru a particulariza Operations Dashboard for ArcGIS. Microsoft Visual Studio 2012 sau 2013 Professional, Premium sau Ultimate este, de asemenea, obligatoriu. </p>
+	<p style="padding:0 15px"><a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> sau <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a> este obligatoriu pentru a particulariza Operations Dashboard for ArcGIS. Pentru a utiliza ArcGIS Runtime SDK for WPF, Microsoft Visual Studio 2012 sau 2013 Professional, Premium sau Ultimate este, de asemenea, obligatoriu.</p>
 
      </div> 
      <div class="clear" style="padding:5px;"></div>
      
 <a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Limbi acceptate</a>
 <div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">arabă, chineză simplificată, cehă, coreeană, daneză, ebraică, engleză, estoniană, finlandeză, franceză, germană, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză, thailandeză şi turcă.</p>
+     	<p style="padding:0 15px">arabă, cehă, chineză simplificată, coreeană, daneză, ebraică, engleză, estoniană, finlandeză, franceză, germană, greacă, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză, thailandeză, turcă şi vietnameză.</p>
      	<p style="padding:0 15px">Limba utilizată în versiunea Windows a aplicaţiei este determinată de setarea pentru limbă a sistemului dvs. de operare. În cazul utilizării unei setări neacceptate pentru limbă, aplicaţia utilizează limba engleză.</p>
 </div>
 <div class="clear"></div>
@@ -201,6 +203,7 @@ mobile: true
  <li>Chrome versiunea 19.0 şi versiuni ulterioare</li>
  <li>Firefox versiunea 4.0 şi versiuni ulterioare</li>
  <li>Internet Explorer versiunea 9.0 şi versiuni ulterioare</li>
+ <li>Microsoft Edge versiunea 20.0 şi versiuni ulterioare</li>
  <li>Safari versiunea 5.1 şi versiuni ulterioare</li>
  </ul> 
  Tabletă 
@@ -212,9 +215,14 @@ mobile: true
  <p style="padding:0 15px">În prezent, nu este suportat niciun browser de telefoane smartphone.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
- <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Limbi acceptate</a>
+ <a class="icon-right-arrow" onclick="exp(event,'div','exp12');" style="display:inline;">Cerinţe pentru dezvoltator</a>
+ <div exp12='yes' style="display:none;padding:0 15px;">
+      	<p style="padding:0 15px"><a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> este obligatoriu pentru a particulariza Operations Dashboard for ArcGIS.</p>
+</div>
+<div class="clear" style="padding:5px;"></div>
+<a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Limbi acceptate</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Cehă, coreeană, daneză, engleză, estoniană, finlandeză, franceză, germană, greacă, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză, thailandeză, turcă şi vietnameză.</p>
+      	<p style="padding:0 15px">cehă, chineză simplificată, chineză tradiţională, coreeană, daneză, engleză, estoniană, finlandeză, franceză, germană, greacă, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză, thailandeză, turcă şi vietnameză.</p>
       	<p style="padding:0 15px">În versiunea pentru browser, pentru setarea limbii este utilizat profilul dvs. ArcGIS Online. În cazul utilizării unei setări neacceptate pentru limbă, aplicaţia utilizează limba engleză.</p>
 </div>
 <div class="clear"></div>
@@ -227,22 +235,15 @@ mobile: true
         <a name="whatsNew"></a>
         <h2 class="divider">Ce este nou</h2>
         <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>Operations Dashboard for ArcGIS 10.3 a fost lansată în ianuarie 2015. Aceasta include următoarele:</p>
+	        <p>Operations Dashboard for ArcGIS 10.3.2 a fost lansat în noiembrie 2015. Include următoarele componente:</p>
 	        <ul>
-	          <li>Capacitatea de filtrare spaţială a informaţiilor</li>
-	          <li>Suport pentru tabele independente ca surse de date externe</li>
-	          <li>Setare de reîmprospătare a imaginii în widgetul cu detaliile obiectului spaţial</li>
-	          <li>Localizare în limba thailandeză</li>
-	          <li>Diverse îmbunătăţiri şi remedieri de defecte, inclusiv NIM093876, NIM098864, NIM099167, NIM099471, NIM100316, NIM100385, NIM100527, NIM100801, NIM101153, NIM101987, NIM102275, NIM102487, NIM102751, NIM102978, NIM103026, BUG-000081941, BUG-000082011, BUG-000082326 şi ENH-000081122</li>
+	         <li>Diverse îmbunătăţiri şi remedieri de defecte, inclusiv BUG-000084019, BUG-000084387, BUG-000086562, BUG-000089887 şi BUG-000089919</li>
 	        </ul>
                 </td>
 	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>Browser</h4>
-	        <p>Aplicaţia browser pentru Operations Dashboard for ArcGIS a fost actualizată în martie 2015. Ea include următoarele îmbunătăţiri:</p>
+	        <p>Aplicaţia de browser Operations Dashboard for ArcGIS a fost actualizată în noiembrie 2015. Include următoarele îmbunătăţiri:</p>
 	        <ul>
-	          <li>Suport pentru vizualizările operative partajate public fără a fi necesară autentificarea</li>
-	          <li>Permite extinderea mai multor tipuri de widget-uri pe tot ecranul</li>
-	          <li>Localizare în limba greacă</li>
-	          <li>Diverse îmbunătăţiri şi remedieri de defecte, inclusiv BUG-000084352</li>
+	          <li>Diverse îmbunătăţiri şi remedieri de defecte, inclusiv BUG-000088087 şi BUG-000089045</li>
         </ul></td><tr></table>
         
         
@@ -269,11 +270,11 @@ mobile: true
 	  </tr>
 	  <tr><th>Lucru cu Portal for ArcGIS</th>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Portal for ArcGIS 10.3 şi versiunile următoare</span></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Portal for ArcGIS 10.3 sau versiunile următoare</span></td>
 	  </tr>
 	  <tr><th>Capacitate de extindere</th>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-green"/></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Acceptat în ArcGIS Online</span></td>
+	    <td><span class="icon-check"/>*<br/><span style="font-size:12px">* Capacitate de extindere cu ajutorul ArcGIS API for JavaScript</span><br/><span style="font-size:12px">* Acceptat în ArcGIS Online</span></td>
 	  </tr>
 	  <tr><th>Utilizare a serviciilor de hărţi drept surse de date</th>
 	    <td><span class="icon-check"/></td>
@@ -321,7 +322,7 @@ mobile: true
        <div class="imgFrame block">
           <h3>Detalii</h3>
           
-	  <h4><a href="#features">Caracteristici</a></h4>
+	  <h4><a href="#features">Obiecte spaţiale</a></h4>
 	  <h4><a href="#systemRequirements">Cerinţele de sistem</a></h4>
 	  <h4><a href="#whatsNew">Ce este nou</a></h4>
 	  <h4><a href="#sneakPeek">Scurtă prezentare</a></h4>
@@ -343,8 +344,7 @@ mobile: true
     </div>
 
 <!--	<script src="/js/main.js" type="text/javascript"></script>-->
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
@@ -357,5 +357,9 @@ mobile: true
 N = # of article shown (default is 2)
 L = 0, 1 (default is 0)
 */
+$("#dashboardDownloadLink").click(function (){
+	window.location = "<%=data.page.dashboardDownloadLink%>";
+	return false;
+})
 
   </script>

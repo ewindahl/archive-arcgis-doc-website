@@ -1,0 +1,166 @@
+---
+title: ArcGIS Open Data ヘルプ
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="ArcGIS Open Data Help Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-open-data"><META name="sub_category" content="ArcGIS Open Data"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Open Data"><META name="search-category" content="help-general"><META name="subject_label" content="OPEN DATA, ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="OPEN DATA, ARCGIS ONLINE"><META name="content-language" content="ja">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ja/open-data/">ArcGIS Open Data</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Open Data Help">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-open-data" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/ja/open-data/">メイン</a></li>
+        <li><a href="/ja/open-data/consumer/">データ利用者向け</a></li>
+        <li><a href="/ja/open-data/provider/">データ公開者向け</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <header>
+
+		  <h2 id="appTitle">ArcGIS Open Data とは</h2>
+
+          <p>オープンデータを使用すると、組織は ArcGIS プラットフォームを使用して、一般ユーザーが組織の信頼できるデータに自由にアクセスできるように設定できます。組織は、独自の外観と操作性を備えた Web サイトを構成し、特定のアイテムを共有するようにオープンデータ グループを指定できます。データ利用者は、オープンデータ サイトを使用して、トピックや位置で検索したり、データをさまざまな形式でダウンロードしたり、対話型のマップやテーブルでデータを表示したりできます。</p>
+
+
+
+        </header>
+        <hr />
+        <br />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="img/consumer.jpg" />
+
+          <h3>データ利用者向け </h3>
+          <p>コミュニティに関する理解を深めるために、チャート、テーブル、マップを通じてデータを操作します。データを検索、探索、ダウンロードしたり、対象のデータセットへのリンクを共有したりします。</p>
+          <p>
+
+			<a href="/ja/open-data/consumer/" class="icon-right-arrow">&nbsp;使用方法</a>
+           </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="img/producer.jpg" />
+
+          <h3>データ公開者向け</h3>
+          <p>カスタマイズされた Web サイトを設定して、共有したい信頼できるデータを選択します。すべての人がデータを検索、表示、複数の形式でダウンロードできるようにします。</p>
+          <p>
+            <a href="/ja/open-data/provider/" class="icon-right-arrow">&nbsp;使用方法</a>
+               <br/>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+
+<br/>
+<div>
+	         <a name="features"></a>
+        <h2 class="divider">特徴</h2>
+
+        <p>既知のワークフローを使用して、独自のデータを作成および共有して、オープンデータ サイトを作成します。</p>
+		<ul>
+			<li>組織およびグループでオープンデータを有効化します。</li>
+			<li>データ用にカスタマイズされたサイトを作成します。</li>
+			<li>組織およびグループを横断するフェデレートされた検索を許可します。</li>
+			<li>空間および非空間テーブルのサポートを提供します。</li>
+			<li>データを探索する対話形式のフィルターを提供します。</li>
+			<li>データセットのフィルター処理されたビューへのリンクを共有します。</li>
+
+		</ul>
+         <p>&nbsp;</p>
+        <div class="clear"></div>
+		<a name="dataRequirements"></a>
+        <h2 class="divider">データ要件</h2>
+        <p>現在、ArcGIS Open Data は、ホスト フィーチャ レイヤー、ArcGIS Server フィーチャ サービス、ArcGIS Server マップ サービス、ArcGIS Server イメージ サービス、CSV ファイル、ホストされたテーブルのデータを扱うことができます。ArcGIS Open Data は、外部の URL、Web マップ、その他のドキュメント (Word ドキュメントや PDF など) を限定的にサポートしています。</p>
+
+        <p>&nbsp;</p>
+
+         <a name="whatsNew"></a>
+        <h2 class="divider">新しい機能</h2>
+		<p>オープンデータは、2015 年 7 月に次の機能が更新されました。</p>
+		
+		<ul>
+			<li>大規模なデータセットに対するグリッド形式の密度のビジュアライゼーション (GeoHash)。</li>
+			<li>ArcGIS Online の正式なメタデータのサポート。</li>
+			<li>ArcGIS Online アカウントでのサイン インおよびサイン アップ。</li>
+			<li>データセットに対するユーザーおよび管理者のコメント付加。</li>
+		</ul>
+
+        <p>&nbsp;</p>
+		
+         <a name="SneakPeek"></a>
+        <h2 class="divider">追加予定の機能</h2>
+		<p>ArcGIS Open Data は、リリースされたばかりであり、将来的に大きな機能強化を計画しています。</p>
+		
+		<ul>
+			<li>ダウンロード件数やビューの詳細を追跡するデータの統計情報。</li>
+			<li>データセットおよび取得に対する管理機能の強化。</li>
+			<li>データセットの検索およびフィルタリング機能の操作性の向上。</li>
+		</ul>
+		        <p>&nbsp;</p>
+		<p>ArcGIS Open Data の今後の機能強化について、<a class="" href="http://ideas.arcgis.com">ご意見</a>をお聞かせください。</p>
+        <p>&nbsp;</p>
+ 
+      </div>
+</div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+	          <div class="imgFrame block">
+	  <h3>詳細</h3>
+	          
+	  <h4><a href="#features">特徴</a></h4>
+	  <h4><a href="#dataRequirements">データ要件</a></h4>
+	  <h4><a href="#whatsNew">新しい機能</a></h4>
+	  <h4><a href="#SneakPeek">追加予定の機能</a></h4>
+	          
+        </div>
+
+        <br />
+		
+        <div class="greyFrame">
+          <h3 class="icon-orange icon-light-bulb">ArcGIS Ideas サイト</h3>
+         <p>ArcGIS Open Data の今後の機能強化について、ご意見をお聞かせください。新しいアイデアを提案するか、既存のアイデアに投票してください。</p> <br/>
+         <p>アイデアを探しているプロバイダーですか？ ユーザーが何を求めているか理解し、 あなたと協力して非公開でアイデアを発展させることができる提供者を招待します。</p></br>
+         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
+        </div>
+
+        <br />
+
+
+ </div>
+
+    </div>
+
+

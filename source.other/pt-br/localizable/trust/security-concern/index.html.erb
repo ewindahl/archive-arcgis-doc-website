@@ -30,11 +30,11 @@ mobile: true
     </header>
   <nav>
       <ul>
-        <li class='current'><a title="Responsabilidade do ArcGIS Online" href="/pt-br/trust/">Responsabilidade</a></li>
-        <li><a title="Status de Sistema do ArcGIS Online" href="/pt-br/trust/system-status/">Status de Sistema</a></li>
-        <li><a title="Segurança do ArcGIS Online" href="/pt-br/trust/security/">Segurança</a></li>
-        <li><a title="Privacidade do ArcGIS Online" href="/pt-br/trust/privacy/">Privacidade</a></li>
-        <li><a title="Privacidade do ArcGIS Online" href="/pt-br/trust/compliance/">Conformidade</a></li>
+        <li class='current'><a title="ArcGIS Online Trust" href="/pt-br/trust/">Trust</a></li>
+        <li><a title="ArcGIS Online System Status" href="/pt-br/trust/system-status/">Status do Sistema</a></li>
+        <li><a title="ArcGIS Online Security" href="/pt-br/trust/security/">Segurança</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/pt-br/trust/privacy/">Privacidade</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/pt-br/trust/compliance/">Conformidade</a></li>
       </ul>
     </nav>
   </div>
@@ -49,7 +49,7 @@ mobile: true
         <h2 data-langlabel="">Relatar uma Preocupação de Segurança</h2>
       </header>
 	  <section>
-		<p data-langlabel="">Preencha o formulário à direita com todas as informações aplicáveis, incluindo detalhes suficientes sobre sua preocupação específica. Seus detalhes de contato serão utilizados para dar seguimento às informações que você forneceu. Selecione o assunto aplicável a partir do menu suspenso de assuntos.</p>
+		<p data-langlabel="">Preencha o formulário à direita com todas as informações aplicáveis, incluindo detalhes suficientes sobre sua preocupação específica.Seus detalhes de contato serão utilizados para dar seguimento às informações que você forneceu.Selecione o assunto aplicável a partir do menu suspenso de assuntos.</p>
 		<ul>
 			<li data-langlabel="">Vulnerabilidade - relata uma vulnerabilidade encontrada em nosso site ou aplicativo.</li>
 			<li data-langlabel="">E-mail Suspeito da Esri - se você acredita que foi alvo de um possível ataque de phishing a partir de um endereço de e-mail da Esri ou recebeu outra correspondência de e-mail suspeita da Esri.</li>
@@ -65,13 +65,13 @@ mobile: true
 		<h3 data-langlabel="">Política para Relatar uma Vulnerabilidade</h3>
 	  </header>
       
-        <p data-langlabel="">A equipe de segurança do ArcGIS.com reconhece o papel valioso que pesquisadores de segurança independentes desempenham na segurança da Internet. Nós encorajamos o responsável à reportar quaisquer vulnerabilidades que possam ser encontradas em nosso site ou aplicativo. A Esri tem o compromisso de trabalhar com a comunidade de segurança para verificar e responder por quaisquer potenciais vulnerabilidades que sejam reportadas para nós. A Esri não entrará com um processo ou começará uma investigação policial sobre você se esta política for seguida.</p>
+        <p data-langlabel="">A equipe de segurança do ArcGIS.com reconhece o papel valioso que pesquisadores de segurança independentes desempenham na segurança da Internet.Nós encorajamos o responsável à reportar quaisquer vulnerabilidades que possam ser encontradas em nosso site ou aplicativo.A Esri tem o compromisso de trabalhar com a comunidade de segurança para verificar e responder por quaisquer potenciais vulnerabilidades que sejam reportadas para nós.A Esri não entrará com um processo ou começará uma investigação policial sobre você se esta política for seguida.</p>
 	  <header>
 		<h4 data-langlabel="">O ArcGIS.com <strong>não</strong> permite os seguintes tipos de pesquisa de segurança</h4>
 	  </header>
 	  <ul>
 			<li data-langlabel="">Causar ou tentar causar uma condição de Negação de Serviço (Dos).</li>
-		<li data-langlabel="">Utilizar ferramentas de segurança automatizadas sem consentimento explícito da Esri. O uso de ferramentas automatizadas pode resultar em ação investigativa ou seu IP ser bloqueado.</li>
+		<li data-langlabel="">Utilizar ferramentas de segurança automatizadas sem consentimento explícito da Esri.O uso de ferramentas automatizadas pode resultar em ação investigativa ou seu IP ser bloqueado.</li>
 		<li data-langlabel="">Acessar ou tentar acessar, dados ou informações que não pertencem a você.</li>
 		<li data-langlabel="">Destruir ou corromper, ou tentar destruir ou corromper, dados ou informações que não pertencem a você.</li>  
 	  </ul>
@@ -86,17 +86,17 @@ mobile: true
 		<li data-langlabel="">Fornecer um prazo estimado para abordar esta vulnerabilidade.</li>
 		<li data-langlabel="">Notificar o indivíduo do relatório quando a vulnerabilidade for corrigida.</li>		
 		</ul>
-		
-		<div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Participating Security Researchers</span>
+      
+    <div class="dropdown-navigation dropdown-wrapper regular">
+      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Pesquisadores de Segurança Participantes</span>
       <div class="dropdown-content">
         <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">We would like to thank the following security researchers for participating in our responsible reporting program:</p>
+          <p data-langlabel="trust-researchers-desc">Gostaríamos de agradecer os seguintes pesquisadores de segurança por participar do nosso programa de notícias confiável:</p>
           <%= partial :"_partial/security_names" %>
         </div>
       </div>
     </div>
-	
+      
 	 </section>
 	 
   </div> 
@@ -110,31 +110,34 @@ mobile: true
 
 			  <label data-langlabel="" for="name">Nome: </label>
 			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">Endereço de E-mail: </label>
+			  <label data-langlabel="email-address" for="email-address">Endereço de E-mail:</label>
 			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">Número de Telefone: </label>
+			  <label data-langlabel="phone-number" for="phone-number">Número de Telefone:</label>
 			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
 			  <label data-langlabel="" for="organization">Organização <span class="optional">(opcional):</span> </label>
 			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">Assunto: </label>
+			  <label data-langlabel="" for="subject">Assunto:</label>
 			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option> <option value="Vulnerability">Vulnerabilidade</option> <option value="Suspicious E-mail from Esri">E-mail Suspeito da Esri</option> <option value="Privacy Issue">Problema de Privacidade</option> <option value="audi">Outro</option>
+				  <option value="" style="display:none;"></option>
+				  <option value="Vulnerability">Vulnerabilidade</option>
+				  <option value="Suspicious E-mail from Esri">E-mail Suspeito da Esri</option>
+				  <option value="Privacy Issue">Problema de Privacidade</option>
+				  <option value="audi">Outro</option>
 			  </select>
 
 			  <label data-langlabel="" for="description">Descrição: </label>
 			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">Para ajudar a prevenir spam automatizado, insira os números fornecidos: </label>
+			  <label data-langlabel="feedback-spam-note" for="spam">Para ajudar a prevenir spam automatizado, insira os números fornecidos:</label>
 			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
 			  <label data-langlabel="numerals" for="captchaValue">Números: <strong><span id="txtCaptcha" class=""></span></strong></label>
 
 			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="interno" name="source" id="source">
+			  <input type="hidden" value="internal" name="source" id="source">
 
-			  <input value="verboso" name="resultType" id="resultType" type="hidden">
-			  <input value="Conformidade de Segurança" name="datablock" id="datablock" type="hidden">
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
 			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-
-			  <input type="hidden" value="pt-BR" name="lg">
+			  <input type="hidden" value="pt-br" name="lg">
 			
 			</fieldset>
 			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Enviar</a>
@@ -143,13 +146,16 @@ mobile: true
 		</div>
 
 	  <div id="submission-confirmation" style="display:none;">	
-		<p data-langlabel=""><h4>Obrigado por reportar este problema. Vamos investigar e resolver a sua preocupação nos próximos dias úteis.</h4></p>
+		<p data-langlabel=""><h4>Obrigado por reportar este problema.Vamos investigar e resolver a sua preocupação nos próximos dias úteis.</h4></p>
 	  </div>
 	  <div id="submission-error" style="display:none;">	
-		<p data-langlabel=""><h4>Ocorreu um erro durante seu enivo. Reenvie sua preocupação mais tarde.</h4></p>
+		<p data-langlabel=""><h4>Ocorreu um erro durante seu enivo.Reenvie sua preocupação mais tarde.</h4></p>
 	  </div>
 
-	  <strong><span style="display:none;" id="referPageLink">Retornar para a <a id="feedback-referring-link" href="">página de referência</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Enviar</a> outra preocupação de segurança</span></strong>
+	  <strong>
+			<span style="display:none;" id="referPageLink">Retornar à <a id="feedback-referring-link" href="">página de referência</a></span>
+			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Enviar</a> outra preocupação de segurança</span>
+	  </strong>
 
     </div>
 

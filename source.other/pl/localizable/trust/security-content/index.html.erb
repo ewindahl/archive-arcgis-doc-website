@@ -1,0 +1,77 @@
+---
+title: Zaufanie
+css:
+  - /cdn/css/documentation
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - video-init
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - sitecfg.js
+
+metatags:
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-12-17"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="pl">
+
+mobile: true
+require_login: true
+
+---
+
+<div class="navigation-bar trailer-2">
+  <div class="container">
+    <header>
+      <h1><a href="/pl/Trust/">Zaufanie ArcGIS</a></h1>
+       <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-online" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+  <nav>
+      <ul>
+        <li><a title="Zaufanie usługi ArcGIS Online" href="/pl/trust/">Zaufanie</a></li>
+        <li><a title="Stan systemu usługi ArcGIS Online" href="/pl/trust/system-status/">Stan systemu</a></li>
+        <li class='current'><a title="Bezpieczeństwo usługi ArcGIS Online" href="/pl/trust/security/">Bezpieczeństwo</a></li>
+        <li><a title="Usługa ArcGIS Online — Prywatność" href="/pl/trust/privacy/">Prywatność</a></li>
+        <li><a title="Usługa ArcGIS Online — Prywatność" href="/pl/trust/compliance/">Zgodność</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <aside class="column-6">
+      <nav class="accordion">
+        <section class="accordion-section current active">
+          <header>
+            <h4 class="section-title">Przegląd</h4>
+          </header>
+          <ul>
+            <li class="current">
+              <a href="">Zabezpieczona zawartość 1</a>
+            </li>
+            <li>
+              <a href="">Zabezpieczona zawartość 2</a>
+            </li>
+            <li>
+              <a href="">Zabezpieczona zawartość 3</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </aside>
+    <div class="column-17 pre-1">
+      <header class="trailer-1">
+        <h1 class="trailer-1">Zabezpieczona zawartość</h1>
+      </header>     
+        <p><%= lorem.sentences 5 %></p>
+        <p><%= lorem.sentences 5 %></p>
+        <p><%= lorem.sentences 5 %></p>
+        <p><%= lorem.sentences 5 %></p>
+    </div>
+  </div>
+</div>

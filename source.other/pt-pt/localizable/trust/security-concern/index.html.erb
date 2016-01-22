@@ -31,10 +31,10 @@ mobile: true
   <nav>
       <ul>
         <li class='current'><a title="ArcGIS Online Trust" href="/pt-pt/trust/">Trust</a></li>
-        <li><a title="ArcGIS Online Estado do Sistema" href="/pt-pt/trust/system-status/">Estado do Sistema</a></li>
-        <li><a title="Segurança do ArcGIS Online" href="/pt-pt/trust/security/">Segurança</a></li>
-        <li><a title="Privacidade do ArcGIS Online" href="/pt-pt/trust/privacy/">Privacidade</a></li>
-        <li><a title="Conformidade ArcGIS Online" href="/pt-pt/trust/compliance/">Conformidade</a></li>
+        <li><a title="ArcGIS Online System Status" href="/pt-pt/trust/system-status/">Estado do Sistema</a></li>
+        <li><a title="ArcGIS Online Security" href="/pt-pt/trust/security/">Segurança</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/pt-pt/trust/privacy/">Privacidade</a></li>
+        <li><a title="ArcGIS Online Privacy" href="/pt-pt/trust/compliance/">Conformidade</a></li>
       </ul>
     </nav>
   </div>
@@ -49,7 +49,7 @@ mobile: true
         <h2 data-langlabel="">Reportar um Problema de Segurança</h2>
       </header>
 	  <section>
-		<p data-langlabel="">Por favor, preencha o formulário à direita com todas as informações aplicáveis, incluindo detalhes suficientes acerca do seu problema específico. Os seus detalhes de contato serão utilizados para dar seguimento às informações que forneceu. Por favor, selecione o assunto aplicável a partir do menu assunto.</p>
+		<p data-langlabel="">Por favor, preencha o formulário à direita com todas as informações aplicáveis, incluindo detalhes suficientes acerca do seu problema específico.Os seus detalhes de contato serão utilizados para dar seguimento às informações que forneceu.Por favor, selecione o assunto aplicável a partir do menu assunto.</p>
 		<ul>
 			<li data-langlabel="">Vulnerabilidade - reporte uma vulnerabilidade encontrada no nosso site ou aplicação.</li>
 			<li data-langlabel="">Correio eletrónico suspeito da Esri - se crê ter sido alvo de um possível ataque de phishing por parte de um endereço de correio eletrónico da Esri ou se recebeu outra correspondência suspeita por correio eletrónico da Esri</li>
@@ -65,13 +65,13 @@ mobile: true
 		<h3 data-langlabel="">Política de Reporte de Vulnerabilidade</h3>
 	  </header>
       
-        <p data-langlabel="">A equipa de segurança ArcGIS Online reconhece o papel valioso assumido pelos investigadores de segurança independentes no que diz respeito à segurança na Internet. Encorajamos o reporte responsável de quaisquer vulnerabilidades que possam ser encontradas no nosso site ou aplicação. A Esri está empenhada em trabalhar com a comunidade de segurança para verificar e responder a quaisquer potenciais vulnerabilidades que nos sejam reportadas. A Esri não irá instaurar quaisquer processos legais ou acionar investigações por parte das forças de segurança em relação a si se estas políticas forem respeitadas.</p>
+        <p data-langlabel="">A equipa de segurança ArcGIS Online reconhece o papel valioso assumido pelos investigadores de segurança independentes no que diz respeito à segurança na Internet.Encorajamos o reporte responsável de quaisquer vulnerabilidades que possam ser encontradas no nosso site ou aplicação.A Esri está empenhada em trabalhar com a comunidade de segurança para verificar e responder a quaisquer potenciais vulnerabilidades que nos sejam reportadas.A Esri não irá instaurar quaisquer processos legais ou acionar investigações por parte das forças de segurança em relação a si se estas políticas forem respeitadas.</p>
 	  <header>
 		<h4 data-langlabel="">O ArcGIS.com <strong>não</strong> permite os seguintes tipos de pesquisa de segurança:</h4>
 	  </header>
 	  <ul>
 			<li data-langlabel="">Causar, ou tentar causar, uma condição de Denial of Service (DoS).</li>
-		<li data-langlabel="">Utilizar ferramentas de segurança automáticas sem o consentimento explícito da Esri. A utilização de ferramentas automáticas poderá resultar em ação de investigação ou o(s) seu(s) IP(s) poderão ser bloqueado(s).</li>
+		<li data-langlabel="">Utilizar ferramentas de segurança automáticas sem o consentimento explícito da Esri.A utilização de ferramentas automáticas poderá resultar em ação de investigação ou o(s) seu(s) IP(s) poderão ser bloqueado(s).</li>
 		<li data-langlabel="">Aceder, ou tentar aceder, a dados ou informações que não lhe pertencem.</li>
 		<li data-langlabel="">Destruir ou corromper, ou tentar destruir ou corromper, dados ou informações que não lhe pertencem.</li>  
 	  </ul>
@@ -86,17 +86,17 @@ mobile: true
 		<li data-langlabel="">Fornecer um intervalo temporal estimado para resolver a vulnerabilidade.</li>
 		<li data-langlabel="">Notificar o indivíduo que submeteu o relatório quando a vulnerabilidade tiver sido resolvida.</li>		
 		</ul>
-		
-		<div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Participating Security Researchers</span>
+      
+    <div class="dropdown-navigation dropdown-wrapper regular">
+      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Investigadores de Segurança que Participaram</span>
       <div class="dropdown-content">
         <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">We would like to thank the following security researchers for participating in our responsible reporting program:</p>
+          <p data-langlabel="trust-researchers-desc">Gostaríamos de agradecer aos seguintes investigadores de segurança por participarem no nosso programa de denúncia responsável:</p>
           <%= partial :"_partial/security_names" %>
         </div>
       </div>
     </div>
-	
+      
 	 </section>
 	 
   </div> 
@@ -108,33 +108,36 @@ mobile: true
 						
 			<fieldset id="security-form-fieldset">
 
-			  <label data-langlabel="" for="name">Nome: </label>
+			  <label data-langlabel="" for="name">Nome:</label>
 			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">Endereço de correio eletrónico: </label>
+			  <label data-langlabel="email-address" for="email-address">Endereço de correio eletrónico:</label>
 			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">Número de Telefone: </label>
+			  <label data-langlabel="phone-number" for="phone-number">Número de Telefone:</label>
 			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
 			  <label data-langlabel="" for="organization">Organização <span class="optional">(opcional):</span> </label>
 			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">Assunto: </label>
+			  <label data-langlabel="" for="subject">Assunto:</label>
 			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option> <option value="Vulnerability">Vulnerabilidade</option> <option value="Suspicious E-mail from Esri">E-mail suspeito da Esri</option> <option value="Privacy Issue">Problema de Privacidade</option> <option value="audi">Outro</option>
+				  <option value="" style="display:none;"></option>
+				  <option value="Vulnerability">Vulnerabilidade</option>
+				  <option value="Suspicious E-mail from Esri">E-mail da Esri suspeito</option>
+				  <option value="Privacy Issue">Problema de Privacidade</option>
+				  <option value="audi">Outro</option>
 			  </select>
 
 			  <label data-langlabel="" for="description">Descrição: </label>
 			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">Para ajudar a prevenir o spam automático, introduza os número que observa: </label>
+			  <label data-langlabel="feedback-spam-note" for="spam">Para ajudar a prevenir o spam automático, introduza os número que observa:</label>
 			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
 			  <label data-langlabel="numerals" for="captchaValue">Números: <strong><span id="txtCaptcha" class=""></span></strong></label>
 
 			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="interno" name="source" id="source">
+			  <input type="hidden" value="internal" name="source" id="source">
 
-			  <input value="verboso" name="resultType" id="resultType" type="hidden">
-			  <input value="Problema de Segurança" name="datablock" id="datablock" type="hidden">
+			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
 			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-
-			  <input type="hidden" value="ing" name="lg">
+			  <input type="hidden" value="pt-pt" name="lg">
 			
 			</fieldset>
 			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Submeter</a>
@@ -143,13 +146,16 @@ mobile: true
 		</div>
 
 	  <div id="submission-confirmation" style="display:none;">	
-		<p data-langlabel=""><h4>Obrigado por reportar este problema. Iremos investigar e resolver o seu problema nos próximos dias úteis.</h4></p>
+		<p data-langlabel=""><h4>Obrigado por reportar este problema.Iremos investigar e resolver o seu problema nos próximos dias úteis.</h4></p>
 	  </div>
 	  <div id="submission-error" style="display:none;">	
-		<p data-langlabel=""><h4>Ocorreu um erro durante a submissão. Por favor, volte a submeter o seu problema mais tarde.</h4></p>
+		<p data-langlabel=""><h4>Ocorreu um erro durante a submissão.Por favor, volte a submeter o seu problema mais tarde.</h4></p>
 	  </div>
 
-	  <strong><span style="display:none;" id="referPageLink">Regresse à <a id="feedback-referring-link" href="">página de referência</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Submeter</a> outro problema de segurança</span></strong>
+	  <strong>
+			<span style="display:none;" id="referPageLink">Regressar à <a id="feedback-referring-link" href="">página de referência</a></span>
+			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Submeter</a> outro problema de segurança</span>
+	  </strong>
 
     </div>
 
@@ -163,7 +169,6 @@ $(document).ready(function() {
     });
     doc.securityConcernForm.DrawCaptcha();
 });
-
 </script>
 
 </div>
