@@ -7,12 +7,13 @@ css:
 js:
   - video-init
   - libs/jquery.cookie
+  - /en/asset/js/appstudio-1
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - sitecfg.js
 
 metatags:
-  - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="app-studio"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="pt-br">
+  - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="appstudio,appstudio-browser"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="pt-br">
 
 mobile: true
 
@@ -20,7 +21,7 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/pt-br/appstudio/">AppStudio for ArcGIS (Beta)</a></h1>
+      <h1><a href="/pt-br/appstudio/">AppStudio for ArcGIS (Desktop Edition)</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search AppStudio for ArcGIS">
         <input type="hidden" name="collection" value="help" />
@@ -35,7 +36,9 @@ mobile: true
         <li><a href="/pt-br/appstudio/create-apps/">Criar Aplicativos</a></li>
        <!-- <li><a href="/pt-br/appstudio/manage-apps/">Manage Apps</a></li>  -->
         <li><a href="/pt-br/appstudio/extend-apps/">Estender Aplicativos</a></li>
-		<li><a href="https://betacommunity.esri.com/project/forum/default.html?cap=5E0BCBB972004AC7A67F93442531EF0F">Forum</a></li>
+		<!-- <li><a href="https://earlyadopter.esri.com/project/forum/default.html?cap=5E0BCBB972004AC7A67F93442531EF0F">Forum</a></li> -->
+		<li><a href="/pt-br/appstudio/community/">Comunidade</a></li>
+        <li><a href="/pt-br/appstudio/download/">Download</a></li>		
       </ul>
     </nav>
   </div>
@@ -49,7 +52,7 @@ mobile: true
 
     <h3 class="gray">O AppStudio for ArcGIS é uma ferramenta inovadora que converte seus mapas em aplicativos móveis atrativos para Mac, iOS, Android, Windows e Linux.</h3>
   
-	<a href="http://beta.esri.com/community/" class="btn primary icon-storage">Baixar a versão Beta</a>
+	<a href="http://doc.arcgis.com/en/appstudio/download/" class="btn primary icon-storage">Obter a versão de Desktop</a>
   
     <hr />
 
@@ -74,7 +77,7 @@ mobile: true
 		  <p>Implante e proteja seus próprios aplicativos dentro da sua organização.</p>
 	       
           <p>
-            <a href="/pt-br/appstudio/create-apps/whatisappstudio.htm#ESRI_SECTION1_FE63E486A16B4260A0B9D2802784E616" class="icon-right-arrow">&nbsp;Mostre-me como</a>
+            <a href="/pt-br/appstudio/create-apps/guidedtour.htm" class="icon-right-arrow">&nbsp;Mostre-me como</a>
           </p>
         </div>
 
@@ -109,7 +112,7 @@ mobile: true
 
 
 		        <a name="features"></a>
-        <h2 class="divider">Feições</h2>
+        <h2 class="divider">Recursos</h2>
 		
 		   <ul><li>Criar aplicativos facilmente </li>
 		       <li>Utilize os modelos de aplicativo configuráveis incluídos.</li>
@@ -127,7 +130,7 @@ mobile: true
         <a name="systemrequirements"></a>
         <h2 class="divider">Requisitos de sistema</h2>
 		
-          <p>Há determinados requisitos do dispositivo para executar o AppStudio for ArcGIS e o Player, como também, requisitos sobre os dados que são utilizados dentro do aplicativo.</p>
+          <p>Há determinados <!--and browser--> requisitos do dispositivo para executar o AppStudio for ArcGIS e o Player, como também, requisitos sobre os dados que são utilizados dentro do aplicativo.</p>
           <p>	
 
           <h3>Requisitos dos dados</h3>
@@ -137,28 +140,34 @@ mobile: true
           <h3>Requisitos do dispositivo</h3>
           <p>Os seguintes sistemas operacionais (com versões mínimas) são suportados.</p>
           <p>
-		  	  
-          <h4>AppStudio for ArcGIS</h4>
+          <!-- <h4>AppStudio for ArcGIS in a browser</h4>
+        <ul>
+          <li>Chrome</li>
+		  <li>Firefox</li>
+          <li>IE 10</li>
+          <li>Safari 7</li>
+        </ul> -->		  	  
+          <h4>AppStudio for ArcGIS no desktop</h4>
         <ul>
           <li>Windows 7</li>
-          <li>OSX 10.8</li>
-          <li>Ubuntu 12.04 </li>
-
+          <li>OSX 10.10</li>
+          <li>Ubuntu 14.04 </li>
         </ul>
           <h4>AppStudio Player</h4>		
         <ul>
           <li>Windows 7</li>
-          <li>OSX 10.8</li>
-          <li>Ubuntu 12.04 </li>
+          <li>OSX 10.10</li>
+          <li>Ubuntu 14.04 </li>
           <li>Android 4.1 (Jelly Bean)</li>
 		  <li>iOS 8</li>
         </ul>
         
         <h3>Idiomas suportados</h3> 
-        <p>Em breve.</p>
+        <p>Árabe, Tcheco, Dinamarquês, Holandês, Inglês, Estoniano, Finlandês, Francês, Alemão, Grego, Hebreu, Italiano, Japonês, Coreano, Letão, Lituano, Norueguês, Polonês, Português (Brasil), Português (Portugal), Romano, Russo, Chinês Simplificado, Espanhol, Sueco, Tailandês, Turco e Vietnamita.</p>
+        <p>O idioma utilizado pelo AppStudio for ArcGIS e AppStudio Player, é determinado pela configuração de idioma do seu dispositivo.</p>
 		
         <h3>ArcGIS Runtime SDK</h3>
-        <p>O AppStudio suporta ArcGIS Runtime SDK 10.2.5 for Qt.</p>
+        <p>O AppStudio suporta ArcGIS Runtime SDK 10.2.7 for Qt.</p>
 
 
         <p>Compartilhe suas <a href="http://ideas.arcgis.com/">ideias</a> e <a href="http://support.esri.com/en/">nos envie seu comentário</a>.</p>
@@ -175,7 +184,8 @@ mobile: true
         <div class="imgFrame block">
           <h3>Novo no AppStudio?</h3>
   
-		  <h4><a href="http://video.arcgis.com/iframe/4274/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  Assista a apresentação do vídeo</a></h4>  
+		  <h4><a href="http://video.arcgis.com/iframe/4274/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png"> Assista a apresentação do vídeo</a></h4>
+		  <h4><a href="http://video.arcgis.com/series/232/appstudio-for-arcgis">Procurar vídeos</a></h4> 		  
           <h4><a href="#features">Recursos</a></h4>
           <h4><a href="#systemrequirements">Requisitos de sistema</a></h4>
 

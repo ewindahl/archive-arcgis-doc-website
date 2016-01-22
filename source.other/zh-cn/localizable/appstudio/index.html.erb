@@ -7,12 +7,13 @@ css:
 js:
   - video-init
   - libs/jquery.cookie
+  - /en/asset/js/appstudio-1
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - sitecfg.js
 
 metatags:
-  - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="app-studio"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="zh-cn">
+  - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="appstudio,appstudio-browser"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="zh-cn">
 
 mobile: true
 
@@ -20,7 +21,7 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/zh-cn/appstudio/">AppStudio for ArcGIS (Beta)</a></h1>
+      <h1><a href="/zh-cn/appstudio/">AppStudio for ArcGIS (Desktop Edition)</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search AppStudio for ArcGIS">
         <input type="hidden" name="collection" value="help" />
@@ -35,7 +36,9 @@ mobile: true
         <li><a href="/zh-cn/appstudio/create-apps/">创建 App</a></li>
        <!-- <li><a href="/zh-cn/appstudio/manage-apps/">Manage Apps</a></li>  -->
         <li><a href="/zh-cn/appstudio/extend-apps/">扩展 App</a></li>
-		<li><a href="https://betacommunity.esri.com/project/forum/default.html?cap=5E0BCBB972004AC7A67F93442531EF0F">论坛</a></li>
+		<!-- <li><a href="https://earlyadopter.esri.com/project/forum/default.html?cap=5E0BCBB972004AC7A67F93442531EF0F">Forum</a></li> -->
+		<li><a href="/zh-cn/appstudio/community/">社区</a></li>
+        <li><a href="/zh-cn/appstudio/download/">下载</a></li>		
       </ul>
     </nav>
   </div>
@@ -49,7 +52,7 @@ mobile: true
 
     <h3 class="gray">AppStudio for ArcGIS 是一款突破性的工具，它能够将您的地图转换为适用于 Mac、iOS、Android、Windows 和 Linux 的美观的移动应用程序。</h3>
   
-	<a href="http://beta.esri.com/community/" class="btn primary icon-storage">下载 Beta 版</a>
+	<a href="http://doc.arcgis.com/en/appstudio/download/" class="btn primary icon-storage">获取桌面版本</a>
   
     <hr />
 
@@ -58,7 +61,7 @@ mobile: true
           <p></p>
 
           <h3>提高工作效率</h3>
-          <p>在 20 分钟之内将想法转化成应用程序并发布到商店。 </p>		  
+          <p>在 20 分钟之内将想法转化成应用程序并发布到商店。</p>		  
 		           
           <p>
             <a href="/zh-cn/appstudio/create-apps/usetemplatecreateapp.htm" class="icon-right-arrow">&nbsp;详情介绍</a>
@@ -74,7 +77,7 @@ mobile: true
 		  <p>在组织中部署并保护您自己的应用程序。</p>
 	       
           <p>
-            <a href="/zh-cn/appstudio/create-apps/whatisappstudio.htm#ESRI_SECTION1_FE63E486A16B4260A0B9D2802784E616" class="icon-right-arrow">&nbsp;详情介绍</a>
+            <a href="/zh-cn/appstudio/create-apps/guidedtour.htm" class="icon-right-arrow">&nbsp;详情介绍</a>
           </p>
         </div>
 
@@ -97,7 +100,7 @@ mobile: true
           <p></p>
 
           <h3>共享应用程序</h3>
-		  <p>将您自己创建的应用程序发布到 Google Play、Apple 和 Microsoft 应用程序商店。&lt;br/&gt;</p>
+		  <p>将您自己创建的应用程序发布到 Google Play、Apple 和 Microsoft 应用程序商店。</p>
 	      
           <p>
             <a href="/zh-cn/appstudio/create-apps/distributeyourapp.htm" class="icon-right-arrow">&nbsp;详情介绍</a>
@@ -127,38 +130,44 @@ mobile: true
         <a name="systemrequirements"></a>
         <h2 class="divider">系统要求</h2>
 		
-          <p>需满足特定的设备要求才能运行 AppStudio for ArcGIS 和 Player，对于在应用程序中使用的数据也有一些要求。</p>
+          <p>需满足特定的设备<!--and browser-->要求才能运行 AppStudio for ArcGIS 和 Player，对于在该应用程序中使用的数据也有一些要求。</p>
           <p>	
 
           <h3>数据要求</h3>
-          <p>要在 AppStudio 中使用地图，您必须拥有 ArcGIS 组织帐户。 地图可以包含来自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的数据。</p>
+          <p>要在 AppStudio 中使用地图，您必须拥有 ArcGIS 组织帐户。地图可以包含来自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的数据。</p>
           <p>		  
 		
           <h3>设备要求</h3>
           <p>支持以下操作系统（包括最低版本）：</p>
           <p>
-		  	  
-          <h4>AppStudio for ArcGIS</h4>
+          <!-- <h4>AppStudio for ArcGIS in a browser</h4>
+        <ul>
+          <li>Chrome</li>
+		  <li>Firefox</li>
+          <li>IE 10</li>
+          <li>Safari 7</li>
+        </ul> -->		  	  
+          <h4>台式机上的 AppStudio for ArcGIS</h4>
         <ul>
           <li>Windows 7</li>
-          <li>OSX 10.8</li>
-          <li>Ubuntu 12.04</li>
-
+          <li>OSX 10.10</li>
+          <li>Ubuntu 14.04 </li>
         </ul>
           <h4>AppStudio Player</h4>		
         <ul>
           <li>Windows 7</li>
-          <li>OSX 10.8</li>
-          <li>Ubuntu 12.04</li>
+          <li>OSX 10.10</li>
+          <li>Ubuntu 14.04 </li>
           <li>Android 4.1 (Jelly Bean)</li>
 		  <li>iOS 8</li>
         </ul>
         
         <h3>受支持语言</h3> 
-        <p>即将推出。</p>
+        <p>阿拉伯语、捷克语、丹麦语、荷兰语、英语、爱沙尼亚语、芬兰语、法语、德语、希腊语、希伯来语、意大利语、日语、韩语、拉脱维亚语、立陶宛语、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、简体中文、西班牙语、瑞典语、泰语、土耳其语和越南语。</p>
+        <p>AppStudio for ArcGIS 和 AppStudio Player 所使用的语言取决于设备的语言设置。</p>
 		
         <h3>ArcGIS Runtime SDK</h3>
-        <p>AppStudio 支持 ArcGIS Runtime SDK 10.2.5 for Qt。</p>
+        <p>AppStudio 支持 ArcGIS Runtime SDK 10.2.7 for Qt。</p>
 
 
         <p>请与我们分享您的<a href="http://ideas.arcgis.com/">看法</a>，并<a href="http://support.esri.com/en/">向我们发送反馈</a>。</p>
@@ -175,9 +184,10 @@ mobile: true
         <div class="imgFrame block">
           <h3>不熟悉 AppStudio？</h3>
   
-		  <h4><a href="http://video.arcgis.com/iframe/4274/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">  观看视频演示</a></h4>  
+		  <h4><a href="http://video.arcgis.com/iframe/4274/000000/width/960/0/00:00:00" class="colorbox-evlarge"><img src="img/playbtn-small.png">观看视频演示</a></h4>
+		  <h4><a href="http://video.arcgis.com/series/232/appstudio-for-arcgis">浏览视频</a></h4> 		  
           <h4><a href="#features">功能</a></h4>
-          <h4><a href="#systemrequirements">系统要求</a> </h4>
+          <h4><a href="#systemrequirements">系统要求</a></h4>
 
           
         </div>
@@ -197,8 +207,7 @@ mobile: true
 </div>
 
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-<script type="text/javascript">
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script> <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/appstudio/feed/',
