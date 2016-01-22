@@ -57,6 +57,12 @@ def doBuild (lg, srcRoot, buildDir):
    dstd = op.join (dstRoot, "source/layouts")
    print "copy {0} -> {1}".format (srcd, dstd)
    shutil.copytree(srcd, dstd)
+   
+   #copy data
+   srcd = op.join (srcRoot, "data")
+   dstd = op.join (dstRoot, "data")
+   print "copy {0} -> {1}".format (srcd, dstd)
+   shutil.copytree(srcd, dstd)
 
    #copy source/localizable/_partial
    srcd = op.join (srcRoot, "source/localizable/_partial")
