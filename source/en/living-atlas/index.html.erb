@@ -4,9 +4,7 @@ css:
   - gallery
 
 js:
-  - gallery/groupMapping
   - gallery/gallery-init
-  - search/jxon
   - gallery/galleryshell-default
   - gallery/gallerydisplay-default
 
@@ -22,6 +20,7 @@ expanded_gallery: true
   <div class="container">
     <header>
       <h1><a href="/en/living-atlas/">Living Atlas of the World</a></h1>
+	  
 	  <form target="_top" id="gallerySearchForm" autocomplete="off">
         <input type="search" placeholder="" id="query" class="leader" name="q">
         <h5 id="gl-cl-btn" class="icon-cancel"></h5>
@@ -29,11 +28,15 @@ expanded_gallery: true
 		<!--<input type="submit" value="" id="search1">-->
       </form>
 	  
-	  <!--<div id="gl-s-ctrl">
-      <input type="search" value="" autocomplete="off" name="query" id="query">
-	  
-    </div>-->
     </header>
+	 <nav>
+      <ul>
+        <li> <a href="/en/living-atlas/about/"> Home </a> </li>
+        <li> <a href="/en/living-atlas/use/"> Use </a> </li>
+        <li> <a href="/en/living-atlas/contribute/"> Contribute </a> </li>
+		<li class="current"> <a href="/en/living-atlas/"> Browse </a> </li>
+      </ul>
+    </nav>
   </div>
 </div>
 
