@@ -55,7 +55,7 @@ var filterCfg = {
       {
         k:"all",
         q: {
-            r:"search-collection:help|search-collection:blogs", 
+            r:"search-collection:help|search-collection:blogs|search-collection:lessons|search-collection:books", 
             p:""
         }
       }, 
@@ -86,6 +86,18 @@ var filterCfg = {
         q:{
           r:"search-collection:blogs",
           sort:"date:D:S:d1" //sort by date descending
+        }
+      },
+		{
+        k:"lessons",
+        q:{
+          r:"search-collection:lessons",
+        }
+      },
+		{
+        k:"books",
+        q:{
+          r:"search-collection:books",
         }
       }
       
