@@ -200,18 +200,18 @@ doc.itemDetails = (function(){
 						viewerType = "layers";
 						pkItem = "item.pitem";
 
-						if(itemDetails.type === "Vector Tile Service" || (itemDetails.type === "Map Service" && ($.inArray("Hosted Service", itemDetails.typeKeywords) > -1 || $.inArray("Tiled", itemDetails.typeKeywords) > -1))){
+						if(itemDetails.type === "Vector Tile Service"){
 							var tyleLayerViewBtn = "<a href='" + AGOLURL + "/sharing/content/items/"+itemDetails.id + "/resources/styles/root.json?f=pjson' target='_blank' class='btn light'>View Style</a>";
 						}
 					}
 					text = "<a href='"+ AGOLURL +"/home/webmap/viewer.html?" + viewerType +"=" + itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
 					
 					// Exclude open in ArcGIS for Desktop from demographics item
-					if(getUrlVars()['subType'] != "demographics"){
+					//if(getUrlVars()['subType'] != "demographics"){
 						var tmpText = (tyleLayerViewBtn)?tyleLayerViewBtn:"<a href='" + AGOLURL + "/sharing/content/items/"+itemDetails.id + "/" + pkItem + "' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
 
 						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;"+tmpText;
-					}
+					//}
 
 					if(itemType == "map") {
 						$(".map-title").text(itemDetails.title);
