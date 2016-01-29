@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/)/)){
   return;
   }
   
@@ -107,9 +107,10 @@ jQuery(document).ready(function ($) {
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
 	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
 	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro","nl"],
-    lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn']
+    lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn'],
     lgMicro = ['en', 'de'],
 	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
+   lgNavigator = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', "it", "ko", "pt-pt", 'el'],
    lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
 
       //all langs
@@ -172,10 +173,11 @@ jQuery(document).ready(function ($) {
                 return true;
               }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){ 
                 return true;
+              }else if(langSelector === "navigator" && lgNavigator.indexOf(lg) >= 0){ 
+                return true;
               }else if(langSelector === "sharepoint" && lgSharepoint.indexOf(lg) >= 0){ 
                 return true;
-              }
-              else{
+              }else{
                 return false;
               }
           },
@@ -256,6 +258,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "micro":
                   lgList = lgMicro;
+                  break;
+                case "navigator":
+                  lgList = lgNavigator;
                   break;
                 case "sharepoint":
                   lgList = lgSharepoint;
@@ -413,12 +418,13 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/marketplace\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/)/)){
     docCfg.langSelector = "marketplace";
+  }else if (winloc.pathname.match( /(\/navigator\/)/)){
+    docCfg.langSelector = "navigator";
   }else if (winloc.pathname.match( /(\/maps-for-sharepoint\/)/)){
     docCfg.langSelector = "sharepoint";
   }
-  
 
   dbg ("start: " + window.location.href);
   
