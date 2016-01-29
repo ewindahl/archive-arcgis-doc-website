@@ -58,7 +58,7 @@ $(document).ready(function() {
 	}
 
 	if (!isHome) {
-			if(!(fname in noSwitcherFileList) && (window.location.pathname.match( /(\/esri-maps-web-part\/|\/install-and-configure\/)/))){
+			if(!(fname in noSwitcherFileList)){
 				$('.reference-content .page-title').after (val);
 			}else{
 				modContentUrls (plat);
