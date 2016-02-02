@@ -1779,7 +1779,9 @@ var localeJsonObj = {
       "solutions": "Solutions", 
       "submit": "Submit", 
       "suggestions": "suggestions", 
-      "tell_us": "Tell us what you think.", 
+      "survey123": "Survey123", 
+      "survey123-ht": "Survey123 for ArcGIS", 
+		"tell_us": "Tell us what you think.", 
       "thumbnail": "Thumbnail", 
       "title_arcgis_103": "ArcGIS for Server (10.3 and 10.3.1)", 
       "top": "Top", 
@@ -1801,7 +1803,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": "Windows Phone"
+      "windows-phone": "Windows Phone",
+		"lessons": "Lessons", 
+      "lessons-ht": "Lessons",
+		"books": "Books", 
+      "books-ht": "Books"
    }, 
    "es": {
       "10.3": "ArcMap 10.3", 
