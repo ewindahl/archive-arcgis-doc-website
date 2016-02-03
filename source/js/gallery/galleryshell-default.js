@@ -688,7 +688,7 @@ function createGalleryShell() {
 
             $.ajax({
                 type: "GET",
-                url: "/apps/proxy/sm-proxy.php?" + gm. agolHost + "/sharing/rest/portals/self?f=json",
+                url: gm. agolHost + "/sharing/rest/portals/self?f=json",
                 //data: {"f":"json"},
                 data: {},
                 dataType: "json"
