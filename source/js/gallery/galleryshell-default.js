@@ -31,9 +31,7 @@ function genGalleryModel(hash, mdfL) {
 
     function GalleryModel(mdfL) {
         this.startN = 0;
-        this.fStartN = 0;
         this.numN = gcfg.numN;
-        this.fNumN = gcfg.numN;
         this.maxN = 0;
         this.sedata = null;
         this.query = ""; //decoded value
@@ -44,11 +42,18 @@ function genGalleryModel(hash, mdfL) {
 		this.clearAll = false;
 		this.col = "All"; //decoded value
         this.type = "All";
+        this.area = "All";
         this.npp = gcfg.numN;
         this.subCat = 0;
+        this.agolHost = getTier(window.location.hostname).agolHost;
+        this.userSessionObj = ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : {};
+        this.groupIds = null;
+        this.regionCode = "WO";
+        //this.userToken = this.getToken ();
 
         this.init = function (hash) {
             this._initMDF(mdfL);
+            //this.getAgolHost ();
             if (hash) {
                 this.updateByHash(hash);
             }
@@ -75,11 +80,30 @@ function genGalleryModel(hash, mdfL) {
         }
 
         this.genViewData = function () {
-            var opt = {featured:1}
             var o = {
                 hash: this._genHash(),
+                //ajaxData: this._genAjaxData(),
+            };
+
+            return o;
+        }
+
+        this.getToken = function () {
+            return (this.userSessionObj.token)?this.userSessionObj.token : null;
+        }
+
+        this.getAgolHost = function () {
+            this.agolHost = (this.userSessionObj.urlKey)?"https://"+this.userSessionObj.urlKey+ "." +this.userSessionObj.customBaseUrl : this.agolHost;
+        }
+
+        this.userAccountType = function () {
+            return (this.userSessionObj.urlKey)?"org" : "public";
+        }
+
+
+        this.genAJaxParamData = function () {
+            var o = {
                 ajaxData: this._genAjaxData(),
-                ajaxFeaturedData: this._genAjaxData(opt)
             };
 
             return o;
@@ -88,13 +112,7 @@ function genGalleryModel(hash, mdfL) {
         this.updateSEData = function (sedata) {
             this.sedata = sedata;
             this.startN = sedata.startI - 1;
-            this.maxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
-        }
-
-        this.updateFSEData = function (sedata) {
-            this.sedata = sedata;
-            this.fStartN = sedata.startI - 1;
-            this.fMaxN = Math.min(1000, sedata.estN); //gsa: only return first 1000
+            this.maxN = sedata.estN; //gsa: only return first 1000
         }
 
 
@@ -110,15 +128,6 @@ function genGalleryModel(hash, mdfL) {
                 this.startN = 0;
             }
 
-            if (o.fs) {
-                this.fStartN = parseInt(o.fs, 10);
-                if (isNaN (this.fStartN)) {
-                    this.fStartN = 0;
-                }
-            } else {
-                this.fStartN = 0;
-            }
-
             if (o.n) {
                 this.numN = parseInt(o.n, 10);
                 if (isNaN(this.numN)) {
@@ -126,24 +135,6 @@ function genGalleryModel(hash, mdfL) {
                 }
             } else {
                 this.numN = gcfg.numN;
-            }
-
-            if (o.fn) {
-                this.fNumN = parseInt(o.fn, 10);
-                if (isNaN(this.fNumN)) {
-                    this.fNumN = gcfg.numN;
-                }
-            } else {
-                this.fNumN = gcfg.numN;
-            }
-
-            if (o.npp) {
-                this.npp = parseInt(o.npp, 10);
-                if (isNaN(this.npp)) {
-                    this.npp = gcfg.numN;
-                }
-            } else {
-                this.npp = gcfg.numN;
             }
 
             if (o.q) {
@@ -160,6 +151,12 @@ function genGalleryModel(hash, mdfL) {
                 this.type = decodeURIComponent(o.type);
             } else {
                 this.type = "All";
+            }
+
+            if (o.area) {
+                this.area = decodeURIComponent(o.area);
+            } else {
+                this.area = "All";
             }
 
             if (o.md) {
@@ -211,15 +208,11 @@ function genGalleryModel(hash, mdfL) {
             }
 
             this.startN = 0;
-            this.fStartN = 0;
         }
 
         this.updateQuery = function () {
             this.query = $.trim($("#query").val());
             this.startN = 0;
-            this.fStartN = 0;
-            this.fNumN = gcfg.numN;
-
         }
 		
 		this.updateCollection = function (col) {
@@ -248,35 +241,12 @@ function genGalleryModel(hash, mdfL) {
             this.type = type;
         }
 
-        this.updateSubCat = function (subCat) {
-            this.subCat = subCat;
+        this.updateArea = function (area) {
+            this.area = area;
         }
 
-        this.updateNpp = function (n,reset) {
-            //this.npp = n || 30;
-            
-            if(n == 0){
-                this.fStartN = 0;
-                this.startN = 0;
-                this.npp = 0;
-                this.fNumN = gcfg.numN;
-                this.numN = 0;
-            }else{
-                //this.fStartN = n||this.npp;
-                this.fStartN = Math.min(this.maxN, this.fStartN + this.fNumN); //n + gcfg.numN;
-                
-                this.fNumN = (reset)?n:this.fNumN;
-                this.npp = this.npp + parseInt(n,10);
-
-                if(this.fNumN <= 0){
-                    this.startN = this.startN + this.numN;
-                    this.numN = n || this.numN;
-                }else{
-                    //this.fStartN = this.npp;
-                    //this.fNumN = this.fNumN;
-                }
-             }
-
+        this.updateSubCat = function (subCat) {
+            this.subCat = subCat;
         }
 
         this.updateDisplayN = function (n) {
@@ -295,8 +265,6 @@ function genGalleryModel(hash, mdfL) {
             }
 
             this.startN = 0;
-            this.fStartN = 0;
-
         }
 
         this.updateDisplay = function (n) {
@@ -308,23 +276,18 @@ function genGalleryModel(hash, mdfL) {
             x = (x - 1) * this.numN;
             x = Math.min(this.maxN, x);
             this.startN = Math.max(0, x);
-            this.fStartN = Math.max(0, x);
         }
 
         this.inc = function () {
-            this.startN = Math.min(this.maxN, this.startN + this.numN);
-            this.fStartN = Math.min(this.fMaxN, this.fStartN + this.numN);
+            this.startN = Math.min(this.maxN, (this.startN+1) + this.numN);
         }
 
         this.dec = function () {
             this.startN = Math.max(0, this.startN - this.numN);
-            this.fStartN = Math.max(0, this.fStartN - this.numN);
         }
 
         this.updatePagination = function (n) {
             this.startN = n || 0;
-            this.fStartN = n || 0;
-            this.fNumN = gcfg.numN;
         }
 
         this._setMdf = function (val) {
@@ -356,7 +319,12 @@ function genGalleryModel(hash, mdfL) {
                 }
             });
             return o;
-        }
+        },
+
+        this._getAgolPrefRegion = function () {
+                var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
+                return (ckObj)?ckObj.region : null;
+        },
 
         this._genHash = function () {
             //s=startN&n=numN&filter=0&q=query&md=mdf
@@ -375,14 +343,9 @@ function genGalleryModel(hash, mdfL) {
             var l = [];
 
             l.push("s=" + this.startN);
-            l.push("n=" + this.numN);
-            l.push("d=" + this.display);
-			l.push("col=" + this.col);
-            //l.push("type=" + this.type);
-            l.push("fs=" + this.fStartN);
-            l.push("fn=" + this.fNumN);
-            l.push("npp=" + this.npp);
             l.push("subCat=" + this.subCat);
+            l.push("type=" + this.type);
+            l.push("area=" + this.area);
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -396,7 +359,7 @@ function genGalleryModel(hash, mdfL) {
 
         this._genAjaxData = function (opt) {
 
-            function _genPartialFields(mdf) {
+            function _genTags(mdf) {
                 var l = [];
 
                 for (key in mdf) {
@@ -408,12 +371,15 @@ function genGalleryModel(hash, mdfL) {
                                 if (state.charAt(i) === "1") {
                                     v = $("#filters input:checkbox[name=" + key + "-" + (i + 1) + "]").val();
                                     if (v) {
-                                        vL.push(key + ":" + v);
+                                        $.each(v.split(" or "), function(k, sv){
+                                          vL.push('tags' +  ':"' + sv + '"');
+                                        });
+                                        
                                     }
                                 }
                             }
                             if (vL.length) {
-                                l.push("(" + vL.join("|") + ")");
+                                l.push("(" + vL.join(" OR ") + ")");
                             }
                         }
                     }
@@ -421,15 +387,61 @@ function genGalleryModel(hash, mdfL) {
                 return l.join(".");
             }
 
+            function _getRegionalGroups(groupIds) {
 
-            function _genPartialFieldsForGalleryType(galleryType) {
                 var l = [];
+                if(groupIds) {
+                    $.each(groupIds.split(","), function (i, val) {
+                        l.push('group:"' + val +'"');
+                    });
+                    
+                    return l.join(" OR ");
+                }
+                return ""
+            }
+
+            function _genQueryFieldsForGalleryType(galleryType) {
+                var l = [];
+                var returnQuery = "";
                 if(galleryType != "All"){
-                     var types = gcfg.type[galleryType];
-                     $.each(types.split("|"), function (i, val) {
-                        l.push("agol-itemtype:" + encodeURIComponent(val));
+                     //exclude all other types like arcgis.com is doing
+
+                     var nl = [];
+                     $.each(galleryTypeExcludeList, function (i, val) {
+                        if(i == galleryType) {
+                            $.each(val, function (j, sVal) {
+                                nl.push('-type:"' + sVal + '"');
+                            });
+                        }
                      });
-                     return l.join("|");
+                     if (nl.length) {
+                        returnQuery = nl.join(" ");
+                     }
+
+                     // Get the selected types
+                     var types = galleryTypeList[galleryType];
+
+                     $.each(types, function (i, val) {
+                        l.push('type:"' + val + '"');
+                     });
+
+                     if (l.length) {
+                        //return "(" + l.join(" OR ") + ")";
+                        if(galleryType == "tool" ||  galleryType == "document"){
+                            returnQuery = returnQuery + ' (typekeywords:"' + galleryType + '" OR ' + l.join(" OR ") + ')';
+                        }else{
+                            returnQuery = returnQuery + ' (' + l.join(" OR ") + ')';
+                        }
+                     }
+
+
+
+
+                     /*if (l.length) {
+                        returnQuery = returnQuery + " " + nl.join(" ");
+                     }*/
+
+                     return returnQuery;
                 }
                 return false;
 
@@ -438,65 +450,52 @@ function genGalleryModel(hash, mdfL) {
             /** -- **/
 
             var l = [];
+            var qry = [];
+           
 
-            /* internal flags */
-            l.push("callback=?");
-            l.push("format=jsonp");
-            l.push("event=search.renderSearch");
-            l.push("interfaceName=resourcesbeta");
-            l.push("searchViewname=resourcesbeta_gallery");
-            //l.push("lr=lang_en");
-            l.push("Oe=utf8");
-            l.push("filter=0");
+			l.push("f=json");
+            // Sort by date
+			l.push("sortField=modified");
+            l.push("sortOrder=desc");
+            l.push("start=" + this.startN);
+            l.push("num=" + this.numN);
 
-            // Additional category if any
-            if(gcfg.addlCategory && gcfg.addlCategory != ""){
-                l.push("requiredfields=search-collection:" + gcfg.collection + ".(search-category:" + gcfg.category + "|search-category:" + gcfg.addlCategory +")");
-            } else {
-                l.push("requiredfields=search-collection:" + gcfg.collection + ".search-category:" + gcfg.category);
-            }
-
-			// Sort by date
-			l.push("sort=date:D:S:d1");
-            //l.push("inmeta:la-featured1:1 AND inmeta:last-modified:2012-06-16..");
-
-            /* public flags */
-            
 
 
             if (this.query) {
-                l.push("q=" + encodeURIComponent(this.query));
+                //l.push("q=" + encodeURIComponent(this.query));
+                qry.push(encodeURIComponent(this.query));
             }
 
-            var pfields = _genPartialFields(this.mdf);
-            var typePFields = _genPartialFieldsForGalleryType(this.type);
+            //var typePFields = _genPartialFieldsForGalleryType(this.type);
+								
+				//groups
+            var groups = _getRegionalGroups(this.groupIds)
+            qry.push("(" + groups + ")");
 
-            if (pfields && typePFields){
-                pfields = pfields+".("+typePFields+")";
-            } else if (typePFields){
-                pfields = typePFields;
+            var tags = _genTags(this.mdf);
+            if (tags) {
+                qry.push(tags);
             }
 
-            if(opt && opt.featured){
-                 pfields = (pfields)? pfields + ".(la-featured:yes)" : "(la-featured:yes)";
-                 l.push("start=" + this.fStartN);
-                l.push("num=" + this.fNumN);
-                //l.push("start=" + this.startN);
-                //l.push("num=" + this.numN);
-            }else {
-                 pfields = (pfields)? pfields+".(-la-featured:yes)" : "(-la-featured:yes)";
-                 l.push("start=" + this.startN);
-                l.push("num=" + this.numN);
+            /*if(this.userAccountType() == "org") {
+                qry.push("orgid=" + this.userSessionObj.accountId);
+            }*/
+
+            var typePFields = _genQueryFieldsForGalleryType(this.type);
+            if (typePFields){
+                qry.push(typePFields)
             }
 
-            
-            if (pfields) {
-                l.push("partialfields=" + pfields);
-            }
+            /*if (this.getToken()){
+                l.push("token=" + this.getToken());
+            } else {
+                qry.push('-type:"Service" AND -type: "Feature Collection" AND -type : "Shapefile"');
+                
+            }*/
 
-            l.push("getfields=*");
 
-            return l.join("&");
+            return l.join("&") + "&q=" + qry.join(" ");
         }
 
 
@@ -507,73 +506,97 @@ function genGalleryModel(hash, mdfL) {
 
 function SEData(data) {
 
-    this.hasError = data.haserror;
-    this.errMsg = data.errormessage;
+    //this.hasError = data.haserror;
+    //this.errMsg = data.errormessage;
 
-    var jxon = getXMLData($.parseXML(data.content).documentElement);
+    //var jxon = getXMLData($.parseXML(data.content).documentElement);
+    //var jxon = getXMLData($.parseXML(data.content).documentElement);
 
-    this.estN = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["m"]);
-    this.startI = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["@sn"]);
-    this.endI = (typeof jxon.res === "undefined") ? 0 : parseInt (jxon.res["@en"]);
+    this.estN = (typeof data === "undefined") ? 0 : parseInt (data.total);
+    this.startI = (typeof data === "undefined") ? 0 : parseInt (data.start);
+    this.endI = (typeof data === "undefined") ? 0 : parseInt (data.num);
 
-    this.rowL = (typeof jxon.res === "undefined") ? [] :
-                      ((jxon.res.r instanceof Array) ? jxon.res["r"] : [jxon.res["r"]]);
-
+    this.rowL = (typeof data.results === "undefined") ? [] :
+                      ((data.results instanceof Array) ? data["results"] : [data["results"]]);
 
 
 };
 SEData.prototype.getRow = function (i) {
     return new SERow(this.rowL[i]);
+
+    
 };
 
 
 function SERow(data) {
     this.data = data;
-    this._md = (function (md) {
-        var r = {};
-        /* should limit the key set - only use subset*/
-        if (md) {
-            var i = md.length,
-                v = null;
-
-            while (i--) {
-                v = md[i];
-                r[v["@n"]] = v["@v"];
-            }
-        }
-        return r;
-    })(data["mt"]);
+    
+    //return this.data
 
 }
-SERow.prototype.md = function (key, dval) {
+/*SERow.prototype.md = function (key, dval) {
     return (this._md.hasOwnProperty(key) ? this._md[key] : dval) || dval;
 };
 SERow.prototype.val = function (key, dval) {
     return this.data.hasOwnProperty(key) ? this.data[key] : dval;
 };
+SERow.prototype.id = function () {
+    return "test"
+    return this.md("id", "");
+};*/
 SERow.prototype.agolId = function () {
-    return this.md("agol-item-id", "");
+    return this.data["id"];
 };
 SERow.prototype.agolItemType = function () {
-    var itemType = this.md("agol-itemtype", "");
+    var itemType = this.data["type"] || "None";
 	
 	if (itemType !== "None") {
-        itemType  = (itemType.match(/application/gi)) ? "app" : "map";
+        itemType  = (itemType.match(/Application/gi)) ? "app" : "map";
     }
 	return itemType;
 };
+SERow.prototype.isLoginRequires = function () {
+    var typeKeywords = this.data["typeKeywords"] || false;
+    
+    if (typeKeywords) {
+        typeKeywords  = (typeKeywords.indexOf("Requires Subscription") >=0 || typeKeywords.indexOf("Requires Credits") >=0) ? true : false;
+    }
+    
+    return typeKeywords;
+};
+SERow.prototype.ContentType = function () {
+    var typeKeywords = this.data["typeKeywords"] || false;
+    var contentType = {};
+    
+    if (typeKeywords.indexOf("Requires Subscription") >=0) {
+        contentType['label']  = "Subscriber Content";
+        contentType['title']  = "Included with your ArcGIS Online subscription.";
+        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
+    } else if (typeKeywords.indexOf("Requires Credits") >=0) {
+        contentType['label']  = "Premium Content";
+        contentType['title']  = "Included with your ArcGIS Online subscription and consumes credits.";
+        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
+    }
+    
+    return contentType;
+};
+SERow.prototype.getType = function () {
+    return this.data["type"] || "None";
+};
+SERow.prototype.getTypeKeywords = function () {
+    return this.data["typeKeywords"] || "None";
+};
 SERow.prototype.agolItemUrl = function (agolId) {
-	var itemType = this.agolItemType();
-    /*var host = gcfg.host || "http://www.arcgis.com";
-    return host + "/home/item.html?id=" + agolId;*/
-	return "item/?itemId=" + agolId;
+	return "http://" + window.location.hostname + "/en/living-atlas/item/?itemId=" + agolId;
 };
 SERow.prototype.agolImgUrl = function (agolId) {
-		var imgf = (this.md("agol-large-thumbnail", null) != "None") ? this.md("agol-large-thumbnail", null) : this.md("agol-thumbnail", null),
+		var imgf = (this.data["largeThumbnail"] && this.data["largeThumbnail"] != "") ? this.data["largeThumbnail"] : this.data["thumbnail"],
 		imgurl = gcfg.emptyImgUrl,
-		host = gcfg.host || "http://www.arcgis.com";
+		host = getTier(window.location.hostname).agolHost || "http://www.arcgis.com";
 
-    if (imgf !== "None") {
+    if(imgf == null){
+        imgurl = "http://static.arcgis.com/images/desktopapp.png";
+    }else if (imgf !== "None") {
         imgurl = host + "/sharing/content/items/" + agolId + "/info/" + imgf;
         //console.info(imgurl);
     }
@@ -582,7 +605,7 @@ SERow.prototype.agolImgUrl = function (agolId) {
 };
 
 SERow.prototype.agolTargetUrl = function (itemURL) {
-    var targetURL = this.md("agol-target-url", null);
+    var targetURL = this.data["url"] || null;
 
     if (targetURL == "None" || targetURL == null) {
         targetURL = itemURL ;
@@ -591,14 +614,7 @@ SERow.prototype.agolTargetUrl = function (itemURL) {
 	return targetURL;
 };
 
-SERow.prototype.agolFeaturedItem = function () {
-    var featuredItem = this.md("la-featured", "");
-    
-    if (featuredItem !== "None") {
-        return featuredItem;
-    }
-    return false;
-};
+
 
 function createGalleryShell() {
     var shell = {
@@ -606,8 +622,6 @@ function createGalleryShell() {
         display: null,
         pageNav: null,
         reloadCount: 0,
-        featureddata:null,
-        numberofRegularItemsRequires:0,
 
         init: function (gm) {
             if (gm.query) {
@@ -628,7 +642,7 @@ function createGalleryShell() {
 
         },
 
-        updateGeneralItem: function (gm) {
+        /*updateGeneralItem: function (gm) {
             this.gm = gm;
 
             var vdata = gm.genViewData();
@@ -660,46 +674,96 @@ function createGalleryShell() {
                 }
             });
 
+        },*/
+
+
+        updateRicky: function (){
+            
+                
         },
-
-
         update: function (gm) {
             //this.updateFeatured(gm);
             this.gm = gm;
+            var gs = this
 
-            var vdata = gm.genViewData();
-
-            if (gm.query) {
-                $("#query").val(gm.query);
-            }
-
-            this.updateHash(gm, vdata);
-
-            this._updateFilter(gm);
-
-            // Featured Item
             $.ajax({
-                url: gm.tier.gallery,
-                dataType: "jsonp",
-                context: this,
-                data: vdata.ajaxFeaturedData,
-                timeout: 6000,
-                async: false,
-                beforeSend: function () {
-                    //$("#gl-content").empty();
-                    $("#spinner").show();
-                },
-                success: function (data) {
-                    this.reloadCount += 1
-                    this._setFeaturedData(data, this.gm);
-                    this.updateGeneralItem(gm)
-                    //this._setFeaturedData(data, this.gm);
-                },
-                error: function (xhr, status, err) {
-                    //$("#gl-content").html(gcfg.errorMsg);
-                    //$("#spinner").hide();
+                type: "GET",
+                url: "/apps/proxy/sm-proxy.php?" + gm. agolHost + "/sharing/rest/portals/self?f=json",
+                //data: {"f":"json"},
+                data: {},
+                dataType: "json"
+            }).done(function (msg){
+                regionCode = gm._getAgolPrefRegion() || msg.ipCntryCode;
+                if(regionCode == "WO"){
+                   $("#countryName").hide()
+                }else{
+                   $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
                 }
-            });
+                                         
+                 /*
+                 grouptype == all   then region+world
+                 grouptype == "regional" then regional Only
+                 grouptype == "world" then world only.*/
+                 if(gm.area == "regional"){
+                     ownerName = "(Esri_cy_" + regionCode +")"
+                 } else if(gm.area == "world") {
+                     ownerName = "(esri)"
+                 }else{
+                     ownerName = "(esri OR Esri_cy_" + regionCode +")"
+                 }
+                
+              $.ajax({
+                    type: "GET",
+                    url: gm.agolHost + '/sharing/rest/community/groups',
+                    data: {'f':'json', 'q':'tags:"gallery" AND owner:' + ownerName },
+                    dataType: "json",
+                }).done(function (msg){
+
+                var l = [];
+                for (i = 0, len = msg.results.length; i < len; i++) {
+                    l.push(msg.results[i].id);
+                }
+                gm.groupIds = l.join(",");
+
+
+                // Main ajax call details
+                var vHashdata = gm.genViewData();
+                var vdata = gm.genAJaxParamData();
+
+                if (gm.query) {
+                    $("#query").val(gm.query);
+                }
+
+                gs.updateHash(gm, vHashdata);
+
+                gs._updateFilter(gm);
+
+            
+                $.ajax({
+                    url: gm.agolHost + "/sharing/rest/search" ,
+                    dataType: "json",
+                    context: gs,
+                    data: vdata.ajaxData,
+                    //timeout: 10000,
+                    //async: false,
+                    beforeSend: function () {
+                        $("#spinner").show();
+                    },
+                    success: function (data) {
+                        $("#spinner").hide();
+                        gs._updateModelAndView(data);
+                        gs.reloadCount += 1
+                        gm.queryStatus = "completed";
+                        //this._setFeaturedData(data, this.gm);
+                    },
+                    error: function (xhr, status, err) {
+                        $("#gl-content").html(gcfg.errorMsg);
+                        $("#spinner").hide();
+                    }
+                });
+
+            }); //end of done
+        }); // End of 2nd done
 
         },
 
@@ -740,64 +804,16 @@ function createGalleryShell() {
                 this.display.update(this.gm);
             }
         },
-        _setFeaturedData: function (data,gm){
-            this.featureddata = new SEData(data);
-            this.gm.updateFSEData(this.featureddata);
-            this.numberofRegularItemsRequires = 0;
-
-
-            if(this.featureddata){
-                var totalFeaturedItemPerPage =  this.featureddata.endI-(this.featureddata.startI-1);
-                
-                var totalFeaturedResult = this.featureddata.estN;
-                if(totalFeaturedItemPerPage < gcfg.numN){
-                    this.numberofRegularItemsRequires = gcfg.numN - totalFeaturedItemPerPage;
-                }
-
-                if(this.numberofRegularItemsRequires > 0){
-                    gm.numN = this.numberofRegularItemsRequires;
-                    gm.fNumN = 0;
-                }else{
-                    gm.numN = 0;
-                }
-            }
-
-            //console.log(totalFeaturedItemPerPage+"-"+totalFeaturedResult+"-"+this.numberofRegularItemsRequires);
-
-
-        },
-
-        mergeData: function(gm,sedata){
-            
-            //var totalFeaturedNumber = (this.updateFeatured.estN)?this.updateFeatured.estN:0;
-           if(this.featureddata){
-                var estN = (this.featureddata.estN)?this.featureddata.estN:0;
-                var endI = (this.featureddata.endI)?this.featureddata.endI:0;
-
-                if( this.numberofRegularItemsRequires > 0){
-                    sedata.rowL = this.featureddata.rowL.concat(sedata.rowL); 
-                }else{
-                    sedata.rowL = this.featureddata.rowL;
-                }
-
-                
-            } 
-            return sedata.rowL;
-            
-             
-
-        },
 
         _updateModelAndView: function (data) {
 
             var sedata = new SEData(data);
-
             
 
             this.gm.updateSEData(sedata);
 
             
-            this.gm.sedata.rowL = this.mergeData(this.gm,sedata);
+            //this.gm.sedata.rowL = this.mergeData(this.gm,sedata);
 
 
             if (this.display === null) {
@@ -836,6 +852,8 @@ $(document).ready(function () {
                 gShell.update(gModel);
 
                 evt.stopImmediatePropagation();
+                //$("#search, #gl-search-btn").trigger('click');
+
                 return false;
             }
         },
@@ -848,6 +866,7 @@ $(document).ready(function () {
 
                 gModel.updateQuery();
                 gShell.update(gModel);
+                evt.stopImmediatePropagation();
             }
         },
         "focus": function (evt) {
@@ -889,7 +908,6 @@ $(document).ready(function () {
             gModel.updateSubCat(0);
         }
         //gModel.updatePagination(0);
-        gModel.updateNpp(0);
 		gShell.update(gModel);
     });
 
@@ -902,6 +920,8 @@ $(document).ready(function () {
 
         evt.stopImmediatePropagation();
         return false;
+
+        
     });
 
 	
@@ -925,7 +945,6 @@ $(document).ready(function () {
            var startNumber = $(this).attr("value");
 
             //gModel.updatePagination(startNumber);
-            gModel.updateNpp($(this).attr("value"));
             gShell.update(gModel);
            
                        
@@ -946,7 +965,8 @@ $(document).ready(function () {
 	
 	$(".filter-label").bind("click", function (evt) {
 
-        $("#gl-content").empty();
+        gModel.startN = 0;
+		  $("#gl-content").empty();
         $("#spinner").show();
 				
 		/*if($(this).hasClass('current') && $(this).attr('col') != "All"){
@@ -963,7 +983,6 @@ $(document).ready(function () {
 			
 		//gModel.updatePagination(0);
         gModel.updateSubCat(0);
-        gModel.updateNpp(0);
         gShell.update(gModel);
 		$("#filters input:checkbox").removeAttr('checked');
         $(".reset-filter").css("display","none");
@@ -972,8 +991,11 @@ $(document).ready(function () {
     });
 
     /* Show me section */
-    $(".showme-dropDown").bind("click", function (evt) {
-        $("#showMeFilters").toggle('slow');
+    $("#areaDropDown").bind("click", function (evt) {
+        $("#menutreeArea").toggle('slow');
+    });
+    $("#typeDropDown").bind("click", function (evt) {
+        $("#menutreeType").toggle('slow');
     });
 
     // Tablet/movile view related
@@ -981,16 +1003,39 @@ $(document).ready(function () {
         $("#navFilters").toggle('slow');
     });
     
-    $(".showme-filter-label").bind("click", function (evt) {
+    $("#menutreeArea .showme-filter-label").bind("click", function (evt) {
+		 
+		 gModel.startN = 0;
+		 $("#gl-content").empty();
+       $("#spinner").show();
                 
-        $(".showme-filter-label").each(function (evt){
+        $("#menutreeArea .showme-filter-label").each(function (evt){
+                $(this).removeClass('current');
+            });
+        $(this).addClass("current");
+        gModel.updateArea($(this).attr("type"));
+            
+        //gModel.updatePagination(0);
+        gShell.update(gModel);
+        
+                
+        evt.stopImmediatePropagation();
+        return false;
+    });
+
+    $("#menutreeType .showme-filter-label").bind("click", function (evt) {
+         
+         gModel.startN = 0;
+         $("#gl-content").empty();
+       $("#spinner").show();
+                
+        $("#menutreeType .showme-filter-label").each(function (evt){
                 $(this).removeClass('current');
             });
         $(this).addClass("current");
         gModel.updateType($(this).attr("type"));
             
         //gModel.updatePagination(0);
-        gModel.updateNpp(0);
         gShell.update(gModel);
         
                 
@@ -1001,23 +1046,14 @@ $(document).ready(function () {
     $(window).scroll(function () {
         if ($(document).height() <= $(window).scrollTop() + $(window).height()+300) {
 
-
-
-
-            //alert("End Of The Page");
-             var countMaxN = gModel.maxN;
-            if(gModel.fMaxN > gModel.maxN)
-                gModel.maxN = gModel.fMaxN;
-
             // GSA has browse limit of 1000 results
-            if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.endI < gModel.maxN)) {
+            if ((gModel.queryStatus && gModel.queryStatus == "completed") && (gModel.sedata.rowL.length >= gModel.numN)) {
                 $(".more-spinner").css("display","block");
                 gModel.queryStatus = null;
                 
-                gModel.updateNpp(30);
+                gModel.inc();
                 gShell.update(gModel);
                                
-                
                 return false;
             }
         }
@@ -1030,10 +1066,12 @@ $(document).ready(function () {
  
         if (curHash) {
             var vdata = gModel.genViewData();
- 
+            
+
             if (vdata.hash) {
                 if ("#" + vdata.hash !== curHash) {
                     //debug("curHash=" + curHash);
+                    //$("#gl-content").empty();
                     gModel.updateByHash(curHash);
                     //gShell.update(gModel);
                     if (gModel.query) { $("#gl-cl-btn").show(); }
@@ -1044,13 +1082,14 @@ $(document).ready(function () {
 
     /** init page **/
     try {
-        var initval = "#s=0&n=" + gcfg.numN + "&d=1&filter=0";
+        var initval = "#s=0&n=" + gcfg.numN;
         if (window.location.hash) {
             initval = window.location.hash;
         }
         
         gModel = genGalleryModel(initval, mdfL);
         housekeeping();
+        gModel.startN = 0;
         gShell.init(gModel);
         gShell.update(gModel);
         if (gModel.query) { $("#gl-cl-btn").show(); }
@@ -1079,8 +1118,9 @@ $(document).ready(function () {
     }
 
     function housekeeping(){
-        if(getUrlVars()['col']){
-            var col = getUrlVars()['col'].split(":")[0];
+        if(getUrlVars()['md']){
+            var col = getUrlVars()['md'].split(":")[0];
+				gModel.col = col;
            
            $(".filter-label").removeClass("current");
            $("."+col+"-filter").addClass("current");
@@ -1092,24 +1132,23 @@ $(document).ready(function () {
            
         }
 
-        /* This feature is not available as of now.. It was for show me section only*/
         if(getUrlVars()['type']){
             var type = getUrlVars()['type'];
+
+           $("#menutreeType .showme-filter-label").removeClass("current");
+           $("#menutreeType ."+type+"-showme-filter").addClass("current");
+           $("#menutreeType").css("display","block");
+        }
+
+        if(getUrlVars()['area']){
+            var area = getUrlVars()['area'];
            
-           $(".showme-filter-label").removeClass("current");
-           $("."+type+"-showme-filter").addClass("current");
-           $("#showMeFilters").css("display","block");
+           $("#menutreeArea .showme-filter-label").removeClass("current");
+           $("#menutreeArea ."+area+"-showme-filter").addClass("current");
+           $("#menutreeArea").css("display","block");
 
         }
 
-        if(getUrlVars()['npp'] && getUrlVars()['npp'] > 0){
-            //gModel.updateNpp(getUrlVars()['npp'],true);
-            gModel.startN = 0;
-            gModel.numN = 0;
-            gModel.fStartN = 0;
-            gModel.fNumN = 30;
-
-        }
 		// For safari back button issue.
 		window.onunload = function(){};
 
