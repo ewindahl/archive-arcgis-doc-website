@@ -67,13 +67,13 @@ mobile: true
 		<p data-langlabel="provider-signup-note">We are looking for developers, startups and organizations who want to build great solutions for our users. Tell us who you are and what you're about and we'll help you get started.</p>
 		
 		<div id="sign-up-form-fields">
-		  <form id="sign-up-form" name="signUpForm" method="post" action="http://resources.arcgis.com/apps/contact-us/">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
 			
 			
 			<fieldset id="signup-form-fieldset">
 
 			  <label data-langlabel="company-name" for="company-name">Company Name: </label>
-			  <input type="text" id="firstName" name="firstName">
+			  <input type="text" id="companyName" name="companyName">
 			  <label data-langlabel="first-name" for="first-name">First Name: </label>
 			  <input type="text" id="firstName" name="firstName">
 			  <label data-langlabel="last-name" for="last-name">Last Name: </label>
@@ -84,10 +84,10 @@ mobile: true
 			  <input type="text" id="userPhone" name="userPhone">
 			  <label data-langlabel="comment" for="comment">Tell us about you or your organization: </label>
 			  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
-			  <label data-langlabel="comment" for="comment">Tell us about your solutions or services: </label>
-			  <textarea data-langlabel="comment" placeholder="My services..." name="userComment" id="userComment"></textarea>
-			  <label data-langlabel="comment" for="comment">Website: </label>
-			  <input type="text" id="website" placeholder="http://www.esri.com/" name="http://www.esri.com/">
+			  <label data-langlabel="services" for="services">Tell us about your solutions or services: </label>
+			  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
+			  <label data-langlabel="website" for="website">Website: </label>
+			  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
 			  
 			  <label data-langlabel="feedback-spam-note" for="spam">To help prevent automated spam, enter the numerals provided: </label>
 			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
@@ -99,9 +99,11 @@ mobile: true
 			<input type="hidden" value="internal" name="source" id="source">
 			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
 			<input type="hidden" value="en" name="lg">
+			<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
+			<input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
 			
 			</fieldset>
-			<a class="btn orange" id="sign-up-link" data-langlabel="contact-us">Submit</a>
+			<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">Submit</a>
 			
 		  </form>
 		</div>
