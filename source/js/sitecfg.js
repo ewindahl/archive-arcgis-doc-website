@@ -45,7 +45,8 @@ if(window.location.hostname.match( /(docstg.arcgis.com)/)) {
 		"securedDownloadUrl" : _downloadUrl,
 
 		"searchIfc" : "arcgis_doc_ifce",
-	  	"searchView" : "arcgis_doc_vw"
+	  	"searchView" : "arcgis_doc_vw",
+		"isValidToken" : false
 
 	};
 	
