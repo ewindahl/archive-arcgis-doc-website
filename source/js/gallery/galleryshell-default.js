@@ -46,7 +46,7 @@ function genGalleryModel(hash, mdfL) {
         this.npp = gcfg.numN;
         this.subCat = 0;
         this.agolHost = getTier(window.location.hostname).agolHost;
-        this.userSessionObj = ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : {};
+        this.userSessionObj = ($.cookie('esri_auth') && sitecfg.isValidToken) ? JSON.parse($.cookie('esri_auth')) : {};
         this.groupIds = null;
         this.regionCode = "WO";
         //this.userToken = this.getToken ();
@@ -322,7 +322,7 @@ function genGalleryModel(hash, mdfL) {
         },
 
         this._getAgolPrefRegion = function () {
-                var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
+                var ckObj =  ($.cookie('esri_auth') && sitecfg.isValidToken) ? JSON.parse($.cookie('esri_auth')) : false
                 return (ckObj)?ckObj.region : null;
         },
 
@@ -688,7 +688,7 @@ function createGalleryShell() {
 
             $.ajax({
                 type: "GET",
-                url: "/apps/proxy/sm-proxy.php?" + gm. agolHost + "/sharing/rest/portals/self?f=json",
+                url: gm. agolHost + "/sharing/rest/portals/self?f=json",
                 //data: {"f":"json"},
                 data: {},
                 dataType: "json"
