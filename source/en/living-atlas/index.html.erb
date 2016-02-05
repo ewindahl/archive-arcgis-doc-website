@@ -5,7 +5,6 @@ css:
 
 js:
   - gallery/gallery-init
-  - search/jxon
   - gallery/galleryshell-default
   - gallery/gallerydisplay-default
 
@@ -13,7 +12,7 @@ js:
 metatags:
   - <META name="description" content="Living Atlas of the World"><META name="last-modified" content="2015-06-25"><META name="product" content="living-atlas,arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="gallery"><META name="content_type_label" content="Living Atlas Gallery"><META name="sub_category_label" content=""><META name="search-category" content="gallery-itemtype"><META name="subject_label" content="ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Gallery Item"><META name="subject" content="ARCGIS ONLINE"><META name="content-language" content="en">
 
-gallery_data_path: //blaster/N/DesktopHelp/rc/living-atlas-agol=en.xml
+gallery_data_path: data/gallery/living-atlas-agol=en.xml
 expanded_gallery: true
 ---
 
@@ -21,6 +20,7 @@ expanded_gallery: true
   <div class="container">
     <header>
       <h1><a href="/en/living-atlas/">Living Atlas of the World</a></h1>
+	  
 	  <form target="_top" id="gallerySearchForm" autocomplete="off">
         <input type="search" placeholder="" id="query" class="leader" name="q">
         <h5 id="gl-cl-btn" class="icon-cancel"></h5>
@@ -28,11 +28,15 @@ expanded_gallery: true
 		<!--<input type="submit" value="" id="search1">-->
       </form>
 	  
-	  <!--<div id="gl-s-ctrl">
-      <input type="search" value="" autocomplete="off" name="query" id="query">
-	  
-    </div>-->
     </header>
+	 <nav>
+      <ul>
+        <li> <a href="/en/living-atlas/about/"> Home </a> </li>
+        <li> <a href="/en/living-atlas/use/"> Use </a> </li>
+        <li> <a href="/en/living-atlas/contribute/"> Contribute </a> </li>
+		<li class="current"> <a href="/en/living-atlas/"> Browse </a> </li>
+      </ul>
+    </nav>
   </div>
 </div>
 
