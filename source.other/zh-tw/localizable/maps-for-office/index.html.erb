@@ -46,8 +46,8 @@ mobile: true
     <div class="column-16 tablet-column-24">
         <header>
 		<h2 id="appTitle">下載應用程式</h2>
-        <span id="appVersion"><strong>版本:</strong> 4.0</span>
-        <span id="appReleased"><strong>上市日期:</strong> 2016 年春季</span>
+        <span id="appVersion"><strong>版本: </strong>4.0</span>
+        <span id="appReleased"><strong>上市日期: </strong>2016 年春季</span>
 
           <p>使用位置驅動型分析增加生產力。將全新的分析規模帶到 Microsoft Office。開始獲得全新的洞察力並立即制訂更明智的決策。將地圖輕鬆地新增至 Excel 試算表和 PowerPoint 簡報。</p>
 
@@ -179,7 +179,7 @@ mobile: true
 		</h3>
 			<div exp1='yes' style="display:none;padding:0 15px;">
 			<p>ArcGIS Maps for Office 需要 ArcGIS 組織和 Microsoft Office Excel 或 PowerPoint 的帳號 (Microsoft Office 2010、2013 或 2016)。</p>
-			<p>有關詳細資訊，包括所需的處理器速度、記憶體及硬碟空間，請參閱以下的系統需求：
+			<p>如需其它資訊，包括必要的處理器速度、記憶體與硬碟空間，請參閱以下的系統要求：
 			<ul>
 				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
 				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
@@ -192,14 +192,16 @@ mobile: true
 
 		<!-- Req'd SW -->
 		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">所需軟體</a>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Required software</a>
 		</h3>
 			<div exp2='yes' style="display:none;padding:0 15px;">
 			<p>ArcGIS Maps for Office 需要 <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> 組織訂閱或內部的 Portal for ArcGIS 部署。假設 ArcGIS 管理員已妥善配置存取平台所用的驗證方法。</p>
 
-			<p>此外，必須在系統上安裝和配置下列軟體：</p>
+			<p>此外，您的系統上必須安裝與配置以下軟體：</p>
 				<ul>
-					<li>Microsoft Office 2010、2013 或 2016</li>
+					<li>Microsoft Office 2010、2013 或 2016*</br>
+						* ArcGIS Maps for Office 支援 Microsoft Office 2016 版本 16.0.4266.1003 和之前版本。
+					</li>
 					<li>Internet Explorer 9、10 或 11*</li>
 					<li>Microsoft Windows。支援的版本：
 						<ul>
@@ -213,7 +215,7 @@ mobile: true
 						</ul>
 					</li>
 				</ul>
-			<p>* ArcGIS Maps for Office 使用 Web 瀏覽器中的 JavaScript 顯示地圖。由於 Microsoft Excel 需要使用 Internet Explorer (IE) 顯示 Web 內容，因此不能選擇使用其他瀏覽器。此應用程式內的功能需要使用 IE9 或更高版本的瀏覽器；不支援舊版本。</p>
+			<p>** ArcGIS Maps for Office 使用 Web 瀏覽器中的 JavaScript 顯示地圖。由於 Microsoft Excel 需要使用 Internet Explorer (IE) 顯示 Web 內容，因此不能選擇使用其他瀏覽器。此應用程式內的功能需要使用 IE9 或更高版本的瀏覽器；不支援舊版本。</p>
 			</div>
 			
 		<!-- Supported languages -->
@@ -224,7 +226,7 @@ mobile: true
 			<p>ArcGIS Maps for Office 可使用下列語言版本：</p>
 			<p>阿拉伯語、中文（簡體）、繁體中文（香港）、繁體中文（台灣）、捷克語、丹麥語、德語、希臘語、英語、西班牙語、愛沙尼亞語、芬蘭語、法語、希伯來語、義大利語、日語、韓語、立陶宛語、拉脫維亞語、荷蘭語、挪威語、波蘭語、葡萄牙語（巴西）、葡萄牙語（葡萄牙）、羅馬尼亞語、俄語、瑞典語、泰語、土耳其語和越南語。</p>
 			
-			<p>ArcGIS Maps for Office 使用在 Excel 選項中指定的語言，而非作業系統的文化設定中的語言。如果使用了不受支援的語言，則應用程式將使用英文。</p>
+			<p>ArcGIS Maps for Office 使用在 Excel 選項中指定的語言，而非作業系統的文化設定中的語言。如果您使用未支援的語言，應用程式會使用英文。</p>
 			
 			</div>
 
@@ -242,7 +244,7 @@ mobile: true
             <li><a href="#supportedEnvironments">支援的環境</a></li>
 			<li>舊版本的說明：
 				<ul>
-					<li>連結至封存的 3.1 說明</li>
+					<li><a href="/zh-tw/maps-for-office/3.1/welcome.htm">3.1 版說明</a></li>
 				</ul>
 			</li>
 			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">觀看影片</a></li>
@@ -267,7 +269,8 @@ mobile: true
 
 	 
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script> <script type="text/javascript">
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+<script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
