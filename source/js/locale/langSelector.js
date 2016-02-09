@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/)/)){
   return;
   }
   
