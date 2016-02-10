@@ -1,0 +1,228 @@
+---
+title: Web AppBuilder for ArcGIS
+css:
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - video-init
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - sitecfg.js
+
+metatags:
+  - <META name="description" content="Web AppBuilder for ArcGIS"><META name="last-modified" content="2014-9-18"><META name="product" content="web-appbuilder"><META name="sub_category" content="Web AppBuilder"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Web AppBuilder"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="ko">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ko/web-appbuilder/">Web AppBuilder for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Web AppBuilder ">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="web-appbuilder" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	 <nav>
+      <ul>
+        <li class='current'><a href="/ko/web-appbuilder/">홈</a></li>
+        <li><a href="/ko/web-appbuilder/create-apps/">앱 생성</a></li>
+        <li><a href="/ko/web-appbuilder/manage-apps/">앱 관리</a></li>
+        <li><a href="/ko/web-appbuilder/extend-apps/">앱 확장</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+  <div class="column-16 tablet-column-24"> 
+
+    <h3 class="gray">모든 기기에서 실행되는 강력한 GIS 앱을 생성합니다. 코딩은 필요하지 않습니다.</h3>
+	<h5>다른 사용자들이 생성한 앱을 확인하려면 <a href="http://www.arcgis.com/apps/MapAndAppGallery/index.html?appid=1e3085af6e1a48c8908fa624bdfef768">실시간 사이트 쇼케이스</a>를 클릭하세요.</h5>
+  
+    <hr />
+
+        <div id="firstApp" class="column-12 phone-column-24">
+          <img src="img/builder-firstapp.jpg" />
+          <p></p>
+
+          <h3>단 5분 안에 첫 번째 앱 생성</h3>
+          
+          <p>
+            <a href="/ko/web-appbuilder/create-apps/make-first-app.htm" class="icon-right-arrow">&nbsp;방법 보기</a>
+          </p>
+        </div>
+
+        <div id="easyConfig" class="column-12 phone-column-24">
+          <img src="img/builder-widgets.jpg" />
+          <p></p>
+
+          <h3>편리한 구성</h3>
+          <p>간단한 구성 빌더 환경에서 응용프로그램을 생성합니다.</p>
+          <p>
+            <a href="/ko/web-appbuilder/create-apps/themes-tab.htm" class="icon-right-arrow">&nbsp;앱 구성</a>
+            <a href="/ko/web-appbuilder/create-apps/widget-attribute-table.htm" class="icon-right-arrow">&nbsp;위젯 구성</a>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="customTemplates" class="column-12 phone-column-24">
+          <img src="img/builder-template.jpg" />
+          <p></p>
+
+          <h3>템플릿 내보내기</h3>
+          <p>내 기관 응용프로그램 갤러리에 추가되는 구성 설정 응용프로그램 템플릿을 생성합니다. 
+          <p>
+            <a href="/ko/web-appbuilder/manage-apps/export-as-template.htm" class="icon-right-arrow">&nbsp;방법 보기</a>
+          </p>
+        </div>
+
+        <div id="customize" class="column-12 phone-column-24">
+          <img src="img/builder-customize-encinitas.jpg" />
+          <p></p>
+
+          <h3>위젯 및 테마 생성</h3>
+          <p>웹 서버에 앱을 다운로드하고 호스팅할 수 있습니다. 또한 사용자 정의 위젯 및 테마를 추가하여 앱을 확장할 수 있습니다.</p>
+          <p>
+            <a href="/ko/web-appbuilder/extend-apps/" class="icon-right-arrow">&nbsp;방법 보기</a>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+		
+
+        <a name="supportedBrowsers"></a>
+        <h2 class="divider">지원되는 브라우저</h2>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari 3 이상</li>
+		  <li>Edge</li>
+          <li>Internet Explorer 9 이상</li>
+        </ul>
+        
+        <a name="license"></a>
+        <h2 class="divider">라이선스</h2>
+
+        <p>Web Appbuilder를 사용하려면 ArcGIS 기관 계정이 있어야 합니다. </p>
+
+        <a name="features"></a>
+        <h2 class="divider">주요 기능</h2>
+        <ul>
+          <li>모든 기기에서 실행되는 HTML/JavaScript 앱을 생성합니다.</li>
+          <li>즉시 사용 가능한 위젯을 사용하여 필요한 앱을 생성합니다.</li>
+          <li>구성 설정 테마로 앱의 모양을 사용자 정의합니다.</li>
+          <li>앱을 온라인에 호스팅하거나 서버에서 실행합니다.</li>
+          <li>사용자 정의 앱 템플릿을 생성합니다.</li>
+        </ul>
+        
+
+         <a name="whatIsNew"></a>
+        <h2 class="divider">새로운 기능</h2>
+        <p>Web AppBuilder for ArcGIS는 2015년 11월에 업데이트되었습니다. 이 버전에는 다음과 같은 새 기능과 개선 사항이 포함되어 있습니다.</p>
+        <ul>
+          <li>이제는 맵 범위와 레이어 가시성 등의 앱 상태가 브라우저를 닫을 때 자동으로 저장됩니다.</li>
+          <li>ArcGIS for Server의 웹 티어 보안 서비스가 완벽하게 지원됩니다.</li>
+          <li>새로운 URL 매개변수 6개를 사용하면 위치나 피처를 찾고, 로그인을 제공하고, 피처를 쿼리하고, 포인트를 추가하고, 로캘을 전환하고, 맵을 확대/축소하거나 이동하기 위한 WKID를 지정할 수 있습니다.</li>
+          <li>새로운 속성 일괄처리 편집기 위젯을 사용하면 여러 속성을 동시에 편집할 수 있습니다.</li>
+          <li>새로운 검토자 대시보드 위젯에 보여지는 데이터 품질 결과 통계가 인포그래픽 원형 차트에 나와 있으며 GIS 데이터에서 식별된 데이터 품질 문제가 막대형 차트에 요약되어 있습니다.</li>
+          <li>새로운 피처 보고서 위젯을 사용하면 사용자로부터 데이터 품질 피드백을 수집하여 관리할 수 있습니다.</li>
+		  <li>새로운 이미지 측정 위젯을 사용하면 측정 기능을 사용하여 이미지 서비스에서 측정을 수행할 수 있습니다.</li>
+          <li>검색 위젯에는 모든 검색 원본에 대해 플레이스 홀더 텍스트를 추가하고 현재 맵 범위별로 검색하는 옵션이 있습니다.</li>
+          <li>속성 테이블 위젯은 맵에서 레이어가 변경되면 그에 따라 레이어를 업데이트합니다.</li>
+		  <li>편집 위젯이 맵에 구성된 편집 가능한 속성을 그대로 적용합니다.</li>
+		  <li>좌표 위젯으로 좌표 텍스트를 더욱 쉽게 읽을 수 있습니다.</li>
+		  <li>스플래시 위젯이 사용자 지정 배경색을 제공합니다.</li>
+		  <li>쿼리 위젯이 결과에서 릴레이트된 테이블을 쿼리하고 릴레이트된 피처를 보여 주는 기능을 지원합니다.</li>
+		  <li>지오프로세싱 위젯에 테이블 결과를 사용자 지정하고 CSV, Feature Collection, GeoJSON으로 내보내는 옵션이 있습니다.</li>
+		  <li>길찾기 위젯에서 교통량 레이어를 URL을 가지고 구성할 수 있습니다.</li>
+		  <li>웹 맵 선택 창에서 가장 최근 항목, 가장 많이 본 항목, 가장 평점이 높은 항목, 제목, 소유자 등에 따라 맵을 정렬하는 기능을 제공합니다.</li>
+		  
+        </ul>
+
+         <a name="supportedAPI"></a>
+        <h2 class="divider">ArcGIS API for JavaScript의 지원되는 버전</h2>
+        <p>Web AppBuilder는 ArcGIS API for JavaScript 3.15를 지원합니다.</p>
+
+        <h3>지원되는 언어</h3>
+        <p> 아랍어, 체코어, 덴마크어, 네덜란드어, 영어, 에스토니아어, 핀란드어, 프랑스어, 독일어, 그리스어, 히브리어, 이탈리아어, 일본어, 한국어, 라트비아어, 리투아니아어, 노르웨이어, 폴란드어, 포르투갈어(브라질), 포르투갈어(포르투갈), 루마니아어, 러시아어, 중국어(간체), 스페인어, 스웨덴어, 태국어, 중국어(번체, 대만), 중국어(번체, 홍콩), 터키어와 베트남어를 지원합니다.</p>
+        <p>앱에서 사용되는 언어는 브라우저의 언어 설정에 따라 결정됩니다.</p>
+
+        <p><a href="http://ideas.arcgis.com/">아이디어</a>를 공유하고 <a href="http://support.esri.com/en/">피드백을 보내 주세요</a>.</p>
+  
+        <p>&nbsp;</p>
+
+  </div> 
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+          <h3>세부정보</h3>
+          
+          <h4><a href="#features">주요 기능</a></h4>
+          <h4><a href="#supportedBrowsers">지원되는 브라우저</a></h4>
+          <h4><a href="#license">라이선스</a></h4>
+          <h4><a href="#whatIsNew">새로운 기능</a></h4>
+          <h4><a href="#supportedAPI">ArcGIS API for JavaScript의 지원되는 버전</a></h4>
+          
+        </div>
+
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>Esri 블로그</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+          <a href="http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/" class="btn secondary">추가 블로그 게시물</a>
+        </div>
+
+        <br />
+     
+        <section id="forum-container">
+        <div class="panel">
+        <h3>GeoNet에서 토론</h3>
+        <div id="forum"></div>
+        <a href="https://geonet.esri.com/discussion/create.jspa?containerType=14&containerID=2150" class="btn secondary">시작</a>&nbsp; <a href="https://geonet.esri.com/community/gis/web-gis/web-appbuilder/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="btn light">자세한 내용</a>
+        </div>
+        </section> 
+
+      </div>
+</div>
+
+
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/feed/',
+        max: 2,
+        layout: 0
+      });
+
+      $("#forum").rssFeed({
+       url:"https://geonet.esri.com/view-browse-feed.jspa?containerType=14&browseSite=place-content&filterID=contentstatus[published]~objecttype~objecttype[thread]&userIDs=-1&browseViewID=placeContent&containerID=2150", 
+       max: 3,        
+       layout: 1
+      }); 
+
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>
