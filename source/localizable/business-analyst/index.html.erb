@@ -32,9 +32,10 @@ mobile: true
 	<nav>
       <ul>
         <li class='current'><a href="/en/business-analyst/">Home</a></li>
+        <li><a href="/en/business-analyst/web/">Web</a></li>
         <li><a href="/en/business-analyst/desktop/">Desktop</a></li>
-        <li><a href="/en/business-analyst/web/">Web app</a></li>
-        <li><a href="/en/business-analyst/mobile/">Mobile app</a></li>
+        <li><a href="/en/business-analyst/server/">Server</a></li>
+        <li><a href="/en/business-analyst/mobile/">Mobile</a></li>
       </ul>
     </nav>
   </div>
@@ -46,12 +47,33 @@ mobile: true
      <div class="column-16 tablet-column-24">
         <header>
 
-		  <h2 id="appTitle">Explore the possibilities</h2>
+		  <h2 id="appTitle">Location-driven market insights</h2>
           <!-- <span id="appVersion"><strong>Version:</strong> 5.1</span>
           <span id="appReleased"><strong>Updated:</strong> Mar 2016</span> -->
 
 
-          <p>Business Analyst applies GIS technology to extensive demographic, consumer spending, and business data to deliver on-demand analysis, presentation-ready reports and maps. Select from a wide variety of existing reports, or create custom reports to meet your marketing needs.</p>
+	    <p>Esri Business Analyst helps you make smarter market planning, site selection, and customer segmentation decisions by combining demographic, lifestyle, behavioral, and spending data, maps and reports with location-driven analytics.</p>
+	    <p>Esri Business Analyst comes with spatial analysis tools including drive-time, consumer profiling, trade area cannibalization, and sales forecasting and global data that covers over 90% of world's population in 135+countries with 15,000+ variables on market data. It is available wherever you need it, on any device, anywhere, anytime.</p>
+	    <p>Choose the product implementation that you need help for:
+			<ul>
+				<table style="margin-left:50px;width:500px;height:100px;font:24px calibri;">
+					<tr>
+						<td style="text-align: center;">
+							<img src="web-icon.png"></br>Web
+						</td>
+						<td style="text-align: center;">
+							<img src="desktop-icon.png"></br>desktop
+						</td>
+						<td style="text-align: center;">
+							<img src="server-icon.png"></br>server
+						</td>
+						<td style="text-align: center;">
+							<img src="mobile-icon.png"></br>mobile
+						</td>
+					</tr>
+				</table>
+			</ul>
+		</p>
 
           <!-- <p>
              <a  class="btn secondary" href="http://bao.arcgis.com" target="_blank">Sign in to Business Analyst</a>
@@ -92,12 +114,12 @@ mobile: true
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/business-analyst/feed/',
-        max: 3,
+        max: 1,
         layout: 0
       });
 	
       $('#forum').rssFeed({        url:'https://geonet.esri.com/community/feeds/search?q=business+analyst&sort=updatedDesc&resultTypes=discussion',
-        max: 5,
+        max: 1,
         layout: 1
       });
     });
