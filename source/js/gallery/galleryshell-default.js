@@ -43,6 +43,7 @@ function genGalleryModel(hash, mdfL) {
 		this.col = "All"; //decoded value
         this.type = "All";
         this.area = "All";
+        this.rgnCode = null;
         this.npp = gcfg.numN;
         this.subCat = 0;
         this.agolHost = getTier(window.location.hostname).agolHost;
@@ -159,6 +160,14 @@ function genGalleryModel(hash, mdfL) {
                 this.area = "All";
             }
 
+            if (o.rgnCode) {
+                this.rgnCode = decodeURIComponent(o.rgnCode);
+                this.area = "regional"
+            } else {
+                this.rgnCode = null;
+            }
+            
+
             if (o.md) {
                 this._setMdf(o.md);
             } else {
@@ -243,6 +252,10 @@ function genGalleryModel(hash, mdfL) {
 
         this.updateArea = function (area) {
             this.area = area;
+        }
+
+        this.updateRegionCode = function (rgnCode) {
+            this.rgnCode = rgnCode;
         }
 
         this.updateSubCat = function (subCat) {
@@ -346,6 +359,10 @@ function genGalleryModel(hash, mdfL) {
             l.push("subCat=" + this.subCat);
             l.push("type=" + this.type);
             l.push("area=" + this.area);
+            if (this.rgnCode){
+                l.push("rgnCode=" + this.rgnCode);
+            }
+            
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -691,15 +708,18 @@ function createGalleryShell() {
                 url: gm. agolHost + "/sharing/rest/portals/self?f=json",
                 //data: {"f":"json"},
                 data: {},
-                dataType: "json"
+                dataType: "jsonp"
             }).done(function (msg){
-                regionCode = gm._getAgolPrefRegion() || msg.ipCntryCode;
+                regionCode = gm.rgnCode || gm._getAgolPrefRegion() || msg.ipCntryCode;
+
                 if(regionCode == "WO"){
-                   $("#countryName").hide()
+                   $(".world-showme-filter").hide()
                 }else{
-                   $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
+                    $(".world-showme-filter").show()
                 }
-                                         
+                $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
+                $("#countryName").attr("code",regionCode);
+                                                         
                  /*
                  grouptype == all   then region+world
                  grouptype == "regional" then regional Only
@@ -716,7 +736,7 @@ function createGalleryShell() {
                     type: "GET",
                     url: gm.agolHost + '/sharing/rest/community/groups',
                     data: {'f':'json', 'q':'tags:"gallery" AND owner:' + ownerName },
-                    dataType: "json",
+                    dataType: "jsonp",
                 }).done(function (msg){
 
                 var l = [];
@@ -741,7 +761,7 @@ function createGalleryShell() {
             
                 $.ajax({
                     url: gm.agolHost + "/sharing/rest/search" ,
-                    dataType: "json",
+                    dataType: "jsonp",
                     context: gs,
                     data: vdata.ajaxData,
                     //timeout: 10000,
@@ -1042,6 +1062,38 @@ $(document).ready(function () {
         evt.stopImmediatePropagation();
         return false;
     });
+
+    
+    $("#reference-index").on("click", ".item-regionCode", function (evt) {
+    //$(".item-regionCode").bind("click",function (evt){
+       gModel.startN = 0;
+       $("#gl-content").empty();
+       $("#spinner").show();
+
+        gModel.updateRegionCode($(this).attr("code"));
+        $("#regionList").toggle();
+        gShell.update(gModel);
+        evt.stopImmediatePropagation();
+        return false;
+    });
+
+    $("#regionList").hide()
+    $(".change-region").bind("click",function (evt){
+        $("#regionList").html(regionList()).toggle();
+    });
+
+    function regionList () {
+        var vL = [],
+        itemStatus = "";
+        vL.push('<div class="dropdown-menu"><ul>')
+        $.each(conuntryCodeMapping, function(k, v){
+            itemStatus = (k == $("#countryName").attr("code"))?"current":""
+            vL.push('<li><label class="item-regionCode ' + itemStatus + '" code="'+k+'">' + v +  '</label></li>');
+        });
+        vL.push('</ul></div>')
+
+        return vL.join(" ");
+    }
 
     $(window).scroll(function () {
         if ($(document).height() <= $(window).scrollTop() + $(window).height()+300) {
