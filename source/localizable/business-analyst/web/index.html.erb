@@ -253,10 +253,34 @@ mobile: true
         </div>
 
         <br />
+        <br />
 		
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>From our blog</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+          <a href="http://blogs.esri.com/esri/arcgis/tag/ba-web/" class="btn secondary">More Blog Posts</a>
+        </div>
+	
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+	<script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/ba-web/feed/',
+        max: 3,
+        layout: 0
+      });
+	});
+	
+	/*
+	N = # of article shown (default is 2)
+	L = 0, 1 (default is 0)
+	*/
+
+  </script>	
 
  </div>
 
-    </div>
-	
-	
+</div>
