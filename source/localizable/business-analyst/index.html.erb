@@ -88,17 +88,7 @@ mobile: true
       <div class="column-8 tablet-column-24 blocks">
 
         <br />
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
-          <a href="http://blogs.esri.com/esri/arcgis/tag/business-analyst/" class="btn secondary">More Blog Posts</a>
-        </div>
-		<p>&nbsp;</p>
-			
-		<!-- Forum Feed -->
+        <!-- Forum Feed -->
         <div class="greyFrame">
           <h3 title="GeoNet - The Esri Community">User Forum Posts</h3>
           <div id="forum">
@@ -110,13 +100,8 @@ mobile: true
 	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
 	<script type="text/javascript">
     $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/business-analyst/feed/',
-        max: 1,
-        layout: 0
-      });
-	
-      $('#forum').rssFeed({        url:'https://geonet.esri.com/community/feeds/search?q=business+analyst&sort=updatedDesc&resultTypes=discussion',
+      $('#forum').rssFeed({        
+		url:'https://geonet.esri.com/community/feeds/search?q=business+analyst&sort=updatedDesc&resultTypes=discussion',
         max: 1,
         layout: 1
       });
