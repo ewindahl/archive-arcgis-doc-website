@@ -50,6 +50,7 @@ function genGalleryModel(hash, mdfL) {
         this.userSessionObj = ($.cookie('esri_auth') && sitecfg.isValidToken) ? JSON.parse($.cookie('esri_auth')) : {};
         this.groupIds = null;
         this.regionCode = "WO";
+        this.defaultRgnCode = "";
         //this.userToken = this.getToken ();
 
         this.init = function (hash) {
@@ -359,7 +360,7 @@ function genGalleryModel(hash, mdfL) {
             l.push("subCat=" + this.subCat);
             l.push("type=" + this.type);
             l.push("area=" + this.area);
-            if (this.rgnCode){
+            if (this.rgnCode && this.area != "world" & this.area != "All"){
                 l.push("rgnCode=" + this.rgnCode);
             }
             
@@ -711,6 +712,7 @@ function createGalleryShell() {
                 dataType: "jsonp"
             }).done(function (msg){
                 regionCode = gm.rgnCode || gm._getAgolPrefRegion() || msg.ipCntryCode;
+                gm.defaultRgnCode = gm._getAgolPrefRegion() || msg.ipCntryCode;
 
                 if(regionCode == "WO"){
                    $(".world-showme-filter").hide()
@@ -724,9 +726,9 @@ function createGalleryShell() {
                  grouptype == all   then region+world
                  grouptype == "regional" then regional Only
                  grouptype == "world" then world only.*/
-                 if(gm.area == "regional"){
+                 if(gm.area == "regional" && regionCode != "WO"){
                      ownerName = "(Esri_cy_" + regionCode +")"
-                 } else if(gm.area == "world") {
+                 } else if(gm.area == "world" || (gm.area == "regional" && regionCode == "WO")) {
                      ownerName = "(esri)"
                  }else{
                      ownerName = "(esri OR Esri_cy_" + regionCode +")"
@@ -1084,11 +1086,16 @@ $(document).ready(function () {
 
     function regionList () {
         var vL = [],
-        itemStatus = "";
+        itemStatus = (gModel.defaultRgnCode == $("#countryName").attr("code"))?"current":"";
+
         vL.push('<div class="dropdown-menu"><ul>')
+        vL.push('<li><label class="item-regionCode ' + itemStatus + '" code="'+gModel.defaultRgnCode+'">' + conuntryCodeMapping[gModel.defaultRgnCode] +  ' (Default)</label></li>');
         $.each(conuntryCodeMapping, function(k, v){
-            itemStatus = (k == $("#countryName").attr("code"))?"current":""
-            vL.push('<li><label class="item-regionCode ' + itemStatus + '" code="'+k+'">' + v +  '</label></li>');
+            itemStatus = (k == $("#countryName").attr("code"))?"current":"";
+            if(k != "WO" && k != gModel.defaultRgnCode){
+                vL.push('<li><label class="item-regionCode ' + itemStatus + '" code="'+k+'">' + v +  '</label></li>');
+            }
+            
         });
         vL.push('</ul></div>')
 
