@@ -73,6 +73,16 @@ $(document).ready(function() {
       return "www.arcgis.com";
     }
   }
+  
+  function  showSignInLink () {
+    $("#logged-in-navigation").addClass ("hide");
+  	
+    $("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
+
+    if ($.cookie && $.cookie ("esri_auth_extn")) {
+      $.removeCookie ("esri_auth_extn", {domain: '.arcgis.com', path:"/"});
+    }
+  }
 
   /* login */
   var ckKey = "esri_auth",
@@ -87,8 +97,6 @@ agolLogout
 */
 
   if (cookie) {
-  	$("#logged-out-navigation").addClass ("hide");
-  	$("#logged-in-navigation").removeClass ("hide");
 
         var avatarurl = "/img/no-user-thumb.jpg",
             avatar = "<img width='16px' height='16px' alt='' src='" + avatarurl +"' />";
@@ -106,10 +114,19 @@ agolLogout
 
 	    var proxyURL = (navigator.userAgent.match(/msie/i)) ? "/apps/proxy/proxy.php?" : "";
 		 
+		 $.ajaxSetup({async:false});
 		 $.getJSON(proxyURL + "https:"+portalHostname + "/sharing/rest/portals/self?Duration=0", params, function (data) {
       		var firstName = getUserDisplayName(data && data.user),        
               orgHostname = getOrgHostname (data),   
   	       		text = firstName || "SIGN IN";
+					if(data.error){
+						showSignInLink();
+						return;
+					}
+					sitecfg["isValidToken"] = true;
+					$("#logged-out-navigation").addClass ("hide");
+					$("#logged-in-navigation").removeClass ("hide");
+					
 
       		//$(".result").html(text);
 	        $("#logged-in-navigation > a").html (avatar+"<span>"+ text +"</span>");
@@ -145,30 +162,13 @@ agolLogout
         }
       }
   
-    	});
+    	}).fail(function() {
+			showSignInLink();
+		});
+		$.ajaxSetup({async:true});
 
-      /*$("#agolLogout").on ("click", function() {
-        cookie.jar.removeItem (ckKey, "/", ".arcgis.com");
-        window.location.reload(true);
-      });*/
-
-  /*	
-        if (cookie.val["role"] && cookie.val["role"].indexOf ("admin")>=0) {
-          $(".myconsole").css ("display", "block");
-
-          $linkL.eq(0).on ("click", function() {
-    	     });
-        }
-    */    
-       
   } else {  	
-  	$("#logged-in-navigation").addClass ("hide");
-  	
-    $("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
-
-    if ($.cookie && $.cookie ("esri_auth_extn")) {
-      $.removeCookie ("esri_auth_extn", {domain: '.arcgis.com', path:"/"});
-    }
+  	showSignInLink();
   }
 
 

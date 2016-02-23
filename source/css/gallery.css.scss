@@ -1328,6 +1328,25 @@ li .current + ol > li
 	display: none
 }
 
+.change-region {
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    font-weight: 200;
+    position: relative;
+    text-align: center;
+    top: -32px;
+    width: 50px;
+}
+
+#regionList ul {
+	background-color:#FFFFFF;
+	overflow: auto;
+	max-height: 250px;
+	width: 285px;
+}
+
 .showme-dropDown {
     background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 rgba(0, 0, 0, 0);
     border-radius: 18px;
@@ -1355,8 +1374,8 @@ li .current + ol > li
 	/*display: none;*/
 }
 
-#showMeFilters ol li label:hover {
-	background:none repeat scroll 0 0 #007AC2;
+#showMeFilters ol li label:hover, #regionList ul li:hover {
+	background:none repeat scroll 0 0 #10a6ff;
 	color: #FFFFFF
 }
 
@@ -1386,6 +1405,9 @@ li .current + ol > li
 @-moz-document url-prefix() { 
   .reset-filter {
      margin-top: -25px;
+  }
+  .change-region {
+     /*margin-top: -25px;*/
   }
 }
 

@@ -43,12 +43,14 @@ function genGalleryModel(hash, mdfL) {
 		this.col = "All"; //decoded value
         this.type = "All";
         this.area = "All";
+        this.rgnCode = null;
         this.npp = gcfg.numN;
         this.subCat = 0;
         this.agolHost = getTier(window.location.hostname).agolHost;
-        this.userSessionObj = ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : {};
+        this.userSessionObj = ($.cookie('esri_auth') && sitecfg.isValidToken) ? JSON.parse($.cookie('esri_auth')) : {};
         this.groupIds = null;
         this.regionCode = "WO";
+        this.defaultRgnCode = "";
         //this.userToken = this.getToken ();
 
         this.init = function (hash) {
@@ -159,6 +161,14 @@ function genGalleryModel(hash, mdfL) {
                 this.area = "All";
             }
 
+            if (o.rgnCode) {
+                this.rgnCode = decodeURIComponent(o.rgnCode);
+                this.area = "regional"
+            } else {
+                this.rgnCode = null;
+            }
+            
+
             if (o.md) {
                 this._setMdf(o.md);
             } else {
@@ -245,6 +255,10 @@ function genGalleryModel(hash, mdfL) {
             this.area = area;
         }
 
+        this.updateRegionCode = function (rgnCode) {
+            this.rgnCode = rgnCode;
+        }
+
         this.updateSubCat = function (subCat) {
             this.subCat = subCat;
         }
@@ -322,7 +336,7 @@ function genGalleryModel(hash, mdfL) {
         },
 
         this._getAgolPrefRegion = function () {
-                var ckObj =  ($.cookie('esri_auth')) ? JSON.parse($.cookie('esri_auth')) : false
+                var ckObj =  ($.cookie('esri_auth') && sitecfg.isValidToken) ? JSON.parse($.cookie('esri_auth')) : false
                 return (ckObj)?ckObj.region : null;
         },
 
@@ -346,6 +360,10 @@ function genGalleryModel(hash, mdfL) {
             l.push("subCat=" + this.subCat);
             l.push("type=" + this.type);
             l.push("area=" + this.area);
+            if (this.rgnCode && this.area != "world" & this.area != "All"){
+                l.push("rgnCode=" + this.rgnCode);
+            }
+            
 
             if (this.query) {
                 l.push("q=" + encodeURIComponent(this.query));
@@ -688,25 +706,29 @@ function createGalleryShell() {
 
             $.ajax({
                 type: "GET",
-                url: "/apps/proxy/sm-proxy.php?" + gm. agolHost + "/sharing/rest/portals/self?f=json",
+                url: gm. agolHost + "/sharing/rest/portals/self?f=json",
                 //data: {"f":"json"},
                 data: {},
-                dataType: "json"
+                dataType: "jsonp"
             }).done(function (msg){
-                regionCode = gm._getAgolPrefRegion() || msg.ipCntryCode;
+                regionCode = gm.rgnCode || gm._getAgolPrefRegion() || msg.ipCntryCode;
+                gm.defaultRgnCode = gm._getAgolPrefRegion() || msg.ipCntryCode;
+
                 if(regionCode == "WO"){
-                   $("#countryName").hide()
+                   $(".world-showme-filter").hide()
                 }else{
-                   $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
+                    $(".world-showme-filter").show()
                 }
-                                         
+                $("#countryName").text((conuntryCodeMapping[regionCode]) ? conuntryCodeMapping[regionCode]:regionCode)
+                $("#countryName").attr("code",regionCode);
+                                                         
                  /*
                  grouptype == all   then region+world
                  grouptype == "regional" then regional Only
                  grouptype == "world" then world only.*/
-                 if(gm.area == "regional"){
+                 if(gm.area == "regional" && regionCode != "WO"){
                      ownerName = "(Esri_cy_" + regionCode +")"
-                 } else if(gm.area == "world") {
+                 } else if(gm.area == "world" || (gm.area == "regional" && regionCode == "WO")) {
                      ownerName = "(esri)"
                  }else{
                      ownerName = "(esri OR Esri_cy_" + regionCode +")"
@@ -716,7 +738,7 @@ function createGalleryShell() {
                     type: "GET",
                     url: gm.agolHost + '/sharing/rest/community/groups',
                     data: {'f':'json', 'q':'tags:"gallery" AND owner:' + ownerName },
-                    dataType: "json",
+                    dataType: "jsonp",
                 }).done(function (msg){
 
                 var l = [];
@@ -741,7 +763,7 @@ function createGalleryShell() {
             
                 $.ajax({
                     url: gm.agolHost + "/sharing/rest/search" ,
-                    dataType: "json",
+                    dataType: "jsonp",
                     context: gs,
                     data: vdata.ajaxData,
                     //timeout: 10000,
@@ -1042,6 +1064,43 @@ $(document).ready(function () {
         evt.stopImmediatePropagation();
         return false;
     });
+
+    
+    $("#reference-index").on("click", ".item-regionCode", function (evt) {
+    //$(".item-regionCode").bind("click",function (evt){
+       gModel.startN = 0;
+       $("#gl-content").empty();
+       $("#spinner").show();
+
+        gModel.updateRegionCode($(this).attr("code"));
+        $("#regionList").toggle();
+        gShell.update(gModel);
+        evt.stopImmediatePropagation();
+        return false;
+    });
+
+    $("#regionList").hide()
+    $(".change-region").bind("click",function (evt){
+        $("#regionList").html(regionList()).toggle();
+    });
+
+    function regionList () {
+        var vL = [],
+        itemStatus = (gModel.defaultRgnCode == $("#countryName").attr("code"))?"current":"";
+
+        vL.push('<div class="dropdown-menu"><ul>')
+        vL.push('<li><label class="item-regionCode ' + itemStatus + '" code="'+gModel.defaultRgnCode+'">' + conuntryCodeMapping[gModel.defaultRgnCode] +  ' (Default)</label></li>');
+        $.each(conuntryCodeMapping, function(k, v){
+            itemStatus = (k == $("#countryName").attr("code"))?"current":"";
+            if(k != "WO" && k != gModel.defaultRgnCode){
+                vL.push('<li><label class="item-regionCode ' + itemStatus + '" code="'+k+'">' + v +  '</label></li>');
+            }
+            
+        });
+        vL.push('</ul></div>')
+
+        return vL.join(" ");
+    }
 
     $(window).scroll(function () {
         if ($(document).height() <= $(window).scrollTop() + $(window).height()+300) {

@@ -143,7 +143,7 @@ function genDisplay() {
             }
 
             if(row.isLoginRequires()){
-                if(!$.cookie('esri_auth')){
+                if(!$.cookie('esri_auth') || !sitecfg.isValidToken){
                     targetUrl = getTier(window.location.hostname).agolHost + "/home/signin.html?returnUrl="+encodeURIComponent(targetUrl);
                 }
             }
