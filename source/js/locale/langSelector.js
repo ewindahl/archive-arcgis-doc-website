@@ -424,7 +424,7 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/|\/maps-for-office\/)/)){
     docCfg.langSelector = "marketplace";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
