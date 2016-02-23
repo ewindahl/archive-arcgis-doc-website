@@ -108,65 +108,50 @@ mobile: true
 
         <a name="systemRequirements"></a>
         <h3>System requirements</h3>
-
 <p>For best performance we strongly recommend using Business Analyst Server 10.4, or higher, with Windows 7 64-bit operating systems. </p>
-<h4>Supported server platforms</h4>
+<h4>Operating system requirements</h4>
+<p>The following 64-bit operating systems satisfy the minimum operating system requirements:
+	<ul class="alternate" type="square">
+		<li>Windows Server 2012 R2 Standard and Datacenter</li>
+		<li>Windows Server 2012 Standard and Datacenter</li>
+		<li>Windows Server 2008 R2 Standard, Enterprise, and Datacenter</li>
+		<li>Windows Server 2008 Standard, Enterprise, and Datacenter</li>
+		<li>Windows 10 Pro and Enterprise</li>
+		<li>Windows 8.1 Pro and Enterprise</li>
+		<li>Windows 8 Pro and Enterprise</li>
+		<li>Windows 7 Ultimate, Professional, Enterprise, and Home Premium</li>
+	</ul>
+</p>
+<b>Notes</b>
 <ul class="alternate" type="square">
-	<li><b>Business Analyst Server for the Microsoft .NET Framework</b>
-	<ul>
-		<li>Windows 2003 SP2 (32-bit) Server Standard, Enterprise & Datacenter</li>
-		<li>Windows 2003 SP2 (64-bit (EM64T)) Server Standard, Enterprise & Datacenter</li>
-		<li>Windows 7 Ultimate, Professional Edition (32-bit and 64-bit (EM64T))</li>
-		<li>Windows 2008 (32-bit) Server Standard, Enterprise & Datacenter</li>
-		<li>Windows 2008 (64-bit (EM64T)) Server Standard, Enterprise & Datacenter</li>
-		<li>Windows XP SP3 (32-bit) Professional Edition</li>
-	</ul>
+<li>Support is not provided for 32-bit operating systems; the setup will only proceed if the operating system is 64 bit.</li>
+<li>Business Analyst Server is not supported on domain controllers. Installing Business Analyst Server on a domain controller may adversely affect functionality.</li>
+<li>Machines with an underscore (_) in their names are not supported. Several widely used Internet host name specifications have designated the underscore character as nonstandard. Although Windows allows you to use the underscore in a machine name, it can still cause problems when you interact with other servers and platforms. For this reason, ArcGIS for Server will not proceed with installation on servers that have an underscore in the host name.</li>
+<li>Windows 10, 8.1, 8, and 7 are supported for basic testing and application development use only. They are not recommended for deployment in a production environment.</li>
 </ul>
-<h4>Operating system requirements and limitations</h4>
+<h4>Supported web browsers</h4>
+<p>ArcGIS Server Manager requires one of the following web browsers to be installed:
 <ul class="alternate" type="square">
-	<li><b>All platforms</b>
-	<ul>
-		<li>Server display requirements - 1024 x 768 recommended or higher at Normal size (96dpi).  Greater than 256 color depth</li>
-	</ul>
-	<li><b>Microsoft Windows</b>
-	<ul>
-		<li>Microsoft Internet Explorer - version 7 or higher is required. You must obtain and install Internet Explorer version 7 or higher, prior to installing ArcGIS Server on Windows.</li>
-		<li>Windows XP and Windows 7 - These operating systems are supported for basic testing and application development use only. It is not recommended for deployment in a production environment.</li>
-		<li>Windows Vista and Windows Server 2008 - When using the ArcGIS Server .NET Manager on Vista or Windows Server 2008, the application unexpectedly errors.</li>
-	</ul>
+	<li>Google Chrome (version 10 or later)</li>
+	<li>Mozilla Firefox (version 10 or later)</li>
+	<li>Microsoft Internet Explorer (version 9, 10, or 11)</li>
+	<li>Microsoft Edge</li>	
 </ul>
-<h4>Supported Clients</h4>
-<ul class="alternate" type="square">
-	<li><b>Client display requirements</b>
-	<ul>
-		<li>Using hardware based graphics accelerators can improve dynamic 2D and 3D rendering performance, however all video cards may not work.</li>
-		<li>If using hardware accelerators for ArcGIS Globecontrol and ArcReader 3D, make sure your graphics card is compliant with a minimum OpenGL 1.3, and be sure to use the latest available driver.</li>
-	</ul>
-	<li><b>Supported web browsers</b>
-	<ul>
-		<li>Internet Explorer 8.0, Internet Explorer 7.0</li>
-		<li>Firefox 3.0, Firefox 2.0</li>
-	</ul>
-</ul>
+</p>
 <h4>Hardware requirements</h4>
-<p>For a development environment, the minimum RAM requirement for Business Analyst Server is 4 GB. This requirement is based on a typical development server. Business Analyst Server and the Esri Business Analyst US 2011 Data for Server Require a minimum of 19 GB of free memory. It is recommended that a minimum of 50 GB of storage be available.</p>
-<p>For a production environment, hardware minimum requirements are not listed because user and business needs of Business Analyst Server may vary. These requirements must be considered in determining hardware needs to meet user performance expectations and scalability. Please refer to <a href="http://www.esri.com/software/arcgis/deployment" target="_blank">Deployment Considerations</a> and <a href="http://www.esri.com/library/whitepapers/pdfs/sysdesig.pdf" target="_blank">System Design Strategies</a> for assistance in designing a Server infrastructure to meet your business requirements.</p>
-<h4>Developer solutions requirements (Web ADF for the .NET framework)</h4>
+<p>The minimum RAM requirement is 4 GB. If you are using the software with ArcGIS GeoEvent Extension for Server, the minimum RAM requirement is 8 GB. These requirements are based on a typical development server with the following environment:
 <ul class="alternate" type="square">
-	<li><b>Supported application/web servers</b>
-	<ul>
-		<li>Internet Information Server -  IIS 5.0, 5.1, 6.0, and 7.0 are supported. The version of IIS is dependant on the Windows version that IIS is running on.</li>
-	</ul>
-	<li><b>Integrated development environment (IDE) requirement</b>
-	<ul>
-		<li>Microsoft Visual Studio 2008 Service Pack 1 Professional Edition or Standard Edition</li>
-		<li>Microsoft Visual Studio 2010</li>
-	</ul>
+	<li>Two cached map services</li>
+	<li>One dynamic map service</li>
+	<li>One locator service</li>
+	<li>One geoprocessing service</li>
+	<li>Geometry service</li>
+	<li>PrintingTools service</li>
+	<li>SQL Server Express</li>
+	<li>ArcGIS Web Adaptor</li>
 </ul>
-<h4>.NET Framework 3.5</h4>
-<p>.NET Framework 3.5 is installed with Visual Studio .NET 2008. The redistributable is available to developers who want to include the .NET Framework installation with their .NET applications.</p>
-<h4>Supported relational database management systems (ArcSDE)</h4>
-<p>Business Analyst Server 10.4 works with ArcSDE for Microsoft SQL Server and Oracle. </p>
+</p>
+<p>For a production environment, hardware minimum requirements are not listed because user and business needs of Business Analyst Server may vary. These requirements must be considered in determining hardware needs to meet user performance expectations and scalability. Please refer to <a href="http://www.esri.com/software/arcgis/deployment" target="_blank">Deployment Considerations</a> and <a href="http://www.esri.com/library/whitepapers/pdfs/sysdesig.pdf" target="_blank">System Design Strategies</a> for assistance in designing a Server infrastructure to meet your business requirements.</p>
 
       </div>
 
