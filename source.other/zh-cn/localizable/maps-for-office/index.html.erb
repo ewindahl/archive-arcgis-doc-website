@@ -1,5 +1,5 @@
 ---
-title: Esri Maps for Office
+title: ArcGIS Maps for Office
 
 css:
   - documentation
@@ -12,27 +12,29 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="zh-cn">
+  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2015-10-30"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="zh-cn">
 
 mobile: true
 
 ---
-<div class="section-bar blue">
+<div class="navigation-bar blue">
   <div class="container">
-    <header>
-      <h1><a href="/zh-cn/maps-for-office/">Esri Maps for Office</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+	<header>
+		<h1><a href="/zh-cn/maps-for-office/">ArcGIS Maps for Office</a></h1>
+		<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Maps for Office">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="esri-maps-office" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
     </header>
+	
 	<nav>
       <ul>
         <li class='current'><a href="/zh-cn/maps-for-office/">主页</a></li>
-        <li><a href="/zh-cn/maps-for-office/help/">帮助</a></li>
-        <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">论坛</a></li>
+        <li><a href="/zh-cn/maps-for-office/install-and-configure/">安装与配置</a></li>
+        <li><a href="/zh-cn/maps-for-office/design-and-use/">设计和使用地图</a></li>
+        <li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus%5Bpublished%5D~tag%5B_office%5D">GeoNet</a></li>
       </ul>
     </nav>
   </div>
@@ -41,240 +43,210 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-     <div class="column-16 tablet-column-24">
+    <div class="column-16 tablet-column-24">
         <header>
-
-	  <h2 id="appTitle">下载应用程序</h2>
-          <span id="appVersion"><strong>版本：</strong> 3.1</span>
-<span id="appReleased"><strong>发布时间：</strong> 2015 年夏</span>
-
+		<h2 id="appTitle">下载应用程序</h2>
+        <span id="appVersion"><strong>版本： </strong>4.0</span>
+        <span id="appReleased"><strong>发布时间：</strong>2016 年春</span>
 
           <p>通过位置驱动分析提高工作效率。为 Microsoft Office 带来全新的分析维度。获取新观点并迅速做出更明智的决策。向 Excel 电子表格和 PowerPoint 演示文稿轻松添加制图功能。</p>
 
           <p>
-             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">获取 Esri Maps for Office</a>
-
+             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">获取 ArcGIS Maps for Office</a>
           </p>
-
+		  
         </header>
         <hr />
         <br />
 
+<!-- features top row -->
+		<!-- Map your Excel data -->
+		<div id="em4oFirstFeature" class="column-12 phone-column-24">
+			<img src="Map-your-data.png" alt="Map your Excel data" />
+		  
+			<h3>绘制您的 Excel 数据</h3>
+			<p>在 Excel 中制作电子表格数据的交互式地图。只需单击几次鼠标，即可创建彩色编码地图、点状地图、聚类点地图和热点图，并深入了解您的数据。</p>
+			<p>&gt; <a href="/zh-cn/maps-for-office/design-and-use/add-a-map-to-excel.htm">了解更多信息</a></p>
+		</div>
 
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="Map-your-data.png" />
-
-          <h3>绘制 Excel 数据</h3>
-          <p>在 Excel 中制作电子表格数据的交互式地图。只需单击几次鼠标，即可创建彩色编码地图、点状地图、聚类点地图和热点图，并深入了解您的数据。</p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="Analyze-your-data.png" />
-
-          <h3>在地图上分析 Excel 数据</h3>
-          <p>揭示表格数据和图表中隐含的模式和趋势。在数据中查找具有统计显著性的热点和冷点。使用行驶时间和环执行空间搜索以查找附近的感兴趣点记录。</p>         
-        </div>
-
-
-	<div id="collectorThirdFeature" class="column-12 phone-column-24">
-          <img src="Enrich-your-spreadsheets.png" />
-
-          <h3>丰富业务电子表格</h3>
-          <p>直接向 Excel 电子表格中添加 Esri 的人口统计和生活方式数据，并获取重要位置的更多环境信息。使用弹出窗口信息图表快速浏览动态位置。</p>
-        </div>
-
-	<div id="collectorFourthFeature" class="column-12 phone-column-24">
-          <img src="Share-your-data.png" />
-
-          <h3>通过 Excel 共享地图</h3>
-          <p>使用 ArcGIS Online 或 Portal for ArcGIS，或通过将地图插入电子邮件、PowerPoint 演示文稿或 Word 文档中来共享地图。</p>
-        </div>
-
+		<!-- Analyze data -->
+        <div id="em4oSecondFeature" class="column-12 phone-column-24">
+			<!-- REPLACE IMAGE > PPT -->
+			<img src="Analyze-your-data.png" alt="Add a map to PowerPoint" />
+			<h3>将动态地图添加到 PowerPoint</h3>
+			<p>将 ArcGIS 组织中的地图添加到 PowerPoint 以创建极佳的动态演示文稿。</p>
+			<p>&gt; <a href="/zh-cn/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">了解更多信息</a></p>
+		</div>
         <div class="clear"></div>
 
+<!-- features second row -->
+		<!-- Enrich your data -->
+		<div id="em4oThirdFeature" class="column-12 phone-column-24">
+			<img src="Enrich-your-spreadsheets.png" alt="Enrich your data" />
 
-        <a name="systemRequirements"></a>
-        <h2>系统要求</h2>
+			<h3>丰富业务电子表格</h3>
+			<p>直接向 Excel 电子表格中添加 ArcGIS 的人口统计和生活方式数据，并获取重要位置的更多环境信息。使用弹出窗口信息图表快速浏览动态位置。</p>
+			<p>&gt; <a href="/zh-cn/maps-for-office/design-and-use/enrich-your-data.htm">了解更多信息</a></p>
+		</div>
 
-        <p>Esri Maps for Office 需要一个属于 <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> 组织的帐户和 Microsoft Office Excel/PowerPoint 2010 或 Microsoft Office Excel/PowerPoint 2013。受支持的操作系统包括：</p>
-		<ul>
-		 <li>Windows 7（32 位和 64 位）</li>
-		 <li>Windows 8（32 位和 64 位）</li>
-		 <li>Windows 8.1（32 位和 64 位）</li>
-		 <li>Windows Server 2008 R2</li>
-		 <li>Windows Server 2012</li>
-		</ul>
-		<p>有关所需处理器速度、内存和硬盘空间的详细信息，请参阅 <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> 和 <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a> 的系统要求。</p>
+		<!-- Share maps -->
+		<div id="em4oFourthFeature" class="column-12 phone-column-24">
+			<img src="Share-your-data.png" alt="Share maps on ArcGIS" />
+			<h3>通过 Excel 共享地图</h3>
+			<p>使用 ArcGIS Online 或 Portal for ArcGIS，或通过将地图插入电子邮件、PowerPoint 演示文稿或 Word 文档中来共享地图。</p>
+			<p>&gt; <a href="/zh-cn/maps-for-office/design-and-use/share-a-map-on-arcgis.htm">了解更多信息</a></p>
+        </div>
+	<div class="clear"></div> 
 
-
-
-        <!-- 
-		<h3>Support for the following languages</h3>
-        <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
-		//-->
-
-
-
-
-        <a name="whatsNew"></a>
-        <h2>新特性</h2>
-        <p>Esri Maps for Office 3.1 版已于 2015 年 6 月发布。该版本包括以下增强：</p>
-        <ul>
-        <li>支持 27 种语言的本地化：</li>
-		<ul>
-		     <li>阿拉伯语</li>
-		     <li>简体中文</li>
-		     <li>捷克语</li>
-		     <li>丹麦语</li>
-		     <li>荷兰语</li>
-		     <li>德语</li>
-		     <li>希腊语</li>
-		     <li>爱沙尼亚语</li>
-		     <li>芬兰语</li>
-		     <li>法语</li>
-		     <li>希伯来语</li>
-		     <li>意大利语</li>
-		     <li>日语</li>
-		     <li>韩语</li>
-		     <li>立陶宛语</li>
-		     <li>拉脱维亚语</li>
-		     <li>挪威语</li>
-		     <li>波兰语</li>
-		     <li>巴西葡萄牙语</li>
-		     <li>葡萄牙葡萄牙语</li>
-		     <li>罗马尼亚语</li>
-		     <li>俄语</li>
-		     <li>西班牙语</li>
-		     <li>瑞典语</li>
-		     <li>泰语</li>
-		     <li>土耳其语</li>
-		     <li>越南语</li>
-		</ul>
-	<li>许多漏洞修复和工作流改进。</li>
-        </ul>
-
-
-        <h3>先前版本</h3>
-        
-        <p>Esri Maps for Office 3.0 版已于 2015 年 4 月发布。该版本包括以下增强：</p>
-        <ul>
-        <li>通过在电子表格中插入多个地图，更加清晰地显示 Excel 数据。可依据电子表格中的不同表创建多个地图。</li>
-	<li>并排比较地图或将其拖至其他监视器以保持 Excel 窗口的整洁。</li>
-	<li>通过查找地图窗口中的工具轻松使用已绘制的数据。</li>
-	<li>利用新的搜索工具快速查找位置。</li>
-	<li>无需成为 GIS 专家也能创建出赏心悦目的地图。绘制数据前可预先查看地图的外观。根据要绘制的数据为您推荐地图样式，让您获得最佳的直观感受。</li>
-	<li>使用选择的坐标系轻松叠加本地坐标系中的其他 GIS 数据集。</li>
-	<li>自定义位置类型现已包括线要素。</li>
-	<li>新增更多帮助以便使新用户轻松快速地入门。</li>
-        </ul>
-
-        <p>Esri Maps for Office 2.1.5 版已于 2014 年冬季发布。该版本包括以下增强：</p>
-        <ul>
-        <li>支持受保护和不受保护的 web 代理。</li>
-        </ul>
-
-	<p>Esri Maps for Office 2.1.4 版已于 2014 年春季发布。该版本包括以下增强：</p>
-        <ul>
-        <li>安全更新。</li>
-        </ul>
-
-        <p>Esri Maps for Office 2.1.3 版已于 2014 年春季发布。该版本包括以下增强：</p>
-        <ul>
-        <li>支持自定义角色。</li>
-        <li>新静默安装参数可用于更好地控制大规模部署。</li>
-        <li>现在，Maps for Office 将检查与 ArcGIS 的连通性，并且在必要服务不可用时向您发出通知。</li>
-		<li>软件漏洞修复和可用性改进，其中包括：</li>
-			<ul>
-			<li>能够将托管地图服务用作自定义位置类型。</li>
-			<li>已更正本地化版本中的图层可见性问题。</li>
-			<li>已修复由于较旧的 Visual Studio Tools for Office 版本而引起的随机故障问题。</li>
-			<li>现在，在添加数据工作流中使用名称而非“地址”来显示自定义定位器。</li>
-			<li>更好地管理与卸载有关的注册表。</li>
-			<li>更加有效地存储从 ArcGIS 返回的几何。</li>
-			<li>连接到 Portal 后，不再需要请求 ArcGIS Online。</li>
-			<li>现在已正确处理作为十进制分隔符的逗号。</li>
-			<li>现在，可设置丰富图层的样式并可按新添加的列对图层进行分组。</li>
-			<li>现在，丰富图层的弹出窗口将显示正确的列标题。</li>
-			<li>与 internet 断开连接后，将不再发生故障。</li>
-			<li>现在，PowerPoint 中的 Esri Maps for Office 支持组织默认底图。</li>
-			</ul>
-        </ul>
-
-
-        <p>Esri Maps for Office 2.1.2 版已于 2013 年 11 月发布。该版本包括以下增强：</p>
-        <ul>
-		<li>软件漏洞修复和可用性改进，其中包括：</li>
-			<ul>
-			<li>“丰富图层”工具改进，如：更具效率的内存利用率以处理较大型丰富请求，以及改进的进度指示器。</li>
-			<li>修复了在安装 Esri Maps 后导致 Excel 崩溃的软件漏洞。</li>
-			<li>修复了在“搜索”窗格中显示错误影像的软件漏洞。</li>
-			<li>修复了在日语、俄语和中文中导致自定义位置类型查找失败的软件漏洞。</li>
-			<li>已清除“搜索”窗格中“主要信息”、“财富”、“政策”和“健康”中的本地化字符串。</li>
-			</ul>
-        </ul>
+		<br />
 		
-		<p>2.1.1 版本已于 2013 年 10 月发布。该版本包括以下增强：</p>
-        <ul>
-        <li>新的本地化版本支持 22 种语言：</li>
-			<ul>
-			<li>阿拉伯语、中文（简体）、丹麦语、荷兰语、英语、爱沙尼亚语、法语、德语、希伯来语、意大利语、日语、韩语、拉脱维亚语、立陶宛语、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、西班牙语和瑞典语</li>
-			</ul>
-		<li>支持 web 地图中的弹出窗口</li>
-		<li>可使用属性 URL 中的图标符号化要素</li>
-		<li>所有产品的软件漏洞修复和可用性改进，其中包括：
-			<ul>
-			<li>OAuth 登录的改进处理</li>
-			<li>“查找热点”工具现具有更多有用的错误消息</li>
-			<li>“查找热点”工具现可处理带空格的列名</li>
-			<li>“选择”工具现支持大小为“0”的缓冲区</li>
-			<li>任务窗格问题已修复</li>
-			<li>组可见性软件漏洞已修复</li>
-			<li>改进了对使用所有连接的 SSL 的组织的支持</li>
-			<li>使用从“丰富图层”工具添加的列时，分组可正常工作</li>
-			</ul>
-        </ul>
-		
-        <p>2.1 版本已于 2013 年 7 月发布。该版本包括以下增强：</p>
-        <ul>
-        <li>使用“热点”工具的统计模式分析</li>
-		<li>数据丰富改进，其中包括更多的数据集合以及从数据集合中选择单个变量的功能</li>
-		<li>支持使用 OAuth+SAML (AGOL) 进行安全登录</li>
-        <li>支持使用 IWA、PKI（仅限于 Portal）进行安全登录</li>
-		<li>“信息图表”和“丰富图层”工具的用户界面改进</li>
-		<li>改进了将 Maps for Office 升级为最新版本的工作流程</li>
-        </ul>
-		<br>
-        <p>2.0.2 版本已于 2013 年 5 月发布。该版本包括以下增强：</p>
-        <ul>
-          <li>使用新的“丰富图层”工具丰富含地理环境的数据</li>
-		  <li>在地图上选择要素以及在其他图层内查找邻近要素</li>
-		  <li>地图弹出窗口现在包含“信息图表”，将提供地图中要素周围区域丰富的上下文信息</li>
-		  <li>Portal for ArcGIS 10.2 支持预览</li>
-		  <li>热点图和聚簇的新配置选项</li>
-		  <li>单击地图图例的分类间隔，在地图上添加过滤分组要素的功能</li>
-		  <li>地址地理编码改进的工作流</li>
-		  <li>支持自定义底图库，此底图库属于 ArcGIS Online 组织</li>
-		  <li>插入地图时使用 ArcGIS Online 组织的默认底图</li>
-		  <li>使用热门类别（例如财富、商业、政策以及健康）在 ArcGIS Online 上搜索数据</li>
-		  <li>地点名称现在基于数据位置进行显示。例如，地理编码工作流中的标注将在日本显示郡县，在美国显示州，在加拿大显示省</li>
-		  <li>支持 Microsoft Office 2013</li>
-		  <li>其他特性、可用性和制图方面的增强。</li>
-        </ul>
+<!-- What's new section -->
+	<hr />
+	<a id="whatsNew"></a>
+ 	<h2>新特性</h2>	
+	<p>&gt;您希望在 ArcGIS Maps for Office 的未来版本中增加哪些功能？ 如果您有任何建议，请将建议提交到 <a href="http://ideas.arcgis.com/ideaList?c=09a300000004xET&category=Esri+Maps+for+Office" target="_blank">ArcGIS Ideas</a> 网站。</p>
+ 	<p>ArcGIS Maps for Office 4.0 版本现已发布。此版本提供了大量的重大更新和增强功能。以下是一些重点内容介绍。</p>
+	
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
 
+		<h3>4.0 更新</h3>
+		<p>ArcGIS Maps for Office 4.0 包含以下新功能：
+			<ul>
+				<li><b>使用<a href="/zh-cn/maps-for-office/design-and-use/change-a-layer-s-style.htm">智能制图</a>快速创建精美地图</b>
+					<p>无论您是使用地图的专家还是初学者，创建视觉效果极佳的地图以讲述您的故事，从未变得如此简单。ArcGIS Maps for Office 将分析电子表格中的数据，并建议在地图上表示它的最佳方式，提供各种样式供您选择。选择样式并立即创建地图，还可以自定义适合故事的样式选项。智能制图还提供了一项众多用户所要求的功能，使您可以手动设置适合图层的分类间隔。</p>
+				</li>
+				<li><b>在您的位置中，运用<a href="/zh-cn/maps-for-office/design-and-use/map-temporal-data.htm">基于时间的动画</a>查找随时间变化的模式</b>
+					<p>如果数据包含时态值，可以向 Excel 中的地图添加时间感知型图层并运行动画，用于显示数据的模式如何随时间而变化。此功能还支持在 ArcGIS 平台上启用时间的图层，您可以将数据中基于时间的模式与组织中或权威来源（如美国国家海洋与大气管理局 (NOAA)）中的相似模式进行比较。</p>
+				</li>
+				<li><b>以全新的体验在 <a href="/zh-cn/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">PowerPoint</a> 中更有效地交流您的工作</b>
+					<p>ArcGIS Maps for Office 通过简化和加速内容搜索为使用交互式动态地图增强 PowerPoint 演示文稿提供了全面更新的体验。使用 ArcGIS 组织中的内容将地图直接添加到 PowerPoint 中，或编辑现有地图幻灯片。将地图插入到幻灯片中并根据需要进行放置 - 独立放置或与其他标准 PowerPoint 要素（如图表、影像和文本）进行组合。在幻灯片放映模式下，您可以在地图中进行缩放和平移，也可以选择要素以显示详细信息，此时您可以快速回答演示过程中的问题。</p>
+				<li><b>使用<a href="/zh-cn/maps-for-office/design-and-use/select-features.htm#ESRI_SECTION1_53FF2A6DECC04ED4A5AAED1BDDBC9515">基于地图的过滤</a>来关注重要的行</b>
+					<p>您能够长时间通过像元值过滤电子表格。现在，ArcGIS Maps for Office 使您能够通过选择地图上的项目过滤电子表格，此时您可以直接关注正在处理的要素。过滤电子表格以仅显示所选要素，然后使用标准 Excel 功能处理您需要的数据。</p>
+				</li>
+				<li><b>通过设置<a href="/zh-cn/maps-for-office/design-and-use/set-refresh-interval.htm">刷新间隔</a>来追踪变化的数据</b>
+					<p>从 ArcGIS 添加的静态图层可帮助您可视化非移动对象（如建筑物、道路或边界）。现在，可通过 ArcGIS Maps for Office 追踪移动的、更改的或发展的事物 - 如风暴、车辆或外业状态。可通过刷新间隔功能来指定图层的更新频率，或单击按钮立即更新图层</p>
+				</li>
+			</ul>
+		</p>
+	
+
+
+<!-- Supported environments section -->
+	<hr />
+	<a id="supportedEnvironments"></a>
+        <h2>支持的环境</h2>
+		<p>ArcGIS Maps for Office 将作为附加组件部署到 Microsoft Excel 和 Microsoft PowerPoint。为使 ArcGIS Maps for Office 正常工作，Esri 假设已实现这些应用程序的操作配置。Esri 仅在通过认证的 Microsoft Excel 或 SharePoint 支持的软件环境下测试 ArcGIS Maps for Office；并非所有 Excel 或 SharePoint 支持的环境均已进行测试或通过认证。有关详细信息，请参阅 <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Esri 支持的环境策略</a>。</p>
+		
+		<p><b>注意：</b>Microsoft Word 允许您在文档中嵌入和使用 Excel 电子表格。此工作流不受 ArcGIS Maps for Office 支持，不建议使用。</p>
+		
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+
+		<!-- Sys Reqs -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">系统要求</a>
+		</h3>
+			<div exp1='yes' style="display:none;padding:0 15px;">
+			<p>ArcGIS Maps for Office 需要一个属于 ArcGIS 组织的帐户和 Microsoft Office Excel 或 PowerPoint（Microsoft Office 2010、2013 或 2016）。</p>
+			<p>有关所需处理器速度、内存和硬盘空间的详细信息，请参阅对以下软件的系统要求：
+			<ul>
+				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
+				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
+				<li><a href="https://products.office.com/en-ca/office-system-requirements#SUITES" target="_blank">Microsoft Office 2016</a></li>
+			</ul>	
+			</p>
+			</div>
+			
+		<div class="clear" style="padding:5px;"></div>
+
+		<!-- Req'd SW -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">所需软件</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
+			<p>ArcGIS Maps for Office 需要一个 <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> 组织订阅或预置 Portal for ArcGIS 部署。假设 ArcGIS 管理员已正确配置了访问平台时所用的身份验证方法。</p>
+
+			<p>另外，必须在系统上安装和配置以下软件：</p>
+				<ul>
+					<li>Microsoft Office 2010、2013 或 2016*</br>
+						* ArcGIS Maps for Office 支持 Microsoft Office 2016 版本 16.0.4266.1003 和更低版本。
+					</li>
+					<li>Internet Explorer 9、10 或 11**</li>
+					<li>Microsoft Windows。受支持的版本：
+						<ul>
+							<li>Windows 7（32 位和 64 位）</li>
+							<li>Windows 8（32 位和 64 位）</li>
+							<li>Windows 8.1（32 位和 64 位）</li>
+							<li>Windows 10（32 位和 64 位）</li>
+							<li>Windows Server 2008 R2</li>
+							<li>Windows Server 2012</li>
+							<li>Windows Server 2012 R2</li>
+						</ul>
+					</li>
+				</ul>
+			<p>** ArcGIS Maps for Office 在 web 浏览器中使用 JavaScript 显示地图。由于 Microsoft Excel 需要使用 Internet Explorer (IE) 来显示 web 内容，因此不能选择使用其他浏览器。该应用程序中的功能要求使用 IE9 或更高版本的浏览器；因此不支持较旧版本。</p>
+			</div>
+			
+		<!-- Supported languages -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">受支持语言</a>
+		</h3>
+			<div exp3='yes' style="display:none;padding:0 15px;">
+			<p>ArcGIS Maps for Office 支持以下语言：</p>
+			<p>阿拉伯语、中文（简体）、繁体中文（香港）、繁体中文（台湾）、捷克语、丹麦语、德语、希腊语、英语、西班牙语、爱沙尼亚语、芬兰语、法语、希伯来语、意大利语、日语、韩语、立陶宛语、拉脱维亚语、荷兰语、挪威语、波兰语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、罗马尼亚语、俄语、瑞典语、泰语、土耳其语和越南语。</p>
+			
+			<p>ArcGIS Maps for Office 使用在 Excel 选项中指定的语言，而不是在操作系统区域性设置中设置的语言。如果使用不受支持的语言，则应用程序将使用英语。</p>
+			
+			</div>
 
         <p>&nbsp;</p>
-
-      </div>
-
-
+	</div>
+	
+	
+<!-- Sidebars -->
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
           <h3>入门</h3>
           <ul>
            <li><a href="#whatsNew">新特性</a></li>
-            <li><a href="#systemRequirements">系统要求</a></li>
+            <li><a href="#supportedEnvironments">支持的环境</a></li>
+			<li>先前版本的帮助：
+				<ul>
+					<li><a href="/zh-cn/maps-for-office/3.1/welcome.htm">3.1 版在线帮助</a></li>
+				</ul>
+			</li>
 			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">观看视频</a></li>
 
           </ul>
@@ -290,12 +262,15 @@ mobile: true
           </div>
         </div>
 
- </div>
+	 </div>
 
-    </div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
+</div>
+
+	 
+
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+<script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
