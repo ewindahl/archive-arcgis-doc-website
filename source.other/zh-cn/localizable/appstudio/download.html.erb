@@ -1,0 +1,227 @@
+---
+title: AppStudio for ArcGIS 
+css:
+  - stat-page-specific
+
+js:
+  - download.js
+
+metatags:
+  - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="appstudio,appstudio-browser"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="zh-cn">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/zh-cn/appstudio/download/">AppStudio for ArcGIS (桌面版)</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search AppStudio for ArcGIS">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="appstudio" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	 <nav>
+      <ul>
+        <li><a href="/zh-cn/appstudio/">主页</a></li>
+        <li><a href="/zh-cn/appstudio/create-apps/">创建 App</a></li>
+        <li><a href="/zh-cn/appstudio/extend-apps/">扩展 App</a></li>
+		    <li><a href="/zh-cn/appstudio/community/">社区</a></li>		
+        <li class='current'><a href="/zh-cn/appstudio/download/">下载</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+    <h4 class="gray trailer">除创建和构建原生应用程序外，AppStudio for ArcGIS (桌面版) 还允许您在应用程序上进行高级自定义或开发工作。</h4>
+	 
+
+
+    <div class="download-section container">
+        <div class="row downloads secured-org">
+            <div class="column-6 tablet-column-23">
+                <div id="desktop-win64" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/win64.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudio-Windows-x64</h4>
+                        <p class="small-grey">180 MB</p>
+
+                        <!--<div class="dropdown-wrapper ">
+                          Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#"></span>
+                          <div class="dropdown-content">
+                            <div class="dropdown-menu">
+                              <%= generateVersionDropDown("appstudio~secured~windows64") %>
+                            </div>
+                          </div>
+                        </div>-->
+								<%= generateVersionDropDown("appstudio~secured~windows64") %>
+                    </div>
+                </div>
+            </div>
+            <div class="column-6 tablet-column-23">
+                <div id="desktop-win32" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/win32.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudio-Windows-x86</h4>
+                        <p class="small-grey">171 MB</p>
+                        <%= generateVersionDropDown("appstudio~secured~windows86") %>
+                    </div>
+                </div>
+            </div>
+            <div class="column-6 tablet-column-23">
+                <div id="desktop-mac" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/apple.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudio-Mac</h4>
+                        <p class="small-grey">481 MB</p>
+                        <%= generateVersionDropDown("appstudio~secured~mac") %>
+                    </div>
+                </div>
+            </div>
+            <div class="column-6 tablet-column-23">
+                <div id="desktop-linux" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/linux.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudio-Linux</h4>
+                        <p class="small-grey">229 MB</p>
+                        <%= generateVersionDropDown("appstudio~secured~linux") %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&nbsp;</p>
+        <div id="player" class="header leader trailer">
+            <h4 class="gray trailer">构建应用程序前可在设备上使用 AppStudio Player 对其进行预览！</h4>
+        </div>
+        <div class="row downloads">
+            <div class="column-6 tablet-column-23">
+                <div id="player-win64" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/win64.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudioPlayer-Windows-x64</h4>
+                        <p class="small-grey">68 MB</p>
+                        <a class="btn orange download-link" href="<%= data.downloads["en"].appstudio.nonSecured.windows64.url %>">下载</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column-6 tablet-column-23">
+                <div id="player-win32" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/win32.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudioPlayer-Windows-x86</h4>
+                        <p class="small-grey" class="small-grey">60 MB</p>
+                        <a class="btn orange download-link" href="<%= data.downloads["en"].appstudio.nonSecured.windows86.url %>">下载</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column-6 tablet-column-23">
+                <div id="player-mac" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/apple.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudioPlayer-Mac</h4>
+                        <p class="small-grey">82 MB</p>
+                        <a class="btn orange download-link" href="<%= data.downloads["en"].appstudio.nonSecured.mac.url %>">下载</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column-6 tablet-column-23">
+                <div id="player-linux" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/linux.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudioPlayer-Linux</h4>
+                        <p class="small-grey">104 MB</p>
+                        <a class="btn orange download-link" href="<%= data.downloads["en"].appstudio.nonSecured.linux.url %>">下载</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="column-6 tablet-column-23">
+                <div id="player-android" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/android.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudioPlayer-Android</h4>
+                        <p class="small-grey">&nbsp;</p>
+                        <a href="<%= data.downloads["en"].appstudio.nonSecured.android.url %>" class="btn orange">在 Google Play 中</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column-6 tablet-column-23">
+                <div id="player-ios" class="card">
+                    <div class="icon">
+                        <img src="../img/icons/apple.png">
+                    </div>
+                    <div class="text">
+                        <h4>AppStudioPlayer-iOS</h4>
+                        <p class="small-grey">&nbsp;</p>
+                        <a href="<%= data.downloads["en"].appstudio.nonSecured.ios.url %>" class="btn orange">在 App Store 中</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>  <!-- End of Container -->
+
+<style>
+.download-section.container .downloads .card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 35px auto;
+    min-width: 290px;
+}
+
+.download-section.container .downloads .card .icon {
+    display: flex;
+}
+.download-section.container .downloads .card .icon {
+    display: -ms-flexbox;
+}
+.download-section.container .downloads .card .text {
+    min-height: 100px;
+    padding-top: 55px;
+    text-align: center;
+    width: 100%;
+}
+
+.download-section.container .downloads .card img {
+    margin: -53px auto;
+}
+.download-section.container .downloads .column-6 {
+  float: left;
+  min-width: 302px;
+}
+
+.download-section.container .downloads .btn {
+  margin: 5px 5px 16px;
+}
+
+.download-section.container .downloads .dropdown::after {
+    right: 16px;
+    top: 16px;
+}
+</style>

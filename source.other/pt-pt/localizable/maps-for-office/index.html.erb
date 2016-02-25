@@ -1,5 +1,5 @@
 ---
-title: Esri Maps for Office
+title: ArcGIS Maps for Office
 
 css:
   - documentation
@@ -12,27 +12,29 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="pt-pt">
+  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2015-10-30"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="pt-pt">
 
 mobile: true
 
 ---
-<div class="section-bar blue">
+<div class="navigation-bar blue">
   <div class="container">
-    <header>
-      <h1><a href="/pt-pt/maps-for-office/">Esri Maps for Office</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+	<header>
+		<h1><a href="/pt-pt/maps-for-office/">ArcGIS Maps for Office</a></h1>
+		<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Maps for Office">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="esri-maps-office" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
     </header>
+	
 	<nav>
       <ul>
-        <li class='current'><a href="/pt-pt/maps-for-office/">Início</a></li>
-        <li><a href="/pt-pt/maps-for-office/help/">Ajuda</a></li>
-        <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">Fórum</a></li>
+        <li class='current'><a href="/pt-pt/maps-for-office/">Página Inicial</a></li>
+        <li><a href="/pt-pt/maps-for-office/install-and-configure/">Instalar e Configurar</a></li>
+        <li><a href="/pt-pt/maps-for-office/design-and-use/">Crie e Utilize Mapas</a></li>
+        <li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus%5Bpublished%5D~tag%5B_office%5D">GeoNet</a></li>
       </ul>
     </nav>
   </div>
@@ -41,240 +43,209 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-     <div class="column-16 tablet-column-24">
+    <div class="column-16 tablet-column-24">
         <header>
+		<h2 id="appTitle">Descarregar a aplicação</h2>
+        <span id="appVersion"><strong>Versão:</strong> 4.0</span> <span id="appReleased"><strong>Disponível:</strong> Primavera 2016</span>
 
-	  <h2 id="appTitle">Descarregar a aplicação</h2>
-          <span id="appVersion"><strong>Versão:</strong> 3.1</span>
-          <span id="appReleased"><strong>Disponível:</strong> Verão de 2015</span>
-
-
-          <p>Seja mais produtivo com análise de destino de condução. Traga uma nova dimensão de análise para o Microsoft Office. Começar a ganhar novas percepções e tomar decisões mais informadas imediatamente. Adicionar facilmente mapeamento às suas folhas de cálculo Excell e apresentações PowerPoint.</p>
+          <p>Seja mais produtivo com análise de destino de condução. Traga uma nova dimensão de análise para o Microsoft Office. Começar a ganhar novas percepções e tomar decisões mais informadas imediatamente. Adicionar facilmente mapas às suas folhas de cálculo Excel e apresentações PowerPoint.</p>
 
           <p>
-             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Obter o Esri Maps for Office</a>
-
+             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Obtenha o ArcGIS Maps for Office</a>
           </p>
-
+		  
         </header>
         <hr />
         <br />
 
+<!-- features top row -->
+		<!-- Map your Excel data -->
+		<div id="em4oFirstFeature" class="column-12 phone-column-24">
+			<img src="Map-your-data.png" alt="Map your Excel data" />
+		  
+			<h3>Mapear os seus dados Excel</h3>
+			<p>Faça mapas interactivos com os dados das suas folhas de cálculo no Excel. Com alguns cliques criar mapas de calor com código de cores, ponto, ponto-agrupado, e obter pontos de vista insights dos seus dados.</p>
+			<p>&gt; <a href="/pt-pt/maps-for-office/design-and-use/add-a-map-to-excel.htm">Obtenha mais informações</a></p>
+		</div>
 
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="Map-your-data.png" />
-
-          <h3>Mapear os seus dados Excel</h3>
-          <p>Faça mapas interactivos com os dados das suas folhas de cálculo no Excel. Com alguns cliques criar mapas de calor com código de cores, ponto, ponto-agrupado, e obter pontos de vista insights dos seus dados.</p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="Analyze-your-data.png" />
-
-          <h3>Analise os seus dados Excel em mapas</h3>
-          <p>Descobrir padrões e tendências que não são evidentes em dados tabulares e gráficos. Encontre pontos quentes e frios estatisticamente significantes nos seus dados. Efectue pesquisas espaciais usando tempos de condução ou anéis para descobrir registos de interesse próximos.</p>         
-        </div>
-
-
-	<div id="collectorThirdFeature" class="column-12 phone-column-24">
-          <img src="Enrich-your-spreadsheets.png" />
-
-          <h3>Enriqueça as folhas de cálculo do seu negócio</h3>
-          <p>Adicione dados demográficos e dados de estilo de vida Esri directamente nas folhas de cálculo Excel e obtenha mais contexto acerca dos locais que lhe são importantes. Rapidamente explore localizações &quot;na mosca&quot; usando infográficos pop-up.</p>
-        </div>
-
-	<div id="collectorFourthFeature" class="column-12 phone-column-24">
-          <img src="Share-your-data.png" />
-
-          <h3>Partilhe os seus mapas a partir do Excel</h3>
-          <p>Partilhe os seus mapas usando quer seja o ArcGIS Online quer o Portal for ArcGIS, ou insira-os em correios electrónicos, apresentações Powerpoint, ou documentos Word.</p>
-        </div>
-
+		<!-- Analyze data -->
+        <div id="em4oSecondFeature" class="column-12 phone-column-24">
+			<!-- REPLACE IMAGE > PPT -->
+			<img src="Analyze-your-data.png" alt="Add a map to PowerPoint" />
+			<h3>Adicione mapas dinâmicos ao PowerPoint</h3>
+			<p>Adicione mapas da sua organização ArcGIS ao PowerPoint para criar fantásticas apresentações dinâmicas.</p>
+			<p>&gt; <a href="/pt-pt/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">Obtenha mais informações</a></p>
+		</div>
         <div class="clear"></div>
 
+<!-- features second row -->
+		<!-- Enrich your data -->
+		<div id="em4oThirdFeature" class="column-12 phone-column-24">
+			<img src="Enrich-your-spreadsheets.png" alt="Enrich your data" />
 
-        <a name="systemRequirements"></a>
-        <h2>Requisitos de sistema</h2>
+			<h3>Enriqueça as folhas de cálculo do seu negócio</h3>
+			<p>Adicione dados demográficos e de estilos de vida de ArcGIS diretamente nas folhas de cálculo de Excel e obtenha uma maior contextualização sobre os locais que são importantes para si. Rapidamente explore localizações &quot;na mosca&quot; usando infográficos pop-up.</p>
+			<p>&gt; <a href="/pt-pt/maps-for-office/design-and-use/enrich-your-data.htm">Obtenha mais informações</a></p>
+		</div>
 
-        <p>O Esri Maps para Office requer uma conta que pertença a uma organização no <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a> e do software Microsoft Office Excel ou PowerPoint 2010 ou Microsoft Office Excel ou PowerPoint 2013. Os sistemas operacionais suportados são:</p>
-		<ul>
-		 <li>Windows 7 (32-bit e 64-bit)</li>
-		 <li>Windows 8 (32-bit e 64-bit)</li>
-		 <li>Windows 8.1 (32-bit e 64-bit)</li>
-		 <li>Windows Server 2008 R2</li>
-		 <li>Windows Server 2012</li>
-		</ul>
-		<p>Para obter informações adicionais, incluindo a velocidade necessária do processador, memória e espaço no disco rígido, consulte os requisitos de sistema para o <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> e <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
+		<!-- Share maps -->
+		<div id="em4oFourthFeature" class="column-12 phone-column-24">
+			<img src="Share-your-data.png" alt="Share maps on ArcGIS" />
+			<h3>Partilhe os seus mapas a partir do Excel</h3>
+			<p>Partilhe os seus mapas usando quer seja o ArcGIS Online quer o Portal for ArcGIS, ou insira-os em correios electrónicos, apresentações Powerpoint, ou documentos Word.</p>
+			<p>&gt; <a href="/pt-pt/maps-for-office/design-and-use/share-a-map-on-arcgis.htm">Obtenha mais informações</a></p>
+        </div>
+	<div class="clear"></div> 
 
-
-
-        <!-- 
-		<h3>Support for the following languages</h3>
-        <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
-		//-->
-
-
-
-
-        <a name="whatsNew"></a>
-        <h2>Quais as novidades?</h2>
-        <p>O Esri Maps for Office versão 3.1 foi lançado em Junho de 2015. E inclui os seguintes melhoramentos:</p>
-        <ul>
-        <li>Suporte de localização para 27 idiomas:</li>
-		<ul>
-		     <li>Árabe</li>
-		     <li>Chinês Simplificado</li>
-		     <li>Checo</li>
-		     <li>Dinamarquês</li>
-		     <li>Holandês</li>
-		     <li>Alemão</li>
-		     <li>Grego</li>
-		     <li>Estónio</li>
-		     <li>Terminar</li>
-		     <li>Francês</li>
-		     <li>Hebraico</li>
-		     <li>Italiano</li>
-		     <li>Japonês</li>
-		     <li>Coreano</li>
-		     <li>Lituano</li>
-		     <li>Letão</li>
-		     <li>Norueguês</li>
-		     <li>Polaco</li>
-		     <li>Português (Brasil)</li>
-		     <li>Português de Portugal</li>
-		     <li>Romeno</li>
-		     <li>Russo</li>
-		     <li>Espanhol</li>
-		     <li>Sueco</li>
-		     <li>Tailandês</li>
-		     <li>Turco</li>
-		     <li>Vietnamita</li>
-		</ul>
-	<li>Várias correcções de bugs e melhorias.</li>
-        </ul>
-
-
-        <h3>Versões anteriores</h3>
-        
-        <p>Mapas Esri for Office versão 3.0 foi lançada em Abril 2015. Inclui os seguintes melhoramentos:</p>
-        <ul>
-        <li>Visualize os seus dados Excel com maior clareza inserindo-os em mais do que um mapa na sua folha de cálculo. Pode criar múltiplos mapas para diferentes tabelas que tenha nas folhas de cálculo.</li>
-	<li>Comparar mapas lado-a-lado ou arrastando-os para outros monitores sem congestionar a sua janela Excel.</li>
-	<li>Trabalhar facilmente com dados mapeados descobrindo as ferramentas na janela do mapa.</li>
-	<li>Aproveite a nova ferramenta de pesquisa para descobrir locais rapidamente.</li>
-	<li>Não precisa de ser um especialista GIS para criar mapas bonitos. Ver como o seu mapa irá ficar antes de mapear os dados. Estilos de mapa são recomendados de acordo com os dados que estiver a mapear para obter as melhores percepções visuais.</li>
-	<li>Use o sistema de coordenadas à sua escolha e sobreponha facilmente outros conjuntos de dados GIS que estão no seu sistema de coordenadas locais.</li>
-	<li>Tipos de localização personalizadas agora incluem elementos de linha</li>
-	<li>Mais ajuda para ajudar novos utilizadores a começarem rapidamente e facilmente.</li>
-        </ul>
-
-        <p>Mapas Esri for Office versão 2.1.5 foi lançada no inverno 2015. Inclui os seguintes melhoramentos:</p>
-        <ul>
-        <li>Suporte para proxies web seguros e não seguros.</li>
-        </ul>
-
-	<p>Mapas Esri for Office versão 2.1.4 foi lançado na primavera 2014. Inclui os seguintes melhoramentos:</p>
-        <ul>
-        <li>Actualizações de segurança.</li>
-        </ul>
-
-        <p>Mapas Esri for Office versão 2.1.3 foi lançado na primavera 2014. Inclui os seguintes melhoramentos:</p>
-        <ul>
-        <li>Suporte para papéis personalizados.</li>
-        <li>Os novos parâmetros de instalação silenciosos permitem um maior controlo sobre implementações de larga escala.</li>
-        <li>Agora o Maps for Office verifica a conetividade ao ArcGIS e notifica-o sempre que alguns serviços necessários não estejam disponíveis.</li>
-		<li>Correcção de erros e usabilidade, incluindo:</li>
-			<ul>
-			<li>Capacidade de utilizar serviços de mapa alojados como tipos de localização personalizados.</li>
-			<li>Foram corrigidos os problemas de visibilidade de camadas em versões localizadas.</li>
-			<li>Falhas aleatórias causadas por versões anteriores do Visual Studio Tools for Office foram corrigidas.</li>
-			<li>Os localizadores personalizados são agora exibidos utilizando o seu nome ao invés do &apos;Endereço&apos; no fluxo de trabalho adicionar dados.</li>
-			<li>Gestão do registo na desinstalação melhorada.</li>
-			<li>Armazenamento de geometrias devolvido pelo ArcGIS mais eficiente.</li>
-			<li>Quando está ligado a um Portal, já não são efetuados os pedidos ao ArcGIS Online.</li>
-			<li>Vírgulas como separadores decimais são agora geridas corretamente.</li>
-			<li>Camadas enriquecidas podem agora ser estilizadas e agrupadas pelas novas colunas adicionadas.</li>
-			<li>As janelas pop-up para camadas enriquecidas exibem agora cabeçalhos de coluna corretos.</li>
-			<li>Quando está desligado da Internet, as falhas já não ocorrem.</li>
-			<li>O Esri Maps for Office em PowerPoint respeita agora o mapa base organizacional padrão.</li>
-			</ul>
-        </ul>
-
-
-        <p>Mapas Esri for Office versão 2.1.2 foi lançada em Novembro 2013. Inclui os seguintes melhoramentos:</p>
-        <ul>
-		<li>Correcção de erros e usabilidade, incluindo:</li>
-			<ul>
-			<li>Melhoramentos na ferramenta de Enriquecimento de Camada, tais como: uso mais eficiente de memória para lidar com mais pedidos de enriquecimento e um indicador de progresso melhorado.</li>
-			<li>Foi corrigido um erro que levava Excel a falhar após a instalação dos Mapas Esri.</li>
-			<li>Foi corrigido um erro que exibia imagens incorretas no painel de Pesquisa.</li>
-			<li>Foi corrigido um erro que causava que as pesquisas personalizadas de tipo de localização falhassem nos idiomas japonês, russo e chinês.</li>
-			<li>Foram limpas strings localizadas referentes a Factos Importantes, Riqueza, Políticas e Saúde no painel Pesquisar.</li>
-			</ul>
-        </ul>
+		<br />
 		
-		<p>Versão 2.1.1 foi lançada em Outubro 2013. Inclui os seguintes melhoramentos:</p>
-        <ul>
-        <li>Novas versões traduzidas suportando agora 22 idiomas:</li>
-			<ul>
-			<li>Árabe, Chinês (simplificado Han), Dinamarquês, Holandês, Inglês, Estónio, Francês, Alemão, Hebraico, Italiano, Japonês, Coreano, Letão, Lituano, Norueguês, Polaco, Português (Brasil), Português (Portugal), Romeno, Russo, Espanhol e Sueco.</li>
-			</ul>
-		<li>Suporte para janelas pop-up em mapas web</li>
-		<li>Simbologia de elementos utilizando um ícone obtido a partir de um URL num atributo.</li>
-		<li>Várias correcções de erros e melhorias de utilização do produto, tais como:
-			<ul>
-			<li>Melhorada a gestão de inícios de sessão OAuth</li>
-			<li>Mais mensagens de erro úteis na ferramenta Localizar Hot Spots</li>
-			<li>A ferramenta Localizar Hot Spots suporta agora nomes de colunas com espaços</li>
-			<li>A ferramenta Seleccionar suporta agora buffers de tamanho &quot;0&quot;</li>
-			<li>Corrigidos erros do painel de tarefas</li>
-			<li>Corrigidos erros na visibilidade de grupos</li>
-			<li>Melhorado o suporte para organizações que utilizam SSL em todas as ligações</li>
-			<li>A funcionalidade agrupar funciona agora correctamente quando são utilizadas colunas adicionadas a partir da ferramenta Enriquecer Camada</li>
-			</ul>
-        </ul>
-		
-        <p>Versão 2.0.2,1 foi lançada em maio de 2013. Inclui os seguintes melhoramentos:</p>
-        <ul>
-        <li>Análise de padrões estatísticos através da ferramenta Hot Spot</li>
-		<li>Melhoras no enriquecimento de dados, incluindo mais coleções de dados e a capacidade de seleccionar as variáveis ​​individuais a partir de colecções de dados</li>
-		<li>Suporte para inicio de sessão protegida utilizando OAuth+SAML (AGOL)</li>
-        <li>Suporte para inicio de sessão protegida utilizando IWA, PKI (Apenas Portal)</li>
-		<li>Melhorias na interface utilizador para gráficos informativos e ferramenta Enriquecer Camada</li>
-		<li>Fluxo de trabalho melhorado para actualizar o Maps for Office para a versão mais recente</li>
-        </ul>
-		<br>
-        <p>Versão 2.0.2 foi lançada em maio de 2013. Inclui os seguintes melhoramentos:</p>
-        <ul>
-          <li>Enriquecimento dos seus dados com o contexto geográfico utilizando a nova ferramenta &apos;Enriquecer Camada &quot;.</li>
-		  <li>Selecção de elementos no mapa e localização de elementos próximos de outras camadas</li>
-		  <li>Pop-ups do mapa com gráficos informativos que fornecem informações contextuais sobre as áreas circundantes dos elementos no mapa</li>
-		  <li>Suporte de visualização para o Portal for ArcGIS 10.2</li>
-		  <li>Novas opções de configuração para os mapas de calor e de clustering</li>
-		  <li>Capacidade de filtrar elementos agrupados no mapa clicando nos intervalos de classe na legenda do mapa</li>
-		  <li>Melhoria do fluxo de trabalho para geocodificação de endereços</li>
-		  <li>Suporte para personalizar a galeria de mapas base da sua organização ArcGIS Online</li>
-		  <li>Inserir Mapas utilizando o mapa base padrão da sua organização ArcGIS Online</li>
-		  <li>Pesquisa de dados do ArcGIS Online utilizando categorias populares, tais como, Riqueza, Negócios, Política e Saúde</li>
-		  <li>Os nomes de lugares são agora baseados na localização de dados. Por exemplo, as etiquetas no fluxo de trabalho de geocodificação vai mostrar prefeituras no Japão, estados nos Estados Unidos, e províncias no Canadá</li>
-		  <li>Suporte para Microsoft Office 2013</li>
-		  <li>Outras qualidades, utilidades e melhorias cartográficas</li>
-        </ul>
+<!-- What's new section -->
+	<hr />
+	<a id="whatsNew"></a>
+ 	<h2>Quais as novidades?</h2>	
+	<p>&gt; Tem uma ideia para uma funcionalidade que gostaria de ver implementada no ArcGIS Maps for Office? Transmita-nos a sua ideia no site <a href="http://ideas.arcgis.com/ideaList?c=09a300000004xET&category=Esri+Maps+for+Office" target="_blank">ArcGIS Ideas</a> .</p>
+ 	<p>ArcGIS Maps for Office versão 4.0 encontra-se agora disponível. Esta versão contém atualizações e melhorias significativas. Aqui estão alguns destaques.</p>
+	
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
 
+		<h3>actualizações 4.0</h3>
+		<p>ArcGIS Maps for Office 4.0 inclui as seguintes novas funcionalidades:
+			<ul>
+				<li><b>Utilize <a href="/pt-pt/maps-for-office/design-and-use/change-a-layer-s-style.htm">Cartografia Inteligente</a> para criar rapidamente mapas de belo efeito</b>
+					<p>Quer seja um especialista a trabalhar com mapas ou esteja apenas a começar, nunca foi tão fácil criar mapas visualmente fantásticos, que contam as histórias que pretende contar. O ArcGIS Maps for Office analisa os dados na sua folha de cálculo e sugere as melhores formas de os representar num mapa, oferecendo uma seleção de estilos de entr os quais pode escolher. Escolha um estilo e crie um mapa instantaneamente, ou personalize as opções de estilo para encaixarem na sua história. A cartografia inteligente também inclui a muito solicitada capacidade de definir manualmente quebras de classe para as suas camadas.</p>
+				</li>
+				<li><b>Encontre padrões nos seus locais ao longo do tempo com <a href="/pt-pt/maps-for-office/design-and-use/map-temporal-data.htm">animações baseadas em tempo</a></b>
+					<p>Se os seus dados contiverem valores temporais, pode adicionar camadas com informação temporal a um mapa no Excel e executar uma animação que mostre como os padrões nos dados se alteram ao longo do tempo. Esta funcionalidade também suporta camadas com informação temporal na plataforma ArcGIS, permitindo-lhe comparar padrões baseados em tempo nos seus dados com padrões semelhantes da sua organização, ou de fontes confiáveis, como US National Oceanic e Atmospheric Administration (NOAA).</p>
+				</li>
+				<li><b>Comunique o seu trabalho de forma mais efetiva com uma experiência totalmente no va em <a href="/pt-pt/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">PowerPoint.</a></b>
+					<p>O ArcGIS Maps for Office fornece uma experiência totalmente atualizada para melhorar as suas apresentações em PowerPoint com mapas dinâmicos e interativos, tornando mais fácil e rápido pesquisar conteúdo. Adicione mapas diretamente ao PowerPoint utilizando conteúdo da sua organização ArcGIS, ou edite slides de mapas existentes. Insira o mapa num slide e posicione-o como pretender—isolado ou combinado com outros elementos básicos do PowerPoint, como gráficos, imagens e texto. No modo Apresentação de Slides, pode fazer zoom e mover-se pelo mapa e selecionar elementos para exibir informações detalhadas, permitindo-lhe responder rapidamente a questões que surgem durante a apresentação.</p>
+				<li><b>Concentre-se nas linhas que são importantes utilizando <a href="/pt-pt/maps-for-office/design-and-use/select-features.htm#ESRI_SECTION1_53FF2A6DECC04ED4A5AAED1BDDBC9515">filtragembaseada em mapa</a></b>
+					<p>Durante muito tempo, teve a possibilidade de filtrar folhas de cálculo pelo valor das células. Agora, o ArcGIS Maps for Office permite-lhe filtrar a sua folha de cálculo selecionando itens no mapa, permitindo-lhe focar-se diretamente nos elementos com os quais se encontra a trabalhar no momento. Filtre a folha de cálculo para exibir apenas elementos selecionados, depois utilize funções básicas do Excel para trabalhar com os dados que necessita.</p>
+				</li>
+				<li><b>Mantenha-se a par de alterações aos dados definindo um <a href="/pt-pt/maps-for-office/design-and-use/set-refresh-interval.htm">intervalo de atualização</a></b>
+					<p>As camadas estáticas adicionadas a partir de ArcGIS ajudam-no a visualizar objetos imóveis tais como edifícios, estradas ou limites. Agora, o ArcGIS Maps for Office permite-lhe acompanhar coisas que se movem, alteram ou evoluem—como tempestades, veículos ou o estado de trabalhos no terreno. A funcionalidade Intervalode Atualização permite-lhe especificar com que frequência uma camada inspecionada por atualizações; ou clicar num botão para atualizar a camada imediatamente.</p>
+				</li>
+			</ul>
+		</p>
+	
+
+
+<!-- Supported environments section -->
+	<hr />
+	<a id="supportedEnvironments"></a>
+        <h2>Ambientes suportados</h2>
+		<p>O ArcGIS Maps for Office é implementado como add-on do Microsoft Excel e Microsoft PowerPoint. Para que o ArcGIS Maps for Office funcione corretamente, a Esri assume uma configuração de operações destas aplicações. A Esri testa o ArcGIS Maps for Office apenas em ambientes de software certificados como sendo suportados por Microsoft Excel ou PowerPoint; nem todos os ambientes suportados por Microsoft Excel ou PowerPoint foram testados ou certificados. Para obter mais informações, consulte a <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>política de ambientes suportados da Esri</a>.</p>
+		
+		<p><b>Nota:</b> O Microsoft Word permite-lhe incorporar e trabalhar com folhas de Excel num documento. Este fluxo de trabalho não é suportado pelo ArcGIS Maps for Office e não é recomendado.</p>
+		
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+
+		<!-- Sys Reqs -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Requisitos de sistema</a>
+		</h3>
+			<div exp1='yes' style="display:none;padding:0 15px;">
+			<p>O Esri Maps para Office requer uma conta que pertença a uma organização ArcGIS e o Microsoft Office Excel ou PowerPoint (Microsoft Office 2010, 2013 ou 2016).</p>
+			<p>Para informação adicional, incluindo a velocidade de processador necessária, memória e espaço de disco rígido, consulte os requisitos de sistema para o seguinte:
+			<ul>
+				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
+				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
+				<li><a href="https://products.office.com/en-ca/office-system-requirements#SUITES" target="_blank">Microsoft Office 2016</a></li>
+			</ul>	
+			</p>
+			</div>
+			
+		<div class="clear" style="padding:5px;"></div>
+
+		<!-- Req'd SW -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Software solicitado</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
+			<p>O ArcGIS Maps for Office requer uma subscrição organizacional <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> ou uma implementação local do Portal for ArcGIS. Assume-se que o método de autenticação utilizado para aceder à plataforma foi configurado de forma adequada pelo administrador ArcGIS.</p>
+
+			<p>Adicionalmente, o software adicional deve ser instalado e configurado no seu sistema:</p>
+				<ul>
+					<li>Microsoft Office 2010, 2013, ou 2016*</br>
+						*O ArcGIS Maps for Office suporta a versão Microsoft Office 2016 16.0.4266.1003 ou mais recentes.
+					</li>
+					<li>Internet Explorer 9, 10 ou 11**</li>
+					<li>Microsoft Windows. Versões suportadas:
+						<ul>
+							<li>Windows 7 (32 bit e 64 bit)</li>
+							<li>Windows 8 (32 bit e 64 bit)</li>
+							<li>Windows 8,1 (32 bit e 64 bit)</li>
+							<li>Windows 10 (32 bit e 64 bit)</li>
+							<li>Windows Server 2008 R2</li>
+							<li>Windows Server 2012</li>
+							<li>Windows Server 2012 R2</li>
+						</ul>
+					</li>
+				</ul>
+			<p>**O ArcGIS Maps for Office utiliza JavaScript dentro de um browser de internet para exibir mapas. Como o Microsoft Excel requer a utilização de Internet Explorer (IE) para exibir conteúdo da web, não existe a opção de utilizar outro navegador. Funcionalidades dentro da aplicação requerem a utilização de IE9 ou posterior; versões mais antigas não são suportadas.</p>
+			</div>
+			
+		<!-- Supported languages -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Idiomas suportados</a>
+		</h3>
+			<div exp3='yes' style="display:none;padding:0 15px;">
+			<p>O ArcGIS Maps for Office encontra-se disponível nos seguintes idiomas:</p>
+			<p>Árabe, Chinês (Simplificado), Chinês (Tradicional de Hong Kong), Chinês (Tradicional de Taiwan), Checo, Dinamarquês, Alemão, Grego, Inglês, Espanhol, Estónio, Finlandês, Francês, Hebreu, Italiano, Japonês, Coreano, Lituano, Letão, Holandês, Norueguês, Polaco, Português (Brasil), Português (Portugal), Romeno, Russo, Sueco, Tailandês, Turco e Vietnamita.</p>
+			
+			<p>O ArcGIS Maps for Office utiliza o idioma especificado nas Opções do Excel, não a definição de base do sistema operativo. Se está a usar um idioma não suportado, a aplicação usa Inglês.</p>
+			
+			</div>
 
         <p>&nbsp;</p>
-
-      </div>
-
-
+	</div>
+	
+	
+<!-- Sidebars -->
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
           <h3>Introdução</h3>
           <ul>
            <li><a href="#whatsNew">Quais as novidades?</a></li>
-            <li><a href="#systemRequirements">Requisitos de sistema</a></li>
+            <li><a href="#supportedEnvironments">Ambientes suportados</a></li>
+			<li>Ajuda para versões anteriores:
+				<ul>
+					<li><a href="/pt-pt/maps-for-office/3.1/welcome.htm">3.1 ajuda online</a></li>
+				</ul>
+			</li>
 			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">Ver vídeos</a></li>
 
           </ul>
@@ -290,12 +261,14 @@ mobile: true
           </div>
         </div>
 
- </div>
+	 </div>
 
-    </div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script></Comment>-&gt;
- <script type="text/javascript">
+</div>
+
+	 
+
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script><script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
