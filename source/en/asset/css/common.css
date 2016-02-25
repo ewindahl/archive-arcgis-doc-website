@@ -556,7 +556,7 @@ table.lined-columns tbody th, table.lined-columns tbody td {
 
 .marketplace .dropdown-navigation {
   float: right;
-  margin-top: 20px;
+  margin-top: 23px;
 }
 
 .marketplace .section-bar.marketplace {
@@ -691,19 +691,16 @@ section > h2 > img {
 
 
 .btn.user-signin {
-  font-size: .8125em;
-  line-height: 1.84615em;
-  border-width: 1px;
-
-  text-shadow: none;
-
-  background: none;
-  color: #007ac2;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  text-transform: none;
-  padding: 0.3em 1.8em 0.2em !important;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: unset;
+    display: block;
+    line-height: unset;
+    margin-top: 1px;
+    text-shadow: none;
+    text-transform: none;
 }
 
 .user-signin > img {
@@ -713,9 +710,10 @@ section > h2 > img {
  .profile-icon {
   background-image: url("/img/ago_sprite_search.png") !important;
   background-position: -64px -81px;
-  position: absolute;
+  position: unset;
   top: 7px;
   display: inline-block;
+  margin-right: 5px;
   width: 16px;
   height: 16px;
 
@@ -773,10 +771,44 @@ ul ol li {
 
 #header .btn.user-signin, #header .dropdown.btn.user-signin, #header .btn.marketplace, #header .dropdown.btn.marketplace {
     color: #323232;
-    padding: 0 1.6em !important;
+    padding: 0 0.2em !important;
 }
 
 #lgarrow.arrow-down {
     background: transparent url("/img/ago_sprite_search.png") no-repeat scroll 75% 36%;
 }
+
+#logged-out-navigation {
+    margin-top: 3px;
+	 margin-right: 1em;
+}
+#logged-in-navigation {
+	 margin-right: 1em;
+}
+
+#header nav li a.active {
+    border-bottom: 3px solid #007ac2;
+	 padding-bottom: 9px;
+}
+
+#logged-in-navigation .user-signin {
+    margin-right: 20px;
+	 padding-top: 3px;
+}
+
+#logged-in-navigation.dropdown-wrapper {
+	 /*top: 18px;*/
+	 margin-top: 3px;
+}
+#logged-in-navigation.dropdown-wrapper .dropdown::after {
+	top: 15px;
+}
+#logged-out-navigation .btn.user-signin {
+	height: 31px;
+}
+#logged-out-navigation .btn.marketplace {
+	height: 29px;
+}
+
+
 
