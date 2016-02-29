@@ -30,6 +30,8 @@ $(document).ready(function () {
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"5.0.1/"));
 		}else if(window.location.pathname.match( /(\/6.0\/)/)){
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"6.0/"));
+		}else if(window.location.pathname.match( /(\/6.0.2\/)/)){
+			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"6.0.2/"));
 		}else{
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,""));
 		}		
@@ -38,6 +40,8 @@ $(document).ready(function () {
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"5.0.1/"));
 		}else if(window.location.pathname.match( /(\/6.0\/)/)){
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"6.0/"));
+		}else if(window.location.pathname.match( /(\/6.0.2\/)/)){
+			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"6.0.2/"));
 		}else{
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,""));
 		}
