@@ -98,6 +98,14 @@ $(document).ready(function() {
 	    return vars;
 	}
 
+	function updateSizeLabel (cardObj)
+	{
+		var fileSize = $(cardObj).find(".download-link").attr("data-file-size")
+		if(fileSize && fileSize.trim() != ""){
+			$(cardObj).find(".small-grey").text(fileSize)
+		}
+	}
+
 
 
 //Execution
@@ -111,12 +119,16 @@ $(document).ready(function() {
 		
 		var fileName = $(this).attr("data-app-file")
 		var folderName = $(this).attr("data-app-folder")
+		var fileSize = $(this).attr("data-file-size")
 		var versionLabel = $(this).text()
 
 		var parentObj = $(this).parentsUntil( ".card" )
 		parentObj.find(".dropdown-wrapper .dropdown-selected").text(versionLabel)
 		parentObj.find(".download-link").attr("data-filename", fileName)
 		parentObj.find(".download-link").attr("data-folder", folderName)
+		parentObj.find(".download-link").attr("data-file-size", fileSize)
+		
+		updateSizeLabel (parentObj)
 	});
 
 	
@@ -126,6 +138,8 @@ $(document).ready(function() {
 			$(this).find (".dropdown-selected").removeClass("dropdown")
 		}
 		$(this).find("ul li a").first().trigger("click")
+
+		updateSizeLabel ($(this))
 	});
 
 
