@@ -102,7 +102,7 @@ $(document).ready(function() {
 	{
 		var fileSize = $(cardObj).find(".download-link").attr("data-file-size")
 		if(fileSize && fileSize.trim() != ""){
-			$(cardObj).find(".small-grey").text(fileSize)
+			$(cardObj).find(".file-size").text(fileSize)
 		}
 	}
 
