@@ -52,7 +52,7 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudio-Windows-x64</h4>
-                        <p class="small-grey">180 MB</p>
+                        <p class="small-grey file-size">180 MB</p>
 
                         <!--<div class="dropdown-wrapper ">
                           Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#"></span>
@@ -73,7 +73,7 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudio-Windows-x86</h4>
-                        <p class="small-grey">171 MB</p>
+                        <p class="small-grey file-size">171 MB</p>
                         <%= generateVersionDropDown("appstudio~secured~windows86") %>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudio-Mac</h4>
-                        <p class="small-grey">481 MB</p>
+                        <p class="small-grey file-size">481 MB</p>
                         <%= generateVersionDropDown("appstudio~secured~mac") %>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudio-Linux</h4>
-                        <p class="small-grey">229 MB</p>
+                        <p class="small-grey file-size">229 MB</p>
                         <%= generateVersionDropDown("appstudio~secured~linux") %>
                     </div>
                 </div>
@@ -115,8 +115,8 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudioPlayer-Windows-x64</h4>
-                        <p class="small-grey">68 MB</p>
-                        <a class="btn orange download-link" href="<%= data.downloads["en"].appstudio.nonSecured.windows64.url %>">Descargar</a>
+                        <p class="small-grey file-size">68 MB</p>
+                        <a class="btn orange download-link" data-file-size="<%= data.downloads["en"].appstudio.nonSecured.windows64.filesize %>" href="<%= data.downloads["en"].appstudio.nonSecured.windows64.url %>">Descargar</a>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@ mobile: true
                     <div class="text">
                         <h4>AppStudioPlayer-Windows-x86</h4>
                         <p class="small-grey" class="small-grey">60 MB</p>
-                        <a class="btn orange download-link" href="<%= data.downloads["en"].appstudio.nonSecured.windows86.url %>">Descargar</a>
+                        <a class="btn orange download-link" data-file-size="<%= data.downloads["en"].appstudio.nonSecured.windows86.filesize %>" href="<%= data.downloads["en"].appstudio.nonSecured.windows86.url %>">Descargar</a>
                     </div>
                 </div>
             </div>
@@ -139,8 +139,8 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudioPlayer-Mac</h4>
-                        <p class="small-grey">82 MB</p>
-                        <a class="btn orange download-link" href="<%= data.downloads["en"].appstudio.nonSecured.mac.url %>">Descargar</a>
+                        <p class="small-grey file-size">82 MB</p>
+                        <a class="btn orange download-link" data-file-size="<%= data.downloads["en"].appstudio.nonSecured.mac.filesize %>" href="<%= data.downloads["en"].appstudio.nonSecured.mac.url %>">Descargar</a>
                     </div>
                 </div>
             </div>
@@ -151,8 +151,8 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudioPlayer-Linux</h4>
-                        <p class="small-grey">104 MB</p>
-                        <a class="btn orange download-link" href="<%= data.downloads["en"].appstudio.nonSecured.linux.url %>">Descargar</a>
+                        <p class="small-grey file-size">104 MB</p>
+                        <a class="btn orange download-link" data-file-size="<%= data.downloads["en"].appstudio.nonSecured.linux.filesize %>"  href="<%= data.downloads["en"].appstudio.nonSecured.linux.url %>">Descargar</a>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudioPlayer-Android</h4>
-                        <p class="small-grey">&nbsp;</p>
+                        <p class="small-grey file-size">&nbsp;</p>
                         <a href="<%= data.downloads["en"].appstudio.nonSecured.android.url %>" class="btn orange">En Google Play</a>
                     </div>
                 </div>
@@ -176,7 +176,7 @@ mobile: true
                     </div>
                     <div class="text">
                         <h4>AppStudioPlayer-iOS</h4>
-                        <p class="small-grey">&nbsp;</p>
+                        <p class="small-grey file-size">&nbsp;</p>
                         <a href="<%= data.downloads["en"].appstudio.nonSecured.ios.url %>" class="btn orange">En la App Store</a>
                     </div>
                 </div>
