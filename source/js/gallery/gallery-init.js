@@ -34,7 +34,7 @@ function getTier(hostname) {
         tier: "dev",
         agolAuthCookie: "esri_auth",
         agolHost: "https://devext.arcgis.com",
-        agolCdnBasePath: "//cdn.arcgis.com/cdn/8031/"
+        agolCdnBasePath: "//cdn.arcgis.com/cdn/8042/"
     };
 
    if (hostname == "docstg.arcgis.com") {
