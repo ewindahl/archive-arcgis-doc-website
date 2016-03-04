@@ -1803,7 +1803,11 @@ var localeJsonObj = {
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
       "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
-      "windows-phone": "Windows Phone"
+      "windows-phone": "Windows Phone",
+		"lessons": "Lessons", 
+      "lessons-ht": "Lessons",
+		"books": "Books", 
+      "books-ht": "Books"
    }, 
    "es": {
       "10.3": "ArcMap 10.3", 

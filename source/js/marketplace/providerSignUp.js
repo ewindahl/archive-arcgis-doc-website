@@ -18,7 +18,7 @@ doc.signUpForm = (function() {
 			}
 			if($('#lastName').val() == ""){
 				alert("Please enter your Last Name!");
-				$('#firstName').focus();
+				$('#lastName').focus();
 				return false;
 			}
 			if($('#userEmail').val() == ""){
@@ -39,31 +39,43 @@ doc.signUpForm = (function() {
 		signUpEmail : function (){
 			
 			$.ajax({
-                    url: $('#sign-up-form').attr('action'),
+               url: $('#sign-up-form').attr('action'),
 					type: 'POST',
-                    dataType: 'text',
-                    cache: false,
-					data: { firstName: $('#firstName').val(), lastName: $('#lastName').val(),userEmail: $('#userEmail').val(),userPhone: $('#userPhone').val(),userComment:encodeURIComponent($('#userComment').val()), submitSignUp: true },
-                    timeout: 1000,
+               dataType: 'JSON',
+               cache: false,
+					data: {
+						companyName: $('#companyName').val(), 
+						firstName: $('#firstName').val(), 
+						lastName: $('#lastName').val(),
+						userEmail: $('#userEmail').val(),
+						userPhone: $('#userPhone').val(), 
+						userWebsite: $('#userWebsite').val(), 
+						userComment:encodeURIComponent($('#userComment').val()), 
+						userServices:encodeURIComponent($('#userServices').val()), 
+						datablock: $("#datablock").val(), 
+						fname: window.location.origin + $("#fname").val(), 
+						submitSignUp: true 
+					},
+               timeout: 2000,
 					beforeSend: function() {
 						$("#sign-up-form-fields").hide();
 						$("#spinner").show();
 					},
-                    success: function (data) {
+               success: function (data) {
 					
-                        if (data) {
-                            // show confirmation page
+                  if (data) {
+                     // show confirmation page
 							$("#signup-confirmation").show();
-                        }else{
+                  }else{
 							//Reload the form
 							$("#sign-up-form-fields").show();
 						}
-                    },
+               },
 					error: function (data) {
 							//Reload the form
 							//$("#sign-up-form-fields").show();
 							$("#signup-confirmation").show();
-                    }
+               }
 				});
 				return;
 		},

@@ -78,6 +78,7 @@ $(document).ready(function() {
     $("#logged-in-navigation").addClass ("hide");
   	
     $("#logged-out-navigation > a").attr ("href", sitecfg["agolSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
+	 $("#logged-out-navigation > a").attr ("linkType", "fix");
 
     if ($.cookie && $.cookie ("esri_auth_extn")) {
       $.removeCookie ("esri_auth_extn", {domain: '.arcgis.com', path:"/"});
