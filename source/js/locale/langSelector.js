@@ -433,7 +433,7 @@ jQuery(document).ready(function ($) {
   }else if (winloc.pathname.match( /(\/open-data\/)/)){
     docCfg.langSelector = "openData";
   }else if (winloc.pathname.match( /(\/maps-for-office\/)/)){
-    docCfg.langSelector = if (winloc.pathname.match( /(\/3.1\/)/)) ? "generic" : "marketplace";
+    docCfg.langSelector = (winloc.pathname.match( /(\/3.1\/)/)) ? "generic" : "marketplace";
   }
 
   dbg ("start: " + window.location.href);
