@@ -10,33 +10,28 @@ if request.path.include? "/trust/"
   pardotTrackingCode = "4024"
 end  
 %>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="<%=readDirection%>"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="<%=readDirection%>"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if lt IE 7]>      <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 7]>         <html class="ie lt-ie9 lt-ie8 ie7" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 8]>         <html class="ie lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
 <!--[if IE 9]>         <html class="ie ie9" dir="<%=readDirection%>"> <![endif]-->
 <!--[if gt IE 8]><!--> <html dir="<%=readDirection%>"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-	<meta name="viewport" content="width=device-width">
+	 <meta name="viewport" content="width=device-width">
 
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
+	 
+	 <!--[if lt IE 9]>
+      <%= javascript_include_tag "libs/html5shiv.js" %>
+		<script src="/assets/js/libs/json2.js"></script>
+      <%= javascript_include_tag "libs/selectivizr-min.js" %>
+     
+    <![endif]-->
 
     <%= javascript_include_tag "sitecfg" %>
 
 	<script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-215788-73']);
-      _gaq.push(['_setDomainName', 'arcgis.com']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-	  
 	  <% if current_page.data.require_login %>
         (function(){
           var cookieRegex = /esri_auth=/;
@@ -45,25 +40,11 @@ end
           }
         })();
       <% end %>
-		
-		<% if current_page.data.loop11 %>
-		var loop11_key = "13faf97dbc6c903ff5e96f7167fce84e4494a9ae";
-		document.write(unescape("%3cscript src='//cdn.loop11.com/my/loop11.js' type='text/javascript'%3e%3c/script%3e"));
-      <% end %>
 
     </script>
-
-    <!--[if lt IE 9]>
-      <%= javascript_include_tag "libs/html5shiv.js" %>
-      <%= javascript_include_tag "libs/selectivizr-min.js" %>
-      <style>
-        #wrapper {
-          min-width: 960px;
-        }
-      </style>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
-    <link rel="shortcut icon" href="/img/favicon.ico">
+   
+    <link rel="pingback" href="//pingback.me/esri/xmlrpc" />
+	 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <%= stylesheet_link_tag "screen" %>
     <% if current_page.data.css %>
@@ -115,8 +96,7 @@ end
 		</script>
 	<% end %>
 
-   <link type="text/css" rel="stylesheet" href="/en/asset/css/common.css"/>
-	
+  	
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
    <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
@@ -134,9 +114,7 @@ end
 	<%= javascript_include_tag "locale/langSelector" %>
    <% end %>
    
-   <!--[if IE]>
-		<%= javascript_include_tag "libs/html5-placeholder-shim.js" %>
-	<![endif]-->
+	<%= javascript_include_tag "calcite-web" %>
 	
 	<!--[if lt IE 11]>
 	<script>
@@ -154,16 +132,9 @@ end
     });
   </script>
 
-    <!--- search MD -->
-	<script>
-	/* Temporary fix for tablet version of "get started/blog column" issue. */
-		$(document).ready(function(){
-			$(".container .tablet-column-24").css('width','66.666%');
-			$(".container .column-8").css('width','33.333%');
-		});
-	</script>
 	<%= partial :"_partial/galleryLayout" %>
   </head>
+
   <body class="<%= current_language %>" >
   <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
