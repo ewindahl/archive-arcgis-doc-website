@@ -53,3 +53,8 @@ if(window.location.hostname.match( /(docstg.arcgis.com)/)) {
 	if(window.location.port && window.location.port == "4567"){
 		sitecfg.localhost = true;
 	}
+	
+	window.onload = function () {
+	  // Initialize all calcite.js patterns
+	  calcite.init();
+	};
