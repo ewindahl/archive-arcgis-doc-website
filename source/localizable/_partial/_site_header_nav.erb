@@ -1,12 +1,10 @@
-<ul>
-  <li><a data-langlabel="home" href="http://www.arcgis.com" class="home hide" id="nav-home"><%= t("site.nav.home") %></a></li>
-  <li><%= link_to t("site.nav.features"), t("paths.features"), "id" => "nav-features", "data-langlabel" => "features", "class" => "anonymous-and-public-only" %></li>
-  <li><%= link_to t("site.nav.plans"), t("paths.plans"), "id" => "nav-plans", "data-langlabel" => "plans", "class" => "anonymous-and-public-only" %></li>
-  <li><%= link_to t("site.nav.gallery"), t("paths.gallery"), "id" => "nav-gallery", "data-langlabel" => "gallery" %></li>
-  <li><%= link_to t("site.nav.map"), t("paths.map"), "id" => "nav-map", "data-langlabel" => "map" %></li>
-  <li><%= link_to t("site.nav.scene"), t("paths.scene"), "data-langlabel" => "scene", "id" => "nav-scene", "class" => "hideOnIE" %></li>
-  <li><%= link_to t("site.nav.help"), t("paths.help").gsub(/\/en\//,"/"+current_language+"/"), "id" => "nav-help", "data-langlabel" => "help", "class" => "anonymous-only" %></li>
-  <li><%= link_to t("site.nav.groups"), t("paths.groups"), "id" => "nav-groups", "data-langlabel" => "nav-groups", "class" => "public-and-org-only hide" %></li>
-  <li><%= link_to t("site.nav.mycontent"), t("paths.mycontent"), "id" => "nav-mycontent", "data-langlabel" => "nav-mycontent", "class" => "public-and-org-only hide" %></li>
-  <li><%= link_to t("site.nav.myorg"), t("paths.myorg"), "id" => "nav-myorg", "data-langlabel" => "nav-myorg" , "class" => "org-only hide"%></li>
-</ul>
+<a data-langlabel="home" href="http://www.arcgis.com" class="home hide <%= navLinkClass %>" id="nav-home"><%= t("site.nav.home") %></a>
+<%= link_to t("site.nav.features"), t("paths.features"), "id" => "nav-features", "data-langlabel" => "features", "class" => "anonymous-and-public-only side-nav-link " + navLinkClass %>
+<%= link_to t("site.nav.plans"), t("paths.plans"), "id" => "nav-plans", "data-langlabel" => "plans", "class" => "anonymous-and-public-only "+ navLinkClass %>
+<%= link_to t("site.nav.gallery"), t("paths.gallery"), "id" => "nav-gallery", "data-langlabel" => "gallery", "class" => navLinkClass %>
+<%= link_to t("site.nav.map"), t("paths.map"), "id" => "nav-map", "data-langlabel" => "map", "class" => navLinkClass %>
+<%= link_to t("site.nav.scene"), t("paths.scene"), "data-langlabel" => "scene", "id" => "nav-scene", "class" => "hideOnIE "+ navLinkClass %>
+<%= link_to t("site.nav.help"), t("paths.help").gsub(/\/en\//,"/"+current_language+"/"), "id" => "nav-help", "data-langlabel" => "help", "class" => "anonymous-only "+ navLinkClass %>
+<%= link_to t("site.nav.groups"), t("paths.groups"), "id" => "nav-groups", "data-langlabel" => "nav-groups", "class" => "public-and-org-only hide "+ navLinkClass %>
+<%= link_to t("site.nav.mycontent"), t("paths.mycontent"), "id" => "nav-mycontent", "data-langlabel" => "nav-mycontent", "class" => "public-and-org-only hide "+ navLinkClass %>
+<%= link_to t("site.nav.myorg"), t("paths.myorg"), "id" => "nav-myorg", "data-langlabel" => "nav-myorg" , "class" => "org-only hide "+ navLinkClass %>

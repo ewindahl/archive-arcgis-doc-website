@@ -115,6 +115,9 @@ end
    <% end %>
    
 	<%= javascript_include_tag "calcite-web" %>
+  <%
+    navLinkClass = "side-nav-link"
+  %>
 	
 	<!--[if lt IE 11]>
 	<script>
@@ -145,12 +148,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WVT7QT');</script>
 <!-- End Google Tag Manager -->
-    <div id="wrapper">
-      <div id="page">
 
-      <header id="header">
-        <div class="container relative-container">
-          <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
+     <!-- top navigation collapses to drawer on mobile -->
+    <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span class="avenir-demi">GIS</span></h2>
+            
+            <form class="gutter-left-half gutter-right-half leader-half trailer-half" method="GET" action="/search">
+              <input type="search" name="q" value="" placeholder="<%= #current_page.data.searchDfltStr %>Search" class="trailer-0">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="<%= #current_page.data.productMeta %>" />
+            </form>
+    
+            <%= partial "_partial/site_header_nav" %>
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    <div class="drawer drawer-right js-drawer" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <h4 class="side-nav-title padding-leader-half padding-trailer-half" data-full-name></h4>
+          <h6 class="side-nav-title font-size--2" data-username></h6>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">Sign Out</a>
+        </aside>
+      </nav>
+    </div>
+<!-- End of drawer -->
+
+
+    <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
 
             <div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
 
