@@ -13,11 +13,9 @@ js:
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
-  - sitecfg.js
-  - marketplace/init.js
 
 metatags:
-  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING">
+  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING"><META name="content-language" content="ko">
 
 mobile: true
 
@@ -26,18 +24,19 @@ mobile: true
   <div class="container">
     <header>
       <h1><a href="/ko/marketplace/">도움말</a></h1>
-	  <form id="helpSearchForm" target="_top">
+      <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search Marketplace Help">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="marketplace" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
+
     </header>
 	<nav>
       <ul>
-        <li class='current'><a href="/ko/marketplace/">기본</a></li>
-        <li><a href="/ko/marketplace/consumer/">소비자용</a></li>
-        <li><a href="/ko/marketplace/provider/">공급자용</a></li>
+        <li class='current'><a href="/ko/marketplace/">메인</a></li>
+        <li><a href="/ko/marketplace/consumer/">소비자 안내</a></li>
+        <li><a href="/ko/marketplace/provider/">공급자 안내</a></li>
       </ul>
     </nav>
   </div>
@@ -51,7 +50,7 @@ mobile: true
 
 		  <h2 id="appTitle">Marketplace란?</h2>
 
-          <p>ArcGIS Marketplace에서는 ArcGIS Online 기관이 자격 있는 공급자(Esri 비즈니스 파트너, Esri 총판 및 Esri)의 앱 및 데이터를 검색하고 구입하여 기관 내에서 사용할 수 있습니다. Marketplace에 등록된 앱 및 데이터 서비스는 전 세계의 모든 ArcGIS Online 기관이 이용할 수 있습니다.</p>
+          <p>ArcGIS Marketplace에서는 ArcGIS Online 기관이 자격 있는 공급자(Esri 비즈니스 파트너, Esri 디스트리뷰터, Esri 벤처기업. Esri)의 앱과 데이터를 검색하고 받아 기관 내에서 사용할 수 있습니다. 이 Marketplace에 기재된 앱과 데이터 서비스를 ArcGIS Online을 사용하는 전 세계 모든 기관이 사용할 수 있습니다.</p>
 
 
 
@@ -63,13 +62,15 @@ mobile: true
         <div id="collectorMapFeature" class="column-12 phone-column-24">
           <img src="img/help-power-your-enterprise.jpg" />
 
-          <h3>기업의 역량 강화 </h3>
-          <p>기관에서 사용할 앱 및 데이터 서비스를 찾아보세요. 앱 또는 데이터 서비스를 구입한 후에는 기관 내의 그룹 및 사용자와 쉽게 공유할 수 있습니다.</p>
+          <h3>기업 역량 강화 </h3>
+          <p>기관에서 사용할 앱 및 데이터 서비스를 찾습니다. 앱 또는 데이터 서비스를 받으면 그룹 또는 개별 구성원을 통해 접근 권한을 쉽게 얻을 수 있습니다.</p>
           <p>
 
-			<a href="/ko/marketplace/consumer/purchase-workflow.htm" class="icon-right-arrow">&nbsp;방법 보기</a> <br/> 
-			<a href="/ko/marketplace/consumer/faq.htm" class="icon-right-arrow">FAQ</a>
-
+			<a href="/ko/marketplace/consumer/purchase-workflow.htm" class="icon-right-arrow">&nbsp;방법 보기</a>
+				<br/>
+			<a href="/ko/marketplace/consumer/faq.htm" class="icon-right-arrow">&nbsp;FAQ</a>
+				<br/>
+            <a href="/ko/marketplace/consumer/whats-new.htm" class="icon-right-arrow">&nbsp;새로운 기능</a>
           </p>
         </div>
 
@@ -77,12 +78,16 @@ mobile: true
         <div id="collectorDataFeature" class="column-12 phone-column-24">
           <img src="img/help-reach-your-users.jpg" />
 
-          <h3>사용자 확보</h3>
-          <p>ArcGIS Marketplace에서는 리드를 창출하고, 무료 평가판을 제공하고, 리스팅에 대한 접근 권한을 부여하고, 구독을 관리할 수 있는 메커니즘을 제공합니다.</p>
+          <h3>사용자 연결</h3>
+          <p>ArcGIS Marketplace에서는 잠재 고객을 창출하고, 무료 평가판을 제공하고, 제품 목록에 대한 액세스 권한을 부여하고, 구독을 관리할 수 있는 메커니즘을 제공합니다.</p>
           <p>
-            <a href="/ko/marketplace/provider/build-apps.htm" class="icon-right-arrow">&nbsp;방법 보기</a> <br/> 
-			<a href="/ko/marketplace/provider/become-a-provider.htm class="icon-right-arrow">공급자 자격 얻기</a> <br/> 
-			<a href="/ko/marketplace/provider/faq.htm" class="icon-right-arrow">FAQ</a>
+            <a href="/ko/marketplace/provider/build-apps.htm" class="icon-right-arrow">&nbsp;방법 보기</a>
+               <br/>
+            <a href="/ko/marketplace/provider/become-a-provider.htm" class="icon-right-arrow">&nbsp;공급자 안내</a>
+               <br/>
+            <a href="/ko/marketplace/provider/faq.htm" class="icon-right-arrow">&nbsp;FAQ</a>
+			   <br/>
+            <a href="/ko/marketplace/provider/whats-new.htm" class="icon-right-arrow">&nbsp;새로운 기능</a>
 
           </p>
         </div>
@@ -92,21 +97,80 @@ mobile: true
         <p>&nbsp;</p>
 
       </div>
-
-
       <div class="column-8 tablet-column-24 blocks">
 
-        <div class="imgFrame block">
-          <h3 class="icon-orange icon-light-bulb">ArcGIS Ideas 사이트</h3>
-         <p>원하는 앱 또는 데이터를 찾을 수 없으신가요? 제안 사항을 게시하거나 기존 아이디어에 투표해 보세요.</p>
-         <p>아이디어를 원하는 공급자이신가요? 고객의 요청 사항을 확인해 보세요. 참여자를 초대하여 개별적으로 협력해 아이디어를 발전시켜 보세요.</p>
-         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
+        <div class="greyFrame">
+          <h4 class="icon-orange icon-light-bulb"><a href="http://ideas.arcgis.com">ArcGIS Ideas 사이트</a></h4>
+         <p>필요한 앱 또는 데이터가 보이지 않습니까? 제한 사항을 게시하거나 기존 아이디어에 투표하세요.</p>
         </div>
 
         <br />
 
 
  </div>
+      <div class="column-8 tablet-column-24 blocks">
 
+       <!--<div class="imgFrame block">
+           <h3 class="icon-blue icon-key"><a href="/ko/marketplace/provider/10-ways-to-create-listing-faq.htm">Key to a successful listing</a></h3>
+         <p>Learn the top 10 ways to create a successful listing</p>
+		 <!--<a title="Get started with ArcGIS Online" href="http://video.arcgis.com/iframe/3958/000000/width/960/0/00:00:00" class="colorbox-evlarge cboxElement">Watch a video tour</a>
+        </div>-->
+
+        <br />
+		<br />
+		<br />
+
+
+ </div>
+
+
+
+ </div>
+<!-- Gallery Title-->
+	<div class="page-section" id="gallery">
+	<div class="container">
+    <div class="row">
+	
+	<div class="feature-text">
+        <h2 class="leader-half trailer-half"><a href="https://marketplace.arcgis.com/" target="">Marketplace의 최신 목록</h2>
+		<span class="more">탐색<span></span></a></span>
     </div>
+	<br />
+    
+<div class="column-4 phone-column-24" style="width: 25%;">
+	
+	
+    <section class="support-option">
+		    <a href="https://marketplace.arcgis.com/listing.html?id=bb98aa7851324393a415e484f6f344e8" target="_blank"><h3>what3words for ArcGIS</h3>
+            <img src="https://www.arcgis.com/sharing/rest/content/listings/bb98aa7851324393a415e484f6f344e8/info/screenshots/w3w-screenshot1-merged.png">
+    </section>
+    
+  </div> 
 
+  <div class="column-4 phone-column-24" style="width: 25%;">
+	
+	<h3>Septentrio PinPoint GIS</h3>
+    <section class="support-option">
+		<a href="https://marketplace.arcgis.com/listing.html?id=3065859ee3b74598b410745ebf55c8ab" target="_blank">
+        <img src="https://www.arcgis.com/sharing/rest/content/listings/3065859ee3b74598b410745ebf55c8ab/info/screenshots/Screenshots_web.png">
+    </section>
+    
+  </div> 
+
+  <div class="column-4 phone-column-24" style="width: 25%;">
+	<h3>육각형</h3>
+	<section class="support-option">
+		<a href="https://marketplace.arcgis.com/listing.html?id=edcc7496680948e199f8f8b3c42e4949" target="_blank">
+        <img src="https://www.arcgis.com/sharing/rest/content/listings/edcc7496680948e199f8f8b3c42e4949/info/screenshots/epcot.jpg">
+	</section>
+  </div>
+  <div class="column-4 phone-column-24" style="width: 25%;">
+	
+	<h3>Collector for ArcGIS</h3>
+	<section class="support-option">
+		<a href="https://marketplace.arcgis.com/listing.html?id=b4168305108c448f901fd08ffc39e4ff" target="_blank">
+        <img src="http://docdev.arcgis.com/en/collector/story-graphic-4.png">
+	</section>
+  </div>
+</div>
+</div></div>
