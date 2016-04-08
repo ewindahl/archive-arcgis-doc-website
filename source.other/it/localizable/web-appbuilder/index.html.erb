@@ -34,7 +34,7 @@ mobile: true
         <li class='current'><a href="/it/web-appbuilder/">Home</a></li>
         <li><a href="/it/web-appbuilder/create-apps/">Creare app</a></li>
         <li><a href="/it/web-appbuilder/manage-apps/">Gestire app</a></li>
-        <li><a href="/it/web-appbuilder/extend-apps/">Estendere app</a></li>
+        <li><a href="/it/web-appbuilder/extend-apps/">Estendere le app</a></li>
       </ul>
     </nav>
   </div>
@@ -101,14 +101,23 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">Browser supportati</h2>
+		<p>L'app 2D supporta i seguenti browser:</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari 3+</li>
+          <li>Safari 3 e versione successiva</li>
 		  <li>Segmento</li>
           <li>Internet Explorer 9 e versioni successive</li>
         </ul>
-        
+		<p>L'app 3D supporta i seguenti browser:</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Segmento</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
         <h2 class="divider">Licenza</h2>
 
@@ -127,30 +136,33 @@ mobile: true
 
          <a name="whatIsNew"></a>
         <h2 class="divider">Novità</h2>
-        <p>Web AppBuilder for ArcGIS è stato aggiornato a novembre 2015. Include le seguenti nuove feature e miglioramenti:</p>
+        <p>Web AppBuilder for ArcGIS è stato aggiornato a marzo 2016. Include le seguenti nuove feature e miglioramenti:</p>
         <ul>
-          <li>Lo stato dell'app, inclusi l'estensione mappa e la visibilità del layer, viene ora automaticamente salvato quando si chiude il browser.</li>
-          <li>È ora completamente supportato un servizio protetto a livello Web di ArcGIS for Server.</li>
-          <li>Sei nuovi parametri URL consentono di trovare posizione o feature, fornire il login, interrogare feature, aggiungere punti, cambiare le impostazioni locali e specificare WKID per applicare zoom o pan sulla mappa.</li>
-          <li>Un nuovo widget Editor attributi batch consente di modificare contemporaneamente più attributi.</li>
-          <li>Un nuovo widget Dashboard di Reviewer visualizza statistiche dei risultati di qualità dei dati come grafici a barre o a torta infografica per riepilogare problemi di qualità dei dati identificati nei dati GIS.</li>
-          <li>Un nuovo widget Feature Report consente di raccogliere e gestire commenti sulla qualità dei dati dagli utenti.</li>
-		  <li>Un nuovo widget Misurazione immagine consente di eseguire misure su image service con funzionalità di misurazione.</li>
-          <li>Il widget per la ricerca dispone di opzioni per aggiungere testo del segnaposto per tutte le fonti di ricerca ed eseguire una ricerca per estensione mappa corrente.</li>
-          <li>Il widget Tabella attributi aggiorna i layer di conseguenza quando vengono modificati nella mappa.</li>
-		  <li>Il widget Modifica trasporta gli attributi modificabili configurati nella mappa.</li>
-		  <li>Il widget Coordinate facilita la lettura del testo delle coordinate.</li>
-		  <li>Il widget Splash fornisce colore di sfondo personalizzato.</li>
-		  <li>Il widget Query dispone del supporto per eseguire interrogazioni su tabelle correlate e visualizzarenel risultato le feature correlate.</li>
-		  <li>Il widget Geoprocessing dispone di opzioni per personalizzare i campi nell'output tabelle ed esportare i risultati in CSV, Raccolta feature e GeoJSON.</li>
-		  <li>Il widget Directions consente di aggiungere dell’URL del layer per il traffico.</li>
-		  <li>La finestra Scegli mappa Web fornisce l'ordinamento sulle mappe in base alla più recente, la più visualizzata, quella con il rating più alto, in base al titolo e al proprietario.</li>
-		  
+          <li>Un'esperienza di creazione migliorata consente di modificare la mappa dall'interno di Web AppBuilder for ArcGIS; non è più necessario lasciare l'app.</li>
+          <li>È ora possibile creare app 3D con scene mediante il pulsante Crea in I miei contenuti.</li>
+          <li>La scheda Attributo dispone di una nuova opzione Stato app. Questa opzione consente di scegliere se mantenere l'estensione mappa e la visibilità layer quando si lascia l'app.</li>
+          <li>Il widget Consapevolezza situazionale è stato rilasciato. Non è più in versione beta. Questo widget consente di creare o selezione un incidente sulla mappa e di analizzare le informazioni da feature layer, all'interno dell'area dell'incidente o entro una distanza dall'incidente specificata.</li>
+          <li>Utilizzare il nuovo widget Nelle vicinanze per individuare feature vicino a una posizione specificata, visualizzare informazioni più dettagliate su tali feature e ottenere indicazioni stradali a una feature selezionata.</li>
+		  <li>Utilizzare il nuovo widget DistrictLookup per individuare feature punto correlate a un poligono selezionato, visualizzare informazioni più dettagliate sulle feature punto correlate e ottenere indicazioni a una feature punto selezionata.</li>
+          <li>Utilizzare il nuovo widget Grafici della tabella correlati per rappresentare (con grafici a barre o a torta) i valori gestiti in una tabella correlata.</li>
+		  <li>Utilizzare il nuovo widget Riepilogo informazioni per riepilogare il numero di feature visibili su una mappa e abilitare il clustering su feature layer punto, se necessario.</li>
+          <li>Utilizzare il nuovo tema Altopiano per creare un'app moderna e di stile minimalista con barre degli strumenti piatte e contenitori widget.</li>
+		  <li>Il widget Modifica include un campo di visualizzazione nella pagina di impostazione che consente di scegliere gli attributi da visualizzare solo quando si esegue la modifica.</li>
+		  <li>È possibile aprire il widget Modifica direttamente nell'app mediante la finestra popup.</li>
+		  <li>Il widget Elaborazione dati geografici consente di aggiungere un'opzione per caricare shapefile.</li>
+		  <li>Il widget per la ricerca supporta la ricerca locale e include le opzioni N. massimo suggerimenti e Scala zoom.</li>
+		  <li>La tabella Attributo consente di copiare valori del campo nella tabella e applicare lo zoom alla feature nella mappa quando si fa doppio clic su di essa. È anche possibile configurare l'opzione Filtra per estensione mappa.</li>
+		  <li>L'URL della modalità di viaggio non è richiesta quando il widget Indicazioni stradali è accessibile pubblicamente.</li>
+		  <li>Il widget Coordinata è stato migliorato per supportare il sistema di coordinate con WKID 102460.</li>
+		  <li>Il widget Stampa visualizza opzioni di layout in base ai metadati dei modelli.</li>
+		  <li>Il widget Analisi consente di scaricare il risultato in formato GeoJson o CSV e di aggiungere un nuovo strumento Scegli strutture migliori.</li>
+		  <li>Per meglio visualizzare il risultato della generazione di grafici utilizzare lo strumento Ingrandisci.</li>
+		  <li>È possibile controllare quando attivare o disattivare il layout per dispositivi mobili specificando le dimensioni dello schermo con il parametro URL mobileBreakPoint.</li>
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">Versioni supportate di ArcGIS API for JavaScript</h2>
-        <p>Web AppBuilder supporta ArcGIS API for JavaScript 3.15.</p>
+        <p>Web AppBuilder supporta ArcGIS API for JavaScript 3.16.</p>
 
         <h3>Lingue supportate</h3>
         <p> Arabo, Ceco, Cinese semplificato, Cinese tradizionale (Taiwan), Cinese tradizionale (Hong Kong), Coreano, Danese, Ebraico, Estone, Finlandese, Francese, Greco, Inglese, Italiano, Giapponese, Lettone, Lituano, Norvegese, Olandese, Polacco, Portoghese (Brasile), Portoghese (Portogallo), Rumeno, Russo, Spagnolo, Svedese, Tailandese, Tedesco, Turco e Vietnamita.</p>

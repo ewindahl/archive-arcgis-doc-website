@@ -31,7 +31,7 @@ mobile: true
     </header>
 	 <nav>
       <ul>
-        <li class='current'><a href="/fr/web-appbuilder/">Origine</a></li>
+        <li class='current'><a href="/fr/web-appbuilder/">Accueil</a></li>
         <li><a href="/fr/web-appbuilder/create-apps/">Créer des applications</a></li>
         <li><a href="/fr/web-appbuilder/manage-apps/">Gérer les applications</a></li>
         <li><a href="/fr/web-appbuilder/extend-apps/">Etendre des applications</a></li>
@@ -101,14 +101,23 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">Navigateurs pris en charge</h2>
+		<p>L'application 2D prend en charge les navigateurs suivants :</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari version 3 et ultérieures</li>
+          <li>Safari 3 et supérieur</li>
 		  <li>Segment</li>
           <li>Internet Explorer 9 et version supérieure</li>
         </ul>
-        
+		<p>L'application 3D prend en charge les navigateurs suivants :</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Segment</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
         <h2 class="divider">Licence</h2>
 
@@ -127,30 +136,33 @@ mobile: true
 
          <a name="whatIsNew"></a>
         <h2 class="divider">Nouveautés</h2>
-        <p>Web AppBuilder for ArcGIS a été mis à jour en novembre 2015. Il inclut les améliorations et nouvelles fonctionnalités suivantes :</p>
+        <p>Web AppBuilder for ArcGIS a été mis à jour en mars 2016. Il inclut les améliorations et nouvelles fonctionnalités suivantes :</p>
         <ul>
-          <li>L'état de l'application, notamment l'étendue de la carte et la visibilité des couches, est maintenant automatiquement enregistré à la fermeture du navigateur.</li>
-          <li>Le serveur sécurisé au niveau du Web d'ArcGIS for Server est entièrement pris en charge.</li>
-          <li>Six nouveaux paramètres URL vous permettent de rechercher un emplacement ou une entité, de fournir un identifiant de connexion, d'interroger une entité, d'ajouter un point, de changer de langue et de spécifier un WKID pour zoomer ou vous déplacer sur la carte.</li>
-          <li>Un nouveau widget Editeur d'attributs par lots vous permet de mettre à jour plusieurs attributs simultanément.</li>
-          <li>Un nouveau widget Tableau de bord Data Reviewer affiche les statistiques des résultats sur la qualité des données sous forme de diagrammes à secteurs et à barres infographiques pour synthétiser les problèmes de qualité identifiés dans vos données SIG.</li>
-          <li>Un nouveau widget Rapport sur les entités vous permet de collecter et de gérer l'avis des utilisateurs sur la qualité des données.</li>
-		  <li>Un nouveau widget Mesure de l'image vous permet d'effectuer des mesures sur les services d'imagerie à l'aide de fonctions de mesure.</li>
-          <li>Le widget Recherche comporte des options permettant d'ajouter du texte d'espace réservé pour toutes les sources de recherche et de rechercher en fonction de l'étendue actuelle de la carte.</li>
-          <li>Le widget Table attributaire actualise les couches en conséquence lorsqu'elles sont modifiées sur la carte.</li>
-		  <li>Le widget Modifier reporte les attributs modifiables configurés sur la carte.</li>
-		  <li>Le widget Coordonnée améliore la lisibilité du texte des coordonnées.</li>
-		  <li>Le widget Fenêtre d'accueil fournit une couleur d'arrière-plan personnalisée.</li>
-		  <li>Le widget Requête prend en charge l'interrogation des tables associées et l'affichage des entités associées dans le résultat.</li>
-		  <li>Le widget Géotraitement comporte des options de personnalisation des champs dans la table en sortie et d'exportation des résultats aux formats CSV, Collection d'entités et GeoJSON.</li>
-		  <li>Le widget Feuille de route permet de configurer l'URL de la couche de trafic.</li>
-		  <li>La fenêtre Choisir la carte Web permet de trier les cartes en fonction des critères suivants : la plus récente, la plus consultée, la mieux évaluée, le titre et le propriétaire.</li>
-		  
+          <li>Une interface de génération optimisée permet de modifier la carte directement dans Web AppBuilder for ArcGIS. Il n'est plus nécessaire de quitter l'application.</li>
+          <li>Vous pouvez maintenant concevoir des applications 3D avec des scènes via le bouton Créer dans Mon contenu.</li>
+          <li>L'onglet Attribut possède une nouvelle option d'état de l'application. Cette option vous permet de choisir si vous voulez conserver l'étendue de la carte et la visibilité des couches lorsque vous quittez l'application.</li>
+          <li>Le widget Perception de situation est désormais disponible. Il n'est plus en version bêta. Ce widget vous permet de créer ou sélectionner un incident sur la carte et d'analyser les informations issues de couches d'entités, dans la zone de l'incident ou dans un rayon donné autour de l'incident.</li>
+          <li>Utilisez le nouveau widget Autour de moi pour rechercher les entités à proximité d'un emplacement spécifié, afficher des informations plus détaillées sur ces entités et générer un itinéraire vers une entité sélectionnée.</li>
+		  <li>Utilisez le nouveau widget Recherche de secteur pour rechercher les entités ponctuelles associées à un polygone sélectionné, afficher des informations plus détaillées sur les entités ponctuelles associées et générer un itinéraire vers une entité ponctuelle sélectionnée.</li>
+          <li>Utilisez le nouveau widget Diagrammes de tables liés pour créer un diagramme (à barres ou à secteurs) de valeurs gérées dans une table liée.</li>
+		  <li>Utilisez le nouveau widget Résumé infos pour récapituler le nombre d'entités visibles sur une carte et permettre l'agrégation sur les couches d'entités ponctuelles le cas échéant.</li>
+          <li>Utilisez le nouveau thème Plateau pour créer une application de style moderne et minimaliste avec des barres d'outils et des conteneurs de widgets plats.</li>
+		  <li>Le widget Modifier comprend un champ d'affichage dans la page des paramètres qui permet de choisir les attributs à afficher uniquement en cas de mise à jour.</li>
+		  <li>Vous pouvez ouvrir le widget Modifier dans l'application directement via la fenêtre contextuelle.</li>
+		  <li>Le widget Géotraitement ajoute une option de chargement des fichiers de forme.</li>
+		  <li>Le widget Rechercher prend en charge la recherche locale et inclut des options de suggestions maximales et d'échelle de zoom.</li>
+		  <li>La table attributaire permet de copier une valeur de champ dans la table et de zoomer sur l'entité sur la carte lorsque vous double-cliquez dessus. Vous pouvez également configurer l'option Filtrer selon l’étendue de la carte.</li>
+		  <li>L'URL du mode de déplacement n'est pas requise lorsque le widget Feuille de route est publiquement accessible.</li>
+		  <li>Le widget Coordonnée est amélioré pour prendre en charge le système de coordonnées avec WKID 102460.</li>
+		  <li>Le widget Imprimer affiche une option de mise en page en fonction des métadonnées des modèles.</li>
+		  <li>Le widget Analyse permet de télécharger le résultat au format GeoJson ou CSV et ajoute un nouvel outil Choisir les meilleures ressources.</li>
+		  <li>Le nouvel outil Agrandir permet de mieux visualiser le diagramme obtenu.</li>
+		  <li>Vous pouvez contrôler l'activation ou la désactivation de la mise en page mobile en indiquant la taille d'écran à l'aide du paramètre URL mobileBreakPoint.</li>
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">Versions prises en charge d'ArcGIS API for JavaScript</h2>
-        <p>Web AppBuilder prend en charge ArcGIS API for JavaScript 3.15.</p>
+        <p>Web AppBuilder prend en charge ArcGIS API for JavaScript 3.16.</p>
 
         <h3>Langues prises en charge</h3>
         <p> Allemand, anglais, arabe, chinois simplifié, chinois traditionnel (Taïwan), chinois traditionnel (Hong Kong), danois, néerlandais, espagnol, estonien, français, finlandais, grec, hébreux, italien, japonais, coréen, letton, lituanien, norvégien, polonais, portugais (Brésil), portugais (Portugal), roumain, russe, suédois, tchèque, thaï, turc et vietnamien.</p>

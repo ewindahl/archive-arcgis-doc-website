@@ -101,14 +101,23 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">Navegadores suportados</h2>
+		<p>O aplicativo 2D suporta os navegadores seguintes:</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari 3+</li>
+          <li>Safari 3 e superior</li>
 		  <li>Segmento</li>
           <li>Internet Explorer 9 e superior</li>
         </ul>
-        
+		<p>O aplicativo 3D suporta os navegadores seguintes:</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Segmento</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
         <h2 class="divider">Licença</h2>
 
@@ -127,30 +136,33 @@ mobile: true
 
          <a name="whatIsNew"></a>
         <h2 class="divider">Quais as novidades</h2>
-        <p>O Web AppBuilder for ArcGIS foi atualizado em Novembro de 2015. Inclui os seguintes novos recursos e melhorias:</p>
+        <p>O Web AppBuilder for ArcGIS foi atualizado em março de 2016. Inclui os seguintes novos recursos e melhorias:</p>
         <ul>
-          <li>O estado do aplicativo, inclusive extensão de mapa e visibilidade da camada, é agora automaticamente salvo quando você fecha seu navegador.</li>
-          <li>Serviço seguro em série da web do ArcGIS for Server é completamente suportado.</li>
-          <li>Seis novos parâmetros da URL permitem a você encontrar loais ou feições, fornecer login, consultar feição, adicionar ponto, trocar lugar e especificar WKID para ampliar ou mover o mapa.</li>
-          <li>Um novo widget Editor de Atributos em Lote permite a você editar simultaneamente múltiplos atributos.</li>
-          <li>Um novo widget Painel do Revisor exibe a estatística de resultado da qualidade dos dados como gráficos de barras ou pizza de infográficos para resumir os problemas de qualidade dos dados identificados em seus dados GIS.</li>
-          <li>Um novo widget Relatório da Feição permite a você coletar e gerenciar os comentários de usuários sobre a qualidade dos dados.</li>
-		  <li>Um novo widget Medição da Imagem permite a você executar medições em serviços de imagem com recurso de medição.</li>
-          <li>O widget Pesquisar tem opções para adicionar texto de local reservado para todas as fontes de pesquisa e pesquisar por extensão de mapa atual.</li>
-          <li>O widget Tabela de Atributos atualiza as camadas conforme são alteradas no mapa.</li>
-		  <li>O widget Editar transporta os atributos editáveis configurados no mapa.</li>
-		  <li>O widget Coordenadas torna os textos de coordenadas mais legíveis.</li>
-		  <li>O widget Tela de Abertura fornece a cor de plano de fundo personalizada.</li>
-		  <li>O widget Consulta tem suporte para consultar em tabelas relacionadas e exibir feições relacionadas no resultado.</li>
-		  <li>O widget Geoprocessamento tem opções para personalizar campos na saída da tabela e exportar os resultados para CSV, Coleção de Feição e GeoJSON.</li>
-		  <li>O widget Direções adiciona configuração de url da camada de tráfego.</li>
-		  <li>A janela Escolher Mapa da Web fornece a classificação nos mapas baseados no mais recente, mais visualizado, avaliação mais alta, título e proprietário.</li>
-		  
+          <li>Uma experiência de construção melhorada permite a você modificar o mapa de dentro do Web AppBuilder for ArcGIS; você não precisa mais sair do aplicativo.</li>
+          <li>Você pode agora construir aplicativos 3D com as cenas pelo botão Criar em Meu Conteúdo.</li>
+          <li>A guia Atributo tem uma nova opção de estado do aplicativo. Esta opção permite a você escolher se deseja manter a extensão do mapa e a visibilidade das camadas ao sair do aplicativo.</li>
+          <li>O widget Percepção da Situação foi lançado. Não está mais em beta. Este widget permite a você criar ou selecionar um incidente no mapa e analisar informações a partir das camadas de feição, de dentro da área de incidente ou de dentro de uma distância especificada do incidente.</li>
+          <li>Utilize o novo widget Próximo a Mim para localizar feições próximas a um local especificado, visualizar informações mais detalhadas sobre estas feições, e obter direções até uma feição selecionada.</li>
+		  <li>Utilize o novo widget Pesquisar Distrito para localizar feições de ponto relacionadas a um polígono selecionado, visualizar informações mais detalhadas sobre as feições de ponto relacionadas, e obter direções para uma feição de ponto selecionada.</li>
+          <li>Utilize o novo widget Gráficos da Tabela Relacionada para criar o gráfico (barra ou pizza) de valores gerenciados em uma tabela relacionada.</li>
+		  <li>Utilize o novo widget Resumo de Info para resumir o número de feições visíveis em um mapa e habilitar o agrupamento em camadas de feição de ponto se desejado.</li>
+          <li>Utilize o novo tema Plateau para criar um aplicativo com estilo moderno e minimalista com barras de ferramentas planas e contêiners de widget.</li>
+		  <li>O widget Editar inclui um campo de visualização na página de configuração, então você pode escolher atributos para exibir somente ao executar a edição.</li>
+		  <li>Você pode abrir o widget Editar no aplicativo diretamente pela janela Pop-up.</li>
+		  <li>O widget Geoprocessamento adiciona uma opção para transferir shapefiles.</li>
+		  <li>O widget Pesquisar suporta pesquisa local e inclui sugestão máxima e opções de escala de zoom.</li>
+		  <li>A tabela Atributo permite a você copiar o valor de campo na tabela e ampliar a feição no mapa ao clicar duas vezes nela. Você também pode configurar a opção Filtrar por Extensão do Mapa.</li>
+		  <li>A URL do modo Viagem não é exigido quando o widget Direções é acessível publicamente.</li>
+		  <li>O widget Coordenadas é melhorado para suportar sistema de coordenadas com WKID 102460.</li>
+		  <li>O widget Imprimir exibe a opção de layout baseado no metadados dos modelos.</li>
+		  <li>O widget opção permite a você baixar o resultado como formato GeoJson ou CSV e adiciona uma nova ferramenta Escolher Melhores Instalações.</li>
+		  <li>Você pode visualizar melhor o resultado do gráfico com a nova ferramenta Aumentar.</li>
+		  <li>Você pode controlar quando ativar ou desativar o layout móvel especificando o tamanho da tela com o parâmetro de URL de mobileBreakPoint.</li>
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">Versões suportadas do ArcGIS API for JavaScript</h2>
-        <p>O Web AppBuilder suporta ArcGIS API for JavaScript 3.15.</p>
+        <p>O Web AppBuilder suporta ArcGIS API for JavaScript 3.16.</p>
 
         <h3>Idiomas suportados</h3>
         <p> Árabe, Tcheco, Dinamarquês, Holandês, Inglês, Estoniano, Finlandês, Francês, Alemão, Grego, Hebreu, Italiano, Japonês, Coreano, Letão, Lituano, Norueguês, Polonês, Português (Brasil), Português (Portugal), Romano, Russo, Chinês Simplificado, Espanhol, Sueco, Tailandês, Chinês Tradicional (Taiwan), Chinês Tradicional (Hong Kong), Turco e Vietnamita.</p>
