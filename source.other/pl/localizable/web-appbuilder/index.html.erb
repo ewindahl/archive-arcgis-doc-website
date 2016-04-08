@@ -101,14 +101,23 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">Obsługiwane przeglądarki</h2>
+		<p>Aplikacja 2D obsługuje następujące przeglądarki:</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari (wersja 3.0 i nowsze)</li>
+          <li>Safari 3 i nowsze wersje</li>
 		  <li>Edge</li>
-          <li>Internet Explorer 9 i nowsze wersje</li>
+          <li>Internet Explorer 9 i wersje nowsze</li>
         </ul>
-        
+		<p>Aplikacja 3D obsługuje następujące przeglądarki:</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Edge</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
         <h2 class="divider">Licencja</h2>
 
@@ -127,33 +136,36 @@ mobile: true
 
          <a name="whatIsNew"></a>
         <h2 class="divider">Co nowego</h2>
-        <p>Oprogramowanie Web AppBuilder for ArcGIS zostało zaktualizowane w listopadzie 2015. Dodano następujące nowe funkcje i rozszerzenia:</p>
+        <p>Aplikacja Web AppBuilder for ArcGIS została zaktualizowana w marcu 2016. Dodano następujące nowe funkcje i rozszerzenia:</p>
         <ul>
-          <li>Stan aplikacji, w tym zasięg mapy i widoczności warstw, jest teraz automatycznie zapisywany w momencie zamknięcia przeglądarki.</li>
-          <li>W pełni obsługiwana jest usługa ochrony na poziomie WWW z serwera ArcGIS for Server.</li>
-          <li>Sześć nowych parametrów adresu URL umożliwia znajdowanie lokalizacji lub obiektu, podanie loginu, wysłanie zapytania o obiekty,  dodanie punktu, przełączenie ustawień regionalnych i określenie identyfikatora WKID w celu powiększenia lub przesunięcia mapy.</li>
-          <li>Nowy widżet Wsadowego edytora atrybutów umożliwia jednoczesną edycję wielu atrybutów.</li>
-          <li>Nowy widżet Pulpitu kontrolnego recenzenta wyświetla statystyki ocen jakości danych w formie infograficznych wykresów słupkowych i kołowych jako podsumowanie problemów dotyczących jakości danych zidentyfikowanych w danych GIS.</li>
-          <li>Nowy widżet Raportu obiektów umożliwia zbieranie opinii użytkowników dotyczących jakości danych oraz zarządzanie tymi opiniami.</li>
-		  <li>Nowy widżet Pomiarów obrazu pozwala wykonywać pomiary w usługach obrazowania z funkcją pomiarów geodezyjnych.</li>
-          <li>Widżet Wyszukiwania ma opcje dodawania tekstu zastępczego dla wszystkich źródeł wyszukiwania oraz wyszukiwania według bieżącego zasięgu mapy.</li>
-          <li>Widżet Tabeli atrybutów aktualizuje odpowiednio warstwy, gdy zostaną one zmienione na mapie.</li>
-		  <li>Widżet Edycji obsługuje edytowalne atrybuty skonfigurowane na mapie.</li>
-		  <li>Widżet Współrzędne poprawia czytelność tekstu współrzędnych.</li>
-		  <li>Widżet Ekran powitalny udostępnia możliwość wyboru niestandardowego koloru tła.</li>
-		  <li>Widżet Zapytanie obsługuje wysyłanie zapytań do powiązanych tabel i wyświetlanie powiązanych obiektów w wyniku.</li>
-		  <li>Widżet Geoprzetwarzanie udostępnia opcje dostosowywania pól w tabeli wyjściowej i eksportowania wyników w formatach CSV i GeoJSON oraz jako zbiór obiektów.</li>
-		  <li>Widżet Wskazówki dojazdu dodaje konfigurację adresów URL warstwy ruchu drogowego.</li>
-		  <li>W oknie Wybierz mapę internetową są dostępne opcje sortowania map na podstawie takich atrybutów jak data dodania, popularność, ocena, tytuł i właściciel.</li>
-		  
+          <li>Udoskonalona obsługa budowania umożliwia modyfikowanie mapy z poziomu aplikacji Web AppBuilder for ArcGIS; nie ma potrzeby opuszczania aplikacji.</li>
+          <li>Można teraz budować aplikacje 3D ze scenami, używając przycisku Utwórz na karcie Moje zasoby.</li>
+          <li>Na karcie Atrybut jest dostępna nowa opcja stanu aplikacji. Opcja ta umożliwia zachowanie zasięgu mapy i widoczności warstw przy wychodzeniu z aplikacji.</li>
+          <li>Opublikowano widżet Świadomość sytuacyjna. Aplikacja nie jest już w fazie beta. Ten widżet umożliwia użytkownikowi tworzenie lub wybór incydentu na mapie oraz analizowanie informacji z warstw obiektowych, na obszarze incydentu lub w określonej odległości od niego.</li>
+          <li>Użyj nowego widżetu Blisko mnie, aby znaleźć obiekty w pobliżu podanej lokalizacji, wyświetlić szczegółowe informacje o tych obiektach i uzyskać wskazówki dojazdu do wybranego obiektu.</li>
+		  <li>Użyj nowego widżetu DistrictLookup, aby znaleźć obiekty punktowe powiązane z wybranym poligonem, wyświetlić szczegółowe informacje o tych obiektach i uzyskać wskazówki dojazdu do wybranego obiektu punktowego.</li>
+          <li>Użyj nowego widżetu Wykresy powiązanej tabeli, aby utworzyć wykres (słupkowy lub kołowy) wartości obsługiwanych w powiązanej tabeli.</li>
+		  <li>Użyj nowego widżetu Podsumowanie informacji, aby podsumować liczbę obiektów widocznych na mapie i w razie potrzeby włączyć klastrowanie w warstwach obiektów punktowych.</li>
+          <li>Użyj nowego motywu Plateau, aby utworzyć nowoczesną, minimalistyczną aplikację z płaskimi paskami narzędziowymi oraz zasobnikami widżetów.</li>
+		  <li>Widżet Edycja obejmuje pole wyświetlane na stronie ustawień, co pozwala wybierać atrybuty wyświetlania tylko podczas edycji.</li>
+		  <li>Widżet Edycja można otworzyć bezpośrednio w aplikacji przy użyciu okna podręcznego.</li>
+		  <li>Widżet Geoprzetwarzanie dodaje opcję przesyłania plików shape.</li>
+		  <li>Widżet Wyszukiwanie obsługuje wyszukiwanie lokalne i zawiera opcje maksymalnej liczby sugestii i skali powiększenia.</li>
+		  <li>Widżet Tabela atrybutów umożliwia skopiowanie wartości pola w tabeli i powiększenie do obiektu na mapie po jego dwukrotnym kliknięciu. Można także skonfigurować opcję Filtruj wg zasięgu mapy.</li>
+		  <li>Adres URL trybu podróżowania nie jest wymagany, gdy Widżet Wskazówki dojazdu jest publicznie dostępny.</li>
+		  <li>Widżet Współrzędne rozszerzono o obsługę układu współrzędnych WKID 102460.</li>
+		  <li>Widżet Drukowanie wyświetla opcję kompozycji zależną od metadanych szablonów.</li>
+		  <li>Widżet Analiza umożliwia pobieranie wyniku w formacie GeoJson lub CSV oraz udostępnia nowe narzędzie Wybierz najlepsze placówki.</li>
+		  <li>Wynikowy wykres najlepiej wyświetlić w nowym narzędziu Powiększ.</li>
+		  <li>W celu sterowania włączaniem i wyłączaniem kompozycji dla urządzenia mobilnego należy określić rozmiar ekranu za pomocą parametru adresu URL mobileBreakPoint.</li>
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">Obsługiwane wersje ArcGIS API for JavaScript.</h2>
-        <p>Aplikacja Web AppBuilder obsługuje interfejs ArcGIS API for JavaScript 3.15.</p>
+        <p>Aplikacja Web AppBuilder obsługuje interfejs ArcGIS API for JavaScript 3.16.</p>
 
         <h3>Obsługiwane języki</h3>
-        <p>Arabski, czeski, duński, niderlandzki, angielski, estoński, fiński, francuski, grecki, niemiecki, hebrajski, włoski, japoński, koreański, łotewski, litewski, norweski, polski, portugalski (Brazylia), portugalski (Portugalia), rumuński, rosyjski, chiński uproszczony, hiszpański, szwedzki, tajski, chiński tradycyjny (Tajwan), chiński tradycyjny (Hong Kong), turecki i wietnamski.</p>
+        <p> Arabski, czeski, duński, niderlandzki, angielski, estoński, fiński, francuski, grecki, niemiecki, hebrajski, włoski, japoński, koreański, łotewski, litewski, norweski, polski, portugalski (Brazylia), portugalski (Portugalia), rumuński, rosyjski, chiński uproszczony, hiszpański, szwedzki, tajski, chiński tradycyjny (Tajwan), chiński tradycyjny (Hong Kong), turecki i wietnamski.</p>
         <p>Język używany w aplikacji zależy od ustawień językowych przeglądarki.</p>
 
         <p>Podziel się <a href="http://ideas.arcgis.com/">pomysłami</a> i <a href="http://support.esri.com/en/">prześlij nam swoją opinię</a>.</p>
