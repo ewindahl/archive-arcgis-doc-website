@@ -1,0 +1,238 @@
+---
+title: Web AppBuilder for ArcGIS
+css:
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - video-init
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - sitecfg.js
+
+metatags:
+  - <META name="description" content="Web AppBuilder for ArcGIS"><META name="last-modified" content="2014-9-18"><META name="product" content="web-appbuilder"><META name="sub_category" content="Web AppBuilder"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Web AppBuilder"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="zh-hk">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/zh-hk/web-appbuilder/">Web AppBuilder for ArcGIS</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Web AppBuilder ">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="platform" value="detect" />          
+        <input type="hidden" name="product" value="web-appbuilder" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	 <nav>
+      <ul>
+        <li class='current'><a href="/zh-hk/web-appbuilder/">首頁</a></li>
+        <li><a href="/zh-hk/web-appbuilder/create-apps/">建立應用程式</a></li>
+        <li><a href="/zh-hk/web-appbuilder/manage-apps/">管理應用程式</a></li>
+        <li><a href="/zh-hk/web-appbuilder/extend-apps/">延伸應用程式</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+  <div class="column-16 tablet-column-24"> 
+
+    <h3 class="gray">建立功能強大且能執行於任何裝置的 GIS 應用程式。不需編寫程式碼。</h3>
+	<h5>請按一下<a href="http://www.arcgis.com/apps/MapAndAppGallery/index.html?appid=1e3085af6e1a48c8908fa624bdfef768">網站即時展示</a>，看看其他人的作品。</h5>
+  
+    <hr />
+
+        <div id="firstApp" class="column-12 phone-column-24">
+          <img src="img/builder-firstapp.jpg" />
+          <p></p>
+
+          <h3>五分鐘就能建立您的第一款應用程式</h3>
+          
+          <p>
+            <a href="/zh-hk/web-appbuilder/create-apps/make-first-app.htm" class="icon-right-arrow">&nbsp;詳情介紹</a>
+          </p>
+        </div>
+
+        <div id="easyConfig" class="column-12 phone-column-24">
+          <img src="img/builder-widgets.jpg" />
+          <p></p>
+
+          <h3>簡易的設定方式</h3>
+          <p>運用簡易的設定方式就能建立應用程式。</p>
+          <p>
+            <a href="/zh-hk/web-appbuilder/create-apps/themes-tab.htm" class="icon-right-arrow">&nbsp;設定應用程式</a> <a href="/zh-hk/web-appbuilder/create-apps/widget-attribute-table.htm" class="icon-right-arrow">&nbsp;設定 Widget</a>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="customTemplates" class="column-12 phone-column-24">
+          <img src="img/builder-template.jpg" />
+          <p></p>
+
+          <h3>匯出範本</h3>
+          <p>建立可設定的應用程式範本，將範本新增至貴組織的應用程式庫。
+          <p>
+            <a href="/zh-hk/web-appbuilder/manage-apps/export-as-template.htm" class="icon-right-arrow">&nbsp;詳情介紹</a>
+          </p>
+        </div>
+
+        <div id="customize" class="column-12 phone-column-24">
+          <img src="img/builder-customize-encinitas.jpg" />
+          <p></p>
+
+          <h3>建立 Widget 和主題</h3>
+          <p>您可以下載應用程式並在 Web 伺服器上完成部署。此外，只要新增自訂的 Widget 和主題，就能進一步延伸應用程式功能。</p>
+          <p>
+            <a href="/zh-hk/web-appbuilder/extend-apps/" class="icon-right-arrow">&nbsp;詳情介紹</a>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+		
+
+        <a name="supportedBrowsers"></a>
+        <h2 class="divider">支援的瀏覽器</h2>
+		<p>2D 應用程式支援下列瀏覽器：</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari 3 及更高版本</li>
+		  <li>Edge</li>
+          <li>Internet Explorer 9 及更高版本</li>
+        </ul>
+		<p>3D 應用程式支援下列瀏覽器：</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Edge</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
+        <a name="license"></a>
+        <h2 class="divider">許可</h2>
+
+        <p>若要使用 Web Appbuilder，您必須申請 ArcGIS 組織帳戶。</p>
+
+        <a name="features"></a>
+        <h2 class="divider">主要功能</h2>
+        <ul>
+          <li>建立能執行於任何裝置的 HTML/JavaScript 應用程式。</li>
+          <li>運用現成的 Widget 建立您需要的應用程式。</li>
+          <li>使用可設定的主題自訂應用程式的外觀。</li>
+          <li>線上託管您的應用程式或在您自己的伺服器上運行這些應用程式。</li>
+          <li>建立自訂應用程式樣板。</li>
+        </ul>
+        
+
+         <a name="whatIsNew"></a>
+        <h2 class="divider">新功能</h2>
+        <p>Web AppBuilder for ArcGIS 已於 2016 年 3 月更新。其中包含下列新功能和增強功能：</p>
+        <ul>
+          <li>建立體驗已改善，能讓您從 Web AppBuilder for ArcGIS 中修改地圖；您不需要再離開應用程式。</li>
+          <li>您現在可以透過「我的內容」的「建立」按鈕來建立包含場景的 3D 應用程式。</li>
+          <li>屬性頁籤有新的應用程式狀態選項。您可以使用此選項，選擇在離開應用程式時是否要維持地圖範圍和圖層的可見性。</li>
+          <li>已發行「情況意識」widget。場景檢視器已不再是測試版。此 widget 可讓您在地圖上建立或選擇事件，及分析圖徵圖層的資訊（位於事件區域中，或位於事件的指定距離內）。</li>
+          <li>使用新的 NearMe widget 來尋找指定位置附近的圖徵、檢視那些圖徵的詳細資訊，以及取得所選圖徵的方向。</li>
+		  <li>使用新的 DistrictLookup widget 來尋找指定位置附近的圖徵、檢視那些圖徵的詳細資訊，以及取得所選圖徵的方向。</li>
+          <li>使用新的「相關表格圖表」widget 來繪製相關表格中管理值的圖表（長條圖或圓餅圖）。</li>
+		  <li>使用新的「資訊摘要」widget 來摘要地圖上可見的圖徵數目，並視需要在點圖徵圖層上啟用叢集。</li>
+          <li>使用新的「高原」主題來建立現代化和極簡樣式的應用程式，包含水平的工具列和 widget 容器。</li>
+		  <li>「編輯」widget 在設定頁面中包含顯示欄位，如此即可選擇唯有在執行編輯時才會顯示的屬性。</li>
+		  <li>您可以透過快顯視窗，在應用程式中直接開啟「編輯」widget。</li>
+		  <li>「地理處理」widget 新增了用來上傳 shapefile 的選項。</li>
+		  <li>「搜尋」widget 支援本機搜尋並包含最大建議和縮放比例選項。</li>
+		  <li>「屬性」表格可讓您複製表格中的欄位值，並按兩下它以縮放至地圖中的圖徵。您也可以配置「按地圖範圍篩選」選項。</li>
+		  <li>在能公開存取「方向」widget 時，不需要「行進」模式 URL。</li>
+		  <li>已加強「座標」widget 來支援包含 WKID 102460 的座標系統。</li>
+		  <li>「列印」widget 可根據樣板中繼資料來顯示版面配置選項。</li>
+		  <li>「分析」widget 可讓您下載 GeoJson 或 CSV 格式的結果，並新增「選擇最佳機構」工具。</li>
+		  <li>您可以使用「放大」工具，更完善地檢視圖表製作結果。</li>
+		  <li>您可以使用 mobileBreakPoint URL 參數來指定畫面大小，藉此控制行動版面配置的開啟或關閉時間。</li>
+        </ul>
+
+         <a name="supportedAPI"></a>
+        <h2 class="divider">支援的 ArcGIS API for JavaScript 版本</h2>
+        <p>Web AppBuilder 支援 ArcGIS API for JavaScript 3.16。</p>
+
+        <h3>支援的語言</h3>
+        <p>阿拉伯語、捷克語、丹麥語、荷蘭語、英語、愛沙尼亞語、芬蘭語、法語、德語、希獵語、希伯來語、義大利語、日語、韓語、拉脫維亞語、立陶宛語、挪威語、波蘭語、葡萄牙語（巴西）、葡萄牙語（葡萄牙）、羅馬尼亞語、俄語、簡體中文、西班牙語、瑞典語、泰語、繁體中文（台灣）、繁體中文（香港）、土耳其語和越南語。</p>
+        <p>應用程式所用的語言以瀏覽器的語言設定為準。</p>
+
+        <p>分享<a href="http://ideas.arcgis.com/">創意</a>並<a href="http://support.esri.com/en/">將您的意見寄給我們</a>。</p>
+  
+        <p>&nbsp;</p>
+
+  </div> 
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+          <h3>詳細資訊</h3>
+          
+          <h4><a href="#features">主要功能</a></h4>
+          <h4><a href="#supportedBrowsers">支援的瀏覽器</a></h4>
+          <h4><a href="#license">授權</a></h4>
+          <h4><a href="#whatIsNew">新功能</a></h4>
+          <h4><a href="#supportedAPI">支援的 ArcGIS API for JavaScript 版本</a></h4>
+          
+        </div>
+
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>部落格</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+          <a href="http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/" class="btn secondary">更多部落格文章</a>
+        </div>
+
+        <br />
+     
+        <section id="forum-container">
+        <div class="panel">
+        <h3>GeoNet 討論</h3>
+        <div id="forum"></div>
+        <a href="https://geonet.esri.com/discussion/create.jspa?containerType=14&containerID=2150" class="btn secondary">開始討論</a>&nbsp; <a href="https://geonet.esri.com/community/gis/web-gis/web-appbuilder/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="btn light">參閱詳細資訊</a>
+        </div>
+        </section> 
+
+      </div>
+</div>
+
+
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/feed/',
+        max: 2,
+        layout: 0
+      });
+
+      $("#forum").rssFeed({
+       url:"https://geonet.esri.com/view-browse-feed.jspa?containerType=14&browseSite=place-content&filterID=contentstatus[published]~objecttype~objecttype[thread]&userIDs=-1&browseViewID=placeContent&containerID=2150", 
+       max: 3,        
+       layout: 1
+      }); 
+
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>
