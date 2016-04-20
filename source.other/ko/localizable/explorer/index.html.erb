@@ -1,0 +1,408 @@
+---
+title: Explorer for ArcGIS
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - /en/asset/js/app-explorer-1
+  - libs/jquery.colorbox-min
+  - jquery.colorbox.init
+  - video-init
+
+metatags:
+  - <META name="description" content="Explorer for ArcGIS Home page."><META name="last-modified" content="2016-2-9"><META name="product" content="explorer-iphone,explorer-ipad,explorer-mac,explorer-android-phone,explorer-android-tablet"><META name="sub_category" content="Explorer for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Explorer for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ko">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ko/explorer/">Explorer for ArcGIS</a></h1>
+	  <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Explorer">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="explorer-ipad" />
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/ko/explorer/">홈</a></li>
+        <li><a href="/ko/explorer/author-maps/create-a-map.htm">맵 작성</a></li>
+        <li><a href="/ko/explorer/android-phone/use-maps/guided-tour-user.htm">맵 사용</a></li>
+        <li><a href="https://geonet.esri.com/community/gis/applications/explorer-for-arcgis">포럼</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="column-16 tablet-column-24">
+        <h3 class="gray">맵에 접근하고, 데이터를 검색 및 시각화하고, 이해 관계자를 대상으로 브리핑을 진행할 수 있습니다.</h3>
+
+	<!--
+          <span id="appVersion"><strong>Version:</strong> 10.2</span>
+          <span id="appReleased"><strong>Released:</strong> March 2014</span>
+	-->
+
+        <p>
+          <a href="https://itunes.apple.com/us/app/explorer-for-arcgis/id860708788"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a>
+          <a href="http://links.esri.com/explorer-mac-install"><img src="mac-app.png" style="margin:10px; vertical-align:middle"/></a>
+          <a href="https://play.google.com/store/apps/details?id=com.esri.explorer"><img src="android-app.png" style="margin:10px; vertical-align:middle"/></a>
+        </p>
+        </header>
+        <hr />
+        <br />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="explorer-home-2.png" />
+
+          <h3>맵 생성</h3>
+          <p>Explorer에서 사용할 맵을 ArcGIS 기관에서 생성합니다.</p>
+          <p>
+            <a href="/ko/explorer/author-maps/create-a-map.htm" class="icon-right-arrow">&nbsp;방법 보기</a><br />
+			<!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
+
+          </p>
+        </div>
+
+	<div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="explorer-home-1.png" />
+
+          <h3>안내</h3>
+          <p>관련 맵을 찾고, 데이터를 검색 및 시각화하고, 자산을 찾아 세부정보를 보고, 다른 사용자와 맵을 공유할 수 있습니다. </p>
+          <p>
+            <a href="/ko/explorer/android-phone/use-maps/guided-tour-user.htm" class="icon-right-arrow">&nbsp;방법 보기</a><br /><br/>
+          </p>
+        </div>
+	<div class="clear"></div>
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+	          <img src="story-graphic-3.png" />
+
+	  <h3>맵을 통해 정보 교환</h3>
+	  <p>기기를 사용하여 맵으로 작성한 프레젠테이션을 공유할 수 있습니다. 프레젠테이션을 진행하면서 실시간으로 맵에서 스케치를 하는 등 데이터와 상호 작용할 수 있습니다.</p>
+	  <p>
+	    <a href="/ko/explorer/android-phone/use-maps/view-a-presentation.htm" class="icon-right-arrow">&nbsp;방법 보기</a><br />
+	    <!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
+	  </p>
+        </div>
+
+	<div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="explorer-home-3.png" />
+
+          <h3>도움이 필요하십니까?</h3>
+          <p><a href="/ko/explorer/android-phone/use-maps/faqs-use-maps.htm">FAQ</a>에서 일반 질문에 대한 답변을 확인하거나,
+          <a href="/ko/explorer/android-phone/use-maps/quick-reference-user.htm">빠른 참조</a>에서 앱 내의 도구 위치를 파악하거나,
+          <a href="https://geonet.esri.com/community/gis/applications/explorer-for-arcgis">포럼</a>을 방문하시기 바랍니다.</p>
+        </div>
+
+        <div class="clear"></div>
+
+        <a name="features"></a>
+        <h2 class="divider">특징</h2>
+        <p>맵에 접근하고, 데이터를 검색 및 시각화하고, 프레젠테이션을 보여 줄 수 있습니다. </p>
+        <ul>
+          <li>자주 사용하는 맵, 장소, 연락처로 앱을 개인 설정할 수 있습니다.</li>
+          <li>맵을 검색할 수 있습니다.</li>
+          <li>데이터를 볼 수 있습니다.</li>
+          <li>맵과 데이터를 이미지나 링크로 공유할 수 있습니다.</li>
+          <li>데이터를 검색할 수 있습니다.</li>
+          <li>대화형 맵으로 프레젠테이션을 진행할 수 있습니다.</li>
+        </ul>
+
+        <a name="systemRequirements"></a>
+        <h2 class="divider">시스템 요구 사항</h2>
+
+        <p> 앱 내에서 사용되는 데이터에 대한 요구 사항과 더불어 Explorer를 실행하는 데에는 특정한 기기 요구 사항이 있습니다.</p>
+
+
+        <h3>데이터 요구 사항</h3>
+        <p>Explorer에서 맵을 사용하려면 ArcGIS 기관 계정이 있어야 합니다. 맵에 ArcGIS Online, Portal for ArcGIS, ArcGIS for Server의 데이터를 포함할 수 있습니다.</p>
+
+
+        <h3>기기 요구 사항</h3>
+        <table><tr>
+          <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
+            <ul>
+              <li>버전 7 이상</li>
+              <li>iPad, iPhone, iPod Touch</li>
+            </ul>
+          </td>
+          <td valign="top" width="250px;"><h4 class="icon-apple">Mac</h4>
+            <ul>
+              <li>OS X Mavericks(10.9) 이상</li>
+            </ul>
+          </td>
+          <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+            <ul>
+              <li>Android 4.0.3(Ice Cream Sandwich) 이상</li>
+              <li>ARMv7 또는 x86 프로세서</li>
+              <li>OpenGL ES 2.0 지원</li>
+            </ul>
+          </td>
+        <tr></table>
+
+	<h3>지원되는 언어</h3>
+	    <p>아랍어, 체코어, 덴마크어, 네덜란드어, 영어, 에스토니아어(<span class="icon-android"/>), 핀란드어, 프랑스어, 독일어, 히브리어, 이탈리아어,
+	       일본어, 한국어, 리투아니아어(<span class="icon-android"/>), 라트비아어(<span class="icon-android"/>), 노르웨이어, 폴란드어,
+	       포르투갈어(브라질), 포르투갈어(포르투갈), 루마니아어, 러시아어, 중국어(간체), 스페인어, 스웨덴어,
+	       태국어(<span class="icon-apple"/> iOS, <span class="icon-android"/>), 터키어와 베트남어(<span class="icon-android"/>)를 지원합니다.</p>
+
+	    <p>앱에서 사용되는 언어는 기기의 언어 설정에 따라 결정됩니다.</p>
+
+        <a name="whatsNew"></a>
+        <h2 class="divider">새로운 기능</h2>
+        <table>
+          <tr>
+          <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
+            <p>Explorer for ArcGIS 10.2.9는 2015년 11월에 출시되었습니다. 이 버전에는 다음과 같은 향상된 기능이 포함되어 있습니다.
+          </td>
+          <td valign="top" width="250px;"><h4 class="icon-apple">Mac</h4>
+            <p>Explorer for ArcGIS 10.2.4는 2014년 9월에 출시되었습니다. 이 버전에는 다음과 같은 향상된 기능이 포함되어 있습니다.</p>
+          </td>
+          <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+            <p>Explorer for ArcGIS 10.2.9는 2016년 2월에 출시되었습니다. 이 버전에는 다음과 같은 향상된 기능이 포함되어 있습니다.</p>
+          </td>
+        <tr>
+        <tr>
+          <!-- iOS -->
+          <td valign="top">
+            <ul>
+              <li>다양한 버그 수정 및 개선</li>
+            </ul>
+          </td>
+          <!-- Mac -->
+          <td valign="top">
+            <ul>
+              <li>아랍어, 체코어, 덴마크어, 네덜란드어, 영어, 핀란드어, 프랑스어, 독일어, 히브리어, 이탈리아어, 일본어, 한국어, 노르웨이어, 폴란드어,
+                  포르투갈어(브라질), 포르투갈어(포르투갈), 루마니아어, 러시아어, 중국어(간체), 스페인어, 스웨덴어와 터키어를 지원합니다.</li>
+              <li>다양한 버그 수정 및 개선</li>
+            </ul>
+          </td>
+          <!-- Android -->
+          <td valign="top">
+            <ul>
+             <li><a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5Mjc0Mw==">BUG-000092743</a> 등의 다양한 버그 수정 및 개선</li>
+            </ul>
+          </td>
+        </tr>
+        </table>
+
+	<a name="sneakPeek"></a>
+	<h2 class="divider">미리 보기</h2>
+	<p>현재도 Explorer 앱을 통해 iPhone, iPad, Mac, Android 기기에서 맵과 프레젠테이션을 효율적으로 사용할 수 있습니다. 하지만 앞으로 추가될 기능은 더욱 많습니다.
+	다음 표에는 이 앱을 통해 각 기기에서 사용할 수 있는 기능이 간략하게 설명되어 있습니다.
+
+	<style>
+	  table.sneakPeek
+	  {
+	    text-align:center;
+	  }
+	  table.sneakPeek tr.heading th
+	  {
+	    background-color:lightgray;
+	    font-style:italic;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	  }
+	  table.sneakPeek tr#deviceHeadings th
+	  {
+	    font-style:italic;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	  }
+	</style>
+        <table class="sneakPeek" border="1">
+	  <caption>플랫폼별 기능<br/>
+	  <span class="icon-check" style="color:black"></span> 출시됨, <span class="icon-check icon-orange"></span> 개발 중, <span class="icon-check" style="color:lightgray"></span><span class="clear"/> 이상<br/>
+	  비어 있는 셀은 예정되지 않은 기능을 나타냅니다.<br/>
+	  Windows Phone과 Windows 스토어에 대한 지원은 현재 계획되어 있지 않습니다.
+	  </caption>
+	  <tr id="deviceHeadings"><td rowspan="2"></td>
+	    <th colspan="2">휴대폰</th>
+	    <th colspan="2">태블릿</th>
+	    <th colspan="2">데스크톱</th>
+	  </tr>
+	  <tr>
+	    <td><span class="icon-apple"/></td>
+	    <td><span class="icon-android"/></td>
+	    <!--<td><span class="icon-windows-8 icon-purple"/></td>-->
+	    <td><span class="icon-apple"/></td>
+	    <td><span class="icon-android"/></td>
+	    <!--<td><span class="icon-windows-8 icon-purple"/></td>-->
+	    <td><span class="icon-apple"/></td>
+	    <td><span class="icon-windows-classic" style="color:#21C9FF"/></td>
+	  </tr>
+	  <tr>
+	    <td>ArcGIS Online 사용</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-orange"/></td>
+	  </tr>
+	  <tr>
+	    <td>Portal for ArcGIS 사용</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-orange"/></td>
+	  </tr>
+	  <tr>
+	    <td>맵 보기</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-orange"/></td>
+	  </tr>
+	  <tr>
+	    <td>맵 작성</td>
+	    <td></td>
+	    <td></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-orange"/></td>
+	  </tr>
+	  <tr>
+	    <td>데이터 검색</td>
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check"/></td>
+	    <td><span class="icon-check icon-orange"/></td>
+	  </tr>
+	  <tr>
+	    <td>데이터 편집</td>
+	    <td></td>
+	    <td></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td></td>
+	    <td><span class="icon-check icon-orange"/></td>
+	  </tr>
+	  <tr>
+	    <td>공간 데이터 이외의 데이터(관련 테이블) 지원</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr>
+	    <td>오프라인에서 작업</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	  <tr>
+	    <td>3D</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check icon-orange"/></td>
+	  </tr>
+	  <tr>
+	    <td>분석 수행</td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <!--<td></td>-->
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	    <td><span class="icon-check" style="color:lightgray"/></td>
+	  </tr>
+	</table>
+
+	<p><a href="http://ideas.arcgis.com/">아이디어</a>를 공유하고 <a href="mailto:Explorer4ArcGIS@esri.com?subject=Explorer%20feedback">피드백을 보내 주세요</a>.</p>
+
+        <p>&nbsp;</p>
+
+
+      </div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+	  <h3>세부정보</h3>
+
+	  <h4><a href="#features">특징</a></h4>
+	  <h4><a href="#systemRequirements">시스템 요구 사항</a></h4>
+	  <h4><a href="#whatsNew">새로운 기능</a></h4>
+	  <h4><a href="#sneakPeek">미리 보기</a></h4>
+
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>Esri 블로그</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+ </div>
+
+    </div>
+
+
+	<!--	<script src="/js/main.js" type="text/javascript"></script>-->
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'http://blogs.esri.com/esri/arcgis/tag/explorer-for-arcgis/feed/',
+        max: 5,
+        layout: 0
+      });
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>
