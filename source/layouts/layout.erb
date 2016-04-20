@@ -187,75 +187,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="grid-container">
           <div class="column-24">
 
-            <div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
+            <a href="/" class="top-nav-title tablet-hide">Arc<span>GIS</span></a>
+            <a href="/" class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav">Arc<span>GIS</span></a>
 
-            <%= partial "_partial/site_header_dropdown" %>
+            <!--<div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
+
+            <%= partial "_partial/site_header_dropdown" %> -->
             <nav>
               <%= partial "_partial/site_header_nav" %>
             </nav>
             
-            <%= link_to "Esri", "http://www.esri.com", id: "esri-logo" %>
-
-<!--            
+           <!--            
             <div id="lg-container" class="dropdown-navigation">
               <div id="lang-block"></div>
             </div>
   -->
-
-            <div id="lg-container" class="banner-navigation">
-
-              <div id="agolSearch" class="agol-search">
-                <form class="agol-search-form" method="GET" action="//www.arcgis.com/home/search.html">
-                  <input name="q" class="agol-search-input" placeholder="Search ArcGIS" type="text" value="">
-                  <!--
-                  <input class="agol-search-submit" type="submit" value="">
-                  -->
-                </form>
-                <span class="agol-icon-search"></span>
-              </div>
-
-              <div id="logged-out-navigation" class="dropdown-navigation no-top no-right-margin">
-                  <a data-langlabel="sign-in" id="login-link" class="btn user-signin" href="#"><span class="profile-icon"></span><%= t("site.nav.sign_in") %></a>
-              </div>
-
-              <div id="logged-in-navigation" class="dropdown-navigation no-top dropdown-wrapper hide">
-                  <a id="A1" class="dropdown btn user-signin" href="#"><%= t("site.nav.sign_in_user") %></a>
-                  <div class="dropdown-content">
-                      <div class="dropdown-menu">
-                          <ul class="myconsole">
-                              <li><a id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a></li>
-                          </ul>
-                          <hr class="myconsole" />
-                          <ul class="myconsole">
-                              <li><a id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a></li>
-                          </ul>
-                          <hr class="myconsole" />
-                          <ul>
-                              <li><a id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-
-              <div id="lang-block"></div>
-
-          </div>
-        
-            <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
-              <a href="#" class="dropdown btn small light icon icon-list-2"><%= t("site.nav.select") %></a>
-              <div class="dropdown-content">
-                <div class="dropdown-menu">
-                  <%= partial "_partial/site_header_nav" %>
-                </div>
-              </div>
+            <div class="gutter-left-1 top-nav-list right hide-if-logged-in">
+              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue" href="#"><%= t("site.nav.sign_in") %></a>
+              <a class="lang-block"></a>
             </div>
+
+
+            <nav class="gutter-left-1 top-nav-list right hide-if-logged-out">
+              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                  <div class="user-name dropdown-link">
+                    <p class="trailer-0" data-full-name></p>
+                    <small data-username></small>
+                  </div>
+                  <a class="dropdown-link" id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a>
+                  <a class="dropdown-link" id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a>
+                  <a class="dropdown-link" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
+                </nav>
+              </div>
+              <a class="lang-block"></a>
+          </nav>
+
+                   
             
           </div>
         </div>
       </header>
 
+       <section class="expand js-expand  panel panel-no-padding" data-expand="search">
+              <div class="grid-container padding-trailer-half padding-leader-1 padding-trailer-1">
+                
+          <form method="GET" action="//www.arcgis.com/home/search.html" class="column-24">
+            <label>Search ArcGIS
+              <a href="#" class="icon-ui-close js-expand-toggle right" data-expand="search"></a>
+              <div class="search-bar">
+                <input type="search" name="q" placeholder="Search">
+                <button type="submit" class="search-submit icon-ui-search"></button>
+              </div>
+            </label>
+          </form>
 
-      <%= yield %>
+    
+        </div>
+      </section>
+
+      <div id="skip-to-content">
+        <%= yield %>
+      </div>
 
 <% if current_page.data.blog_url or current_page.data.forum_url or current_page.data.agol_gallery %>
 	<script>
@@ -291,8 +299,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</script>
 	<% end %>
 
-      </div>
-    </div>
+  </div>
+    
   
 
     <footer id="footer">
@@ -317,9 +325,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
    <script>
-   $(function() {
+   /*$(function() {
       $("#agolSearch").agolSearch();
-   });
+   });*/
    </script>
 
    <script type="text/javascript"> 
