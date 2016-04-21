@@ -19,7 +19,7 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/)/)){
+  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/)/)){
   return;
   }
   
@@ -112,6 +112,7 @@ jQuery(document).ready(function ($) {
 	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
    lgNavigator = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', "it", "ko", "pt-pt", 'el'],
    lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
+	 lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -166,6 +167,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "trust" && lgTrustSite.indexOf(lg) >= 0){ 
                 return true;
               }else if(langSelector === "agol" && lgAGOL.indexOf(lg) >= 0){ 
+                return true;
+              }else if(langSelector === "openData" && lgOpenData.indexOf(lg) >= 0){ 
                 return true;
               }else if(langSelector === "cognos" && lgCognos.indexOf(lg) >= 0){ 
                 return true;
@@ -253,7 +256,10 @@ jQuery(document).ready(function ($) {
 				        case "agol":
                   lgList = lgAGOL;
                   break;
-                case "cognos":
+                case "openData":
+                  lgList = lgOpenData;
+                  break;
+					 case "cognos":
                   lgList = lgCognos;
                   break;
                 case "micro":
@@ -418,12 +424,16 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/|\/web-appbuilder\/)/)){
     docCfg.langSelector = "marketplace";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
   }else if (winloc.pathname.match( /(\/maps-for-sharepoint\/)/)){
     docCfg.langSelector = "sharepoint";
+  }else if (winloc.pathname.match( /(\/open-data\/)/)){
+    docCfg.langSelector = "openData";
+  }else if (winloc.pathname.match( /(\/maps-for-office\/)/)){
+    docCfg.langSelector = (winloc.pathname.match( /(\/3.1\/)/)) ? "generic" : "marketplace";
   }
 
   dbg ("start: " + window.location.href);

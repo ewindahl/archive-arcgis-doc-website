@@ -55,7 +55,7 @@ var filterCfg = {
       {
         k:"all",
         q: {
-            r:"search-collection:help|search-collection:blogs", 
+            r:"search-collection:help|search-collection:blogs|search-collection:lessons|search-collection:books", 
             p:""
         }
       }, 
@@ -87,6 +87,18 @@ var filterCfg = {
           r:"search-collection:blogs",
           sort:"date:D:S:d1" //sort by date descending
         }
+      },
+		{
+        k:"lessons",
+        q:{
+          r:"search-collection:lessons",
+        }
+      },
+		{
+        k:"books",
+        q:{
+          r:"search-collection:books",
+        }
       }
       
     ]
@@ -100,7 +112,7 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:collector-windows|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce|product:appstudio|product:navigator-iphone|product:navigator-ipad|product:living-atlas"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:collector-windows|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce|product:appstudio|product:navigator-iphone|product:navigator-ipad|product:living-atlas|product:arcgis-earth|product:survey123"
           }
       },
 	  {
@@ -109,7 +121,14 @@ var filterCfg = {
           r:"",
           p:"(product:appstudio)"
         }
-      }, 
+      },
+      {
+        k:"arcgis-earth",
+        q: {
+          r:"",
+          p:"(product:arcgis-earth)"
+        }
+      },  
 	  {
         k:"arcgis-online",
         q: {
@@ -178,13 +197,6 @@ var filterCfg = {
         q: {
           r:"",
           p:"(product:community-analyst)"
-        }
-      },
-		{
-        k:"community-maps",
-        q: {
-          r:"",
-          p:"(product:community-maps)"
         }
       },
 	   {
@@ -337,8 +349,15 @@ var filterCfg = {
 	  {
         k:"ops-dashboard",
         q: {
-          r:"",
-          p:"(product:ops-dashboard)"
+          r:"(product:ops-dashboard)",
+          p:""
+        }
+      },
+		{
+        k:"survey123",
+        q: {
+          r:"(product:survey123)",
+          p:""
         }
       },
 	  {

@@ -282,10 +282,12 @@ $search-icon-height: 30px;
   background: url("/img/trans-bg-green.png") repeat scroll 0 0 transparent;
 }
 .display1 .item-title {
-  display: block;
-  padding-top: 5px;
-  text-align:left;
-  width: 286px;
+    display: block;
+    overflow: hidden;
+    padding-top: 5px;
+    text-align: left;
+    white-space: nowrap;
+    width: 262px;
 }
 
 .display1 .item-img {
@@ -555,11 +557,11 @@ input[type="checkbox"] {
 }
 
 #filters ol li label:hover {
-	background:none repeat scroll 0 0 #007AC2;
+	background:none repeat scroll 0 0 #10a6ff;
 	color: #FFFFFF
 }
 
-.current {
+#reference-index .current {
     background: none repeat scroll 0 0 #007AC2;
     color: #FFFFFF;
     font-weight: 700;
@@ -597,7 +599,7 @@ ul li {
 /* Minimal css for clickable pure CSS collapsible tree menu */
 /* As specific as possible to prevent interference with other code */
 
-#menutree li {
+#menutree li, #menutreeArea li, #menutreeType li {
    list-style: none;          /* all list item li dots invisible */
 }
 
@@ -624,6 +626,19 @@ li .current + ol > li
 	display: block;         /* display submenu on click */
 }
 
+.tablet-theme-dropDown {
+      background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
+      border-radius: 18px 18px 18px 18px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 18px;
+      margin-left: 13px;
+      overflow: hidden;
+      vertical-align: 17px;
+      width: 18px;
+    }
+	 
 
 
 /* Media query section start */
@@ -1313,6 +1328,25 @@ li .current + ol > li
 	display: none
 }
 
+.change-region {
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    font-weight: 200;
+    position: relative;
+    text-align: center;
+    top: -32px;
+    width: 50px;
+}
+
+#regionList ul {
+	background-color:#FFFFFF;
+	overflow: auto;
+	max-height: 250px;
+	width: 285px;
+}
+
 .showme-dropDown {
     background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 rgba(0, 0, 0, 0);
     border-radius: 18px;
@@ -1337,11 +1371,11 @@ li .current + ol > li
 }
 
 #showMeFilters {
-	display: none;
+	/*display: none;*/
 }
 
-#showMeFilters ol li label:hover {
-	background:none repeat scroll 0 0 #007AC2;
+#showMeFilters ol li label:hover, #regionList ul li:hover {
+	background:none repeat scroll 0 0 #10a6ff;
 	color: #FFFFFF
 }
 
@@ -1372,4 +1406,38 @@ li .current + ol > li
   .reset-filter {
      margin-top: -25px;
   }
+  .change-region {
+     /*margin-top: -25px;*/
+  }
+}
+
+.showSubFilter {
+	display: block;
+}
+
+.hideSubFilter {
+	display: none;
+}
+.premiumItem {
+    position: absolute;
+    right: -5px;
+    top: 214px;
+}
+
+.esri-premium-icon {
+    float: right;
+    margin-right: 5px;
+    margin-top: 6px;
+}
+
+.itemTypeIcon{
+	position:absolute;
+	right:0;
+	top:194px;
+}
+
+.grid-item-icon {
+    border: medium none;
+    float: right;
+    margin-top: 6px;
 }

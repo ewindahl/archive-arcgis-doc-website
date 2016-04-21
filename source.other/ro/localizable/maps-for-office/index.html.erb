@@ -1,5 +1,5 @@
 ---
-title: Esri Maps for Office
+title: ArcGIS Maps for Office
 
 css:
   - documentation
@@ -12,27 +12,29 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for Office Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="esri-maps-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ro">
+  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2015-10-30"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ro">
 
 mobile: true
 
 ---
-<div class="section-bar blue">
+<div class="navigation-bar blue">
   <div class="container">
-    <header>
-      <h1><a href="/ro/maps-for-office/">Esri Maps for Office</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Office">
+	<header>
+		<h1><a href="/ro/maps-for-office/">ArcGIS Maps for Office</a></h1>
+		<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Maps for Office">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="esri-maps-office" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
     </header>
+	
 	<nav>
       <ul>
-        <li class='current'><a href="/ro/maps-for-office/">Prima pagină</a></li>
-        <li><a href="/ro/maps-for-office/help/">Ajutor</a></li>
-        <li><a href="http://forums.arcgis.com/forums/219-Maps-for-Office">Forum</a></li>
+        <li class='current'><a href="/ro/maps-for-office/">Pagina principală</a></li>
+        <li><a href="/ro/maps-for-office/install-and-configure/">Instalare şi configurare</a></li>
+        <li><a href="/ro/maps-for-office/design-and-use/">Proiectaţi şi utilizaţi hărţi</a></li>
+        <li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus%5Bpublished%5D~tag%5B_office%5D">GeoNet</a></li>
       </ul>
     </nav>
   </div>
@@ -41,240 +43,209 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
-     <div class="column-16 tablet-column-24">
+    <div class="column-16 tablet-column-24">
         <header>
-
-	  <h2 id="appTitle">Descărcaţi aplicaţia</h2>
-          <span id="appVersion"><strong>Versiune:</strong> 3.1</span>
-          <span id="appReleased"><strong>Disponibilă:</strong> vara anului 2015</span>
-
+		<h2 id="appTitle">Descărcaţi aplicaţia</h2>
+        <span id="appVersion"><strong>Versiune:</strong> 4.0</span> <span id="appReleased"><strong>Disponibilă:</strong> primăvara 2016</span>
 
           <p>Fiţi mai productivi prin intermediul analizei bazate pe locaţie. Conferiţi o nouă dimensiune analitică suitei Microsoft Office. Începeţi imediat să obţineţi noi informaţii şi să luaţi decizii mai informate. Adăugaţi cu uşurinţă cartografieri la foile de calcul din Excel şi la prezentările din PowerPoint.</p>
 
           <p>
-             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Obţineţi Esri Maps for Office</a>
-
+             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">Descărcaţi ArcGIS Maps for Office</a>
           </p>
-
+		  
         </header>
         <hr />
         <br />
 
+<!-- features top row -->
+		<!-- Map your Excel data -->
+		<div id="em4oFirstFeature" class="column-12 phone-column-24">
+			<img src="Map-your-data.png" alt="Map your Excel data" />
+		  
+			<h3>Cartografiaţi datele din Excel</h3>
+			<p>Creaţi hărţi interactive din date din foi de calcul direct în Excel. Cu câteva clicuri puteţi crea hărţi interactive codificate pe culori, de puncte sau de tip heat-map, obţinând astfel informaţii vizuale detaliate despre datele dvs.</p>
+			<p>&gt; <a href="/ro/maps-for-office/design-and-use/add-a-map-to-excel.htm">Aflaţi mai multe</a></p>
+		</div>
 
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="Map-your-data.png" />
-
-          <h3>Cartografiaţi datele din Excel</h3>
-          <p>Creaţi hărţi interactive din date din foi de calcul direct în Excel. Cu câteva clicuri puteţi crea hărţi interactive codificate pe culori, de puncte sau de tip heat-map, obţinând astfel informaţii vizuale detaliate despre datele dvs.</p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="Analyze-your-data.png" />
-
-          <h3>Analizaţi pe hărţi datele din Excel</h3>
-          <p>Scoateţi la iveală modele şi tendinţe care nu sunt evidente în datele tabelare şi în diagrame. Găsiţi în datele dvs. puncte de interes şi puncte lipsite de interes din punct de vedere statistic. Executaţi căutări spaţiale utilizând timpii sau razele de conducere, pentru a găsi înregistrări de interes din apropiere.</p>         
-        </div>
-
-
-	<div id="collectorThirdFeature" class="column-12 phone-column-24">
-          <img src="Enrich-your-spreadsheets.png" />
-
-          <h3>Îmbogăţiţi foile de calcul destinate afacerilor</h3>
-          <p>Adăugaţi date demografice şi despre modul de viaţă din Esri direct în foile de calcul Excel şi obţineţi un context mai larg despre locaţiile importante pentru dvs. Exploraţi rapid şi pe parcurs locaţii utilizând grafice informative pop-up.</p>
-        </div>
-
-	<div id="collectorFourthFeature" class="column-12 phone-column-24">
-          <img src="Share-your-data.png" />
-
-          <h3>Partajaţi hărţile din Excel</h3>
-          <p>Partajaţi hărţile utilizând ArcGIS Online sau Portal for ArcGIS ori integraţi-le în e-mail-uri, prezentări PowerPoint sau documente Word.</p>
-        </div>
-
+		<!-- Analyze data -->
+        <div id="em4oSecondFeature" class="column-12 phone-column-24">
+			<!-- REPLACE IMAGE > PPT -->
+			<img src="Analyze-your-data.png" alt="Add a map to PowerPoint" />
+			<h3>Adăugarea hărţilor dinamice la PowerPoint</h3>
+			<p>Adăugaţi hărţi din organizaţia dvs. ArcGIS în PowerPoint pentru a crea prezentări excepţionale, dinamice.</p>
+			<p>&gt; <a href="/ro/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">Aflaţi mai multe</a></p>
+		</div>
         <div class="clear"></div>
 
+<!-- features second row -->
+		<!-- Enrich your data -->
+		<div id="em4oThirdFeature" class="column-12 phone-column-24">
+			<img src="Enrich-your-spreadsheets.png" alt="Enrich your data" />
 
-        <a name="systemRequirements"></a>
-        <h2>Cerinţele de sistem</h2>
+			<h3>Îmbogăţiţi foile de calcul destinate afacerilor</h3>
+			<p>Adăugaţi date demografice şi despre modul de viaţă din ArcGIS direct în foile de calcul Excel şi obţineţi un context mai larg despre locaţiile importante pentru dvs. Exploraţi rapid şi pe parcurs locaţii utilizând grafice informative pop-up.</p>
+			<p>&gt; <a href="/ro/maps-for-office/design-and-use/enrich-your-data.htm">Aflaţi mai multe</a></p>
+		</div>
 
-        <p>Pentru Esri Maps for Office este necesar un cont care să facă parte dintr-o organizaţie <a href="http://help.arcgis.com/en/arcgisonline/help/#/What_is_ArcGIS_Online/010q00000074000000/">ArcGIS Online</a>, precum şi de aplicaţia Microsoft Office Excel sau PowerPoint 2010 ori Microsoft Office Excel sau PowerPoint 2013. Printre sistemele de operare acceptate se numără:</p>
-		<ul>
-		 <li>Windows 7 (32 şi 64 de biţi)</li>
-		 <li>Windows 8 (32 şi 64 de biţi)</li>
-		 <li>Windows 8.1 (32 şi 64 de biţi)</li>
-		 <li>Windows Server 2008 R2</li>
-		 <li>Windows Server 2012</li>
-		</ul>
-		<p>Pentru informaţii suplimentare, inclusiv frecvenţa procesorului, cantitatea de memorie şi spaţiul pe hard disk necesare, consultaţi cerinţele de sistem pentru <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX">Microsoft Office 2010</a> şi <a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX">Microsoft Office 2013</a>.</p>
+		<!-- Share maps -->
+		<div id="em4oFourthFeature" class="column-12 phone-column-24">
+			<img src="Share-your-data.png" alt="Share maps on ArcGIS" />
+			<h3>Partajaţi hărţile din Excel</h3>
+			<p>Partajaţi hărţile utilizând ArcGIS Online sau Portal for ArcGIS ori integraţi-le în e-mail-uri, prezentări PowerPoint sau documente Word.</p>
+			<p>&gt; <a href="/ro/maps-for-office/design-and-use/share-a-map-on-arcgis.htm">Aflaţi mai multe</a></p>
+        </div>
+	<div class="clear"></div> 
 
-
-
-        <!-- 
-		<h3>Support for the following languages</h3>
-        <p>Arabic, Chinese (Simplified), Danish, Dutch, English, Estonian, French, German, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Spanish, and Swedish.</p>
-		//-->
-
-
-
-
-        <a name="whatsNew"></a>
-        <h2>Ce este nou</h2>
-        <p>Esri Maps for Office versiunea 3.1 a fost lansată în iunie 2015. Include următoarele îmbunătăţiri:</p>
-        <ul>
-        <li>Suport localizat pentru 27 de limbi:</li>
-		<ul>
-		     <li>Arabă</li>
-		     <li>Chineză simplificată</li>
-		     <li>Cehă</li>
-		     <li>Daneză</li>
-		     <li>Olandeză</li>
-		     <li>Germană</li>
-		     <li>Greacă</li>
-		     <li>Estoniană</li>
-		     <li>Finalizare</li>
-		     <li>Franceză</li>
-		     <li>Ebraică</li>
-		     <li>Italiană</li>
-		     <li>Japoneză</li>
-		     <li>Coreeană</li>
-		     <li>Lituaniană</li>
-		     <li>Letonă</li>
-		     <li>Norvegiană</li>
-		     <li>Poloneză</li>
-		     <li>Portugheză braziliană</li>
-		     <li>Portugheză Portugalia</li>
-		     <li>Română</li>
-		     <li>Rusă</li>
-		     <li>Spaniolă</li>
-		     <li>Suedeză</li>
-		     <li>Thailandeză</li>
-		     <li>Turcă</li>
-		     <li>Vietnameză</li>
-		</ul>
-	<li>Numeroase remedieri de defecte şi îmbunătăţiri ale fluxului de lucru.</li>
-        </ul>
-
-
-        <h3>Versiunile anterioare</h3>
-        
-        <p>Esri Maps for Office versiunea 3.0 a fost lansată în aprilie 2015. A inclus următoarele îmbunătăţiri:</p>
-        <ul>
-        <li>Vizualizaţi mai clar datele Excel prin integrarea mai multor hărţi în foaia de calcul. Puteţi crea hărţi multiple pentru diferite tabele pe care le aveţi în foile de calcul.</li>
-	<li>Comparaţi hărţile prin alăturare sau trageţi-le pe alte monitoare fără să aglomeraţi fereastra de Excel.</li>
-	<li>Lucraţi cu uşurinţă cu date cartografiate găsind instrumentele în fereastra hărţii.</li>
-	<li>Exploataţi noul instrument de căutare pentru a găsi rapid locaţii.</li>
-	<li>Nu trebuie să fiţi expert în GIS pentru a crea hărţi aspectuoase. Vedeţi cum va arăta harta dvs. înainte de a cartografia datele. Stilurile de hartă sunt recomandate conform datelor pe care le cartografiaţi pentru a obţine cele mai bune informaţii vizuale detaliate.</li>
-	<li>Utilizaţi sistemul de coordonate preferat şi suprapuneţi cu uşurinţă alte seturi de date GIS care se află în sistemul local de coordonate.</li>
-	<li>Tipurile de locaţii particularizate includ acum obiecte spaţiale liniare.</li>
-	<li>Mai multe posibilităţi de asistenţă pentru ca utilizatorii noi să înceapă rapid şi uşor.</li>
-        </ul>
-
-        <p>Esri Maps for Office versiunea 2.1.5 a fost lansată în iarna anului 2015. A inclus următoarele îmbunătăţiri:</p>
-        <ul>
-        <li>Suport pentru proxy-urile web securizate şi nesecurizate.</li>
-        </ul>
-
-	<p>Esri Maps for Office versiunea 2.1.4 a fost lansată în primăvara anului 2014. A inclus următoarele îmbunătăţiri:</p>
-        <ul>
-        <li>Actualizări de securitate.</li>
-        </ul>
-
-        <p>Esri Maps for Office versiunea 2.1.3 a fost lansată în primăvara anului 2014. A inclus următoarele îmbunătăţiri:</p>
-        <ul>
-        <li>Suport pentru roluri particularizate.</li>
-        <li>Parametrii de instalare silenţioasă noi permit un control mai bun asupra instalărilor la scară mare.</li>
-        <li>Maps for Office verifică acum conectivitate la ArcGIS şi vă înştiinţează când nu sunt disponibile servicii necesare.</li>
-		<li>Remedieri de defecte şi îmbunătăţiri ale caracterului utilizabil, printre care:</li>
-			<ul>
-			<li>Capacitatea de a utiliza servicii de hărţi găzduite drept tipuri de locaţii particularizate.</li>
-			<li>Problemele de vizibilitate a straturilor tematice în versiuni localizate au fost corectate.</li>
-			<li>Problemele de blocare aleatorie provocate de versiuni mai vechi ale Visual Studio Tools for Office au fost remediate.</li>
-			<li>Aplicaţiile de localizare particularizate sunt acum prezentate cu numele lor în loc de „Adresă” în fluxul de adăugare a datelor.</li>
-			<li>Administrare mai bună a înregistrării la dezinstalare.</li>
-			<li>Stocare mai eficientă a geometriilor returnate din ArcGIS.</li>
-			<li>În timpul conectării la Portal, nu se mai efectuează solicitări către ArcGIS Online.</li>
-			<li>Virgulele ca separatoare zecimale sunt acum gestionate corect.</li>
-			<li>Straturile tematice îmbogăţite pot fi acum particularizate şi grupate după coloane nou adăugate.</li>
-			<li>Ferestrele pop-up pentru straturi tematice îmbogăţite afişează acum antente de coloane corecte.</li>
-			<li>La deconectarea de la internet, nu se mai produc blocaje.</li>
-			<li>Esri Maps for Office în PowerPoint accepă acum harta fundal implicită a organizaţiei.</li>
-			</ul>
-        </ul>
-
-
-        <p>Esri Maps for Office versiunea 2.1.2 a fost lansată în noiembrie 2013. A inclus următoarele îmbunătăţiri:</p>
-        <ul>
-		<li>Remedieri de defecte şi îmbunătăţiri ale caracterului utilizabil, printre care:</li>
-			<ul>
-			<li>Îmbunătăţiri ale instrumentului Îmbogăţire strat tematic, precum: o utilizare mai eficientă a memoriei pentru a satisface solicitări de îmbunătăţire mai mari şi un indicator de progres îmbunătăţit.</li>
-			<li>A fost remediat un defect care provoca blocarea aplicaţiei Excel după instalarea Esri Maps.</li>
-			<li>A fost remediat un defect prin care erau afişate imagini incorecte în panoul Căutare.</li>
-			<li>A fost remediat un defect care determina eşuarea căutărilor după tipuri de locaţii particularizate în limbile japoneză, rusă şi chineză.</li>
-			<li>Au fost aranjate şirurile localizate pentru Date cheie, Avere, Politică şi Sănătate din panoul Căutare.</li>
-			</ul>
-        </ul>
+		<br />
 		
-		<p>Versiunea 2.1.1 a fost lansată în octombrie 2013. A inclus următoarele îmbunătăţiri:</p>
-        <ul>
-        <li>Versiuni localizate noi pentru 22 de limbi suportate:</li>
-			<ul>
-			<li>arabă, chineză (simplificată), coreeană, daneză, ebraică, engleză, estoniană, franceză, germană, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă şi suedeză</li>
-			</ul>
-		<li>Suport pentru ferestre pop-up în hărţi web</li>
-		<li>Caracteristici de simbolizare cu ajutorul unei pictograme dintr-un URL de atribut</li>
-		<li>Remedieri şi îmbunătăţiri ale utilizării în întregul produs, printre care:
-			<ul>
-			<li>Gestionare îmbunătăţită pentru autentificările OAuth</li>
-			<li>Mesaje de eroare mai utile în instrumentul Găsire hot spot</li>
-			<li>Instrumentul Găsire hot spot poate gestiona acum nume de coloane cu spaţii</li>
-			<li>Instrumentul Selectare suportă acum buffere de dimensiune „0”</li>
-			<li>Au fost remediate probleme legate de panoul de activităţi</li>
-			<li>Au fost remediate defecte de vizibilitate a grupurilor</li>
-			<li>A fost îmbunătăţit suportul pentru organizaţii care utilizează SSL pentru toate conexiunile</li>
-			<li>Grupare funcţionează acum corect la utilizarea coloanelor adăugate din instrumentul Îmbogăţire strat tematic</li>
-			</ul>
-        </ul>
-		
-        <p>Versiunea 2.1 a fost lansată în iulie 2013. A inclus următoarele îmbunătăţiri: </p>
-        <ul>
-        <li>Analiza modelelor statistice prin instrumentul Puncte de interes</li>
-		<li>Îmbunătăţiri aduse îmbogăţirii datelor, inclusiv colecţii de date suplimentare şi posibilitatea de a selecta variabile individuale din colecţiile de date</li>
-		<li>Suport pentru autentificare securizată utilizând OAuth+SAML (AGOL)</li>
-        <li>Suport pentru autentificare securizată utilizând IWA, PKI (numai în portal)</li>
-		<li>Îmbunătăţiri aduse interfeţei cu utilizatorul la nivelul graficelor informative şi al instrumentului Îmbogăţire strat tematic</li>
-		<li>Flux de lucru îmbunătăţit pentru upgrade-ul Maps for Office la cea mai recentă versiune</li>
-        </ul>
-		<br>
-        <p>Versiunea 2.0.2 a fost lansată în mai 2013. A inclus următoarele îmbunătăţiri:</p>
-        <ul>
-          <li>Îmbogăţirea datelor prin adăugarea unui context geografic utilizând instrumentul nou „Îmbogăţire strat tematic”</li>
-		  <li>Selectarea obiectelor spaţiale pe hartă şi găsirea de obiecte spaţiale din apropiere în alte straturi tematice</li>
-		  <li>Acum, ferestrele pop-up cu hărţi conţin grafice informative, care furnizează informaţii contextuale extinse despre zonele ce înconjoară obiectele spaţiale de pe hartă.</li>
-		  <li>Suport pentru previzualizare pentru Portal for ArcGIS 10.2</li>
-		  <li>Opţiuni de configurare noi pentru hărţile de temperaturi şi pentru grupări</li>
-		  <li>A fost adăugată posibilitatea de a filtra obiectele spaţiale grupate pe hartă făcând clic pe pauzele de clasă în legenda hărţii</li>
-		  <li>Flux de lucru îmbunătăţit pentru geocodificarea adreselor</li>
-		  <li>Suport pentru personalizarea hărţilor fundal din organizaţia ArcGIS Online</li>
-		  <li>Funcţia Inserare hartă utilizează harta fundal implicită din organizaţia ArcGIS Online</li>
-		  <li>Căutaţi date în ArcGIS Online utilizând categorii populare precum Bogăţie, Afaceri, Politică şi Sănătate</li>
-		  <li>Acum, numele de locuri sunt bazate pe locaţia datelor. De exemplu, etichetele din fluxul de lucru cu geocoduri vor afişa nume de prefecturi în Japonia, nume de state în Statele Unite şi provincii în Canada</li>
-		  <li>Suport pentru Microsoft Office 2013</li>
-		  <li>Alte îmbunătăţiri calitative, cartografice şi privind utilizarea</li>
-        </ul>
+<!-- What's new section -->
+	<hr />
+	<a id="whatsNew"></a>
+ 	<h2>Ce este nou</h2>	
+	<p>&gt; Aveţi idei pentru caracteristici pe care aţi dori să le vedeţi în ArcGIS Maps for Office? Vorbiţi-ne despre acest lucru pe site-ul <a href="http://ideas.arcgis.com/ideaList?c=09a300000004xET&category=Esri+Maps+for+Office" target="_blank">ArcGIS Ideas</a>.</p>
+ 	<p>Versiunea 4.0 de ArcGIS Maps for Office este acum disponibilă. Această versiune oferă actualizări şi îmbunătăţiri semnificative. Iată câteva elemente importante.</p>
+	
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
 
+		<h3>Actualizări 4.0</h3>
+		<p>ArcGIS Maps for Office 4.0 include următoarele caracteristici noi:
+			<ul>
+				<li><b>Utilizaţi <a href="/ro/maps-for-office/design-and-use/change-a-layer-s-style.htm">Smart Mapping</a> pentru a crea rapid hărţi frumoase</b>
+					<p>Indiferent dacă sunteţi expert la lucrul cu hărţile sau doar sunteţi la început, nu a fost niciodată mai uşor să creaţi hărţi excepţionale din punct de vedere vizual care relatează poveştile dorite. ArcGIS Maps for Office analizează datele din foaia de calcul şi sugerează cele mai bune moduri de reprezentare pe o hartă, oferind o selecţie de stiluri dintre care să alegeţi. Alegeţi un stil şi creaţi instantaneu o hartă sau particularizaţi opţiunile de stil pentru a se potrivi cu povestea dvs. Cartografierea inteligentă furnizează, de asemenea, capacitatea foarte solicitată de a seta manual separarea claselor pentru straturilor dvs. tematice.</p>
+				</li>
+				<li><b>Găsiţi de-a lungul timpului modele în locaţiile dvs. cu ajutorul <a href="/ro/maps-for-office/design-and-use/map-temporal-data.htm">animaţiilor bazate pe timp</a></b>
+					<p>Dacă datele dvs. conţin valori temporale, puteţi adăuga straturi tematice cu sensibilitate temporală la o hartă din Excel şi puteţi rula o animaţie care indică modul în care datele se schimbă în timp. Această caracteristică acceptă straturile cu sensibilitate temporală şi pe platforma ArcGIS, permiţându-vă să comparaţi modelele bazate pe timp din datele dvs. cu modele similare din organizaţia dvs. sau din surse de creaţie precum Administraţia Naţională SUA pentru Ocean şi Atmosferă (NOAA).</p>
+				</li>
+				<li><b>Comunicaţi-vă lucrările mai eficient cu o experienţă complet nouă în <a href="/ro/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">PowerPoint</a></b>
+					<p>ArcGIS Maps for Office oferă o experienţă complet actualizată pentru îmbunătăţirea prezentărilor PowerPoint cu hărţi interactive, dinamice, simplificându-le şi accelerând procesul de căutare a conţinutului. Adăugaţi hărţi direct în PowerPoint utilizând conţinut din organizaţia dvs. ArcGIS sau editaţi diapozitivele cu hărţi existente. Introduceţi harta într-un diapozitiv şi poziţionaţi-o după cum doriţi - de una singură sau combinată cu alte caracteristici PowerPoint standard, precum diagramele, imaginile şi textul. În modul Prezentare de diapozitive, puteţi transfoca şi panorama pe hartă şi puteţi selecta obiecte spaţiale pentru a afişa informaţii detaliate, ceea ce vă permite să răspundeţi rapid la întrebări care apar în timpul prezentării.</p>
+				<li><b>Concentraţi-vă asupra rândurilor care sunt importante utilizând <a href="/ro/maps-for-office/design-and-use/select-features.htm#ESRI_SECTION1_53FF2A6DECC04ED4A5AAED1BDDBC9515">filtrarea bazată pe hărţi</a></b>
+					<p>Puteţi de multă vreme să filtraţi foile de calcul după valoarea celulei. Acum, în ArcGIS Maps for Office puteţi să filtraţi foaia de calcul selectând elemente pe hartă, ceea ce vă permite să vă concentraţi direct asupra obiectelor spaţiale cu care lucraţi în momentul respectiv. Filtraţi foaia de calcul pentru a afişa doar obiectele spaţiale selectate, apoi utilizaţi funcţii Excel standard pentru a lucra cu datele de care aveţi nevoie.</p>
+				</li>
+				<li><b>Monitorizaţi modificarea datelor prin setarea unui <a href="/ro/maps-for-office/design-and-use/set-refresh-interval.htm">interval de reîmprospătare</a></b>
+					<p>Straturile tematice statice adăugate din ArcGIS vă ajută să vizualizaţi obiecte imobile precum clădirile, drumurile sau graniţele. Acum, ArcGIS Maps for Office vă permite să monitorizaţi lucrurile care se mişcă, se modifică sau evoluează - precum furtunile, vehiculele sau starea lucrărilor de teren. Caracteristica Interval de reîmprospătare vă permite să specificaţi cât de des este utilizat un strat tematic pentru actualizări; sau faceţi clic pe un buton pentru a actualiza imediat stratul tematic</p>
+				</li>
+			</ul>
+		</p>
+	
+
+
+<!-- Supported environments section -->
+	<hr />
+	<a id="supportedEnvironments"></a>
+        <h2>Medii acceptate</h2>
+		<p>ArcGIS Maps for Office este implementat ca add-on în Microsoft Excel şi Microsoft PowerPoint. Pentru ca ArcGIS Maps for Office să funcţioneze corespunzător, Esri asumă o configuraţie operaţională a acestor aplicaţii. Esri testează ArcGIS Maps for Office doar în medii software certificate sau acceptate de Microsoft Excel sau PowerPoint; nu toate mediile acceptate de Excel sau PowerPoint au fost testate sau certificate. Pentru informaţii suplimentare, consultaţi <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Politica Esri privind mediile acceptate</a>.</p>
+		
+		<p><b>Notă:</b> Microsoft Word vă permite să încorporaţi şi să lucraţi cu o foaie de calcul Excel într-un document. Acest flux de lucru nu este acceptat de ArcGIS Maps for Office şi nu este recomandat.</p>
+		
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+
+		<!-- Sys Reqs -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Cerinţele de sistem</a>
+		</h3>
+			<div exp1='yes' style="display:none;padding:0 15px;">
+			<p>Pentru ArcGIS Maps for Office este necesar un cont care să facă parte dintr-o organizaţie ArcGIS, precum şi de aplicaţia Microsoft Office Excel sau PowerPoint (Microsoft Office 2010, 2013 sau 2016).</p>
+			<p>Pentru informaţii suplimentare, inclusiv frecvenţa procesorului, cantitatea de memorie şi spaţiul pe hard disk necesare, consultaţi cerinţele de sistem pentru următoarele:
+			<ul>
+				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
+				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
+				<li><a href="https://products.office.com/en-ca/office-system-requirements#SUITES" target="_blank">Microsoft Office 2016</a></li>
+			</ul>	
+			</p>
+			</div>
+			
+		<div class="clear" style="padding:5px;"></div>
+
+		<!-- Req'd SW -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Software necesar</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
+			<p>ArcGIS Maps for Office necesită un abonament de organizaţie <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> sau o implementare locală de Portal for ArcGIS. Se presupune că metoda de autentificare utilizată pentru a accesa platforma a fost configurată corespunzător de administratorul ArcGIS.</p>
+
+			<p>În plus, următorul software trebuie instalat şi configurat pe sistemul dvs.:</p>
+				<ul>
+					<li>Microsoft Office 2010, 2013 sau 2016*</br>
+						* ArcGIS Maps for Office acceptă Microsoft Office 2016 versiunile 16.0.4266.1003 şi anterioare.
+					</li>
+					<li>Internet Explorer 9, 10 sau 11**</li>
+					<li>Microsoft Windows. Versiuni suportate:
+						<ul>
+							<li>Windows 7 (32 şi 64 de biţi)</li>
+							<li>Windows 8 (32 şi 64 de biţi)</li>
+							<li>Windows 8.1 (32 şi 64 de biţi)</li>
+							<li>Windows 10 (32 şi 64 de biţi)</li>
+							<li>Windows Server 2008 R2</li>
+							<li>Windows Server 2012</li>
+							<li>Windows Server 2012 R2</li>
+						</ul>
+					</li>
+				</ul>
+			<p>** ArcGIS Maps for Office utilizează JavaScript într-un browser web pentru a afişa hărţi. Având în vedere că Microsoft Excel necesită utilizarea Internet Explorer (IE) pentru a afişa conţinutul web, nu există opţiunea de a utiliza un alt browser. Funcţionalitatea din cadrul aplicaţiei necesită utilizarea IE 9 sau a unei versiuni ulterioare, aşa că versiunile mai vechi nu sunt suportate.</p>
+			</div>
+			
+		<!-- Supported languages -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Limbi acceptate</a>
+		</h3>
+			<div exp3='yes' style="display:none;padding:0 15px;">
+			<p>ArcGIS Maps for Office este disponibil în următoarele limbi:</p>
+			<p>arabă, chineză (simplificată), chineză (tradiţională Hong Kong), chineză (tradiţională Taiwan), cehă, daneză, germană, greacă, engleză, spaniolă, estonă, finlandeză, franceză, ebraică, italiană, japoneză, coreeană, lituaniană, letonă, olandeză, norvegiană, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, suedeză, thailandeză, turcă şi vietnameză.</p>
+			
+			<p>ArcGIS Maps for Office utilizează limba specificată în meniul Opţiuni Excel şi nu setarea pentru cultură a sistemului de operare. Dacă utilizaţi o limbă neacceptată, aplicaţia utilizează limba engleză.</p>
+			
+			</div>
 
         <p>&nbsp;</p>
-
-      </div>
-
-
+	</div>
+	
+	
+<!-- Sidebars -->
       <div class="column-8 tablet-column-24 blocks">
 
         <div class="imgFrame block">
           <h3>Începeţi</h3>
           <ul>
            <li><a href="#whatsNew">Ce este nou</a></li>
-            <li><a href="#systemRequirements">Cerinţele de sistem</a></li>
+            <li><a href="#supportedEnvironments">Medii acceptate</a></li>
+			<li>Ajutor pentru versiunile anterioare:
+				<ul>
+					<li><a href="/ro/maps-for-office/3.1/welcome.htm">Ajutor online 3.1</a></li>
+				</ul>
+			</li>
 			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">Vizionaţi videoclipurile</a></li>
 
           </ul>
@@ -290,12 +261,14 @@ mobile: true
           </div>
         </div>
 
- </div>
+	 </div>
 
-    </div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
+</div>
+
+	 
+
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script> <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',

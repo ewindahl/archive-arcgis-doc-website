@@ -1,0 +1,166 @@
+---
+title: باب التعليمات في ArcGIS Open Data
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - libs/jquery.cookie
+  - libs/jquery.colorbox-min.js
+  - jquery.colorbox.init.js
+  - video-init
+
+metatags:
+  - <META name="description" content="ArcGIS Open Data Help Home page."><META name="last-modified" content="2014-07-02"><META name="product" content="arcgis-open-data"><META name="sub_category" content="ArcGIS Open Data"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Open Data"><META name="search-category" content="help-general"><META name="subject_label" content="OPEN DATA, ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="OPEN DATA, ARCGIS ONLINE"><META name="content-language" content="ar">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1><a href="/ar/open-data/">ArcGIS Open Data</a></h1>
+      <form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Open Data Help">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="arcgis-open-data" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+
+    </header>
+	<nav>
+      <ul>
+        <li class='current'><a href="/ar/open-data/">رئيسي</a></li>
+        <li><a href="/ar/open-data/consumer/">للمستهلكين</a></li>
+        <li><a href="/ar/open-data/provider/">للموفرين</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+     <div class="column-16 tablet-column-24">
+        <header>
+
+		  <h2 id="appTitle">ما هو ArcGIS Open Data؟</h2>
+
+          <p>يسمح فتح البيانات للمنظمات استخدام النظام الأساسي ArcGIS لتسهيل الوصول إلى البيانات الموثوقة من قبل الجميع. يمكن للمؤسسات تكوين موقع تبعًا لشكلها وأسلوب عرضها وتحديد مجموعات Open Data لمشاركة العناصر المحددة. يمكن للجميع استخدام مواقع Open Data للبحث باستخدام الموضوع أو الموقع وتنزيل البيانات باستخدام تنسيقات متعددة وعرض البيانات في الخريطة التفاعلية وداخل الجدول.</p>
+
+
+
+        </header>
+        <hr />
+        <br />
+
+
+        <div id="collectorMapFeature" class="column-12 phone-column-24">
+          <img src="img/consumer.jpg" />
+
+          <h3>للعملاء </h3>
+          <p>التفاعل مع البيانات من خلال التخطيطات والجداول والخرائط لمساعدة المستخدمين في التعرف على المجتمعات. اكتشاف واستكشاف وتنزيل البيانات أو مشاركة رابط على مجموعة البيانات ذات أهمية.</p>
+          <p>
+
+			<a href="/ar/open-data/consumer/" class="icon-right-arrow">&nbsp;إظهار كيفية</a>
+           </p>
+        </div>
+
+
+        <div id="collectorDataFeature" class="column-12 phone-column-24">
+          <img src="img/producer.jpg" />
+
+          <h3>للمُزودين</h3>
+          <p>تعيين موقع ويب مخصص وتحديد البيانات الموثوقة التي تريد مشاركتها. السماح لكل مستخدم بالبحث وعرض وتنزيل البيانات في العديد من التنسيقات.</p>
+          <p>
+            <a href="/ar/open-data/provider/" class="icon-right-arrow">&nbsp;إظهار كيفية</a>
+               <br/>
+          </p>
+        </div>
+
+        <div class="clear"></div>
+
+<br/>
+<div>
+	         <a name="features"></a>
+        <h2 class="divider">المعالم</h2>
+
+        <p>إنشاء ومشاركة البيانات باستخدام دورات العميل التي تعرفها بالفعل لإنشاء موقع Open Data.</p>
+		<ul>
+			<li>تمكين Open Data على المنظمة والمجموعات.</li>
+			<li>إنشاء مواقع مخصصة للبيانات.</li>
+			<li>السماح للبحث الموحد عبر المنظمات والمجموعات.</li>
+			<li>توفير الدعم للجداول المكانية وغير المكانية.</li>
+			<li>توفير عمليات التنقية التفاعلية لاكتشاف البيانات.</li>
+			<li>مشاركة الروابط على مناطق عرض مجموعات البيانات التي تم تنقيتها.</li>
+
+		</ul>
+         <p>&nbsp;</p>
+        <div class="clear"></div>
+		<a name="dataRequirements"></a>
+        <h2 class="divider">متطلبات البيانات</h2>
+        <p>يعمل ArcGIS Open Data حاليًا مع البيانات من طبقات المعلم المستضافة وخدمات معلم ArcGIS for Server وخدمات خريطة ArcGIS for Server وخدمات صور ArcGIS for Server وملفات CSV والجداول المستضافة. يوفر ArcGIS Open Data دعمًا محدودًا لعناوين URL الخارجية وخرائط الويب وغيرها من المستندات (مثل مستندات العالم وملفات PDF).</p>
+
+        <p>&nbsp;</p>
+
+         <a name="whatsNew"></a>
+        <h2 class="divider">ما الجديد</h2>
+		<p>تم تحديث Open Data في يوليو 2015 مع الميزات والوظائف التالية: </p>
+		
+		<ul>
+			<li>تصورات الكثافة الشبكية لمجموعات البيانات الكبيرة (GeoHash).</li>
+			<li>الدعم للبيانات التعريفية الرسمية من ArcGIS Online.</li>
+			<li>تسجيل الدخول وتسجيل الخروج لحسابات ArcGIS Online.</li>
+			<li>المستخدمون والمسؤولون الذين يضيفون تعليقات على مجموعات البيانات.</li>
+		</ul>
+
+        <p>&nbsp;</p>
+		
+         <a name="SneakPeek"></a>
+        <h2 class="divider">نظرة سريعة</h2>
+		<p>لقد تم إصدار ArcGIS Open Data توًا، وإننا نخطط لبعض الأمور المثيرة في الطريق مقدمًا:</p>
+		
+		<ul>
+			<li>المعلومات الإحصائية بشأن البيانات لتعقب اعتبارات التنزيل والتفاصيل عند العرض.</li>
+			<li>التحكم الإداري الأكبر عبر مجموعات البيانات والتجميع.</li>
+			<li>تحسين خبرة المستخدم بغرض البحث وتنقية مجموعات البيانات.</li>
+		</ul>
+		        <p>&nbsp;</p>
+		<p>مشاركة <a class="" href="http://ideas.arcgis.com">الأفكار</a> من موضع انتقال ArcGIS Open Data!</p>
+        <p>&nbsp;</p>
+ 
+      </div>
+</div>
+
+
+      <div class="column-8 tablet-column-24 blocks">
+
+	          <div class="imgFrame block">
+	  <h3>التفاصيل</h3>
+	          
+	  <h4><a href="#features">المعالم</a></h4>
+	  <h4><a href="#dataRequirements">متطلبات البيانات</a></h4>
+	  <h4><a href="#whatsNew">ما الجديد</a></h4>
+	  <h4><a href="#SneakPeek">نظرة سريعة</a></h4>
+	          
+        </div>
+
+        <br />
+		
+        <div class="greyFrame">
+          <h3 class="icon-orange icon-light-bulb">موقع أفكار ArcGIS</h3>
+         <p>مشاركة الأفكار من موضع انتقال ArcGIS Open Data! انشر الاقتراح أو صوت على الأفكار الحالية.</p> <br/>
+         <p>هل أنت موفر تبحث عن أفكار؟ تعرف على متطلبات العملاء. قم بدعوة المساهمين للتعاون معك لتطوير الأفكار.</p></br>
+         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
+        </div>
+
+        <br />
+
+
+ </div>
+
+    </div>
+
+
