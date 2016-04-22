@@ -23,9 +23,9 @@ end
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
 	 
 	 <!--[if lt IE 9]>
-      <%= javascript_include_tag "libs/html5shiv.js" %>
+      <script src="/assets/js/libs/html5shiv.js"></script>
 		<script src="/assets/js/libs/json2.js"></script>
-      <%= javascript_include_tag "libs/selectivizr-min.js" %>
+    <script src="/assets/js/libs/selectivizr-min.js"></script>
      
     <![endif]-->
 
@@ -102,7 +102,6 @@ end
    <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
    <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
       
-   <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
 	<% if current_language != "en" %> 
 		<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
@@ -135,7 +134,7 @@ end
     });
   </script>
 
-	<%= partial :"_partial/galleryLayout" %>
+	<%= partial "_partial/galleryLayout" %>
   </head>
 
   <body class="claro <%= current_language %>" >
@@ -190,9 +189,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <a href="/" class="top-nav-title tablet-hide">Arc<span>GIS</span></a>
             <a href="/" class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav">Arc<span>GIS</span></a>
 
-            <!--<div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>
+            <!--<div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>-->
 
-            <%= partial "_partial/site_header_dropdown" %> -->
             <nav>
               <%= partial "_partial/site_header_nav" %>
             </nav>
@@ -303,22 +301,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
   
 
-    <footer id="footer">
-      <div class="container">
-        <div class="row">
-          <nav>
+    <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+      <div class="grid-container">
+          <nav class="column-6">
             <h4>ArcGIS</h4>
             <%= partial "_partial/site_header_nav" %>
           </nav>
 
           <%= partial "_partial/site_footer_common" %>
-
-        </div>
-
       </div>
     </footer>
 
-    <%= javascript_include_tag "drop-down" %>
     <%= javascript_include_tag "search/searchform.js" %>
     <%= javascript_include_tag "/cdn/js/sitewide.js" %>
     <%= javascript_include_tag "/cdn/js/link-modifier.js" %>
