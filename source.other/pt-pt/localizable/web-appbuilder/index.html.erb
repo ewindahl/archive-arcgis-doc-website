@@ -31,7 +31,7 @@ mobile: true
     </header>
 	 <nav>
       <ul>
-        <li class='current'><a href="/pt-pt/web-appbuilder/">Início</a></li>
+        <li class='current'><a href="/pt-pt/web-appbuilder/">Página Inicial</a></li>
         <li><a href="/pt-pt/web-appbuilder/create-apps/">Criar Aplicações</a></li>
         <li><a href="/pt-pt/web-appbuilder/manage-apps/">Gerir Aplicações</a></li>
         <li><a href="/pt-pt/web-appbuilder/extend-apps/">Estender Aplicação</a></li>
@@ -101,14 +101,23 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">Navegadores suportados</h2>
+		<p>A aplicação 2D suporta os seguintes navegadores:</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari 3+</li>
+          <li>Safari 3 e superior</li>
 		  <li>Margem</li>
           <li>Internet Explorer 9 e superior</li>
         </ul>
-        
+		<p>A aplicação 3D suporta os seguintes navegadores:</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Margem</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
         <h2 class="divider">Licença</h2>
 
@@ -127,36 +136,39 @@ mobile: true
 
          <a name="whatIsNew"></a>
         <h2 class="divider">Quais as novidades?</h2>
-        <p>O Web AppBuilder for ArcGIS foi actualizado em Novembro de 2015. Inclui os seguintes elementos e melhorias:</p>
+        <p>O Web AppBuilder for ArcGIS foi atualizado em março de 2016. Inclui os seguintes elementos e melhorias:</p>
         <ul>
-          <li>A aplicação estado, incluí a extensão de mapa e camada de visibilidade, é automaticamente guardada automaticamente quando fecha a sua navegação.</li>
-          <li>Serviços seguros por Web-tier de ArcGIS for Server são totalmente suportados.</li>
-          <li>Seis novos parâmetros de URL permitem que encontre a localização ou elemento, início de sessão de fornecimento, elemento de consulta, adicionar ponto, switch de locale, e especifique WKID para ampliar ou deslocar o mapa.</li>
-          <li>Um novo widget Editor de Atributo Batch permite editar simultaneamente vários atributos.</li>
-          <li>Um novo widget do Dashboard Reviewer exibe estatísticas de resultados de qualidade de dados como gráficos circulares e gráficos de barras para resumir as questões de qualidade de dados identificadas nos seus dados GIS.</li>
-          <li>Um novo widget Elemento de Relatório permite recolher e gerir feedbacks de qualidade de dados dos utilizadores.</li>
-		  <li>Um novo widget de Medição de imagem permite realizar medições em serviços de imagem com capacidade de mensuração.</li>
-          <li>O Widget de Pesquisa tem opções para adicionar texto de espaço reservado para todas as fontes de pesquisa e busca por extensão de mapa actual.</li>
-          <li>O Widget de Tabela Atributo actualiza camadas conformidade quando são alteradas no mapa.</li>
-		  <li>O widget Edição tem disponiveis os atributos editáveis configurados no mapa.</li>
-		  <li>O widget Coordenadas torna o texto de coordenadas mais perceptível.</li>
-		  <li>O widget Splash disponibiliza cor de fundo personalizada.</li>
-		  <li>O widget Consulta suporta a consulta em tabelas relacionadas e a exibição de elementos relacionados no resultado.</li>
-		  <li>O widget de Geoprocessamento possui opções para personalizar campos na tabela de saída e exportar resultados para CSV, Colecção de Elementos e GeoJSON.</li>
-		  <li>O widget Direcções adiciona configuração por URL de camada de tráfego.</li>
-		  <li>A janela Escolha o Mapa Web disponibiliza os mapas ordenados com base no mais recente, mais visualizado, com melhor avaliações, título e proprietário.</li>
-		  
+          <li>Uma experiência de construção melhorada permite-lhe modificar o mapa de dentro do Web AppBuilder for ArcGIS; já não necessita de sair da aplicação.</li>
+          <li>Agora pode construir aplicações com cenas através do botão Criar em O Meu Conteúdo.</li>
+          <li>O separador Atributo tem agora uma nova opção de estado da aplicação. Esta opção permite-lhe escolher se quer manter a extensão do mapa e a visibilidade das camadas quando sai da aplicação.</li>
+          <li>Foi lançado o widget Percepção Situacional. Já não é versão beta. Este widget permite-lhe criar ou seleccionar um incidente no mapa e analisar informação a partir das camadas de elementos, seja dentro da área do incidente ou a uma distância específica do incidente.</li>
+          <li>Utilize o novo widget NearMe para encontrar elementos perto de uma localização definida, visualizar informações mais detalhadas sobre esses elementos e obter direções para um elemento selecionado</li>
+		  <li>Utilize o novo widget DistrictLookup para encontrar elementos de ponto relacionados com um polígono selecionado, visualizar informações mais detalhadas sobre os elementos de ponto relacionados e obter direções para um elemento de ponto selecionado</li>
+          <li>Utilize o novo widget Gráficos de tabela Relacionados para criar gráficos (de barras ou circulares) de valores geridos numa tabela relacionada.</li>
+		  <li>Utilize o novo widget Resumo de Informações para resumir o número de elementos visíveis num mapa e permitir o clustering em camadas de elementos de pontos, se pretender.</li>
+          <li>Utilize o novo tema Plateau para criar uma aplicação de estilo moderno e minimalista com barras de ferramentas planas e painéis de widgets simples.</li>
+		  <li>O widget Editar inclui um campo de exibição na página de definições para que possa escolher atributos para exibir apenas quando efetua edição.</li>
+		  <li>Também pode abrir o widget Editar diretamente na aplicação através da janela Pop-up.</li>
+		  <li>O widget Geoprocessamento adiciona uma opção para carregar shapefiles.</li>
+		  <li>O widget Procurar suporta a pesquisa de locais e inclui opções de máximo de sugestões e de escala de zoom.</li>
+		  <li>A tabela Atributo permite-lhe copiar valor de campo na tabela e aplicar zoom no elemento no mapa quando faz duplo clique no mesmo. Também pode configurar a opção Filtrar Por Extensão de Mapa.</li>
+		  <li>O URL do modo Viagem não é necessário quando o widget Direções se encontra publicamente acessível.</li>
+		  <li>O widget Coordenadas foi melhorado para suportar sistema de coordenadas com WKID 102460.</li>
+		  <li>O widget Imprimir exibe opção de layout com base nos metadados dos modelos,</li>
+		  <li>O witget Análise permite-lhe descarregar o resultado em formato GeoJson ou CSV e adiciona uma nova ferramenta Escolher Melhores Instalações.</li>
+		  <li>Poderá visualizar melhor o resultado do gráfico com a nova ferramenta Ampliar.</li>
+		  <li>Pode controlar quando ativar ou desativar o layout móvel especificando o tamanho do ecrã com o parâmetro URL mobileBreakPoint.</li>
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">Versões suportadas do ArcGIS API for JavaScript</h2>
-        <p>Web AppBuilder suporta ArcGIS API for JavaScript 3.15.</p>
+        <p>Web AppBuilder suporta ArcGIS API for JavaScript 3.16.</p>
 
         <h3>Idiomas suportados</h3>
         <p> Alemão, Árabe, Checo, Chinês Simplificado, Chinês Tradicional (Hong Kong), Chinês Tradicional (Taiwan), Coreano, Dinamarquês, Holandês, Inglês, Estónio, Espanhol, Finlandês, Francês, Grego, Hebreu, Italiano, Japonês, Letão, Lituano, Norueguês, Polaco, Português (Brasil), Português (Portugal), Romeno, Russo, Tailandês, Sueco, Turco e Vietnamita.</p>
         <p>O idioma usado pela aplicação é determinado pelas definições de idioma do seu navegador.</p>
 
-        <p>Partilhe as suas <a href="http://ideas.arcgis.com/">ideias</a> e <a href="http://support.esri.com/en/">envie-nos o seu feedback</a>.</p>
+        <p>Partilhe as suas <a href="http://ideas.arcgis.com/">ideias</a> e <a href="http://support.esri.com/en/">envie-nos o seufeedback</a>.</p>
   
         <p>&nbsp;</p>
 
@@ -202,7 +214,7 @@ mobile: true
 </div>
 
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script></Comment>-&gt; <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script> <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/feed/',
