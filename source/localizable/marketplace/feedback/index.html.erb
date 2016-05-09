@@ -2,11 +2,6 @@
 layout: marketplace/layout
 
 title: Feedback - ArcGIS
-css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - feedback
   
 js:
   - app-feedback
@@ -19,61 +14,77 @@ languageSelector: "No"
 mobile: true
 
 ---
-<div class="section-bar marketplace">
-  <div class="container feedback">
-    <header>
-      <h1 data-langlabel="feedback-title">Feedback</h1>
-    </header>
-	<nav>
-     &nbsp;
-    </nav>
+
+<header class="sub-nav sub-nav-marketplace">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 text-white" data-langlabel="feedback-title">Feedback</h1>
+        </div>
+      </div>
+    </div>
   </div>
+</header>
+
+
+<div class="grid-container leader-2 trailer-1 feedback">
+	<main class="column-24">
+      <div class="column-12 trailer-2">
+			<div class="warning">
+				<header>
+				  <h1 data-langlabel="help-us-get-better">Help us get better</h1>
+				</header>
+
+				<section>
+				  <p data-langlabel="feedback_note">See something on this website that we can improve? Send in your thoughts and ideas. If something on the site doesn't work as expected, send us details on that too. Help us make this a site you enjoy using. </p>
+				</section>
+			</div>
+      </div>
+		
+		<div class="column-11 pre-1 panel">
+			<div class="contact-form">
+				<div id="spinner" class="loader padding-leader-3 padding-trailer-3">
+				  <div class="loader-bars"></div>
+				  <div class="loader-text">Loading</div>
+				</div>
+				<form id="feedback-form" name="feedbackForm" method="post" action="/apps/feedback/api/">
+				  <h3 data-langlabel="send-your-suggestion">Send us your suggestion</h3>
+				  <fieldset>
+
+					 <label for="message" data-langlabel="message">Message: </label>
+				  <textarea data-langlabel="it-would-be-great" placeholder="It would be great if you could..." name="userFeedback" id="userFeedback"></textarea>
+					 <label data-langlabel="regarding-the-page" for="regarding">Regarding the page: </label>
+				  <input type="text" id="regarding" name="fromURL">
+				  <label data-langlabel="email-address" for="email">Email address: </label>
+				  <input type="text" placeholder="johnsmith@esri.com" value="" name="userEmail" id="userEmail">
+				  <label data-langlabel="feedback-spam-note" for="email">To help prevent automated spam, enter the numerals you see: </label>
+				  <input type="text" placeholder="1 2 3 4 5 6 7" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+					<label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+				  </fieldset>
+					<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+				  <input type="hidden" value="internal" name="source" id="source">
+				   <!--<input type="hidden" value="" name="redirectUrl" id="redirectUrl">-->
+				  <input type="hidden" value="en" name="lg">
+				  <input type="hidden" id="datablock" name="datablock" value="Marketplace site feedback">
+				  <input type="hidden" id="fname" name="fname" value="/assets/js/formConfig.json">
+				  <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" name="submitFeedback">
+				</form>
+			</div>
+			<div id="thank-you-confirmation" class="leader-1" style="display:none;">
+				<h2 data-langlabel="feedback-thank-you">Thank you!</h2>
+				<section>
+					<p data-langlabel="feedback-confirmation-note">You just helped us make this site a little better. We always take feedback seriously. It improves the site for everyone. Thanks again!</p>
+				</section>
+				<p><strong><span id="referPageLink"></span></strong></p>
+		  </div>
+		</div>
+	</main>
+		
 </div>
 
-<!-- Page Content -->
-<div class="container feedback">
-
-    <div class="row main">
-    <div class="warning">
-      <header>
-        <h1 data-langlabel="help-us-get-better">Help us get better</h1>
-      </header>
-
-      <section>
-        <p data-langlabel="feedback_note">See something on this website that we can improve? Send in your thoughts and ideas. If something on the site doesn't work as expected, send us details on that too. Help us make this a site you enjoy using. </p>
-      </section>
-    </div>
-
-
-    <div class="contact-form">
-      <form id="feedback-form" name="feedbackForm" method="post" action="http://resources.arcgis.com/apps/feedback/dev_feedback.php">
-        <h3 data-langlabel="send-your-suggestion">Send us your suggestion</h3>
-        <fieldset>
-
-          <label for="message" data-langlabel="message">Message: </label>
-		  <textarea data-langlabel="it-would-be-great" placeholder="It would be great if you could..." name="userFeedback" id="userFeedback"></textarea>
-          <label data-langlabel="regarding-the-page" for="regarding">Regarding the page: </label>
-		  <input type="text" id="regarding" name="fromURL">
-		  <label data-langlabel="email-address" for="email">Email address: </label>
-		  <input type="text" placeholder="johnsmith@esri.com" value="" name="userEmail" id="userEmail">
-		  <label data-langlabel="feedback-spam-note" for="email">To help prevent automated spam, enter the numerals you see: </label>
-		  <input type="text" placeholder="1 2 3 4 5 6 7" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-
-		   <label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
-
-        </fieldset>
-        <!--<input type="hidden" value="https://developers.arcgis.com/en/thank-you" name="redirectUrl" id="redirect-url">-->
-		<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-        <input type="hidden" value="internal" name="source" id="source">
-        <input type="hidden" value="" name="redirectUrl" id="redirectUrl">
-        <input type="hidden" value="en" name="lg">
-        <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" name="submitFeedback">
-      </form>
-    </div>
-
-  </div> <!-- end of row main -->
-
-  <p>&nbsp;</p>
 
 <script>
 $(document).ready(function() {

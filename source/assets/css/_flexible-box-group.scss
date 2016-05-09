@@ -1,0 +1,234 @@
+@import "imports";
+
+$flexible-block-group-gutter: 1.5rem;
+
+.flexible-block-group {
+  // make sure this fills the parents width + 1 gutter
+  width: calc(100% + #{$flexible-block-group-gutter});
+  box-sizing: border-box;
+
+  // negate the extra gutter
+  margin-left: -($flexible-block-group-gutter);
+
+  // make it a flexbox
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	// wrap items
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flexible-block-group-item {
+  box-sizing: border-box;
+
+  // each item is also a flexbox
+  display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	// that flexes top-to-bottom rather then left-to-right
+	-webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  // only flex content
+  .flexible-block-group-item-content {
+    display: block;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+
+  // dont flex header or footer
+  .flexible-block-group-item-header,
+  .flexible-block-group-item-footer {
+    display: block;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+}
+
+@mixin flexible-block-group-item($num-up, $gutter-override: $flexible-block-group-gutter) {
+  width: 100%/$num-up;
+
+  &:nth-child(n) {
+    padding: $flexible-block-group-gutter 0 0 $gutter-override;
+  }
+
+  // negate top padding of first $num-up children
+  &:nth-child(-n+#{$num-up}) {
+    padding-top: 0;
+  }
+}
+
+.flexible-block-group-4-up {
+  .flexible-block-group-item {
+    @include flexible-block-group-item(4);
+
+    @media screen and (max-width: 1024px) {
+      @include flexible-block-group-item(2);
+    }
+
+    @media screen and (max-width: $small) {
+      @include flexible-block-group-item(1, 0px);
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.flexible-block-group-3-up {
+  .flexible-block-group-item {
+    @include flexible-block-group-item(3);
+
+    @media screen and (max-width: $medium) {
+      @include flexible-block-group-item(1, 0px);
+    }
+  }
+
+  @media screen and (max-width: $medium) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.flexible-block-group-2-up {
+  .flexible-block-group-item {
+    @include flexible-block-group-item(2);
+
+    @media screen and (max-width: $small) {
+      @include flexible-block-group-item(1, 0px);
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.flexible-block-group-item {
+  img {
+    width: 100%;
+  }
+
+  &-light, &-dark, &-blue, &-white {
+    .flexible-block-group-item-content,
+    .flexible-block-group-item-header,
+    .flexible-block-group-item-footer {
+      border-style: solid;
+      border-left-width: 1px;
+      border-right-width: 1px;
+      border-bottom-width: 0px;
+      border-top-width: 0px;
+      padding-left: $flexible-block-group-gutter;
+      padding-right: $flexible-block-group-gutter;
+    }
+    .flexible-block-group-item-header {
+      border-bottom-width: 0px;
+      border-top-width: 1px;
+      padding-top: $flexible-block-group-gutter;
+    }
+    .flexible-block-group-item-footer {
+      border-top-width: 0px;
+      border-bottom-width: 1px;
+      padding-bottom: $flexible-block-group-gutter;
+    }
+  }
+
+  .flexible-block-group-item-no-footer {
+    .flexible-block-group-item-content {
+      border-bottom: 1px solid;
+      padding-bottom: $flexible-block-group-gutter;
+    }
+  }
+
+  &-light {
+    .flexible-block-group-item-content,
+    .flexible-block-group-item-header,
+    .flexible-block-group-item-footer {
+      border-color: $lighter-gray;
+      background-color: $lightest-gray;
+    }
+  }
+
+  &-dark {
+    .flexible-block-group-item-content,
+    .flexible-block-group-item-header,
+    .flexible-block-group-item-footer {
+      border-color: $off-black;
+      background-color: $darkest-gray;
+    }
+  }
+
+  &-blue {
+    .flexible-block-group-item-content,
+    .flexible-block-group-item-header,
+    .flexible-block-group-item-footer {
+      border-color: $dark-blue;
+      background-color: $blue;
+    }
+  }
+
+  &-white {
+    .flexible-block-group-item-content,
+    .flexible-block-group-item-header,
+    .flexible-block-group-item-footer {
+      border-color: $lightest-gray;
+      background-color: $white;
+    }
+  }
+}
+
+.flexible-block-group-item-no-footer {
+  .flexible-block-group-item-content {
+    border-bottom-width: 1px;
+    padding-bottom: $flexible-block-group-gutter;
+  }
+}
+
+.flexible-block-group-item-no-header {
+  .flexible-block-group-item-content {
+    border-top-width: 1px;
+    padding-top: $flexible-block-group-gutter;
+  }
+}
+
+.flexible-block-group-link {
+  background: $off-white;
+  border: 1px solid $lightest-gray;
+  padding: 0.75rem;
+  transition: none;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $link-color;
+  }
+
+  p {
+    color: $type-color;
+  }
+
+  &:hover {
+    background: $link-color;
+    border: 1px solid $link-color;
+    color: white;
+    text-decoration: none;
+    transition: all 150ms linear;
+    h1, h2, h3, h4, h5, h6, p {
+      color: white;
+    }
+  }
+}
+
+html.ie9, html.lt-ie9 {
+  .flexible-block-group-item {
+    @include flexible-block-group-item(1, 0px);
+  }
+}

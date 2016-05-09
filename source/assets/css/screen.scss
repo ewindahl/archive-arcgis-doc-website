@@ -1,0 +1,218 @@
+$include-content-family: true;
+$include-secondary-family: true;
+$image-path: '/assets/img';
+$font-path: '/assets/fonts';
+$medium: 960px;
+
+// Turn these on to test 960px grid
+// $container-width: 960px;
+
+/*@import "github";*/
+@import "calcite-web";
+@import "flexible-box-group";
+
+// Sub-Nav test Classes
+.sub-nav {
+  background-image: url('../img/banner.jpg');
+  background-position: center top;
+}
+
+// Type Specimen Classes
+.type-sample {
+  @include font-size(10);
+  line-height: 1.15em;
+}
+
+// Modifier Classes
+.styleguide-modifiers {
+  @include clearfix();
+  background: $white;
+  .styleguide-modifier-example {
+    padding: .5em;
+    border-bottom: 1px solid $lightest-gray;
+    border-left: 1px solid $lightest-gray;
+    border-right: 1px solid $lightest-gray;
+    position: relative;
+    clear: both;
+    &:last-child {
+      border-bottom: none;
+    }
+    &:first-child {
+      border-top: 1px solid $lightest-gray;
+      border-radius: 6px 6px 0 0;
+      .modifier-name {
+        border-radius: 0 3px 0 3px;
+      }
+    }
+    .modifier-name {
+      border-radius: 0 0 0 3px;
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      @include font-size(-3);
+      padding-left: 3px;
+      padding-right: 3px;
+      z-index: 1;
+    }
+  }
+}
+
+.styleguide-modifiers + pre {
+  margin-top: 0;
+  code {
+    border-radius: 0 0 3px 3px;
+  }
+}
+
+// Grid Test Classes
+.grid-example [class*="column-"],
+.grid-example .block, {
+  margin-top: 1em;
+  span {
+    width: 100%;
+    display: block;
+    color: $white;
+    background-color: rgba($blue, 0.6);
+    font-family: monospace;
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+    text-align: center;
+  }
+}
+
+.nested-demo [class*="column-"] {
+  [class*="column-"] {
+    span {
+      background-color: rgba($blue, 0.4);
+    }
+    [class*="column-"] {
+      span {
+        background-color: rgba($blue, 0.2);
+      }
+      [class*="column-"] {
+        span {
+          background-color: rgba($blue, 0.1);
+        }
+      }
+    }
+  }
+}
+
+// Color Sample Classes
+
+.color-sample {
+  width: 100%;
+  height: 5*$baseline;
+  padding-top: .5rem;
+  &.white { background-color: $white; }
+  &.off-white { background-color: $off-white; }
+  &.lightest-gray { background-color: $lightest-gray; }
+  &.lighter-gray { background-color: $lighter-gray; }
+  &.light-gray { background-color: $light-gray; }
+  &.gray { background-color: $gray; }
+  &.dark-gray { background-color: $dark-gray; }
+  &.darker-gray { background-color: $darker-gray; }
+  &.darkest-gray { background-color: $darkest-gray; }
+  &.off-black { background-color: $off-black; }
+  &.black { background-color: $black; }
+  &.transparent-off-black { background-color: $transparent-off-black; }
+  &.transparent-black { background-color: $transparent-black; }
+  &.lightest-blue { background-color: $lightest-blue; }
+  &.lighter-blue { background-color: $lighter-blue; }
+  &.light-blue { background-color: $light-blue; }
+  &.blue { background-color: $blue; }
+  &.dark-blue { background-color: $dark-blue; }
+  &.light-green { background-color: $light-green; }
+  &.green { background-color: $green; }
+  &.dark-green { background-color: $dark-green; }
+  &.light-red { background-color: $light-red; }
+  &.red { background-color: $red; }
+  &.dark-red { background-color: $dark-red; }
+  &.light-orange { background-color: $light-orange; }
+  &.orange { background-color: $orange; }
+  &.dark-orange { background-color: $dark-orange; }
+  &.light-yellow { background-color: $light-yellow; }
+  &.yellow { background-color: $yellow; }
+  &.dark-yellow { background-color: $dark-yellow; }
+  &.light-purple { background-color: $light-purple; }
+  &.purple { background-color: $purple; }
+  &.dark-purple { background-color: $dark-purple; }
+  &.light-brown { background-color: $light-brown; }
+  &.brown { background-color: $brown; }
+  &.dark-brown { background-color: $dark-brown; }
+}
+
+// Temp type sample stuff
+
+@import url(http://fast.fonts.net/t/1.css?apiType=css&projectid=23855eec-5fdf-4594-9898-0113a04bfef0);
+@font-face{
+font-family:"Avenir LT W01 35 Light";
+src:url("http://fast.fonts.net/dv2/2/3511a780-31ca-4ee1-9083-89b1b7185748.eot?d44f19a684109620e4841670a390e8183446d050a80fe05e7adce812b9216faf4b2ace01055f7ad96c5eec92f51697e0e7291273a5b86984a71c2c37e6ef5de8c59c5e07e4ac4ad322787381e9d6bcf60553d0606abd5c3f1efbd8f9b4e181bfd130259aae2cf299dc0cc6d21017792a33afa5e2c4f9537b8f581f8ffc47ee6e037f701536a2660412c0f24a5af9d90225454c2a0d5914005e8ea63935c5cf4d45f903ecdfa68735bfec76b5184d2e296cff40fddf48f43a9c1c52fe2d1dbedf5149cf44d466226cca96a4719ec2c180d2d7c4fd70a9dbaa4b7fc919efca263c1e9088d79122aacda8764713fcc7760ab6bc16f82452e7fc66573d05a466877a1110933b32ff1569b2254e819fa4ce2692abfe6a79b70b70396f7264f6efdaa7a2ded00bcfcd&projectId=23855eec-5fdf-4594-9898-0113a04bfef0") format("eot");
+}
+@font-face{
+font-family:"Avenir LT W01 35 Light";
+src:url("http://fast.fonts.net/dv2/2/3511a780-31ca-4ee1-9083-89b1b7185748.eot?d44f19a684109620e4841670a390e8183446d050a80fe05e7adce812b9216faf4b2ace01055f7ad96c5eec92f51697e0e7291273a5b86984a71c2c37e6ef5de8c59c5e07e4ac4ad322787381e9d6bcf60553d0606abd5c3f1efbd8f9b4e181bfd130259aae2cf299dc0cc6d21017792a33afa5e2c4f9537b8f581f8ffc47ee6e037f701536a2660412c0f24a5af9d90225454c2a0d5914005e8ea63935c5cf4d45f903ecdfa68735bfec76b5184d2e296cff40fddf48f43a9c1c52fe2d1dbedf5149cf44d466226cca96a4719ec2c180d2d7c4fd70a9dbaa4b7fc919efca263c1e9088d79122aacda8764713fcc7760ab6bc16f82452e7fc66573d05a466877a1110933b32ff1569b2254e819fa4ce2692abfe6a79b70b70396f7264f6efdaa7a2ded00bcfcd&projectId=23855eec-5fdf-4594-9898-0113a04bfef0");
+src:url("http://fast.fonts.net/dv2/3/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff?d44f19a684109620e4841670a390e8183446d050a80fe05e7adce812b9216faf4b2ace01055f7ad96c5eec92f51697e0e7291273a5b86984a71c2c37e6ef5de8c59c5e07e4ac4ad322787381e9d6bcf60553d0606abd5c3f1efbd8f9b4e181bfd130259aae2cf299dc0cc6d21017792a33afa5e2c4f9537b8f581f8ffc47ee6e037f701536a2660412c0f24a5af9d90225454c2a0d5914005e8ea63935c5cf4d45f903ecdfa68735bfec76b5184d2e296cff40fddf48f43a9c1c52fe2d1dbedf5149cf44d466226cca96a4719ec2c180d2d7c4fd70a9dbaa4b7fc919efca263c1e9088d79122aacda8764713fcc7760ab6bc16f82452e7fc66573d05a466877a1110933b32ff1569b2254e819fa4ce2692abfe6a79b70b70396f7264f6efdaa7a2ded00bcfcd&projectId=23855eec-5fdf-4594-9898-0113a04bfef0") format("woff"),url("/dv2/1/3e419b5b-c789-488d-84cf-a64009cc308e.ttf?d44f19a684109620e4841670a390e8183446d050a80fe05e7adce812b9216faf4b2ace01055f7ad96c5eec92f51697e0e7291273a5b86984a71c2c37e6ef5de8c59c5e07e4ac4ad322787381e9d6bcf60553d0606abd5c3f1efbd8f9b4e181bfd130259aae2cf299dc0cc6d21017792a33afa5e2c4f9537b8f581f8ffc47ee6e037f701536a2660412c0f24a5af9d90225454c2a0d5914005e8ea63935c5cf4d45f903ecdfa68735bfec76b5184d2e296cff40fddf48f43a9c1c52fe2d1dbedf5149cf44d466226cca96a4719ec2c180d2d7c4fd70a9dbaa4b7fc919efca263c1e9088d79122aacda8764713fcc7760ab6bc16f82452e7fc66573d05a466877a1110933b32ff1569b2254e819fa4ce2692abfe6a79b70b70396f7264f6efdaa7a2ded00bcfcd&projectId=23855eec-5fdf-4594-9898-0113a04bfef0") format("truetype"),url("/dv2/11/ca038835-1be3-4dc5-ba25-be1df6121499.svg?d44f19a684109620e4841670a390e8183446d050a80fe05e7adce812b9216faf4b2ace01055f7ad96c5eec92f51697e0e7291273a5b86984a71c2c37e6ef5de8c59c5e07e4ac4ad322787381e9d6bcf60553d0606abd5c3f1efbd8f9b4e181bfd130259aae2cf299dc0cc6d21017792a33afa5e2c4f9537b8f581f8ffc47ee6e037f701536a2660412c0f24a5af9d90225454c2a0d5914005e8ea63935c5cf4d45f903ecdfa68735bfec76b5184d2e296cff40fddf48f43a9c1c52fe2d1dbedf5149cf44d466226cca96a4719ec2c180d2d7c4fd70a9dbaa4b7fc919efca263c1e9088d79122aacda8764713fcc7760ab6bc16f82452e7fc66573d05a466877a1110933b32ff1569b2254e819fa4ce2692abfe6a79b70b70396f7264f6efdaa7a2ded00bcfcd&projectId=23855eec-5fdf-4594-9898-0113a04bfef0#ca038835-1be3-4dc5-ba25-be1df6121499") format("svg");
+}
+.avenir-light-body p {
+  font-family: 'Avenir LT W01 35 Light';
+}
+
+.sub-nav-blue {
+  background: #502070;
+  background: url('/assets/img/background-banners/blue.jpg') no-repeat top center, -moz-linear-gradient(left, #0172b6 0%,  #0172b6 100%); /* FF3.6+ */
+  background: url('/assets/img/background-banners/blue.jpg') no-repeat top center, -webkit-gradient(linear, left top, right top, color-stop(0%,#0172b6), color-stop(100%, #0172b6)); /* Chrome,Safari4+ */
+  background: url('/assets/img/background-banners/blue.jpg') no-repeat top center, -webkit-linear-gradient(left,  #0172b6 0%, #0172b6 100%); /* Chrome10+,Safari5.1+ */
+  background: url('/assets/img/background-banners/blue.jpg') no-repeat top center, -o-linear-gradient(left,  #0172b6 0%, #0172b6 100%); /* Opera 11.10+ */
+  background: url('/assets/img/background-banners/blue.jpg') no-repeat top center, -ms-linear-gradient(left,  #0172b6 0%, #0172b6 100%); /* IE10+ */
+  background: url('/assets/img/background-banners/blue.jpg') no-repeat top center, linear-gradient(to right,  #0172b6 0%, #0172b6 100%); /* W3C */
+}
+
+.sub-nav-marketplace {
+  background: #502070;
+  background: url('/assets/img/background-banners/banner-marketplace.jpg') no-repeat top center, -moz-linear-gradient(left, #012756 0%,  #012756 100%); /* FF3.6+ */
+  background: url('/assets/img/background-banners/banner-marketplace.jpg') no-repeat top center, -webkit-gradient(linear, left top, right top, color-stop(0%,#012756), color-stop(100%, #012756)); /* Chrome,Safari4+ */
+  background: url('/assets/img/background-banners/banner-marketplace.jpg') no-repeat top center, -webkit-linear-gradient(left,  #012756 0%, #012756 100%); /* Chrome10+,Safari5.1+ */
+  background: url('/assets/img/background-banners/banner-marketplace.jpg') no-repeat top center, -o-linear-gradient(left,  #012756 0%, #012756 100%); /* Opera 11.10+ */
+  background: url('/assets/img/background-banners/banner-marketplace.jpg') no-repeat top center, -ms-linear-gradient(left,  #012756 0%, #012756 100%); /* IE10+ */
+  background: url('/assets/img/background-banners/banner-marketplace.jpg') no-repeat top center, linear-gradient(to right,  #012756 0%, #012756 100%); /* W3C */
+}
+
+
+// Customized CSS
+// role/authentication classes
+.hide-if-logged-in {
+    display: none;
+}
+
+.hide-if-logged-out {
+  display: none;
+}
+
+// calcite web overrides
+
+.panel-blackest {
+  background-color: #191919;
+}
+
+img {
+  border:none;
+  outline:none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.link-white a, .breadcrumbs-white .crumb a, a.link-white, .breadcrumbs-white a.crumb {
+    color: white;
+}
+.sdk-home-banner .search-bar {
+    float: right;
+    max-width: 368px;
+}

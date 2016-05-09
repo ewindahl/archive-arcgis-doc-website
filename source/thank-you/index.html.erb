@@ -1,0 +1,64 @@
+---
+title: Feedback - ArcGIS
+
+js:
+  - app-feedback
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+  
+languageSelector: "No"
+
+mobile: true
+
+---
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;">
+        <div class="sdk-home-banner-content">
+			 <h1 class="sub-nav-title leader-1 text-white" data-langlabel="feedback">Feedback</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="grid-container leader-2 trailer-1 feedback">
+      <main class="column-24">
+			<div class="column-18 trailer-2">
+				<div class="thank-you panel leader-2">
+				  <h2 data-langlabel="feedback-thank-you">Thank you!</h2>
+					<section>
+					<p data-langlabel="feedback-confirmation-note">You just helped us make this site a little better. We always take feedback seriously. It improves the site for everyone. Thanks again!</p>
+				  </section>
+
+				  <p>
+				  <strong><span id="referPageLink"></span></strong>
+				  </p>
+				</div>
+			</div>
+		</main>
+		
+</div>
+
+<script>
+$(document).ready(function() {
+    
+    var docCfg = docCfg || {},
+        urlLang = doc.l10n.getReferrerLang(),
+        curlang = doc.l10n.calcPrefLang (docCfg["langSelector"] || "all", urlLang);
+
+	doc.supportForm.addReferrerLink(curlang);
+
+    if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) {   
+      doc.l10n.changeLabel (curlang);
+    }
+
+	});
+</script>
+
+  </div>
+
