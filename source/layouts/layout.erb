@@ -47,6 +47,8 @@ end
 	 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <%= stylesheet_link_tag "screen" %>
+    <%= stylesheet_link_tag "documentation/base" %>
+
     <% if current_page.data.css %>
       <% current_page.data.css.each do |stylesheet| %>
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
@@ -55,14 +57,14 @@ end
 
 	<%= javascript_include_tag "locale/l10NStrings" %>
 
-    <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
-    <%= javascript_include_tag "libs/jquery.cookie" %>
+    <script src="/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+    <script src="/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
 
   <%= javascript_include_tag "signIn" %>
 
    <!--- beg agol search -->
-   <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
-  <%= javascript_include_tag "agolsearch" %>
+  <!-- <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+  <%= javascript_include_tag "agolsearch" %>-->
    <!--- end agol search -->
 
     <% if current_page.data.js %>
@@ -72,13 +74,7 @@ end
     <% end %>
     <% if current_page.data.mobile %>
       <meta name="viewport" content="width=device-width,initial-scale=1">
-    <% else %>
-      <style>
-        body {
-          /*min-width: 768px;*/
-        }
-      </style>
-    <% end%>
+    <% end %>
 
 	<!--- search MD -->
 	<% if current_page.data.metatags %>
@@ -97,26 +93,19 @@ end
 	<% end %>
 
   	
-   <!-- Language Picker-->
-   <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
-   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
-   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
       
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
 	<% if current_language != "en" %> 
-		<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
-		<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
-		<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
-		<link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
-		<link type="text/css" rel="stylesheet" href="/css/print_l10n.css"/>
+		<link type="text/css" rel="stylesheet" href="/assets/css/screen_l10n.css"/>
+		<link type="text/css" rel="stylesheet" href="/assets/css/documentation_l10n.css"/>
+		<link type="text/css" rel="stylesheet" href="/assets/css/print_l10n.css"/>
 	<% end %>
 	<%= javascript_include_tag "locale/langSelector" %>
    <% end %>
    
 	<%= javascript_include_tag "calcite-web" %>
-  <%
-    navLinkClass = "side-nav-link"
-  %>
+  
 	
 	<!--[if lt IE 11]>
 	<script>
@@ -126,11 +115,15 @@ end
 	</script>
 	<![endif]-->
 
+  <!--Dynamic common meta tags -->
+  <META name="last-modified" content="<%= Time.now.year %>-<%= Time.now.month %>-<%= Time.now.day %>">
+  <META name="content-language" content="<%= current_language %>">
+
    <!-- set dropdown/show home in footer -->
   <script>
     $(document).ready(function(){
-      $($("#dropDown a").get (0)).addClass ("current selected");
-      $("#footer .home").toggleClass("hide");
+      //$($("#dropDown a").get (0)).addClass ("current selected");
+      $(".footer .home").toggleClass("hide");
     });
   </script>
 
@@ -155,23 +148,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <h2 class="side-nav-title">Arc<span class="avenir-demi">GIS</span></h2>
             
             <form class="gutter-left-half gutter-right-half leader-half trailer-half" method="GET" action="/search">
-              <input type="search" name="q" value="" placeholder="<%= #current_page.data.searchDfltStr %>Search" class="trailer-0">
+              <input type="search" name="q" value="" placeholder="<%= current_page.data.searchDfltStr %> Search" class="trailer-0">
               <input type="hidden" name="collection" value="help" />
-              <input type="hidden" name="product" value="<%= #current_page.data.productMeta %>" />
+              <input type="hidden" name="product" value="<%= current_page.data.productMeta %>" />
             </form>
     
-            <%= partial "_partial/site_header_nav" %>
+            <%= partial "_partial/site_header_nav", :locals => { :navLinkClass => "side-nav-link" } %>
           </aside>
         </nav>
     </div>
 
     <!-- user navigation collapses to drawer on mobile -->
-    <div class="drawer drawer-right js-drawer" data-drawer="user-nav">
+    <div class="drawer drawer-right js-drawer logged-in-navigation" data-drawer="user-nav">
       <nav class="drawer-nav">
         <aside class="side-nav">
           <h4 class="side-nav-title padding-leader-half padding-trailer-half" data-full-name></h4>
           <h6 class="side-nav-title font-size--2" data-username></h6>
-          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">Sign Out</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
         </aside>
       </nav>
     </div>
@@ -181,66 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="wrapper">
       <!--googleoff: all-->
 
-      <header class="top-nav">
-        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
-        <div class="grid-container">
-          <div class="column-24">
-
-            <a href="/" class="top-nav-title tablet-hide">Arc<span>GIS</span></a>
-            <a href="/" class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav">Arc<span>GIS</span></a>
-
-            <!--<div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>-->
-
-            <nav>
-              <%= partial "_partial/site_header_nav" %>
-            </nav>
-            
-           <!--            
-            <div id="lg-container" class="dropdown-navigation">
-              <div id="lang-block"></div>
-            </div>
-  -->
-            <div class="gutter-left-1 top-nav-list right hide-if-logged-in">
-              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
-              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue" href="#"><%= t("site.nav.sign_in") %></a>
-              <a class="lang-block"></a>
-            </div>
-
-
-            <nav class="gutter-left-1 top-nav-list right hide-if-logged-out">
-              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
-
-             
-              <div class="dropdown js-dropdown right">
-
-                <div class="tablet-show top-nav-link">
-                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
-                  <a href="#" data-drawer="user-nav" class="js-drawer-toggle" data-first-name></a>
-                </div>
-
-                <div class="tablet-hide top-nav-link js-dropdown-toggle">
-                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
-                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
-                </div>
-
-                <nav class="dropdown-menu dropdown-right">
-                  <div class="user-name dropdown-link">
-                    <p class="trailer-0" data-full-name></p>
-                    <small data-username></small>
-                  </div>
-                  <a class="dropdown-link" id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a>
-                  <a class="dropdown-link" id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a>
-                  <a class="dropdown-link" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
-                </nav>
-              </div>
-              <a class="lang-block"></a>
-          </nav>
-
-                   
-            
-          </div>
-        </div>
-      </header>
+      <%= partial "_partial/site_app_header" %>
 
        <section class="expand js-expand  panel panel-no-padding" data-expand="search">
               <div class="grid-container padding-trailer-half padding-leader-1 padding-trailer-1">
@@ -258,6 +192,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
         </div>
       </section>
+      <!--googleon: all-->
 
       <div id="skip-to-content">
         <%= yield %>
@@ -301,11 +236,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
   
 
-    <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <footer class="footer leader-0 link-dark-gray" role="contentinfo">
       <div class="grid-container">
           <nav class="column-6">
-            <h4>ArcGIS</h4>
-            <%= partial "_partial/site_header_nav" %>
+            <h6>ArcGIS</h6>
+            <ul class="list-plain">
+              <%= partial "_partial/site_footer_nav" %>
+            </ul>
           </nav>
 
           <%= partial "_partial/site_footer_common" %>

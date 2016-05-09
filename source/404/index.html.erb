@@ -1,6 +1,4 @@
 ---
-layout: marketplace/layout
-
 title: Page Not Found - ArcGIS
 
 js:
@@ -10,16 +8,19 @@ metatags:
   - <META name="robot" content="NOINDEX|NOFOLLOW">
 
 languageSelector: "No"
-  
+
 mobile: true
 
+pageName: "404"
 ---
-<header class="sub-nav sub-nav-marketplace">
+
+
+<header class="sub-nav sub-nav-blue">
   <div class="grid-container">
     <div class="column-24">
       <div style="display:table;">
         <div class="sdk-home-banner-content">
-          <h1 class="sub-nav-title leader-1 text-white" data-langlabel="page-not-found">Page Not Found</h1>
+          <h1 data-langlabel="page-not-found" class="sub-nav-title leader-1 text-white">Page Not Found</h1>
         </div>
       </div>
     </div>
@@ -36,17 +37,21 @@ mobile: true
 					</header>
 
 					 <section>
-					  <p data-langlabel="404-note">The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem.</p>
-					</section>
+					  <p id="404_note">The page you are looking for could not be found. Check the URL you've entered and try again. If you were directed here from an external link, please contact us so we can remedy the problem.</p>
+						<p id="englishLinkNote"></p>
+					 </section>
 
 					<div class="popular-links">
-					<h3 data-langlabel="popular-links">Popular Links </h3>
-					  <ul>
-							<li><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html">My Console</a></li>
-							<li><a data-langlabel="help" href="/en/marketplace">Help</a></li>
-					  </ul>
+						  <h3 data-langlabel="popular-links">Popular Links </h3>
+						  <ul>
+								<li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html">Features</a></li>
+								<li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
+								<li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+								<li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+								<li><a data-langlabel="help" href="/en/arcgis-online/">Help</a></li>
+						  </ul>
 					</div>
-				</div>
+				 </div>
 			</div>
 			
 			<div class="panel column-11 pre-1">
@@ -69,15 +74,14 @@ mobile: true
 					  <label data-langlabel="feedback-spam-note" for="email">To help prevent automated spam, enter the numerals you see: </label>
 					  <input type="text" placeholder="1 2 3 4 5 6 7" value="" name="txtCaptchaInput" id="txtCaptchaInput">
 
-						<label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
+						<label for="captchaValue"><span data-langlabel="numerals">Numerals: </span><strong><span id="txtCaptcha" class=""></span></strong></label>
 
 					  </fieldset>
-					  <!--<input type="hidden" value="https://developers.arcgis.com/en/thank-you" name="redirectUrl" id="redirect-url">-->
-					  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+						<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
 					  <input type="hidden" value="internal" name="source" id="source">
 					  <!--<input type="hidden" value="" name="redirectUrl" id="redirectUrl">-->
 					  <input type="hidden" value="en" name="lg">
-					  <input type="hidden" id="datablock" name="datablock" value="Marketplace site feedback">
+					  <input type="hidden" id="datablock" name="datablock" value="Doc site feedback">
 					  <input type="hidden" id="fname" name="fname" value="/assets/js/formConfig.json">
 					  <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" name="submitFeedback">
 					</form>
@@ -88,11 +92,14 @@ mobile: true
 					<p data-langlabel="feedback-confirmation-note">You just helped us make this site a little better. We always take feedback seriously. It improves the site for everyone. Thanks again!</p>
 				</section>
 				<p><strong><span id="referPageLink"></span></strong></p>
-				</div>
+			  </div>
 			</div>
 	</main>
 		
 </div>
+
+
+
 
 
 <script>
@@ -102,20 +109,21 @@ $(document).ready(function() {
         referrer = document.referrer;
 
     $('#regarding').val (referrer);
-    $('#redirectUrl').val ("http://" + winloc.host + "/en/marketplace/thank-you/");
+    $('#redirectUrl').val ("http://" + winloc.host + "/en/thank-you/");
 
-    
     doc.supportForm.DrawCaptcha();
 
     var docCfg = docCfg || {},
         urlLang = doc.l10n.getReferrerLang(),
         curlang = doc.l10n.calcPrefLang (docCfg["langSelector"] || "all", urlLang);
-	
+
 	$('#feedback-form :submit').on ("click", function() {
       return doc.supportForm.validateFeedbackForm(curlang);
     });
-
+	
+		
     if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) { 
+	  doc.l10n.pageNotFoundText (curlang);
       doc.l10n.changeLabel (curlang);
     }
 

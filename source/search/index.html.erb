@@ -3,17 +3,13 @@ layout: search
 
 title: Search Result
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
   - searchResult
-  - marketplace
 
 
 js:
   - sitecfg
-  - libs/underscore
-  - libs/backbone
+  - /cdn/js/libs/underscore
+  - /cdn/js/libs/backbone
   - search/jxon
   - search/searchcfg
   - search/gsasearch
@@ -23,52 +19,56 @@ js:
 metatags:
   - <META name="robot" content="NOINDEX,NOFOLLOW">
 
+languageSelector: "No"
+
 mobile: true
+root: true
 
 ---
 
 <!-- Page Content -->
-<div class="container search inithide">
-  <div class="row">
-    <aside class="reference-index">
-      <nav id="searchFilter">
-      </nav>
-    </aside>
 
-    <section class="reference-content">
-      <div class="search-box">
-        <div id="searchBox">
-          <form id="gsaSearchForm">
-            <input type="search" size="80" placeholder="Search doc.arcgis.com help" 
-            data-langlabel="search-arcgis-doc-content" name="q" id="query">
-          </form>
-        </div>
+<div class="grid-container leader-2 trailer-1 inithide">
+      <div class="column-6 trailer-2">
+        <aside id="searchFilter" role="tablist" aria-live="polite" class="js-accordion accordion column-6">
+		  
+		  </aside>
       </div>
+		
+		<main class="column-17 pre-1">
+		  <div class="panel search-box">
+			  <div id="searchBox" class="search-bar">
+				 <form id="gsaSearchForm">
+					<input type="search" placeholder="Search doc.arcgis.com help" 
+					data-langlabel="search-arcgis-server-content" name="q" id="query">
+					<button class="search-submit icon-ui-search" type="submit"></button>
+				 </form>
+			  </div>
+			</div>
 
-      <div class="row search-nav">
-        <div id="searchStat" class="column-9"></div>
-        <div class="pre-1 column-2"></div>
-        <div id="searchLang" class="pre-1 column-11"></div>
-      </div>
+			<div class="row search-nav">
+			  <div id="searchStat" class="column-9"></div>
+			  <div class="pre-1 column-2"></div>
+			  <div id="searchLang" class="pre-1 column-11"></div>
+			</div>
 
-      <hr />
+			<hr />
 
-      <div id="results">
-        <div id="spinner" style="display: none;">
-          <img alt="loading" src="/img/ajax-loader.gif">
-        </div>
+			<div id="results">
+			  <div id="spinner" class="loader is-active padding-leader-3 padding-trailer-3">
+				  <div class="loader-bars"></div>
+				  <div class="loader-text">Loading</div>
+				</div>
 
-        <!-- Result area -->
-        <div id="searchResult" class="display3">
-          <div class="clear"></div>
-        </div>
-        <!-- End of Result -->
-      </div>
+			  <!-- Result area -->
+			  <div id="searchResult" class="display3">
+				 <div class="clear"></div>
+			  </div>
+			  <!-- End of Result -->
+			</div>
 
-      <div id="searchPager">
-      </div>
-
-    </section>
-
-  </div>
+			<div id="searchPager">
+			</div>
+		</main>
+		
 </div>

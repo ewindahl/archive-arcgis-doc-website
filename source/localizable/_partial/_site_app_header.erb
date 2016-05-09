@@ -1,0 +1,59 @@
+<header class="top-nav" data-skin="app">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+            <a href="/" class="top-nav-title tablet-hide">Arc<span>GIS</span></a>
+            <a href="/" class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav">Arc<span>GIS</span></a>
+
+            <!--<div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>-->
+
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <%= partial "_partial/site_header_nav" %>
+            </nav>
+            
+           <!--            
+            <div id="lg-container" class="dropdown-navigation">
+              <div id="lang-block"></div>
+            </div>
+  -->
+            <div class="lang-block dropdown js-dropdown right gutter-left-1 top-nav-list right"></div>
+
+            <div class="gutter-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue" href="#"><%= t("site.nav.sign_in") %></a>
+            </div>
+
+
+            <nav class="gutter-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                  <!--<div class="user-name dropdown-link">
+                    <p class="trailer-0" data-full-name></p>
+                    <small data-username></small>
+                  </div>-->
+                  <a class="dropdown-link" id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a>
+                  <a class="dropdown-link" id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a>
+                  <a class="dropdown-link" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
+                </nav>
+              </div>
+          </nav>
+
+            
+          </div>
+        </div>
+      </header>
