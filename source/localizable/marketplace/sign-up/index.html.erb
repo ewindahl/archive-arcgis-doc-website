@@ -2,16 +2,9 @@
 layout: marketplace/layout
 
 title: Sign Up - ArcGIS Marketplace
-css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - feedback
 
 js:
-  - sitecfg
   - marketplace/providerSignUp
-  - marketplace/init
 
 languageSelector: "No"
 
@@ -21,101 +14,101 @@ metatags:
 mobile: true
 
 ---
-<div class="section-bar marketplace">
-  <div class="container feedback">
-    <header>
-      <h1 data-langlabel="provider-sign-up">Sign up to be a provider</h1>
-    </header>
-	<nav>
-     &nbsp;
-    </nav>
+
+<header class="sub-nav sub-nav-marketplace">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 text-white" data-langlabel="provider-sign-up">Sign up to be a provider</h1>
+        </div>
+      </div>
+    </div>
   </div>
+</header>
+
+
+<div class="grid-container leader-2 trailer-1 feedback">
+	<main class="column-24">
+		<p class="trailer-2" data-langlabel="sell-your-app-note">Sell your app on the ArcGIS Marketplace. Get access to the largest GIS user base in the world. We make it easy for you to connect with users, provide free trials, and generate leads. As an app provider, you keep 100% of the revenue generated from the sale of your app. Check out the <a href="/en/marketplace/provider/faq.htm">FAQ</a> for details. </p>
+		
+      <div class="column-12 trailer-2">
+			<div class="warning-signup">
+				<header>
+				  <h2 data-langlabel="already-an-esri-partner">Already an Esri Partner?</h2>
+				</header>
+
+				<section>
+				  <p data-langlabel="reach-a-broader-audience">Reach a broader audience by listing your solution in the ArcGIS Marketplace. Log into the <a href="http://partnerportal.esri.com/">Esri Partner Portal</a> to learn what it takes to become a provider.</p>
+				</section>
+
+				<header>
+				  <h2 data-langlabel="already-an-esri-partner">Become an Esri Startup by joining the Esri Emerging Business Program</h2>
+				</header>
+
+				<section>
+				  <p data-langlabel="reach-a-broader-audience">The <a href= "https://developers.arcgis.com/startups/">Esri Emerging Business Program</a> is a free three year program that gives emerging businesses the tools to build mapping and location analytics capabilities into their products. Qualifying startups receive online services, software, training and support, content, and other opportunities to help them succeed.</p>
+				</section>
+			  
+			</div> 
+      </div>
+		
+		<div class="column-11 pre-1 panel">
+			<div class="contact-form-signup">
+				<h2 data-langlabel="new-to-esri">Not a partner? New to Esri?</h2>
+				<p data-langlabel="provider-signup-note">We are looking for developers, startups and organizations who want to build great solutions for our users. Tell us who you are and what you're about and we'll help you get started.</p>
+				
+				<div id="sign-up-form-fields">
+				  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
+					
+					
+					<fieldset id="signup-form-fieldset">
+
+					  <label data-langlabel="company-name" for="company-name">Company Name: </label>
+					  <input type="text" id="companyName" name="companyName">
+					  <label data-langlabel="first-name" for="first-name">First Name: </label>
+					  <input type="text" id="firstName" name="firstName">
+					  <label data-langlabel="last-name" for="last-name">Last Name: </label>
+					  <input type="text" id="lastName" name="lastName">
+					  <label data-langlabel="email-address" for="email-address">Email Address: </label>
+					  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+					  <label data-langlabel="phone-number" for="phone-number">Phone Number: </label>
+					  <input type="text" id="userPhone" name="userPhone">
+					  <label data-langlabel="comment" for="comment">Tell us about you or your organization: </label>
+					  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
+					  <label data-langlabel="services" for="services">Tell us about your solutions or services: </label>
+					  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
+					  <label data-langlabel="website" for="website">Website: </label>
+					  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
+					  
+					  <label data-langlabel="feedback-spam-note" for="spam">To help prevent automated spam, enter the numerals provided: </label>
+					  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+						<label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+					
+					<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+					<input type="hidden" value="internal" name="source" id="source">
+					<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+					<input type="hidden" value="en" name="lg">
+					<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
+					<input value="/assets/js/formConfig.json" name="fname" id="fname" type="hidden">
+					
+					</fieldset>
+					<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">Submit</a>
+					
+				  </form>
+				</div>
+			  <div id="signup-confirmation" style="display:none;">
+				<p>&nbsp;</p>
+				<p data-langlabel="provider-signup-confirmation"><strong>Thank you for your interest in becoming an ArcGIS Marketplace provider. We will be in touch within the next few business days.</strong></p>
+			  </div>
+			 </div>
+		</div>
+	</main>
+		
 </div>
 
-<!-- Page Content -->
-<div class="container feedback">
-
-     <div class="row main">
-	 <p data-langlabel="sell-your-app-note">Sell your app on the ArcGIS Marketplace. Get access to the largest GIS user base in the world. We make it easy for you to connect with users, provide free trials, and generate leads. As an app provider, you keep 100% of the revenue generated from the sale of your app. Check out the <a href="/en/marketplace/provider/faq.htm">FAQ</a> for details. </p>
-	 
- 	  
-  <div class="warning-signup">
-      <header>
-        <h2 data-langlabel="already-an-esri-partner">Already an Esri Partner?</h2>
-      </header>
-
-      <section>
-        <p data-langlabel="reach-a-broader-audience">Reach a broader audience by listing your solution in the ArcGIS Marketplace. Log into the <a href="http://partnerportal.esri.com/">Esri Partner Portal</a> to learn what it takes to become a provider.</p>
-		
-      </section>
-
-	<header>
-        <h2 data-langlabel="already-an-esri-partner">Become an Esri Startup by joining the Esri Emerging Business Program</h2>
-      </header>
-
-      <section>
-        <p data-langlabel="reach-a-broader-audience">The <a href= "https://developers.arcgis.com/startups/">Esri Emerging Business Program</a> is a free three year program that gives emerging businesses the tools to build mapping and location analytics capabilities into their products. Qualifying startups receive online services, software, training and support, content, and other opportunities to help them succeed.</p>
-		
-
-      </section>
-	  
-    </div> 
-
-
-    <div class="contact-form-signup">
-		<h2 data-langlabel="new-to-esri">Not a partner? New to Esri?</h2>
-		<p data-langlabel="provider-signup-note">We are looking for developers, startups and organizations who want to build great solutions for our users. Tell us who you are and what you're about and we'll help you get started.</p>
-		
-		<div id="sign-up-form-fields">
-		  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
-			
-			
-			<fieldset id="signup-form-fieldset">
-
-			  <label data-langlabel="company-name" for="company-name">Company Name: </label>
-			  <input type="text" id="companyName" name="companyName">
-			  <label data-langlabel="first-name" for="first-name">First Name: </label>
-			  <input type="text" id="firstName" name="firstName">
-			  <label data-langlabel="last-name" for="last-name">Last Name: </label>
-			  <input type="text" id="lastName" name="lastName">
-			  <label data-langlabel="email-address" for="email-address">Email Address: </label>
-			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">Phone Number: </label>
-			  <input type="text" id="userPhone" name="userPhone">
-			  <label data-langlabel="comment" for="comment">Tell us about you or your organization: </label>
-			  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
-			  <label data-langlabel="services" for="services">Tell us about your solutions or services: </label>
-			  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
-			  <label data-langlabel="website" for="website">Website: </label>
-			  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
-			  
-			  <label data-langlabel="feedback-spam-note" for="spam">To help prevent automated spam, enter the numerals provided: </label>
-			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-
-			   <label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
-
-			
-			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			<input type="hidden" value="internal" name="source" id="source">
-			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
-			<input type="hidden" value="en" name="lg">
-			<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
-			<input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-			
-			</fieldset>
-			<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">Submit</a>
-			
-		  </form>
-		</div>
-	  <div id="signup-confirmation" style="display:none;">
-		<p>&nbsp;</p>
-		<p data-langlabel="provider-signup-confirmation"><strong>Thank you for your interest in becoming an ArcGIS Marketplace provider. We will be in touch within the next few business days.</strong></p>
-	  </div>
-    </div>
-
-  </div> <!-- end of row main -->
-
-  <p>&nbsp;</p>
 
 <script>
 $(document).ready(function() {

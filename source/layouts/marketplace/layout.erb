@@ -1,64 +1,54 @@
 <!doctype html>
 <%
 readDirection="ltr" 
-if current_language == "ar" 
-	readDirection="rtl"
+if current_language == "ar" or current_language == "he"
+  readDirection="rtl"
 end
 %>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="<%=readDirection%>"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="<%=readDirection%>"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if lt IE 7]>      <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 7]>         <html class="ie lt-ie9 lt-ie8 ie7" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 8]>         <html class="ie lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
 <!--[if IE 9]>         <html class="ie ie9" dir="<%=readDirection%>"> <![endif]-->
 <!--[if gt IE 8]><!--> <html dir="<%=readDirection%>"> <!--<![endif]-->
+
   <head>
     <meta charset="utf-8">
-
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width">
 
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
-
-    <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-215788-73']);
-      _gaq.push(['_setDomainName', 'arcgis.com']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
-
-
-
-    <!--[if lt IE 9]>
-      <%= javascript_include_tag "libs/html5shiv.js" %>
-      <%= javascript_include_tag "libs/selectivizr-min.js" %>
-      <style>
-        #wrapper {
-          min-width: 960px;
-        }
-      </style>
+   
+   <!--[if lt IE 9]>
+      <script src="/assets/js/libs/html5shiv.js"></script>
+    <script src="/assets/js/libs/json2.js"></script>
+    <script src="/assets/js/libs/selectivizr-min.js"></script>
+     
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/4a60d16b-c9e4-404d-89d3-809adb97d65c.css"/>
-    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <%= javascript_include_tag "sitecfg" %>
+
+    <link rel="pingback" href="//pingback.me/esri/xmlrpc" />
+   <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <%= stylesheet_link_tag "screen" %>
+    <%= stylesheet_link_tag "documentation/base" %>
+
     <% if current_page.data.css %>
       <% current_page.data.css.each do |stylesheet| %>
         <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
       <% end %>
     <% end %>
 
+  <%= javascript_include_tag "locale/l10NStrings" %>
+
+    <script src="/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+    <script src="/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+
+  <%= javascript_include_tag "signIn" %>
+
   <link type="text/css" rel="stylesheet" href="/css/marketplace.css" /> 
 
-  <%= javascript_include_tag "sitecfg" %>	
-	<%= javascript_include_tag "locale/l10NStrings" %>
-
-    <%= javascript_include_tag "libs/jquery-1.9.1.min" %>
-    <%= javascript_include_tag "libs/jquery.cookie" %>
+ 
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>
@@ -69,12 +59,6 @@ end
 
     <% if current_page.data.mobile %>
       <meta name="viewport" content="width=device-width,initial-scale=1">
-    <% else %>
-      <style>
-        body {
-          min-width: 768px;
-        }
-      </style>
     <% end%>
 
 	<!--- search MD -->
@@ -84,32 +68,32 @@ end
       <% end %>
     <% end %>
 
-   <!-- Language Picker-->
-   <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
-   <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
-   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->   
+   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
+      
+   <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
+    <% if current_language != "en" %> 
+      <link type="text/css" rel="stylesheet" href="/assets/css/screen_l10n.css"/>
+      <link type="text/css" rel="stylesheet" href="/assets/css/documentation_l10n.css"/>
+      <link type="text/css" rel="stylesheet" href="/assets/css/print_l10n.css"/>
+    <% end %>
+    <%= javascript_include_tag "locale/langSelector" %>
+   <% end %>
    
-    <% #Add langselector .js if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
-	<% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>  
-		<% if current_language == "ar" %> 
-			<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
-			<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
-			<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
-			<link type="text/css" rel="stylesheet" href="/css/langSelector_l10n.css"/>
-			<link type="text/css" rel="stylesheet" href="/css/print_l10n.css"/>
-		<% end %>
-		<%= javascript_include_tag "locale/langSelector" %>
-	<% end %>
+  <%= javascript_include_tag "calcite-web" %>
+
+  <!--Dynamic common meta tags -->
+  <META name="last-modified" content="<%= Time.now.year %>-<%= Time.now.month %>-<%= Time.now.day %>">
+  <META name="content-language" content="<%= current_language %>">
    
    <!-- set dropdown/show home in footer -->
   <script>
-    $(document).ready(function(){
+    /*$(document).ready(function(){
       $($("#dropDown a").get (5)).addClass ("current selected");
-    });
+    });*/
   </script>
 
   </head>
-  <body class="<%= current_language %> marketplace">
+  <body class="claro <%= current_language %> marketplace">
   <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -119,85 +103,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WVT7QT');</script>
 <!-- End Google Tag Manager -->
-    <div id="wrapper">
-      <div id="page">
 
-        <header id="header" class="">
-          <div class="container relative-container">
-              <div class="header-inner <% if current_page.data.mobile %>responsive<% end %>">
+<!-- top navigation collapses to drawer on mobile -->
+    <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span class="avenir-demi">GIS</span> Marketplace</h2>
+            
+            
+            <form class="mkpSearchForm gutter-left-half gutter-right-half leader-half trailer-half" action="#">
+              <input type="search" class="leader" name="mkpSearch"  placeholder="<%= t("site.nav.mpSearch") %>">
+            </form>
 
-                <div class="logo-wrap">
-                  <a id="site-logo" href="http://marketplace.arcgis.com/" data-langlabel="arcgis-logo-text">Arc<span>GIS</span> Marketplace</a>
-                  <span class="down-arrow" id="down-arrow"></span>
-                </div>
                 
-                <%= partial "_partial/site_header_dropdown" %>
-                
-                <form id="mkpSearchForm" action="#">
-                  <input type="search" name="mkpSearch"  placeholder="<%= t("site.nav.mpSearch") %>">
-                </form>
-
-
-                <a href="http://www.esri.com/" id="esri-logo">Esri</a>
-				
-			<div id="lg-container" class="dropdown-navigation">
-				<div id="lang-block"></div>
-			</div>
-
-              <div id="logged-out-navigation" class="dropdown-navigation">
-                <a data-langlabel="sign-in" id="login-link" class="btn marketplace" href="#"><span class="profile-icon"></span><%= t("site.nav.sign_in") %></a>
-              </div>
-		
-              <div id="logged-in-navigation" class="dropdown-navigation dropdown-wrapper hide">
-                <a id="login-link" class="dropdown btn marketplace" href="#"><%= t("site.nav.sign_in_user") %></a>
-                <div class="dropdown-content">
-                  <div class="dropdown-menu">
-                    <ul class="myconsole">
-                      <li><a href="#"><%= t("site.nav.sign_in_myconsole") %></a></li>
-                    </ul>
-                    <hr class="myconsole" />
-                    <ul>
-                      <li><a href="#"><%= t("site.nav.sign_in_logout") %></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <nav class="right-nav">
-                 <ul>
-                    <li><a href="<%= t("paths.mphelp") %>"><span class="help-icon"></span><%= t("site.nav.help") %></a></li>
-                 </ul>
-              </nav>
-
-              </div>
-          </div>
-        </header>
-
-<%= yield %>
-
-      </div>
+            <a data-langlabel="home" href="//marketplace.arcgis.com" class="home side-nav-link"><%= t("site.nav.home") %></a>
+            <a data-langlabel="help" href="<%= t("paths.mphelp") %>" class="side-nav-link"><%= t("site.nav.help") %></a>
+          </aside>
+        </nav>
     </div>
 
-    <footer id="footer" class="">
-      <div class="container">
-        <div class="row">
-          <nav>
-            <h4 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h4>
-            <ul>
-               <li><a data-langlabel="home" href="http://marketplace.arcgis.com"><%= t("site.nav.home") %></a></li>
-               <li class="myconsole"><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html"><%= t("site.nav.sign_in_myconsole") %></a></li>
-              <li><a data-langlabel="help" href="<%= t("paths.mphelp") %>"><%= t("site.nav.help") %></a></li>
+    <!-- user navigation collapses to drawer on mobile -->
+    <div class="drawer drawer-right js-drawer logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <h4 class="side-nav-title padding-leader-half padding-trailer-half" data-full-name></h4>
+          <h6 class="side-nav-title font-size--2" data-username></h6>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
+        </aside>
+      </nav>
+    </div>
+<!-- End of drawer -->
 
+
+    <div class="wrapper">
+      <!--googleoff: all-->
+
+      <%= partial "_partial/site_marketplace_header" %>
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <%= yield %>
+      </div>
+    </div>  <!-- End of wrapper -->
+
+   
+    <footer class="footer leader-0 link-dark-gray" role="contentinfo">
+      <div class="grid-container">
+          <nav class="column-6">
+            <h6 data-langlabel="arcgis-marketplace">ArcGIS Marketplace</h6>
+            <ul class="list-plain">
+              <li><a data-langlabel="home" href="http://marketplace.arcgis.com"><%= t("site.nav.home") %></a></li>
+              <li class="myconsole"><a data-langlabel="my-console" href="http://marketplace.arcgis.com/console.html"><%= t("site.nav.sign_in_myconsole") %></a></li>
+              <li><a data-langlabel="help" href="<%= t("paths.mphelp") %>"><%= t("site.nav.help") %></a></li>
             </ul>
           </nav>
 
           <%= partial "_partial/site_footer_common" %>
-        </div>
-
       </div>
     </footer>
 
-    <%= javascript_include_tag "drop-down" %>
     <%= javascript_include_tag "search/searchform.js" %>
     <%= javascript_include_tag "/cdn/js/sitewide.js" %>
     <%= javascript_include_tag "/cdn/js/link-modifier.js" %>

@@ -1,6 +1,4 @@
 ---
-layout: marketplace/layout
-
 title: Feedback - ArcGIS
 
 js:
@@ -8,13 +6,14 @@ js:
 
 metatags:
   - <META name="robot" content="NOINDEX|NOFOLLOW">
-
-languageSelector: "No"
   
+languageSelector: "No"
+
 mobile: true
 
 ---
-<header class="sub-nav sub-nav-marketplace">
+
+<header class="sub-nav sub-nav-blue">
   <div class="grid-container">
     <div class="column-24">
       <div style="display:table;">
@@ -47,12 +46,14 @@ mobile: true
 
 <script>
 $(document).ready(function() {
-		var docCfg = docCfg || {},
+    
+    var docCfg = docCfg || {},
         urlLang = doc.l10n.getReferrerLang(),
         curlang = doc.l10n.calcPrefLang (docCfg["langSelector"] || "all", urlLang);
 
 	doc.supportForm.addReferrerLink(curlang);
-	if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) {   
+
+    if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) {   
       doc.l10n.changeLabel (curlang);
     }
 

@@ -1,5 +1,8 @@
+<%
+    navLinkClass = navLinkClass || "top-nav-link"
+%>
 <a data-langlabel="home" href="http://www.arcgis.com" class="home hide <%= navLinkClass %>" id="nav-home"><%= t("site.nav.home") %></a>
-<%= link_to t("site.nav.features"), t("paths.features"), "id" => "nav-features", "data-langlabel" => "features", "class" => "anonymous-and-public-only side-nav-link " + navLinkClass %>
+<%= link_to t("site.nav.features"), t("paths.features"), "id" => "nav-features", "data-langlabel" => "features", "class" => "anonymous-and-public-only " + navLinkClass %>
 <%= link_to t("site.nav.plans"), t("paths.plans"), "id" => "nav-plans", "data-langlabel" => "plans", "class" => "anonymous-and-public-only "+ navLinkClass %>
 <%= link_to t("site.nav.gallery"), t("paths.gallery"), "id" => "nav-gallery", "data-langlabel" => "gallery", "class" => navLinkClass %>
 <%= link_to t("site.nav.map"), t("paths.map"), "id" => "nav-map", "data-langlabel" => "map", "class" => navLinkClass %>
