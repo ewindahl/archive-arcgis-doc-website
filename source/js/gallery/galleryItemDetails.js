@@ -382,6 +382,7 @@ var cookieName = "esri_auth";
 var contentType = {};
 var agolDataFolder = "info";
 var token = obj.getToken();
+var itemFor = "public";
 
 /*if(getUrlVars()['ls'] && getUrlVars()['ls'] == "t"){
 	window.opener.location.reload(false);
@@ -393,6 +394,7 @@ if(itemDetails && itemDetails.id){
 	var tierObj = getTier(window.location.hostname);
 
 	if(itemDetails.typeKeywords.indexOf("Requires Subscription") >=0 || itemDetails.typeKeywords.indexOf("Requires Credits") >=0){
+		itemFor = "premium";
 		if(!$.cookie('esri_auth')){
 			var agolSigninURL = (sitecfg)?sitecfg.agolSignin:AGOLURL+"/home/signin.html";
 			agolSigninURL += "?returnUrl=" + encodeURIComponent(window.location.href + "&ls=t");
@@ -503,5 +505,14 @@ $(document).ready(function() {
 	 $(this).attr("action", "/en/living-atlas/#q="+$("#q").val());
 	 $(this).submit();
 	});
+
+	if (itemFor == "premium" && !obj.orgUserCustomURL()) {
+		//$("#show_auth_modal")[0].click();
+			setTimeout(function () {
+				$("#show_auth_modal").removeClass('hide');
+					$("#show_auth_modal")[0].click();
+			}, 	3000);
+	}
+	
 
 });
