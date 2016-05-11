@@ -160,7 +160,7 @@ function genDisplay() {
             buf.push("<a class='item-title' target='_blank' title='" + row.data["title"] + "' href='" + targetUrl + "'>");
             buf.push(itemTitle);
             buf.push("</a>");
-            buf.push("<span class='ownerName'>By "+row.data["owner"]+"</span>");
+            buf.push("<span class='ownerName'>By <a href='#' class='show-modal ownerNameLnk'>"+row.data["owner"]+"<a></span>");
 
            //console.log(typeIconPath);
             if(typeIconPath){

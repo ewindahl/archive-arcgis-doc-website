@@ -19,7 +19,7 @@
 
   for(i=0; i <  document.getElementsByClassName("show-modal").length; i++){
       button = document.getElementsByClassName("show-modal")[i];
-    
+
     addEvent(button, 'click', function(e){
       e.preventDefault();
       overlay.className += ' visible';

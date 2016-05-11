@@ -49,15 +49,7 @@ doc.itemDetails = (function(){
 				
 		getIframeSource : function(){
 						
-			if(itemType == "app"){
-				//iframeSrc = itemDetails.url;
-				iframeSrc = "";
-			} else if(itemType == "layers"){
-				//iframeSrc = itemDetails.url+ "?f=jsapi";
-				iframeSrc = "";
-			} else if (itemType == "tools" || itemType == "webscene" || itemType == "files"){
-				iframeSrc = "";
-			} else {
+			if(itemType == "maps"){
 				// Map
 				var extent=null;
 				if(itemDetails.extent)
@@ -70,8 +62,8 @@ doc.itemDetails = (function(){
 					iframeSrc = customURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent + "&preventId=true";
 				}*/
 
-
-				
+			} else {
+				iframeSrc = "";
 			}
 			
 			return iframeSrc;
@@ -374,8 +366,8 @@ doc.itemDetails = (function(){
 
 
 var itemId = getUrlVars()['itemId'];
-var itemType = "map";
-var itemTypeLabel = "Map"
+var itemType = "layers";
+var itemTypeLabel = "Map Layer"
 var obj = doc.itemDetails;
 var itemDetails = obj.getItemInfo(itemId);
 var cookieName = "esri_auth";
@@ -423,7 +415,10 @@ if(itemDetails && itemDetails.id){
 		if(itemDetails.type == "Image"){
 			agolDataFolder = "data"
 		}
-	} else if($.inArray(itemDetails.type, galleryTypeList["layers"]) >= 0){
+	} else if($.inArray(itemDetails.type, galleryTypeList["maps"]) >= 0){
+		itemType = "maps";
+		itemTypeLabel = "Map";
+	}else if($.inArray(itemDetails.type, galleryTypeList["layers"]) >= 0){
 		itemType = "layers";
 		itemTypeLabel = "Map Layer";
 	} else if($.inArray(itemDetails.type, galleryTypeList["tool"]) >= 0) {
@@ -506,7 +501,7 @@ $(document).ready(function() {
 	 $(this).submit();
 	});
 
-	if (itemFor == "premium" && !obj.orgUserCustomURL()) {
+	if ((itemType == "maps" && itemFor == "premium") && !obj.orgUserCustomURL()) {
 		//$("#show_auth_modal")[0].click();
 			setTimeout(function () {
 				$("#show_auth_modal").removeClass('hide');
