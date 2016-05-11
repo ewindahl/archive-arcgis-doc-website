@@ -160,7 +160,7 @@ function genDisplay() {
             buf.push("<a class='item-title' target='_blank' title='" + row.data["title"] + "' href='" + targetUrl + "'>");
             buf.push(itemTitle);
             buf.push("</a>");
-            buf.push("<span class='ownerName'>By <a href='#' class='show-modal ownerNameLnk'>"+row.data["owner"]+"<a></span>");
+            buf.push("<span class='ownerName'>By <a href='JavaScript:void(0);' class='ownerNameLnk'>"+row.data["owner"]+"<a></span>");
 
            //console.log(typeIconPath);
             if(typeIconPath){
@@ -225,6 +225,29 @@ function genDisplay() {
 
             // Re-enable checkbox.
             $('input[type=checkbox]').prop('disabled',false);
+        },
+
+        populateProfilePopup: function(agolHost,data){
+
+          if(!data.error){
+            $(".profilePopup .spinner").hide();
+            var usrThumbnailPath = (data.thumbnail)?agolHost+"/sharing/rest/community/users/"+data.username+"/info/"+data.thumbnail:"";
+            
+            $(".profilePopup .profileDetails").removeClass("hide");
+            if(usrThumbnailPath != ""){
+              $(".profilePopup .itemThumbnailContainer").html('<img src="'+usrThumbnailPath+'" class="profileThumbnail">');
+            }
+            $(".profilePopup .profileThumbnail").attr("src",usrThumbnailPath);
+            $(".profilePopup .profile-name").text(data.fullName);
+            
+            var desc = (data.description)?data.description:"This user has not provided any personal information."
+            $(".profilePopup .profile-content").html(desc);
+
+             $(".profilePopup .profileLink").attr("href",agolHost+"/home/user.html?user="+data.username);
+             $(".profilePopup .profileItemsLink").attr("href",agolHost+"/home/search.html?q=owner:"+data.username);
+            $(".profilePopup .profileGroupLink").attr("href",agolHost+"/home/search.html?t=groups&q=owner:"+data.username);
+          }
+
         }
     };
 

@@ -847,6 +847,21 @@ function createGalleryShell() {
                 this.pageNav = genPageNav();
             }
             this.pageNav.update(this.gm);
+        },
+
+        getProfileInfo: function (gm, username) {
+            //this.updateFeatured(gm);
+            this.gm = gm;
+            var gs = this
+
+            $.ajax({
+                type: "GET",
+                url: gm.agolHost + "/sharing/rest/community/users/" + username + "?f=json",
+                data: {},
+                dataType: "jsonp"
+            }).done(function (data){
+                gs.display.populateProfilePopup(gm.agolHost, data);
+            });
         }
 
     }
@@ -1083,6 +1098,24 @@ $(document).ready(function () {
     $(".change-region").bind("click",function (evt){
         $("#regionList").html(regionList()).toggle();
     });
+
+    $("#reference-content").on("click",".ownerName a", function (evt){
+        $(".profilePopup .profileDetails").addClass("hide");
+        $(".profilePopup").css({"top":$(this).offset().top+"px", "left":$(this).offset().left+"px", "display":"block"})
+        
+        
+        $(".profilePopup .spinner").show();
+
+        gShell.getProfileInfo(gModel, $(this).text())
+    });
+    $(".profilePopup .icon-close").bind("click",function (evt){
+        $(".profilePopup").toggle();
+        $(".profilePopup .itemThumbnailContainer").empty();
+        $(".profilePopup .profile-name").empty();
+        $(".profilePopup .profile-content").empty();
+    });
+
+    
 
     function regionList () {
         var vL = [],

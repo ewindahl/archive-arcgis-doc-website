@@ -204,9 +204,10 @@ doc.itemDetails = (function(){
 
 						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;"+tmpText;
 					//}
+					$("#agol-thumbnail a").attr("href", AGOLURL +"/home/webmap/viewer.html?" + viewerType +"=" + itemDetails.id)
 
-					if(itemType == "map") {
-						$(".map-title").text(itemDetails.title);
+					if(itemType == "maps") {
+						$(".map-title").html('<a href="#contentArea">'+itemDetails.title+'</a>');
 						$(".map-title").show();
 
 						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ obj.getIframeSource() +"' target='_blank' class='btn light'>View Full Screen</a>";
@@ -260,7 +261,15 @@ doc.itemDetails = (function(){
 						layers.push("<li>"+value.id+"<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + value.url + "'>" + value.url + "</a></span></li>");
 					});
 				}
+
+				if((!isLayersExist && !isFeatureService) && itemType == "layers"){
+					isLayersExist = true;
+					layers.push("<li>"+itemDetails.title+"test<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + itemDetails.url + "'>" + itemDetails.url + "</a></span></li>");
+				}
+
 				layers.push("</ul>");
+
+
 
 				if(isLayersExist){
 					$("#map-contents-layers").html(layers.join(""));
@@ -375,6 +384,7 @@ var contentType = {};
 var agolDataFolder = "info";
 var token = obj.getToken();
 var itemFor = "public";
+var isFeatureService = false;
 
 /*if(getUrlVars()['ls'] && getUrlVars()['ls'] == "t"){
 	window.opener.location.reload(false);
@@ -406,6 +416,10 @@ if(itemDetails && itemDetails.id){
 	        contentType['title']  = "Included with your ArcGIS Online subscription and consumes credits.";
 	        contentType['img']  = tierObj.agolCdnBasePath + "js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
 	    }
+	}
+
+	if(itemDetails.typeKeywords.indexOf("Feature Service") >=0 || itemDetails.type == ("Feature Service")){
+		isFeatureService = true;
 	}
 
 	
