@@ -219,6 +219,12 @@ doc.itemDetails = (function(){
 				}
 			}
 
+			if(itemDetails.typeKeywords.indexOf("Metadata") >=0 ){
+				var metaData = "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ AGOLURL +"/sharing/rest/content/items/" + itemDetails.id +"/info/metadata/metadata.xml?format=default&output=html' target='_blank' class='btn light'>Metadata</a>";
+				$("#downloadBtns").append(metaData);
+			}
+			
+
 
 			// Credits information
 			$("#map-credits p").html(itemDetails.accessInformation);
