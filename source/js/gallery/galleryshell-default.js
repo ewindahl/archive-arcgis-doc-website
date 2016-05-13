@@ -589,11 +589,11 @@ SERow.prototype.ContentType = function () {
     if (typeKeywords.indexOf("Requires Subscription") >=0) {
         contentType['label']  = "Subscriber Content";
         contentType['title']  = "Included with your ArcGIS Online subscription.";
-        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
+        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
     } else if (typeKeywords.indexOf("Requires Credits") >=0) {
         contentType['label']  = "Premium Content";
         contentType['title']  = "Included with your ArcGIS Online subscription and consumes credits.";
-        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
+        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
     }
     
     return contentType;
