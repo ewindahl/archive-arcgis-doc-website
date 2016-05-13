@@ -8,7 +8,7 @@ css:
 js:
   - gallery/gallery-init
   - gallery/galleryItemDetails
-
+  
 metatags:
   - <META name="description" content=""><META name="last-modified" content=""><META name="product" content="living-atlas,arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="gallery"><META name="content_type_label" content="Gallery Item"><META name="sub_category_label" content=""><META name="search-category" content="gallery-itemtype"><META name="subject_label" content="ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Gallery Item"><META name="subject" content="ARCGIS ONLINE"><META name="content-language" content="en">
 
@@ -43,6 +43,7 @@ mobile: true
 		<iframe id="mapIframe" width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""></iframe>
 </div>		
 		<div class="container item-details">
+		<a name="contentArea"></a>
 		<div class="row">	
 			<div class="column-10">
 			<!-- Need to derive H2 below from title in the iteminfo file -->
@@ -156,6 +157,21 @@ mobile: true
 
 			</div>
 
-		</div> 
+			<!--
+				Modal box for alert -->
+			<div id="modal-overlay1" class="modal-overlay"></div>
+			<div id="modal1" class="modal">
+			  <a href="#" id="close-modal" class="icon-close right close-modal"></a>
+			  <div class="ago-form">
+			    <h4>Error</h4>
+			    <p>
+			    	Layers can not be added to te map because you do not have privileges to use this layer
+			    </p>
+			  </div>
+			</div>
+			<a href="#" id="show_auth_modal" class="hide show-modal"></a>
 
+		</div> 
+		
+	<script src="/js/modal.js" type="text/javascript"></script>
 	<script src="/js/gallery.comments.js" type="text/javascript"></script>
