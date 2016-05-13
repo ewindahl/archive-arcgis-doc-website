@@ -800,9 +800,11 @@ function createGalleryShell() {
                     var state = mdf[key].state;
                     if (state) {
                         for (i = 0, len = state.length; i < len; i++) {
+                            var selector = "#filters input:checkbox[name=" + key + "-" + (i + 1) + "]";
                             if (state.charAt(i) === "1") {
-                                var selector = "#filters input:checkbox[name=" + key + "-" + (i + 1) + "]";
                                 $(selector).attr("checked", "true");
+                            }else{
+                                $(selector).removeAttr("checked");
                             }
                         }
                     } else {
@@ -1156,16 +1158,19 @@ $(document).ready(function () {
     window.onhashchange = function (evt) {
         var curHash = window.location.hash;
  
+        //$("#filters .ctrlbox").trigger("change");
         if (curHash) {
             var vdata = gModel.genViewData();
             
-
             if (vdata.hash) {
                 if ("#" + vdata.hash !== curHash) {
                     //debug("curHash=" + curHash);
                     //$("#gl-content").empty();
+                    $("#gl-content").empty();
+                    $("#spinner").show();
                     gModel.updateByHash(curHash);
-                    //gShell.update(gModel);
+                    gShell._updateFilter(gModel);
+                    gShell.update(gModel);
                     if (gModel.query) { $("#gl-cl-btn").show(); }
                 }
             }
