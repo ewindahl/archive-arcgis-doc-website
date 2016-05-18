@@ -15,9 +15,9 @@ $(document).ready(function() {
    
     var val = '<p id="plats">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="explorer" data-plat="android-phone" data-prefix="/' + localedir +'/explorer/android-phone" href="/en/explorer/" data-langlabel="android-phone" class=""> Android phone</a>' +
+        '<a data-appname="explorer" data-plat="android-phone" data-prefix="/' + localedir +'/explorer/android-phone" href="/en/explorer/" data-langlabel="android-phone" class=""> ' + dict['android-phone'] + '</a>' +
         ' | ' +
-		'<a data-appname="explorer" data-plat="android-tablet" data-prefix="/' + localedir +'/explorer/android-tablet" href="/en/explorer/" data-langlabel="android-tablet" class=""> Android tablet</a>' +
+		'<a data-appname="explorer" data-plat="android-tablet" data-prefix="/' + localedir +'/explorer/android-tablet" href="/en/explorer/" data-langlabel="android-tablet" class=""> ' + dict['android-tablet'] + '</a>' +
         ' | ' +
 		'<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir +'/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class=""> iPad</a>' +
         ' | ' +
