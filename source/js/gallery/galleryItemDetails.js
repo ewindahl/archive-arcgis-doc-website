@@ -281,7 +281,7 @@ doc.itemDetails = (function(){
 					});
 				}
 
-				if((!isLayersExist && !isFeatureService) && itemType == "layers"){
+				if((!isLayersExist) && itemType == "layers"){
 					isLayersExist = true;
 					layers.push("<li>"+itemDetails.title+"test<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + itemDetails.url + "'>" + itemDetails.url + "</a></span></li>");
 				}
