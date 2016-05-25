@@ -59,7 +59,7 @@ function genDisplay() {
             
           var itemType = (type)? type.toLowerCase() : "",
             typeKeywords = typeKeywords || [],
-            imgDir = getTier(window.location.hostname).agolCdnBasePath + "js/jsapi/esri/css/images/item_type_icons/",
+            imgDir = getTier(window.location.hostname).agolCdnBasePath + "esri/css/images/item_type_icons/",
             size = "16",  //for now we only support 16x16 pixel images
             isHosted = false,
             isTable = false,
