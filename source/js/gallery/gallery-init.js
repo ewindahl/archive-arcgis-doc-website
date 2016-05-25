@@ -34,18 +34,18 @@ function getTier(hostname) {
         tier: "dev",
         agolAuthCookie: "esri_auth",
         agolHost: "https://devext.arcgis.com",
-		  agolCdnBasePath: "//jsdev.arcgis.com/4.0/"
+		  agolCdnBasePath: "//jsdev.arcgis.com/3.16/"
         //agolCdnBasePath: "//cdn.arcgis.com/cdn/8108/js/jsapi/"
     };
 
    if (hostname == "docstg.arcgis.com") {
         tierObj.tier = "stg",
         tierObj.agolHost = "https://qaext.arcgis.com",
-		  tierObj.agolCdnBasePath = "//jsqa.arcgis.com/4.0/"
+		  tierObj.agolCdnBasePath = "//jsqa.arcgis.com/3.16/"
     } else if (hostname == "doc.arcgis.com") {
         tierObj.tier = "prd",
         tierObj.agolHost = "https://www.arcgis.com",
-		  tierObj.agolCdnBasePath = "//js.arcgis.com/4.0/"
+		  tierObj.agolCdnBasePath = "//js.arcgis.com/3.16/"
     }
 
     return tierObj 
