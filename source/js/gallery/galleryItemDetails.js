@@ -164,8 +164,8 @@ doc.itemDetails = (function(){
 
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 				if(itemDetails.type == "Rule Package"){
-					toolsTargetURL = AGOLURL + "/sharing/content/items/" + itemDetails.id + "/" + itemDetails.name;
-					text = "<a href='" + toolsTargetURL + "' target='_blank' class='btn primary'>Download</a>";
+					toolsTargetURL = AGOLURL + "/sharing/content/items/" + itemDetails.id + "/data/";
+					text = "<a href='" + toolsTargetURL + "' class='btn primary'>Download</a>";
 				} else {
 					text = "<a href='" + toolsTargetURL + "' target='_blank' class='btn primary'>Open in ArcGIS for Desktop</a>";	
 				}
@@ -429,11 +429,11 @@ if(itemDetails && itemDetails.id){
 		if (itemDetails.typeKeywords.indexOf("Requires Subscription") >=0) {
 	        contentType['label']  = "Subscriber Content";
 	        contentType['title']  = "Included with your ArcGIS Online subscription.";
-	        contentType['img']  = tierObj.agolCdnBasePath + "js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
+	        contentType['img']  = tierObj.agolCdnBasePath + "esri/css/images/item_type_icons/premiumitem16.png";
 	    } else if (itemDetails.typeKeywords.indexOf("Requires Credits") >=0) {
 	        contentType['label']  = "Premium Content";
 	        contentType['title']  = "Included with your ArcGIS Online subscription and consumes credits.";
-	        contentType['img']  = tierObj.agolCdnBasePath + "js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
+	        contentType['img']  = tierObj.agolCdnBasePath + "esri/css/images/item_type_icons/premiumcredits16.png";
 	    }
 	}
 
