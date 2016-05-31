@@ -33,6 +33,7 @@ mobile: true
 	<nav>
       <ul>
         <li class='current'><a href="/en/drone2map/">Home</a></li>
+		<li><a href="/en/drone2map/install/">What is Drone2Map for ArcGIS</a></li>
         <li><a href="/en/drone2map/install/">Install</a></li>
         <li><a href="/en/drone2map/configure/">Configure</a></li>
 		  <li><a href="/en/drone2map/process-and-share/">Process & Share</a></li>
@@ -48,10 +49,10 @@ mobile: true
     <div class="column-16 tablet-column-24">
         <header>
 		<h2 id="appTitle">Download the app</h2>
-        <span id="appVersion"><strong>Version:</strong> 4.0</span>
-        <span id="appReleased"><strong>Available:</strong> Spring 2016</span>
+        <span id="appVersion"><strong>Version:</strong> 1.0</span>
+        <span id="appReleased"><strong>Available:</strong> Summer 2016</span>
 
-          <p>Be more productive with location-driven analytics. Bring a whole new analytical dimension to Microsoft Office. Start gaining new insights and making more informed decisions immediately. Easily add mapping to your Excel spreadsheets and PowerPoint presentations.</p>
+          <p>Drone2Map for ArcGIS turns raw still imagery from drones into stunning 2D and 3D imagery products in ArcGIS for monitoring, analysis, and inspection.</p>
 
           <div class="secured-org">
 				<a class="btn primary download-link" data-file-size="<%= data.downloads["en"].drone2map.secured.send('versions'.to_sym)[1.0].filesize %>" data-folder="<%= data.downloads["en"].drone2map.secured.send('versions'.to_sym)[1.0].foldername %>" data-filename="<%= data.downloads["en"].drone2map.secured.send('versions'.to_sym)[1.0].filename %>">Get Drone2Map for ArcGIS</a>
@@ -62,102 +63,112 @@ mobile: true
         <br />
 
 <!-- features top row -->
-		<!-- Map your Excel data -->
+		<!-- Rapid -->
 		<div id="em4oFirstFeature" class="column-12 phone-column-24">
 			<img src="Map-your-data.png" alt="Map your Excel data" />
 		  
-			<h3>Map your Excel data</h3>
-			<p>Make interactive maps of your spreadsheet data right in Excel. With a few clicks create color-coded, point, clustered-point, and heat maps and gain visual insights about your data.</p>
-			<p>&gt; <a href="/en/maps-for-office/design-and-use/add-a-map-to-excel.htm">Learn more</a></p>
+			<h3>Rapid</h3>
+			<p>Quickly create orthosmosaics and digital surface models to verify the coverage and quality of your imagery collection.</p>
+			<p>&gt; <a href="/en/drone2map/quick-start-guide/">Learn more</a></p>
 		</div>
 
-		<!-- Analyze data -->
+		<!-- 2D Mapping -->
         <div id="em4oSecondFeature" class="column-12 phone-column-24">
 			<!-- REPLACE IMAGE > PPT -->
 			<img src="Analyze-your-data.png" alt="Add a map to PowerPoint" />
-			<h3>Add dynamic maps to PowerPoint</h3>
-			<p>Add maps from your ArcGIS organization to PowerPoint to create stunning, dynamic presentations.</p>
+			<h3>2D Mapping</h3>
+			<p>Create high resolutions orthosmosaics, digital surface models, and multispectral indices.</p>
 			<p>&gt; <a href="/en/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">Learn more</a></p>
 		</div>
         <div class="clear"></div>
 
 <!-- features second row -->
-		<!-- Enrich your data -->
+		<!-- 3D Mapping -->
 		<div id="em4oThirdFeature" class="column-12 phone-column-24">
 			<img src="Enrich-your-spreadsheets.png" alt="Enrich your data" />
 
-			<h3>Enrich your business spreadsheets</h3>
-			<p>Add ArcGIS demographics and lifestyle data directly to Excel spreadsheets and get more context about the locations that are important to you. Quickly explore locatyions on-the-fly using pop-up infographics.</p>
+			<h3>3D Mapping</h3>
+			<p>Create detailed 3D colorized point clouds, 3D textured meshes, and 3D PDFs.</p>
 			<p>&gt; <a href="/en/maps-for-office/design-and-use/enrich-your-data.htm">Learn more</a></p>
 		</div>
 
-		<!-- Share maps -->
+		<!-- Inspection Project -->
 		<div id="em4oFourthFeature" class="column-12 phone-column-24">
 			<img src="Share-your-data.png" alt="Share maps on ArcGIS" />
-			<h3>Share your maps from Excel</h3>
-			<p>Share your maps using either ArcGIS Online or Portal for ArcGIS, or insert them in emails, PowerPoint presentations, or Word documents.</p>
+			<h3>Inspection</h3>
+			<p>Process drone imagery and quickly inspect objects of interest.</p>
 			<p>&gt; <a href="/en/maps-for-office/design-and-use/share-a-map-on-arcgis.htm">Learn more</a></p>
         </div>
 	<div class="clear"></div> 
 
 		<br />
 		
+<!-- License -->
+	<hr />
+	<a id="whatsNew"></a>
+ 	<h2>License</h2>	
+	<p>To use Drone2Map, you must have an ArcGIS organizational account that has been configured with a Drone2Map for ArcGIS license. for details about assigning licenses to named users in ArcGIS Online please see <a href="http://ideas.arcgis.com/ideaList?c=09a300000004xET&category=Esri+Maps+for+Office" target="_blank">Drone2Map for ArcGIS Free Trial Guide</a>.</p>
+	
 <!-- What's new section -->
 	<hr />
 	<a id="whatsNew"></a>
  	<h2>What's new</h2>	
-	<p>&gt; Do you have an idea for a feature you’d like to see in ArcGIS Maps for Office? Tell us about it at the <a href="http://ideas.arcgis.com/ideaList?c=09a300000004xET&category=Esri+Maps+for+Office" target="_blank">ArcGIS Ideas</a> site.</p>
- 	<p>ArcGIS Maps for Office 4.0 release is now available. This release offers significant updates and enhancements. Here are some highlights.</p>
-	
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
+	<p>Drone2Map for ArcGIS 1.0 release is now available. This release includes the following new features and enhancements:</p>
 
-		<h3>4.0 updates</h3>
-		<p>ArcGIS Maps for Office 4.0 includes the following new features:
 			<ul>
-				<li><b>Use <a href="/en/maps-for-office/design-and-use/change-a-layer-s-style.htm">Smart Mapping</a> to quickly create beautiful maps</b>
-					<p>Whether you’re an expert at working with maps or just getting started, it’s never been easier to create visually stunning maps that tell the stories you want to tell. ArcGIS Maps for Office analyzes the data in your spreadsheet and suggests the best ways to represent it on a map, offering a selection of styles for you to choose from. Choose a style and instantly create a map, or customize the styling options to suit your story. Smart mapping also provides the much-requested ability to manually set class breaks for your layers.</p>
-				</li>
-				<li><b>Find patterns in your locations over time with <a href="/en/maps-for-office/design-and-use/map-temporal-data.htm">time-based animations</a></b>
-					<p>If your data contains temporal values, you can add time-aware layers to a map in Excel and run an animation that shows how patterns in the data change over time. This feature also supports time-enabled layers on the ArcGIS platform, allowing you to compare time-based patterns in your data with similar patterns from within your organization or from authoritative sources such as the US National Oceanic and Atmospheric Administration (NOAA).</p>
-				</li>
-				<li><b>Communicate your work more effectively with an all-new experience in <a href="/en/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">PowerPoint</a></b>
-					<p>ArcGIS Maps for Office provides a fully updated experience for enhancing your PowerPoint presentations with interactive, dynamic maps by making it simpler and quicker to search for content. Add maps directly to PowerPoint using content from your ArcGIS organization, or edit existing map slides. Insert the map into a slide and position it as desired—on its own or combined with other standard PowerPoint features such as charts, images, and text. In Slide Show mode, you can zoom and pan across the map and select features to display detailed information, allowing you to quickly answer questions that come up during your presentation.</p>
-				<li><b>Focus on the rows that are important by using <a href="/en/maps-for-office/design-and-use/select-features.htm#ESRI_SECTION1_53FF2A6DECC04ED4A5AAED1BDDBC9515">map-based filtering</a></b>
-					<p>You’ve been able to filter spreadsheets by cell value for a long time. Now, ArcGIS Maps for Office lets you filter your spreadsheet by selecting items on the map, allowing you to focus directly on the features you’re working with right now. Filter the spreadsheet to display only selected features, then use standard Excel functions to work with the data that you need.</p>
-				</li>
-				<li><b>Keep track of changing data by setting a <a href="/en/maps-for-office/design-and-use/set-refresh-interval.htm">refresh interval</a></b>
-					<p>Static layers added from ArcGIS help you visualize immobile objects such as buildings, roads, or boundaries. Now, ArcGIS Maps for Office lets you keep track of things that move, change, or evolve&#8212;like storms, vehicles, or field work status. The Refresh Interval feature lets you specify how often a layer is polled for updates; or click a button to update the layer immediately</p>
-				</li>
+			<li>Exciting new user interface and color scheme.</li>
+			<li>Authorize Drone2Map to work offline for working in a disconnected environment.</li>
+			<li>Register multiple Portals for adding and sharing content.</li>
+			<li>New 2D Mapping and 3D Mapping templates to allow you to build only the products you need from your drone data.</li>
+			<li>Create scene layer packages from textured meshes and share as a scene layer in ArcGIS Online or Portal.</li>
+			<li>Toggle between 2D and 3D views within the application.</li>
+			<li>Download a portion of your basemaps for offline use.</li>
+			<li>Import and create Ground Control Points (GCPs) for improved data accuracy.</li>
+			<li>Export your GCPs for easy re-use.</li>
+			<li>Define the extent of output products by drawing a polygon or importing shapefile to define clip area.</li>
 			</ul>
-		</p>
-	
 
 
-<!-- Supported environments section -->
+
+<!-- System requirements -->
 	<hr />
 	<a id="supportedEnvironments"></a>
-        <h2>Supported environments</h2>
-		<p>ArcGIS Maps for Office is deployed as an add-on to Microsoft Excel and Microsoft PowerPoint. For ArcGIS Maps for Office to operate properly, Esri assumes an operation configuration of these applications. Esri tests ArcGIS Maps for Office only in software environments certified as supported by Microsoft Excel or PowerPoint; not all Excel or PowerPoint-supported environments have been tested or certified. For more information, see the <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Esri supported environment policy</a>.</p>
+	<p>The following description shows the minimum and recommended requirements for running Drone2Map for ArcGIS.</p>
+        <h2>Supported platforms</h2>
+		<ul>
+			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)</li>
+			<li>Windows 8 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 10 Home, Pro, and Enterprise (64 bit)</li>
+		</ul>
 		
-		<p><b>Note:</b> Microsoft Word allows you to embed and work with an Excel spreadsheet in a document. This workflow is unsupported by ArcGIS Maps for Office and is not recommended.</p>
+	    <h2>Hardware requirements</h2>
+		<p>Minimum</p>
+		<ul>
+			<li>Any CPU (Intel i5/i7/Xeon recommended).</li>
+			<li>Any GPU that is compatible with OpenGL 3.2. (Integrated graphic cards Intel HD 4000 or above).</li>
+			<li>Small projects (under 100 images at 14 MP): 4 GB RAM, 10 GB HDD Free Space.</li>
+			<li>Medium projects (between 100 and 500 images at 14 MP): 8 GB RAM, 20 GB HDD Free Space.</li>
+			<li>Large projects (between 500 and 2000 images at 14 MP): 16 GB RAM, 40 GB HDD Free Space.</li>
+			<li>Very Large projects (over 2000 images at 14 MP): 16 GB RAM, 80 GB HDD Free Space.</li>
+		</ul>
 		
-		<!-- script for collapsible headings -->
+		<p>Recommended</p>
+		<ul>
+			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)</li>
+			<li>Windows 8 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 10 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>CPU quad-core or hexa-core Intel i7/Xeon.</li>
+			<li>GeForce GPU compatible with OpenGL 3.2 and 2 GB RAM.</li>
+			<li>Hard disk: SSD.</li>
+			<li>Small projects (under 100 images at 14 MP): 8 GB RAM, 15 GB SSD Free Space.</li>
+			<li>Medium projects (between 100 and 500 images at 14 MP): 16GB RAM, 30 GB SSD Free Space.</li>
+			<li>Large projects (over 500 images at 14 MP): 32 GB RAM, 60 GB SSD Free Space.</li>
+			<li>Very Large projects (over 2000 images at 14 MP): 32 GB RAM, 120 GB SSD Free Space.</li>
+		</ul>
+		
+		<!-- script for collapsible headings
 		<script> 
 		 function exp(e,strTag ,strAttribute){ 
 		 var elem = document.getElementsByTagName(strTag); 
@@ -173,66 +184,7 @@ mobile: true
 		 } 
 		 } 
 		 } 
-		 </script> 
-
-		<!-- Sys Reqs -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">System requirements</a>
-		</h3>
-			<div exp1='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office requires an account that is part of an ArcGIS organization and Microsoft Office Excel or PowerPoint (Microsoft Office 2010, 2013, or 2016).</p>
-			<p>For additional information, including the required processor speed, memory, and hard disk space, see the system requirements for the following:
-			<ul>
-				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
-				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
-				<li><a href="https://products.office.com/en-ca/office-system-requirements#SUITES" target="_blank">Microsoft Office 2016</a></li>
-			</ul>	
-			</p>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Req'd SW -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Required software</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office requires an <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> organizational subscription or an on-premises Portal for ArcGIS deployment. It is assumed that the authentication method used to access the platform has been properly configured by the ArcGIS administrator.</p>
-
-			<p>In addition, the following software must be installed and configured on your system:</p>
-				<ul>
-					<li>Microsoft Office 2010, 2013, or 2016*</br>
-						* ArcGIS Maps for Office supports Microsoft Office 2016 versions 16.0.4266.1003 and earlier.
-					</li>
-					<li>Internet Explorer 9, 10, or 11**</li>
-					<li>Microsoft Windows. Supported versions:
-						<ul>
-							<li>Windows 7 (32 bit and 64 bit)</li>
-							<li>Windows 8 (32 bit and 64 bit)</li>
-							<li>Windows 8.1 (32 bit and 64 bit)</li>
-							<li>Windows 10 (32 bit and 64 bit)</li>
-							<li>Windows Server 2008 R2</li>
-							<li>Windows Server 2012</li>
-							<li>Windows Server 2012 R2</li>
-						</ul>
-					</li>
-				</ul>
-			<p>** ArcGIS Maps for Office uses JavaScript within a web browser to display maps. Because Microsoft Excel requires the use of Internet Explorer (IE) to display web content, there is no option to use another browser. Functionality within the app requires the use of IE9 or later; older versions are not supported.</p>
-			</div>
-			
-		<!-- Supported languages -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Supported languages</a>
-		</h3>
-			<div exp3='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office is available in the following languages:</p>
-			<p>Arabic, Chinese (Simplified), Chinese (Traditional Hong Kong), Chinese (Traditional Taiwan), Czech, Danish, German, Greek, English, Spanish, Estonian, Finish, French, Hebrew, Italian, Japanese, Korean, Lithuanian, Latvian, Dutch, Norwegian, Polish, Portuguese (Brazilian), Portuguese (Portugal), Romanian, Russian, Swedish, Thai, Turkish, and Vietnamese.</p>
-			
-			<p>ArcGIS Maps for Office uses the language specified in the Excel Options, not the operating system's culture setting. If you are using an unsupported language, the app uses English.</p>
-			
-			</div>
-
-        <p>&nbsp;</p>
+		 </script> -->
 	</div>
 	
 	
@@ -243,13 +195,7 @@ mobile: true
           <h3>Get started</h3>
           <ul>
            <li><a href="#whatsNew">What's new</a></li>
-            <li><a href="#supportedEnvironments">Supported environments</a></li>
-			<li>Help for previous versions:
-				<ul>
-					<li><a href="/en/maps-for-office/3.1/welcome.htm">3.1 online help</a></li>
-				</ul>
-			</li>
-			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">Watch videos</a></li>
+			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">Quick Start Guides</a></li>
 
           </ul>
         </div>
