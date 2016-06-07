@@ -126,63 +126,31 @@ mobile: true
     </div>
   </div>
 </div>
+
 <div class="full-bkg gray">
   <div class="container">
     <div class="column-24 trailer leader">
     <h2 class="divider">From our blog
 		<a href="https://blogs.esri.com/esri/arcgis/category/arcgis-online " class="font-size-0 right">More blog posts</a>
 	</h2>
-    <div class="column-8">
-      <div class="panel">
-        <small>April 7, 2016</small>
-        <h4><a href="https://blogs.esri.com/esri/arcgis/2016/04/07/whats-new-in-arcgis-open-data-april-2016/">What's new in ArcGIS Open Data, April 2016</a></h4>
-        <p>ArcGIS Open Data just released a bunch of new features and functionality to augment the citizen... <a href="https://blogs.esri.com/esri/arcgis/2016/04/07/whats-new-in-arcgis-open-data-april-2016/">Continue reading &rarr;</a>
-      </div>
-    </div>
-    <div class="column-8">
-      <div class="panel">
-        <small>April 12, 2016</small>
-        <h4><a href="https://blogs.esri.com/esri/arcgis/2016/04/12/six_easy_ways_to_improve_your_maps/">Six Ways to Improve Your Map</a></h4>
-        <p>ArcGIS allows you to explore your data and make useful maps of it... <a href="https://blogs.esri.com/esri/arcgis/2016/04/12/six_easy_ways_to_improve_your_maps/">Continue reading &rarr;</a>
-      </div>
-    </div>
-    <div class="column-8">
-      <div class="panel">
-        <small>March 23, 2016</small>
-        <h4><a href="https://blogs.esri.com/esri/arcgis/2016/03/23/scene-viewer-tips-and-trick-2/">Create a local scene with scene layers</a></h4>
-        <p>Throughout 2016, we will be presenting a series of scene viewer tips and tricks. We hope these posts will help you work more efficiently, produce better 3D visualizations, and really harness the power of your 2D and 3D data with the... <a href="https://blogs.esri.com/esri/arcgis/2016/03/23/scene-viewer-tips-and-trick-2/">Continue reading &rarr;</a>
-      </div>
-    </div>
+	<div data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/" class="block-group block-group-3-up blogHpFeed">
+		<!-- Blog Content goes here -->
+	 </div>
+    
     </div>
   </div>
 </div>
+
 <div class="full-bkg off-white">
   <div class="container">
     <div class="column-24 trailer leader">
       <h2 class="divider">Discussions in the community
 	  	<a href="https://geonet.esri.com/community/gis/web-gis/arcgisonline" class="font-size-0 right">More discussions</a>
 	  </h2>
-      <div class="column-8">
-        <div class="panel white">
-          <small>May 9, 2016</small>
-          <h4><a href="#">What's new in ArcGIS Open Data, April 2016</a></h4>
-          <p>ArcGIS Open Data just released a bunch of new features and functionality to augment the citizen... <a href="#">Continue reading &rarr;</a>
-        </div>
-      </div>
-      <div class="column-8">
-        <div class="panel white">
-          <small>May 9, 2016</small>
-          <h4><a href="#">Six Ways to Improve Your Map</a></h4>
-          <p><%= lorem.sentences 3 %>... <a href="#">Continue reading &rarr;</a>
-        </div>
-      </div>
-      <div class="column-8">
-        <div class="panel white">
-          <small>May 9, 2016</small>
-          <h4><a href="#">Six Ways to Improve Your Map</a></h4>
-          <p><%= lorem.sentences 3 %>... <a href="#">Continue reading &rarr;</a>
-        </div>
-      </div>
+	   <div data-geonet-feed-url="https://geonet.esri.com/community/gis/arcgis-online/view-browse-feed.jspa?browseSite=place-content&browseViewID=placeContent&userID=2188&containerType=14&containerID=2055&filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+		</div>
+      
     </div>
   </div>
 </div>
@@ -218,22 +186,8 @@ mobile: true
 </div>
 
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+	<script src="/js/rssfeed.js" type="text/javascript"></script>
   <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/',
-        max: 2,
-        layout: 0
-      });
-
-	  $("#forum").rssFeed({
-			url:"https://geonet.esri.com/community/gis/arcgis-online/view-browse-feed.jspa?browseSite=place-content&browseViewID=placeContent&userID=2188&containerType=14&containerID=2055&filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D",
-			max: 3,
-			layout: 1
-		  });
-
-    });
 
 	 if(window.location.pathname.match( /(\/arcgis-online\/)/)){
 		$("#help-nav").attr("class", "active");
