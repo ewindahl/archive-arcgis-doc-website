@@ -168,7 +168,7 @@ $(document).ready(function() {
 				var localedir = (typeof(docConfig) !== 'undefined') ? docConfig['locale'].toLowerCase():false;
 				var localeDict = (localedir && window.localeJsonObj)?window.localeJsonObj[localedir]:false;
 
-				alert ((localeDict && localeDict['invalid-org-acct']) ? localeDict['invalid-org-acct'] : "Please login with a valid Organizationl account!")
+				alert ((localeDict && localeDict['invalid-org-acct']) ? localeDict['invalid-org-acct'] : "Please sign in with a valid organizational account.")
 				return false;
 			}
 
