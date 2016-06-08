@@ -3,7 +3,14 @@
   padding-bottom: 262px;
 }
 .full-bkg {
-  padding: 2em 0;
+	padding: 2em 0;
+	h2 a {
+		color: $white;
+		text-decoration: underline;
+		&:hover,&:focus {
+		color: $off-white;
+		}
+	}
   &.gray {
     background-color: #323232;
     border: 1px solid #4c4c4c;
@@ -15,19 +22,25 @@
   }
   &.white{
     background-color: #fff;
+	 h2 a {
+		color: $blue;
+		&:hover,&:focus {
+		color: $light-blue;
+		}
+	 }
+	 
   }
   &.blue {
     background-color: $blue;
-    color: $off-white;
-    a {
-      color: $off-white;
-      &:hover,&:focus {
-        color: $light-blue;
-      }
-    }
   }
   &.off-white {
     background-color: $off-white;
+	 h2 a {
+		color: $blue;
+		&:hover,&:focus {
+		color: $light-blue;
+		}
+	 }
   }
 }
 
