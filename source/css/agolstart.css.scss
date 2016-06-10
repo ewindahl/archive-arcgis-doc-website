@@ -3,13 +3,22 @@
   padding-bottom: 262px;
 }
 .full-bkg {
-	padding: 2em 0;
-	h2 a {
-		color: $white;
-		text-decoration: underline;
-		&:hover,&:focus {
-		color: $off-white;
-		}
+	padding: 3em 0;
+	h2 {
+    &.divider {
+      padding-bottom: 0;
+    }
+    small {
+      font-size: 17px;
+      font-weight: 400;
+    }
+    a {
+		  color: $white;
+	    &:hover,&:focus {
+        text-decoration: underline;
+    	  color: $off-white;
+	    }
+    }
 	}
   &.gray {
     background-color: #323232;
@@ -22,13 +31,12 @@
   }
   &.white{
     background-color: #fff;
-	 h2 a {
-		color: $blue;
-		&:hover,&:focus {
-		color: $light-blue;
-		}
-	 }
-	 
+    h2 a {
+      color: $blue;
+      &:hover,&:focus {
+        color: $light-blue;
+      }
+    }
   }
   &.blue {
     background-color: $blue;
@@ -43,11 +51,22 @@
 	 }
   }
   &.dark {
+    background-color: #595959;
+    color: $white;
+    a {
+      color: $white;
+      &:hover,&:focus {
+        text-decoration: underline;
+        &:before {
+          text-decoration: none;
+        }
+      }
+    }
     .panel {
-		p {
-			color: #4d4d4d;
-		}
-	 }
+      p {
+      	color: #4d4d4d;
+      }
+    }
   }
 }
 
