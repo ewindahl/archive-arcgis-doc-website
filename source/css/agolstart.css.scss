@@ -39,6 +39,10 @@
     }
     .panel {
       background-color: $off-white;
+      &.dark {
+        background-color: #595959;
+
+      }
     }
   }
   &.blue {
@@ -176,5 +180,45 @@ ul {;
     border: 1px solid #a9a9a9;
     border-radius: 0;
     font-size: 16px;
+  }
+}
+
+.make-first {
+  h2 {
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    position: relative;
+    padding: 4.25em 0 0 0;
+    line-height: 1.25em;
+    min-height: 2em;
+    display: inline-block;
+    text-align: center;
+    @include column(6);
+    &.green:before {
+      color: rgba(190,219,101,0.8);
+      background-color: rgba(169,210,90,0.15);
+      border: 1px solid rgba(190,219,101,0.8);
+    }
+    .orange {}
+    .purple {}
+    &.blue:before {
+        color: rgba(1,125,195,0.8);
+        background-color: rgba(1, 137, 197, 0.15);
+        border: 1px solid rgba(1,125,195,0.8);
+    }
+  }
+  h2:before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 10px 0;
+    font-size: 85px;
+    display: block;
+    width: 120px;
+    text-align: center;
+    border-radius: 6px;
+
   }
 }
