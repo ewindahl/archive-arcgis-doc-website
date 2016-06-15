@@ -181,48 +181,48 @@ doc.itemDetails = (function(){
 
 				var websceneTargetURL = AGOLURL + "/home/webscene/viewer.html?webscene="+itemDetails.id;
 
-				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 				var text = "<a href='" + websceneTargetURL + "' target='_blank' class='btn primary'>Open in Scene Viewer</a>";
+
+				if(itemDetails.type == "CityEngine Web Scene") {
+					websceneTargetURL = AGOLURL +"/apps/CEWebViewer/viewer.html?3dWebScene=" + itemDetails.id;
+					text = "<a href='"+ websceneTargetURL +"' target='_blank' class='btn primary'>View Application</a>";
+					text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ AGOLURL +"/sharing/rest/content/items/" + itemDetails.id +"/data?f=json' class='btn light'>Download</a>";
+				}
+				
+
 				$("#downloadBtns").html(text);
 
 				$("#agol-thumbnail").html("<a href='" + websceneTargetURL + "' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 			} else {
-
 				if(itemDetails.extent.length > 0){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
 					$("#map-extent p").html(text);
 
-					if(itemDetails.type == "CityEngine Web Scene") {
-						text = "<a href='"+ AGOLURL +"/apps/CEWebViewer/viewer.html?3dWebScene=" + itemDetails.id +"' target='_blank' class='btn primary'>View Application</a>";
-						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ AGOLURL +"/sharing/rest/content/items/" + itemDetails.id +"/data?f=json' class='btn light'>Download</a>";
-						$("#agol-thumbnail a").attr("href", AGOLURL +"/apps/CEWebViewer/viewer.html?3dWebScene=" + itemDetails.id);
-					}else{
-						var viewerType = "webmap",
-						pkItem = "item.pkinfo";
-						if (itemType == "layers") {
-							viewerType = "layers";
-							pkItem = "item.pitem";
+					var viewerType = "webmap",
+					pkItem = "item.pkinfo";
+					if (itemType == "layers") {
+						viewerType = "layers";
+						pkItem = "item.pitem";
 
-							if(itemDetails.type === "Vector Tile Service"){
-								var tyleLayerViewBtn = "<a href='" + AGOLURL + "/sharing/content/items/"+itemDetails.id + "/resources/styles/root.json?f=pjson' target='_blank' class='btn light'>View Style</a>";
-							}
+						if(itemDetails.type === "Vector Tile Service"){
+							var tyleLayerViewBtn = "<a href='" + AGOLURL + "/sharing/content/items/"+itemDetails.id + "/resources/styles/root.json?f=pjson' target='_blank' class='btn light'>View Style</a>";
 						}
-						text = "<a href='"+ AGOLURL +"/home/webmap/viewer.html?" + viewerType +"=" + itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
-						
-						// Exclude open in ArcGIS for Desktop from demographics item
-						//if(getUrlVars()['subType'] != "demographics"){
-							var tmpText = (tyleLayerViewBtn)?tyleLayerViewBtn:"<a href='" + AGOLURL + "/sharing/content/items/"+itemDetails.id + "/" + pkItem + "' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
+					}
+					text = "<a href='"+ AGOLURL +"/home/webmap/viewer.html?" + viewerType +"=" + itemDetails.id + "' target='_blank' class='btn primary'>Open in Map Viewer</a>";
+					
+					// Exclude open in ArcGIS for Desktop from demographics item
+					//if(getUrlVars()['subType'] != "demographics"){
+						var tmpText = (tyleLayerViewBtn)?tyleLayerViewBtn:"<a href='" + AGOLURL + "/sharing/content/items/"+itemDetails.id + "/" + pkItem + "' target='_blank' class='btn light'>Open in ArcGIS for Desktop</a>";
 
-							text = text + "&nbsp;&nbsp;&nbsp;&nbsp;"+tmpText;
-						//}
-						$("#agol-thumbnail a").attr("href", AGOLURL +"/home/webmap/viewer.html?" + viewerType +"=" + itemDetails.id)
+						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;"+tmpText;
+					//}
+					$("#agol-thumbnail a").attr("href", AGOLURL +"/home/webmap/viewer.html?" + viewerType +"=" + itemDetails.id)
 
-						if(itemType == "maps") {
-							$(".map-title").html('<a href="#contentArea">'+itemDetails.title+'</a>');
-							$(".map-title").show();
+					if(itemType == "maps") {
+						$(".map-title").html('<a href="#contentArea">'+itemDetails.title+'</a>');
+						$(".map-title").show();
 
-							text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ obj.getIframeSource() +"' target='_blank' class='btn light'>View Full Screen</a>";
-						}
+						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ obj.getIframeSource() +"' target='_blank' class='btn light'>View Full Screen</a>";
 					}
 
 

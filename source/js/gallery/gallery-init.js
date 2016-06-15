@@ -133,13 +133,12 @@ var galleryTypeList = {
     "document" : ["Image", "Layout", "Desktop Style", "Project Template", "PDF", "Document Link"],
     "tool" : ["Raster function template", "Geodata Service", "Workflow Manager Package", "Rule Package", "Operations Dashboard Add In", "Workflow Manager Service", "Geoprocessing Service"],
     "apps" : ["Code Sample", "Web Mapping Application", "Mobile Application", "Application", "Desktop Application Template", "Desktop Application", "Operation View", "Operations Dashboard Extension"],
-    "scenes" : ["Web Scene"],
+    "scenes" : ["Web Scene", "CityEngine Web Scene"],
     "layers": ["Scene Service", "Feature Collection", "Layer", "Explorer Layer", "Tile Package", "Vector Tile Package", "Scene Package", "Layer Package", "Feature Service", "Stream Service", "Map Service", "Vector Tile Service", "Image Service", "WMS", "KML", "OGC", "Globe Service", "CSV", "Shapefile", "GeoJson", "Service Definition", "File Geodatabase", "CAD Drawing"],
     "maps": ["Project Package", "Windows Mobile Package", "Map Package", "Basemap Package", "Mobile Basemap Package", "Mobile Map Package", "Pro Map", "Web Map", "Map Document", "Globe Document", "Scene Document", "Published Map", "Explorer Map", "ArcPad Package", "Map Template"]
 }
 
 var galleryTypeExcludeList = {
     "document" : ["Image Service", "Layer"],
-    "scenes" : ["CityEngine Web Scene"],
     "maps": ["Web Mapping Application", "Code Attachment", "Symbol Set", "Color Set", "Windows Viewer Add In", "Windows Viewer Configuration", "Layer Package"]
 }
