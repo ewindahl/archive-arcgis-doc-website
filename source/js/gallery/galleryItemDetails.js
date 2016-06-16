@@ -325,7 +325,7 @@ doc.itemDetails = (function(){
 					feed.push("<p>No comments yet.<br/>Go ahead and get the conversation started.</p>");
 				}
 
-				var addCommentBtn = AGOLURL+"/home/signin.html?returnUrl=" + AGOLURL + "/home/item.html?id="+itemId;
+				var addCommentBtn = AGOLURL+"/home/signin.html?returnUrl=https:" + AGOLURL + "/home/item.html?id="+itemId;
 				$("#addCommentBtn").attr('href',addCommentBtn);
 
 			}else{
