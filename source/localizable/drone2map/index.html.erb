@@ -125,52 +125,7 @@ mobile: true
 			<li>Define the extent of output products by drawing a polygon or importing shapefile to define clip area.</li>
 			</ul>
 
-
-
-<!-- System requirements -->
-	<hr />
-	<a id="supportedEnvironments"></a>
-	<p>The following description shows the minimum and recommended requirements for running Drone2Map for ArcGIS.</p>
-        <h2>Supported platforms</h2>
-		<ul>
-			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)
-			<ul>
-			<li>NET Framework 4.5 installation required if not previously installed
-			</li>
-			</ul>
-			</li>			
-			<li>Windows 8 Basic, Pro, and Enterprise (64 bit)</li>
-			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
-			<li>Windows 10 Home, Pro, and Enterprise (64 bit)</li>
-		</ul>
-		
-	    <h2>Hardware requirements</h2>
-		<p>Minimum</p>
-		<ul>
-			<li>Any CPU (Intel i5/i7/Xeon recommended).</li>
-			<li>Any GPU that is compatible with OpenGL 3.2. (Integrated graphic cards Intel HD 4000 or above).</li>
-			<li>Small projects (under 100 images at 14 MP): 4 GB RAM, 10 GB HDD Free Space.</li>
-			<li>Medium projects (between 100 and 500 images at 14 MP): 8 GB RAM, 20 GB HDD Free Space.</li>
-			<li>Large projects (between 500 and 2000 images at 14 MP): 16 GB RAM, 40 GB HDD Free Space.</li>
-			<li>Very Large projects (over 2000 images at 14 MP): 16 GB RAM, 80 GB HDD Free Space.</li>
-		</ul>
-		
-		<p>Recommended</p>
-		<ul>
-			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)</li>
-			<li>Windows 8 Basic, Pro, and Enterprise (64 bit)</li>
-			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
-			<li>Windows 10 Basic, Pro, and Enterprise (64 bit)</li>
-			<li>CPU quad-core or hexa-core Intel i7/Xeon.</li>
-			<li>GeForce GPU compatible with OpenGL 3.2 and 2 GB RAM.</li>
-			<li>Hard disk: SSD.</li>
-			<li>Small projects (under 100 images at 14 MP): 8 GB RAM, 15 GB SSD Free Space.</li>
-			<li>Medium projects (between 100 and 500 images at 14 MP): 16GB RAM, 30 GB SSD Free Space.</li>
-			<li>Large projects (over 500 images at 14 MP): 32 GB RAM, 60 GB SSD Free Space.</li>
-			<li>Very Large projects (over 2000 images at 14 MP): 32 GB RAM, 120 GB SSD Free Space.</li>
-		</ul>
-		
-		<!-- script for collapsible headings
+<!-- script for collapsible headings -->
 		<script> 
 		 function exp(e,strTag ,strAttribute){ 
 		 var elem = document.getElementsByTagName(strTag); 
@@ -186,10 +141,180 @@ mobile: true
 		 } 
 		 } 
 		 } 
-		 </script> -->
+		 </script> 
+
+		<h3>4.0 updates</h3>
+		<p>The following description shows the minimum and recommended requirements for running Drone2Map for ArcGIS.
+		</p>
+	
+
+
+<!-- Supported environments section -->
+	<hr />
+	<a id="supportedEnvironments"></a>
+        <h2>Supported environments</h2>
+			<p>testing</p>
+		
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+
+		<!-- Sys platforms -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Supported platforms</a>
+		</h3>
+			<div exp1='yes' style="display:none;padding:0 15px;">
+			<ul>
+			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)
+			<ul>
+			<li>NET Framework 4.5 installation required if not previously installed
+			</li>
+			</ul>
+			</li>			
+			<li>Windows 8 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 10 Home, Pro, and Enterprise (64 bit)</li>
+		</ul>
+			</div>
+			
+		<div class="clear" style="padding:5px;"></div>
+
+		<!-- Hardware requirements -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Hardware requirements</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
+		<p>Minimum</p>
+		<ul>
+			<li>Any CPU (Intel i5/i7/Xeon recommended).</li>
+			<li>Any GPU that is compatible with OpenGL 3.2. (Integrated graphic cards Intel HD 4000 or above).</li>
+			<li>Small projects (under 100 images at 14 MP): 4 GB RAM, 10 GB HDD Free Space.</li>
+			<li>Medium projects (between 100 and 500 images at 14 MP): 8 GB RAM, 20 GB HDD Free Space.</li>
+			<li>Large projects (between 500 and 2000 images at 14 MP): 16 GB RAM, 40 GB HDD Free Space.</li>
+			<li>Very Large projects (over 2000 images at 14 MP): 16 GB RAM, 80 GB HDD Free Space.</li>
+		</ul>
+		<p>Recommended</p>
+		<ul>
+			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)</li>
+			<li>Windows 8 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 10 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>CPU quad-core or hexa-core Intel i7/Xeon.</li>
+			<li>GeForce GPU compatible with OpenGL 3.2 and 2 GB RAM.</li>
+			<li>Hard disk: SSD.</li>
+			<li>Small projects (under 100 images at 14 MP): 8 GB RAM, 15 GB SSD Free Space.</li>
+			<li>Medium projects (between 100 and 500 images at 14 MP): 16GB RAM, 30 GB SSD Free Space.</li>
+			<li>Large projects (over 500 images at 14 MP): 32 GB RAM, 60 GB SSD Free Space.</li>
+			<li>Very Large projects (over 2000 images at 14 MP): 32 GB RAM, 120 GB SSD Free Space.</li>
+		</ul>
+			</div>
+			
+		<!-- FAQ -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">FAQ</a>
+		</h3>
+			<div exp3='yes' style="display:none;padding:0 15px;">
+			<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<dl>
+  <dt><b>What does Drone2Map for ArcGIS do?</b></dt>
+  <dd>Drone2Map for ArcGIS is a desktop app that turns raw still imagery from drones into stunning information products in ArcGIS. Now, with drone hardware becoming more accessible, you can create 2D and 3D maps of features and areas.</dd>
+<P></P>
+  <dt><b>What is Drone2Map for ArcGIS? Is it an app, an ArcGIS for Desktop extension, or something else?</b></dt>
+  <dd>It is a stand-alone 64-bit Windows desktop app that will run alongside ArcMap and ArcGIS Pro.</dd>
+
+<p></p>
+  <dt><b>How do I try the software?</b></dt>
+  <dd>You can register for a free trial of Drone2Map through the ArcGIS Marketplace.</dd>
+<p></p>
+ 
+ <dt><b>Does Drone2Map for ArcGIS work only with a specific type of drone? </b></dt>
+  <dd>Drone2Map for ArcGIS is designed to be generic for all drones.  What is important is that the drone collects certain types of metadata.  At a very minimum, this metadata needs to include Latitude, Longitude, and Altitude.  The addition of orientation, focal length and pixel size of the sensor will greatly improve results.  Many commercially available drones have this capability and automatically add this information to the image metadata.   </dd>
+<p></p> 
+  
+  <dt><b>Can Drone2Map for ArcGIS be used to create special imagery analysis products such as an NDVI for the Agricultural markets? </b></dt>
+  <dd>Yes, multispectral cameras are supported and will automatically create NDVI products to quickly assess crop health.</dd>
+<p></p>
+  
+  <dt><b>How will the resulting imagery products be stored so I can share them on ArcGIS Online? Will it be expensive?</b></dt>
+  <dd>The imagery products created by Drone2Map for ArcGIS are stored and shared as tile caches on ArcGIS Online. They will be very inexpensive to store. For example, the below tile cache of the Oatlands Historic House and Gardens requires 85 Mb of storage. <i>http://www.arcgis.com/home/webmap/viewer.html?layers=30cb0c28a0a748068f42d33292ac648c</i></dd>
+<p></p>
+
+  <dt><b>How do I share 3D files created by Drone2Map for ArcGIS? </b></dt>
+  <dd>Drone2Map for ArcGIS produces a new file type called a Web Scene Package (.i3s) which can be consumed by other ArcGIS apps such as ArcGIS Earth. It will function similarly to a Tile Package (.tpk).</dd>
+<p></p>
+
+  <dt><b>Does the end user need ArcGIS for Desktop for processing?</b></dt>
+  <dd>Drone2Map for ArcGIS is designed to produce GIS-ready products that can be published directly into an ArcGIS Online Account.  ArcGIS for Desktop adds additional visualization and analytical capabilities to get the most out of your drone data. </dd>
+<p></p>
+
+  <dt><b>Can I use Drone2Map for ArcGIS behind my firewall, i.e., does it work with Portal for ArcGIS? </b></dt>
+  <dd>This capability is not present at v1; it is coming at the ArcGIS 10.5 release later this year.  At that time, using ArcGIS for Server with Portal for ArcGIS, you can have the same setup as ArcGIS Online to deliver imagery, mapping and GIS services securely behind your firewall.  This v1 release does support sharing to ArcGIS Portal 10.4.1.</dd>
+<p></p>
+
+  <dt><b>What is the workflow for using Drone2Map disconnected?</b></dt>
+  <dd>Similar to ArcGIS Pro, a user can check out the license while connected in order to take it offline into the field.  Once back in the office, the user will need to check in the license for connected use.</dd>
+<p></p>
+
+<dt><b>What is Esri’s recommended software for mission planning with Drone2Map?</b></dt>
+  <dd>Most commercial drone manufacturers include a mission planning application with their hardware offerings. Concerns about the capabilities of your particular mission planning application can be discussed with an Esri specialist.</dd>
+<p></p>
+  
+  <dt><b>Will it scale? </b></dt>
+  <dd>Yes, it is a 64-bit multi-threaded app and will scale vertically, leveraging multiple cores and powerful graphics chips.</dd>
+<p></p>
+  
+  <dt><b>Will it work in a “headless” scenario with ArcGIS for Server? </b></dt>
+  <dd>For customers with this use case, please reach out to the Drone2Map for ArcGIS team at <i>drone2map@esri.com.</i></dd>
+<p></p>
+  
+  <dt><b>Can multiple users share one Drone2Map license?</b></dt>
+  <dd>When you buy a Drone2Map subscription, you get a license entitlement for Drone2Map and an ArcGIS Online (or Portal for ArcGIS) Named User. The license entitlement can only be assigned to one Named User at a time, and thus, a single license entitlement cannot be shared.  Note, however, that the license entitlement may be revoked from one Named User and assigned to another at any time during the duration of the subscription.  Also note that sharing a single Named User credential with multiple users is prohibited.</dd>
+<p></p>
+  
+  <dt><b>Is a Named User allowed to access Drone2Map on multiple machines?</b></dt>
+  <dd>Named Users can log in to any machine with Drone2Map installed, however, they may only log in to one machine at a time.</dd>
+<p></p>
+  
+  <dt><b>How many Drone2Map licenses would an organization need?</b></dt>
+  <dd>It is recommended that for each drone an organization flies, they purchase two subscriptions of Drone2Map: one for the field and one for the office. The common workflow is that one license of Drone2Map is assigned to the drone operator and used 100% of the time with the drone (collection verification and quick product creation for in-field answers). The data collected by the operator is then sent back to the office for a different Named User to process in more detail on a much higher end machine with the second license.</dd>
+<p></p>
+  
+  <dt><b></b></dt>
+  <dd></dd>
+<p></p>
+  
+  
+  
+  
+</dl>
+
+
+</body>
+</html>
+					
+			</div>
 	</div>
-	
-	
+
+
 <!-- Sidebars -->
       <div class="column-8 tablet-column-24 blocks">
 
