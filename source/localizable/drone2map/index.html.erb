@@ -143,17 +143,14 @@ mobile: true
 		 } 
 		 </script> 
 
-		<h3>4.0 updates</h3>
-		<p>The following description shows the minimum and recommended requirements for running Drone2Map for ArcGIS.
-		</p>
 	
 
 
 <!-- Supported environments section -->
 	<hr />
-	<a id="supportedEnvironments"></a>
-        <h2>Supported environments</h2>
-			<p>testing</p>
+	<!--<a id="supportedEnvironments"></a>-->
+        <!--<h2>Supported hardwares</h2>-->
+			<!--<p>testing</p>-->
 		
 		<!-- script for collapsible headings -->
 		<script> 
@@ -175,10 +172,12 @@ mobile: true
 
 		<!-- Sys platforms -->
 		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Supported platforms</a>
-		</h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">System requirements</a>
+		</h3>	
 			<div exp1='yes' style="display:none;padding:0 15px;">
-			<ul>
+		<p>The following description shows the minimum and recommended requirements for running Drone2Map for ArcGIS. </p>
+		<h3>Supported platforms</h3>
+		<ul>
 			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)
 			<ul>
 			<li>NET Framework 4.5 installation required if not previously installed
@@ -189,15 +188,8 @@ mobile: true
 			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
 			<li>Windows 10 Home, Pro, and Enterprise (64 bit)</li>
 		</ul>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Hardware requirements -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Hardware requirements</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
+		
+		<h3>Hardware requirements</h3>
 		<p>Minimum</p>
 		<ul>
 			<li>Any CPU (Intel i5/i7/Xeon recommended).</li>
@@ -223,6 +215,8 @@ mobile: true
 		</ul>
 			</div>
 			
+		<div class="clear" style="padding:5px;"></div>
+			
 		<!-- FAQ -->
 		<h3>
 		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">FAQ</a>
@@ -243,11 +237,11 @@ mobile: true
 
 <p></p>
   <dt><b>How do I try the software?</b></dt>
-  <dd>You can register for a free trial of Drone2Map through the ArcGIS Marketplace.</dd>
+  <dd>You can register for a free trial of Drone2Map through the ArcGIS Marketplace or the 60-day trial of the ArcGIS Platform.</dd>
 <p></p>
  
  <dt><b>Does Drone2Map for ArcGIS work only with a specific type of drone? </b></dt>
-  <dd>Drone2Map for ArcGIS is designed to be generic for all drones.  What is important is that the drone collects certain types of metadata.  At a very minimum, this metadata needs to include Latitude, Longitude, and Altitude.  The addition of orientation, focal length and pixel size of the sensor will greatly improve results.  Many commercially available drones have this capability and automatically add this information to the image metadata.   </dd>
+  <dd>Drone2Map for ArcGIS is designed to be generic for all drones.  What is important is that the drone collects certain types of metadata.  At a very minimum, this metadata needs to include Latitude, Longitude, and Altitude.  Many commercially available drones have this capability and automatically add this information to the image metadata.   </dd>
 <p></p> 
   
   <dt><b>Can Drone2Map for ArcGIS be used to create special imagery analysis products such as an NDVI for the Agricultural markets? </b></dt>
@@ -255,11 +249,11 @@ mobile: true
 <p></p>
   
   <dt><b>How will the resulting imagery products be stored so I can share them on ArcGIS Online? Will it be expensive?</b></dt>
-  <dd>The imagery products created by Drone2Map for ArcGIS are stored and shared as tile caches on ArcGIS Online. They will be very inexpensive to store. For example, the below tile cache of the Oatlands Historic House and Gardens requires 85 Mb of storage. <i>http://www.arcgis.com/home/webmap/viewer.html?layers=30cb0c28a0a748068f42d33292ac648c</i></dd>
+  <dd>The imagery products created by Drone2Map for ArcGIS are stored and shared as tile layers and scene layers on ArcGIS Online. They will be very inexpensive to store. For example, the below tile layer of the Oatlands Historic House and Gardens requires 85 Mb of storage. <i>http://www.arcgis.com/home/webmap/viewer.html?layers=30cb0c28a0a748068f42d33292ac648c</i></dd>
 <p></p>
 
   <dt><b>How do I share 3D files created by Drone2Map for ArcGIS? </b></dt>
-  <dd>Drone2Map for ArcGIS produces a new file type called a Web Scene Package (.i3s) which can be consumed by other ArcGIS apps such as ArcGIS Earth. It will function similarly to a Tile Package (.tpk).</dd>
+  <dd>Drone2Map for ArcGIS produces a new file type called a Scene Layer Package (.spk) which can be consumed by other ArcGIS apps such as ArcGIS Earth. It will function similarly to a Tile Package (.tpk).</dd>
 <p></p>
 
   <dt><b>Does the end user need ArcGIS for Desktop for processing?</b></dt>
@@ -287,7 +281,7 @@ mobile: true
 <p></p>
   
   <dt><b>Can multiple users share one Drone2Map license?</b></dt>
-  <dd>When you buy a Drone2Map subscription, you get a license entitlement for Drone2Map and an ArcGIS Online (or Portal for ArcGIS) Named User. The license entitlement can only be assigned to one Named User at a time, and thus, a single license entitlement cannot be shared.  Note, however, that the license entitlement may be revoked from one Named User and assigned to another at any time during the duration of the subscription.  Also note that sharing a single Named User credential with multiple users is prohibited.</dd>
+  <dd>When you buy a Drone2Map subscription, you get a license entitlement for Drone2Map and an ArcGIS Online Named User. The license entitlement can only be assigned to one Named User at a time, and thus, a single license entitlement cannot be shared.  Note, however, that the license entitlement may be revoked from one Named User and assigned to another at any time during the duration of the subscription.  Also note that sharing a single Named User credential with multiple users is prohibited.</dd>
 <p></p>
   
   <dt><b>Is a Named User allowed to access Drone2Map on multiple machines?</b></dt>
@@ -298,8 +292,8 @@ mobile: true
   <dd>It is recommended that for each drone an organization flies, they purchase two subscriptions of Drone2Map: one for the field and one for the office. The common workflow is that one license of Drone2Map is assigned to the drone operator and used 100% of the time with the drone (collection verification and quick product creation for in-field answers). The data collected by the operator is then sent back to the office for a different Named User to process in more detail on a much higher end machine with the second license.</dd>
 <p></p>
   
-  <dt><b></b></dt>
-  <dd></dd>
+  <dt><b>What training is available for Drone2Map for ArcGIS?</b></dt>
+  <dd><a href="learn.arcgis.com/en/projects/get-started-with-drone2map-for-arcgis/">Get Started with Drone2Map for ArcGIS</a>, a Learn Lesson available online, teaches how to use Drone2Map to add drone images to a map, create 3D data from 2D imagery, and share 3D data to ArcGIS Online. Future Esri Training courses are being developed.</dd>
 <p></p>
   
   
