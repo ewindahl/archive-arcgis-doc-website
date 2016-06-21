@@ -164,7 +164,7 @@ doc.itemDetails = (function(){
 
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 				if(itemDetails.type == "Rule Package"){
-					toolsTargetURL = AGOLURL + "/sharing/content/items/" + itemDetails.id + "/data/";
+					toolsTargetURL = AGOLURL + "/sharing/content/items/" + itemDetails.id + "/data";
 					text = "<a href='" + toolsTargetURL + "' class='btn primary'>Download</a>";
 				} else {
 					text = "<a href='" + toolsTargetURL + "' target='_blank' class='btn primary'>Open in ArcGIS for Desktop</a>";	
@@ -260,11 +260,11 @@ doc.itemDetails = (function(){
 			
 			var miscData = obj.getAJAXResponse(itemId,AGOLURL+"/sharing/rest/content/items/"+itemId+"/data?f=json");
 			
+			var isLayersExist = false;
+			var layers = [];
+			layers.push("<ul>");
 			if(miscData && !miscData.code){
-				var isLayersExist = false;
 				
-				var layers = [];
-				layers.push("<ul>");
 				if(miscData.operationalLayers){
 					isLayersExist = true;
 					$.each( miscData.operationalLayers, function( key, value ) {
@@ -280,21 +280,19 @@ doc.itemDetails = (function(){
 						layers.push("<li>"+value.id+"<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + value.url + "'>" + value.url + "</a></span></li>");
 					});
 				}
+			}
 
-				if((!isLayersExist) && itemType == "layers"){
+			if((!isLayersExist) && itemType == "layers"){
 					isLayersExist = true;
-					layers.push("<li>"+itemDetails.title+"test<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + itemDetails.url + "'>" + itemDetails.url + "</a></span></li>");
-				}
+					layers.push("<li>"+itemDetails.title+"<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + itemDetails.url + "'>" + itemDetails.url + "</a></span></li>");
+			}
 
-				layers.push("</ul>");
+			layers.push("</ul>");
 
-
-
-				if(isLayersExist){
-					$("#map-contents-layers").html(layers.join(""));
-				} else {
-					$(".layers").hide();
-				}
+			if(isLayersExist){
+				$("#map-contents-layers").html(layers.join(""));
+			} else {
+				$(".layers").hide();
 			}
 		},
 
