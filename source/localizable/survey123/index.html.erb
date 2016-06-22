@@ -21,7 +21,7 @@ mobile: true
 <div class="navigation-bar blue">
   <div class="container">
     <header>
-      <h1><a href="/en/survey123/">Survey123 for ArcGIS (Beta)</a></h1>
+      <h1><a href="/en/survey123/">Survey123 for ArcGIS</a></h1>
       <form id="helpSearchForm" target="_top">
         <input type="search" name="q" class="leader" placeholder="Search Survey123">
         <input type="hidden" name="collection" value="help" />
@@ -34,9 +34,10 @@ mobile: true
       <ul>
         <li class='current'><a href="/en/survey123/">Home</a></li>
         <li><a href="/en/survey123/create-surveys/">Create Surveys</a></li>
-       <!-- <li><a href="/en/survey123/manage-apps/">Manage Apps</a></li>  -->
-        <!-- <li><a href="/en/survey123/extend-apps/">Extend Apps</a></li> -->
-		<li><a href="/en/survey123/community/">Community</a></li>		
+        <li><a href="/en/survey123/get-answers/">Get Answers</a></li>
+        <li><a href="/en/survey123/analyze-results/">Analyze Results</a></li>
+		<li><a href="/en/survey123/community/">Community</a></li>	
+		<li><a href="/en/survey123/download/">Download</a></li>			
       </ul>
     </nav>
   </div>
@@ -50,10 +51,10 @@ mobile: true
 
     <h3 class="gray">Survey123 for ArcGIS is a simple and intuitive form-centric data gathering solution that makes creating, sharing and analyzing surveys possible in just three easy steps. </h3>
   
-	<a href="http://survey123.esri.com/#/home" class="btn primary icon-storage">Get Desktop versions</a>
+	<!-- <a href="http://survey123.esri.com/#/home" class="btn primary icon-storage">Get Desktop versions</a>
 	
 	    <a href="https://itunes.apple.com/us/app/survey123-for-arcgis/id993015031"><img src="img/ios-app.png" style="margin:10px; vertical-align:middle"/></a>
-	    <a href="https://play.google.com/store/apps/details?id=com.esri.survey123"><img src="img/android-app.png" style="margin:10px; vertical-align:middle"/></a>
+	    <a href="https://play.google.com/store/apps/details?id=com.esri.survey123"><img src="img/android-app.png" style="margin:10px; vertical-align:middle"/></a> -->
 
 		
   
@@ -81,7 +82,7 @@ mobile: true
 		  <p>Get the Survey123 for ArcGIS mobile app from the Google Play and Apple App Store, download surveys and start collecting data.</p>
 	       
           <p>
-            <a href="/en/survey123/create-surveys/guidedtour.htm" class="icon-right-arrow">&nbsp;Show me how</a>
+            <a href="/en/survey123/get-answers/getanswers.htm" class="icon-right-arrow">&nbsp;Show me how</a>
           </p>
         </div>
 
@@ -94,7 +95,7 @@ mobile: true
 		  <p>Use the power of maps and ArcGIS to analyze facts from the field, gain insights, and make your best calls.</p>
 	      
           <p>
-            <a href="/en/survey123/create-surveys/guidedtour.htm" class="icon-right-arrow">&nbsp;Show me how</a>
+            <a href="/en/survey123/analyze-results/viewresults.htm" class="icon-right-arrow">&nbsp;Show me how</a>
           </p>
         </div>	
 			
@@ -116,36 +117,47 @@ mobile: true
         <a name="systemrequirements"></a>
         <h2 class="divider">System requirements</h2>
 		
-          <p>There are certain device <!--and browser-->requirements to run Survey123 for ArcGIS.</p>
+          <p>There are certain device and browser requirements to run Survey123 for ArcGIS.</p>
           <p>	
 
-          <h3>Data requirements</h3>
-          <p>To create forms in Survey123 Connect, you must have an ArcGIS organizational account. To use a form only a named user account is required.</p>
+          <h3>ArcGIS requirements</h3>
+          <p>To use a form in Survey123 you must have an ArcGIS organizational account. To create forms in Survey123 Connect you must have an ArcGIS organizational account with publishing permissions. ArcGIS Online and Portal for ArcGIS 10.3.1 and later is supported.</p>
           <p>		  
 		
           <h3>Device requirements</h3>
           <p>The following operating systems (with minimum versions) are supported:</p>
           <p>
-		  	  
-          <h4>Survey123 Connect</h4>
+		  	
+        <table><tr><td valign="top"><h4>Survey123 Connect</h4>
+        <ul>
+          <li>Windows 7</li>
+          <li>OSX 10.8</li>
+          <li>Ubuntu 14.04</li>
+        </ul></td>
+        <td valign="top"><h4>Survey123 for ArcGIS</h4>
         <ul>
           <li>Windows 7</li>
           <li>OSX 10.8</li>
           <li>Ubuntu 14.04 </li>
-        </ul>
-          <h4>Survey123 for ArcGIS</h4>		
-        <ul>
-          <li>Windows 7</li>
-          <li>OSX 10.8</li>
-          <li>Ubuntu 14.04 </li>
-          <li>Android 4.1 (Jelly Bean)</li>
+          <li>Android 4.1.2 (Jelly Bean)</li>
 		  <li>iOS 8</li>
-		  <li>Windows Phone 8.1</li>
-        </ul>
+		  <li>Windows Phone 10</li>
+        </ul></td>
+        <td valign="top"><h4>Survey123 Hub</h4>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Edge</li>
+		  <li>Internet Explorer 11</li>
+        </ul></td></tr>
+        </table>
+
         
         <h3>Supported languages</h3> 
-        <p>Arabic, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Spanish, Swedish, Thai, Turkish and Vietnamese.</p>
-        <p>The language used by Survey123 for ArcGIS, is determined by your device's language setting.</p>
+		<p>The following languages are supported by the Survey123 app and Survey123 Connect.</p>
+        <p>Arabic, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hebrew, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Serbian, Spanish, Swedish, Thai, Traditional Chinese (Hong Kong), Traditional Chinese (Taiwan), Turkish and Vietnamese.</p>
+        <p>The language used is determined by your device's language setting.</p>
 		
 
         <p>Share your <a href="http://ideas.arcgis.com/">ideas</a> and <a href="http://support.esri.com/en/">send us your feedback</a>.</p>
@@ -162,8 +174,8 @@ mobile: true
         <div class="imgFrame block">
           <h3>New to Survey123?</h3>
   
-		  <h4><a href="https://www.youtube.com/watch?v=0gGQbCuPRQI&feature=youtu.be"  class="colorbox-evlarge"><img src="img/playbtn-small.png">  Watch a video tour</a></h4>
-		  <h4><a href="http://video.arcgis.com/series/232/survey123-for-arcgis">Browse videos</a></h4> 		  
+		  <h4><a href="http://links.esri.com/survey123/videos/overview"  class="colorbox-evlarge"><img src="img/playbtn-small.png">  Watch a video tour</a></h4>
+		  <h4><a href="http://links.esri.com/survey123/videos">Browse videos</a></h4> 		  
           <h4><a href="#features">Features</a></h4>
           <h4><a href="#systemrequirements">System requirements</a></h4>
 

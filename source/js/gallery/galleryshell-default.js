@@ -589,11 +589,11 @@ SERow.prototype.ContentType = function () {
     if (typeKeywords.indexOf("Requires Subscription") >=0) {
         contentType['label']  = "Subscriber Content";
         contentType['title']  = "Included with your ArcGIS Online subscription.";
-        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
+        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "esri/css/images/item_type_icons/premiumitem16.png";
     } else if (typeKeywords.indexOf("Requires Credits") >=0) {
         contentType['label']  = "Premium Content";
         contentType['title']  = "Included with your ArcGIS Online subscription and consumes credits.";
-        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
+        contentType['img']  = getTier(window.location.hostname).agolCdnBasePath + "esri/css/images/item_type_icons/premiumcredits16.png";
     }
     
     return contentType;
@@ -800,9 +800,11 @@ function createGalleryShell() {
                     var state = mdf[key].state;
                     if (state) {
                         for (i = 0, len = state.length; i < len; i++) {
+                            var selector = "#filters input:checkbox[name=" + key + "-" + (i + 1) + "]";
                             if (state.charAt(i) === "1") {
-                                var selector = "#filters input:checkbox[name=" + key + "-" + (i + 1) + "]";
                                 $(selector).attr("checked", "true");
+                            }else{
+                                $(selector).removeAttr("checked");
                             }
                         }
                     } else {
@@ -847,6 +849,21 @@ function createGalleryShell() {
                 this.pageNav = genPageNav();
             }
             this.pageNav.update(this.gm);
+        },
+
+        getProfileInfo: function (gm, username) {
+            //this.updateFeatured(gm);
+            this.gm = gm;
+            var gs = this
+
+            $.ajax({
+                type: "GET",
+                url: gm.agolHost + "/sharing/rest/community/users/" + username + "?f=json",
+                data: {},
+                dataType: "jsonp"
+            }).done(function (data){
+                gs.display.populateProfilePopup(gm.agolHost, data);
+            });
         }
 
     }
@@ -1084,6 +1101,24 @@ $(document).ready(function () {
         $("#regionList").html(regionList()).toggle();
     });
 
+    $("#reference-content").on("click",".ownerName a", function (evt){
+        $(".profilePopup .profileDetails").addClass("hide");
+        $(".profilePopup").css({"top":$(this).offset().top+"px", "left":$(this).offset().left+"px", "display":"block"})
+        
+        
+        $(".profilePopup .spinner").show();
+
+        gShell.getProfileInfo(gModel, $(this).text())
+    });
+    $(".profilePopup .icon-close").bind("click",function (evt){
+        $(".profilePopup").toggle();
+        $(".profilePopup .itemThumbnailContainer").empty();
+        $(".profilePopup .profile-name").empty();
+        $(".profilePopup .profile-content").empty();
+    });
+
+    
+
     function regionList () {
         var vL = [],
         itemStatus = (gModel.defaultRgnCode == $("#countryName").attr("code"))?"current":"";
@@ -1123,16 +1158,19 @@ $(document).ready(function () {
     window.onhashchange = function (evt) {
         var curHash = window.location.hash;
  
+        //$("#filters .ctrlbox").trigger("change");
         if (curHash) {
             var vdata = gModel.genViewData();
             
-
             if (vdata.hash) {
                 if ("#" + vdata.hash !== curHash) {
                     //debug("curHash=" + curHash);
                     //$("#gl-content").empty();
+                    $("#gl-content").empty();
+                    $("#spinner").show();
                     gModel.updateByHash(curHash);
-                    //gShell.update(gModel);
+                    gShell._updateFilter(gModel);
+                    gShell.update(gModel);
                     if (gModel.query) { $("#gl-cl-btn").show(); }
                 }
             }
