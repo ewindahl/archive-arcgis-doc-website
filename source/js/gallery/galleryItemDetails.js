@@ -48,16 +48,8 @@ doc.itemDetails = (function(){
 		
 				
 		getIframeSource : function(){
-						
-			if(itemType == "app"){
-				//iframeSrc = itemDetails.url;
-				iframeSrc = "";
-			} else if(itemType == "layers"){
-				//iframeSrc = itemDetails.url+ "?f=jsapi";
-				iframeSrc = "";
-			} else if (itemType == "tools" || itemType == "webscene" || itemType == "files"){
-				iframeSrc = "";
-			} else {
+				
+			if(itemType == "maps"){
 				// Map
 				var extent=null;
 				if(itemDetails.extent)
@@ -70,8 +62,8 @@ doc.itemDetails = (function(){
 					iframeSrc = customURL + "/apps/Embed/index.html?webmap=" + itemDetails.id + "&extent=" + extent + "&preventId=true";
 				}*/
 
-
-				
+			} else {
+				iframeSrc = "";
 			}
 			
 			return iframeSrc;
@@ -171,7 +163,13 @@ doc.itemDetails = (function(){
 				var toolsTargetURL = AGOLURL + "/sharing/content/items/" + itemDetails.id + "/item.pitem";
 
 				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
-				text = "<a href='" + toolsTargetURL + "' target='_blank' class='btn primary'>Open in ArcGIS for Desktop</a>";
+				if(itemDetails.type == "Rule Package"){
+					toolsTargetURL = AGOLURL + "/sharing/content/items/" + itemDetails.id + "/data/";
+					text = "<a href='" + toolsTargetURL + "' class='btn primary'>Download</a>";
+				} else {
+					text = "<a href='" + toolsTargetURL + "' target='_blank' class='btn primary'>Open in ArcGIS for Desktop</a>";	
+				}
+				
 				$("#downloadBtns").html(text);
 
 				// thumbanail link update
@@ -183,13 +181,19 @@ doc.itemDetails = (function(){
 
 				var websceneTargetURL = AGOLURL + "/home/webscene/viewer.html?webscene="+itemDetails.id;
 
-				//text = "<a href='"+ itemDetails.url +"' target='_blank' class='btn primary'>Launch Tool</a>";
 				var text = "<a href='" + websceneTargetURL + "' target='_blank' class='btn primary'>Open in Scene Viewer</a>";
+
+				if(itemDetails.type == "CityEngine Web Scene") {
+					websceneTargetURL = AGOLURL +"/apps/CEWebViewer/viewer.html?3dWebScene=" + itemDetails.id;
+					text = "<a href='"+ websceneTargetURL +"' target='_blank' class='btn primary'>View Application</a>";
+					text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ AGOLURL +"/sharing/rest/content/items/" + itemDetails.id +"/data?f=json' class='btn light'>Download</a>";
+				}
+				
+
 				$("#downloadBtns").html(text);
 
 				$("#agol-thumbnail").html("<a href='" + websceneTargetURL + "' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 			} else {
-
 				if(itemDetails.extent.length > 0){
 					var text = "Left: " + itemDetails.extent[0][0] + ", Right: "+itemDetails.extent[1][0] + ", Top: " + itemDetails.extent[1][1] + ", Bottom: "+itemDetails.extent[0][1];
 					$("#map-extent p").html(text);
@@ -212,19 +216,27 @@ doc.itemDetails = (function(){
 
 						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;"+tmpText;
 					//}
+					$("#agol-thumbnail a").attr("href", AGOLURL +"/home/webmap/viewer.html?" + viewerType +"=" + itemDetails.id)
 
-					if(itemType == "map") {
-						$(".map-title").text(itemDetails.title);
+					if(itemType == "maps") {
+						$(".map-title").html('<a href="#contentArea">'+itemDetails.title+'</a>');
 						$(".map-title").show();
 
 						text = text + "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ obj.getIframeSource() +"' target='_blank' class='btn light'>View Full Screen</a>";
 					}
+
 
 					$("#downloadBtns").html(text);
 
 					this.renderLayers();
 				}
 			}
+
+			if(itemDetails.typeKeywords.indexOf("Metadata") >=0 ){
+				var metaData = "&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+ AGOLURL +"/sharing/rest/content/items/" + itemDetails.id +"/info/metadata/metadata.xml?format=default&output=html' target='_blank' class='btn light'>Metadata</a>";
+				$("#downloadBtns").append(metaData);
+			}
+			
 
 
 			// Credits information
@@ -268,7 +280,15 @@ doc.itemDetails = (function(){
 						layers.push("<li>"+value.id+"<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + value.url + "'>" + value.url + "</a></span></li>");
 					});
 				}
+
+				if((!isLayersExist) && itemType == "layers"){
+					isLayersExist = true;
+					layers.push("<li>"+itemDetails.title+"test<br/><span style='margin-left: 1.5em;'><a target='_blank' href='" + itemDetails.url + "'>" + itemDetails.url + "</a></span></li>");
+				}
+
 				layers.push("</ul>");
+
+
 
 				if(isLayersExist){
 					$("#map-contents-layers").html(layers.join(""));
@@ -305,7 +325,7 @@ doc.itemDetails = (function(){
 					feed.push("<p>No comments yet.<br/>Go ahead and get the conversation started.</p>");
 				}
 
-				var addCommentBtn = AGOLURL+"/home/signin.html?returnUrl=" + AGOLURL + "/home/item.html?id="+itemId;
+				var addCommentBtn = AGOLURL+"/home/signin.html?returnUrl=https:" + AGOLURL + "/home/item.html?id="+itemId;
 				$("#addCommentBtn").attr('href',addCommentBtn);
 
 			}else{
@@ -374,14 +394,16 @@ doc.itemDetails = (function(){
 
 
 var itemId = getUrlVars()['itemId'];
-var itemType = "map";
-var itemTypeLabel = "Map"
+var itemType = "layers";
+var itemTypeLabel = "Map Layer"
 var obj = doc.itemDetails;
 var itemDetails = obj.getItemInfo(itemId);
 var cookieName = "esri_auth";
 var contentType = {};
 var agolDataFolder = "info";
 var token = obj.getToken();
+var itemFor = "public";
+var isFeatureService = false;
 
 /*if(getUrlVars()['ls'] && getUrlVars()['ls'] == "t"){
 	window.opener.location.reload(false);
@@ -393,6 +415,7 @@ if(itemDetails && itemDetails.id){
 	var tierObj = getTier(window.location.hostname);
 
 	if(itemDetails.typeKeywords.indexOf("Requires Subscription") >=0 || itemDetails.typeKeywords.indexOf("Requires Credits") >=0){
+		itemFor = "premium";
 		if(!$.cookie('esri_auth')){
 			var agolSigninURL = (sitecfg)?sitecfg.agolSignin:AGOLURL+"/home/signin.html";
 			agolSigninURL += "?returnUrl=" + encodeURIComponent(window.location.href + "&ls=t");
@@ -406,22 +429,28 @@ if(itemDetails && itemDetails.id){
 		if (itemDetails.typeKeywords.indexOf("Requires Subscription") >=0) {
 	        contentType['label']  = "Subscriber Content";
 	        contentType['title']  = "Included with your ArcGIS Online subscription.";
-	        contentType['img']  = tierObj.agolCdnBasePath + "js/jsapi/esri/css/images/item_type_icons/premiumitem16.png";
+	        contentType['img']  = tierObj.agolCdnBasePath + "esri/css/images/item_type_icons/premiumitem16.png";
 	    } else if (itemDetails.typeKeywords.indexOf("Requires Credits") >=0) {
 	        contentType['label']  = "Premium Content";
 	        contentType['title']  = "Included with your ArcGIS Online subscription and consumes credits.";
-	        contentType['img']  = tierObj.agolCdnBasePath + "js/jsapi/esri/css/images/item_type_icons/premiumcredits16.png";
+	        contentType['img']  = tierObj.agolCdnBasePath + "esri/css/images/item_type_icons/premiumcredits16.png";
 	    }
 	}
 
-	
+	if(itemDetails.typeKeywords.indexOf("Feature Service") >=0 || itemDetails.type == ("Feature Service")){
+		isFeatureService = true;
+	}
+
 	if($.inArray(itemDetails.type, galleryTypeList["document"]) >= 0){
 		itemType = "files";
 		itemTypeLabel = "Files";
 		if(itemDetails.type == "Image"){
 			agolDataFolder = "data"
 		}
-	} else if($.inArray(itemDetails.type, galleryTypeList["layers"]) >= 0){
+	} else if($.inArray(itemDetails.type, galleryTypeList["maps"]) >= 0){
+		itemType = "maps";
+		itemTypeLabel = "Map";
+	}else if($.inArray(itemDetails.type, galleryTypeList["layers"]) >= 0){
 		itemType = "layers";
 		itemTypeLabel = "Map Layer";
 	} else if($.inArray(itemDetails.type, galleryTypeList["tool"]) >= 0) {
@@ -503,5 +532,14 @@ $(document).ready(function() {
 	 $(this).attr("action", "/en/living-atlas/#q="+$("#q").val());
 	 $(this).submit();
 	});
+
+	if ((itemType == "maps" && itemFor == "premium") && !obj.orgUserCustomURL()) {
+		//$("#show_auth_modal")[0].click();
+			setTimeout(function () {
+				$("#show_auth_modal").removeClass('hide');
+					$("#show_auth_modal")[0].click();
+			}, 	3000);
+	}
+	
 
 });
