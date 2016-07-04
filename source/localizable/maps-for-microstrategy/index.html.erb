@@ -13,7 +13,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Esri Maps for MicroStrategy Home page."><META name="last-modified" content="2016-05-04"><META name="product" content="esri-maps-micro"><META name="sub_category" content="Maps for MicroStrategy"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for MicroStrategy"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,BUSINESS,BI,MAPPING"><META name="version" content="micro-1.0,micro-2.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,BUSINESS,BI,MAPPING, MICROSTRATEGY"><META name="content-language" content="en">
+  - <META name="description" content="Esri Maps for MicroStrategy Home page."><META name="last-modified" content="2016-07-04"><META name="product" content="esri-maps-micro"><META name="sub_category" content="Maps for MicroStrategy"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for MicroStrategy"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,BUSINESS,BI,MAPPING"><META name="version" content="micro-3.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,BUSINESS,BI,MAPPING, MICROSTRATEGY"><META name="content-language" content="en">
 
 mobile: true
 
@@ -177,20 +177,25 @@ mobile: true
 
 <ul>
 <li><b><a href="http://support.esri.com/en/downloads/patches-servicepacks/view/productid/210/metaid/2276" target=_blank>NEW! Patch release:</a></b> Esri Maps for MicroStrategy server plug-in Support and Update Patch</li>
-<li>New Esri Maps for MicroStrategy Mobile app</li>
-<li>New tool for automatic map generation: Location Architect</li>
-<li>Support for disconnected Portal for ArcGIS deployments</li>
-<li>New drawing tools for triggering configured selectors and links</li>
-<li>Filter features that are displayed on the map using the Filter layer tool</li>
-<li>Measure area, distance, and X,Y coordinates using the Measure tool</li>
-<li>Geocode addresses and find routes using the Get route tool</li>
-<li>Configure Infographics and other map tools and settings</li>
-<li>Change the map extent using an overview map and other navigation tools</li>
-<li>Specify the WKID of X,Y coordinates when adding point data to the map</li>
-<li>Configure multiple styles for a layer</li>
-<li>Critical bug fixes</li>
-<li>Additional support for Express Mode</li>
+<li>Streamlined map application</li>
+<li>Quickly edit MicroStrategy layer properties after data has been added</li>
+<li>Style data using manual breaks classification</li>
+<li>New floating, resizable map legend</li>
+<li>Change the order of groups in the legend</li>
+<li>Improved user experience for configuring map tools and settings</li>
+<li>Customize the availability of map tools and elements in the map</li>
+<li>Change the map's look and feel using predefined or custom themes</li>
+<li>Improved heat map algorithm with support for weighted measures heat maps</li>
+<li>Improved user experience for working with feature attribute tables</li>
+<li>Automatic clustering when features exceed a specified threshold</li>
+<li>Enhanced visible range widget</li>
+<li>Create and use labels on the map</li>
+<li>Set the outline color for point shapes and polygon features</li>
+<li>Additional number, data, and currency formats available</li>
+<li>Support for ArcGIS roles and privileges</li>
+<li>Support for vector tile layers and basemaps</li>
 <li>Software available in English, Japanese, and German</li>
+<li>Documentation available in English and German</li>
 
 </ul>
 
@@ -231,33 +236,44 @@ mobile: true
 		 } 
 		 </script> 
 		 
-		<!-- EM4M server plug-in expanding arrow -->
+		<!-- ArcGIS support -->	
+		<div class="clear" style="padding:5px;"></div>
+	
 		<h3>
-		<a name="em4mstr" class="icon-right-arrow" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">ArcGIS</a>
 		</h3>
 			<div exp1='yes' style="display:none;padding:0 15px;">
+			
+			<p>Esri Maps for MicroStrategy requires an ArcGIS Online organizational subscription or an on-premises Portal for ArcGIS deployment. It is assumed that the authentication method used to access the platform has been properly configured by the ArcGIS administrator.</p>
+			<p>Esri Maps for MicroStrategy 3.0 supports the following ArcGIS versions:
+				<ul>
+					<li><b>ArcGIS Online:</b> current version</li>
+					<li><b>Portal for ArcGIS:</b> 10.4, 10.4.1</li>
+				</ul>
+			</p>
+			
+			</div>
+		 
+		 
+		<!-- EM4M server plug-in expanding arrow -->
+		<h3>
+		<a name="em4mstr" class="icon-right-arrow" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy server plug-in</a>
+		</h3>
+			<div exp2='yes' style="display:none;padding:0 15px;">
 			
 		<!-- MicroStrategy Web versions -->
 			<h4>MicroStrategy Web versions</h4>
 			
 				<p>For Esri Maps for MicroStrategy to operate properly, the Esri Maps for MicroStrategy server plug-in requires an operational configuration of these supported versions of MicroStrategy Web:</p>
 				<ul>
-					<li>MicroStrategy 10.1</li>
-					<li>MicroStrategy 10.0</li>
+					<li>MicroStrategy 10.3</li>
+					<li>MicroStrategy 10.4</li>
 				</ul>	
-				
-				<p><a name="patch"><b><a href="http://support.esri.com/en/downloads/patches-servicepacks/view/productid/210/metaid/2276" target=_blank>&#62; NEW! Patch release:</a></b> Esri Maps for MicroStrategy 2.0.2 MicroStrategy Web 10.2 Support and Update Patch</a></p>
-				<p>Certification tests performed on the following:
-					<ul>
-						<li>MicroStrategy 10.2</li>
-						<li>MicroStrategy 10.3</li>
-					</ul>
-				</p>
-				
+								
 				<p>MicroStrategy recommends using certified configurations over the supported configurations. Check <a href="https://community.microstrategy.com/t5/Release-Notes/TN280885-Defects-and-Enhancements-Addressed-in-MicroStrategy-10/ta-p/280885 " target="_blank">MicroStrategy Release Notes</a> for certified versions of other third party application servers for each corresponding version of MicroStrategy.</p>
 		
 		
-<!-- Web application servers subhead for EM4M -->
+		<!-- Web application servers subhead for EM4M -->
 		<h4>Web application servers</h4>
 		<p>The following table outlines the Web application servers on which Esri has focused its testing efforts for both the JSP server and ASP.NET server configurations. If you would like to see the web application server used by your MicroStrategy configuration, contact <a href="http://support.esri.com/" target="_blank">Esri Technical Support</a></li>. 
 		<p>
@@ -268,17 +284,17 @@ mobile: true
 					</tr>
 					<tr align="left" valign="top">
 						<td align="left" valign="top">Apache Tomcat</td>
-						<td align="left" valign="top">7.0.x</td>
+						<td align="left" valign="top">8.x</td>
 						</tr>
 						
 						<tr align="left" valign="top">
 						<td align="left" valign="top">IBM WebSphere</td>
-						<td align="left" valign="top">7.0.x</td>
+						<td align="left" valign="top">7.x</td>
 					</tr>
 					
 					<tr align="left" valign="top">
 						<td align="left" valign="top">JBoss Application Server</td>
-						<td align="left" valign="top">6.2.x</td>
+						<td align="left" valign="top">7.4.x</td>
 					</tr>
 						
 					<tr align="left" valign="top">
@@ -309,17 +325,22 @@ mobile: true
 					<tbody  style="font-size:14px"> 
 					<tr align="left" valign="top">
 						<td align="left" valign="top">Internet Explorer</td>
-						<td align="left" valign="top">11.x | 10.x | 9.x</td>
+						<td align="left" valign="top">11.x</td>
+					</tr>
+					
+					<tr align="left" valign="top">
+						<td align="left" valign="top">Microsoft Edge</td>
+						<td align="left" valign="top">Latest</td>
 					</tr>
 					
 					<tr align="left" valign="top">
 						<td align="left" valign="top">Mozilla Firefox</td>
-						<td align="left" valign="top">27.x</td>
+						<td align="left" valign="top">41 and later</td>
 					</tr>
 									
 					<tr align="left" valign="top">
 						<td align="left" valign="top">Google Chrome</td>
-						<td align="left" valign="top">33.x</td>
+						<td align="left" valign="top">42 and later</td>
 					</tr>
 					
 				</tbody>
@@ -331,17 +352,17 @@ mobile: true
 		
 	<!-- Esri Maps for MicroStrategy Mobile -->
 		<h3>
-		<a name="em4mm" class="icon-right-arrow" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>
+		<a name="em4mm" class="icon-right-arrow" onclick="exp(event,'div','exp3')">Esri Maps for MicroStrategy Mobile</a>
 		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
+			<div exp3='yes' style="display:none;padding:0 15px;">
 				<!-- Developer prerequisites subhead for EM4MM section - no table -->
 				<h4>Developer machine</h4>
 			<p>To support the creation of the custom mobile app, the developer system must meet the following requirements:</p>	
 				<ul>
 				<li>A Mac OS machine running OS X version 10.8.4 or later and 4G RAM or greater</li>
-				<li>Xcode IDE 6.x</li>
-				<li>iOS SDK 8.x</li>
-				<li>MicroStrategy 10.1 Mobile client (see the <a href="https://software.microstrategy.com/Download/index.aspx" target="_blank">MicroStrategy download site</a>)</li>
+				<li>Xcode IDE 7.x</li>
+				<li>iOS SDK 9.x</li>
+				<li>MicroStrategy 10.4 Mobile client (see the <a href="https://software.microstrategy.com/Download/index.aspx" target="_blank">MicroStrategy download site</a>)</li>
 				</ul>
 			
 			<p>For more information, about:</p>
@@ -353,7 +374,7 @@ mobile: true
 				<!-- Mobile users subhead for EM4MM section -->
 				<h4>Mobile app user device</h4>
 				<ul>
-				<li>iPad device running iOS 8.x</li>
+				<li>iPad device running iOS 9.x</li>
 				</ul>
 			</div>	
 		
@@ -361,16 +382,17 @@ mobile: true
 		<div class="clear" style="padding:5px;"></div>
 	
 		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Support</a>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp4')">Support</a>
 		</h3>
-			<div exp3='yes' style="display:none;padding:0 15px;">
+			<div exp4='yes' style="display:none;padding:0 15px;">
 			
 			<p>MicroStrategy Web requires several third-party components to be configured in order to function properly. These components include an application server, web server, and Java Development Kit. MicroStrategy Technical Support aids in the deployment of MicroStrategy Web  with these components. <a href="http://support.esri.com/" target="_blank">Esri Technical Support</a> aids in the deployment (and use) of the Esri Maps for MicroStrategy plug-in within an operational configuration of MicroStrategy Web.</p>
 
 			<p>Esri Technical Support analysts are not experts in all possible configurations of MicroStrategy Web. Similarly, MicroStrategy Technical Support engineers are not experts in all the third-party components required for an operational configuration of MicroStrategy. If you are experiencing a problem configuring MicroStrategy, it is often more efficient to obtain help from MicroStrategy Technical Support. Similarly, if you are if you are experiencing a configuration problem with third-party components, it is more efficient to get help from the third party's support organization. In cases where a problem is deemed to be in the Esri Maps for MicroStrategy plug-in, Esri Technical Support can be available to work with MicroStrategy Technical Support and third-party vendors or their consultants.</p>			
 			</div>
 			
-		<div class="clear"></div>
+		<div class="clear">
+	</div>
 </div>
 
 
@@ -384,8 +406,7 @@ mobile: true
             <li><a href="#supportedEnvironments">Supported environments</a></li>
 			<li>Help for previous versions:
 			<ul>
-				<li><a href="/en/maps-for-microstrategy/1.1/">1.1</a></li>
-				<li><a href="/en/maps-for-microstrategy/1.0.1/">1.0.1</a></li>
+				<li><a href="/en/maps-for-microstrategy/2.0.2/">2.0.2</a></li>
 							</ul>
 			</li>
 			<li><a href="http://video.arcgis.com/series/220/maps-for-microstrategy">Watch videos</a></li>
