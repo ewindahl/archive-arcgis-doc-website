@@ -111,7 +111,7 @@ $(document).ready(function() {
 	}
 
 	if (!isHome) {
-			if(window.location.pathname.match( /(\/fieldwork\/)/)){
+			if(window.location.pathname.match( /(\/mobile-worker\/)/)){
 				$('.reference-content .page-title').after (val);
 			}else{
 				modHelpNavUrls (plat);
