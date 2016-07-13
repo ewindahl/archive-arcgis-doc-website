@@ -1,0 +1,136 @@
+---
+layout: marketplace/layout
+
+title: تسجيل - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+  - marketplace/init
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">سجّل لتصبح مُزودًا</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">يمكنك بيع تطبيقك في ArcGIS Marketplace. ادخل إلى أكبر قاعدة لمستخدمي GIS في العالم. جعلنا عملية الاتصال بالمستخدمين وتوفير الفترات التجريبية المجانية وتقديم القادة عملية سهلة. بصفتك مُوفر التطبيق، سيصبح لديك 100% من العائد يُمكن إنتاجه لبيع التطبيق. تحقق من <a href="/ar/marketplace/provider/faq.htm">الأسئلة المتداولة</a> لمزيد من التفاصيل. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">هل تكون شريك Esri بالفعل؟</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">الوصول إلى قاعدة كبيرة من الحضور بواسطة إدراج الحلول في ArcGIS Marketplace. قم بتسجيل الدخول على <a href="http://partnerportal.esri.com/"> Esri Partner Portal</a> لتتعرف على المطلوب لتصبح مُوفر.</p>
+		
+      </section>
+
+	<header>
+        <h2 data-langlabel="already-an-esri-partner">كن أول المنضمين إلى Esri عن طريق الانضمام إلى برنامج عمل Esri الناشئ</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">برنامج <a href="https://developers.arcgis.com/startups/">عمل Esri الناشئ</a> هو برنامج مجاني لمدة ثلاثة سنوات يعطي للأعمال الناشئة الأدوات للتخطيط والقدرات التحليلية للموقع داخل منتجاتهم. تتلقى البدايات المؤهلة خدمات عبر الإنترنت وبرامج وتدريب ودعم ومحتوى وفرص أخرى للمساعدة في النجاح.</p>
+		
+
+      </section>
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">هل أنت ليس شريكًا؟ هل أنت مستخدم جديد في Esri؟</h2>
+		<p data-langlabel="provider-signup-note">نحن نبحث عن مُطورين ومبتدئين ومؤسسات تود بناء حلول كبيرة للمستخدمين الآخرين. أخبرنا عنك وما هي المساعدة التي يمكن تقديمها وسنساعدك للبدء</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="company-name" for="company-name">اسم الشركة: </label>
+			  <input type="text" id="companyName" name="companyName">
+			  <label data-langlabel="first-name" for="first-name">الاسم الأول: </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">الاسم الأول: </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">عنوان البريد الإلكتروني: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">رقم الهاتف: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">تحدث عن نفسك أو مؤسستك: </label>
+			  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
+			  <label data-langlabel="services" for="services">تحدث عن حلولك أو خدماتك: </label>
+			  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
+			  <label data-langlabel="website" for="website">موقع ويب: </label>
+			  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">للمساعدة في منع وصول رسائل البريد العشوائي، أدخل الأرقام المتاحة: </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">أرقام: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="internal" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="ar" name="lg">
+			<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
+			<input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">ارسال</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>نشكرك على الاهتمام بأن تصبح مُوفر لـ ArcGIS Marketplace. سنكون على اتصال في أيام العمل التالية.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>
+
