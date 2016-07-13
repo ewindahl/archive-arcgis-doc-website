@@ -24,12 +24,15 @@ $(document).ready(function () {
         '<a data-appname="maps_for_cognos_use_maps" data-plat="use-maps-mobile" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/use-maps-mobile" href="/en/maps-for-cognos/" data-langlabel="mobile" class=""> ' + dict['mobile'] + '</a>';
 		
 		
+	var section = (window.location.pathname.match( /(\/5.0.1\/|\/6.0.2\/)/))?"archive":"current";
 	if(window.location.pathname.match( /(\/use-maps\/|\/use-maps-mobile\/)/)){
 		//val = val.replace("platform-placehoder",useMaps);
 		if(window.location.pathname.match( /(\/5.0.1\/)/)){
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"5.0.1/"));
 		}else if(window.location.pathname.match( /(\/6.0\/)/)){
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"6.0/"));
+		}else if(window.location.pathname.match( /(\/6.0.2\/)/)){
+			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"6.0.2/"));
 		}else{
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,""));
 		}		
@@ -38,12 +41,15 @@ $(document).ready(function () {
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"5.0.1/"));
 		}else if(window.location.pathname.match( /(\/6.0\/)/)){
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"6.0/"));
+		}else if(window.location.pathname.match( /(\/6.0.2\/)/)){
+			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"6.0.2/"));
 		}else{
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,""));
 		}
 	}
           
     var fnameFilter = {
+				"current" : {
              /*"about-apache-configuration.htm": "", "about-web-server-configuration.htm": "", "administrative-and-login-settings.htm": "", "change-the-logging-levels.htm": "",
             "communication-bi-bus-.htm": "", "configuration.htm": "", "configure-an-upstream-proxy.htm": "", "configure-apache.htm": "", "configure-login-settings.htm": "",
             "configure-proxy-settings.htm": "", "control-who-can-access-esri-maps-for-ibm-cognos.htm": "", "create-a-default-map.htm": "", "distribution-options.htm": "",
@@ -51,9 +57,15 @@ $(document).ready(function () {
             "install-and-configure-em4c-dispatcher.htm": "", "install-and-configure-em4c-gateway.htm": "", "install-and-configure-em4c-server-and-em4c-dispatcher.htm": "",
             "install-and-configure-em4c-server.htm": "", "install-and-configure-on-a-single-computer.htm": "", "installation-options.htm": "", "installation-sequence-for-server-components.htm": "",
             "items-added-to-a-map-enabled-report.htm": "", "required-ibm-cognos-capabilities.htm": "", "supported-arcgis-authentication-methods.htm": "", "supported-environments.htm": "",
-            "test-the-configuration.htm": "", "uninstall-esri-maps-for-ibm-cognos.htm": "", "upgrade-esri-maps-for-ibm-cognos.htm": "","report-formats.htm": "","create-the-esri-maps-capability.htm": ""*/
-			"configure-microsoft-internet-information-services-7-x-or-8-x.htm":""
+            "test-the-configuration.htm": "", "uninstall-esri-maps-for-ibm-cognos.htm": "", "upgrade-esri-maps-for-ibm-cognos.htm": "","report-formats.htm": "","create-the-esri-maps-capability.htm": ""
+			"configure-microsoft-internet-information-services-7-x-or-8-x.htm":""*/
         },
+		  
+		  "archive" : {
+			  "configure-microsoft-internet-information-services-7-x-or-8-x.htm": ""
+		  }
+	 },	  
+		  
 
 		
 		//prodDVal = "install-windows",
@@ -140,7 +152,7 @@ $(document).ready(function () {
         } else {
             $ele.toggleClass("off");
             url = prefix + "/" + fname;
-			if (fnameFilter.hasOwnProperty(fname)) {
+			if (fnameFilter[section].hasOwnProperty(fname)) {
 				url = prefix + "/";
 			}
 
