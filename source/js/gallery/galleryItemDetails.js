@@ -205,6 +205,16 @@ doc.itemDetails = (function(){
 					$("#downloadBtns").html(text);
 					$("#agol-thumbnail").html("<a href='" + targetURL + "' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
 				
+				} else if(itemTypeLabel == "Layer Package") {
+					$(".layers").hide();
+					$(".extent").hide();
+
+					var targetURL = AGOLURL + "/sharing/content/items/" + itemDetails.id + "/data";
+					var text = "<a href='" + targetURL + "' class='btn primary'>Open in ArcGIS for Desktop</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='" + targetURL + "' class='btn light'>Download</a>";
+
+					$("#downloadBtns").html(text);
+					$("#agol-thumbnail").html("<a href='" + targetURL + "' target='_blank'><img src='"+AGOLURL+"/sharing/content/items/"+itemId+"/info/"+(itemDetails.largeThumbnail || itemDetails.thumbnail)+"' class='item-img' border=0></a><p>&nbsp;</p>");
+				
 				}else{
 
 					if(itemDetails.extent.length > 0){
@@ -467,6 +477,8 @@ if(itemDetails && itemDetails.id){
 		itemType = "layers";
 		if (itemDetails.typeKeywords.indexOf("Elevation 3D Layer") >=0){
 			itemTypeLabel = "Elevation Layer";
+		}else if(itemDetails.typeKeywords.indexOf("lpk") >=0 || itemDetails.typeKeywords.indexOf("lpkx") >=0){
+ 			itemTypeLabel = "Layer Package"; 
 		}else{
 			itemType = "layers";
 			itemTypeLabel = "Map Layer";
