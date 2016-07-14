@@ -6,6 +6,27 @@ $(document).ready(function() {
 		data-plat="browser"
 
 */
+	var noSwitcherFileList = {
+	   "xlsformessentials.htm": "Desktop",
+		"xlsformsappearance.htm": "Desktop",
+		"xlsformnotes.htm": "Desktop",
+		"locations.htm": "Desktop",
+		"xlsformmultiplelanguagesupport.htm": "Desktop",
+		"xlsformrepeats.htm": "Desktop",
+		"xlsformcascadingselects.htm": "Desktop",
+		"xlsformformulas.htm": "Desktop",
+		"xlsformrelevant.htm": "Desktop",
+		"xlsforminstancename.htm": "Desktop",
+		"xlsformmedia.htm": "Desktop",
+		"xlsformsubmissionurl.htm": "Desktop",
+		"prepopulateanswers.htm": "Desktop",
+		"esricustomcolumns.htm": "Desktop",
+		"preparebasemaps.htm": "Desktop",
+		"UseOfflineBasemaps.htm": "Desktop"	
+	   
+	}
+	
+	
    var localedir = "en";
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'];
@@ -124,8 +145,14 @@ $(document).ready(function() {
 			$ele.toggleClass ("on");
 			url = prefix + fldpath.replace (prefix, "") + "/" + fname;
 		} else {
-			$ele.toggleClass ("off");
-			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+			if(fname in noSwitcherFileList){
+				// disable click
+				url = "#";
+				$ele.toggleClass ("is-disabled");
+			}else{
+				$ele.toggleClass ("off");
+				url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+			}
 		}
 
 	
