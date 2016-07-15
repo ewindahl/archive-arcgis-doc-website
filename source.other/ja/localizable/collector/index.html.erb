@@ -17,7 +17,7 @@ js:
   - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-03-01"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-07-14"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -28,7 +28,7 @@ mobile: true
     <header>
       <h1>Collector for ArcGIS</h1>
       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="search" name="q" class="leader" placeholder="Collector for ArcGIS の検索">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="platform" value="detect" />          
         <input type="hidden" name="product" value="collector-android" />          
@@ -72,19 +72,20 @@ mobile: true
 
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="app-collector-map.jpg" />
+          <img src="app-collector-map.jpg" alt="Create a map" title="マップの作成"/>
 
           <h3>マップの作成と共有</h3>
           <p>ArcGIS を屋外で利用することにより、お持ちの空間データの精度と鮮度が向上します。2 つの手順でデータ収集のためのマップを作成および共有します。</p>
           <p>
             <a href="/ja/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
+            <a href="https://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;テンプレートを使用してジャンプ スタート</a>
             <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="app-collector-data.jpg" />
+          <img src="app-collector-data.jpg" alt="Collect data" title="データの収集"/>
 
           <h3>データの収集</h3>
           <p>損害報告や史跡の修繕依頼など、組織にとって重要なデータを作成します。画像およびビデオを簡単に追加して、データを共有します。</p>
@@ -100,9 +101,9 @@ mobile: true
 	<div class="clear"></div>
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="story-graphic-3.png" />
+          <img src="story-graphic-3.png" alt="Go offline" title="オフラインでの操作" />
 
-          <h3>オフライン操作</h3>
+          <h3>オフラインでの操作</h3>
           <p>インターネットに接続できない場所でも現場作業を行えます。マップおよびデータをオフラインで使用し、データを収集します。再度オンラインに接続したときにデータを同期します。</p>
           <p>
             <a href="/ja/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
@@ -110,12 +111,13 @@ mobile: true
         </div>
         
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="story-graphic-4.png" />
+          <img src="story-graphic-4.png" alt="Professional-grade accuracy" title="プロ品質の精度"/>
 
-          <h3>テンプレートを使用してジャンプ スタート</h3>
-          <p>各業界には、その業界で一般的に使用されるデータセットがあります。テンプレートをダウンロードして必要な基本データ構造を作成し、特定の業務に合わせてカスタマイズします。</p>
+          <h3>プロ品質の精度を取得</h3>
+          <p>高精度の受信機を使用して、センチメートル レベルの精度を取得できます。GPS メタデータを確実に取得して記録し、データの品質を把握します。</p>
           <p>
-            <a href="http://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;ダウンロードの表示</a><br />
+            <a href="/ja/collector/android/create-maps/gps-high-accuracy-receivers.htm" class="icon-right-arrow">&nbsp;収集の設定</a><br />
+            <a href="/ja/collector/android/collect-data/high-accuracy-gps.htm" class="icon-right-arrow">&nbsp;高精度 GPS を使用</a><br />
           </p>
         </div>
         
@@ -123,37 +125,29 @@ mobile: true
 
 	<a name="features"></a>
 	<h2 class="divider">特長</h2>
-	<p>現場で情報を収集および更新したり、現在の位置を記録したり、キャプチャしたデータを作業に活かし、情報を得た上での意思決定をタイムリーに下せます。
-	どこにいてもマップを使用して、データの現地調査、観測、イベントへの対応に利用できます。
-	屋外調査員の効率性と GIS の正確性が改善されます。</p>
+	<p>屋外でデータを収集、更新したり、現在地を記録したり、取得したデータをすぐに活かせるので、それらの情報を得てからタイムリーな意思決定を行うことができます。どこにいてもマップを使用して、データの現地調査、観測、イベントへの対応に利用できます。現場スタッフの作業効率性と GIS の正確性が改善されます。</p>
 	
 	<ul>
+	<li>マップまたは GPS を使用してデータを収集および更新</li>
 	<li>マップを各種端末にダウンロードしてオフラインで操作</li>
-	<li>GPS を使用したマップ データの作成と更新</li>
-	<li>ポイント、ライン、およびポリゴン フィーチャの収集</li>
-	<li>マップ ドリブンで使いやすいフォームでのデータ入力</li>
-	<li>場所とフィーチャを検索します。</li>
-	<li>訪問したエリアの記録と報告</li>	
-	<li><a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-apple"/>) と統合します。</li>
+	<li>ポイント、ライン、エリア、および関連データの収集</li>
+	<li>マップ上の操作しやすいフォームを使用してデータ入力</li>
+	<li>写真をフィーチャに添付</li>
+	<li>プロ品質の GPS 受信機を使用できます。</li>
+	<li>場所およびフィーチャの検索</li>
+	<li>訪問したエリアを記録し報告</li>
+	<li><a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-apple"/>) と統合</li>
+	<li><a href="http://workforce.arcgis.com">Navigator for ArcGIS</a> (<span class="icon-apple"/>) と統合</li>
 	</ul>
 
         <a name="systemRequirements"></a>
         <h2 class="divider">システム要件</h2>
-
-        <p>Collector for ArcGIS を実行するためのデバイス要件は、次のとおりです。アプリ内で使用するデータについても要件があります。Collector for ArcGIS では、多数の言語がサポートされています。</p>
-
-
-        <h3>データ要件</h3>
-        <p>Collector for ArcGIS でマップを使用するには、ArcGIS の組織アカウントが必要です。マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。</p>
-
-
-        <h3>デバイス要件</h3>
         <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
         <ul>
-          <li>Android 4.0 (Ice Cream Sandwich) 以降</li>
+          <li>Android 4.1 (Jelly Bean) 以降</li>
           <li>ARMv7 または x86 プロセッサ</li>
-          <li>OpenGL ES 2.0 サポート</li>
-          <li>正確な位置を (GPS およびネットワークに基づいて) サポート</li>
+          <li>OpenGL ES 2.0 のサポート</li>
+          <li>正確な位置のサポート (GPS およびネットワークを利用)</li>
         </ul></td>
         <td valign="top"><h4 class="icon-apple">iOS</h4>
         <ul>
@@ -162,47 +156,31 @@ mobile: true
         </ul></td>
         <td valign="top"><h4 class="icon-windows-8">Windows</h4>
         <ul>
-          <li>Windows 10 以降 (タブレットおよび PC)</li>
+          <li>Windows 10.0.586 以降 (タブレットおよび PC)</li>
         </ul></td></tr>
         </table>
 
-
         <h3>サポートされている言語</h3>
-        <p>アラビア語、チェコ語、デンマーク語、オランダ語、英語、エストニア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、イタリア語、日本語、韓国語、ラトビア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、リトアニア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、ノルウェー語、ポーランド語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ルーマニア語、ロシア語、中国語 (簡体字)、スペイン語、スウェーデン語、タイ語、繁体字中国語 (香港)、トルコ語、およびベトナム語。</p>
+        <p>アラビア語、チェコ語、デンマーク語、オランダ語、英語、エストニア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、イタリア語、日本語、韓国語、ラトビア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、リトアニア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、ノルウェー語、ポーランド語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ルーマニア語、ロシア語、中国語 (簡体字)、セルビア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、スペイン語、スウェーデン語、タイ語、繁体字中国語 (香港)、トルコ語、およびベトナム語。</p>
         <p>アプリで使用される言語は、デバイスの言語設定によって決まります。</p>
+        
+        <a name="arcgisRequirements"></a>
+        <h2 class="divider">ArcGIS の要件</h2>
+        <p>Collector for ArcGIS でマップを使用するには、ArcGIS の組織アカウントが必要です。ArcGIS Online および Portal for ArcGIS 10.3.1 以降がサポートされています。</p>
+        <p>マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。詳細については、「<a href="/ja/collector/android/create-maps/supported-data.htm">サポートされているデータ</a>」をご参照ください。</p>
+       
 
         <a name="whatsNew"></a>
-        <h2 class="divider">新機能</h2>
-        <p>Windows 用 Collector for ArcGIS 10.3.7 が 2016 年 2 月に、Android および iOS 用が 2016 年 3 月にリリースされました。機能強化された点は次のとおりです。</p>
+        <h2 class="divider">新しい機能</h2>
+        <p>Collector for ArcGIS 10.4 は、2016 年 7 月にリリースされました (Android は近日公開予定)。機能強化された点は次のとおりです。</p>
         <ul>
-	  <li>ダウンロードおよび同期を最適化する高度なオフライン オプションのサポート</li>          
-	  <li><a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5MjY2Mw==">BUG-000092663</a> など、多数のバグ修正および機能改善</li>
+	  <li>高精度 GPS 受信機をサポート</li>  
+	  <li>添付ファイルの EXIF データを維持</li>
+	  <li>PDF および Word ドキュメント (<span class="icon-windows-8"/>) をはじめ、さまざまなファイル タイプの添付ファイルをサポート</li>
+	  <li><a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-apple"/>) との統合</li>
+	  <li>クロアチア語およびセルビア語に対応</li>
+	  <li>各種不具合の修正と改善 (<a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NDM1NQ==">BUG-000094355</a>、<a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NDcwNA==">BUG-000094704</a>、および <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NTY2MA==">BUG-000095660</a> など)</li>
         </ul>
-        <!--table>
-          <tr>
-            <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
-              <p>Collector for ArcGIS 10.3.7 was released in February 2016. It includes the following enhancements:</p>
-            </td>
-            <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
-              <p>Collector for ArcGIS 10.3.7 was released in February 2016. It includes the following enhancements:</p>
-            </td>
-            <td valign="top" width="250px;"><h4 class="icon-windows-8">Windows</h4>
-              <p>Collector for ArcGIS 10.3.7 was released in February 2016. It includes the following enhancements:</p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top"><ul>
-              <li>Support for advanced offline options to optimize download and sync</li>          
-              <li>Various bug fixes and improvements, including BUG-000092663</li>
-            </ul></td>
-            <td valign="top"><ul>
-              <li>Support for advanced offline options to optimize download and sync</li>
-            </ul></td>
-            <td valign="top"><ul>
-              <li>Support for advanced offline options to optimize download and sync</li>
-            </ul></td>
-          </tr>
-        </table-->
 
 	<a name="sneakPeek"></a>
 	<h2 class="divider">追加予定の機能</h2>
@@ -211,9 +189,9 @@ mobile: true
 	<table><tr><td valign="top"><h4>開発中の機能</h4>
 	<p>現在、次の機能の追加に取り組んでいます。</p>
 	<ul>
-		<li>外部 GNSS レシーバーのサポート</li>
-		<li>Windows 10 Mobile のサポート</li>
+		<li>オフセットを使用したデータ収集</li>
 		<li><a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-android"/>) との統合</li>
+		<li><a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-android"/>、<span class="icon-windows-8"/>) との統合</li>
 	</ul>
 	</td>
 	<td valign="top"><h4>計画中の機能</h4>
@@ -221,12 +199,12 @@ mobile: true
 	<ul>
 		  <li>よりスマートなデータ収集フォーム</li>
 		  <li>オフラインでの現場操作を計画するためのツール</li>
-		  <li>オフセットを使用したデータ収集</li>
 		  <li>周辺機器 (レーザー レンジ ファインダー、バーコード スキャナーなど) との統合</li>
+		  <li>Windows 10 Mobile のサポート</li>
 	</ul>
 	</td></tr></table>
 
-	<p><a href="http://ideas.arcgis.com/">アイデア</a>を共有したり、<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">フィードバックを送信</a>します。</p>
+	<p><a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bcollector-for-arcgis%5D">アイデア</a>を共有したり、<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">フィードバックを送信</a>します。</p>
 		
         <p>&nbsp;</p>
 
@@ -240,7 +218,8 @@ mobile: true
 	          
 	  <h4><a href="#features">特長</a></h4>
 	  <h4><a href="#systemRequirements">システム要件</a></h4>
-	  <h4><a href="#whatsNew">新機能</a></h4>
+	  <h4><a href="#arcgisRequirements">ArcGIS の要件</a></h4>
+	  <h4><a href="#whatsNew">新しい機能</a></h4>
 	  <h4><a href="#sneakPeek">追加予定の機能</a></h4>
 	          
         </div>
