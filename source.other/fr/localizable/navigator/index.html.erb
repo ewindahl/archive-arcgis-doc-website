@@ -13,7 +13,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2015-7-3"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="fr">
+  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-07-05"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="fr">
 
 mobile: true
 
@@ -23,7 +23,7 @@ mobile: true
     <header>
       <h1><a href="/fr/navigator/">Navigator for ArcGIS</a></h1>
 	  <form id="helpSearchForm" target="_top">
-       <input type="search" name="q" class="leader" placeholder="Search Navigator"> 
+       <input type="search" name="q" class="leader" placeholder="Parcourir Navigator"> 
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="navigator-ipad" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
@@ -32,6 +32,7 @@ mobile: true
 	 <nav>
       <ul>
         <li class='current'><a href="/fr/navigator/">Accueil</a></li>
+        <li><a href="/fr/navigator/prepare-maps/prepare-maps.htm">Préparer des cartes</a></li>
         <li><a href="/fr/navigator/ipad/navigate/guided-tour.htm">Naviguer</a></li>
         <li><a href="http://links.esri.com/geonet-navigator">Forum</a></li> 
       </ul>
@@ -47,6 +48,7 @@ mobile: true
 
         <p>
           <a href="http://links.esri.com/navigator-ios-install"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a> 
+          <a style="font-size:1.23em; margin:10px; vertical-align:middle" class="btn primary icon-android" href="https://earlyadopter.esri.com/callout/?callid=%7b28F9956B-A1F0-4793-8B7E-BA0E9473D06A%7d">Android maintenant disponible en version bêta !</a>
         </p> 
         </header>
         <hr />
@@ -66,14 +68,13 @@ mobile: true
         </div>
         
 	<div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="nav-home-2.png" />
+          <img src="nav-home-2.png" title="Utiliser vos données"/>
 
-          <h3>Intégration avec Collector</h3>
-          <p>Connectez-vous sans peine à d'autres applications Esri, à savoir Collector for ArcGIS par exemple, pour accéder à des emplacements lorsque vous travaillez sur le terrain.
-</p>
+          <h3>Utiliser vos données</h3>
+          <p>Créez des cartes de navigation avec vos propres cartes. Recherchez vos ressources, créez des itinéraires sur vos routes et affichez vos couches.</p>
           <p>
 		  
-		<a href="/fr/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
+		<a href="/fr/navigator/prepare-maps" class="icon-right-arrow">&nbsp;Comment</a><br />
 				
           </p>
         </div>
@@ -81,75 +82,104 @@ mobile: true
         <div class="clear"></div>
         
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-		<img src="1.png" />
+		<img src="1.png" title="Intégration avec Collector"/>
 		
-          <h3>Créer un lien vers une application</h3>
-          <p>Utilisez les applications de votre organisation en toute transparence. Développez des liens vers des applications pour intégrer Navigator à vos applications.</p>
+          <h3>Intégration avec Collector</h3>
+          <p>Connectez-vous facilement à d'autres applications Esri, telles que Collector for ArcGIS, pour accéder aux différents lieux de travail tout en étant sur le terrain.</p>
           <p>
 		  
-		<a href="/fr/navigator/ipad/navigate/app-links.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
+		<a href="/fr/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;Comment</a><br />
 				
           </p>
         </div>
         
 	<div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="4.PNG" />
+          <img src="4.PNG" title="Envoyer des arrêts à Navigator"/>
 
-          <h3>Besoin d’aide ?</h3>
-          <p>Consultez le <a href="/fr/navigator/iphone/navigate/faqs.htm">FAQ</a> pour obtenir des réponses aux questions les plus courantes, utilisez le document <a href="/fr/navigator/iphone/navigate/quick-reference.htm">Référence rapide</a> pour savoir où se trouvent les outils dans l'application ou visitez notre <a href="http://links.esri.com/geonet-navigator">forum</a>.</p>
+          <h3>Envoyer des arrêts à Navigator</h3>
+          <p>Utilisez la structure URL personnalisée afin que les utilisateurs puissent démarrer Navigator depuis votre application, site Web ou message électronique et naviguer en fonction des paramètres que vous avez fournis.</p>
+          <p>
+            <a href="https://github.com/Esri/navigator-integration" class="icon-github">&nbsp;Découvrir comment sur GitHub</a><br />
+          </p>
         </div>
         
         <div class="clear"></div>
 
         <a name="features"></a>
-        <h2 class="divider">Entités</h2>
-        <p>Générez une feuille de route, modifiez les itinéraires et commencez la navigation pour que vos équipes se trouvent au bon endroit. Navigator n'est pas uniquement une application de navigation de niveau consommateur. Utilisez les cartes fournies pour rechercher les ressources de votre organisation et y accéder, pour spécifier des modes de déplacement et pour intégrer Navigator à vos applications, tout en étant en mode hors connexion.</p>
+        <h2 class="divider">Fonctionnalités</h2>
+        <p>Générez une feuille de route, modifiez les itinéraires et commencez la navigation pour que vos équipes se trouvent au bon endroit.</p>
         <ul>
           <li>Utilisez la feuille de route vocale tournant par tournant qui permet de recalculer automatiquement votre itinéraire.</li>
-          <li>Recherchez des lieux et obtenez une feuille de route à destination d'un ou plusieurs arrêts.</li>
-          <li>Accédez aux cartes téléchargeables pour la navigation en mode hors connexion.</li>
-          <li>Sélectionnez vos modes de déplacement favoris, tels que la marche, le camion ou la voiture.</li>
-          <li>Intégrez Navigator à d'autres applications ArcGIS, telles que Collector for ArcGIS et vos propres applications.</li>
+          <li>Naviguez entièrement en mode hors connexion avec les données stockées localement.</li>
+          <li>Accédez aux données de navigation d'Esri ou utilisez vos propres cartes. Recherchez vos ressources, créez des itinéraires sur vos routes et affichez vos couches.</li>
+          <li>Effectuez les arrêts un par un ou créez une liste de travail pour une journée entière.</li>
+          <li>Utilisez des modes de déplacement propres aux véhicules.</li>
+          <li>Recevez des arrêts par courrier électronique, depuis votre propre application ou depuis d'autres applications ArcGIS, telles que Collector for ArcGIS.</li>
         </ul>
         
         <a name="systemRequirements"></a>
-        <h2 class="divider">Configuration du système</h2>
-        <p>Pour utiliser Navigator for ArcGIS, vous devez disposer d'un compte ArcGIS Online doté d'une <a href="/fr/arcgis-online/administer/manage-licenses.htm" target="_blank">licence Navigator for ArcGIS</a>.</p>
-
-
-        <h3>Conditions requises pour les données</h3>
-        <p>Navigator propose des cartes qui prennent en charge la fonction de navigation. Vous pouvez télécharger sur votre périphérique les cartes de navigation disponibles sur ArcGIS Online. Les versions futures d'ArcGIS Pro permettront de créer des cartes de navigation personnalisées.</p>
-
-
-        <h3>Configurations des périphériques</h3>
-        <table><tr>
+        <h2 class="divider">Configuration système requise</h2>
+	<table><tr>
           <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
             <ul>
-              <li>Version 8 ou ultérieure</li>
+              <li>Version 8 ou ultérieure</li>
               <li>iPad (quatrième génération ou ultérieure pour des performances optimales), iPhone (6 ou version ultérieure pour des performances optimales), iPod touch</li>
+            </ul>
+          </td>
+          <td valign="top" width="250px;"><h4 class="icon-android">Android (Bêta)</h4>
+	    <ul>
+	      <li>Android 4.2 (Jelly Bean) ou version supérieure</li>
+	      <li>Processeur ARMv7 ou x86</li>
+	      <li>Prise en charge d'OpenGL ES 2.0</li>
+	      <li>Prise en charge des emplacements précis (basée sur le réseau et GPS)</li>
             </ul>
           </td>
         <tr></table>
 
 	 <h3>Langues prises en charge</h3>
-	    <p>Anglais, français, allemand, grec, italien, japonais, coréen, portugais (Portugal), russe, chinois simplifié, espagnol et turc.</p>
-	  
+	    <p>Allemand, anglais, arabe, chinois simplifié, coréen, espagnol, français, grec, hébreu, italien, japonais, néerlandais, portugais (Brésil), portugais (Portugal), russe et turc.</p>        
+
+
+	<a name="arcgisRequirements"></a>
+        <h2 class="divider">Configuration requise pour ArcGIS</h2>
+        <p>Pour utiliser Navigator for ArcGIS, vous devez disposer d'un compte d'organisation ArcGIS doté d'une licence Navigator for ArcGIS. 
+        Pour en savoir plus sur l'utilisation d'ArcGIS Online, reportez-vous à la rubrique <a href="/fr/arcgis-online/administer/manage-licenses.htm#ESRI_SECTION1_C9282762EB1F4A72BB3D8794F2E4E516" target="_blank">A propos des licences Navigator for ArcGIS</a>. 
+        Pour en savoir plus sur l'utilisation de Portal for ArcGIS, reportez-vous à la rubrique <a href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-navigator-for-arcgis-licenses.htm#ESRI_SECTION1_D9DCE11B3F03413BBD608ECFA8BC4A04">Configurer des licences Navigator for ArcGIS pour votre organisation</a>. 
+        ArcGIS Online et Portal for ArcGIS 10.4 et version supérieure sont pris en charge. </p>
+        
+        <p>Vous pouvez utiliser les cartes de navigation fournies par Esri ou créer la vôtre. Les cartes fournies par Esri sont disponibles sur ArcGIS Online ou sur Portal for ArcGIS et peuvent être téléchargées sur votre appareil. Pour en savoir plus sur les cartes fournies, reportez-vous à la section <a href="http://server.arcgis.com/en/streetmap-premium/latest/coverage/navigator-maps.htm">Navigator Map coverage</a>.</p>
+        <p>La configuration requise pour créer ou modifier une carte à utiliser dans Navigator dépend de ce que vous voulez mettre à jour. Reportez-vous à la rubrique expliquant les <a href="/fr/navigator/prepare-maps/faqs-author.htm#anchor3">licences nécessaires pour utiliser les cartes de navigation</a></p>
             
         <a name="whatsNew"></a>
         <h2 class="divider">Nouveautés</h2>     
         
-        <p>Navigator for ArcGIS 1.2 a été publié en novembre 2015. Cette version inclut les améliorations suivantes :</p>
-        
-        <ul>
-	  <li>Localisation en italien et en turc</li>
-	  <li>Prise en charge améliorée des identifiants d'entreprise basés sur SAML</li>
-	  <li>Prise en charge améliorée d'iOS 9</li>
-	  <li>Diverses résolutions de bogues et améliorations</li>
-	</ul>
+        <table>
+	  <tr>
+	    <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
+	      <p>Navigator for ArcGIS 2.0 a été publié en juillet 2016. Cette version inclut les améliorations suivantes :</p>
+	    </td>
+	    <td valign="top" width="250px;"><h4 class="icon-android">Android (Bêta)</h4>
+	      <p>Navigator for ArcGIS est disponible en version bêta depuis mai 2016. Cette version inclut les améliorations suivantes :</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign="top"><ul>
+              <li>Utilisez vos propres cartes. Recherchez vos ressources, créez des itinéraires sur vos routes et affichez vos couches</li>
+              <li>En vue d'optimiser les itinéraires, plusieurs arrêts peuvent être réorganisés automatiquement</li>
+              <li>Transférez des adresses avec la structure URL personnalisée</li>
+              <li>Prise en charge de Portal for ArcGIS 10.4 et version ultérieure</li>
+              <li>Localisation en arabe, néerlandais, hébreux et portugais (Brésil)</li>
+              <li>Diverses résolutions de bogues et optimisations</li>
+	    </ul></td>
+	    <td valign="top"><ul>
+	      <li>Inclut toutes les fonctionnalités répertoriées comme en cours d'élaboration pour Android dans la table d'<a href="#sneakPeak">aperçu</a>. Toutes les fonctionnalités actuellement publiées sur iOS sont prises en charge.</li>
+	    </ul></td>
+	  </tr>
+        </table>
         
 	<a name="sneakPeek"></a>
-	<h2 class="divider">Aperçu furtif</h2>
-	<p>Voici un tableau des développements prévus pour cette application et des fonctionnalités qu'elle offrira à vos périphériques : </p>
+	<h2 class="divider">Améliorations à venir</h2>
+	<p>	La table suivante décrit la progression de cette application et présente les fonctionnalités propres à chaque plateforme d'appareil : </p>
 	
 	<style>
 	  table.sneakPeek
@@ -173,7 +203,7 @@ mobile: true
         <table class="sneakPeek" border="1">
 	  <caption>Fonctionnalités par plateforme<br/>
 	  <span class="icon-check" style="color:black"></span> disponible, <span class="icon-check icon-orange"></span> en cours de développement, <span class="icon-check" style="color:lightgray"></span><span class="clear"/> ultérieure<br/>
-Les cellules vides identifient des fonctionnalités non prévues.<br/>
+Les cellules vides désignent des fonctionnalités non prévues.<br/>
 Aucun support n'est actuellement prévu pour les ordinateurs de bureau.
 	  </caption>
 	  <tr>
@@ -190,7 +220,7 @@ Aucun support n'est actuellement prévu pour les ordinateurs de bureau.
 	  </tr>	
 	  <tr>
 	    <td>Naviguer à l'aide de vos cartes personnalisées (géocodage, routage et affichage)</td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check icon-orange"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr> 
@@ -202,7 +232,7 @@ Aucun support n'est actuellement prévu pour les ordinateurs de bureau.
 	  </tr>
 	  <tr>
 	    <td>Utiliser Portal for ArcGIS</td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check icon-orange"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>	
@@ -214,7 +244,7 @@ Aucun support n'est actuellement prévu pour les ordinateurs de bureau.
 	  </tr>	
 	</table>
 	
-	<p>Partagez vos <a href="http://ideas.arcgis.com/">idées</a> et <a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">envoyez-nous vos commentaires</a>.</p>
+	<p>Partagez vos <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bnavigator-for-arcgis%5D">idées</a> et <a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">envoyez-nous vos commentaires</a>.</p>
 	
         <p>&nbsp;</p>
 
@@ -227,10 +257,11 @@ Aucun support n'est actuellement prévu pour les ordinateurs de bureau.
         <div class="imgFrame block">
 	  <h3>Détails</h3>
 	          
-	  <h4><a href="#features">Entités</a></h4>
+	  <h4><a href="#features">Fonctionnalités</a></h4>
 	  <h4><a href="#systemRequirements">Configuration du système</a></h4>
+	  <h4><a href="#arcgisRequirements">Configuration requise pour ArcGIS</a></h4>
 	  <h4><a href="#whatsNew">Nouveautés</a></h4>
-	  <h4><a href="#sneakPeek">Aperçu furtif</a></h4>
+	  <h4><a href="#sneakPeek">Améliorations à venir</a></h4>
 	          
         </div>
 
@@ -248,7 +279,7 @@ Aucun support n'est actuellement prévu pour les ordinateurs de bureau.
     </div>
 
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script></Comment>--&gt;  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/navigator-for-arcgis/feed/',
