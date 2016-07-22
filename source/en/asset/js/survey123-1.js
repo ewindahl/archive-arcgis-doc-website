@@ -22,7 +22,10 @@ $(document).ready(function() {
 		"prepopulateanswers.htm": "Desktop",
 		"esricustomcolumns.htm": "Desktop",
 		"preparebasemaps.htm": "Desktop",
-		"UseOfflineBasemaps.htm": "Desktop"	
+		"UseOfflineBasemaps.htm": "Desktop",
+		"troubleshootcreatesurveys.htm": "Desktop",
+		"troubleshootgetanswers.htm": "Desktop",
+		"quickreferencegetanswers.htm": "Desktop"
 	   
 	}
 	
