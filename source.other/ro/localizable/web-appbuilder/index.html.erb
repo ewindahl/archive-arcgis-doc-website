@@ -31,7 +31,7 @@ mobile: true
     </header>
 	 <nav>
       <ul>
-        <li class='current'><a href="/ro/web-appbuilder/">Prima pagină</a></li>
+        <li class='current'><a href="/ro/web-appbuilder/">Pagina principală</a></li>
         <li><a href="/ro/web-appbuilder/create-apps/">Creare de aplicaţii</a></li>
         <li><a href="/ro/web-appbuilder/manage-apps/">Gestionare aplicaţii</a></li>
         <li><a href="/ro/web-appbuilder/extend-apps/">Extindere aplicaţii</a></li>
@@ -101,14 +101,23 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">Browsere suportate</h2>
+		<p>Aplicaţia 2D acceptă următoarele browsere:</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari 3+</li>
+          <li>Safari 3 şi versiuni ulterioare</li>
 		  <li>Edge</li>
           <li>Internet Explorer 9 şi versiunile ulterioare</li>
         </ul>
-        
+		<p>Aplicaţia 3D acceptă următoarele browsere:</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Edge</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
         <h2 class="divider">Licenţă</h2>
 
@@ -127,30 +136,33 @@ mobile: true
 
          <a name="whatIsNew"></a>
         <h2 class="divider">Ce este nou</h2>
-        <p>Web AppBuilder for ArcGIS a fost actualizat în noiembrie 2015. Acesta include următoarele noi caracteristici şi îmbunătăţiri:</p>
+        <p>Web AppBuilder for ArcGIS a fost actualizat în martie 2016. Acesta include următoarele noi caracteristici şi îmbunătăţiri:</p>
         <ul>
-          <li>Starea aplicaţiei, inclusiv extinderea hărţii şi vizibilitatea stratului tematic, este acum salvată automat atunci când închideţi browserul.</li>
-          <li>Serviciul securizat prin web de la ArcGIS for Server este acceptat în întregime.</li>
-          <li>Şase noi parametri de URL vă permit să găsiţi locaţia sau obiectul spaţial, să furnizaţi datele de autentificare, să interogaţi obiectele spaţiale, să adăugaţi un punct, să schimbaţi regiunea şi să specificaţi WKID pentru a transfoca sau panorama harta.</li>
-          <li>Un nou widget Editor atribute în masă vă permite să editaţi simultan atribute multiple.</li>
-          <li>Un nou widget Tablou de control Reviewer afişează statisticile rezultatelor calităţii datelor sub formă de diagrame circulare sau cu bare de tip infografic pentru a rezuma problemele legate de calitatea datelor identificate în datele GIS.</li>
-          <li>Un nou widget Raport obiecte spaţiale vă permite să colectaţi şi să administraţi feedback privind calitatea datelor de la utilizatori.</li>
-		  <li>Un nou widget Măsurare imagine vă permite să efectuaţi măsurători în serviciile de imagini cu capacităţi de măsurare.</li>
-          <li>Widgetul Căutare are opţiuni de adăugare de text substituent pentru toate sursele de căutare şi de căutare după extinderea de hartă curentă.</li>
-          <li>Widgetul Tabel de atribute actualizează straturile tematice în mod corespunzător atunci când sunt modificate pe hartă.</li>
-		  <li>Widgetul Editare transferă atributele editabile configurate pe hartă.</li>
-		  <li>Widgetul Coordonată sporeşte lizibilitatea textului coordonatelor.</li>
-		  <li>Widgetul Ecran de pornire furnizează o culoare de fundal particularizată.</li>
-		  <li>Widgetul Interogare acceptă interogarea de tabele corelate şi afişarea de obiecte spaţiale asociate în rezultat.</li>
-		  <li>Widgetul Geoprocesare are opţiuni de particularizare a câmpurilor din tabelul rezultat şi de export al rezultatelor către CSV, Colecţie de obiecte spaţiale şi GeoJSON.</li>
-		  <li>Widgetul Indicaţii adaugă configurarea url-ului stratului tematic cu traficul.</li>
-		  <li>Fereastra Alegere hartă web furnizează sortarea hărţilor în baza celor mai recente, celor mai multe vizualizări, celor mai mari note, titlului şi proprietarului.</li>
-		  
+          <li>O experienţă de construcţie îmbunătăţită vă permite să modificaţi harta din interiorul Web AppBuilder for ArcGIS; nu mai este necesar să părăsiţi aplicaţia.</li>
+          <li>Acum puteţi să creaţi aplicaţii 3D cu scene prin intermediul butonului Creare din Resursele mele.</li>
+          <li>Fila Atribut are o nouă opţiune de stare a aplicaţiei. Această opţiune vă permite să alegeţi dacă doriţi să menţineţi extinderea hărţii şi vizibilitatea straturilor tematice când părăsiţi aplicaţia.</li>
+          <li>A fost lansat widgetul Conştientizare situaţie. Nu mai este oferit în versiunea beta. Acest widget vă permite să creaţi sau să selectaţi un incident pe hartă şi să analizaţi informaţiile din straturi tematice de obiecte spaţiale, fie din cadrul zonei de incident, fie aflate la o distanţă maximă specificată de incident.</li>
+          <li>Utilizaţi noul widget În apropierea mea pentru a căuta obiecte spaţiale în apropierea unei locaţii specificate, vizualizaţi informaţii mai detaliate referitoare la aceste obiecte spaţiale şi obţineţi instrucţiuni de deplasare până la un obiect spaţial selectat.</li>
+		  <li>Utilizaţi noul widget Localizare district pentru a căuta obiecte spaţiale punctuale corelate cu un poligon selectat, vizualizaţi informaţii mai detaliate referitoare obiectele spaţiale punctuale şi obţineţi instrucţiuni de deplasare până la un obiect spaţial punctual selectat.</li>
+          <li>Utilizaţi noul widget Diagrame tabel corelat pentru a trasa diagrame (cu bare sau radiale) ale valorilor existente într-un tabel corelat.</li>
+		  <li>Utilizaţi noul widget Rezumat informaţii pentru a rezuma numărul de obiecte spaţiale vizibile într-o hartă şi pentru a activa, dacă doriţi, gruparea straturilor tematice de obiecte spaţiale punctuale.</li>
+          <li>Utilizaţi noua temă Platou pentru a crea o aplicaţie modernă şi cu un stil minimalist, cu bare de instrumente şi containere de widgeturi plate.</li>
+		  <li>Widgetul Editare include un câmp de afişare în pagina de setări pentru ca dvs. să puteţi selecta atributele pentru afişare numai în cursul realizării editării.</li>
+		  <li>Puteţi deschide widgetul Editare direct în aplicaţie prin intermediul ferestrei pop-up.</li>
+		  <li>Widgetul Geoprocesare adaugă o opţiune pentru încărcarea fişierelor shapefile.</li>
+		  <li>Widgetul căutare acceptă căutări locale şi include opţiuni pentru număr maxim de sugestii şi scală de transfocare.</li>
+		  <li>Tabelul atribute vă permite să copiaţi valori ale câmpului în tabel şi să transfocaţi la obiectul spaţial din hartă atunci când faceţi dublu clic pe acesta. De asemenea, puteţi configura opţiunea Filtrare după extindere hartă.</li>
+		  <li>Adresa URL Mod de deplasare nu este necesară atunci când widgetul Indicaţii de deplasare este accesibil public.</li>
+		  <li>Widgetul Coordonate este îmbunătăţit pentru a accepta sistemul de coordonate cu WKID 102460.</li>
+		  <li>Widgetul Imprimare afişează opţiunea de format pe baza metadatelor de şablon.</li>
+		  <li>Widgetul Analiză vă permite să descărcaţi rezultatul în format GeoJson sau CSV şi adaugă un nou instrument Selectare cele mai bune centre.</li>
+		  <li>Puteţi vizualiza mai bine rezultatul cartografierii cu noul instrument Mărire.</li>
+		  <li>Puteţi controla activarea şi dezactivarea configuraţiei pentru mobil prin specificarea dimensiunii ecranului cu ajutorul parametrului adresă URL mobileBreakPoint.</li>
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">Versiunile acceptate de ArcGIS API for JavaScript</h2>
-        <p>Web AppBuilder acceptă ArcGIS API for JavaScript 3.15.</p>
+        <p>Web AppBuilder acceptă ArcGIS API for JavaScript 3.16.</p>
 
         <h3>Limbi acceptate</h3>
         <p> arabă, cehă, chineză simplificată, chineză tradiţională (Hong Kong), chineză tradiţională (Taiwan), daneză, olandeză, engleză, estoniană, finlandeză, franceză, germană, greacă, ebraică, italiană, japoneză, coreeană, letonă, lituaniană, norvegiană, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză, thailandeză, turcă şi vietnameză.</p>

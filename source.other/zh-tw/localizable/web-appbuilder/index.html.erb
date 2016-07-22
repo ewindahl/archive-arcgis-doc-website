@@ -101,16 +101,25 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">支援的瀏覽器</h2>
+		<p>2D 應用程式支援下列瀏覽器：</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari 3+</li>
-		  <li>邊緣</li>
+          <li>Safari 3 及更高版本</li>
+		  <li>Edge</li>
           <li>Internet Explorer 9 及更高版本</li>
         </ul>
-        
+		<p>3D 應用程式支援下列瀏覽器：</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari</li>
+		  <li>Edge</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
-        <h2 class="divider">授權</h2>
+        <h2 class="divider">許可</h2>
 
         <p>若要使用 Web Appbuilder，您必須申請 ArcGIS 組織帳戶。</p>
 
@@ -119,38 +128,41 @@ mobile: true
         <ul>
           <li>建立能執行於任何裝置的 HTML/JavaScript 應用程式。</li>
           <li>運用現成的 Widget 建立您需要的應用程式。</li>
-          <li>運用可設定的主題自訂應用程式外觀。</li>
-          <li>將應用程式儲存在網路上，或是在自己的伺服器中執行。</li>
-          <li>建立自訂應用程式範本。</li>
+          <li>使用可設定的主題自訂應用程式的外觀。</li>
+          <li>線上託管您的應用程式或在您自己的伺服器上運行這些應用程式。</li>
+          <li>建立自訂應用程式樣板。</li>
         </ul>
         
 
          <a name="whatIsNew"></a>
         <h2 class="divider">新功能</h2>
-        <p>Web AppBuilder for ArcGIS 是在 2015 年 11 月更新。其中包含下列新功能和增強功能：</p>
+        <p>Web AppBuilder for ArcGIS 已於 2016 年 3 月更新。其中包含下列新功能和增強功能：</p>
         <ul>
-          <li>現在當您關閉瀏覽器時會自動儲存應用程式狀態（包括地圖範圍和圖層能見度）。</li>
-          <li>完全支援來自 ArcGIS for Server 的 Web 層安全服務。</li>
-          <li>六個新的 URL 參數能讓您尋找位置或圖徵、提供登入、查詢圖徵、新增點、切換地區設定，及指定 WKID 以縮放或平移地圖。</li>
-          <li>新的「批次屬性編輯器」widget 可讓您同時編輯多個屬性。</li>
-          <li>新的「審查者儀表板」widget 可將資料品質結果統計資料顯示成圓餅圖和長條圖等資訊圖表，以摘要在您的 GIS 資料中發現的資料品質闆題。</li>
-          <li>新的「圖徵報告」widget 可讓您收集和管理使用者的資料品質意見。</li>
-		  <li>新的「圖片測量」widget 可讓您使用測量功能來執行圖片服務測量。</li>
-          <li>「搜尋」widget 可選擇新增所有搜尋來源的占位符文字，及按目前的地圖範圍搜尋。</li>
-          <li>當地圖中的圖層變更時，屬性表 widget 會相應更新這些圖層。</li>
-		  <li>「編輯」widget 可執行地圖中配置的可編輯屬性。</li>
-		  <li>「座標」widget 更提高座標文字的可讀性。</li>
-		  <li>「啟動」widget 提供自訂的背景顏色。</li>
-		  <li>「查詢」widget 支援相關表格的查詢，並可在結果中顯示相關的圖徵。</li>
-		  <li>「地理處理」widget 可選擇自訂表格輸出中的欄位，並將結果匯出到 CSV、圖徵集合和 GeoJSON。</li>
-		  <li>「方向」widget 可新增交通圖層 url 配置。</li>
-		  <li>「選擇網上地圖」視窗能讓您根據最近、最高檢視次數、最高評級、標題和擁有者在地圖上排序。</li>
-		  
+          <li>建立體驗已改善，能讓您從 Web AppBuilder for ArcGIS 中修改地圖；您不需要再離開應用程式。</li>
+          <li>您現在可以透過「我的內容」的「建立」按鈕來建立包含場景的 3D 應用程式。</li>
+          <li>屬性頁籤有新的應用程式狀態選項。您可以使用此選項，選擇在離開應用程式時是否要維持地圖範圍和圖層的可見性。</li>
+          <li>已發行「情況意識」widget。場景檢視器已不再是測試版。此 widget 可讓您在地圖上建立或選擇事件，及分析圖徵圖層的資訊（位於事件區域中，或位於事件的指定距離內）。</li>
+          <li>使用新的 NearMe widget 來尋找指定位置附近的圖徵、檢視那些圖徵的詳細資訊，以及取得所選圖徵的方向。</li>
+		  <li>使用新的 DistrictLookup widget 來尋找指定位置附近的圖徵、檢視那些圖徵的詳細資訊，以及取得所選圖徵的方向。</li>
+          <li>使用新的「相關表格圖表」widget 來繪製相關表格中管理值的圖表（長條圖或圓餅圖）。</li>
+		  <li>使用新的「資訊摘要」widget 來摘要地圖上可見的圖徵數目，並視需要在點圖徵圖層上啟用叢集。</li>
+          <li>使用新的「高原」主題來建立現代化和極簡樣式的應用程式，包含水平的工具列和 widget 容器。</li>
+		  <li>「編輯」widget 在設定頁面中包含顯示欄位，如此即可選擇唯有在執行編輯時才會顯示的屬性。</li>
+		  <li>您可以透過快顯視窗，在應用程式中直接開啟「編輯」widget。</li>
+		  <li>「地理處理」widget 新增了用來上傳 shapefile 的選項。</li>
+		  <li>「搜尋」widget 支援本機搜尋並包含最大建議和縮放比例選項。</li>
+		  <li>「屬性」表格可讓您複製表格中的欄位值，並按兩下它以縮放至地圖中的圖徵。您也可以配置「按地圖範圍篩選」選項。</li>
+		  <li>在能公開存取「方向」widget 時，不需要「行進」模式 URL。</li>
+		  <li>已加強「座標」widget 來支援包含 WKID 102460 的座標系統。</li>
+		  <li>「列印」widget 可根據樣板中繼資料來顯示版面配置選項。</li>
+		  <li>「分析」widget 可讓您下載 GeoJson 或 CSV 格式的結果，並新增「選擇最佳機構」工具。</li>
+		  <li>您可以使用「放大」工具，更完善地檢視圖表製作結果。</li>
+		  <li>您可以使用 mobileBreakPoint URL 參數來指定畫面大小，藉此控制行動版面配置的開啟或關閉時間。</li>
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">支援的 ArcGIS API for JavaScript 版本</h2>
-        <p>Web AppBuilder 支援 ArcGIS API for JavaScript 3.15。</p>
+        <p>Web AppBuilder 支援 ArcGIS API for JavaScript 3.16。</p>
 
         <h3>支援的語言</h3>
         <p>阿拉伯語、捷克語、丹麥語、荷蘭語、英語、愛沙尼亞語、芬蘭語、法語、德語、希獵語、希伯來語、義大利語、日語、韓語、拉脫維亞語、立陶宛語、挪威語、波蘭語、葡萄牙語（巴西）、葡萄牙語（葡萄牙）、羅馬尼亞語、俄語、簡體中文、西班牙語、瑞典語、泰語、繁體中文（台灣）、繁體中文（香港）、土耳其語和越南語。</p>
