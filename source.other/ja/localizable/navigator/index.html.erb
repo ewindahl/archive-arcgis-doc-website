@@ -13,7 +13,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2015-7-3"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja">
+  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-07-05"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja">
 
 mobile: true
 
@@ -23,7 +23,7 @@ mobile: true
     <header>
       <h1><a href="/ja/navigator/">Navigator for ArcGIS</a></h1>
 	  <form id="helpSearchForm" target="_top">
-       <input type="search" name="q" class="leader" placeholder="Search Navigator"> 
+       <input type="search" name="q" class="leader" placeholder="Navigator for ArcGIS の検索"> 
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="navigator-ipad" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
@@ -32,6 +32,7 @@ mobile: true
 	 <nav>
       <ul>
         <li class='current'><a href="/ja/navigator/">ホーム</a></li>
+        <li><a href="/ja/navigator/prepare-maps/prepare-maps.htm">マップの準備</a></li>
         <li><a href="/ja/navigator/ipad/navigate/guided-tour.htm">ナビゲーション</a></li>
         <li><a href="http://links.esri.com/geonet-navigator">フォーラム</a></li> 
       </ul>
@@ -47,6 +48,7 @@ mobile: true
 
         <p>
           <a href="http://links.esri.com/navigator-ios-install"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a> 
+          <a style="font-size:1.23em; margin:10px; vertical-align:middle" class="btn primary icon-android" href="https://earlyadopter.esri.com/callout/?callid=%7b28F9956B-A1F0-4793-8B7E-BA0E9473D06A%7d">Android 向けベータ版の提供が開始されました。</a>
         </p> 
         </header>
         <hr />
@@ -57,7 +59,7 @@ mobile: true
 		<a href="http://video.arcgis.com/iframe/4633/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement" title="Navigator for ArcGIS の基本操作"><img src="nav-home-1.png" /><img src="/img/playbtn.png" class="playbtn"></a>
 		
           <h3>ガイド ツアー</h3>
-          <p>自分に関連のあるマップをダウンロードして、ルートを作成し、ストップ（中継点）の順序を変更し、移動モードを構成し、目的地までのルート検索を行います。</p>
+          <p>自分に関連のあるマップをダウンロードして、ルートを作成し、ストップ (中継点) の順序を変更し、移動モードを構成し、目的地までのルート検索を行います。</p>
           <p>
 		<a href="/ja/navigator/ipad/navigate/guided-tour.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />  
 		<a href="http://video.arcgis.com/iframe/4633/000000/width/960/0/00:00:00" title="Navigator for ArcGIS の基本操作" class="videoLink colorbox-evlarge cboxElement icon-play">&nbsp;ビデオを見る</a>
@@ -66,14 +68,13 @@ mobile: true
         </div>
         
 	<div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="nav-home-2.png" />
+          <img src="nav-home-2.png" title="独自データの使用"/>
 
-          <h3>Collector との統合</h3>
-          <p>Collector for ArcGIS などの別の Esri アプリと簡単に接続して、現場での作業で移動する場所へのナビゲーションを行います。
-</p>
+          <h3>独自データの使用</h3>
+          <p>独自のデータを使用してナビゲーション マップを作成します。対象物を検索したり、道路のルートを検索したり、レイヤーを表示したりすることができます。</p>
           <p>
 		  
-		<a href="/ja/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
+		<a href="/ja/navigator/prepare-maps" class="icon-right-arrow">&nbsp;使用方法</a><br />
 				
           </p>
         </div>
@@ -81,75 +82,104 @@ mobile: true
         <div class="clear"></div>
         
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-		<img src="1.png" />
+		<img src="1.png" title="Collector との統合"/>
 		
-          <h3>アプリ リンクの作成</h3>
-          <p>組織のアプリとシームレスに連携します。アプリ リンクを作成して Navigator とアプリを統合します。</p>
+          <h3>Collector との統合</h3>
+          <p>Collector for ArcGIS など他の Esri アプリと簡単に接続して、現場にいながら作業場所へのナビゲーションを行います。</p>
           <p>
 		  
-		<a href="/ja/navigator/ipad/navigate/app-links.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
+		<a href="/ja/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
 				
           </p>
         </div>
         
 	<div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="4.PNG" />
+          <img src="4.PNG" title="Navigator への目的地情報の送信"/>
 
-          <h3>ヘルプ</h3>
-          <p>よくある質問に対する回答については、<a href="/ja/navigator/iphone/navigate/faqs.htm">FAQ</a> をご参照ください。アプリ内のツールの場所については、<a href="/ja/navigator/iphone/navigate/quick-reference.htm">クイック リファレンス</a>、または<a href="http://links.esri.com/geonet-navigator">フォーラム</a>をご参照ください。</p>
+          <h3>Navigator への目的地情報の送信</h3>
+          <p>独自のアプリ、Web サイト、または電子メールからユーザーが Navigator を起動して、提供されたパラメーターに基づき、ナビゲーションを行えるように、カスタム URL スキームを使用します。</p>
+          <p>
+            <a href="https://github.com/Esri/navigator-integration" class="icon-github">&nbsp;GitHub での使用方法</a><br />
+          </p>
         </div>
         
         <div class="clear"></div>
 
         <a name="features"></a>
         <h2 class="divider">機能</h2>
-        <p>作業員を必要な場所に配置するために、ルート案内を取得し、ルートを編集し、ナビゲーションを開始します。しかし、Navigator はコンシューマーレベルのナビゲーション アプリと同じものではありません。提供されるマップを使用して、組織のアセットを検索およびナビゲートし、移動モードを指定し、Navigator とお使いのアプリを統合します。これらはすべてオフライン環境で実行できます。</p>
+        <p>作業員を必要な場所に配置するために、ルート案内を取得し、ルートを編集し、ナビゲーションを開始します。</p>
         <ul>
           <li>音声ガイド付きの詳しいルート案内とルートの自動再計算を使用します。</li>
-          <li>位置を検索し、1 つ以上のストップのルート案内を取得します。</li>
-          <li>オフラインでのナビゲーションを可能にするダウンロード可能なマップにアクセスします。</li>
-          <li>徒歩、トラック輸送、運転など、優先させる移動モードを選択します。</li>
-          <li>Collector for ArcGIS などの他の ArcGIS アプリやユーザー独自アプリと統合します。</li>
+          <li>ローカルに保存されたデータを使用し、完全なオフライン状態でナビゲーションできます。</li>
+          <li>Esri のナビゲーション データにアクセスするか、または独自のマップを使用できます。つまり、対象物を検索し、道路のルートを検索して、レイヤーを表示できます。</li>
+          <li>一度に 1 つの目的地へのルート検索を完了させることも、その日全体の業務リストを作成して処理することもできます。</li>
+          <li>車両固有の移動モードを使用します。</li>
+          <li>電子メール、独自のアプリ、または Collector for ArcGIS などの他の ArcGIS アプリから目的地情報を受信します。</li>
         </ul>
         
         <a name="systemRequirements"></a>
         <h2 class="divider">システム要件</h2>
-        <p>Navigator for ArcGIS を使用するには、<a href="/ja/arcgis-online/administer/manage-licenses.htm" target="_blank">Navigator for ArcGIS ライセンス</a>が割り当てられた ArcGIS Online アカウントが必要です。</p>
-
-
-        <h3>データ要件</h3>
-        <p>Navigator にはナビゲーションをサポートするマップが付属しています。ナビゲーション マップは ArcGIS Online で入手して、お使いのデバイスにダウンロードできます。ArcGIS Pro の今後のリリースでは、カスタム ナビゲーション マップの作成がサポートされる予定です。</p>
-
-
-        <h3>デバイス要件</h3>
-        <table><tr>
+	<table><tr>
           <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
             <ul>
               <li>バージョン 8 以降</li>
               <li>iPad (最適なパフォーマンスを得るには第 4 世代以降)、iPhone (最適なパフォーマンスを得るには 6 以降)、iPod touch</li>
             </ul>
           </td>
+          <td valign="top" width="250px;"><h4 class="icon-android">Android (ベータ版)</h4>
+	    <ul>
+	      <li>Android 4.2 (Jelly Bean) 以降</li>
+	      <li>ARMv7 または x86 プロセッサ</li>
+	      <li>OpenGL ES 2.0 のサポート</li>
+	      <li>正確な位置を (GPS およびネットワークに基づいて) サポート</li>
+            </ul>
+          </td>
         <tr></table>
 
 	 <h3>サポートされている言語</h3>
-	    <p>英語、フランス語、ドイツ語、ギリシャ語、イタリア語、日本語、韓国語、ポルトガル (ポルトガル) 語、ロシア語、簡体字中国語、スペイン語、およびトルコ語。</p>
-	  
+	    <p>アラビア語、オランダ語、英語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、イタリア語、日本語、韓国語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ロシア語、簡体字中国語、スペイン語、およびトルコ語。</p>        
+
+
+	<a name="arcgisRequirements"></a>
+        <h2 class="divider">ArcGIS の要件</h2>
+        <p>Navigator for ArcGIS を使用するには、Navigator for ArcGIS ライセンスが割り当てられた ArcGIS 組織アカウントが必要です。
+        ArcGIS Online の使用の詳細については、「<a href="/ja/arcgis-online/administer/manage-licenses.htm#ESRI_SECTION1_C9282762EB1F4A72BB3D8794F2E4E516" target="_blank">Navigator for ArcGIS のライセンスについて</a>」をご参照ください。
+        Portal for ArcGIS の使用の詳細については、「<a href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-navigator-for-arcgis-licenses.htm#ESRI_SECTION1_D9DCE11B3F03413BBD608ECFA8BC4A04">組織向けの Navigator for ArcGIS ライセンスの構成</a>」をご参照ください。
+        ArcGIS Online および Portal for ArcGIS 10.4 以降がサポートされています。</p>
+        
+        <p>Esri が提供するナビゲーション マップを使用することも、独自のマップを作成することもできます。Esri が提供するマップは ArcGIS Online または Portal for ArcGIS で入手して、お使いのデバイスにダウンロードできます。提供されているマップの詳細については、「<a href="http://server.arcgis.com/en/streetmap-premium/latest/coverage/navigator-maps.htm">Navigator のマップのカバー範囲</a>」をご参照ください。</p>
+        <p>Navigator 用にマップを作成または変更するための要件は、編集する内容によって異なります。「<a href="/ja/navigator/prepare-maps/faqs-author.htm#anchor3">ナビゲーション マップの操作に必要なライセンス</a>」をご参照ください。</p>
             
         <a name="whatsNew"></a>
         <h2 class="divider">新機能</h2>     
         
-        <p>Navigator for ArcGIS 1.2 は、2015 年 11 月にリリースされました。機能強化された点は次のとおりです。</p>
-        
-        <ul>
-	  <li>イタリア語およびトルコ語にローカライズ</li>
-	  <li>SAML ベースのログインのサポートを強化</li>
-	  <li>iOS 9 のサポートを改善</li>
-	  <li>各種不具合の修正と改善</li>
-	</ul>
+        <table>
+	  <tr>
+	    <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
+	      <p>Navigator for ArcGIS 2.0 は、2016 年 7 月にリリースされました。機能強化された点は次のとおりです。</p>
+	    </td>
+	    <td valign="top" width="250px;"><h4 class="icon-android">Android (ベータ版)</h4>
+	      <p>Navigator for ArcGIS のベータ版は、2016 年 5 月に提供が開始されました。機能強化された点は次のとおりです。</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign="top"><ul>
+              <li>独自のマップの使用して、対象物の検索、道路のルート検索、およびレイヤーの表示ができます。</li>
+              <li>複数の目的地の順序を自動的に並べ替えて、最適なルートを表示</li>
+              <li>カスタム URL スキームを使用して住所を伝送</li>
+              <li>Portal for ArcGIS 10.4 以降をサポート</li>
+              <li>アラビア語、オランダ語、ヘブライ語、ポルトガル (ブラジル) 語に対応</li>
+              <li>各種不具合の修正と改善</li>
+	    </ul></td>
+	    <td valign="top"><ul>
+	      <li>Android の開発過程に沿って挙げられたすべての機能が「<a href="#sneakPeak">追加予定の機能</a>」表に含まれます。iOS 上で現在リリース済みのすべての機能がサポートされています。</li>
+	    </ul></td>
+	  </tr>
+        </table>
         
 	<a name="sneakPeek"></a>
 	<h2 class="divider">追加予定の機能</h2>
-	<p>このアプリケーションでは、お使いのデバイスで次のような機能を利用できるようになります。</p>
+	<p>	次の表に、このアプリの開発状況の概略を示します。アプリの機能が、デバイスのプラットフォーム別に表示されています。</p>
 	
 	<style>
 	  table.sneakPeek
@@ -173,8 +203,8 @@ mobile: true
         <table class="sneakPeek" border="1">
 	  <caption>プラットフォーム別の機能<br/>
 	  <span class="icon-check" style="color:black"></span> リリース済み、<span class="icon-check icon-orange"></span> 開発中、<span class="icon-check" style="color:lightgray"></span><span class="clear"/> 今後<br/>
-	  空白のセルは予定外の機能を示しています。<br/>
-	  デスクトップのサポートは現時点では予定されていません。
+空白のセルは予定外の機能を示しています。<br/>
+デスクトップのサポートは現時点では予定されていません。
 	  </caption>
 	  <tr>
 	    <td></td>
@@ -183,14 +213,14 @@ mobile: true
 	    <td><span class="icon-windows-8 icon-purple"/></td>
 	  </tr>
 	  <tr>
-	    <td>含まれているマップを使用したナビゲーション</td>
+	    <td>製品に付属するマップを使用したナビゲーション</td>
 	    <td><span class="icon-check"/></td>
 	    <td><span class="icon-check icon-orange"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>	
 	  <tr>
 	    <td>ユーザー独自のカスタム マップ (ジオコーディング、ルート検索、表示) を使用したナビゲーション</td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check icon-orange"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr> 
@@ -201,8 +231,8 @@ mobile: true
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>
 	  <tr>
-	    <td>Portal for ArcGIS での操作</td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td>Portal for ArcGIS との連携</td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check icon-orange"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>	
@@ -214,7 +244,7 @@ mobile: true
 	  </tr>	
 	</table>
 	
-	<p><a href="http://ideas.arcgis.com/">アイデア</a>を共有したり、<a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">フィードバックを送信</a>します。</p>
+	<p><a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bnavigator-for-arcgis%5D">アイデア</a>を共有したり、<a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">フィードバックを送信</a>します。</p>
 	
         <p>&nbsp;</p>
 
@@ -229,6 +259,7 @@ mobile: true
 	          
 	  <h4><a href="#features">特長</a></h4>
 	  <h4><a href="#systemRequirements">システム要件</a></h4>
+	  <h4><a href="#arcgisRequirements">ArcGIS の要件</a></h4>
 	  <h4><a href="#whatsNew">新機能</a></h4>
 	  <h4><a href="#sneakPeek">追加予定の機能</a></h4>
 	          
@@ -248,7 +279,8 @@ mobile: true
     </div>
 
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/navigator-for-arcgis/feed/',
