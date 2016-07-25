@@ -31,7 +31,8 @@ mobile: true
 	<nav>
       <ul>
         <li class='current'><a href="/en/arcgis-earth/">Home</a></li>
-        <li><a href="/en/arcgis-earth/use/get-started.htm">Use</a></li>
+        <li><a href="/en/arcgis-earth/get-started/get-started.htm">Get Started</a></li>
+		<li><a href="/en/arcgis-earth/use/guided-tour.htm">Use</a></li>
         <li><a href="/en/arcgis-earth/administer/admin-config.htm">Administer</a></li>
         <li><a href="https://geonet.esri.com/groups/arcgis-earth">Forum</a></li>
       </ul>
@@ -65,7 +66,7 @@ mobile: true
           <h3>Navigate ArcGIS Earth</h3>
           <p>Use your mouse, keyboard, or touch screen to explore terrains, oceans, and mountains anywhere in the world.</p>
           <p>
-            <a href="/en/arcgis-earth/use/navigation-controls.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
+            <a href="/en/arcgis-earth/get-started/navigation-controls.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
 			<!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
 
           </p>
@@ -95,10 +96,10 @@ mobile: true
 
 	<div id="earthHome4" class="column-12 phone-column-24">
           <img src="/en/arcgis-earth/ShareMaps.jpg" />
-	  <h3>Share maps</h3>
-	  <p>Share a screen capture of your current Earth view by saving it as an image, emailing it, or printing it.</p>
+	  <h3>Share your work</h3>
+	  <p>Share a screen capture of your current Earth view and share your work in progress.</p>
 	  <p>
-	    <a href="/en/arcgis-earth/use/guided-tour.htm#ESRI_SECTION1_2A3F3A27057C47E0A6B62AEE556B7A9E" class="icon-right-arrow">&nbsp;Show me how</a><br />
+	    <a href="/en/arcgis-earth/use/share-your-work.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
 	    <!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
 	  </p>
         </div>
@@ -109,7 +110,8 @@ mobile: true
         <h2 class="divider">Features</h2>
         <p>ArcGIS Earth is a lightweight, easy-to-use 64-bit Windows desktop app that enables anyone in your organization to easily view and explore 2D and 3D data including KML and ArcGIS services, whether behind a firewall or over the Internet.</p>
         <ul>
-          <li>Display KML layers and shapefiles in 3D.</li>
+          <li>Display Tile package, Scene package, KML layers and shapefiles in 3D.</li>
+		  <li>Display local raster data.</li>
           <li>Connect to Esri RESTful services including feature, map, image, and scene services.</li>
           <li>Use Esri basemaps and Living Atlas of the World content.</li>
           <li>Measure, create placemarks and simple geometry, and more.</li>
@@ -119,21 +121,19 @@ mobile: true
         <a name="systemrequirements"></a>
         <h2 class="divider">System requirements</h2>
 
-        <p> ArcGIS Earth is a desktop app built on the <a href="https://developers.arcgis.com/net/desktop/guide/system-requirements.htm#ESRI_SECTION1_F2655B7F48F7464DB86CC7756706296D">ArcGIS Runtime SDK for .NET</a> and shares the same requirements for deployment targets as other apps built with the Runtime SDK.</p>
+        <p> ArcGIS Earth is a desktop app built on the <a href="https://developers.arcgis.com/net/desktop/guide/system-requirements.htm#ESRI_SECTION1_F2655B7F48F7464DB86CC7756706296D">ArcGIS Runtime SDK for .NET</a> and shares the same requirements for deployment targets as other apps built with the Runtime SDK. ArcGIS Earth has a dependency of .NET 4.5.2.</p>
 
 
         <h3>Supported platforms</h3>
         <ul>
-          <li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit [EM64T])</li>
-		  <li>Windows 8 Basic, Pro, and Enterprise (64 bit [EM64T])</li>
-          <li>Windows 8.1 Basic, Pro, and Enterprise (64 bit [EM64T])</li>
-          <li>Windows 10 Home, Pro, and Enterprise (64 bit [EM64T])</li>
-          <li>Windows Server 2008 SP2 Standard, Enterprise, and Datacenter (64 bit [EM64T])</li>
-          <li>Windows Server 2008 R2 SP1 Standard, Enterprise, and Datacenter (64bit [EM64T])</li>
-          <li>Windows Server 2012 Standard and Datacenter (64 bit [EM64T])</li>
-          <li>Windows Server 2012 R2 Standard and Datacenter (64 bit [EM64T])</li>
+          <li>Windows 10 Home, Professional, Enterprise, and Educational (64 bit [EM64T])</li>
+		  <li>Windows 8.1 Basic, Pro, and Enterprise (64 bit [EM64T])</li>
+		  <li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit [EM64T])</li>
+		  <li>Windows Server 2012 R2 Standard and Datacenter (64 bit [EM64T])</li>
+		  <li>Windows Server 2012 Standard and Datacenter (64 bit [EM64T])</li>
+		  <li>Windows Server 2008 R2 SP1 Standard, Enterprise, and Datacenter (64 bit [EM64T])</li>
         </ul>
-		
+
 		<h3>DirectX</h3>
 		<p>ArcGIS Earth uses <a href="http://en.wikipedia.org/wiki/DirectX">DirectX</a> to provide high-performance map rendering. DirectX provides support for hardware and software rendering of graphics and is provided by the <a href="https://developers.arcgis.com/net/desktop/guide/system-requirements.htm#ESRI_SECTION2_254FB8C139314E42BB3E5EEA32C049F2">supported Windows platforms</a>.</p>
         <ul>
@@ -155,6 +155,34 @@ mobile: true
           <li>Video/Graphics adapter: 256 MB RAM minimum, 1 GB RAM recommended; NVIDIA, ATI, and Intel chipsets supported；accelerated graphics card driver; Shader Model 4.0 minimum. Be sure to use the latest available driver.</li>
         </ul>
 
+		<a name="What's new"></a>
+        <h2 class="divider">What's new</h2>
+		<p>ArcGIS Earth was updated in June 2016 to Version 1.2. It includes the following new features and enhancements:<p>
+		<h4>Features<h4>
+		 <ul>
+			<li>TPK, SPK, and local elevation raster data support have been added.</li>
+			<p></p>
+            <p>Support for advanced options under a disconnected environment:</p>
+		    <li>A network connection indicator has been added.</li>
+		    <li>Import or export a workspace directory.</li>
+		    <li>Save drawing elements and CSV/TXT data as KMZ.</li>
+		    <li>Use local data for Basemap and Terrain.</li>    
+		 </ul>
+		<h4>Enhancements<h4>
+        <ul>
+          <li>Ability to change units and set them in preferences&mdash;coordinate, distance, area</li>
+		  <li>Enhanced table of contents behaviors<li>
+          <li>Ability to identify multiple features in one location<li>  
+		  <li>Support for WMS in startup layers<li>
+		  <li>Improved PKI/IWA authentication workflow<li>
+		  <li>Improved icons for point SHP and CSV/TXT files<li>
+		  <li>Ability to configure About content<li>
+        </ul>
+		<p>ArcGIS Earth was updated in July 2016 to Version 1.2.1. It includes the following hotfix.<p>
+		<ul>
+          <li>Support GCS-WGS84 Terrain 3D image service.</li>
+		</ul>
+		
 	<p>Share your <a href="http://ideas.arcgis.com/">ideas</a>, and <a href="http://support.esri.com/en/">send us your feedback</a>.</p>
 
         <p>&nbsp;</p>
@@ -167,10 +195,17 @@ mobile: true
 
         <div class="imgFrame block">
 	  <h3>Details</h3>
-	  <h4><a href="http://video.esri.com/watch/4646/arcgis-earth">Quick introduction video</a></h4>
+	 <!-- <h4><a href="http://video.esri.com/watch/4646/arcgis-earth">Quick introduction video</a></h4>-->
+	  <h4><a href="http://video.arcgis.com/iframe/4646/000000/width/960/autoplay:1/00:00:00"  class="colorbox-evlarge"><img src="/img/playbtn-small.png">Quick introduction video</a></h4>
+		<video width="320" height="240" controls id="4646" class="mobileVideo">
+		  <source src="http://video.arcgis.com/download-video/4646/mp4/480">
+		</video>		
+	  <h4><a href="https://learn.arcgis.com/en/projects/get-started-with-arcgis-earth/">Take a lesson</a></h4>
 	  <h4><a href="#features">Features</a></h4>
 	  <h4><a href="#systemrequirements">System requirements</a></h4>
+	  <h4><a href="#What's new">What's new</a></h4>
 
+	  
         </div>
 
         <br />

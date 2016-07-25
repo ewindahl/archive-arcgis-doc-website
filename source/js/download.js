@@ -116,14 +116,16 @@ $(document).ready(function() {
 	// UI Manipulation
 	// On select version drop down item
 	$(".downloads .card .dropdown-item").click(function (){
-		
 		var fileName = $(this).attr("data-app-file")
 		var folderName = $(this).attr("data-app-folder")
 		var fileSize = $(this).attr("data-file-size")
 		var versionLabel = $(this).text()
 
 		var parentObj = $(this).parentsUntil( ".card" )
-		parentObj.find(".dropdown-wrapper .dropdown-selected").text(versionLabel)
+		 parentObj.find(".dropdown-wrapper .dropdown-selected").fadeOut(50, function(){
+            parentObj.find(".dropdown-wrapper .dropdown-selected").text(versionLabel).fadeIn().delay(100);
+       });
+								
 		parentObj.find(".download-link").attr("data-filename", fileName)
 		parentObj.find(".download-link").attr("data-folder", folderName)
 		parentObj.find(".download-link").attr("data-file-size", fileSize)
@@ -166,7 +168,7 @@ $(document).ready(function() {
 				var localedir = (typeof(docConfig) !== 'undefined') ? docConfig['locale'].toLowerCase():false;
 				var localeDict = (localedir && window.localeJsonObj)?window.localeJsonObj[localedir]:false;
 
-				alert ((localeDict && localeDict['invalid-org-acct']) ? localeDict['invalid-org-acct'] : "Please login with a valid Organizationl account!")
+				alert ((localeDict && localeDict['invalid-org-acct']) ? localeDict['invalid-org-acct'] : "Please sign in with a valid organizational account.")
 				return false;
 			}
 
