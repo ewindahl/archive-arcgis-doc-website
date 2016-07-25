@@ -1701,7 +1701,9 @@ var localeJsonObj = {
       "desktop": "Desktop", 
       "detail": "Detail", 
       "developer-summit": "Developer Summit", 
-      "display": "Display", 
+      "display": "Display",
+      "drone2map": "Drone2Map", 
+      "drone2map-ht": "Drone2Map for ArcGIS",  
       "email-address": "Email address:", 
       "english": "English", 
       "enter-valid-captcha": "Please enter the valid captcha value!", 
@@ -1907,7 +1909,12 @@ var localeJsonObj = {
       "web-appbuilder": "Web AppBuilder", 
       "web-appbuilder-ht": "Web AppBuilder for ArcGIS", 
       "win-phone-app": "ArcGIS app (Windows Phone)", 
-      "win-phone-app-ht": "ArcGIS app (Windows Phone)"
+      "win-phone-app-ht": "ArcGIS app (Windows Phone)", 
+      "windows-phone": "Windows Phone",
+		"workforce-ipad":"Workforce (iPad)",
+		"workforce-ipad-ht":"Workforce (iPad)",
+		"workforce-iphone":"Workforce (iPhone)",
+		"workforce-iphone-ht":"Workforce (iPhone)"
    }, 
    "es": {
       "10.3": "ArcMap 10.3", 
