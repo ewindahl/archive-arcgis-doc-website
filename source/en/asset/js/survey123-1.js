@@ -25,8 +25,8 @@ $(document).ready(function() {
 		"UseOfflineBasemaps.htm": "Desktop",
 		"troubleshootcreatesurveys.htm": "Desktop",
 		"troubleshootgetanswers.htm": "Desktop",
-		"quickreferencegetanswers.htm": "Desktop"
-	   
+		"quickreferencegetanswers.htm": "Desktop",
+		"integrationwithworkforce.htm": "Desktop"
 	}
 	
 	
