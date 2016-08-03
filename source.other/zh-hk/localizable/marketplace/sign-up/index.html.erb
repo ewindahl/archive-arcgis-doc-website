@@ -36,7 +36,7 @@ mobile: true
 <div class="container feedback">
 
      <div class="row main">
-	 <p data-langlabel="sell-your-app-note">在 ArcGIS Marketplace 銷售您的應用程式。 接觸到世界上最大的 GIS 使用者群。 我們會使您輕鬆地聯繫使用者、提供免費試用，並發掘潛在客戶。 做為應用程式供應商，您可以保留銷售應用程式的全部營收。 有關詳細資訊，請檢視<a href="/zh-hk/marketplace/provider/faq.htm">常見問題集</a>。 </p>
+	 <p data-langlabel="sell-your-app-note">在 ArcGIS Marketplace 銷售您的應用程式。接觸到世界上最大的 GIS 使用者群。您能夠輕鬆地聯繫使用者、提供免費試用，並發掘潛在客戶。作為應用程式供應商，您可以保留銷售應用程式所獲得的全部營收。有關詳細資訊，請檢視<a href="/zh-hk/marketplace/provider/faq.htm">常見問題集</a>。</p>
 	 
  	  
   <div class="warning-signup">
@@ -45,24 +45,35 @@ mobile: true
       </header>
 
       <section>
-        <p data-langlabel="reach-a-broader-audience">透過在 ArcGIS Marketplace 列出您的解決方案，以接觸到更廣泛的目標群眾。 登入 <a href="http://partnerportal.esri.com/">Esri Partner Portal</a>，以瞭解成為供應商的條件。</p>
-
+        <p data-langlabel="reach-a-broader-audience">透過在 ArcGIS Marketplace 列出您的解決方案，以接觸到更廣泛的目標群眾。登入 <a href="http://partnerportal.esri.com/">Esri Partner Portal</a>，以瞭解成為供應商的條件。</p>
+		
       </section>
 
+	<header>
+        <h2 data-langlabel="already-an-esri-partner">加入 Esri 新興業務計畫來成立 Esri 初創公司</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience"><a href="https://developers.arcgis.com/startups/">Esri 新興業務計畫</a>是一項三年的免費計畫，其提供必要的工具，讓新創的公司將製圖和位置分析功能建置到其產品中。合格的初創公司會收到線上服務、軟體、培訓和支援、內容及其他商機，協助其邁向成功之路。</p>
+		
+
+      </section>
 	  
     </div> 
 
 
     <div class="contact-form-signup">
 		<h2 data-langlabel="new-to-esri">尚未成為合作夥伴？ Esri 的新使用者？</h2>
-		<p data-langlabel="provider-signup-note">我們正在尋找希望為我們的使用者建立傑出解決方案的開發人員。 請自我介紹，我們將協助您開始。</p>
+		<p data-langlabel="provider-signup-note">我們正在尋找希望為我們的使用者建立傑出解決方案的開發人員、初創公司和組織。請自我介紹，然後我們將協助您開始。</p>
 		
 		<div id="sign-up-form-fields">
-		  <form id="sign-up-form" name="signUpForm" method="post" action="http://resources.arcgis.com/apps/contact-us/">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
 			
 			
 			<fieldset id="signup-form-fieldset">
 
+			  <label data-langlabel="company-name" for="company-name">公司名稱： </label>
+			  <input type="text" id="companyName" name="companyName">
 			  <label data-langlabel="first-name" for="first-name">名字： </label>
 			  <input type="text" id="firstName" name="firstName">
 			  <label data-langlabel="last-name" for="last-name">姓氏： </label>
@@ -71,8 +82,12 @@ mobile: true
 			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
 			  <label data-langlabel="phone-number" for="phone-number">電話號碼： </label>
 			  <input type="text" id="userPhone" name="userPhone">
-			  <label data-langlabel="comment" for="comment">關於您： </label>
-			  <textarea data-langlabel="comment" placeholder="I build apps that..." name="userComment" id="userComment"></textarea>
+			  <label data-langlabel="comment" for="comment">將您和您組織的相關資訊告訴我們： </label>
+			  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
+			  <label data-langlabel="services" for="services">將您的解決方案或服務告訴我們： </label>
+			  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
+			  <label data-langlabel="website" for="website">網站： </label>
+			  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
 			  
 			  <label data-langlabel="feedback-spam-note" for="spam">為防止自動發送的垃圾郵件，請輸入以下數字： </label>
 			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
@@ -84,15 +99,17 @@ mobile: true
 			<input type="hidden" value="internal" name="source" id="source">
 			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
 			<input type="hidden" value="zh-hk" name="lg">
+			<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
+			<input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
 			
 			</fieldset>
-			<a class="btn orange" id="sign-up-link" data-langlabel="contact-us">提交</a>
+			<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">提交</a>
 			
 		  </form>
 		</div>
 	  <div id="signup-confirmation" style="display:none;">
 		<p>&nbsp;</p>
-		<p data-langlabel="provider-signup-confirmation"><strong>感謝您有意成為 ArcGIS Marketplace 供應商。 我們將在接下來的幾個工作日內與您聯絡。</strong></p>
+		<p data-langlabel="provider-signup-confirmation"><strong>感謝您有意成為 ArcGIS Marketplace 供應商。我們將在接下來的幾個工作日內與您聯絡。</strong></p>
 	  </div>
     </div>
 

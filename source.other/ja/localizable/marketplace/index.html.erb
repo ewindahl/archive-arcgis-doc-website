@@ -1,12 +1,11 @@
 ---
 layout: marketplace/layout
+
 title: ArcGIS Marketplace
 css:
   - documentation
-
   - /en/asset/css/common
   - stat-page-specific
-
   - colorbox/colorbox
 
 js:
@@ -14,11 +13,9 @@ js:
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
-  - sitecfg.js
-  - marketplace/init.js
 
 metatags:
-  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING"><META name="content-language" content="ja">
 
 mobile: true
 
@@ -33,12 +30,13 @@ mobile: true
         <input type="hidden" name="product" value="marketplace" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
+
     </header>
 	<nav>
       <ul>
         <li class='current'><a href="/ja/marketplace/">メイン</a></li>
-        <li><a href="/ja/marketplace/consumer/">一般ユーザ向け</a></li>
-        <li><a href="/ja/marketplace/provider/">提供者向け</a></li>
+        <li><a href="/ja/marketplace/consumer/">データ利用者向け</a></li>
+        <li><a href="/ja/marketplace/provider/">データ公開者向け</a></li>
       </ul>
     </nav>
   </div>
@@ -47,14 +45,13 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
+
      <div class="column-16 tablet-column-24">
         <header>
 
-		  <h2 id="appTitle">マーケットプレイスとは</h2>
-
-          <p>ArcGIS Marketplace は、ArcGIS Online の組織サイトのユーザが組織内での利用を目的に、認定プロバイダ (Esri ビジネス パートナー、Esri 販売代理店、および Esri) からアプリやデータを検索して取得することができる場所です。マーケットプレイスに掲載されているアプリやデータ サービスは、ArcGIS Online 組織サイト上に公開して世界中で利用することができます。</p>
-
-
+			 
+		 <!--<h2 id="appTitle" class="gray">What is the Marketplace?</h2>-->
+		<h5 class="gray">ArcGIS Marketplace を最大限に活用するための方法をご紹介します。</h5>	
 
         </header>
         <hr />
@@ -62,49 +59,67 @@ mobile: true
 
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/help-power-your-enterprise.jpg" />
+          <img src="img/for-consumers.png" />
 
-          <h3>ビジネスをパワーアップ </h3>
-          <p>組織内で使用するアプリケーションおよびデータ サービスを見つけます。アプリケーションまたはデータ サービスを入手すると、それらを簡単に組織サイトのグループやユーザと共有できます。</p>
-          <p>
-
-			<a href="/ja/marketplace/consumer/purchase-workflow.htm" class="icon-right-arrow">&nbsp;手順の表示</a> <br/> <a href="/ja/marketplace/consumer/faq.htm" class="icon-right-arrow">&nbsp;FAQ</a>
-
-          </p>
+          <h3>データ利用者向け </h3>
+          <p>アプリやデータを検索し、使用する方法を説明します。</p>
+          <ul>			
+			<li><a href="/ja/marketplace/consumer/get-started-consumers.htm">ArcGIS Marketplace の有効な活用</a></li>
+			<li><a href="/ja/marketplace/consumer/search-for-apps-and-data.htm">アイテムの検索</a></li>
+			<li><a href="/ja/marketplace/consumer/subscribe-to-apps-and-data.htm">アイテムの取得</a></li>
+			<li><a href="/ja/marketplace/consumer/faq.htm">よくあるご質問 (FAQ)</a></li>
+          </ul>
         </div>
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/help-reach-your-users.jpg" />
+          <img src="img/for-providers.png" />
 
-          <h3>ユーザへの案内</h3>
-          <p>ArcGIS Marketplace では、見出しの作成、無料トライアルの提供、リストの閲覧許可、およびサブスクリプションの管理などの仕組みが提供されています。</p>
-          <p>
-            <a href="/ja/marketplace/provider/build-apps.htm" class="icon-right-arrow">&nbsp;手順の表示</a> <br/> <a href="/en/marketplace/provider/become-a-provider.htm" class="icon-right-arrow">&nbsp;認定プロバイダ</a> <br/> <a href="/ja/marketplace/provider/faq.htm" class="icon-right-arrow">&nbsp;FAQ</a>
-
-          </p>
+          <h3>データ公開者向け</h3>
+          <p>アプリやデータの追加、宣伝、販売の方法をご紹介します。</p>
+          <ul>			
+			<li><a href="/ja/marketplace/provider/become-a-provider.htm">プロバイダーになる</a></li>
+			<li><a href="/ja/marketplace/provider/listing-tips.htm">効果の高いリストを作成するためのヒント</a></li>
+			<li><a href="/ja/marketplace/provider/create-listings.htm">リストについて</a></li>
+			<li><a href="/ja/marketplace/provider/faq.htm">よくあるご質問 (FAQ)</a></li>
+          </ul>
         </div>
-
         <div class="clear"></div>
 
+<hr>
+<br>
+<div>
+    
+<div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">Esri テクニカル サポート</a></h4>
+      <p>チャット、電子メール、または電話でサポートに問い合わせます。</p>
+    </section>
+    
+  </div> 
+  <div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-light-bulb icon-orange"><a href="https://geonet.esri.com/community/arcgis-ideas/" target="_blank">ArcGIS Ideas</a></h4>
+      <p>ソフトウェアのフィードバックを送信します。</p>
+    </section>
+    
+  </div>
+  <div class="column-8 phone-column-24" >
+
+   <h4 class="icon-comment icon-blue"><a href="https://geonet.esri.com/groups/arcgis-marketplace-apps" target="_blank">Esri コミュニティ</a></h4>
+      <p>GeoNet での議論に参加します。</p>
+    
+  </div>
+  <!--<div class="row">-->
+
+  
+</div>
         <p>&nbsp;</p>
 
-      </div>
 
 
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3 class="icon-orange icon-light-bulb">ArcGIS Ideas サイト</h3>
-         <p>必要なアプリまたはデータが見つかりませんか？ぜひ新しいアイディアを提案するか、既存のアイディアに投票してください。</p>
-         <p>アイディアを探しているプロバイダですか？ユーザが何を求めているか理解し、あなたと協力して非公開でアイディアを発展させることができる提供者を招待します。</p>
-         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
-        </div>
-
-        <br />
 
 
- </div>
-
-    </div>
 

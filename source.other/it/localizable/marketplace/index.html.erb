@@ -13,11 +13,9 @@ js:
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
-  - sitecfg.js
-  - marketplace/init.js
 
 metatags:
-  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING">
+  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING"><META name="content-language" content="it">
 
 mobile: true
 
@@ -32,11 +30,13 @@ mobile: true
         <input type="hidden" name="product" value="marketplace" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
-    </header> <nav>
+
+    </header>
+	<nav>
       <ul>
         <li class='current'><a href="/it/marketplace/">Principale</a></li>
         <li><a href="/it/marketplace/consumer/">Per gli utenti</a></li>
-        <li><a href="/it/marketplace/provider/">Per i fornitori</a></li>
+        <li><a href="/it/marketplace/provider/">Per i provider</a></li>
       </ul>
     </nav>
   </div>
@@ -45,14 +45,13 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
+
      <div class="column-16 tablet-column-24">
         <header>
 
-		  <h2 id="appTitle">Che cos'è il marketplace?</h2>
-
-          <p>ArcGIS Marketplace è una destinazione che consente alle organizzazioni ArcGIS Online di cercare, scoprire e ottenere applicazioni e dati da fornitori qualificati (partner Esri, distributori Esri ed Esri) per l'utilizzo all'interno dell'organizzazione. È possibile rendere disponibili a tutte le organizzazioni ArcGIS Online di tutto il mondo le applicazioni e i servizi dati elencati nel marketplace.</p>
-
-
+			 
+		 <!--<h2 id="appTitle" class="gray">What is the Marketplace?</h2>-->
+		<h5 class="gray">Informazioni su come sfruttare al massimo ArcGIS Marketplace.</h5>	
 
         </header>
         <hr />
@@ -60,52 +59,67 @@ mobile: true
 
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/help-power-your-enterprise.jpg" />
+          <img src="img/for-consumers.png" />
 
-          <h3>Numerosi vantaggi per l'azienda </h3>
-          <p>Per trovare applicazioni e servizi dati da utilizzare all'interno dell'organizzazione. Dopo aver ottenuto un'applicazione o un servizio dati, sarà possibile condividerli facilmente con gruppi e utenti della propria organizzazione.</p>
-          <p>
-
-			<a href="/it/marketplace/consumer/purchase-workflow.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a> <br/> 
-			<a href="/it/marketplace/consumer/faq.htm" class="icon-right-arrow">&nbsp;Domande frequenti</a>
-
-          </p>
+          <h3>Per gli utenti </h3>
+          <p>Informazioni su come trovare e utilizzare app e dati.</p>
+          <ul>			
+			<li><a href="/it/marketplace/consumer/get-started-consumers.htm">Sfruttare al massimo ArcGIS Marketplace</a></li>
+			<li><a href="/it/marketplace/consumer/search-for-apps-and-data.htm">Cercare elementi</a></li>
+			<li><a href="/it/marketplace/consumer/subscribe-to-apps-and-data.htm">Acquisire gli elementi</a></li>
+			<li><a href="/it/marketplace/consumer/faq.htm">Domande frequenti</a></li>
+          </ul>
         </div>
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/help-reach-your-users.jpg" />
+          <img src="img/for-providers.png" />
 
-          <h3>Condivisione</h3>
-          <p>ArcGIS Marketplace include un meccanismo per generare potenziali clienti, offrire versioni di prova gratuite, concedere l'accesso alle presentazioni e gestire gli abbonamenti.</p>
-          <p>
-            <a href="/it/marketplace/provider/build-apps.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a> <br/> 
-			<a href="/it/marketplace/provider/become-a-provider.htm" class="icon-right-arrow">&nbsp;Qualificarsi come fornitori</a> <br/> 
-			<a href="/it/marketplace/provider/faq.htm" class="icon-right-arrow">&nbsp;Domande frequenti</a>
-
-          </p>
+          <h3>Per i provider</h3>
+          <p>Informazioni su come aggiungere, promuovere e vendere app e dati.</p>
+          <ul>			
+			<li><a href="/it/marketplace/provider/become-a-provider.htm">Diventare un provider</a></li>
+			<li><a href="/it/marketplace/provider/listing-tips.htm">Suggerimenti per una presentazione di successo</a></li>
+			<li><a href="/it/marketplace/provider/create-listings.htm">Informazioni sulle presentazioni</a></li>
+			<li><a href="/it/marketplace/provider/faq.htm">Domande frequenti</a></li>
+          </ul>
         </div>
-
         <div class="clear"></div>
 
+<hr>
+<br>
+<div>
+    
+<div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">Supporto tecnico Esri</a></h4>
+      <p>Contattare il supporto tecnico attraverso chat, e-mail o telefono.</p>
+    </section>
+    
+  </div> 
+  <div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-light-bulb icon-orange"><a href="https://geonet.esri.com/community/arcgis-ideas/" target="_blank">Idee ArcGIS</a></h4>
+      <p>Inviare feedback sul software.</p>
+    </section>
+    
+  </div>
+  <div class="column-8 phone-column-24" >
+
+   <h4 class="icon-comment icon-blue"><a href="https://geonet.esri.com/groups/arcgis-marketplace-apps" target="_blank">La community Esri</a></h4>
+      <p>Partecipare a discussioni su GeoNet.</p>
+    
+  </div>
+  <!--<div class="row">-->
+
+  
+</div>
         <p>&nbsp;</p>
 
-      </div>
 
 
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3 class="icon-orange icon-light-bulb">Sito idee ArcGIS</h3>
-         <p>L'applicazione o i dati necessari non sono disponibili? Inviare un suggerimento o assegnare un voto alle idee esistenti.</p>
-         <p>Fornitori in cerca di idee? Qui è possibile visualizzare le necessità degli utenti. È possibile invitare i partecipanti al sito a una collaborazione privata per lo sviluppo delle idee.</p>
-         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
-        </div>
-
-        <br />
 
 
- </div>
-
-    </div>
 

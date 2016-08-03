@@ -59,41 +59,55 @@ function genDisplay() {
             
           var itemType = (type)? type.toLowerCase() : "",
             typeKeywords = typeKeywords || [],
-            imgDir = getTier(window.location.hostname).agolCdnBasePath + "7674/js/jsapi/esri/css/images/item_type_icons/",
+            imgDir = getTier(window.location.hostname).agolCdnBasePath + "esri/css/images/item_type_icons/",
             size = "16",  //for now we only support 16x16 pixel images
             isHosted = false,
             isTable = false,
             imgName;
 
 
-          if (itemType.indexOf("service") > 0 || itemType === "feature collection" || itemType === "kml" || itemType === "wms" || itemType === "wmts") {
+          if (itemType.indexOf("service") > 0 || itemType === "feature collection" || itemType === "wms" || itemType === "wmts") {
             isHosted = $.inArray("Hosted Service", typeKeywords) > -1;
-            if (itemType === "feature service" || itemType === "feature collection" || itemType === "kml") {
+            if (itemType === "feature service" || itemType === "feature collection") {
               isTable = $.inArray("Table", typeKeywords) > -1;
               imgName = isTable ? "table" : (isHosted ? "featureshosted" : "features");
             } else if (itemType === "map service" || itemType === "wms" || itemType === "wmts") {
               imgName = (isHosted || $.inArray("Tiled", typeKeywords) > -1) ? "maptiles" : "mapimages";
             } else if (itemType === "scene service") {
-              imgName = "sceneweblayer";
+              if ($.inArray("Line", typeKeywords) > -1) {
+                imgName = "sceneweblayerline";
+              } else if ($.inArray("3DObject", typeKeywords) > -1) {
+                imgName = "sceneweblayermultipatch";
+              } else if ($.inArray("Point", typeKeywords) > -1) {
+                imgName = "sceneweblayerpoint";
+              } else if ($.inArray("Integrated mesh", typeKeywords) > -1) {
+                imgName = "sceneweblayermesh";
+              } else if ($.inArray("PointCloud", typeKeywords) > -1) {
+                imgName = "sceneweblayerpointcloud";
+              } else if ($.inArray("Polygon", typeKeywords) > -1) {
+                imgName = "sceneweblayerpolygon";
+              } else {
+                imgName = "sceneweblayer";
+              }
             } else if (itemType === "image service") {
               imgName = $.inArray("Elevation 3D Layer", typeKeywords) > -1 ? "elevationlayer" : "imagery";
             } else if (itemType === "stream service") {
               imgName = "streamlayer";
             } else if (itemType === "vector tile service") {
               imgName = "vectortile";
+            } else if (itemType === "datastore catalog service") {
+              imgName = "datastorecollection";
             } else {
               imgName = "layers";
             }
-          } else
-          if (itemType == "web map" || itemType == "cityengine web scene") {
+          } else if (itemType == "web map" || itemType == "cityengine web scene") {
             imgName = "maps";
           } else  if (itemType == "web scene") {
             imgName = $.inArray("ViewingMode-Local", typeKeywords) > -1 ? "webscenelocal": "websceneglobal";
           } else if (itemType == "web mapping application" || itemType == "mobile application" || itemType == "application" ||
             itemType == "operation view" || itemType == "desktop application") {
             imgName = "apps";
-          } else 
-          if (itemType === "map document" || itemType === "map package" || itemType === "published map" || itemType === "scene document" ||
+          } else if (itemType === "map document" || itemType === "map package" || itemType === "published map" || itemType === "scene document" ||
             itemType === "globe document" || itemType === "basemap package" || itemType === "mobile basemap package" || itemType === "mobile map package" ||
             itemType === "project package" || itemType === "project template" || itemType === "pro map" || itemType === "layout" ||
             (itemType === "layer" && $.inArray("ArcGIS Pro", typeKeywords) > -1) || (itemType === "explorer map" && $.inArray("Explorer Document", typeKeywords))) {
@@ -114,8 +128,18 @@ function genDisplay() {
             imgName = "toolsgray";
           } else if (itemType === "layer" || itemType === "layer package" || itemType === "explorer layer") {
             imgName = "layersgray";
+          } else if (itemType === "scene package") {
+            imgName = "scenepackage";
+          } else if (itemType === "tile package") {
+            imgName = "tilepackage";
           } else if (itemType === "task file") {
             imgName = "taskfile";
+          } else if (itemType === "report template") {
+            imgName = "report-template";
+          } else if (itemType === "statistical data collection") {
+            imgName = "statisticaldatacollection";
+          } else if (itemType === "route layer") {
+            imgName = "routelayer";
           } else {
             imgName = "maps";
           }
@@ -160,7 +184,7 @@ function genDisplay() {
             buf.push("<a class='item-title' target='_blank' title='" + row.data["title"] + "' href='" + targetUrl + "'>");
             buf.push(itemTitle);
             buf.push("</a>");
-            buf.push("<span class='ownerName'>By "+row.data["owner"]+"</span>");
+            buf.push("<span class='ownerName'>By <a href='JavaScript:void(0);' class='ownerNameLnk'>"+row.data["owner"]+"</a></span>");
 
            //console.log(typeIconPath);
             if(typeIconPath){
@@ -225,6 +249,29 @@ function genDisplay() {
 
             // Re-enable checkbox.
             $('input[type=checkbox]').prop('disabled',false);
+        },
+
+        populateProfilePopup: function(agolHost,data){
+
+          if(!data.error){
+            $(".profilePopup .spinner").hide();
+            var usrThumbnailPath = (data.thumbnail)?agolHost+"/sharing/rest/community/users/"+data.username+"/info/"+data.thumbnail:"";
+            
+            $(".profilePopup .profileDetails").removeClass("hide");
+            if(usrThumbnailPath != ""){
+              $(".profilePopup .itemThumbnailContainer").html('<img src="'+usrThumbnailPath+'" class="profileThumbnail">');
+            }
+            $(".profilePopup .profileThumbnail").attr("src",usrThumbnailPath);
+            $(".profilePopup .profile-name").text(data.fullName);
+            
+            var desc = (data.description)?data.description:"This user has not provided any personal information."
+            $(".profilePopup .profile-content").html(desc);
+
+             $(".profilePopup .profileLink").attr("href",agolHost+"/home/user.html?user="+data.username);
+             $(".profilePopup .profileItemsLink").attr("href",agolHost+"/home/search.html?q=owner:"+data.username);
+            $(".profilePopup .profileGroupLink").attr("href",agolHost+"/home/search.html?t=groups&q=owner:"+data.username);
+          }
+
         }
     };
 
