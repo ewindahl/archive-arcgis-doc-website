@@ -110,7 +110,7 @@ jQuery(document).ready(function ($) {
     lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn'],
     lgMicro = ['en', 'de'],
 	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
-   lgNavigator = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', "it", "ko", "pt-pt", 'el'],
+   lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
    lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
 	 lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
 
