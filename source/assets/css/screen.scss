@@ -212,7 +212,35 @@ img {
 .link-white a, .breadcrumbs-white .crumb a, a.link-white, .breadcrumbs-white a.crumb {
     color: white;
 }
-.sdk-home-banner .search-bar {
-    float: right;
-    max-width: 368px;
+.sdk-home-banner {
+	.search-bar {
+		float: right;
+		min-width: 368px;
+	}
+	
+}
+.top-nav .search-bar, .sub-nav .search-bar{
+	display: inline-block;
+	position: relative;
+	.search-submit {
+		background:transparent none repeat scroll 0 0;
+		border: 1px solid transparent;
+		color: #0079c1;
+		position: absolute;
+		right: 0;
+		top: 6px;
+	}
+	
+	.search-submit:hover {
+		 background: #005e95 none repeat scroll 0 0;
+		 border-color: #005e95;
+		 color: white;
+	}
+}
+
+.expand {
+	display: none;
+}
+.expand.is-active {
+    display: inherit; 
 }
