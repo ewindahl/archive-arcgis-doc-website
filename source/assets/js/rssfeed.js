@@ -13,7 +13,7 @@
 				  
           $.ajax ({
             //cache: false,
-            url : "/apps/proxy/sm-proxy.php?" + url,
+            url : url,//"http://docdev.arcgis.com/apps/proxy/sm-proxy.php?" + url,
             type: "GET",
             dataType: "json",
             crossDomain: true,
@@ -37,7 +37,7 @@
     max: 2
   };
 
-  $.fn.rssFeed.format = function (node, feed, narticles) {
+  $.fn.rssFeed.format = function (node, feed, narticles, feedType) {
 
   function getNodeValue(post, tag) {
     var tag =  post.getElementsByTagName(tag);
