@@ -50,6 +50,8 @@ configure :build do
 
   # Automatically compress PNG images
   # activate :smusher
+  
+  ignore 'cdn/*'
 
 
 end

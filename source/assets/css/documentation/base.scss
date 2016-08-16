@@ -12,11 +12,18 @@
   }
 
   .is-disabled {
+	 color: #cccccc;
+    cursor: text;
     &:hover {
-      cursor: pointer;
+      cursor: text;
       text-decoration: none;
     }
   }
+  
+  .is-active {
+    font-weight: 700;
+	}
+  	
 }
 
 .icon-social-sdk-home {
@@ -191,4 +198,54 @@
     max-width: 40%;
     margin-top: 40px;
   }
+}
+
+// Workfow Image
+figure.workflow-image {
+    display:block;
+    width: 70%;
+    margin-bottom: 2em;
+	 img{
+		max-width: 100%;
+	 }
+	 div {
+		 display: inline-block;
+		 width: 30%;
+		 vertical-align: top;
+		 padding: 0.5em;
+		 box-sizing: border-box;
+	 }
+}
+
+figcaption.fig-caption {
+    display:block;
+    text-align:left;
+    width: 100%;
+	 border:none; 
+	 padding-left:0;
+	 
+	 .workflowImgSteps {
+		 display: inline-block;
+		 background-color: #007ac2;
+		 height: 32px;
+		 width: 32px;
+		 color: #fff;
+		 line-height: 32px;
+		 border-radius: 16px;
+		 font-family: "Avenir LT W01 65 Medium";
+		 font-size: 15px;
+		 font-style: normal;
+		 text-align:center;
+		 vertical-align:middle;
+
+		 float:left;
+	 }
+	 .workflowDesc {
+		display: block;
+      margin-left: 40px;
+	 }
+}
+
+.xref .uicontrol {
+    color: #0079c1;
 }
