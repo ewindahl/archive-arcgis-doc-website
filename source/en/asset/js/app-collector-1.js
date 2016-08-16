@@ -109,7 +109,7 @@ var noSwitcherFileList = {
 			$ele.toggleClass ("off");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
 			
-			if(fname in noSwitcherFileList){
+			if(prefix.match( /(\/android)/) && fname in noSwitcherFileList){
 				// disable click
 				url = "#";
 				$ele.toggleClass ("is-disabled");
