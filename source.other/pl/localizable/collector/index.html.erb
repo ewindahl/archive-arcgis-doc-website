@@ -17,7 +17,7 @@ js:
   - smartbanner.init
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-03-29"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="pl"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-07-14"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="pl"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 
 
 mobile: true
@@ -28,7 +28,7 @@ mobile: true
     <header>
       <h1>Collector for ArcGIS</h1>
       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Collector">
+        <input type="search" name="q" class="leader" placeholder="Przeszukaj aplikację Collector">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="platform" value="detect" />          
         <input type="hidden" name="product" value="collector-android" />          
@@ -72,19 +72,20 @@ mobile: true
 
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="app-collector-map.jpg" />
+          <img src="app-collector-map.jpg" alt="Create a map" title="Tworzenie mapy"/>
 
           <h3>Tworzenie i udostępnianie mapy</h3>
           <p>Korzystaj z oprogramowania ArcGIS także w terenie, zwiększ precyzję i aktualność danych przestrzennych. Tworzenie i udostępnianie map przeznaczonych do gromadzenia danych jest procesem dwuetapowym.</p>
           <p>
             <a href="/pl/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;Dowiedz się, jak to zrobić</a><br />
+            <a href="https://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;Rozpoczęcie pracy z użyciem szablonów</a>
             <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
           </p>
         </div>
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="app-collector-data.jpg" />
+          <img src="app-collector-data.jpg" alt="Collect data" title="Gromadzenie danych"/>
 
           <h3>Gromadzenie danych</h3>
           <p>Twórz dane do celów swojej instytucji, od raportów o szkodach i zgłoszeń serwisowych po lokalizacje powiązane z historycznymi danymi. Możesz łatwo załączać zdjęcia oraz filmy wideo i udostępniać swoją pracę.</p>
@@ -100,7 +101,7 @@ mobile: true
 	<div class="clear"></div>
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="story-graphic-3.png" />
+          <img src="story-graphic-3.png" alt="Go offline" title="Praca w trybie offline" />
 
           <h3>Praca w trybie offline</h3>
           <p>Praca w terenie wiąże się z wykonywaniem zadań w miejscach bez dostępu do sieci. Pracuj z mapami i danymi w trybie offline, gromadź informacje i synchronizuj zmiany, gdy połączenie z siecią będzie możliwe.</p>
@@ -110,12 +111,13 @@ mobile: true
         </div>
         
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="story-graphic-4.png" />
+          <img src="story-graphic-4.png" alt="Professional-grade accuracy" title="Dokładność na poziomie profesjonalnym"/>
 
-          <h3>Rozpoczęcie pracy z użyciem szablonów</h3>
-          <p>Twoja branża używa określonych zestawów danych. Pobierz szablony, aby utworzyć podstawową strukturę danych, której potrzebujesz i dostosuj ją do konkretnego zadania.</p>
+          <h3>Uzyskaj dokładność wymaganą do zastosowań profesjonalnych</h3>
+          <p>Przy użyciu odbiornika o wysokiej dokładności można wykonywać pomiary z dokładnością do centymetrów. Pewne przechwytywanie i rejestrowanie metadanych GPS pozwala ocenić jakość danych.</p>
           <p>
-            <a href="http://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;Wyświetl pobrane</a><br />
+            <a href="/pl/collector/android/create-maps/gps-high-accuracy-receivers.htm" class="icon-right-arrow">&nbsp;Konfiguracja gromadzenia</a><br />
+            <a href="/pl/collector/android/collect-data/high-accuracy-gps.htm" class="icon-right-arrow">&nbsp;Korzystanie z dokładnego odbiornika GPS</a><br />
           </p>
         </div>
         
@@ -123,32 +125,26 @@ mobile: true
 
 	<a name="features"></a>
 	<h2 class="divider">Charakterystyka</h2>
-	<p>Gromadź i aktualizuj dane w terenie, twórz dziennik bieżącej lokalizacji i stosuj pozyskane dane w pracy, aby podejmować bardziej świadome i szybsze decyzje. Możesz korzystać z map w dowolnym miejscu, zwiększając dokładność dodawanych danych, wykonuj obserwacje i reaguj na zdarzenia. Pozwoli to na poprawienie efektywności pracowników terenowych oraz zwiększenie dokładności danych GIS.</p>
+	<p>Gromadź i aktualizuj dane w terenie, twórz dziennik bieżącej lokalizacji i stosuj pozyskane dane w pracy, aby podejmować bardziej świadome i szybsze decyzje. Możesz korzystać z map w dowolnym miejscu, zwiększając dokładność dodawanych danych, wykonywać obserwacje i reagować na zdarzenia. Pozwoli to na poprawienie efektywności wykonywanych prac terenowych oraz zwiększenie dokładności danych GIS.</p>
 	
 	<ul>
-	<li>Pobieranie map do urządzenia i praca w trybie offline.</li>
-	<li>Tworzenie i aktualizowanie danych map za pomocą GPS.</li>
-	<li>Zbieranie obiektów punktowych, liniowych i powierzchniowych.</li>
-	<li>Wypełnianie łatwych w użyciu formularzy map.</li>
+	<li>Zbieranie i aktualizowanie danych przy użyciu mapy lub urządzenia GPS.</li>
+	<li>Pobieranie map na urządzenia i praca w trybie offline.</li>
+	<li>Edycja punktów, linii, obszarów i powiązanych z nimi danych.</li>
+	<li>Wypełnianie prostych w obsłudze formularzy współdziałających z mapą.</li>
+	<li>Dołączanie zdjęć do obiektów.</li>
+	<li>Korzystanie z profesjonalnych odbiorników GPS.</li>
 	<li>Wyszukiwanie miejsc i obiektów.</li>
-	<li>Śledzenie i zgłaszanie odwiedzanych obszarów.</li>	
+	<li>Śledzenie i zgłaszanie odwiedzonych miejsc.</li>
 	<li>Integracja z aplikacją <a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-apple"/>).</li>
+	<li>Integracja z aplikacją <a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-apple"/>).</li>
 	</ul>
 
         <a name="systemRequirements"></a>
         <h2 class="divider">Wymagania systemowe</h2>
-
-        <p>Aby uruchomić aplikację Collector, należy spełniać określone wymagania dotyczące urządzenia oraz danych używanych w aplikacji. Aplikacja Collector obsługuje szereg różnych języków.</p>
-
-
-        <h3>Wymagania dotyczące danych</h3>
-        <p>Aby używać map w aplikacji Collector, należy posiadać konto instytucji ArcGIS. Mapy mogą zawierać dane pochodzące z usługi ArcGIS Online, witryny Portal for ArcGIS i ArcGIS for Server.</p>
-
-
-        <h3>Wymagania dotyczące urządzenia</h3>
         <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
         <ul>
-          <li>Android 4.0 (Ice Cream Sandwich) lub nowszy</li>
+          <li>Android 4.1 (Jelly Bean) lub nowszy</li>
           <li>Procesor ARMv7 lub x86</li>
           <li>Obsługa interfejsu OpenGL ES 2.0</li>
           <li>Obsługa wyznaczania precyzyjnych lokalizacji (w oparciu o system GPS i sieć)</li>
@@ -160,47 +156,31 @@ mobile: true
         </ul></td>
         <td valign="top"><h4 class="icon-windows-8">Windows</h4>
         <ul>
-          <li>Windows 10 lub nowszy (na tablecie i komputerze)</li>
+          <li>Windows 10.0.586 lub nowszy (na tablecie i komputerze)</li>
         </ul></td></tr>
         </table>
 
-
         <h3>Obsługiwane języki</h3>
-        <p>Angielski, arabski, chiński tradycyjny (Hong Kong), chiński tradycyjny (Tajwan), chiński uproszczony, czeski, duński, estoński (<span class="icon-android"/>, <span class="icon-windows-8"/>), fiński, francuski, grecki, hebrajski, hiszpański, japoński, koreański, litewski (<span class="icon-android"/>, <span class="icon-windows-8"/>), łotewski (<span class="icon-android"/>, <span class="icon-windows-8"/>), niderlandzki, niemiecki, norweski, polski, portugalski (Brazylia), portugalski (Portugalia), rosyjski, rumuński, szwedzki, tajski, turecki, wietnamski i włoski.</p>
+        <p>Angielski, arabski, chiński tradycyjny (Hong Kong), chiński tradycyjny (Tajwan), chiński uproszczony, chorwacki, czeski, duński, estoński (<span class="icon-android"/>, <span class="icon-windows-8"/>), fiński, francuski, grecki, hebrajski, hiszpański, japoński, koreański, litewski (<span class="icon-android"/>, <span class="icon-windows-8"/>), łotewski (<span class="icon-android"/>, <span class="icon-windows-8"/>), niderlandzki, niemiecki, norweski, polski, portugalski (Brazylia), portugalski (Portugalia), rosyjski, rumuński, serbski (<span class="icon-android"/>, <span class="icon-windows-8"/>), szwedzki, tajski, turecki, wietnamski i włoski.</p>
         <p>Wersja językowa aplikacji zależy od ustawień językowych urządzenia.</p>
+        
+        <a name="arcgisRequirements"></a>
+        <h2 class="divider">Wymagania systemu ArcGIS</h2>
+        <p>Aby używać map w aplikacji Collector, należy posiadać konto instytucji ArcGIS. Obsługiwane są w ramach ArcGIS Online i Portal for ArcGIS w wersji 10.3.1 i nowszej.</p>
+        <p>Mapy mogą zawierać dane pochodzące z usługi ArcGIS Online, witryny Portal for ArcGIS i ArcGIS for Server. Szczegółowe informacje zawiera temat <a href="/pl/collector/android/create-maps/supported-data.htm">Obsługiwane dane</a>.</p>
+       
 
         <a name="whatsNew"></a>
         <h2 class="divider">Co nowego</h2>
-        <!--p>Collector for ArcGIS 10.3.7 was released on Windows in February 2016, and on Android and iOS in March 2016. It includes the following enhancements:</p>
+        <p>Aplikację Collector for ArcGIS 10.4 udostępniono w lipcu 2016 r. (wersja dla systemu Android zostanie udostępniona wkrótce). Obejmuje ona następujące ulepszenia:</p>
         <ul>
-	  <li>Support for advanced offline options to optimize download and sync</li>          
-	  <li>Various bug fixes and improvements, including <a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5MjY2Mw==">BUG-000092663</a></li>
-        </ul-->
-        <table>
-          <tr>
-            <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
-              <p>Aplikację Collector for ArcGIS 10.3.9 udostępniono w marcu 2016 r. Obejmuje ona następujące ulepszenia:</p>
-            </td>
-            <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
-              <p>Aplikację Collector for ArcGIS 10.3.7 udostępniono w marcu 2016 r. Obejmuje ona następujące ulepszenia:</p>
-            </td>
-            <td valign="top" width="250px;"><h4 class="icon-windows-8">Windows</h4>
-              <p>Aplikację Collector for ArcGIS 10.3.7 udostępniono w lutym 2016 r. Obejmuje ona następujące ulepszenia:</p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top"><ul>
-              <li>Obsługa zaawansowanych opcji trybu offline w celu optymalizacji pobierania i synchronizacji</li>          
-              <li>Różne poprawki i usprawnienia, w tym <a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5MjY2Mw==">BUG-000092663</a> i <a href="http://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5NTM3OA==">BUG-000095378</a></li>
-            </ul></td>
-            <td valign="top"><ul>
-              <li>Obsługa zaawansowanych opcji trybu offline w celu optymalizacji pobierania i synchronizacji</li>
-            </ul></td>
-            <td valign="top"><ul>
-              <li>Obsługa zaawansowanych opcji trybu offline w celu optymalizacji pobierania i synchronizacji</li>
-            </ul></td>
-          </tr>
-        </table>
+	  <li>Obsługa odbiorników GPS o wysokiej dokładności</li>  
+	  <li>Przechowywanie danych EXIF w załącznikach</li>
+	  <li>Obsługa dodatkowych formatów załączników, w tym PDF i dokumentów programu Word (<span class="icon-windows-8"/>)</li>
+	  <li>Integracja z aplikacją <a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-apple"/>)</li>
+	  <li>Wersje językowe chorwacka i serbska</li>
+	  <li>Różne poprawki i usprawnienia, w tym <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NDM1NQ==">BUG-000094355</a>, <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NDcwNA==">BUG-000094704</a> i <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NTY2MA==">BUG-000095660</a></li>
+        </ul>
 
 	<a name="sneakPeek"></a>
 	<h2 class="divider">Zapowiedź</h2>
@@ -209,22 +189,22 @@ mobile: true
 	<table><tr><td valign="top"><h4>W trakcie prac</h4>
 	<p>Obecnie pracujemy nad dodaniem następujących funkcji:</p>
 	<ul>
-		<li>Obsługa zewnętrznych odbiorników GNSS</li>
-		<li>Obsługa systemu Windows 10 Mobile</li>
+		<li>Dodawanie danych z użyciem przesunięć</li>
 		<li>Integracja z aplikacją <a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-android"/>)</li>
+		<li>Integracja z aplikacją <a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-android"/>, <span class="icon-windows-8"/>)</li>
 	</ul>
 	</td>
 	<td valign="top"><h4>Planowane</h4>
 	<p>W przyszłości planujemy dodanie następujących funkcji:</p>
 	<ul>
-		  <li>Ulepszone inteligentne formularze dodawania danych</li>
+		  <li>Wprowadzenie inteligentnych formularzy dodawania danych</li>
 		  <li>Więcej narzędzi do planowania zadań wykonywanych podczas pracy w trybie offline w terenie</li>
-		  <li>Dodawanie danych z użyciem przesunięć</li>
 		  <li>Integracja urządzeń zewnętrznych (dalmierzy laserowych, skanerów kodów kreskowych, itp.)</li>
+		  <li>Obsługa systemu Windows 10 Mobile</li>
 	</ul>
 	</td></tr></table>
 
-	<p>Podziel się <a href="http://ideas.arcgis.com/">pomysłami</a> i <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">prześlij nam swoją opinię</a>.</p>
+	<p>Podziel się <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bcollector-for-arcgis%5D">pomysłami</a> i <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">prześlij nam swoją opinię</a>.</p>
 		
         <p>&nbsp;</p>
 
@@ -238,6 +218,7 @@ mobile: true
 	          
 	  <h4><a href="#features">Charakterystyka</a></h4>
 	  <h4><a href="#systemRequirements">Wymagania systemowe</a></h4>
+	  <h4><a href="#arcgisRequirements">Wymagania systemu ArcGIS</a></h4>
 	  <h4><a href="#whatsNew">Co nowego</a></h4>
 	  <h4><a href="#sneakPeek">Zapowiedź</a></h4>
 	          
