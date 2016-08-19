@@ -6,6 +6,17 @@ $(document).ready(function() {
 		data-plat="ios"
 
 */
+var noSwitcherFileList = {
+	   "high-accuracy-gps.htm": "Desktop",
+		"troubleshoot-collect.htm": "Desktop",
+		"gps-high-accuracy-receivers.htm": "Desktop",
+		"gps-map-prep.htm": "Desktop",
+		"troubleshoot-create-map.htm": "Desktop",
+		"gps-config-metadata-storage.htm": "Desktop",
+		"gps-receiver-support.htm": "Desktop"
+	   
+}
+
    var localedir = "en";
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'].toLowerCase();
@@ -97,6 +108,15 @@ $(document).ready(function() {
 		} else {
 			$ele.toggleClass ("off");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+			
+			if(prefix.match( /(\/android)/) && fname in noSwitcherFileList){
+				// disable click
+				url = "#";
+				$ele.toggleClass ("is-disabled");
+			}else{
+				$ele.toggleClass ("off");
+				url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+			}
 
 		}
 

@@ -1,0 +1,367 @@
+---
+title: Drone2Map
+
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - colorbox/colorbox
+
+js:
+  - download
+  - libs/jquery.colorbox-min.js
+  - video-init
+
+metatags:
+  - <META name="description" content="Drone2Map Home page."><META name="last-modified" content="2016-04-12"><META name="product" content="drone2map"><META name="sub_category" content="Drone2Map"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="drone2map"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+
+mobile: true
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+	<header>
+		<h1><a href="/en/maps-for-office/">Drone2Map for ArcGIS Help</a></h1>
+		<form id="helpSearchForm" target="_top">
+        <input type="search" name="q" class="leader" placeholder="Search Drone2Map">
+        <input type="hidden" name="collection" value="help" />
+        <input type="hidden" name="product" value="drone2map" />          
+        <input type="hidden" name="language" value="<%= current_language %>" />
+      </form>
+    </header>
+	
+	<nav>
+      <ul>
+        <li class='current'><a href="/en/drone2map/">Home</a></li>
+		<li><a href="/en/drone2map/install/">Install</a></li>
+		<li><a href="/en/drone2map/quick-start-exercises/">Quick-start exercises</a></li>
+        <li><a href="/en/drone2map/configure/">Configure</a></li>
+		  <li><a href="/en/drone2map/process-and-share/">Process and share</a></li>
+        <li><a href="https://geonet.esri.com/groups/arcgis-maps-for-office">GeoNet</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="column-16 tablet-column-24">
+        <header>		
+		<h2 id="appTitle">Drone2Map for ArcGIS</h2>
+		<p>Drone2Map for ArcGIS is a desktop app that turns raw still imagery from drones into stunning information products in ArcGIS. Now, with drone hardware becoming more accessible, you can create 2D and 3D maps of features and areas that may be hard to access or fully cover because of size or terrain. Monitor environmental changes, the impact of natural disasters, scheduled events, and more. Together with many other capabilities in ArcGIS, Drone2Map for ArcGIS helps you unlock the insights hidden in your imagery. </p>
+
+          <div class="secured-org">
+				<a class="btn primary download-link" data-file-size="<%= data.downloads["en"].drone2map.secured.send('versions'.to_sym)['1.0.1'].filesize %>" data-folder="<%= data.downloads["en"].drone2map.secured.send('versions'.to_sym)['1.0.1'].foldername %>" data-filename="<%= data.downloads["en"].drone2map.secured.send('versions'.to_sym)['1.0.1'].filename %>">Get Drone2Map for ArcGIS</a>
+          </div>
+		  
+        </header>
+        <hr />
+        <br />
+
+<!-- features top row -->
+		<!-- Rapid -->
+		<div id="em4oFirstFeature" class="column-12 phone-column-24">
+			<img src="rapid.jpg" alt="Map your Excel data" />
+		  
+			<h3>Rapid</h3>
+			<p>Quickly create orthosmosaics and digital surface models to verify the coverage and quality of your imagery collection.</p>
+			<p>&gt; <a href="/en/drone2map/quick-start-exercises/rapid.htm">Learn more</a></p>
+		</div>
+
+		<!-- 2D Mapping -->
+        <div id="em4oSecondFeature" class="column-12 phone-column-24">
+			<!-- REPLACE IMAGE > PPT -->
+			<img src="2d-mapping.jpg" alt="Add a map to PowerPoint" />
+			<h3>2D mapping</h3>
+			<p>Create high-resolution orthomosaics, digital surface models, and multispectral indices.</p>
+			<p>&gt; <a href="/en/drone2map/quick-start-exercises/2d-mapping.htm">Learn more</a></p>
+		</div>
+        <div class="clear"></div>
+
+<!-- features second row -->
+		<!-- 3D Mapping -->
+		<div id="em4oThirdFeature" class="column-12 phone-column-24">
+			<img src="3d-mapping.jpg" alt="Enrich your data" />
+
+			<h3>3D mapping</h3>
+			<p>Create detailed 3D colorized point clouds, 3D textured meshes, and 3D PDFs.</p>
+			<p>&gt; <a href="/en/drone2map/quick-start-exercises/3d-mapping.htm">Learn more</a></p>
+		</div>
+
+		<!-- Inspection Project -->
+		<div id="em4oFourthFeature" class="column-12 phone-column-24">
+			<img src="inspection.jpg" alt="Share maps on ArcGIS" />
+			<h3>Inspection</h3>
+			<p>Process drone imagery and quickly inspect objects of interest.</p>
+			<p>&gt; <a href="/en/drone2map/quick-start-exercises/inspection.htm">Learn more</a></p>
+        </div>
+	<div class="clear"></div> 
+
+		<br />
+		
+<!-- License -->
+	<hr />
+	<a id="whatsNew"></a>
+ 	<h2>License</h2>	
+	<p>To use Drone2Map, you must have an ArcGIS organizational account that has been configured with a Drone2Map for ArcGIS license. For details about assigning licenses to named users in ArcGIS Online, see <a href="/en/drone2map/install/manage-licenses.htm">Manage Drone2Map licenses</a>.</p>
+	
+<!-- What's new section -->
+	<hr />
+	<a id="whatsNew"></a>
+ 	<h2>What's new</h2>	
+	<p>Do you have an idea for a feature you'd like to see in Drone2Map for ArcGIS? Tell us about it at the <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus[published]~category[drone2map-for-arcgis]" target="_blank">ArcGIS Ideas site</a>.</p>
+	<p>Drone2Map for ArcGIS 1.0.1 is a minor update that brings you improved stability and bug fixes. Here are some highlights:</p>
+
+			<ul>
+			<li>Fixed issues that allowed users to accidentally double-click the Offline check box, which resulted in some users locking their accounts</li>
+			<li>Improved user management when checking licenses in and out for offline use</li>
+			<li>Improved icon for offline basemap</li>
+			<li>Fixed issue that prevented users from canceling an attempt to close the application</li>
+			<li>Fixed issue where a black border displayed after processing a clip area on an NDVI product and sharing as tile service</li>
+			<li>Fixed issue where rapidly switching projects resulted in products persisting between projects</li>
+			<li>Fixed issue where pinned projects were not properly displayed when Drone2Map opens</li>
+			<li>Improved stability when working in 3D view</li>
+			<li>Improved handling of datasets that include yaw, pitch, and roll</li>
+			<li>Improved consistency with zooming to the project area and highlighting the selected image point when opening inspection projects</li> 
+			<li>Improved performance and annotation management when using the inspection viewer</li>
+			</ul>
+
+<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+
+	
+
+
+<!-- Supported environments section -->
+	<hr />
+	<!--<a id="supportedEnvironments"></a>-->
+        <!--<h2>Supported hardwares</h2>-->
+			<!--<p>testing</p>-->
+		
+		<!-- script for collapsible headings -->
+		<script> 
+		 function exp(e,strTag ,strAttribute){ 
+		 var elem = document.getElementsByTagName(strTag); 
+		 var elem1 = e.target;
+		for (var i=0;i<elem1.children.length;i++){ 
+		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
+		 } 
+		 for (var i =0;i<elem.length;i++) 
+		 { 
+		 if(elem[i].getAttribute(strAttribute)=="yes") 
+		 { 
+		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
+		 } 
+		 } 
+		 } 
+		 </script> 
+
+		<!-- Sys platforms -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')" id="requirements">System requirements</a>
+		</h3>	
+			<div exp1='yes' style="display:none;padding:0 15px;">
+		<p>The minimum and recommended requirements for running Drone2Map for ArcGIS are described below. </p>
+		<h3>Supported platforms</h3>
+		<ul>
+			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)
+			<ul>
+			<li>.NET Framework 4.5 installation (if not previously installed)
+			</li>
+			<li>Visual C++ 2008 Redistributable installation (if not previously installed)
+			</li>
+			</ul>
+			</li>			
+			<li>Windows 8 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 10 Home, Pro, and Enterprise (64 bit)</li>
+		</ul>
+		
+		<h3>Hardware requirements</h3>
+		<p>Minimum</p>
+		<ul>
+			<li>Any CPU (Intel i5/i7/Xeon recommended)</li>
+			<li>Any GPU that is compatible with OpenGL 3.2 (integrated graphic cards Intel HD 4000 or above)</li>
+			<li>Small projects (under 100 images at 14 MP): 4 GB RAM, 10 GB HDD free space</li>
+			<li>Medium projects (between 100 and 500 images at 14 MP): 8 GB RAM, 20 GB HDD free space</li>
+			<li>Large projects (between 500 and 2000 images at 14 MP): 16 GB RAM, 40 GB HDD free space</li>
+			<li>Very large projects (over 2000 images at 14 MP): 16 GB RAM, 80 GB HDD free space</li>
+		</ul>
+		<p>Recommended</p>
+		<ul>
+			<li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit)</li>
+			<li>Windows 8 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 8.1 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>Windows 10 Basic, Pro, and Enterprise (64 bit)</li>
+			<li>CPU quad-core or hexa-core Intel i7/Xeon</li>
+			<li>GeForce GPU compatible with OpenGL 3.2 and 2 GB RAM</li>
+			<li>Hard disk: SSD</li>
+			<li>Small projects (under 100 images at 14 MP): 8 GB RAM, 15 GB SSD free space</li>
+			<li>Medium projects (between 100 and 500 images at 14 MP): 16GB RAM, 30 GB SSD free space</li>
+			<li>Large projects (over 500 images at 14 MP): 32 GB RAM, 60 GB SSD free space</li>
+			<li>Very Large projects (over 2,000 images at 14 MP): 32 GB RAM, 120 GB SSD free space</li>
+		</ul>
+			</div>
+			
+		<div class="clear" style="padding:5px;"></div>
+			
+		<!-- FAQ -->
+		<h3>
+		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">FAQ</a>
+		</h3>
+			<div exp3='yes' style="display:none;padding:0 15px;">
+			<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<dl>
+  <dt><b>What does Drone2Map for ArcGIS do?</b></dt>
+  <dd>Drone2Map for ArcGIS is a desktop app that turns raw still imagery from drones into stunning information products in ArcGIS. Now, with drone hardware becoming more accessible, you can create 2D and 3D maps of features and areas.</dd>
+<P></P>
+  <dt><b>What is Drone2Map for ArcGIS? Is it an app, an ArcGIS for Desktop extension, or something else?</b></dt>
+  <dd>It is a stand-alone 64-bit Windows desktop app that will run alongside ArcMap and ArcGIS Pro.</dd>
+
+<p></p>
+  <dt><b>How do I try the software?</b></dt>
+  <dd>You can register for a free trial of Drone2Map through ArcGIS Marketplace or the free trial of ArcGIS.</dd>
+<p></p>
+ 
+ <dt><b>Does Drone2Map for ArcGIS work only with a specific type of drone? </b></dt>
+  <dd>Drone2Map for ArcGIS is designed to be generic for all drones. What is important is that the drone collects certain types of metadata. At a very minimum, this metadata needs to include latitude, longitude, and altitude. Many commercially available drones have this capability and automatically add this information to the image metadata.   </dd>
+<p></p> 
+  
+  <dt><b>Can Drone2Map for ArcGIS be used to create special imagery analysis products such as an NDVI for the agricultural markets? </b></dt>
+  <dd>Yes, multispectral cameras are supported and will automatically create NDVI products to quickly assess crop health.</dd>
+<p></p>
+  
+  <dt><b>How will the resulting imagery products be stored so I can share them on ArcGIS Online? Will it be expensive?</b></dt>
+  <dd>The imagery products created by Drone2Map for ArcGIS are stored and shared as tile layers and scene layers on ArcGIS Online. They are inexpensive to store. For example, the below tile layer of the <a href="http://www.arcgis.com/home/webmap/viewer.html?layers=30cb0c28a0a748068f42d33292ac648c" target="_blank">Oatlands Historic House and Gardens</a> requires 85 MB of storage.</dd>
+<p></p>
+
+  <dt><b>How do I share 3D files created by Drone2Map for ArcGIS? </b></dt>
+  <dd>Drone2Map for ArcGIS produces a new file type called a scene layer package (.spk) that can be consumed by other ArcGIS apps such as ArcGIS Earth. It will function similarly to a tile package (.tpk).</dd>
+<p></p>
+
+  <dt><b>Do I need ArcGIS for Desktop to process files from Drone2Map?</b></dt>
+  <dd>No. Drone2Map for ArcGIS is designed to produce GIS-ready products that can be published directly into an ArcGIS Online account.  ArcGIS for Desktop adds additional visualization and analytical capabilities to get the most out of your drone data. </dd>
+<p></p>
+
+  <dt><b>Can I use Drone2Map for ArcGIS with Portal for ArcGIS?</b></dt>
+  <dd>This first release of Drone2Map for ArcGIS does not support licensing with Portal for ArcGIS, but it does support sharing to Portal for ArcGIS. In the upcoming release of ArcGIS 10.5 for Server, you will be able to deliver imagery, mapping, and GIS services securely behind your firewall.</dd>
+<p></p>
+
+  <dt><b>What is the workflow for using Drone2Map in a disconnected environment?</b></dt>
+  <dd>Similar to ArcGIS Pro, a user can check out the license while connected in order to take it offline into the field. Once back in the office, the user will need to check in the license for connected use.</dd>
+<p></p>
+
+<dt><b>What is the recommended software for mission planning with Drone2Map?</b></dt>
+  <dd>Most commercial drone manufacturers include a mission planning application with their hardware offerings. Concerns about the capabilities of your particular mission planning application can be discussed with an <a target="_blank" class="xref xref" href="mailto:drone2map@esri.com" >Esri specialist</a>.</dd>
+<p></p>
+  
+  <dt><b>Does Drone2Map scale? </b></dt>
+  <dd>Yes, Drone2Map is a 64-bit multithreaded app and will scale vertically, leveraging multiple cores and powerful graphics chips.</dd>
+<p></p>
+  
+  <dt><b>Will Drone2Map work from a command line interface? </b></dt>
+  <dd>For this use case, please reach out to the Drone2Map for ArcGIS team at <a target="_blank" class="xref xref" href="mailto:drone2map@esri.com" >drone2map@esri.com</a>.</dd>
+<p></p>
+  
+  <dt><b>Can multiple users share one Drone2Map license?</b></dt>
+  <dd>When you buy a Drone2Map subscription, you get a license entitlement for Drone2Map and an ArcGIS Online named user. The license entitlement can only be assigned to one named user at a time, and thus, a single license entitlement cannot be shared. Note, however, that the license entitlement may be revoked from one named user and assigned to another at any time during the duration of the subscription. Also note that sharing a single named user credential with multiple users is prohibited.</dd>
+<p></p>
+  
+  <dt><b>Is a named user allowed to access Drone2Map on multiple machines?</b></dt>
+  <dd>Named users can log in to any machine with Drone2Map installed; however, they may only log in to one machine at a time.</dd>
+<p></p>
+  
+  <dt><b>How many Drone2Map licenses does an organization need?</b></dt>
+  <dd>It is recommended that for each drone your organization flies, you purchase two subscriptions of Drone2Map: one for the field and one for the office. A common workflow is to assign a drone operator to use one license 100 percent of the time in the field for tasks such as collection verification and quick product creation for in-field answers. The data collected by the operator is sent back to the office for a different user to process in more detail on a much higher-end machine with the second license.</dd>
+<p></p>
+  
+  <dt><b>What training is available for Drone2Map?</b></dt>
+  <dd>The ArcGIS Learn lesson <a href="https://learn.arcgis.com/en/projects/get-started-with-drone2map-for-arcgis/">Get Started with Drone2Map for ArcGIS</a> teaches you how to transform drone imagery into 3D GIS data. You'll use Drone2Map to add drone images to a map, create 3D data from 2D imagery, and share 3D data to ArcGIS Online. Esri Training courses will be available in the future.</dd>
+<p></p>
+  
+  
+  
+  
+</dl>
+
+
+</body>
+</html>
+					
+			</div>
+	</div>
+
+
+<!-- Sidebars -->
+      <div class="column-8 tablet-column-24 blocks">
+
+        <div class="imgFrame block">
+          <h3>Get started</h3>
+          <ul>
+           <li><a href="#whatsNew">What's new</a></li>
+			<li><a href="/en/drone2map/quick-start-exercises/">Quick-start exercises</a></li>
+			<li><a href="#requirements"> System requirements</a></li>
+
+          </ul>
+        </div>
+
+        <br />
+
+        <!-- Blog Feed -->
+        <div class="greyFrame">
+          <h3>From our blog</h3>
+          <div id="blog">
+            <!-- blog goes here -->
+          </div>
+        </div>
+
+	 </div>
+
+
+</div>
+
+	 
+
+<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+      $('#blog').rssFeed({
+        url:'https://blogs.esri.com/esri/arcgis/tag/drone2map/feed/',
+        max: 5,
+        layout: 0
+      });
+		
+		$(".secured-org .download-link").click(function (){
+				setTimeout(function () {
+					  document.location.pathname = "/en/drone2map/install/install-and-authorize.htm";
+				}, 1000);
+		});
+    });
+
+/*
+N = # of article shown (default is 2)
+L = 0, 1 (default is 0)
+*/
+
+  </script>
