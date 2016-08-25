@@ -1,15 +1,11 @@
 ---
 title: Esri Maps for MicroStrategy
-
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
@@ -18,399 +14,190 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/maps-for-microStrategy/">Esri Maps for MicroStrategy</a></h1>
-	  <form id="helpSearchForm" target="_top">
-                    <input type="search" name="q" class="leader" placeholder="Search Esri Maps for MicroStrategy" data-langlabel="search-esri-maps-micro">
-                    <input type="hidden" name="collection" value="help" />
-                    <input type="hidden" name="product" value="esri-maps-micro" />          
-					<input type="hidden" name="version" value="micro-2.0.1" />
-                    <input type="hidden" name="language" value="en" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/maps-for-microstrategy/">Home</a></li>
-        <li><a href="/en/maps-for-microstrategy/install-and-configure/">Install</a></li>
-        <li><a href="/en/maps-for-microstrategy/design-and-use-map/">Design and Use</a></li>
-		<li><a href="/en/maps-for-microstrategy/build-a-model/">Build a Model</a></li>
-		<li><a href="/en/maps-for-microstrategy/use-maps-mobile/">Mobile</a></li>
-        <li><a href="http://forums.arcgis.com/forums/233-Esri-Maps-for-MicroStrategy">GeoNet</a></li>
-      </ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/collector/">Esri Maps for MicroStrategy</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">Esri Maps for MicroStrategy</h1>
+          <p>&nbsp;</p>
+          <p class="text-white font-size--2"><strong>Version 3.0</strong> August 2016</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search Esri Maps for MicroStrategy">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="esri-maps-micro" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link  is-active" href="/en/maps-for-microstrategy/">Home</a></li>
+        <a class="sub-nav-link" href="/en/maps-for-microstrategy/install-and-configure/">Install</a>
+        <a class="sub-nav-link" href="/en/maps-for-microstrategy/design-and-use-map/">Design and Use</a>
+        <a class="sub-nav-link" href="/en/maps-for-microstrategy/build-a-model/">Build a Model</a>
+        <a class="sub-nav-link" href="/en/maps-for-microstrategy/use-maps-mobile/">Mobile</a>
+        <a class="sub-nav-link" href="http://forums.arcgis.com/forums/233-Esri-Maps-for-MicroStrategy">GeoNet</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <p>Enrich your MicroStrategy Report Services documents with live dynamic maps, allowing you to analyze your business data visually and interactively. Esri Maps for MicroStrategy is designed to seamlessly integrate into the everyday workflows familiar to MicroStrategy designers and analysts, without the need for custom coding or GIS experience. Create rich maps that interact with other datasets in your documents and reports, and combine published geographic data with MicroStrategy business data for easier analysis.</p>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">Esri Maps for MicroStrategy offers significant updates and enhancements for document designers, analysts, and architects.</p>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <header>
-
-		  <h2 id="appTitle">Get the app</h2>
-          <span id="appVersion"><strong>Version:</strong> 2.0.2</span>
-          <span id="appReleased"><strong>Available:</strong> November 2015</span>
-
-
-          <p>Enrich your MicroStrategy Report Services documents with live dynamic maps, allowing you to analyze your business data visually and interactively. Esri Maps for MicroStrategy is designed to seamlessly integrate into the everyday workflows familiar to MicroStrategy designers and analysts, without the need for custom coding or GIS experience. Create rich maps that interact with other datasets in your documents and reports, and combine published geographic data with MicroStrategy business data for easier analysis. </p>
-
-          <p>
-             <a  class="btn primary" href="http://www.esri.com/software/location-analytics/esri-maps-for-microstrategy/pricing">Get Esri Maps for MicroStrategy</a>
-
-          </p>
-
-        </header>
-        <hr />
-        <br />
-<!--Feature highlights - first row -->		
-<div id="simplifymapcreation-LA" class="column-12 phone-column-24">
-          <img src="em4m_la.png" />
-
-          <h3>Simplify map creation</h3>
-          <p>Create rich maps that meet corporate style standards in just a few clicks using Location Architect.</p>
-          <p>
-            <a href="/en/maps-for-microstrategy/build-a-model/what-is-.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-			<br/>
-			<a href="http://video.arcgis.com/iframe/4149/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="4149" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4149/mp4/480">
-			</video>			
-          </p>
-		</div>
-		
-		 <div id="configureanduseselectors" class="column-12 phone-column-24">
-          <img src="em4m2.png"/>
-
-          <h3>Configure selectors</h3>
-          <p>Add interactivity between datasets in your document by configuring your map as a selector or as a target of a selector. </p>
-          <p>
-		  <a href="/en/maps-for-microstrategy/design-and-use-map/configure-selectors.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-             <br/>
-			 <a href="http://video.arcgis.com/iframe/4114/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-		   <video width="320" height="240" controls id="4114" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4114/mp4/480">
-			</video>
-	      </p>
-        </div>
-	<br/>		
-		
-	<!--Feature highlights - second row -->		
-		<div class="clear"></div>
-			
-		<div id="addandconfigureamap-report" class="column-12 phone-column-24">
-          <img src="em4m3b.png" />
-
-          <h3>Create a map-enabled report</h3>
-          <p>Add a dynamic Esri map to your MicroStrategy Web report to help you make better business decisions. </p>
-          <p>
-            <a href="/en/maps-for-microstrategy/design-and-use-map/build-a-map-enabled-report.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-			<br/>
-			<a href="http://video.arcgis.com/iframe/4115/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="4115" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4115/mp4/480">
-			</video>			
-          </p>
-		
-        </div>
-		
-<div id="addandconfigureamap-dashboard" class="column-12 phone-column-24">
-          <img src="em4m1.png" />
-
-          <h3>Add maps to your dashboard</h3>
-          <p>Enhance your dashboard with one or more interactive maps to visualize your MicroStrategy data in new ways. </p>
-          <p>
-            <a href="/en/maps-for-microstrategy/design-and-use-map/build-a-map-enabled-document.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-			<br/>
-			<a href="http://video.arcgis.com/iframe/4113/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="4113" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4113/mp4/480">
-			</video>
-</p>
-</div>
-
-<div class="clear"></div>
-       
-		<!--Commenting out until we add another feature highlight to make a third row
-		<div id="dynamiclinking" class="column-12 phone-column-24">
-          <img src="em4m4.png"/>
-
-          <h3>Add dynamic linking</h3>
-          <p>Configure a dynamic link from a map in a report or document to launch an external document or report. </p>
-          <p>
-          <a href="/en/maps-for-microstrategy/design-and-use-map/configure-links.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-          </p>
-        </div>
-
-        <div class="clear"></div>-->
-
-<!--Commenting this section out until I get better screenshots
-<div id="adddatafromarcgis" class="column-12 phone-column-24">
-          <img src="em4m2.png"/>
-
-          <h3>Add data from ArcGIS</h3>
-          <p>Add published geographic data from ArcGIS to your map-enabled document or report for easier analysis of your business data.</p>
-          <p><a href="/en/maps-for-microstrategy/design-and-use-map/add-data-from-arcgis.htm" class="icon-right-arrow">&nbsp;Learn more</a>         
-          </p>
-        </div>
-		
-		<div id="sharemapsandlayers" class="column-12 phone-column-24">
-          <img src="em4m2.png"/>
-
-          <h3>Share maps and layers</h3>
-          <p>Share maps or individual map layers to ArcGIS for use by others in or outside of your organization.</p>
-          <p><a href="/en/maps-for-microstrategy/design-and-use-map/build-a-map-enabled-document.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-          </p>
-        </div>
--->
-
-	  
-<div class="clear"></div>
-
-
-<!-- What's new section -->
-<hr />
-<a name="whatsNew"></a>
-<h2>What's new</h2>
-<p>Esri Maps for MicroStrategy offers significant updates and enhancements for document designers,  analysts, and architects. Here are some highlights.</p>
-
-<ul>
-<li>New Esri Maps for MicroStrategy Mobile app</li>
-<li>New tool for automatic map generation: Location Architect</li>
-<li>Support for disconnected Portal for ArcGIS deployments</li>
-<li>New drawing tools for triggering configured selectors and links</li>
-<li>Filter features that are displayed on the map using the Filter layer tool</li>
-<li>Measure area, distance, and X,Y coordinates using the Measure tool</li>
-<li>Geocode addresses and find routes using the Get route tool</li>
-<li>Configure Infographics and other map tools and settings</li>
-<li>Change the map extent using an overview map and other navigation tools</li>
-<li>Specify the WKID of X,Y coordinates when adding point data to the map</li>
-<li>Configure multiple styles for a layer</li>
-<li>Critical bug fixes</li>
-<li>Additional support for Express Mode</li>
-<li>Software available in English, Japanese, and German</li>
-
-</ul>
-
-<!-- Supported environments section -->
- <hr />
-<a name="supportedEnvironments"></a>
-        <h2>Supported environments</h2>
-          <p>Esri Maps for MicroStrategy has two components:</p>
-		<ul>
-			<li>
-			<p><a href="#em4mstr" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>, which is deployed to both the MicroStrategy Web server and the MicroStrategy Mobile server (if using Esri Maps for MicroStrategy Mobile)
-			</p>
-			</li>
-			<li>
-			<p><a href="#em4mm" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>, which is delivered as an iOS client framework that uses MicroStrategy Mobile SDK for iOS and other third-party development tools to build a custom iOS app.</p> 
-			</li>
-		</ul>
-
-<p>Deploying the server plug-in to your web server allows your organization to integrate your MicroStrategy business intelligence (BI) data with the ArcGIS platform. Deploying the server plug-in to your organization’s mobile server allows Esri Maps for MicroStrategy Mobile app users to access map-enabled documents on their iPads.</p>
-
-<p>Before the mobile app can be shared and used, the Esri Maps for MicroStrategy Mobile iOS client framework must first be compiled. It is recommended that you secure the services of a developer in your organization to compile the Esri Maps for MicroStrategy Mobile app.</p>
-		
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-		 
-		<!-- EM4M server plug-in expanding arrow -->
-		<h3>
-		<a name="em4mstr" class="icon-right-arrow" onclick="exp(event,'div','exp1')">Esri Maps for MicroStrategy server plug-in</a>
-		</h3>
-			<div exp1='yes' style="display:none;padding:0 15px;">
-			
-		<!-- MicroStrategy Web versions -->
-			<h4>MicroStrategy Web versions</h4>
-			
-				<p>For Esri Maps for MicroStrategy to operate properly, the Esri Maps for MicroStrategy server plug-in requires an operational configuration of these supported versions of MicroStrategy Web:</p>
-				<ul>
-					<li>MicroStrategy 10.1</li>
-					<li>MicroStrategy 10.0</li>
-				</ul>				
-				
-				<p>MicroStrategy recommends using certified configurations over the supported configurations</p>
-		
-		
-<!-- Web application servers subhead for EM4M -->
-		<h4>Web application servers</h4>
-		<p>The following table outlines the Web application servers on which Esri has focused its testing efforts for both the JSP server and ASP.NET server configurations. If you would like to see the web application server used by your MicroStrategy configuration, contact <a href="http://support.esri.com/" target="_blank">Esri Technical Support</a></li>. 
-		<p>
-				<table width="400" border="1" align="left">
-					<tr align="left">
-					<th scope="col">Web application server</th>
-					<th scope="col">Tested version</th>
-					</tr>
-					<tr align="left" valign="top">
-						<td align="left" valign="top">Apache Tomcat</td>
-						<td align="left" valign="top">7.0.x</td>
-						</tr>
-						
-						<tr align="left" valign="top">
-						<td align="left" valign="top">IBM WebSphere</td>
-						<td align="left" valign="top">7.0.x</td>
-					</tr>
-					
-					<tr align="left" valign="top">
-						<td align="left" valign="top">JBoss Application Server</td>
-						<td align="left" valign="top">6.2.x</td>
-					</tr>
-						
-					<tr align="left" valign="top">
-						<td align="left" valign="top">Microsoft Internet Information Services</td>
-						<td align="left" valign="top">8.x | 7.x</td>
-					</tr>
-					
-			
-				</tbody>
-				</table>
-		</p>
-			<div class="clear" style="padding:10px;"></div>
-		
-		<!-- Web browsers subhead for EM4M -->
-			<h4>Web browsers</h4>
-			<p>Esri does not test all combinations of web browsers (and the underlying client operating systems) certified by MicroStrategy. Rather, a subset of certified web browsers is selected, and testing is performed on the most recent operating systems. Not all selected browsers are tested on all identified operating systems.</p>
-
-				<p>Esri has not performed any client browser testing on platforms other than Windows. It is expected, however, that the Esri Maps for MicroStrategy plug-in will function as expected on non-Windows clients if one of the web browsers listed below is used. If this is not your experience, contact <a href="http://support.esri.com/" target="_blank">Esri Technical Support</a> to ask that your particular configuration be tested.</p>
-
-				<p>The following browsers have been tested:</p>
-				<p>
-				<table width="400" border="1" align="left">
-					<tr align="left">
-					<th scope="col">Browser name</th>
-					<th scope="col">Tested version</th>
-					</tr>
-
-					<tbody  style="font-size:14px"> 
-					<tr align="left" valign="top">
-						<td align="left" valign="top">Internet Explorer</td>
-						<td align="left" valign="top">11.x | 10.x | 9.x</td>
-					</tr>
-					
-					<tr align="left" valign="top">
-						<td align="left" valign="top">Mozilla Firefox</td>
-						<td align="left" valign="top">27.x</td>
-					</tr>
-									
-					<tr align="left" valign="top">
-						<td align="left" valign="top">Google Chrome</td>
-						<td align="left" valign="top">33.x</td>
-					</tr>
-					
-				</tbody>
-				</table>
-				</p>
-								</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-		
-	<!-- Esri Maps for MicroStrategy Mobile -->
-		<h3>
-		<a name="em4mm" class="icon-right-arrow" onclick="exp(event,'div','exp2')">Esri Maps for MicroStrategy Mobile</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-				<!-- Developer prerequisites subhead for EM4MM section - no table -->
-				<h4>Developer machine</h4>
-			<p>To support the creation of the custom mobile app, the developer system must meet the following requirements:</p>	
-				<ul>
-				<li>A Mac OS machine running OS X version 10.8.4 or later and 4G RAM or greater</li>
-				<li>Xcode IDE 6.x</li>
-				<li>iOS SDK 8.x</li>
-				<li>MicroStrategy 10.1 Mobile client (see the <a href="https://software.microstrategy.com/Download/index.aspx" target="_blank">MicroStrategy download site</a>)</li>
-				</ul>
-			
-			<p>For more information, about:</p>
-				<ul>
-				<li>Compiling the app using the Esri Maps for MicroStrategy Mobile iOS client framework, see <a href="/en/maps-for-microstrategy/install-and-configure/overview.htm">Esri Maps for MicroStrategy Mobile Administrator’s guide</a></li>
-				<li>MicroStrategy Mobile SDK for iOS, see the <a href="https://lw.microstrategy.com/msdz/MSDZ_World2015/docs/projects/MobileSDK/output/vvitarello/HTML5/default.htm#topics/iOS/iOS_What_Can_You_Do_with_the_Mobile_SDK.htm" target="_blank">MicroStrategy Developer Zone</a></li>
-				</ul>
-				
-				<!-- Mobile users subhead for EM4MM section -->
-				<h4>Mobile app user device</h4>
-				<ul>
-				<li>iPad device running iOS 8.x</li>
-				</ul>
-			</div>	
-		
-		<!-- Support -->	
-		<div class="clear" style="padding:5px;"></div>
-	
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Support</a>
-		</h3>
-			<div exp3='yes' style="display:none;padding:0 15px;">
-			
-			<p>MicroStrategy Web requires several third-party components to be configured in order to function properly. These components include an application server, web server, and Java Development Kit. MicroStrategy Technical Support aids in the deployment of MicroStrategy Web  with these components. <a href="http://support.esri.com/" target="_blank">Esri Technical Support</a> aids in the deployment (and use) of the Esri Maps for MicroStrategy plug-in within an operational configuration of MicroStrategy Web.</p>
-
-			<p>Esri Technical Support analysts are not experts in all possible configurations of MicroStrategy Web. Similarly, MicroStrategy Technical Support engineers are not experts in all the third-party components required for an operational configuration of MicroStrategy. If you are experiencing a problem configuring MicroStrategy, it is often more efficient to obtain help from MicroStrategy Technical Support. Similarly, if you are if you are experiencing a configuration problem with third-party components, it is more efficient to get help from the third party's support organization. In cases where a problem is deemed to be in the Esri Maps for MicroStrategy plug-in, Esri Technical Support can be available to work with MicroStrategy Technical Support and third-party vendors or their consultants.</p>			
-			</div>
-			
-		<div class="clear"></div>
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="#">What's new</a></li>
+        <li><a href="#">Supported environments</a></li>
+	      <li><a href="/en/maps-for-microstrategy/2.0.2/">Help for previous versions</a></li>
+        <li><a href="http://video.arcgis.com/series/220/maps-for-microstrategy">Watch Videos</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
 </div>
 
 
-<!-- Get started links -->
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>Get started</h3>
-          <ul>
-           <li><a href="#whatsNew">What's new</a></li>
-            <li><a href="#supportedEnvironments">Supported environments</a></li>
-			<li>Help for previous versions:
-			<ul>
-				<li><a href="/en/maps-for-microstrategy/1.1/">1.1</a></li>
-				<li><a href="/en/maps-for-microstrategy/1.0.1/">1.0.1</a></li>
-							</ul>
-			</li>
-			<li><a href="http://video.arcgis.com/series/220/maps-for-microstrategy">Watch videos</a></li>
-
-          </ul>
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-microstrategy/build-a-model/what-is-.htm"><img class="trailer-1" alt="" src="em4m_la.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Simplify map creation</h3>
+            <p>Create rich maps that meet corporate style standards in just a few clicks using Location Architect.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-microstrategy/build-a-model/what-is-.htm">Learn more</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge" title="Watch a video" href="http://video.arcgis.com/iframe/4149/000000/width/960/0/00:00:00">Watch a video</a></p>
           </div>
         </div>
-
- </div>
-
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-microstrategy/design-and-use-map/configure-selectors.htm"><img class="trailer-1" alt="" src="em4m2.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Configure selectors</h3>
+            <p>Add interactivity between datasets in your document by configuring your map as a selector or as a target of a selector.</p>
+				    <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-microstrategy/design-and-use-map/configure-selectors.htm">Learn more</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge" title="Watch a video" href="http://video.arcgis.com/iframe/4114/000000/width/960/0/00:00:00">Watch a video</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-microstrategy/design-and-use-map/build-a-map-enabled-report.htm"><img class="trailer-1" alt="" src="em4m3b.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Create a map-enabled report</h3>
+            <p>Add a dynamic Esri map to your MicroStrategy Web report to help you make better business decisions.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-microstrategy/design-and-use-map/build-a-map-enabled-report.htm">Learn More</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge" title="Watch a video" href="http://video.arcgis.com/iframe/4115/000000/width/960/0/00:00:00">Watch a video</a></p>
+          </div>
+        </div>
+      </div>
+		  <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-microstrategy/design-and-use-map/build-a-map-enabled-document.htm"><img class="trailer-1" alt="" src="em4m1.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Add maps to your dashboard</h3>
+            <p>Enhance your dashboard with one or more interactive maps to visualize your MicroStrategy data in new ways.</p>
+				    <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-microstrategy/design-and-use-map/build-a-map-enabled-document.htm">Learn more</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge" title="Watch a video" href="http://video.arcgis.com/iframe/4113/000000/width/960/0/00:00:00">Watch a video</a></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<!-- Collapsible contents -->
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Blog -->
+<div class="panel panel panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">From our Blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/location-analytics/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-  </script>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Discussions on GeoNet
+        <a class="btn btn-transparent btn-large right" href="http://forums.arcgis.com/forums/233-Esri-Maps-for-MicroStrategy">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=4472">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with the Esri Maps for Microstrategy</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/microstrategy">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/2720/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for Business Intelligence" ><img alt="Esri Maps for Business Intelligence" src="http://video.esri.com/thumbs/2013/08/2720/2720-esri-maps-for-business-intelligence_x.jpg"></a>
+            <h5 class="leader-1">Esri Maps for Business Intelligence</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/2720/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

@@ -1,17 +1,11 @@
 ---
 title: Esri Maps for Cognos
-
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/app.cognos.1
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
@@ -20,877 +14,212 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/maps-for-cognos/">Esri Maps for IBM Cognos</a></h1>
-	  <form id="helpSearchForm" target="_top">
-                    <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Cognos" data-langlabel="search-esri-maps-cognos">
-                    <input type="hidden" name="collection" value="help" />
-                    <input type="hidden" name="product" value="esri-maps-cognos" />          
-                    <input type="hidden" name="version" value="cognos-6.1" />
-					<input type="hidden" name="language" value="en" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/maps-for-cognos/">Home</a></li>
-        <li><a href="/en/maps-for-cognos/install-windows/">Install and Configure</a></li>
-        <li><a href="/en/maps-for-cognos/author-maps/">Author Maps</a></li>
-        <li><a href="/en/maps-for-cognos/use-maps/">Use Maps</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D&filterID=contentstatus%5Bpublished%5D~tag%5B_cognos%5D">GeoNet</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <header>
-
-		  <h2 id="appTitle">Get the app</h2>
-          <span id="appVersion"><strong>Version:</strong> 6.1</span>
-          <span id="appReleased"><strong>Available:</strong> February 2016</span>
-
-
-          <p>Enrich your IBM Cognos reports with live dynamic maps using familiar everyday workflows&mdash;without the need for custom coding or GIS expertise. Esri Maps for IBM Cognos seamlessly integrates with IBM Cognos, allowing report authors to add and configure maps that interact with other objects in their IBM Cognos reports. Create maps that combine published geographic data from ArcGIS with IBM Cognos business data for richer analysis. Report consumers require no additional skills or tools to start using map-enabled reports to analyze their data visually.   
-</p>
-
-          <p>
-             <a  class="btn primary" href="http://www.esri.com/software/location-analytics/esri-maps-for-ibm-cognos/pricing">Get Esri Maps for IBM Cognos</a>
-
-          </p>
-
-        </header>
-        <hr />
-        <br />
-
-<!-- features top row -->
-		<!-- Add maps -->
-        <div id="addandconfigureamap" class="column-12 phone-column-24">
-          <a title="Add maps to your report" class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/4951/000000/width/960/0/00:00:00" style="max-width: 325px"><img src="em4c1a.png" /><img class="playbtn" src="/img/playbtn.png"></a>
-
-          <h3>Add maps to your report </h3>
-          <p>Add dynamic maps to your IBM Cognos report to help you analyze your business data visually.</p>
-          <p>
-           <a href="/en/maps-for-cognos/author-maps/configure-a-map-enabled-report.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-			<br/>
-			<a title="Add maps to your report" href="http://video.arcgis.com/iframe/4951/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="4951" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4951/mp4/480">
-			</video>
-          </p>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/maps-for-cognos/">Esri Maps for IBM Cognos</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">Esri Maps for IBM Cognos</h1>
+          <p>&nbsp;</p>
+          <p class="text-white font-size--2"><strong>Version 6.1.1</strong> September 2016</p>
         </div>
-
-		<!-- Configure interactive behaviors -->
-        <div id="configureinteractivebehaviors" class="column-12 phone-column-24">
-          <a title="Configure interactive behaviors" class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/4952/000000/width/960/0/00:00:00" style="max-width: 325px"><img src="em4c2.png" /><img class="playbtn" src="/img/playbtn.png"></a>
-
-          <h3>Configure interactive behaviors</h3>
-          <p>Make reports more interactive for report consumers. Select features on the map to update other report objects, set a prompt, or drill through to an external report.</p>
-          <p>
-			<a href="/en/maps-for-cognos/author-maps/about-interactive-behaviors.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-			<br/>
-		   <a title="Configure interactive behaviors" href="http://video.arcgis.com/iframe/4952/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-		<video width="320" height="240" controls id="4952" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4952/mp4/480">
-			</video>
-          </p>
+          <!-- Placeholder for image in blue banner-->
+		    <div class="sdk-home-banner-image">
+          <img src="../arcgis-online/img/main-scalable.png">
         </div>
-		<br/>
-        <div class="clear"></div>
-
-
-		<div id="adddatafromArcGIS" class="column-12 phone-column-24">
-          <img src="em4c3.png" />
-
-          <h3>Add data from ArcGIS</h3>
-          <p>Add published geographic data from ArcGIS to your map-enabled report for easier analysis of your business data.</p>
-          <p><a href="/en/maps-for-cognos/author-maps/add-data-from-arcgis.htm" class="icon-right-arrow">&nbsp;Learn more</a>         
-          </p>
-        </div>
-
-
-        <div id="sharemapsandlayers" class="column-12 phone-column-24">
-          <img src="em4c4.png" />
-
-          <h3>Share maps and layers</h3>
-          <p>Share maps or individual map layers to ArcGIS for use by others in or outside your organization.</p>
-          <p><a href="/en/maps-for-cognos/use-maps/share-a-map-on-arcgis.htm" class="icon-right-arrow">&nbsp;Share a map</a>
-		  <br/>
-		  <a href="/en/maps-for-cognos/use-maps/share-a-layer-on-arcgis.htm" class="icon-right-arrow">&nbsp;Share a layer</a>
-          </p>
-        </div>
-    <div class="clear"></div> 
-	  
-
-<hr />
-
-<a name="whatsNew"></a>
-<h2>What's new</h2>
-<p>Esri Maps for IBM Cognos 6.1 offers significant updates and enhancements for report authors, consumers, and administrators. Here are some highlights.
-</p>
-
-
-<ul>
-<li>More streamlined map application</li>
-<li>Quickly <a href="/en/maps-for-cognos/author-maps/edit-layer-properties.htm">edit IBM Cognos layer properties</a> after data has been added</li>
-<li>Style data using <a href="/en/maps-for-cognos/author-maps/feature-display-and-style.htm#GUID-59F7F621-EEF8-40E5-829B-41DBC0C358B4">manual breaks classification</a></li>
-<li>New floating, resizable map legend (<a href="/en/maps-for-cognos/author-maps/use-the-legend.htm">report authors</a> and <a href="/en/maps-for-cognos/use-maps/use-the-legend.htm">consumers</a>)</li>
-<li>Change the order of groups in the legend (<a href="/en/maps-for-cognos/author-maps/use-the-legend.htm#ESRI_SECTION1_E23823B25CEC499CAFADC5783D27A40C">report authors</a> and <a href="/en/maps-for-cognos/use-maps/use-the-legend.htm#ESRI_SECTION1_E23823B25CEC499CAFADC5783D27A40C">consumers</a>)</li>
-<li>Improved user experience for configuring map tools and settings</li>
-<li>Customize the availability of <a href="/en/maps-for-cognos/author-maps/configure-map-settings-and-tools.htm#ESRI_SECTION1_096AEB7953914BEAA4F1FB4AD718A1DF">map tools</a> and <a href="/en/maps-for-cognos/author-maps/configure-map-settings-and-tools.htm#ESRI_SECTION1_B3B7D16E14EF4CBAA70C5C39494A7DDB">elements</a> in the map</li>
-<li>Change the map look and feel using <a href="/en/maps-for-cognos/author-maps/configure-map-settings-and-tools.htm#GUID-0BCF234E-5050-4785-B2C0-91B4732D931A">predefined</a> or <a href="/en/maps-for-cognos/install-windows/define-a-custom-map-theme.htm">custom themes</a></li>
-<li>Modify the <a href="/en/maps-for-cognos/install-windows/modify-default-symbols-and-color-ramps.htm">default symbols and color ramps</a> available for styling layers, or add your own <a href="/en/maps-for-cognos/install-windows/add-custom-symbol-sets.htm">custom symbol sets</a></li>
-<li>Improved heat map algorithm with support for weighted measure heat maps (<a href="/en/maps-for-cognos/author-maps/apply-a-heat-map.htm">report authors</a> and <a href="/en/maps-for-cognos/use-maps/apply-a-heat-map.htm">consumers</a>)</li>
-<li>Improved user experience for working with feature attribute tables (<a href="/en/maps-for-cognos/author-maps/view-records.htm">report authors</a> and <a href="/en/maps-for-cognos/use-maps/view-records.htm">consumers</a>)</li>
-<li>Additional number, date, and currency formats</li>
-<li>Support for transparency in PDF reports</li>
-<li>Support for ArcGIS Web Map Service (WMS) layers</li>
-<li>Support for ArcGIS roles and privileges</li>
-<li><a href="/en/maps-for-cognos/install-windows/troubleshooting-view-as-pdf-or-excel.htm">Troubleshooting documentation</a> for administrators</li>
-</ul>
-
-
-
-<hr />
-
- <a name="supportedEnvironments"></a>
-        <h2>Supported environments</h2>
-
-        <p>To ensure that Esri Maps for IBM Cognos operates properly, Esri assumes an operational configuration of IBM Cognos Business Intelligence (BI). Software environments for IBM Cognos BI are listed as active, compatible, or not supported. Esri only tests Esri Maps for IBM Cognos using active configurations, and not all active configurations have been tested/certified. </p>
-		<p>If your IBM Cognos configuration is not listed below, contact Esri Technical Support or your Esri sales representative to inquire whether it's planned for a future release, or whether it can be put on the planned list. In general, it's Esri's policy to support newly released IBM Cognos Fix Packs 60 days after they've been made available for download.</p>
-
-<p>Esri Maps for IBM Cognos is supported for use with IBM Cognos Enterprise and IBM Cognos Express 10.2.2 and later. It is not supported for use with any developer edition.</p>
-
-
-<script> 
- function exp(e,strTag ,strAttribute){ 
- var elem = document.getElementsByTagName(strTag); 
- var elem1 = e.target;
- for (var i=0;i<elem1.children.length;i++){ 
- elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
- } 
- for (var i =0;i<elem.length;i++) 
- { 
- if(elem[i].getAttribute(strAttribute)=="yes") 
- { 
- elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
- } 
- } 
- } 
- </script> 
-
-
-<h3><a class="icon-right-arrow" onclick="exp(event,'div','exp1')">
-System requirements</a></h3>
-     <div exp1='yes' style="display:none;padding:0 15px;">
-
-        <ul>
-          <li>Hard disk: 300 MB</li>
-          <li>Memory: 2 GB</li>
-	</ul>
-	<p><b>Note:</b> Disk space requirements will vary depending on the use of the Excel 2002 report format option. See <a href="/en/maps-for-cognos/install-windows/report-formats.htm">Report formats</a> for more information.</p>
-</div>
-<div class="clear"></div>
-
-     <h3/>
-<h3><a class="icon-right-arrow" onclick="exp(event,'div','exp2')">
-IBM Cognos versions</a></h3>
-<div exp2='yes' style="display:none;padding:0 15px;">
-
-<p>In general, it's Esri's policy to support newly released IBM Cognos Fix Packs 60 days after they've been made available for download.</p>
- <p>The following table shows which versions and Fix Packs of IBM Cognos are supported for each version of Esri Maps for IBM Cognos:</p>	
- 
-
-
-<table style="text-align:center" border="1">
-
-<tr style="font-size:14px">
-<th colspan="2">IBM Cognos versions</th>
-<th colspan="5">Esri Maps for IBM Cognos versions</th>
-</tr>
-
-<tr style="font-size:14px">
-<th colspan="2" rowspan="1">&nbsp;</th>
-<th colspan="1" rowspan="1">5.0.1</th>
-<th colspan="1" rowspan="1">6.0</th>
-<th colspan="1" rowspan="1">6.0.1</th>
-<th colspan="1" rowspan="1">6.0.2</th>
-<th colspan="1" rowspan="1">6.1</th>
-</tr>
-
-<tbody  style="font-size:14px"> 
-
-<tr>
-<td rowspan="2" colspan="1"><p><b>10.1</b></p></td>
-<td rowspan="1" colspan="1">10.1 GA</td>
-<td>&#10004;</td>
-<td></td>
-<td>&#10004;</td>
-<td>&#10004;</td>
-<td>&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.1 FP1</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-<tr>
-<td rowspan="5" colspan="1"><p><b>10.1.1</b></p></td>
-<td rowspan="1" colspan="1">10.1.1 RP1</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.1.1 FP1</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.1.1 FP2</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.1.1 FP3</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.1.1 FP4</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-<tr>
-<td rowspan="5" colspan="1"><p><b>10.2</b></p></td>
-<td rowspan="1" colspan="1">10.2</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2 FP1</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2 FP2</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2 FP3</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2 FP4</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-<tr>
-<td rowspan="10" colspan="1"><p><b>10.2.1</b></p></td>
-<td rowspan="1" colspan="1">10.2.1</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP1</td>
-<td rowspan="1" colspan="1">&#10004; *</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP2</td>
-<td rowspan="1" colspan="1">&#10004; *</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP3</td>
-<td rowspan="1" colspan="1">&#10004; *</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP4</td>
-<td rowspan="1" colspan="1">&#10004; *</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP5</td>
-<td rowspan="1" colspan="1">&#10004; *</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP6</td>
-<td rowspan="1" colspan="1">&#10004; *</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP7</td>
-<td rowspan="1" colspan="1">&#10004; *</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP8</td>
-<td rowspan="1" colspan="1">&#10004; *</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.1 FP9</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-<tr>
-<td rowspan="4" colspan="1"><p><b>10.2.2**</b></p></td>
-<td rowspan="1" colspan="1">10.2.2</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&#10004;</td>
-<td>&#10004;</td>
-<td>&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.2 FP1</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.2 FP2</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.2.2 FP3</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-</tbody>
-</table>
-
-<br/>
-<p>* If you have Esri Maps for IBM Cognos version 5.0.1 installed, refer to <a href="http://support.esri.com/en/knowledgebase/techarticles/detail/41743">Knowledge Base article 41743</a> for more information before installing the Fix Pack.</p>
-<p>** Esri Maps for IBM Cognos 6.0.1 and later support IBM Cognos Express 10.2.2 in addition to IBM Cognos Enterprise.</p>
-	
-	
-</div>
-<div class="clear"></div>
-
-     <h3/>
-<h3><a class="icon-right-arrow" onclick="exp(event,'div','exp3')">
-Operating systems</a></h3>
-<div exp3='yes' style="display:none;padding:0 15px;">
-
- <p>IBM certifies and supports operating systems that are compatible with a set of CPU chipsets, referred to as CPU architectures. Esri tests Esri Maps for IBM Cognos on a subset of the operating systems (and chipsets) listed as active by IBM. The list Esri tests is based on market research and existing client configurations.</p>
- <p>The following table shows which operating systems are supported for each version of Esri Maps for IBM Cognos:</p>	
-
-
-<table style="text-align:center" border="1">
-
-
-<tr style="font-size:14px">
-<th rowspan="1" colspan="2">Operating systems</th>
-<th rowspan="1" colspan="5">Esri Maps for IBM Cognos versions</th>
-</tr>
-
-<tr style="font-size:14px">
-<th rowspan="1" colspan="2">&nbsp;</th>
-<th rowspan="1" colspan="1">5.0.1</th>
-<th rowspan="1" colspan="1">6.0</th>
-<th rowspan="1" colspan="1">6.0.1</th>
-<th rowspan="1" colspan="1">6.0.2</th>
-<th rowspan="1" colspan="1">6.1</th>
-</tr>
-
-<tbody style="font-size:14px"> 
-
-<tr>
-<td rowspan="4" colspan="1"><p><b>Windows Server</b></p></td>
-<td rowspan="1" colspan="1">2008</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">2008 R2</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">2012</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">2012 R2</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-<tr>
-<td rowspan="1" colspan="1"><p><b>Red Hat Enterprise Linux Server</b></p></td>
-<td rowspan="1" colspan="1">5.3+</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;*</td>
-<td rowspan="1" colspan="1">&#10004;*</td>
-<td rowspan="1" colspan="1">&#10004;*</td>
-</tr>
-
-<tr>
-<td rowspan="2" colspan="1"><p><b>Novell SUSE Linux Enterprise Server</b></p></td>
-<td rowspan="1" colspan="1">10 SP1+</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10.3+ on System z</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;*</td>
-<td rowspan="1" colspan="1">&#10004;*</td>
-</tr>
-
-<tr>
-<td rowspan="1" colspan="1"><p><b>IBM AIX</b></p></td>
-<td rowspan="1" colspan="1">6.1+</td>
-<td rowspan="1" colspan="1">&nbsp;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-</tbody>
-</table>
-
-<br/>
-<p>* Only 64-bit versions of System z are supported.</p>
-	
-	
-</div>	 
-	 
-<div class="clear"></div>
-
-     <h3/>
-	 
-<h3><a class="icon-right-arrow" onclick="exp(event,'div','exp4')">
-Prerequisites (Linux and UNIX only)</a></h3>
-<div exp4='yes' style="display:none;padding:0 15px;">
-
-	 <p>The following system libraries are required to run the Esri Maps for IBM Cognos EM4C Gateway on Linux and UNIX operating systems:</p>
-
-        <ul>
-          <li>Linux (32-bit)
-		  <ul>
-			<li>linux-gate.so.1</li>
-			<li>/lib/libc.so.6</li>
-			<li>/lib/libdl.so.2</li>
-			<li>/lib/librt.so.1</li>
-			<li>/lib/ld-linux.so.2</li>
-			<li>/lib/libpthread.so.0</li>
-		  </ul>
-		  </li>
-		  <li>Linux (64-bit)
-		  <ul>
-			<li>/lib64/libc.so.6</li>
-			<li>/lib64/libdl.so.2</li>
-			<li>/lib64/librt.so.1</li>
-			<li>/lib64/ld-linux-x86-64.so.2</li>
-			<li>/lib64/libpthread.so.0</li>
-		  </ul>
-		  </li>
-		  <li>Linux System z (64-bit)* 
-		  <ul>
-			<li>/lib64/libc.so.6</li>
-			<li>/lib64/libdl.so.2</li>
-			<li>/lib64/librt.so.1</li>
-			<li>/lib/ld64.so.1</li>
-			<li>/lib64/libpthread.so.0</li>
-		  </ul>
-		  </li>
-		  <li>AIX (32-bit)
-		  <ul>
-			<li>unix</li>
-			<li>libc.a(shr.o)</li>
-			<li>libcrypt.a(shr.o)</li>
-			<li>libiconv.a(shr4.o)</li>
-			<li>libpthreads.a(shr_xpg5.o)</li>
-			<li>libpthreads.a(shr_comm.o)</li>
-		  </ul>
-		  </li>
-		  <li>AIX (64-bit)
-		  <ul>
-			<li>unix</li>
-			<li>libc.a(shr_64.o)</li>
-			<li>ibcrypt.a(shr_64.o)</li>
-			<li>libiconv.a(shr4_64.o)</li>
-			<li>libpthreads.a(shr_xpg5_64.o)</li>
-			</ul>
-			</li>
-					  
-	</ul>
-	<p>* Required for versions 6.0.1 and later</p>
-</div>
-
-
-<div class="clear"></div>
-
-     <h3/>
-<h3><a class="icon-right-arrow" onclick="exp(event,'div','exp5')">
-Web browsers</a></h3>
-<div exp5='yes' style="display:none;padding:0 15px;">
-	 <p>Esri does not test all combinations of web browsers (and the underlying client operating systems) listed as supported by IBM. Rather, a subset of web browsers is selected, and testing is performed on the most recent operating systems. Not all selected browsers are tested on all identified operating systems.</p>
-       
-
-<p>Similarly, Esri performs robust browser testing on the Windows platform only. It is expected, however, that Esri Maps for IBM Cognos will function as expected on non-Windows clients if one of the web browsers listed below is used. If this is not your experience, please contact Esri Technical Support to ask that your particular operating system and web browser be tested.</p>
-
-<p>The following table shows which browsers have been tested in each version of Esri Maps for IBM Cognos:</p>
-
-<table style="text-align:center" border="1">
-
-<tr style="font-size:14px">
-<th colspan="2">Browsers</th>
-<th colspan="5">Esri Maps for IBM Cognos versions</th>
-</tr>
-
-<tr style="font-size:14px">
-<th colspan="2">&nbsp;</th>
-<th>5.0.1</th>
-<th>6.0</th>
-<th>6.0.1</th>
-<th>6.0.2</th>
-<th>6.1</th>
-</tr>
-
-<tbody  style="font-size:14px"> 
-
-<tr>
-<td rowspan="2" colspan="1"><b>Apple Safari on iOS</b></td>
-<td rowspan="1" colspan="1">7</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">8</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-
-<tr>
-<td rowspan="3" colspan="1"><b>Google Chrome</b></td>
-<td rowspan="1" colspan="1">21</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">33</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">41</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="2" colspan="1"><b>Google Chrome for Android</b></td>
-<td rowspan="1" colspan="1">36</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">40</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-
-<tr>
-<td rowspan="4" colspan="1"><b>Internet Explorer*</b></td>
-<td rowspan="1" colspan="1">8</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td  rowspan="1" colspan="1">9</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">10**</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">11**</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-
-<tr>
-<td rowspan="4" colspan="1"><b>Firefox</b></td>
-<td rowspan="1" colspan="1">ESR 17</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">ESR 24</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">ESR 31</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-<tr>
-<td rowspan="1" colspan="1">ESR 38</td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1"></td>
-<td rowspan="1" colspan="1">&#10004;</td>
-</tr>
-</tbody>
-</table>
-<p></p>
-
-<p>* Heat maps are not compatible with IBM Cognos running in Internet Explorer. In Esri Maps for IBM Cognos 6.0.1 and earlier, pie chart clusters are also not compatible with IBM Cognos running in Internet Explorer. For more information, see <a href="http://support.esri.com/en/knowledgebase/techarticles/detail/42801">Knowledge Base article 42801</a>.</p>
-<p>** Internet Explorer 10 and 11 are only supported in compatibility mode.</p>
-<p>Google Chrome for Android and Apple Safari on iOS browsers are only supported for report consumers. Esri Maps Designer is not supported in these browsers.</p>
-
-<p>For improved rendering of map features and graphics in Internet Explorer, it is recommended that Silverlight 5.x be downloaded and installed on the client. </p>
-</div>
-
-
-
-<div class="clear"></div>
-
-     <h3/>
-<h3><a class="icon-right-arrow" onclick="exp(event,'div','exp6')">
-Languages</a></h3>
-<div exp6='yes' style="display:none;padding:0 15px;">
-       <p>The following languages represent the product languages supported by Esri Maps for IBM Cognos 6.0.1, 6.0.2, and 6.1:</p>
-	
-        <ul>
-          <li>Chinese (China)</li>
-		  <li>English</li>
-		  <li>French</li>
-		  <li>German</li>
-		  <li>Japanese</li>
-		  <li>Korean</li>
-		  <li>Russian</li>
-	</ul>
-
-       <p>Esri Maps for IBM Cognos 6.0 and 5.0.1 support English only.</p>
-        
-
-</div>
-
-<div class="clear"></div>
-
-     <h3/>
-<h3><a class="icon-right-arrow" onclick="exp(event,'div','exp7')">
-Support</a></h3>
-<div exp7='yes' style="display:none;padding:0 15px;">
-<p>IBM Cognos requires several third-party components to be configured in order to function properly. These components include application servers, web servers, database servers, Java runtime libraries, and so on. IBM Technical Support aids in the deployment of IBM Cognos with these components. Esri Technical Support aids in the deployment (and use) of Esri Maps for IBM Cognos.</p>
-
-<p>Esri Technical Support analysts are not experts in all possible configurations of IBM Cognos. Similarly, IBM Technical Support engineers are not experts in all the third-party components that are required for an operational configuration of Esri Maps for IBM Cognos. If you're experiencing a problem configuring IBM Cognos, it's often more efficient to obtain help from IBM Technical Support. Similarly, if you're experiencing a configuration problem with third-party components, it's more efficient to get help from the third party's support organization. In cases where a problem is deemed to be in Esri Maps for IBM Cognos, Esri Technical Support can be available to work with IBM Technical Support and/or third-party vendors and/or their consultants.</p>
-<br />
-<hr />
-  </div>
-<div class="clear"></div>
-
-
+		    <div class="search-bar">
+			    <form id="helpSearchForm" target="_top">
+			      <input type="search" name="q" class="leader" placeholder="Search Data Appliance for ArcGIS">
+		  	    <input type="hidden" name="product" value="data-appl" />
+            <input type="hidden" name="collection" value="help" />
+		  	    <input type="hidden" name="language" value="<%= current_language %>" />
+		  	    <button class="search-submit icon-ui-search" type="submit"></button>
+			    </form>
+		    </div>
       </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link  is-active" href="/en/maps-for-cognos/">Home</a></li>
+        <a class="sub-nav-link" href="/en/maps-for-cognos/install-windows/">Install and Configure</a>
+        <a class="sub-nav-link" href="/en/maps-for-cognos/author-maps/">Author Maps</a>
+        <a class="sub-nav-link" href="/en/maps-for-cognos/use-maps/">Use Maps</a>
+        <a class="sub-nav-link" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D&filterID=contentstatus%5Bpublished%5D~tag%5B_cognos%5D">GeoNet</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
-      <div class="column-8 tablet-column-24 blocks">
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <p>Enrich your IBM Cognos reports with live dynamic maps using familiar everyday workflows—without the need for custom coding or GIS expertise. Esri Maps for IBM Cognos seamlessly integrates with IBM Cognos 10, allowing report authors to add and configure maps that interact with other objects in their IBM Cognos reports. Create maps that combine published geographic data from ArcGIS with IBM Cognos business data for richer analysis. Report consumers require no additional skills or tools to start using map-enabled reports to analyze their data visually.</p>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">Esri Maps for IBM Cognos 6.1.1 offers significant updates and enhancements for report authors, consumers, and administrators.</p>
+    </div>
+  </div>
+</div>
 
-        <div class="imgFrame block">
-          <h3>Get started</h3>
-          <ul>
-          <li><a href="#whatsNew">What's new</a></li>		
-		  <li><a href="#supportedEnvironments">Supported environments</a></li>
-		  <li>Help for previous versions:
-			<ul>
-				
-				<li><a href="/en/maps-for-cognos/6.0.2">6.0.2</a></li>
-				<li><a href="/en/maps-for-cognos/5.0.1">5.0.1</a></li>
-				<li>4.3.2
-					<ul>
-						<li><a href="http://resources.arcgis.com/en/communities/maps-for-cognos/pdf/EM4C-Installation-and-Configuration-Guide.pdf">Installation and Configuration Guide</a></li>
-						<li><a href="http://resources.arcgis.com/en/help/esri-maps-for-ibm-cognos/4.3.2/">Report Author's Guide<li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		  <li><a href="http://video.arcgis.com/series/216/maps-for-ibm-cognos">Watch videos</a></li>
-		  </ul>
-		  
-        </div>
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+    <ul class="list-plain sdk-home-nav-list">
+      <li><a href="#">Supported environments</a></li>
+      <li><a href="/en/maps-for-cognos/6.1/">Help for previous versions</a></li>
+      <li><a href="http://video.arcgis.com/series/216/maps-for-ibm-cognos">Watch videos</a></li>
+    </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>
 
-        <br />
 
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-cognos/author-maps/configure-a-map-enabled-report.htm"><img class="trailer-1" alt="" src="em4c1a.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Add maps to your report</h3>
+            <p>Add dynamic maps to your IBM Cognos report to help you analyze your business data visually.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-cognos/author-maps/configure-a-map-enabled-report.htm">Learn more</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge" title="Watch a video" href="http://video.arcgis.com/iframe/3946/000000/width/960/0/00:00:00">Watch a video</a></p>
           </div>
         </div>
-
- </div>
-
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/data-appliance/6.2/deploy/"><img class="trailer-1" alt="" src="em4c2.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Deploy</h3>
+            <p>Configure your data appliance and deploy the services on ArcGIS for Server.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/data-appliance/6.2/deploy/">Show me how</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/data-appliance/6.2/use/"><img class="trailer-1" alt="" src="em4c3.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Use</h3>
+            <p>Use the services in your ArcGIS client.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/data-appliance/6.2/use/">Show me how</a></p>
+          </div>
+        </div>
+      </div>
+		  <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/data-appliance/6.2/reference/"><img class="trailer-1" alt="" src="em4c4.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Reference</h3>
+            <p>View general information, frequently asked questions, and terms of use as well as links for the previous version.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/data-appliance/6.2/reference/">Show me details</a></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<!-- Collapsible contents -->
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Blog -->
+<div class="panel panel panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">From our Blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/location-analytics/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up blogHpFeed">
+				<!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-  </script>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Discussions on GeoNet
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D&filterID=contentstatus%5Bpublished%5D~tag%5B_cognos%5D">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=4472">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+	  <div class="column-25 text-white text-center">
+		  <h4 class="trailer-half">Connect with the Esri Maps for IBM Cognos</h4>
+	  	<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+      <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+		  <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+		  <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+		  <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+    </div>
+	</div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/cognos">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/1292/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for IBM Cognos" ><img alt="Esri Maps for IBM Cognos" src="http://video.esri.com/thumbs/2012/05/1292/1292-esri-maps-for-ibm-cognos_x.jpg"></a>
+            <h5 class="leader-1">Esri Maps for IBM Cognos</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/1292/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3260/000000/width/960/1" class="colorbox-evlarge" title="SharePoint: Esri Maps Extensibility API" ><img alt="SharePoint: Esri Maps Extensibility API" src="http://video.esri.com/thumbs/2014/04/3260/3260-extending-maps-for-sharepoint-esri-maps-extensibility-api_x.jpg"></a>
+            <h5 class="leader-1">SharePoint: Esri Maps Extensibility API</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3260/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/1412/000000/width/960/1" class="colorbox-evlarge" title="2012 Petroleum GIS Conference: Business Intelligence Demonstration" ><img alt="2012 Petroleum GIS Conference: Business Intelligence Demonstration" src="http://video.esri.com/thumbs/2012/06/1412/1412-2012-petroleum-gis-conference-business-intelligence-demonstration_x.jpg"></a>
+            <h5 class="leader-1">2012 Petroleum GIS Conference: Business Intelligence Demonstration</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/1412/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/2720/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for Business Intelligence" ><img alt="Esri Maps for Business Intelligence" src="http://video.esri.com/thumbs/2013/08/2720/2720-esri-maps-for-business-intelligence_x.jpg"></a>
+            <h5 class="leader-1">Esri Maps for Business Intelligence</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/2720/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

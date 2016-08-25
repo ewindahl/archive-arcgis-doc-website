@@ -1,14 +1,11 @@
 ---
 title: ArcGIS Earth
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.colorbox-min
-  - jquery.colorbox.init
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
@@ -17,197 +14,221 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/arcgis-earth/">ArcGIS Earth</a></h1>
-	  <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Earth">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-earth" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/arcgis-earth/">Home</a></li>
-        <li><a href="/en/arcgis-earth/use/get-started.htm">Use</a></li>
-        <li><a href="/en/arcgis-earth/administer/admin-config.htm">Administer</a></li>
-        <li><a href="https://geonet.esri.com/groups/arcgis-earth">Forum</a></li>
-      </ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/arcgis-earth/">Earth</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">ArcGIS Earth</h1>
+          <div class="trailer-half clearfix">
+            <a class="btn btn-green download-link" href="//go.esri.com/l/82202/2015-12-07/nv11n">Get ArcGIS Earth</a>
+          </div>
+
+          <p class="text-white font-size--2">&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search ArcGIS Earth">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="arcgis-earth" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link  is-active" href="/en/arcgis-earth/">Home</a></li>
+        <a class="sub-nav-link" href="/en/arcgis-earth/get-started/get-started.htm">Get Started</a>
+        <a class="sub-nav-link" href="/en/arcgis-earth/use/guided-tour.htm/">Use</a>
+        <a class="sub-nav-link" href="/en/arcgis-earth/administer/admin-config.htm">Administer</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <p>ArcGIS Earth allows anyone to easily and quickly view 3D maps.</p>
+    <p>
+      <a href="//go.esri.com/l/82202/2015-12-07/nv11n" class="videoLink colorbox-evlarge cboxElement">
+        <span class="btn primary icon-windows-8">Get ArcGIS Earth</span>
+      </a>
+    </p>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">ArcGIS Earth was updated in June 2016 to Version 1.2. It includes TPK, SPK, and local elevation raster data support as well as advanced options under a disconnected environment.</p>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-    <div class="column-16 tablet-column-24">
-        <h3 class="gray">ArcGIS Earth allows anyone to easily and quickly view 3D maps.</h3>
-
-	<!--
-          <span id="appVersion"><strong>Version:</strong> 10.2</span>
-          <span id="appReleased"><strong>Released:</strong> March 2014</span>
-	-->
-
-          <p>
-				<a href="//go.esri.com/l/82202/2015-12-07/nv11n" class="videoLink colorbox-evlarge cboxElement">
-				<span class="btn primary icon-windows-8">Get ArcGIS Earth</span>
-				</a>
-
-          </p>
-        <hr />
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a class="icon-ui-play icon-ui-small colorbox-evlarge" title="Quick introduction video" href="http://video.arcgis.com/iframe/4646/000000/width/960/autoplay:1/00:00:00">Quick introduction video</a></li>
+        <li><a href="https://learn.arcgis.com/en/projects/get-started-with-arcgis-earth/">Take a lesson</a></li>
+	      <li><a href="#">Features</a></li>
+        <li><a href="#">System requirements</a></li>
+        <li><a href="#">What's new</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>
 
 
-        <div id="earthHome1" class="column-12 phone-column-24">
-          <img src="/en/arcgis-earth/Navigate_ArcGIS_Earth.jpg" />
-
-          <h3>Navigate ArcGIS Earth</h3>
-          <p>Use your mouse, keyboard, or touch screen to explore terrains, oceans, and mountains anywhere in the world.</p>
-          <p>
-            <a href="/en/arcgis-earth/use/navigation-controls.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
-			<!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
-
-          </p>
-        </div>
-
-	<div id="earthHome2" class="column-12 phone-column-24">
-          <img src="/en/arcgis-earth/View_KML_and_ArcGIS_services.jpg" />
-
-          <h3>View KML or KMZ files and ArcGIS services</h3>
-          <p>Drag files or URLs into ArcGIS Earth to instantly open KML files, shapefiles, or ArcGIS services and view them in 3D.</p>
-          <p>
-            <a href="/en/arcgis-earth/use/guided-tour.htm#ESRI_SECTION1_B2A6D7E39AF9422B8D7EA825E7131236" class="icon-right-arrow">&nbsp;Show me how</a><br /><br/>
-          </p>
-        </div>
-	<div class="clear"></div>
-
-        <div id="earthHome3" class="column-12 phone-column-24">
-	          <img src="/en/arcgis-earth/Draw_Measure.jpg" />
-
-	  <h3>Draw and measure on the globe</h3>
-	  <p>Draw point, line, or polygon placemarks to highlight information. Measure distance and areas in 3D.</p>
-	  <p>
-	    <a href="/en/arcgis-earth/use/guided-tour.htm#ESRI_SECTION1_A2B700B7AA59466C9A7DD712284240F5" class="icon-right-arrow">&nbsp;Show me how</a><br />
-	    <!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
-	  </p>
-        </div>
-
-	<div id="earthHome4" class="column-12 phone-column-24">
-          <img src="/en/arcgis-earth/ShareMaps.jpg" />
-	  <h3>Share maps</h3>
-	  <p>Share a screen capture of your current Earth view by saving it as an image, emailing it, or printing it.</p>
-	  <p>
-	    <a href="/en/arcgis-earth/use/guided-tour.htm#ESRI_SECTION1_2A3F3A27057C47E0A6B62AEE556B7A9E" class="icon-right-arrow">&nbsp;Show me how</a><br />
-	    <!--<a href="#" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>-->
-	  </p>
-        </div>
-
-        <div class="clear"></div>
-
-        <a name="features"></a>
-        <h2 class="divider">Features</h2>
-        <p>ArcGIS Earth is a lightweight, easy-to-use 64-bit Windows desktop app that enables anyone in your organization to easily view and explore 2D and 3D data including KML and ArcGIS services, whether behind a firewall or over the Internet.</p>
-        <ul>
-          <li>Display KML layers and shapefiles in 3D.</li>
-          <li>Connect to Esri RESTful services including feature, map, image, and scene services.</li>
-          <li>Use Esri basemaps and Living Atlas of the World content.</li>
-          <li>Measure, create placemarks and simple geometry, and more.</li>
-          <li>Save the view as an image and share it with others via email.</li>
-        </ul>
-
-        <a name="systemrequirements"></a>
-        <h2 class="divider">System requirements</h2>
-
-        <p> ArcGIS Earth is a desktop app built on the <a href="https://developers.arcgis.com/net/desktop/guide/system-requirements.htm#ESRI_SECTION1_F2655B7F48F7464DB86CC7756706296D">ArcGIS Runtime SDK for .NET</a> and shares the same requirements for deployment targets as other apps built with the Runtime SDK.</p>
-
-
-        <h3>Supported platforms</h3>
-        <ul>
-          <li>Windows 7 SP1 Ultimate, Enterprise, Professional, and Home Premium (64 bit [EM64T])</li>
-		  <li>Windows 8 Basic, Pro, and Enterprise (64 bit [EM64T])</li>
-          <li>Windows 8.1 Basic, Pro, and Enterprise (64 bit [EM64T])</li>
-          <li>Windows 10 Home, Pro, and Enterprise (64 bit [EM64T])</li>
-          <li>Windows Server 2008 SP2 Standard, Enterprise, and Datacenter (64 bit [EM64T])</li>
-          <li>Windows Server 2008 R2 SP1 Standard, Enterprise, and Datacenter (64bit [EM64T])</li>
-          <li>Windows Server 2012 Standard and Datacenter (64 bit [EM64T])</li>
-          <li>Windows Server 2012 R2 Standard and Datacenter (64 bit [EM64T])</li>
-        </ul>
-		
-		<h3>DirectX</h3>
-		<p>ArcGIS Earth uses <a href="http://en.wikipedia.org/wiki/DirectX">DirectX</a> to provide high-performance map rendering. DirectX provides support for hardware and software rendering of graphics and is provided by the <a href="https://developers.arcgis.com/net/desktop/guide/system-requirements.htm#ESRI_SECTION2_254FB8C139314E42BB3E5EEA32C049F2">supported Windows platforms</a>.</p>
-        <ul>
-          <li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ff476876">Direct3D feature level</a> 9_3</li>
-          <li>Default: DirectX 11 hardware support</li>
-          <li>Falls back to DirectX 11 software rendering if hardware support is not available</li>
-        </ul>
-
-
-        <h3>Hardware requirements</h3>
-        <ul>
-          <li>CPU speed: 2.2 GHz or higher; Hyper-Threading Technology (HTT) or multicore recommended.</li>
-          <li>Processor: Intel Pentium 4, Intel Core Duo, or Xeon Processors; SSE2 minimum. Run this <a href="https://technet.microsoft.com/EN-US/SYSINTERNALS/CC835722">Microsoft utility</a> from your Windows command prompt to check your processor.</li>
-          <li>Disk space: 50 MB is needed for the application, and more is needed for cache and swap.</li>
-          <li>Memory/RAM: 2 GB or higher.</li>
-          <li>Display: 24-bit color depth.</li>
-          <li>Screen resolution: 1024x768 or higher recommended at normal size (96 dpi).</li>
-          <li>Swap space: Determined by the operating system; 500 MB minimum. ArcGIS Runtime will create cache files when used; additional disk space may be required.</li>
-          <li>Video/Graphics adapter: 256 MB RAM minimum, 1 GB RAM recommended; NVIDIA, ATI, and Intel chipsets supported；accelerated graphics card driver; Shader Model 4.0 minimum. Be sure to use the latest available driver.</li>
-        </ul>
-
-	<p>Share your <a href="http://ideas.arcgis.com/">ideas</a>, and <a href="http://support.esri.com/en/">send us your feedback</a>.</p>
-
-        <p>&nbsp;</p>
-
-
-      </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-	  <h3>Details</h3>
-	  <h4><a href="http://video.esri.com/watch/4646/arcgis-earth">Quick introduction video</a></h4>
-	  <h4><a href="#features">Features</a></h4>
-	  <h4><a href="#systemrequirements">System requirements</a></h4>
-
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/arcgis-earth/get-started/navigation-controls.htm"><img class="trailer-1" alt="" src="/en/arcgis-earth/Navigate_ArcGIS_Earth.jpg"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Navigate ArcGIS Earth</h3>
+            <p>Use your mouse, keyboard, or touch screen to explore terrains, oceans, and mountains anywhere in the world.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/arcgis-earth/get-started/navigation-controls.htm">Show me how</a></p>
           </div>
         </div>
-
- </div>
-
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/arcgis-earth/use/guided-tour.htm#ESRI_SECTION1_B2A6D7E39AF9422B8D7EA825E7131236"><img class="trailer-1" alt="" src="/en/arcgis-earth/View_KML_and_ArcGIS_services.jpg"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">View KML or KMZ files and ArcGIS services</h3>
+            <p>Drag files or URLs into ArcGIS Earth to instantly open KML files, shapefiles, or ArcGIS services and view them in 3D.</p>
+				    <p><a class="icon-ui-right icon-ui-small" href="/en/arcgis-earth/use/guided-tour.htm#ESRI_SECTION1_B2A6D7E39AF9422B8D7EA825E7131236">Show me how</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/arcgis-earth/use/guided-tour.htm#ESRI_SECTION1_A2B700B7AA59466C9A7DD712284240F5"><img class="trailer-1" alt="" src="/en/arcgis-earth/Draw_Measure.jpg"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Draw and measure on the globe</h3>
+            <p>Draw point, line, or polygon placemarks to highlight information. Measure distance and areas in 3D.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/arcgis-earth/use/guided-tour.htm#ESRI_SECTION1_A2B700B7AA59466C9A7DD712284240F5">Show me how</a></p>
+          </div>
+        </div>
+      </div>
+		  <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/arcgis-earth/use/share-your-work.htm"><img class="trailer-1" alt="" src="/en/arcgis-earth/ShareMaps.jpg"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Share your work</h3>
+            <p>Share a screen capture of your current Earth view and share your work in progress.</p>
+				    <p><a class="icon-ui-right icon-ui-small" href="/en/arcgis-earth/use/share-your-work.htm">Show me how</a></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- Collapsible contents -->
+
+<!-- Blog -->
+<div class="panel panel panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">From our Blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/arcgis-earth/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/arcgis-earth/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Discussions on GeoNet
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/groups/arcgis-earth">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=4472">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with the ArcGIS Earth</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/arcgis-earth">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-3-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/4964/000000/width/960/1" class="colorbox-evlarge" title="ArcGIS Earth" ><img alt="ArcGIS Earth" src="http://video.esri.com/thumbs/2016/03/4964/4964-arcgis-earth_x.jpg"></a>
+              <h5 class="leader-1">ArcGIS Earth</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4964/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/4646/000000/width/960/1" class="colorbox-evlarge" title="ArcGIS Earth" ><img alt="ArcGIS Earth" src="http://video.esri.com/thumbs/2015/07/4646/4646-arcgis-earth_x.jpg"></a>
+            <h5 class="leader-1">ArcGIS Earth</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4646/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/150/000000/width/960/1" class="colorbox-evlarge" title="DevGeo Keynote Speech" ><img alt="DevGeo Keynote Speech" src="http://video.esri.com/thumbs/2011/01/150/1_DevGeo-Keynote_s.jpg"></a>
+            <h5 class="leader-1">DevGeo Keynote Speech</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/150/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <!--div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="//video.arcgis.com/iframe/2992/000000/width/960/1" class="colorbox-evlarge" title="What is Location Analytics?" ><img alt="What is Location Analytics?" src="//video.arcgis.com/thumbs/2013/10/2992/2992-what-is-location-analytics_question__x.jpg"></a>
+            <h5 class="leader-1">What is Location Analytics?</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="//video.arcgis.com/iframe/2992/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div-->
+      </div>
+    </div>
+  </div>
+</div>
 
 
-	<!--	<script src="/js/main.js" type="text/javascript"></script>-->
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/arcgis-earth/feed/',
-        max: 5,
-        layout: 0
-      });
-		
-		$("#arcgisEarthDownloadLink").click(function (){
-			window.open("//go.esri.com/l/82202/2015-12-07/nv11n", "mywindow", "location=0, titlebar=no, width=600, height=600");
-			return false;
-		});
-	 
-    });
-
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-
-  </script>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

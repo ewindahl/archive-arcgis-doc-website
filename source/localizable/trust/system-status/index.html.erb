@@ -1,15 +1,12 @@
 ---
 title: Trust - System Status
 css:
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - sitecfg.js
 
 metatags:
   - <META name="description" content="Trust ArcGIS System Status page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="en">
@@ -17,56 +14,124 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li><a title="ArcGIS Online Trust" href="/en/trust/">Trust</a></li>
-        <li class='current'><a title="ArcGIS Online System Status" href="/en/trust/system-status/">ArcGIS Online Status</a></li>
-        <li><a title="ArcGIS Online Security" href="/en/trust/security/">Security</a></li>		
-        <li><a title="ArcGIS Online Privacy" href="/en/trust/privacy/">Privacy</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/en/trust/compliance/">Compliance</a></li>
-	</ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/trust/">Trust</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">Trust ArcGIS</h1>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="arcgis-online" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link" href="/en/trust/">Home</a></li>
+        <a class="sub-nav-link is-active" href="/en/trust/system-status/">ArcGIS Online Status</a>
+        <a class="sub-nav-link" href="/en/trust/security/">Security</a>
+        <a class="sub-nav-link" href="/en/trust/privacy/">Privacy</a>
+        <a class="sub-nav-link" href="/en/trust/compliance/">Compliance</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div id="collectorMapFeature">
+    <iframe src="http://status.arcgis.com/" width="1000" height="1250" frameborder="0">
+      Error: Embedded data could not be displayed.
+    </iframe>
+  </div>
+  <div>
+    <p>The ArcGIS Online Health Dashboard provides status information that has been verified as having impacted the majority of our users. As ArcGIS Online is a large cloud-based platform, many events have limited effect on our broader user base, if at all. This status page does not post organization-specific issues as we encourage these be resolved using our available support services.</p>
+  </div>
+  <div style="text-align:center; padding-top:15px;">
+    <a href="http://www.fedramp.gov/"><img src="../img/fedramp.png"/></a>
+    <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="../img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="../img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="../img/safeharbor.png"/></a>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with Trust ArcGIS</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
 
-     <div class="">
-	
-        <div id="collectorMapFeature" >
-
-<iframe src="http://status.arcgis.com/" width="1000" height="1250" frameborder="0">
-  Error: Embedded data could not be displayed. 
-</iframe>
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/trust">More Videos <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/4324/000000/width/960/1" class="colorbox-evlarge" title="Auth in ArcGIS Online"><img alt="Auth in ArcGIS Online" src="http://video.esri.com/thumbs/2015/04/4324/4324-auth-in-arcgis-online_x.jpg"></a>
+              <h5 class="leader-1">Auth in ArcGIS Online</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4324/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3471/000000/width/960/1" class="colorbox-evlarge" title="Geodesigning Our Way to Livable Cities"><img alt="Geodesigning Our Way to Livable Cities" src="http://video.esri.com/thumbs/2014/04/3471/3471-geodesigning-our-way-to-lovable-cities-_dash_-part-1-of-2_x.jpg"></a>
+            <h5 class="leader-1">Geodesigning Our Way to Livable Cities</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3471/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
         </div>
- </div>
-
-<div>
-	<p>The ArcGIS Online Health Dashboard provides status information that has been verified as having impacted the majority of our users. As ArcGIS Online is a large cloud-based platform, many events have limited effect on our broader user base, if at all. This status page does not post organization-specific issues as we encourage these be resolved using our available support services.</p>
-</div>
-
- <div style="text-align:center; padding-top:15px;">
-			 <a href="http://www.fedramp.gov/"><img src="../img/fedramp.png"/></a>
-			 <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="../img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="../img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="../img/safeharbor.png"/></a>
-		</div>	
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3472/000000/width/960/1" class="colorbox-evlarge" title="Using Geodesign to Create Livable Healthy Communities"><img alt="Using Geodesign to Create Livable Healthy Communities" src="http://video.esri.com/thumbs/2014/04/3472/3472-using-geodesign-to-create-livable-healthy-communities-_dash_-part-2-of-2_x.jpg"></a>
+            <h5 class="leader-1">Using Geodesign to Create Livable Healthy Communities</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3472/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/1627/000000/width/960/1" class="colorbox-evlarge" title="Making a Difference and President's Awards"><img alt="Making a Difference and President's Awards" src="http://video.esri.com/thumbs/2012/08/1627/1627-making-a-difference-and-presidents-awards_x.jpg"></a>
+            <h5 class="leader-1">Making a Difference and President's Awards</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/1627/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
     </div>
- 
-
-		 		
-
-	
- </div>
+  </div>
 </div>
-	
+
+
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
