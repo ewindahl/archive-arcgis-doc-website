@@ -1,17 +1,11 @@
 ---
 title: Esri Demographics
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - /en/asset/css/app-switch-1
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/arcgis-app-1
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
@@ -20,99 +14,177 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/esri-demographics/">Esri Demographics</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Esri Demographics">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="esri-demographics" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/esri-demographics/">Home</a></li>
-        <li><a href="/en/esri-demographics/access/">Access</a></li>
-        <li><a href="/en/esri-demographics/data/">Data</a></li>
-        <li><a href="/en/esri-demographics/coverage/">Coverage</a></li>
-        <li><a href="/en/esri-demographics/reference/">Reference</a></li>
-      </ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/esri-demographics/">Esri Demographics</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">Esri Demographics</h1>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search Esri Demographics">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="esri-demographics" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link  is-active" href="/en/esri-demographics/">Home</a></li>
+        <a class="sub-nav-link" href="/en/esri-demographics/access/">Access</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/data/">Data</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/coverage/">Coverage</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/reference/">Reference</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <h3 class="gray">Esri Demographics powers the ArcGIS System with access to global demographic, spending, lifestyle, and business data. </h3>
+    <p>Esri Demographics is used for mapping and analysis purposes. Esri Demographics supports commercial market analytics and noncommercial usages, such as economic development, planning, and at-risk population assessment. Esri Demographics is accessible in four ways: dynamic web maps, data enrichment, reports, and infographics.</p>
+    <p>To see the available comprehensive set of global Esri Demographics data, use the data browser below by selecting a country and peruse the available data categories.</p>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">The June 2016 release includes 2016 updates for the U.S. For details, see the <a target="_blank" class="xref" href="http://links.esri.com/esri-demographics/2016-whats-new-blog">What's New in Esri Demographics (June 2016)</a> blog post.</p>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-      <div class="column-16 tablet-column-24">
-
-	<h3 class="gray">Esri Demographics powers the ArcGIS System with access to global demographic, spending, lifestyle, and business data. </h3>
-	<p style="padding-top:15px;">Esri Demographics is used for mapping and analysis purposes. Esri Demographics supports commercial market analytics and noncommercial usages, such as economic development, planning, and at-risk population assessment. Esri Demographics is accessible in four ways: dynamic web maps, data enrichment, reports, and infographics. </p>
-	<p>To see the available comprehensive set of global Esri Demographics data, use the data browser below by selecting a country and peruse the available data categories.</p>	
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-
-        </div>
-			<iframe src="http://links.esri.com/data-browser/" width="815" height="850" frameborder="0">
-				Error: Embedded data could not be displayed. 
-			</iframe>
- 
-        <div class="clear"></div>
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="/en/esri-demographics/reference/whats-new.htm">What's new</a></li>
+        <li><a href="/en/esri-demographics/access/">Access</a></li>
+	      <li><a href="/en/esri-demographics/data/">Data</a></li>
+        <li><a href="/en/esri-demographics/coverage/">Coverage</a></li>
+        <li><a href="/en/esri-demographics/reference/">Reference</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>
 
 
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <iframe src="http://links.esri.com/data-browser/" width="815" height="850" frameborder="0">
+      Error: Embedded data could not be displayed.
+    </iframe>
+  </div>
+</div>
 
-      </div>
+<!-- Collapsible contents -->
 
+<!-- Blog -->
+<div class="panel panel panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">From our Blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/demographics/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/demographics/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-      <div class="column-8 tablet-column-24 blocks">
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Discussions on GeoNet
+        <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/groups/arcgis-maps-for-office">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=4472">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-        <div class="imgFrame block">
-          <h3>Get started</h3>
-          <ul>
-           <li><a href="/en/esri-demographics/access/">Access</a></li>
-           <li><a href="/en/esri-demographics/data/">Data</a></li>
-           <li><a href="/en/esri-demographics/coverage/">Coverage</a></li>
-           <li><a href="/en/esri-demographics/reference/">Reference</a></li>
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with the Esri Demographics</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
 
-
-          </ul>
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/demographics">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/1099/000000/width/960/1" class="colorbox-evlarge" title="ArcGIS for Demographics, Statistics, Housing, and Health" ><img alt="ArcGIS for Demographics, Statistics, Housing, and Health" src="http://video.esri.com/thumbs/2012/03/1099/1099-arcgis-for-demographics_comma_-statistics_comma_-housing_comma_-and-health_x.jpg"></a>
+              <h5 class="leader-1">ArcGIS for Demographics, Statistics, Housing, and Health</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/1099/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/2719/000000/width/960/1" class="colorbox-evlarge" title="Esri Global Demographic, Business, and Lifestyle Data" ><img alt="Esri Global Demographic, Business, and Lifestyle Data" src="http://video.esri.com/thumbs/2013/08/2719/2719-esri-global-demographic_comma_-business_comma_-and-lifestyle-data_x.jpg"></a>
+            <h5 class="leader-1">Esri Global Demographic, Business, and Lifestyle Data</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/2719/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
           </div>
         </div>
-
- </div>
-
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/2486/000000/width/960/1" class="colorbox-evlarge" title="Enrich Your Excel Data" ><img alt="Enrich Your Excel Data" src="http://video.esri.com/thumbs/2013/06/2486/2486-enrich-your-excel-data_x.jpg"></a>
+            <h5 class="leader-1">Enrich Your Excel Data</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/2486/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/1889/000000/width/960/1" class="colorbox-evlarge" title="Building Apps That Use Esri Lifestyle Data" ><img alt="Building Apps That Use Esri Lifestyle Data" src="http://video.esri.com/thumbs/2012/10/1889/1889-building-apps-that-use-esri-lifestyle-data_x.jpg"></a>
+            <h5 class="leader-1">Building Apps That Use Esri Lifestyle Data</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/1889/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/demographics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-
-  </script>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

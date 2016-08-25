@@ -1,17 +1,11 @@
 ---
 title: ArcGIS app for smartphones and tablets
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - /en/asset/css/app-switch-1
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/arcgis-app-1
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
@@ -20,220 +14,202 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/arcgis-app/">ArcGIS app for smartphones and tablets</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS app">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="android-app" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/arcgis-app/">Home</a></li>
-        <li><a href="/en/arcgis-app/android/help/get-started-faqs.htm">Help</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/applications/arcgis-app-for-smartphones-and-tablets">Forum</a></li>
-      </ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/arcgis-app/">App for smartphones and tablets</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">ArcGIS app for smartphones and tablets</h1>
+          <div class="trailer-half clearfix">
+            &nbsp;
+          </div>
+
+          <p class="text-white font-size--2">&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search ArcGIS app">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="android-app" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link  is-active" href="/en/arcgis-app/">Home</a></li>
+        <a class="sub-nav-link" href="/en/arcgis-app/android/help/get-started-faqs.htm">Help</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <div class="alert alert-red is-active">
+      This application will be removed from Apple's App Store, Google Play, the Amazon Appstore for Android, and the Windows Phone Store in 2016. See <a href="http://blogs.esri.com/esri/arcgis/?p=49721">our blog</a> for details, including migration paths.
+    </div>
+    <p>
+      <a href="https://itunes.apple.com/us/app/arcgis/id379687930"><img src="ios-app.png" style="margin:10px; vertical-align:middle"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.esri.android.client"><img src="android-app.png" style="margin:10px; vertical-align:middle"></a>
+      <a href="http://www.amazon.com/gp/product/B007OWF3BI/ref=mas_pm_ArcGIS"><img src="android-amazon-app.png" style="margin:10px; vertical-align:middle" height="45" width="136"></a>
+      <a href="http://www.windowsphone.com/en-us/store/app/arcgis/7cb003be-990a-e011-9264-00237de2db9e"><img src="winphone-app.png" style="margin:10px; vertical-align:middle"></a>
+    </p>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">Version 10.1.2 was released in September 2013 and includes Expanded support for scale dependency on layers.</p>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-      <div class="column-16 tablet-column-24">
-
-	<h3 class="gray">Use your smartphone or tablet to work with your maps and data.</h3>
-	
-		  <!-- <span id="appVersion"><strong>Version:</strong> <span class="icon-android"/><span class="icon-apple"/> 10.1.2, <span class="icon-purple icon-windows-8"/> 10.1.3</span> -->
-		  <!--<span id="appVersion"><strong>Version:</strong> 10.1.2 </span>-->
-          <!--<span id="appVersion"><strong>Version:</strong> <span class="icon-android"> 2.0.5,</span> <span class="icon-apple"> 10.1.2,</span> <span class="icon-purple icon-windows-8"> 10.1.2</span></span>-->
-          <!-- <span id="appReleased"><strong>Released:</strong> <span class="icon-android"> December 2012,</span> <span class="icon-apple"> September 2012,</span> <span class="icon-purple icon-windows-8"> May 2013</span></span> -->
-
-        <div class="alert error icon-alert" style="font-size:0.87em">
-        This application will be removed from Apple's App Store, Google Play, the Amazon Appstore for Android, and the Windows Phone Store in 2016. 
-        See <a href="http://blogs.esri.com/esri/arcgis/?p=49721">our blog</a> for details, including migration paths.  
-        </div>
-
-          <p>
-             <a href="https://itunes.apple.com/us/app/arcgis/id379687930"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a>
-             <a href="https://play.google.com/store/apps/details?id=com.esri.android.client"><img src="android-app.png" style="margin:10px; vertical-align:middle"/></a>
-             <a href="http://www.amazon.com/gp/product/B007OWF3BI/ref=mas_pm_ArcGIS"><img src="android-amazon-app.png" style="margin:10px; vertical-align:middle" height="45" width="136"/></a>
-             <a href="http://www.windowsphone.com/en-us/store/app/arcgis/7cb003be-990a-e011-9264-00237de2db9e"><img src="winphone-app.png" style="margin:10px; vertical-align:middle"/></a>
-          </p>
-		 <p>
-            <a id="appSysRequirements" href="#systemRequirements">System Requirements</a>
-            <a id="appWhatsNew" href="#whatsNew">What's New</a>
-          </p>
-
-        </header>
-        
-        <hr />
-        <br />
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="/en/arcgis-app/android/help/get-started-faqs.htm">Get started</a></li>
+        <li><a href="/en/arcgis-app/android/help/use-the-app-faqs.htm">Use the app</a></li>
+	      <li><a href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm">Work with my data</a></li>
+        <li><a href="#">System requirements</a></li>
+        <li><a href="#">What's new</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>
 
 
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="app-collector-data.jpg" />
-
-          <h3>Use the app</h3>
-          <p>What map functionality is supported? How do I view more information about a feature? How do I edit an existing feature? Get answers to your questions on using the app.</p>
-          <p>
-            <a href="/en/arcgis-app/android/help/use-the-app-faqs.htm" class="icon-right-arrow">&nbsp;Get answers</a>
-          </p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="app-collector-map.jpg" />
-
-          <h3>Your data</h3>
-          <p>How do I make a map? What types of services and layers are supported? How do I open maps created in ArcMap? Get answers to your questions on bringing your data into the app.</p>
-          <p>
-            <a href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm" class="icon-right-arrow">&nbsp;Get answers</a>
-          </p>
-        </div>
-
-        <div class="clear"></div>
-
-
-        <a name="systemRequirements"></a>
-        <h2 class="divider">System requirements</h2>
-
-        <p>There are certain device requirements to run the ArcGIS app, as well as requirements on the data that is used within the app. The ArcGIS app is supported in a number of languages.</p>
-
-
-        <h3>Data requirements</h3>
-        <p>To use your data in the ArcGIS app, you must use ArcGIS.com or Portal for ArcGIS to create a map. In your map, use services from ArcGIS Server 9.3.1 or later.</p>
-
-
-        <h3>Device requirements</h3>
-        <table><tr><td valign="top"><h4 class="icon-android">Android</h4>
-        <ul>
-          <li>Android 2.3.3 or later</li>
-          <li>If using Android emulator: 4.0.3 system image with hardware acceleration</li>
-          <li>ARMv6 or ARMv7 processor</li>
-          <li>Hardware support for OpenGL ES 2.0</li>
-
-          <li>Recommended:
-              <ul><li>ARMv7 processor</li>
-              <li>1 GHz processor</li>
-              <li>512 MB of RAM</li>
-              <li>Screen resolution of 800x480</li>
-              <li>Hardware based (not software emulated) OpenGL ES 2.0 support</li>
-              <li>GPS</li>
-              <li>Camera</li></ul></li>
-          <li>Unsupported device: HTC Mytouch 3G</li>
-        </ul></td>
-        <td valign="top"><h4 class="icon-apple">iOS</h4>
-        <ul>
-          <li>iOS 5 or later</li>
-          <li>Supports: iPhone 3GS and later, iPad, iPod touch</li>
-        </ul></td><td valign="top"><h4 class="icon-purple icon-windows-8">Windows Phone</h4>
-        <ul>
-          <li>Windows Phone 7.5 (Mango) or later</li>
-        </ul></td><tr></table>
-
-        <h3>Supported languages</h3>
-        <p>Arabic (<span class="icon-android"/><span class="icon-apple"/>), Danish, Dutch, English, Estonian (<span class="icon-android"/>), French, German, Hebrew (<span class="icon-android"/><span class="icon-apple"/>), Italian, Japanese, Korean, Latvian (<span class="icon-android"/>), Lithuanian (<span class="icon-android"/>), Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian (<span class="icon-android"/><span class="icon-apple"/>), Russian, Simplified Chinese, Spanish, and Swedish.</p>
-        <p>The language used by the app is determined by your device's language setting.</p>
-
-
-
-
-
-
-        <a name="whatsNew"></a>
-        <h2 class="divider">What's new</h2>
-        <table><tr>
-			<td valign="top"><h4 class="icon-android">Android</h4>
-				<p>Version 10.1.2 was released in September 2013. It includes the following enhancements:
-				<ul>
-					<li>Expanded support for scale dependency on layers</li>
-					<li>Support for overriding editing in the map</li>
-					<li>Support for layer filters in the map</li>
-					<li>New layer support: WMS, OpenStreetMap</li>
-					<li>Support for layers from federated ArcGIS Servers</li>
-					<li>Various bug fixes</li>
-					<li>Fixed HTML links on pop-ups (NIM077005)</li>
-					<li>Removed support for Android 2.2</li>
-        		</ul>
-        		<p> See <a data-modlink="false" href="/en/arcgis-app/android/help/what-s-new.htm">What's new in Android</a> for previous versions.</p>
-			</td>
-		    <td valign="top"><h4 class="icon-apple">iOS</h4>
-		    	<p>Version 10.1.2 was released in August 2013. It includes the following enhancements:
-				<ul>
-					<li>Expanded support for scale dependency on layers</li>
-					<li>Support for overriding editing in the map</li>
-					<li>Support for layer filters in the map</li>
-					<li>Support for layers from federated ArcGIS Servers</li>
-					<li>Localized into additional languages</li>
-					<li>Fixed posting attachments with add only permissions (NIM084199)</li>
-					<li>Fixed crash with uploaded shapefiles (NIM085622)</li>
-					<li>Fixed predefined queries for 10.1 secure services (NIM083799)</li>
-        		</ul>
-        		<p>See <a data-modlink="false" href="/en/arcgis-app/ios/help/what-s-new.htm">What's new in iOS</a> for previous versions.</p>
-		    </td>
-		    <td valign="top"><h4 class="icon-purple icon-windows-8">Windows Phone</h4>
-		        <p>Version 10.1.3 was released in January 2014 with various bug fixes.</p>
-		    	<p>Version 10.1.2 was released in May 2013. It includes the following enhancements:
-		    	<ul>
-					<li>Windows Phone 8 support</li>
-					<li>Support for additional types of secure layers</li>
-					<li>Localized into additional languages</li>
-					<li>Various bug fixes</li>
-        		</ul>
-        		<p> See <a data-modlink="false" href="/en/arcgis-app/windows-phone/help/what-s-new.htm">What's new in Windows Phone</a> for details and previous versions.</p>
-			</td>
-		<tr></table>
-
-        <p>&nbsp;</p>
-
-      </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>Get started</h3>
-          <ul>
-           <li><a href="/en/arcgis-app/android/help/get-started-faqs.htm">Get started</a></li>
-            <li><a href="/en/arcgis-app/android/help/use-the-app-faqs.htm">Use the app</a></li>
-            <li><a href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm">Work with my data</a></li>
-
-          </ul>
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/arcgis-app/android/help/use-the-app-faqs.htm"><img class="trailer-1" alt="" src="app-collector-data.jpg"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Use the app</h3>
+            <p>What map functionality is supported? How do I view more information about a feature? How do I edit an existing feature? Get answers to your questions on using the app.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/arcgis-app/android/help/use-the-app-faqs.htm">Get answers</a></p>
           </div>
         </div>
-
- </div>
-
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm"><img class="trailer-1" alt="" src="app-collector-map.jpg"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Your data</h3>
+            <p>How do I make a map? What types of services and layers are supported? How do I open maps created in ArcMap? Get answers to your questions on bringing your data into the app.</p>
+				    <p><a class="icon-ui-right icon-ui-small" href="/en/arcgis-app/android/help/work-with-my-data-faqs.htm">Get answers</a></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/mobile/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<!-- Collapsible contents -->
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Blog -->
+<div class="panel panel panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">From our Blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/mobile/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/category/mobile/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-  </script>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Discussions on GeoNet
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/applications/arcgis-app-for-smartphones-and-tablets">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=4472">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with the ArcGIS app for smartphones and tablets</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/arcgis-app">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/5236/000000/width/960/1" class="colorbox-evlarge" title="E380 Live: Evert Wind, Provincie Zuid-Holland" ><img alt="E380 Live: Evert Wind, Provincie Zuid-Holland" src="http://video.esri.com/thumbs/2016/08/5236/5236-e380-live-evert-wind_comma_-provincie-zuid_dash_holland_x.jpg"></a>
+              <h5 class="leader-1">E380 Live: Evert Wind, Provincie Zuid-Holland</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5236/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/5222/000000/width/960/1" class="colorbox-evlarge" title="E380 Live: Ian Smith, Auckland City Council" ><img alt="E380 Live: Ian Smith, Auckland City Council" src="http://video.esri.com/thumbs/2016/08/5222/5222-esri-business-summit-auckland-city-council_x.jpg"></a>
+            <h5 class="leader-1">E380 Live: Ian Smith, Auckland City Council</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5222/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/5225/000000/width/960/1" class="colorbox-evlarge" title="E380 Live: Choo Chin Hua, Singapore Housing Development Board" ><img alt="E380 Live: Choo Chin Hua, Singapore Housing Development Board" src="http://video.esri.com/thumbs/2016/08/5225/5225-e380-live-choo-chun-hua_comma_-singapore-housing-development-board_x.jpg"></a>
+            <h5 class="leader-1">E380 Live: Choo Chin Hua, Singapore Housing Development Board</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5225/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/5083/000000/width/960/1" class="colorbox-evlarge" title="Thomas Dobrzinski, INTEND Geoinformatik" ><img alt="Thomas Dobrzinski, INTEND Geoinformatik" src="http://video.esri.com/thumbs/2016/05/5083/5083-thomas-dobrzinski_comma_-intend-geoinformatik_x.jpg"></a>
+            <h5 class="leader-1">Thomas Dobrzinski, INTEND Geoinformatik</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5083/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

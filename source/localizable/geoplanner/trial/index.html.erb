@@ -1,76 +1,90 @@
 ---
 title: GeoPlanner for ArcGIS Free Trial
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
+  - homepage
+  - /cdn/css/colorbox
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-init
   - geoplanner
 
 metatags:
   - <META name="description" content="GeoPlanner for ArcGIS Free Trial page."><META name="last-modified" content="2015-04-15"><META name="product" content="arcgis-geoplanner"><META name="sub_category" content="GeoPlanner for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="GeoPlanner for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="GEODESIGN,APPS,LANDSCAPE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="GEODESIGN,APPS,LANDSCAPE"><META name="content-language" content="en">
 
-
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/geoplanner/">GeoPlanner for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search GeoPlanner">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />
-		<input type="hidden" name="product" value="arcgis-geoplanner"/>
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
 
-    </header>
-	<nav>
-      <ul>
-        <li><a href="/en/geoplanner/">Home</a></li>
-         <li><a href="/en/geoplanner/get-started/">Get Started</a></li>
-         <li><a href="/en/geoplanner/documentation/">Documentation</a></li>
-		 <li><a href="/en/geoplanner/pricing/">Pricing</a></li>
-		<li class='current'><a href="/en/geoplanner/trial/">Free Trial</a></li>
-      </ul>
-    </nav>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/geoplanner/">GeoPlanner</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">GeoPlanner for ArcGIS</h1>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search GeoPlanner">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="arcgis-geoplanner" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link" href="/en/geoplanner/">Home</a></li>
+        <a class="sub-nav-link" href="/en/geoplanner/get-started/">Get Started</a>
+        <a class="sub-nav-link" href="/en/geoplanner/documentation/">Documentation</a>
+        <a class="sub-nav-link" href="/en/geoplanner/pricing/">Pricing</a>
+        <a class="sub-nav-link is-active" href="/en/geoplanner/trial/">Free Trial</a>
+      </nav>
+    </div>
   </div>
-</div>
+</header>
 
-<!-- Page Content -->
-<div class="container">
-      <div class="column-18 tablet-column-18">
-
-         <div class="row trial column-24 tablet-column-23">
-				<h2>Free Trial </h2>
-				<p>To try GeoPlanner, you need an ArcGIS Online subscription.</p>
-				<section class="section column-24 tablet-column-23">
-					<header class="haveSubscription" onclick="ToggleList(event,'haveSubscription')"><span class="icon-plus"></span> <span>Have an ArcGIS Online subscription?</span></header>
-					<div class="collapsed" id="haveSubscription">
-						<p>Follow the steps below: </p>
-					  <ol class="numbered">
-						 <li>Make sure that you have the administrator role in your ArcGIS Online subscription. If not, talk to your ArcGIS Online administrator to sign up for the trial. </li>
-						 <li>Go to the <a href="https://marketplace.arcgis.com/listing.html?id=5e99f4fa519949209cd3da2966fd543b" target="_blank">GeoPlanner listing on ArcGIS Marketplace</a>.</li>
-						 <li>Click the Free Trial button and enter your ArcGIS Online credentials to submit your trial request in ArcGIS Marketplace.</li>
-						 <li>Go to <a href="http://geoplanner.arcgis.com" target="_blank">http://geoplanner.arcgis.com</a> and sign in using your ArcGIS Online credentials.</li>
-					  </ol>
-					</div>
-					
-					<header class="noSubscription" onclick="ToggleList(event,'noSubscription')"><span class="icon-plus"></span> <span>Don't have an ArcGIS Online subscription?</span></header>
-					<div class="collapsed" id="noSubscription">
-						<p>Follow the steps below: </p>
-					  <ol class="numbered">
-						 <li>
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <h2>Free Trial </h2>
+		<p>To try GeoPlanner, you need an ArcGIS Online subscription.</p>
+    <aside class="js-accordion accordion">
+      <div class="accordion-section">
+        <h4 class="accordion-title">Have an ArcGIS Online subscription?</h4>
+        <div class="accordion-content">
+          <p>Follow the steps below: </p>
+          <ol class="numbered">
+						<li>Make sure that you have the administrator role in your ArcGIS Online subscription. If not, talk to your ArcGIS Online administrator to sign up for the trial. </li>
+						<li>Go to the <a href="https://marketplace.arcgis.com/listing.html?id=5e99f4fa519949209cd3da2966fd543b" target="_blank">GeoPlanner listing on ArcGIS Marketplace</a>.</li>
+						<li>Click the Free Trial button and enter your ArcGIS Online credentials to submit your trial request in ArcGIS Marketplace.</li>
+						<li>Go to <a href="http://geoplanner.arcgis.com" target="_blank">http://geoplanner.arcgis.com</a> and sign in using your ArcGIS Online credentials.</li>
+					</ol>
+        </div>
+      </div>
+      <div class="accordion-section">
+        <h4 class="accordion-title">Don't have an ArcGIS Online subscription?</h4>
+        <div class="accordion-content" id="noSubscription">
+					<p>Follow the steps below: </p>
+					<ol class="numbered">
+						<li>
 							Sign up for a trial subscription.
 							<div class="column-24 tablet-column-23 tablet-post-0">
-								<div class="column-12 tablet-column-23">
-								<iframe frameborder="0" scrolling="no" src="//webapps-cdn.esri.com/CDN/custom-pages/free-trial/?proxyURL=//webapps-cdn.esri.com/REST/esriProxy.php&amp;confirmURL=confirm.html&amp;origin=geoplanner_prod_page_doc" style="width: 400px; height: 550px;"></iframe>
+								<div class="column-7 tablet-column-23">
+									<iframe frameborder="0" scrolling="no" src="//webapps-cdn.esri.com/CDN/custom-pages/free-trial/?proxyURL=//webapps-cdn.esri.com/REST/esriProxy.php&amp;confirmURL=confirm.html&amp;origin=geoplanner_prod_page_doc" style="width: 400px; height: 550px;"></iframe>
 								</div>
-							
-								<div class="column-12 tablet-column-23">
+								<div class="column-8 tablet-column-23">
 									<h4>Why do I need an ArcGIS Online subscription to try GeoPlanner?</h4>
 									<ul>
 										<li>Enable collaboration among stakeholders throughout the planning process.</li>
@@ -80,43 +94,90 @@ mobile: true
 									</ul>
 								</div>
 							</div>
-						 </li>
-
-						 <li>Go to the <a href="https://marketplace.arcgis.com/listing.html?id=5e99f4fa519949209cd3da2966fd543b" target="_blank">GeoPlanner listing on ArcGIS Marketplace</a>.</li>
-						 <li>Click the Free Trial button and enter your ArcGIS Online credentials to submit your trial request in ArcGIS Marketplace.</li>
-						 <li>Go to <a href="http://geoplanner.arcgis.com" target="_blank">http://geoplanner.arcgis.com</a> and sign in using your ArcGIS Online credentials.</li>
-					  </ol>
-					</div>
-				</section>
-				
-			
-			</div>
-
-		</div>
-
-		
-		<div class="column-6 tablet-column-6 phone-column-24 blocks">
-		 <div class="imgFrame">
-			<h3>Questions</h3>
-						
-			<p><a class="icon-email" href="http://www.esri.com/apps/company/sales/sales_call_request.cfm" target="_parent"><span class="contactIcon emailIcon"></span> Request pricing information</a><br/><br>
-			<span class="icon-phone"><span class="contactIcon phoneIcon"></span>Call Esri at 1-800-447-9778</span><br>
-			<span class="smaller"> US Customers Only</span><br/><br>
-			<a class="icon-support" href="http://www.esri.com/about-esri/offices" target="_parent"><span class="contactIcon arrowIcon"></span> Contact your local Esri office</a></p>
-		 </div>
-		</div>
+						</li>
+						<li>Go to the <a href="https://marketplace.arcgis.com/listing.html?id=5e99f4fa519949209cd3da2966fd543b" target="_blank">GeoPlanner listing on ArcGIS Marketplace</a>.</li>
+						<li>Click the Free Trial button and enter your ArcGIS Online credentials to submit your trial request in ArcGIS Marketplace.</li>
+						<li>Go to <a href="http://geoplanner.arcgis.com" target="_blank">http://geoplanner.arcgis.com</a> and sign in using your ArcGIS Online credentials.</li>
+					</ol>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">Questions</h4>
+      <p class="text-white">
+        <a class="icon-email" href="http://www.esri.com/apps/company/sales/sales_call_request.cfm" target="_parent"><span class="contactIcon emailIcon"></span> Request pricing information</a><br /><br />
+			  <span class="icon-phone"><span class="contactIcon phoneIcon"></span>Call Esri at 1-800-447-9778</span><br />
+			  <span class="smaller"> US Customers Only</span><br /><br />
+			  <a class="icon-support" href="http://www.esri.com/about-esri/offices" target="_parent"><span class="contactIcon arrowIcon"></span> Contact your local Esri office</a>
+      </p>
+    </div>
+  </div>
 </div>
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/geoplanner/feed/',
-        max: 5,
-        layout: 0
-      });
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with the GeoPlanner for ArcGIS</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
 
-    });
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/geoplanner">More Videos <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/4887/000000/width/960/1" class="colorbox-evlarge" title="Marine Spatial Planning Using GeoPlanner"><img alt="Marine Spatial Planning Using GeoPlanner" src="http://video.esri.com/thumbs/2015/12/4887/4887-marine-spatial-planning-using-geoplanner_x.jpg"></a>
+              <h5 class="leader-1">Marine Spatial Planning Using GeoPlanner</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4887/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/4708/000000/width/960/1" class="colorbox-evlarge" title="GeoPlanner: Web-based Site Suitability Analysis with Weighted Raster Overlay Services"><img alt="GeoPlanner: Web-based Site Suitability Analysis with Weighted Raster Overlay Services" src="http://video.esri.com/thumbs/2015/08/4708/4708-geoplanner-site-suitability-analysis-and-weighted-raster-overlay-services_x.jpg"></a>
+            <h5 class="leader-1">GeoPlanner: Web-based Site Suitability Analysis with Weighted Raster Overlay Services</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4708/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/4208/000000/width/960/1" class="colorbox-evlarge" title="GeoPlanner for ArcGIS - Soma City"><img alt="GeoPlanner for ArcGIS - Soma City" src="http://video.esri.com/thumbs/2015/03/4208/4208-geoplanner-for-arcgis-_dash_-soma-city_x.jpg"></a>
+            <h5 class="leader-1">GeoPlanner for ArcGIS - Soma City</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4208/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3663/000000/width/960/1" class="colorbox-evlarge" title="GeoPlanner for ArcGIS"><img alt="GeoPlanner for ArcGIS" src="http://video.esri.com/thumbs/2014/07/3663/3663-building-resilient-communities_x.jpg"></a>
+            <h5 class="leader-1">GeoPlanner for ArcGIS</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3663/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  </script>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

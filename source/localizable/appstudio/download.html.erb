@@ -1,10 +1,13 @@
 ---
-title: AppStudio for ArcGIS 
+title: AppStudio for ArcGIS
 css:
-  - stat-page-specific
+  - homepage
+  - all
+  - /cdn/css/colorbox
 
 js:
-  - download.js
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-init
 
 metatags:
   - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="appstudio,appstudio-browser"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="en">
@@ -12,41 +15,99 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/appstudio/download/">AppStudio for ArcGIS (Desktop Edition)</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search AppStudio for ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="appstudio" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	 <nav>
-      <ul>
-        <li><a href="/en/appstudio/">Home</a></li>
-        <li><a href="/en/appstudio/create-apps/">Create Apps</a></li>
-        <li><a href="/en/appstudio/extend-apps/">Extend Apps</a></li>
-		    <li><a href="/en/appstudio/community/">Community</a></li>		
-        <li class='current'><a href="/en/appstudio/download/">Download</a></li>
-      </ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/appstudio/">AppStudio for ArcGIS</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">AppStudio for ArcGIS (Desktop Edition)</h1>
+          <div class="trailer-half clearfix">&nbsp;
+          </div>
+          <p class="text-white font-size--2">&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+		  <div class="sdk-home-banner-image">
+          <img src="../../arcgis-online/img/main-scalable.png">
+        </div>
+		  <div class="search-bar">
+			 <form id="helpSearchForm" target="_top">
+			  <input type="search" name="q" class="leader" placeholder="Search AppStudio for ArcGIS">
+			  <input type="hidden" name="collection" value="help" />
+			  <input type="hidden" name="product" value="appstudio" />
+			  <input type="hidden" name="language" value="<%= current_language %>" />
+			  <button class="search-submit icon-ui-search" type="submit"></button>
+			</form>
+		  </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		  <a class="sub-nav-link" href="/en/maps-for-office/">Home</a></li>
+        <a class="sub-nav-link" href="/en/appstudio/create-apps/">Create Apps</a>
+        <a class="sub-nav-link" href="/en/appstudio/extend-apps/">Extend Apps</a>
+        <a class="sub-nav-link" href="/en/appstudio/community/">Community</a>
+        <a class="sub-nav-link  is-active" href="/en/appstudio/download/">Download</a>
+      </nav>
+    </div>
   </div>
-</div>
+</header>
 
-<!-- Page Content -->
-<div class="container">
-
-    <h4 class="gray trailer">In addition to creating and building native apps, AppStudio for ArcGIS (Desktop Edition) allows you to do advanced customization or development work on your apps.</h4>
-	 
-
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <p>In addition to creating and building native apps, AppStudio for ArcGIS (Desktop Edition) allows you to do advanced customization or development work on your apps.</p>
+    <div class="block-group block-group-3-up tablet-block-group-1-up">
+      <div class="card card-shaped block">
+        <figure class="card-image-wrap">
+          <img src="../img/icons/win64.png" alt="AppStudio-Windows-x6" class="card-image">
+        </figure>
+        <div class="card-content">
+          <h4>AppStudio-Windows-x64</h4>
+          <p class="small-grey file-size">180 MB</p>
+          <%= generateVersionDropDown("appstudio~secured~windows64") %>
+        </div>
+      </div>
+      <div class="card card-shaped block">
+        <figure class="card-image-wrap">
+          <img src="../img/icons/win64.png" alt="AppStudio-Windows-x6" class="card-image">
+        </figure>
+        <div class="card-content">
+          <h4>AppStudio-Windows-x64</h4>
+          <p class="small-grey file-size">180 MB</p>
+          <%= generateVersionDropDown("appstudio~secured~windows64") %>
+        </div>
+      </div>
+      <div class="card card-shaped block">
+        <figure class="card-image-wrap">
+          <img src="../img/icons/win64.png" alt="AppStudio-Windows-x6" class="card-image">
+        </figure>
+        <div class="card-content">
+          <h4>AppStudio-Windows-x64</h4>
+          <p class="small-grey file-size">180 MB</p>
+          <%= generateVersionDropDown("appstudio~secured~windows64") %>
+        </div>
+      </div>
+      <div class="card card-shaped block">
+        <figure class="card-image-wrap">
+          <img src="../img/icons/win64.png" alt="AppStudio-Windows-x6" class="card-image">
+        </figure>
+        <div class="card-content">
+          <h4>AppStudio-Windows-x64</h4>
+          <p class="small-grey file-size">180 MB</p>
+          <%= generateVersionDropDown("appstudio~secured~windows64") %>
+        </div>
+      </div>
+    </div>
 
     <div class="download-section container">
         <div class="row downloads secured-org">
-            <div class="column-6 tablet-column-23">
-                <div id="desktop-win64" class="card">
+            <!--div class="column-6 tablet-column-23">
+                <div id="desktop-win64" class="card"-->
+                <div class="panel panel-no-border">
                     <div class="icon">
                         <img src="../img/icons/win64.png">
                     </div>
@@ -62,10 +123,10 @@ mobile: true
                             </div>
                           </div>
                         </div>-->
-								<%= generateVersionDropDown("appstudio~secured~windows64") %>
+                <%= generateVersionDropDown("appstudio~secured~windows64") %>
                     </div>
                 </div>
-            </div>
+            <!--/div-->
             <div class="column-6 tablet-column-23">
                 <div id="desktop-win32" class="card">
                     <div class="icon">
@@ -104,9 +165,9 @@ mobile: true
             </div>
         </div>
         <p>&nbsp;</p>
-        <div id="player" class="header leader trailer">
-            <h4 class="gray trailer">Use AppStudio Player to preview apps on your devices before you build!</h4>
-        </div>
+        <!--div id="player" class="header leader trailer"-->
+            <p>Use AppStudio Player to preview apps on your devices before you build!</p>
+        <!--/div-->
         <div class="row downloads">
             <div class="column-6 tablet-column-23">
                 <div id="player-win64" class="card">
@@ -183,10 +244,74 @@ mobile: true
             </div>
         </div>
     </div>
+  </div>
+</div>
+
+	<!-- Social -->
+	<div class="panel panel-dark panel-no-border">
+	  <div class="grid-container">
+		 <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with AppStudio for ArcGIS</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/AppStudioArcGIS"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		 </div>
+	  </div>
+	</div>
+
+	<!-- Videos -->
+	<div class="panel panel-blue panel-no-border panel-no-padding">
+    <div class="grid-container padding-leader-1 padding-trailer-1">
+      <div class="column-24">
+        <h2 class="text-white text-rule padding-trailer-half">From our Videos
+          <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/appstudio">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+        </h2>
+        <div class="flexible-block-group flexible-block-group-4-up">
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="http://video.esri.com/iframe/5083/000000/width/960/1" class="colorbox-evlarge" title="Thomas Dobrzinski, INTEND Geoinformatik" ><img alt="Thomas Dobrzinski, INTEND Geoinformatik" src="http://video.esri.com/thumbs/2016/05/5083/5083-thomas-dobrzinski_comma_-intend-geoinformatik_x.jpg"></a>
+                <h5 class="leader-1">Thomas Dobrzinski, INTEND Geoinformatik</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5083/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="http://video.esri.com/iframe/5066/000000/width/960/1" class="colorbox-evlarge" title="Extending the Survey123 for ArcGIS Mobile App" ><img alt="Extending the Survey123 for ArcGIS Mobile App" src="http://video.esri.com/thumbs/2016/05/5066/5066-extending-the-survey123-for-arcgis-mobile-app_x.jpg"></a>
+                <h5 class="leader-1">Extending the Survey123 for ArcGIS Mobile App</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5066/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="http://video.esri.com/iframe/5047/000000/width/960/1" class="colorbox-evlarge" title="Developing Cross-Platform Native Apps with AppStudio for ArcGIS (Advanced)" ><img alt="Developing Cross-Platform Native Apps with AppStudio for ArcGIS (Advanced)" src="http://video.esri.com/thumbs/2016/05/5047/5047-developing-cross_dash_platform-native-apps-with-appstudio-for-arcgis-_opt_advanced_cpt__x.jpg"></a>
+                <h5 class="leader-1">Developing Cross-Platform Native Apps with AppStudio for ArcGIS (Advanced)</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5047/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="http://video.esri.com/iframe/5046/000000/width/960/1" class="colorbox-evlarge" title="Developing Cross-Platform Native Apps with AppStudio for ArcGIS (The Basics)" ><img alt="Developing Cross-Platform Native Apps with AppStudio for ArcGIS (The Basics)" src="http://video.esri.com/thumbs/2016/05/5046/5046-developing-cross_dash_platform-native-apps-with-appstudio-for-arcgis-_opt_the-basics_cpt__x.jpg"></a>
+                <h5 class="leader-1">Developing Cross-Platform Native Apps with AppStudio for ArcGIS (The Basics)</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5046/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 
 
-</div>  <!-- End of Container -->
-
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
 <style>
 .download-section.container .downloads .card {
     background-color: #f0f0f0;

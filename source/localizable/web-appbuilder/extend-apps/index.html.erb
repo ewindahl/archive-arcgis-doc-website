@@ -1,119 +1,178 @@
 ---
 title: Web AppBuilder for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
-  - <META name="description" content="Extend Apps with Web AppBuilder for ArcGIS"><META name="last-modified" content="2014-9-18"><META name="product" content="web-appbuilder"><META name="sub_category" content="Web AppBuilder"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Web AppBuilder"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="en">
+  - <META name="description" content="Web AppBuilder for ArcGIS"><META name="last-modified" content="2014-9-18"><META name="product" content="web-appbuilder"><META name="sub_category" content="Web AppBuilder"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Web AppBuilder"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/web-appbuilder/">Web AppBuilder for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Web AppBuilder ">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="web-appbuilder" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-   <nav>
-      <ul>
-        <li><a href="/en/web-appbuilder/">Home</a></li>
-        <li><a href="/en/web-appbuilder/create-apps/">Create Apps</a></li>
-        <li><a href="/en/web-appbuilder/manage-apps/">Manage Apps</a></li>
-        <li class='current'><a href="/en/web-appbuilder/extend-apps/">Extend Apps</a></li>
-      </ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/web-appbuilder/">Web AppBuilder</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">Web AppBuilder for ArcGIS</h1>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search Web AppBuilder">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="web-appbuilder" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link" href="/en/web-appbuilder/">Home</a></li>
+        <a class="sub-nav-link" href="/en/web-appbuilder/create-apps/">Create Apps</a>
+        <a class="sub-nav-link" href="/en/web-appbuilder/manage-apps/">Manage Apps</a>
+        <a class="sub-nav-link is-active" href="/en/web-appbuilder/extend-apps/">Extend Apps</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-24">
+    <h2 id="appTitle">Extend Web AppBuilder with the Developer Edition</h2>
+    <p>Create your own widgets and themes using Web AppBuilder for ArcGIS (Developer Edition). Visit <a href="https://developers.arcgis.com/web-appbuilder/">ArcGIS for Developers</a> <a class="icon-external-link" href="https://developers.arcgis.com/web-appbuilder/"> </a> to download the Developer Edition and learn more about creating your own custom apps.</p>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>
 
-     <div class="column-16 tablet-column-24">
-        <header>
-
-	<h2 id="appTitle">Extend Web AppBuilder with the Developer Edition</h2> 
-
-          <p>Create your own widgets and themes using Web AppBuilder for ArcGIS (Developer Edition). Visit <a href="https://developers.arcgis.com/web-appbuilder/">ArcGIS for Developers</a> <a class="icon-external-link" href="https://developers.arcgis.com/web-appbuilder/"> </a> to download the Developer Edition and learn more about creating your own custom apps.</p>
-
-
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/en/web-appbuilder/img/builder-widget-theme.png" />
-
-          <h3>Power your enterprise </h3>
-          <p><ul>
-            <li>Boost your productivity for building web apps that run on desktops, tablets, and smartphones</li>
-            <li>Leverage the application framework and out-of-the-box widgets so you can focus on building components specific to your workflows</li>
-            <li>Personalize your app by building a custom theme</li>
-            <li>Create new apps using widgets and themes shared by other developers</li>
-          </ul></p>
-
-
-         
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <img class="trailer-1" alt="" src="../img/builder-widget-theme.png">
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Power your enterprise</h3>
+            <p>
+              <ul>
+                <li>Boost your productivity for building web apps that run on desktops, tablets, and smartphones</li>
+                <li>Leverage the application framework and out-of-the-box widgets so you can focus on building components specific to your workflows</li>
+                <li>Personalize your app by building a custom theme</li>
+                <li>Create new apps using widgets and themes shared by other developers</li>
+              </ul>
+            </p>
+          </div>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/web-appbuilder/img/builder-sell.png" />
-
-          <h3>Build apps to sell</h3>
-          <p><ul>
-            <li>Build an app to promote and sell in <a href="http://marketplace.arcgis.com/">ArcGIS Marketplace</a> <a class="icon-external-link" href="http://marketplace.arcgis.com/"> </a></li>
-            <li>Create custom widgets and themes that your customers can use to configure powerful new apps in Web AppBuilder</li>
-            <li>Create a custom theme that is unique and branded for your company</li>
-          </ul>
-          </p>
-        </div>
-
-
-
-        <div class="clear"></div>
-
-        <div class="column-16 tablet-column-24">
-
-        <p>Visit <a href="https://developers.arcgis.com/web-appbuilder/">ArcGIS for Developers</a> <a class="icon-external-link" href="https://developers.arcgis.com/web-appbuilder/"> </a> to download and learn more.</p>
-
-        <p>&nbsp;</p>
-
       </div>
-
-      </div>
-
-
-     <!-- <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3 class="icon-orange icon-light-bulb">ArcGIS Ideas site</h3>
-         <p>Don't see the app or data you need? Post a suggestion or vote on existing ideas.</p>
-         <p>Are you a provider looking for ideas? See what customers are asking for. Invite contributors to privately collaborate with you to evolve ideas.</p>
-         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <img class="trailer-1" alt="" src="../img/builder-sell.png">
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Build apps to sell</h3>
+            <p>
+              <ul>
+                <li>Build an app to promote and sell in <a href="http://marketplace.arcgis.com/">ArcGIS Marketplace</a> <a class="icon-external-link" href="http://marketplace.arcgis.com/"> </a></li>
+                <li>Create custom widgets and themes that your customers can use to configure powerful new apps in Web AppBuilder</li>
+                <li>Create a custom theme that is unique and branded for your company</li>
+              </ul>
+            </p>
+          </div>
         </div>
-
-        <br />
-
-
- </div> -->
-
+      </div>
     </div>
+  </div>
+</div>
 
+<div class="grid-container trailer-1">
+  <div class="column-24 text-center">
+    <p>Visit <a href="https://developers.arcgis.com/web-appbuilder/">ArcGIS for Developers</a> <a class="icon-external-link" href="https://developers.arcgis.com/web-appbuilder/"> </a> to download and learn more.</p>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with the Web AppBuilder</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/web-appbuilder">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/5049/000000/width/960/1" class="colorbox-evlarge" title="Web AppBuilder for ArcGIS: Development Tools and Techniques" ><img alt="Web AppBuilder for ArcGIS: Development Tools and Techniques" src="http://video.esri.com/thumbs/2016/05/5049/5049-web-appbuilder-for-arcgis-development-tools-and-techniques_x.jpg"></a>
+              <h5 class="leader-1">Web AppBuilder for ArcGIS: Development Tools and Techniques</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5049/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/5048/000000/width/960/1" class="colorbox-evlarge" title="Web AppBuilder for ArcGIS: Customizing and Extending" ><img alt="Web AppBuilder for ArcGIS: Customizing and Extending" src="http://video.esri.com/thumbs/2016/05/5048/5048-web-appbuilder-for-arcgis-customizing-and-extending_x.jpg"></a>
+            <h5 class="leader-1">Web AppBuilder for ArcGIS: Customizing and Extending</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5048/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/5021/000000/width/960/1" class="colorbox-evlarge" title="Real-Time GIS: Leveraging Stream Services" ><img alt="Real-Time GIS: Leveraging Stream Services" src="http://video.esri.com/thumbs/2016/04/5021/5021-real_dash_time-gis-leveraging-stream-services_x.jpg"></a>
+            <h5 class="leader-1">Real-Time GIS: Leveraging Stream Services</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5021/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/4992/000000/width/960/1" class="colorbox-evlarge" title="Mapping & Visualization" ><img alt="Mapping & Visualization" src="http://video.esri.com/thumbs/2016/03/4992/4992-mapping-_and_-visualization_x.jpg"></a>
+            <h5 class="leader-1">Mapping & Visualization</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4992/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

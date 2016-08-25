@@ -1,15 +1,11 @@
 ---
 title: ArcGIS Open Data Help
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
@@ -18,149 +14,191 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/open-data/">ArcGIS Open Data</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Open Data Help">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-open-data" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
 
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/open-data/">Main</a></li>
-        <li><a href="/en/open-data/consumer/">For Consumers</a></li>
-        <li><a href="/en/open-data/provider/">For Providers</a></li>
-      </ul>
-    </nav>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/open-data/">Open Data</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">ArcGIS Open Data</h1>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search Open Data Help">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="arcgis-open-data" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link  is-active" href="/en/open-data/">Home</a></li>
+        <a class="sub-nav-link" href="/en/open-data/consumer/">For Consumers</a>
+        <a class="sub-nav-link" href="/en/open-data/provider/">For Providers</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <p>Open Data allows organizations to use the ArcGIS platform to provide the public with open access to their authoritative data. Organizations configure a website with their own look and feel and specify Open Data groups to share specific items. The general public can use Open Data sites to search by topic or location, download data in multiple formats, and view data on an interactive map and in a table.</p>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">Open Data was updated in June 2016 with the following features and functionality: Ability to create new beta sites with a new site editor, an API Explorer to programmatically explore datasets, ability to launch a dataset into Story Maps, and file geodatabase download support</p>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <header>
-
-		  <h2 id="appTitle">What is ArcGIS Open Data?</h2>
-
-          <p>Open Data allows organizations to use the ArcGIS platform to provide the public with open access to their authoritative data. Organizations configure a website with their own look and feel and specify Open Data groups to share specific items. The general public can use Open Data sites to search by topic or location, download data in multiple formats, and view data on an interactive map and in a table.</p>
-
-
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/consumer.jpg" />
-
-          <h3>For Consumers </h3>
-          <p>Interact with data through charts, tables, and maps to help you learn about your community. Discover, explore, and download data, or share a link to an interesting dataset.</p>
-          <p>
-
-			<a href="/en/open-data/consumer/" class="icon-right-arrow">&nbsp;Show me how</a>
-           </p>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/producer.jpg" />
-
-          <h3>For Providers</h3>
-          <p>Set up a customized website and select the authoritative data you want to share. Allow anyone to search, view, and download your data in multiple formats.</p>
-          <p>
-            <a href="/en/open-data/provider/" class="icon-right-arrow">&nbsp;Show me how</a>
-               <br/>
-          </p>
-        </div>
-
-        <div class="clear"></div>
-
-<br/>
-<div>
-	         <a name="features"></a>
-        <h2 class="divider">Features</h2>
-
-        <p>Create and share your own data using the workflows you already know to create an Open Data site.</p>
-		<ul>
-			<li>Enable Open Data on your organization and groups.</li>
-			<li>Create customized sites for your data.</li>
-			<li>Allow federated searching across organizations and groups.</li>
-			<li>Provide support for spatial and non-spatial tables.</li>
-			<li>Provide interactive filters to explore data.</li>
-			<li>Share links to filtered views of datasets.</li>
-
-		</ul>
-         <p>&nbsp;</p>
-        <div class="clear"></div>
-		<a name="dataRequirements"></a>
-        <h2 class="divider">Data requirements</h2>
-        <p>ArcGIS Open Data currently works with data from hosted feature layers, ArcGIS Server feature services, ArcGIS Server map services, ArcGIS Server image services, CSV files, hosted tables. ArcGIS Open Data offers limited support for external URLs, web maps, and other documents (such as Word documents and PDFs).</p>
-
-        <p>&nbsp;</p>
-
-         <a name="whatsNew"></a>
-        <h2 class="divider">What's new</h2>
-		<p>Open Data was updated in July 2015 with the following features and functionality: </p>
-		
-		<ul>
-			<li>Gridded density visualizations for large datasets (GeoHash).</li>
-			<li>Support for formal metadata from ArcGIS Online.</li>
-			<li>Sign in with and sign up for ArcGIS Online accounts.</li>
-			<li>User and administrator commenting on datasets.</li>
-		</ul>
-
-        <p>&nbsp;</p>
-		
-         <a name="SneakPeek"></a>
-        <h2 class="divider">Sneak peek</h2>
-		<p>ArcGIS Open Data has just been released, and we're planning some exciting things in the road ahead:</p>
-		
-		<ul>
-			<li>Statistical information on your data to track download counts and details on views.</li>
-			<li>Greater administrative control over datasets and harvesting.</li>
-			<li>Improved user experience for searching and filtering datasets.</li>
-		</ul>
-		        <p>&nbsp;</p>
-		<p>Share your <a class="" href="http://ideas.arcgis.com">ideas</a> for where ArcGIS Open Data will go!</p>
-        <p>&nbsp;</p>
- 
-      </div>
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Data requirements</a></li>
+	      <li><a href="#">What's new</a></li>
+        <li><a href="#">Sneak peek</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
 </div>
 
 
-      <div class="column-8 tablet-column-24 blocks">
-
-	          <div class="imgFrame block">
-	  <h3>Details</h3>
-	          
-	  <h4><a href="#features">Features</a></h4>
-	  <h4><a href="#dataRequirements">Data requirements</a></h4>
-	  <h4><a href="#whatsNew">What's new</a></h4>
-	  <h4><a href="#SneakPeek">Sneak peek</a></h4>
-	          
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/open-data/consumer/"><img class="trailer-1" alt="" src="img/consumer.jpg"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">For Consumers</h3>
+            <p>Interact with data through charts, tables, and maps to help you learn about your community. Discover, explore, and download data, or share a link to an interesting dataset.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/open-data/consumer/">Show me how</a></p>
+          </div>
         </div>
-
-        <br />
-		
-        <div class="greyFrame">
-          <h3 class="icon-orange icon-light-bulb">ArcGIS Ideas site</h3>
-         <p>Share your ideas of where ArcGIS Open Data will go! Post a suggestion or vote on existing ideas.</p> <br/>
-         <p>Are you a provider looking for ideas? See what customers are asking for. Invite contributors to privately collaborate with you to evolve ideas.</p></br>
-         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/open-data/provider/"><img class="trailer-1" alt="" src="img/producer.jpg"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">For Providers</h3>
+            <p>Set up a customized website and select the authoritative data you want to share. Allow anyone to search, view, and download your data in multiple formats.</p>
+				    <p><a class="icon-ui-right icon-ui-small" href="/en/open-data/provider/">Show me how</a></p>
+          </div>
         </div>
-
-        <br />
-
-
- </div>
-
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- Collapsible contents -->
+
+<!-- Blog -->
+<div class="panel panel panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">From our Blog
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/category/arcgis-open-data/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/arcgis-open-data/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Discussions on GeoNet
+        <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/groups/arcgis-maps-for-office">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=4472">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with Open Data</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/open-data">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/5075/000000/width/960/1" class="colorbox-evlarge" title="Developing with ArcGIS Open Data" ><img alt="Developing with ArcGIS Open Data" src="http://video.esri.com/thumbs/2016/05/5075/5075-developing-with-arcgis-open-data_x.jpg"></a>
+              <h5 class="leader-1">Developing with ArcGIS Open Data</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5075/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/4994/000000/width/960/1" class="colorbox-evlarge" title="Open Data & Developer Experience" ><img alt="Open Data & Developer Experience" src="http://video.esri.com/thumbs/2016/03/4994/4994-open-data-_and_-developer-experience_x.jpg"></a>
+            <h5 class="leader-1">Open Data & Developer Experience</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4994/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/5228/000000/width/960/1" class="colorbox-evlarge" title="E380 Live: Nick O'Day, City of Johns Creek, Georgia" ><img alt="E380 Live: Nick O'Day, City of Johns Creek, Georgia" src="http://video.esri.com/thumbs/2016/08/5228/5228-e380-live-nick-oday_comma_-city-of-johns-creek_comma_-georgia_x.jpg"></a>
+            <h5 class="leader-1">E380 Live: Nick O'Day, City of Johns Creek, Georgia</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5228/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/5229/000000/width/960/1" class="colorbox-evlarge" title="E380 Live: Lilian Coral, Office of Mayor Eric Garcetti, City of Los Angeles" ><img alt="E380 Live: Lilian Coral, Office of Mayor Eric Garcetti, City of Los Angeles" src="http://video.esri.com/thumbs/2016/08/5229/5229-e380-live-lilian-coral_comma_-office-of-mayor-eric-garcetti_comma_-city-of-los-angeles_x.jpg"></a>
+            <h5 class="leader-1">E380 Live: Lilian Coral, Office of Mayor Eric Garcetti, City of Los Angeles</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/5229/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

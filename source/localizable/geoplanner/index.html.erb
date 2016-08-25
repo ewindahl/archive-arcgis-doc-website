@@ -1,299 +1,223 @@
 ---
 title: GeoPlanner for ArcGIS
 css:
-
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
-  - libs/jquery.cycle2.min
-  - libs/jquery.colorbox-min
-
-
 
 metatags:
   - <META name="description" content="GeoPlanner for ArcGIS Home page."><META name="last-modified" content="2015-04-15"><META name="product" content="arcgis-geoplanner"><META name="sub_category" content="GeoPlanner for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="GeoPlanner for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="GEODESIGN,APPS,LANDSCAPE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="GEODESIGN,APPS,LANDSCAPE"><META name="content-language" content="en">
 
-
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/geoplanner/">GeoPlanner for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search GeoPlanner">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />
-		<input type="hidden" name="product" value="arcgis-geoplanner"/>
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
 
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/geoplanner/">Home</a></li>
-         <li><a href="/en/geoplanner/get-started/">Get Started</a></li>
-         <li><a href="/en/geoplanner/documentation/">Documentation</a></li>
-		 <li><a href="/en/geoplanner/pricing/">Pricing</a></li>
-		<li><a href="/en/geoplanner/trial/">Free Trial</a></li>
-      </ul>
-    </nav>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/geoplanner/">GeoPlanner</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">GeoPlanner for ArcGIS</h1>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search GeoPlanner">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="arcgis-geoplanner" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link is-active" href="/en/geoplanner/">Home</a></li>
+        <a class="sub-nav-link" href="/en/geoplanner/get-started/">Get Started</a>
+        <a class="sub-nav-link" href="/en/geoplanner/documentation/">Documentation</a>
+        <a class="sub-nav-link" href="/en/geoplanner/pricing/">Pricing</a>
+        <a class="sub-nav-link" href="/en/geoplanner/trial/">Free Trial</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <h1 class="gray">Your Planning Workflows in One App </h1>
+		<p class="gray" style="padding-bottom:30px;">Bring all the steps of your planning workflow into one place. You can use GeoPlanner to make location-driven decisions on land use, natural resource conservation, forestry management, and landscape architecture. From project creation and data management to evaluating scenarios and preparing reports, you can manage your planning process more efficiently.</p>
+    <p>
+      <a class="btn primary" name="TryButton_Top" id="TryButton_Top" href="/en/geoplanner/trial/">Try GeoPlanner</a>
+    <p>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <a class="videoLink colorbox-evlarge cboxElement" title="GeoPlanner for ArcGIS" href="http://video.arcgis.com/iframe/4075/000000/width/960/autoplay:1/00:00:00">
+        <img src="images/main-play-geoplanner-video-lg.jpg">
+      </a>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container" >
-		<h1 class="gray" style="padding-bottom:15px;">Your Planning Workflows in One App </h1> <br/>
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+    <ul class="list-plain sdk-home-nav-list">
+      <li><a href="#">How Organizations Use GeoPlanner</a></li>
+    </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>
 
-        <div class="column-12 phone-column-24">
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <img class="trailer-1" alt="" src="images/manage-your-planning-data.jpg">
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Manage Your Planning Data</h3>
+            <p>Use your own planning data and get started quickly with ready-to-use landscape layers in GeoPlanner. Discover planning datasets shared by others on ArcGIS Online and add them to your project.</p>
+          </div>
+        </div>
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <img class="trailer-1" alt="" src="images/make-better-geodesign-decisions.jpg">
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Make Better Geodesign Decisions</h3>
+            <p>Manage a complete planning process in a single web app and enable collaboration among team members. Access GeoPlanner dashboards and planning alternatives from anywhere using mobile devices.</p>
+          </div>
+        </div>
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <img class="trailer-1" alt="" src="images/assess-site-suitability.jpg">
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Assess Site Suitability</h3>
+            <p>Combine factors such as slope, aspect, population, and distance to water to understand risks in your planning area. For example, overlay insect and disease risk, wildland fire potential, and woody biomass to identify areas in a forest that are at highest risk for fire.</p>
+          </div>
+        </div>
+      </div>
+		  <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <img class="trailer-1" alt="" src="images/compare-design-alternatives.jpg">
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Compare Design Alternatives</h3>
+            <p>Evaluate and compare development scenarios using dashboards. Get started with ready-to-use templates or create custom templates to meet the needs of your industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-		<p class="gray" style="padding-bottom:30px;">Bring all the steps of your planning workflow into one place. You can use GeoPlanner to make location-driven decisions on land use, natural resource conservation, forestry management, and landscape architecture. From project creation and data management to evaluating scenarios and preparing reports, you can manage your planning process more efficiently.</p>
+<!-- Collapsible contents -->
 
+<!-- Blog -->
+<div class="panel panel panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">From our Blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/geoplanner/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/geoplanner/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-		
-          <p>
-             <a  class="btn primary" name="TryButton_Top" id="TryButton_Top" href="/en/geoplanner/trial/" >Try GeoPlanner</a>
-          </p>
-		<br/>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Discussions on GeoNet
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/feeds/allcontent?community=2124">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=2124">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with the GeoPlanner for ArcGIS</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
 		</div>
-        <div class="column-12 phone-column-24">
-      <a class="videoLink colorbox-evlarge cboxElement" title="GeoPlanner for ArcGIS" href="http://video.arcgis.com/iframe/4075/000000/width/960/autoplay:1/00:00:00"><img src="images/main-play-geoplanner-video-lg.jpg" style="padding-left:120px;" ></a>
-		<video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://video.arcgis.com/watch/4148/geoplanner-for-arcgis"></source>
-         </video>
-		
+	</div>
+</div>
 
-		</div>	
-
-			<div class="clear"></div>
-<hr/>
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/geoplanner">More Videos <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/4887/000000/width/960/1" class="colorbox-evlarge" title="Marine Spatial Planning Using GeoPlanner"><img alt="Marine Spatial Planning Using GeoPlanner" src="http://video.esri.com/thumbs/2015/12/4887/4887-marine-spatial-planning-using-geoplanner_x.jpg"></a>
+              <h5 class="leader-1">Marine Spatial Planning Using GeoPlanner</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4887/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/4708/000000/width/960/1" class="colorbox-evlarge" title="GeoPlanner: Web-based Site Suitability Analysis with Weighted Raster Overlay Services"><img alt="GeoPlanner: Web-based Site Suitability Analysis with Weighted Raster Overlay Services" src="http://video.esri.com/thumbs/2015/08/4708/4708-geoplanner-site-suitability-analysis-and-weighted-raster-overlay-services_x.jpg"></a>
+            <h5 class="leader-1">GeoPlanner: Web-based Site Suitability Analysis with Weighted Raster Overlay Services</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4708/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/4208/000000/width/960/1" class="colorbox-evlarge" title="GeoPlanner for ArcGIS - Soma City"><img alt="GeoPlanner for ArcGIS - Soma City" src="http://video.esri.com/thumbs/2015/03/4208/4208-geoplanner-for-arcgis-_dash_-soma-city_x.jpg"></a>
+            <h5 class="leader-1">GeoPlanner for ArcGIS - Soma City</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4208/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3663/000000/width/960/1" class="colorbox-evlarge" title="GeoPlanner for ArcGIS"><img alt="GeoPlanner for ArcGIS" src="http://video.esri.com/thumbs/2014/07/3663/3663-building-resilient-communities_x.jpg"></a>
+            <h5 class="leader-1">GeoPlanner for ArcGIS</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3663/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<div class="container" style="padding-top:60px;">
-		<div id="collectorDataFeature" class="column-12 phone-column-24" style="padding-right:60px; padding-bottom:60px;">
-          <a class="videoLinkGeoPlanner colorbox-evlarge cboxElement" title="Manage Your Planning Data with GeoPlanner for ArcGIS" href="http://video.arcgis.com/iframe/4498/000000/width/960/autoplay:1/00:00:00"><img src="images/manage-your-planning-data.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
-		<video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://video.arcgis.com/watch/4498/manage-your-planning-data-with-geoplanner"></source>
-         </video> 
-
-          <h3 >Manage Your Planning Data</h3>
-          <p >Use your own planning data and get started quickly with ready-to-use landscape layers in GeoPlanner. Discover planning datasets shared by others on ArcGIS Online and add them to your project. </p>
-
-        </div>	
-		<div id="collectorDataFeature" class="column-12 phone-column-24" style="padding-right:60px; padding-bottom:60px;">
-          <a class="videoLinkGeoPlanner colorbox-evlarge cboxElement" title="Make Better Geodesign Decisions with GeoPlanner for ArcGIS" href="http://video.arcgis.com/iframe/4583/000000/width/960/autoplay:1/00:00:00"><img src="images/make-better-geodesign-decisions.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
-		<video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://video.arcgis.com/watch/4583/make-better-geodesign-decisions"></source>
-         </video>
-
-          <h3>Make Better Geodesign Decisions</h3>
-		  <p>Manage a complete planning process in a single web app and enable collaboration among team members. Access GeoPlanner dashboards and planning alternatives from anywhere using mobile devices.</p>
-
-        </div>		
-	<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24" style="padding-right:60px; padding-bottom:60px;">
-          <a class="videoLinkGeoPlanner colorbox-evlarge cboxElement" title="Assess Site Suitability with GeoPlanner for ArcGIS" href="http://video.arcgis.com/iframe/4497/000000/width/960/autoplay:1/00:00:00"><img src="images/assess-site-suitability.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
-          <video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://video.arcgis.com/watch/4497/assess-site-suitability-with-geoplanner"></source>
-         </video>
-
-          <h3>Assess Site Suitability </h3>
-		  <p>Combine factors such as slope, aspect, population, and distance to water to understand risks in your planning area. For example, overlay insect and disease risk, wildland fire potential, and woody biomass to identify areas in a forest that are at highest risk for fire. </p>
-
-        </div>
-
-		
-       <div id="collectorDataFeature" class="column-12 phone-column-24" style="padding-right:60px; padding-bottom:60px;">
-          <a class="videoLinkGeoPlanner colorbox-evlarge cboxElement" title="Compare Design Alternatives with GeoPlanner for ArcGIS" href="http://video.arcgis.com/iframe/4582/000000/width/960/autoplay:1/00:00:00"><img src="images/compare-design-alternatives.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
-          <video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://video.arcgis.com/watch/4582/compare-design-alternatives"></source>
-         </video>
-
-          <h3>Compare Design Alternatives </h3>
-          <p>Evaluate and compare development scenarios using dashboards. Get started with ready-to-use templates or create custom templates to meet the needs of your industry.
-		  </p>
-
-        </div>
-		<div class="column-24 phone-column-24">
-		<div class="greyFrame">
-	          <h3 style="display:inline;">Start creating and sharing planning designs. </h3>
-			<div style="display:inline;">
-             <a class="btn primary right" name="TryButton_Middle" id="TryButton_Middle" href="/en/geoplanner/trial/" style="margin-top: 5px;">Try GeoPlanner </a>
-			</div>
-		</div>
-		</div>
-        <div class="clear"></div>
-
-		<h2 align="center" style="padding-bottom:45px; padding-top:60px;">How Organizations Use GeoPlanner</h2>
-		
-		<div class="column-6 phone-column-24">
-		<div class="greyFrame" >
-		<a href="http://www.esri.com/library/casestudies/menlo-park-california.pdf" target="_blank"> <img src="images/PlaceWorks-is-using-GeoPlanner.jpg" style="padding-right:30px;"/>  </a>
-     <!-- <a class="pdfLink colorbox-evlarge cboxElement" title="PlaceWorks is using GeoPlanner" href="http://www.esri.com/library/casestudies/menlo-park-california.pdf/iframe/000000/width/960/0/00:00:00"><img src="images/PlaceWorks-is-using-GeoPlanner.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
-		<video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://www.esri.com/library/casestudies/menlo-park-california.pdf"></source>
-         </video>  -->
-		<p style="padding-top: 15px; padding-bottom:45px;">PlaceWorks is using GeoPlanner to help City of Menlo Park planners deal with Facebook’s rapid growth in the area. [PDF] </p>				
-		</div>
-		</div>
-		<div class="column-6 phone-column-24">
-		<div class="greyFrame">
-      <a class="videoLink colorbox-evlarge cboxElement" title="Smart Growth with GeoPlanner" href="http://video.arcgis.com/iframe/4164/000000/width/960/0/00:00:00"><img src="images/smart-growth-with-geoplanner.png"><img src="/img/playbtn.png" class="playbtn"></a>
-		<video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://video.arcgis.com/watch/4164/geodesign-tools-for-planners"></source>
-         </video>
-		 <p style="padding-top: 30px; padding-bottom:45px;">Hear David Early of PlaceWorks discuss GreenScore, and how GeoPlanner and Story Maps increase citizen engagement. </p><br/>
-		</div>
-		</div>
-		<div class="column-6 phone-column-24">
-		<div class="greyFrame">
-	<!--	<img src="images/geoplanner-2d-to-arcgis-pro-3d.jpg" style="padding-right:30px;"/>  -->
-      <a class="videoLink colorbox-evlarge cboxElement" title="2D to 3D Planning Designs" href="http://video.arcgis.com/iframe/4183/000000/width/960/0/00:00:00"><img src="images/geoplanner-2d-to-arcgis-pro-3d.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
-		<video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://video.arcgis.com/watch/4183/geodesign-_and_-aec"></source>
-         </video>
-		<p style="padding-top: 15px; padding-bottom:60px;"> See how 2D planning in GeoPlanner is used for detailed street design in 3D using ArcGIS Pro and CityEngine. </p>
-		</div>
-		</div>
-		<div class="column-6 phone-column-24">
-		<!-- <a href="http://video.arcgis.com/iframe/4208/000000/width/960/0/00:00:00" title="GeoPlanner for ArcGIS - Soma City" class="videoLink colorbox-evlarge cboxElement"><img src="ihttp://placehold.it/275x250&text=Video"><img src="/img/playbtn.png" class="playbtn"></a>
-		<video width="320" height="240" class="mobileVideo" preload="none" id="247" controls="">
-		<source src="http://video.esri.com/watch/3625/what-is-arcgis_question_"></source>
-		</video>  -->
-
-		<div class="greyFrame" >
-	<!--	<img src="images/tsunami-damaged-soma-city.jpg" style="padding-right:30px;"/>  -->
-      <a class="videoLink colorbox-evlarge cboxElement" title="Soma City Restoration" href="http://video.arcgis.com/iframe/4208/000000/width/960/0/00:00:00"><img src="images/tsunami-damaged-soma-city.jpg"><img src="/img/playbtn.png" class="playbtn"></a>
-		<video width="320" height="240" class="mobileVideo" preload="none" id="4208" controls="">
-         <source src="http://video.arcgis.com/watch/4208/geoplanner-for-arcgis-_dash_-soma-city"></source>
-         </video>
-		<p style="padding-top: 15px; padding-bottom:60px;"> See how GeoPlanner was used in tsunami-damaged Soma City’s design and restoration. </p>
-		</div>
-		</div>
-
-
-		       <div class="clear"></div>
-<br/><br/><br/>
-			<hr/>
-	<!-- <div>		
-		<h2 align="center" style="padding-bottom:45px; padding-top:30px;">Demos</h2>
-		<div class="column-8 phone-column-24">
-		<a href="http://www.portlandmaps.com/bps/cpmapp2/" target="_blank">
-		<img src="images/comprehensive-planning-portland.jpg" style="padding-right:30px;"/>
-		<p style="padding-top: 15px; padding-bottom:60px;text-align: center;"> Comprehensive planning app by the City of Portland Bureau of Planning and Suitability</p> </a>
-
-		</div>
-		<div class="column-8 phone-column-24">
- 	    <a href="http://www.esri.com/esri-news/arcuser/fall-2014/modeling-suitability" target="_blank">
-		<img src="images/modeling-suitability-temecula-vineyard.jpg" style="padding-right:30px;"/>
-		<p style="padding-top: 15px; padding-bottom:60px; text-align: center;">  Modeling suitability to identify potential sites for more vineyards in Temecula, California</p> </a>
-		</div>
-		<div class="column-8 phone-column-24">
-		<a href="http://ecoreata.com/conservationbanks_storymap_2013/" target="_blank">
-		<img src="images/conservation-efforts.jpg" style="padding-right:30px;"/>
-		<p style="padding-top: 15px; padding-bottom:60px; text-align: center;"> Conservation efforts of the Endangered Species Act</p> </a>
-		</div>	
-		
-		</div
-		<br/>
-		       <div class="clear"></div>
-		
-			<hr/>  -->
-	
-		
-		<div class="column-8 tablet-column-24" style="padding-top:30px; padding-right:90px;">
-		<div class="">
-          <h3>From Our Blog</h3>
-          <div id="blog">
-
-          </div>
-        </div>			
-		</div>
-		<div class="column-8 tablet-column-24" style="padding-top:30px; padding-right:90px;">
-		<div class="">
-          <h3>Discussions on GeoNet</h3>
-          <div id="forum">
-
-          </div>
-        </div>			
-		</div>
-
-		<div class="column-8 tablet-column-24" style="padding-top:30px;">
-		<div class="">
-          <h3>More Community Resources</h3>
-          <div id="other">
-
-        <h4 class="icon-play icon-green">
-          <a href="http://video.arcgis.com">
-            Video.arcgis.com
-          </a>
-        </h4>
-        <p>Learn from the pros and the community.</p>
-		<br/>
-
-        <h4 class="icon-lightbulb icon-orange">
-          <a href="http://ideas.esri.com">
-            Ideas.esri.com
-          </a>
-        </h4>
-        <p>Submit your feedback on the software.</p>
-			<br/>
-        <h4 class="training-icon">
-         <img src="images/training.png"/>
-		 <a href="http://training.esri.com">
-            Training.esri.com
-          </a>
-        </h4>
-        <p>Explore free training and videos.</p>
-
-          </div>
-        </div>			
-		</div>
-
-
-		<div class="column-24 phone-column-24" style="padding-top:60px;">
-		<div class="greyFrame">
-	          <h3 style="display:inline;">Start creating and sharing planning designs. </h3>
-			<div style="display:inline;">
-             <a class="btn primary right" name="TryButton_Bottom" id="TryButton_Bottom" href="/en/geoplanner/trial/" style="margin-top: 5px;">Try GeoPlanner </a>
-			</div>
-		</div>
-		</div>
-        <div class="clear"></div>
-
-    </div>
-    </div>
-
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/geoplanner/feed/',
-        max: 2,
-        layout: 0
-      });
-
-	  $("#forum").rssFeed({
-			url:"https://geonet.esri.com/community/feeds/allcontent?community=2124", 
-			max: 2,        
-			layout: 1
-		  });
-
-    });
-	 
-	 // video tracker
-	$(document).bind("cbox_complete", function(){
-		 var href = $.colorbox.element().attr("href");
-		 if (href) {
-			  _gaq.push(["_trackPageview", href]);
-		 }
-	});
-  </script>
-
-   
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
