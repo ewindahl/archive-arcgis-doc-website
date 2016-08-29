@@ -1,0 +1,106 @@
+---
+title: MOOC Download 
+css:
+  - stat-page-specific
+
+js:
+  - download.js
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+require_login: Yes
+
+---
+<div class="navigation-bar blue">
+  <div class="container">
+    <header>
+      <h1>MOOC Download</h1>
+    </header>
+	 
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+    <h2 class="leader"></h2>
+	 <div class="download-section container">
+        <div class="row downloads secured-org">
+				
+				<div class="column-12 tablet-column-23">
+                <div class="card">
+                    <div class="icon">
+                        <img src="/img/icon-download.png">
+                    </div>
+                    <div class="text">
+                        <h4>ArcGIS Pro</h4>
+                        <p class="small-grey file-size"> </p>
+							<%= generateVersionDropDown("pro~secured") %>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column-12 tablet-column-23">
+                <div  class="card">
+                    <div class="icon">
+                        <img src="/img/icon-download.png">
+                    </div>
+                    <div class="text">
+                        <h4>Drone2Map</h4>
+                        <p class="small-grey file-size"> </p>
+                        <%= generateVersionDropDown("drone2map~secured") %>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
+    </div>
+
+
+</div>  <!-- End of Container -->
+
+<script>
+	var allowedSubTypes = ["In House"]
+</script>
+<style>
+.download-section.container .downloads .card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 35px auto;
+    min-width: 290px;
+}
+
+.download-section.container .downloads .card .icon {
+    display: flex;
+}
+.download-section.container .downloads .card .icon {
+    display: -ms-flexbox;
+}
+.download-section.container .downloads .card .text {
+    min-height: 100px;
+    padding-top: 55px;
+    text-align: center;
+    width: 100%;
+}
+
+.download-section.container .downloads .card img {
+    margin: -53px auto;
+}
+.download-section.container .downloads .column-6 {
+  float: left;
+  min-width: 302px;
+}
+
+.download-section.container .downloads .btn {
+  margin: 5px 5px 16px;
+}
+
+.download-section.container .downloads .dropdown::after {
+    right: 16px;
+    top: 16px;
+}
+</style>
