@@ -1,12 +1,12 @@
 ---
 title: Report a Security Concern
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - feedback
+  - homepage
+  - /cdn/css/colorbox
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-init
   - securityForm
 
 languageSelector: "No"
@@ -17,158 +17,211 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/Trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-  <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online Trust" href="/en/trust/">Trust</a></li>
-        <li><a title="ArcGIS Online System Status" href="/en/trust/system-status/">System Status</a></li>
-        <li><a title="ArcGIS Online Security" href="/en/trust/security/">Security</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/en/trust/privacy/">Privacy</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/en/trust/compliance/">Compliance</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<!-- Page Content -->
-<div class="container feedback">
 
-  <div class="row main">
-	  
-  <div class="warning-signup">
-      <header>
-        <h2 data-langlabel="">Report a Security Concern</h2>
-      </header>
-	  <section>
-		<p data-langlabel="">Please fill out the form on the right with all applicable information including sufficient details of your specific concern. Your contact details will be used to follow up on the information you provided. Please select the applicable subject from the subject drop-down menu.</p>
-		<ul>
-			<li data-langlabel="">Vulnerability - report a vulnerability found in our site or application.</li>
-			<li data-langlabel="">Suspicious E-mail from Esri - if you believe you were targeted by a possible phishing attack from an Esri e-mail address, or have received other suspicious e-mail correspondance from Esri.</li>
-			<li data-langlabel="">Privacy Issue - if you have a privacy concern related to our application or organization.</li>
-			<li data-langlabel="">Other - for all other security, privacy or compliance related concerns.</li>
-		</ul>
-		
-<div style="padding-bottom:15px;">		
-
-  </div>   
-	  <hr style="padding-bottom:20px;"/>
-	  	  <header>
-		<h3 data-langlabel="">Vulnerability Reporting Policy</h3>
-	  </header>
-      
-        <p data-langlabel="">The ArcGIS.com security team acknowledges the valuable role that independent security researchers play in Internet security. We encourage responsible reporting of any vulnerabilities that may be found in our site or application. Esri is committed to working with the security community to verify and respond to any potential vulnerabilities that are reported to us. Esri will not bring a lawsuit or begin law enforcement investigation of you if this policy is followed.</p>
-	  <header>
-		<h4 data-langlabel="">ArcGIS.com does <strong>not</strong> permit the following types of security research</h4>
-	  </header>
-	  <ul>
-			<li data-langlabel="">Causing, or attempting to cause, a Denial of Service (DoS) condition.</li>
-		<li data-langlabel="">Use automated security tools without Esri's explicit consent. Use of automated tools may result in investigative action or your IP(s) being blocked.</li>
-		<li data-langlabel="">Accessing, or attempting to access, data or information that does not belong to you.</li>
-		<li data-langlabel="">Destroying or corrupting, or attempting to destroy or corrupt, data or information that does not belong to you.</li>  
-	  </ul>
-
-	 <header>
-	  <h4 data-langlabel="">The ArcGIS.com Security Team commitment</h4>
-	  </header>
-		<p data-langlabel="">To all security researchers who follow this ArcGIS.com Vulnerability Reporting Policy, the ArcGIS.com Security Team commits the following:</p>
-		
-		<ul>
-		<li data-langlabel="">To respond in a timely manner, acknowledging receipt of your report.</li>
-		<li data-langlabel="">To provide an estimated time frame for addressing this vulnerability.</li>
-		<li data-langlabel="">To notify the reporting individual when the vulnerability has been fixed.</li>		
-		</ul>
-      
-    <div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Participating Security Researchers</span>
-      <div class="dropdown-content">
-        <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">We would like to thank the following security researchers for participating in our responsible reporting program:</p>
-          <%= partial :"_partial/security_names" %>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/trust/">Trust</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">Trust ArcGIS</h1>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="arcgis-online" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
         </div>
       </div>
     </div>
-      
-	 </section>
-	 
-  </div> 
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link" href="/en/trust/">Home</a></li>
+        <a class="sub-nav-link" href="/en/trust/system-status/">ArcGIS Online Status</a>
+        <a class="sub-nav-link" href="/en/trust/security/">Security</a>
+        <a class="sub-nav-link" href="/en/trust/privacy/">Privacy</a>
+        <a class="sub-nav-link" href="/en/trust/compliance/">Compliance</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
-    <div class="contact-form-signup">
-		
-		<div id="form-fields">
-		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
-						
-			<fieldset id="security-form-fieldset">
+<div class="grid-container leader-2">
+  <div class="column-12 warning-signup">
+    <header>
+      <h2>Report a Security Concern</h2>
+    </header>
+  	<section>
+  		<p>Please fill out the form on the right with all applicable information including sufficient details of your specific concern. Your contact details will be used to follow up on the information you provided. Please select the applicable subject from the subject drop-down menu.</p>
+  		<ul>
+  			<li>Vulnerability - report a vulnerability found in our site or application.</li>
+  			<li>Suspicious E-mail from Esri - if you believe you were targeted by a possible phishing attack from an Esri e-mail address, or have received other suspicious e-mail correspondance from Esri.</li>
+  			<li>Privacy Issue - if you have a privacy concern related to our application or organization.</li>
+  			<li>Other - for all other security, privacy or compliance related concerns.</li>
+  		</ul>
+  	  <hr />
+  	  <header>
+  		  <h3>Vulnerability Reporting Policy</h3>
+  	  </header>
+      <p>The ArcGIS.com security team acknowledges the valuable role that independent security researchers play in Internet security. We encourage responsible reporting of any vulnerabilities that may be found in our site or application. Esri is committed to working with the security community to verify and respond to any potential vulnerabilities that are reported to us. Esri will not bring a lawsuit or begin law enforcement investigation of you if this policy is followed.</p>
+  	  <header>
+  		  <h4>ArcGIS.com does <strong>not</strong> permit the following types of security research</h4>
+  	  </header>
+  	  <ul>
+  			<li>Causing, or attempting to cause, a Denial of Service (DoS) condition.</li>
+  		  <li>Use automated security tools without Esri's explicit consent. Use of automated tools may result in investigative action or your IP(s) being blocked.</li>
+  		  <li>Accessing, or attempting to access, data or information that does not belong to you.</li>
+  		  <li>Destroying or corrupting, or attempting to destroy or corrupt, data or information that does not belong to you.</li>
+  	  </ul>
 
-			  <label data-langlabel="" for="name">Name: </label>
-			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">Email Address: </label>
-			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">Phone Number: </label>
-			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
-			  <label data-langlabel="" for="organization">Organization <span class="optional">(optional):</span> </label>
-			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">Subject: </label>
-			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option>
-				  <option value="Vulnerability">Vulnerability</option>
-				  <option value="Privacy Issue">Privacy Issue</option>
-				  <option value="audi">Other</option>
-			  </select>
-
-			  <label data-langlabel="" for="description">Description: </label>
-			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">To help prevent automated spam, enter the numerals provided: </label>
-			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-			  <label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
-
-			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="internal" name="source" id="source">
-
-			  <input value="verbose" name="resultType" id="resultType" type="hidden">
-			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
-			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-			  <input type="hidden" value="en" name="lg">
-			
-			</fieldset>
-			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Submit</a>
-			
-		  </form>
-		</div>
-
-	  <div id="submission-confirmation" style="display:none;">	
-		<p data-langlabel=""><h4>Thank you for reporting this issue. We will investigate and address your concern within the next few business days.</h4></p>
+  	  <header>
+  	    <h4>The ArcGIS.com Security Team commitment</h4>
+  	  </header>
+  		<p>To all security researchers who follow this ArcGIS.com Vulnerability Reporting Policy, the ArcGIS.com Security Team commits the following:</p>
+  		<ul>
+  		  <li>To respond in a timely manner, acknowledging receipt of your report.</li>
+  		  <li>To provide an estimated time frame for addressing this vulnerability.</li>
+  		  <li>To notify the reporting individual when the vulnerability has been fixed.</li>
+  		</ul>
+      <div class="dropdown-navigation dropdown-wrapper regular">
+        <span class="dropdown btn btn-small" data-langlabel="trust-researchers-title">Participating Security Researchers</span>
+        <div class="dropdown-content">
+          <div class="dropdown-menu">
+            <p data-langlabel="trust-researchers-desc">We would like to thank the following security researchers for participating in our responsible reporting program:</p>
+            <%= partial :"_partial/security_names" %>
+          </div>
+        </div>
+      </div>
+  	</section>
+  </div>
+  <div class="column-12 tablet-column-12 right">
+	  <div class="panel panel-white">
+      <div class="contact-form-signup">
+  		  <div id="form-fields">
+  		    <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+  			    <fieldset id="security-form-fieldset">
+  			      <label data-langlabel="" for="name">Name: </label>
+  			      <input type="text" autocomplete="off" id="name" name="name">
+  			      <label data-langlabel="email-address" for="email-address">Email Address: </label>
+  			      <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+  			      <label data-langlabel="phone-number" for="phone-number">Phone Number: </label>
+  			      <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+  			      <label data-langlabel="" for="organization">Organization <span class="optional">(optional):</span> </label>
+  			      <input type="text" autocomplete="off" id="organization" name="organization">
+  			      <label data-langlabel="" for="subject">Subject: </label>
+  			      <select id="subject" autocomplete="off" name="subject">
+  				      <option value="" style="display:none;"></option>
+  				      <option value="Vulnerability">Vulnerability</option>
+  				      <option value="Privacy Issue">Privacy Issue</option>
+  				      <option value="audi">Other</option>
+  			      </select>
+  	    		  <label data-langlabel="" for="description">Description: </label>
+  			      <label data-langlabel="feedback-spam-note" for="spam">To help prevent automated spam, enter the numerals provided: </label>
+              <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+  		    	  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+  		    	  <label data-langlabel="numerals" for="captchaValue">Numerals: <strong><span id="txtCaptcha" class=""></span></strong></label>
+      			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+      			  <input type="hidden" value="internal" name="source" id="source">
+      			  <input value="verbose" name="resultType" id="resultType" type="hidden">
+      			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
+  	    		  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+  		    	  <input type="hidden" value="en" name="lg">
+      			</fieldset>
+      			<a class="btn" name="submit-concern" id="submit" data-langlabel="contact-us">Submit</a>
+  		    </form>
+  		  </div>
+      </div>
+    </div>
+  </div>
+  <div class="column-24 tablet-column-24">
+    <p>&nbsp;</p>
+    <div id="submission-confirmation" style="display:none;">
+		  <p><h4>Thank you for reporting this issue. We will investigate and address your concern within the next few business days.</h4></p>
 	  </div>
-	  <div id="submission-error" style="display:none;">	
-		<p data-langlabel=""><h4>An error occurred during your submission. Please resubmit your concern at a later time.</h4></p>
+	  <div id="submission-error" style="display:none;">
+		  <p><h4>An error occurred during your submission. Please resubmit your concern at a later time.</h4></p>
 	  </div>
-
 	  <strong>
 			<span style="display:none;" id="referPageLink">Return to the <a id="feedback-referring-link" href="">referring page</a></span>
 			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Submit</a> another security concern</span>
 	  </strong>
-
-    </div>
-
-  </div> <!-- end of row main -->
-
-<script>
-$(document).ready(function() {
-
-	$('#submit').on ("click", function() {
-      return doc.securityConcernForm.validateForm();
-    });
-    doc.securityConcernForm.DrawCaptcha();
-});
-</script>
-
+  </div>
 </div>
 
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with Trust ArcGIS</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/trust">More Videos <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/4324/000000/width/960/1" class="colorbox-evlarge" title="Auth in ArcGIS Online"><img alt="Auth in ArcGIS Online" src="http://video.esri.com/thumbs/2015/04/4324/4324-auth-in-arcgis-online_x.jpg"></a>
+              <h5 class="leader-1">Auth in ArcGIS Online</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge" href="http://video.esri.com/iframe/4324/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3471/000000/width/960/1" class="colorbox-evlarge" title="Geodesigning Our Way to Livable Cities"><img alt="Geodesigning Our Way to Livable Cities" src="http://video.esri.com/thumbs/2014/04/3471/3471-geodesigning-our-way-to-lovable-cities-_dash_-part-1-of-2_x.jpg"></a>
+            <h5 class="leader-1">Geodesigning Our Way to Livable Cities</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3471/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3472/000000/width/960/1" class="colorbox-evlarge" title="Using Geodesign to Create Livable Healthy Communities"><img alt="Using Geodesign to Create Livable Healthy Communities" src="http://video.esri.com/thumbs/2014/04/3472/3472-using-geodesign-to-create-livable-healthy-communities-_dash_-part-2-of-2_x.jpg"></a>
+            <h5 class="leader-1">Using Geodesign to Create Livable Healthy Communities</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3472/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/1627/000000/width/960/1" class="colorbox-evlarge" title="Making a Difference and President's Awards"><img alt="Making a Difference and President's Awards" src="http://video.esri.com/thumbs/2012/08/1627/1627-making-a-difference-and-presidents-awards_x.jpg"></a>
+            <h5 class="leader-1">Making a Difference and President's Awards</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/1627/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

@@ -1,14 +1,11 @@
 ---
 title: Esri Maps for SAP BusinessObjects
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
@@ -17,368 +14,223 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/maps-for-sap-bobj/">Esri Maps for SAP BusinessObjects</a></h1>
-	  <form id="helpSearchForm" target="_top">
-                    <input type="search" name="q" class="leader" placeholder="Search Esri Maps for SAP BOBJ" data-langlabel="search-esri-maps-sapbobj">
-                    <input type="hidden" name="collection" value="help" />
-                    <input type="hidden" name="product" value="esri-maps-sapbobj" />          
-					<input type="hidden" name="version" value="sapbobj-2.0" />
-                    <input type="hidden" name="language" value="en" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/maps-for-sap-bobj/">Home</a></li>
-        <li><a href="/en/maps-for-sap-bobj/install-and-configure/">Install</a></li>
-		<li><a href="/en/maps-for-sap-bobj/design-maps/">Design maps</a></li>
-		<li><a href="/en/maps-for-sap-bobj/use-maps/">Use maps</a></li>
-		<li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus[published]~objecttype~objecttype[thread]&filterID=contentstatus[published]~tag[_sap_business_objects]">GeoNet</a>
-		<!-- old forum link
-        <li><a href="http://forums.arcgis.com/forums/263-Esri-Maps-for-SAP-BusinessObjects/">Forum</a></li>
-		-->
-      </ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/en/maps-for-sap-bobj/">Esri Maps for SAP BusinessObjects</a>
+          </nav>
+          <h1 class="sub-nav-title leader-1 text-white">Esri Maps for SAP BusinessObjects</h1>
+          <p>&nbsp;</p>
+
+          <p class="text-white font-size--2"><strong>Version 2.0</strong> Fall 2014</p>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+        <div class="sdk-home-banner-image">
+          <img src="../arcgis-online/img/main-scalable.png">
+        </div>
+        <div class="search-bar">
+          <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" class="leader" placeholder="Search Esri Maps for SAP BOBJ">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="esri-maps-sapbobj" />
+            <input type="hidden" name="language" value="<%= current_language %>" />
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link is-active" href="/en/maps-for-sap-bobj/">Home</a></li>
+        <a class="sub-nav-link" href="/en/maps-for-sap-bobj/install-and-configure/">Install</a>
+        <a class="sub-nav-link" href="/en/maps-for-sap-bobj/design-maps/">Design Maps</a>
+        <a class="sub-nav-link" href="/en/maps-for-sap-bobj/use-maps/">Use Maps</a>
+        <a class="sub-nav-link" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus[published]~objecttype~objecttype[thread]&filterID=contentstatus[published]~tag[_sap_business_objects]">GeoNet</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <h2 id="appTitle">Get the app</h2>
+    <p>Enrich your SAP models with live interactive maps, allowing dashboard consumers to analyze business data visually and interactively. Create maps that interact with other components in your dashboard, and combine published geographic data from ArcGIS with SAP BusinessObjects business data for richer analysis. Esri Maps for SAP BusinessObjects seamlessly integrates into the everyday workflows familiar to you and dashboard consumers, without the need for custom coding or GIS expertise. Dashboard consumers require no additional skills or tools to start using map-enabled reports to analyze their data visually; they can view, browse, query, and manipulate the maps in the dashboards using tools and actions that you configure.</p>
+    <p>
+      <a class="btn" href="http://www.esri.com/software/location-analytics/esri-maps-for-sap-business-objects/pricing">Get Esri Maps for SAP BusinessObjects</a>
+    </p>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+	  <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">Esri Maps for SAP BusinessObjects offers significant updates and enhancements for dashboard designers, consumers, and administrators.</p>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="#">What's new</a></li>
+        <li><a href="#">Supported environments</a></li>
+	      <li><a href="/en/maps-for-sap-bobj/design-maps/build-a-map-enabled-dashboard.htm">Build a map-enabled dashboard</a></li>
+        <li><a href="/en/maps-for-sap-bobj/1.0/">Help for previous versions</a></li>
+        <li><a href="http://video.arcgis.com/series/158/location-analytics/">Watch Location Analytics videos</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>
 
-     <div class="column-16 tablet-column-24">
-        <header>
 
-		  <h2 id="appTitle">Get the app</h2>
-          <span id="appVersion"><strong>Version:</strong> 2.0</span>
-          <span id="appReleased"><strong>Available:</strong> Fall 2014</span>
-
-
-          <p>Enrich your SAP models with live interactive maps, allowing dashboard consumers to analyze business data visually and interactively. Create maps that interact with other components in your dashboard, and combine published geographic data from ArcGIS with SAP BusinessObjects business data for richer analysis. Esri Maps for SAP BusinessObjects seamlessly integrates into the everyday workflows familiar to you and dashboard consumers, without the need for custom coding or GIS expertise. Dashboard consumers require no additional skills or tools to start using map-enabled reports to analyze their data visually; they can view, browse, query, and manipulate the maps in the dashboards using tools and actions that you configure.</p>
-
-          <p>
-             <a  class="btn primary" href="http://www.esri.com/software/location-analytics/esri-maps-for-sap-business-objects/pricing">Get Esri Maps for SAP BusinessObjects</a>
-          </p>
-        </header>
-
-        <hr />
-        <br />
-
-<!-- features top row -->
-		<!-- Create a map-enabled dashboard -->
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="map-your-data.png" />
-
-          <h3>Map your universe data</h3>
-          <p>With Esri Maps for SAP BusinessObjects, you can easily map your SAP BusinessObjects data, whether it's stored in a universe or in the dashboard's embedded spreadsheet.</p>
-		  <br />
-		  
-		<!-- link to help and video -->
-		  <p>
-		  <a href="/en/maps-for-sap-bobj/design-maps/build-a-map-enabled-dashboard.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-		  <br/>
-			<a title="Map your universe data" href="http://video.arcgis.com/iframe/4102/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="4102" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4102/mp4/480">
-			</video>
-		  </p>
-        </div>
-
-		<!-- Add data from ArcGIS -->
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="addArcGISdata.png" />
-
-          <h3>Add data from ArcGIS to your map</h3>
-          <p>Esri Maps for SAP BusinessObjects works directly with your ArcGIS subscription, allowing you to search for content within your organization and other public content published by the GIS community. Adding data from ArcGIS is a quick and easy way to complement your existing SAP Dashboards data.</p>
-		<!-- link to help and video -->
-		  <p>
-		  <a href="/en/maps-for-sap-bobj/use-maps/add-data-from-arcgis.htm" 
-		  class="icon-right-arrow">&nbsp;Learn more</a>
-		  <br/>
-			<a title="Add data from ArcGIS to your map" href="http://video.arcgis.com/iframe/4103/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="4103" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4103/mp4/480">
-			</video>
-		  </p>
-	  </div>
-				
-      <div class="clear"></div>
-
-		
-<!-- feature second row -->
-		<!-- Configure map as a selector -->
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="config-selector.png" />
-
-          <h3>Configure a map as a selector</h3>
-          <p>You can quickly add interactivity between components in your map-enabled dashboard by configuring selectors. A map configured as a selector lets users  dynamically update other dashboard components by selecting features on the map. </p>
-		<!-- link to help and video -->
-		  <p>
-		  <a href="/en/maps-for-sap-bobj/design-maps/configure-the-map-as-a-selector.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-		  <br/>
-			<a title="Configure a map as a selector" href="http://video.arcgis.com/iframe/4104/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="4104" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4104/mp4/480">
-			</video>
-		  </p>
-	  </div>
-
-		<!-- Configure the map as the target of a selector -->
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="mapTarget.png" />
-
-          <h3>Configure a map as a target</h3>
-          <p>Esri Maps for SAP BusinessObjects lets you configure standard SAP Dashboards components to seamlessly update features on the map based on the user's interaction with other objects on the dashboard.</p>
-		<!-- link to help and video -->
-		  <p>
-		  <a href="/en/maps-for-sap-bobj/design-maps/configure-the-map-as-the-target-of-selectors.htm" class="icon-right-arrow">&nbsp;Learn more</a>
-		  <br/>
-			<a title="Configure a map as a target" href="http://video.arcgis.com/iframe/4107/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="4017" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/4017/mp4/480">
-			</video>
-		  </p>
-        </div>
-
-		<div class="clear"></div>
-
-	<!-- What's new section -->
-	<hr />
-	<a name="whatsNew"></a>
-		<h2>What's new</h2>
-		<p>Esri Maps for SAP BusinessObjects offers significant updates and enhancements for dashboard designers, consumers, and administrators. Here are some highlights.
-		</p>
-
-		<h3>2.0 updates</h3>
-		<ul>
-			<li>Support for dynamic map service layers</li>
-			<li>New drawing tools for triggering configured interactive behaviors</li>
-			<li>New analysis tools: Filter layer, Measure, and Get route</li>
-			<li>Trigger interactive behaviors with the Measure tool, Get route tool, and Find nearby tool</li>
-			<li>Configure Infographics and other map tools and settings</li>
-			<li>Change the map extent using an overview map and other navigation tools</li>
-			<li>Specify any coordinate system when adding XY points</li>
-			<li>Configure and apply multiple styles for a layer</li>
-			<li>Find hot spots</li>
-		</ul>
-	
-	
-<!-- Supported environments section -->
-	<hr />
-	<a name="supportedEnvironments"></a>
-        <h2>Supported environments</h2>
-        <p>Esri Maps for SAP BusinessObjects is deployed as an add-on to SAP Dashboards. For Esri Maps for SAP BusinessObjects to operate properly, Esri assumes an operational configuration of the SAP BusinessObjects Business Intelligence platform and SAP Dashboards. Esri tests Esri Maps for BusinessObjects only in software environments certified or supported by SAP BusinessObjects BI; not all SAP-supported environments have been tested or certified. For more information, see the <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Esri supported environment policy</a>.
-		
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-		 
-		<!-- Sys Reqs -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">System requirements</a>
-		</h3>
-			<div exp1='yes' style="display:none;padding:0 15px;">
-				<ul>
-					<li>Hard disk: 300 MB</li>
-					<li>Memory: 2 GB</li>
-				</ul>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Req'd SW -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Required software</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-			<p>Before you install the Esri Maps for SAP BusinessObjects components, the following software components must be installed and properly configured on your system:</p>
-				<ul>
-					<li>SAP BusinessObjects Business Intelligence platform 4.0 SP 08 or later</li>
-					<li>SAP Dashboards 4.0 SP08 or later</li>
-					<li><a href="http://get.adobe.com/air/" target=blank>Adobe AIR 3.7</a> or later</li>
-				</ul>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- SAP Platform -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">SAP BusinessObjects Business Intelligence platform support</a>
-		</h3>
-			<div exp3='yes' style="display:none;padding:0 15px;">
-			<p>Esri Maps for SAP BusinessObjects is a Java web application; it supports Java application servers that require standard J2EE deployment archives such as .war files. Although Esri has performed rigorous testing only on SAP BusinessObjects BI platforms deployed on Apache Tomcat web application servers, it is expected that the application will operate in any certified configuration of SAP BusinessObjects Business Intelligence platform 4.0 SP08 or later installed on a Java web application server running Java Servlet 2.5 or later.</p>
-			<p>Esri Maps for SAP BusinessObjects server-side components must be installed on a 64-bit system.</p>
-			<p>Esri Maps for SAP BusinessObjects is certified for the following versions of SAP BusinessObjects Business Intelligence platform:</p>
-				<ul>
-					<li>4.0 SP08 / SP09 / SP10</li>
-					<li>4.1 SP03 / SP04 / SP05</li>
-				</ul>
-			<p>Esri Maps for SAP BusinessObjects server-side components have been tested on the following operating systems. To add the operating system of your SAP BusinessObjects Business Intelligence platform deployment this list, contact <a href="http://support.esri.com/phonesupport#us" target=blank>Esri Technical Support</a>.</p>
-				<ul>
-					<li>Windows Server 2008 R2</li>
-					<li>Windows Server 2008 SP2</li>
-					<li>Windows Server 2012</li>
-					<li>Red Hat Enterprise Linux 6.5</li>
-				</ul>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- SAP Dashboards -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp4')">SAP Dashboards support</a>
-		</h3>
-			<div exp4='yes' style="display:none;padding:0 15px;">
-			<p>Esri tests Esri Maps for SAP BusinessObjects on a subset of the client operating systems supported by SAP. On the client side, Esri Maps for SAP BusinessObjects is expected to operate in a certified configuration of SAP Dashboards 4.0 SP08 or later.</p>
-			<p>Esri Maps for SAP BusinessObjects is certified for the following versions of SAP Dashboards:</p>
-				<ul>
-					<li>4.0 SP08 / SP09 / SP10</li>
-					<li>4.1 SP03 / SP04 / SP05</li>
-				</ul>
-			<p>Esri Maps for SAP BusinessObjects is certified and supported on the following operating systems:
-				<ul>
-					<li>Windows 7</li>
-					<li>Windows 8</li>
-					<li>Windows 8.1</li>
-					<li>Windows Server 2012</li>
-				</ul>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Browsers -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp5')">Browsers</a>
-		</h3>
-			<div exp5='yes' style="display:none;padding:0 15px;">
-			<p>Esri has tested Esri Maps for SAP BusinessObjects in the following browsers. Note that SAP BusinessObjects Business Intelligence platform supports only 32-bit browsers, except on Mac OS where it supports the 64-bit Safari browser.</p>
-			<p>
-				<table width="400" border="1" align="left">
-				  <tr align="left">
-					<th scope="col">Web browser</th>
-					<th scope="col">Version</th>
-				  </tr>
-				  <tr align="left" valign="top">
-					<td>Microsoft Internet Explorer</td>
-					<td>9.x | 10.x | 11.x</td>
-				  </tr>
-				  <tr align="left" valign="top">
-					<td>Mozilla Firefox ESR</td>
-					<td>24.x</td>
-				  </tr>
-				  <tr align="left" valign="top">
-					<td>Google Chrome</td>
-					<td>39.x</td>
-				  </tr>
-				  <tr align="left" valign="top">
-					<td>Apple Safari (on Mac OS X)</td>
-					<td>7.x</td>
-				  </tr>
-				</table>
-			</p>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Languages -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp6')">Languages</a>
-		</h3>
-			<div exp6='yes' style="display:none;padding:0 15px;">
-			<p>Esri Maps for SAP BusinessObjects supports the following languages:</p>
-				<ul>
-					<li>English (United States)</li>
-					<!-- not yet localized
-					<li>German</li>
-					<li>Japanese</li>
-					<li>Korean</li>
-					<li>Russian</li>
-					<li>Spanish</li>
-					-->
-				</ul>
-			<!-- not yet localized
-			<p><b>Note:</b> To ensure full support for localized features, upgrade existing dashboards using Esri Maps for SAP BusinessObjects v2.0.1 or later.</p>
-			-->
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Support -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp7')">Support</a>
-		</h3>
-			<div exp7='yes' style="display:none;padding:0 15px;">
-			<p>Esri Maps for SAP BusinessObjects requires an already configured and functional SAP BusinessObjects Business Intelligence platform environment with its required web server environment (such as built-in Tomcat or optional third-party supported web server environment), other supporting applications or database servers, and a configured and functional SAP BusinessObjects Dashboards environment. SAP Technical Support aids in the deployment of SAP BusinessObjects with these components. Esri Technical Support aids in the deployment (and use) of the Esri Maps for SAP BusinessObjects add-on within an operational configuration of SAP BusinessObjects.</p>
-			
-			<p>Esri Technical Support analysts are not experts in all possible configurations of SAP BusinessObjects. Similarly, SAP Technical Support engineers are not experts in all aspects of an operational configuration of Esri Maps for SAP BusinessObjects. If you are experiencing a problem configuring SAP BusinessObjects, it is often more efficient to obtain help from SAP Technical Support. Similarly, if you are experiencing a configuration problem with third-party components within the larger SAP BusinessObjects environment, such as the dedicated web server environment, it is more efficient to get help from the third party's support organization. In cases where a problem is deemed to be in Esri Maps for SAP BusinessObjects, Esri Technical Support can be available to work with SAP Technical Support, third-party vendors, or their consultants.</p>
-			
-			</div>
-			
-		<div class="clear"></div>
-		<p>&nbsp;</p>
-      </div>	
-	
-
-<!-- Sidebars -->
-    <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>Get started</h3>
-          <ul>
-			<li><a href="#whatsNew">What's new</a></li>		
-            <li><a href="#supportedEnvironments">Supported environments</a></li>
-			<li><a href="/en/maps-for-sap-bobj/design-maps/build-a-map-enabled-dashboard.htm">Build a map-enabled dashboard</a></li>
-			<li>Help for previous versions:
-				<ul>
-				<li><a href="/en/maps-for-sap-bobj/1.0/">1.0</a></li>
-				</ul>
-			</li>
-			<li><a href="http://video.arcgis.com/series/158/location-analytics/">Watch Location Analytics videos</a></li>
-          </ul>
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-sap-bobj/design-maps/build-a-map-enabled-dashboard.htm"><img class="trailer-1" alt="" src="map-your-data.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Map your universe data</h3>
+            <p>With Esri Maps for SAP BusinessObjects, you can easily map your SAP BusinessObjects data, whether it's stored in a universe or in the dashboard's embedded spreadsheet.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-sap-bobj/design-maps/build-a-map-enabled-dashboard.htm">Learn more</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge cboxElement" title="Watch a video" href="http://video.arcgis.com/iframe/4102/000000/width/960/0/00:00:00">Watch a video</a></p>
           </div>
         </div>
-
-	</div>
-
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-sap-bobj/use-maps/add-data-from-arcgis.htm"><img class="trailer-1" alt="" src="addArcGISdata.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Add data from ArcGIS to your map</h3>
+            <p>Esri Maps for SAP BusinessObjects works directly with your ArcGIS subscription, allowing you to search for content within your organization and other public content published by the GIS community. Adding data from ArcGIS is a quick and easy way to complement your existing SAP Dashboards data.</p>
+				    <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-sap-bobj/use-maps/add-data-from-arcgis.htm">Learn more</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge cboxElement" title="Watch a video" href="http://video.arcgis.com/iframe/4103/000000/width/960/0/00:00:00">Watch a video</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-sap-bobj/design-maps/configure-the-map-as-a-selector.htm"><img class="trailer-1" alt="" src="config-selector.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Configure a map as a selector</h3>
+            <p>You can quickly add interactivity between components in your map-enabled dashboard by configuring selectors. A map configured as a selector lets users dynamically update other dashboard components by selecting features on the map.</p>
+            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-sap-bobj/design-maps/configure-the-map-as-a-selector.htm">Learn More</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge cboxElement" title="Watch a video" href="http://video.arcgis.com/iframe/4104/000000/width/960/0/00:00:00">Watch a video</a></p>
+          </div>
+        </div>
+      </div>
+		  <div class="block leader-1">
+        <div class="panel panel-no-padding">
+          <a href="/en/maps-for-sap-bobj/design-maps/configure-the-map-as-the-target-of-selectors.htm"><img class="trailer-1" alt="" src="mapTarget.png"></a>
+          <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Configure a map as a target</h3>
+            <p>Esri Maps for SAP BusinessObjects lets you configure standard SAP Dashboards components to seamlessly update features on the map based on the user's interaction with other objects on the dashboard.</p>
+				    <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-sap-bobj/design-maps/configure-the-map-as-the-target-of-selectors.htm">Learn more</a></p>
+            <p><a class="icon-ui-play icon-ui-small colorbox-evlarge cboxElement" title="Watch a video" href="http://video.arcgis.com/iframe/4102/000000/width/960/0/00:00:00">Watch a video</a></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<!-- Collapsible contents -->
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Blog -->
+<div class="panel panel panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">From our Blog
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/category/location-analytics/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-  </script>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Discussions on GeoNet
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus[published]~objecttype~objecttype[thread]&filterID=contentstatus[published]~tag[_sap_business_objects]">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?sr=cmenu&question=false&suppressMarkQuestion=true&containerType=14&containerID=2086">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?community=2086" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+	<div class="grid-container">
+	  <div class="column-25 text-white text-center">
+			<h4 class="trailer-half">Connect with the Esri Maps for SAP BusinessObjects</h4>
+			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
+			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right" href="http://video.esri.com/search/sap-business-objects">More Videos <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3133/000000/width/960/1" class="colorbox-evlarge" title="Integrating Our Enterprise Systems - Esri Maps for SAP Business Objects"><img alt="Integrating Our Enterprise Systems - Esri Maps for SAP Business Objects" src="http://video.esri.com/thumbs/2014/02/3133/3133-integrating-our-enterprise-systems-_dash_-esri-maps-for-sap-business-objects-with-david-schmidt_x.jpg"></a>
+            <h5 class="leader-1">Integrating Our Enterprise Systems - Esri Maps for SAP Business Objects</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3133/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="//video.arcgis.com/iframe/2484/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for Business Intelligence"><img alt="Esri Maps for Business Intelligence" src="http://video.esri.com/thumbs/2013/08/2720/2720-esri-maps-for-business-intelligence_x.jpg"></a>
+            <h5 class="leader-1">Esri Maps for Business Intelligence</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/2720/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="http://video.esri.com/iframe/3133/000000/width/960/1" class="colorbox-evlarge" title="Integrating Our Enterprise Systems - Esri Maps for SAP Business Objects"><img alt="Integrating Our Enterprise Systems - Esri Maps for SAP Business Objects" src="http://video.esri.com/thumbs/2014/02/3133/3133-integrating-our-enterprise-systems-_dash_-esri-maps-for-sap-business-objects-with-david-schmidt_x.jpg"></a>
+            <h5 class="leader-1">Integrating Our Enterprise Systems - Esri Maps for SAP Business Objects</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/3133/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+          <div class="flexible-block-group-conent">
+            <a href="//video.arcgis.com/iframe/2484/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for Business Intelligence"><img alt="Esri Maps for Business Intelligence" src="http://video.esri.com/thumbs/2013/08/2720/2720-esri-maps-for-business-intelligence_x.jpg"></a>
+            <h5 class="leader-1">Esri Maps for Business Intelligence</h5>
+          </div>
+          <div class="flexible-block-group-footer">
+            <a class="colorbox-evlarge" href="http://video.esri.com/iframe/2720/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
