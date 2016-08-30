@@ -52,6 +52,8 @@ configure :build do
   # activate :smusher
   
   ignore 'cdn/*'
+  ignore 'css/*'
+  ignore 'js/*'
 
 
 end
