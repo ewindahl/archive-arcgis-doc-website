@@ -8,6 +8,7 @@ css:
 js:
   - /cdn/js/libs/jquery.colorbox-min
   - video-init
+  - download
 
 metatags:
   - <META name="description" content="AppStudio for ArcGIS"><META name="last-modified" content="2015-3-3"><META name="product" content="appstudio,appstudio-browser"><META name="sub_category" content="AppStudio"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="AppStudio"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="en">
@@ -64,7 +65,7 @@ mobile: true
     <p>In addition to creating and building native apps, AppStudio for ArcGIS (Desktop Edition) allows you to do advanced customization or development work on your apps.</p>
     <div class="download-section">
       <div class="block-group block-group-4-up tablet-block-group-1-up secured-org downloads">
-        <div class="card card-shaped block">
+        <div id="desktop-win64" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/win64.png" alt="AppStudio-Windows-x64" class="card-image">
           </figure>
@@ -76,7 +77,7 @@ mobile: true
             </div>
           </div>
         </div>
-        <div class="card card-shaped block">
+        <div id="desktop-win32" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/win32.png" alt="AppStudio-Windows-x32" class="card-image">
           </figure>
@@ -88,7 +89,7 @@ mobile: true
             </div>
           </div>
         </div>
-        <div class="card card-shaped block">
+        <div id="desktop-mac" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/apple.png" alt="AppStudio-Mac" class="card-image">
           </figure>
@@ -100,7 +101,7 @@ mobile: true
             </div>
           </div>
         </div>
-        <div class="card card-shaped block card-last">
+        <div id="desktop-linux" class="card card-shaped block card-last">
           <figure class="card-image-wrap">
             <img src="../img/icons/linux.png" alt="AppStudio-Linux" class="card-image">
           </figure>
@@ -117,7 +118,7 @@ mobile: true
       <p>Use AppStudio Player to preview apps on your devices before you build!</p>
 
       <div class="block-group block-group-4-up tablet-block-group-1-up downloads">
-        <div class="card card-shaped block">
+        <div id="player-win64" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/win64.png" alt="AppStudioPlayer-Windows-x64" class="card-image">
           </figure>
@@ -129,7 +130,7 @@ mobile: true
             </div>
           </div>
         </div>
-        <div class="card card-shaped block">
+        <div id="player-win32" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/win32.png" alt="AppStudioPlayer-Windows-x32" class="card-image">
           </figure>
@@ -141,7 +142,7 @@ mobile: true
             </div>
           </div>
         </div>
-        <div class="card card-shaped block">
+        <div id="player-mac" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/apple.png" alt="AppStudioPlayer-Mac" class="card-image">
           </figure>
@@ -153,7 +154,7 @@ mobile: true
             </div>
           </div>
         </div>
-        <div class="card card-shaped block">
+        <div id="player-linux" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/linux.png" alt="AppStudioPlayer-Linux" class="card-image">
           </figure>
@@ -168,7 +169,7 @@ mobile: true
       </div>
       <p>&nbsp;</p>
       <div class="block-group block-group-4-up tablet-block-group-1-up downloads">
-        <div class="card card-shaped block">
+        <div id="player-android" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/android.png" alt="AppStudioPlayer-Android" class="card-image">
           </figure>
@@ -180,7 +181,7 @@ mobile: true
             </div>
           </div>
         </div>
-        <div class="card card-shaped block">
+        <div id="player-ios" class="card card-shaped block">
           <figure class="card-image-wrap">
             <img src="../img/icons/apple.png" alt="AppStudioPlayer-iOS" class="card-image">
           </figure>
@@ -263,41 +264,3 @@ mobile: true
 
 
 <script src="/assets/js/rssfeed.js" type="text/javascript"></script>
-<style>
-.download-section.container .downloads .card {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    margin: 35px auto;
-    min-width: 290px;
-}
-
-.download-section.container .downloads .card .icon {
-    display: flex;
-}
-.download-section.container .downloads .card .icon {
-    display: -ms-flexbox;
-}
-.download-section.container .downloads .card .text {
-    min-height: 100px;
-    padding-top: 55px;
-    text-align: center;
-    width: 100%;
-}
-
-.download-section.container .downloads .card img {
-    margin: -53px auto;
-}
-.download-section.container .downloads .column-6 {
-  float: left;
-  min-width: 302px;
-}
-
-.download-section.container .downloads .btn {
-  margin: 5px 5px 16px;
-}
-
-.download-section.container .downloads .dropdown::after {
-    right: 16px;
-    top: 16px;
-}
-</style>
