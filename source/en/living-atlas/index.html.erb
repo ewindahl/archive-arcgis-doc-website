@@ -16,52 +16,49 @@ gallery_data_path: data/gallery/living-atlas-agol=en.xml
 expanded_gallery: true
 ---
 
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/living-atlas/">Living Atlas of the World</a></h1>
-	  
-	  <form target="_top" id="gallerySearchForm" autocomplete="off">
-        <input type="search" placeholder="" id="query" class="leader" name="q">
-        <h5 id="gl-cl-btn" class="icon-cancel"></h5>
-		<h5 id="gl-search-btn" class="icon-search"></h5>
-		<!--<input type="submit" value="" id="search1">-->
-      </form>
-	  
-    </header>
-	 <nav>
-      <ul>
-        <li> <a href="/en/living-atlas/about/"> Home </a> </li>
-        <li> <a href="/en/living-atlas/use/"> Use </a> </li>
-        <li> <a href="/en/living-atlas/contribute/"> Contribute </a> </li>
-		<li class="current"> <a href="/en/living-atlas/"> Browse </a> </li>
-      </ul>
-    </nav>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 text-white"><a class="text-white" href="/en/living-atlas/">Living Atlas of the World</a></h1>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+		  <div class="search-bar">
+			 <form id="gallerySearchForm" target="_top" autocomplete="off">
+			  <input type="search" name="q" id="query" class="leader" placeholder="">
+			  <input type="hidden" name="collection" value="help" />
+			  <input type="hidden" name="language" value="<%= current_language %>" />
+			  <h5 id="gl-cl-btn" class="icon-cancel"></h5>
+			  <button class="search-submit icon-ui-search" type="submit"></button>
+			</form>
+		  </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		  <a class="sub-nav-link" href="/en/living-atlas/about/"> Home </a>
+        <a class="sub-nav-link" href="/en/living-atlas/use/"> Use </a>
+        <a class="sub-nav-link" href="/en/living-atlas/contribute/"> Contribute </a>
+        <a class="sub-nav-link is-active" href="/en/living-atlas/"> Browse </a>
+      </nav>
+    </div>
   </div>
-</div>
+</header>
 
-<div class="container content">
+
+<div class="panel panel-white panel-no-border panel-no-padding">
+	<div class="content container leader-3">
   
   <%= partial :"_partial/galleryFilters" %>
     <div id="reference-content">
 
-   <!-- 
-    <div id="rss">
-     <a target="_self" href="http://www.arcgis.com/sharing/search?q=(group:( 8cb0765d4f394cc097407068580188ad))&amp;f=rss" rel="nofollow">
-      <img src="/img/gallery/rss-icon.png" alt="RSS">
-     </a>
-    </div>-->
+  
 
     <div id="gl-display">
      <div id="spinner" style="display: none;">
-    <img alt="loading" src="/img/gallery/ajax-loader.gif">
+		<img alt="loading" src="/img/gallery/ajax-loader.gif">
      </div>
-<!--
-      <div id="gl-display-type">Display: <a id="display2" href="#">List</a> | <a id="display1" class="displaytype_selected" href="#">Thumbnail</a> | <a id="display3" href="#">Detail</a></div>
-
-     <div id="gl-display-shown"><span>Show: </span><a href="#" id="numn1">15</a> | <a href="#" class="displayn_selected" id="numn2">30</a> | <a href="#" id="numn3">45</a> items</div>
-  
-     <div class="gl-pnavinfo-s"></div> -->
      
      <!-- Result area -->
      <div id="gl-content" class="display1">
@@ -70,12 +67,41 @@ expanded_gallery: true
 
      
     </div>
-      <div class="clear"></div>
+	 
+     <div class="clear"></div>
+	  
+	  <div class="profilePopup">
+        <a href="JavaScript:void(0);"><span class="right icon-ui-close">Close</span></a>
+        <div class="clear"></div>
+        <div class="spinner">
+            <div>
+              <img alt="loading" src="/img/gallery/ajax-loader.gif">
+            </div>
+        </div>
+        <div class="profileDetails hide column-24 left" style="position: relative; top: 0px; left: 0px;">
+            <div class="column-2">
+              <div class="itemThumbnailContainer"></div>
+            </div>
+            <div class="column-7">
+              <h4 class="profile-name blue"></h4>
+              <div class="drop-shadow">
+                <p class="profile-content">
+                  
+                </p>
+              </div>
+              <div class="profileLinks right">
+                <a class="profileLink" target="_blank" href="#">Profile</a>
+                <a class="profileItemsLink" target="_blank" href="#">Items</a>
+                <a class="profileGroupLink" target="_blank" href="#">Groups</a>
+              </div>
+            </div>
+        </div>
+      </div>
     </div> <!-- End of reference content -->
-	
-	 <!--
-	 <div id="gl-pagenav">
-     </div> -->
-
-    
+	 
+	 
+	 
+	</div>
 </div>
+
+	
