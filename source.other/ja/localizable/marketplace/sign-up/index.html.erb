@@ -1,0 +1,136 @@
+---
+layout: marketplace/layout
+
+title: サイン アップ - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+  - marketplace/init
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">プロバイダーとしてサイン アップ</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">ArcGIS Marketplace でアプリケーションを販売することができます。世界で最大規模の GIS ユーザー ベースにアクセスすることができます。簡単にユーザーとつながり、無料のトライアルを提供してリードを生み出すことができます。アプリケーション プロバイダーとして、アプリケーションの販売による売上高を 100% 受け取ることができます。詳細は、「<a href="/ja/marketplace/provider/faq.htm">FAQ</a>」をご参照ください。</p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">Esri パートナーの場合:</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">自社ソリューションを ArcGIS Marketplace にリストすることで、より幅広いユーザーにアピールできます。<a href="http://partnerportal.esri.com/">Esri Partner Portal</a> にログインし、プロバイダーになるための条件を確認します。</p>
+		
+      </section>
+
+	<header>
+        <h2 data-langlabel="already-an-esri-partner">Esri 新規ビジネス プログラムに参加し、Esri スタートアップに参加する</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience"><a href="https://developers.arcgis.com/startups/">Esri 新規ビジネス プログラム</a>とは、3 年間無料でご参加いただけるプログラムで、新規ビジネスが自社製品にマッピングや位置解析機能を組み込むためのツールを提供します。対象となるスタートアップは、オンライン サービス、ソフトウェア、トレーニングとサポート、コンテンツ、その他の機会を手に入れ、成功にお役立ていただけます。</p>
+		
+
+      </section>
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">パートナーではない、 Esri のご利用が初めての場合:</h2>
+		<p data-langlabel="provider-signup-note">ユーザー向けに魅力的なソリューションを構築する開発者、スタートアップ、組織を求めています。ぜひ貴社の情報をお寄せください。Esri のご利用にあたってサポートさせていただきます。</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="company-name" for="company-name">会社名: </label>
+			  <input type="text" id="companyName" name="companyName">
+			  <label data-langlabel="first-name" for="first-name">氏名 (名): </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">氏名 (姓): </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">電子メール アドレス: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">電話番号: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">組織に関する情報: </label>
+			  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
+			  <label data-langlabel="services" for="services">ソリューションまたはサービスに関する情報: </label>
+			  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
+			  <label data-langlabel="website" for="website">Web サイト: </label>
+			  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">自動生成されたスパムを防ぐために、表示されている数字を入力してください。</label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">数字: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="internal" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="ja" name="lg">
+			<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
+			<input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">送信</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>ArcGIS Marketplace プロバイダーについて関心をお寄せいただき、ありがとうございました。数日以内にご連絡いたします。</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>
+

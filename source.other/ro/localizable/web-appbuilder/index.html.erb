@@ -32,7 +32,7 @@ mobile: true
 	 <nav>
       <ul>
         <li class='current'><a href="/ro/web-appbuilder/">Prima pagină</a></li>
-        <li><a href="/ro/web-appbuilder/create-apps/">Creare de aplicaţii</a></li>
+        <li><a href="/ro/web-appbuilder/create-apps/">Creare aplicaţii</a></li>
         <li><a href="/ro/web-appbuilder/manage-apps/">Gestionare aplicaţii</a></li>
         <li><a href="/ro/web-appbuilder/extend-apps/">Extindere aplicaţii</a></li>
       </ul>
@@ -101,14 +101,23 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">Browsere suportate</h2>
+		<p>Aplicaţia 2D acceptă următoarele browsere:</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari 3+</li>
+          <li>Safari 3 şi versiuni ulterioare</li>
 		  <li>Edge</li>
           <li>Internet Explorer 9 şi versiunile ulterioare</li>
         </ul>
-        
+		<p>Aplicaţia 3D acceptă următoarele browsere:</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari 7.2 şi versiuni ulterioare</li>
+		  <li>Edge</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
         <h2 class="divider">Licenţă</h2>
 
@@ -127,33 +136,37 @@ mobile: true
 
          <a name="whatIsNew"></a>
         <h2 class="divider">Ce este nou</h2>
-        <p>Web AppBuilder for ArcGIS a fost actualizat în noiembrie 2015. Acesta include următoarele noi caracteristici şi îmbunătăţiri:</p>
+        <p>Web AppBuilder for ArcGIS a fost actualizat în iunie 2016. Acesta include următoarele noi caracteristici şi îmbunătăţiri:</p>
         <ul>
-          <li>Starea aplicaţiei, inclusiv extinderea hărţii şi vizibilitatea stratului tematic, este acum salvată automat atunci când închideţi browserul.</li>
-          <li>Serviciul securizat prin web de la ArcGIS for Server este acceptat în întregime.</li>
-          <li>Şase noi parametri de URL vă permit să găsiţi locaţia sau obiectul spaţial, să furnizaţi datele de autentificare, să interogaţi obiectele spaţiale, să adăugaţi un punct, să schimbaţi regiunea şi să specificaţi WKID pentru a transfoca sau panorama harta.</li>
-          <li>Un nou widget Editor atribute în masă vă permite să editaţi simultan atribute multiple.</li>
-          <li>Un nou widget Tablou de control Reviewer afişează statisticile rezultatelor calităţii datelor sub formă de diagrame circulare sau cu bare de tip infografic pentru a rezuma problemele legate de calitatea datelor identificate în datele GIS.</li>
-          <li>Un nou widget Raport obiecte spaţiale vă permite să colectaţi şi să administraţi feedback privind calitatea datelor de la utilizatori.</li>
-		  <li>Un nou widget Măsurare imagine vă permite să efectuaţi măsurători în serviciile de imagini cu capacităţi de măsurare.</li>
-          <li>Widgetul Căutare are opţiuni de adăugare de text substituent pentru toate sursele de căutare şi de căutare după extinderea de hartă curentă.</li>
-          <li>Widgetul Tabel de atribute actualizează straturile tematice în mod corespunzător atunci când sunt modificate pe hartă.</li>
-		  <li>Widgetul Editare transferă atributele editabile configurate pe hartă.</li>
-		  <li>Widgetul Coordonată sporeşte lizibilitatea textului coordonatelor.</li>
-		  <li>Widgetul Ecran de pornire furnizează o culoare de fundal particularizată.</li>
-		  <li>Widgetul Interogare acceptă interogarea de tabele corelate şi afişarea de obiecte spaţiale asociate în rezultat.</li>
-		  <li>Widgetul Geoprocesare are opţiuni de particularizare a câmpurilor din tabelul rezultat şi de export al rezultatelor către CSV, Colecţie de obiecte spaţiale şi GeoJSON.</li>
-		  <li>Widgetul Indicaţii adaugă configurarea url-ului stratului tematic cu traficul.</li>
-		  <li>Fereastra Alegere hartă web furnizează sortarea hărţilor în baza celor mai recente, celor mai multe vizualizări, celor mai mari note, titlului şi proprietarului.</li>
-		  
+          <li>Stilul Adăugare selector de culori în cadrul temelor, care vă permite să alegeţi culoarea dorită sau să o selectaţi din paleta de culori aprobată a agenţiei dvs.</li>
+		  <li>Puteţi seta fonturi personalizate pentru titlul şi subtitlul aplicaţiei în cadrul filei Atribute.</li>
+		  <li>Puteţi configura Servicii premium ArcGIS Online şi Conţinut premium pentru acces public în cadrul filei Atribute.</li>
+          <li>Noul widget Selectare comunică cu ale widgeturi pentru a realiza acţiuni asupra obiectelor spaţiale selectate.</li>
+		  <li>Noul widget Partajare adaugă aplicaţiilor experienţa partajării pe reţele sociale.</li>
+		  <li>Noul widget Adăugare date permite utilizatorilor finali să caute straturi tematice în ArcGIS Online şi să introducă URL-uri pentru a adăuga date hărţilor.</li>
+          <li>Noul widget Filtrare vă permite să filtraţi obiecte spaţiale pe baza unei expresii. Alte widgeturi vor onora setările de filtrare, dacă acestea sunt aplicabile. </li>
+		  <li>Noul widget Editor inteligent extinde widgetul de editare de bază cu atribute inteligente, presetarea valorilor câmpurilor, validarea înregistrărilor şi vizualizarea ferestrelor pop-up în timpul editării.</li>
+          <li>Noul widget Vizualizator imagini oblice afişează imaginile în sistemele native de coordonate ale acestora utilizând sistemul de coordonate al imaginii. Acest lucru permite panoramarea în modul oblic, la un singur unghi de vizualizare, sau schimbarea unghiului pentru vizualizarea zonei dorite din diferite unghiuri.</li>
+		  <li>Noul widget Filtru grup permite crearea unor grupuri de straturi tematice la care se vor aplica filtrele de valori. Aveţi opţiunea de a salva şi reîncărca grupurile definite, revenind apoi în orice moment pentru a vă relua lucrul.</li>
+          <li>Widgetul Rezumat informaţii nu mai este în faza beta. Acest widget vă permite să furnizaţi o numărătoare şi să vizualizaţi o listă a obiectelor spaţiale conţinute în extinderea curentă a hărţii pentru fiecare dintre straturile tematice specificate. Straturile tematice de puncte configurate în widget pot fi vizualizate opţional ca grupări.</li>
+		  <li>Widgetul Interogare adaugă raporturi spaţiale, precum cele de intersectare, suprapunere şi conţinere, care permit efectuarea interogărilor asupra obiectelor spaţiale dintr-un alt strat tematic.</li>
+		  <li>Widgetul Editare include opţiuni pentru toleranţă şi şablonul de filtrare pentru obiecte spaţiale.</li>
+		  <li>Selectarea înregistrărilor în Tabelul de atribute va evidenţia obiectele spaţiale ale acestora pe hartă şi reciproca. </li>
+		  <li>Widgetul Geoprocesare primeşte ca date de intrare un set de obiecte spaţiale dintr-un strat tematic, fereastră pop-up, sau de la un widget Interogare sau Selectare.</li>
+		  <li>Widgetul Listă straturi tematice vă permite să selectaţi ce straturi tematice doriţi să afişaţi în listă. Puteţi controla, de asemenea, vizibilitatea tuturor straturilor tematice.</li>
+		  <li>Widgetul Aproape de mine, este îmbunătăţit cu parametri de configurare suplimentari, incluzând posibilitatea de a afişa bufferul pe hartă, de a returna poligoane care se intersectează în loc de poligoane cu buffer şi de a transfoca la obiectele spaţiale selectate, în loc de buffer.</li>
+		  <li>Widgetul căutare district este îmbunătăţit pentru a accepta poligoane suprapuse.</li>
+		  <li>Widgetul Diagrame tabel corelate este îmbunătăţit pentru a accepta grafice polare.</li>
+		  <li>Widgetul existent 3DFx a fost îmbunătăţit pentru a include mai multe efecte de animaţie 3D.</li>
+	
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">Versiunile acceptate de ArcGIS API for JavaScript</h2>
-        <p>Web AppBuilder acceptă ArcGIS API for JavaScript 3.15.</p>
+        <p>Web AppBuilder acceptă ArcGIS API for JavaScript 3.17.</p>
 
         <h3>Limbi acceptate</h3>
-        <p> arabă, cehă, chineză simplificată, chineză tradiţională (Hong Kong), chineză tradiţională (Taiwan), daneză, olandeză, engleză, estoniană, finlandeză, franceză, germană, greacă, ebraică, italiană, japoneză, coreeană, letonă, lituaniană, norvegiană, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, spaniolă, suedeză, thailandeză, turcă şi vietnameză.</p>
+        <p> arabă, croată, cehă, chineză simplificată, chineză tradiţională (Hong Kong), chineză tradiţională (Taiwan), coreeană, daneză, ebraică, engleză, estoniană, finlandeză, franceză, germană, greacă, italiană, japoneză, letonă, lituaniană, norvegiană, olandeză, poloneză, portugheză (Brazilia), portugheză (Portugalia), română, rusă, sârbă, spaniolă, suedeză, thailandeză, turcă şi vietnameză.</p>
         <p>Limba utilizată de aplicaţie este determinată de setarea pentru limbă din browserul dvs.</p>
 
         <p>Împărtăşiţi-vă <a href="http://ideas.arcgis.com/">ideile</a> şi <a href="http://support.esri.com/en/">trimiteţi-ne părerile dvs</a>.</p>

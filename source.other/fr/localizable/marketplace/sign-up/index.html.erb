@@ -1,0 +1,136 @@
+---
+layout: marketplace/layout
+
+title: Inscription - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+  - marketplace/init
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">S'inscrire pour devenir fournisseur</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">Vendez votre application sur ArcGIS Marketplace. Accédez à la plus grande base d'utilisateurs de SIG au monde. Vous pouvez ainsi facilement établir des contacts avec les utilisateurs, fournir des versions d'évaluation et générer des perspectives commerciales. En tant que fournisseur d'application, vous conservez 100 % des recettes issues de la vente de votre application. Consultez le <a href="/fr/marketplace/provider/faq.htm">FAQ</a> pour en savoir plus. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">Déjà partenaire Esri ?</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">Touchez un plus large public en répertoriant votre solution dans ArcGIS Marketplace. Connectez-vous au <a href="http://partnerportal.esri.com/">portail des partenaires Esri</a> pour savoir comment devenir fournisseur.</p>
+		
+      </section>
+
+	<header>
+        <h2 data-langlabel="already-an-esri-partner">Devenir une start-up Esri en rejoignant le Programme d'entreprises émergentes Esri</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">Le <a href="https://developers.arcgis.com/startups/">Programme d'entreprises émergentes Esri</a> est un programme gratuit de trois ans qui donnent aux entreprises émergentes les outils dont elles ont besoin pour intégrer des fonctionnalités d'analyse d'emplacement et de cartographie dans leurs produits. Les start-ups retenues bénéficient de services en ligne, de logiciels, de formations et d'un support, de différents contenus et opportunités qui les aident dans leur réussite.</p>
+		
+
+      </section>
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">Vous n'êtes pas partenaire ? Vous découvrez Esri ?</h2>
+		<p data-langlabel="provider-signup-note">Nous recherchons des développeurs, start-ups et organisations désireux de créer des solutions de qualité pour nos utilisateurs. Donnez-nous quelques informations à votre sujet et nous vous aiderons à démarrer.</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="company-name" for="company-name">Nom de l'entreprise : </label>
+			  <input type="text" id="companyName" name="companyName">
+			  <label data-langlabel="first-name" for="first-name">Prénom : </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">Nom : </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">Adresse électronique: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Numéro de téléphone : </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">Présentez-vous ou décrivez votre organisation : </label>
+			  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
+			  <label data-langlabel="services" for="services">Décrivez vos solutions ou services : </label>
+			  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
+			  <label data-langlabel="website" for="website">Site Web : </label>
+			  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">Pour nous aider à lutter contre le courrier indésirable automatique, saisissez les nombres fournis : </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">Nombres : <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="internal" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="fr" name="lg">
+			<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
+			<input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">Envoyer</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>Nous vous remercions de votre intérêt pour le statut de fournisseur ArcGIS Marketplace. Nous vous recontacterons dans les prochains jours ouvrables.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>
+

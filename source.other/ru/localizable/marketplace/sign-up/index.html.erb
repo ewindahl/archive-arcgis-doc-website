@@ -1,0 +1,136 @@
+---
+layout: marketplace/layout
+
+title: Войти - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+  - marketplace/init
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">Подпишитесь, чтобы стать провайдером</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">Продавайте ваши приложения на ArcGIS Marketplace. Получите доступ к крупнейшей базе пользователей ГИС во всем мире. Мы упростили связь с пользователями, предложение пробных версий и определение круга потенциальных клиентов. Как поставщик приложения, вы получаете 100% прибыли от продажи вашего приложения. Подробнее см. в разделе <a href="/ru/marketplace/provider/faq.htm">FAQ</a>. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">Вы уже партнер Esri?</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">Обратитесь к широкой аудитории, разместив ваше решение на ArcGIS Marketplace. Войдите в <a href="http://partnerportal.esri.com/">Esri Partner Portal</a>, чтобы узнать, как стать поставщиком.</p>
+		
+      </section>
+
+	<header>
+        <h2 data-langlabel="already-an-esri-partner">Стать Esri Startup, присоединившись к Esri Emerging Business Program</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience"><a href="https://developers.arcgis.com/startups/">Esri Emerging Business Program</a> - это бесплатная трехлетняя программа, которая дает бизнесу возможность встроить картографические и геоаналитические элементы в свои продукты. Те, кого выбирают в качестве старт-апов, получают онлайн-сервисы, программное обеспечения, обучение, поддержку, ресурсы и другие бонусы, которые помогают им стать успешнее.</p>
+		
+
+      </section>
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">Вы еще не партнер? Новичок в Esri?</h2>
+		<p data-langlabel="provider-signup-note">Мы ищем разработчиков, старт-аперов и организации, которые готовы предлагать новые решения для наших пользователей. Расскажите нам о себе и мы поможем вам начать.</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="company-name" for="company-name">Название компании: </label>
+			  <input type="text" id="companyName" name="companyName">
+			  <label data-langlabel="first-name" for="first-name">Имя: </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">Фамилия: </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">Email: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">Телефон: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">Расскажите о себе или своей организации: </label>
+			  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
+			  <label data-langlabel="services" for="services">Расскажите о своем решении или сервисах: </label>
+			  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
+			  <label data-langlabel="website" for="website">Веб-сайт: </label>
+			  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">Чтобы подтвердить что Вы не робот, введите эти символы: </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">Цифры: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="internal" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="ru" name="lg">
+			<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
+			<input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">Отправить</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>Спасибо за вашу заинтересованность стать поставщиком ArcGIS Marketplace. Мы свяжемся с вами в течение нескольких дней.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>
+

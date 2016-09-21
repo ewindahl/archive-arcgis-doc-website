@@ -101,14 +101,23 @@ mobile: true
 
         <a name="supportedBrowsers"></a>
         <h2 class="divider">Browser supportati</h2>
+		<p>L'app 2D supporta i seguenti browser:</p>
         <ul>
           <li>Chrome</li>
           <li>Firefox</li>
-          <li>Safari 3+</li>
+          <li>Safari 3 e versione successiva</li>
 		  <li>Segmento</li>
           <li>Internet Explorer 9 e versioni successive</li>
         </ul>
-        
+		<p>L'app 3D supporta i seguenti browser:</p>
+        <ul>
+          <li>Chrome</li>
+          <li>Firefox</li>
+          <li>Safari 7.2 e versione successiva</li>
+		  <li>Segmento</li>
+          <li>Internet Explorer 11</li>
+        </ul>
+		
         <a name="license"></a>
         <h2 class="divider">Licenza</h2>
 
@@ -127,33 +136,37 @@ mobile: true
 
          <a name="whatIsNew"></a>
         <h2 class="divider">Novità</h2>
-        <p>Web AppBuilder for ArcGIS è stato aggiornato a novembre 2015. Include le seguenti nuove feature e miglioramenti:</p>
+        <p>Web AppBuilder for ArcGIS è stato aggiornato a giugno 2016. Include le seguenti nuove feature e miglioramenti:</p>
         <ul>
-          <li>Lo stato dell'app, inclusi l'estensione mappa e la visibilità del layer, viene ora automaticamente salvato quando si chiude il browser.</li>
-          <li>È ora completamente supportato un servizio protetto a livello Web di ArcGIS for Server.</li>
-          <li>Sei nuovi parametri URL consentono di trovare posizione o feature, fornire il login, interrogare feature, aggiungere punti, cambiare le impostazioni locali e specificare WKID per applicare zoom o pan sulla mappa.</li>
-          <li>Un nuovo widget Editor attributi batch consente di modificare contemporaneamente più attributi.</li>
-          <li>Un nuovo widget Dashboard di Reviewer visualizza statistiche dei risultati di qualità dei dati come grafici a barre o a torta infografica per riepilogare problemi di qualità dei dati identificati nei dati GIS.</li>
-          <li>Un nuovo widget Feature Report consente di raccogliere e gestire commenti sulla qualità dei dati dagli utenti.</li>
-		  <li>Un nuovo widget Misurazione immagine consente di eseguire misure su image service con funzionalità di misurazione.</li>
-          <li>Il widget per la ricerca dispone di opzioni per aggiungere testo del segnaposto per tutte le fonti di ricerca ed eseguire una ricerca per estensione mappa corrente.</li>
-          <li>Il widget Tabella attributi aggiorna i layer di conseguenza quando vengono modificati nella mappa.</li>
-		  <li>Il widget Modifica trasporta gli attributi modificabili configurati nella mappa.</li>
-		  <li>Il widget Coordinate facilita la lettura del testo delle coordinate.</li>
-		  <li>Il widget Splash fornisce colore di sfondo personalizzato.</li>
-		  <li>Il widget Query dispone del supporto per eseguire interrogazioni su tabelle correlate e visualizzarenel risultato le feature correlate.</li>
-		  <li>Il widget Geoprocessing dispone di opzioni per personalizzare i campi nell'output tabelle ed esportare i risultati in CSV, Raccolta feature e GeoJSON.</li>
-		  <li>Il widget Directions consente di aggiungere dell’URL del layer per il traffico.</li>
-		  <li>La finestra Scegli mappa Web fornisce l'ordinamento sulle mappe in base alla più recente, la più visualizzata, quella con il rating più alto, in base al titolo e al proprietario.</li>
-		  
+          <li>Aggiunto stile Selettore colore nei temi per poter scegliere il proprio colore o abbinare la tavolozza colori approvata dell'agenzia.</li>
+		  <li>È possibile impostare caratteri personalizzati per il titolo e il sottotitolo dell'app nella scheda Attributi.</li>
+		  <li>È possibile configurare i servizi ArcGIS Online Premium e i contenuti premium per l'accesso pubblico nella scheda Attributo.</li>
+          <li>Il nuovo widget Seleziona comunica con altri widget per eseguire azioni sulle feature selezionate.</li>
+		  <li>Il nuovo widget Condividi consente un'esperienza di condivisione social delle app.</li>
+		  <li>Il nuovo widget Aggiungi dati consente agli utenti finali di cercare layer in ArcGIS Online e immettere URL per aggiungere dati alla mappa.</li>
+          <li>Il nuovo widget Filtro consente di filtrare le feature in base a un'espressione. Atri widget rispetteranno le impostazioni filtro, se applicabili. </li>
+		  <li>Il nuovo widget Smart Editor estende il widget di modifica principale, ad esempio attributi Smart, preimpostando valori campo, convalida record e visualizzando popup durante la modifica.</li>
+          <li>Il nuovo widget Viewer obliquo visualizza immagini nel sistema di coordinate nativo utilizzando il sistema di coordinate dell'immagine. Questo consente all'utente di eseguire il pan in modalità obliqua, in un singolo angolo di visualizzazione, o cambiare gli angoli per visualizzare un'area di interesse da angoli diversi.</li>
+		  <li>Il nuovo widget Filtro gruppo consente di creare raggruppamenti di layer cui applicare un filtro valore. È possibile salvare e ricaricare i raggruppamenti definiti per ritornare in qualsiasi momento e riprendere il lavoro.</li>
+          <li>Il widget Riepilogo informazioni non è più in versione beta. Questo widget consente di fornire un conteggio e visualizzare un elenco di feature contenute nell'estensione mappa corrente per ogni layer specificato. I layer punto configurati nel widget possono essere facoltativamente visualizzati come cluster.</li>
+		  <li>Il widget Interrogazione aggiunge relazioni spaziali, ad esempio interseca, sovrapponi e contieni per eseguire l'interrogazione rispetto alle feature in un altro layer.</li>
+		  <li>Il widget Modifica include opzioni per modello di feature tolleranza e filtro.</li>
+		  <li>La selezione di record nella Tabella attributi evidenzia le relative feature sulla mappa e viceversa. </li>
+		  <li>Il widget Geoprocessing accetta un insieme di feature come input da un layer, un popup, un widget Interrogazione o Seleziona.</li>
+		  <li>Il widget Elenco layer consente di scegliere i layer da visualizzare nell'elenco. È anche possibile controllare la visibilità di tutti i layer.</li>
+		  <li>Il widget Nelle vicinanze è stato migliorato con parametri di configurazione aggiuntivi che includono la possibilità di visualizzare il buffer sulla mappa, restituire poligoni intersecanti anziché poligoni memorizzati nel buffer ed eseguire lo zoom alle feature selezionate anziché al buffer.</li>
+		  <li>Il widget District Lookup è stato migliorato per supportare poligoni impilati.</li>
+		  <li>Il widget Grafici della tabella correlati è stato migliorato per supportare grafici polari.</li>
+		  <li>Il widget 3DFx esistente è stato migliorato per includere più effetti per animazione 3D.</li>
+	
         </ul>
 
          <a name="supportedAPI"></a>
         <h2 class="divider">Versioni supportate di ArcGIS API for JavaScript</h2>
-        <p>Web AppBuilder supporta ArcGIS API for JavaScript 3.15.</p>
+        <p>Web AppBuilder supporta ArcGIS API for JavaScript 3.17.</p>
 
         <h3>Lingue supportate</h3>
-        <p> Arabo, Ceco, Cinese semplificato, Cinese tradizionale (Taiwan), Cinese tradizionale (Hong Kong), Coreano, Danese, Ebraico, Estone, Finlandese, Francese, Greco, Inglese, Italiano, Giapponese, Lettone, Lituano, Norvegese, Olandese, Polacco, Portoghese (Brasile), Portoghese (Portogallo), Rumeno, Russo, Spagnolo, Svedese, Tailandese, Tedesco, Turco e Vietnamita.</p>
+        <p> Arabo, Ceco, Cinese semplificato, Cinese tradizionale (Hong Kong), Cinese tradizionale (Taiwan), Coreano, Croato, Danese, Ebraico, Estone (, ), Finlandese, Francese, Greco, Inglese, Italiano, Giapponese, Lettone (, ), Lituano (, ), Norvegese, Olandese, Polacco, Portoghese (Brasile), Portoghese (Portogallo), Rumeno, Russo, Serbo, Spagnolo, Svedese, Tailandese, Tedesco, Turco e Vietnamita.</p>
         <p>La lingua utilizzata dall'app dipende dalla lingua impostata nel browser.</p>
 
         <p>Vi invitiamo a condividere le vostre <a href="http://ideas.arcgis.com/">idee</a> e a <a href="http://support.esri.com/en/">inviarci commenti e suggerimenti</a>.</p>

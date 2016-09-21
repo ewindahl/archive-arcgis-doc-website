@@ -13,7 +13,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2015-7-3"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="zh-cn">
+  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-07-05"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="zh-cn">
 
 mobile: true
 
@@ -23,7 +23,7 @@ mobile: true
     <header>
       <h1><a href="/zh-cn/navigator/">Navigator for ArcGIS</a></h1>
 	  <form id="helpSearchForm" target="_top">
-       <input type="search" name="q" class="leader" placeholder="Search Navigator"> 
+       <input type="search" name="q" class="leader" placeholder="搜索 Navigator"> 
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="navigator-ipad" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
@@ -32,6 +32,7 @@ mobile: true
 	 <nav>
       <ul>
         <li class='current'><a href="/zh-cn/navigator/">主页</a></li>
+        <li><a href="/zh-cn/navigator/prepare-maps/prepare-maps.htm">准备地图</a></li>
         <li><a href="/zh-cn/navigator/ipad/navigate/guided-tour.htm">导航</a></li>
         <li><a href="http://links.esri.com/geonet-navigator">论坛</a></li> 
       </ul>
@@ -47,6 +48,7 @@ mobile: true
 
         <p>
           <a href="http://links.esri.com/navigator-ios-install"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a> 
+          <a style="font-size:1.23em; margin:10px; vertical-align:middle" class="btn primary icon-android" href="https://earlyadopter.esri.com/callout/?callid=%7b28F9956B-A1F0-4793-8B7E-BA0E9473D06A%7d">Android 现已推出 beta 版本！</a>
         </p> 
         </header>
         <hr />
@@ -66,14 +68,13 @@ mobile: true
         </div>
         
 	<div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="nav-home-2.png" />
+          <img src="nav-home-2.png" title="使用您的数据"/>
 
-          <h3>与 Collector 相集成</h3>
-          <p>可轻松与 Collector for ArcGIS 等其他 Esri 应用程序相集成，能够在外业工作时进行位置导航。
-</p>
+          <h3>使用您的数据</h3>
+          <p>使用您自己的数据创建导航地图 - 搜索您的资产、在您的道路上行驶，以及查看您的图层。</p>
           <p>
 		  
-		<a href="/zh-cn/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;详情介绍</a><br />
+		<a href="/zh-cn/navigator/prepare-maps/prepare-maps.htm" class="icon-right-arrow">&nbsp;详情介绍</a><br />
 				
           </p>
         </div>
@@ -81,75 +82,104 @@ mobile: true
         <div class="clear"></div>
         
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-		<img src="1.png" />
+		<img src="1.png" title="与 Collector 相集成"/>
 		
-          <h3>创建应用链接</h3>
-          <p>与您所在组织的应用无缝配合。开发应用链接，将 Navigator 与您的应用相结合。</p>
+          <h3>与 Collector 相集成</h3>
+          <p>可轻松与 Collector for ArcGIS 之类的 Esri 应用程序连接，从而在外业工作中导航到工作地点。</p>
           <p>
 		  
-		<a href="/zh-cn/navigator/ipad/navigate/app-links.htm" class="icon-right-arrow">&nbsp;详情介绍</a><br />
+		<a href="/zh-cn/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;详情介绍</a><br />
 				
           </p>
         </div>
         
 	<div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="4.PNG" />
+          <img src="4.PNG" title="将停靠点发送到 Navigator"/>
 
-          <h3>需要帮助？</h3>
-          <p>查看<a href="/zh-cn/navigator/iphone/navigate/faqs.htm">常见问题</a>来获取常见问题的答案，使用<a href="/zh-cn/navigator/iphone/navigate/quick-reference.htm">快速参考</a>来了解各个工具在应用中的位置，或访问我们的<a href="http://links.esri.com/geonet-navigator">论坛</a>。</p>
+          <h3>将停靠点发送到 Navigator</h3>
+          <p>使用自定义 URL 方案，以便用户可从应用程序、网站或电子邮件启动 Navigator，并根据您提供的参数进行导航。</p>
+          <p>
+            <a href="https://github.com/Esri/navigator-integration" class="icon-github">&nbsp;在 GitHub 上查看详情</a><br />
+          </p>
         </div>
         
         <div class="clear"></div>
 
         <a name="features"></a>
         <h2 class="divider">功能</h2>
-        <p>获取方向、编辑路径并进行导航以便指引工作人员到达所需的位置。但 Navigator 不仅仅是一个用户级别的导航应用。使用提供的地图来搜索并导航到您所在组织的资产，指定出行模式，并将 Navigator 与您的应用相集成，而且所有这些功能均支持离线工作。</p>
+        <p>获取方向、编辑路径并进行导航以便指引工作人员到达所需的位置。</p>
         <ul>
           <li>使用具有自动重计算路线功能的语音式逐向导航。</li>
-          <li>搜索位置并获取一个或多个停靠点的方向。</li>
-          <li>地图可以下载，支持离线导航。</li>
-          <li>选择首选的出行模式，例如驾驶、货运或步行。</li>
-          <li>与 Collector for ArcGIS 等其他 ArcGIS 应用程序以及您自己的应用程序相集成。</li>
+          <li>通过本地存储数据进行完全离线导航。</li>
+          <li>访问 Esri 的导航数据或使用您自己的地图 - 搜索您的资产、在您的道路上行驶，以及查看您的图层。</li>
+          <li>一次完成一个停靠点，或创建一整天工作的工作列表。</li>
+          <li>使用特定于车辆的出行模式。</li>
+          <li>从电子邮件、您自己的应用程序或诸如 Collector for ArcGIS 的 ArcGIS 应用程序接收停靠点。</li>
         </ul>
         
         <a name="systemRequirements"></a>
         <h2 class="divider">系统要求</h2>
-        <p>要使用 Navigator for ArcGIS，您必须具有 ArcGIS Online 帐户，并且此帐户应已配置 <a href="/zh-cn/arcgis-online/administer/manage-licenses.htm" target="_blank">Navigator for ArcGIS 许可</a>。</p>
-
-
-        <h3>数据要求</h3>
-        <p>Navigator 随附提供可支持导航的地图。导航地图在 ArcGIS Online 中提供，并可下载到您的设备中。未来版本的 ArcGIS Pro 将会支持创建自定义导航地图。</p>
-
-
-        <h3>设备要求</h3>
-        <table><tr>
+	<table><tr>
           <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
             <ul>
               <li>版本 8 或更高版本</li>
               <li>iPad（为获取最佳性能，最好为版本 4 或更高版本），iPhone（为获取最佳性能，最好为版本 6 或更高版本），iPod touch</li>
             </ul>
           </td>
+          <td valign="top" width="250px;"><h4 class="icon-android">Android (Beta)</h4>
+	    <ul>
+	      <li>Android 4.2 (Jelly Bean) 或更高版本</li>
+	      <li>ARMv7 或 x86 处理器</li>
+	      <li>OpenGL ES 2.0 支持</li>
+	      <li>精确位置（基于 GPS 和网络）支持</li>
+            </ul>
+          </td>
         <tr></table>
 
 	 <h3>受支持语言</h3>
-	    <p>英语、法语、德语、希腊语、意大利语、日语、韩语、葡萄牙语（葡萄牙）、俄语、简体中文、西班牙语和土耳其语。</p>
-	  
+	    <p>阿拉伯语、荷兰语、英语、法语、德语、希腊语、意大利语、希伯来语、日语、韩语、葡萄牙语（巴西）、葡萄牙语（葡萄牙）、俄语、简体中文、西班牙语和土耳其语。</p>        
+
+
+	<a name="arcgisRequirements"></a>
+        <h2 class="divider">ArcGIS 系统要求</h2>
+        <p>要使用 Navigator for ArcGIS，您必须拥有 ArcGIS 组织帐户，并且此帐户应已配置 Navigator for ArcGIS 许可。
+        有关使用 ArcGIS Online 的详细信息，请参阅<a href="/zh-cn/arcgis-online/administer/manage-licenses.htm#ESRI_SECTION1_C9282762EB1F4A72BB3D8794F2E4E516" target="_blank">关于 Navigator for ArcGIS 许可</a>。
+        有关 Portal for ArcGIS 的详细信息，请参阅<a href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-navigator-for-arcgis-licenses.htm#ESRI_SECTION1_D9DCE11B3F03413BBD608ECFA8BC4A04">为您的组织配置 Navigator for ArcGIS 许可</a>。
+        支持 ArcGIS Online 和 Portal for ArcGIS 10.4 及更高版本。</p>
+        
+        <p>您可以使用 Esri 提供的导航地图或创建自己的地图。可从 ArcGIS Online 或 Portal for ArcGIS 获取 Esri 提供的地图，并可将其下载到您的设备。有关提供地图的详细信息，请参阅 <a href="http://server.arcgis.com/en/streetmap-premium/latest/coverage/navigator-maps.htm">Navigator 地图范围</a>。</p>
+        <p>创建和修改供 Navigator 使用地图的要求取决于您希望编辑的内容。请参阅<a href="/zh-cn/navigator/prepare-maps/faqs-author.htm#anchor3">我需要什么许可才能使用导航地图？</a></p>
             
         <a name="whatsNew"></a>
         <h2 class="divider">新特性</h2>     
         
-        <p>Navigator for ArcGIS 1.2 已于 2015 年 11 月发布。该版本包括以下增强功能：</p>
-        
-        <ul>
-	  <li>已本地化为意大利语和土耳其语</li>
-	  <li>增强了基于 SAML 登录的支持</li>
-	  <li>改进了对 iOS 9 的支持</li>
-	  <li>修复了若干缺陷并进行了多处改进</li>
-	</ul>
+        <table>
+	  <tr>
+	    <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
+	      <p>Navigator for ArcGIS 2.0 已于 2016 年 7 月发布。该版本包括以下增强功能：</p>
+	    </td>
+	    <td valign="top" width="250px;"><h4 class="icon-android">Android (Beta)</h4>
+	      <p>Navigator for ArcGIS 的测试版已于 2016 年 5 月发布。该版本包括以下增强功能：</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign="top"><ul>
+              <li>使用您自己的地图 - 搜索您的资产、在您的道路上行驶，以及查看您的图层</li>
+              <li>可在优化的路线中自动重新排序多个停靠点</li>
+              <li>通过自定义 URL 方案转到地址</li>
+              <li>支持 Portal for ArcGIS 10.4 及更高版本</li>
+              <li>已本地化为阿拉伯语、荷兰语、希伯来语和葡萄牙语（巴西）</li>
+              <li>修复了若干缺陷并进行了多处改进</li>
+	    </ul></td>
+	    <td valign="top"><ul>
+	      <li>包括<a href="#sneakPeak">抢先预览</a>表中针对 Android 列出的正在开发的所有功能。支持当前已在 iOS 发行的所有功能。</li>
+	    </ul></td>
+	  </tr>
+        </table>
         
 	<a name="sneakPeek"></a>
 	<h2 class="divider">抢先预览</h2>
-	<p>下表将向您介绍此应用程序的发展方向并展示将出现在设备中的各种功能： </p>
+	<p> 下表列出了此款应用程序的进程，显示了针对各种设备平台的功能： </p>
 	
 	<style>
 	  table.sneakPeek
@@ -172,7 +202,7 @@ mobile: true
 	</style>
         <table class="sneakPeek" border="1">
 	  <caption>基于不同平台的功能<br/>
-	  <span class="icon-check" style="color:black"></span> 已发布，<span class="icon-check icon-orange"></span> 研发中，<span class="icon-check" style="color:lightgray"></span><span class="clear"/> 后续计划<br/>
+	  <span class="icon-check" style="color:black"></span>已发布，<span class="icon-check icon-orange"></span>研发中，<span class="icon-check" style="color:lightgray"></span><span class="clear"/>后续计划<br/>
 空白单元表示尚未计划的功能。<br/>
 面向桌面的支持当前尚未计划。
 	  </caption>
@@ -190,7 +220,7 @@ mobile: true
 	  </tr>	
 	  <tr>
 	    <td>使用自身自定义地图进行导航（地理编码、路径选择和显示）</td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check icon-orange"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr> 
@@ -202,7 +232,7 @@ mobile: true
 	  </tr>
 	  <tr>
 	    <td>使用 Portal for ArcGIS</td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check icon-orange"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>	
@@ -214,7 +244,7 @@ mobile: true
 	  </tr>	
 	</table>
 	
-	<p>请与我们分享您的<a href="http://ideas.arcgis.com/">看法</a>，并<a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">向我们发送反馈</a>。</p>
+	<p>请与我们分享您的<a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bnavigator-for-arcgis%5D">看法</a>，并<a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">向我们发送反馈</a>。</p>
 	
         <p>&nbsp;</p>
 
@@ -227,8 +257,9 @@ mobile: true
         <div class="imgFrame block">
 	  <h3>详细信息</h3>
 	          
-	  <h4><a href="#features">功能</a></h4>
+	  <h4><a href="#features">功能 </a></h4>
 	  <h4><a href="#systemRequirements">系统要求</a></h4>
+	  <h4><a href="#arcgisRequirements">ArcGIS 系统要求</a></h4>
 	  <h4><a href="#whatsNew">新特性</a></h4>
 	  <h4><a href="#sneakPeek">抢先预览</a></h4>
 	          
@@ -248,7 +279,8 @@ mobile: true
     </div>
 
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
+ <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/navigator-for-arcgis/feed/',

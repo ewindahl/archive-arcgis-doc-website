@@ -86,7 +86,13 @@ $(document).ready(function() {
 	}
 
 	if (!isHome) {
-		$('.reference-content .page-title').after (val);
+		if(!window.location.pathname.match( /(\/prepare-maps\/)/)){
+			$('.reference-content .page-title').after (val);
+		}else{
+			modContentLinks (plat);
+			// Update product meta value in search form
+			$('#helpSearchForm input[name=product]').attr("value","navigator-" + plat);
+		}
 	} else {
 		modHomeUrls (plat);
 	}
