@@ -610,7 +610,7 @@ SERow.prototype.agolItemUrl = function (agolId) {
 SERow.prototype.agolImgUrl = function (agolId) {
 		var imgf = (this.data["largeThumbnail"] && this.data["largeThumbnail"] != "") ? this.data["largeThumbnail"] : this.data["thumbnail"],
 		imgurl = gcfg.emptyImgUrl,
-		host = getTier(window.location.hostname).agolHost || "https://www.arcgis.com";
+		host = getTier(window.location.hostname).agolHost || "http://www.arcgis.com";
 
     if(imgf == null){
         imgurl = "http://static.arcgis.com/images/desktopapp.png";

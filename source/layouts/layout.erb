@@ -1,6 +1,6 @@
 <!doctype html>
 <%
-readDirection="ltr"
+readDirection="ltr" 
 if current_language == "ar" or current_language == "he"
 	readDirection="rtl"
 end
@@ -8,7 +8,7 @@ end
 pardotTrackingCode = "4008"
 if request.path.include? "/trust/"
   pardotTrackingCode = "4024"
-end
+end  
 %>
 <!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="<%=readDirection%>"> <![endif]-->
 <!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="<%=readDirection%>"> <![endif]-->
@@ -36,7 +36,7 @@ end
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-
+	  
 	  <% if current_page.data.require_login %>
         (function(){
           var cookieRegex = /esri_auth=/;
@@ -45,7 +45,7 @@ end
           }
         })();
       <% end %>
-
+		
 		<% if current_page.data.loop11 %>
 		var loop11_key = "13faf97dbc6c903ff5e96f7167fce84e4494a9ae";
 		document.write(unescape("%3cscript src='//cdn.loop11.com/my/loop11.js' type='text/javascript'%3e%3c/script%3e"));
@@ -107,7 +107,7 @@ end
     <% end %>
 
 	<!-- Handle Marketplace 404 issue -->
-	<% if current_page.data.pageName and current_page.data.pageName == "404" %>
+	<% if current_page.data.pageName and current_page.data.pageName == "404" %> 
 		<script>
 			if(window.location.href.indexOf("/marketplace/") >= 0){
 				window.location = "/en/marketplace/404/";
@@ -116,15 +116,15 @@ end
 	<% end %>
 
    <link type="text/css" rel="stylesheet" href="/en/asset/css/common.css"/>
-
+	
    <!-- Language Picker-->
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
    <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
    <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
-
+      
    <% #Add langselector .js  if languageSelector has not been defined (to work with existing pages) or "defined but not set to No" %>
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
-	<% if current_language != "en" %>
+	<% if current_language != "en" %> 
 		<link type="text/css" rel="stylesheet" href="/css/screen_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/documentation_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/css/common_l10n.css"/>
@@ -133,11 +133,11 @@ end
 	<% end %>
 	<%= javascript_include_tag "locale/langSelector" %>
    <% end %>
-
+   
    <!--[if IE]>
 		<%= javascript_include_tag "libs/html5-placeholder-shim.js" %>
 	<![endif]-->
-
+	
 	<!--[if lt IE 11]>
 	<script>
 		$(document).ready(function(){
@@ -187,10 +187,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <nav>
               <%= partial "_partial/site_header_nav" %>
             </nav>
-
+            
             <%= link_to "Esri", "http://www.esri.com", id: "esri-logo" %>
 
-<!--
+<!--            
             <div id="lg-container" class="dropdown-navigation">
               <div id="lang-block"></div>
             </div>
@@ -217,11 +217,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <div class="dropdown-content">
                       <div class="dropdown-menu">
                           <ul class="myconsole">
-                              <li><a id="agolProfile" href="https://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a></li>
+                              <li><a id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a></li>
                           </ul>
                           <hr class="myconsole" />
                           <ul class="myconsole">
-                              <li><a id="agolHelp" href="https://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a></li>
+                              <li><a id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a></li>
                           </ul>
                           <hr class="myconsole" />
                           <ul>
@@ -234,7 +234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div id="lang-block"></div>
 
           </div>
-
+        
             <div id="mobile-navigation" class="dropdown-navigation dropdown-wrapper">
               <a href="#" class="dropdown btn small light icon icon-list-2"><%= t("site.nav.select") %></a>
               <div class="dropdown-content">
@@ -243,7 +243,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
               </div>
             </div>
-
+            
           </div>
         </div>
       </header>
@@ -256,22 +256,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	  $(window).load(function() {
 		  <% if current_page.data.blog_url %>
 		  $("#blog").rssFeed({
-			url:"<%= current_page.data.blog_url %>",
-			max: 2,
+			url:"<%= current_page.data.blog_url %>", 
+			max: 2, 
 			layout: 0
 		  });
 		  <% end %>
 		  <% if current_page.data.forum_url %>
 		  $("#forum").rssFeed({
-			url:"<%= current_page.data.forum_url%>",
-			max: 2,
+			url:"<%= current_page.data.forum_url%>", 
+			max: 2,        
 			layout: 1
 		  });
 		  <% end %>
 		  <% if current_page.data.agol_gallery %>
 			  <% if !current_page.data.agol_url %>
 					$("#gallery-cont").agolGallery({
-					    url: "https://www.arcgis.com/sharing/rest/search?q=%20group%3A5e79591f54564399b99c76ec58a245ab%20-type:%22Code%20Attachment%22%20-type:%22Featured%20Items%22%20-type:%22Symbol%20Set%22%20-type:%22Color%20Set%22%20-type:%22Windows%20Viewer%20Add%20In%22%20-type:%22Windows%20Viewer%20Configuration%22%20%20-type:%22Code%20Attachment%22%20-type:%22Featured%20Items%22%20-type:%22Symbol%20Set%22%20-type:%22Color%20Set%22%20-type:%22Windows%20Viewer%20Add%20In%22%20-type:%22Windows%20Viewer%20Configuration%22%20&num=10&sortField=modified&sortOrder=desc&f=json",
+					    url: "http://www.arcgis.com/sharing/rest/search?q=%20group%3A5e79591f54564399b99c76ec58a245ab%20-type:%22Code%20Attachment%22%20-type:%22Featured%20Items%22%20-type:%22Symbol%20Set%22%20-type:%22Color%20Set%22%20-type:%22Windows%20Viewer%20Add%20In%22%20-type:%22Windows%20Viewer%20Configuration%22%20%20-type:%22Code%20Attachment%22%20-type:%22Featured%20Items%22%20-type:%22Symbol%20Set%22%20-type:%22Color%20Set%22%20-type:%22Windows%20Viewer%20Add%20In%22%20-type:%22Windows%20Viewer%20Configuration%22%20&num=10&sortField=modified&sortOrder=desc&f=json",
 					   max:8
 					  });
 				<% else %>
@@ -287,7 +287,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       </div>
     </div>
-
+  
 
     <footer id="footer">
       <div class="container">
@@ -316,7 +316,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    });
    </script>
 
-   <script type="text/javascript">
+   <script type="text/javascript"> 
    piAId = '83202'; piCId = '<%= pardotTrackingCode %>';
   (function() { function async_load(){
   var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
