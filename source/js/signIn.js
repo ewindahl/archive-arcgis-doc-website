@@ -92,8 +92,8 @@ $(document).ready(function() {
   $(".myconsole").css ("display", "none");
 
 /*
-agolProfile - http://www.arcgis.com/home/user.html
-agolHelp - http://www.arcgis.com/home/support.html
+agolProfile - https://www.arcgis.com/home/user.html
+agolHelp - https://www.arcgis.com/home/support.html
 agolLogout
 */
 
