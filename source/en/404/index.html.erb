@@ -47,10 +47,10 @@ pageName: "404"
 	  <div class="popular-links">
       <h3 data-langlabel="popular-links">Popular Links </h3>
         <ul>
-			   <li><a data-langlabel="features" href="http://www.arcgis.com/features/features.html">Features</a></li>
-            <li><a data-langlabel="plans" href="http://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
-            <li><a data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
-            <li><a data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Gallery</a></li>
+			   <li><a data-langlabel="features" href="https://www.arcgis.com/features/features.html">Features</a></li>
+            <li><a data-langlabel="plans" href="https://www.arcgis.com/features/plans/pricing.html">Plans</a></li>
+            <li><a data-langlabel="map" href="https://www.arcgis.com/home/webmap/viewer.html">Map</a></li>
+            <li><a data-langlabel="gallery" href="https://www.arcgis.com/home/gallery.html">Gallery</a></li>
             <li><a data-langlabel="help" href="/en/arcgis-online/">Help</a></li>
         </ul>
       </div>
@@ -105,9 +105,9 @@ $(document).ready(function() {
 	$('#feedback-form :submit').on ("click", function() {
       return doc.supportForm.validateFeedbackForm(curlang);
     });
-	
-		
-    if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) { 
+
+
+    if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) {
 	  doc.l10n.pageNotFoundText (curlang);
       doc.l10n.changeLabel (curlang);
     }
@@ -117,4 +117,3 @@ $(document).ready(function() {
 </script>
 
   </div>
-

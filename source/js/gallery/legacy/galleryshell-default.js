@@ -371,13 +371,13 @@ SERow.prototype.agolId = function () {
     return this.md("agol-item-id", "");
 };
 SERow.prototype.agolItemUrl = function (agolId) {
-    var host = gcfg.host || "http://www.arcgis.com";
+    var host = gcfg.host || "https://www.arcgis.com";
     return host + "/home/item.html?id=" + agolId;
 };
 SERow.prototype.agolImgUrl = function (agolId) {
     var imgf = this.md("agol-thumbnail", null),
 		imgurl = gcfg.emptyImgUrl,
-		host = gcfg.host || "http://www.arcgis.com";
+		host = gcfg.host || "https://www.arcgis.com";
 
     if (imgf !== "None") {
         imgurl = host + "/sharing/content/items/" + agolId + "/info/" + imgf;
