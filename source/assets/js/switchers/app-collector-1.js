@@ -14,21 +14,19 @@ var noSwitcherFileList = {
 		"troubleshoot-create-map.htm": "Desktop",
 		"gps-config-metadata-storage.htm": "Desktop",
 		"gps-receiver-support.htm": "Desktop"
-	   
+
 }
    var localedir = "en";
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'].toLowerCase();
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   
-    var val = '<p id="plats">' +
+
+    var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="collector" data-plat="android" data-prefix="/' + localedir +'/collector/android" href="/en/collector/" data-langlabel="android" class=""> Android</a>' +
-        ' | ' +
-        '<a data-appname="collector" data-plat="ios" data-prefix="/' + localedir +'/collector/ios" href="/en/collector/" data-langlabel="ios" class=""> iOS</a>' +
-		   ' | ' +
-        '<a data-appname="collector" data-plat="windows" data-prefix="/' + localedir + '/collector/windows" href="/en/collector/" data-langlabel="windows" class=""> Windows</a>' +
+        '<a data-appname="collector" data-plat="android" data-prefix="/' + localedir +'/collector/android" href="/en/collector/" data-langlabel="android" class="">Android</a>' +
+        '<a data-appname="collector" data-plat="ios" data-prefix="/' + localedir +'/collector/ios" href="/en/collector/" data-langlabel="ios" class="">iOS</a>' +
+        '<a data-appname="collector" data-plat="windows" data-prefix="/' + localedir + '/collector/windows" href="/en/collector/" data-langlabel="windows" class="">Windows</a>' +
         '</p>',
 
 		prodKey = "collector",
@@ -107,7 +105,6 @@ var noSwitcherFileList = {
 		} else {
 			$ele.toggleClass ("off");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
-			
 			if(fname in noSwitcherFileList){
 				// disable click
 				url = "#";
