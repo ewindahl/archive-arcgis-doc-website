@@ -11,12 +11,11 @@ $(document).ready(function() {
       localedir =   docConfig['localedir'].toLowerCase();
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   
-    var val = '<p id="plats">' +
+
+    var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="operations-dashboard" data-plat="windows-desktop" data-prefix="/' + localedir +'/operations-dashboard/windows-desktop" href="/' + localedir +'/en/operations-dashboard/" data-langlabel="windows" class=""> Windows</a>' +
-        ' | ' +
-        '<a data-appname="operations-dashboard" data-plat="web" data-prefix="/' + localedir +'/operations-dashboard/web" href="/' + localedir +'/en/operations-dashboard/" data-langlabel="browser" class=""> Browser</a>' +
+        '<a data-appname="operations-dashboard" data-plat="windows-desktop" data-prefix="/' + localedir +'/operations-dashboard/windows-desktop" href="/' + localedir +'/en/operations-dashboard/" data-langlabel="windows" class="">Windows</a>' +
+        '<a data-appname="operations-dashboard" data-plat="web" data-prefix="/' + localedir +'/operations-dashboard/web" href="/' + localedir +'/en/operations-dashboard/" data-langlabel="browser" class="">Browser</a>' +
         '</p>',
 
 		prodKey = "operations-dashboard",
@@ -32,7 +31,7 @@ $(document).ready(function() {
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
 
-    
+
 
 	if(!($.cookie (prodKey)) && !(navigator.userAgent.match(/Windows NT/gi))) {
       plat = prodWebVal;
@@ -54,7 +53,7 @@ $(document).ready(function() {
 			}
 
 	}
-	
+
 	function modHomeUrls (plat) {
 		$("a[href]").each (function (i) {
 			var $ele = $(this),
@@ -69,16 +68,16 @@ $(document).ready(function() {
 				$ele.attr ("href", newHref);
 			}
 		})
-		
+
 		// Update product meta value in search form
 		if(plat == prodWebVal){
 			$('#helpSearchForm input[name=product]').attr("value",prodWebSearchMetaProd);
 		}
 
 	}
-	
+
 	function modContentLinks (plt) {
-		$(".navigation-bar nav a[href], .reference-content a[href]").each (function (i) {
+		$("ul.pre-0 a[href], .sub-nav nav a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
@@ -94,7 +93,7 @@ $(document).ready(function() {
 
 	if (!isHome) {
 		if(window.location.pathname.match( /(\/user\/)/)){
-			$('.reference-content .page-title').after (val);
+			$('main h1').after (val);
 		}else{
 			modContentLinks (plat);
 			// Update product meta value in search form
@@ -114,10 +113,10 @@ $(document).ready(function() {
 			url;
 
 		if ((fldpath.indexOf (prefix) === 0))  {
-			$ele.toggleClass ("on");
+			$ele.toggleClass ("is-active");
 			url = prefix + fldpath.replace (prefix, "") + "/" + fname;
 		} else {
-			$ele.toggleClass ("off");
+			$ele.toggleClass ("available");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
 
 		}

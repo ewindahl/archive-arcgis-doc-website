@@ -5,12 +5,11 @@ $(document).ready(function() {
       localedir =   docConfig['localedir'];
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   
-    var val = '<p id="plats">' +
+
+    var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-		'<a data-appname="appstudio" data-plat="desktop" data-prefix="/' + localedir +'/appstudio/desktop" href="/en/appstudio/" data-langlabel="desktop" class=""> Desktop</a>' +
-        ' | ' +
-        '<a data-appname="appstudio" data-plat="browser" data-prefix="/' + localedir +'/appstudio/browser" href="/en/appstudio/" data-langlabel="online" class=""> Online</a>'
+		'<a data-appname="appstudio" data-plat="desktop" data-prefix="/' + localedir +'/appstudio/desktop" href="/en/appstudio/" data-langlabel="desktop" class="">Desktop</a>' +
+        '<a data-appname="appstudio" data-plat="browser" data-prefix="/' + localedir +'/appstudio/browser" href="/en/appstudio/" data-langlabel="online" class="">Online</a>'
         '</p>',
 
 		prodKey = "appstudio",
@@ -19,7 +18,7 @@ $(document).ready(function() {
 		prodBrowserMetaProd = "appstudio-browser",
 		homePath = "/en/appstudio"
 
-    
+
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
 		fname = parts.pop(),
@@ -64,17 +63,17 @@ $(document).ready(function() {
 			    $ele.attr("href", newHref);
 			}
 		})
-		
+
 		// Update product meta value in search form
 		if(plat == prodBrowserVal){
 			$('#helpSearchForm input[name=product]').attr("value",prodBrowserMetaProd);
 		}
-		
+
 
 	}
-	
+
 	function modContentLinks (plt) {
-		$(".reference-content a[href], .column-16 a[href], .navigation-bar nav a[href]").each (function (i) {
+		$("ul.pre-0 a[href], .column-17 a[href], .sub-nav nav a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href"),
 				parts = href.split("/"),
@@ -82,13 +81,13 @@ $(document).ready(function() {
 				fld = parts.pop(),
 				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
 				$ele.attr ("href", newHref);
-				
+
 		});
 	}
 
 	if (!isHome) {
 		if(window.location.pathname.match( /(\/create-apps\/)/)){
-			$('.reference-content .page-title').after (val);
+			$('main h1').after (val);
 		}else{
 			modContentLinks (plat);
 			// Update product meta value in search form
