@@ -4,15 +4,14 @@ $(document).ready(function () {
         data-appname="maps_for_cognos"
             data-plat="windows"
             data-plat="linux"
-    
+
     */
-    var val = '<p id="plats">' +
+    var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing">Viewing: </span>' +
-        '<a data-appname="maps_for_cognos" data-plat="install-windows" data-prefix="/en/maps-for-cognos/install-windows" href="/en/maps-for-cognos/" class=""> Install on Windows</a>' +
-        ' | ' +
-        '<a data-appname="maps_for_cognos" data-plat="install-linux" data-prefix="/en/maps-for-cognos/install-linux" href="/en/maps-for-cognos/" class=""> Install on Linux and UNIX</a>' +
+        '<a data-appname="maps_for_cognos" data-plat="install-windows" data-prefix="/en/maps-for-cognos/install-windows" href="/en/maps-for-cognos/" class="">Install on Windows</a>' +
+        '<a data-appname="maps_for_cognos" data-plat="install-linux" data-prefix="/en/maps-for-cognos/install-linux" href="/en/maps-for-cognos/" class="">Install on Linux and UNIX</a>' +
         '</p>',
-          
+
         fnameFilter = {
             "about-apache-configuration.htm" : "", "about-web-server-configuration.htm" : "", "administrative-and-login-settings.htm" : "",
             "changing-the-logging-levels.htm" : "", "communication-bi-bus-.htm" : "", "configuration.htm" : "", "configure-an-upstream-proxy.htm" : "",
@@ -21,7 +20,7 @@ $(document).ready(function () {
             "ibm-cognos-architecture.htm" : "", "ibm-cognos-files.htm" : "", "ibm-cognos-fix-packs.htm" : "", "installation-options.htm" : "", "installation-sequence-for-server-components.htm" : "",
             "installing-and-configuring-em4c-dispatcher.htm" : "", "installing-and-configuring-em4c-gateway.htm" : "", "installing-and-configuring-em4c-server.htm" : "",
             "installing-and-configuring-em4c-server-and-em4c-dispatcher.htm" : "", "installing-and-configuring-on-a-single-computer.htm" : "", "items-added-to-a-map-enabled-report.htm" : "",
-            "required-ibm-cognos-capabilities.htm" : "", "supported-arcgis-authentication-methods.htm" : "", "supported-environments.htm" : "", "testing-the-configuration.htm" : "", 
+            "required-ibm-cognos-capabilities.htm" : "", "supported-arcgis-authentication-methods.htm" : "", "supported-environments.htm" : "", "testing-the-configuration.htm" : "",
             "uninstall-esri-maps-for-ibm-cognos.htm" : "", "upgrade-esri-maps-for-ibm-cognos.htm" : ""
         },
 		prodKey = "maps_for_cognos",
@@ -44,7 +43,7 @@ $(document).ready(function () {
             newHref = href.replace("/" + prodDVal + "/", "/" + plat + "/");
 
             if (href.indexOf(homePath) === 0) {
-                //console.log (href + "=>" + newHref);				
+                //console.log (href + "=>" + newHref);
                 $ele.attr("href", newHref);
             }
         })
@@ -52,7 +51,7 @@ $(document).ready(function () {
     }
 
     if (!isHome) {
-        $('.reference-content .page-title').after(val);
+        $('main h1').after(val);
     } else {
         modHomeUrls(plat);
     }

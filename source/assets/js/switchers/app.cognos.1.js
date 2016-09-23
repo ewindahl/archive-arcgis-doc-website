@@ -4,26 +4,24 @@ $(document).ready(function () {
         data-appname="maps_for_cognos"
             data-plat="windows"
             data-plat="linux"
-    
+
     */
     var localedir = "en";
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'].toLowerCase();
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   
-    var val = '<p id="plats">' +
+
+    var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>platform-placehoder</p>';
-	
-	var installAndConfigure = '<a data-appname="maps_for_cognos" data-plat="install-windows" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/install-windows" href="/en/maps-for-cognos/" data-langlabel="install-onwindows" class=""> ' + dict['install-onwindows'] + '</a>' +
-        ' | ' +
-        '<a data-appname="maps_for_cognos" data-plat="install-linux" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/install-linux" href="/en/maps-for-cognos/" data-langlabel="install-on-linux" class=""> ' + dict['install-on-linux'] + '</a>';
-		
-	var useMaps = '<a data-appname="maps_for_cognos_use_maps" data-plat="use-maps" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/use-maps" href="/en/maps-for-cognos/" data-langlabel="desktop" class="">  ' + dict['desktop'] + '</a>' +
-        ' | ' +
-        '<a data-appname="maps_for_cognos_use_maps" data-plat="use-maps-mobile" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/use-maps-mobile" href="/en/maps-for-cognos/" data-langlabel="mobile" class=""> ' + dict['mobile'] + '</a>';
-		
-		
+
+	var installAndConfigure = '<a data-appname="maps_for_cognos" data-plat="install-windows" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/install-windows" href="/en/maps-for-cognos/" data-langlabel="install-onwindows" class="">' + dict['install-onwindows'] + '</a>' +
+        '<a data-appname="maps_for_cognos" data-plat="install-linux" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/install-linux" href="/en/maps-for-cognos/" data-langlabel="install-on-linux" class="">' + dict['install-on-linux'] + '</a>';
+
+	var useMaps = '<a data-appname="maps_for_cognos_use_maps" data-plat="use-maps" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/use-maps" href="/en/maps-for-cognos/" data-langlabel="desktop" class=""> ' + dict['desktop'] + '</a>' +
+        '<a data-appname="maps_for_cognos_use_maps" data-plat="use-maps-mobile" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/use-maps-mobile" href="/en/maps-for-cognos/" data-langlabel="mobile" class="">' + dict['mobile'] + '</a>';
+
+
 	var section = (window.location.pathname.match( /(\/5.0.1\/|\/6.0.2\/)/))?"archive":"current";
 	if(window.location.pathname.match( /(\/use-maps\/|\/use-maps-mobile\/)/)){
 		//val = val.replace("platform-placehoder",useMaps);
@@ -35,7 +33,7 @@ $(document).ready(function () {
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"6.0.2/"));
 		}else{
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,""));
-		}		
+		}
 	} else {
 		if(window.location.pathname.match( /(\/5.0.1\/)/)){
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"5.0.1/"));
@@ -47,7 +45,7 @@ $(document).ready(function () {
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,""));
 		}
 	}
-          
+
     var fnameFilter = {
 				"current" : {
              /*"about-apache-configuration.htm": "", "about-web-server-configuration.htm": "", "administrative-and-login-settings.htm": "", "change-the-logging-levels.htm": "",
@@ -60,14 +58,14 @@ $(document).ready(function () {
             "test-the-configuration.htm": "", "uninstall-esri-maps-for-ibm-cognos.htm": "", "upgrade-esri-maps-for-ibm-cognos.htm": "","report-formats.htm": "","create-the-esri-maps-capability.htm": ""
 			"configure-microsoft-internet-information-services-7-x-or-8-x.htm":""*/
         },
-		  
+
 		  "archive" : {
 			  "configure-microsoft-internet-information-services-7-x-or-8-x.htm": ""
 		  }
-	 },	  
-		  
+	 },
 
-		
+
+
 		//prodDVal = "install-windows",
 		prodDVal = "install-windows",
 		prodDValUseMaps = "use-maps",
@@ -84,7 +82,7 @@ $(document).ready(function () {
 		isHome = fldpath === homePath;
 
     function modHomeUrls(plat) {
-	
+
         $("a[href]").each(function (i) {
             var $ele = $(this),
 				href = $ele.attr("href"),
@@ -95,16 +93,16 @@ $(document).ready(function () {
             if(href.match( /(\/use-maps|\/use-maps-mobile)/)){
 				newHref = href.replace("/" + prodDValUseMaps + "/", "/" + useMapPlat + "/");
 			}
-			
+
 
             if (href.indexOf(homePath) === 0) {
-                //console.log (href + "=>" + newHref);				
+                //console.log (href + "=>" + newHref);
                 $ele.attr("href", newHref);
             }
         })
 
     }
-	
+
 	function modHelpNavUrls (plt) {
 		$(".section-bar nav a[href]").each (function (i) {
 			var $ele = $(this),
@@ -116,24 +114,24 @@ $(document).ready(function () {
 				$ele.attr ("href", newHref);
 		});
 	}
-	
+
 	function updateSearchForm (){
 		var prdPlat = $.cookie(prodKeyUseMaps) || prodDValUseMaps;
 		var searchProdMeta = (prdPlat === prodDValUseMaps) ? defaultSearchProdMeta : defaultSearchProdMeta + "-mobile";
-		
+
 		$('#helpSearchForm input[name=product]').attr("value",searchProdMeta);
 	}
 
     if (!isHome) {
-        $('.reference-content .page-title').after(val);
-		
+        $('main h1').after(val);
+
 		// Update product meta value in search form
 		//updateSearchForm();
-		
+
 		modHelpNavUrls();
     } else {
         modHomeUrls(plat);
-		
+
 		// Update product meta value in search form
 		updateSearchForm();
     }
@@ -146,11 +144,11 @@ $(document).ready(function () {
 			url;
 
         if ((fldpath == prefix)) {
-            $ele.toggleClass("on");
+            $ele.toggleClass("is-active");
             url = prefix + fldpath.replace(prefix, "") + "/" + fname;
 
         } else {
-            $ele.toggleClass("off");
+            $ele.toggleClass("available");
             url = prefix + "/" + fname;
 			if (fnameFilter[section].hasOwnProperty(fname)) {
 				url = prefix + "/";

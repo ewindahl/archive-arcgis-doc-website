@@ -13,13 +13,11 @@ $(document).ready(function() {
    }
    var dict = (window.localeJsonObj || {})[localedir];
 
-    var val = '<p id="plats">' +
+    var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="arcgisapp" data-plat="android" data-prefix="/' + localedir +'/arcgis-app/android" href="/en/arcgis-app/" data-langlabel="android" class=""> Android</a>' +
-        ' | ' +
-        '<a data-appname="arcgisapp" data-plat="ios" data-prefix="/' + localedir +'/arcgis-app/ios" href="/en/arcgis-app/" data-langlabel="ios" class=""> iOS</a>' +
-        ' | ' +
-        '<a data-appname="arcgisapp" data-plat="windows-phone" data-prefix="/' + localedir +'/arcgis-app/windows-phone" href="/en/arcgis-app/" data-langlabel="windows-phone" class=""> Windows Phone</a>' +
+        '<a data-appname="arcgisapp" data-plat="android" data-prefix="/' + localedir +'/arcgis-app/android" href="/en/arcgis-app/" data-langlabel="android" class="">Android</a>' +
+        '<a data-appname="arcgisapp" data-plat="ios" data-prefix="/' + localedir +'/arcgis-app/ios" href="/en/arcgis-app/" data-langlabel="ios" class="">iOS</a>' +
+        '<a data-appname="arcgisapp" data-plat="windows-phone" data-prefix="/' + localedir +'/arcgis-app/windows-phone" href="/en/arcgis-app/" data-langlabel="windows-phone" class="">Windows Phone</a>' +
         '</p>',
 
 		prodKey = "arcgisapp",
@@ -92,7 +90,7 @@ $(document).ready(function() {
 	}
 
 	function modForumUrls (plt) {
-		$(".navigation-bar nav a[href]").each (function (i) {
+		$(".sub-nav nav a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
@@ -111,7 +109,7 @@ $(document).ready(function() {
 		if (isForum) {
 			modForumUrls (plat);
 		} else {
-			$('.reference-content .page-title').after (val);
+			$('main h1').after (val);
 		}
 	} else {
 		modHomeUrls (plat);
@@ -126,10 +124,10 @@ $(document).ready(function() {
 			url;
 
 		if ((fldpath.indexOf (prefix) === 0) )  {
-			$ele.toggleClass ("on");
+			$ele.toggleClass ("is-active");
 			url = prefix + fldpath.replace (prefix, "") + "/" + fname;
 		} else {
-			$ele.toggleClass ("off");
+			$ele.toggleClass ("available");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
 		}
 
