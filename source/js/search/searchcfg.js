@@ -305,6 +305,13 @@ var filterCfg = {
         }
       },
       {
+        k:"maps-power-bi",
+        q: {
+          r:"",
+          p:"(product:maps-power-bi)"
+        }
+      },
+      {
         k:"esri-maps-salesforce",
         q: {
           r:"",
@@ -393,13 +400,6 @@ var filterCfg = {
         q: {
           r:"",
           p:"(product:workforce-iphone)"
-        }
-      },
-    {
-        k:"maps-power-bi",
-        q: {
-          r:"",
-          p:"(product:maps-power-bi)"
         }
       },
 
