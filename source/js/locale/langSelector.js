@@ -107,7 +107,7 @@ jQuery(document).ready(function ($) {
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
 	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
 	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro","nl"],
-    lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn'],
+    lgCognos = ['en', 'de','fr','ja', 'ko', 'zh-cn'],
     lgMicro = ['en', 'de'],
 	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
    lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
