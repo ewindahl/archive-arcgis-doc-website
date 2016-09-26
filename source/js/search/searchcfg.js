@@ -2,7 +2,7 @@
 
 k: url query parameter
 l: url query parameter label
-v: url query possible values 
+v: url query possible values
 
 v.k=parameter value
 v.q=query
@@ -21,14 +21,14 @@ var filterCfgDefaults = {
 
     //for apps
     "default" : {
-      "collection" : "all", 
-      "product" : "any"      
+      "collection" : "all",
+      "product" : "any"
     }
 };
 
 
 var filterCfg = {
-  
+
   "marketplace" : [
   {
     "k" : "collection",
@@ -55,10 +55,10 @@ var filterCfg = {
       {
         k:"all",
         q: {
-            r:"search-collection:help|search-collection:blogs|search-collection:lessons|search-collection:books", 
+            r:"search-collection:help|search-collection:blogs|search-collection:lessons|search-collection:books",
             p:""
         }
-      }, 
+      },
       {
         k:"help",
         q:{
@@ -73,7 +73,7 @@ var filterCfg = {
   		  p:""
         }
       }
-       
+
       {
         k:"videos",
         q:{
@@ -100,7 +100,7 @@ var filterCfg = {
           r:"search-collection:books",
         }
       }
-      
+
     ]
   },
 
@@ -128,21 +128,21 @@ var filterCfg = {
           r:"",
           p:"(product:arcgis-earth)"
         }
-      },  
+      },
 	  {
         k:"arcgis-online",
         q: {
           r:"",
           p:"(product:arcgis-online)"
         }
-      }, 
+      },
       {
         k:"arcgis-open-data",
         q: {
           r:"",
           p:"(product:arcgis-open-data)"
         }
-      }, 
+      },
 	  {
         k:"android-app",
         q: {
@@ -156,7 +156,7 @@ var filterCfg = {
           r:"",
           p:"(product:ios-app)"
         }
-      }, 
+      },
       {
         k:"win-phone-app",
         q: {
@@ -394,7 +394,14 @@ var filterCfg = {
           r:"",
           p:"(product:workforce-iphone)"
         }
-      }
+      },
+    {
+        k:"maps-power-bi",
+        q: {
+          r:"",
+          p:"(product:maps-power-bi)"
+        }
+      },
 
     ]
   }
