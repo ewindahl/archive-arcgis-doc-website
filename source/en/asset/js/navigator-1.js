@@ -20,7 +20,8 @@ $(document).ready(function() {
 		prodKey = "navigator",
     prodTVal = "ipad",
 		prodIOSVal = "iphone",
-    prodDVal = "android-phone",
+    prodDVal = "ipad",
+    newProdDVal = "android-phone"
     prodATVal = "android-tablet",
 		homePath = "/en/navigator"
 
@@ -29,7 +30,7 @@ $(document).ready(function() {
 		parts = pathname.split ("/"),
 		fname = parts.pop(),
 		fldpath = parts.join ("/"),
-		plat = $.cookie (prodKey) || prodDVal,
+		plat = $.cookie (prodKey) || newProdDVal,
 		isHome = fldpath === homePath;
     if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
       if(navigator.userAgent.match(/(iPhone)/gi)){
