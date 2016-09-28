@@ -13,7 +13,7 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-07-05"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
+  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-10-01"><META name="product" content="navigator-iphone,navigator-ipad,navigator-android-phone,navigator-android-tablet"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
 
 mobile: true
 
@@ -25,7 +25,7 @@ mobile: true
 	  <form id="helpSearchForm" target="_top">
        <input type="search" name="q" class="leader" placeholder="Search Navigator"> 
         <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="navigator-ipad" />          
+        <input type="hidden" name="product" value="navigator-android-phone" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
     </header>
@@ -33,7 +33,7 @@ mobile: true
       <ul>
         <li class='current'><a href="/en/navigator/">Home</a></li>
         <li><a href="/en/navigator/prepare-maps/prepare-maps.htm">Prepare maps</a></li>
-        <li><a href="/en/navigator/ipad/navigate/guided-tour.htm">Navigate</a></li>
+        <li><a href="/en/navigator/android-phone/navigate/guided-tour.htm">Navigate</a></li>
         <li><a href="http://links.esri.com/geonet-navigator">Forum</a></li> 
       </ul>
     </nav>  
@@ -61,7 +61,7 @@ mobile: true
           <h3>Guided tour</h3>
           <p>Download maps relevant to you, create a route, reorder your stops, configure travel modes, and route to your destination.</p>
           <p>
-		<a href="/en/navigator/ipad/navigate/guided-tour.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />  
+		<a href="/en/navigator/android-phone/navigate/guided-tour.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />  
 		<a href="http://video.arcgis.com/iframe/4633/000000/width/960/0/00:00:00" title="Get Started with Navigator for ArcGIS" class="videoLink colorbox-evlarge cboxElement icon-play">&nbsp;Watch a video</a>
 				
           </p>
@@ -88,7 +88,7 @@ mobile: true
           <p>Easily connect with other Esri apps such as Collector for ArcGIS to navigate to work sites while in the field.</p>
           <p>
 		  
-		<a href="/en/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
+		<a href="/en/navigator/android-phone/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
 				
           </p>
         </div>
@@ -126,7 +126,7 @@ mobile: true
               <li>iPad (fourth generation or later for best performance), iPhone (6 or later for best performance), iPod touch</li>
             </ul>
           </td>
-          <td valign="top" width="250px;"><h4 class="icon-android">Android (Beta)</h4>
+          <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
 	    <ul>
 	      <li>Android 4.2 (Jelly Bean) or later</li>
 	      <li>ARMv7 or x86 processor</li>
@@ -137,7 +137,7 @@ mobile: true
         <tr></table>
 
 	 <h3>Supported languages</h3>
-	    <p>Arabic, Dutch, English, French, German, Greek, Hebrew, Italian, Japanese, Korean, Portuguese (Brazil), Portuguese (Portugal), Russian, Simplified Chinese, Spanish, and Turkish.</p>        
+	    <p>Arabic, Dutch, English, Estonian (<span class="icon-android"/>), French, German, Greek, Hebrew, Italian, Japanese, Korean, Lithuanian (<span class="icon-android"/>), Latvian (<span class="icon-android"/>), Portuguese (Brazil), Portuguese (Portugal), Russian, Simplified Chinese, Spanish, and Turkish.</p>        
 
 
 	<a name="arcgisRequirements"></a>
@@ -158,8 +158,8 @@ mobile: true
 	    <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
 	      <p>Navigator for ArcGIS 2.0 was released in July 2016. It includes the following enhancements:</p>
 	    </td>
-	    <td valign="top" width="250px;"><h4 class="icon-android">Android (Beta)</h4>
-	      <p>Navigator for ArcGIS went into beta in May 2016. It includes the following enhancements:</p>
+	    <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+	      <p>Navigator for ArcGIS 2.0 was the initial release on Android. It is feature-equivalent to Navigator on iOS.</p>
 	    </td>
 	  </tr>
 	  <tr>
@@ -171,9 +171,7 @@ mobile: true
               <li>Localized into Arabic, Dutch, Hebrew, and Portuguese (Brazil)</li>
               <li>Various bug fixes and improvements</li>
 	    </ul></td>
-	    <td valign="top"><ul>
-	      <li>Includes all features listed as in development for Android in the <a href="#sneakPeek">Sneak peek</a> table. All features currently released on iOS are supported.</li>
-	    </ul></td>
+	    <td valign="top"></td>
 	  </tr>
         </table>
         
@@ -215,31 +213,31 @@ mobile: true
 	  <tr>
 	    <td>Navigate using included maps</td>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>	
 	  <tr>
 	    <td>Navigate using your own custom maps (geocoding, routing, and display)</td>
 	    <td><span class="icon-check"></td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr> 
 	  <tr>
 	    <td>Work with ArcGIS Online</td>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>
 	  <tr>
 	    <td>Work with Portal for ArcGIS</td>
 	    <td><span class="icon-check"></td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>	
 	  <tr>
 	    <td>Navigate, route, and search using maps stored on your device</td>
 	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
+	    <td><span class="icon-check"></td>
 	    <td><span class="icon-check" style="color:lightgray"/></td>
 	  </tr>	
 	</table>
