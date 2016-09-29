@@ -31,10 +31,20 @@ $(document).ready(function() {
 		fldpath = parts.join ("/"),
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
-    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh|Android)/gi))) {
       if(navigator.userAgent.match(/(iPhone)/gi)){
 			  plat = prodIOSVal;
 		  }
+      if(navigator.userAgent.match(/(iPad)/gi)){
+			  plat = prodTVal;
+		  }
+      if(navigator.userAgent.match(/(Android)/gi)){
+        if(navigator.userAgent.match(/(Mobile)/gi)){
+          plat = prodDVal;
+        }else{
+          plat = prodATVal;
+        }
+      }
 
       if (!isHome) {
         UASpecificRedirect (plat, pathname);
