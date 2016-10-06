@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	 
+
 	 if ((navigator.userAgent.match(/(iPhone|iPod|iPad|Android|blackberry)/gi))) {
         // Remove css class "cboxElement", else it will open video on light box.
         $("a.cboxElement").removeClass('cboxElement');
@@ -38,7 +38,7 @@ $(document).ready(function() {
                 // Add back the original url in case if user will click on Video link again.
                 $(obj).attr('href', tempUrl);
             });
-				
+
 				// Prevent multiple video play
 				$('audio,video').bind('play', function() {
 					activated = this;
@@ -49,7 +49,7 @@ $(document).ready(function() {
             //
         }
     } else {
-        $('.wrapper .colorbox-evlarge').colorbox({
+        $('.wrapper .colorbox-evlarge').each(function(){$(this).attr('onClick', 'return false;')}).colorbox({
             iframe: true,
             title: function () {
                 var tempurl = $(this).attr('href'),
@@ -67,7 +67,7 @@ $(document).ready(function() {
             current: "({current} of {total})"
         });
     }
-	 
+
 	 function generateVideo(videoId, obj) {
 		var source = document.createElement("source");
 		source.src = "http://video.arcgis.com/download-video/" + videoId + "/mp4/480";
