@@ -2,7 +2,7 @@
 
 k: url query parameter
 l: url query parameter label
-v: url query possible values 
+v: url query possible values
 
 v.k=parameter value
 v.q=query
@@ -21,14 +21,14 @@ var filterCfgDefaults = {
 
     //for apps
     "default" : {
-      "collection" : "all", 
-      "product" : "any"      
+      "collection" : "all",
+      "product" : "any"
     }
 };
 
 
 var filterCfg = {
-  
+
   "marketplace" : [
   {
     "k" : "collection",
@@ -55,10 +55,10 @@ var filterCfg = {
       {
         k:"all",
         q: {
-            r:"search-collection:help|search-collection:blogs|search-collection:lessons|search-collection:books", 
+            r:"search-collection:help|search-collection:blogs|search-collection:lessons|search-collection:books",
             p:""
         }
-      }, 
+      },
       {
         k:"help",
         q:{
@@ -73,7 +73,7 @@ var filterCfg = {
   		  p:""
         }
       }
-       
+
       {
         k:"videos",
         q:{
@@ -100,7 +100,7 @@ var filterCfg = {
           r:"search-collection:books",
         }
       }
-      
+
     ]
   },
 
@@ -112,7 +112,7 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:collector-windows|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce|product:appstudio|product:navigator-iphone|product:navigator-ipad|product:living-atlas|product:arcgis-earth|product:survey123"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:collector-windows|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce|product:appstudio|product:navigator-iphone|product:navigator-ipad|product:living-atlas|product:arcgis-earth|product:survey123-desktop|product:survey123-browser|product:drone2map|product:workforce-iphone|product:workforce-ipad|product:maps-power-bi"
           }
       },
 	  {
@@ -128,21 +128,21 @@ var filterCfg = {
           r:"",
           p:"(product:arcgis-earth)"
         }
-      },  
+      },
 	  {
         k:"arcgis-online",
         q: {
           r:"",
           p:"(product:arcgis-online)"
         }
-      }, 
+      },
       {
         k:"arcgis-open-data",
         q: {
           r:"",
           p:"(product:arcgis-open-data)"
         }
-      }, 
+      },
 	  {
         k:"android-app",
         q: {
@@ -156,7 +156,7 @@ var filterCfg = {
           r:"",
           p:"(product:ios-app)"
         }
-      }, 
+      },
       {
         k:"win-phone-app",
         q: {
@@ -204,6 +204,13 @@ var filterCfg = {
         q: {
           r:"",
           p:"(product:data-appl)"
+        }
+      },
+      {
+        k:"drone2map",
+        q: {
+          r:"",
+          p:"(product:drone2map)"
         }
       },
 	    {
@@ -298,6 +305,13 @@ var filterCfg = {
         }
       },
       {
+        k:"maps-power-bi",
+        q: {
+          r:"",
+          p:"(product:maps-power-bi)"
+        }
+      },
+      {
         k:"esri-maps-salesforce",
         q: {
           r:"",
@@ -354,9 +368,16 @@ var filterCfg = {
         }
       },
 		{
-        k:"survey123",
+        k:"survey123-desktop",
         q: {
-          r:"(product:survey123)",
+          r:"(product:survey123-desktop)",
+          p:""
+        }
+      },
+		{
+        k:"survey123-browser",
+        q: {
+          r:"(product:survey123-browser)",
           p:""
         }
       },
@@ -366,7 +387,21 @@ var filterCfg = {
           r:"",
           p:"(product:web-appbuilder)"
         }
-      }
+      },
+		{
+        k:"workforce-ipad",
+        q: {
+          r:"",
+          p:"(product:workforce-ipad)"
+        }
+      },
+		{
+        k:"workforce-iphone",
+        q: {
+          r:"",
+          p:"(product:workforce-iphone)"
+        }
+      },
 
     ]
   }

@@ -24,7 +24,7 @@ $(document).ready(function () {
         '<a data-appname="maps_for_cognos_use_maps" data-plat="use-maps-mobile" data-prefix="/' + localedir +'/maps-for-cognos/-place-holder-folder-/use-maps-mobile" href="/en/maps-for-cognos/" data-langlabel="mobile" class=""> ' + dict['mobile'] + '</a>';
 		
 		
-	var section = (window.location.pathname.match( /(\/5.0.1\/|\/6.0.2\/)/))?"archive":"current";
+	var section = (window.location.pathname.match( /(\/5.0.1\/|\/6.0.2\/|\/6.1\/)/))?"archive":"current";
 	if(window.location.pathname.match( /(\/use-maps\/|\/use-maps-mobile\/)/)){
 		//val = val.replace("platform-placehoder",useMaps);
 		if(window.location.pathname.match( /(\/5.0.1\/)/)){
@@ -33,6 +33,8 @@ $(document).ready(function () {
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"6.0/"));
 		}else if(window.location.pathname.match( /(\/6.0.2\/)/)){
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"6.0.2/"));
+		}else if(window.location.pathname.match( /(\/6.1\/)/)){
+			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,"6.1/"));
 		}else{
 			val = val.replace("platform-placehoder",useMaps.replace(/-place-holder-folder-\//g,""));
 		}		
@@ -43,6 +45,8 @@ $(document).ready(function () {
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"6.0/"));
 		}else if(window.location.pathname.match( /(\/6.0.2\/)/)){
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"6.0.2/"));
+		}else if(window.location.pathname.match( /(\/6.1\/)/)){
+			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,"6.1/"));
 		}else{
 			val = val.replace("platform-placehoder",installAndConfigure.replace(/-place-holder-folder-\//g,""));
 		}
