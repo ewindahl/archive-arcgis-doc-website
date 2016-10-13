@@ -1,0 +1,276 @@
+<!doctype html>
+<%
+readDirection="ltr" 
+if current_language == "ar" or current_language == "he"
+	readDirection="rtl"
+end
+
+pardotTrackingCode = "4008"
+
+%>
+<!--[if lt IE 7]>      <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 7]>         <html class="ie lt-ie9 lt-ie8 ie7" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 8]>         <html class="ie lt-ie9 ie8" dir="<%=readDirection%>"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9" dir="<%=readDirection%>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html dir="<%=readDirection%>"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	 <meta name="viewport" content="width=device-width">
+
+    <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
+	 
+	 <!--[if lt IE 9]>
+      <script src="/assets/js/libs/html5shiv.js"></script>
+		<script src="/assets/js/libs/json2.js"></script>
+    <script src="/assets/js/libs/selectivizr-min.js"></script>
+     
+    <![endif]-->
+
+    <%= javascript_include_tag "sitecfg" %>
+
+	<script>
+	  <% if current_page.data.require_login %>
+        (function(){
+          var cookieRegex = /esri_auth=/;
+          if(!cookieRegex.test(document.cookie)){
+            window.location = sitecfg["agolSignin"] + "?returnUrl=" + window.location.href;
+          }
+        })();
+      <% end %>
+
+    </script>
+   
+    <link rel="pingback" href="//pingback.me/esri/xmlrpc" />
+	 <link rel="shortcut icon" href="/assets/img/app-icons/workforce-app.png">
+
+    <%= stylesheet_link_tag "screen" %>
+	 <link type="text/css" rel="stylesheet" href="/cdn/calcite/css/documentation.css"/>
+
+    <% if current_page.data.css %>
+      <% current_page.data.css.each do |stylesheet| %>
+        <%= stylesheet_link_tag stylesheet, { :media=> "all" } %>
+      <% end %>
+    <% end %>
+
+	<%= javascript_include_tag "locale/l10NStrings" %>
+
+    <script src="/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+    <script src="/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+
+  <%= javascript_include_tag "signIn" %>
+
+   <!--- beg agol search -->
+  <!-- <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
+  <%= javascript_include_tag "agolsearch" %>-->
+   <!--- end agol search -->
+
+    <% if current_page.data.js %>
+      <% current_page.data.js.each do |javascript| %>
+        <%= javascript_include_tag javascript %>
+      <% end %>
+    <% end %>
+    <% if current_page.data.mobile %>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+    <% end %>
+
+	<!--- search MD -->
+	<% if current_page.data.metatags %>
+      <% current_page.data.metatags.each do |v| %>
+        <%= v %>
+      <% end %>
+    <% end %>
+
+	<!-- Handle Marketplace 404 issue -->
+	<% if current_page.data.pageName and current_page.data.pageName == "404" %> 
+		<script>
+			/*if(window.location.href.indexOf("/workforce/") >= 0){
+				window.location = "/en/workforce/404/";
+			}*/
+		</script>
+	<% end %>
+
+  	
+  <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
+      
+   <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
+	<% if current_language != "en" %> 
+		<link type="text/css" rel="stylesheet" href="/assets/css/screen_l10n.css"/>
+		<link type="text/css" rel="stylesheet" href="/assets/css/documentation_l10n.css"/>
+		<link type="text/css" rel="stylesheet" href="/assets/css/print_l10n.css"/>
+	<% end %>
+	<%= javascript_include_tag "locale/langSelector" %>
+   <% end %>
+   
+	<%= javascript_include_tag "calcite-web" %>
+  
+	
+	<!--[if lt IE 11]>
+	<script>
+		$(document).ready(function(){
+			$(".hideOnIE").hide();
+		});
+	</script>
+	<![endif]-->
+
+  <!--Dynamic common meta tags -->
+  <META name="last-modified" content="<%= Time.now.year %>-<%= Time.now.month %>-<%= Time.now.day %>">
+  <META name="content-language" content="<%= current_language %>">
+
+  
+  </head>
+
+  <body class="claro <%= current_language %>" >
+  <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVT7QT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WVT7QT');</script>
+<!-- End Google Tag Manager -->
+
+     <!-- top navigation collapses to drawer on mobile -->
+    <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Workforce for ArcGIS</h2>
+            
+            <form class="margin-left-half margin-right-half leader-half trailer-half" method="GET" action="/search">
+              <input type="search" name="q" value="" placeholder="<%= current_page.data.searchDfltStr %> Search" class="trailer-0">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="workforce-ipad" />
+            </form>
+    
+            <a data-langlabel="myprojects" href="//workforce.arcgis.com/projects" class="side-nav-link"><%= t("site.nav.workforce.myprojects") %></a>
+				<a data-langlabel="resources" href="/en/workforce/" class="side-nav-link"><%= t("site.nav.workforce.resources") %></a>
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    <div class="drawer drawer-right js-drawer logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <h4 class="side-nav-title padding-leader-half padding-trailer-half" data-full-name></h4>
+          <h6 class="side-nav-title font-size--2" data-username></h6>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
+        </aside>
+      </nav>
+    </div>
+<!-- End of drawer -->
+
+
+    <div class="wrapper workforce">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="workforce">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+		  
+		  
+			  <div class="panel panel-white panel-no-border panel-no-padding header-panel">
+				<div class="tablet-hide">
+				  <a href="//workforce.arcgis.com" class="top-nav-title">
+					<img width="24" height="24" style="" class="app-logo" src="/assets/img/app-icons/workforce-app.png" alt="Workforce"> <span>Workforce for ArcGIS</span>
+				  </a>
+				</div>
+		  
+		  
+		   <div class="tablet-show">
+				<a href="//workforce.arcgis.com" class="top-nav-title icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav">
+					<img width="24" height="24" style="" class="app-logo" src="/assets/img/app-icons/workforce-app.png" alt="Workforce"> <span>Workforce for ArcGIS</span>
+				</a>
+		  </div>
+
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a data-langlabel="myprojects" href="//workforce.arcgis.com/projects" class="top-nav-link"><%= t("site.nav.workforce.myprojects") %></a>
+            </nav>
+            
+          
+            <div class="lang-block dropdown js-dropdown right margin-left-1 top-nav-list right"></div>
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation ">
+              <a data-langlabel="resources" class="top-nav-link tablet-hide" href="/en/workforce/"><%= t("site.nav.workforce.resources") %></a>
+              <a data-langlabel="sign-in" id="login-link" class="login-link icon-ui-user top-nav-link" href="#"><%= t("site.nav.sign_in") %></a>
+            </div>
+
+
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              <a data-langlabel="resources" class="tablet-hide top-nav-link" href="/en/workforce/"><%= t("site.nav.workforce.resources") %></a>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                  <!--<div class="user-name dropdown-link">
+                    <p class="trailer-0" data-full-name></p>
+                    <small data-username></small>
+                  </div>-->
+                  <a class="dropdown-link" id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a>
+                  <a class="dropdown-link" id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
+                </nav>
+              </div>
+          </nav>
+
+            
+          <!--</div>-->
+        </div>
+      </header>
+
+      
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <%= yield %>
+      </div>
+
+
+  </div>
+    
+  
+
+    <footer class="footer leader-0 link-dark-gray" role="contentinfo">
+      <div class="grid-container">
+          <nav class="column-6">
+            <h6>ArcGIS</h6>
+            <ul class="list-plain">
+              <%= partial "_partial/site_footer_nav" %>
+            </ul>
+          </nav>
+
+          <%= partial "_partial/site_footer_common" %>
+      </div>
+    </footer>
+
+    <%= javascript_include_tag "search/searchform.js" %>
+    <%= javascript_include_tag "/cdn/js/sitewide.js" %>
+    <%= javascript_include_tag "/cdn/js/link-modifier.js" %>
+
+
+  
+
+   <script type="text/javascript"> 
+   piAId = '83202'; piCId = '<%= pardotTrackingCode %>';
+  (function() { function async_load(){
+  var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
+  '.pardot.com/pd.js';
+  var c = document.getElementsByTagName('script')[0];
+  c.parentNode.insertBefore(s, c);
+  } if(window.attachEvent) { window.attachEvent('onload', async_load); } else { window.addEventListener('load', async_load, false); }
+  })();
+  </script>
+
+  </body>
+</html>

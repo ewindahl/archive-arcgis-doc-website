@@ -1,0 +1,10 @@
+<li><a data-langlabel="home" href="http://www.arcgis.com" class="home" ><%= t("site.nav.home") %></a></li>
+<li><%= link_to t("site.nav.features"), t("paths.features"), "data-langlabel" => "features", "class" => "anonymous-and-public-only" %></li>
+<li><%= link_to t("site.nav.plans"), t("paths.plans"), "data-langlabel" => "plans", "class" => "anonymous-and-public-only" %></li>
+<li><%= link_to t("site.nav.gallery"), t("paths.gallery"), "id" => "nav-gallery", "data-langlabel" => "gallery"%></li>
+<li><%= link_to t("site.nav.map"), t("paths.map"), "data-langlabel" => "map" %></li>
+<li><%= link_to t("site.nav.scene"), t("paths.scene"), "data-langlabel" => "scene", "class" => "hideOnIE " %></li>
+<li><%= link_to t("site.nav.help"), t("paths.help").gsub(/\/en\//,"/"+current_language+"/"), "data-langlabel" => "help", "class" => "anonymous-only" %></li>
+<li><%= link_to t("site.nav.groups"), t("paths.groups"), "data-langlabel" => "nav-groups", "class" => "public-and-org-only hide" %></li>
+<li><%= link_to t("site.nav.mycontent"), t("paths.mycontent"), "data-langlabel" => "nav-mycontent", "class" => "public-and-org-only hide" %></li>
+<li><%= link_to t("site.nav.myorg"), t("paths.myorg"), "data-langlabel" => "nav-myorg" , "class" => "org-only hide " %></li>
