@@ -20,11 +20,7 @@ mobile: true
     <div class="column-24">
       <div style="display:table;" class="sdk-home-banner">
         <div class="sdk-home-banner-content">
-          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
-            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
-            <a class="crumb is-active" href="/en/arcgis-online/">Help</a>
-          </nav>
-          <h1 class="sub-nav-title leader-half trailer-1 text-white">ArcGIS Online Help</h1>
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Online Help</h1>
         </div>
       </div>
     </div>
@@ -43,35 +39,40 @@ mobile: true
 </header>
 
 <div class="grid-container leader-2">
-  <div class="column-15">
-    <div class="wf-nav">
-    <div class="search-bar column-15 trailer-1">
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-        <button class="search-submit icon-ui-search" type="submit"></button>
-      </form>
-    </div></div>
-    <h2>
-      Maps, scenes, analytics, apps, collaboration&mdash;you can do it all with ArcGIS
-    </h2>
-    <p><img src="img/fff.jpg"></p>
-  </div>
-  <div class="column-8 tablet-column-12 right">
-	  <div class="panel">
-      <h4 class="icon-ui-announcement">What's new</h4>
-      <p>Version 10.1.2 was released in September 2013 and includes Expanded support for scale dependency on layers.</p>
-      <a class="btn secondary" href="#">Learn more</a>
+  <div class="column-16">
+    <div class="wf-nav" style="height:55px;">
+      <div class="wf-nav search-bar column-16 trailer-1">
+        <form id="helpSearchForm" target="_top">
+          <input type="search" name="q" class="leader" placeholder="Search ArcGIS Online Help">
+          <input type="hidden" name="collection" value="help" />
+          <input type="hidden" name="product" value="arcgis-online" />
+          <input type="hidden" name="language" value="<%= current_language %>" />
+          <button class="search-submit icon-ui-search" type="submit"></button>
+        </form>
+      </div>
     </div>
+    <h3>
+      Maps, scenes, analytics, apps, collaboration&mdash;you can do it all with ArcGIS
+    </h3>
+    <div class="column-8">
+    <img src="img/fff.jpg">
+  </div>
+  <div class="column-7 right">
     <div>
-      <p class="avenir-bold leader-1 trailer-0">Are you an organization administrator?</p>
+      <p class="avenir-bold leader-0 trailer-half">Are you an organization administrator?</p>
       <p class="trailer-half">Learn how to use custom roles, security settings, and flexible configurations.</p>
       <p class="trailer-half"><a href="#">Get Started with administration</a></p>
       <p class="trailer-half"><a href="#">Understand Credits</a></p>
       <p class="trailer-half"><a href="#">Organizational Roles</a></p>
       <p class="trailer-half"><a href="#">View Status</a></p>
+    </div>
+  </div>
+  </div>
+  <div class="column-7 tablet-column-12 right">
+    <div class="panel">
+      <h4 class="icon-ui-announcement">What's new</h4>
+      <p>Version 10.1.2 was released in September 2013 and includes Expanded support for scale dependency on layers.</p>
+      <a class="btn secondary" href="#">Learn more</a>
     </div>
   </div>
 </div>
@@ -236,6 +237,69 @@ mobile: true
       <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/community/feeds/threads?community=2106" class="flexible-block-group flexible-block-group-3-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with ArcGIS Online</h4>
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/AppStudioArcGIS"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-white text-rule padding-trailer-half">From our Videos
+        <a class="btn btn-transparent btn-large right text-white" href="http://video.esri.com/search/appstudio">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+      </h2>
+      <div class="flexible-block-group flexible-block-group-4-up">
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/5083/000000/width/960/1" class="colorbox-evlarge" title="Thomas Dobrzinski, INTEND Geoinformatik" ><img alt="Thomas Dobrzinski, INTEND Geoinformatik" src="http://video.esri.com/thumbs/2016/05/5083/5083-thomas-dobrzinski_comma_-intend-geoinformatik_x.jpg"></a>
+              <h5 class="leader-1">Thomas Dobrzinski, INTEND Geoinformatik</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge text-white" href="http://video.esri.com/iframe/5083/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/5066/000000/width/960/1" class="colorbox-evlarge" title="Extending the Survey123 for ArcGIS Mobile App" ><img alt="Extending the Survey123 for ArcGIS Mobile App" src="http://video.esri.com/thumbs/2016/05/5066/5066-extending-the-survey123-for-arcgis-mobile-app_x.jpg"></a>
+              <h5 class="leader-1">Extending the Survey123 for ArcGIS Mobile App</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge text-white" href="http://video.esri.com/iframe/5066/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/5047/000000/width/960/1" class="colorbox-evlarge" title="Developing Cross-Platform Native Apps with AppStudio for ArcGIS (Advanced)" ><img alt="Developing Cross-Platform Native Apps with AppStudio for ArcGIS (Advanced)" src="http://video.esri.com/thumbs/2016/05/5047/5047-developing-cross_dash_platform-native-apps-with-appstudio-for-arcgis-_opt_advanced_cpt__x.jpg"></a>
+              <h5 class="leader-1">Developing Cross-Platform Native Apps with AppStudio for ArcGIS (Advanced)</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge text-white" href="http://video.esri.com/iframe/5047/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+            <div class="flexible-block-group-conent">
+              <a href="http://video.esri.com/iframe/5046/000000/width/960/1" class="colorbox-evlarge" title="Developing Cross-Platform Native Apps with AppStudio for ArcGIS (The Basics)" ><img alt="Developing Cross-Platform Native Apps with AppStudio for ArcGIS (The Basics)" src="http://video.esri.com/thumbs/2016/05/5046/5046-developing-cross_dash_platform-native-apps-with-appstudio-for-arcgis-_opt_the-basics_cpt__x.jpg"></a>
+              <h5 class="leader-1">Developing Cross-Platform Native Apps with AppStudio for ArcGIS (The Basics)</h5>
+            </div>
+            <div class="flexible-block-group-footer">
+              <a class="colorbox-evlarge text-white" href="http://video.esri.com/iframe/5046/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
