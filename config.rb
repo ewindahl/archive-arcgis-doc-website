@@ -1,5 +1,5 @@
 # Middleman Config
-require "arcgis-framework"
+require "calcite-web"
 require "builder"
 require "download"
 
@@ -7,10 +7,11 @@ activate :i18n, :mount_at_root => false
 activate :directory_indexes
 activate :download
 
-set :css_dir, 'css'
-set :js_dir, 'js'
-set :images_dir, 'img'
-set :fonts_dir, 'fonts'
+set :css_dir, 'assets/css'
+set :sass_dir, 'assets/sass'
+set :js_dir, 'assets/js'
+set :images_dir, 'assets/img'
+set :fonts_dir, 'assets/fonts'
 
 # Helpers function block
 helpers do
@@ -35,6 +36,9 @@ end
 #Folder specific layout
 #page "/es/*", :layout => "es"
 #page "/en/marketplace/*", :layout => "marketplace/layout"
+page "/*/maps-for-powerbi/*", :layout => "calcite/layout"
+page "/feedback/", :layout => "calcite/layout"
+page "/404/", :layout => "calcite/layout"
 
 configure :build do
   # Minify CSS on build
@@ -49,6 +53,10 @@ configure :build do
 
   # Automatically compress PNG images
   # activate :smusher
+  
+  ignore 'cdn/*'
+  ignore 'css/*'
+  ignore 'js/*'
 
 
 end
