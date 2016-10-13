@@ -36,9 +36,6 @@ end
 #Folder specific layout
 #page "/es/*", :layout => "es"
 #page "/en/marketplace/*", :layout => "marketplace/layout"
-page "/*/maps-for-powerbi/*", :layout => "calcite/layout"
-page "/feedback/", :layout => "calcite/layout"
-page "/404/", :layout => "calcite/layout"
 
 configure :build do
   # Minify CSS on build
