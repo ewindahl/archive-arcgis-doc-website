@@ -38,15 +38,18 @@ Follow the [installation instructions](https://github.com/ArcGIS/arcgis-solution
 
 
 * Pushing changes to your Fork:
-`git push origin branch-name` (or click on sync link on Github client if you are not pushing the changes for the first 
+`git push origin branch-name` (or click on sync link on Github client if you are not pushing the changes for the first
 time)
 
 * Making pull request:
 	* Go to you fork and select the relevant branch
-	* Click on green pull request button and follow the instructions. Please make sure that pull request destination is 
+	* Click on green pull request button and follow the instructions. Please make sure that pull request destination is
 correct.
 
- 
+* Pages currently in calcite_latest:
+  * https://github.com/ArcGIS/arcgis-doc-website/wiki/Pages-in-calcite_latest
+
+
 ## Admin
 
 ### Sync
