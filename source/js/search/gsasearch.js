@@ -645,12 +645,13 @@ app.SRListView = Backbone.View.extend ({
 
       if (res) { 
         var rL = $.isArray (res.r) ? res.r : [res.r],
-            txtChk, totalDuplicateN = 0;
+            txtChk=[], titleChk=[], totalDuplicateN = 0;
             l = _.map (rL, _.bind (function (x) {
-              if(txtChk == x.s){
+              if(txtChk.indexOf(x.s) >=0 && titleChk.indexOf(x.t) >=0){
                 totalDuplicateN = totalDuplicateN + 1
               }else{
-                txtChk = x.s
+                txtChk.push(x.s);
+                titleChk.push(x.t);
 
                 var data = {
                   t: x.t,
