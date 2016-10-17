@@ -7,6 +7,7 @@ css:
 js:
   - /cdn/js/libs/jquery.colorbox-min
   - video-playlist
+  - rssfeed
 
 metatags:
   - <META name="description" content="ArcGIS Online Help Home page."><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING">
@@ -198,15 +199,29 @@ mobile: true
     </div>
   </div>
 </div>
-
-<div class="grid-container leader-2">
+<div class="panel  leader-2 padding-leader-half padding-trailer-half">
+<div class="grid-container leader-0">
   <div class="column-24 text-center">
-    <div class="panel padding-leader-half padding-trailer-half">Start your 60-day free trial of ArcGIS today <button class="btn margin-left-1">Free Trial</button></div>
+    <div >Start your 60-day free trial of ArcGIS today <button class="btn margin-left-1">Free Trial</button></div>
   </div>
 </div>
-
+</div>
 
 <!-- Collapsible contents -->
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with ArcGIS Online</h4>
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/AppStudioArcGIS"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
 <!-- Blog -->
 <div class="panel panel-white panel-no-border panel-no-padding leader-1">
@@ -230,24 +245,10 @@ mobile: true
         <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/community/gis/web-gis/arcgisonline">Read more</a>
         <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=2106">Start discussion</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/community/feeds/threads?community=2106" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2106" class="block-group block-group-3-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
     </div>
-  </div>
-</div>
-
-<!-- Social -->
-<div class="panel panel-dark panel-no-border">
-  <div class="grid-container">
-   <div class="column-24 text-white text-center trailer-half leader-half">
-    <h4 class="trailer-half">Connect with ArcGIS Online</h4>
-    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/AppStudioArcGIS"></a>
-    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
-    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
-    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
-    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
-   </div>
   </div>
 </div>
 
@@ -256,9 +257,9 @@ mobile: true
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
       <h2 class="text-white text-rule padding-trailer-half">From our Videos
-        <a class="btn btn-transparent btn-large right text-white" href="https://www.youtube.com/channel/UCgGDPs8cte-VLJbgpaK4GPw">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+        <a class="btn btn-transparent btn-large right text-white" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf">More Videos</a>
       </h2>
-      <div id="video-holder" playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="flexible-block-group flexible-block-group-4-up">
+      <div id="video-holder" playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="block-group block-group-5-up tablet-block-group-1-up">
       </div>
     </div>
   </div>
@@ -290,5 +291,3 @@ mobile: true
     </div>
   </div>
 </div>
-
-<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
