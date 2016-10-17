@@ -257,6 +257,7 @@ app.QueryResult = Backbone.Model.extend ({
     cfg: app.cfg,
 
     data: null,
+    resultAdjust: 0,
 
     status: -1, //-1: init, 0:fail, 1: succ
     ts: -1 //timestamp: force update event to happen
@@ -270,7 +271,7 @@ app.QueryResult = Backbone.Model.extend ({
         n = parseInt (data.res?data.res.m:"0", 10);      
     }
     
-    return n;
+    return n-this.get("resultAdjust");
   },
 
   getPageN: function () {
@@ -644,21 +645,31 @@ app.SRListView = Backbone.View.extend ({
 
       if (res) { 
         var rL = $.isArray (res.r) ? res.r : [res.r],
+            txtChk=[], titleChk=[], totalDuplicateN = 0;
             l = _.map (rL, _.bind (function (x) {
-              var data = {
-                t: x.t,
-                url: x.u, //u or ue?
-                txt: x.s,
-                mdSubj: "",
-                mdCat: "",
-                mdDate : ""
-              };
+              if(txtChk.indexOf(x.s) >=0 && titleChk.indexOf(x.t) >=0){
+                totalDuplicateN = totalDuplicateN + 1
+              }else{
+                txtChk.push(x.s);
+                titleChk.push(x.t);
 
-              _.extend (data, genMD(x));
+                var data = {
+                  t: x.t,
+                  url: x.u, //u or ue?
+                  txt: x.s,
+                  mdSubj: "",
+                  mdCat: "",
+                  mdDate : ""
+                };
 
-              return this.template (data);
+                _.extend (data, genMD(x));
+
+                return this.template (data);
+              }
 
           }, this));
+
+          this.model.set({"resultAdjust": totalDuplicateN })
 
         this.$el.html (l.join (""));
       }  
