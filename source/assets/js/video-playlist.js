@@ -35,7 +35,7 @@ function addVideo(video, duration){
 }
 
 function onGoogleLoad() {
-  gapi.client.setApiKey('AIzaSyASA5BrNTvmbEi8kOrUMxjiZT_lloyaLbI');
+  gapi.client.setApiKey('AIzaSyCH-LBvthf-WX7SMc9NvDu7rO9IfOpkqIQ');
   gapi.client.load('youtube', 'v3', function() {
     var request = gapi.client.youtube.playlistItems.list({
       part: 'snippet',
