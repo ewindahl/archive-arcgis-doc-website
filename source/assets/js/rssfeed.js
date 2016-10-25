@@ -5,15 +5,15 @@
 
   $.fn.rssFeed = function(options) {
       var opts = $.extend({}, $.fn.rssFeed.defaults, options);
-      
+
       return this.each(function() {
           var url = (opts.url.indexOf("blogs.esri.com") >=0)?opts.url.replace("http://","https://") : opts.url,
               node = this,
 				  feedType = (opts.feedType)?opts.feedType : "";
-				  
+
           $.ajax ({
             //cache: false,
-            url : url,//"http://docdev.arcgis.com/apps/proxy/sm-proxy.php?" + url,
+            url : "/apps/proxy/sm-proxy.php?" + url,
             type: "GET",
             dataType: "json",
             crossDomain: true,
@@ -60,7 +60,7 @@
     }
     return []
   }
-	 
+
  function formatTheDate(feedDate){
     function toMonth (m) {
       return {
@@ -73,21 +73,21 @@
     var entrydate=new Date(feedDate);
     var entrydatestr=' '+toMonth(entrydate.getMonth()+1)+" "+entrydate.getDate()+", "+entrydate.getFullYear();
     return entrydatestr;
-  }    
+  }
 
   function cleanText (s) {
     s = s.replace(/(<([^>]+)>)/ig,"");
 
     return s;
   }
-	 
+
    function truncateDescription (s, maxLength) {
   	s = s.replace(/[\n]/g, ' ')
   	s = s.substr(0, maxLength);
-  	
+
   	// Re-trim in case we are in middle of a word
   	s = s.substr(0, Math.min(s.length, s.lastIndexOf(" ")));
-  	
+
   	return s
    }
 
@@ -97,7 +97,7 @@
 
     for(var i=0; i<data.length && i<max; i++){
       var item= data[i];
-		
+
       if(feedType == "blogHome"){
 			buf.push ("<div class='block trailer-1'><div class='panel'>"+
 			"<small>"+ formatTheDate (getNodeValue(item, "pubDate")) +"</small>"+
@@ -119,7 +119,7 @@
             "</article>");
 		}
     }
-    $(node).html(buf.join ("\n"));      
+    $(node).html(buf.join ("\n"));
   };
 
 })(jQuery);
@@ -127,7 +127,7 @@
  $(window).load(function() {
 	 var geonetHpFeed = $(".panel .geonetFeed").attr("data-geonet-feed-url")
    var blogHpFeed = $(".panel .blogHpFeed").attr("data-blog-feed-url")
-	 
+
 	 if(geonetHpFeed){
 		 $('.geonetFeed').rssFeed({
         url: geonetHpFeed,
@@ -136,7 +136,7 @@
 		  feedType: 'geonetHome'
       });
 	 }
-	 
+
 	 if(blogHpFeed){
 		 $('.blogHpFeed').rssFeed({
         url: blogHpFeed,
@@ -145,5 +145,5 @@
 		  feedType: 'blogHome'
       });
 	 }
-     
+
     });
