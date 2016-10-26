@@ -3,6 +3,7 @@ title: ArcGIS Online Help
 css:
   - homepage
   - /cdn/css/colorbox
+  - video-play-button
 
 js:
   - /cdn/js/libs/jquery.colorbox-min
@@ -23,16 +24,19 @@ mobile: true
         <div class="sdk-home-banner-content">
           <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Online Help</h1>
         </div>
+        <div class="leader-1 text-right">
+          <p><button class="btn margin-left-1 btn-clear">60-day Free Trial</button></p>
+        </div>
       </div>
     </div>
     <div class="column-24">
       <nav class="sub-nav-list">
 		    <a class="sub-nav-link  is-active" title="ArcGIS Online Help" href="/en/arcgis-online/">Home</a>
-			  <a class="sub-nav-link" title="Get started with ArcGIS Online" href="/en/arcgis-online/get-started/">Get Started</a></li>
+        <a class="sub-nav-link" title="Get started with ArcGIS Online" href="/en/arcgis-online/get-started/">Get Started</a>
 			  <a class="sub-nav-link" title="Create maps, scenes and apps" href="/en/arcgis-online/create-maps/">Create</a>
-			  <a class="sub-nav-link" title="Perform analysis" href="/en/arcgis-online/analyze/">Analyze</a></li>
+        <a class="sub-nav-link" title="Perform analysis" href="/en/arcgis-online/analyze/">Analyze</a>
 			  <a class="sub-nav-link" title="Share maps, scenes and apps" href="/en/arcgis-online/share-maps/">Share</a>
-			  <a class="sub-nav-link" title="Administer your organization" href="/en/arcgis-online/administer/">Administer</a> 
+			  <a class="sub-nav-link" title="Administer your organization" href="/en/arcgis-online/administer/">Administer</a>
 			  <a class="sub-nav-link" title="Reference" href="/en/arcgis-online/reference/">Reference</a>
 			  <a class="sub-nav-link" title="Apps for everyone" href="/en/arcgis-online/apps/arcgis-apps.htm">Apps</a>
       </nav>
@@ -53,177 +57,341 @@ mobile: true
         </form>
       </div>
     </div>
-    <a href="https://www.youtube.com/embed/Csjt1OCy9yY?showinfo=0&amp;autoplay=1" class="colorbox-evlarge cboxElement" title="Get Started with ArcGIS Online" onclick="return false;">
-      <img style="width:800px;height:400px;" alt="Get Started with ArcGIS Online" src="https://i.ytimg.com/vi/Csjt1OCy9yY/maxresdefault.jpg">
+    <div class="column-4 right padding-right-0">
+    <a href="https://www.youtube.com/embed/Csjt1OCy9yY?showinfo=0&amp;autoplay=1" class="colorbox-evlarge cboxElement videoElement" title="Get Started with ArcGIS Online" onclick="return false;">
+      <img style="width:225px;height:130px;position:relative;display:block;" alt="Get Started with ArcGIS Online" src="https://i.ytimg.com/vi/Csjt1OCy9yY/maxresdefault.jpg">
+      <div class='play-button'><div class="play-icon"></div></div>
     </a>
-    <p><span class="avenir-bold">Are you new to ArcGIS Online?</span> Watch this short overview or scroll down to the <a href="#start">Get started</a> section.</p>
+    </div>
+    <div class="column-10">
+      <h3>Maps, scenes, analytics, apps, collaboration—you can do it all with ArcGIS Online.<p class="font-size-1"><a href="https://www.arcgis.com/features/features.html">Discover the features of ArcGIS Online</a></p></h3>
+    </div>
   </div>
-  <div class="column-7 tablet-column-12 right">
+  <div class="column-8 tablet-column-12 right">
     <div class="panel">
       <h4 class="icon-ui-announcement">What's new</h4>
       <p>The September 2016 minor update includes enhanced support for open standards and improvements throughout the site.</p>
       <a class="btn secondary" href="#">Learn more</a>
     </div>
-    <div>
-      <p class="avenir-bold leader-1 trailer-half">Are you an organization administrator?</p>
-      <p class="trailer-half">Learn how to set up your organization with flexible configurations,  track usage, and more.</p>
-      <p class="trailer-half"><a href="administer/get-started-with-administration.htm">Get started with administration</a></p>
-      <p class="trailer-half"><a href="reference/credits.htm">Understand credits</a></p>
-      <p class="trailer-half"><a href="reference/roles.htm">Organizational roles</a></p>
-      <p class="trailer-half"><a href="administer/view-status.htm">View status</a></p>
-    </div>
   </div>
 </div>
 
-<div class="panel panel-white panel-no-padding leader-half">
-  <div class="grid-container">
-    <div class="column-24 leader-1 trailer-half text-center">
-      <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up">
-        <div class="block trailer-half">
-          <h5 class="icon-ui-layers icon-ui-green trailer-half"><a href="http://www.esri.com/training/main/arcgis-online-training">Find training courses</a></h5>
-          <p class="trailer-0">
-            Search Esri training courses for more learning.
-          </p>
-        </div>
-        <div class="block trailer-half">
-          <h5 class="icon-ui-question icon-ui-orange trailer-half"><a href="http://support.esri.com/en/">Get technical support</a></h5>
-          <p class="trailer-0">
-            Contact Support through chat, email, or telephone.
-          </p>
-        </div>
-        <div class="block trailer-half">
-          <h5 class="icon-ui-notice-triangle icon-ui-blue trailer-half"><a href="http://doc.arcgis.com/en/trust/system-status/">Check system health</a></h5>
-          <p class="trailer-0">
-            See the status of ArcGIS Online and report issues.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="grid-container leader-2">
+  <div class="js-tab-group trailer-half">
+    <nav class="tab-nav">
+      <a class="tab-title js-tab font-size-1 avenir-demi trailer-0 is-active" style="max-width: 25%;">Start with the basics</a>
+      <a class="tab-title js-tab font-size-1 avenir-demi trailer-0" style="max-width: 25%;">Learn by doing</a>
+      <a class="tab-title js-tab font-size-1 avenir-demi trailer-0" tabindex="0" style="max-width: 25%;">Manage an organization</a>
+      <a class="tab-title js-tab font-size-1 avenir-demi trailer-0" style="max-width: 25%;">Popular resources</a>
+    </nav>
+    <section class="tab-contents">
+      <!--Start with basics tab -->
+      <article class="tab-section js-tab-section is-active">
+        <div class="block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up">
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="create-maps/make-your-first-map.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="create-maps/make-your-first-map.htm">Make your first map</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn the basics of making maps online.</p>
+            </div>
+            <a href="create-maps/make-your-first-map.htm" class="btn btn-clear btn-fill leader-0">Start making maps</a>
+          </div>
 
-<div class="grid-container leader-1">
-  <div class="column-24 text-center">
-    <h2 class="trailer-1 leader-1">Get Started</h2>
-    <p>Get started with maps, scenes, apps, analysis, and sharing. When you're ready to learn more, explore popular topics and take a scenario-based exercise.</p>
-  </div>
-  <div class="column-16 pre-4 post-4 leader-1 tablet-column-12 tablet-pre-0 tablet-post-0">
-    <div class="block-group block-group-5-up phone-block-group-2-up">
-      <div class="block">
-        <a href="create-maps/make-your-first-map.htm">
-    			<div class="icon-ui-maps icon-ui-blue trailer-half text-center font-size-8"></div>
-    			<h4 class="text-center">Map<h4>
-    		</a>
-      </div>
-      <div class="block">
-        <a href="create-maps/make-your-first-scene.htm">
-    			<div class="icon-ui-globe icon-ui-blue trailer-half text-center font-size-8"></div>
-    			<h4 class="text-center">Scene<h4>
-    		</a>
-      </div>
-      <div class="block">
-        <a href="create-maps/make-your-first-app.htm">
-    			<div class="icon-ui-applications icon-ui-blue trailer-half text-center font-size-8"></div>
-    			<h4 class="text-center">App<h4>
-    		</a>
-      </div>
-      <div class="block">
-        <a href="use-maps/get-started-with-analysis.htm">
-    			<div class="icon-ui-line-chart icon-ui-blue trailer-half text-center font-size-8"></div>
-    			<h4 class="text-center">Analysis<h4>
-    		</a>
-      </div>
-      <div class="block">
-        <a href="share-maps/get-started-with-sharing.htm">
-    			<div class="icon-ui-share icon-ui-blue trailer-half text-center font-size-8"></div>
-    			<h4 class="text-center">Share<h4>
-    		</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="grid-container leader-1">
-  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
-    <hr class="leader-half trailer-half">
-    <ul class="list-plain sdk-home-nav-list">
-      <li><a href="/en/arcgis-online/reference/faq.htm">Frequently asked questions</a></li>
-      <li><a href="/en/arcgis-online/share-maps/add-items.htm">Add items</a></li>
-      <li><a href="/en/arcgis-online/use-maps/perform-analysis.htm">Perform analysis</a></li>
-      <li><a href="/en/arcgis-online/share-maps/publish-features.htm">Publish features</a></li>
-      <li><a href="/en/arcgis-online/administer/view-status.htm">View status</a></li>
-    </ul>
-    <hr class="leader-half trailer-half">
-  </nav>
-</div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="create-maps/make-your-first-scene.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="create-maps/make-your-first-scene.htm">Make your first scene</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Go 3D with web scenes.</p>
+            </div>
+            <a href="create-maps/make-your-first-scene.htm" class="btn btn-clear btn-fill leader-0">Start making web scenes</a>
+          </div>
+
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="create-maps/make-your-first-app.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="create-maps/make-your-first-app.htm">Make your first app</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn the basics of making a web app.</p>
+            </div>
+            <a href="create-maps/make-your-first-app.htm" class="btn btn-clear btn-fill leader-0">Start making apps</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="use-maps/get-started-with-analysis.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="use-maps/get-started-with-analysis.htm">Get started with analysis</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn the basics of performing analysis on your maps, scenes, and apps.</p>
+            </div>
+            <a href="use-maps/get-started-with-analysis.htm" class="btn btn-clear btn-fill leader-0">Start analyzing your map's data</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="share-maps/get-started-with-sharing.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="share-maps/get-started-with-sharing.htm">Get started with sharing</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn the basics of sharing your maps, scenes, and apps with others.</p>
+            </div>
+            <a href="share-maps/get-started-with-sharing.htm" class="btn btn-clear btn-fill leader-0">Start sharing your work</a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Learn by doing tab -->
+      <article class="tab-section js-tab-section">
+        <p class="text-right"><a href="tbd">More exercises</a></p>
+        <div class="block-group block-group-4-up tablet-block-group-2-up">
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Get Started with ArcGIS Online</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Exercise: 1 hour 30 minutes</p>
+              <p class="trailer-0">Learn the basics of making maps online.</p>
+            </div>
+            <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/" class="btn btn-clear btn-fill leader-0">Start learning the basics</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="http://learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">
+                <img alt="" src="img/fight-child-poverty-with-demographic-analysis.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="http://learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">Demographic Analysis and Smart Mapping</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Exercise: 1 hour 20 minutes</p>
+              <p class="trailer-0">Locate children in poverty using demographic analysis, smart mapping, and a web app.</p>
+            </div>
+            <a href="http://learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/" class="btn btn-clear btn-fill leader-0">Complete this exercise</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="http://learn.arcgis.com/en/projects/plan-routes-for-food-inspectors/">
+                <img alt="" src="img/restaurant-report-cards-final-map.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="http://learn.arcgis.com/en/projects/plan-routes-for-food-inspectors/">Plan Routes</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Exercise: 1 hour</p>
+              <p class="trailer-0">Help four health officials inspect 36 restaurants in San Diego County.</p>
+            </div>
+            <a href="http://learn.arcgis.com/en/projects/plan-routes-for-food-inspectors/" class="btn btn-clear btn-fill leader-0">Start planning routes</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="http://learn.arcgis.com/en/projects/evaluate-locations-for-mixed-use-development/">
+                <img alt="" src="img/live-above-shop-below.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="http://learn.arcgis.com/en/projects/evaluate-locations-for-mixed-use-development/">Spatial Analysis</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Exercise: 40 Minutes</p>
+              <p class="trailer-0">Find the best areas for a new mixed-use housing development.</p>
+            </div>
+            <a href="http://learn.arcgis.com/en/projects/evaluate-locations-for-mixed-use-development/" class="btn btn-clear btn-fill leader-0">Build your analysis skills</a>
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- Org Admin tab -->
+      <article class="tab-section js-tab-section">
+
+        <div class="block-group block-group-4-up tablet-block-group-2-up">
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="administer/get-started-with-administration.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="administer/get-started-with-administration.htm">Get Started with administration</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn the basics of administering an ArcGIS Online organization.</p>
+            </div>
+            <a href="administer/get-started-with-administration.htm" class="btn btn-clear btn-fill leader-0">Start learning the basics</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="reference/credits.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="reference/credits.htm">Understanding credits</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn how credits are consumed.</p>
+            </div>
+            <a href="reference/credits.htm" class="btn btn-clear btn-fill leader-0">Learn about credits</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="reference/roles.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="reference/roles.htm">Organizational roles</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn about organizational roles</p>
+            </div>
+            <a href="reference/roles.htm" class="btn btn-clear btn-fill leader-0">Manage roles</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="administer/view-status.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="administer/view-status.htm">View status</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Track usage.</p>
+            </div>
+            <a href="administer/view-status.htm" class="btn btn-clear btn-fill leader-0">Track usage</a>
+          </div>
+        </div>
+
+      </article>
 
 
-<div class="grid-container leader-1">
-  <div class="column-24">
-	  <h3 class="trailer-0 text-center padding-trailer-0">Learn by doing</h3>
-    <a class="btn btn-transparent btn-large right padding-leader-0 trailer-0" href="http://learn.arcgis.com/en/gallery/">More exercises</a>
-    <div class="clearfix"></div>
-    <div class="block-group block-group-4-up tablet-block-group-1-up">
-      <div class="card block leader-0">
-        <figure class="card-image-wrap">
-          <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">
-            <img alt="" src="img/get-started-with-arcgis-online.png">
-          </a>
-        </figure>
-        <div class="card-content leader-0 padding-leader-half">
-          <h5 class="trailer-0 leader-0">
-            <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">Get Started with ArcGIS Online</a>
-          </h5>
-          <p class="font-size--2 text-light-gray trailer-half">1 hour 30 minutes</p>
-          <p class="trailer-0">Learn the basics of making maps online.</p>
+      <!-- Popular topics tab -->
+      <article class="tab-section js-tab-section" aria-expanded="false" role="tabpanel">
+        <div class="block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up">
+
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="/en/arcgis-online/reference/faq.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="/en/arcgis-online/reference/faq.htm">Frequently asked questions</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">FAQs when working with ArcGIS Online.</p>
+            </div>
+            <a href="/en/arcgis-online/reference/faq.htm" class="btn btn-clear btn-fill leader-0">Review ArcGIS Online FAQs</a>
+          </div>
+
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="/en/arcgis-online/share-maps/add-items.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="/en/arcgis-online/share-maps/add-items.htm">Add items</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Items are...</p>
+            </div>
+            <a href="/en/arcgis-online/share-maps/add-items.htm" class="btn btn-clear btn-fill leader-0">Learn about adding items</a>
+          </div>
+
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="/en/arcgis-online/share-maps/publish-features.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="/en/arcgis-online/share-maps/publish-features.htm">Publish features</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn about publishing features....</p>
+            </div>
+            <a href="/en/arcgis-online/share-maps/publish-features.htm" class="btn btn-clear btn-fill leader-0">Publishing features</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="/en/arcgis-online/tbd.htm">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="/en/arcgis-online/tbd.htm">Change styles</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Topic: 15 minutes</p>
+              <p class="trailer-0">Learn the basics changing styles.</p>
+            </div>
+            <a href="/en/arcgis-online/tbd.htm" class="btn btn-clear btn-fill leader-0">Start changing styles</a>
+          </div>
+          <div class="card block leader-0">
+            <figure class="card-image-wrap">
+              <a href="https://status.arcgis.com">
+                <img alt="" src="img/get-started-with-arcgis-online.png">
+              </a>
+            </figure>
+            <div class="card-content leader-0 padding-leader-half">
+              <h5 class="trailer-0 leader-0">
+                <a href="https://status.arcgis.com">ArcGIS Online System Status</a>
+              </h5>
+              <p class="font-size--2 text-light-gray trailer-half">Web site</p>
+              <p class="trailer-0">See the status of ArcGIS Online and report issues.</p>
+            </div>
+            <a href="https://status.arcgis.com" class="btn btn-clear btn-fill leader-0">Check system health</a>
+          </div>
+
         </div>
-        <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/" class="btn btn-clear btn-fill leader-0">Start learning the basics</a>
-      </div>
-      <div class="card block leader-0">
-        <figure class="card-image-wrap">
-          <a href="http://learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">
-            <img alt="" src="img/fight-child-poverty-with-demographic-analysis.png">
-          </a>
-        </figure>
-        <div class="card-content leader-0 padding-leader-half">
-          <h5 class="trailer-0 leader-0">
-            <a href="http://learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">Demographic Analysis and Smart Mapping</a>
-          </h5>
-          <p class="font-size--2 text-light-gray trailer-half">1 hour 20 minutes</p>
-          <p class="trailer-0">Locate children in poverty using demographic analysis, smart mapping, and a web app.</p>
-        </div>
-        <a href="http://learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/" class="btn btn-clear btn-fill leader-0">Complete this exercise</a>
-      </div>
-      <div class="card block leader-0">
-        <figure class="card-image-wrap">
-          <a href="http://learn.arcgis.com/en/projects/plan-routes-for-food-inspectors/">
-            <img alt="" src="img/restaurant-report-cards-final-map.png">
-          </a>
-        </figure>
-        <div class="card-content leader-0 padding-leader-half">
-          <h5 class="trailer-0 leader-0">
-            <a href="http://learn.arcgis.com/en/projects/plan-routes-for-food-inspectors/">Plan Routes</a>
-          </h5>
-          <p class="font-size--2 text-light-gray trailer-half">1 hour</p>
-          <p class="trailer-0">Help four health officials inspect 36 restaurants in San Diego County.</p>
-        </div>
-        <a href="http://learn.arcgis.com/en/projects/plan-routes-for-food-inspectors/" class="btn btn-clear btn-fill leader-0">Start planning routes</a>
-      </div>
-      <div class="card block leader-0">
-        <figure class="card-image-wrap">
-          <a href="http://learn.arcgis.com/en/projects/evaluate-locations-for-mixed-use-development/">
-            <img alt="" src="img/live-above-shop-below.png">
-          </a>
-        </figure>
-        <div class="card-content leader-0 padding-leader-half">
-          <h5 class="trailer-0 leader-0">
-            <a href="http://learn.arcgis.com/en/projects/evaluate-locations-for-mixed-use-development/">Spatial Analysis</a>
-          </h5>
-          <p class="font-size--2 text-light-gray trailer-half">40 Minutes</p>
-          <p class="trailer-0">Find the best areas for a new mixed-use housing development.</p>
-        </div>
-        <a href="http://learn.arcgis.com/en/projects/evaluate-locations-for-mixed-use-development/" class="btn btn-clear btn-fill leader-0">Build your analysis skills</a>
-      </div>
-    </div>
+      </article>
+    </section>
   </div>
 </div>
 
@@ -232,9 +400,9 @@ mobile: true
 <div class="panel panel-blue panel-no-border panel-no-padding leader-2">
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
-      <h3 class="leader-half trailer-0 text-center padding-trailer-0">Watch the basics</h3>
+      <h3 class="leader-half trailer-0 text-center padding-trailer-0">Watch our videos</h3>
       <a class="btn btn-transparent btn-large right padding-leader-0 padding-trailer-0 text-white" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf">More videos</a>
-      <div id="video-holder" playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="block-group block-group-5-up tablet-block-group-1-up leader-1 padding-leader-half trailer-half">
+      <div playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-1 padding-leader-half trailer-half">
       </div>
     </div>
   </div>
@@ -283,11 +451,29 @@ mobile: true
   </div>
 </div>
 
-<!-- Free Trial -->
-<div class="panel panel-blue panel-no-border padding-leader-1 padding-trailer-1">
-  <div class="grid-container leader-0">
-    <div class="column-24 text-center">
-      <div class="text-white">Start your 60-day free trial of ArcGIS today <button class="btn margin-left-1 btn-clear">Free Trial</button></div>
+<div class="panel panel-blue panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-half text-center">
+      <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-green trailer-half link-white"><a href="http://www.esri.com/training/main/arcgis-online-training">Find training courses</a></h5>
+          <p class="trailer-0 text-white">
+            Search Esri training courses for more learning.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-orange trailer-half link-white"><a href="http://support.esri.com/en/">Get technical support</a></h5>
+          <p class="trailer-0text-white">
+            Contact Support through chat, email, or telephone.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-white trailer-half link-white"><a href="http://doc.arcgis.com/en/trust/system-status/">Check system health</a></h5>
+          <p class="trailer-0 text-white">
+            See the status of ArcGIS Online and report issues.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
