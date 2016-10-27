@@ -113,7 +113,7 @@
             "</div>");
 		}else {
 			buf.push ("<article>"+
-            "<h4><a href='" + getNodeValue(item, "link") + "'>" + truncateDescription(getNodeValue(item, "title"), 50) + " ..</a></h4>"+
+            "<h4><a href='" + getNodeValue(item, "link") + "'>" + truncateDescription(getNodeValue(item, "title"), 50) + " ...</a></h4>"+
             "<small><time>"+ formatTheDate (getNodeValue(item, "pubDate")) +"</time></small>"+
             "<p>" + truncateDescription(cleanText (getNodeValue(item, "description")), 100)  + " ... <a href='" +getNodeValue(item, "link") + "'>Continue reading →</a>"  + "</p>" +
             "</article>");
