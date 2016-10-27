@@ -8,3 +8,4 @@ gem "calcite-web", :git => "https://github.com/Esri/calcite-web.git", :tag => "v
 #:git => "git@github.com:ArcGIS/arcgis-for-developers-css.git"
 gem "wdm", "~>0.1", :platform => [:mswin, :mingw]
 gem "builder"
+gem "middleman-livereload", "~>3.1.0"
