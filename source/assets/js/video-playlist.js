@@ -53,7 +53,6 @@ function onGoogleLoad() {
                      'title': response.items[i].snippet.title,
                      'image': (response.items[i].snippet.thumbnails.maxres ? 'maxresdefault' : 'mqdefault')};
       }
-
       var durrequest = gapi.client.youtube.videos.list({
         part: 'contentDetails',
         id: videoIds
@@ -62,9 +61,11 @@ function onGoogleLoad() {
         for(var d = 0; d < durresponse.items.length; d++) {
           duration = YTDurationToSeconds(durresponse.items[d].contentDetails.duration);
           videoHolder.append(addVideo(videos[d], duration));
+          if(d+1 == i){
+            $.getScript("/assets/js/video-init.js");
+          }
         }
       });
-      $.getScript("/assets/js/video-init.js");
     });
   });});
 }
