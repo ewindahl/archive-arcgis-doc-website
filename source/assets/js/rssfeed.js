@@ -99,9 +99,9 @@
       var item= data[i];
 
       if(feedType == "blogHome" || feedType == "geonetHome"){
-			buf.push ("<div class='block trailer-1'><div class='panel'>"+
+			buf.push ("<div class='card block trailer-1'><div class='card-content panel panel-no-border'>"+
 			"<small>"+ formatTheDate (getNodeValue(item, "pubDate")) +"</small>"+
-            "<h4 class='leader-half'><a href='" + getNodeValue(item, "link") + "'>" + getNodeValue(item, "title") + "</a></h4>"+
+            "<h5 class='leader-half'><a href='" + getNodeValue(item, "link") + "'>" + getNodeValue(item, "title") + "</a></h5>"+
             "<p>" + truncateDescription(cleanText (getNodeValue(item, "description")), 100)  + " ... <a href='" +getNodeValue(item, "link") + "'>Continue reading →</a>"  + "</p>" +
             "</div></div>");
 		/*}else if (feedType == "geonetHome"){
