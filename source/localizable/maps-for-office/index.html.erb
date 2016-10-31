@@ -3,13 +3,15 @@ title: ArcGIS Maps for Office
 css:
   - homepage
   - /cdn/css/colorbox
+  - video-play-button
 
 js:
   - /cdn/js/libs/jquery.colorbox-min
-  - video-init
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4.1"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING">
 
 mobile: true
 
@@ -20,35 +22,17 @@ mobile: true
     <div class="column-24">
       <div style="display:table;" class="sdk-home-banner">
         <div class="sdk-home-banner-content">
-          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
-            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
-            <a class="crumb is-active" href="/en/maps-for-office/">Maps for Office</a>
-          </nav>
-          <h1 class="sub-nav-title leader-1 text-white">ArcGIS Maps for Office</h1>
-          <div class="trailer-half clearfix">
-            <a class="btn btn-green download-link" href="//www.esri.com/software/arcgis/arcgisonline/apps/download">Download Maps for Office</a>
-          </div>
-
-          <p class="text-white font-size--2"><strong>Version 4.1</strong> Fall 2016</p>
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Maps for Office</h1>
         </div>
-        <!-- Placeholder for image in blue banner-->
-        <div class="sdk-home-banner-image">
-          <img src="m4o_banner.png">
-        </div>
-        <div class="search-bar">
-          <form id="helpSearchForm" target="_top">
-            <input type="search" name="q" class="leader" placeholder="Search ArcGIS Maps for Office">
-            <input type="hidden" name="collection" value="help" />
-            <input type="hidden" name="product" value="esri-maps-office" />
-            <input type="hidden" name="language" value="<%= current_language %>" />
-            <button class="search-submit icon-ui-search" type="submit"></button>
-          </form>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear" href="//www.esri.com/software/arcgis/arcgisonline/apps/download">Download Maps for Office</a>
+          <p class="trailer-0 leader-half text-white font-size--2"><strong>Version 4.1</strong> Fall 2016</p>
         </div>
       </div>
     </div>
     <div class="column-24">
       <nav class="sub-nav-list">
-		    <a class="sub-nav-link is-active" href="/en/maps-for-office/">Home</a></li>
+        <a class="sub-nav-link is-active" href="/en/maps-for-office/">Home</a>
         <a class="sub-nav-link" href="/en/maps-for-office/install-and-configure/">Install and Configure</a>
         <a class="sub-nav-link" href="/en/maps-for-office/design-and-use/">Design and Use Maps</a>
         <a class="sub-nav-link" href="//geonet.esri.com/groups/arcgis-maps-for-office">GeoNet</a>
@@ -59,12 +43,29 @@ mobile: true
 
 <div class="grid-container leader-2">
   <div class="column-16">
-    <p>Be more productive with location-driven analytics. Bring a whole new analytical dimension to Microsoft Office. Start gaining new insights and making more informed decisions immediately. Easily add mapping to your Excel spreadsheets and PowerPoint presentations.</p>
+    <div class="wf-nav" style="height:55px;">
+      <div class="wf-nav search-bar column-16 trailer-1 padding-right-2">
+        <form id="helpSearchForm" target="_top">
+          <input type="search" name="q" class="leader" placeholder="Search ArcGIS Maps for Office">
+          <input type="hidden" name="collection" value="help" />
+          <input type="hidden" name="product" value="esri-maps-office" />
+          <input type="hidden" name="language" value="<%= current_language %>" />
+          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+        </form>
+      </div>
+    </div>
+    <div class="column-4 right margin-right-1 padding-left-0">
+      <img src="m4o_banner.png">
+    </div>
+    <div class="column-11 tablet-column-7">
+      <p>Be more productive with location-driven analytics. Bring a whole new analytical dimension to Microsoft Office. Start gaining new insights and making more informed decisions immediately. Easily add mapping to your Excel spreadsheets and PowerPoint presentations.</p>
+    </div>
   </div>
   <div class="column-8 tablet-column-12 right">
-	  <div class="panel panel-dark">
-      <h4 class="text-white icon-ui-announcement">What's new</h4>
-      <p class="text-white">ArcGIS Maps for Office 4.1 is a minor update that brings you improved speed, better usability, and many bug fixes.</p>
+    <div class="panel">
+      <h4 class="icon-ui-announcement">What's new</h4>
+      <p>ArcGIS Maps for Office 4.1 is a minor update that brings you improved speed, better usability, and many bug fixes.</p>
+      <a class="btn secondary" href="/en/maps-for-office/install-and-configure/whats-new.htm">Learn more</a>
     </div>
   </div>
 </div>
@@ -75,69 +76,108 @@ mobile: true
       <ul class="list-plain sdk-home-nav-list">
         <li><a href="/en/maps-for-office/install-and-configure/whats-new.htm">What's new</a></li>
         <li><a href="/en/maps-for-office/install-and-configure/supported-environments.htm">Supported environments</a></li>
-	    <li><a href="/en/maps-for-office/4.0/install-and-configure/about-esri-maps-for-office.htm">Archived help</a></li>
+	      <li><a href="/en/maps-for-office/4.0/install-and-configure/about-esri-maps-for-office.htm">Archived help</a></li>
         <li><a href="//www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">Watch videos</a></li>
       </ul>
     <hr class="leader-half trailer-half">
   </nav>
 </div>
 
-
-<div class="grid-container trailer-1">
+<div class="grid-container leader-1">
   <div class="column-24">
-    <div class="block-group block-group-4-up tablet-block-group-1-up">
-      <div class="block leader-1">
-        <div class="panel panel-no-padding">
-          <a href="/en/maps-for-office/design-and-use/add-a-map-to-excel.htm"><img class="trailer-1" alt="" src="Map-your-data.png"></a>
-          <div class="margin-right-1 margin-left-1 trailer-1">
-            <h3 class="font-size-2">Map your Excel data</h3>
-            <p>Make interactive maps of your spreadsheet data directly in Excel. With a few clicks, create color-coded, point, clustered-point, and heat maps and gain visual insights about your data.</p>
-            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-office/design-and-use/add-a-map-to-excel.htm">Learn more</a></p>
-          </div>
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/add-a-map-to-excel.htm">
+            <img alt="" src="Map-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/add-a-map-to-excel.htm">Map your Excel data</a>
+          </h5>
+          <p>Make interactive maps of your spreadsheet data directly in Excel. With a few clicks, create color-coded, point, clustered-point, and heat maps and gain visual insights about your data.</p>
         </div>
+        <a href="design-and-use/add-a-map-to-excel.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
-      <div class="block leader-1">
-        <div class="panel panel-no-padding">
-          <a href="/en/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm"><img class="trailer-1" alt="" src="Analyze-your-data.png"></a>
-          <div class="margin-right-1 margin-left-1 trailer-1">
-            <h3 class="font-size-2">Add dynamic maps to PowerPoint</h3>
-            <p>Add maps from your ArcGIS organization to PowerPoint to create stunning, dynamic presentations.</p>
-				    <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">Learn more</a></p>
-          </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/add-a-map-to-powerpoint.htm">
+            <img alt="" src="Analyze-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/add-a-map-to-powerpoint.htm">Add dynamic maps to PowerPoint</a>
+          </h5>
+          <p>Add maps from your ArcGIS organization to PowerPoint to create stunning, dynamic presentations.</p>
         </div>
+        <a href="design-and-use/add-a-map-to-powerpoint.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
-      <div class="block leader-1">
-        <div class="panel panel-no-padding">
-          <a href="/en/maps-for-office/design-and-use/enrich-your-data.htm"><img class="trailer-1" alt="" src="Enrich-your-spreadsheets.png"></a>
-          <div class="margin-right-1 margin-left-1 trailer-1">
-            <h3 class="font-size-2">Enrich your business spreadsheets</h3>
-            <p>Add ArcGIS demographics and lifestyle data directly to Excel spreadsheets, and get more context about the locations that are important to you. Quickly explore locations on the fly using pop-up infographics.</p>
-            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-office/design-and-use/enrich-your-data.htm">Learn More</a></p>
-          </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/enrich-your-data.htm">
+            <img alt="" src="Enrich-your-spreadsheets.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/enrich-your-data.htm">Enrich your business spreadsheets</a>
+          </h5>
+          <p>Add ArcGIS demographics and lifestyle data directly to Excel spreadsheets, and get more context about the locations that are important to you. Quickly explore locations on the fly using pop-up infographics.</p>
         </div>
+        <a href="design-and-use/enrich-your-data.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
-		  <div class="block leader-1">
-        <div class="panel panel-no-padding">
-          <img class="trailer-1" alt="" src="Share-your-data.png">
-          <div class="margin-right-1 margin-left-1 trailer-1">
-            <h3 class="font-size-2">Share your maps from Excel</h3>
-            <p>Share your maps using either ArcGIS Online or Portal for ArcGIS; or insert them in emails, PowerPoint presentations, or Word documents.</p>
-				    <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-office/design-and-use/share-a-map-to-arcgis.htm">Learn more</a></p>
-          </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/share-a-map-to-arcgis.htm">
+            <img alt="" src="Share-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/share-a-map-to-arcgis.htm">Share your maps from Excel</a>
+          </h5>
+          <p>Share your maps using either ArcGIS Online or Portal for ArcGIS; or insert them in emails, PowerPoint presentations, or Word documents.</p>
         </div>
+        <a href="design-and-use/share-a-map-to-arcgis.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Collapsible contents -->
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-2">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h3 class="leader-half trailer-0 text-center padding-trailer-0">Watch our videos</h3>
+      <a class="btn btn-transparent btn-large right padding-leader-0 padding-trailer-0 text-white" href="https://www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">More videos</a>
+      <div playlistid="PLpq4BB-MZiMchCC8XEpSWGlEN89qls1FJ" class="video-holder block-group block-group-3-up tablet-block-group-1-up leader-1 padding-leader-half trailer-half">
       </div>
     </div>
   </div>
 </div>
 
-<!-- Collapsible contents -->
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with ArcGIS Maps for Office</h4>
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/mapsforoffice"></a>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/company/5311?trk=vsrp_companies_hero_name&trkInfo=VSRPsearchId%3A62267361477673144233%2CVSRPtargetId%3A5311%2CVSRPcmpt%3Ahero"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/esrigis/"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/groups/arcgis-maps-for-office"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/en/feedback"></a>
+   </div>
+  </div>
+</div>
 
 <!-- Blog -->
-<div class="panel panel panel-no-border panel-no-padding leader-1">
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">Read our Blog
-        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/">More posts</a>
       </h2>
       <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/feed/" class="block-group block-group-3-up blogHpFeed">
 			  <!-- Blog Content goes here -->
@@ -150,78 +190,12 @@ mobile: true
 <div class="panel panel-white panel-no-border panel-no-padding">
   <div class="grid-container padding-trailer-1 padding-leader-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">Join the conversation
-        <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/groups/arcgis-maps-for-office">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
-        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?containerType=14&amp;containerID=4472">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+      <h2 class="text-rule padding-trailer-half">Join the discussion
+        <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/groups/arcgis-maps-for-office">More discussions</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="block-group block-group-3-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
     </div>
   </div>
 </div>
-
-<!-- Social
-<div class="panel panel-dark panel-no-border">
-	<div class="grid-container">
-	  <div class="column-25 text-white text-center">
-			<h4 class="trailer-half">Connect with the ArcGIS Maps for Office</h4>
-			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
-			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
-			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
-			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
-			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
-		</div>
-	</div>
-</div>
--->
-
-<!-- Videos -->
-<div class="panel panel-blue panel-no-border panel-no-padding">
-  <div class="grid-container padding-leader-1 padding-trailer-1">
-    <div class="column-24">
-      <h2 class="text-white text-rule padding-trailer-half">Watch videos
-        <a class="btn btn-transparent btn-large right text-white" href="https://www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">More Videos <span class="icon-ui-link-external icon-ui-small"></span></a>
-      </h2>
-
-	  <!-- changed flexible-block-group-4-up to 3-up -->
-      <div class="flexible-block-group flexible-block-group-3-up">
-	  <!-- VIDEO 1 -->
-        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
-          <div class="flexible-block-group-conent">
-            <a href="https://youtu.be/VF2Tt0v8I58" class="colorbox-evlarge" title="Map Excel Data" TARGET ="_blank"><img alt="Map Excel Data" src="vid_mapExcelData.png"></a>
-            <h5 class="leader-1">Map Excel Data</h5>
-          </div>
-          <div class="flexible-block-group-footer">
-            <a class="colorbox-evlarge text-white" href="https://youtu.be/VF2Tt0v8I58" target="_blank">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
-          </div>
-        </div>
-
-		<!-- VIDEO 2 -->
-        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
-            <div class="flexible-block-group-conent">
-              <a href="https://youtu.be/7r-woseBfqA" class="colorbox-evlarge" title="Change the look of your maps" target="_blank"><img alt="Change the look of your maps" src="vid_changeMap.png"></a>
-              <h5 class="leader-1">Change the look of your maps</h5>
-            </div>
-            <div class="flexible-block-group-footer">
-              <a class="colorbox-evlarge text-white" href="https://youtu.be/7r-woseBfqA" target="_blank">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
-            </div>
-        </div>
-
-		<!-- VIDEO 3 -->
-        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
-          <div class="flexible-block-group-conent">
-            <a href="https://youtu.be/G8rQpQh_1dM" class="colorbox-evlarge" title="Enrich your data" target="_blank"><img alt="Enrich your Excel data" src="vid_enrich.png"></a>
-            <h5 class="leader-1">Enrich your data</h5>
-          </div>
-          <div class="flexible-block-group-footer">
-            <a class="colorbox-evlarge text-white" href="https://youtu.be/G8rQpQh_1dM" target="_blank">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

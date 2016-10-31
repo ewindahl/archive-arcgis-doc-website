@@ -98,22 +98,22 @@
     for(var i=0; i<data.length && i<max; i++){
       var item= data[i];
 
-      if(feedType == "blogHome"){
+      if(feedType == "blogHome" || feedType == "geonetHome"){
 			buf.push ("<div class='block trailer-1'><div class='panel'>"+
 			"<small>"+ formatTheDate (getNodeValue(item, "pubDate")) +"</small>"+
             "<h4 class='leader-half'><a href='" + getNodeValue(item, "link") + "'>" + getNodeValue(item, "title") + "</a></h4>"+
             "<p>" + truncateDescription(cleanText (getNodeValue(item, "description")), 100)  + " ... <a href='" +getNodeValue(item, "link") + "'>Continue reading →</a>"  + "</p>" +
             "</div></div>");
-		}else if (feedType == "geonetHome"){
+		/*}else if (feedType == "geonetHome"){
 			buf.push ("<div class='flexible-block-group-item flexible-block-group-item-white'>"+
 			"<div class='flexible-block-group-item-header'><small>"+ formatTheDate (getNodeValue(item, "pubDate")) +"</small></div>"+
             "<div class='flexible-block-group-item-content'><h4 class='leader-half'><a href='" + getNodeValue(item, "link") + "'>" + getNodeValue(item, "title") + "</a></h4>"+
             "<p>" + truncateDescription(cleanText (getNodeValue(item, "description")), 100)  + " ... "  + "</p></div>" +
 				"<div class='flexible-block-group-item-footer'><a href='" +getNodeValue(item, "link") + "'>Continue reading <span class='icon-ui-right icon-ui-small'></span></a></div>"+
-            "</div>");
+            "</div>");*/
 		}else {
 			buf.push ("<article>"+
-            "<h4><a href='" + getNodeValue(item, "link") + "'>" + truncateDescription(getNodeValue(item, "title"), 50) + " ..</a></h4>"+
+            "<h4><a href='" + getNodeValue(item, "link") + "'>" + truncateDescription(getNodeValue(item, "title"), 50) + " ...</a></h4>"+
             "<small><time>"+ formatTheDate (getNodeValue(item, "pubDate")) +"</time></small>"+
             "<p>" + truncateDescription(cleanText (getNodeValue(item, "description")), 100)  + " ... <a href='" +getNodeValue(item, "link") + "'>Continue reading →</a>"  + "</p>" +
             "</article>");
