@@ -1,0 +1,136 @@
+---
+layout: marketplace/layout
+
+title: 등록 - ArcGIS Marketplace
+css:
+  - documentation
+  - /en/asset/css/common
+  - stat-page-specific
+  - feedback
+
+js:
+  - sitecfg
+  - marketplace/providerSignUp
+  - marketplace/init
+
+languageSelector: "No"
+
+metatags:
+  - <META name="robot" content="NOINDEX|NOFOLLOW">
+
+mobile: true
+
+---
+<div class="section-bar marketplace">
+  <div class="container feedback">
+    <header>
+      <h1 data-langlabel="provider-sign-up">공급자로 등록</h1>
+    </header>
+	<nav>
+     &nbsp;
+    </nav>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container feedback">
+
+     <div class="row main">
+	 <p data-langlabel="sell-your-app-note">ArcGIS Marketplace에서 앱을 판매하세요. 세계 최대의 GIS 사용자층을 대상으로 판매할 수 있습니다. Eris는 사용자와 연결하고 무료 평가판을 제공하고 잠재 고객을 늘릴 수 있는 간편한 방법을 제공합니다. 앱 판매 수익금 전액은 앱 공급자에게 지급됩니다. 자세한 내용은 <a href="/ko/marketplace/provider/faq.htm">FAQ</a>를 참고하세요. </p>
+	 
+ 	  
+  <div class="warning-signup">
+      <header>
+        <h2 data-langlabel="already-an-esri-partner">Esri 파트너인 경우</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience">ArcGIS Marketplace에 솔루션을 나열하여 더욱 넓은 대상층으로 범위를 확대합니다. <a href="http://partnerportal.esri.com/">Esri Partner Portal</a>에 로그인하여 공급자가 얻을 수 있는 이점에 대해 알아보세요.</p>
+		
+      </section>
+
+	<header>
+        <h2 data-langlabel="already-an-esri-partner">Esri 신흥 비즈니스 프로그램에 가입하여 Esri 파트너(벤처기업) 되기</h2>
+      </header>
+
+      <section>
+        <p data-langlabel="reach-a-broader-audience"><a href="https://developers.arcgis.com/startups/">Esri 신흥 비즈니스 프로그램</a>은 신흥 비즈니스에 제품의 매핑과 위치 분석 기능을 구축할 수 있는 도구를 제공하는 무료 프로그램(3년)입니다. 적격 벤처기업은 온라인 서비스, 소프트웨어, 교육 및 지원, 콘텐츠와 더불어 성공을 돕기 위한 여러 가지 기회를 제공받습니다.</p>
+		
+
+      </section>
+	  
+    </div> 
+
+
+    <div class="contact-form-signup">
+		<h2 data-langlabel="new-to-esri">파트너가 아니십니까? Esri 제품을 처음 사용하십니까?</h2>
+		<p data-langlabel="provider-signup-note">Esri는 사용자를 위해 뛰어난 솔루션을 구축하고자 하는 개발자, 벤처기업, 기관을 찾고 있습니다. 신상 및 기관 정보를 알려주시면 솔루션 구축을 시작할 수 있도록 도와드리겠습니다.</p>
+		
+		<div id="sign-up-form-fields">
+		  <form id="sign-up-form" name="signUpForm" method="post" action="/apps/feedback/api/">
+			
+			
+			<fieldset id="signup-form-fieldset">
+
+			  <label data-langlabel="company-name" for="company-name">회사 이름: </label>
+			  <input type="text" id="companyName" name="companyName">
+			  <label data-langlabel="first-name" for="first-name">이름: </label>
+			  <input type="text" id="firstName" name="firstName">
+			  <label data-langlabel="last-name" for="last-name">성: </label>
+			  <input type="text" id="lastName" name="lastName">
+			  <label data-langlabel="email-address" for="email-address">이메일 주소: </label>
+			  <input type="text" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+			  <label data-langlabel="phone-number" for="phone-number">전화번호: </label>
+			  <input type="text" id="userPhone" name="userPhone">
+			  <label data-langlabel="comment" for="comment">본인 또는 본인이 속한 기관에 대한 정보: </label>
+			  <textarea data-langlabel="comment" placeholder="My organization..." name="userComment" id="userComment"></textarea>
+			  <label data-langlabel="services" for="services">솔루션 또는 서비스 정보: </label>
+			  <textarea data-langlabel="my-services" placeholder="My services..." name="userServices" id="userServices"></textarea>
+			  <label data-langlabel="website" for="website">웹 사이트: </label>
+			  <input type="text" id="userWebsite" placeholder="http://www.esri.com/" name="userWebsite">
+			  
+			  <label data-langlabel="feedback-spam-note" for="spam">자동 스팸을 방지하려면 제공된 숫자를 입력하세요. </label>
+			  <input type="text" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+
+			   <label data-langlabel="numerals" for="captchaValue">숫자: <strong><span id="txtCaptcha" class=""></span></strong></label>
+
+			
+			<input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+			<input type="hidden" value="internal" name="source" id="source">
+			<input type="hidden" value="" name="redirectUrl" id="redirectUrl">
+			<input type="hidden" value="ko" name="lg">
+			<input value="Marketplace Sign Up" name="datablock" id="datablock" type="hidden">
+			<input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+			
+			</fieldset>
+			<a class="btn orange" id="sign-up-link" name="submit-signup" data-langlabel="contact-us">제출</a>
+			
+		  </form>
+		</div>
+	  <div id="signup-confirmation" style="display:none;">
+		<p>&nbsp;</p>
+		<p data-langlabel="provider-signup-confirmation"><strong>ArcGIS Marketplace 공급자에 관심을 가져 주셔서 감사합니다. 며칠(영업일 기준) 이내에 연락을 드리겠습니다.</strong></p>
+	  </div>
+    </div>
+
+  </div> <!-- end of row main -->
+
+  <p>&nbsp;</p>
+
+<script>
+$(document).ready(function() {
+
+    /*$('#sign-up-form :button').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });*/
+	$('#sign-up-link').on ("click", function() {
+      return doc.signUpForm.validateSignUpForm();
+    });
+    doc.signUpForm.DrawCaptcha();
+
+    
+	});
+</script>
+
+  </div>
+

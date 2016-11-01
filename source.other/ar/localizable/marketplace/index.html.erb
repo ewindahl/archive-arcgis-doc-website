@@ -13,11 +13,9 @@ js:
   - libs/jquery.colorbox-min.js
   - jquery.colorbox.init.js
   - video-init
-  - sitecfg.js
-  - marketplace/init.js
 
 metatags:
-  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING">
+  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING"><META name="content-language" content="ar">
 
 mobile: true
 
@@ -32,12 +30,13 @@ mobile: true
         <input type="hidden" name="product" value="marketplace" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
+
     </header>
 	<nav>
       <ul>
         <li class='current'><a href="/ar/marketplace/">رئيسي</a></li>
         <li><a href="/ar/marketplace/consumer/">للمستهلكين</a></li>
-        <li><a href="/ar/marketplace/provider/">للموفرين</a></li>
+        <li><a href="/ar/marketplace/provider/">للمزودين</a></li>
       </ul>
     </nav>
   </div>
@@ -46,14 +45,13 @@ mobile: true
 <!-- Page Content -->
 <div class="container">
 
+
      <div class="column-16 tablet-column-24">
         <header>
 
-		  <h2 id="appTitle">ما هو موقع السوق؟</h2>
-
-          <p>يعتبر موقع سوق ArcGIS هو وجهة تتيح لمنظمات ArcGIS Online البحث عن التطبيقات والبيانات واستكشافها والحصول عليها من الموفرين المؤهلين (شركاء العمل بـ Esri وموزعين Esri و Esri) للاستخدام داخل المنظمة. تتوفر خدمات التطبيقات والبيانات المُدرجة في موقع السوق لأي منظمة في ArcGIS online حول العالم.</p>
-
-
+			 
+		 <!--<h2 id="appTitle" class="gray">What is the Marketplace?</h2>-->
+		<h5 class="gray">تعرف على كيفية الحصول على أكبر قدر ممكن من سوق ArcGIS.</h5>	
 
         </header>
         <hr />
@@ -61,51 +59,67 @@ mobile: true
 
 
         <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/help-power-your-enterprise.jpg" />
+          <img src="img/for-consumers.png" />
 
-          <h3>القوة المؤسسية </h3>
-          <p>البحث عن التطبيقات وخدمات البيانات للاستخدام في المنظمة. بمجرد الحصول على تطبيق وخدمة البيانات، فيمكن مشاركتها مع المجموعات والمستخدمين بسهولة داخل المنظمة.</p>
-          <p>
-			<a href="/ar/marketplace/consumer/purchase-workflow.htm" class="icon-right-arrow"> إظهار كيفية</a> <br/> 
-			<a href="/ar/marketplace/consumer/faq.htm" class="icon-right-arrow"> الأسئلة المتداولة</a>
-
-          </p>
+          <h3>للعملاء </h3>
+          <p>تعرف على كيفية البحث عن التطبيقات والبيانات واستخدامها.</p>
+          <ul>			
+			<li><a href="/ar/marketplace/consumer/get-started-consumers.htm">تعرف على كيفية الحصول على أكبر قدر ممكن من سوق ArcGIS</a></li>
+			<li><a href="/ar/marketplace/consumer/search-for-apps-and-data.htm">البحث عن العناصر</a></li>
+			<li><a href="/ar/marketplace/consumer/subscribe-to-apps-and-data.htm">الحصول على العناصر</a></li>
+			<li><a href="/ar/marketplace/consumer/faq.htm">الأسئلة المتداولة</a></li>
+          </ul>
         </div>
 
 
         <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/help-reach-your-users.jpg" />
+          <img src="img/for-providers.png" />
 
-          <h3>الوصول للمستخدمين</h3>
-          <p>يوفر موقع سوق ArcGIS ألية لإيجاد العملاء المحتملون وتوفير برامج تجريبية مجانية ومنح الوصول للقوائم وإدارة الاشتراكات.</p>
-          <p>
-            <a href="/ar/marketplace/provider/build-apps.htm" class="icon-right-arrow"> عرض كيفية</a> <br/> 
-			<a href="/ar/marketplace/provider/become-a-provider.htm" class="icon-right-arrow"> الإعداد باعتبارك الموفر</a> <br/> 
-			<a href="/ar/marketplace/provider/faq.htm" class="icon-right-arrow"> الأسئلة المتداولة</a>
-
-          </p>
+          <h3>للمُزودين</h3>
+          <p>تعرف على كيفية إضافة التطبيقات والبيانات والترويج لها وبيعها.</p>
+          <ul>			
+			<li><a href="/ar/marketplace/provider/become-a-provider.htm">كُن مزود</a></li>
+			<li><a href="/ar/marketplace/provider/listing-tips.htm">نصائح للقوائم الناجحة</a></li>
+			<li><a href="/ar/marketplace/provider/create-listings.htm">حول القوائم</a></li>
+			<li><a href="/ar/marketplace/provider/faq.htm">الأسئلة المتداولة</a></li>
+          </ul>
         </div>
-
         <div class="clear"></div>
 
-        <p> </p>
+<hr>
+<br>
+<div>
+    
+<div class="column-8 phone-column-24">
 
-      </div>
+    <section class="support-option">
+      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">الدعم الفني لشركة Esri</a></h4>
+      <p>الاتصال بالدعم بواسطة البريد الإلكتروني أو الدردشة او الهاتف.</p>
+    </section>
+    
+  </div> 
+  <div class="column-8 phone-column-24">
+
+    <section class="support-option">
+      <h4 class="icon-light-bulb icon-orange"><a href="https://geonet.esri.com/community/arcgis-ideas/" target="_blank">أفكار ArcGIS</a></h4>
+      <p>أرسل تعليقاتك على البرنامج.</p>
+    </section>
+    
+  </div>
+  <div class="column-8 phone-column-24" >
+
+   <h4 class="icon-comment icon-blue"><a href="https://geonet.esri.com/groups/arcgis-marketplace-apps" target="_blank">مجتمع Esri</a></h4>
+      <p>انضم إلى المناقشات على Geonet.</p>
+    
+  </div>
+  <!--<div class="row">-->
+
+  
+</div>
+        <p>&nbsp;</p>
 
 
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3 class="icon-orange icon-light-bulb">موقع أفكار ArcGIS</h3>
-         <p>هل ترى التطبيقات والبيانات التي تحتاجها؟ انشر الاقتراح أو صوت على الأفكار الحالية.</p>
-         <p>هل أنت موفر تبحث عن أفكار؟ تعرف على متطلبات العملاء. قم بدعوة المساهمين للتعاون معك لتطوير الأفكار.</p>
-         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
-        </div>
-
-        <br />
 
 
- </div>
 
-    </div>
 

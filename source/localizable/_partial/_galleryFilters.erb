@@ -4,23 +4,15 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
    contents = File.read(current_page.data.gallery_data_path)
    ref =  XmlSimple.xml_in(contents, { 'ForceArray' => true })
 %>
-<div id="reference-index">
+<div class="column-5" id="reference-index">
 	<header>
-	<h4>Themes</h4>
+	<h4 class="">Themes</h4>
 	<span class="down-arrow tablet-theme-dropDown"></span>
-	<div class="filter-misc">
-		<!--<div id="rss">
-		 <a target="_self" href="http://www.arcgis.com/sharing/search?q=(group:( 8cb0765d4f394cc097407068580188ad))&amp;f=rss" rel="nofollow">
-		  <img src="/img/gallery/rss-icon.png" alt="RSS">
-		 </a>
-		</div>-->
-	</div>
-	
 	</header>
   <!--<div><a href="#" id="gl-filter-clear">Clear All</a></div>-->
 	<nav id="navFilters">
 		<div id="filters">
-		<ol id="menutree">
+		<ol id="menutree" class="list-plain">
 		<li>
 		<label id="allCollections" class="filter-label current All-filter" col="All">All</label>
          <%
@@ -34,7 +26,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
                <label class="filter-label <%= k['metaname'] %>-filter" for="c<%= c %>" col="<%= k['metaname']%>:<%=k["value"].length%>"><%= k['label'] %>
 			   <span class="reset-filter">Reset</span>
 			   </label>
-			   <ol id="ol<%= c %>" >
+			   <ol id="ol<%= c %>" class="list-plain">
                <%
                    i = 0
 				   k["value"].each { |sk| 
@@ -80,7 +72,7 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 	</header>
 	<nav id="showMe">
 		<div id="showMeFilters">
-		<ol id="menutreeType">
+		<ol id="menutreeType" class="list-plain">
 		<li><label id="allFilters" class="showme-filter-label current All-showme-filter" type="All">All</label></li>
 		<li><label class="showme-filter-label maps-showme-filter" type="maps">Maps</label></li>
 		<li><label class="showme-filter-label layers-showme-filter" type="layers">Layers</label></li>
@@ -96,12 +88,12 @@ if current_page.data.gallery_data_path and current_page.data.expanded_gallery
 	</header>
 	<nav id="showMe2">
 		<div id="showMeFilters"> <!--used -->
-		<ol id="menutreeArea">
+		<ol id="menutreeArea" class="list-plain">
 		<li><label id="allFilters" class="showme-filter-label current All-showme-filter" type="All">All</label></li>
 		<li><label class="showme-filter-label world-showme-filter" type="world">World</label></li>
 		<li><label class="showme-filter-label regional-showme-filter" id="countryName" type="regional">United States</label> 
-		<span class="dropdown change-region">Change</span>
-		<div id="regionList" class="dropdown-content"></div>
+		<span class="change-region">Change</span>
+		<div id="regionList" class="dropdown js-dropdown dropdown-content"></div>
 		</li>
 		
 		</ol>

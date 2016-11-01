@@ -51,7 +51,12 @@ $(document).ready(function() {
 			},
 			IsValidSubscription: function () {
 				if(accountExtnCookieObj && accountExtnCookieObj.state == "active"){
-					return true
+					if (typeof allowedSubTypes != 'undefined' && allowedSubTypes.indexOf(accountExtnCookieObj.type) < 0){
+						// If allowedSubtypes defined and user sub type is not in the list
+						return false
+					} else {
+						return true
+					}
 				} else {
 					return false
 				}
@@ -145,7 +150,7 @@ $(document).ready(function() {
 	});
 
 
-	if(dload.methods.loginType() == "public"){
+	if((dload.methods.loginType() == "public") || (dload.methods.getOrgType() && !dload.methods.IsValidSubscription())){
 		// disable Org specific download buttons
 		$(".secured-org .download-link").addClass("disabled")
 	}
@@ -168,7 +173,7 @@ $(document).ready(function() {
 				var localedir = (typeof(docConfig) !== 'undefined') ? docConfig['locale'].toLowerCase():false;
 				var localeDict = (localedir && window.localeJsonObj)?window.localeJsonObj[localedir]:false;
 
-				alert ((localeDict && localeDict['invalid-org-acct']) ? localeDict['invalid-org-acct'] : "Please login with a valid Organizationl account!")
+				alert ((localeDict && localeDict['invalid-org-acct']) ? localeDict['invalid-org-acct'] : "Please sign in with a valid organizational account.")
 				return false;
 			}
 

@@ -6,6 +6,10 @@ $(document).ready(function() {
 		data-plat="ios"
 
 */
+var noSwitcherFileList = {
+	   "test.htm": "Desktop",
+}
+
    var localedir = "en";
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'].toLowerCase();
@@ -97,6 +101,15 @@ $(document).ready(function() {
 		} else {
 			$ele.toggleClass ("off");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+			
+			if(fname in noSwitcherFileList){
+				// disable click
+				url = "#";
+				$ele.toggleClass ("is-disabled");
+			}else{
+				$ele.toggleClass ("off");
+				url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+			}
 
 		}
 

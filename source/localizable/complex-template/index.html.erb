@@ -1,0 +1,320 @@
+---
+title: FULL_PRODUCT_NAME
+css:
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
+
+js:
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+
+metatags:
+  - <META PRODUCT_METADATA>
+
+mobile: true
+
+---
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  PRODUCT_METADATA: The metadata for the product
+  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
+  DOWNLOAD_LINK: A link to download the product, free trial, etc.
+  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
+  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
+  NAV_LINK_x: The link for the navigation tabs at the top.
+  NAV_TEXT_x: The text for the navigation tabs at the top.
+  PRODUCT_SEARCH_VALUE: The product value for the search form
+  PRODUCT_IMAGE_231x149.png: This is an image in the first section under the search bar.
+  MAIN_TEXT: The text that appears in the first section under the search bar.
+  WHATS_NEW_TEXT: A blurb about what's new with the product.
+  WHATS_NEW_LINK: A link to more info about what's new with the product.
+  TAB_TITLE_x: The title for the tab.
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  CARD_LINK_x: The page that the card should link to.
+  CARD_TITLE_x: The title of the card.
+  CARD_TEXT_x: The text inside the card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+  GEONET_LINK: Link to the product's Geonet page
+  BLOG_LINK: Link to the the product's blog
+  BLOG_FEED_URL: URL for the product's blog feed
+  GEONET_LINK: Link to the the product's geonet page
+  GEONET_FEED_URL: URL for the product's geonet feed
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">FULL_PRODUCT_NAME</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="DOWNLOAD_LINK">Download PRODUCT_NAME</a>
+          <!-- INSTRUCTIONS: Remove this p tag if not needed -->
+          <p class="trailer-0 leader-half text-white font-size--2"><strong>Version VERSION_NUMBER</strong> RELEASE DATE</p>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link is-active" href="NAV_LINK_1">Home</a>
+        <a class="sub-nav-link" href="NAV_LINK_2">NAV_TEXT_2</a>
+        <a class="sub-nav-link" href="NAV_LINK_3">NAV_TEXT_3</a>
+        <a class="sub-nav-link" href="NAV_LINK_4">NAV_TEXT_4</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <div class="wf-nav" style="height:55px;">
+      <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
+        <form id="helpSearchForm" target="_top">
+          <input type="search" name="q" class="leader" placeholder="Search FULL_PRODUCT_NAME">
+          <input type="hidden" name="collection" value="help" />
+          <input type="hidden" name="product" value="PRODUCT_SEARCH_VALUE" />
+          <input type="hidden" name="language" value="<%= current_language %>" />
+          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+        </form>
+      </div>
+    </div>
+
+    <!--
+    <div class="column-16 tablet-column-7">
+      <p>MAIN_TEXT</p>
+    </div>
+    -->
+    <!-- INSTRUCTIONS: If you don't want to use an image in this section, uncomment the div above and remove the divs below. -->
+    <div class="column-4 right margin-right-1 padding-left-0">
+      <img src="img/PRODUCT_IMAGE_231x149.png">
+    </div>
+    <div class="column-11 tablet-column-7">
+      <p>MAIN_TEXT</p>
+    </div>
+
+
+  </div>
+  <div class="column-8 tablet-column-12 right">
+    <div class="panel">
+      <h4 class="icon-ui-announcement">What's new</h4>
+      <p>WHATS_NEW_TEXT</p>
+      <a class="btn secondary" href="WHATS_NEW_LINK">Learn more</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container leader-2">
+  <div class="js-tab-group trailer-half">
+    <nav class="tab-nav">
+      <a class="tab-title js-tab font-size-1 avenir-demi trailer-0 is-active" style="max-width: 25%;">TAB_TITLE_1</a>
+      <a class="tab-title js-tab font-size-1 avenir-demi trailer-0" style="max-width: 25%;">TAB_TITLE_2</a>
+    </nav>
+    <section class="tab-contents">
+      <article class="tab-section js-tab-section is-active">
+        <!-- INSTRUCTIONS: If you want to use more or less than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would be better with wider, shorter images. -->
+        <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_1">
+                <img alt="" src="img/CARD_IMAGE_1.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_1">CARD_TITLE_1</a>
+              </h5>
+              <p>CARD_TEXT_1</p>
+            </div>
+            <a href="CARD_LINK_1" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_2">
+                <img alt="" src="img/CARD_IMAGE_2.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_2">CARD_TITLE_2</a>
+              </h5>
+              <p>CARD_TEXT_2</p>
+            </div>
+            <a href="CARD_LINK_2" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_3">
+                <img alt="" src="img/CARD_IMAGE_3.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_3">CARD_TITLE_3</a>
+              </h5>
+              <p>CARD_TEXT_3</p>
+            </div>
+            <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_4">
+                <img alt="" src="img/CARD_IMAGE_4.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_4">CARD_TITLE_4</a>
+              </h5>
+              <p>CARD_TEXT_4</p>
+            </div>
+            <a href="CARD_LINK_4" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="tab-section js-tab-section">
+        <!-- INSTRUCTIONS: If you want to use more or less than 5 cards, change "block-group-5-up" to the number you will use.  Keep in mind that using fewer cards would be better with wider, shorter images. -->
+        <div class="block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up">
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_1">
+                <img alt="" src="img/CARD_IMAGE_1.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_1">CARD_TITLE_1</a>
+              </h5>
+              <p>CARD_TEXT_1</p>
+            </div>
+            <a href="CARD_LINK_1" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_2">
+                <img alt="" src="img/CARD_IMAGE_2.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_2">CARD_TITLE_2</a>
+              </h5>
+              <p>CARD_TEXT_2</p>
+            </div>
+            <a href="CARD_LINK_2" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_3">
+                <img alt="" src="img/CARD_IMAGE_3.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_3">CARD_TITLE_3</a>
+              </h5>
+              <p>CARD_TEXT_3</p>
+            </div>
+            <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_4">
+                <img alt="" src="img/CARD_IMAGE_4.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_4">CARD_TITLE_4</a>
+              </h5>
+              <p>CARD_TEXT_4</p>
+            </div>
+            <a href="CARD_LINK_4" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+          <div class="card block">
+            <figure class="card-image-wrap">
+              <a href="CARD_LINK_5">
+                <img alt="" src="img/CARD_IMAGE_5.png">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h5 class="trailer-half leader-0">
+                <a href="CARD_LINK_5">CARD_TITLE_5</a>
+              </h5>
+              <p>CARD_TEXT_5</p>
+            </div>
+            <a href="CARD_LINK_5" class="btn btn-clear btn-fill leader-0">Learn more</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-2">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h3 class="leader-half trailer-0 text-center padding-trailer-0">Watch our videos</h3>
+      <a class="btn btn-transparent btn-large right padding-leader-0 padding-trailer-0 text-white" href="MORE_VIDEOS_LINK">More videos</a>
+      <!-- INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number. -->
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-1 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with FULL_PRODUCT_NAME</h4>
+    <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="TWITTER_LINK"></a>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="LINKEDIN_LINK"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="GITHUB_LINK"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="FACEBOOK_LINK"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="GEONET_LINK"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
+
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="BLOG_LINK">More posts</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="BLOG_FEED_URL" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Join the discussion
+        <a class="btn btn-transparent btn-large right" href="GEONET_LINK">More discussions</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="GEONET_FEED_LINK" class="block-group block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
