@@ -1,0 +1,40 @@
+---
+title: ArcGIS Documentation
+layout: docindex
+---
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+<script src="/<%= current_language %>/docindex_controller.js" type="text/javascript"></script>
+
+<div class="grid-container" ng-app="docindexApp" ng-controller="DocIndexListCtrl">
+  <nav id='filter-list' class="column-16 pre-4 post-4 leader-2 trailer-4">
+      <div class="input-group">
+        <input class="input-group-input" type="text" ng-model="query" placeholder="Search for a Product">
+        <span class="input-group-button">
+          <button class="btn" ng-click="query='';">Reset</button>
+        </span>
+      </div>
+  </nav>
+  <div class="column-24">
+    <div id="gallerycontent" class="block-group block-group-6-up tablet-block-group-3-up phone-block-group-1-up">
+      <div class="card card-shaped block trailer-2" ng-repeat="item in (galleryResults = (galleryitems | filter:query | orderBy:orderProp))">
+        <figure class="card-image-wrap">
+          <img src="/assets/img/app-icons/test.png" class="card-image" alt="Placeholder" />
+        </figure>
+        <div class="card-content">
+          <a href="{{item.appLink}}">
+            <h5 class="trailer-half">{{item.appName}}</h5>
+          </a>
+          <p class="font-size--1 card-last">
+            {{item.appDesc}}
+          </p>
+          <a href="{{item.appLink}}" class="btn btn-clear btn-fill leader-1">View Help</a>
+        </div>
+      </div>
+      <div ng-show="isEmpty(galleryResults)" class="empty-results">
+        <h3>No results found.</h3>
+      </div>
+    </div>
+  </div>
+</div>
