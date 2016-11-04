@@ -13,11 +13,12 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-07-05"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="it">
+  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-10-12"><META name="product" content="navigator-iphone,navigator-ipad,navigator-android-phone,navigator-android-tablet"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="it">
 
 mobile: true
 
 ---
+
 <div class="navigation-bar blue">
   <div class="container">
     <header>
@@ -25,7 +26,7 @@ mobile: true
 	  <form id="helpSearchForm" target="_top">
        <input type="search" name="q" class="leader" placeholder="Ricerca di Navigator"> 
         <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="navigator-ipad" />          
+        <input type="hidden" name="product" value="navigator-android-phone" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
     </header>
@@ -33,7 +34,7 @@ mobile: true
       <ul>
         <li class='current'><a href="/it/navigator/">Home</a></li>
         <li><a href="/it/navigator/prepare-maps/prepare-maps.htm">Prepara mappe</a></li>
-        <li><a href="/it/navigator/ipad/navigate/guided-tour.htm">Naviga</a></li>
+        <li><a href="/it/navigator/android-phone/navigate/guided-tour.htm">Naviga</a></li>
         <li><a href="http://links.esri.com/geonet-navigator">Forum</a></li> 
       </ul>
     </nav>  
@@ -48,7 +49,8 @@ mobile: true
 
         <p>
           <a href="http://links.esri.com/navigator-ios-install"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a> 
-          <a style="font-size:1.23em; margin:10px; vertical-align:middle" class="btn primary icon-android" href="https://earlyadopter.esri.com/callout/?callid=%7b28F9956B-A1F0-4793-8B7E-BA0E9473D06A%7d">Android ora in versione beta</a>
+          <a href="https://play.google.com/store/apps/details?id=com.esri.navigator&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Ottienilo in Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:10px; vertical-align:middle"/></a>
+          <!--a style="font-size:1.23em; margin:10px; vertical-align:middle" class="btn primary icon-android" href="https://earlyadopter.esri.com/callout/?callid=%7b28F9956B-A1F0-4793-8B7E-BA0E9473D06A%7d">Android now in beta!</a-->
         </p> 
         </header>
         <hr />
@@ -61,7 +63,7 @@ mobile: true
           <h3>Tour guidato</h3>
           <p>Scaricare mappe pertinenti, creare un percorso, riordinare le soste, configurare le modalità di viaggio e instradare alla destinazione.</p>
           <p>
-		<a href="/it/navigator/ipad/navigate/guided-tour.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />  
+		<a href="/it/navigator/android-phone/navigate/guided-tour.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />  
 		<a href="http://video.arcgis.com/iframe/4633/000000/width/960/0/00:00:00" title="Introduzione a Navigator for ArcGIS" class="videoLink colorbox-evlarge cboxElement icon-play">&nbsp;Guardare il video</a>
 				
           </p>
@@ -88,7 +90,7 @@ mobile: true
           <p>Connettersi facilmente con altre app Esri quali Collector for ArcGIS per raggiungere le sedi di lavoro durante il lavoro sul campo.</p>
           <p>
 		  
-		<a href="/it/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />
+		<a href="/it/navigator/android-phone/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />
 				
           </p>
         </div>
@@ -126,7 +128,7 @@ mobile: true
               <li>iPad (quarta generazione o versioni successive per prestazioni ottimali), iPhone (6 o versioni successive per prestazioni ottimali), iPod touch</li>
             </ul>
           </td>
-          <td valign="top" width="250px;"><h4 class="icon-android">Android (Beta)</h4>
+          <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
 	    <ul>
 	      <li>Android 4.2 (Jelly Bean) o versioni successive</li>
 	      <li>Processore ARMv7 o x86</li>
@@ -137,15 +139,12 @@ mobile: true
         <tr></table>
 
 	 <h3>Lingue supportate</h3>
-	    <p>Arabo, olandese, inglese, francese, tedesco, greco, ebraico, italiano, giapponese, coreano, portoghese (Brasile), portoghese (Portogallo), russo, cinese semplificato, spagnolo e turco.</p>        
+	    <p>Arabo, cinese semplificato, coreano, ebraico, estone (<span class="icon-android"/>), francese, giapponese, greco, inglese, italiano, lettone (<span class="icon-android"/>), lituano (<span class="icon-android"/>), olandese, portoghese (Brasile), portoghese (Portogallo), russo, spagnolo, tedesco e turco.</p>        
 
 
 	<a name="arcgisRequirements"></a>
         <h2 class="divider">Requisiti di ArcGIS</h2>
-        <p>Per utilizzare Navigator for ArcGIS, è necessario disporre di un account aziendale di ArcGIS Online che è stato configurato con una licenza di Navigator for ArcGIS. 
-        Per ulteriori informazioni sull'utilizzo di ArcGIS Online, vedere <a href="/it/arcgis-online/administer/manage-licenses.htm#ESRI_SECTION1_C9282762EB1F4A72BB3D8794F2E4E516" target="_blank">Informazioni sulla licenza di Navigator for ArcGIS</a>. 
-        Per maggiori informazioni sull'utilizzo di Portal for ArcGIS, vedere <a href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-navigator-for-arcgis-licenses.htm#ESRI_SECTION1_D9DCE11B3F03413BBD608ECFA8BC4A04">Configurare licenze Navigator for ArcGIS per l'organizzazione</a>. 
-        ArcGIS Online e Portal for ArcGIS 10.4 e versioni successive sono supportate. </p>
+        <p>Per utilizzare Navigator for ArcGIS, è necessario disporre di un account aziendale di ArcGIS Online che è stato configurato con una licenza di Navigator for ArcGIS. Per ulteriori informazioni sull'utilizzo di ArcGIS Online, vedere <a href="/it/arcgis-online/administer/manage-licenses.htm#ESRI_SECTION1_C9282762EB1F4A72BB3D8794F2E4E516" target="_blank">Informazioni sulla licenza di Navigator for ArcGIS</a>. Per maggiori informazioni sull'utilizzo di Portal for ArcGIS, vedere <a href="http://server.arcgis.com/it/portal/latest/administer/windows/configure-navigator-for-arcgis-licenses.htm#ESRI_SECTION1_D9DCE11B3F03413BBD608ECFA8BC4A04">Configurare licenze Navigator for ArcGIS per l'organizzazione</a>. ArcGIS Online e Portal for ArcGIS 10.4 e versioni successive sono supportate. </p>
         
         <p>È possibile utilizzare le mappe di navigazione fornite da Esri o creare le proprie mappe. Le mappe di navigazione fornite da Esri sono disponibili in ArcGIS Online o Portal for ArcGIS e possono essere scaricate nel dispositivo. Per maggiori informazioni sulle mappe fornite, vedere <a href="http://server.arcgis.com/en/streetmap-premium/latest/coverage/navigator-maps.htm">Copertura di Navigator Map</a>.</p>
         <p>I requisiti per la creazione o la modifica di una mappa per l'uso in Navigator dipendono da ciò che si desidera modificare. Vedere <a href="/it/navigator/prepare-maps/faqs-author.htm#anchor3">Quali licenze sono necessarie per utilizzare le mappe di navigazione?</a></p>
@@ -156,99 +155,26 @@ mobile: true
         <table>
 	  <tr>
 	    <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
-	      <p>Navigator for ArcGIS 2.0, rilasciato a luglio 2016, include i seguenti miglioramenti:</p>
+	      <p>Navigator for ArcGIS 2.0, rilasciato a luglio 2016. Include i seguenti miglioramenti:</p>
+	      <ul>
+                <li>Utilizzare le proprie mappe; cercare le risorse, il percorso sulle strade e visualizzare i layer</li>
+	        <li>Più fermate possono essere riordinate automaticamente in percorsi ottimizzati</li>
+	        <li>Passaggio di indirizzi con lo schema URL personalizzato</li>
+	        <li>Supporto per Portal for ArcGIS 10.4 e versioni successive</li>
+	        <li>Localizzazione in arabo, olandese, ebraico e portoghese (Brasiliano)</li>
+	        <li>Correzioni di diversi bug e miglioramenti</li>
+	    </ul>
 	    </td>
-	    <td valign="top" width="250px;"><h4 class="icon-android">Android (Beta)</h4>
-	      <p>Navigator for ArcGIS è passato alla versione beta a maggio 2016. Include i seguenti miglioramenti:</p>
+	    <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+	      <p>Navigator for ArcGIS 2.0, rilasciato a ottobre 2016, È la prima release su Android e si comporta in modo equivalente a Navigator su iOS.</p>
 	    </td>
 	  </tr>
-	  <tr>
-	    <td valign="top"><ul>
-              <li>Utilizzare le proprie mappe; cercare le risorse, il percorso sulle strade e visualizzare i layer</li>
-              <li>Più fermate possono essere riordinate automaticamente in percorsi ottimizzati</li>
-              <li>Passaggio di indirizzi con lo schema URL personalizzato</li>
-              <li>Supporto per Portal for ArcGIS 10.4 e versioni successive</li>
-              <li>Localizzazione in arabo, olandese, ebraico e portoghese (Brasiliano)</li>
-              <li>Correzioni di diversi bug e miglioramenti</li>
-	    </ul></td>
-	    <td valign="top"><ul>
-	      <li>Include tutte le feature elencate come in sviluppo per Android nella tabella <a href="#sneakPeak">In anteprima</a>. Tutte le feature attualmente rilasciate su iOS sono supportate.</li>
-	    </ul></td>
-	  </tr>
+	  <!--tr>
+	    <td valign="top"></td>
+	    <td valign="top"></td>
+	  </tr-->
         </table>
         
-	<a name="sneakPeek"></a>
-	<h2 class="divider">In anteprima</h2>
-	<p>	Nella seguente tabella è descritto in dettaglio lo stato di avanzamento di questa app, mostrando le funzionalità per ogni piattaforma dispositivo: </p>
-	
-	<style>
-	  table.sneakPeek
-	  {
-	    text-align:center;
-	  }
-	  table.sneakPeek tr.heading th
-	  {
-	    background-color:lightgray;
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	  table.sneakPeek tr#deviceHeadings th
-	  {
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	</style>
-        <table class="sneakPeek" border="1">
-	  <caption>Funzionalità per piattaforma<br/>
-	  <span class="icon-check" style="color:black"></span> rilasciato, <span class="icon-check icon-orange"></span> in fase di sviluppo, <span class="icon-check" style="color:lightgray"></span><span class="clear"/> in seguito<br/>
-Celle vuote indicano funzionalità non pianificata.<br/>
-Il supporto per desktop non è attualmente pianificato.
-	  </caption>
-	  <tr>
-	    <td></td>
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-android"/></td>
-	    <td><span class="icon-windows-8 icon-purple"/></td>
-	  </tr>
-	  <tr>
-	    <td>Navigare utilizzando le mappe incluse</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	  <tr>
-	    <td>Navigare utilizzando mappe personalizzate (geocodifica, creazione percorsi e visualizzazione)</td>
-	    <td><span class="icon-check"></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr> 
-	  <tr>
-	    <td>Utilizzo di ArcGIS Online</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	  <tr>
-	    <td>Utilizzo di Portal for ArcGIS</td>
-	    <td><span class="icon-check"></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	  <tr>
-	    <td>Navigare, creare percorsi ed eseguire ricerche utilizzando mappe memorizzate nel dispositivo</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	</table>
-	
-	<p>Vi invitiamo a condividere le vostre <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bnavigator-for-arcgis%5D">idee</a>, ed <a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">inviarci commenti e suggerimenti</a>.</p>
-	
-        <p>&nbsp;</p>
-
-
       </div>
 
 
@@ -261,7 +187,6 @@ Il supporto per desktop non è attualmente pianificato.
 	  <h4><a href="#systemRequirements">Requisiti di sistema</a></h4>
 	  <h4><a href="#arcgisRequirements">Requisiti di ArcGIS</a></h4>
 	  <h4><a href="#whatsNew">Novità</a></h4>
-	  <h4><a href="#sneakPeek">In anteprima</a></h4>
 	          
         </div>
 
@@ -279,8 +204,7 @@ Il supporto per desktop non è attualmente pianificato.
     </div>
 
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
+	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
     $(window).load(function() {
       $('#blog').rssFeed({
         url:'http://blogs.esri.com/esri/arcgis/tag/navigator-for-arcgis/feed/',
