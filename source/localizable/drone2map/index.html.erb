@@ -7,8 +7,9 @@ css:
 
 js:
   - /cdn/js/libs/jquery.colorbox-min
-  - video-playlist
+  - video-init
   - rssfeed
+  - download
 
 metatags:
   - <META name="description" content="Drone2Map Home page."><META name="last-modified" content="2016-11-10"><META name="product" content="drone2map"><META name="sub_category" content="Drone2Map"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="drone2map"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
@@ -58,9 +59,9 @@ Please search for INSTRUCTIONS within the file for element specific instructions
           <h1 class="sub-nav-title leader-1 trailer-1 text-white">Drone2Map for ArcGIS Help</h1>
         </div>
         <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
-        <div class="leader-1 text-right">
+        <div class="leader-1 text-right secured-org">
           <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
-          <a class="btn margin-left-1 btn-clear" href="DOWNLOAD_LINK">Download Drone2Map for ArcGIS</a>
+          <a class="btn download-link margin-left-1 btn-clear" data-file-size="231 MB" data-folder="software/Drone2Map" data-filename="Drone2Map_101_152894.exe">Download Drone2Map for ArcGIS</a>
         </div>
       </div>
     </div>
@@ -70,8 +71,8 @@ Please search for INSTRUCTIONS within the file for element specific instructions
         <a class="sub-nav-link" href="/en/drone2map/install/">Install</a>
         <a class="sub-nav-link" href="/en/drone2map/quick-start-exercises/">Quick-start exercises</a>
         <a class="sub-nav-link" href="/en/drone2map/configure/">Configure</a>
-		<a class="sub-nav-link" href="/en/drone2map/process-and-share/">Process and share</a>
-		<a class="sub-nav-link" href="/en/drone2map/reference/">Reference</a>
+		    <a class="sub-nav-link" href="/en/drone2map/process-and-share/">Process and share</a>
+		    <a class="sub-nav-link" href="/en/drone2map/reference/">Reference</a>
       </nav>
     </div>
   </div>
@@ -91,19 +92,18 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       </div>
     </div>
 
-    
+
     <!-- INSTRUCTIONS: If you don't want to use an image in this section, uncomment the div above and remove the two divs below.-->
     <div class="column-4 right margin-right-1 padding-left-0">
       <!--<img src="img/PRODUCT_IMAGE_231x149.png">-->
-	  <a href="https://www.youtube.com/watch?v=y8QT9FTu2iA" class="colorbox-evlarge cboxElement videoElement" title="Introducing Drone2Map for ArcGIS" onclick="return false;">
+	    <a href="https://www.youtube.com/embed/y8QT9FTu2iA?showinfo=0&amp;autoplay=1" class="colorbox-evlarge cboxElement videoElement" title="Introducing Drone2Map for ArcGIS" onclick="return false;">
         <img alt="VIDEO_TITLE" src="img/video-d2m.png">
         <div class="play-button"><div class="play-icon"></div></div>
-      </a> 
+      </a>
     </div>
     <div class="column-11 tablet-column-7">
-	<p>Drone2Map for ArcGIS is a desktop app that turns raw still imagery from drones into stunning information products in ArcGIS. Now, with drone hardware becoming more accessible, you can create 2D and 3D maps of features and areas that may be hard to access or fully cover because of size or terrain. Monitor environmental changes, the impact of natural disasters, scheduled events, and more. Together with many other capabilities in ArcGIS, Drone2Map for ArcGIS helps you unlock the insights hidden in your imagery</p>
-
-	</div>
+	    <p>Drone2Map for ArcGIS is a desktop app that turns raw still imagery from drones into stunning information products in ArcGIS. Now, with drone hardware becoming more accessible, you can create 2D and 3D maps of features and areas that may be hard to access or fully cover because of size or terrain. Monitor environmental changes, the impact of natural disasters, scheduled events, and more. Together with many other capabilities in ArcGIS, Drone2Map for ArcGIS helps you unlock the insights hidden in your imagery</p>
+	  </div>
 
 
   </div>
@@ -129,7 +129,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   </nav>
 </div>
 
-<div class="grid-container leader-1">
+<div class="grid-container leader-1 trailer-2">
   <div class="column-24">
     <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would be better with wider, shorter images. -->
     <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
@@ -193,7 +193,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   </div>
 </div>
 
-<!-- Videos 
+<!-- Videos
 <div class="panel panel-blue panel-no-border panel-no-padding leader-2">
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
