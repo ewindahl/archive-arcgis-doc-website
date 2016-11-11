@@ -1,0 +1,247 @@
+---
+title: FULL_PRODUCT_NAME
+css:
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
+
+js:
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+
+metatags:
+  - <META PRODUCT_METADATA>
+
+mobile: true
+
+---
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  PRODUCT_METADATA: The metadata for the product
+  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
+  DOWNLOAD_LINK: A link to download the product, free trial, etc.
+  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
+  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
+  NAV_LINK_x: The link for the navigation tabs at the top.
+  NAV_TEXT_x: The text for the navigation tabs at the top.
+  PRODUCT_SEARCH_VALUE: The product value for the search form
+  PRODUCT_IMAGE_231x149.png: This is an image in the first section under the search bar.
+  MAIN_TEXT: The text that appears in the first section under the search bar.
+  WHATS_NEW_TEXT: A blurb about what's new with the product.
+  WHATS_NEW_LINK: A link to more info about what's new with the product.
+  POPULAR_LINK_x: Links to popular pages and topics, such as "What's new", "Supported environments", "Archived help", etc.
+  POPULAR_TEXT_x: Text for links to popular pages and topics.
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  CARD_LINK_x: The page that the card should link to.
+  CARD_TITLE_x: The title of the card.
+  CARD_TEXT_x: The text inside the card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+  GEONET_LINK: Link to the product's Geonet page
+  BLOG_LINK: Link to the the product's blog
+  BLOG_FEED_URL: URL for the product's blog feed
+  GEONET_LINK: Link to the the product's geonet page
+  GEONET_FEED_URL: URL for the product's geonet feed
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Survey123 for ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="/en/survey123/browser/download/">Download Survey123</a>
+          <!-- INSTRUCTIONS: Remove this p tag if not needed -->
+          <p class="trailer-0 leader-half text-white font-size--2"><strong>Version 1.10</strong> December 2016</p>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link is-active" href="/en/survey123/">Home</a>
+        <a class="sub-nav-link" href="/en/survey123/desktop/create-surveys/">Create Surveys</a>
+        <a class="sub-nav-link" href="/en/survey123/desktop/get-answers/">Get Answers</a>
+        <a class="sub-nav-link" href="/en/survey123/browser/analyze-results/">Analyze Results</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <div class="wf-nav" style="height:55px;">
+      <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
+        <form id="helpSearchForm" target="_top">
+          <input type="search" name="q" class="leader" placeholder="Search FULL_PRODUCT_NAME">
+          <input type="hidden" name="collection" value="help" />
+          <input type="hidden" name="product" value="PRODUCT_SEARCH_VALUE" />
+          <input type="hidden" name="language" value="<%= current_language %>" />
+          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+        </form>
+      </div>
+    </div>
+
+    <!--
+    <div class="column-16 tablet-column-7">
+      <p>MAIN_TEXT</p>
+    </div>
+    -->
+    <!-- INSTRUCTIONS: If you don't want to use an image in this section, uncomment the div above and remove the two divs below. -->
+    <div class="column-4 right margin-right-1 padding-left-0">
+      <img src="img/Survey123.png">
+    </div>
+    <div class="column-11 tablet-column-7">
+      <p>Survey123 for ArcGIS is a simple and intuitive form-centric data gathering solution that makes creating, sharing and analyzing surveys possible in just three easy steps.</p>
+    </div>
+
+
+  </div>
+  <div class="column-8 tablet-column-12 right">
+    <div class="panel">
+      <h4 class="icon-ui-announcement">What's new</h4>
+      <p>Improved ability to create surveys from existing feature services</p>
+      <a class="btn secondary" href="/en/survey123/desktop/create-surveys/whatsnewsurvey123.htm">Learn more</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="/en/survey123/browser/create-surveys/quickreferencecreatesurveys.htm">Quick Reference</a></li>
+        <li><a href="/en/survey123/desktop/create-surveys/systemrequirements.htm">System Requirements</a></li>
+	      <li><a href="https://survey123.arcgis.com/videos/">Watch Videos</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>
+
+<div class="grid-container leader-1">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would be better with wider, shorter images. -->
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_1">
+            <img alt="" src="img/CARD_IMAGE_1.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_1">Create a public survey</a>
+          </h5>
+          <p>CARD_TEXT_1</p>
+        </div>
+        <a href="CARD_LINK_1" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_2">
+            <img alt="" src="img/CARD_IMAGE_2.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_2">Create a survey from existing layers</a>
+          </h5>
+          <p>CARD_TEXT_2</p>
+        </div>
+        <a href="CARD_LINK_2" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_3">
+            <img alt="" src="img/CARD_IMAGE_3.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_3">Collect data when theres no connectivty</a>
+          </h5>
+          <p>CARD_TEXT_3</p>
+        </div>
+        <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_4">
+            <img alt="" src="img/CARD_IMAGE_4.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_4">Share results with stakeholders</a>
+          </h5>
+          <p>CARD_TEXT_4</p>
+        </div>
+        <a href="CARD_LINK_4" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-2">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="https://www.youtube.com/channel/UCJ203R9PsZn6wF_zYfsp1SA">More videos</a>
+      </h2>
+      <!-- INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number. -->
+      <div playlistid="PLGZUzt4E4O2L7h2PdpL7st93nURZAW58d" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with Survey123 for ArcGIS</h4>
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/search?q=%23esrisurvey123"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri/Survey123Community"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/groups/survey123"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
+
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/survey123/">More posts</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/survey123/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Join the discussion
+        <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/groups/survey123">More discussions</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4077" class="block-group block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
