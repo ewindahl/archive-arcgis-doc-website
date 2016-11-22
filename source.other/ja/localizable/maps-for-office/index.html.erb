@@ -1,289 +1,202 @@
 ---
 title: ArcGIS Maps for Office
-
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.colorbox-min.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2016-07-18"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4.1"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ja">
-
+  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2016-11-02"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4."><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ja">
+    
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-	<header>
-		<h1><a href="/ja/maps-for-office/">ArcGIS Maps for Office</a></h1>
-		<form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Maps for Office">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="esri-maps-office" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	
-	<nav>
-      <ul>
-        <li class='current'><a href="/ja/maps-for-office/">ホーム</a></li>
-        <li><a href="/ja/maps-for-office/install-and-configure/">インストールと構成</a></li>
-        <li><a href="/ja/maps-for-office/design-and-use/">マップのデザインと使用</a></li>
-        <li><a href="https://geonet.esri.com/groups/arcgis-maps-for-office">GeoNet</a></li>
-      </ul>
-    </nav>
+
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Maps for Office</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear" href="//www.esri.com/software/arcgis/arcgisonline/apps/download">Maps for Office のダウンロード</a>
+          <p class="trailer-0 leader-half text-white font-size--2"><strong>バージョン 4.1</strong> 2016 年秋</p>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link is-active" href="/ja/maps-for-office/">ホーム</a>
+        <a class="sub-nav-link" href="/ja/maps-for-office/install-and-configure/">インストールと構成</a>
+        <a class="sub-nav-link" href="/ja/maps-for-office/design-and-use/">マップのデザインと使用</a>
+        <a class="sub-nav-link" href="//geonet.esri.com/groups/arcgis-maps-for-office">GeoNet</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <div class="wf-nav" style="height:55px;">
+      <div class="wf-nav search-bar column-16 trailer-1 padding-right-2">
+        <form id="helpSearchForm" target="_top">
+          <input type="search" name="q" class="leader" placeholder="ArcGIS Maps for Office の検索">
+          <input type="hidden" name="collection" value="help" />
+          <input type="hidden" name="product" value="esri-maps-office" />
+          <input type="hidden" name="language" value="<%= current_language %>" />
+          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+        </form>
+      </div>
+    </div>
+    <div class="column-4 right margin-right-1 padding-left-0">
+      <img src="m4o_banner.png">
+    </div>
+    <div class="column-11 tablet-column-7">
+      <p>位置情報を活用した分析で作業の生産性を高めます。Microsoft Office でまったく新しい分析を実現させます。新たな洞察の結果も合わせて、より多くの情報をもとにして迅速な意思決定を行うことができます。Excel スプレッドシートおよび PowerPoint プレゼンテーションに簡単にマップを追加できます。</p>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+    <div class="panel">
+      <h4 class="icon-ui-announcement">新機能</h4>
+      <p>ArcGIS Maps for Office 4.1 はマイナー アップデートです。パフォーマンスおよび操作性が改善され、その他多くの不具合が修正されました。</p>
+      <a class="btn secondary" href="/ja/maps-for-office/install-and-configure/whats-new.htm">詳細</a>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-    <div class="column-16 tablet-column-24">
-        <header>
-		<h2 id="appTitle">アプリのダウンロード</h2>
-        <span id="appVersion"><strong>バージョン:</strong> 4.1</span>
-          <span id="appReleased"><strong>公開時期:</strong> 2016 年秋</span>
-
-          <p>位置情報を活用した分析で作業の生産性を高めます 。Microsoft Office でまったく新しい分析を実現させます。新たな洞察を得るだけでなく、より多くの情報を基にして迅速な意思決定を行うことができます。Excel スプレッドシートおよび PowerPoint プレゼンテーションにマップを追加できます。</p>
-
-          <p>
-             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">ArcGIS Maps for Office の取得</a>
-          </p>
-		  
-        </header>
-        <hr />
-        <br />
-
-<!-- features top row -->
-		<!-- Map your Excel data -->
-		<div id="em4oFirstFeature" class="column-12 phone-column-24">
-			<img src="Map-your-data.png" alt="Map your Excel data" />
-		  
-			<h3>Excel データのマッピング</h3>
-			<p>Excel のスプレッドシート データから直接、対話的なマップを作成することができます。ポイントの色分け、クラスタリング、およびヒート マップを数クリックで作成して、地理的な視点からデータを把握することができます。</p>
-			<p>&gt; <a href="/ja/maps-for-office/design-and-use/add-a-map-to-excel.htm">詳細を見る</a></p>
-		</div>
-
-		<!-- Analyze data -->
-        <div id="em4oSecondFeature" class="column-12 phone-column-24">
-			<!-- REPLACE IMAGE > PPT -->
-			<img src="Analyze-your-data.png" alt="Add a map to PowerPoint" />
-			<h3>操作可能なマップを PowerPoint へ追加</h3>
-			<p>ArcGIS 組織サイトからマップを PowerPoint に追加して、マップを自由に操作しながら効果的な発表を行うことができます。</p>
-			<p>&gt; <a href="/ja/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">詳細を見る</a></p>
-		</div>
-        <div class="clear"></div>
-
-<!-- features second row -->
-		<!-- Enrich your data -->
-		<div id="em4oThirdFeature" class="column-12 phone-column-24">
-			<img src="Enrich-your-spreadsheets.png" alt="Enrich your data" />
-
-			<h3>スプレッドシートへの情報付加</h3>
-			<p>ArcGIS の人口統計とライフスタイル データを直接 Excel スプレッドシートに追加して、重要な場所に関する情報をさらに多く得ることができます。ポップアップ インフォグラフィックスを使用してリアルタイムで簡単に場所を調べることができます。</p>
-			<p>&gt; <a href="/ja/maps-for-office/design-and-use/enrich-your-data.htm">詳細を見る</a></p>
-		</div>
-
-		<!-- Share maps -->
-		<div id="em4oFourthFeature" class="column-12 phone-column-24">
-			<img src="Share-your-data.png" alt="Share maps on ArcGIS" />
-			<h3>Excel からのマップの共有</h3>
-			<p>ArcGIS Online または Portal for ArcGIS を使用してマップを共有したり、メール、PowerPoint プレゼンテーション、または Word ドキュメントにマップを挿入したりできます。</p>
-			<p>&gt; <a href="/ja/maps-for-office/design-and-use/share-a-map-to-arcgis.htm">詳細を見る</a></p>
-        </div>
-	<div class="clear"></div> 
-
-		<br />
-		
-<!-- What's new section -->
-	<hr />
-	<a id="whatsNew"></a>
- 	<h2>新機能</h2>	
-	<p>&gt; ArcGIS Maps for Office の機能に関するご意見をお待ちしています。お客様のご意見を <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Barcgis-maps-for-office%5D" target="_blank">ArcGIS Ideas</a> サイトにお寄せください。</p>
-	
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-
-		<p>ArcGIS Maps for Office 4.1 はマイナー アップデートで、スピードの向上、操作性の改善、および多数の不具合の修正が含まれています。以下では、主な新機能について説明します。</p>
-			<ul>
-				<li>ArcGIS Maps for Office は、組織のデフォルトのジオコーダーを認識するようになりました。</li>
-				<li>ArcGIS Maps for Office は、Chromium をベースとしたブラウザーを使用してマップを表示するようになったため、データの操作が一段と速くなりました。大量のデータを操作しても、マップを簡単に移動したりズームすることができます。</li>
-				<li>ArcGIS Maps for Office は、ベクター ベースマップおよびベクター レイヤーをサポートするようになったため、高解像度のモニターでさらに高精細なマップを表示することができます。</li>
-				<li>マップでアイテムを選択し、対応するデータの行を新しい<a href="/ja/maps-for-office/design-and-use/export-layer-data.htm#ESRI_SECTION1_C600AB636AC342D4A10E7F119CF29F21" target="_blank">ワークシート</a>または新しい Excel <a href="http://docdev.arcgis.com/ja/maps-for-office/design-and-use/export-layer-data.htm#ESRI_SECTION1_CC8A61DBF1C94C8B805C25E9944047FF" target="_blank">ワークブック</a>にエクスポートできるようになったため、必要なデータを操作することができます。</li>
-				<li><a href="/ja/maps-for-office/design-and-use/add-layers-from-excel.htm" target="_blank">[データの追加]</a> および <a href="/ja/maps-for-office/design-and-use/change-a-layer-s-style.htm" target="_blank">[レイヤースタイル]</a> のインターフェイスが改善され、より簡単にデータを読み込み、可視化することができます。</li>
-				<li><a href="/ja/maps-for-office/design-and-use/view-infographics.htm" target="_blank">ポップアップ インフォグラフィックス設定</a>は、レイヤー間で有効なため、各レイヤーに個別の変更を加える必要がありません。</li>
-				<li>セルに式が含まれている場合、そのソース データが更新されるとマップも更新されます。</li>
-				<li>セルの値が変化すると、マップおよびレイヤー スタイルは正しくレンダリングされます。</li>
-				<li><a href="/ja/maps-for-office/design-and-use/export-layer-data.htm" target="_blank">レイヤーをエクスポート</a>するときに使用する空間参照を指定できるようになりました。</li>
-				<li>ローカリゼーションおよびインターナショナリゼーションの問題など、多くの不具合が修正されました。</li>
-			</ul>
-		</p>
-
-
-<!-- Supported environments section -->
-	<hr />
-	<a id="supportedEnvironments"></a>
-        <h2>サポートされている環境</h2>
-		<p>ArcGIS Maps for Office は、Microsoft Excel および Microsoft PowerPoint へのアドオンとして配置されます。ArcGIS Maps for Office が適切に動作するために、Esri はこれらのアプリケーションの運用構成を想定しています。Esri では、Microsoft Excel または PowerPoint でサポート対象と認定されたソフトウェア環境のみで ArcGIS Maps for Office をテストしていますが、すべての Excel または PowerPoint のサポート環境でテストまたは認定を行っているわけではありません。詳細については、「<a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Esri がサポートする環境ポリシー</a>」をご参照ください。</p>
-		
-		<p><b>注意: </b>Microsoft Word を使用すると、ドキュメント内に Excel スプレッドシートを埋め込んで操作できます。このワークフローは ArcGIS Maps for Office でサポートされていないため、推奨しません。</p>
-		
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-
-		<!-- Sys Reqs -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">システム要件</a>
-		</h3>
-			<div exp1='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office を使用するには、ArcGIS 組織サイトに所属しているアカウントと、Microsoft Office Excel または PowerPoint (Microsoft Office 2010、2013、2016) が必要です。</p>
-			<p>必要なプロセッサ速度、メモリ、およびハード ディスク スペースなどの詳細については、以下のシステム要件をご参照ください。
-			<ul>
-				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
-				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
-				<li><a href="https://products.office.com/en-ca/office-system-requirements#SUITES" target="_blank">Microsoft Office 2016</a></li>
-			</ul>	
-			</p>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Req'd SW -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">必要なソフトウェア</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office には、<a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> 組織サイトのサブスクリプションまたはオンプレミスの Portal for ArcGIS の配置が必要です。ArcGIS 管理者によってプラットフォームへのアクセスに使用される認証方式が正しく構成されていることが前提になります。</p>
-			<p>ArcGIS Maps for Office 4.1 は、次の ArcGIS バージョンをサポートしています。
-				<ul>
-					<li>ArcGIS Online: 現在のバージョン</li>
-					<li>Portal for ArcGIS: 10.2、10.2.1、10.2.2、10.3、10.3.1、10.4、10.4.1</li>
-				</ul>
-			</p>
-
-			<p>さらに、以下のソフトウェアをシステムにインストールして構成する必要があります。</p>
-				<ul>
-					<li>Microsoft Office 2010、2013、2016*</br>
-						*<b>重要:</b> Microsoft Office 2016 バージョン 16.0.6326.1010 では、ArcGIS Maps for Office の Backstage コントロールが仕様どおりに動作しません。その他の Microsoft Office 2016 バージョンはすべてサポートされています。
-					</li>
-					<li>Microsoft Windows サポートされているバージョン:
-						<ul>
-							<li>Windows 7 (32 ビットおよび 64 ビット)</li>
-							<li>Windows 8 (32 ビットおよび 64 ビット)</li>
-							<li>Windows 8.1 (32 ビットおよび 64 ビット)</li>
-							<li>Windows 10 (32 ビットおよび 64 ビット)</li>
-							<li>Windows Server 2008 R2</li>
-							<li>Windows Server 2012</li>
-							<li>Windows Server 2012 R2</li>
-						</ul>
-					</li>
-					<li>Microsoft .NET Framework 4.0 以上</li>
-					<li>Microsoft Visual Studio 2010 Tools for Office Runtime</li>
-					<li>Microsoft Visual C++ 2015 ランタイム アセンブリ</li>
-				</ul>
-			<p></p>
-			</div>
-			
-		<!-- Supported languages -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">サポートされている言語</a>
-		</h3>
-			<div exp3='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office は次の言語で使用できます。</p>
-			<p>アラビア語、中国語 (簡体字)、中国語 (繁体字香港)、中国語 (繁体字台湾)、チェコ語、デンマーク語、オランダ語、ドイツ語、ギリシャ語、英語、スペイン語、エストニア語、フィンランド語、フランス語、ヘブライ語、イタリア語、日本語、韓国語、ラトビア語、リトアニア語、ノルウェー語、ポーランド語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ルーマニア語、ロシア語、スペイン語、スウェーデン語、タイ語、トルコ語、およびベトナム語。</p>
-			
-			<p>ArcGIS Maps for Office は、オペレーティング システムのカルチャ設定ではなく、[Excel のオプション] で指定された言語を使用します。サポートされていない言語を使用している場合、アプリは英語を使用します。</p>
-			
-			</div>
-
-        <p>&nbsp;</p>
-	</div>
-	
-	
-<!-- Sidebars -->
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>基本操作</h3>
-          <ul>
-           <li><a href="#whatsNew">新機能</a></li>
-            <li><a href="#supportedEnvironments">サポートされている環境</a></li>
-			<li>以前のバージョンのヘルプ:
-				<ul>
-					<!-- TODO: verify URL for archived 4.0 help -->
-					<li><a href="/ja/maps-for-office/4.0/">ArcGIS Online 4.0 オンライン ヘルプ</a></li>
-				</ul>
-			</li>
-			<li><a href="https://www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">ビデオを見る</a></li>
-
-          </ul>
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>ブログ</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
-        </div>
-
-	 </div>
-
-
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="/ja/maps-for-office/install-and-configure/whats-new.htm">新機能</a></li>
+        <li><a href="/ja/maps-for-office/install-and-configure/supported-environments.htm">サポート環境</a></li>
+	      <li><a href="/ja/maps-for-office/4.0/install-and-configure/about-esri-maps-for-office.htm">旧バージョンのヘルプ</a></li>
+        <li><a href="//www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">ビデオ</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
 </div>
 
-	 
+<div class="grid-container leader-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/add-a-map-to-excel.htm">
+            <img alt="" src="Map-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/add-a-map-to-excel.htm">Excel データのマッピング</a>
+          </h5>
+          <p>Excel のスプレッドシート データから直接、対話的なマップを作成することができます。ポイントの色分け、クラスタリング、およびヒート マップを数クリックで作成して、地理的な視点からデータを把握することができます。</p>
+        </div>
+        <a href="design-and-use/add-a-map-to-excel.htm" class="btn btn-clear btn-fill leader-0">詳細</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/add-a-map-to-powerpoint.htm">
+            <img alt="" src="Analyze-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/add-a-map-to-powerpoint.htm">操作可能なマップを PowerPoint へ追加</a>
+          </h5>
+          <p>ArcGIS 組織サイトからマップを PowerPoint に追加して、マップを自由に操作しながら効果的な発表を行うことができます。</p>
+        </div>
+        <a href="design-and-use/add-a-map-to-powerpoint.htm" class="btn btn-clear btn-fill leader-0">詳細</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/enrich-your-data.htm">
+            <img alt="" src="Enrich-your-spreadsheets.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/enrich-your-data.htm">スプレッドシートへの情報付加</a>
+          </h5>
+          <p>ArcGIS の人口統計とライフスタイル データを直接 Excel スプレッドシートに追加して、重要な場所に関する情報をさらに多く得ることができます。ポップアップ インフォグラフィックスを使用してリアルタイムで簡単に場所を調べることができます。</p>
+        </div>
+        <a href="design-and-use/enrich-your-data.htm" class="btn btn-clear btn-fill leader-0">詳細</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/share-a-map-to-arcgis.htm">
+            <img alt="" src="Share-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/share-a-map-to-arcgis.htm">Excel からマップの共有</a>
+          </h5>
+          <p>ArcGIS Online または Portal for ArcGIS を使用してマップを共有したり、メール、PowerPoint プレゼンテーション、または Word ドキュメントにマップを挿入したりできます。</p>
+        </div>
+        <a href="design-and-use/share-a-map-to-arcgis.htm" class="btn btn-clear btn-fill leader-0">詳細</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Collapsible contents -->
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-2">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h3 class="leader-half trailer-0 text-center padding-trailer-0">ビデオを見る</h3>
+      <a class="btn btn-transparent btn-large right padding-leader-0 padding-trailer-0 text-white" href="https://www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">その他のビデオ</a>
+      <div playlistid="PLpq4BB-MZiMchCC8XEpSWGlEN89qls1FJ" class="video-holder block-group block-group-3-up tablet-block-group-1-up leader-1 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div>
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">ArcGIS Maps for Office とつながる</h4>
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/mapsforoffice"></a>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/company/5311?trk=vsrp_companies_hero_name&trkInfo=VSRPsearchId%3A62267361477673144233%2CVSRPtargetId%3A5311%2CVSRPcmpt%3Ahero"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/esrigis/"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/groups/arcgis-maps-for-office"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Esri のブログを読む
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/">その他の記事</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-  </script>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">ディスカッションに参加する
+        <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/groups/arcgis-maps-for-office">その他のディスカッション</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="block-group block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
