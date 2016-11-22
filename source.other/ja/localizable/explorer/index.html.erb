@@ -14,17 +14,18 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Explorer for ArcGIS Home page."><META name="last-modified" content="2016-2-9"><META name="product" content="explorer-iphone,explorer-ipad,explorer-mac,explorer-android-phone,explorer-android-tablet"><META name="sub_category" content="Explorer for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Explorer for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja">
+  - <META name="description" content="Explorer for ArcGIS Home page."><META name="last-modified" content="2016-11-8"><META name="product" content="explorer-iphone,explorer-ipad,explorer-mac,explorer-android-phone,explorer-android-tablet"><META name="sub_category" content="Explorer for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Explorer for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja">
 
 mobile: true
 
 ---
+
 <div class="navigation-bar blue">
   <div class="container">
     <header>
       <h1><a href="/ja/explorer/">Explorer for ArcGIS</a></h1>
 	  <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Explorer">
+        <input type="search" name="q" class="leader" placeholder="Explorer の検索">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="explorer-ipad" />
         <input type="hidden" name="language" value="<%= current_language %>" />
@@ -55,7 +56,7 @@ mobile: true
         <p>
           <a href="https://itunes.apple.com/us/app/explorer-for-arcgis/id860708788"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a>
           <a href="http://links.esri.com/explorer-mac-install"><img src="mac-app.png" style="margin:10px; vertical-align:middle"/></a>
-          <a href="https://play.google.com/store/apps/details?id=com.esri.explorer"><img src="android-app.png" style="margin:10px; vertical-align:middle"/></a>
+          <a href="https://play.google.com/store/apps/details?id=com.esri.explorer&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Google Play で手に入れよう" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:1px; vertical-align:middle;"/></a>
         </p>
         </header>
         <hr />
@@ -119,15 +120,6 @@ mobile: true
 
         <a name="systemRequirements"></a>
         <h2 class="divider">システム要件</h2>
-
-        <p> Explorer を実行するためのデバイス要件は、次のとおりです。アプリ内で使用するデータについても要件があります。</p>
-
-
-        <h3>データ要件</h3>
-        <p>Explorer でマップを使用するには、ArcGIS の組織アカウントが必要です。マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。</p>
-
-
-        <h3>デバイス要件</h3>
         <table><tr>
           <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
             <ul>
@@ -154,12 +146,17 @@ mobile: true
 
 	    <p>アプリで使用される言語は、デバイスの言語設定によって決まります。</p>
 
+        <a name="arcgisRequirements"></a>
+        <h2 class="divider">ArcGIS の要件</h2>
+        <p>Explorer でマップを使用するには、ArcGIS の組織アカウントが必要です。ArcGIS Online および Portal for ArcGIS 10.3.1 以降がサポートされています。
+        <p>マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。</p>
+
         <a name="whatsNew"></a>
         <h2 class="divider">新機能</h2>
         <table>
           <tr>
           <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
-            <p>Explorer for ArcGIS 10.2.9 は、2015 年 11 月にリリースされました。機能強化された点は次のとおりです。
+            <p>Explorer for ArcGIS 10.2.10 は、2016 年 11 月にリリースされました。機能強化された点は次のとおりです。
           </td>
           <td valign="top" width="250px;"><h4 class="icon-apple">Mac</h4>
             <p>Explorer for ArcGIS 10.2.4 は、2014 年 9 月にリリースされました。機能強化された点は次のとおりです。</p>
@@ -172,13 +169,13 @@ mobile: true
           <!-- iOS -->
           <td valign="top">
             <ul>
-              <li>各種不具合の修正と改善</li>
+              <li>各種不具合の修正と改善 (<a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5OTc4Nw==">BUG-000099787</a>、<a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5OTY2MA==">BUG-000099660</a> など)</li>
             </ul>
           </td>
           <!-- Mac -->
           <td valign="top">
             <ul>
-              <li>アラビア語、チェコ語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ヘブライ語、イタリア語、日本語、韓国語、ノルウェー語、ポーランド語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ルーマニア語、ロシア語、中国語 (簡体字)、スウェーデン語、トルコ語に対応。</li>
+              <li>アラビア語、チェコ語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ヘブライ語、イタリア語、日本語、韓国語、ノルウェー語、ポーランド語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ルーマニア語、ロシア語、中国語 (簡体字)、スペイン語、スウェーデン語、トルコ語に対応。</li>
               <li>各種不具合の修正と改善</li>
             </ul>
           </td>
@@ -193,162 +190,21 @@ mobile: true
 
 	<a name="sneakPeek"></a>
 	<h2 class="divider">追加予定の機能</h2>
-	<p>Explorer は、iPhone、iPad、Mac、Android の各デバイスでマップとプレゼンテーションを操作するための優れたアプリです。今後、さまざまな機能の追加が予定されています。
-	このアプリでは、お使いのデバイスで次のような機能を利用できるようになります。
+	<p>Explorer は、iPhone、iPad、Android (スマートフォンおよびタブレット) の各デバイスでマップを操作するための優れたアプリです。
+	今後、さまざまな機能の追加が予定されています。Esri は次の機能のサポートを追加しています。
+	
+	<ul>
+	  <li>オフラインでのマップの使用</li>
+	  <li>ベクター タイル ベースマップ</li>
+	</ul>
+	
+	<p>長期的には次の機能を追加する予定です。</li>
+	<ul>
+	  <li>高度なスケッチ (マークアップ)</li>
+	  <li>非空間データ (関連テーブル) の表示</li>
+	</ul>
 
-	<style>
-	  table.sneakPeek
-	  {
-	    text-align:center;
-	  }
-	  table.sneakPeek tr.heading th
-	  {
-	    background-color:lightgray;
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	  table.sneakPeek tr#deviceHeadings th
-	  {
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	</style>
-        <table class="sneakPeek" border="1">
-	  <caption>プラットフォーム別の機能<br/>
-	  <span class="icon-check" style="color:black"></span> リリース済み、<span class="icon-check icon-orange"></span> 開発中、<span class="icon-check" style="color:lightgray"></span><span class="clear"/> 今後<br/>
-	  空白のセルは追加予定のない機能を示しています。<br/>
-	  Windows Phone および Windows Store のサポートは、現時点では予定されていません。
-	  </caption>
-	  <tr id="deviceHeadings"><td rowspan="2"></td>
-	    <th colspan="2">スマートフォン</th>
-	    <th colspan="2">タブレット</th>
-	    <th colspan="2">デスクトップ</th>
-	  </tr>
-	  <tr>
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-android"/></td>
-	    <!--<td><span class="icon-windows-8 icon-purple"/></td>-->
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-android"/></td>
-	    <!--<td><span class="icon-windows-8 icon-purple"/></td>-->
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-windows-classic" style="color:#21C9FF"/></td>
-	  </tr>
-	  <tr>
-	    <td>ArcGIS Online との連携</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>Portal for ArcGIS との連携</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>マップの表示</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>マップの作成</td>
-	    <td></td>
-	    <td></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>データの検索</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>データの編集</td>
-	    <td></td>
-	    <td></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>非空間データ (関連テーブル) のサポート</td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	  <tr>
-	    <td>オフライン作業</td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	  <tr>
-	    <td>3D</td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>解析の実行</td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	</table>
-
-	<p><a href="http://ideas.arcgis.com/">アイデア</a>を共有したり、<a href="mailto:Explorer4ArcGIS@esri.com?subject=Explorer%20feedback">フィードバックを送信</a>します。</p>
+	<p><a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bexplorer-for-arcgis%5D">アイデア</a>を共有したり、<a href="mailto:Explorer4ArcGIS@esri.com?subject=Explorer%20feedback">フィードバックを送信</a>したりします。</p>
 
         <p>&nbsp;</p>
 
@@ -363,6 +219,7 @@ mobile: true
 
 	  <h4><a href="#features">特長</a></h4>
 	  <h4><a href="#systemRequirements">システム要件</a></h4>
+	  <h4><a href="#arcgisRequirements">ArcGIS の要件</a></h4>
 	  <h4><a href="#whatsNew">新機能</a></h4>
 	  <h4><a href="#sneakPeek">追加予定の機能</a></h4>
 
