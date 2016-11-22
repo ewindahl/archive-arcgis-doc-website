@@ -105,21 +105,21 @@ jQuery(document).ready(function ($) {
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
       lgPartial = ["it","ko", "pl","pt-br","pt-pt","ro"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
-	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
-	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro","nl"],
-    lgCognos = ['en', 'de','fr','ja', 'ko','zh-cn'],
-    lgMicro = ['en', 'de'],
-	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
-   lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
-   lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
-	 lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
+      lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
+      lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro","nl"],
+      lgCognos = ['en', 'de','fr','ja', 'ko','zh-cn'],
+      lgMicro = ['en', 'de'],
+      lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
+      lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
+      lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
+      lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
 
       //all langs
       lgPickerLabels = GLangLabels,
 
       //historyCK = "state404",
       prefLangCK = "preflang";
-    esriAuthCK = "esri_auth";
+      esriAuthCK = "esri_auth";
 
       return {
           getReferrerLang : function () {
@@ -259,7 +259,7 @@ jQuery(document).ready(function ($) {
                 case "openData":
                   lgList = lgOpenData;
                   break;
-					 case "cognos":
+                case "cognos":
                   lgList = lgCognos;
                   break;
                 case "micro":
@@ -271,7 +271,7 @@ jQuery(document).ready(function ($) {
                 case "sharepoint":
                   lgList = lgSharepoint;
                   break;
-					 case "marketplace":
+                case "marketplace":
                   lgList = lgMarketplace;
                   break;
               }
