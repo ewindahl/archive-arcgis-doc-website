@@ -14,17 +14,18 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Explorer for ArcGIS Home page."><META name="last-modified" content="2016-2-9"><META name="product" content="explorer-iphone,explorer-ipad,explorer-mac,explorer-android-phone,explorer-android-tablet"><META name="sub_category" content="Explorer for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Explorer for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ro">
+  - <META name="description" content="Explorer for ArcGIS Home page."><META name="last-modified" content="2016-11-8"><META name="product" content="explorer-iphone,explorer-ipad,explorer-mac,explorer-android-phone,explorer-android-tablet"><META name="sub_category" content="Explorer for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Explorer for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ro">
 
 mobile: true
 
 ---
+
 <div class="navigation-bar blue">
   <div class="container">
     <header>
       <h1><a href="/ro/explorer/">Explorer for ArcGIS</a></h1>
 	  <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Explorer">
+        <input type="search" name="q" class="leader" placeholder="Căutare în Explorer">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="explorer-ipad" />
         <input type="hidden" name="language" value="<%= current_language %>" />
@@ -55,7 +56,7 @@ mobile: true
         <p>
           <a href="https://itunes.apple.com/us/app/explorer-for-arcgis/id860708788"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a>
           <a href="http://links.esri.com/explorer-mac-install"><img src="mac-app.png" style="margin:10px; vertical-align:middle"/></a>
-          <a href="https://play.google.com/store/apps/details?id=com.esri.explorer"><img src="android-app.png" style="margin:10px; vertical-align:middle"/></a>
+          <a href="https://play.google.com/store/apps/details?id=com.esri.explorer&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Descărcaţi din Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:1px; vertical-align:middle;"/></a>
         </p>
         </header>
         <hr />
@@ -119,15 +120,6 @@ mobile: true
 
         <a name="systemRequirements"></a>
         <h2 class="divider">Cerinţele de sistem</h2>
-
-        <p> Pentru rularea aplicaţiei Explorer există anumite cerinţe de sistem, precum şi cerinţe în privinţa datelor utilizate în cadrul aplicaţiei.</p>
-
-
-        <h3>Cerinţe pentru date</h3>
-        <p>Pentru a utiliza hărţile dvs. în Explorer, trebuie să deţineţi un cont ArcGIS de organizaţie. Hărţile dvs. pot include date din ArcGIS Online, Portal for ArcGIS şi ArcGIS for Server.</p>
-
-
-        <h3>Cerinţe pentru dispozitiv</h3>
         <table><tr>
           <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
             <ul>
@@ -154,12 +146,17 @@ mobile: true
 
 	    <p>Limba utilizată de aplicaţie este determinată de setarea pentru limbă din dispozitivul dvs.</p>
 
+        <a name="arcgisRequirements"></a>
+        <h2 class="divider">Cerinţe ArcGIS</h2>
+        <p>Pentru a utiliza hărţile dvs. în Explorer, trebuie să deţineţi un cont ArcGIS de organizaţie. Sunt acceptate ArcGIS Online şi Portal for ArcGIS 10.3.1 şi versiuni ulterioare.
+        <p>Hărţile dvs. pot include date din ArcGIS Online, Portal for ArcGIS şi ArcGIS for Server.</p>
+
         <a name="whatsNew"></a>
         <h2 class="divider">Ce este nou</h2>
         <table>
           <tr>
           <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
-            <p>Explorer for ArcGIS 10.2.9 a fost lansat în noiembrie 2015. Include următoarele îmbunătăţiri:
+            <p>Explorer for ArcGIS 10.2.10 a fost lansat în noiembrie 2016. Include următoarele îmbunătăţiri:
           </td>
           <td valign="top" width="250px;"><h4 class="icon-apple">Mac</h4>
             <p>Explorer for ArcGIS 10.2.4 a fost lansat în septembrie 2014. Include următoarele îmbunătăţiri:</p>
@@ -172,7 +169,7 @@ mobile: true
           <!-- iOS -->
           <td valign="top">
             <ul>
-              <li>Diverse îmbunătăţiri şi remedieri de defecte</li>
+              <li>Diverse îmbunătăţiri şi remedieri de defecte, inclusiv <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5OTc4Nw==">BUG-000099787</a> şi <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5OTY2MA==">BUG-000099660</a></li>
             </ul>
           </td>
           <!-- Mac -->
@@ -185,7 +182,7 @@ mobile: true
           <!-- Android -->
           <td valign="top">
             <ul>
-             <li>Diverse remedieri de defecte şi îmbunătăţiri</li>
+             <li>Diverse îmbunătăţiri şi remedieri de defecte</li>
             </ul>
           </td>
         </tr>
@@ -193,161 +190,21 @@ mobile: true
 
 	<a name="sneakPeek"></a>
 	<h2 class="divider">Scurtă prezentare</h2>
-	<p>În prezent, Explorer este o aplicaţie excelentă pentru lucrul cu hărţile şi prezentările dvs. pe dispozitive iPhone, iPad, Mac şi Android. Însă urmează multe alte lucruri! Următorul tabel evidenţiază ceea ce dorim să realizăm cu această aplicaţie, arătând capabilităţile pe care le-am adus pentru fiecare dispozitiv al dvs.:
+	<p>În prezent, Explorer este o aplicaţie excelentă pentru lucrul cu hărţile dvs. pe dispozitive iPhone, iPad şi Android (atât pe telefoane, cât şi pe tablete). 
+	Însă urmează multe alte lucruri! Lucrăm la adăugarea de suport pentru următoarele obiecte spaţiale:
+	
+	<ul>
+	  <li>Utilizarea offline a hărţilor</li>
+	  <li>Hărţi fundal cu segmente tile vectoriale</li>
+	</ul>
+	
+	<p>Planurile noastre pe termen lung includ următoarea funcţionalitate:</li>
+	<ul>
+	  <li>Schiţare îmbunătăţită (marcaje)</li>
+	  <li>Vizualizarea datelor nespaţiale (tabele corelate)</li>
+	</ul>
 
-	<style>
-	  table.sneakPeek
-	  {
-	    text-align:center;
-	  }
-	  table.sneakPeek tr.heading th
-	  {
-	    background-color:lightgray;
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	  table.sneakPeek tr#deviceHeadings th
-	  {
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	</style>
-        <table class="sneakPeek" border="1">
-	  <caption>Funcţionalitate în funcţie de platformă<br/>
-	  <span class="icon-check" style="color:black"></span> lansat, <span class="icon-check icon-orange"></span> în dezvoltare, <span class="icon-check" style="color:lightgray"></span><span class="clear"/> ulterior<br/>
-	  Celulele goale indică funcţii ca nu sunt planificate.<br/>
-	  Compatibilitatea cu telefoane Windows şi Windows Store nu este planificată în prezent.
-	  </caption>
-	  <tr id="deviceHeadings"><td rowspan="2"></td>
-	    <th colspan="2">Telefon</th>
-	    <th colspan="2">Tabletă</th>
-	    <th colspan="2">Desktop</th>
-	  </tr>
-	  <tr>
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-android"/></td>
-	    <!--<td><span class="icon-windows-8 icon-purple"/></td>-->
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-android"/></td>
-	    <!--<td><span class="icon-windows-8 icon-purple"/></td>-->
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-windows-classic" style="color:#21C9FF"/></td>
-	  </tr>
-	  <tr>
-	    <td>Lucrul cu ArcGIS Online</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>Lucru cu Portal for ArcGIS</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>Vizualizare hărţi</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>Creare hărţi</td>
-	    <td></td>
-	    <td></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>Căutare date</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>Editare date</td>
-	    <td></td>
-	    <td></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>Acceptarea datelor nespaţiale (tabele corelate)</td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	  <tr>
-	    <td>Lucrul offline</td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	  <tr>
-	    <td>3D</td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check icon-orange"/></td>
-	  </tr>
-	  <tr>
-	    <td>Efectuarea analizelor</td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <!--<td></td>-->
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	</table>
-
-	<p>Împărtăşiţi <a href="http://ideas.arcgis.com/">ideile</a> şi <a href="mailto:Explorer4ArcGIS@esri.com?subject=Explorer%20feedback">trimiteţi-ne părerile dvs</a>.</p>
+	<p>Împărtăşiţi <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bexplorer-for-arcgis%5D">ideile</a> şi <a href="mailto:Explorer4ArcGIS@esri.com?subject=Explorer%20feedback">trimiteţi-ne părerile dvs</a>.</p>
 
         <p>&nbsp;</p>
 
@@ -362,6 +219,7 @@ mobile: true
 
 	  <h4><a href="#features">Obiecte spaţiale</a></h4>
 	  <h4><a href="#systemRequirements">Cerinţele de sistem</a></h4>
+	  <h4><a href="#arcgisRequirements">Cerinţe ArcGIS</a></h4>
 	  <h4><a href="#whatsNew">Ce este nou</a></h4>
 	  <h4><a href="#sneakPeek">Scurtă prezentare</a></h4>
 
