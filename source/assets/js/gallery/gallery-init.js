@@ -58,6 +58,7 @@ var conuntryCodeMapping = {
 "AU": "Australia",
 "AT": "Austria",
 "BE": "Belgium",
+"BN": "Brunei Darussalam",
 "BO": "Bolivia",
 "BR": "Brazil",
 "BG": "Bulgaria",
