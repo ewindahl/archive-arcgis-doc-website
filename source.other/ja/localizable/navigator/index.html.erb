@@ -13,19 +13,20 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-07-05"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja">
+  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-10-12"><META name="product" content="navigator-iphone,navigator-ipad,navigator-android-phone,navigator-android-tablet"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja">
 
 mobile: true
 
 ---
+
 <div class="navigation-bar blue">
   <div class="container">
     <header>
       <h1><a href="/ja/navigator/">Navigator for ArcGIS</a></h1>
 	  <form id="helpSearchForm" target="_top">
-       <input type="search" name="q" class="leader" placeholder="Navigator for ArcGIS の検索"> 
+       <input type="search" name="q" class="leader" placeholder="ナビゲーターの検索"> 
         <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="navigator-ipad" />          
+        <input type="hidden" name="product" value="navigator-android-phone" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
       </form>
     </header>
@@ -33,7 +34,7 @@ mobile: true
       <ul>
         <li class='current'><a href="/ja/navigator/">ホーム</a></li>
         <li><a href="/ja/navigator/prepare-maps/prepare-maps.htm">マップの準備</a></li>
-        <li><a href="/ja/navigator/ipad/navigate/guided-tour.htm">ナビゲーション</a></li>
+        <li><a href="/ja/navigator/android-phone/navigate/guided-tour.htm">ナビゲート</a></li>
         <li><a href="http://links.esri.com/geonet-navigator">フォーラム</a></li> 
       </ul>
     </nav>  
@@ -48,7 +49,8 @@ mobile: true
 
         <p>
           <a href="http://links.esri.com/navigator-ios-install"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a> 
-          <a style="font-size:1.23em; margin:10px; vertical-align:middle" class="btn primary icon-android" href="https://earlyadopter.esri.com/callout/?callid=%7b28F9956B-A1F0-4793-8B7E-BA0E9473D06A%7d">Android 向けベータ版の提供が開始されました。</a>
+          <a href="https://play.google.com/store/apps/details?id=com.esri.navigator&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Google Play で手に入れよう" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:10px; vertical-align:middle"/></a>
+          <!--a style="font-size:1.23em; margin:10px; vertical-align:middle" class="btn primary icon-android" href="https://earlyadopter.esri.com/callout/?callid=%7b28F9956B-A1F0-4793-8B7E-BA0E9473D06A%7d">Android now in beta!</a-->
         </p> 
         </header>
         <hr />
@@ -61,7 +63,7 @@ mobile: true
           <h3>ガイド ツアー</h3>
           <p>自分に関連のあるマップをダウンロードして、ルートを作成し、ストップ (中継点) の順序を変更し、移動モードを構成し、目的地までのルート検索を行います。</p>
           <p>
-		<a href="/ja/navigator/ipad/navigate/guided-tour.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />  
+		<a href="/ja/navigator/android-phone/navigate/guided-tour.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />  
 		<a href="http://video.arcgis.com/iframe/4633/000000/width/960/0/00:00:00" title="Navigator for ArcGIS の基本操作" class="videoLink colorbox-evlarge cboxElement icon-play">&nbsp;ビデオを見る</a>
 				
           </p>
@@ -88,7 +90,7 @@ mobile: true
           <p>Collector for ArcGIS など他の Esri アプリと簡単に接続して、現場にいながら作業場所へのナビゲーションを行います。</p>
           <p>
 		  
-		<a href="/ja/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
+		<a href="/ja/navigator/android-phone/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
 				
           </p>
         </div>
@@ -126,7 +128,7 @@ mobile: true
               <li>iPad (最適なパフォーマンスを得るには第 4 世代以降)、iPhone (最適なパフォーマンスを得るには 6 以降)、iPod touch</li>
             </ul>
           </td>
-          <td valign="top" width="250px;"><h4 class="icon-android">Android (ベータ版)</h4>
+          <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
 	    <ul>
 	      <li>Android 4.2 (Jelly Bean) 以降</li>
 	      <li>ARMv7 または x86 プロセッサ</li>
@@ -137,7 +139,7 @@ mobile: true
         <tr></table>
 
 	 <h3>サポートされている言語</h3>
-	    <p>アラビア語、オランダ語、英語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、イタリア語、日本語、韓国語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ロシア語、簡体字中国語、スペイン語、およびトルコ語。</p>        
+	    <p>アラビア語、オランダ語、英語、エストニア語 (<span class="icon-android"/>)、フランス語、ドイツ語、ギリシャ語、ヘブライ語、イタリア語、日本語、韓国語、ラトビア語 (<span class="icon-android"/>)、リトアニア語 (<span class="icon-android"/>)、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ロシア語、簡体字中国語、スペイン語、およびトルコ語。</p>        
 
 
 	<a name="arcgisRequirements"></a>
@@ -157,98 +159,25 @@ mobile: true
 	  <tr>
 	    <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
 	      <p>Navigator for ArcGIS 2.0 は、2016 年 7 月にリリースされました。機能強化された点は次のとおりです。</p>
+	      <ul>
+                <li>独自のマップの使用して、対象物の検索、道路のルート検索、およびレイヤーの表示ができます。</li>
+	        <li>複数の目的地の順序を自動的に並べ替えて、最適なルートを表示</li>
+	        <li>カスタム URL スキームを使用して住所を伝送</li>
+	        <li>Portal for ArcGIS 10.4 以降をサポート</li>
+	        <li>アラビア語、オランダ語、ヘブライ語、ポルトガル (ブラジル) 語に対応</li>
+	        <li>各種不具合の修正と改善</li>
+	    </ul>
 	    </td>
-	    <td valign="top" width="250px;"><h4 class="icon-android">Android (ベータ版)</h4>
-	      <p>Navigator for ArcGIS のベータ版は、2016 年 5 月に提供が開始されました。機能強化された点は次のとおりです。</p>
+	    <td valign="top" width="250px;"><h4 class="icon-android">Android</h4>
+	      <p>Navigator for ArcGIS 2.0 は、2016 年 11 月にリリースされました。これは、Android での最初のリリースで、機能は iOS の Navigator と同じです。</p>
 	    </td>
 	  </tr>
-	  <tr>
-	    <td valign="top"><ul>
-              <li>独自のマップの使用して、対象物の検索、道路のルート検索、およびレイヤーの表示ができます。</li>
-              <li>複数の目的地の順序を自動的に並べ替えて、最適なルートを表示</li>
-              <li>カスタム URL スキームを使用して住所を伝送</li>
-              <li>Portal for ArcGIS 10.4 以降をサポート</li>
-              <li>アラビア語、オランダ語、ヘブライ語、ポルトガル (ブラジル) 語に対応</li>
-              <li>各種不具合の修正と改善</li>
-	    </ul></td>
-	    <td valign="top"><ul>
-	      <li>Android の開発過程に沿って挙げられたすべての機能が「<a href="#sneakPeak">追加予定の機能</a>」表に含まれます。iOS 上で現在リリース済みのすべての機能がサポートされています。</li>
-	    </ul></td>
-	  </tr>
+	  <!--tr>
+	    <td valign="top"></td>
+	    <td valign="top"></td>
+	  </tr-->
         </table>
         
-	<a name="sneakPeek"></a>
-	<h2 class="divider">追加予定の機能</h2>
-	<p>	次の表に、このアプリの開発状況の概略を示します。アプリの機能が、デバイスのプラットフォーム別に表示されています。</p>
-	
-	<style>
-	  table.sneakPeek
-	  {
-	    text-align:center;
-	  }
-	  table.sneakPeek tr.heading th
-	  {
-	    background-color:lightgray;
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	  table.sneakPeek tr#deviceHeadings th
-	  {
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	</style>
-        <table class="sneakPeek" border="1">
-	  <caption>プラットフォーム別の機能<br/>
-	  <span class="icon-check" style="color:black"></span> リリース済み、<span class="icon-check icon-orange"></span> 開発中、<span class="icon-check" style="color:lightgray"></span><span class="clear"/> 今後<br/>
-空白のセルは予定外の機能を示しています。<br/>
-デスクトップのサポートは現時点では予定されていません。
-	  </caption>
-	  <tr>
-	    <td></td>
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-android"/></td>
-	    <td><span class="icon-windows-8 icon-purple"/></td>
-	  </tr>
-	  <tr>
-	    <td>製品に付属するマップを使用したナビゲーション</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	  <tr>
-	    <td>ユーザー独自のカスタム マップ (ジオコーディング、ルート検索、表示) を使用したナビゲーション</td>
-	    <td><span class="icon-check"></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr> 
-	  <tr>
-	    <td>ArcGIS Online との連携</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	  <tr>
-	    <td>Portal for ArcGIS との連携</td>
-	    <td><span class="icon-check"></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	  <tr>
-	    <td>ユーザーのデバイスに保存されたマップを使用したナビゲーション、ルート、検索</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	</table>
-	
-	<p><a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bnavigator-for-arcgis%5D">アイデア</a>を共有したり、<a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">フィードバックを送信</a>します。</p>
-	
-        <p>&nbsp;</p>
-
-
       </div>
 
 
@@ -261,7 +190,6 @@ mobile: true
 	  <h4><a href="#systemRequirements">システム要件</a></h4>
 	  <h4><a href="#arcgisRequirements">ArcGIS の要件</a></h4>
 	  <h4><a href="#whatsNew">新機能</a></h4>
-	  <h4><a href="#sneakPeek">追加予定の機能</a></h4>
 	          
         </div>
 
