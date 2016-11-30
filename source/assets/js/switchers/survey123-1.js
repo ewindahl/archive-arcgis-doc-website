@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 */
 	var noSwitcherFileList = {
-	   "xlsformessentials.htm": "Desktop",
+		"xlsformessentials.htm": "Desktop",
 		"xlsformsappearance.htm": "Desktop",
 		"xlsformnotes.htm": "Desktop",
 		"locations.htm": "Desktop",
@@ -28,18 +28,16 @@ $(document).ready(function() {
 		"quickreferencegetanswers.htm": "Desktop",
 		"integrationwithworkforce.htm": "Desktop"
 	}
-	
-	
+
    var localedir = "en";
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'];
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   
-    var val = '<p id="plats">' +
+
+    var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-		'<a data-appname="survey123" data-plat="desktop" data-prefix="/' + localedir +'/survey123/desktop" href="/en/survey123/" data-langlabel="desktop" class=""> Desktop</a>' +
-        ' | ' +
+        '<a data-appname="survey123" data-plat="desktop" data-prefix="/' + localedir +'/survey123/desktop" href="/en/survey123/" data-langlabel="desktop" class=""> Desktop</a>' +
         '<a data-appname="survey123" data-plat="browser" data-prefix="/' + localedir +'/survey123/browser" href="/en/survey123/" data-langlabel="browser" class=""> Browser</a>' +
         '</p>',
 
@@ -48,7 +46,7 @@ $(document).ready(function() {
 		prodDesktopVal = "desktop",
 		prodBrowserVal = "browser",
 		homePath = "/en/survey123"
-    
+
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
 		fname = parts.pop(),
@@ -62,25 +60,23 @@ $(document).ready(function() {
          UASpecificRedirect (plat, pathname);
       }
     }
-	 
 	function isValidPattern(pattern) {
 		if (!pattern.match( /(\/analyze-results\/)/)){
 			return true;
 		} else {
 			return false;
 		}
-	}		
-   
+	}
+
 	function UASpecificRedirect (plat, pathname) {
 
 			var parts = pathname.split("/");
 				fname = parts.pop(),
 				fld = parts.pop(),
 				newHref = pathname.replace ("/"+prodDVal+"/", "/"+plat+"/");
-
 			if (pathname.indexOf (homePath) === 0 ) {
 				window.location.replace(newHref);
-            $.cookie (prodKey, plat, {expires: new Date(2020,1,1), path:"/"});
+				$.cookie (prodKey, plat, {expires: new Date(2020,1,1), path:"/"});
 			}
 
 	}
@@ -98,18 +94,18 @@ $(document).ready(function() {
 
 			if (!keeplink && href.indexOf (homePath) === 0 && isValidPattern(href)) {
 				//console.log (href + "=>" + newHref);
-			    $ele.attr("href", newHref);
+				$ele.attr("href", newHref);
 			}
 		})
-		
+
 		// Update product meta value in search form
 		$('#helpSearchForm input[name=product]').attr("value","survey123-" + plat);
-		
+
 
 	}
 
 	function modContentLinks (plt) {
-		$(".navigation-bar nav a[href], .reference-content a[href], .column-16 a[href]").each (function (i) {
+		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
@@ -117,17 +113,17 @@ $(document).ready(function() {
 				fname = parts.pop(),
 				fld = parts.pop(),
 				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
-				
+
 				if(isValidPattern(href)){
 					$ele.attr ("href", newHref);
 				}
 		});
 	}
-	
+
 
 	if (!isHome) {
 			if(!window.location.pathname.match( /(\/analyze-results\/)/)){
-				$('.reference-content .page-title').after (val);
+				$('main.column-17 h1').after (val);
 			}else{
 				modContentLinks (plat);
 				// Update product meta value in search form
@@ -145,7 +141,7 @@ $(document).ready(function() {
 			url;
 
 		if ((fldpath.indexOf (prefix) === 0) )  {
-			$ele.toggleClass ("on");
+			$ele.toggleClass ("is-active");
 			url = prefix + fldpath.replace (prefix, "") + "/" + fname;
 		} else {
 			if(fname in noSwitcherFileList){
@@ -158,7 +154,6 @@ $(document).ready(function() {
 			}
 		}
 
-	
 		$ele.attr ("href", url);
 	});
 
