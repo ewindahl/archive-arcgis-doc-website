@@ -19,10 +19,10 @@ if (!String.prototype.format) {
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/)/)){
+  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/)/)){
   return;
   }
-  
+
   var doc = {};
 
   doc.cookieJar = (function(){
@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
           }
       };
 
-  })(); 
+  })();
 
 
   doc.l10n = (function () {
@@ -77,16 +77,16 @@ jQuery(document).ready(function ($) {
           "cs": "cs",
           "da": "da",
           "de" : "de", "de-at" : "de", "de-de" : "de", "de-li" : "de", "de-lu" : "de", "de-ch" : "de",
-          "es": "es", "es-us": "es", "es-us": "es", "es-ar": "es", "es-bo": "es", "es-cl": "es", "es-co": "es", "es-cr": "es", "es-do": "es", "es-ec": "es", "es-sv": "es", "es-gt": "es", "es-hn": "es", "es-mx": "es", "es-pr": "es", "es-es": "es", "es-uy": "es", "es-ve": "es",      
+          "es": "es", "es-us": "es", "es-us": "es", "es-ar": "es", "es-bo": "es", "es-cl": "es", "es-co": "es", "es-cr": "es", "es-do": "es", "es-ec": "es", "es-sv": "es", "es-gt": "es", "es-hn": "es", "es-mx": "es", "es-pr": "es", "es-es": "es", "es-uy": "es", "es-ve": "es",
           "et": "et",
-          "fi": "fi", 
+          "fi": "fi",
           "fr": "fr", "fr-be": "fr", "fr-ca": "fr", "fr-fr": "fr", "fr-lu": "fr", "fr-ch": "fr", "fr-mc": "fr",
-          "he": "he", 
+          "he": "he",
           "it": "it", "it-it": "it", "it-ch": "it",
           "ja" : "ja","ja-jp" : "ja",
           "ko": "ko", "ko-kp" : "ko", "ko-kr" : "ko",
-          "lt": "lt", 
-          "lv": "lv", 
+          "lt": "lt",
+          "lv": "lv",
           "nl" : "nl", "nl-be" : "nl",
           "no": "no","no-no": "no",
           "pl": "pl",
@@ -96,30 +96,30 @@ jQuery(document).ready(function ($) {
           "ru": "ru", "ru-mo": "ru", "ru-ru": "ru", "ru-md": "ru",
           "sv": "sv", "sv-fi": "sv", "sv-se": "sv",
           "th": "th",
-          "tr": "tr", 
+          "tr": "tr",
           "zh-cn": "zh-cn", "zh-hk": "zh-hk", "zh-mo": "zh-cn", "zh-sg": "zh-cn", "zh-tw": "zh-tw"
-      },  
+      },
 
 
       //RC fully supported langs
       lgPickFull = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'ar'],
       lgPartial = ["it","ko", "pl","pt-br","pt-pt","ro"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
-	  lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
-	  lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro","nl"],
-    lgCognos = ['en', 'de','fr','ja', 'ko','ru', 'zh-cn'],
-    lgMicro = ['en', 'de'],
-	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
-   lgNavigator = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', "it", "ko", "pt-pt", 'el'],
-   lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
-	 lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
+      lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
+      lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro","nl"],
+      lgCognos = ['en', 'de','fr','ja', 'ko','zh-cn'],
+      lgMicro = ['en', 'de'],
+      lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
+      lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
+      lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
+      lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
 
       //all langs
       lgPickerLabels = GLangLabels,
 
-      //historyCK = "state404", 
+      //historyCK = "state404",
       prefLangCK = "preflang";
-    esriAuthCK = "esri_auth";
+      esriAuthCK = "esri_auth";
 
       return {
           getReferrerLang : function () {
@@ -141,11 +141,11 @@ jQuery(document).ready(function ($) {
               var loc = window.location,
                   path = loc.pathname,
                   lg = path.split ("/")[1].toLowerCase();
-              
+
               if (this.isSupportedLang (lg)) {
                   return lg;
               } else {
-                  //not exactly true, could be mistyped language 
+                  //not exactly true, could be mistyped language
                   return "en";
               }
           },
@@ -162,23 +162,23 @@ jQuery(document).ready(function ($) {
 
 			  if(langSelector === "all"){
                 return true;
-              }else if(langSelector === "generic" && lgPickFull.concat(lgPartial).indexOf(lg) >= 0){ 
+              }else if(langSelector === "generic" && lgPickFull.concat(lgPartial).indexOf(lg) >= 0){
                 return true;
-              }else if(langSelector === "trust" && lgTrustSite.indexOf(lg) >= 0){ 
+              }else if(langSelector === "trust" && lgTrustSite.indexOf(lg) >= 0){
                 return true;
-              }else if(langSelector === "agol" && lgAGOL.indexOf(lg) >= 0){ 
+              }else if(langSelector === "agol" && lgAGOL.indexOf(lg) >= 0){
                 return true;
-              }else if(langSelector === "openData" && lgOpenData.indexOf(lg) >= 0){ 
+              }else if(langSelector === "openData" && lgOpenData.indexOf(lg) >= 0){
                 return true;
-              }else if(langSelector === "cognos" && lgCognos.indexOf(lg) >= 0){ 
+              }else if(langSelector === "cognos" && lgCognos.indexOf(lg) >= 0){
                 return true;
-              }else if(langSelector === "micro" && lgMicro.indexOf(lg) >= 0){ 
+              }else if(langSelector === "micro" && lgMicro.indexOf(lg) >= 0){
                 return true;
-              }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){ 
+              }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){
                 return true;
-              }else if(langSelector === "navigator" && lgNavigator.indexOf(lg) >= 0){ 
+              }else if(langSelector === "navigator" && lgNavigator.indexOf(lg) >= 0){
                 return true;
-              }else if(langSelector === "sharepoint" && lgSharepoint.indexOf(lg) >= 0){ 
+              }else if(langSelector === "sharepoint" && lgSharepoint.indexOf(lg) >= 0){
                 return true;
               }else{
                 return false;
@@ -215,7 +215,7 @@ jQuery(document).ready(function ($) {
 
           getBrowserPref : function() {
               var lg =  (typeof navigator) != "undefined" ?  (navigator.language || navigator.userLanguage || "").toLowerCase() : "en";
-             
+
               return langList [lg] || "en";
           },
 
@@ -237,7 +237,7 @@ jQuery(document).ready(function ($) {
 
 
           showSelector : function(lg, selectorType) {
-              
+
               /*if (selectorType === "agol") {
                   return;
               }*/
@@ -259,7 +259,7 @@ jQuery(document).ready(function ($) {
                 case "openData":
                   lgList = lgOpenData;
                   break;
-					 case "cognos":
+                case "cognos":
                   lgList = lgCognos;
                   break;
                 case "micro":
@@ -271,13 +271,13 @@ jQuery(document).ready(function ($) {
                 case "sharepoint":
                   lgList = lgSharepoint;
                   break;
-					 case "marketplace":
+                case "marketplace":
                   lgList = lgMarketplace;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
 
-              $('<div class="tablet-hide top-nav-link js-dropdown-toggle"><a data-lang="' + lg + '" class="lglink top-nav-dropdown dropdown-btn">' + lgPickerLabels[lg] + 
+              $('<div class="tablet-hide top-nav-link js-dropdown-toggle"><a data-lang="' + lg + '" class="lglink top-nav-dropdown dropdown-btn">' + lgPickerLabels[lg] +
               '</a></div>').appendTo('.lang-block');
 
               var lgPicker = $('<nav/>', { class: 'lgpicker dropdown-menu dropdown-right' });
@@ -294,7 +294,7 @@ jQuery(document).ready(function ($) {
                 if ($(".lgpicker").hasClass ("show")) {
                   evt.preventDefault();
                   $(".lgpicker").toggleClass("show");
-                  //$('.lgarrow').toggleClass('arrow-down arrow-up');                  
+                  //$('.lgarrow').toggleClass('arrow-down arrow-up');
                 }
               });
 
@@ -311,7 +311,7 @@ jQuery(document).ready(function ($) {
                   var lgSetting = $(this).attr("data-lang");
                   dbg ("lgchoice: " + lgSetting);
                   //$("#lgpicker").toggleClass("show");
-              
+
                   doc.l10n.setPrefLang(lgSetting);
 
                   var url = doc.l10n.toNewUrl (lgSetting);
@@ -328,7 +328,7 @@ jQuery(document).ready(function ($) {
                   path = loc.pathname,
                   lang = path.split ("/")[1].toLowerCase(),
                   url = "";
-                  
+
 
               if (this.isEN (lang)) {
                   url = loc.href.replace ("/en/", "/"+lg+"/");
@@ -346,7 +346,7 @@ jQuery(document).ready(function ($) {
                   path = loc.pathname,
                   lg = path.split ("/")[1].toLowerCase(),
                   url = "";
-              
+
               if (this.isSupportedLang (lg)) {
                   url = loc.href.replace ("/"+lg+"/", "/en/");
               } else {
@@ -386,14 +386,14 @@ jQuery(document).ready(function ($) {
                   $("*[data-langlabel]").each (function(i) {
                       var o = $(this),
                           txt = dict[o.attr("data-langlabel")];
-                      
+
                       if (this.tagName === "INPUT" || this.tagName === "input") {
                           o.val (txt);
                       }
                       if (txt) {
                           o.html (txt);
                       }
-                  });                
+                  });
               }
           },
 
@@ -403,7 +403,7 @@ jQuery(document).ready(function ($) {
           }
 
 
-      };    
+      };
   })();
 
 
@@ -412,7 +412,7 @@ jQuery(document).ready(function ($) {
   var docCfg = (typeof docConfig != "undefined") ? docConfig : {"langSelector":"all"};
   // Default for doc site. We can remove this default setting once all publication has relevant value
   // Generic = full +partial | all = full+partial+others
-  docCfg.langSelector = "generic";  
+  docCfg.langSelector = "generic";
 
   if(winloc.pathname.match( /(\/location-analytics\/)/)){
     docCfg.langSelector = "all";
@@ -424,7 +424,7 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/|\/web-appbuilder\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/|\/web-appbuilder\/|\/explorer\/|\/appstudio\/|\/operations-dashboard\/|\/workforce\/)/)){
     docCfg.langSelector = "marketplace";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
@@ -437,9 +437,9 @@ jQuery(document).ready(function ($) {
   }
 
   dbg ("start: " + window.location.href);
-  
+
   //If user clicked on English link from 404 page
-  
+
   if (window.location.href.indexOf("lg=en") > 0){
     doc.l10n.setPrefLang("en");
   }
@@ -447,7 +447,7 @@ jQuery(document).ready(function ($) {
   if (docCfg["doctype"] === void(0) || docCfg["doctype"] === "doc") {
 
     dbg ("help topic");
-    
+
     var urlLang = doc.l10n.getUrlLang(),
       prefLang = doc.l10n.calcPrefLang (docCfg["langSelector"]);
 
@@ -472,8 +472,8 @@ jQuery(document).ready(function ($) {
           window.location = doc.l10n.toLocaleUrl (prefLang);
           return false;
         }
-      } 
-    } 
+      }
+    }
 
 
     doc.l10n.showSelector (prefLang ? prefLang: urlLang, docCfg["langSelector"]);
