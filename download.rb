@@ -45,6 +45,21 @@ module Download
 			return (prodObj.send("versions".to_sym) and prodObj.send("versions".to_sym).count() > 1) ? true : false
 		end
 
+    def generateDownloadsJson (prodName)
+      require 'json'
+      require 'yaml'
+      input_file = File.open('data/downloads.yml', 'r')
+      input_yml = input_file.read
+      input_file.close
+      yaml_data = YAML::load(input_yml)
+      if yaml_data['en'][prodName]
+        output_json = JSON.dump(yaml_data['en'][prodName])
+      else
+        output_json = "{}"
+      end
+      return output_json
+    end
+
 
 		def generateVersionDropDown (dataPath)
 			if data.downloads[current_language]
