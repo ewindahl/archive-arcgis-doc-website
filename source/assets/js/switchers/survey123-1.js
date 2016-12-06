@@ -26,7 +26,8 @@ $(document).ready(function() {
 		"troubleshootcreatesurveys.htm": "Desktop",
 		"troubleshootgetanswers.htm": "Desktop",
 		"quickreferencegetanswers.htm": "Desktop",
-		"integrationwithworkforce.htm": "Desktop"
+		"integrationwithworkforce.htm": "Desktop",
+		"survey123withportal.htm": "Desktop",
 	}
 
    var localedir = "en";
