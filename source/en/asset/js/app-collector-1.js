@@ -81,7 +81,12 @@ var noSwitcherFileList = {
 	}
 
 	if (!isHome) {
-		$('.reference-content .page-title').after (val);
+		if(!window.location.pathname.match( /(\/overview\/)/)){
+			$('.reference-content .page-title').after (val);
+		}else{
+			 modHomeUrls (plat)
+			 $('#helpSearchForm input[name=product]').attr("value", "collector-" + plat);
+		}
 	} else {
 		modHomeUrls (plat);
 		// Update product meta value in search form
