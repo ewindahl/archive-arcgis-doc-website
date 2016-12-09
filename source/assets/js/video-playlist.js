@@ -28,12 +28,12 @@ function addVideo(video, duration){
           '<img class="card-image" alt="'+video.title+'" src="https://i.ytimg.com/vi/'+video.videoId+'/'+video.image+'.jpg">'+
           '<div class="play-button"><div class="play-icon"></div></div>'+
         '</a>'+
-        '<div class="card-image-caption text-darker-gray font-size--3 padding-leader-0 padding-trailer-0 avenir-bold padding-left-half padding-right-half">'+
-         duration+
-        '</div>'+
       '</figure>'+
-      '<div class="card-content padding-leader-half padding-trailer-half padding-left-half padding-right-half">'+
+      '<div class="card-content padding-leader-0 padding-trailer-half padding-left-half padding-right-half">'+
         '<p class="font-size-1 card-last text-blue">'+video.title+'</p>'+
+        '<p class="font-size--2 text-light-gray trailer-0">'+
+        duration+
+        '</p>'+
       '</div>'+
     '</div>';
 }
