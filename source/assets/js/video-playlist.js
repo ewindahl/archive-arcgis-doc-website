@@ -4,13 +4,17 @@ function YTDurationToSeconds(duration) {
   times['hour'] = (parseInt(match[1]) || 0);
   times['minute'] = (parseInt(match[2]) || 0);
   times['second'] = (parseInt(match[3]) || 0);
+  if(times['second'] != 0){
+    times['minute'] += 1;
+  }
+  delete times['second'];
   var duration_str = '';
   for(inc in times){
     if(times[inc] > 0){
       if(times[inc] == 1){
-        duration_str += times[inc].toString()+' '+inc.toUpperCase()+' ';
+        duration_str += times[inc].toString()+' '+inc+' ';
       }else{
-        duration_str += times[inc].toString()+' '+inc.toUpperCase()+'S ';
+        duration_str += times[inc].toString()+' '+inc+'s ';
       }
     }
   }
