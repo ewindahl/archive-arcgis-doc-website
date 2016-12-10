@@ -16,40 +16,6 @@ metatags:
 mobile: true
 
 ---
-<!--
-This is a tamplate for a simple homepage.  Please search for and replace the following:
-  PRODUCT_METADATA: The metadata for the product
-  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
-  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
-  DOWNLOAD_LINK: A link to download the product, free trial, etc.
-  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
-  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
-  NAV_LINK_x: The link for the navigation tabs at the top.
-  NAV_TEXT_x: The text for the navigation tabs at the top.
-  PRODUCT_SEARCH_VALUE: The product value for the search form
-  PRODUCT_IMAGE_231x149.png: This is an image in the first section under the search bar.
-  MAIN_TEXT: The text that appears in the first section under the search bar.
-  WHATS_NEW_TEXT: A blurb about what's new with the product.
-  WHATS_NEW_LINK: A link to more info about what's new with the product.
-  POPULAR_LINK_x: Links to popular pages and topics, such as "What's new", "Supported environments", "Archived help", etc.
-  POPULAR_TEXT_x: Text for links to popular pages and topics.
-  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
-  CARD_LINK_x: The page that the card should link to.
-  CARD_TITLE_x: The title of the card.
-  CARD_TEXT_x: The text inside the card.
-  MORE_VIDEOS_LINK: Page to link to for more videos.
-  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
-  TWITTER_LINK: Link to the product's Twitter page
-  LINKEDIN_LINK: Link to the product's LinkedIn page
-  GITHUB_LINK: Link to the product's GitHub page
-  FACEBOOK_LINK: Link to the product's Facebook page
-  GEONET_LINK: Link to the product's Geonet page
-  BLOG_LINK: Link to the the product's blog
-  BLOG_FEED_URL: URL for the product's blog feed
-  GEONET_LINK: Link to the the product's geonet page
-  GEONET_FEED_URL: URL for the product's geonet feed
-Please search for INSTRUCTIONS within the file for element specific instructions.
--->
 <header class="sub-nav sub-nav-blue">
   <div class="grid-container">
     <div class="column-24">
@@ -71,50 +37,52 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   </div>
 </header>
 
-<div class="grid-container leader-2">
-  <div class="column-16">
-    <div class="wf-nav" style="height:55px;">
-      <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="Search Esri Demographics">
-          <input type="hidden" name="collection" value="help" />
-          <input type="hidden" name="product" value="esri-demographics" />
-          <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
-        </form>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Power your GIS with global demographic, spending, lifestyle, and business data.</h1>
+      <h5>Esri Demographics is used for mapping and analysis purposes. Esri Demographics supports commercial market analytics and noncommercial usages, such as economic development, planning, and at-risk population assessment. Esri Demographics is accessible in four ways: dynamic web maps, data enrichment, reports, and infographics.</h5>
+      <h5>Find out what's new in this release. <a href="/en/esri-demographics/reference/whats-new.htm">Learn more.</a></h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" target="_top">
+              <input type="search" name="q" class="leader" placeholder="Search Esri Demographics">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="esri-demographics" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-
-
-    <div class="column-16 tablet-column-7">
-      <p>Esri Demographics powers the ArcGIS System with access to global demographic, spending, lifestyle, and business data.</p>
-
-      <p>Esri Demographics is used for mapping and analysis purposes. Esri Demographics supports commercial market analytics and noncommercial usages, such as economic development, planning, and at-risk population assessment. Esri Demographics is accessible in four ways: dynamic web maps, data enrichment, reports, and infographics.</p>
-
-      <p>To see the available comprehensive set of global Esri Demographics data, use the data browser below by selecting a country and peruse the available data categories.</p>
-    </div>
-
-
-  </div>
-  <div class="column-8 tablet-column-12 right">
-    <div class="panel">
-      <h4 class="icon-ui-announcement">What's new</h4>
-      <p>Find information on what's new in Esri Demographics.</p>
-      <a class="btn secondary" href="/en/esri-demographics/reference/whats-new.htm">Learn more</a>
+    <div class="column-24">
+      <hr class="leader-half trailer-0">
     </div>
   </div>
 </div>
-
-
-<div class="grid-container leader-1">
+<div class="grid-container leader-2">
   <div class="column-24">
-		<iframe src="//la.arcgis.com/databrowser/index.html" width="815" height="850" frameborder="0">
-			Error: Embedded data could not be displayed.
-		</iframe>
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 text-center">
+      <h2 class="text-center">What demographics data is available?</h2>
+      <p>
+        To see the available comprehensive set of global Esri Demographics data, use the data browser below by selecting a country and peruse the available data categories.
+      </p>
+      <iframe src="//la.arcgis.com/databrowser/index.html" width="815" height="850" frameborder="0">
+  			Error: Embedded data could not be displayed.
+  		</iframe>
+    </div>
   </div>
 </div>
-
-
 
 <!-- Blog -->
 <div class="panel panel-white panel-no-border panel-no-padding leader-1">
