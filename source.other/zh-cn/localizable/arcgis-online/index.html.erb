@@ -1,217 +1,541 @@
 ---
 title: ArcGIS Online 帮助
 css:
-  - stat-page-specific
-  - colorbox/colorbox
-  - agolstart
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - video-init
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - sitecfg.js
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="ArcGIS Online Help Home page."><META name="last-modified" content="2014-07-09"><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING"><META name="content-language" content="zh-cn">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING">
 
 mobile: true
 
-
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/zh-cn/arcgis-online/">ArcGIS Online 帮助</a></h1>
-    </header>
-    <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online 帮助" href="/zh-cn/arcgis-online/">主页</a></li>
-        <li><a title="使用地图和场景" href="/zh-cn/arcgis-online/use-maps/">使用</a></li>
-        <li><a title="创建地图、场景和应用程序" href="/zh-cn/arcgis-online/create-maps/">创建</a></li>
-        <li><a title="共享地图、场景和应用程序" href="/zh-cn/arcgis-online/share-maps/">共享</a></li>
-        <li><a title="管理您的组织" href="/zh-cn/arcgis-online/administer/">管理</a></li>
-        <li><a title="参考" href="/zh-cn/arcgis-online/reference/">参考</a></li>
-        <li><a title="适用于任何人的应用程序" href="/zh-cn/arcgis-online/apps/arcgis-apps.htm">应用程序</a></li>
+
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Online 帮助</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <p> <a href="http://www.arcgis.com/features/free-trial.html"> <button class="btn margin-left-1 btn-clear">60 天免费试用</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+		    <a class="sub-nav-link  is-active" title="ArcGIS Online 帮助" href="/zh-cn/arcgis-online/">主页</a>
+        <a class="sub-nav-link" title="ArcGIS Online 入门" href="/zh-cn/arcgis-online/get-started/">入门</a>
+			  <a class="sub-nav-link" title="创建地图、场景和应用程序" href="/zh-cn/arcgis-online/create-maps/">创建</a>
+        <a class="sub-nav-link" title="执行分析" href="/zh-cn/arcgis-online/analyze/">分析</a>
+			  <a class="sub-nav-link" title="共享地图、场景和应用程序" href="/zh-cn/arcgis-online/share-maps/">共享</a>
+			  <a class="sub-nav-link" title="管理您的组织" href="/zh-cn/arcgis-online/administer/">管理</a>
+			  <a class="sub-nav-link" title="参考" href="/zh-cn/arcgis-online/reference/">参考</a>
+			  <a class="sub-nav-link" title="适用于任何人的应用程序" href="/zh-cn/arcgis-online/apps/arcgis-apps.htm">应用程序</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>在几分钟内制作地图</h1>
+      <h5>ArcGIS Online 提供了一个基于云的完整世界级地理信息系统。</h5>
+      <h5>立即开始使用 ArcGIS Online。<a href="http://www.arcgis.com/features/free-trial.html" >注册 ArcGIS 免费试用版。</a></h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" target="_top">
+              <input type="search" name="q" class="leader" placeholder="搜索 ArcGIS Online 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-online" />
+              <input type="hidden" name="language" value="zh-cn" />
+              <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><strong>当前更新：</strong>2016 年 12 月</li>
+        <li><a href="/zh-cn/arcgis-online/reference/whats-new.htm">新特性</a></li>
+	      <li><a href="/zh-cn/arcgis-online/reference/faq.htm">常见问题</a></li>
       </ul>
     </nav>
   </div>
 </div>
-
-<div class="full-bkg white">
-  <div class="container">
-    <div class="agol-search-box">
-        <form target="_top" id="helpSearchForm" class="agolhomesearchForm">
-        <input type="search" placeholder="Search ArcGIS Online Help" class="leader" name="q">
-        <input type="hidden" value="help" name="collection">
-        <input type="hidden" value="arcgis-online" name="product">
-        <input type="hidden" value="zh-cn" name="language">
-      </form>
-    </div>
-    <div class="column-14 post-2 get-started">
-      <!--<h2>Get started</h2>-->
-	  <p>
-		地图、场景、分析、应用程序及协作 - 均可通过 ArcGIS Online 来完成。</p>
-	
-	<p>您是 ArcGIS 的初学者？ 从创建第一个地图、场景、应用程序或群组开始。当您要了解更多信息时，可尝试参与课程或浏览热门主题。您是组织<a href="/zh-cn/arcgis-online/administer/admin-org.htm">管理员</a>吗？ 了解使用自定义角色、安全性设置以及灵活配置的方式。
-	</p> 
-	<p>确保从我们的<a href="#blog">博客</a>和<a href="#community">社区</a>中查看最新资讯。
-		</p> 
-	
-      <!--<p>
-        Are you an ? Learn how to use custom roles, security settings, and flexible configurations that make sense for your organization.-->
-      </p>
-      <!-- <h2>Make your first</h2>
-      <h4 class="icon-right-arrow"><a href="/zh-cn/arcgis-online/create-maps/make-your-first-map.htm">Map</a></h4>
-      <h4 class="icon-right-arrow"><a href="/zh-cn/arcgis-online/create-maps/make-your-first-scene.htm">Scene</a></h4>
-      <h4 class="icon-right-arrow"><a href="/zh-cn/arcgis-online/create-maps/make-your-first-app.htm">App</a></h4>
-      <h4 class="icon-right-arrow"><a href="/zh-cn/arcgis-online/share-maps/make-your-first-group.htm">Group</a></h4> -->
-    </div>
-    <div class="column-8">
-      <div class="panel dark">
-        <h3 class="icon-announcement">新特性</h3>
-        <p>2016 年 6 月的更新包括改进的项目页面、查看时间的新选项、对集成格网图层的支持等。
-        </p>
-			<!--<a href="/zh-cn/arcgis-online/reference/whats-new.htm" class="btn light">Learn more</a>-->
-			<a href="/zh-cn/arcgis-online/reference/whats-new.htm" class="btn secondary">了解更多信息</a>
-      </div>
-
-    </div>
+<div class="panel panel-blue panel-no-border panel-no-padding leader-half">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
-      <h2>创建第一个</h2>
-      <div class="make-first">
-        <a href="/zh-cn/arcgis-online/create-maps/make-your-first-map.htm"><h2 class="icon-map-trail">地图</h2></a>
-        <a href="/zh-cn/arcgis-online/create-maps/make-your-first-scene.htm"><h2 class="icon-geo">场景</h2></a>
-        <a href="/zh-cn/arcgis-online/create-maps/make-your-first-app.htm"><h2 class="icon-window-cursor">应用程序</h2></a>
-        <a href="/zh-cn/arcgis-online/share-maps/make-your-first-group.htm"><h2 class="icon-community">群组</h2></a>
+      <h2 class="trailer-half leader-1">入门
+        <a class="btn btn-transparent text-white btn-large right" href="/zh-cn/arcgis-online/get-started/online-quick-exercises.htm">更多练习</a>
+      </h2>
+      <div class="block-group block-group-6-up tablet-block-group-2-up leader-0 padding-leader-half trailer-half">
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="/zh-cn/arcgis-online/get-started/quick-exercise-maps.htm">
+              <img alt="" src="img/create-a-map.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="/zh-cn/arcgis-online/get-started/quick-exercise-maps.htm">创建地图</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">20 分钟</p>-
+            <p class="trailer-0 text-off-black">创建 Web 地图作为研究内华达州克拉克县的医院的一部分。</p>
+          </div>
+          <a href="/zh-cn/arcgis-online/get-started/quick-exercise-maps.htm" class="btn btn-clear btn-fill leader-0">开始练习</a>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/">
+              <img alt="" src="img/create-an-app.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/">创建 Web 应用程序</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">1 小时</p>
+            <p class="trailer-0 text-off-black">为华盛顿州 Oso 泥石流创建 Web 应用程序。</p>
+          </div>
+          <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/" class="btn btn-clear btn-fill leader-0">开始练习</a>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">
+              <img alt="" src="img/get-started-with-scene-viewer.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">通过场景查看器转至 3D 模式</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">1 小时 20 分钟</p>
+            <p class="trailer-0 text-off-black">创建展示佛罗里达州沙滩和水湾的 3D 场景。</p>
+          </div>
+          <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/" class="btn btn-clear btn-fill leader-0">开始练习</a>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/">
+              <img alt="" src="img/track-crime-rates.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/">追踪犯罪率</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">40 分钟</p>
+            <p class="trailer-0 text-off-black">为内布拉斯加州的林肯市创建犯罪密度地图。</p>
+          </div>
+          <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/" class="btn btn-clear btn-fill leader-0">开始练习</a>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm">
+              <img alt="" src="img/get-started-with-collector.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm">配置 Collector 地图</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">30 分钟</p>
+            <p class="trailer-0 text-off-black">创建与 Collector for ArcGIS 配合使用的地图以收集损失评估数据。</p>
+          </div>
+          <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm" class="btn btn-clear btn-fill leader-0">开始练习</a>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://learn.arcgis.com/en/projects/set-up-an-arcgis-organization/">
+              <img alt="" src="img/set-up-an-arcgis-organization.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://learn.arcgis.com/en/projects/set-up-an-arcgis-organization/">设置 ArcGIS 组织</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">60 分钟</p>
+            <p class="trailer-0 text-off-black">为新 ArcGIS 组织配置站点。</p>
+          </div>
+          <a href="http://learn.arcgis.com/en/projects/set-up-an-arcgis-organization/" class="btn btn-clear btn-fill leader-0">开始练习</a>
+        </div>
       </div>
     </div>
-	<hr>
+  </div>
+</div>
+
+
+<div class="panel panel panel-no-border panel-no-padding leader-0">
+  <div class="grid-container">
     <div class="column-24">
-      <hr>
-      <ul class="horizontal">
-        <li><h4>查看热门主题：</h4></li>
-        <li><a href="/zh-cn/arcgis-online/reference/faq.htm">常见问题</a></li>
-		<li><a href="/zh-cn/arcgis-online/share-maps/add-items.htm">添加项目</a></li>
-        <li><a href="/zh-cn/arcgis-online/use-maps/perform-analysis.htm">执行分析</a></li>
-		<li><a href="/zh-cn/arcgis-online/share-maps/publish-features.htm">发布要素</a></li>
-		<li><a href="/zh-cn/arcgis-online/administer/view-status.htm">查看状态</a></li>
+        <div class="row">
+          <h2>&nbsp;</h2>
+          <h2 class="text-center">ArcGIS Online 有哪些功能？</h2>
+        </div>
+        <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up leader-1 trailer-1">
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white trailer-0">
+              <h2 class="icon-ui-maps text-center trailer-half"></h2>
+              <h3 class="text-center trailer-0">制作地图</h3>
+              <p class="trailer-half">
+                了解有关用于与用户共享 GIS 的地图角色的详细信息。
+              </p>
+              <ul class="bulleted trailer-0">
+                <li>
+                  <a href="/zh-cn/arcgis-online/get-started/get-started-with-maps.htm">创建地图入门</a>
+                </li>
+                <li>
+                  <a href="/zh-cn/arcgis-online/share-maps/share-maps.htm">共享地图</a>
+                </li>
+                <li>
+                  <a href="/zh-cn/arcgis-online/get-started/view-maps.htm">在地图查看器中查看地图</a>
+                </li>
+                <li>
+                  <a href="//storymaps.arcgis.com/">创建故事地图，讲述您自己的故事</a>
+                </li>
+                <li>
+                  <a href="//links.esri.com/agol-help/storymap/how-to-smart-map">了解如何分三步使用智能制图</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white trailer-0">
+                <h2 class="icon-ui-globe text-center trailer-half"></h2>
+                <h3 class="text-center trailer-0">使用 3D GIS</h3>
+                <p class="trailer-half">
+                  通过在 3D 模式下显示信息获取新视角。使用 3D GIS 功能解决在 2D 环境中无法解决的问题。
+                </p>
+                <ul class="bulleted trailer-0">
+                  <li>
+                    <a href="/zh-cn/arcgis-online/get-started/get-started-with-scenes.htm">创建场景入门</a>
+                  </li>
+                  <li>
+                    <a href="/zh-cn/arcgis-online/get-started/view-scenes.htm">在场景查看器中查看场景</a>
+                  </li>
+                  <li>
+                    <a href="//links.esri.com/agol-help/livingatlas-3d">在 Living Atlas 中访问即用型 3D 场景</a>
+                  </li>
+                  <li>
+                    <a href="/zh-cn/drone2map/quick-start-exercises/3d-mapping.htm">使用 Drone2Map for ArcGIS 生成 3D 图层</a>
+                  </li>
+                </ul>
+
+            </div>
+          </div>
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white primary trailer-0">
+                <h2 class="icon-ui-line-chart text-center trailer-half"></h2>
+                <h3 class="text-center trailer-0">执行分析</h3>
+                <p class="trailer-half">
+                   结合多个图层中的信息并应用空间运算来解决各种各样的问题。浏览并显示结果以作出决策和获得更深入的了解。
+                </p>
+                <ul class="bulleted trailer-0">
+                  <li>
+                    <a href="/zh-cn/arcgis-online/get-started/get-started-with-analysis.htm">分析入门</a>
+                  </li>
+                  <li>
+                    <a href="/zh-cn/arcgis-online/analyze/perform-analysis.htm">执行地图分析</a>
+                  </li>
+                  <li>
+                    <a href="//learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">通过人口分析探究儿童贫困的情况</a>
+                  </li>
+				  <li>
+                    <a href="/zh-cn/arcgis-online/create-maps/change-style.htm#ESRI_SECTION1_195BD40347774AEDAEC373A7A0898A80">通过智能制图回答空间问题</a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white trailer-0">
+                <h2 class="icon-ui-layers text-center trailer-half"></h2>
+                <h3 class="text-center trailer-0">访问 Living Atlas</h3>
+                <p class="trailer-half">
+                  通过 Living Atlas of the World（来自 ArcGIS 用户和 Esri 及其合作伙伴的精选全球最佳可用地图、应用程序和数据集合）推动您的 GIS。
+                </p>
+                <ul class="bulleted trailer-0">
+                  <li>
+                    <a href="http://links.esri.com/agol-help/living-atlas">访问 Living Atlas</a>
+                  </li>
+                  <li>
+                    <a href="//links.esri.com/agol-help/livingatlas-storymap">通过故事地图浏览 Living Atlas</a>
+                  </li>
+                  <li>
+                    <a href="/zh-cn/arcgis-online/create-maps/add-layers.htm#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">浏览要添加到您的地图的 Living Atlas 图层</a>
+                  </li>
+                  <li>
+                    <a href="/zh-cn/arcgis-online/create-maps/add-layers-to-scene.htm#ESRI_SECTION1_8FC6CAC878CB41CD8F4B21F978D57135">向您的场景添加 Living Atlas 内容</a>
+                  </li>
+                  <li>
+                    <a href="/zh-cn/arcgis-online/get-started/quick-exercise-explore-data.htm">使用 Living Atlas 地图查找空间模式</a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white trailer-0">
+                <h2 class="icon-ui-collection text-center trailer-half"></h2>
+                <h3 class="text-center trailer-0">管理数据</h3>
+                <p class="trailer-half">
+                  使您的数据变得生动起来。通过发布其他人可以在其地图和场景中使用的图层共享要素等其他内容。启用编辑以收集社区反馈。
+                </p>
+                <ul class="bulleted trailer-0">
+                  <li>
+                    <a href="/zh-cn/arcgis-online/share-maps/hosted-web-layers.htm">将要素、切片等内容发布为图层</a></li>
+                  <li>
+                    <a href="/zh-cn/arcgis-online/create-maps/edit-features.htm">编辑要素</a>
+                  </li>
+                  <li>
+                    <a href="/zh-cn/arcgis-online/create-maps/take-maps-offline.htm">使用离线地图</a>
+                  </li>
+                  <li>
+                    <a href="/zh-cn/arcgis-online/reference/best-practices-layers.htm">了解在地图中使用图层的最佳做法</a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white primary trailer-0">
+                <h2 class="icon-ui-share text-center trailer-half"></h2>
+                <h3 class="text-center trailer-0">共享工作</h3>
+                <p class="trailer-half">
+                  共享丰富的地理信息项目以供用户使用。通过提供使用大量应用程序和故事地图的访问权限将您的宝贵信息投入使用。
+                </p>
+                <ul class="bulleted trailer-0">
+                  <li><a href="/zh-cn/arcgis-online/get-started/get-started-with-sharing.htm">共享入门</a></li>
+                  <li><a href="//storymaps.arcgis.com/en/">使用应用程序共享故事</a></li>
+                  <li><a href="/zh-cn/arcgis-online/reference/best-practices-share.htm">了解共享的最佳做法</a></li>
+                  <li><a href="/zh-cn/arcgis-online/reference/ogc.htm">通过开放标准共享数据</a></li>
+				  <li><a href="http://opendata.arcgis.com/">通过 Open Data for ArcGIS 共享</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white trailer-0">
+              <h2 class="icon-ui-applications text-center trailer-half"></h2>
+              <h3 class="text-center trailer-0">使用应用程序</h3>
+              <p class="trailer-half">
+                ArcGIS 应用程序提供有适用于您的地图、场景和数据的界面和工具。ArcGIS Online 随附了几十个应用程序，来支持您的组织完成作业。
+              </p>
+              <ul class="bulleted trailer-0">
+                <li><a href="//www.esri.com/software/apps/field">查看适用于外业的应用程序</a></li>
+                <li><a href="//www.esri.com/software/apps/office">查看适用于办公室的应用程序</a></li>
+                <li><a href="//www.esri.com/software/apps/community">查看适用于社区的应用程序</a></li>
+                <li><a href="//www.esri.com/software/apps/builders">构建您自己的应用程序</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white primary trailer-0">
+              <h2 class="icon-ui-search text-center trailer-half"></h2>
+              <h3 class="text-center trailer-0">发现和管理项目</h3>
+              <p class="trailer-half">
+                ArcGIS Online 可让您访问可搜索的世界 GIS，其中包括由 GIS 社区、您的组织和您贡献的大量地图、场景、图层、分析和应用程序。这些项目均被组织到信息图库中，这样，您就可以快速发现与您的工作有关的内容。
+              </p>
+              <ul class="bulleted trailer-0">
+                <li><a href="/zh-cn/arcgis-online/reference/geo-info.htm">查看 ArcGIS 信息模型</a></li>
+                <li><a href="/zh-cn/arcgis-online/share-maps/add-items.htm">将项目添加到 ArcGIS Online</a></li>
+                <li><a href="/zh-cn/arcgis-online/get-started/get-started-with-groups.htm">使用群组共享信息</a></li>
+                <li><a href="//links.esri.com/agol-help/living-atlas">在 Living Atlas 中查找地图等内容</a></li>
+                <li><a href="/zh-cn/arcgis-online/reference/search.htm">在 ArcGIS Online 中发现项目</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card block trailer-1">
+            <div class="panel panel-no-border panel-white primary trailer-0">
+              <h2 class="icon-ui-settings2 text-center trailer-half"></h2>
+              <h3 class="text-center trailer-0">管理您的组织</h3>
+              <p class="trailer-half">
+                从配置自定义角色和安全设置到管理许可以再到查看使用情况报告，ArcGIS Online 包含管理组织所需的一切功能。
+              </p>
+              <ul class="bulleted trailer-0">
+                <li><a href="/zh-cn/arcgis-online/administer/get-started-with-administration.htm">管理入门</a></li>
+                <li><a href="//links.esri.com/agol-help/administering-platform">了解管理员可使用的最佳做法和资源</a></li>
+                <li><a href="/zh-cn/arcgis-online/reference/roles.htm">了解级别、角色和权限</a></li>
+                <li><a href="/zh-cn/arcgis-online/reference/credits.htm">了解配额</a></li>
+                <li><a href="/zh-cn/trust/security/security-overview.htm">查看 ArcGIS 安全性</a></li>
+                <li><a href="https://github.com/Esri/ago-admin-wiki/wiki/Tools">浏览其他管理工具</a></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid-container leader-2 text-center">
+  <div class="column-24 text-center trailer-2">
+    <h2 class="text-center trailer-0">从 ArcGIS Online 中获取更多内容</h2>
+    <p class="leader-1 trailer-0">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="https://developers.arcgis.com/" title="ArcGIS for Developers">ArcGIS for Developers</a></li>
+        <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+        <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+        <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
       </ul>
-      <hr>
-    </div>
-    <div class="column-24 trailer leader">
-      <h2>参与课程
-	  <small><a href="http://learn.arcgis.com/en/gallery/" class="font-size-0 right">更多课程<span class="icon-external-link">&nbsp;</span></a></small>
-	  </h2>
-      <div class="column-6">
-        <div class="card clear">
-          <img src="img/get-started-with-arcgis-online.png" alt="Get started with ArcGIS Online" />
-          <h3 class="no-trailer"><a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-online/">ArcGIS Online 入门</a></h3>
-          <p>
-            了解在线创建地图的基础知识。
-			</p>
-   		<!--  <p>
-		  <a title="ArcGIS Online Overview" href="http://video.arcgis.com/iframe/916/000000/width/960/0/00:00:00" class="colorbox-evlarge cboxElement"> Watch a video</a>
-		  </p>-->
-        </div>
+    </p>
+  </div>
+</div>
+
+<!-- Collapsible contents -->
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">观看视频
+        <a class="btn btn-transparent text-white btn-large right" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf">更多视频</a>
+      </h2>
+      <!--h3 class="leader-half trailer-0 padding-trailer-0">Watch our videos</h3>
+      <a class="btn btn-transparent btn-large right padding-leader-0 padding-trailer-0 text-white" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf">More videos</a-->
+      <div playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
       </div>
-      <div class="column-6">
-        <div class="card clear">
-          <img src="img/fight-child-poverty-with-demographic-analysis.png" alt="Fight child poverty with demographic analysis" />
-          <h3 class="no-trailer"><a href="http://learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">人口分析和智能制图</a></h3>
-          <p>
-            使用人口分析、智能绘图和 Web 应用程序查找贫困儿童。
-          </p>
-        </div>
-      </div>
-      <div class="column-6">
-        <div class="card clear">
-          <img src="img/restaurant-report-cards-final-map.png" alt="Plan routes for food inspectors" />
-          <h3 class="no-trailer"><a href="http://learn.arcgis.com/en/projects/plan-routes-for-food-inspectors/">计划路径</a></h3>
-          <p>
-帮助四家卫生部门检查圣地亚哥县的 36 家餐馆。
-          </p>
-        </div>
-      </div>
-      <div class="column-6">
-        <div class="card clear">
-          <img src="img/live-above-shop-below.png" alt="Evaluate locations for mixed use development" />
-          <h3 class="no-trailer"><a href="http://learn.arcgis.com/en/projects/evaluate-locations-for-mixed-use-development/">空间分析</a></h3>
-          <p>
-            为全新的综合性房产开发寻找最佳地点。
-          </p>
-        </div>
-      </div>
-      <div class="clear"></div>
     </div>
   </div>
 </div>
 
-<!--Blog feed-->
-<div class="full-bkg off-white">
-  <div class="container">
-    <div class="column-24 trailer leader">
-    <h2>阅读我们的博客
-		<small><a id="blog" href="https://blogs.esri.com/esri/arcgis/category/arcgis-online " class="font-size-0 right">更多博客文章 <span class="icon-external-link">&nbsp;</span></a></small>
-	</h2>
-	<div data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/" class="block-group block-group-3-up blogHpFeed">
-		<!-- Blog Content goes here -->
-	 </div>
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">连接 ArcGIS Online</h4>
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISOnline"></a>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Online"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/LivingAtlas"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/web-gis/arcgisonline"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">阅读博客
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/category/arcgis-online">更多博客文章</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
     </div>
   </div>
 </div>
 
-<div class="full-bkg white">
-  <div class="container">
-    <div class="column-24 trailer leader">
-      <h2 class="divider">加入对话
-		<small><a id="community" href="https://geonet.esri.com/community/gis/web-gis/arcgisonline" class="font-size-0 right">更多讨论 <span class="icon-external-link">&nbsp;</span></a></small>
-	  </h2>
-
-	   <div data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2106" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">加入对话
+        <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/community/gis/web-gis/arcgisonline">更多对话</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2106" class="block-group block-group-3-up geonetFeed">
 				<!-- Forum content goes here -->
-		</div>
-
+			</div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">深入了解手册
+        <a class="btn btn-transparent text-white btn-large right" href="http://esripress.esri.com/">更多手册</a>
+      </h2>
+      <div class="block-group block-group-3-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=289&moduleID=0">
+              <img alt="" src="img/arcgis-book.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://links.esri.com/book/arcgis-book">ArcGIS 手册</a>
+            </h5>
+            <p class="trailer-0 text-off-black">了解和使用 web GIS 创建并共享地理信息。查看网站、下载免费交互式 PDF 或购买印刷版。</p>
+          </div>
+          <a href="http://links.esri.com/book/arcgis-book" class="btn btn-clear btn-fill leader-0">立即阅读</a>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=289&moduleID=0">
+              <img alt="" src="img/instructional-guide.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://links.esri.com/book/instructional-guide">ArcGIS 手册指南</a>
+            </h5>
+            <p class="trailer-0 text-off-black">获取与 ArcGIS Online 和 web GIS 有关的活动、资源、课程和数据。以印刷版形式提供。</p>
+          </div>
+          <a href="http://links.esri.com/book/instructional-guide" class="btn btn-clear btn-fill leader-0">立即购买</a>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=308&moduleID=0">
+              <img alt="" src="img/imagery-book.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://links.esri.com/book/imagery">ArcGIS 影像手册</a>
+            </h5>
+            <p class="trailer-0 text-off-black">探索影像和遥感如何助力现代 GIS。查看网站、下载免费交互式 PDF 或购买印刷版。</p>
+          </div>
+          <a href="http://links.esri.com/book/imagery" class="btn btn-clear btn-fill leader-0">立即阅读</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="full-bkg dark">
-  <div class="container">
-    <div class="column-6">
-      <h4 class="icon-book icon-green"><a href="http://www.esri.com/training/main/arcgis-online-training">查找培训课程</a></h4>
-      <p class="no-trailer">
-        搜索 Esri 培训课程以了解更多信息。
-      </p>
+<div class="panel panel-white panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-purple trailer-half"><a href="http://links.esri.com/agol-help/learn/agol">参加深入课程</a></h5>
+          <p class="trailer-0">
+            搜索“了解 ArcGIS”以查找和完成使用 ArcGIS 解决现实问题的练习。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-green trailer-half"><a href="http://www.esri.com/training/main/arcgis-online-training">查找培训课程</a></h5>
+          <p class="trailer-0">
+            通过导师授课式课程、web 课程和研讨会了解有关 ArcGIS 的详细信息。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-orange trailer-half"><a href="http://support.esri.com/en/">获取技术支持</a></h5>
+          <p class="trailer-0">
+            通过聊天、电子邮件或电话联系 Esri 支持部门。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-white trailer-half"><a href="http://doc.arcgis.com/en/trust/system-status/">检查系统状况</a></h5>
+          <p class="trailer-0">
+ 查看 ArcGIS Online 的状态并报告问题。
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="column-6">
-      <h4 class="icon-play icon-gray"><a href="https://www.youtube.com/channel/UCgGDPs8cte-VLJbgpaK4GPw">观看视频</a></h4>
-      <p class="no-trailer">
-        查看一组关于 ArcGIS Online 的视频。
-      </p>
-    </div>
-    <div class="column-6">
-      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/">获取技术支持</a></h4>
-      <p class="no-trailer">
-        通过聊天、电子邮件或电话联系 Esri 支持部门。
-      </p>
-    </div>
-    <div class="column-6">
-      <h4 class="icon-alert icon-blue"><a href="http://doc.arcgis.com/en/trust/system-status/">检查系统状况</a></h4>
-      <p class="no-trailer">
-        查看 ArcGIS Online 的状态并报告问题。
-      </p>
-    </div>
-
   </div>
 </div>
-
-
-	<script src="/js/rssfeed.js" type="text/javascript"></script>   <script type="text/javascript">
-
-	 if(window.location.pathname.match( /(\/arcgis-online\/)/)){
-		$("#help-nav").attr("class", "active");
-	 }
-
-
-  </script>
