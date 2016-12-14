@@ -28,6 +28,8 @@ $(document).ready(function() {
 		"quickreferencegetanswers.htm": "Desktop",
 		"integrationwithworkforce.htm": "Desktop",
 		"survey123withportal.htm": "Desktop",
+		"survey123witharcgisserver": "Desktop",
+		"useofflinebasemaps": "Desktop",
 	}
 
    var localedir = "en";
