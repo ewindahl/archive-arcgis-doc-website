@@ -105,8 +105,6 @@ $(document).ready(function() {
     $('#redirectUrl').val ("http://" + winloc.host + "/en/marketplace/thank-you/");
 
     
-    doc.supportForm.DrawCaptcha();
-
     var docCfg = docCfg || {},
         urlLang = doc.l10n.getReferrerLang(),
         curlang = doc.l10n.calcPrefLang (docCfg["langSelector"] || "all", urlLang);
@@ -118,6 +116,7 @@ $(document).ready(function() {
     if (doc.l10n.isSupportedLang(curlang) && !doc.l10n.isEN (curlang)) { 
       doc.l10n.changeLabel (curlang);
     }
+	  doc.supportForm.DrawCaptcha();
 
 
 	});
