@@ -28,6 +28,9 @@ $(document).ready(function() {
 		"quickreferencegetanswers.htm": "Desktop",
 		"integrationwithworkforce.htm": "Desktop",
 		"survey123withportal.htm": "Desktop",
+		"survey123witharcgisserver.htm": "Desktop",
+		"useofflinebasemaps.htm": "Desktop",
+		"geopoints.htm": "Desktop",
 	}
 
    var localedir = "en";
