@@ -7,11 +7,11 @@ module Download
 
     # Called when trial extension activated
     def registered(app, options={})
-	
+
       # Setup extension-specific config
       app.set :config_variable, false
-	  
-	  
+
+
 	  app.helpers do
 
 
@@ -22,7 +22,7 @@ module Download
 			else
 				prodObj = data.downloads['en']
 			end
-	
+
 			explodedStr = product.split("~")
 
 			if explodedStr.length > 0
@@ -44,6 +44,21 @@ module Download
 		def isMultiVersions (prodObj)
 			return (prodObj.send("versions".to_sym) and prodObj.send("versions".to_sym).count() > 1) ? true : false
 		end
+
+    def generateDownloadsJson (prodName)
+      require 'json'
+      require 'yaml'
+      input_file = File.open('data/downloads.yml', 'r')
+      input_yml = input_file.read
+      input_file.close
+      yaml_data = YAML::load(input_yml)
+      if yaml_data['en'][prodName]
+        output_json = JSON.dump(yaml_data['en'][prodName])
+      else
+        output_json = "{}"
+      end
+      return output_json
+    end
 
 
 		def generateVersionDropDown (dataPath)
@@ -67,25 +82,24 @@ module Download
 
 			retValue = ""
 			if isMultiVersions(prodObj)
-				retValue = "<div class='dropdown-wrapper '>
-                          Version <span class='dropdown dropdown-selected' filename='' foldername='' href='#'></span>
+        retValue = "<div class='dropdown-wrapper dropdown js-dropdown'>
+                          <button class='btn btn-transparent dropdown-btn js-dropdown-toggle' tabindex='0' aria-haspopup='true' aria-expanded='false'>Version <span class='dropdown dropdown-selected' filename='' foldername='' href='#'></span></button>
                           <div class='dropdown-content'>
-                            <div class='dropdown-menu'>
-				<ul>"
+                            <nav class='dropdown-menu modifier-class' role='menu'>"
 				#if isMultiVersions(prodObj) == true
 				prodObj.send("versions".to_sym).each {|k,v|
-					fileSize = v['filesize'] ? v['filesize'] : "&nbsp;" 
-					retValue = retValue + '<li><a href="#" class="dropdown-item" data-file-size="' + fileSize + '" data-app-folder="' + v['foldername'] + '" data-app-file="' + v['filename'] + '">' + k.to_s + '</a></li>'
+					fileSize = v['filesize'] ? v['filesize'] : "&nbsp;"
+					retValue = retValue + '<a href="#" class="dropdown-link" role="menu-item" data-file-size="' + fileSize + '" data-app-folder="' + v['foldername'] + '" data-app-file="' + v['filename'] + '">' + k.to_s + '</a>'
 				}
-				retValue = retValue + "</ul>
-				</div></div></div>
-				<a class='btn orange download-link' data-folder='' data-filename=''>Download</a>"
+				retValue = retValue + "</nav>
+				</div></div>
+				<br /><a class='btn download-link' data-folder='' data-filename=''>Download</a>"
 			else
 				prodObj.send("versions".to_sym).each {|k,v|
-					fileSize = v['filesize'] ? v['filesize'] : "&nbsp;" 
+					fileSize = v['filesize'] ? v['filesize'] : "&nbsp;"
 					retValue = retValue + '
 					Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#">' + k.to_s + '</span><br/>
-					<a href="#" class="btn orange download-link" data-file-size="' + fileSize + '" data-folder="' + v['foldername'] + '" data-filename="' + v['filename'] + '">Download</a>'
+					<a href="#" class="btn download-link" data-file-size="' + fileSize + '" data-folder="' + v['foldername'] + '" data-filename="' + v['filename'] + '">Download</a>'
 				}
 			end
 
@@ -104,7 +118,7 @@ module Download
 			return names
 
 		end
-		
+
 	  end
 
     end

@@ -32,7 +32,7 @@ app.cfg = {
       if (txt.indexOf ("?")===0) {
         txt = txt.substring(1);
       }
-      
+
       var r = {};
       if (txt.length>0) {
         _.reduce (txt.split ("&"), function (m, kv){
@@ -47,12 +47,12 @@ app.cfg = {
       var langv = $.trim(r["language"] || "en").toLowerCase(),
           langL = langv.split ("_"),
           lg = langL[0];
-          
-      return (lg in app.langRsrc) ? lg : "en"     
+
+      return (lg in app.langRsrc) ? lg : "en"
     },
 
     getInc: function () {
-      return 15;      
+      return 15;
     }
 };
 
@@ -95,24 +95,24 @@ app.QueryStatement = Backbone.Model.extend ({
   defaults: {
     cfg: app.cfg,
 
-    q: "", 
+    q: "",
     p: 0,
     language: "en",
 
-    status: -1, //-1: init, 0:fail, 1: succ    
+    status: -1, //-1: init, 0:fail, 1: succ
     ts: -1 //timestamp: force update event to happen
   },
 
   getQueryDefaults : function () {
     //define the default values for the url query parameter
     return _.extend ({
-            q : "", 
+            q : "",
             p : "0",
             language : "en",
             product : "any",
 		   version : "",
             n: "" + this.get ("cfg").getInc()
-          }, 
+          },
           app.filterCfgDefaults);
   },
 
@@ -126,7 +126,7 @@ app.QueryStatement = Backbone.Model.extend ({
     function andStmt () {
       var ll = Array.prototype.slice.call (arguments);
       //remove empty string then do AND
-      return _.filter (_.flatten(ll), 
+      return _.filter (_.flatten(ll),
                         function (x) {return x.length>0}).join (".");
     };
 
@@ -138,11 +138,11 @@ app.QueryStatement = Backbone.Model.extend ({
              v = _.findWhere (ele.v, {k:self.get (k)}) || {q:{}};
 
           if (fldtype == "requiredfields") {
-            return ("r" in v.q) ? v.q["r"] : ""  
+            return ("r" in v.q) ? v.q["r"] : ""
           } else if (fldtype == "sort") {
-            return ("sort" in v.q) ? v.q["sort"] : ""  
+            return ("sort" in v.q) ? v.q["sort"] : ""
           }else {
-            return ("p" in v.q) ? v.q["p"] : ""  
+            return ("p" in v.q) ? v.q["p"] : ""
           }
       });
 
@@ -158,7 +158,7 @@ app.QueryStatement = Backbone.Model.extend ({
 
       if (langL.length >=1) {
           var lg = langL[0].toLowerCase();
-          baseLang = (lg in app.langRsrc) ? lg : "en" 
+          baseLang = (lg in app.langRsrc) ? lg : "en"
       }
 
       if (baseLang !== "en") {
@@ -203,16 +203,16 @@ app.QueryStatement = Backbone.Model.extend ({
     };
 
     v = _.extend (
-                  { "q" : this.get ("q"), 
+                  { "q" : this.get ("q"),
                     "start" : this.get ("p") * increment
-                  }, 
+                  },
                   {
                     "requiredfields": andStmt (addFilter ("requiredfields"), addVersion())
-                  }, 
-                  { 
+                  },
+                  {
                     "partialfields": andStmt (addFilter ("partialfields"), addLanguage())
-                  }, 
-                  { 
+                  },
+                  {
                     "sort": andStmt (addFilter ("sort"))
                   }
                 );
@@ -234,12 +234,12 @@ app.QueryStatement = Backbone.Model.extend ({
 
            if (k === "p") {
               if (typeof i === "undefined") {
-               return k +"="+encodeURIComponent(this.get (k)) 
+               return k +"="+encodeURIComponent(this.get (k))
               } else {
-               return k +"="+encodeURIComponent(""+i); 
+               return k +"="+encodeURIComponent(""+i);
               }
            } else {
-             return k +"="+encodeURIComponent(this.get (k)) 
+             return k +"="+encodeURIComponent(this.get (k))
           }
 
         }, this);
@@ -268,9 +268,9 @@ app.QueryResult = Backbone.Model.extend ({
 
     if (this.get("status")) {
         var data = this.get ("data");
-        n = parseInt (data.res?data.res.m:"0", 10);      
+        n = parseInt (data.res?data.res.m:"0", 10);
     }
-    
+
     return n-this.get("resultAdjust");
   },
 
@@ -280,7 +280,7 @@ app.QueryResult = Backbone.Model.extend ({
 
   getRes: function () {
     var data = this.get ("data");
-    return data ? data.res: []; 
+    return data ? data.res: [];
   }
 
 });
@@ -288,7 +288,7 @@ app.QueryResult = Backbone.Model.extend ({
 app.SearchBoxView = Backbone.View.extend ({
 
   events: {
-    "submit #gsaSearchForm" : "search" 
+    "submit #gsaSearchForm" : "search"
   },
 
   initialize: function () {
@@ -300,7 +300,7 @@ app.SearchBoxView = Backbone.View.extend ({
   render: function() {
     dbg ("searchboxview.render");
 
-    $("#gsaSearchForm > input[name='q']").val(this.model.get("q")); 
+    $("#gsaSearchForm > input[name='q']").val(this.model.get("q"));
     return this;
   },
 
@@ -309,7 +309,7 @@ app.SearchBoxView = Backbone.View.extend ({
     dbg ("searchboxview.search");
 
     e.stopImmediatePropagation();
-    var query = $("#gsaSearchForm > input[name='q']").val(); 
+    var query = $("#gsaSearchForm > input[name='q']").val();
 
     this.model.set ({"q":query, "p":0}, {silent:true});
 
@@ -332,7 +332,7 @@ app.tmplt.filterItem = _.template ('<a class="side-nav-link <%= liClass %>" data
 app.SearchFilterView = Backbone.View.extend ({
 
   events: {
-    "click a[data-fkey]" : "choose" 
+    "click a[data-fkey]" : "choose"
   },
 
   initialize: function () {
@@ -343,7 +343,7 @@ app.SearchFilterView = Backbone.View.extend ({
 
   render: function() {
     dbg ("SearchFilterView.render");
-    
+
     var self = this;
 
     function genFilterHtml (cfg) {
@@ -359,24 +359,24 @@ app.SearchFilterView = Backbone.View.extend ({
           value: item["k"]
         };
 
-        return app.tmplt.filterItem (data);        
+        return app.tmplt.filterItem (data);
       };
 
       data = {
         header: app.util.getLabel (cfg["l"]),
-        filters: _.map (cfg["v"], 
+        filters: _.map (cfg["v"],
                         function (x) {return genFilterItem(cfg["k"], x);}).join ("")
       };
 
       return app.tmplt.filter (data);
-    } 
-   
+    }
+
     this.$el.empty();
 
     var sl = _.map (app.filterCfg, genFilterHtml);
 
     this.$el.html (sl.join (""));
-    
+
     return this;
   },
 
@@ -386,7 +386,7 @@ app.SearchFilterView = Backbone.View.extend ({
 
     e.stopImmediatePropagation();
 
-    var ctarget = $(e.currentTarget), 
+    var ctarget = $(e.currentTarget),
         fkey = ctarget.data ("fkey"),
         fval = ctarget.data ("fval");
         v = {};
@@ -413,7 +413,7 @@ app.SearchFilterView = Backbone.View.extend ({
 app.SearchLangView = Backbone.View.extend({
 
   events: {
-    "click a[data-langkey]" : "choose" 
+    "click a[data-langkey]" : "choose"
   },
 
   initialize: function() {
@@ -433,7 +433,7 @@ app.SearchLangView = Backbone.View.extend({
 
     if (langL.length >=1) {
         var lg = langL[0].toLowerCase();
-        baseLang = (lg in app.langRsrc) ? lg : "en" 
+        baseLang = (lg in app.langRsrc) ? lg : "en"
     }
 
     this.$el.empty();
@@ -447,16 +447,16 @@ app.SearchLangView = Backbone.View.extend({
       this.$el.html (s.format (baseLang, app.langRsrc[baseLang], app.rsrc["english"],
                                cls0, cls1));
     }
-    
+
     return this;
   },
-  
+
   choose : function (e) {
 
 
     e.stopImmediatePropagation();
 
-    var ctarget = $(e.currentTarget), 
+    var ctarget = $(e.currentTarget),
         lang = ctarget.data ("langkey");
 
     dbg ("SearchLang.choose: " + lang);
@@ -490,7 +490,7 @@ app.SRStatView = Backbone.View.extend({
         p = app.qStmt.get ("p");
 
     this.$el.empty();
-    
+
     if (status) {
       if (resultN <=0) {
         this.$el.html (app.util.getLabel("results_zero"));
@@ -515,50 +515,50 @@ app.SRPagerView = Backbone.View.extend({
   render: function () {
     dbg ("srpagerview.render");
     //dbg (this.model.changedAttributes());
-  
+
     var mdl = this.model,
         status = mdl.get ("status"),
         pageN = mdl.getPageN(),
         buf = ["<ul class='search-pager'>"];
-    
+
     this.$el.empty();
-    
+
     if (status) {
       var i = 0,
           p = app.qStmt.get ("p"),
           q = app.qStmt.get ("q"),
           url = "";
-          
+
 
       begI = Math.max (p-5, 0);
       endI = Math.min (begI+10, pageN);
 
 
       if (begI>0) {
-        url = app.qStmt.toUrl (p-1), 
+        url = app.qStmt.toUrl (p-1),
         className = "";
         buf.push ("<li><a "+ className +" href='"+ url +"'>" + "&lt;" + "</a></li>");
       }
 
       for (i=begI; i<endI; i++) {
-        var url = app.qStmt.toUrl (i), 
+        var url = app.qStmt.toUrl (i),
             className = (p === i)? "class='current'" : "";
 
         buf.push ("<li><a "+ className +" href='"+ url +"'>" + (i+1) + "</a></li>");
       }
 
       if (endI < pageN) {
-        url = app.qStmt.toUrl (p+1), 
+        url = app.qStmt.toUrl (p+1),
         className = "";
         buf.push ("<li><a "+ className +" href='"+ url +"'>" + "&gt;" + "</a></li>");
-      }  
+      }
 
       buf.push ("</ul>");
       this.$el.html (buf.join (""));
     } else {
       //err: noop
     }
-    
+
     return this;
   }
 
@@ -567,8 +567,8 @@ app.SRPagerView = Backbone.View.extend({
 
 app.SRListView = Backbone.View.extend ({
 
-    template: _.template('<div class="result"><h5 class="no-trailer"><a class="searchTitle" href="<%= url %>"><%= t %></a></h5>' +
-                     '<p class="resultMeta"><%= mdType %><%= mdTpc %><%= dateTpc %></p>' + 
+    template: _.template('<div class="result"><h5 class="trailer-0"><a class="searchTitle" href="<%= url %>"><%= t %></a></h5>' +
+                     '<p class="resultMeta"><%= mdType %><%= mdTpc %><%= dateTpc %></p>' +
                      '<p class="item-snippet"><%= txt %></p></div>'),
 
     initialize: function () {
@@ -592,8 +592,8 @@ app.SRListView = Backbone.View.extend ({
         function parseDate (s) {
           var dL = s.split ("-");
           try {
-            return new Date (parseInt (dL[0], 10), 
-                             parseInt (dL[1], 10) -1, 
+            return new Date (parseInt (dL[0], 10),
+                             parseInt (dL[1], 10) -1,
                              parseInt (dL[2], 10));
           } catch (e) {
             return null;
@@ -604,7 +604,7 @@ app.SRListView = Backbone.View.extend ({
           kv = mt[i];
           md[kv["@n"]] = kv["@v"];
         }
-        
+
         var monthNames = ["January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"];
 
@@ -617,15 +617,15 @@ app.SRListView = Backbone.View.extend ({
         subj = subj.split (",")[0];
 
         if (subj && cat) {
-          mdTpc = " | " + subj + " - " + cat; 
+          mdTpc = " | " + subj + " - " + cat;
 
         } else if (subj) {
-          mdTpc = " | " + subj ; 
+          mdTpc = " | " + subj ;
 
         } else if (cat) {
-          mdTpc = " | " + cat; 
+          mdTpc = " | " + cat;
         };
-        
+
         dateTpc = ""; //| <%= mdDate %>
         mdDate =  date ? monthNames[date.getMonth()] + " " + date.getDate() +", " + date.getFullYear() : "";
         if (mdDate) {
@@ -643,7 +643,7 @@ app.SRListView = Backbone.View.extend ({
 
       //dbg (res);
 
-      if (res) { 
+      if (res) {
         var rL = $.isArray (res.r) ? res.r : [res.r],
 				txtChk=[], titleChk=[], totalDuplicateN = 0;
             l = _.map (rL, _.bind (function (x) {
@@ -670,7 +670,7 @@ app.SRListView = Backbone.View.extend ({
 
 			this.model.set({"resultAdjust": totalDuplicateN })
         this.$el.html (l.join (""));
-      }  
+      }
 
       return this;
     }
@@ -687,7 +687,7 @@ app.util.query2kv = function (txt) {
   if (txt.indexOf ("?")===0) {
     txt = txt.substring(1);
   }
-  
+
   var r = {};
   if (txt.length>0) {
     _.reduce (txt.split ("&"), function (m, kv){
@@ -698,7 +698,7 @@ app.util.query2kv = function (txt) {
       return m
     }, r);
   }
-   
+
   qDefaults  = app.qStmt.getQueryDefaults();
 
   r = _.pick (r, _.keys (qDefaults));
@@ -711,9 +711,9 @@ app.util.query2kv = function (txt) {
   return r;
 }
 
-app.util.getLabel = function (key) {  
+app.util.getLabel = function (key) {
   return app.rsrc[key] || "undefined";
-} 
+}
 
 app.util.changeL10NLabel = function () {
   //this is copy from langSelector.js
@@ -724,14 +724,14 @@ app.util.changeL10NLabel = function () {
       $("*[data-langlabel]").each (function(i) {
           var o = $(this),
               txt = dict[o.attr("data-langlabel")];
-          
+
           if (this.tagName === "INPUT" || this.tagName === "input") {
               o.val (txt);
           }
           if (txt) {
               o.html (txt);
           }
-      });                
+      });
   }
 
 }
@@ -771,9 +771,9 @@ app.doSearch = function () {
     $("#spinner").removeClass("is-active");
     data = Array.prototype.slice.call (arguments,0)[0];
     //dbg (data);
-    
+
     if (data) {
-            
+
       app.qStmt.set ({
         status:1,
         ts: Date.now()
@@ -782,7 +782,7 @@ app.doSearch = function () {
       app.qResult.set({
         data: data,
         status:1,
-        ts: Date.now()        
+        ts: Date.now()
       });
 
     } else {
@@ -794,7 +794,7 @@ app.doSearch = function () {
 
       app.qResult.set({
         status: 0,
-        ts: Date.now()        
+        ts: Date.now()
       });
 
     }
@@ -810,12 +810,12 @@ app.doSearch = function () {
       status:0,
       ts: Date.now()
     });
-    
+
     app.qResult.set({
       status:0,
-      ts: Date.now()        
+      ts: Date.now()
     });
-    
+
     return null;
   });
 };
@@ -835,15 +835,12 @@ app.SearchRouter = Backbone.Router.extend({
         query = decodeURIComponent(window.location.search);
       } else {
       }
-      
+
       //this.navigate ("./"+query, {trigger:false, replace:true});
 
       app.qStmt.set (_.extend (app.util.query2kv(query), {status:-1, ts:0}), {silent:true});
 
       app.doSearch ();
- 
+
     }
 });
-
-
-
