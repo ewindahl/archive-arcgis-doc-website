@@ -9,6 +9,7 @@ js:
   - /cdn/js/libs/jquery.colorbox-min
   - video-playlist
   - rssfeed
+  - switchers/app-collector-1
 
 metatags:
   - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-12-15"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
@@ -34,7 +35,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
           <h1 class="sub-nav-title leader-1 trailer-1 text-white">Collector for ArcGIS</h1>
         </div>
         <div class="leader-1 text-right">
-          <a class="btn margin-left-1 btn-clear" href="http://www.arcgis.com/features/free-trial.html">60-day Free Trial</a>         
+          <a class="btn margin-left-1 btn-clear" href="http://www.arcgis.com/features/free-trial.html">60-day Free Trial</a>
         </div>
       </div>
     </div>
@@ -64,13 +65,15 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       <div container="" class="panel">
         <div class="wf-nav" style="height:55px;">
           <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
-            <form id="helpSearchForm" target="_top">
-              <input type="search" name="q" class="leader" placeholder="Search Collector Help">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Search Collector Help">
               <input type="hidden" name="collection" value="help" />
               <input type="hidden" name="platform" value="detect" />
               <input type="hidden" name="product" value="collector-android" />
               <input type="hidden" name="language" value="<%= current_language %>" />
-              <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
             </form>
           </div>
         </div>
