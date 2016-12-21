@@ -37,9 +37,9 @@ $(document).ready(function() {
                 return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
                	}
 
-        }, 
+        },
   		ckval = $.parseJSON (cookieJar.getItem (ckname) || "{}");
- 	
+
   	return ("email" in ckval) ? {jar:cookieJar, val: ckval}: null;
   };
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
       }
       return firstName.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, "").replace(/\s+/g, " ");
     };
-	 
+
 	 function  showSignInLink () {
     	$(".logged-in-navigation").addClass ("hide-if-logged-out");
 		$(".logged-out-navigation").removeClass ("hide-if-logged-in");
@@ -75,7 +75,7 @@ $(document).ready(function() {
   /* login */
   var ckKey = "esri_auth",
       cookie = getCookie(ckKey);
-  
+
   $(".myconsole").css ("display", "none");
 
   if (cookie) {
@@ -87,18 +87,18 @@ $(document).ready(function() {
 
 		var token = cookie.val && cookie.val.token,
 			params = {f:"json"},
-			portalHostname = sitecfg["portalHostname"], 
+			portalHostname = sitecfg["portalHostname"],
       		firstName,
 	  		text;
-    
+
     	if (token){
       		params.token = token;
     	}
-	    
+
 	    $.getJSON("//" + portalHostname + "/sharing/rest/portals/self", params, function (data) {
-      		firstName = getUserDisplayName(data && data.user);          
+      		firstName = getUserDisplayName(data && data.user);
 	  		text = firstName || "SIGN IN";
-			
+
 			if(data.error){
 				showSignInLink();
 				return;
@@ -107,7 +107,7 @@ $(document).ready(function() {
 	       //$("#logged-in-navigation > a").html (avatar+"<span>"+ text +"</span>");
 			 $(".logged-in-navigation .user-nav-image").attr ("src",avatarurl);
           $(".logged-in-navigation .user-nav-name").html ("<span>"+ text +"</span>");
-			 
+
 			 $(".logged-out-navigation").addClass ("hide-if-logged-in");
 			 $(".logged-in-navigation").removeClass ("hide-if-logged-out");
 
@@ -115,12 +115,12 @@ $(document).ready(function() {
 
 
 
-/*  	
+/*
         $("#logged-in-navigation > a").html (avatar+"<span>"+cookie.val["email"]+"</span>");
  */
 
   	var $linkL = $(".logged-in-navigation .dropdown-menu a");
-  	
+
         if (cookie.val["role"] && cookie.val["role"].indexOf ("admin")>=0) {
           $(".myconsole").css ("display", "block");
 
@@ -129,17 +129,17 @@ $(document).ready(function() {
   		window.location = sitecfg["mkpConsole"];
   	  });
         }
-        
+
         $linkL.eq(1).on ("click", function() {
   		//logout
   		cookie.jar.removeItem (ckKey, "/", ".arcgis.com");
   		window.location.reload(true);
     });
 
-  } else {  	
+  } else {
 	showSignInLink ();
   }
-  
+
 
   /* app search box */
   $(".mkpSearchForm").submit(function() {
@@ -147,6 +147,9 @@ $(document).ready(function() {
     window.location.href = sitecfg["mkpSearch"] + "?q="+encodeURIComponent(term)
     return false;
   })
+
+  /* Feedback link */
+  $("a[data-langlabel='feedback-on-this-topic']").attr("href", "/en/marketplace/feedback/");
 
   /* help search box */
   $(".helpSearchForm").submit(function() {
