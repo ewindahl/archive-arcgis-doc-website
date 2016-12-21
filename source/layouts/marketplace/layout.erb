@@ -1,6 +1,6 @@
 <!doctype html>
 <%
-readDirection="ltr" 
+readDirection="ltr"
 if current_language == "ar" or current_language == "he"
   readDirection="rtl"
 end
@@ -14,15 +14,17 @@ end
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <script src="//assets.adobedtm.com/2e9cd01e19dc5ac4867e752f17a2f1ea1923e5af/satelliteLib-0ed1001fd441a838aefe8e755be42aaafddcc46b.js"></script>
+		<script type="text/javascript" src="//go.pardot.com/dcjs/82202/1182/dc.js"></script>
     <meta name="viewport" content="width=device-width">
 
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
-   
+
    <!--[if lt IE 9]>
       <script src="/assets/js/libs/html5shiv.js"></script>
     <script src="/assets/js/libs/json2.js"></script>
     <script src="/assets/js/libs/selectivizr-min.js"></script>
-     
+
     <![endif]-->
 
     <%= javascript_include_tag "sitecfg" %>
@@ -46,9 +48,9 @@ end
 
   <%= javascript_include_tag "signIn" %>
 
-  <link type="text/css" rel="stylesheet" href="/css/marketplace.css" /> 
+  <link type="text/css" rel="stylesheet" href="/css/marketplace.css" />
 
- 
+
     <% if current_page.data.js %>
       <% current_page.data.js.each do |javascript| %>
         <%= javascript_include_tag javascript %>
@@ -69,22 +71,22 @@ end
     <% end %>
 
    <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
-      
+
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
-    <% if current_language != "en" %> 
+    <% if current_language != "en" %>
       <link type="text/css" rel="stylesheet" href="/assets/css/screen_l10n.css"/>
       <link type="text/css" rel="stylesheet" href="/assets/css/documentation_l10n.css"/>
       <link type="text/css" rel="stylesheet" href="/assets/css/print_l10n.css"/>
     <% end %>
     <%= javascript_include_tag "locale/langSelector" %>
    <% end %>
-   
+
   <%= javascript_include_tag "calcite-web" %>
 
   <!--Dynamic common meta tags -->
   <META name="last-modified" content="<%= Time.now.year %>-<%= Time.now.month %>-<%= Time.now.day %>">
   <META name="content-language" content="<%= current_language %>">
-   
+
    <!-- set dropdown/show home in footer -->
   <script>
     /*$(document).ready(function(){
@@ -109,13 +111,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <nav class="drawer-nav">
           <aside class="side-nav">
             <h2 class="side-nav-title">Arc<span class="avenir-demi">GIS</span> Marketplace</h2>
-            
-            
+
+
             <form class="mkpSearchForm gutter-left-half gutter-right-half leader-half trailer-half" action="#">
               <input type="search" class="leader" name="mkpSearch"  placeholder="<%= t("site.nav.mpSearch") %>">
             </form>
 
-                
+
             <a data-langlabel="home" href="//marketplace.arcgis.com" class="home side-nav-link"><%= t("site.nav.home") %></a>
             <a data-langlabel="help" href="<%= t("paths.mphelp") %>" class="side-nav-link"><%= t("site.nav.help") %></a>
           </aside>
@@ -146,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>  <!-- End of wrapper -->
 
-   
+
     <footer class="footer leader-0 link-dark-gray" role="contentinfo">
       <div class="grid-container">
           <nav class="column-6">
@@ -167,7 +169,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <%= javascript_include_tag "/cdn/js/link-modifier.js" %>
 
 
-    <script type="text/javascript"> 
+    <script type="text/javascript">
    piAId = '83202'; piCId = '4008';
   (function() { function async_load(){
   var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
@@ -179,4 +181,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </script>
 
   </body>
+	<script type="text/javascript">_satellite.pageBottom();</script>
 </html>

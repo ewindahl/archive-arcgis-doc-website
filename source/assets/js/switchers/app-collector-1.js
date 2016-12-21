@@ -4,18 +4,11 @@ $(document).ready(function() {
 	data-appname="collector"
 		data-plat="android"
 		data-plat="ios"
-
 */
 var noSwitcherFileList = {
-	   "high-accuracy-gps.htm": "Desktop",
-		"troubleshoot-collect.htm": "Desktop",
-		"gps-high-accuracy-receivers.htm": "Desktop",
-		"gps-map-prep.htm": "Desktop",
-		"troubleshoot-create-map.htm": "Desktop",
-		"gps-config-metadata-storage.htm": "Desktop",
-		"gps-receiver-support.htm": "Desktop"
-
+	   "test.htm": "Desktop",
 }
+
    var localedir = "en";
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'].toLowerCase();
@@ -85,7 +78,13 @@ var noSwitcherFileList = {
 	}
 
 	if (!isHome) {
-		$('main h1').after (val);
+		if(!window.location.pathname.match( /(\/overview\/)/)){
+			//$('.reference-content .page-title').after (val);
+			$('main h1').after (val);
+		}else{
+			 modHomeUrls (plat)
+			 $('#helpSearchForm input[name=product]').attr("value", "collector-" + plat);
+		}
 	} else {
 		modHomeUrls (plat);
 		// Update product meta value in search form
@@ -105,6 +104,7 @@ var noSwitcherFileList = {
 		} else {
 			$ele.toggleClass ("off");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+
 			if(fname in noSwitcherFileList){
 				// disable click
 				url = "#";
