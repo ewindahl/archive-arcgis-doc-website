@@ -19,13 +19,13 @@
 		
 		} else if (hn === "docdev.arcgis.com") {
 
-			insertCss ("/en/asset/css/workflow.css");
-			insertJS ("/en/asset/js/workflow.js");
+			insertCss ("/cdn/css/workflow.css");
+			insertJS ("/assets/js/workflow.js");
 
 		} else if (hn === "docstg.arcgis.com") {
 
-			insertCss ("/en/asset/css/workflow.css");
-			insertJS ("/en/asset/js/workflow.js");				
+			insertCss ("/cdn/css/workflow.css");
+			insertJS ("/assets/js/workflow.js");				
 
 		}
 	} catch (e){

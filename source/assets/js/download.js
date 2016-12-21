@@ -29,10 +29,10 @@ $(document).ready(function() {
 		 accountExtnCookieObj = ($.cookie('esri_auth_extn')) ? JSON.parse($.cookie('esri_auth_extn')) : false;
 		var proxyPath = "/apps/proxy/proxy.php";
 		var downloadAPI = sitecfg.securedDownloadUrl;
-			
+
 		return {
-	        
-			
+
+
 			loginType: function () {
 				if(accountCookieObj && accountExtnCookieObj){
 					return "org"
@@ -61,7 +61,7 @@ $(document).ready(function() {
 				token = accountCookieObj.token;
 
 				$.ajax({
-						
+
 					url: (navigator.userAgent.match(/msie/i)) ? proxyPath + "?" + downloadAPI + filename + "?folder=" + foldername + "&" + "token=" + token : downloadAPI + filename,
 					type: 'GET',
 					dataType: 'json',
@@ -115,7 +115,7 @@ $(document).ready(function() {
 
 	// UI Manipulation
 	// On select version drop down item
-	$(".downloads .card .dropdown-item").click(function (){
+	$(".download-section .card .dropdown-link").click(function (){
 		var fileName = $(this).attr("data-app-file")
 		var folderName = $(this).attr("data-app-folder")
 		var fileSize = $(this).attr("data-file-size")
@@ -125,21 +125,21 @@ $(document).ready(function() {
 		 parentObj.find(".dropdown-wrapper .dropdown-selected").fadeOut(50, function(){
             parentObj.find(".dropdown-wrapper .dropdown-selected").text(versionLabel).fadeIn().delay(100);
        });
-								
 		parentObj.find(".download-link").attr("data-filename", fileName)
 		parentObj.find(".download-link").attr("data-folder", folderName)
 		parentObj.find(".download-link").attr("data-file-size", fileSize)
-		
+
 		updateSizeLabel (parentObj)
+		return false;
 	});
 
-	
+
 	$(".downloads .card").each(function () {
-		if($(this).find("ul li a").length == 1){
+		if($(this).find("nav a").length == 1){
 			//Remove dropdown icon
 			$(this).find (".dropdown-selected").removeClass("dropdown")
 		}
-		$(this).find("ul li a").first().trigger("click")
+		$(this).find("nav a").first().trigger("click")
 
 		updateSizeLabel ($(this))
 	});
@@ -152,7 +152,7 @@ $(document).ready(function() {
 
 
 
-	
+
 	// Org Account Tokenized downloads.
 	$(".secured-org .download-link").click(function (){
 		var fileName = $(this).attr("data-filename");
@@ -162,7 +162,7 @@ $(document).ready(function() {
 			if (dload.methods.getOrgType() && dload.methods.IsValidSubscription()){
 				if(fileName != ""){
 					var data = dload.methods.getDownloadLink(fileName, folderName);
-					dload.methods.downloadFile(data.url);	
+					dload.methods.downloadFile(data.url);
 				}
 			} else {
 				var localedir = (typeof(docConfig) !== 'undefined') ? docConfig['locale'].toLowerCase():false;
@@ -187,7 +187,7 @@ $(document).ready(function() {
 		if(dload.methods.loginType() != "" ){
 			if(fileName != ""){
 				var data = dload.methods.getDownloadLink(fileName, folderName);
-				dload.methods.downloadFile(data.url);	
+				dload.methods.downloadFile(data.url);
 			}
 		} else {
 			window.location = loginHref + fileName;
@@ -195,8 +195,8 @@ $(document).ready(function() {
 		}
 
 	});
-	
-	
+
+
 	// Post sign in trigger download automatically.
 	if(getUrlVars ()["dload"]){
 		var downloadFileName = getUrlVars ()["dload"];
