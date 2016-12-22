@@ -1,18 +1,14 @@
 ---
 title: Esri Demographics - Coverage
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - /en/asset/css/app-switch-1
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/arcgis-app-1
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
+  - rssfeed
 
 metatags:
   - <META name="description" content="Esri Demographics Global Coverage Map"><META name="last-modified" content="2014-12-29"><META name="product" content="esri-demographics"><META name="sub_category" content="Esri Demographics"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Demographics"><META name="search-category" content="help-general"><META name="subject_label" content="DATA,BUSINESS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="DATA,BUSINESS"><META name="content-language" content="en">
@@ -20,54 +16,45 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/esri-demographics/">Esri Demographics</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Esri Demographics">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="esri-demographics" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li><a href="/en/esri-demographics/">Home</a></li>
-        <li><a href="/en/esri-demographics/access/">Access</a></li>
-        <li><a href="/en/esri-demographics/data/">Data</a></li>
-        <li class='current'><a href="/en/esri-demographics/coverage/">Coverage</a></li>
-        <li><a href="/en/esri-demographics/reference/">Reference</a></li>
-      </ul>
-    </nav>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Esri Demographics</h1>
+        </div>
+        <div class="search-bar">
+      	  <form id="helpSearchForm" target="_top">
+      		  <input type="search" name="q" placeholder="Search Esri Demographics" class="leader">
+	          <input type="hidden" name="collection" value="help">
+	          <input type="hidden" name="product" value="esri-demographics">
+	          <input type="hidden" name="version" value="">
+	          <input type="hidden" name="language" value="en">
+	          <button class="search-submit icon-ui-search" type="submit"></button>
+      		</form>
+      	</div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link" href="/en/esri-demographics/">Home</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/access/">Access</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/data/">Data</a>
+        <a class="sub-nav-link is-active" href="/en/esri-demographics/coverage/">Coverage</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/reference/">Reference</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 trailer-2">
+  <div class="column-21">
+    <h4 class="gray">Click a country on the map to access its data coverage details. You can also view the map in <a href="http://doc.arcgis.com/webapps/demographics-global-coverage/">fullscreen mode</a>.</h3>
+    <div>
+      <iframe src="//doc.arcgis.com/webapps/demographics-global-coverage/" width="100%" height="1500px" frameborder="0">
+        Error: Embedded story map could not be displayed.
+      </iframe>
+    </div>
+    <div class="clear"></div>
   </div>
 </div>
-
-<!-- Page Content -->
-<div class="container">
-
-      <div>
-
-	<h3 class="gray">Click a country on the map to access its data coverage details. You can also view the map in <a href="http://doc.arcgis.com/webapps/demographics-global-coverage/">fullscreen mode</a>.</h3>
-	
-       
-
-
-		<div>
-		
-			<iframe src="http://links.esri.com/demographics-global-coverage" width="100%" height="1500px" frameborder="0">
-				Error: Embedded story map could not be displayed. 
-			</iframe>
-		</div>
-        <div class="clear"></div>
-
-
-
-      </div>
-
-
-     
-    </div>
-
-
