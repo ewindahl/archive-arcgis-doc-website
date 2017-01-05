@@ -11,7 +11,7 @@ js:
   - rssfeed
 
 metatags:
-   - <META name="description" content="ArcGIS Online Help Home page."><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING">
+  - <META name="description" content="ArcGIS Online Help Home page."><META name="product" content="arcgis-online"><META name="sub_category" content=""><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content=""><META name="search-category" content="help-general"><META name="subject_label" content="ONLINE,WEB,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="ONLINE,WEB,MAPPING">
 
 mobile: true
 ---
@@ -22,21 +22,26 @@ mobile: true
       <div style="display:table;" class="sdk-home-banner">
         <div class="sdk-home-banner-content">
           <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Earth</h1>
-        </div>       
-        <div class="leader-1 text-right">          
-		<a href="//go.esri.com/l/82202/2015-12-07/nv11n" class="videoLink colorbox-evlarge cboxElement">
-				<span class="btn primary icon-windows-8">Get ArcGIS Earth</span>
-		</a> 	  
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="//go.esri.com/l/82202/2015-12-07/nv11n">Get ArcGIS Earth</a>
         </div>
       </div>
     </div>
 	<div class="column-24">
-      <nav class="sub-nav-list">
+    <select class="tablet-show select-full trailer-half js-select-nav">
+      <option value="/en/collector/" selected>Home</option>
+      <option value="/en/arcgis-earth/get-started/get-started.htm">Get Started</option>
+      <option value="/en/arcgis-earth/use/guided-tour.htm">Use</option>
+      <option value="/en/arcgis-earth/administer/admin-config.htm">Administer</option>
+      <option value="//geonet.esri.com/groups/arcgis-earth">Forum</option>
+    </select>
+      <nav class=" tablet-hide sub-nav-list">
         <a class="sub-nav-link is-active" href="/en/collector/">Home</a>
         <a class="sub-nav-link" href="/en/arcgis-earth/get-started/get-started.htm">Get Started</a>
         <a class="sub-nav-link" href="/en/arcgis-earth/use/guided-tour.htm">Use</a>
         <a class="sub-nav-link" href="/en/arcgis-earth/administer/admin-config.htm">Administer</a>
-		<a class="sub-nav-link" href="//geonet.esri.com/groups/arcgis-earth">Forum</a>
+		    <a class="sub-nav-link" href="//geonet.esri.com/groups/arcgis-earth">Forum</a>
       </nav>
     </div>
   </div>
@@ -46,18 +51,20 @@ mobile: true
   <div class="column-16">
     <div class="wf-nav" style="height:55px;">
       <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="Search ArcGIS Earth">
+        <form id="helpSearchForm" class="input-group" target="_top">
+          <input type="search" name="q" class="leader input-group-input" placeholder="Search ArcGIS Earth">
           <input type="hidden" name="collection" value="help" />
           <input type="hidden" name="product" value="ArcGIS Earth" />
           <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+          <span class="input-group-button">
+            <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+          </span>
         </form>
       </div>
     </div>
 
 	<div class="column-4 right margin-right-1 padding-left-0">
-       <img src="m4o_banner.png">
+       <img src="img/m4o_banner.png">
     </div>
     <div class="column-11 tablet-column-7">
       <p>ArcGIS Earth allows anyone to easily and quickly view 3D maps.</p>
@@ -91,7 +98,7 @@ mobile: true
       <div class="card block">
         <figure class="card-image-wrap">
           <a href="get-started/navigation-controls.htm">
-            <img alt="" src="Navigate_ArcGIS_Earth.jpg">
+            <img alt="" src="img/Navigate_ArcGIS_Earth.jpg">
           </a>
         </figure>
         <div class="card-content">
@@ -105,7 +112,7 @@ mobile: true
       <div class="card block">
         <figure class="card-image-wrap">
           <a href="use/guided-tour.htm#ESRI_SECTION1_B2A6D7E39AF9422B8D7EA825E7131236">
-            <img alt="" src="View_KML_and_ArcGIS_services.jpg">
+            <img alt="" src="img/View_KML_and_ArcGIS_services.jpg">
           </a>
         </figure>
         <div class="card-content">
@@ -119,7 +126,7 @@ mobile: true
       <div class="card block">
         <figure class="card-image-wrap">
           <a href="use/guided-tour.htm#ESRI_SECTION1_A2B700B7AA59466C9A7DD712284240F5">
-            <img alt="" src="Draw_Measure.jpg">
+            <img alt="" src="img/Draw_Measure.jpg">
           </a>
         </figure>
         <div class="card-content">
@@ -133,7 +140,7 @@ mobile: true
       <div class="card block">
         <figure class="card-image-wrap">
           <a href="use/share-your-work.htm">
-            <img alt="" src="ShareMaps.jpg">
+            <img alt="" src="img/ShareMaps.jpg">
           </a>
         </figure>
         <div class="card-content">
@@ -181,7 +188,7 @@ mobile: true
       <h2 class="text-rule padding-trailer-half">Read our blog
         <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/arcgis-earth/">More posts</a>
       </h2>
-      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/arcgis-earth/feed/" class="block-group block-group-3-up blogHpFeed">
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/arcgis-earth/feed/" class="block-group block-group-3-up tablet-block-group-1-up blogHpFeed">
 			  <!-- Blog Content goes here -->
 			</div>
     </div>
@@ -195,7 +202,7 @@ mobile: true
       <h2 class="text-rule padding-trailer-half">Join the conversation
         <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/groups/arcgis-earth">More conversations</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="block-group block-group-3-up geonetFeed">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="block-group block-group-3-up tablet-block-group-1-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
     </div>
