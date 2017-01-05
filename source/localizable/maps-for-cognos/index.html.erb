@@ -67,7 +67,13 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       </div>
     </div>
     <div class="column-24">
-      <nav class="sub-nav-list">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/maps-for-cognos/" selected>Home</option>
+        <option value="/en/maps-for-cognos/install-windows/">Install and Configure</option>
+        <option value="/en/maps-for-cognos/author-maps/">Author Maps</option>
+        <option value="/en/maps-for-cognos/use-maps/">Use Maps</option>
+      </select>
+      <nav class="tablet-hide sub-nav-list">
         <a class="sub-nav-link is-active" href="/en/maps-for-cognos/">Home</a>
         <a class="sub-nav-link" href="/en/maps-for-cognos/install-windows/">Install and Configure</a>
         <a class="sub-nav-link" href="/en/maps-for-cognos/author-maps/">Author Maps</a>
@@ -81,12 +87,14 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   <div class="column-16">
     <div class="wf-nav" style="height:55px;">
       <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Cognos">
+        <form id="helpSearchForm" class="input-group" target="_top">
+          <input type="search" name="q" class="leader input-group-input" placeholder="Search Esri Maps for Cognos">
           <input type="hidden" name="collection" value="help" />
           <input type="hidden" name="product" value="LOCATION ANALYTICS,MAPPING, COGNOS, BI, BUSINESS INTELLIGENCE" />
           <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+          <span class="input-group-button">
+            <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+          </span>
         </form>
       </div>
     </div>
@@ -229,7 +237,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       <h2 class="text-rule padding-trailer-half">Read our blog
         <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/location-analytics/">More posts</a>
       </h2>
-      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up blogHpFeed">
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up tablet-block-group-1-up blogHpFeed">
 			  <!-- Blog Content goes here -->
 			</div>
     </div>
@@ -243,7 +251,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       <h2 class="text-rule padding-trailer-half">Join the conversation
         <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/">More conversations</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2086" class="block-group block-group-3-up geonetFeed">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2086" class="block-group block-group-3-up tablet-block-group-1-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
     </div>
