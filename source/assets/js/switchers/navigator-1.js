@@ -85,7 +85,7 @@ $(document).ready(function() {
 	}
 
 	if (!isHome) {
-		if(!window.location.pathname.match( /(\/prepare-maps\/)/)){
+		if(!window.location.pathname.match( /(\/prepare-maps\/|\/overview\/)/)){
 			$('main h1').after(val);
 		}else{
 			modContentLinks (plat);
