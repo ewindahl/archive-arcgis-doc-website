@@ -7,21 +7,27 @@
       var opts = $.extend({}, $.fn.rssFeed.defaults, options);
 
       return this.each(function() {
-          var url = opts.url,
-              node = this;
+          var url = (opts.url.indexOf("blogs.esri.com") >=0)?opts.url.replace("http://","https://") : opts.url,
+              node = this,
+				  feedType = (opts.feedType)?opts.feedType : "";
 
           $.ajax ({
-            cache: false,
+            //cache: false,
+            url : "/apps/proxy/sm-proxy.php?" + url,
             type: "GET",
             dataType: "json",
             crossDomain: true,
-            url : "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=" + encodeURIComponent (url)
-          }).done (function(feed) {
-            if (feed) {
-              $.fn.rssFeed.format (node, feed, opts.max)
+            context: this,
+            success: function(feed) {
+            	if (feed) {
+            	  $.fn.rssFeed.format (node, feed, opts.max, feedType)
+            	}
+            },
+            error: function(xhr, status, err) {
+            	 if(xhr.responseText) {
+            		 $.fn.rssFeed.format (node, xhr.responseText, opts.max, feedType)
+            	 }
             }
-          }).fail (function (xhr, status, err) {
-          }).always (function() {
           });
       });
 
@@ -32,38 +38,71 @@
     max: 2
   };
 
-  $.fn.rssFeed.format = function (node, feed, narticles) {
+  $.fn.rssFeed.format = function (node, feed, narticles, feedType) {
 
-    function formatTheDate(feedDate){
-      function toMonth (m) {
-        return {
-          1: "January",2:  "February",3: "March",
-          4: "April",5: "May",6: "June",
-          7: "July",8: "August",9: "September",
-          10: "October",11: "November",12: "December"
-        }[m];
-      }
-      var entrydate=new Date(feedDate);
-      var entrydatestr=' '+toMonth(entrydate.getMonth()+1)+" "+entrydate.getDate()+", "+entrydate.getFullYear();
-      return entrydatestr;
-    }
+     function getNodeValue(post, tag) {
+    var tag =  post.getElementsByTagName(tag);
+    if (tag && tag.length) {
+      var tagElement = tag[0]
+      if (tagElement) {
+        return tagElement.childNodes[0].nodeValue;
+       }
+     }
+     return '';
+  }
 
-    function cleanText (s) {
-      s = s.replace (/&lt;!--[\s\S]*][\s](--&gt;)?/gmi, "");
-      return s;
+  function parseItems(xmlString) {
+    if (typeof window.DOMParser != "undefined") {
+      var parser = new window.DOMParser();
+      var parsedXml = parser.parseFromString(xmlString, "text/xml");
+      if (parsedXml) {
+        return parsedXml.getElementsByTagName('item');
+        }
     }
+    return []
+  }
+
+ function formatTheDate(feedDate){
+    function toMonth (m) {
+      return {
+        1: "January",2:  "February",3: "March",
+        4: "April",5: "May",6: "June",
+        7: "July",8: "August",9: "September",
+        10: "October",11: "November",12: "December"
+      }[m];
+    }
+    var entrydate=new Date(feedDate);
+    var entrydatestr=' '+toMonth(entrydate.getMonth()+1)+" "+entrydate.getDate()+", "+entrydate.getFullYear();
+    return entrydatestr;
+  }
+
+  function cleanText (s) {
+    s = s.replace(/(<([^>]+)>)/ig,"");
+
+    return s;
+  }
+
+   function truncateDescription (s, maxLength) {
+  	s = s.replace(/[\n]/g, ' ')
+  	s = s.substr(0, maxLength);
+
+  	// Re-trim in case we are in middle of a word
+  	s = s.substr(0, Math.min(s.length, s.lastIndexOf(" ")));
+
+  	return s
+   }
 
     var max = narticles,
-        data = feed.responseData.feed.entries,
+        data = parseItems(feed),
         buf = [];
 
     for(var i=0; i<data.length && i<max; i++){
       var item= data[i];
       buf.push ("<div class='feeditem'><div class='content'>"+
-            "<small><time>"+ formatTheDate (item.publishedDate) +"</time></small>"+
-            "<h4>" + item.title + "</h4>"+
-            "<p>" + cleanText (item.contentSnippet) +  "</p>" +
-            "<a href='" +item.link + "'>Continue reading &gt;</a>"  +
+            "<small><time>"+ formatTheDate (getNodeValue(item, "pubDate")) +"</time></small>"+
+            "<h4>" + getNodeValue(item, "title") + "</h4>"+
+            "<p>" + truncateDescription(cleanText (getNodeValue(item, "description")), 100) +  "</p>" +
+            "<a href='" +getNodeValue(item, "link") + "'>Continue reading &gt;</a>"  +
             "</div></div>");
     }
     $(node).html(buf.join ("\n"));
