@@ -6,15 +6,22 @@ $(document).ready(function() {
    }
    var dict = (window.localeJsonObj || {})[localedir];
 
-    var val = '<p id="plats" class="doc-platform-switcher">' +
+   var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-		'<a data-appname="navigator" data-plat="ipad" data-prefix="/' + localedir +'/navigator/ipad" href="/en/navigator/" data-langlabel="ipad" class="">iPad</a>' +
+        '<a data-appname="navigator" data-plat="android-phone" data-prefix="/' + localedir +'/navigator/android-phone" href="/en/navigator/" data-langlabel="android-phone" class="">Android Phone</a>' +
+        ' | ' +
+        '<a data-appname="navigator" data-plat="android-tablet" data-prefix="/' + localedir +'/navigator/android-tablet" href="/en/navigator/" data-langlabel="android-tablet" class="">Android Tablet</a>' +
+        ' | ' +
+		    '<a data-appname="navigator" data-plat="ipad" data-prefix="/' + localedir +'/navigator/ipad" href="/en/navigator/" data-langlabel="ipad" class="">iPad</a>' +
+        ' | ' +
         '<a data-appname="navigator" data-plat="iphone" data-prefix="/' + localedir +'/navigator/iphone" href="/en/navigator/" data-langlabel="iphone" class="">iPhone</a>'
         '</p>',
 
 		prodKey = "navigator",
-		prodDVal = "ipad",
+    prodTVal = "ipad",
 		prodIOSVal = "iphone",
+    prodDVal = "android-phone"
+    prodATVal = "android-tablet",
 		homePath = "/en/navigator"
 
 
@@ -24,14 +31,23 @@ $(document).ready(function() {
 		fldpath = parts.join ("/"),
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
-
-    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh|Android)/gi))) {
       if(navigator.userAgent.match(/(iPhone)/gi)){
-			plat = prodIOSVal;
-		}
+			  plat = prodIOSVal;
+		  }
+      if(navigator.userAgent.match(/(iPad)/gi)){
+			  plat = prodTVal;
+		  }
+      if(navigator.userAgent.match(/(Android)/gi)){
+        if(navigator.userAgent.match(/(Mobile)/gi)){
+          plat = prodDVal;
+        }else{
+          plat = prodATVal;
+        }
+      }
 
       if (!isHome) {
-         UASpecificRedirect (plat, pathname);
+        UASpecificRedirect (plat, pathname);
       }
     }
 
@@ -72,7 +88,7 @@ $(document).ready(function() {
 	}
 
 	function modContentLinks (plt) {
-		$("ul.pre-0 a[href], .column-17 a[href], .sub-nav nav a[href]").each (function (i) {
+    $("ul.pre-0 a[href], .column-17 a[href], .sub-nav nav a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href"),
 				parts = href.split("/"),
@@ -85,8 +101,8 @@ $(document).ready(function() {
 	}
 
 	if (!isHome) {
-		if(!window.location.pathname.match( /(\/prepare-maps\/|\/overview\/)/)){
-			$('main h1').after(val);
+    if(!window.location.pathname.match( /(\/prepare-maps\/|\/overview\/)/)){
+      $('main h1').after(val);
 		}else{
 			modContentLinks (plat);
 			// Update product meta value in search form
@@ -103,10 +119,10 @@ $(document).ready(function() {
 			url;
 
 		if ((fldpath.indexOf (prefix) === 0) )  {
-			$ele.toggleClass ("is-active");
+      $ele.toggleClass ("is-active");
 			url = prefix + fldpath.replace (prefix, "") + "/" + fname;
 		} else {
-			$ele.toggleClass ("available");
+      $ele.toggleClass ("available");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
 		}
 
