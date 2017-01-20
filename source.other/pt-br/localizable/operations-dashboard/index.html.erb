@@ -13,19 +13,20 @@ js:
   - video-init
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2016-02-29"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="pt-br">
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2016-12-14"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="pt-br">
 
 dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
   
 mobile: true
 
 ---
+
 <div class="navigation-bar blue">
   <div class="container">
     <header>
       <h1><a href="/pt-br/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
+        <input type="search" name="q" class="leader" placeholder="Pesquisar Operations Dashboard">
         <input type="hidden" name="collection" value="help" />
         <input type="hidden" name="product" value="ops-dashboard" />          
         <input type="hidden" name="language" value="<%= current_language %>" />
@@ -152,7 +153,6 @@ mobile: true
         <ul>
           <li>Windows 10 Pro e Windows 10 Enterprise (32 bit e 64 bit [EM64T])</li>
           <li>Windows 8.1, Windows 8.1 Pro e Windows 8.1 Enterprise (32 bits e 64 bits [EM64T])</li>
-          <li>Windows 8, Windows 8 Pro e Windows 8 Enterprise (32 bits e 64 bits [EM64T])</li>
 		  <li>Windows 7 Ultimate, Enterprise, Professional e Home Premium (32 bit e 64 bit [EM64T]) SP1</li>
 		  <li>Windows Server 2012 Standard e Datacenter (64 bit [EM64T])</li>
 		<li>Windows Server 2008 R2 Standard, Enterprise e Datacenter (64 bit [EM64T]) SP1</li>
@@ -211,7 +211,7 @@ mobile: true
  <li>Android 4.0 e posterior executando Chrome versão 19.0 e posterior</li>
  <li>iOS 6.0 e posterior executando Safari</li>
  </ul>
- Telefone 
+  Telefone 
  <p style="padding:0 15px">Nenhum navegador de smartphone é atualmente suportado.</p>
  </div></div> 
  <div class="clear" style="padding:5px;"></div>
@@ -222,7 +222,7 @@ mobile: true
 <div class="clear" style="padding:5px;"></div>
 <a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Idiomas suportados</a>
  <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Árabe, Tcheco, Dinamarquês, Holandês, Inglês, Estoniano, Finlandês, Francês, Alemão, Grego, Italiano, Japonês, Coreano, Letão, Lituano, Norueguês, Polonês, Português (Brasil), Português (Portugal), Romeno, Russo, Sérbio, Chinês Simplificado, Espanhol, Sueco, Tailandês, Chinês Tradicional (Taiwan), Chinês Tradicional (Hong Kong), Turco e Vietnamita.</p>
+      	<p style="padding:0 15px">Bósnio, Croata, Tcheco, Dinamarquês, Holandês, Inglês, Estoniano, Finlandês, Francês, Alemão, Grego, Indonésio, Italiano, Japonês, Coreano, Letão, Lituano, Norueguês, Polonês, Português (Brasil), Português (Portugal), Romenio, Russo, Sérvio, Chinês Simplificado, Espanhol, Sueco, Tailandês, Chinês Tradicional (Taiwan), Chinês Tradicional (Hong Kong), Turco e Vietnamita.</p>
       	<p style="padding:0 15px">Na versão do navegador, seu perfil do ArcGIS Online é utilizado para configurar o idioma. Se utilizar uma configuração de idioma sem suporte, o aplicativo utilizará o Inglês.</p>
 </div>
 <div class="clear"></div>
@@ -231,23 +231,29 @@ mobile: true
         <p style="padding:0 15px" />
         <a name="arcgisRequirements"></a>
         <h2 class="divider">Requisitos do ArcGIS</h2>
-        <p>Para utilizar seus mapas no Operations Dashboard, você deve ter uma conta organizacional do ArcGIS. ArcGIS Online e Portal for ArcGIS 10.3.1 e posteriores são suportados. As extensões para aplicativo do navegador exigem ArcGIS Online ou Portal for ArcGIS 10.4 ou superior.</p>
-        <p>Seus mapas podem incluir dados do ArcGIS Online, Portal for ArcGIS e ArcGIS for Server. As fontes de dados devem ser hospedadas no ArcGIS Online, ArcGIS 10.1 for Server ou superior.</p>
-        <p>Se compartilhada publicamente, uma visualização da operação poderá ser visualizada no aplicativo do navegador sem registrar.</p>
+        <p>Os requisitos do ArcGIS for Operations Dashboard dependem do que você está fazendo com o aplicativo. ArcGIS Online e Portal for ArcGIS 10.4.1 e posterior são suportados.</p>
+        <h3>Exibindo visualizações de operação</h3>
+        <p>Qualquer um, inclusive usuários anônimos, pode utilizar o aplicativo navegador para exibir visualizações de operação compartilhadas publicamente. Exibir uma visualização de operação que não é compartilhada 
+        publicamente ou utilizar o aplicativo do Windows para exibir uma visualização de operação, exige que você seja um membro de uma organização do ArcGIS.</p>
+        
+        <h3>Criando visualizações de operação</h3>
+        <p>Para utilizar seus mapas no Operations Dashboard e criar visualizações de operação, você deve ser um membro de uma organização do ArcGIS. Se utilizar o ArcGIS Online ou Portal 
+        for ArcGIS 10.5 ou posterior, você deve ser um membro de nível 2.</p>
+        
+        <p>Seus mapas podem incluir dados do ArcGIS Online, Portal for ArcGIS e ArcGIS Enterprise. As fontes de dados devem ser hospedadas no ArcGIS Online, ArcGIS Server 10.1 ou superior.</p>
 
         <a name="whatsNew"></a>
         <h2 class="divider">Quais as novidades</h2>
         <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>O Operations Dashboard for ArcGIS 10.3.3 foi lançado em Agosto de 2016. Inclui o seguinte:</p>
+	        <p>O Operations Dashboard for ArcGIS 10.3.4 foi lançado em Dezembro de 2016. Inclui o seguinte:</p>
 	        <ul>
-	          <li>Localizado em Chinês Tradicional (Hong Kong) e Chinês Tradicional (Taiwan)</li>
-	          <li>Várias correções de erros e melhorias, incluindo BUG-000095467</li>
+	          <li>Várias melhorias e correções de erro</li>
 	        </ul>
                 </td>
 	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>Navegador</h4>
-	        <p>O aplicativo do navegador para Operations Dashboard for ArcGIS foi atualizado em Julho de 2016. Inclui as seguintes melhorias:</p>
+	        <p>O aplicativo do navegador para Operations Dashboard for ArcGIS foi atualizado em Dezembro de 2016. Inclui as seguintes melhorias:</p>
 	        <ul>
-	          <li>Localizado em Croata e Sérvio</li>
+	          <li>Localizado em Indonésio e Bósnio</li>
 	          <li>Várias melhorias e correções de erro</li>
         </ul></td><tr></table>
         
@@ -256,10 +262,10 @@ mobile: true
         
         <a name="sneakPeek"></a>
 	<h2 class="divider">Prévia</h2>
-	<p>Hoje o Operations Dashboard é um ótimo aplicativo para monitorar suas operações. Mas há mais por vir! Estamos atualmente construindo a próxima geração do aplicativo: um aplicativo de navegador que será completamente funcional, sem necessidade de download de um aplicativo Windows. Você solicitou o recurso para criar visualizações da operação no navegador, e com a próxima geração do aplicativo você poderá ! Você visualizará os layouts e ancoragem de widgets que você ama no aplicativo Windows criando seu caminho no navegador. Além disso, rótulos e mapeamento inteligentes serão suportados. Leia mais sobre ele em <a href="https://blogs.esri.com/esri/arcgis/2016/05/26/operations-dashboard-for-arcgis-a-new-experience-is-coming/">nossas postagens do blog</a> 
-	ou <a href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}">participe do beta</a>.</p>
+	<p>Hoje o Operations Dashboard é um ótimo aplicativo para monitorar suas operações. Mas há mais por vir! Estamos atualmente construindo a próxima geração do aplicativo: um aplicativo de navegador que será completamente funcional, sem necessidade de download de um aplicativo Windows. Você solicitou o recurso para criar visualizações da operação no navegador, e com a próxima geração do aplicativo você poderá! 
+	Você visualizará os layouts e ancoragem de widgets que você ama no aplicativo Windows criando seu caminho no navegador. Além disso, rótulos e mapeamento inteligentes serão suportados. Leia mais sobre ele em <a href="https://blogs.esri.com/esri/arcgis/2016/08/15/operations-dashboard-for-arcgis-open-beta/">nossas postagens do blog</a> ou <a href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}">participe do beta</a>.</p>
 	
-	<p>Compartilhe suas <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Boperations-dashboard-for-arcgis%5D">idéias</a>e <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">nos envie sua resposta</a>.</p>
+	<p>Compartilhe suas <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Boperations-dashboard-for-arcgis%5D">idéias</a> e <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">nos envie sua resposta</a>.</p>
         
         <p>&nbsp;</p>
         
