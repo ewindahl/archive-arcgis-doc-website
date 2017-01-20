@@ -1,256 +1,242 @@
 ---
 title: Collector for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - /en/asset/css/app-switch-1
-  - colorbox/colorbox
-  - jquery.smartbanner
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/app-collector-1
-  - libs/jquery.colorbox-min
-  - video-init
-  - libs/jquery.smartbanner
-  - smartbanner.init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+  - switchers/app-collector-1
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-10-01"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
-
-
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-12-15"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="ja"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1>Collector for ArcGIS</h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Collector for ArcGIS の検索">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />
-        <input type="hidden" name="product" value="collector-android" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
 
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/ja/collector/">ホーム</a></li>
-        <li><a href="/ja/collector/android/create-maps/create-maps.htm">マップの作成</a></li>
-        <li><a href="/ja/collector/android/collect-data/collect-tutorial.htm">データの収集</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/applications/collector-for-arcgis">フォーラム</a></li>
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Collector for ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear" href="http://www.arcgis.com/features/free-trial.html">60 日間無料トライアル</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link is-active" href="/ja/collector/">ホーム</a>
+        <a class="sub-nav-link" href="/ja/collector/overview/overview.htm">概要</a>
+        <a class="sub-nav-link" href="/ja/collector/android/create-maps/create-maps.htm">マップの作成</a>
+        <a class="sub-nav-link" href="/ja/collector/android/collect-data/collect-tutorial.htm">データの収集</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>現場スタッフにマッピング機能を提供</h1>
+      <h5>オンラインでもオフラインでも、スマートフォンまたはタブレットを使用して、現場で情報を収集および更新できます。</h5>
+      <!--h5>Start using ArcGIS Online now. <a href="http://www.arcgis.com/features/free-trial.html" >Sign up for your free ArcGIS trial.</a></h5-->
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Collector for ArcGIS ヘルプの検索">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="collector-android" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- download badges -->
+      <p class="trailer-0 leader-half font-size--2">
+        <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="img/ios-app.png" alt="App Store からダウンロード" style="margin:10px; vertical-align:middle"/></a>
+        <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Google Play で手に入れよう" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:10px; vertical-align:middle"/></a>
+        <a href="https://www.microsoft.com/store/apps/9wzdncrdg7lk"><img src="https://cmsresources.windowsphone.com/devcenter/common/resources/images/badgegenerator/English_wstore_black_258x67.png" alt="Windows ストアからダウンロード" style="margin:10px; vertical-align:middle; height:40px"/></a>
+      </p>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <!--li><strong>Current update:</strong> December 2016</li-->
+        <li><a href="/ja/collector/overview/what-s-new.htm">新機能</a></li>
+	<li><a href="/ja/collector/overview/requirements.htm">要件</a></li>
+        <li><a href="/ja/collector/overview/sneak-peek.htm">追加予定の機能</a></li>
+	<li><a href="/ja/collector/android/create-maps/faqs-create-map.htm">マップの作成に関する FAQ</a></li>
+	<li><a href="/ja/collector/android/collect-data/faqs-collect.htm">データの収集に関する FAQ</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-      <div class="column-16 tablet-column-24">
-
-        <h3 class="gray">オンラインでもオフラインでも、スマートフォンまたはタブレットを使用して、現場で情報を収集および更新できます。</h3>
-
-	  <!--
-          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
-          <span id="appReleased"><strong>Released:</strong> March 2014</span>
-	  -->
-
-
-        <p>
-	    <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a>
-	    <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" style="margin:10px; vertical-align:middle"/></a>
-	    <a href="https://www.microsoft.com/store/apps/9wzdncrdg7lk"><img src="https://cmsresources.windowsphone.com/devcenter/common/resources/images/badgegenerator/English_wstore_black_258x67.png" alt="Download from Windows Store" style="margin:10px; vertical-align:middle; height:40px"/></a>
-        </p>
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="app-collector-map.jpg" alt="Create a map" title="マップの作成"/>
-
-          <h3>マップの作成と共有</h3>
+<div class="grid-container leader-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ja/collector/android/create-maps/create-maps.htm">
+            <img alt="" src="img/createMaps.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ja/collector/android/create-maps/create-maps.htm">マップの作成と共有</a>
+          </h5>
           <p>ArcGIS を屋外で利用することにより、お持ちの空間データの精度と鮮度が向上します。2 つの手順でデータ収集のためのマップを作成および共有します。</p>
-          <p>
-            <a href="/ja/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
-            <a href="https://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;テンプレートを使用してジャンプ スタート</a>
-            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
-          </p>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="app-collector-data.jpg" alt="Collect data" title="データの収集"/>
-
-          <h3>データの収集</h3>
-          <p>損害報告や史跡の修繕依頼など、組織にとって重要なデータを作成します。画像およびビデオを簡単に追加して、データを共有します。</p>
-          <p>
-            <a href="/ja/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
-
-			<a title="データの収集" href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;ビデオを見る</a>
-			<video width="320" height="240" controls id="2194" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
-			</video>
-          </p>
-        </div>
-	<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="story-graphic-3.png" alt="Go offline" title="オフラインでの操作" />
-
-          <h3>オフラインでの操作</h3>
-          <p>インターネットに接続できない場所でも現場作業を行えます。マップおよびデータをオフラインで使用し、データを収集します。再度オンラインに接続したときにデータを同期します。</p>
-          <p>
-            <a href="/ja/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
-          </p>
-        </div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="story-graphic-4.png" alt="Professional-grade accuracy" title="プロ品質の精度"/>
-
-          <h3>プロ品質の精度を取得</h3>
-          <p>高精度の受信機を使用して、センチメートル レベルの精度を取得できます。GPS メタデータを確実に取得して記録し、データの品質を把握します。</p>
-          <p>
-            <a href="/ja/collector/android/create-maps/gps-high-accuracy-receivers.htm" class="icon-right-arrow">&nbsp;収集の設定</a><br />
-            <a href="/ja/collector/android/collect-data/high-accuracy-gps.htm" class="icon-right-arrow">&nbsp;高精度 GPS を使用</a><br />
-          </p>
-        </div>
-
-        <div class="clear"></div>
-
-	<a name="features"></a>
-	<h2 class="divider">特長</h2>
-	<p>屋外でデータを収集、更新したり、現在地を記録したり、取得したデータをすぐに活かせるため、それらの情報を得てからタイムリーな意思決定を行うことができます。どこにいてもマップを使用して、データの現地調査、観測、イベントへの対応に利用できます。現場スタッフの作業効率性と GIS の正確性が改善されます。</p>
-
-	<ul>
-	<li>マップまたは GPS を使用してデータを収集および更新</li>
-	<li>マップを各種端末にダウンロードしてオフラインで操作</li>
-	<li>ポイント、ライン、エリア、および関連データの収集</li>
-	<li>マップ上の操作しやすいフォームを使用してデータ入力</li>
-	<li>写真をフィーチャに添付</li>
-	<li>プロ品質の GPS 受信機を使用できます。</li>
-	<li>場所およびフィーチャの検索</li>
-	<li>訪問したエリアを記録し報告</li>
-	<li><a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-apple"/>) と統合</li>
-	<li><a href="http://workforce.arcgis.com">Navigator for ArcGIS</a> (<span class="icon-apple"/>) と統合</li>
-	</ul>
-
-        <a name="systemRequirements"></a>
-        <h2 class="divider">システム要件</h2>
-        <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
-        <ul>
-          <li>Android 4.1 (Jelly Bean) 以降</li>
-          <li>ARMv7 または x86 プロセッサ</li>
-          <li>OpenGL ES 2.0 のサポート</li>
-          <li>正確な位置を (GPS およびネットワークに基づいて) サポート</li>
-        </ul></td>
-        <td valign="top"><h4 class="icon-apple">iOS</h4>
-        <ul>
-          <li>iOS 8 以降</li>
-          <li>iPhone、iPad、iPod touch</li>
-        </ul></td>
-        <td valign="top"><h4 class="icon-windows-8">Windows</h4>
-        <ul>
-          <li>Windows 10.0.586 以降 (タブレットおよび PC、LTSB を除く)</li>
-        </ul></td></tr>
-        </table>
-
-        <h3>サポートされている言語</h3>
-        <p>アラビア語、チェコ語、デンマーク語、オランダ語、英語、エストニア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、イタリア語、日本語、韓国語、ラトビア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、リトアニア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、ノルウェー語、ポーランド語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ルーマニア語、ロシア語、中国語 (簡体字)、セルビア語 (<span class="icon-android"/>、<span class="icon-windows-8"/>)、スペイン語、スウェーデン語、タイ語、繁体字中国語 (香港)、トルコ語、およびベトナム語。</p>
-        <p>アプリで使用される言語は、デバイスの言語設定によって決まります。</p>
-
-        <a name="arcgisRequirements"></a>
-        <h2 class="divider">ArcGIS の要件</h2>
-        <p>Collector for ArcGIS でマップを使用するには、ArcGIS の組織アカウントが必要です。ArcGIS Online および Portal for ArcGIS 10.3.1 以降がサポートされています。</p>
-        <p>マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。詳細については、「<a href="/ja/collector/android/create-maps/supported-data.htm">サポートされているデータ</a>」をご参照ください。</p>
-
-
-        <a name="whatsNew"></a>
-        <h2 class="divider">新しい機能</h2>
-        <p>Collector for ArcGIS 10.4 では、以下の機能が強化されています。</p>
-        <ul>
-	  <li>高精度 GPS 受信機をサポート</li>
-	  <li>添付ファイルの EXIF データを維持</li>
-	  <li>PDF および Word ドキュメント (<span class="icon-windows-8"/>) をはじめ、さまざまなファイル タイプの添付ファイルをサポート</li>
-	  <li><a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-apple"/>) との統合</li>
-	  <li>クロアチア語およびセルビア語に対応</li>
-	  <li>各種不具合の修正と改善 (<a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NDM1NQ==">BUG-000094355</a>、<a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NDcwNA==">BUG-000094704</a>、および <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NTY2MA==">BUG-000095660</a> など)</li>
-        </ul>
-	<p>iOS 版は 2016 年 7 月、Windows 版は 2016 年 8 月、Android 版は 2016 年 10 月にリリースされました。</p>
-
-	<a name="sneakPeek"></a>
-	<h2 class="divider">追加予定の機能</h2>
-	<p>Collector for ArcGIS は、現場でデータを収集したり編集するための非常に優れたアプリです。今後、さまざまな機能の追加が予定されています。
-
-	<table><tr><td valign="top"><h4>開発中の機能</h4>
-	<p>現在、次の機能の追加に取り組んでいます。</p>
-	<ul>
-		<li>オフセットを使用したデータ収集</li>
-		<li><a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-android"/>) との統合</li>
-		<li><a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-android"/>、<span class="icon-windows-8"/>) との統合</li>
-	</ul>
-	</td>
-	<td valign="top"><h4>計画中の機能</h4>
-	<p>次のような機能の搭載を予定しています。</p>
-	<ul>
-		  <li>よりスマートなデータ収集フォーム</li>
-		  <li>オフラインでの現場操作を計画するためのツール</li>
-		  <li>周辺機器 (レーザー レンジ ファインダー、バーコード スキャナーなど) との統合</li>
-		  <li>Windows 10 Mobile のサポート</li>
-	</ul>
-	</td></tr></table>
-
-	<p><a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bcollector-for-arcgis%5D">アイデア</a>を共有したり、<a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">フィードバックを送信</a>します。</p>
-
-        <p>&nbsp;</p>
-
+        <a href="/ja/collector/android/create-maps/create-maps.htm" class="btn btn-clear btn-fill leader-0">演習を開始</a>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-	  <h3>詳細</h3>
-
-	  <h4><a href="#features">特長</a></h4>
-	  <h4><a href="#systemRequirements">システム要件</a></h4>
-	  <h4><a href="#arcgisRequirements">ArcGIS の要件</a></h4>
-	  <h4><a href="#whatsNew">新機能</a></h4>
-	  <h4><a href="#sneakPeek">追加予定の機能</a></h4>
-
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ja/collector/android/collect-data/collect-tutorial.htm">
+            <img alt="" src="img/collectData.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ja/collector/android/collect-data/collect-tutorial.htm">データの収集</a>
+          </h5>
+          <p>損害報告や史跡の修繕依頼など、組織にとって重要なデータを作成します。画像およびビデオを簡単に追加して、データを共有します。</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>ブログ</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <nav>
+          <a href="/ja/collector/android/collect-data/collect-tutorial.htm" class="btn btn-grouped btn-clear btn-half leader-0">操作方法</a>
+          <a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="btn btn-grouped btn-clear btn-half leader-0">ビデオを見る</a>
+        </nav>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ja/collector/android/collect-data/offline-use.htm">
+            <img alt="" src="img/offline.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ja/collector/android/collect-data/offline-use.htm">オフライン操作</a>
+          </h5>
+          <p>インターネットに接続できない場所でも現場作業を行えます。マップおよびデータをオフラインで使用し、データを収集します。再度オンラインに接続したときにデータを同期します。</p>
         </div>
-
- </div>
-
+        <a href="/ja/collector/android/collect-data/offline-use.htm" class="btn btn-clear btn-fill leader-0">詳細</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ja/collector/android/create-maps/gps-high-accuracy-receivers.htm">
+            <img alt="" src="img/highAccuracy.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ja/collector/android/create-maps/gps-high-accuracy-receivers.htm">プロ品質の精度を取得</a>
+          </h5>
+          <p>高精度の受信機を使用して、センチメートル レベルの精度を取得できます。GPS メタデータを確実に取得して記録し、データの品質を把握します。</p>
+        </div>
+        <nav>
+          <a href="/ja/collector/android/create-maps/gps-high-accuracy-receivers.htm" class="btn btn-grouped btn-clear btn-half leader-0">設定</a>
+          <a href="/ja/collector/android/collect-data/high-accuracy-gps.htm" class="btn btn-grouped btn-clear btn-half leader-0">使用方法</a>
+        </nav>
+      </div>
     </div>
+  </div>
+</div>
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
-        max: 5,
-        layout: 0
-      });
+<div class="panel panel-grey panel-no-border panel-no-padding leader-2">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">ArcGIS を有効活用してください</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS for Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<!--div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div-->
 
-    });
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Collector for ArcGIS とつながる</h4>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri/collector-tools"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/applications/collector-for-arcgis"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Esri のブログを読む
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/collector/">その他の記事</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/collector/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-  </script>
-
-   <script src="/en/asset/js/app-collector-1.js" type="text/javascript"></script>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">会話に参加する
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/applications/collector-for-arcgis">その他の会話</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2120" class="block-group block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
