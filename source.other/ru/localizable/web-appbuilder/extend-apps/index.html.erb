@@ -1,16 +1,14 @@
 ---
 title: Web AppBuilder for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
   - <META name="description" content="Extend Apps with Web AppBuilder for ArcGIS"><META name="last-modified" content="2014-9-18"><META name="product" content="web-appbuilder"><META name="sub_category" content="Web AppBuilder"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Web AppBuilder"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="ru">
@@ -18,102 +16,84 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/ru/web-appbuilder/">Web AppBuilder for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Web AppBuilder ">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="web-appbuilder" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-   <nav>
-      <ul>
-        <li><a href="/ru/web-appbuilder/">На главную</a></li>
-        <li><a href="/ru/web-appbuilder/create-apps/">Создание приложений</a></li>
-        <li><a href="/ru/web-appbuilder/manage-apps/">Управление приложениями</a></li>
-        <li class='current'><a href="/ru/web-appbuilder/extend-apps/">Расширение приложений</a></li>
-      </ul>
-    </nav>
+
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Web AppBuilder for ArcGIS</h1>
+        </div>
+        <div class="search-bar">
+      	  <form id="helpSearchForm" target="_top">
+      		  <input type="search" name="q" placeholder="Поиск Web AppBuilder" class="leader">
+	          <input type="hidden" name="collection" value="help">
+            <input type="hidden" name="platform" value="detect">
+	          <input type="hidden" name="product" value="web-appbuilder">
+	          <input type="hidden" name="version" value="">
+	          <input type="hidden" name="language" value="ru">
+	          <button class="search-submit icon-ui-search" type="submit"></button>
+      		</form>
+      	</div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link" href="/ru/web-appbuilder/">На главную</a>
+        <a class="sub-nav-link" href="/ru/web-appbuilder/create-apps/">Создание приложений</a>
+        <a class="sub-nav-link" href="/ru/web-appbuilder/manage-apps/">Управление приложениями</a>
+        <a class="sub-nav-link is-active" href="/ru/web-appbuilder/extend-apps/">Расширение приложений</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-24 tablet-column-7">
+    <h3 class="gray">Расширьте возможности Web AppBuilder с помощью версии для разработчиков</h3>
+    <h5>Создайте свои собственные виджеты и темы с помощью Web AppBuilder for ArcGIS (Developer Edition). Посетите сайт <a href="https://developers.arcgis.com/web-appbuilder/">ArcGIS for Developers</a> <a class="icon-external-link" href="https://developers.arcgis.com/web-appbuilder/"> </a>, чтобы загрузить Developer Edition и больше узнать о создании собственных приложений.</h5>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <header>
-
-	<h2 id="appTitle">Расширьте возможности Web AppBuilder с помощью версии для разработчиков</h2> 
-
-          <p>Создайте свои собственные виджеты и темы с помощью Web AppBuilder for ArcGIS (Developer Edition). Посетите сайт <a href="https://developers.arcgis.com/web-appbuilder/">ArcGIS for Developers</a> <a class="icon-external-link" href="https://developers.arcgis.com/web-appbuilder/"> </a>, чтобы загрузить Developer Edition и больше узнать о создании собственных приложений.</p>
-
-
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/en/web-appbuilder/img/builder-widget-theme.png" />
-
-          <h3>Увеличьте эффективность вашей компании </h3>
-          <p><ul>
-            <li>Повысьте продуктивность построения веб-приложений, работающих на настольных компьютерах, планшетах и смартфонах</li>
-            <li>Пользуйтесь рабочей средой приложения и готовыми виджетами, что позволит сфокусироваться на построении специфических компонентов именно для вашей работы</li>
+<div class="grid-container leader-1 trailer-1">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would be better with wider, shorter images. -->
+    <div class="block-group block-group-2-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap text-center leader-1">
+          <img alt="" src="../img/builder-widget-theme.png">
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+   Увеличьте эффективность вашей компании
+          </h5>
+          <ul>
+            <li>Повысьте продуктивность работы, используя созданные вами веб-приложения для настольных компьютеров, планшетов и смартфонов</li>
+            <li>Рабочая среда приложения и готовые виджеты позволяют сфокусироваться на создании компонентов, заточенных под ваши рабочие процессы. </li>
             <li>Персонализируйте приложения с помощью собственных тем</li>
             <li>Создавайте новые приложения с помощью виджетов и тем, предоставленных другими разработчиками</li>
-          </ul></p>
-
-
-         
+          </ul>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/web-appbuilder/img/builder-sell.png" />
-
-          <h3>Создавайте приложения на продажу</h3>
-          <p><ul>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap text-center leader-1">
+          <img alt="" src="../img/builder-sell.png">
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+   Создавайте приложения для продажи
+          </h5>
+          <ul>
             <li>Создавайте приложения для продвижения и продажи на <a href="http://marketplace.arcgis.com/">ArcGIS Marketplace</a> <a class="icon-external-link" href="http://marketplace.arcgis.com/"> </a></li>
             <li>Создавайте собственные виджеты и темы, которые ваши потребители могут использовать для настройки новых приложений в Web AppBuilder</li>
             <li>Создавайте собственные, уникальные темы в соответствие с фирменным стилем компании</li>
           </ul>
-          </p>
         </div>
-
-
-
-        <div class="clear"></div>
-
-        <div class="column-16 tablet-column-24">
-
-        <p>Посетите сайт <a href="https://developers.arcgis.com/web-appbuilder/">ArcGIS for Developers</a> <a class="icon-external-link" href="https://developers.arcgis.com/web-appbuilder/"> </a>, чтобы загрузить ПО и получить дополнительные сведения.</p>
-
-        <p>&nbsp;</p>
-
       </div>
-
-      </div>
-
-
-     <!-- <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3 class="icon-orange icon-light-bulb">ArcGIS Ideas site</h3>
-         <p>Don't see the app or data you need? Post a suggestion or vote on existing ideas.</p>
-         <p>Are you a provider looking for ideas? See what customers are asking for. Invite contributors to privately collaborate with you to evolve ideas.</p>
-         <p><a class="" href="http://ideas.arcgis.com"> ideas.arcgis.com</a></p>
-        </div>
-
-        <br />
-
-
- </div> -->
-
     </div>
-
+  </div>
+  <div class="column-24 text-center leader-1">
+    <p>Посетите сайт <a href="https://developers.arcgis.com/web-appbuilder/">ArcGIS for Developers</a> <a class="icon-external-link" href="https://developers.arcgis.com/web-appbuilder/"> </a>, чтобы загрузить ПО и получить дополнительные сведения.</p>
+  </div>
+</div>
