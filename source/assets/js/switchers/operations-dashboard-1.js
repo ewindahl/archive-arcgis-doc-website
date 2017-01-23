@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 	if(!($.cookie (prodKey)) && !(navigator.userAgent.match(/Windows NT/gi))) {
       plat = prodWebVal;
-      if (!isHome && !pathname.match( /(\/web\/|\/author\/|\/overview\/)/)) {
+      if (!isHome && !pathname.match( /(\/web\/|\/author\/)/)) {
          UASpecificRedirect (plat, pathname);
       }
     }

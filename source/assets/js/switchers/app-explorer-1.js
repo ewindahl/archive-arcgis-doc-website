@@ -40,28 +40,16 @@ $(document).ready(function() {
 		fldpath = parts.join ("/"),
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath,
-		isForum = fldpath === forumPath
-    betaPage = false;
-
-		if(window.location.pathname.match( /(\/beta\/)/)){
-			betaPage = true;
-			val = '<p id="plats" class="doc-platform-switcher">' +
-        '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="explorer" data-plat="android-phone" data-prefix="/' + localedir +'/explorer/beta/android-phone" href="/en/explorer/" data-langlabel="android-phone" class="">' + dict['android-phone'] + '</a>' +
-        '<a data-appname="explorer" data-plat="android-tablet" data-prefix="/' + localedir +'/explorer/beta/android-tablet" href="/en/explorer/" data-langlabel="android-tablet" class="">' + dict['android-tablet'] + '</a>' +
-        '<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir +'/explorer/beta/ipad" href="/en/explorer/" data-langlabel="ipad" class="">iPad</a>' +
-        '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir +'/explorer/beta/iphone" href="/en/explorer/" data-langlabel="iphone" class="">iPhone</a>' +
-	      '</p>';
-		}
+		isForum = fldpath === forumPath;
 
     if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh)/gi))) {
-      if(navigator.userAgent.match(/(iPhone|iPod)/gi)){
-		    plat = prodIOSVal;
-	    }else if(!betaPage && navigator.userAgent.match(/(Macintosh)/gi)){
-		    plat = prodMacVal;
-	    }else if(navigator.userAgent.match(/(iPad)/gi)){
-		    plat = prodIpadVal;
-	    }
+      if(navigator.userAgent.match(/(iPhone)/gi)){
+		plat = prodIOSVal;
+	  }else if(navigator.userAgent.match(/(Macintosh)/gi)){
+		plat = prodMacVal;
+	  }else if(navigator.userAgent.match(/(iPad)/gi)){
+		plat = prodIpadVal;
+	  }
 
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
@@ -164,7 +152,7 @@ $(document).ready(function() {
 			modForumUrls (plat);
 		} else {
 
-			if(window.location.pathname.match( /(\/use-maps\/|\/beta\/)/)){
+			if(window.location.pathname.match( /(\/use-maps\/)/)){
 				$('main h1').after (val);
 			}else{
 				modHelpNavUrls (plat);
