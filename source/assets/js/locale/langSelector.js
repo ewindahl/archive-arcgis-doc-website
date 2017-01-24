@@ -440,9 +440,9 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/explorer\/|\/appstudio\/|\/operations-dashboard\/)/)){
+  }else if (winloc.pathname.match( /(\/explorer\/|\/appstudio\/|\/operations-dashboard\/)/)){
     docCfg.langSelector = "marketplace";
-  }else if (winloc.pathname.match( /(\/workforce\/|\/collector\/|\/web-appbuilder\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/workforce\/|\/collector\/|\/web-appbuilder\/)/)){
     docCfg.langSelector = "marketplaceptpt";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";

@@ -3,123 +3,288 @@ layout: marketplace/layout
 
 title: ArcGIS Marketplace
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
-  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING"><META name="content-language" content="es">
-
+  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING">
 mobile: true
 
 ---
-<div class="section-bar marketplace">
-  <div class="container">
-    <header>
-      <h1><a href="/es/marketplace/">Ayuda</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Marketplace Help">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="marketplace" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
 
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/es/marketplace/">Principal</a></li>
-        <li><a href="/es/marketplace/consumer/">Para clientes</a></li>
-        <li><a href="/es/marketplace/provider/">Para proveedores</a></li>
-      </ul>
-    </nav>
+<header class="sub-nav sub-nav-marketplace">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+			<!--
+			<nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/es/marketplace/">Marketplace</a>
+          </nav>
+			-->
+          <h1 class="sub-nav-title leader-1 text-white">Ayuda</h1>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+		  <!--<div class="sdk-home-banner-image">
+          <img src="img/epcot.jpg">
+        </div>-->
+		  <div class="search-bar">
+			 <form id="helpSearchForm" target="_top">
+			  <input type="search" name="q" class="leader" placeholder="Buscar en la ayuda de Marketplace">
+			  <input type="hidden" name="collection" value="help" />
+			  <input type="hidden" name="product" value="marketplace" />
+			  <input type="hidden" name="language" value="<%= current_language %>" />
+			  <button class="search-submit icon-ui-search" type="submit"></button>
+			</form>
+		  </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+	     <a href="/es/marketplace/" class="sub-nav-link  is-active ">Principal</a>
+        <a href="/es/marketplace/consumer/" class="sub-nav-link ">Para consumidores</a>
+        <a href="/es/marketplace/provider/" class="sub-nav-link ">Para proveedores</a>
+        </nav>
+    </div>
   </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <h2>¿Qué es el Marketplace?</h2>
+    <p>ArcGIS Marketplace es un destino que permite a organizaciones de ArcGIS Online buscar, descubrir y obtener aplicaciones y datos proporcionados por proveedores cualificados (partners comerciales de Esri, distribuidores de Esri, empresas emergentes de Esri y Esri) para el uso en la organización.  Las aplicaciones y los servicios de datos ofertados en el Marketplace pueden ponerse a disposición de cualquier organización de ArcGIS Online en cualquier parte del mundo.</p>
+
+  </div>
+  <!--<div class="column-8 tablet-column-12 right">
+	 <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">The December 2016 update includes a new enhancements to reviews and email notifications.</p>
+    </div>
+  </div>-->
+  <!--<div class="column-8 tablet-column-12 right">
+      <div class="panel-1">
+        <img class="trailer-1" alt="" src="img/epcot.jpg">
+      </div>
+    </div>-->
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-
-     <div class="column-16 tablet-column-24">
-        <header>
-
-			 
-		 <!--<h2 id="appTitle" class="gray">What is the Marketplace?</h2>-->
-		<h5 class="gray">Aprenda cómo sacar el máximo partido de ArcGIS Marketplace.</h5>	
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/for-consumers.png" />
-
-          <h3>Para clientes </h3>
-          <p>Aprenda cómo buscar y utilizar aplicaciones y datos.</p>
-          <ul>			
-			<li><a href="/es/marketplace/consumer/get-started-consumers.htm">Sacar el máximo partido de ArcGIS Marketplace</a></li>
-			<li><a href="/es/marketplace/consumer/search-for-apps-and-data.htm">Buscar elementos</a>.</li>
-			<li><a href="/es/marketplace/consumer/subscribe-to-apps-and-data.htm">Obtener elementos</a>.</li>
-			<li><a href="/es/marketplace/consumer/faq.htm">Preguntas frecuentes</a></li>
-          </ul>
-        </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/for-providers.png" />
-
-          <h3>Para proveedores</h3>
-          <p>Aprenda cómo agregar, promocionar y vender sus aplicaciones y datos.</p>
-          <ul>			
-			<li><a href="/es/marketplace/provider/become-a-provider.htm">Conviértete en proveedor</a></li>
-			<li><a href="/es/marketplace/provider/listing-tips.htm">Consejos para crear un listado correctamente</a></li>
-			<li><a href="/es/marketplace/provider/create-listings.htm">Acerca de los listados</a></li>
-			<li><a href="/es/marketplace/provider/faq.htm">Preguntas frecuentes</a></li>
-          </ul>
-        </div>
-        <div class="clear"></div>
-
-<hr>
-<br>
-<div>
-    
-<div class="column-8 phone-column-24">
-
-    <section class="support-option">
-      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">Soporte técnico de Esri</a></h4>
-      <p>Contacta con el soporte técnico por chat, por correo electrónico o por teléfono.</p>
-    </section>
-    
-  </div> 
-  <div class="column-8 phone-column-24">
-
-    <section class="support-option">
-      <h4 class="icon-light-bulb icon-orange"><a href="https://geonet.esri.com/community/arcgis-ideas/" target="_blank">Ideas de ArcGIS</a></h4>
-      <p>Envía tus comentarios sobre el software.</p>
-    </section>
-    
+<div class="grid-container leader-1">
+  <hr class="leader-half trailer-half">
   </div>
-  <div class="column-8 phone-column-24" >
-
-   <h4 class="icon-comment icon-blue"><a href="https://geonet.esri.com/groups/arcgis-marketplace-apps" target="_blank">La Comunidad de Esri</a></h4>
-      <p>Únete a los debates sobre GeoNet.</p>
-    
-  </div>
-  <!--<div class="row">-->
-
   
+ <!-- <div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+    <ul class="list-plain sdk-home-nav-list">
+      <li><a href="/es/marketplace/provider/sales.htm">Set up Sales</a></li>
+      <li><a href="/es/marketplace/provider/create-listings.htm">Create listings</a></li>
+		<li><a href="/es/marketplace/consumer/manage-license.htm">Manage licenses</a></li>
+		 <li><a href="/es/marketplace/consumer/whats-new.htm">What's new</a></li>
+    </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
+</div>-->
+
+<!-- option 2 -->
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-2-up tablet-block-group-1-up">
+      <div class="block leader-1 text-center">
+        <div class="panel panel-no-padding">
+            <a href="/es/marketplace/consumer/"><img class="gutter-left-1 leader-1 trailer-1" alt="" src="img/for-consumers.png"></a>
+            <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Para clientes</h3>
+            <p>Aprenda cómo buscar y utilizar aplicaciones y datos.</p>
+				<p>
+				<a class="icon-ui-right icon-ui-small" href="/es/marketplace/consumer/search-for-apps-and-data.htm">Buscar aplicaciones y datos</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/es/marketplace/consumer/use-apps-and-data.htm">Utilizar aplicaciones y datos</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/es/marketplace/consumer/manage-licenses.htm">Administrar licencias</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/es/marketplace/consumer/faq.htm">Preguntas frecuentes</a><br/>
+				</p>
+          </div>
+        </div>
+      </div>
+
+		<div class="block leader-1 text-center">
+        <div class="panel panel-no-padding">
+            <a href="/es/marketplace/provider/"><img class="leader-1 trailer-1" alt="" src="img/for-providers.png"></a>
+            <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">Para proveedores</h3>
+            <p>Aprenda cómo agregar, promocionar y vender sus aplicaciones y datos.</p>
+            <p>
+				<a class="icon-ui-right icon-ui-small" href="/es/marketplace/provider/become-a-provider.htm">Conviértase en proveedor</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/es/marketplace/provider/create-listings.htm">Creación de listados</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/es/marketplace/provider/sales.htm">Configurar las ventas</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/es/marketplace/provider/faq.htm">Preguntas frecuentes</a><br/>
+				</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-        <p>&nbsp;</p>
+
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-3-up tablet-block-group-1-up">
+      <div class="block leader-1">
+        <div class="panel-no-padding">
+            <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h4 class="icon-ui-question icon-ui-orange"><a href="http://support.esri.com/en/" target="_blank">Obtener soporte técnico</a></h4>
+            <p>Póngase en contacto con el soporte técnico por chat de Esri, por correo electrónico o por teléfono.</p>
+          </div>
+        </div>
+      </div>
+
+		<div class="block leader-1">
+        <div class="panel-no-padding">
+            <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h4 class="icon-ui-share icon-ui-orange"><a href="https://geonet.esri.com/community/arcgis-ideas/" target="_blank">Cuéntenos su idea ArcGIS</a></h4>
+            <p>Envíe su idea y vote a otros.</p>
+          </div>
+        </div>
+      </div>
+
+		<div class="block leader-1">
+        <div class="panel-no-padding">
+            <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h4 class="icon-ui-chat icon-ui-blue"><a href="https://geonet.esri.com/groups/arcgis-marketplace-apps" target="_blank">Únase a la comunidad Esri</a></h4>
+            <p>Converse sobre aplicaciones o SIG, entre otras cuestiones.</p>
+          </div>
+        </div>
+      </div>
+
+		</div>
+  </div>
+</div>
+
+
+<!-- Featured block-->
+<div class="panel panel-black planel-no-border panel-no-padding">
+    <div class="grid-container padding-leader-1">
+      <div class="column-24">
+        <h2 class="text-white text-rule padding-trailer-half">Últimos listados en Marketplace</h2>
+
+        <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+            <div class="block trailer-1">
+                <div class="panel panel-dark">
+					 <h6>Fast@Home<h6>
+                 <a href="//marketplace.arcgis.com/listing.html?id=1b6e8ad44f8b49f186c869febe1b3782">
+					  <img alt="Fast@Home" src="/en/marketplace/img/fast_home.png">
+					  </a>
+                </div>
+            </div>
+            <div class="block trailer-1">
+                <div class="panel panel-dark">
+					 <h6>Mapa ARES<h6>
+                 <a href="//marketplace.arcgis.com/listing.html?id=206f870b85684bad995997ce063b2e3e">
+					  <img alt="Mapa ARES" src="/en/marketplace/img/aresmap.png"></a>
+                </div>
+            </div>
+				<div class="block trailer-1">
+                <div class="panel panel-dark">
+					 <h6>Survey123 for ArcGIS<h6>
+                 <a href="//marketplace.arcgis.com/listing.html?id=53ed22682e6840598378ce2988d68b20">
+					  <img alt="Survey123 for ArcGIS" src="/en/marketplace/img/survey123.png"></a>
+                </div>
+            </div>
+				<div class="block trailer-1">
+                <div class="panel panel-dark">
+					 <h6>AppSmart for ArcGIS<h6>
+                 <a href="//marketplace.arcgis.com/listing.html?id=d066a4c37f6e45d0aa0fffc617661ad8">
+					  <img alt="AppSmart for ArcGIS" src="/en/marketplace/img/appsmart.png"></a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
+  <!-- Blog
+  <div class="panel panel-no-border panel-no-padding leader-1">
+      <div class="grid-container padding-leader-1 padding-trailer-1">
+        <div class="column-24">
+          <h2 class="text-rule padding-trailer-half">From our Blog
+            <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/collector/">More posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+          </h2>
+          <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/collector/feed/" class="block-group block-group-3-up blogHpFeed">
+				<!-- Blog Content goes here
+				</div>
+        </div>
+      </div>
+    </div>-->
+
+	<!-- Forum -->
+	<div class="panel panel-white panel-no-border panel-no-padding">
+        <div class="grid-container padding-trailer-1 padding-leader-1">
+          <div class="column-24">
+            <h2 class="text-rule padding-trailer-half">Únase a la conversación
+              <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/groups/arcgis-marketplace-apps">Más conversaciones  <span class="icon-ui-small icon-ui-link-external"></span></a>
+            </h2>
+            <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=1350" class="block-group block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+				</div>
+
+          </div>
+        </div>
+      </div>
 
 
+	<!-- Videos -->
+	<!--<div class="panel panel-blue panel-no-border panel-no-padding">
+    <div class="grid-container padding-leader-1 padding-trailer-1">
+      <div class="column-24">
+        <h2 class="text-white text-rule padding-trailer-half">From our Videos
+          <a class="btn btn-transparent btn-large right text-white" href="http://video.esri.com/search/Collector for ArcGIS">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+        </h2>
+        <div class="flexible-block-group flexible-block-group-4-up">
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="//video.arcgis.com/iframe/2672/000000/width/960/1" class="colorbox-evlarge" title="Getting Started with Collector" ><img alt="Getting Started with Collector" src="//video.arcgis.com/thumbs/2013/08/2672/2672-getting-started-with-collector-for-arcgis_x.jpg"></a>
+                <h5 class="leader-1">Getting Started With Collector</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge text-white" href="//video.arcgis.com/iframe/2672/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="//video.arcgis.com/iframe/3945/000000/width/960/1" class="colorbox-evlarge" title="Collector for ArcGIS - ArcGIS for the Military" ><img alt="Collector for ArcGIS - ArcGIS for the Military" src="//video.arcgis.com/thumbs/2014/11/3945/3945-collector-for-arcgis-_dash_-arcgis-for-the-military_x.jpg"></a>
+                <h5 class="leader-1">Collector for ArcGIS - ArcGIS for the Military</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge text-white" href="//video.arcgis.com/iframe/3945/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="//video.arcgis.com/iframe/3474/000000/width/960/1" class="colorbox-evlarge" title="Using Collector for ArcGIS with ArcGIS Server" ><img alt="Using Collector for ArcGIS with ArcGIS Server" src="//video.arcgis.com/thumbs/2014/04/3474/3474-using-collector-for-arcgis-with-arcgis-server-1022_x.jpg"></a>
+                <h5 class="leader-1">Using Collector for ArcGIS with ArcGIS Server</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge text-white" href="//video.arcgis.com/iframe/3474/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="//video.arcgis.com/iframe/4154/000000/width/960/1" class="colorbox-evlarge" title="Offline Maps with ArcGIS for Server and Collector for ArcGIS" ><img alt="Offline Maps with ArcGIS for Server and Collector for ArcGIS" src="//video.arcgis.com/thumbs/2015/02/4154/4154-offline-maps-with-arcgis-for-server-and-collector-for-arcgis_x.jpg"></a>
+                <h5 class="leader-1">Offline Maps with ArcGIS for Server and Collector for ArcGIS</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge text-white" href="//video.arcgis.com/iframe/4154/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>-->
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 
+
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
