@@ -110,6 +110,7 @@ jQuery(document).ready(function ($) {
     lgCognos = ['en', 'de','fr','ja', 'ko', 'zh-cn'],
     lgMicro = ['en', 'de'],
 	 lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
+   lgMarketplaceptpt = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
    lgNavigator = lgPickFull.concat(["it","ko","pt-br","pt-pt"]),
    lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
 	 lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","ro"],
@@ -175,6 +176,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "micro" && lgMicro.indexOf(lg) >= 0){
                 return true;
               }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){
+                return true;
+              }else if(langSelector === "marketplaceptpt" && lgMarketplaceptpt.indexOf(lg) >= 0){
                 return true;
               }else if(langSelector === "navigator" && lgNavigator.indexOf(lg) >= 0){
                 return true;
@@ -273,6 +276,9 @@ jQuery(document).ready(function ($) {
                   break;
 					 case "marketplace":
                   lgList = lgMarketplace;
+                  break;
+                case "marketplaceptpt":
+                  lgList = lgMarketplaceptpt;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -423,8 +429,10 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/|\/web-appbuilder\/|\/explorer\/|\/appstudio\/|\/operations-dashboard\/|\/workforce\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/|\/web-appbuilder\/|\/explorer\/|\/appstudio\/|\/workforce\/)/)){
     docCfg.langSelector = "marketplace";
+  }else if (winloc.pathname.match( /(\/operations-dashboard\/)/)){
+    docCfg.langSelector = "marketplaceptpt";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
   }else if (winloc.pathname.match( /(\/maps-for-sharepoint\/)/)){
