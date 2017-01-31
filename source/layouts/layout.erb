@@ -1,6 +1,6 @@
 <!doctype html>
 <%
-readDirection="ltr" 
+readDirection="ltr"
 if current_language == "ar" or current_language == "he"
 	readDirection="rtl"
 end
@@ -8,7 +8,7 @@ end
 pardotTrackingCode = "4008"
 if request.path.include? "/trust/"
   pardotTrackingCode = "4024"
-end  
+end
 %>
 <!--[if lt IE 7]>      <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="<%=readDirection%>"> <![endif]-->
 <!--[if IE 7]>         <html class="ie lt-ie9 lt-ie8 ie7" dir="<%=readDirection%>"> <![endif]-->
@@ -18,15 +18,17 @@ end
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<script src="//assets.adobedtm.com/2e9cd01e19dc5ac4867e752f17a2f1ea1923e5af/satelliteLib-0ed1001fd441a838aefe8e755be42aaafddcc46b.js"></script>
+		<script type="text/javascript" src="//go.pardot.com/dcjs/82202/1182/dc.js"></script>
 	 <meta name="viewport" content="width=device-width">
 
     <title><%= data.page.title ? data.page.title + " | ArcGIS" : "ArcGIS" %></title>
-	 
+
 	 <!--[if lt IE 9]>
       <script src="/assets/js/libs/html5shiv.js"></script>
 		<script src="/assets/js/libs/json2.js"></script>
     <script src="/assets/js/libs/selectivizr-min.js"></script>
-     
+
     <![endif]-->
 
     <%= javascript_include_tag "sitecfg" %>
@@ -42,7 +44,7 @@ end
       <% end %>
 
     </script>
-   
+
     <link rel="pingback" href="//pingback.me/esri/xmlrpc" />
 	 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
@@ -84,7 +86,7 @@ end
     <% end %>
 
 	<!-- Handle Marketplace 404 issue -->
-	<% if current_page.data.pageName and current_page.data.pageName == "404" %> 
+	<% if current_page.data.pageName and current_page.data.pageName == "404" %>
 		<script>
 			if(window.location.href.indexOf("/marketplace/") >= 0){
 				window.location = "/en/marketplace/404/";
@@ -92,21 +94,21 @@ end
 		</script>
 	<% end %>
 
-  	
+
   <!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5shiv-printshiv.js"></script><![endif]-->
-      
+
    <% if !current_page.data.languageSelector or current_page.data.languageSelector != "No"%>
-	<% if current_language != "en" %> 
+	<% if current_language != "en" %>
 		<link type="text/css" rel="stylesheet" href="/assets/css/screen_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/assets/css/documentation_l10n.css"/>
 		<link type="text/css" rel="stylesheet" href="/assets/css/print_l10n.css"/>
 	<% end %>
 	<%= javascript_include_tag "locale/langSelector" %>
    <% end %>
-   
+
 	<%= javascript_include_tag "calcite-web" %>
-  
-	
+
+
 	<!--[if lt IE 11]>
 	<script>
 		$(document).ready(function(){
@@ -146,13 +148,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <nav class="drawer-nav">
           <aside class="side-nav">
             <h2 class="side-nav-title">Arc<span class="avenir-demi">GIS</span></h2>
-            
+
             <form class="margin-left-half margin-right-half leader-half trailer-half" method="GET" action="/search">
               <input type="search" name="q" value="" placeholder="<%= current_page.data.searchDfltStr %> Search" class="trailer-0">
               <input type="hidden" name="collection" value="help" />
               <input type="hidden" name="product" value="<%= current_page.data.productMeta %>" />
             </form>
-    
+
             <%= partial "_partial/site_header_nav", :locals => { :navLinkClass => "side-nav-link" } %>
           </aside>
         </nav>
@@ -178,7 +180,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
        <section class="expand js-expand  panel panel-no-padding" data-expand="search">
               <div class="grid-container padding-trailer-half padding-leader-1 padding-trailer-1">
-                
+
           <form method="GET" action="//www.arcgis.com/home/search.html" class="column-24">
             <label>Search ArcGIS
               <a href="#" class="icon-ui-close js-expand-toggle right" data-expand="search"></a>
@@ -189,7 +191,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </label>
           </form>
 
-    
+
         </div>
       </section>
       <!--googleon: all-->
@@ -203,15 +205,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	  $(window).load(function() {
 		  <% if current_page.data.blog_url %>
 		  $("#blog").rssFeed({
-			url:"<%= current_page.data.blog_url %>", 
-			max: 2, 
+			url:"<%= current_page.data.blog_url %>",
+			max: 2,
 			layout: 0
 		  });
 		  <% end %>
 		  <% if current_page.data.forum_url %>
 		  $("#forum").rssFeed({
-			url:"<%= current_page.data.forum_url%>", 
-			max: 2,        
+			url:"<%= current_page.data.forum_url%>",
+			max: 2,
 			layout: 1
 		  });
 		  <% end %>
@@ -233,8 +235,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<% end %>
 
   </div>
-    
-  
+
+
 
     <footer class="footer leader-0 link-dark-gray" role="contentinfo">
       <div class="grid-container">
@@ -260,7 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    });*/
    </script>
 
-   <script type="text/javascript"> 
+   <script type="text/javascript">
    piAId = '83202'; piCId = '<%= pardotTrackingCode %>';
   (function() { function async_load(){
   var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') +
@@ -272,4 +274,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </script>
 
   </body>
+	<script type="text/javascript">_satellite.pageBottom();</script>
 </html>

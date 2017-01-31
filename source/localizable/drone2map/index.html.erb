@@ -17,7 +17,6 @@ metatags:
 mobile: true
 
 ---
-
 <header class="sub-nav sub-nav-blue">
   <div class="grid-container">
     <div class="column-24">
@@ -49,12 +48,14 @@ mobile: true
   <div class="column-16">
     <div class="wf-nav" style="height:55px;">
       <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="Search Drone2Map">
+        <form id="helpSearchForm" class="input-group" target="_top">
+          <input type="search" name="q" class="leader input-group-input" placeholder="Search Drone2Map">
           <input type="hidden" name="collection" value="help" />
           <input type="hidden" name="product" value="Drone2Map" />
           <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+          <span class="input-group-button">
+            <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+          </span>
         </form>
       </div>
     </div>
