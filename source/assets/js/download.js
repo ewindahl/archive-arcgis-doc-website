@@ -99,7 +99,6 @@ $(document).ready(function() {
 
 	function updateSizeLabel (cardObj)
 	{
-		alert($(cardObj).find(".download-link").attr("data-file-size"));
 		var fileSize = $(cardObj).find(".download-link").attr("data-file-size")
 		if(fileSize && fileSize.trim() != ""){
 			$(cardObj).find(".file-size").text(fileSize)
