@@ -68,12 +68,19 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       </div>
     </div>
     <div class="column-24">
-      <nav class="sub-nav-list">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/ar/appstudio/" selected>الصفحة الرئيسية</option>
+        <option value="/ar/appstudio/create-apps/">إنشاء تطبيقات</option>
+        <option value="/ar/appstudio/extend-apps/">تمديد التطبيقات</option>
+        <option value="/ar/appstudio/api-guide/">دليل API</option>
+        <option value="http://links.esri.com/appstudio/apireference">مرجع API</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
         <a class="sub-nav-link is-active" href="/ar/appstudio/">الصفحة الرئيسية</a>
         <a class="sub-nav-link" href="/ar/appstudio/create-apps/">إنشاء تطبيقات</a>
         <a class="sub-nav-link" href="/ar/appstudio/extend-apps/">تمديد التطبيقات</a>
         <a class="sub-nav-link" href="/ar/appstudio/api-guide/">دليل API</a>
-		<a class="sub-nav-link" href=" 	http://links.esri.com/appstudio/apireference">مرجع API</a></span>
+        <a class="sub-nav-link" href="http://links.esri.com/appstudio/apireference">مرجع API</a></span>
       </nav>
     </div>
   </div>
@@ -83,12 +90,14 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   <div class="column-16">
     <div class="wf-nav" style="height:55px;">
       <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="البحث في AppStudio for ArcGIS">
+        <form id="helpSearchForm" class="input-group" target="_top">
+          <input type="search" name="q" class="leader input-group-input" placeholder="البحث في AppStudio for ArcGIS">
           <input type="hidden" name="collection" value="help" />
           <input type="hidden" name="product" value="appstudio" />
           <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+          <span class="input-group-button">
+            <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+          </span>
         </form>
       </div>
     </div>
@@ -101,13 +110,13 @@ Please search for INSTRUCTIONS within the file for element specific instructions
     <!-- INSTRUCTIONS: If you don't want to use an image in this section, uncomment the div above and remove the two divs below. -->
     <div class="column-4 right margin-right-1 padding-left-0">
       <!-- <img src="img/AppStudio.png"> -->
-	  
+
       <a href="https://www.youtube.com/embed/SNhjPh96Z9Q?showinfo=0&autoplay=1" class="colorbox-evlarge cboxElement videoElement" title="مقدمة إلى AppStudio for ArcGIS" onclick="return false;">
         <img alt="مقدمة إلى AppStudio for ArcGIS" src="img/AppStudio.png">
         <div class='play-button'><div class="play-icon"></div></div>
 
-      </a>	  
-	  
+      </a>
+
     </div>
     <div class="column-11 tablet-column-7">
       <p>أداة AppStudio for ArcGIS هي أداة لتحويل الخرائط إلى تطبيقات جوال جميلة لـ Mac وiOS وAndroid وWindows وLinux.</p>
@@ -131,8 +140,8 @@ Please search for INSTRUCTIONS within the file for element specific instructions
         <li><a href="en/appstudio/create-apps/guidedtour.htm">الجولة الإرشادية</a></li>
         <li><a href="/ar/appstudio/create-apps/systemrequirements.htm">متطلبات النظام</a></li>
 	    <li><a href="/ar/appstudio/extend-apps/samplecode.htm">كود العينة</a></li>
-	    <li><a href="https://geonet.esri.com/groups/appstudio/blog">مدونة Geonet</a></li>		  
-		  
+	    <li><a href="https://geonet.esri.com/groups/appstudio/blog">مدونة Geonet</a></li>
+
       </ul>
     <hr class="leader-half trailer-half">
   </nav>

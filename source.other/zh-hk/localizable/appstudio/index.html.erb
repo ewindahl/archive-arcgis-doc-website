@@ -68,12 +68,19 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       </div>
     </div>
     <div class="column-24">
-      <nav class="sub-nav-list">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/zh-hk/appstudio/" selected>首頁</option>
+        <option value="/zh-hk/appstudio/create-apps/">建立應用程式</option>
+        <option value="/zh-hk/appstudio/extend-apps/">延伸應用程式</option>
+        <option value="/zh-hk/appstudio/api-guide/">API 指南</option>
+        <option value="http://links.esri.com/appstudio/apireference">API 參考</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
         <a class="sub-nav-link is-active" href="/zh-hk/appstudio/">首頁</a>
         <a class="sub-nav-link" href="/zh-hk/appstudio/create-apps/">建立應用程式</a>
         <a class="sub-nav-link" href="/zh-hk/appstudio/extend-apps/">延伸應用程式</a>
         <a class="sub-nav-link" href="/zh-hk/appstudio/api-guide/">API 指南</a>
-		<a class="sub-nav-link" href=" 	http://links.esri.com/appstudio/apireference">API 參考</a>
+		<a class="sub-nav-link" href="http://links.esri.com/appstudio/apireference">API 參考</a>
       </nav>
     </div>
   </div>
@@ -83,12 +90,14 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   <div class="column-16">
     <div class="wf-nav" style="height:55px;">
       <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="搜尋 AppStudio for ArcGIS">
+        <form id="helpSearchForm" class="input-group" target="_top">
+          <input type="search" name="q" class="leader input-group-input" placeholder="搜尋 AppStudio for ArcGIS">
           <input type="hidden" name="collection" value="help" />
           <input type="hidden" name="product" value="appstudio" />
           <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+          <span class="input-group-button">
+            <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+          </span>
         </form>
       </div>
     </div>
@@ -101,13 +110,13 @@ Please search for INSTRUCTIONS within the file for element specific instructions
     <!-- INSTRUCTIONS: If you don't want to use an image in this section, uncomment the div above and remove the two divs below. -->
     <div class="column-4 right margin-right-1 padding-left-0">
       <!-- <img src="img/AppStudio.png"> -->
-	  
+
       <a href="https://www.youtube.com/embed/SNhjPh96Z9Q?showinfo=0&autoplay=1" class="colorbox-evlarge cboxElement videoElement" title="AppStudio for ArcGIS 簡介" onclick="return false;">
         <img alt="AppStudio for ArcGIS 簡介" src="img/AppStudio.png">
         <div class='play-button'><div class="play-icon"></div></div>
 
-      </a>	  
-	  
+      </a>
+
     </div>
     <div class="column-11 tablet-column-7">
       <p>AppStudio for ArcGIS 是一個開創性工具，可將您的地圖轉換成美觀的 Mac、iOS、Android、Windows 和 Linux 行動應用程式。</p>
@@ -131,8 +140,8 @@ Please search for INSTRUCTIONS within the file for element specific instructions
         <li><a href="en/appstudio/create-apps/guidedtour.htm">導覽</a></li>
         <li><a href="/zh-hk/appstudio/create-apps/systemrequirements.htm">系統需求</a></li>
 	    <li><a href="/zh-hk/appstudio/extend-apps/samplecode.htm">程式碼範例</a></li>
-	    <li><a href="https://geonet.esri.com/groups/appstudio/blog">Geonet 部落格</a></li>		  
-		  
+	    <li><a href="https://geonet.esri.com/groups/appstudio/blog">Geonet 部落格</a></li>
+
       </ul>
     <hr class="leader-half trailer-half">
   </nav>
