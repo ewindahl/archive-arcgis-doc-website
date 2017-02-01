@@ -118,7 +118,7 @@ module Download
       return retValue
     end
 
-		def generateVersionDropDown (dataPath)
+		def generateDevVersionDropDown (dataPath)
 			if data.downloads[current_language]
 				prodObj = data.downloads[current_language]
 			else
@@ -157,6 +157,52 @@ module Download
 			return retValue
 		end
 
+    def generateVersionDropDown (dataPath)
+      if data.downloads[current_language]
+        prodObj = data.downloads[current_language]
+      else
+        prodObj = data.downloads['en']
+      end
+
+      explodedStr = dataPath.split("~")
+      appDownloadType = explodedStr[3]
+
+      if explodedStr.length > 0
+        explodedStr.each{|k,v|
+          prodObj = prodObj.send(k.to_sym) ? prodObj.send(k.to_sym) : false
+          if not prodObj
+            break
+          end
+        }
+      end
+
+      retValue = ""
+      if isMultiVersions(prodObj)
+        retValue = "<div class='dropdown-wrapper dropdown js-dropdown'>
+                          <button class='btn btn-transparent dropdown-btn js-dropdown-toggle' tabindex='0' aria-haspopup='true' aria-expanded='false'>Version <span class='dropdown dropdown-selected' filename='' foldername='' href='#'></span></button>
+                          <div class='dropdown-content'>
+                            <nav class='dropdown-menu modifier-class' role='menu'>"
+        #if isMultiVersions(prodObj) == true
+        prodObj.send("versions".to_sym).each {|k,v|
+          fileSize = v['filesize'] ? v['filesize'] : "&nbsp;"
+          retValue = retValue + '<a href="#" class="dropdown-link" role="menu-item" data-file-size="' + fileSize + '" data-app-folder="' + v['foldername'] + '" data-app-file="' + v['filename'] + '">' + k.to_s + '</a>'
+        }
+        retValue = retValue + "</nav>
+        </div></div>
+        <br /><a class='btn download-link' data-folder='' data-filename=''>Download</a>"
+      else
+        prodObj.send("versions".to_sym).each {|k,v|
+          fileSize = v['filesize'] ? v['filesize'] : "&nbsp;"
+          retValue = retValue + '
+          Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#">' + k.to_s + '</span><br/>
+          <a href="#" class="btn download-link" data-file-size="' + fileSize + '" data-folder="' + v['foldername'] + '" data-filename="' + v['filename'] + '">Download</a>'
+        }
+      end
+
+
+
+      return retValue
+    end
 
 		def getExtensionNames (extensions,type)
 			names = ""
