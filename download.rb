@@ -60,6 +60,26 @@ module Download
           return output_json
         end
 
+        def generateDownloadLink(linkData, explodedStr, deviceName, version = false, extraClass = '')
+          retValue = ''
+          fileSize = linkData['filesize'] ? '<p class="trailer-0 leader-half"><b>Size:</b> <span>' + linkData['filesize'] + '</span></p>' : "&nbsp;"
+          if linkData['url']
+            link = '<a href="' + linkData['url'].to_s + '" class="btn btn-fill icon-ui-download download-link" style="margin:.375rem 0">' + deviceName + '</a>'
+          else
+            link = '<a href="#" class="btn btn-fill icon-ui-download download-link" style="margin:.375rem 0" data-filename="' + linkData['filename'] + '" data-folder="' + linkData['foldername'] + '">' + deviceName + '</a>'
+          end
+          retValue = retValue + '<div class="js-download ' + extraClass + ' clearfix" data-sdk="' + explodedStr[0] + '-' + explodedStr[1] + (version ? '-'+version.to_s : '') + '">
+            <div class="column-5 first-column">
+              ' + link + '
+            </div>
+            <div class="column-6 text-gray font-size--3 last-column">
+              ' + fileSize + '
+            </div>
+          </div>'
+          return retValue
+        end
+
+
         def generateVersionButtons(dataPath)
           if data.downloads[current_language]
             prodObj = data.downloads[current_language]
@@ -81,39 +101,24 @@ module Download
 
           retValue = ""
 
-          deviceNames = {'windows64' => 'Windows x64', 'windows86' => 'Windows x86', 'mac' => 'macOS', 'linux' => 'Linux'}
+          deviceNames = {'windows64' => 'Windows x64', 'windows86' => 'Windows x86', 'mac' => 'macOS', 'linux' => 'Linux', 'android' => 'Android in Google Play', 'amazon' => 'Android in Amazon Store', 'ios' => 'iOS', 'windowsphone' => 'Windows Phone'}
 
           deviceName = deviceNames[explodedStr[2].to_s].to_s
 
-          if isMultiVersions(prodObj)
+          if(prodObj['versions'])
             firstVersion = true
+            extraClass = ''
             prodObj.send("versions".to_sym).each {|k,v|
-              retValue = retValue + '<div class="js-download '
+              #retValue = retValue + '<div class="js-download '
               if firstVersion
                 firstVersion = false
               else
-                retValue = retValue + 'hide '
+                extraClass = 'hide'
               end
-              fileSize = v['filesize'] ? v['filesize'] : "&nbsp;"
-              retValue = retValue + 'clearfix" data-sdk="' + explodedStr[0] + '-' + explodedStr[1] + '-' + k.to_s + '">
-                <div class="column-5 first-column">
-                  <a href="#" class="btn btn-fill icon-ui-download download-link" style="margin:.375rem 0" data-filename="' + v['filename'] + '" data-folder="' + v['foldername'] + '">' + deviceName + '</a>
-                </div>
-                <div class="column-6 text-gray font-size--3 last-column">
-                  <p class="trailer-0 leader-half"><b>Size:</b> <span>' + fileSize + '</span></p>
-                </div>
-              </div>'
+              retValue = retValue + generateDownloadLink(v, explodedStr, deviceName, k, extraClass)
             }
           else
-            fileSize = prodObj['filesize'] ? prodObj['filesize'] : "&nbsp;"
-            retValue = retValue + '<div class="js-download clearfix" data-sdk="' + explodedStr[0] + '-' + explodedStr[1] + '">
-              <div class="column-5 first-column">
-                <a href="' + prodObj['url'] + '" class="btn btn-fill icon-ui-download download-link" style="margin:.375rem 0">' + deviceName + '</a>
-              </div>
-              <div class="column-6 text-gray font-size--3 last-column">
-                <p class="trailer-0 leader-half"><b>Size:</b> <span>' + fileSize + '</span></p>
-              </div>
-            </div>'
+            retValue = retValue + generateDownloadLink(prodObj, explodedStr, deviceName)
           end
           return retValue
         end
