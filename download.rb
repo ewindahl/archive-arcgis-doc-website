@@ -60,13 +60,20 @@ module Download
           return output_json
         end
 
-        def generateDownloadLink(linkData, explodedStr, deviceName, version = false, extraClass = '')
+        def generateDownloadLink(linkData, explodedStr, deviceName, imgFile = false, version = false, extraClass = '')
           retValue = ''
           fileSize = linkData['filesize'] ? '<p class="trailer-0 leader-half"><b>Size:</b> <span>' + linkData['filesize'] + '</span></p>' : "&nbsp;"
-          if linkData['url']
-            link = '<a href="' + linkData['url'].to_s + '" class="btn btn-fill icon-ui-download download-link" style="margin:.375rem 0">' + deviceName + '</a>'
+          if imgFile
+            linkClasses = 'download-link'
+            linkFiller = '<img src="/assets/img/badges/' + imgFile + '" style="height:40px;"/>'
           else
-            link = '<a href="#" class="btn btn-fill icon-ui-download download-link" style="margin:.375rem 0" data-filename="' + linkData['filename'] + '" data-folder="' + linkData['foldername'] + '">' + deviceName + '</a>'
+            linkClasses = 'btn btn-fill icon-ui-download download-link'
+            linkFiller = deviceName
+          end
+          if linkData['url']
+            link = '<a href="' + linkData['url'].to_s + '" class="' + linkClasses + '" style="margin:.375rem 0">' + linkFiller + '</a>'
+          else
+            link = '<a href="#" class="' + linkClasses + '" style="margin:.375rem 0" data-filename="' + linkData['filename'] + '" data-folder="' + linkData['foldername'] + '">' + linkFiller + '</a>'
           end
           retValue = retValue + '<div class="js-download ' + extraClass + ' clearfix" data-sdk="' + explodedStr[0] + '-' + explodedStr[1] + (version ? '-'+version.to_s : '') + '">
             <div class="column-5 first-column">
@@ -80,7 +87,7 @@ module Download
         end
 
 
-        def generateVersionButtons(dataPath)
+        def generateVersionButtons(dataPath, imgFile = false, urlOnly = false)
           if data.downloads[current_language]
             prodObj = data.downloads[current_language]
           else
@@ -109,16 +116,22 @@ module Download
             firstVersion = true
             extraClass = ''
             prodObj.send("versions".to_sym).each {|k,v|
+              if urlOnly and v.key?('url')
+                return v['url'].to_s
+              end
               #retValue = retValue + '<div class="js-download '
               if firstVersion
                 firstVersion = false
               else
                 extraClass = 'hide'
               end
-              retValue = retValue + generateDownloadLink(v, explodedStr, deviceName, k, extraClass)
+              retValue = retValue + generateDownloadLink(v, explodedStr, deviceName, imgFile, k, extraClass)
             }
           else
-            retValue = retValue + generateDownloadLink(prodObj, explodedStr, deviceName)
+            if urlOnly and prodObj.key?('url')
+              return prodObj['url'].to_s
+            end
+            retValue = retValue + generateDownloadLink(prodObj, explodedStr, deviceName, imgFile)
           end
           return retValue
         end
