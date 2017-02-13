@@ -112,7 +112,7 @@ var filterCfg = {
         k:"any",
         q:{
             r:"",
-            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:collector-windows|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce|product:appstudio|product:navigator-android-phone|product:navigator-android-tablet|product:navigator-iphone|product:navigator-ipad|product:living-atlas|product:arcgis-earth|product:survey123-desktop|product:survey123-browser|product:drone2map|product:workforce-iphone|product:workforce-ipad|product:maps-power-bi"
+            p:"product:android-app|product:ios-app|product:win-phone-app|product:collector-android|product:collector-ios|product:collector-windows|product:esri-maps-office|product:esri-maps-sharepoint|product:esri-maps-sharepoint-beta|product:ops-dashboard|product:ops-dashboard-browser|product:arcgis-online|product:explorer-ipad|product:explorer-iphone|product:explorer-mac|product:explorer-android-phone|product:explorer-android-tablet|product:esri-demographics|product:arcgis-geoplanner|product:arcgis-open-data|product:web-appbuilder|product:data-appl|product:bus-analyst-online|product:community-analyst|product:esri-maps-cognos|product:esri-maps-cognos-mobile|product:esri-maps-dynamics|product:esri-maps-micro|product:esri-maps-sapbobj|product:esri-maps-salesforce|product:appstudio|product:navigator-android-phone|product:navigator-android-tablet|product:navigator-iphone|product:navigator-ipad|product:living-atlas|product:arcgis-earth|product:survey123-desktop|product:survey123-browser|product:drone2map|product:workforce-iphone|product:workforce-ipad|product:maps-power-bi|product:explorer-beta-android-phone|product:explorer-beta-android-tablet|product:explorer-beta-ipad|product:explorer-beta-iphone"
           }
       },
 	  {
@@ -253,6 +253,34 @@ var filterCfg = {
         q: {
           r:"",
           p:"(product:explorer-mac)"
+        }
+      },
+    {
+        k:"explorer-beta-android-phone",
+        q: {
+          r:"",
+          p:"(product:explorer-beta-android-phone)"
+        }
+      },
+	  {
+        k:"explorer-beta-android-tablet",
+        q: {
+          r:"",
+          p:"(product:explorer-beta-android-tablet)"
+        }
+      },
+	  {
+        k:"explorer-beta-ipad",
+        q: {
+          r:"",
+          p:"(product:explorer-beta-ipad)"
+        }
+      },
+	  {
+        k:"explorer-beta-iphone",
+        q: {
+          r:"",
+          p:"(product:explorer-beta-iphone)"
         }
       },
 	  {
