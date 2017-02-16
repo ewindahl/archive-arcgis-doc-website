@@ -402,20 +402,6 @@ var filterCfg = {
           p:"(product:web-appbuilder)"
         }
       },
-		{
-        k:"workforce-ipad",
-        q: {
-          r:"",
-          p:"(product:workforce-ipad)"
-        }
-      },
-		{
-        k:"workforce-iphone",
-        q: {
-          r:"",
-          p:"(product:workforce-iphone)"
-        }
-      },
       {
         k:"workforce-android-phone",
         q: {
@@ -430,7 +416,20 @@ var filterCfg = {
           p:"(product:workforce-android-tablet)"
         }
       },
-
+		{
+        k:"workforce-ipad",
+        q: {
+          r:"",
+          p:"(product:workforce-ipad)"
+        }
+      },
+		{
+        k:"workforce-iphone",
+        q: {
+          r:"",
+          p:"(product:workforce-iphone)"
+        }
+      },
     ]
   }
   ]
