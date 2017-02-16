@@ -11,20 +11,26 @@ $(document).ready(function() {
       localedir =   docConfig['localedir'];
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   
+
     var val = '<p id="plats">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-		'<a data-appname="workforce" data-plat="ipad" data-prefix="/' + localedir +'/workforce/ipad" href="/en/workforce/" data-langlabel="ipad" class=""> iPad</a>' +
+        '<a data-appname="workforce" data-plat="android-phone" data-prefix="/' + localedir +'/workforce/android-phone" href="/en/workforce/" data-langlabel="android-phone" class=""> Android Phone</a>' +
+        ' | ' +
+        '<a data-appname="workforce" data-plat="android-tablet" data-prefix="/' + localedir +'/workforce/android-tablet" href="/en/workforce/" data-langlabel="android-tablet" class=""> Android Tablet</a>' +
+        ' | ' +
+		    '<a data-appname="workforce" data-plat="ipad" data-prefix="/' + localedir +'/workforce/ipad" href="/en/workforce/" data-langlabel="ipad" class=""> iPad</a>' +
         ' | ' +
         '<a data-appname="workforce" data-plat="iphone" data-prefix="/' + localedir +'/workforce/iphone" href="/en/workforce/" data-langlabel="iphone" class=""> iPhone</a>' +
         '</p>',
 
 		prodKey = "workforce",
-		prodDVal = "ipad",
+		prodDVal = "android-phone",
 		prodIpadVal = "ipad",
 		prodIOSVal = "iphone",
+    prodAPVal = 'android-phone',
+    prodATVal = 'android-tablet',
 		homePath = "/en/workforce"
-    
+
 		pathname = window.location.pathname,
 		parts = pathname.split ("/"),
 		fname = parts.pop(),
@@ -32,12 +38,20 @@ $(document).ready(function() {
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
 
-    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
+    if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad|Macintosh|Android)/gi))) {
       if(navigator.userAgent.match(/(iPhone)/gi)){
-		plat = prodIOSVal;
-	  }else if(navigator.userAgent.match(/(iPad)/gi)){
-		plat = prodIpadVal;
-	  }
+		     plat = prodIOSVal;
+	    }else if(navigator.userAgent.match(/(iPad)/gi)){
+		     plat = prodIpadVal;
+	    }
+
+      if(navigator.userAgent.match(/(Android)/gi)){
+        if(navigator.userAgent.match(/(Mobile)/gi)){
+          plat = prodAPVal;
+        }else{
+          plat = prodATVal;
+        }
+      }
 
       if (!isHome) {
          UASpecificRedirect (plat, pathname);
@@ -75,10 +89,10 @@ $(document).ready(function() {
 			    $ele.attr("href", newHref);
 			}
 		})
-		
+
 		// Update product meta value in search form
 		$('#helpSearchForm input[name=product]').attr("value","workforce-" + plat);
-		
+
 
 	}
 
@@ -94,7 +108,7 @@ $(document).ready(function() {
 				$ele.attr ("href", newHref);
 		});
 	}
-	
+
 	function modContentLinks (plt) {
 		$(".reference-content a[href], .column-16 a[href]").each (function (i) {
 			var $ele = $(this),
@@ -106,7 +120,7 @@ $(document).ready(function() {
 				newHref = href.replace ("/"+prodDVal+"/", "/"+plt+"/");
 				newHref = newHref.replace (prodIpadVal+"/", plt+"/"); // Temporary, Once links on erb are fixed, we can remove this
 				$ele.attr ("href", newHref);
-				
+
 		});
 	}
 
