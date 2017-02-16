@@ -11,28 +11,29 @@ js:
   - rssfeed
 
 metatags:
-  - <META PRODUCT_METADATA>
+  - <META name="description" content="Esri Maps for Cognos Home page"><META name="last-modified" content="2017-02-06"><META name="product" content="esri-maps-cognos,esri-maps-cognos-mobile"><META name="sub_category" content="Esri Maps for Cognos"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for Cognos"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING, COGNOS, BI, BUSINESS INTELLIGENCE"><META name="version" content="cognos-6.1.1"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING, COGNOS, BI, BUSINESS INTELLIGENCE"><META name="content-language" content="fr">
 
 mobile: true
 
 ---
 
 <!--
-This is a tamplate for a simple homepage.  Please search for and replace the following:
+This is a tamplate for a simple homepage.  Please search for and replace each of the following, then remove these notes when you're done:
   PRODUCT_METADATA: The metadata for the product
-  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
-  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
+  Esri Maps for IBM Cognos: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the Esri Maps for IBM Cognos.
   DOWNLOAD_LINK: A link to download the product, free trial, etc.
   VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
   RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
   NAV_LINK_x: The link for the navigation tabs at the top.
   NAV_TEXT_x: The text for the navigation tabs at the top.
+  PRODUCT_HEADLINE: The main headline for the product.  This should be very short.
+  PRODUCT_SUB_HEADLINE: A slightly longer blurb about the product.
   PRODUCT_SEARCH_VALUE: The product value for the search form
-  PRODUCT_IMAGE_231x149.png: This is an image in the first section under the search bar.
-  MAIN_TEXT: The text that appears in the first section under the search bar.
-  WHATS_NEW_TEXT: A blurb about what's new with the product.
-  WHATS_NEW_LINK: A link to more info about what's new with the product.
-  POPULAR_LINK_x: Links to popular pages and topics, such as "What's new", "Supported environments", "Archived help", etc.
+  ITUNES_STORE_LINK: Link to the product on the app store
+  GOOGLE_PLAY_LINK: Link to the product on Google Play
+  WINDOWS_STORE_LINK: Link to the product on the Windows store
+  POPULAR_LINK_x: Links to popular pages and topics. These should include "FAQs", "What's new", and "Supported environments", but may include other links as well.
   POPULAR_TEXT_x: Text for links to popular pages and topics.
   CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
   CARD_LINK_x: The page that the card should link to.
@@ -61,77 +62,72 @@ Please search for INSTRUCTIONS within the file for element specific instructions
         <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
         <div class="leader-1 text-right">
           <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
-          <a class="btn margin-left-1 btn-clear" href="http://www.esri.com/software/location-analytics/esri-maps-for-ibm-cognos/pricing">Télécharger Esri Maps for IBM Cognos</a>
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="DOWNLOAD_LINK">Télécharger Esri Maps for IBM Cognos</a>
           <!-- INSTRUCTIONS: Remove this p tag if not needed -->
-          <p class="trailer-0 leader-half text-white font-size--2"><strong>Version 6.1.1</strong> Septembre 2016</p>
+          <p class="trailer-0 leader-0 text-white font-size--2"><strong>Version 6.1.1</strong> Septembre 2016</p>
         </div>
       </div>
     </div>
     <div class="column-24">
-      <nav class="sub-nav-list">
-        <a class="sub-nav-link is-active" href="/fr/maps-for-cognos/">Accueil</a>
-        <a class="sub-nav-link" href="/fr/maps-for-cognos/install-windows/">Installer et configurer</a>
-        <a class="sub-nav-link" href="/fr/maps-for-cognos/author-maps/">Créer des cartes</a>
-        <a class="sub-nav-link" href="/fr/maps-for-cognos/use-maps/">Utiliser des cartes</a>
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/maps-for-cognos/" selected>Accueil</option>
+        <option value="/en/maps-for-cognos/install-windows">Installer et configurer</option>
+        <option value="/en/maps-for-cognos/author-maps">Créer des cartes</option>
+        <option value="/en/maps-for-cognos/use-maps">Utiliser des cartes</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/fr/maps-for-cognos/">Accueil</a> <a class="sub-nav-link" href="/fr/maps-for-cognos/install-windows">Installer et configurer</a> <a class="sub-nav-link" href="/fr/maps-for-cognos/author-maps">Créer des cartes</a> <a class="sub-nav-link" href="/fr/maps-for-cognos/use-maps">Utiliser des cartes</a>
       </nav>
     </div>
   </div>
 </header>
 
-<div class="grid-container leader-2">
-  <div class="column-16">
-    <div class="wf-nav" style="height:55px;">
-      <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="Parcourir Esri Maps for Cognos">
-          <input type="hidden" name="collection" value="help" />
-          <input type="hidden" name="product" value="LOCATION ANALYTICS,MAPPING, COGNOS, BI, BUSINESS INTELLIGENCE" />
-          <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
-        </form>
-      </div>
-    </div>
-
-    <!--
-    <div class="column-16 tablet-column-7">
-      <p>MAIN_TEXT</p>
-    </div>
-    -->
-    <!-- INSTRUCTIONS: If you don't want to use an image in this section, uncomment the div above and remove the two divs below. -->
-    <div class="column-4 right margin-right-1 padding-left-0">
-      <img src="img/banner.png">
-    </div>
-    <div class="column-11 tablet-column-7">
-      <p>Enrichissez vos rapports IBM Cognos de cartes dynamiques en utilisant vos workflows quotidiens, sans recourir à un codage personnalisé ou à des connaissances SIG pointues. Esri Maps for IBM Cognos s'intègre en toute transparence à IBM Cognos 10, ce qui permet aux créateurs de rapports d'ajouter et de configurer des cartes qui interagissent avec d'autres objets dans leurs rapports IBM Cognos. Créez des cartes associant des données géographiques publiées provenant d'ArcGIS à des données d'entreprise IBM Cognos afin d'enrichir l'analyse. Les utilisateurs de rapports n'ont besoin d'aucune compétence ni outil supplémentaire pour commencer à utiliser des rapports cartographiques afin d'analyser visuellement leurs données.</p>
-    </div>
-
-
-  </div>
-  <div class="column-8 tablet-column-12 right">
-    <div class="panel">
-      <h4 class="icon-ui-announcement">Nouveautés</h4>
-      <p>Esri Maps for IBM Cognos 6.1.1 offre des mises à jour et des améliorations significatives aux auteurs, utilisateurs et administrateurs de rapports</p>
-      <a class="btn secondary" href="/fr/maps-for-cognos/install-windows/what-s-new.htm">En savoir plus</a>
-    </div>
-  </div>
-</div>
-
-<div class="grid-container leader-1">
-  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
-    <hr class="leader-half trailer-half">
-      <ul class="list-plain sdk-home-nav-list">
-        <li><a href="/fr/maps-for-cognos/install-windows/supported-env.htm">Environnements pris en charge</a></li>
-        <li><a href="/fr/maps-for-cognos/install-windows/esri-maps-for-ibm-cognos-architecture.htm">Architecture</a></li>
-	      <li><a href="/fr/maps-for-cognos/author-maps/configure-a-map-enabled-report.htm">Créer une carte</a></li>
-        <li><a href="/fr/maps-for-cognos/author-maps/configure-styles-for-a-layer.htm">Couches de style</a></li>
-      </ul>
-    <hr class="leader-half trailer-half">
-  </nav>
-</div>
-
-<div class="grid-container leader-1">
+<div class="grid-container leader-2 text-center">
   <div class="column-24">
-    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would be better with wider, shorter images. -->
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Enrichir vos rapports IBM Cognos de cartes dynamiques</h1>
+      <h5>Esri Maps for IBM Cognos s'intègre en toute transparence à IBM Cognos 10 pour permettre aux créateurs de rapports d'ajouter et de configurer des cartes qui interagissent avec d'autres objets de leurs rapports IBM Cognos. </h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Parcourir Esri Maps for IBM Cognos">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="LOCATION ANALYTICS,MAPPING, COGNOS, BI, BUSINESS INTELLIGENCE" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="/fr/maps-for-cognos/install-windows/what-s-new.htm">Nouveautés</a></li>
+        <li><a href="/fr/maps-for-cognos/install-windows/supported-env.htm">Environnements pris en charge</a></li>
+	      <li><a href="/fr/maps-for-cognos/install-windows/esri-maps-for-ibm-cognos-architecture.htm">Architecture</a></li>
+        <li><a href="/fr/maps-for-cognos/author-maps/configure-a-map-enabled-report.htm">Créer une carte</a></li>
+      </ul>
+      <hr class="leader-half trailer-half">
+    </nav>
+  </div>
+</div>
+
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
     <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
       <div class="card block">
         <figure class="card-image-wrap">
@@ -145,7 +141,9 @@ Please search for INSTRUCTIONS within the file for element specific instructions
           </h5>
           <p>Ajoutez des cartes dynamiques à votre rapport IBM Cognos pour une meilleure analyse visuelle de vos données d'entreprise.</p>
         </div>
+        <nav>
         <a href="/fr/maps-for-cognos/author-maps/configure-a-map-enabled-report.htm" class="btn btn-clear btn-fill leader-0">En savoir plus</a>
+        </nav>
       </div>
       <div class="card block">
         <figure class="card-image-wrap">
@@ -193,15 +191,30 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   </div>
 </div>
 
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Aller encore plus loin avec ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS pour les développeurs">ArcGIS pour les développeurs</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
 <!-- Videos -->
-<div class="panel panel-blue panel-no-border panel-no-padding leader-2">
+<div class="panel panel-blue panel-no-border panel-no-padding leader-0">
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
       <h2 class="trailer-half leader-1">Visionner nos vidéos
         <a class="btn btn-transparent text-white btn-large right" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2LUe3m1qDJtV6PJDthHstWR">Plus de vidéos</a>
       </h2>
       <!-- INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number. -->
-	  <!-- Replaced small image with hi-res from YouTube -->
       <div playlistid="PLGZUzt4E4O2LUe3m1qDJtV6PJDthHstWR" class="video-holder block-group block-group-2-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
       </div>
     </div>
@@ -212,7 +225,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
 <div class="panel panel-dark panel-no-border">
   <div class="grid-container">
    <div class="column-24 text-white text-center trailer-half leader-half">
-    <h4 class="trailer-half">Se connecter avec Esri Maps for Cognos</h4>
+    <h4 class="trailer-half">Se connecter à Esri Maps for IBM Cognos</h4>
     <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
     <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISOnline"></a>
     <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
@@ -227,9 +240,10 @@ Please search for INSTRUCTIONS within the file for element specific instructions
 <div class="panel panel-white panel-no-border panel-no-padding leader-1">
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">Lire notre blog <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/location-analytics/">Autres billets de blog</a>
+      <h2 class="text-rule padding-trailer-half">Lire notre blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/location-analytics/">Autres billets de blog</a>
       </h2>
-      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up blogHpFeed">
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
 			  <!-- Blog Content goes here -->
 			</div>
     </div>
@@ -243,9 +257,43 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       <h2 class="text-rule padding-trailer-half">Rejoindre la conversation
         <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/">Autres discussions</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2086" class="block-group block-group-3-up geonetFeed">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2086" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
     </div>
   </div>
 </div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Suivre une leçon détaillée</a></h5>
+          <p class="trailer-0">
+            Recherchez et suivez des exercices qui résolvent des problèmes réels avec ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Rechercher des cours de formation</a></h5>
+          <p class="trailer-0">
+            Découvrez plus d'informations sur ArcGIS par l'intermédiaire de cours dispensés par des formateurs, de cours sur le web et de séminaires.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Obtenir l'aide du support technique</a></h5>
+          <p class="trailer-0">
+            Contactez le support Esri via la discussion en ligne, par courrier électronique ou par téléphone.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Vérifier la santé du système</a></h5>
+          <p class="trailer-0">
+Découvrez le statut d'ArcGIS Online et signalez les problèmes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
