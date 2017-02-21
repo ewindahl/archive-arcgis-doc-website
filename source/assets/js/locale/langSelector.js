@@ -15,7 +15,8 @@ if (!String.prototype.format) {
     };
 }
 
-function replace_langd(lang='en'){
+function replace_langd(lang){
+  var lang = lang || 'en';
   var help_link = $("a[data-langlabel='help']").attr('href');
   if(help_link.indexOf("%(langd)s") >= 0){
     var new_help_link = help_link.replace("%(langd)s", lang);
@@ -440,9 +441,9 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/|\/web-appbuilder\/|\/explorer\/|\/appstudio\/|\/operations-dashboard\/|\/workforce\/)/)){
+  }else if (winloc.pathname.match( /(\/explorer\/|\/appstudio\/|\/operations-dashboard\/)/)){
     docCfg.langSelector = "marketplace";
-  }else if (winloc.pathname.match( /(\/workforce\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/workforce\/|\/collector\/|\/web-appbuilder\/)/)){
     docCfg.langSelector = "marketplaceptpt";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
