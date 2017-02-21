@@ -77,7 +77,7 @@ $(document).ready(function() {
 	}
 
 	function modContentLinks (plt) {
-		$("ul.pre-0 a[href], .sub-nav nav a[href]").each (function (i) {
+		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
