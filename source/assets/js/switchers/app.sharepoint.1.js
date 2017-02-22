@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 	}
 	function modContentUrls (plt) {
-		$("#skip-to-content a[href], .sub-nav nav a[href]").each (function (i) {
+		$(".sub-nav nav a[href], .reference-index a[href], .content-section a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
@@ -58,7 +58,7 @@ $(document).ready(function() {
 
 	if (!isHome) {
 			if(!(fname in noSwitcherFileList) && (window.location.pathname.match( /(\/esri-maps-web-part\/|\/install-and-configure\/|\/prepare-data\/|\/use-maps\/)/))){
-				$('main h1').after (val);
+				$('div.content-section h1').after (val);
 			}else{
 				modContentUrls (plat);
 				// Update product meta value in search form
