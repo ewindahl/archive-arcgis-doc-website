@@ -41,8 +41,8 @@ $(document).ready(function() {
 
     var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="survey123" data-plat="desktop" data-prefix="/' + localedir +'/survey123/desktop" href="/en/survey123/" data-langlabel="desktop" class=""> Desktop</a>' +
-        '<a data-appname="survey123" data-plat="browser" data-prefix="/' + localedir +'/survey123/browser" href="/en/survey123/" data-langlabel="browser" class=""> Browser</a>' +
+        '<a data-appname="survey123" data-plat="desktop" data-prefix="/' + localedir +'/survey123/desktop" href="/en/survey123/" data-langlabel="desktop" class="">Desktop</a>' +
+        '<a data-appname="survey123" data-plat="browser" data-prefix="/' + localedir +'/survey123/browser" href="/en/survey123/" data-langlabel="browser" class="">Browser</a>' +
         '</p>',
 
 		prodKey = "survey123",
@@ -109,7 +109,9 @@ $(document).ready(function() {
 	}
 
 	function modContentLinks (plt) {
-		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href]").each (function (i) {
+		console.log('hi');
+		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href], .content-section a[href]").each (function (i) {
+			console.log($(this).attr("href"));
 			var $ele = $(this),
 				href = $ele.attr("href");
 
@@ -127,12 +129,13 @@ $(document).ready(function() {
 
 	if (!isHome) {
 			if(!window.location.pathname.match( /(\/analyze-results\/)/)){
-				$('main.column-17 h1').after (val);
+				$('main.column-17 h1, div.content-section h1').after (val);
 			}else{
-				modContentLinks (plat);
+				//modContentLinks (plat);
 				// Update product meta value in search form
 				$('#helpSearchForm input[name=product]').attr("value","survey123-" + plat);
 			}
+			modContentLinks (plat);
 	} else {
 		modHomeUrls (plat);
 		modContentLinks (plat);
