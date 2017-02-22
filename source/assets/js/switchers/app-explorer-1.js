@@ -104,7 +104,7 @@ $(document).ready(function() {
 	}
 
 	function modForumUrls (plt) {
-		$(".sub-nav nav a[href]").each (function (i) {
+		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href], .content-section a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
@@ -120,7 +120,7 @@ $(document).ready(function() {
 	}
 
 	function modHelpNavUrls (plt) {
-		$(".sub-nav nav a[href]").each (function (i) {
+		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href], .content-section a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
@@ -133,7 +133,7 @@ $(document).ready(function() {
 	}
 
 	function modContentLinks (plt) {
-		$("ul.pre-0 a[href], .column-16 a[href]").each (function (i) {
+		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href], .content-section a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href");
 
@@ -153,7 +153,7 @@ $(document).ready(function() {
 		} else {
 
 			if(window.location.pathname.match( /(\/use-maps\/)/)){
-				$('main h1').after (val);
+				$('main.column-17 h1, div.content-section h1').after (val);
 			}else{
 				modHelpNavUrls (plat);
 				modContentLinks (plat);
