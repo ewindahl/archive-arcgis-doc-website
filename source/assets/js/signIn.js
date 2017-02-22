@@ -37,9 +37,9 @@ $(document).ready(function() {
                 return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
                	}
 
-        }, 
+        },
   		ckval = $.parseJSON (cookieJar.getItem (ckname) || "{}");
- 	
+
   	return ("email" in ckval) ? {jar:cookieJar, val: ckval}: null;
   };
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
   function  showSignInLink () {
     $(".logged-in-navigation").addClass ("hide-if-logged-out");
     $(".logged-out-navigation").removeClass ("hide-if-logged-in");
-  	
+
     $("#login-link").attr ("href", sitecfg["agolSignin"]+"?returnUrl="+encodeURIComponent(window.location.href));
 	 $("#login-link > a").attr ("linkType", "fix");
 
@@ -90,7 +90,7 @@ $(document).ready(function() {
   /* login */
   var ckKey = "esri_auth",
       cookie = getCookie(ckKey);
-  
+
   $(".myconsole").css ("display", "none");
 
 /*
@@ -106,21 +106,21 @@ agolLogout
 
 		  var token = cookie.val && cookie.val.token,
 			params = {f:"json"},
-			portalHostname = sitecfg["portalHostname"],  
+			portalHostname = sitecfg["portalHostname"],
       		firstName,
 	  		text;
-    
+
     	if (token){
       		params.token = token;
     	}
-	    
+
 
 	    var proxyURL = (navigator.userAgent.match(/msie/i)) ? "/apps/proxy/proxy.php?" : "";
-		 
+
 		 $.ajaxSetup({async:false});
 		 $.getJSON(proxyURL + "https:"+portalHostname + "/sharing/rest/portals/self?Duration=0", params, function (data) {
-      		var firstName = getUserDisplayName(data && data.user),        
-              orgHostname = getOrgHostname (data),   
+      		var firstName = getUserDisplayName(data && data.user),
+              orgHostname = getOrgHostname (data),
   	       		text = firstName;
 					if(data.error){
 						showSignInLink();
@@ -129,7 +129,7 @@ agolLogout
 					sitecfg["isValidToken"] = true;
 					$(".logged-out-navigation").addClass ("hide-if-logged-in");
 					$(".logged-in-navigation").removeClass ("hide-if-logged-out");
-					
+
 
       		//$(".result").html(text);
 	        $(".logged-in-navigation .user-nav-image").attr ("src",avatarurl);
@@ -137,10 +137,10 @@ agolLogout
 
           $("#agolProfile").attr ("href", "//" + orgHostname + sitecfg["agolProfile"]);
           $("#agolHelp").attr ("href", sitecfg["agolHelp"]);
-		      $("#agolLogout").attr ("href", "https://" + orgHostname + sitecfg["agolSignout"]+"?redirect_uri=https:"+sitecfg["portalHostname"] + sitecfg["agolSignout"]+"?redirect_uri="+encodeURIComponent(window.location.href));
-    
+		      $(".js-log-out").each(function(){$(this).attr("href", "https://" + orgHostname + sitecfg["agolSignout"]+"?redirect_uri=https:"+sitecfg["portalHostname"] + sitecfg["agolSignout"]+"?redirect_uri="+encodeURIComponent(window.location.href))});
+
           $(".myconsole").css ("display", "block");
-			
+
 			if(data.subscriptionInfo && (data.subscriptionInfo.type.toLowerCase() === "trial" && data.subscriptionInfo.state.toLowerCase() === "active")){
 				var trialDownloadString = (window.localeJsonObj['docConfig'] && window.localeJsonObj[docConfig['locale']]['trial-downloads'])?window.localeJsonObj[docConfig['locale']]['trial-downloads'] : "Trial Downloads";
 				$(".myconsole li:last").before('<li><a href="' + sitecfg["trialDownloadUrl"] + '">' + trialDownloadString +'</a></li>');
@@ -165,13 +165,13 @@ agolLogout
           $.removeCookie ("esri_auth_extn", {domain: '.arcgis.com', path:"/"});
         }
       }
-  
+
     	}).fail(function() {
 			showSignInLink();
 		});
 		$.ajaxSetup({async:true});
 
-  } else {  	
+  } else {
   	showSignInLink();
   }
 
