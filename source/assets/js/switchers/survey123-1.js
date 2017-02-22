@@ -109,9 +109,7 @@ $(document).ready(function() {
 	}
 
 	function modContentLinks (plt) {
-		console.log('hi');
 		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href], .content-section a[href]").each (function (i) {
-			console.log($(this).attr("href"));
 			var $ele = $(this),
 				href = $ele.attr("href");
 
