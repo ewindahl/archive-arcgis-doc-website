@@ -127,13 +127,12 @@ $(document).ready(function() {
 
 	if (!isHome) {
 			if(!window.location.pathname.match( /(\/analyze-results\/)/)){
-				$('main.column-17 h1, div.content-section h1').after (val);
+				$('div.content-section h1, main.column-17 h1').after (val);
 			}else{
-				//modContentLinks (plat);
+				modContentLinks (plat);
 				// Update product meta value in search form
 				$('#helpSearchForm input[name=product]').attr("value","survey123-" + plat);
 			}
-			modContentLinks (plat);
 	} else {
 		modHomeUrls (plat);
 		modContentLinks (plat);
