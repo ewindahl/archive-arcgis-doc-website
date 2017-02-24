@@ -13,8 +13,10 @@
 	}
 
 	try {
+		insertJS("/assets/js/anchor-links.js");
+		
 		var hn = window.location.hostname;
-		insertJS("/assets/js/anchor.js");
+
 		if (hn === "doc.arcgis.com") {
 
 		} else if (hn === "docdev.arcgis.com") {
