@@ -14,9 +14,9 @@
 
 	try {
 		var hn = window.location.hostname;
-		
+		insertJS("/assets/js/anchor.js");
 		if (hn === "doc.arcgis.com") {
-		
+
 		} else if (hn === "docdev.arcgis.com") {
 
 			insertCss ("/cdn/css/workflow.css");
@@ -25,11 +25,10 @@
 		} else if (hn === "docstg.arcgis.com") {
 
 			insertCss ("/cdn/css/workflow.css");
-			insertJS ("/assets/js/workflow.js");				
+			insertJS ("/assets/js/workflow.js");
 
 		}
 	} catch (e){
 		//console.log (e);
 	}
 })();
-
