@@ -1,4 +1,5 @@
 ﻿<!doctype html>
+
 <!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="ltr"> <![endif]-->
 <!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="ltr"> <![endif]-->
 <!--[if IE 8]>         <html class="lt-ie9 ie8" dir="ltr"> <![endif]-->
@@ -7,13 +8,13 @@
 <html dir="ltr"> 
 <!--<![endif]-->
   <head>
-
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
     <meta charset="utf-8">
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 	<meta name="viewport" content="width=device-width">
 
-    <title>Workforce</title>
+    <title>Personal</title>
 
     <script src="/js/sitecfg.js?1465401204" type="text/javascript"></script>
 
@@ -66,10 +67,10 @@
 
   <script src="/js/signIn.js?1465401204" type="text/javascript"></script>
 
-
+   
    <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
   <script src="/js/agolsearch.js?1465401217" type="text/javascript"></script>
-
+   
 
 
 
@@ -81,15 +82,17 @@
 
         <script src="/js/sitecfg.js?1465401204" type="text/javascript"></script>
 
+        <script src="/en/asset/js/workforce-1.js" type="text/javascript"></script>
+
 
 
       <meta name="viewport" content="width=device-width,initial-scale=1">
 
 
+	
 
 
-
-        <META name="description" content="Workforce Help Home page."><META name="last-modified" content="2016-10-05"><META name="product" content="workforce,workforce-iphone,workforce-ipad"><META name="sub_category" content="Workforce for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Workforce for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="WEB,MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="WEB,MOBILE,MOBILE APPS"><META name="content-language" content="en">
+        <META name="description" content="Workforce Help Home page."><META name="last-modified" content="2017-01-23"><META name="product" content="workforce,workforce-iphone,workforce-ipad,workforce-android-phone,workforce-android-tablet"><META name="sub_category" content="Workforce for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Workforce for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="WEB,MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="WEB,MOBILE,MOBILE APPS"><META name="content-language" content="en">
 
 
 
@@ -98,10 +101,10 @@
 
    <link type="text/css" rel="stylesheet" href="/en/asset/css/common.css"/>
 
-
+   
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
    <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
-
+ 
 
 
 
@@ -117,12 +120,14 @@
 
 
 	<script>
-
+	/* Temporary fix for tablet version of "get started/blog column" issue. */
 		$(document).ready(function(){
 			$(".container .tablet-column-24").css('width','66.666%');
 			$(".container .column-8").css('width','33.333%');
 		});
 	</script>
+
+
 
 
 	<style>
@@ -239,7 +244,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                           <form id="helpSearchForm" target="_top" >
 	                          <input type="search" name="q" class="leader" placeholder="Buscar personal" style="width:250px; border:none; opacity:.75; box-shaddow: 0 0 12px rgba(0, 0, 0, 0.25); box-sizing:border-box; border-radius:3px; font-size:.875em;	                          line-height:2.5em; height: 2.57143em; padding-left: .57143em; font-family:Lucida Grande, Segoe UI, Arial, sans-serif; display:block; outline:none; outline-offset:0;	                          -webkit-appearance:textfield;">
 	                          <input type="hidden" name="collection" value="help" />
-	                          <input type="hidden" name="product" value="workforce-ipad" />
+	                          <input type="hidden" name="product" value="workforce-android-phone" />
 	                          <input type="hidden" name="version" value="" />
 	                          <input type="hidden" name="language" value="en" />
                         </form>
@@ -250,12 +255,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="full-bkg">
   <div class="container">
-
     <div class="column-12 get-started"> 
-
 	  <p>
-		Workforce for ArcGIS permite disponer de una vista común en el campo y en la oficina. Permite que el trabajador adecuado esté en el lugar oportuno con las herramientas necesarias para hacer el trabajo requerido. Utilice la aplicación web en la oficina para crear y asignar el trabajo a los trabajadores móviles que, a continuación, utilizarán la aplicación web para trabajar sobre su lista personal de tareas pendientes.
-
+Workforce for ArcGIS permite disponer de una vista común en el campo y en la oficina. Permite que el trabajador adecuado esté en el lugar oportuno con las herramientas necesarias para hacer el trabajo requerido. Utilice la aplicación web en la oficina para crear y asignar el trabajo a los trabajadores móviles que, a continuación, utilizarán la aplicación web para trabajar sobre su lista personal de tareas pendientes.
 
 	  </p>
 
@@ -263,7 +265,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="column-12">
       <div class="panel dark">
         <h3 class="icon-announcement">Novedades</h3>
-        <p>Workforce se actualizó en octubre de 2016. Entre los elementos destacados de las actualizaciones de la aplicación web y móvil se incluye una mejora de la función de búsqueda, la capacidad de los controladores para crear varias asignaciones, soporte a trabajadores de otras organizaciones y nuevos idiomas.
+        <p>Workforce se lanzó en Android en febrero de 2017.</p>
+        <p>La aplicación web de Workforce se actualizó en enero de 2017. Entre las novedades destacadas para los controladores se incluyen la capacidad de deshabilitar el clustering, una experiencia mejorada para identificar a los trabajadores, filtros para facilitar la selección del tipo y la prioridad de las asignaciones y nuevos idiomas.
         </p>
           <a href="/es/workforce/whats-new.html" class="btn secondary">Más información</a>
       </div>
@@ -275,7 +278,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="horizontal" style="color:rgb(0,121,193); font-size:16px">
         <li><a href="./requirements.html">Requisitos y descargas</a></li>
         <li style="border-left-color:rgb(169,169,169); border-left-style:solid; border-left-width:1px;"><a href="./sneakPeek.html">De un vistazo</a></li>
-        <li><span style="color:rgb(89,89,89);">Preguntas frecuentes para </span><a href="/es/workforce/project-owner/faqs-project-owner.htm">Propietarios de proyectos</a> &middot <a href="/es/workforce/dispatcher/faqs-dispatcher.htm">Controladores</a> &middot <a href="/es/workforce/ipad/mobile-worker/faqs-mobile-worker.htm">Trabajadores móviles</a></li>
+        <li><span style="color:rgb(89,89,89);">Preguntas frecuentes para </span><a href="/es/workforce/project-owner/faqs-project-owner.htm">Propietarios de proyectos</a> &middot <a href="/es/workforce/dispatcher/faqs-dispatcher.htm">Controladores</a> &middot <a href="/es/workforce/android-phone/mobile-worker/faqs-mobile-worker.htm">Trabajadores móviles</a></li>
       </ul>
       <hr>
     </div>
@@ -306,11 +309,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       <div style="box-sizing:border-box; color:rgb(76,76,76); display:inline-block; float:none; position:relative; vertical-align:top; width:32%;">
         <div style="background-color:white; border-color:rgb(239,239,239); border-style:solid; border-width:1px; color:rgb(76,76,76); display:block; ">
-          <a href="/es/workforce/iphone/mobile-worker/"><img src="./mobileWorkerBlockImage.jpg" alt="" class="trailer-1"/></a>
+          <a href="/es/workforce/android-phone/mobile-worker/"><img src="./mobileWorkerBlockImage.jpg" alt="" class="trailer-1"/></a>
           <div style="display:block; line-height:26.35px; padding-left:17px; padding-right:17px;">
             <h3 style="font-size:24px; display:block;">Trabajador móvil</h3>
-            <p>Trabaje con su lista de tareas pendientes en su dispositivo móvil, donde podrá completar asignaciones y recibir notificaciones cuando lleguen nuevos trabajos. La integración con otras aplicaciones de Esri mejora la eficiencia y los controladores reciben la información actualizada en tiempo real.</p>
-            <a href="/es/workforce/iphone/mobile-worker/" class="icon-right-arrow">Más información</a></p>
+            <p>Trabaje con su lista de tareas pendientes en su dispositivo móvil, donde podrá completar asignaciones y recibir notificaciones cuando lleguen nuevos trabajos. La integración
+            con otras aplicaciones de Esri mejora la eficiencia y los controladores reciben la información actualizada en tiempo real.</p>
+            <a href="/es/workforce/android-phone/mobile-worker/" class="icon-right-arrow">Más información</a></p>
           </div>
         </div>
       </div>
@@ -327,9 +331,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	          <img src="img/1-create-project.png" alt="Create your first project" />
 	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/es/workforce/project-owner/create-your-first-project.htm" style="color:rgb(89,89,89);">Cree su primer proyecto</a></h3>
 	          <p style="color:rgb(89,89,89);">
-	            Los propietarios de proyectos crean proyectos de Workforce, definen los tipos de asignaciones y asignan a los usuarios roles de controlador y trabajador móvil.
+Los propietarios de proyectos crean proyectos de Workforce, definen los tipos de asignaciones y asignan a los usuarios roles de controlador y trabajador móvil.
 	          </p>
-
 	        </div>
 	      </div>
 	      <div class="column-6">
@@ -337,7 +340,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	          <img src="img/2-create-assignment.png" alt="Create your first assignment" />
 	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/es/workforce/dispatcher/create-your-first-assignment.htm" style="color:rgb(89,89,89);">Cree su primera asignación</a></h3>
 	          <p style="color:rgb(89,89,89);">
-	            Antes de empezar con el trabajo, los controladores crean las asignaciones, clasifican el trabajo y les asignan la prioridad.
+Antes de empezar con el trabajo, los controladores crean las asignaciones, clasifican el trabajo y les asignan la prioridad.
 	          </p>
 	        </div>
 	      </div>
@@ -346,16 +349,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	          <img src="img/3-assign-assignment.png" alt="Assign your first assignment" />
 	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/es/workforce/dispatcher/assign-your-first-assignment.htm" style="color:rgb(89,89,89);">Asigne su primera asignación</a></h3>
 	          <p style="color:rgb(89,89,89);">
-	           Los controladores asignan el trabajo a los trabajadores móviles y les notifican las tareas y plazos.
+Los controladores asignan el trabajo a los trabajadores móviles y les notifican las tareas y plazos.
 	          </p>
 	        </div>
 	      </div>
 	      <div class="column-6">
 	        <div class="card clear" style="border-color:rgb(200,200,200);">
 	          <img src="img/4-complete-assignment.png" alt="A place to play" />
-	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/es/workforce/iphone/mobile-worker/complete-your-first-assignment.htm" style="color:rgb(89,89,89);">Complete su primera asignación</a></h3>
+	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/es/workforce/android-phone/mobile-worker/complete-your-first-assignment.htm" style="color:rgb(89,89,89);">Complete su primera asignación</a></h3>
 	          <p style="color:rgb(89,89,89);">
-	            Los trabajadores móviles utilizan smartphones y tablets para realizar un seguimiento del trabajo que tienen asignado y para informar sobre las tareas en las que están trabajando.
+Los trabajadores móviles utilizan smartphones y tablets para realizar un seguimiento del trabajo que tienen asignado y para informar sobre las tareas en las que están trabajando.
 	          </p>
 	        </div>
 	      </div>
@@ -365,12 +368,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </div>
 
-
 <div class="full-bkg off-white">
   <div class="container">
     <div class="column-24 trailer leader">
-    <h2 class="divider">Lea nuestro blog
-		<small><a id="blog" href="https://blogs.esri.com/esri/arcgis/tag/workforce-for-arcgis/" class="font-size-0 right">Más publicaciones del blog<span class="icon-external-link">&nbsp;</span></a></small>
+    <h2 class="divider">Lea nuestro blog <small><a id="blog" href="https://blogs.esri.com/esri/arcgis/tag/workforce-for-arcgis/" class="font-size-0 right">Más publicaciones del blog <span class="icon-external-link">&nbsp;</span></a></small>
 	</h2>
 	<div data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/workforce-for-arcgis/feed/" class="block-group block-group-3-up blogHpFeed">
 	 </div>
@@ -383,7 +384,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="container">
     <div class="column-24 trailer leader">
       <h2 class="divider">Únase a la conversación
-	  	<small><a id="community" href="https://geonet.esri.com/groups/workforce-for-arcgis" class="font-size-0 right">Más discusiones <span class="icon-external-link">&nbsp;</span></a></small>
+	  	<small><a id="community" href="https://geonet.esri.com/groups/workforce-for-arcgis" class="font-size-0 right">Más debates<span class="icon-external-link">&nbsp;</span></a></small>
 	  </h2>
 
 	   <div data-geonet-feed-url="https://geonet.esri.com/groups/feeds/allcontent?socialGroup=4364" class="flexible-block-group flexible-block-group-3-up geonetFeed">
@@ -398,13 +399,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="column-8" style="margin-left:140px">
       <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/">Obtener soporte técnico</a></h4>
       <p class="no-trailer">
-         Póngase en contacto con el soporte técnico por chat, por correo electrónico o por teléfono.
+Póngase en contacto con el soporte técnico por chat, por correo electrónico o por teléfono.
       </p>
     </div>
     <div class="column-8" style="margin-right:140px">
-      <h4 class="icon-alert icon-blue"><a href="http://doc.arcgis.com/en/trust/system-status/">Comprobar el estado del sistema</a></h4>
+      <h4 class="icon-alert icon-blue"><a href="http://doc.arcgis.com/es/trust/system-status/">Comprobar el estado del sistema</a></h4>
       <p class="no-trailer">
-         Consulte el estado de ArcGIS Online y notifique los problemas.
+Consulte el estado de ArcGIS Online y notifique los problemas.
       </p>
     </div>
 
@@ -441,7 +442,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li><a id="nav-gallery" data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Galería</a></li>
   <li><a id="nav-map" data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Mapa</a></li>
   <li><a data-langlabel="scene" id="nav-scene" class="hideOnIE" href="http://www.arcgis.com/home/webscene/viewer.html">Escena</a></li>
-  <li><a id="nav-help" data-langlabel="help" class="anonymous-only" href="http://doc.arcgis.com/en/arcgis-online/">Ayuda</a></li>
+  <li><a id="nav-help" data-langlabel="help" class="anonymous-only" href="http://doc.arcgis.com/es/arcgis-online/">Ayuda</a></li>
   <li><a id="nav-groups" data-langlabel="nav-groups" class="public-and-org-only hide" href="http://www.arcgis.com/home/groups.html">Grupos</a></li>
   <li><a id="nav-mycontent" data-langlabel="nav-mycontent" class="public-and-org-only hide" href="http://www.arcgis.com/home/content.html">Mi contenido</a></li>
   <li><a id="nav-myorg" data-langlabel="nav-myorg" class="org-only hide" href="http://www.arcgis.com/home/organization.html">Mi organización</a></li>
@@ -481,7 +482,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a class="icon-email" href="http://www.esri.com/about-esri/contact/"></a>
   </section>
 </nav>
-<small id="footer-legal"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright © 2016 Esri.</a> Todos los derechos reservados. | <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy">Privacidad</a> | <a data-langlabel="legal" href="http://www.esri.com/legal/software-license">Legal</a></small>
+<small id="footer-legal"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright © 2016 Esri. </a> Todos los derechos reservados. | <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy">Privacidad</a> | <a data-langlabel="legal" href="http://www.esri.com/legal/software-license">Legal</a></small>
 
 
 

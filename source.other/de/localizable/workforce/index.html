@@ -1,4 +1,5 @@
 ﻿<!doctype html>
+
 <!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" dir="ltr"> <![endif]-->
 <!--[if IE 7]>         <html class="lt-ie9 lt-ie8" dir="ltr"> <![endif]-->
 <!--[if IE 8]>         <html class="lt-ie9 ie8" dir="ltr"> <![endif]-->
@@ -7,7 +8,7 @@
 <html dir="ltr"> 
 <!--<![endif]-->
   <head>
-
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
     <meta charset="utf-8">
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -66,10 +67,10 @@
 
   <script src="/js/signIn.js?1465401204" type="text/javascript"></script>
 
-
+   
    <link rel="stylesheet" type="text/css" href="/css/agolsearch.css" />
   <script src="/js/agolsearch.js?1465401217" type="text/javascript"></script>
-
+   
 
 
 
@@ -81,15 +82,17 @@
 
         <script src="/js/sitecfg.js?1465401204" type="text/javascript"></script>
 
+        <script src="/en/asset/js/workforce-1.js" type="text/javascript"></script>
+
 
 
       <meta name="viewport" content="width=device-width,initial-scale=1">
 
 
+	
 
 
-
-        <META name="description" content="Workforce Help Home page."><META name="last-modified" content="2016-10-05"><META name="product" content="workforce,workforce-iphone,workforce-ipad"><META name="sub_category" content="Workforce for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Workforce for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="WEB,MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="WEB,MOBILE,MOBILE APPS"><META name="content-language" content="en">
+        <META name="description" content="Workforce Help Home page."><META name="last-modified" content="2017-01-23"><META name="product" content="workforce,workforce-iphone,workforce-ipad,workforce-android-phone,workforce-android-tablet"><META name="sub_category" content="Workforce for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Workforce for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="WEB,MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="WEB,MOBILE,MOBILE APPS"><META name="content-language" content="en">
 
 
 
@@ -98,10 +101,10 @@
 
    <link type="text/css" rel="stylesheet" href="/en/asset/css/common.css"/>
 
-
+   
    <link type="text/css" rel="stylesheet" href="/css/langSelector.css"/>
    <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
-
+ 
 
 
 
@@ -117,12 +120,14 @@
 
 
 	<script>
-
+	/* Temporary fix for tablet version of "get started/blog column" issue. */
 		$(document).ready(function(){
 			$(".container .tablet-column-24").css('width','66.666%');
 			$(".container .column-8").css('width','33.333%');
 		});
 	</script>
+
+
 
 
 	<style>
@@ -239,7 +244,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                           <form id="helpSearchForm" target="_top" >
 	                          <input type="search" name="q" class="leader" placeholder="Workforce durchsuchen" style="width:250px; border:none; opacity:.75; box-shaddow: 0 0 12px rgba(0, 0, 0, 0.25); box-sizing:border-box; border-radius:3px; font-size:.875em;	                          line-height:2.5em; height: 2.57143em; padding-left: .57143em; font-family:Lucida Grande, Segoe UI, Arial, sans-serif; display:block; outline:none; outline-offset:0;	                          -webkit-appearance:textfield;">
 	                          <input type="hidden" name="collection" value="help" />
-	                          <input type="hidden" name="product" value="workforce-ipad" />
+	                          <input type="hidden" name="product" value="workforce-android-phone" />
 	                          <input type="hidden" name="version" value="" />
 	                          <input type="hidden" name="language" value="en" />
                         </form>
@@ -250,12 +255,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="full-bkg">
   <div class="container">
-
     <div class="column-12 get-started"> 
-
 	  <p>
-		Workforce for ArcGIS ermöglicht den Zugriff auf dieselben Daten im Außendienst und im Büro. Setzen Sie den geeignetsten Mitarbeiter am richtigen Ort und mit dem passenden Handwerkszeug effizient ein.Verwenden Sie die Web-App im Büro, um Arbeitsaufträge zu erstellen und sie Außendienstmitarbeitern zuzuweisen, die die mobile App verwenden, um ihre persönliche Aufgabenliste abzuarbeiten.
-
+		Workforce for ArcGIS ermöglicht den Zugriff auf dieselben Daten im Außendienst und im Büro. Setzen Sie den geeignetsten Mitarbeiter am richtigen Ort und mit dem passenden Handwerkszeug effizient ein.
+		Verwenden Sie die Web-App im Büro, um Arbeitsaufträge zu erstellen und sie Außendienstmitarbeitern zuzuweisen, die die mobile App verwenden, um ihre persönliche Aufgabenliste abzuarbeiten.
 
 	  </p>
 
@@ -263,7 +266,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="column-12">
       <div class="panel dark">
         <h3 class="icon-announcement">Neuerungen</h3>
-        <p>Workforce wurde im Oktober 2016 aktualisiert. Zu den wichtigen Neuerungen der Web- und mobilen App zählen die verbesserte Suchfunktion, die Möglichkeit für Dispatcher, mehrere Arbeistaufräge zuzuweisen, die Unterstützung von Mitarbeitern aus anderen Organisationen und neue Sprachen.
+        <p>Workforce wurde im Februar 2017 unter Android veröffentlicht.</p>
+        <p>Die Workforce-Web-App wurde im Januar 2017 aktualisiert. Zu den wichtigen Neuerungen für Dispatcher zählen die Möglichkeit, die Cluster-Bildung zu deaktivieren, eine optimierte Benutzerfreundlichkeit beim Identifizieren von Mitarbeitern, Filter zur einfacheren Auswahl des Zuweisungs- und Prioritätstyps sowie neue Sprachen.
         </p>
           <a href="/de/workforce/whats-new.html" class="btn secondary">Mehr erfahren</a>
       </div>
@@ -275,7 +279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="horizontal" style="color:rgb(0,121,193); font-size:16px">
         <li><a href="./requirements.html">Systemvoraussetzungen und Download</a></li>
         <li style="border-left-color:rgb(169,169,169); border-left-style:solid; border-left-width:1px;"><a href="./sneakPeek.html">Vorschau</a></li>
-        <li><span style="color:rgb(89,89,89);">FAQs für </span><a href="/de/workforce/project-owner/faqs-project-owner.htm">Projektbesitzer</a> &middot <a href="/de/workforce/dispatcher/faqs-dispatcher.htm">Dispatcher</a> &middot <a href="/de/workforce/ipad/mobile-worker/faqs-mobile-worker.htm">Außendienstmitarbeiter</a></li>
+        <li><span style="color:rgb(89,89,89);">FAQs für </span><a href="/de/workforce/project-owner/faqs-project-owner.htm">Projektbesitzer</a> &middot <a href="/de/workforce/dispatcher/faqs-dispatcher.htm">Dispatcher</a> &middot <a href="/de/workforce/android-phone/mobile-worker/faqs-mobile-worker.htm">Außendienstmitarbeiter</a></li>
       </ul>
       <hr>
     </div>
@@ -289,8 +293,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div style="display:block; line-height:26.35px; padding-left:17px; padding-right:17px;">
             <h3 style="font-size:24px; display:block;">Projektbesitzer</h3>
             <p>Erstellen und konfigurieren Sie Workforce-Projekte, indem Sie Auftragstypen und Benutzerrollen definieren.</p>
-            <a href="/de/workforce/project-owner/" class="icon-right-arrow"> Weitere Informationen</a><br/>
-            <a href="https://github.com/Esri/workforce-scripts" class="icon-github">Skripte auf GitHub</a></p>
+            <a href="/de/workforce/project-owner/" class="icon-right-arrow"> Mehr erfahren</a><br/>
+            <a href="https://github.com/Esri/workforce-scripts" class="icon-github"> Skripte auf GitHub</a></p>
           </div>
         </div>
       </div>
@@ -300,18 +304,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div style="display:block; line-height:26.35px; padding-left:17px; padding-right:17px;">
             <h3 style="font-size:24px; display:block;">Dispatcher</h3>
             <p>Teilen Sie Arbeit zu, indem Sie Aufträge erstellen, sie an den Außendienst senden und den aktuellen Standort Ihrer Mitarbeiter gleichzeitig verfolgen.</p>
-            <a href="/de/workforce/dispatcher/" class="icon-right-arrow"> Weitere Informationen</a></p>
+            <a href="/de/workforce/dispatcher/" class="icon-right-arrow"> Mehr erfahren</a></p>
           </div>
         </div>
       </div>
       <div style="box-sizing:border-box; color:rgb(76,76,76); display:inline-block; float:none; position:relative; vertical-align:top; width:32%;">
         <div style="background-color:white; border-color:rgb(239,239,239); border-style:solid; border-width:1px; color:rgb(76,76,76); display:block; ">
-          <a href="/de/workforce/iphone/mobile-worker/"><img src="./mobileWorkerBlockImage.jpg" alt="" class="trailer-1"/></a>
+          <a href="/de/workforce/android-phone/mobile-worker/"><img src="./mobileWorkerBlockImage.jpg" alt="" class="trailer-1"/></a>
           <div style="display:block; line-height:26.35px; padding-left:17px; padding-right:17px;">
             <h3 style="font-size:24px; display:block;">Außendienstmitarbeiter</h3>
             <p>Arbeiten Sie Ihre Aufgabenliste auf Ihrem mobilen Gerät ab, indem Sie Aufträge abschließen und benachrichtigt werden, sobald neue eintreffen. Durch die Integration
-            in andere Esri Apps wird Ihre Effizienz erhöht und Dispatcher werden in Echtzeit auf den neuesten Stand gebracht.</p>
-            <a href="/de/workforce/iphone/mobile-worker/" class="icon-right-arrow">Mehr erfahren</a></p>
+             in andere Esri Apps wird Ihre Effizienz erhöht und Dispatcher werden in Echtzeit auf den neuesten Stand gebracht.</p>
+            <a href="/de/workforce/android-phone/mobile-worker/" class="icon-right-arrow">Mehr erfahren</a></p>
           </div>
         </div>
       </div>
@@ -326,17 +330,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	      <div class="column-6" >
 	        <div class="card clear" style="border-color:rgb(200,200,200);">
 	          <img src="img/1-create-project.png" alt="Create your first project" />
-	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/de/workforce/project-owner/create-your-first-project.htm" style="color:rgb(89,89,89);">Projekt erstellen</a></h3>
+	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/de/workforce/project-owner/create-your-first-project.htm" style="color:rgb(89,89,89);">Erstellen eines Projekts</a></h3>
 	          <p style="color:rgb(89,89,89);">
-	            Projektbesitzer erstellen Workforce-Projekte, indem sie Auftragstypen definieren und Benutzern die Rollen &quot;Dispatcher&quot; und &quot;Außendienstmitarbeiter&quot; zuweisen.
+Projektbesitzer erstellen Workforce-Projekte, indem sie Auftragstypen definieren und Benutzern die Rollen &quot;Dispatcher&quot; und &quot;Außendienstmitarbeiter&quot; zuweisen.
 	          </p>
-
 	        </div>
 	      </div>
 	      <div class="column-6">
 	        <div class="card clear" style="border-color:rgb(200,200,200);">
 	          <img src="img/2-create-assignment.png" alt="Create your first assignment" />
-	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/de/workforce/dispatcher/create-your-first-assignment.htm" style="color:rgb(89,89,89);">Auftrag erstellen</a></h3>
+	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/de/workforce/dispatcher/create-your-first-assignment.htm" style="color:rgb(89,89,89);">Erstellen eines Auftrags</a></h3>
 	          <p style="color:rgb(89,89,89);">
 	            Bevor mit der Arbeit begonnen werden kann, erstellen Dispatcher Aufträge, indem die vorliegende Arbeit priorisiert und kategorisiert wird.
 	          </p>
@@ -345,7 +348,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	      <div class="column-6">
 	        <div class="card clear" style="border-color:rgb(200,200,200);">
 	          <img src="img/3-assign-assignment.png" alt="Assign your first assignment" />
-	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/de/workforce/dispatcher/assign-your-first-assignment.htm" style="color:rgb(89,89,89);">Auftrag zuweise</a></h3>
+	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/de/workforce/dispatcher/assign-your-first-assignment.htm" style="color:rgb(89,89,89);">Zuweisen eines Auftrags</a></h3>
 	          <p style="color:rgb(89,89,89);">
 	           Dispatcher weisen Außendienstmitarbeitern Aufträge zu und informieren über die anstehenden Aufgaben und Termine.
 	          </p>
@@ -354,9 +357,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	      <div class="column-6">
 	        <div class="card clear" style="border-color:rgb(200,200,200);">
 	          <img src="img/4-complete-assignment.png" alt="A place to play" />
-	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/de/workforce/iphone/mobile-worker/complete-your-first-assignment.htm" style="color:rgb(89,89,89);">Auftrag abschließen</a></h3>
+	          <h3 class="no-trailer" style="margin-bottom:26px;"><a href="/de/workforce/android-phone/mobile-worker/complete-your-first-assignment.htm" style="color:rgb(89,89,89);">Abschließen eines Auftrags</a></h3>
 	          <p style="color:rgb(89,89,89);">
-	            	Außendienstmitarbeiter können über Smartphones und Tablets die ihnen zugewiesenen Arbeitsaufträge nachverfolgen und Berichte zu Aufgaben erstellen, die sie bearbeiten.
+	            Außendienstmitarbeiter können über Smartphones und Tablets die ihnen zugewiesenen Arbeitsaufträge nachverfolgen und Berichte zu Aufgaben erstellen, die sie bearbeiten.
 	          </p>
 	        </div>
 	      </div>
@@ -366,12 +369,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </div>
 
-
 <div class="full-bkg off-white">
   <div class="container">
     <div class="column-24 trailer leader">
     <h2 class="divider">Lesen Sie unseren Blog
-		<small><a id="blog" href="https://blogs.esri.com/esri/arcgis/tag/workforce-for-arcgis/" class="font-size-0 right">Weitere Blog-Postings<span class="icon-external-link">&nbsp;</span></a></small>
+		<small><a id="blog" href="https://blogs.esri.com/esri/arcgis/tag/workforce-for-arcgis/" class="font-size-0 right">Weitere Blogbeiträge <span class="icon-external-link">&nbsp;</span></a></small>
 	</h2>
 	<div data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/workforce-for-arcgis/feed/" class="block-group block-group-3-up blogHpFeed">
 	 </div>
@@ -399,13 +401,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="column-8" style="margin-left:140px">
       <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/">Technischen Support anfordern</a></h4>
       <p class="no-trailer">
-         Sie erreichen den Support per Chat, E-Mail oder Telefon.
+        Sie erreichen den Support per Chat, E-Mail oder Telefon.
       </p>
     </div>
     <div class="column-8" style="margin-right:140px">
-      <h4 class="icon-alert icon-blue"><a href="http://doc.arcgis.com/en/trust/system-status/">Systemstatus überprüfen</a></h4>
+      <h4 class="icon-alert icon-blue"><a href="http://doc.arcgis.com/de/trust/system-status/">Überprüfen des Systemstatus</a></h4>
       <p class="no-trailer">
-         Überprüfen Sie den Status von ArcGIS Online und melden Sie Probleme.
+        Überprüfen Sie den Status von ArcGIS Online und melden Sie Probleme.
       </p>
     </div>
 
@@ -442,7 +444,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li><a id="nav-gallery" data-langlabel="gallery" href="http://www.arcgis.com/home/gallery.html">Galerie</a></li>
   <li><a id="nav-map" data-langlabel="map" href="http://www.arcgis.com/home/webmap/viewer.html">Karte</a></li>
   <li><a data-langlabel="scene" id="nav-scene" class="hideOnIE" href="http://www.arcgis.com/home/webscene/viewer.html">Szene</a></li>
-  <li><a id="nav-help" data-langlabel="help" class="anonymous-only" href="http://doc.arcgis.com/en/arcgis-online/">Hilfe</a></li>
+  <li><a id="nav-help" data-langlabel="help" class="anonymous-only" href="http://doc.arcgis.com/de/arcgis-online/">Hilfe</a></li>
   <li><a id="nav-groups" data-langlabel="nav-groups" class="public-and-org-only hide" href="http://www.arcgis.com/home/groups.html">Gruppen</a></li>
   <li><a id="nav-mycontent" data-langlabel="nav-mycontent" class="public-and-org-only hide" href="http://www.arcgis.com/home/content.html">Eigene Inhalte</a></li>
   <li><a id="nav-myorg" data-langlabel="nav-myorg" class="org-only hide" href="http://www.arcgis.com/home/organization.html">Eigene Organisation</a></li>
@@ -456,7 +458,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <li><a data-langlabel="arcgis" href="http://www.arcgis.com/">ArcGIS Online</a></li>
     <li><a data-langlabel="arcgis-for-desktop" href="http://desktop.arcgis.com/">ArcGIS for Desktop</a></li>
     <li><a data-langlabel="arcgis-for-server" href="http://server.arcgis.com/">ArcGIS for Server</a></li>
-	<li><a data-langlabel="arcgis-for-developers" href="http://developers.arcgis.com/">ArcGIS for Developers</a></li>
+	<li><a data-langlabel="arcgis-for-developers" href="http://developers.arcgis.com/">ArcGIS for Developer</a></li>
 	<li><a data-langlabel="arcgis-solutions" href="http://solutions.arcgis.com/">ArcGIS Solutions</a></li>
     <li><a data-langlabel="arcgis-marketplace" href="http://marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
   </ul>
@@ -482,7 +484,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a class="icon-email" href="http://www.esri.com/about-esri/contact/"></a>
   </section>
 </nav>
-<small id="footer-legal"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright © 2016 Esri.</a> Alle Rechte vorbehalten. | <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy">Datenschutz </a> | <a data-langlabel="legal" href="http://www.esri.com/legal/software-license">Rechtliche Hinweise</a></small>
+<small id="footer-legal"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright © 2016 Esri. </a> Alle Rechte vorbehalten. | <a data-langlabel="privacy" href="http://www.esri.com/legal/privacy">Datenschutz</a> | <a data-langlabel="legal" href="http://www.esri.com/legal/software-license">Rechtliche Hinweise</a></small>
 
 
 
