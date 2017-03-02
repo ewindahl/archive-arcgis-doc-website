@@ -217,7 +217,7 @@ div.downloads div.card-shaped img.card-image {width:106px; margin: auto;}
 .sdk-home-banner {
 	.search-bar {
 		float: right;
-		min-width: 368px;
+		min-width: 368px !important;
 	}
 
 }
@@ -275,4 +275,13 @@ div.downloads div.card-shaped img.card-image {width:106px; margin: auto;}
 .mobileVideo{display:none;}
 .sdk-home-banner .search-bar {
   margin-top: 20px !important;
+}
+html[dir="rtl"] div.card nav .btn-grouped + .btn-grouped {
+  margin-right:0
+}
+div.card nav {
+  display:flex
+}
+div.card div.dropdown-wrapper:not(.is-active) nav.dropdown-menu {
+  display:none
 }
