@@ -1922,6 +1922,8 @@ var localeJsonObj = {
       "help-ht": "Help",
       "help-us-get-better": "Help us get better",
       "home": "Home",
+      "imagery-workflows": "Imagery Workflows",
+      "imagery-workflows-ht": "Imagery Workflows",
       "inAppStore": "On the App Store",
       "inGooglePlay": "In Google Play",
       "inWindowsStore": "In the Windows Store",

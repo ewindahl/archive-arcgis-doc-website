@@ -262,6 +262,13 @@ var filterCfg = {
           p:"(product:arcgis-geoplanner)"
         }
       },
+    {
+        k:"imagery-workflows",
+        q: {
+          r:"",
+          p:"(product:imagery-workflows)"
+        }
+      },
       {
         k:"living-atlas",
         q: {

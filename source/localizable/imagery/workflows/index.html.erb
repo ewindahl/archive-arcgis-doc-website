@@ -1,0 +1,276 @@
+---
+title: ArcGIS Imagery Workflows
+css:
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
+
+js:
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+
+metatags:
+  - <META name="description" content="ArcGIS Imagery Workflows landing page. Tools and best practices to help you manage, analyze and use your imagery and rasters."><META name="last-modified" content="2017-3-3"><META name="product" content="imagery-workflows"><META name="sub_category" content="Imagery Workflows"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Imagery Workflows"><META name="search-category" content="help-general"><META name="version" content="10.5"><META name="content_type" content="Help Topic"><META name="subject" content=""><META name="content-language" content="en">
+
+mobile: true
+
+---
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace each of the following, then remove these notes when you're done:
+  PRODUCT_METADATA: The metadata for the product
+  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
+  DOWNLOAD_LINK: A link to download the product, free trial, etc.
+  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
+  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
+  NAV_LINK_x: The link for the navigation tabs at the top.
+  NAV_TEXT_x: The text for the navigation tabs at the top.
+  PRODUCT_HEADLINE: The main headline for the product.  This should be very short.
+  PRODUCT_SUB_HEADLINE: A slightly longer blurb about the product.
+  PRODUCT_SEARCH_VALUE: The product value for the search form
+  ITUNES_STORE_LINK: Link to the product on the app store
+  GOOGLE_PLAY_LINK: Link to the product on Google Play
+  WINDOWS_STORE_LINK: Link to the product on the Windows store
+  POPULAR_LINK_x: Links to popular pages and topics. These should include "FAQs", "What's new", and "Supported environments", but may include other links as well.
+  POPULAR_TEXT_x: Text for links to popular pages and topics.
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  CARD_LINK_x: The page that the card should link to.
+  CARD_TITLE_x: The title of the card.
+  CARD_TEXT_x: The text inside the card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+  GEONET_LINK: Link to the product's Geonet page
+  BLOG_LINK: Link to the the product's blog
+  BLOG_FEED_URL: URL for the product's blog feed
+  GEONET_LINK: Link to the the product's geonet page
+  GEONET_FEED_URL: URL for the product's geonet feed
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue text-white" style="background-image:url(img/banner1.bmp);background-color:#0951c4">
+  <div class="grid-container">
+    <div class="column-24 leader-2">
+      <div class="column-3">&nbsp;</div>
+      <div class="column-18 text-center center trailer-1">
+        <h1>ArcGIS Imagery Workflows</h1>
+        <h5>Tools and best practices to help you manage, analyze, and use your imagery and rasters</h5>
+      </div>
+    </div>
+    <div class="column-24 trailer-1">
+      <div class="column-4">&nbsp;</div>
+      <div class="column-16 center trailer-1">
+        <div container="" class="panel">
+          <div class="wf-nav" style="height:55px;">
+            <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+              <form id="helpSearchForm" class="input-group" target="_top">
+                <input type="search" name="q" class="leader input-group-input" placeholder="Search ArcGIS">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="platform" value="detect" />
+                <input type="hidden" name="product" value="PRODUCT_SEARCH_VALUE" />
+                <input type="hidden" name="language" value="<%= current_language %>" />
+                <span class="input-group-button">
+                  <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+                </span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-half text-center">
+  <div class="column-24">
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="http://www.arcgis.com/home/group.html?id=b65f2601e0084e32afab3eb488fa8a67/&q=ManagingImagery&t=group&start=1">Image Management Tools</a></li>
+        <li><a href="http://www.arcgis.com/home/group.html?id=b65f2601e0084e32afab3eb488fa8a67/&q=AnalyzingImagery&t=group&start=1">Image Analysis Tools</a></li>
+	    <li><a href="http://www.arcgis.com/home/group.html?id=b65f2601e0084e32afab3eb488fa8a67/&q=UsingImagery&t=group&start=1">Image Use Tools</a></li>
+      </ul>
+      <hr class="leader-half trailer-half">
+    </nav>
+  </div>
+</div>
+
+<div class="grid-container leader-1 trailer-1">
+  <div class="column-24">
+    <div><h3>Manage Imagery</h3></div>
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
+    <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="http://doc.arcgis.com/en/imagery/workflows/managing-preprocessed-orthophotos/overview/">
+            <img alt="" src="img/OrthoIcon.bmp">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="http://doc.arcgis.com/en/imagery/workflows/managing-preprocessed-orthophotos/overview/">Managing Preprocessed Orthophotos</a>
+          </h5>
+          <p>Get tools and guidance for creating mosaic datasets to manage your preprocessed orthophotos, including imagery with multiple timesteps and resolutions. </p>
+        </div>
+        <a href="http://doc.arcgis.com/en/imagery/workflows/managing-preprocessed-orthophotos/overview/" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="http://doc.arcgis.com/en/imagery/workflows/managing-elevation/overview/">
+            <img alt="" src="img/ElevationIcon.bmp">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="http://doc.arcgis.com/en/imagery/workflows/managing-elevation/overview/">Managing Elevation</a>
+          </h5>
+          <p>Get tools and guidance for creating mosaic datasets to manage your elevation datasets and produce products like aspect, hillshades, and slope.</p>
+        </div>
+        <a href="http://doc.arcgis.com/en/imagery/workflows/managing-elevation/overview/" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="http://doc.arcgis.com/en/imagery/workflows/browse-imagery/overview/">
+            <img alt="" src="img/BrowseIcon.bmp">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="http://doc.arcgis.com/en/imagery/workflows/browse-imagery/overview/">Browse Imagery</a>
+          </h5>
+          <p>Get tools and guidance for managing and publishing reference imagery to help end users search, review, and order full-resolution content. </p>
+        </div>
+        <a href="http://doc.arcgis.com/en/imagery/workflows/browse-imagery/overview/" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+
+	<!--    
+	  <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_4">
+            <img alt="" src="img/CARD_IMAGE_4.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_4">Managing Scanned Maps</a>
+          </h5>
+          <p>TEXT</p>
+        </div>
+        <a href="CARD_LINK_4" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+	-->
+
+    </div>
+    <div class="leader-1 trailer-1"><h4>Check out our <a href="http://arcg.is/0b4zun">ArcGIS Online Group</a> for more tools to help you manage, analyze, and use your imagery.</h4></div>
+  </div>
+</div>
+
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Get even more out of ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<!--div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <!-- INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number. -->
+      <!--div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div-->
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with ArcGIS Imagery Workflows</h4>
+    <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
+    <!-- <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="TWITTER_LINK"></a> -->
+    <!-- <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="LINKEDIN_LINK"></a> -->
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri"></a>
+    <!-- <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="FACEBOOK_LINK"></a> -->
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/imagery-and-remote-sensing"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
+
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/imagery-and-remote-sensing/blog">More posts</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://geonet.esri.com/view-browse-feed.jspa?filterID=contentstatus[published]~objecttype~objecttype[blogpost]&browseSite=place-content&containerType=14&userIDs=-1&containerID=2161&browseViewID=placeContent" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Join the conversation
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/imagery-and-remote-sensing">More conversations</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/view-browse-feed.jspa?browseSite=content&browseViewID=placeContent&userID=-1&containerType=14&containerID=2161&filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Take an in-depth lesson</a></h5>
+          <p class="trailer-0">
+            Find and complete exercises that solve real-world problems with ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Find training courses</a></h5>
+          <p class="trailer-0">
+            Learn more about ArcGIS through instructor-led courses, web courses, and seminars.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Get technical support</a></h5>
+          <p class="trailer-0">
+            Contact Esri Support by chat, email, or telephone.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Check system health</a></h5>
+          <p class="trailer-0">
+            See the status of ArcGIS Online and report issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
