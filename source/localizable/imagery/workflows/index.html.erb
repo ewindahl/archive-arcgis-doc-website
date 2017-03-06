@@ -51,7 +51,7 @@ This is a tamplate for a simple homepage.  Please search for and replace each of
   GEONET_FEED_URL: URL for the product's geonet feed
 Please search for INSTRUCTIONS within the file for element specific instructions.
 -->
-<header class="sub-nav sub-nav-blue text-white" style="background-image:url(img/banner1.bmp);background-color:#0951c4">
+<header class="sub-nav sub-nav-blue text-white" style="background-image:url(img/Banner1.jpg);background-color:#1b2944">
   <div class="grid-container">
     <div class="column-24 leader-2">
       <div class="column-3">&nbsp;</div>
@@ -63,20 +63,18 @@ Please search for INSTRUCTIONS within the file for element specific instructions
     <div class="column-24 trailer-1">
       <div class="column-4">&nbsp;</div>
       <div class="column-16 center trailer-1">
-        <div container="" class="panel">
-          <div class="wf-nav" style="height:55px;">
-            <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
-              <form id="helpSearchForm" class="input-group" target="_top">
-                <input type="search" name="q" class="leader input-group-input" placeholder="Search ArcGIS">
-                <input type="hidden" name="collection" value="help" />
-                <input type="hidden" name="platform" value="detect" />
-                <input type="hidden" name="product" value="PRODUCT_SEARCH_VALUE" />
-                <input type="hidden" name="language" value="<%= current_language %>" />
-                <span class="input-group-button">
-                  <button class="icon-ui-search icon-ui-flush" type="submit"></button>
-                </span>
-              </form>
-            </div>
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Search Imagery Workflows">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="imagery-workflows" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
           </div>
         </div>
       </div>
@@ -145,7 +143,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
         <a href="http://doc.arcgis.com/en/imagery/workflows/browse-imagery/overview/" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
 
-	<!--    
+	<!--
 	  <div class="card block">
         <figure class="card-image-wrap">
           <a href="CARD_LINK_4">
