@@ -42,6 +42,9 @@
           return false;
         }
         anchorOffset = $(match).offset().top - this.getFixedOffset();
+        if($('#bigmac').hasClass('affix')){
+          anchorOffset += 75;
+        }
         $('html, body').animate({ scrollTop: anchorOffset});
 
         // Add the state to history as-per normal anchor links
