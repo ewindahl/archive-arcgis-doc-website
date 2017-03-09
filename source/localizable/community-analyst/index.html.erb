@@ -1,328 +1,310 @@
 ---
-title: Community Analyst
+title: FULL_PRODUCT_NAME
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - video-init
-
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="Community Analyst Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="community-analyst"><META name="sub_category" content="Community Analyst"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Community Analyst"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+  - <META PRODUCT_METADATA>
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/community-analyst/">Community Analyst</a></h1>
-	  <form id="helpSearchForm" target="_top">
-                    <input type="search" name="q" class="leader" placeholder="Search Community Analyst" data-langlabel="search-community-analyst">
-                    <input type="hidden" name="collection" value="help" />
-                    <input type="hidden" name="product" value="community-analyst" />          
-                    <input type="hidden" name="language" value="en" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/community-analyst/">Home</a></li>
-        <li><a href="/en/community-analyst/help/">Help</a></li>
-        <!-- <li><a href="/en/community-analyst/mobile/">Mobile</a></li> -->
-        <li><a href="http://forums.arcgis.com/forums/123-Community-Analyst">Forum</a></li>
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace each of the following, then remove these notes when you're done:
+  PRODUCT_METADATA: The metadata for the product
+  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
+  DOWNLOAD_LINK: A link to download the product, free trial, etc.
+  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
+  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
+  NAV_LINK_x: The link for the navigation tabs at the top.
+  NAV_TEXT_x: The text for the navigation tabs at the top.
+  PRODUCT_HEADLINE: The main headline for the product.  This should be very short.
+  PRODUCT_SUB_HEADLINE: A slightly longer blurb about the product.
+  PRODUCT_SEARCH_VALUE: The product value for the search form
+  ITUNES_STORE_LINK: Link to the product on the app store
+  GOOGLE_PLAY_LINK: Link to the product on Google Play
+  WINDOWS_STORE_LINK: Link to the product on the Windows store
+  POPULAR_LINK_x: Links to popular pages and topics. These should include "FAQs", "What's new", and "Supported environments", but may include other links as well.
+  POPULAR_TEXT_x: Text for links to popular pages and topics.
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  CARD_LINK_x: The page that the card should link to.
+  CARD_TITLE_x: The title of the card.
+  CARD_TEXT_x: The text inside the card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+  GEONET_LINK: Link to the product's Geonet page
+  BLOG_LINK: Link to the the product's blog
+  BLOG_FEED_URL: URL for the product's blog feed
+  GEONET_LINK: Link to the the product's geonet page
+  GEONET_FEED_URL: URL for the product's geonet feed
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">FULL_PRODUCT_NAME</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="DOWNLOAD_LINK">Download PRODUCT_NAME</a>
+          <!-- INSTRUCTIONS: Remove this p tag if not needed -->
+          <p class="trailer-0 leader-0 text-white font-size--2"><strong>Version VERSION_NUMBER</strong> RELEASE DATE</p>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="NAV_LINK_1" selected>Home</option>
+        <option value="NAV_LINK_2">NAV_TEXT_2</option>
+        <option value="NAV_LINK_3">NAV_TEXT_3</option>
+        <option value="NAV_LINK_4">NAV_TEXT_4</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="NAV_LINK_1">Home</a>
+        <a class="sub-nav-link" href="NAV_LINK_2">NAV_TEXT_2</a>
+        <a class="sub-nav-link" href="NAV_LINK_3">NAV_TEXT_3</a>
+        <a class="sub-nav-link" href="NAV_LINK_4">NAV_TEXT_4</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>PRODUCT_HEADLINE</h1>
+      <h5>PRODUCT_SUB_HEADLINE</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Search FULL_PRODUCT_NAME">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="PRODUCT_SEARCH_VALUE" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete the download badges you don't want to use.  Delete the p tag entirely if you don't want to use any of the download badges. -->
+      <p class="trailer-0 leader-half font-size--2">
+        <a href="ITUNES_STORE_LINK"><img src="/assets/img/badges/app_store.svg" alt="Download on the App Store" style="margin:10px; vertical-align:middle"/></a>
+        <a href="GOOGLE_PLAY_LINK"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:10px; vertical-align:middle"/></a>
+        <a href="WINDOWS_STORE_LINK"><img src="https://cmsresources.windowsphone.com/devcenter/common/resources/images/badgegenerator/English_wstore_black_258x67.png" alt="Download from Windows Store"  style="margin:10px; vertical-align:middle; height:40px"/></a>
+      </p>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="POPULAR_LINK_1">POPULAR_TEXT_1</a></li>
+        <li><a href="POPULAR_LINK_2">POPULAR_TEXT_2</a></li>
+	      <li><a href="POPULAR_LINK_3">POPULAR_TEXT_3</a></li>
+        <li><a href="POPULAR_LINK_4">POPULAR_TEXT_4</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <header>
-
-		  <h2 id="appTitle">Start using the app</h2>
-          <!-- <span id="appVersion"><strong>Version:</strong> 5.3</span> -->
-          <span id="appReleased"><strong>Updated:</strong> June 2016</span>
-
-
-          <p>Community Analyst is a web-based solution that applies GIS technology to extensive demographic, consumer spending, and business data to deliver on-demand analysis, presentation-ready reports and maps. Select from a wide variety of existing reports, or create custom reports to meet your marketing needs.</p>
-
-          <p>
-             <a  class="btn secondary" href="http://communityanalyst.arcgis.com/" target="_blank">Sign in to Community Analyst</a>
-
-          </p>
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="color-coded.png" />
-
-          <h3>Create color-coded maps</h3>
-          <p>This video shows you how to use the color-coded maps tool to select one of the thousands of data variables available in Community Analyst, and visualize the data on a map.</p>
-          <p>
-            <!-- <a href="http://video.arcgis.com/watch/2457/map-your-excel-data" class="icon-play colorbox-evlarge cboxElement" id="aWatchVideo">&nbsp;Watch the video</a> -->
-			<a title="Create color-coded Maps" href="http://video.arcgis.com/iframe/3009/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch the video</a>
-			<video width="320" height="240" controls id="3010" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/3010/mp4/480">
-			</video>
-          </p>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_1">
+            <img alt="" src="/en/community-analyst/img/CARD_IMAGE_1.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_1">CARD_TITLE_1</a>
+          </h5>
+          <p>CARD_TEXT_1</p>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="smart-map.png" />
-
-          <h3>Responsive Smart Map Searches</h3>
-          <p>You can now select multiple brackets or define your own, such as households earning over $50K annually or men aged 25 - 75. Or use advanced options to create even more variables to map and analyze.</p>
-          <p>
-           <!-- <a href="http://video.arcgis.com/watch/2468/enrich-your-excel-data" class="icon-play">&nbsp;Watch the video</a> -->
-			<a title="Responsive Smart Map Searches" href="http://video.arcgis.com/iframe/3008/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Watch the video</a>
-			<video width="320" height="240" controls id="3012" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/3012/mp4/480">
-			</video>
-          </p>
-        </div>
-
-        <div class="clear"></div>
-
-
-
-        <!-- <h3>Supported languages</h3>
-        <p>Arabic, English, Chinese, French, German, Italian, Japanese, Spanish, Portuguese (Brazil), and Russian.</p> -->
-
-
-
-
-
-        <a name="whatsNew"></a>
-        <h3>What's new</h3>
-        <p>The latest release includes the following enhancements:</p>
-        <ul>
-			<li>Updated content
-				<ul>
-					<li>Updated content from the Esri 2016 Demographic Data Update can be accessed through the Business Analyst web app's mapping, reporting and analytic capabilities. The data update includes Esri's latest projections and estimates for U.S. demographics, consumer spending, market potential, business data and more.</li>
-					<li>Updated standard reports allow you to analyze and summarize information about sites and areas with the updated content from the data update.</li>
-					<li>The Report Builder supports working with the updated content in custom reports.</li>
-				</ul></li>
-			<li>Report Builder: Enhanced table editing with a new popup editing dialog box
-				<ul>
-					<li>Supports a more streamlined experience when working with tabular elements including cells, rows, columns and their contents.</li>
-					<li>Simplifies the creation of advanced report content including custom variables, column-based calculations, Rich Text, hyperlinks and charts.</li>
-				</ul></li>
-			<li>Report Builder: Additional timesaving features and options with tables
-				<ul>
-					<li>New options include the ability to merge tables from or split tables into multiple sections while in the Preview and Editing modes of the Report Builder.</li>
-					<li>Multiple variables can be selected and added to the tables within a report simultaneously. When required, rows are automatically added to the tables to accommodate the variables.</li>
-					<li>Variable descriptions are automatically added to adjacent columns when variables are added to tables within a report.</li>
-					<li>New tabular options support custom reports that work with and describe analysis areas consisting of multiple rings around individual sites.</li>
-					<li>Support for automatically scaling tables to fit the height and/or width of custom report sections.</li>
-				</ul></li>
-			<li>Report Builder: New ways to work with report sections
-				<ul>
-					<li>Options to label individual report sections and to set their style and layout.</li>
-					<li>Ability to select and move one or more sections within a report simultaneously.</li>
-					<li>Support for dragging and dropping individual charts into other sections in a report.</li>
-				</ul></li>
-			<li>Report Builder: Save custom variables
-				<ul>
-					<li>Support for naming and saving user-created variables to the My Data repository for reuse in other reports to avoid recreation when needed.</li>
-				</ul></li>
-		</ul>
-
-
-        <a name="systemRequirements"></a>
-        <h3>System requirements</h3>
-
-		<ul>
-		 <li>Community Analyst requires an account that is part of an ArcGIS Online organization and is a member of a group with access to the Community Analyst Application.</li>
-		 <li>Community Analyst supports the following browsers: Internet Explorer 10+<b>*</b>, Chrome (latest), Firefox (latest), and Safari (latest for Windows<b>*</b> and Mac OS X).<br>
-		 <b>*</b> Some features will not work in Internet Explorer 10 and Safari for Windows.</li>
-		</ul>
-		
-        <a name="previousUpdates"></a>
-        <h3>Previous updates</h3>
-		<h5>Community Analyst Mar 2016</h5>
-		<ul>
-			<li>Build your own reports
-				<ul>
-					<li>Create custom reports by choosing sections from reports, individual data variables or saved lists of variables. Data variables can be displayed as percentages or charts.</li>
-					<li>Share report templates with others in your organization. </li>
-					<li>Get started by going to the Reports tab, click Build Reports and create your custom report.</li>
-				</ul></li>
-			<li>Create Infographics from sites
-				<ul>
-					<li>Explore the demographic profile of an area with visually compelling and easy to scan infographics. Start by adding a site, creating analysis areas around it and clicking Infographics from the pop-up.</li>
-				</ul></li>
-			<li>Learn more about releases
-				<ul>
-					<li>About is accessible in the Help drop-down menu.</li>
-					<li>Provides the current release version number and information about the latest release.</li>
-				</ul></li>
-			<li>Data and content updates
-				<ul>
-					<li>Learn more about Market Potential variables from the i icon. Information describes whether data is households or adults.</li>
-					<li>Access Standard Global Demographic data updates from Michael Bauer Research for 60 countries. </li>
-					<li>Create color-coded maps or perform smart map searches with Congressional Districts.</li>
-				</ul></li>
-		</ul>
-		<h5>Community Analyst Nov 2015</h5>
-        <ul>
-			<li>Mapping
-				<ul>
-					<li>You can now <a href="/en/community-analyst/help/color-coded-maps.htm#ESRI_SECTION1_5CB9F61CD7AD47BCB1F565B475CB4E3D">browse and select the 2015 Dominant Tapestry Segment</a> when creating a color-coded map in the U.S. </li>
-					<li>Access to Web Maps is now available from the "Create Maps from Data" menu. </li>
-					<li>New options in Preferences are available to change color and thickness of boundary borders.</li>
-					<li>The ability to display boundary borders and labels is now available for all countries.</li>
-				</ul></li>
-			<li>Display enhancements for sites, businesses, and imported points
-				<ul>
-					<li><a href="/en/community-analyst/help/set-preferences.htm#ESRI_SECTION1_B2BC0A3005434363A13713733145A167">Import and store logos to represent locations that you import</a> or business locations from Business and Facilities Search.</li>
-					<li>Set the default symbol for sites, imported files, and business and facilities search results.</li>
-					<li>New options for displaying point data are now available with a new mapping option in <a href="/en/community-analyst/help/import-file.htm">Import File</a> and in <a href="/en/community-analyst/help/business-and-facilities-search.htm">Business and Facilities Search</a>.</li>
-					<li>Reorder saved variables.</li>
-				</ul></li>
-			<li>New ways to create trade areas
-				<ul>
-					<li><a href="/en/community-analyst/help/find-location.htm#ESRI_SECTION1_021BBA7E96FB4D69882832382902064A">Create trade areas around sites based on walk time or distance</a>.  Walk times follow paths and roads that allow pedestrian traffic and find solutions that optimize travel time/distance.</li>
-					<li>Reports using bands can be applied to rings, drive times, and walk times.</li>
-					<li><a href="/en/community-analyst/help/find-location.htm#ESRI_SECTION1_9AAE29FA0F6B4BDBB7E27C82941933EF">More options are available for drive time analysis</a> including travel mode (driving, rural driving, and trucking), direction to or from a facility, and traffic. Traffic options include live traffic or traffic based on typical conditions.</li>
-				</ul></li>
-			<li>Content Updates
-				<ul>
-					<li>Infogroup is the <a href="/en/esri-demographics/data/business.htm">new Business Locations/Business Search provider</a> in the U.S. and Canada.</li>
-					<li><a href="/en/esri-demographics/data/retail-marketplace.htm">Retail MarketPlace Profile and data</a> have been updated to include business summary counts from Infogroup.</li>
-					<li><a href="/en/esri-demographics/data/shopping-centers.htm">Major Shopping Center Locator and Major Shopping Center Map</a> have been updated to include June 2015 data from Directory of Major Malls (DMM).</li>
-					<li>Advanced Demographic Datasets are now available. <ul><li>Choose either the Standard data, from Michael Bauer Research (MBR), or the Advanced data.</li></ul></li>
-					<li><a href="/en/esri-demographics/data/north-america.htm">Canada 2015 demographic updates</a> (from Environics Analytics).</li>
-					<li><a href="http://blogs.esri.com/esri/arcgis/2015/11/04/upcoming-november-2015-release-demographic/">Updates to 45 countries</a> (Standard MBR Data Update).</li>
-				</ul></li>
-		</ul>	
-		<h5>Community Analyst Sept 2015</h5>
-        <ul>
-			<li>Run Community Analyst on the web browser of your tablet device.</li>
-			<li>Access recently created sites, reports, and searches from the new home page tab.</li>
-			<li>Access the latest data on income, age, spending, and more for many countries including Germany, Spain, Denmark, France, and others. This update replaces the data that was previously available. See the <a href="http://blogs.esri.com/esri/arcgis/2015/06/25/upcoming-july-2015-release-of-updated-standard-global-demographic-data/">full list of updates here</a>.</li>
-			<li>Community Analyst has been modernized to use the latest web technology. As a result, Community Analyst will not support Internet Explorer version 8 and older. <a href="#systemRequirements">Learn more about supported browsers</a>.</li>
-		</ul>		
-		<h5>Community Analyst May 2015</h5>
-		<ul>
-			<li>Esri 2015 U.S. Data Update
-				<ul><li>Demographic Data and Reports</li>
-				<li>Tapestry Segmentation Data and Report</li>
-				<li>Consumer Spending Data and Reports</li>
-				<li>Market Potential Data and Reports</li>
-				<li>Retail MarketPlace Data and Report (with data from Dun & Bradstreet)</li>
-				<li>Business Summary Data and Report (with data from Infogroup)</li>
-				<li>American Community Survey (ACS) Data and Reports (2009-2013)</li></ul>
-			<li>AGS 2014 U.S. Crime Data Update (2014A)</li>
-			<li>Kalibrate 2015 U.S. Traffic Count Report Update (Q1, 2015)</li>
-			<li>New Health category for browsing data variables important to the Health industry</li>
-		</ul>
-		<h5>Community Analyst March 2015</h5>
-		<ul>
-		<li>In the Community Analyst web app, drive time areas have been improved with a newer algorithm that has better performance and is consistent with how drive times are generated across the platform
-		<li>Announced deprecation of IE8 support
-		<li>Image quality improvement for custom logos
-		<li>Addition of advanced datasets for Australia and Spain in the form of new reports
-		</ul>
-		<h5>Community Analyst December 2014</h5>
-		<ul>
-		<li>This release of Community Analyst included adding 57 new countries bringing the total to 137 countries and equivalent to all country data available through GeoEnrichment Services in ArcGIS Online
-		<li>Canada was updated to include 2014 updates from Environics Analytics
-		<li>Australia, France, Germany, and India each had advanced datasets added in the form of new reports
-		</ul>
-		<h5>Community Analyst November 2014</h5>
-		<ul>
-		<li>Generate all-in-one PDF report, send notification via email, and share on ArcGIS Online
-		</ul>
-		<h5>Community Analyst July 2014</h5>
-		<ul>
-		<li>2014 Esri US Demographic data and reports
-		</ul>
-		<h5>Community Analyst March 2014</h5>
-		<ul>
-		<li>Data for more than 80 countries added
-		<li>Import sites from the Legacy Community Analyst app
-		<li>Share sites to ArcGIS Online
-		<li>Use sites in web maps in ArcGIS Online
-		<li>Share maps for ArcGIS Online
-		<li>Shared maps are available for use in ArcGIS Online
-		<li>Updated American Community Survey (ACS) data (2007-2011)
-		<li>Updated Market Potential data (2013)
-		<li>New Data Collections - At Risk, Poverty, and Key Facts
-		<li>Data in web maps can be combined with Esri Data for mapping and Smart Map Search
-		</ul>
-		<h5>Community Analyst July 2013</h5>
-		<ul>
-		<li>Step-by-step Guided Tours (in the US)
-		<li>Easy to find data in the Data Browser
-		<li>Get reports from the pin menu
-		<li>Create custom variables
-		<li>Responsive Smart Map Search
-		<li>Color coded maps based on targeted areas
-		<li>Access map content from ArcGIS Online
-		<li>Add notes, pictures, and labels
-		<li>Select geographies by clicking on the map
-		<li>Combine geographies into one site
-		<li>Measure distance and area
-		<li>New map legend
-		<li>Improved search bar
-		</ul>
-		
+        <!-- This is an example of a card with two buttons.  Only follow this example if you want two buttons on a card. -->
+        <nav>
+          <a href="CARD_LINK_1" class="btn btn-grouped btn-clear btn-half leader-0">Learn more</a>
+          <a href="CARD_LINK_1" class="btn btn-grouped btn-clear btn-half leader-0">Learn more</a>
+        </nav>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>Get started</h3>
-          <ul>
-            <li><a href="/en/community-analyst/help/faqs.htm">FAQs</a></li>
-            <li><a href="#whatsNew">What's new</a></li>
-            <li><a href="#systemRequirements">System Requirements</a></li>
-            <li><a href="#previousUpdates">Previous updates</a></li>
-			<li><a href="http://video.arcgis.com/series/58/community-analyst/order/desc">Watch videos</a></li>
-
-          </ul>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_2">
+            <img alt="" src="/en/community-analyst/img/CARD_IMAGE_2.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_2">CARD_TITLE_2</a>
+          </h5>
+          <p>CARD_TEXT_2</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <a href="CARD_LINK_2" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_3">
+            <img alt="" src="/en/community-analyst/img/CARD_IMAGE_3.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_3">CARD_TITLE_3</a>
+          </h5>
+          <p>CARD_TEXT_3</p>
         </div>
-		<p>&nbsp;</p>
-
- </div>
-
+        <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="CARD_LINK_4">
+            <img alt="" src="/en/community-analyst/img/CARD_IMAGE_4.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="CARD_LINK_4">CARD_TITLE_4</a>
+          </h5>
+          <p>CARD_TEXT_4</p>
+        </div>
+        <a href="CARD_LINK_4" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
     </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/community-analyst/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Get even more out of ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <!-- INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number. -->
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div>
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with FULL_PRODUCT_NAME</h4>
+    <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="TWITTER_LINK"></a>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="LINKEDIN_LINK"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="GITHUB_LINK"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="FACEBOOK_LINK"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="GEONET_LINK"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-  </script>
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="BLOG_LINK">More posts</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="BLOG_FEED_URL" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Join the conversation
+        <a class="btn btn-transparent btn-large right" href="GEONET_LINK">More conversations</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="GEONET_FEED_LINK" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Take an in-depth lesson</a></h5>
+          <p class="trailer-0">
+            Find and complete exercises that solve real-world problems with ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Find training courses</a></h5>
+          <p class="trailer-0">
+            Learn more about ArcGIS through instructor-led courses, web courses, and seminars.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Get technical support</a></h5>
+          <p class="trailer-0">
+            Contact Esri Support by chat, email, or telephone.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Check system health</a></h5>
+          <p class="trailer-0">
+            See the status of ArcGIS Online and report issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
