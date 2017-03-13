@@ -20,7 +20,6 @@ Download link class should be '.download-link'
 
 */
 $(document).ready(function() {
-
 	var dload = {};
 
 	setTimeout(function(){
@@ -29,10 +28,10 @@ $(document).ready(function() {
 		 accountExtnCookieObj = ($.cookie('esri_auth_extn')) ? JSON.parse($.cookie('esri_auth_extn')) : false;
 		var proxyPath = "/apps/proxy/proxy.php";
 		var downloadAPI = sitecfg.securedDownloadUrl;
-			
+
 		return {
-	        
-			
+
+
 			loginType: function () {
 				if(accountCookieObj && accountExtnCookieObj){
 					return "org"
@@ -61,7 +60,7 @@ $(document).ready(function() {
 				token = accountCookieObj.token;
 
 				$.ajax({
-						
+
 					url: (navigator.userAgent.match(/msie/i)) ? proxyPath + "?" + downloadAPI + filename + "?folder=" + foldername + "&" + "token=" + token : downloadAPI + filename,
 					type: 'GET',
 					dataType: 'json',
@@ -115,7 +114,7 @@ $(document).ready(function() {
 
 	// UI Manipulation
 	// On select version drop down item
-	$(".downloads .card .dropdown-item").click(function (){
+	$(".download-section .card .dropdown-link").click(function (){
 		var fileName = $(this).attr("data-app-file")
 		var folderName = $(this).attr("data-app-folder")
 		var fileSize = $(this).attr("data-file-size")
@@ -125,21 +124,21 @@ $(document).ready(function() {
 		 parentObj.find(".dropdown-wrapper .dropdown-selected").fadeOut(50, function(){
             parentObj.find(".dropdown-wrapper .dropdown-selected").text(versionLabel).fadeIn().delay(100);
        });
-								
 		parentObj.find(".download-link").attr("data-filename", fileName)
 		parentObj.find(".download-link").attr("data-folder", folderName)
 		parentObj.find(".download-link").attr("data-file-size", fileSize)
-		
+
 		updateSizeLabel (parentObj)
+		return false;
 	});
 
-	
+
 	$(".downloads .card").each(function () {
-		if($(this).find("ul li a").length == 1){
+		if($(this).find("nav a").length == 1){
 			//Remove dropdown icon
 			$(this).find (".dropdown-selected").removeClass("dropdown")
 		}
-		$(this).find("ul li a").first().trigger("click")
+		$(this).find("nav a").first().trigger("click")
 
 		updateSizeLabel ($(this))
 	});
@@ -152,7 +151,7 @@ $(document).ready(function() {
 
 
 
-	
+
 	// Org Account Tokenized downloads.
 	$(".secured-org .download-link").click(function (){
 		var fileName = $(this).attr("data-filename");
@@ -162,7 +161,7 @@ $(document).ready(function() {
 			if (dload.methods.getOrgType() && dload.methods.IsValidSubscription()){
 				if(fileName != ""){
 					var data = dload.methods.getDownloadLink(fileName, folderName);
-					dload.methods.downloadFile(data.url);	
+					dload.methods.downloadFile(data.url);
 				}
 			} else {
 				var localedir = (typeof(docConfig) !== 'undefined') ? docConfig['locale'].toLowerCase():false;
@@ -187,7 +186,7 @@ $(document).ready(function() {
 		if(dload.methods.loginType() != "" ){
 			if(fileName != ""){
 				var data = dload.methods.getDownloadLink(fileName, folderName);
-				dload.methods.downloadFile(data.url);	
+				dload.methods.downloadFile(data.url);
 			}
 		} else {
 			window.location = loginHref + fileName;
@@ -195,8 +194,8 @@ $(document).ready(function() {
 		}
 
 	});
-	
-	
+
+
 	// Post sign in trigger download automatically.
 	if(getUrlVars ()["dload"]){
 		var downloadFileName = getUrlVars ()["dload"];
@@ -205,4 +204,60 @@ $(document).ready(function() {
 		}
 	}
 	}, 1000);
+
+
+
+
+//js from dveelopers download page
+	(function (calcite){
+	  var versions = calcite.nodeListToArray(document.querySelectorAll('.js-version'));
+
+	  function switchVersions (e) {
+
+	    var i;
+	    var sdkVersion = calcite.eventTarget(e).getAttribute('data-sdk');
+	    var versionBreakdown = sdkVersion.split('-');
+	    var sdk = versionBreakdown[0]+'-'+versionBreakdown[1];
+	    var version = '';
+
+	    // // update the checkmarks
+	    var checkmarks = calcite.nodeListToArray(document.querySelectorAll('.js-version[data-sdk^=' + sdk + ']'));
+
+	    // Reassemble the version in case it also had a '-' in it. We have to handle problems like "os-x-10.2.6-2"
+	    for (i = versionBreakdown.length - 1; i >= 0; i --) {
+	      if (isNaN(parseInt(versionBreakdown[i], 10))) {
+	        break;
+	      } else {
+	        version = versionBreakdown[i] + (version === '' ? '' : '-') + version;
+	      }
+	    }
+
+	    for (i = checkmarks.length - 1; i >= 0; i--) {
+	      calcite.removeClass(checkmarks[i], 'version-is-active');
+	    }
+
+	    // // update the text
+	    calcite.addClass(calcite.eventTarget(e), 'version-is-active');
+	    calcite.nodeListToArray(calcite.closest('dropdown', calcite.eventTarget(e)).querySelectorAll('.js-dropdown-toggle'))[0].textContent = 'Version ' + version;
+
+	    // toggle the versions
+	    var allVersions = calcite.nodeListToArray(document.querySelectorAll('.js-download[data-sdk^=' + sdk + ']'));
+	    var showVersions = calcite.nodeListToArray(document.querySelectorAll('.js-download[data-sdk="' + sdkVersion + '"]'));
+
+	    for (i = allVersions.length - 1; i >= 0; i--) {
+	      calcite.addClass(allVersions[i], 'hide');
+	    }
+
+	    for (i = showVersions.length - 1; i >= 0; i--) {
+	      calcite.removeClass(showVersions[i], 'hide');
+	    }
+
+	    calcite.preventDefault(e);
+	  }
+
+	  for (var i = versions.length - 1; i >= 0; i--) {
+	    calcite.addEvent(versions[i], calcite.click(), switchVersions);
+	  }
+	}(window.calcite));
+
 });

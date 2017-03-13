@@ -7,105 +7,230 @@ module Download
 
     # Called when trial extension activated
     def registered(app, options={})
-	
+
       # Setup extension-specific config
       app.set :config_variable, false
-	  
-	  
-	  app.helpers do
 
 
-	  	def getAttrData(product,dataAttr)
-
-	  		if data.downloads[current_language]
-				prodObj = data.downloads[current_language]
-			else
-				prodObj = data.downloads['en']
-			end
-	
-			explodedStr = product.split("~")
-
-			if explodedStr.length > 0
-				explodedStr.each{|k,v|
-					prodObj = prodObj.send(k.to_sym) ? prodObj.send(k.to_sym) : false
-					if not prodObj
-						break
-					end
-				}
-			end
+      app.helpers do
 
 
-			retValue = (prodObj and prodObj.send(dataAttr.to_sym)) ? prodObj.send(dataAttr.to_sym) : ""
-			#retValue = prodObj.send(dataAttr.to_sym) ? prodObj.send(product.to_sym).send(dataAttr.to_sym) : ""
+      	def getAttrData(product,dataAttr)
 
-			return retValue
-		end
+      		if data.downloads[current_language]
+            prodObj = data.downloads[current_language]
+          else
+            prodObj = data.downloads['en']
+          end
 
-		def isMultiVersions (prodObj)
-			return (prodObj.send("versions".to_sym) and prodObj.send("versions".to_sym).count() > 1) ? true : false
-		end
+          explodedStr = product.split("~")
 
-
-		def generateVersionDropDown (dataPath)
-			if data.downloads[current_language]
-				prodObj = data.downloads[current_language]
-			else
-				prodObj = data.downloads['en']
-			end
-
-			explodedStr = dataPath.split("~")
-			appDownloadType = explodedStr[3]
-
-			if explodedStr.length > 0
-				explodedStr.each{|k,v|
-					prodObj = prodObj.send(k.to_sym) ? prodObj.send(k.to_sym) : false
-					if not prodObj
-						break
-					end
-				}
-			end
-
-			retValue = ""
-			if isMultiVersions(prodObj)
-				retValue = "<div class='dropdown-wrapper '>
-                          Version <span class='dropdown dropdown-selected' filename='' foldername='' href='#'></span>
-                          <div class='dropdown-content'>
-                            <div class='dropdown-menu'>
-				<ul>"
-				#if isMultiVersions(prodObj) == true
-				prodObj.send("versions".to_sym).each {|k,v|
-					fileSize = v['filesize'] ? v['filesize'] : "&nbsp;" 
-					retValue = retValue + '<li><a href="#" class="dropdown-item" data-file-size="' + fileSize + '" data-app-folder="' + v['foldername'] + '" data-app-file="' + v['filename'] + '">' + k.to_s + '</a></li>'
-				}
-				retValue = retValue + "</ul>
-				</div></div></div>
-				<a class='btn orange download-link' data-folder='' data-filename=''>Download</a>"
-			else
-				prodObj.send("versions".to_sym).each {|k,v|
-					fileSize = v['filesize'] ? v['filesize'] : "&nbsp;" 
-					retValue = retValue + '
-					Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#">' + k.to_s + '</span><br/>
-					<a href="#" class="btn orange download-link" data-file-size="' + fileSize + '" data-folder="' + v['foldername'] + '" data-filename="' + v['filename'] + '">Download</a>'
-				}
-			end
+          if explodedStr.length > 0
+            explodedStr.each{|k,v|
+              prodObj = prodObj.send(k.to_sym) ? prodObj.send(k.to_sym) : false
+              if not prodObj
+                break
+              end
+            }
+          end
 
 
+          retValue = (prodObj and prodObj.send(dataAttr.to_sym)) ? prodObj.send(dataAttr.to_sym) : ""
+          #retValue = prodObj.send(dataAttr.to_sym) ? prodObj.send(product.to_sym).send(dataAttr.to_sym) : ""
 
-			return retValue
-		end
+          return retValue
+        end
+
+        def isMultiVersions (prodObj)
+          return (prodObj.send("versions".to_sym) and prodObj.send("versions".to_sym).count() > 1) ? true : false
+        end
+
+        def generateDownloadsJson (prodName)
+          require 'json'
+          require 'yaml'
+          input_file = File.open('data/downloads.yml', 'r')
+          input_yml = input_file.read
+          input_file.close
+          yaml_data = YAML::load(input_yml)
+          if yaml_data['en'][prodName]
+            output_json = JSON.dump(yaml_data['en'][prodName])
+          else
+            output_json = "{}"
+          end
+          return output_json
+        end
+
+        def generateDownloadLink(linkData, explodedStr, deviceName, imgFile = false, version = false, extraClass = '')
+          retValue = ''
+          fileSize = linkData['filesize'] ? '<p class="trailer-0 leader-half"><b>Size:</b> <span>' + linkData['filesize'] + '</span></p>' : "&nbsp;"
+          if imgFile
+            linkClasses = 'download-link'
+            linkFiller = '<img src="/assets/img/badges/' + imgFile + '" style="height:40px;"/>'
+          else
+            linkClasses = 'btn btn-fill icon-ui-download download-link'
+            linkFiller = deviceName
+          end
+          if linkData['url']
+            link = '<a href="' + linkData['url'].to_s + '" class="' + linkClasses + '" style="margin:.375rem 0">' + linkFiller + '</a>'
+          else
+            link = '<a href="#" class="' + linkClasses + '" style="margin:.375rem 0" data-filename="' + linkData['filename'] + '" data-folder="' + linkData['foldername'] + '">' + linkFiller + '</a>'
+          end
+          retValue = retValue + '<div class="js-download ' + extraClass + ' clearfix" data-sdk="' + explodedStr[0] + '-' + explodedStr[1] + (version ? '-'+version.to_s : '') + '">
+            <div class="column-5 first-column">
+              ' + link + '
+            </div>
+            <div class="column-6 text-gray font-size--3 last-column">
+              ' + fileSize + '
+            </div>
+          </div>'
+          return retValue
+        end
 
 
-		def getExtensionNames (extensions,type)
-			names = ""
+        def generateVersionButtons(dataPath, imgFile = false, urlOnly = false)
+          if data.downloads[current_language]
+            prodObj = data.downloads[current_language]
+          else
+            prodObj = data.downloads['en']
+          end
 
-			extensions.each {|k,v|
-				names = names + ',' + k + '-' + v[type]
-			}
-			return names
+          explodedStr = dataPath.split("~")
+          appDownloadType = explodedStr[3]
 
-		end
-		
-	  end
+          if explodedStr.length > 0
+            explodedStr.each{|k,v|
+              prodObj = prodObj.send(k.to_sym) ? prodObj.send(k.to_sym) : false
+              if not prodObj
+                break
+              end
+            }
+          end
+
+          retValue = ""
+
+          deviceNames = {'windows64' => 'Windows x64', 'windows86' => 'Windows x86', 'mac' => 'macOS', 'linux' => 'Linux', 'android' => 'Android in Google Play', 'amazon' => 'Android in Amazon Store', 'ios' => 'iOS', 'windowsphone' => 'Windows Phone'}
+
+          deviceName = deviceNames[explodedStr[2].to_s].to_s
+
+          if(prodObj['versions'])
+            firstVersion = true
+            extraClass = ''
+            prodObj.send("versions".to_sym).each {|k,v|
+              if urlOnly and v.key?('url')
+                return v['url'].to_s
+              end
+              #retValue = retValue + '<div class="js-download '
+              if firstVersion
+                firstVersion = false
+              else
+                extraClass = 'hide'
+              end
+              retValue = retValue + generateDownloadLink(v, explodedStr, deviceName, imgFile, k, extraClass)
+            }
+          else
+            if urlOnly and prodObj.key?('url')
+              return prodObj['url'].to_s
+            end
+            retValue = retValue + generateDownloadLink(prodObj, explodedStr, deviceName, imgFile)
+          end
+          return retValue
+        end
+
+        def generateDevVersionDropDown (dataPath)
+          if data.downloads[current_language]
+            prodObj = data.downloads[current_language]
+          else
+            prodObj = data.downloads['en']
+          end
+
+          explodedStr = dataPath.split("~")
+          appDownloadType = explodedStr[3]
+
+          if explodedStr.length > 0
+            explodedStr.each{|k,v|
+              prodObj = prodObj.send(k.to_sym) ? prodObj.send(k.to_sym) : false
+              if not prodObj
+                break
+              end
+            }
+          end
+
+          retValue = ""
+          if isMultiVersions(prodObj)
+            retValue = '<a href="#" class="js-dropdown-toggle btn btn-clear btn-small dropdown-btn" aria-expanded="false">Version '
+            firstVersion = true
+            prodObj.send("versions".to_sym).each {|k,v|
+              fileSize = v['filesize'] ? v['filesize'] : "&nbsp;"
+              if firstVersion
+                retValue = retValue + k.to_s + '</a>
+                <nav class="dropdown-menu dropdown-right">
+                <a href="#" class="dropdown-link js-version icon-ui-check-mark version-is-active"  data-sdk="' + explodedStr[0] + '-' + explodedStr[1] + '-' + k.to_s + '">' + k.to_s + '</a>'
+                firstVersion = false
+              else
+                retValue = retValue + '<a href="#" class="dropdown-link js-version icon-ui-check-mark"  data-sdk="' + explodedStr[0] + '-' + explodedStr[1] + '-' + k.to_s + '">' + k.to_s + '</a>'
+              end
+            }
+            retValue = retValue + "</nav>"
+          end
+          return retValue
+        end
+
+        def generateVersionDropDown (dataPath)
+          if data.downloads[current_language]
+            prodObj = data.downloads[current_language]
+          else
+            prodObj = data.downloads['en']
+          end
+
+          explodedStr = dataPath.split("~")
+          appDownloadType = explodedStr[3]
+
+          if explodedStr.length > 0
+            explodedStr.each{|k,v|
+              prodObj = prodObj.send(k.to_sym) ? prodObj.send(k.to_sym) : false
+              if not prodObj
+                break
+              end
+            }
+          end
+
+          retValue = ""
+          if isMultiVersions(prodObj)
+            retValue = "<div class='dropdown-wrapper dropdown js-dropdown'>
+                              <button class='btn btn-transparent dropdown-btn js-dropdown-toggle' tabindex='0' aria-haspopup='true' aria-expanded='false'>Version <span class='dropdown dropdown-selected' filename='' foldername='' href='#'></span></button>
+                              <div class='dropdown-content'>
+                                <nav class='dropdown-menu modifier-class' role='menu'>"
+            #if isMultiVersions(prodObj) == true
+            prodObj.send("versions".to_sym).each {|k,v|
+              fileSize = v['filesize'] ? v['filesize'] : "&nbsp;"
+              retValue = retValue + '<a href="#" class="dropdown-link" role="menu-item" data-file-size="' + fileSize + '" data-app-folder="' + v['foldername'] + '" data-app-file="' + v['filename'] + '">' + k.to_s + '</a>'
+            }
+            retValue = retValue + "</nav>
+            </div></div>
+            <br /><a class='btn download-link' data-folder='' data-filename=''>Download</a>"
+          else
+            prodObj.send("versions".to_sym).each {|k,v|
+              fileSize = v['filesize'] ? v['filesize'] : "&nbsp;"
+              retValue = retValue + '
+              Version <span class="dropdown dropdown-selected" filename="" foldername="" href="#">' + k.to_s + '</span><br/>
+              <a href="#" class="btn download-link" data-file-size="' + fileSize + '" data-folder="' + v['foldername'] + '" data-filename="' + v['filename'] + '">Download</a>'
+            }
+          end
+
+          return retValue
+        end
+
+        def getExtensionNames (extensions,type)
+          names = ""
+
+          extensions.each {|k,v|
+            names = names + ',' + k + '-' + v[type]
+          }
+          return names
+
+        end
+
+      end
 
     end
     alias :included :registered

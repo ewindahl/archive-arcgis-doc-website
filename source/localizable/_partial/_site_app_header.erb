@@ -11,8 +11,8 @@
             <nav role="navigation" class="top-nav-list left tablet-hide">
               <%= partial "_partial/site_header_nav" %>
             </nav>
-            
-           <!--            
+
+           <!--
             <div id="lg-container" class="dropdown-navigation">
               <div id="lang-block"></div>
             </div>
@@ -20,15 +20,15 @@
             <div class="lang-block dropdown js-dropdown right margin-left-1 top-nav-list right"></div>
 
             <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
-              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
+              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search"><%= t("site.nav.search") %></a>
               <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue" href="#"><%= t("site.nav.sign_in") %></a>
             </div>
 
 
             <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
-              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
+              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search"><%= t("site.nav.search") %></a>
 
-             
+
               <div class="dropdown js-dropdown right">
 
                 <div class="tablet-show top-nav-link">
@@ -48,12 +48,12 @@
                   </div>-->
                   <a class="dropdown-link" id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a>
                   <a class="dropdown-link" id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a>
-                  <a class="dropdown-link" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
                 </nav>
               </div>
           </nav>
 
-            
+
           </div>
         </div>
       </header>

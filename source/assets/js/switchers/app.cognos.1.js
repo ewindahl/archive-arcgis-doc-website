@@ -104,7 +104,7 @@ $(document).ready(function () {
     }
 
 	function modHelpNavUrls (plt) {
-		$(".section-bar nav a[href]").each (function (i) {
+		$(".sub-nav nav a[href], .reference-index a[href], .column-17 a[href], .content-section a[href]").each (function (i) {
 			var $ele = $(this),
 				href = $ele.attr("href"),
 				newHref = href.replace("/" + prodDVal + "/", "/" + plat + "/");
@@ -123,7 +123,7 @@ $(document).ready(function () {
 	}
 
     if (!isHome) {
-        $('main h1').after(val);
+        $('main h1, div.content-section h1').after(val);
 
 		// Update product meta value in search form
 		//updateSearchForm();

@@ -1,286 +1,202 @@
 ---
 title: ArcGIS Maps for Office
-
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.colorbox-min.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2015-10-30"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ko">
+  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2016-11-02"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4."><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ko">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-	<header>
-		<h1><a href="/ko/maps-for-office/">ArcGIS Maps for Office</a></h1>
-		<form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Maps for Office">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="esri-maps-office" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	
-	<nav>
-      <ul>
-        <li class='current'><a href="/ko/maps-for-office/">홈</a></li>
-        <li><a href="/ko/maps-for-office/install-and-configure/">설치 및 구성</a></li>
-        <li><a href="/ko/maps-for-office/design-and-use/">맵 디자인 및 사용</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus%5Bpublished%5D~tag%5B_office%5D">GeoNet</a></li>
-      </ul>
-    </nav>
+
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Maps for Office</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear" href="//www.esri.com/software/arcgis/arcgisonline/apps/download">Maps for Office 다운로드</a>
+          <p class="trailer-0 leader-half text-white font-size--2"><strong>버전 4.1</strong> Q1 2017</p>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link is-active" href="/ko/maps-for-office/">홈</a>
+        <a class="sub-nav-link" href="/ko/maps-for-office/install-and-configure/">설치 및 구성</a>
+        <a class="sub-nav-link" href="/ko/maps-for-office/design-and-use/">맵 디자인 및 사용</a>
+        <a class="sub-nav-link" href="//geonet.esri.com/groups/arcgis-maps-for-office">GeoNet</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <div class="wf-nav" style="height:55px;">
+      <div class="wf-nav search-bar column-16 trailer-1 padding-right-2">
+        <form id="helpSearchForm" target="_top">
+          <input type="search" name="q" class="leader" placeholder="ArcGIS Maps for Office 검색">
+          <input type="hidden" name="collection" value="help" />
+          <input type="hidden" name="product" value="esri-maps-office" />
+          <input type="hidden" name="language" value="<%= current_language %>" />
+          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+        </form>
+      </div>
+    </div>
+    <div class="column-4 right margin-right-1 padding-left-0">
+      <img src="m4o_banner.png">
+    </div>
+    <div class="column-11 tablet-column-7">
+      <p>위치 기반 분석을 통해 생산성을 높일 수 있습니다. Microsoft Office에서 완전히 새로운 차원의 분석을 사용할 수 있습니다. 지금 바로 새로운 통찰력을 얻고 더욱 충분한 정보를 가지고 의사 결정을 내릴 수 있습니다. Excel 스프레드시트와 PowerPoint 프레젠테이션에 쉽게 매핑 기능을 추가할 수 있습니다.</p>
+    </div>
+  </div>
+  <div class="column-8 tablet-column-12 right">
+    <div class="panel">
+      <h4 class="icon-ui-announcement">새로운 기능</h4>
+      <p>ArcGIS Maps for Office 4.1은 속도와 사용성이 개선되었으며 다수의 버그가 수정된 마이너 업데이트입니다.</p>
+      <a class="btn secondary" href="/ko/maps-for-office/install-and-configure/whats-new.htm">자세한 정보</a>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-    <div class="column-16 tablet-column-24">
-        <header>
-		<h2 id="appTitle">앱 다운로드</h2>
-        <span id="appVersion"><strong>버전:</strong> 4.0</span> <span id="appReleased"><strong>출시일:</strong> 2016년 봄</span>
-
-          <p>위치 기반 분석을 통해 생산성을 높일 수 있습니다. Microsoft Office에서 완전히 새로운 차원의 분석을 사용할 수 있습니다. 지금 바로 새로운 통찰력을 얻고 더욱 충분한 정보를 가지고 의사 결정을 내릴 수 있습니다. Excel 스프레드시트와 PowerPoint 프레젠테이션에 쉽게 지도를 추가합니다.</p>
-
-          <p>
-             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">ArcGIS Maps for Office 다운로드</a>
-          </p>
-		  
-        </header>
-        <hr />
-        <br />
-
-<!-- features top row -->
-		<!-- Map your Excel data -->
-		<div id="em4oFirstFeature" class="column-12 phone-column-24">
-			<img src="Map-your-data.png" alt="Map your Excel data" />
-		  
-			<h3>Excel 데이터 매핑</h3>
-			<p>Excel에서 스프레드시트 데이터를 바로 대화형 맵으로 만들 수 있습니다. 클릭 몇 번으로 색상 구분 맵, 포인트 맵, 군집된 포인트 맵, 히트 맵을 생성하여 데이터를 시각적으로 나타낼 수 있습니다.</p>
-			<p>&gt; <a href="/ko/maps-for-office/design-and-use/add-a-map-to-excel.htm">자세한 정보</a></p>
-		</div>
-
-		<!-- Analyze data -->
-        <div id="em4oSecondFeature" class="column-12 phone-column-24">
-			<!-- REPLACE IMAGE > PPT -->
-			<img src="Analyze-your-data.png" alt="Add a map to PowerPoint" />
-			<h3>동적 맵을 PowerPoint에 추가</h3>
-			<p>ArcGIS 기관의 맵을 PowerPoint에 추가하여 멋진 동적 프레젠테이션을 만들 수 있습니다.</p>
-			<p>&gt; <a href="/ko/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">자세한 정보</a></p>
-		</div>
-        <div class="clear"></div>
-
-<!-- features second row -->
-		<!-- Enrich your data -->
-		<div id="em4oThirdFeature" class="column-12 phone-column-24">
-			<img src="Enrich-your-spreadsheets.png" alt="Enrich your data" />
-
-			<h3>비즈니스 스프레드시트 보강</h3>
-			<p>ArcGIS 인구 통계와 생활 방식 데이터를 Excel 스프레드시트에 직접 추가하여 중요한 위치와 관련된 정보를 더욱 자세하게 확인할 수 있습니다. 팝업 인포그래픽을 사용해 위치를 신속하게 탐색합니다.</p>
-			<p>&gt; <a href="/ko/maps-for-office/design-and-use/enrich-your-data.htm">자세한 정보</a></p>
-		</div>
-
-		<!-- Share maps -->
-		<div id="em4oFourthFeature" class="column-12 phone-column-24">
-			<img src="Share-your-data.png" alt="Share maps on ArcGIS" />
-			<h3>Excel에서 맵 공유</h3>
-			<p>ArcGIS Online 또는 Portal for ArcGIS를 사용하여 맵을 공유하거나, 이메일, PowerPoint 프레젠테이션 또는 Word 문서에 삽입할 수 있습니다.</p>
-			<p>&gt; <a href="/ko/maps-for-office/design-and-use/share-a-map-on-arcgis.htm">자세한 정보</a></p>
-        </div>
-	<div class="clear"></div> 
-
-		<br />
-		
-<!-- What's new section -->
-	<hr />
-	<a id="whatsNew"></a>
- 	<h2>새로운 기능</h2>	
-	<p>&gt; ArcGIS Maps for Office에서 보고 싶은 기능에 대한 아이디어가 있습니까? <a href="http://ideas.arcgis.com/ideaList?c=09a300000004xET&category=Esri+Maps+for+Office" target="_blank">ArcGIS 아이디어</a> 사이트에 의견을 보내 주세요.</p>
- 	<p>ArcGIS Maps for Office 4.0 릴리스가 출시되었습니다. 이 릴리스에서 중요한 업데이트와 향상된 기능을 제공합니다. 주요 업데이트 및 향상된 기능은 다음과 같습니다.</p>
-	
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-
-		<h3>4.0 업데이트</h3>
-		<p>ArcGIS Maps for Office 4.0에는 다음의 새 기능이 포함되어 있습니다.
-			<ul>
-				<li><b>멋진 맵을 빠르게 만들 수 있는 <a href="/ko/maps-for-office/design-and-use/change-a-layer-s-style.htm">스마트 매핑</a> 기능</b>
-					<p>전달하려는 스토리를 시각적으로 멋진 맵으로 만드는 일은 첫 사용자에게나 지도 제작 전문가에게나 결코 쉽지 않습니다. ArcGIS Maps for Office가 여러분의 스프레드시트 데이터를 분석한 후 다양한 스타일 중에서 선택할 수 있도록 하여 맵에 데이터를 표현할 가장 적절한 방법을 제안합니다. 스타일을 선택하고 맵을 즉시 생성하거나 스토리에 더 적합하도록 스타일 지정 옵션을 수정할 수 있습니다. 스마트 매핑에는 그동안 가장 많이 요청된 기능인 레이어에 클래스 구분점을 수동으로 설정하는 기능도 제공합니다.</p>
-				</li>
-				<li><b><a href="/ko/maps-for-office/design-and-use/map-temporal-data.htm">시간 기반 애니메이션</a>을 사용해 시간에 따른 내 위치의 패턴 찾기</b>
-					<p>데이터에 시계열 값이 포함된 경우 Excel에서 시계열 레이어를 맵에 추가하고 시간에 따른 데이터 패턴 변화를 보여 주는 애니메이션을 실행할 수 있습니다. 또한 이 기능은 ArcGIS platform의 시계열 레이어를 지원하여 내 기관 또는 NOAA(미국 국립해양청) 등의 신뢰할 수 있는 원본 내에에서 유사한 패턴이 있는 데이터의 시간 기반 패턴을 비교할 수 있습니다.</p>
-				</li>
-				<li><b><a href="/ko/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">PowerPoint</a>에서의 새로운 기능을 활용하여 내 작업을 더욱 효과적으로 전달</b>
-					<p>ArcGIS Maps for Office에서는 PowerPoint 프레젠테이션을 적극 활용할 수 있도록 전체적인 업그레이드가 이루어졌습니다. 콘텐츠를 더 간편하고 빠르게 검색할 수 있도록 함으로써 대화형, 동적 맵 구동을 제공합니다. ArcGIS 기관 콘텐츠를 PowerPoint에 직접 맵을 추가하거나 기존 맵 슬라이드를 편집합니다. 슬라이드에 맵을 삽입하여 단독으로 사용하거나 차트, 이미지, 텍스트와 같은 다른 표준 PowerPoint 기능과 조합하여 원하는 위치에 배치합니다. 슬라이드 쇼 모드에서 프레젠테이션 중에 나오는 질문에 빠르게 답변할 수 있도록 맵의 여기 저기를 확대/축소하거나 이동시킬 수 있고 피처를 선택하여 자세한 정보를 표시할 수 있습니다.</p>
-				<li><b>중요한 행에 집중할 수 있는 <a href="/ko/maps-for-office/design-and-use/select-features.htm#ESRI_SECTION1_53FF2A6DECC04ED4A5AAED1BDDBC9515">맵 기반 필터링</a></b>
-					<p>그동안은 스프레드시트를 셀 값별로 필터링할 수 있었습니다. 이제 ArcGIS Maps for Office을 사용하면 현재 작업하는 피처에 바로 집중할 수 있도록.스프레드시트를 맵에서 선택한 항목별로 필터링할 수 잇습니다. 원하는 피처만 보이도록 스프레드시트를 필터링한 다음 표준 Excel 기능을 사용하여 필요한 데이터로 작업할 수 있습니다.</p>
-				</li>
-				<li><b><a href="/ko/maps-for-office/design-and-use/set-refresh-interval.htm">새로 고침 간격</a>을 설정하여 데이터 변경 사항 확인</b>
-					<p>ArcGIS에서 추가된 정적 레이어를 사용하면 건물, 도로 또는 경계 등의 고정 개체를 시각화할 수 있습니다. 이제 ArcGIS Maps for Office를 사용하여 폭풍, 차량, 또는 현장 작업 상태와 같이 이동하고 바뀌거나 발전하는 사물의 상태를 확인할 수 있습니다. 새로 고침 간격 기능을 사용하여 레이어가 업데이트되는 빈도를 지정하거나, 버튼을 클릭하여 레이어를 즉시 업데이트할 수 있습니다.</p>
-				</li>
-			</ul>
-		</p>
-	
-
-
-<!-- Supported environments section -->
-	<hr />
-	<a id="supportedEnvironments"></a>
-        <h2>지원 환경</h2>
-		<p>ArcGIS Maps for Office는 Microsoft Excel 및 Microsoft PowerPoint에 애드-온으로 배포됩니다. ArcGIS Maps for Office가 제대로 작동하려면 이러한 응용프로그램의 작동 구성에서 사용해야 합니다. Esri에서는 Microsoft Excel 또는 Microsoft PowerPoint에서 인증받거나 이들을 지원하는 소프트웨어 환경에서만 ArcGIS Maps for Office를 테스트하였으며 일부 Excel/PowerPoint 지원 환경은 테스트 또는 인증되지 않았습니다. 자세한 내용은 <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Esri 지원 환경 정책</a>을 참고하세요.</p>
-		
-		<p><b>참고 사항:</b> Microsoft Word 문서에 Excel 스프레드시트를 임베드하여 사용할 수 있습니다. 이 워크플로는 ArcGIS Maps for Office에서 지원하지 않으며 권장되지 않습니다.</p>
-		
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-
-		<!-- Sys Reqs -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">시스템 요구 사항</a>
-		</h3>
-			<div exp1='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office를 사용하려면 ArcGIS 기관에 속한 계정과 Microsoft Office Excel 또는 PowerPoint(Microsoft Office 2010, 2013 또는 2016)가 필요합니다.</p>
-			<p>필요한 프로세서 속도, 메모리 및 하드 디스크 공간을 비롯한 자세한 내용은 다음에 대한 시스템 요구 사항을 참고하세요.
-			<ul>
-				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
-				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
-				<li><a href="https://products.office.com/en-ca/office-system-requirements#SUITES" target="_blank">Microsoft Office 2016</a></li>
-			</ul>	
-			</p>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Req'd SW -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">필수 소프트웨어</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office를 사용하려면 <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> 기관 구독 또는 온-프레미스 Portal for ArcGIS 배포가 필요합니다. 여기에서는 ArcGIS 관리자에서 플랫폼 접근 인증 방법을 올바르게 구성한 것으로 가정합니다.</p>
-
-			<p>또한 시스템에서 다음 소프트웨어를 설치하고 구성해야 합니다.</p>
-				<ul>
-					<li>Microsoft Office 2010, 2013 또는 2016*</br>
-						* ArcGIS Maps for Office는 Microsoft Office 2016 16.0.4266.1003 이전 버전을 지원합니다.
-					</li>
-					<li>Internet Explorer 9, 10 또는 11**</li>
-					<li>Microsoft Windows 지원 버전:
-						<ul>
-							<li>Windows 7(32비트, 64비트)</li>
-							<li>Windows 8(32비트, 64비트)</li>
-							<li>Windows 8.1(32비트, 64비트)</li>
-							<li>Windows 10(32비트, 64비트)</li>
-							<li>Windows Server 2008 R2</li>
-							<li>Windows Server 2012</li>
-							<li>Windows Server 2012 R2</li>
-						</ul>
-					</li>
-				</ul>
-			<p>** ArcGIS Maps for Office는 웹 브라우저 내에서 Javascript를 사용하여 맵을 나타냅니다. Microsoft Excel은 Internet Explorer(IE)를 사용하여 웹 콘텐츠를 나타내야 하기 때문에 다른 브라우저 옵션은 제공되지 않습니다. 앱 내의 기능을 구현하려면 IE 9 이상을 사용해야 합니다. 이전 버전은 지원되지 않습니다.</p>
-			</div>
-			
-		<!-- Supported languages -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">지원되는 언어</a>
-		</h3>
-			<div exp3='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for Office는 다음 언어로 제공됩니다.</p>
-			<p>아랍어, 중국어(간체), 중국어(번체)(홍콩), 중국어(번체)(대만), 체코어, 덴마크어, 독일어, 그리스어, 영어, 스페인어, 에스토니아어, 핀란드어, 프랑스어, 히브리어, 이탈리아어, 일본어, 한국어, 리투아니아어, 라트비아어, 네덜란드어, 노르웨이어, 폴란드어, 포르투갈어(브라질), 포르투갈어(포르투갈), 루마니아어, 러시아어, 스웨덴어, 태국어, 터키어와 베트남어를 지원합니다.</p>
-			
-			<p>ArcGIS Maps for Office는 운영 체제의 문화 설정이 아니라, Excel 옵션에 지정된 언어를 사용합니다. 지원되지 않는 언어를 사용할 경우 앱에서 영어가 사용됩니다.</p>
-			
-			</div>
-
-        <p>&nbsp;</p>
-	</div>
-	
-	
-<!-- Sidebars -->
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>시작하기</h3>
-          <ul>
-           <li><a href="#whatsNew">새로운 기능</a></li>
-            <li><a href="#supportedEnvironments">지원 환경</a></li>
-			<li>이전 버전에 대한 도움말:
-				<ul>
-					<li><a href="/ko/maps-for-office/3.1/welcome.htm">3.1 Online 도움말</a></li>
-				</ul>
-			</li>
-			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">비디오 보기</a></li>
-
-          </ul>
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>Esri 블로그</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
-        </div>
-
-	 </div>
-
-
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="/ko/maps-for-office/install-and-configure/whats-new.htm">새로운 기능</a></li>
+        <li><a href="/ko/maps-for-office/install-and-configure/supported-environments.htm">지원 환경</a></li>
+	      <li><a href="/ko/maps-for-office/4.0/install-and-configure/about-esri-maps-for-office.htm">보관된 도움말</a></li>
+        <li><a href="//www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">비디오 보기</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
 </div>
 
-	 
+<div class="grid-container leader-1">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/add-a-map-to-excel.htm">
+            <img alt="" src="Map-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/add-a-map-to-excel.htm">Excel 데이터 매핑</a>
+          </h5>
+          <p>Excel에서 스프레드시트 데이터를 바로 대화형 맵으로 만들 수 있습니다. 클릭 몇 번으로 색상 구분 맵, 포인트 맵, 군집된 포인트 맵, 히트 맵을 생성하여 데이터를 시각적으로 나타낼 수 있습니다.</p>
+        </div>
+        <a href="design-and-use/add-a-map-to-excel.htm" class="btn btn-clear btn-fill leader-0">자세한 정보</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/add-a-map-to-powerpoint.htm">
+            <img alt="" src="Analyze-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/add-a-map-to-powerpoint.htm">동적 맵을 PowerPoint에 추가</a>
+          </h5>
+          <p>ArcGIS 기관의 맵을 PowerPoint에 추가하여 멋진 동적 프레젠테이션을 만들 수 있습니다.</p>
+        </div>
+        <a href="design-and-use/add-a-map-to-powerpoint.htm" class="btn btn-clear btn-fill leader-0">자세한 정보</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/enrich-your-data.htm">
+            <img alt="" src="Enrich-your-spreadsheets.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/enrich-your-data.htm">비즈니스 스프레드시트 보강</a>
+          </h5>
+          <p>ArcGIS 인구 통계와 생활 방식 데이터를 Excel 스프레드시트에 직접 추가하여 중요한 위치와 관련된 정보를 더욱 자세하게 확인할 수 있습니다. 팝업 인포그래픽을 사용하면 원하는 위치를 빠르게 즉시 탐색할 수 있습니다.</p>
+        </div>
+        <a href="design-and-use/enrich-your-data.htm" class="btn btn-clear btn-fill leader-0">자세한 정보</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/share-a-map-to-arcgis.htm">
+            <img alt="" src="Share-your-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/share-a-map-to-arcgis.htm">Excel에서 맵 공유</a>
+          </h5>
+          <p>ArcGIS Online 또는 Portal for ArcGIS를 사용하여 맵을 공유하거나, 이메일, PowerPoint 프레젠테이션 또는 Word 문서에 삽입할 수 있습니다.</p>
+        </div>
+        <a href="design-and-use/share-a-map-to-arcgis.htm" class="btn btn-clear btn-fill leader-0">자세한 정보</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Collapsible contents -->
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-2">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h3 class="leader-half trailer-0 text-center padding-trailer-0">Esri 비디오 보기</h3>
+      <a class="btn btn-transparent btn-large right padding-leader-0 padding-trailer-0 text-white" href="https://www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">더 많은 비디오</a>
+      <div playlistid="PLpq4BB-MZiMchCC8XEpSWGlEN89qls1FJ" class="video-holder block-group block-group-3-up tablet-block-group-1-up leader-1 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div>
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">ArcGIS Maps for Office 연결</h4>
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/mapsforoffice"></a>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/company/5311?trk=vsrp_companies_hero_name&trkInfo=VSRPsearchId%3A62267361477673144233%2CVSRPtargetId%3A5311%2CVSRPcmpt%3Ahero"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/esrigis/"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/groups/arcgis-maps-for-office"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Esri 블로그 읽기
+		<a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/">더 많은 게시물</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-  </script>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">대화 참여
+        <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/groups/arcgis-maps-for-office">더 많은 대화</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="block-group block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
