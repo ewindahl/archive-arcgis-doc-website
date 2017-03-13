@@ -18,19 +18,14 @@ layout: docindex
   </nav>
   <div class="column-24">
     <div id="gallerycontent" class="block-group block-group-6-up tablet-block-group-3-up phone-block-group-1-up">
-      <div class="card card-shaped block trailer-2" ng-repeat="item in (galleryResults = (galleryitems | filter:query | orderBy:orderProp))">
+      <div class="card block trailer-2" ng-repeat="item in (galleryResults = (galleryitems | filter:query | orderBy:orderProp))">
         <figure class="card-image-wrap">
           <img src="/assets/img/app-icons/test.png" class="card-image" alt="Placeholder" />
         </figure>
         <div class="card-content">
-          <a href="{{item.appLink}}">
-            <h5 class="trailer-half">{{item.appName}}</h5>
-          </a>
-          <p class="font-size--1 card-last">
-            {{item.appDesc}}
-          </p>
-          <a href="{{item.appLink}}" class="btn btn-clear btn-fill leader-1">View Help</a>
+            <h5 class="card-last text-center trailer-0 ">{{item.appName}}</h5>
         </div>
+        <a href="{{item.appLink}}" class="btn btn-clear btn-fill leader-1">View Help</a>
       </div>
       <div ng-show="isEmpty(galleryResults)" class="empty-results">
         <h3>No results found.</h3>
