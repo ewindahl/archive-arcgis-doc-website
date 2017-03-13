@@ -45,7 +45,45 @@ mobile: true
   </div>
 </header>
 
-<div class="grid-container leader-2">
+<div class="grid-container">
+  <div class="column-12 post-1 trailer-2 secured-org downloads">
+    <header class="clearfix leader-1">
+      <h2 class="left trailer-half font-size-3" id="Survey123Connect">Survey123 Connect</h2>
+      <div class="dropdown js-dropdown right">
+        <%= generateDevVersionDropDown("survey123~secured~windows86") %>
+      </div>
+    </header>
+    <hr class="leader-0 trailer-half">
+    <p class="trailer-half">Download Survey123 Connect to create and share a survey.</p>
+    <div class="clearfix">
+      <%= generateVersionButtons("survey123~secured~windows86") %>
+      <%= generateVersionButtons("survey123~secured~mac") %>
+      <%= generateVersionButtons("survey123~secured~linux") %>
+    </div>
+  </div>
+  <div class="column-11 trailer-2">
+    <header class="clearfix leader-1">
+      <h2 class="left trailer-half font-size-3" id="Survey123">Survey123 for ArcGIS</h2>
+    </header>
+    <hr class="leader-0 trailer-half">
+    <p class="trailer-half">Download Survey123 for ArcGIS to complete a survey and get answers.</p>
+    <div class="clearfix">
+      <%= generateVersionButtons("survey123~nonSecured~windows86") %>
+      <%= generateVersionButtons("survey123~nonSecured~mac") %>
+      <%= generateVersionButtons("survey123~nonSecured~linux") %>
+    </div>
+    <div class="leader-half">
+      <a href="<%= generateVersionButtons("survey123~nonSecured~ios", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="/assets/img/badges/app_store.svg" style="height:40px;"></a>
+      <a href="<%= generateVersionButtons("survey123~nonSecured~android", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="/assets/img/badges/google_play.png" style="height:40px;"></a>
+      <a href="<%= generateVersionButtons("survey123~nonSecured~amazon", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="/assets/img/badges/amazon.png" style="height:40px;"></a>
+      <a href="<%= generateVersionButtons("survey123~nonSecured~windowsphone", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="/assets/img/badges/microsoft.png" style="height:40px;"></a>
+    </div>
+  </div>
+</div>
+
+
+
+<!--div class="grid-container leader-2">
   <div class="column-24">
     <p>To create and share a survey, download Survey123 Connect.</p>
     <div class="download-section">
@@ -171,4 +209,4 @@ mobile: true
     </div>
   </div>
 </div>
-<p>&nbsp;</p>
+<p>&nbsp;</p-->

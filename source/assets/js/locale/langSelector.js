@@ -1,4 +1,4 @@
-﻿//this file contains core library that is used by all/most pages
+//this file contains core library that is used by all/most pages
 
 function dbg (s) {
     //window.console && console.info (s);
@@ -15,12 +15,23 @@ if (!String.prototype.format) {
     };
 }
 
+function replace_langd(lang){
+  var lang = lang || 'en';
+  var help_link = $("a[data-langlabel='help']").attr('href');
+  if(help_link.indexOf("%(langd)s") >= 0){
+    var new_help_link = help_link.replace("%(langd)s", lang);
+    $("a[data-langlabel='help']").each(function(){
+      $(this).attr('href', new_help_link);
+    });
+  }
+}
 
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
   if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/)/)){
-  return;
+    replace_langd();
+    return;
   }
 
   var doc = {};
@@ -110,6 +121,7 @@ jQuery(document).ready(function ($) {
       lgCognos = ['en', 'de','fr','ja', 'ko','zh-cn'],
       lgMicro = ['en', 'de'],
       lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
+      lgMarketplaceptpt = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
       lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
       lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
       lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
@@ -175,6 +187,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "micro" && lgMicro.indexOf(lg) >= 0){
                 return true;
               }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){
+                return true;
+              }else if(langSelector === "marketplaceptpt" && lgMarketplaceptpt.indexOf(lg) >= 0){
                 return true;
               }else if(langSelector === "navigator" && lgNavigator.indexOf(lg) >= 0){
                 return true;
@@ -273,6 +287,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "marketplace":
                   lgList = lgMarketplace;
+                  break;
+                case "marketplaceptpt":
+                  lgList = lgMarketplaceptpt;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -424,8 +441,10 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/collector\/|\/web-appbuilder\/|\/explorer\/|\/appstudio\/|\/operations-dashboard\/|\/workforce\/)/)){
+  }else if (winloc.pathname.match( /(\/explorer\/|\/operations-dashboard\/)/)){
     docCfg.langSelector = "marketplace";
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/workforce\/|\/collector\/|\/web-appbuilder\/|\/appstudio\/)/)){
+    docCfg.langSelector = "marketplaceptpt";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
   }else if (winloc.pathname.match( /(\/maps-for-sharepoint\/)/)){
@@ -474,6 +493,7 @@ jQuery(document).ready(function ($) {
         }
       }
     }
+    replace_langd(urlLang);
 
 
     doc.l10n.showSelector (prefLang ? prefLang: urlLang, docCfg["langSelector"]);
@@ -482,3 +502,4 @@ jQuery(document).ready(function ($) {
   }
 
 })
+;

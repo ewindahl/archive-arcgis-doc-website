@@ -4,18 +4,11 @@ $(document).ready(function() {
 	data-appname="collector"
 		data-plat="android"
 		data-plat="ios"
-
 */
 var noSwitcherFileList = {
-	   "high-accuracy-gps.htm": "Desktop",
-		"troubleshoot-collect.htm": "Desktop",
-		"gps-high-accuracy-receivers.htm": "Desktop",
-		"gps-map-prep.htm": "Desktop",
-		"troubleshoot-create-map.htm": "Desktop",
-		"gps-config-metadata-storage.htm": "Desktop",
-		"gps-receiver-support.htm": "Desktop"
-
+	   "test.htm": "Desktop",
 }
+
    var localedir = "en";
    if(window.docConfig !== undefined){
       localedir =   docConfig['localedir'].toLowerCase();
@@ -40,7 +33,6 @@ var noSwitcherFileList = {
 		fldpath = parts.join ("/"),
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
-
     if(!($.cookie (prodKey)) && (navigator.userAgent.match(/(iPhone|iPod|iPad)/gi))) {
       plat = prodIOSVal;
       if (!isHome) {
@@ -54,7 +46,6 @@ var noSwitcherFileList = {
     }
 
    function UASpecificRedirect (plat, pathname) {
-
 			var parts = pathname.split("/");
 				fname = parts.pop(),
 				fld = parts.pop(),
@@ -69,34 +60,33 @@ var noSwitcherFileList = {
 
 	function modHomeUrls (plat) {
 		$("a[href]").each (function (i) {
-			var $ele = $(this),
-				href = $ele.attr ("href"),
-				parts = href.split("/");
-				fname = parts.pop(),
-				fld = parts.pop(),
-				newHref = href.replace ("/"+prodDVal+"/", "/"+plat+"/");
+			var $modele = $(this),
+				modhref = $modele.attr ("href"),
+				modparts = modhref.split("/");
+				modfname = modparts.pop(),
+				modfld = modparts.pop(),
+				modnewHref = modhref.replace ("/"+prodDVal+"/", "/"+plat+"/");
 
-			if (href.indexOf (homePath) === 0 ) {
+			if (modhref.indexOf (homePath) === 0 ) {
 				//console.log (href + "=>" + newHref);
-				$ele.attr ("href", newHref);
+				$modele.attr ("href", modnewHref);
 			}
 		})
-
 	}
-
 	if (!isHome) {
 		if(!window.location.pathname.match( /(\/overview\/)/)){
-			$('main h1').after (val);
+			//$('.reference-content .page-title').after (val);
+			$('main.column-17 h1, div.content-section h1').after (val);
 		}else{
-			 modHomeUrls (plat)
+			 modHomeUrls (plat);
 			 $('#helpSearchForm input[name=product]').attr("value", "collector-" + plat);
 		}
+		modHomeUrls (plat);
 	} else {
 		modHomeUrls (plat);
 		// Update product meta value in search form
 		$('#helpSearchForm input[name=product]').attr("value", "collector-" + plat);
 	}
-
 
 	$("#plats a[data-appname]").each (function (i) {
 		var $ele = $(this),
@@ -110,6 +100,7 @@ var noSwitcherFileList = {
 		} else {
 			$ele.toggleClass ("off");
 			url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+
 			if(fname in noSwitcherFileList){
 				// disable click
 				url = "#";
@@ -120,7 +111,6 @@ var noSwitcherFileList = {
 			}
 
 		}
-
 		$ele.attr ("href", url);
 	});
 

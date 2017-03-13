@@ -26,19 +26,29 @@ mobile: true
           <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Online ヘルプ</h1>
         </div>
         <div class="leader-1 text-right">
-          <p> <a href="http://www.arcgis.com/features/free-trial.html"> <button class="btn margin-left-1 btn-clear">60 日間無料トライアル</button></p>
+          <p><a href="http://www.arcgis.com/features/free-trial.html"><button class="btn margin-left-1 btn-clear">無料トライアル</button></a></p>
         </div>
       </div>
     </div>
     <div class="column-24">
-      <nav class="sub-nav-list">
-		    <a class="sub-nav-link  is-active" title="ArcGIS Online ヘルプ" href="/ja/arcgis-online/">ホーム</a>
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/arcgis-online/" selected>ホーム</option>
+        <option value="/en/arcgis-online/get-started/">基本操作</option>
+        <option value="/en/arcgis-online/create-maps/">作成</option>
+        <option value="/en/arcgis-online/analyze/">解析</option>
+        <option value="/en/arcgis-online/share-maps/">共有</option>
+        <option value="/en/arcgis-online/administer/">管理</option>
+        <option value="/en/arcgis-online/reference/">参照</option>
+        <option value="/en/arcgis-online/apps/arcgis-apps.htm">アプリ</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link  is-active" title="ArcGIS Online ヘルプ" href="/ja/arcgis-online/">ホーム</a>
         <a class="sub-nav-link" title="はじめての ArcGIS Online" href="/ja/arcgis-online/get-started/">基本操作</a>
 			  <a class="sub-nav-link" title="マップ、シーン、およびアプリの作成" href="/ja/arcgis-online/create-maps/">作成</a>
         <a class="sub-nav-link" title="解析の実行" href="/ja/arcgis-online/analyze/">解析</a>
 			  <a class="sub-nav-link" title="マップ、シーン、およびアプリの共有" href="/ja/arcgis-online/share-maps/">共有</a>
 			  <a class="sub-nav-link" title="組織サイトの管理" href="/ja/arcgis-online/administer/">管理</a>
-			  <a class="sub-nav-link" title="リファレンス" href="/ja/arcgis-online/reference/">参照</a>
+			  <a class="sub-nav-link" title="参照" href="/ja/arcgis-online/reference/">参照</a>
 			  <a class="sub-nav-link" title="すべての人のためのアプリ" href="/ja/arcgis-online/apps/arcgis-apps.htm">アプリ</a>
       </nav>
     </div>
@@ -60,12 +70,14 @@ mobile: true
       <div container="" class="panel">
         <div class="wf-nav" style="height:55px;">
           <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
-            <form id="helpSearchForm" target="_top">
-              <input type="search" name="q" class="leader" placeholder="ArcGIS Online ヘルプの検索">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="ArcGIS Online ヘルプの検索">
               <input type="hidden" name="collection" value="help" />
               <input type="hidden" name="product" value="arcgis-online" />
               <input type="hidden" name="language" value="ja" />
-              <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
             </form>
           </div>
         </div>
@@ -74,9 +86,9 @@ mobile: true
     <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
       <hr class="leader-half trailer-half">
       <ul class="list-plain sdk-home-nav-list text-center">
-        <li><strong>最新の更新:</strong> 2016 年 12 月</li>
+        <li><strong>最新の更新:</strong> 2017 年 3 月</li>
         <li><a href="/ja/arcgis-online/reference/whats-new.htm">新機能</a></li>
-	      <li><a href="/ja/arcgis-online/reference/faq.htm">FAQ</a></li>
+        <li><a href="/ja/arcgis-online/reference/faq.htm">FAQ</a></li>
       </ul>
     </nav>
   </div>
@@ -84,10 +96,10 @@ mobile: true
 <div class="panel panel-blue panel-no-border panel-no-padding leader-half">
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
-      <h2 class="trailer-half leader-1">基本操作
+      <h2 class="trailer-half leader-1">はじめに
         <a class="btn btn-transparent text-white btn-large right" href="/ja/arcgis-online/get-started/online-quick-exercises.htm">その他の演習</a>
       </h2>
-      <div class="block-group block-group-6-up tablet-block-group-2-up leader-0 padding-leader-half trailer-half">
+      <div class="block-group block-group-6-up tablet-block-group-2-up leader-0 padding-leader-half trailer-half" style="clear:right;">
         <div class="card block leader-0">
           <figure class="card-image-wrap">
             <a href="/ja/arcgis-online/get-started/quick-exercise-maps.htm">
@@ -103,66 +115,38 @@ mobile: true
           </div>
           <a href="/ja/arcgis-online/get-started/quick-exercise-maps.htm" class="btn btn-clear btn-fill leader-0">演習を開始</a>
         </div>
+
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/">
-              <img alt="" src="img/create-an-app.png">
+            <a href="/ja/arcgis-online/get-started/quick-exercise-apps.htm">
+              <img alt="" src="img/create-an-app.jpg">
             </a>
           </figure>
           <div class="card-content leader-0 padding-leader-half">
             <h5 class="trailer-0 leader-0">
-              <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/">Web アプリの作成</a>
+              <a href="/ja/arcgis-online/get-started/quick-exercise-apps.htm">アプリの作成</a>
             </h5>
-            <p class="font-size--2 text-light-gray trailer-half">1 時間</p>
-            <p class="trailer-0 text-off-black">ワシントン州オソで発生した地滑りの Web アプリを作成します。</p>
+            <p class="font-size--2 text-light-gray trailer-half">20 分</p>
+            <p class="trailer-0 text-off-black">ビジネス サイトの提案を共有する Web アプリを作成します。</p>
           </div>
-          <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/" class="btn btn-clear btn-fill leader-0">演習を開始</a>
+          <a href="/ja/arcgis-online/get-started/quick-exercise-apps.htm" class="btn btn-clear btn-fill leader-0">演習を開始</a>
         </div>
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">
-              <img alt="" src="img/get-started-with-scene-viewer.png">
+            <a href="/ja/arcgis-online/get-started/quick-exercise-analysis.htm">
+              <img alt="" src="img/solve-spatial-problem.png">
             </a>
           </figure>
           <div class="card-content leader-0 padding-leader-half">
             <h5 class="trailer-0 leader-0">
-              <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">シーン ビューアーを使用した 3D の作成</a>
+              <a href="/ja/arcgis-online/get-started/quick-exercise-analysis.htm">空間的問題の解決</a>
             </h5>
-            <p class="font-size--2 text-light-gray trailer-half">1 時間 20 分</p>
-            <p class="trailer-0 text-off-black">フロリダのビーチと入り江を表示する 3D シーンを作成します。</p>
+            <p class="font-size--2 text-light-gray trailer-half">25 分</p>
+            <p class="trailer-0 text-off-black">解析ツールを使用して、侵略的な雑草の範囲内にあるキャンプ場を特定します。</p>
           </div>
-          <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/" class="btn btn-clear btn-fill leader-0">演習を開始</a>
+          <a href="/ja/arcgis-online/get-started/quick-exercise-analysis.htm" class="btn btn-clear btn-fill leader-0">演習を開始</a>
         </div>
-        <div class="card block leader-0">
-          <figure class="card-image-wrap">
-            <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/">
-              <img alt="" src="img/track-crime-rates.png">
-            </a>
-          </figure>
-          <div class="card-content leader-0 padding-leader-half">
-            <h5 class="trailer-0 leader-0">
-              <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/">犯罪率の追跡</a>
-            </h5>
-            <p class="font-size--2 text-light-gray trailer-half">40 分</p>
-            <p class="trailer-0 text-off-black">ネブラスカ州リンカーンの犯罪密度マップを作成します。</p>
-          </div>
-          <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/" class="btn btn-clear btn-fill leader-0">演習を開始</a>
-        </div>
-        <div class="card block leader-0">
-          <figure class="card-image-wrap">
-            <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm">
-              <img alt="" src="img/get-started-with-collector.png">
-            </a>
-          </figure>
-          <div class="card-content leader-0 padding-leader-half">
-            <h5 class="trailer-0 leader-0">
-              <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm">現地調査用マップの構成</a>
-            </h5>
-            <p class="font-size--2 text-light-gray trailer-half">30 分</p>
-            <p class="trailer-0 text-off-black">損害評価のデータ収集に Collector for ArcGIS で使用するマップを作成します。</p>
-          </div>
-          <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm" class="btn btn-clear btn-fill leader-0">演習を開始</a>
-        </div>
+
         <div class="card block leader-0">
           <figure class="card-image-wrap">
             <a href="http://learn.arcgis.com/en/projects/set-up-an-arcgis-organization/">
@@ -178,6 +162,39 @@ mobile: true
           </div>
           <a href="http://learn.arcgis.com/en/projects/set-up-an-arcgis-organization/" class="btn btn-clear btn-fill leader-0">演習を開始</a>
         </div>
+
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">
+              <img alt="" src="img/get-started-with-scene-viewer.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">シーン ビューアーを使用した 3D の作成</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">80 分</p>
+            <p class="trailer-0 text-off-black">フロリダのビーチと入り江を表示する 3D シーンを作成します。</p>
+          </div>
+          <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/" class="btn btn-clear btn-fill leader-0">演習を開始</a>
+        </div>
+
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://learn.arcgis.com/en/projects/get-started-with-survey123/">
+              <img alt="" src="img/get-started-with-survey123.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://learn.arcgis.com/en/projects/get-started-with-survey123/">調査の操作</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">95 分</p>
+            <p class="trailer-0 text-off-black">Survey123 for ArcGIS を使用して安全対策を調査し、緊急資産目録を作成します。</p>
+          </div>
+          <a href="http://learn.arcgis.com/en/projects/get-started-with-survey123/" class="btn btn-clear btn-fill leader-0">演習を開始</a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -187,196 +204,195 @@ mobile: true
 <div class="panel panel panel-no-border panel-no-padding leader-0">
   <div class="grid-container">
     <div class="column-24">
-        <div class="row">
-          <h2>&nbsp;</h2>
-          <h2 class="text-center">ArcGIS Online とは</h2>
+      <div class="row">
+        <h2>&nbsp;</h2>
+        <h2 class="text-center">ArcGIS Online とは</h2>
+      </div>
+      <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up leader-1 trailer-1">
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-maps text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">マップの作成</h3>
+            <p class="trailer-half">
+ GIS をユーザーと共有するためのマップのロールの詳細を学びます。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="/ja/arcgis-online/get-started/get-started-with-maps.htm">マップの作成の開始</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/share-maps/share-maps.htm">マップの共有</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/get-started/view-maps.htm">マップ ビューアーでのマップの表示</a>
+              </li>
+              <li>
+                <a href="//storymaps.arcgis.com/">ストーリー マップを使用したストーリーの伝達</a>
+              </li>
+              <li>
+                <a href="//links.esri.com/agol-help/storymap/how-to-smart-map">3 つの手順によるスマート マッピングの使用方法</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up leader-1 trailer-1">
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-              <h2 class="icon-ui-maps text-center trailer-half"></h2>
-              <h3 class="text-center trailer-0">マップの作成</h3>
-              <p class="trailer-half">
-                GIS をユーザーと共有するためのマップのロールの詳細を学びます。
-              </p>
-              <ul class="bulleted trailer-0">
-                <li>
-                  <a href="/ja/arcgis-online/get-started/get-started-with-maps.htm">マップの作成の開始</a>
-                </li>
-                <li>
-                  <a href="/ja/arcgis-online/share-maps/share-maps.htm">マップの共有</a>
-                </li>
-                <li>
-                  <a href="/ja/arcgis-online/get-started/view-maps.htm">マップ ビューアーでのマップの表示</a>
-                </li>
-                <li>
-                  <a href="//storymaps.arcgis.com/">ストーリー マップを使用したストーリーの伝達</a>
-                </li>
-                <li>
-                  <a href="//links.esri.com/agol-help/storymap/how-to-smart-map">3 つの手順によるスマート マッピングの使用方法</a>
-                </li>
-              </ul>
-            </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-globe text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">3D GIS の操作</h3>
+            <p class="trailer-half">
+ 情報を 3D で可視化することで、新しい視点を得ます。3D GIS 機能を使用して、2D のコンテキストでは解決できない問題に対処します。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="/ja/arcgis-online/get-started/get-started-with-scenes.htm">シーンの作成の開始</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/get-started/view-scenes.htm">シーン ビューアーでのシーンの表示</a>
+              </li>
+              <li>
+                <a href="//links.esri.com/agol-help/livingatlas-3d">Living Atlas のすぐに使用できる 3D シーンへのアクセス</a>
+              </li>
+              <li>
+                <a href="/ja/drone2map/quick-start-exercises/3d-mapping.htm">Drone2Map for ArcGIS を使用した 3D レイヤーの生成</a>
+              </li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-                <h2 class="icon-ui-globe text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">3D GIS の操作</h3>
-                <p class="trailer-half">
-                  情報を 3D で可視化することで、新しい視点を得ます。3D GIS 機能を使用して、2D のコンテキストでは解決できない問題に対処します。
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li>
-                    <a href="/ja/arcgis-online/get-started/get-started-with-scenes.htm">シーンの作成の開始</a>
-                  </li>
-                  <li>
-                    <a href="/ja/arcgis-online/get-started/view-scenes.htm">シーン ビューアーでのシーンの表示</a>
-                  </li>
-                  <li>
-                    <a href="//links.esri.com/agol-help/livingatlas-3d">Living Atlas のすぐに使用できる 3D シーンへのアクセス</a>
-                  </li>
-                  <li>
-                    <a href="/ja/drone2map/quick-start-exercises/3d-mapping.htm">Drone2Map for ArcGIS を使用した 3D レイヤーの生成</a>
-                  </li>
-                </ul>
-
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white primary trailer-0">
+            <h2 class="icon-ui-line-chart text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">解析の実行</h3>
+            <p class="trailer-half">
+ 複数のレイヤーの情報を組み合わせ、空間処理を適用して幅広い問題に対処します。結果を調査および視覚化して、意思決定を行ったり理解を深めます。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="/ja/arcgis-online/get-started/get-started-with-analysis.htm">解析の基本操作</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/analyze/perform-analysis.htm">マップを使用した解析の実行</a>
+              </li>
+              <li>
+                <a href="//learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">人口統計解析を用いた子供の貧困調査</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/create-maps/change-style.htm#ESRI_SECTION1_195BD40347774AEDAEC373A7A0898A80">スマート マッピングを使用した空間に関する質問への回答</a>
+              </li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white primary trailer-0">
-                <h2 class="icon-ui-line-chart text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">解析の実行</h3>
-                <p class="trailer-half">
-                   複数のレイヤーの情報を組み合わせ、空間処理を適用して幅広い問題に対処します。結果を調査および視覚化して、意思決定を行ったり理解を深めます。
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li>
-                    <a href="/ja/arcgis-online/get-started/get-started-with-analysis.htm">解析の基本操作</a>
-                  </li>
-                  <li>
-                    <a href="/ja/arcgis-online/analyze/perform-analysis.htm">マップを使用した解析の実行</a>
-                  </li>
-                  <li>
-                    <a href="//learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">人口統計解析を用いた子供の貧困調査</a>
-                  </li>
-				  <li>
-                    <a href="/ja/arcgis-online/create-maps/change-style.htm#ESRI_SECTION1_195BD40347774AEDAEC373A7A0898A80">スマート マッピングを使用した空間に関する質問への回答</a>
-                  </li>
-                </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-layers text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">Living Atlas へのアクセス</h3>
+            <p class="trailer-half">
+ Living Atlas of the World は、ArcGIS ユーザーや Esri とそのパートナーが提供する最良のマップ、アプリ、データの管理されたグローバルなコレクションです。これを使用して、GIS を促進します。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="http://links.esri.com/agol-help/living-atlas">Living Atlas へのアクセス</a>
+              </li>
+              <li>
+                <a href="//links.esri.com/agol-help/livingatlas-storymap">ストーリー マップを通じた Living Atlas の探索</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/create-maps/add-layers.htm#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">マップに追加する Living Atlas レイヤーの参照</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/create-maps/add-layers-to-scene.htm#ESRI_SECTION1_8FC6CAC878CB41CD8F4B21F978D57135">Living Atlas コンテンツのシーンへの追加</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/get-started/quick-exercise-explore-data.htm">Living Atlas マップを使用した空間パターンの検出</a>
+              </li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-                <h2 class="icon-ui-layers text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">Living Atlas へのアクセス</h3>
-                <p class="trailer-half">
-                  Living Atlas of the World は、ArcGIS ユーザーや Esri とそのパートナーが提供する最良のマップ、アプリ、データの管理されたグローバルなコレクションです。これを使用して、GIS を促進します。
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li>
-                    <a href="http://links.esri.com/agol-help/living-atlas">Living Atlas へのアクセス</a>
-                  </li>
-                  <li>
-                    <a href="//links.esri.com/agol-help/livingatlas-storymap">ストーリー マップを通じた Living Atlas の探索</a>
-                  </li>
-                  <li>
-                    <a href="/ja/arcgis-online/create-maps/add-layers.htm#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">マップに追加する Living Atlas レイヤーの参照</a>
-                  </li>
-                  <li>
-                    <a href="/ja/arcgis-online/create-maps/add-layers-to-scene.htm#ESRI_SECTION1_8FC6CAC878CB41CD8F4B21F978D57135">Living Atlas コンテンツのシーンへの追加</a>
-                  </li>
-                  <li>
-                    <a href="/ja/arcgis-online/get-started/quick-exercise-explore-data.htm">Living Atlas マップを使用した空間パターンの検出</a>
-                  </li>
-                </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-collection text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">データの管理</h3>
+            <p class="trailer-half">
+ データを活用します。他のユーザーがマップとシーンで使用できるレイヤーを公開して、フィーチャなどを共有します。編集を有効化して、コミュニティのフィードバックを収集します。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="/ja/arcgis-online/share-maps/hosted-web-layers.htm">フィーチャやタイルなどをレイヤーとして公開</a></li>
+              <li>
+                <a href="/ja/arcgis-online/create-maps/edit-features.htm">フィーチャの編集</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/create-maps/take-maps-offline.htm">オフラインでのマップの利用</a>
+              </li>
+              <li>
+                <a href="/ja/arcgis-online/reference/best-practices-layers.htm">マップでレイヤーを使用するためのベスト プラクティスの詳細</a>
+              </li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-                <h2 class="icon-ui-collection text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">データ管理</h3>
-                <p class="trailer-half">
-                  データを活用します。他のユーザーがマップとシーンで使用できるレイヤーを公開して、フィーチャなどを共有します。編集を有効化して、コミュニティのフィードバックを収集します。
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li>
-                    <a href="/ja/arcgis-online/share-maps/hosted-web-layers.htm">フィーチャやタイルなどをレイヤーとして公開</a></li>
-                  <li>
-                    <a href="/ja/arcgis-online/create-maps/edit-features.htm">フィーチャの編集</a>
-                  </li>
-                  <li>
-                    <a href="/ja/arcgis-online/create-maps/take-maps-offline.htm">オフラインでのマップの利用</a>
-                  </li>
-                  <li>
-                    <a href="/ja/arcgis-online/reference/best-practices-layers.htm">マップでレイヤーを使用するためのベスト プラクティスの詳細</a>
-                  </li>
-                </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white primary trailer-0">
+            <h2 class="icon-ui-share text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">作業の共有</h3>
+            <p class="trailer-half">
+ 豊富な地理情報アイテムをユーザーが使用できるように共有します。貴重な情報を多くのアプリやストーリー マップを通じてアクセスできようにして活用します。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li><a href="/ja/arcgis-online/get-started/get-started-with-sharing.htm">共有の基本操作</a></li>
+              <li><a href="//storymaps.arcgis.com/en/">アプリを使用したストーリーの共有</a></li>
+              <li><a href="/ja/arcgis-online/reference/best-practices-share.htm">共有のベスト プラクティスの詳細</a></li>
+              <li><a href="/ja/arcgis-online/reference/ogc.htm">オープン スタンダードを使用したデータの共有</a></li>
+              <li><a href="http://opendata.arcgis.com/">Open Data for ArcGIS を使用した共有</a></li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white primary trailer-0">
-                <h2 class="icon-ui-share text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">作業の共有</h3>
-                <p class="trailer-half">
-                  豊富な地理情報アイテムをユーザーが使用できるように共有します。貴重な情報を多くのアプリやストーリー マップを通じてアクセスできようにして活用します。
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li><a href="/ja/arcgis-online/get-started/get-started-with-sharing.htm">共有の基本操作</a></li>
-                  <li><a href="//storymaps.arcgis.com/en/">アプリを使用したストーリーの共有</a></li>
-                  <li><a href="/ja/arcgis-online/reference/best-practices-share.htm">共有のベスト プラクティスの詳細</a></li>
-                  <li><a href="/ja/arcgis-online/reference/ogc.htm">オープン スタンダードを使用したデータの共有</a></li>
-				  <li><a href="http://opendata.arcgis.com/">Open Data for ArcGIS を使用した共有</a></li>
-                </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-applications text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">アプリの使用</h3>
+            <p class="trailer-half">
+ ArcGIS アプリは、マップ、シーン、およびデータに特化したインターフェイスとツールです。ArcGIS Online では、数十のアプリを使用して、組織の作業を実行できます。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li><a href="//www.esri.com/software/apps/field">現場で使用するアプリの確認</a></li>
+              <li><a href="//www.esri.com/software/apps/office">オフィスで使用するアプリの確認</a></li>
+              <li><a href="//www.esri.com/software/apps/community">コミュニティで使用するアプリの確認</a></li>
+              <li><a href="//www.esri.com/software/apps/builders">独自のアプリの作成</a></li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-              <h2 class="icon-ui-applications text-center trailer-half"></h2>
-              <h3 class="text-center trailer-0">アプリの使用</h3>
-              <p class="trailer-half">
-                ArcGIS アプリは、マップ、シーン、およびデータに特化したインターフェイスとツールです。ArcGIS Online では、数十のアプリを使用して、組織の作業を実行できます。
-              </p>
-              <ul class="bulleted trailer-0">
-                <li><a href="//www.esri.com/software/apps/field">現場で使用するアプリの確認</a></li>
-                <li><a href="//www.esri.com/software/apps/office">オフィスで使用するアプリの確認</a></li>
-                <li><a href="//www.esri.com/software/apps/community">コミュニティで使用するアプリの確認</a></li>
-                <li><a href="//www.esri.com/software/apps/builders">独自のアプリの作成</a></li>
-              </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white primary trailer-0">
+            <h2 class="icon-ui-search text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">アイテムの検索と管理</h3>
+            <p class="trailer-half">
+ ArcGIS Online を使用すると、GIS コミュニティ、組織、ユーザーが提供する幅広いマップ、シーン、レイヤー、分析、アプリを利用できる世界の検索可能な GIS にアクセスできます。これらのアイテムは、情報ギャラリーに整理されているので、作業に関係するコンテンツを簡単に見つけることができます。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li><a href="/ja/arcgis-online/reference/geo-info.htm">ArcGIS 情報モデルの確認</a></li>
+              <li><a href="/ja/arcgis-online/share-maps/add-items.htm">アイテムを ArcGIS Online へ追加</a></li>
+              <li><a href="/ja/arcgis-online/get-started/get-started-with-groups.htm">グループを使用した情報の共有</a></li>
+              <li><a href="//links.esri.com/agol-help/living-atlas">Living Atlas でのマップなどの検索</a></li>
+              <li><a href="/ja/arcgis-online/reference/search.htm">ArcGIS Online のアイテムの検索</a></li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white primary trailer-0">
-              <h2 class="icon-ui-search text-center trailer-half"></h2>
-              <h3 class="text-center trailer-0">アイテムの検索と管理</h3>
-              <p class="trailer-half">
-                ArcGIS Online を使用すると、GIS コミュニティ、組織、ユーザーが提供する幅広いマップ、シーン、レイヤー、分析、アプリを利用できる世界の検索可能な GIS にアクセスできます。これらのアイテムは、情報ギャラリーに整理されているので、作業に関係するコンテンツを簡単に見つけることができます。
-              </p>
-              <ul class="bulleted trailer-0">
-                <li><a href="/ja/arcgis-online/reference/geo-info.htm">ArcGIS 情報モデルの確認</a></li>
-                <li><a href="/ja/arcgis-online/share-maps/add-items.htm">アイテムを ArcGIS Online へ追加</a></li>
-                <li><a href="/ja/arcgis-online/get-started/get-started-with-groups.htm">グループを使用した情報の共有</a></li>
-                <li><a href="//links.esri.com/agol-help/living-atlas">Living Atlas でのマップなどの検索</a></li>
-                <li><a href="/ja/arcgis-online/reference/search.htm">ArcGIS Online のアイテムの検索</a></li>
-              </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white primary trailer-0">
+            <h2 class="icon-ui-settings2 text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">組織サイトの管理</h3>
+            <p class="trailer-half">
+ ArcGIS Online には、カスタム ロールやセキュリティ設定の構成からライセンスの管理や使用状況レポートの表示まで、組織サイトで管理する必要があることがすべて含まれています。
+            </p>
+            <ul class="bulleted trailer-0">
+              <li><a href="/ja/arcgis-online/administer/get-started-with-administration.htm">管理の基本操作</a></li>
+              <li><a href="//links.esri.com/agol-help/administering-platform">管理者向けのベスト プラクティスとリソースの詳細</a></li>
+              <li><a href="/ja/arcgis-online/reference/roles.htm">レベル、ロール、権限の概要</a></li>
+              <li><a href="/ja/arcgis-online/reference/credits.htm">クレジットの概要</a></li>
+              <li><a href="/ja/trust/security/security-overview.htm">ArcGIS セキュリティの確認</a></li>
+              <li><a href="https://github.com/Esri/ago-admin-wiki/wiki/Tools">その他の管理ツールの参照</a></li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white primary trailer-0">
-              <h2 class="icon-ui-settings2 text-center trailer-half"></h2>
-              <h3 class="text-center trailer-0">組織サイトの管理</h3>
-              <p class="trailer-half">
-                ArcGIS Online には、カスタム ロールやセキュリティ設定の構成からライセンスの管理や使用状況レポートの表示まで、組織サイトで管理する必要があることがすべて含まれています。
-              </p>
-              <ul class="bulleted trailer-0">
-                <li><a href="/ja/arcgis-online/administer/get-started-with-administration.htm">管理の基本操作</a></li>
-                <li><a href="//links.esri.com/agol-help/administering-platform">管理者向けのベスト プラクティスとリソースの詳細</a></li>
-                <li><a href="/ja/arcgis-online/reference/roles.htm">レベル、ロール、権限の概要</a></li>
-                <li><a href="/ja/arcgis-online/reference/credits.htm">クレジットの概要</a></li>
-                <li><a href="/ja/trust/security/security-overview.htm">ArcGIS セキュリティの確認</a></li>
-                <li><a href="https://github.com/Esri/ago-admin-wiki/wiki/Tools">その他の管理ツールの参照</a></li>
-              </ul>
-            </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -387,7 +403,7 @@ mobile: true
     <p class="leader-1 trailer-0">
       <ul class="list-plain sdk-home-nav-list text-center">
         <li><a href="https://developers.arcgis.com/" title="ArcGIS for Developers">ArcGIS for Developers</a></li>
-        <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro"> ArcGIS Pro </a></li>
+        <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
         <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
         <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
       </ul>
@@ -401,11 +417,11 @@ mobile: true
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
       <h2 class="trailer-half leader-1">ビデオを見る
-        <a class="btn btn-transparent text-white btn-large right" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf">その他のビデオ</a>
+        <a class="btn btn-transparent text-white btn-large right" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IulSSoNHnpaprsxhbWPa3B">その他のビデオ</a>
       </h2>
       <!--h3 class="leader-half trailer-0 padding-trailer-0">Watch our videos</h3>
       <a class="btn btn-transparent btn-large right padding-leader-0 padding-trailer-0 text-white" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf">More videos</a-->
-      <div playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      <div style="clear:right;" playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
       </div>
     </div>
   </div>
@@ -430,12 +446,13 @@ mobile: true
 <div class="panel panel-white panel-no-border panel-no-padding leader-1">
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">Esri のブログを読む
+      <h2 class="trailer-0">Esri のブログを読む
         <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/category/arcgis-online">その他のブログ記事</a>
       </h2>
-      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/" class="block-group block-group-3-up blogHpFeed">
-			  <!-- Blog Content goes here -->
-			</div>
+      <hr class="padding-trailer-1 trailer-0 leader-half" style="clear:right">
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/" class="block-group phone-block-group-1-up block-group-3-up blogHpFeed">
+        <!-- Blog Content goes here -->
+      </div>
     </div>
   </div>
 </div>
@@ -444,25 +461,28 @@ mobile: true
 <div class="panel panel-white panel-no-border panel-no-padding">
   <div class="grid-container padding-trailer-1 padding-leader-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">会話に参加する
+      <h2 class="trailer-0">会話に参加する
         <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/community/gis/web-gis/arcgisonline">その他の会話</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2106" class="block-group block-group-3-up geonetFeed">
-				<!-- Forum content goes here -->
-			</div>
+      <hr class="padding-trailer-1 trailer-0 leader-half" style="clear:right">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2106" class="block-group phone-block-group-1-up block-group-3-up geonetFeed">
+        <!-- Forum content goes here -->
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Books -->
 <div class="panel panel-blue panel-no-border panel-no-padding leader-0">
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
       <h2 class="trailer-half leader-1">書籍を参照する
         <a class="btn btn-transparent text-white btn-large right" href="http://esripress.esri.com/">その他の書籍</a>
       </h2>
-      <div class="block-group block-group-3-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      <div style="clear:right;" class="block-group block-group-3-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=289&moduleID=0">
+            <a href="http://links.esri.com/book/arcgis-book">
               <img alt="" src="img/arcgis-book.png">
             </a>
           </figure>
@@ -476,7 +496,7 @@ mobile: true
         </div>
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=289&moduleID=0">
+            <a href="http://links.esri.com/book/instructional-guide">
               <img alt="" src="img/instructional-guide.png">
             </a>
           </figure>
@@ -490,7 +510,7 @@ mobile: true
         </div>
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=308&moduleID=0">
+            <a href="http://links.esri.com/book/imagery">
               <img alt="" src="img/imagery-book.png">
             </a>
           </figure>
@@ -507,32 +527,33 @@ mobile: true
   </div>
 </div>
 
-<div class="panel panel-white panel-no-padding">
+<!-- Learn links -->
+<div class="panel panel-dark panel-no-padding">
   <div class="grid-container">
     <div class="column-24 leader-1 trailer-1 text-center">
       <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
         <div class="block ">
-          <h5 class="icon-ui-review icon-ui-purple trailer-half"><a href="http://links.esri.com/agol-help/learn/agol">高度なレッスンを受ける</a></h5>
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://links.esri.com/agol-help/learn/agol">高度なレッスンを受ける</a></h5>
           <p class="trailer-0">
-            Learn ArcGIS を検索して、ArcGIS で実世界の問題を解決する演習を検索および実行します。
+ Learn ArcGIS を検索して、ArcGIS で実世界の問題を解決する演習を検索および実行します。
           </p>
         </div>
         <div class="block ">
-          <h5 class="icon-ui-layers icon-ui-green trailer-half"><a href="http://www.esri.com/training/main/arcgis-online-training">トレーニング コースの検索</a></h5>
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main/arcgis-online-training">トレーニング コースの検索</a></h5>
           <p class="trailer-0">
-            インストラクター主導型コース、Web コース、セミナーを通じて ArcGIS の詳細を学びます。
+ インストラクター主導型コース、Web コース、セミナーを通じて ArcGIS の詳細を学びます。
           </p>
         </div>
         <div class="block ">
-          <h5 class="icon-ui-question icon-ui-orange trailer-half"><a href="http://support.esri.com/en/">テクニカル サポートを受ける</a></h5>
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">テクニカル サポート</a></h5>
           <p class="trailer-0">
-            チャット、電子メール、または電話で Esri Support に問い合わせます。
+ チャット、電子メール、または電話で Esri Support に問い合わせます。
           </p>
         </div>
         <div class="block ">
-          <h5 class="icon-ui-notice-triangle icon-ui-white trailer-half"><a href="http://doc.arcgis.com/en/trust/system-status/">システム状態のチェック</a></h5>
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">システム状態のチェック</a></h5>
           <p class="trailer-0">
-            ArcGIS Online のステータスを確認して、問題を報告します。
+ ArcGIS Online のステータスを確認して、問題を報告します。
           </p>
         </div>
       </div>

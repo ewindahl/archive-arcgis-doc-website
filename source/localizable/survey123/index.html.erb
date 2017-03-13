@@ -16,40 +16,6 @@ metatags:
 mobile: true
 
 ---
-<!--
-This is a template for a simple homepage.  Please search for and replace the following:
-  PRODUCT_METADATA: The metadata for the product
-  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
-  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
-  DOWNLOAD_LINK: A link to download the product, free trial, etc.
-  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
-  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
-  NAV_LINK_x: The link for the navigation tabs at the top.
-  NAV_TEXT_x: The text for the navigation tabs at the top.
-  PRODUCT_SEARCH_VALUE: The product value for the search form
-  PRODUCT_IMAGE_231x149.png: This is an image in the first section under the search bar.
-  MAIN_TEXT: The text that appears in the first section under the search bar.
-  WHATS_NEW_TEXT: A blurb about what's new with the product.
-  WHATS_NEW_LINK: A link to more info about what's new with the product.
-  POPULAR_LINK_x: Links to popular pages and topics, such as "What's new", "Supported environments", "Archived help", etc.
-  POPULAR_TEXT_x: Text for links to popular pages and topics.
-  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
-  CARD_LINK_x: The page that the card should link to.
-  CARD_TITLE_x: The title of the card.
-  CARD_TEXT_x: The text inside the card.
-  MORE_VIDEOS_LINK: Page to link to for more videos.
-  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
-  TWITTER_LINK: Link to the product's Twitter page
-  LINKEDIN_LINK: Link to the product's LinkedIn page
-  GITHUB_LINK: Link to the product's GitHub page
-  FACEBOOK_LINK: Link to the product's Facebook page
-  GEONET_LINK: Link to the product's Geonet page
-  BLOG_LINK: Link to the the product's blog
-  BLOG_FEED_URL: URL for the product's blog feed
-  GEONET_LINK: Link to the the product's geonet page
-  GEONET_FEED_URL: URL for the product's geonet feed
-Please search for INSTRUCTIONS within the file for element specific instructions.
--->
 <header class="sub-nav sub-nav-blue">
   <div class="grid-container">
     <div class="column-24">
@@ -62,7 +28,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
           <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
           <a class="btn margin-left-1 btn-clear" href="/en/survey123/download/">Download Survey123</a>
           <!-- INSTRUCTIONS: Remove this p tag if not needed -->
-          <p class="trailer-0 leader-half text-white font-size--2"><strong>Version 1.10</strong> December 2016</p>
+          <p class="trailer-0 leader-0 text-white font-size--2"><strong>Version 1.10</strong> December 2016</p>
         </div>
       </div>
     </div>
@@ -81,12 +47,14 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   <div class="column-16">
     <div class="wf-nav" style="height:55px;">
       <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="Search Survey123 for ArcGIS">
+        <form id="helpSearchForm" class="input-group" target="_top">
+          <input type="search" name="q" class="leader input-group-input" placeholder="Search Survey123 for ArcGIS">
           <input type="hidden" name="collection" value="help" />
           <input type="hidden" name="product" value="Survey123-desktop" />
           <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+          <span class="input-group-button">
+            <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+          </span>
         </form>
       </div>
     </div>
@@ -134,7 +102,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
     <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
       <div class="card block">
         <figure class="card-image-wrap">
-          <a href="CARD_LINK_1">
+          <a href="/en/survey123/browser/create-surveys/createfirstsurvey.htm">
             <img alt="" src="img/SurveyInWeb.png">
           </a>
         </figure>
@@ -162,7 +130,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       </div>
       <div class="card block">
         <figure class="card-image-wrap">
-          <a href="CARD_LINK_3">
+          <a href="/en/survey123/desktop/get-answers/quickreferencegetanswers.htm">
             <img alt="" src="img/SurveyOnDevice.png">
           </a>
         </figure>
@@ -176,7 +144,7 @@ Please search for INSTRUCTIONS within the file for element specific instructions
       </div>
       <div class="card block">
         <figure class="card-image-wrap">
-          <a href="CARD_LINK_4">
+          <a href="/en/survey123/browser/analyze-results/analyzeresults.htm">
             <img alt="" src="img/Chart.png">
           </a>
         </figure>
