@@ -1,5 +1,5 @@
 ---
-title: FULL_PRODUCT_NAME
+title: Community Analyst
 css:
   - homepage
   - /cdn/css/colorbox
@@ -19,8 +19,8 @@ mobile: true
 <!--
 This is a tamplate for a simple homepage.  Please search for and replace each of the following, then remove these notes when you're done:
   PRODUCT_METADATA: The metadata for the product
-  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
-  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
+  Community Analyst: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the Community Analyst.
   DOWNLOAD_LINK: A link to download the product, free trial, etc.
   VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
   RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
@@ -56,81 +56,74 @@ Please search for INSTRUCTIONS within the file for element specific instructions
     <div class="column-24">
       <div style="display:table;" class="sdk-home-banner">
         <div class="sdk-home-banner-content">
-          <h1 class="sub-nav-title leader-1 trailer-1 text-white">FULL_PRODUCT_NAME</h1>
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Community Analyst</h1>
         </div>
         <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
         <div class="leader-1 text-right">
-          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
-          <a class="btn margin-left-1 btn-clear icon-ui-download" href="DOWNLOAD_LINK">Download PRODUCT_NAME</a>
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download Community Analyst" text as needed. -->
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="http://communityanalyst.arcgis.com/" target="_Blank">Login to Community Analyst</a>
           <!-- INSTRUCTIONS: Remove this p tag if not needed -->
-          <p class="trailer-0 leader-0 text-white font-size--2"><strong>Version VERSION_NUMBER</strong> RELEASE DATE</p>
+          <p class="trailer-0 leader-0 text-white font-size--2"><strong>Version 5.5</strong> Mar, 2017</p>
         </div>
       </div>
     </div>
     <div class="column-24">
       <select class="tablet-show select-full trailer-half js-select-nav">
-        <option value="NAV_LINK_1" selected>Home</option>
-        <option value="NAV_LINK_2">NAV_TEXT_2</option>
-        <option value="NAV_LINK_3">NAV_TEXT_3</option>
-        <option value="NAV_LINK_4">NAV_TEXT_4</option>
+        <option value="/en/community-analyst/" selected>Home</option>
+        <option value="/en/community-analyst/Help/">Help</option>
+        <option value="NAV_LINK_3">Forum</option>
+        <!-- <option value="NAV_LINK_4">NAV_TEXT_4</option> -->
       </select>
       <nav class="sub-nav-list tablet-hide">
-        <a class="sub-nav-link is-active" href="NAV_LINK_1">Home</a>
-        <a class="sub-nav-link" href="NAV_LINK_2">NAV_TEXT_2</a>
-        <a class="sub-nav-link" href="NAV_LINK_3">NAV_TEXT_3</a>
-        <a class="sub-nav-link" href="NAV_LINK_4">NAV_TEXT_4</a>
+        <a class="sub-nav-link is-active" href="/en/community-analyst/">Home</a>
+        <a class="sub-nav-link" href="/en/community-analyst/Help/">Help</a>
+        <a class="sub-nav-link" href="NAV_LINK_3">Forum</a>
+        <!-- <a class="sub-nav-link" href="NAV_LINK_4">NAV_TEXT_4</a> -->
       </nav>
     </div>
   </div>
 </header>
 
-<div class="grid-container leader-2 text-center">
-  <div class="column-24">
-    <div class="column-3">&nbsp;</div>
-    <div class="column-18 text-center center trailer-1">
-      <h1>PRODUCT_HEADLINE</h1>
-      <h5>PRODUCT_SUB_HEADLINE</h5>
-    </div>
-  </div>
-  <div class="column-24">
-    <div class="column-4">&nbsp;</div>
-    <div class="column-16 center trailer-1">
-      <div container="" class="panel">
-        <div class="wf-nav" style="height:55px;">
-          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
-            <form id="helpSearchForm" class="input-group" target="_top">
-              <input type="search" name="q" class="leader input-group-input" placeholder="Search FULL_PRODUCT_NAME">
-              <input type="hidden" name="collection" value="help" />
-              <input type="hidden" name="platform" value="detect" />
-              <input type="hidden" name="product" value="PRODUCT_SEARCH_VALUE" />
-              <input type="hidden" name="language" value="<%= current_language %>" />
-              <span class="input-group-button">
-                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
-              </span>
-            </form>
-          </div>
-        </div>
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <div class="wf-nav" style="height:55px;">
+      <div class="wf-nav search-bar column-16 trailer-1 padding-right-2">
+        <form id="helpSearchForm" target="_top">
+          <input type="search" name="q" class="leader" placeholder="Search Community Analyst">
+          <input type="hidden" name="collection" value="help" />
+          <input type="hidden" name="product" value="esri-maps-office" />
+          <input type="hidden" name="language" value="<%= current_language %>" />
+          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+        </form>
       </div>
-
-      <!-- Delete the download badges you don't want to use.  Delete the p tag entirely if you don't want to use any of the download badges. -->
-      <p class="trailer-0 leader-half font-size--2">
-        <a href="ITUNES_STORE_LINK"><img src="/assets/img/badges/app_store.svg" alt="Download on the App Store" style="margin:10px; vertical-align:middle"/></a>
-        <a href="GOOGLE_PLAY_LINK"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:10px; vertical-align:middle"/></a>
-        <a href="WINDOWS_STORE_LINK"><img src="https://cmsresources.windowsphone.com/devcenter/common/resources/images/badgegenerator/English_wstore_black_258x67.png" alt="Download from Windows Store"  style="margin:10px; vertical-align:middle; height:40px"/></a>
-      </p>
     </div>
-
-    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
-      <hr class="leader-0 trailer-half">
-      <ul class="list-plain sdk-home-nav-list text-center">
-        <li><a href="POPULAR_LINK_1">POPULAR_TEXT_1</a></li>
-        <li><a href="POPULAR_LINK_2">POPULAR_TEXT_2</a></li>
-	      <li><a href="POPULAR_LINK_3">POPULAR_TEXT_3</a></li>
-        <li><a href="POPULAR_LINK_4">POPULAR_TEXT_4</a></li>
-      </ul>
-      <hr class="leader-half trailer-half">
-    </nav>
+    <div class="column-4 right margin-right-1 padding-left-0">
+      <img src="/en/community-analyst/img/thumb.png">
+    </div>
+    <div class="column-11 tablet-column-7">
+      <p>Community Analyst is a web-based solution that applies GIS technology to extensive demographic, consumer spending, and business data to deliver on-demand analysis, presentation-ready reports and maps. Select from a wide variety of existing reports, or create custom reports to meet your marketing needs.</p>
+    </div>
   </div>
+  <div class="column-8 tablet-column-12 right">
+    <div class="panel">
+      <h4 class="icon-ui-announcement">What's new</h4>
+      <p>Community Analyst 5.5 is a minor update that brings you improved speed, better usability, and many bug fixes.</p>
+      <a class="btn secondary" href="/en/community-analyst/help/whats-new-in-community-analyst.htm">Learn more</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container leader-1">
+  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+    <hr class="leader-half trailer-half">
+      <ul class="list-plain sdk-home-nav-list">
+        <li><a href="http://productmedia.esri.com/arcstream/2013/11/3002-quickly-getting-started-with-community-analyst_960.mp4">Quick start video</a></li>
+        <li><a href="/en/community-analyst/help/system-requirements.htm">System requirements</a></li>
+	      <li><a href="/en/community-analyst/help/faqs.htm">Frequently asked questions</a></li>
+        <li><a href="/en/community-analyst/help/essential-vocabulary.htm">Essential vocabulary</a></li>
+      </ul>
+    <hr class="leader-half trailer-half">
+  </nav>
 </div>
 
 <div class="grid-container leader-1 trailer-2">
@@ -139,63 +132,62 @@ Please search for INSTRUCTIONS within the file for element specific instructions
     <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
       <div class="card block">
         <figure class="card-image-wrap">
-          <a href="CARD_LINK_1">
-            <img alt="" src="/en/community-analyst/img/CARD_IMAGE_1.png">
+          <a href="/en/community-analyst/help/projects.htm">
+            <img alt="" src="/en/community-analyst/img/projects.png">
           </a>
         </figure>
         <div class="card-content">
           <h5 class="trailer-half leader-0">
-            <a href="CARD_LINK_1">CARD_TITLE_1</a>
+            <a href="/en/community-analyst/help/projects.htm" target-"_blank">Projects</a>
           </h5>
-          <p>CARD_TEXT_1</p>
+          <p>Projects enable you to manage your work more effectively and is aligned with the way your business works. </p>
         </div>
         <!-- This is an example of a card with two buttons.  Only follow this example if you want two buttons on a card. -->
         <nav>
-          <a href="CARD_LINK_1" class="btn btn-grouped btn-clear btn-half leader-0">Learn more</a>
-          <a href="CARD_LINK_1" class="btn btn-grouped btn-clear btn-half leader-0">Learn more</a>
+        <a href="/en/community-analyst/help/projects.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
         </nav>
       </div>
       <div class="card block">
         <figure class="card-image-wrap">
-          <a href="CARD_LINK_2">
-            <img alt="" src="/en/community-analyst/img/CARD_IMAGE_2.png">
+          <a href="/en/community-analyst/help/suitability-analysis.htm">
+            <img alt="" src="/en/community-analyst/img/suitability-analysis.png">
           </a>
         </figure>
         <div class="card-content">
           <h5 class="trailer-half leader-0">
-            <a href="CARD_LINK_2">CARD_TITLE_2</a>
+            <a href="/en/community-analyst/help/suitability-analysis.htm">Suitability analysis</a>
           </h5>
-          <p>CARD_TEXT_2</p>
+          <p>Suitability Analysis allows you to identify the most suitable sites from a set of candidates, as defined by applying a set of individually weighted criteria. </p>
         </div>
-        <a href="CARD_LINK_2" class="btn btn-clear btn-fill leader-0">Learn more</a>
+        <a href="/en/community-analyst/help/suitability-analysis.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
       <div class="card block">
         <figure class="card-image-wrap">
-          <a href="CARD_LINK_3">
-            <img alt="" src="/en/community-analyst/img/CARD_IMAGE_3.png">
+          <a href="/en/community-analyst/help/building-inforgraphic-reports.htm">
+            <img alt="" src="/en/community-analyst/img/infographic-reports.png">
           </a>
         </figure>
         <div class="card-content">
           <h5 class="trailer-half leader-0">
-            <a href="CARD_LINK_3">CARD_TITLE_3</a>
+            <a href="/en/community-analyst/help/building-inforgraphic-reports.htm">Build infographics</a>
           </h5>
-          <p>CARD_TEXT_3</p>
+          <p>Using the Community Analyst web app you can create custom Infographic templates for analysis of your sites. </p>
         </div>
-        <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-0">Learn more</a>
+        <a href="/en/community-analyst/help/building-inforgraphic-reports.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
       <div class="card block">
         <figure class="card-image-wrap">
-          <a href="CARD_LINK_4">
-            <img alt="" src="/en/community-analyst/img/CARD_IMAGE_4.png">
+          <a href="/en/community-analyst/help/custom-data-setup.htm">
+            <img alt="" src="/en/community-analyst/img/custom-data.png">
           </a>
         </figure>
         <div class="card-content">
           <h5 class="trailer-half leader-0">
-            <a href="CARD_LINK_4">CARD_TITLE_4</a>
+            <a href="/en/community-analyst/help/custom-data-setup.htm">Custom data setup</a>
           </h5>
-          <p>CARD_TEXT_4</p>
+          <p>Custom data setup allows you to use an accessible feature layer in the Community Analyst. </p>
         </div>
-        <a href="CARD_LINK_4" class="btn btn-clear btn-fill leader-0">Learn more</a>
+        <a href="/en/community-analyst/help/custom-data-setup.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
     </div>
   </div>
@@ -222,10 +214,10 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
       <h2 class="trailer-half leader-1">Watch our videos
-        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+        <a class="btn btn-transparent text-white btn-large right" href="http://links.esri.com/community-analyst/videos/playlist" target="_blank">More videos</a>
       </h2>
       <!-- INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number. -->
-      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      <div playlistid="PLGZUzt4E4O2KQIgWq0fiJdEenmNgvYzOe" class="video-holder block-group block-group-4-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
       </div>
     </div>
   </div>
@@ -235,14 +227,14 @@ Please search for INSTRUCTIONS within the file for element specific instructions
 <div class="panel panel-dark panel-no-border">
   <div class="grid-container">
    <div class="column-24 text-white text-center trailer-half leader-half">
-    <h4 class="trailer-half">Connect with FULL_PRODUCT_NAME</h4>
+    <h4 class="trailer-half">Connect with Community Analyst</h4>
     <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
-    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="TWITTER_LINK"></a>
+    <!-- <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="TWITTER_LINK"></a>
     <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="LINKEDIN_LINK"></a>
     <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="GITHUB_LINK"></a>
-    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="FACEBOOK_LINK"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="FACEBOOK_LINK"></a> -->
     <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="GEONET_LINK"></a>
-    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="mailto:NextGen-CA@esri.com"></a>
    </div>
   </div>
 </div>
@@ -252,9 +244,9 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
       <h2 class="text-rule padding-trailer-half">Read our blog
-        <a class="btn btn-transparent btn-large right" href="BLOG_LINK">More posts</a>
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/community-analyst/">More posts</a>
       </h2>
-      <div data-post-limit="3" data-blog-feed-url="BLOG_FEED_URL" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/community-analyst/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
 			  <!-- Blog Content goes here -->
 			</div>
     </div>
@@ -266,9 +258,9 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   <div class="grid-container padding-trailer-1 padding-leader-1">
     <div class="column-24">
       <h2 class="text-rule padding-trailer-half">Join the conversation
-        <a class="btn btn-transparent btn-large right" href="GEONET_LINK">More conversations</a>
+        <a class="btn btn-transparent btn-large right" href="http://links.esri.com/community-analyst/geonet">More conversations</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="GEONET_FEED_LINK" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4573" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
     </div>
