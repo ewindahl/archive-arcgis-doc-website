@@ -5,14 +5,18 @@ $(document).ready(function() {
       localedir =   docConfig['localedir'].toLowerCase();
    }
    var dict = (window.localeJsonObj || {})[localedir];
-   
+   var versionRe = /[a-zA-Z-]{2,5}\/maps-for-sharepoint\/([\d\.]+)\/[a-zA-Z]+/g;
+   var versionArray = versionRe.exec(window.location.pathname);
+   if(typeof versionArray[1] != 'undefined'){
+     version = versionArray[1]+'/';
+   }else version = '';
     var val = '<p id="plats">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="sharepoint" data-plat="foundation-server" data-prefix="/' + localedir +'/maps-for-sharepoint/foundation-server" href="/en/maps-for-sharepoint/" data-langlabel="sharepoint-foundation-server" class=""> Foundation/Server</a>' +
+        '<a data-appname="sharepoint" data-plat="foundation-server" data-prefix="/' + localedir +'/maps-for-sharepoint/'+version+'foundation-server" href="/en/maps-for-sharepoint/" data-langlabel="sharepoint-foundation-server" class=""> Foundation/Server</a>' +
         ' | ' +
-        '<a data-appname="sharepoint" data-plat="office-365" data-prefix="/' + localedir +'/maps-for-sharepoint/office-365" href="/en/maps-for-sharepoint/" data-langlabel="sharepoint-office-365" class=""> Office 365</a>' +
+        '<a data-appname="sharepoint" data-plat="office-365" data-prefix="/' + localedir +'/maps-for-sharepoint/'+version+'office-365" href="/en/maps-for-sharepoint/" data-langlabel="sharepoint-office-365" class=""> Office 365</a>' +
         '</p>',
-		  
+
 		noSwitcherFileList = {
         "test.htm": ""
 		},
@@ -27,7 +31,7 @@ $(document).ready(function() {
 		plat = $.cookie (prodKey) || prodDVal,
 		isHome = fldpath === homePath;
 
-   
+
 	function modHomeUrls (plat) {
 		$("a[href]").each (function (i) {
 			var $ele = $(this),
@@ -69,7 +73,7 @@ $(document).ready(function() {
 		modHomeUrls (plat);
 		// Update product meta value in search form
 	}
-	
+
 
 
 	$("#plats a[data-appname]").each (function (i) {
