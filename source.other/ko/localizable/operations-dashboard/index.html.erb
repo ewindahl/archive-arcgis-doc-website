@@ -1,322 +1,295 @@
 ---
 title: Operations Dashboard for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/operations-dashboard-1
-  - libs/jquery.colorbox-min.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+  - switchers/operations-dashboard-1
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2016-02-29"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ko">
-
-dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
-  
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2017-01-12"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ko">
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/ko/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="ops-dashboard" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/ko/operations-dashboard/">홈</a></li>
-        <li><a href="/ko/operations-dashboard/windows-desktop/author/create-a-map.htm">뷰 작성</a></li>
-        <li><a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">뷰 사용</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis">포럼</a></li>
+
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Operations Dashboard for ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Windows 버전 다운로드</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/operations-dashboard/" selected>홈</option>
+        <option value="/en/operations-dashboard/overview/overview.htm">개요</a>
+        <option value="/en/operations-dashboard/windows-desktop/author/create-a-map.htm">뷰 작성</a>
+        <option value="/en/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">뷰 사용</a>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/ko/operations-dashboard/">홈</a>
+        <a class="sub-nav-link" href="/ko/operations-dashboard/overview/overview.htm">개요</a>
+        <a class="sub-nav-link" href="/ko/operations-dashboard/windows-desktop/author/create-a-map.htm">뷰 작성</a>
+        <a class="sub-nav-link" href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">뷰 사용</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- beta announcement -->
+<div class="panel panel-dark panel-no-border panel-no-padding leader-2 text-center">
+  <div class="grid-container padding-leader-half padding-trailer-half trailer-0">
+    <div class="column-24">
+      <h5 class="trailer-0 leader-0">이 곳에서 차세대 사용자 경험을 누리실 수 있습니다! <a class="btn secondary" href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}" style="margin: 0px 0 0 10px;">베타 버전에 참여</a>
+      </h5>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>간편한 확인</h1>
+      <!--<br/>
+      Know Operational Status Like You Are There<br/>
+      Be There Without Leaving Your Office<br/>
+      Know Operational Status Like You Are There<br/>
+      Know the Status of your Operations<br/>
+      Monitor, Track, and Assess Your Daily Operations<br/>
+      Monitor, Track, and Assess What Matters Most (to You)<br/>
+      Monitor, Track, and Assess with a Dynamic View of your Operations<br/>
+      Know; outlook; view <br/>-->
+      <h5>위치에 상관없이 활동 및 이벤트를 모니터링하고, 현장 근무자를 확인하며, 일상 업무의 상태와 성과를 평가합니다.</h5>
+      <!--Monitor, track, and assess what matters most to you from whereever you are. Use your laptop or tablet to see your operations as they progress. -->
+          
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Operations Dashboard 도움말 검색">
+              <input type="hidden" name="collection" value="help" />
+              <!--input type="hidden" name="platform" value="detect" / -->
+              <input type="hidden" name="product" value="ops-dashboard" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-2 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <!--li><strong>Current update:</strong> December 2016</li-->
+        <li><a href="/ko/operations-dashboard/overview/whats-new.htm">새로운 기능</a></li>
+	<li><a href="/ko/operations-dashboard/overview/requirements.htm">요구 사항</a></li>
+        <li><a href="/ko/operations-dashboard/overview/sneak-peek.htm">미리 보기</a></li>
+	<li><a href="/ko/operations-dashboard/windows-desktop/author/faqs-author.htm">뷰 작성 FAQ</a></li>
+	<li><a href="/ko/operations-dashboard/windows-desktop/user/faqs-user.htm">뷰 사용 FAQ</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <h3 class="gray">활동 및 이벤트를 모니터링하고, 현장 Workforce를 확인하며, 일상적인 작업의 상태와 성과를 평가합니다.</h3>
-          
-          <!--
-          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
-          <span id="appReleased"><strong>Released:</strong> March 2014</span>
-	  -->	  
-
-          <p>
-            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">Operations Dashboard 가져오기</a>
-
-          </p>
-        <hr />
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/dashboard-create-small.png" />
-
-          <h3>작업 뷰 생성 및 공유</h3>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ko/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">
+            <img alt="" src="img/createMaps.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ko/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">작업 뷰 생성 및 공유</a>
+          </h5>
           <p>간단한 3단계를 통해 맵 또는 웹 서비스에 정의된 실시간 지리 데이터를 기반으로 맵, 목록, 차트, 게이지 등을 포함하는 작업 뷰를 생성하고 공유합니다.</p>
-          <p>
-            <a href="/ko/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;방법 보기</a><br />
-            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
-          </p>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
-
-          <h3>이벤트 모니터링 및 대응</h3>
-          <p>작업 뷰를 사용하여 중요한 작업 사항에 중점을 둡니다. 전 세계 어디서든 4단계를 통해 서비스, 배달, 사용자, 차량 등을 모니터링할 수 있습니다.</p>
-          <p>
-            <a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;방법 보기</a><br />
-            <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a title="이벤트 모니터링 및 대응" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;비디오 보기</a>
-			<video width="320" height="240" controls id="2195" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
-			</video>
-          </p>
-        </div>
-	<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/story-graphic-3.png" />
-
-          <h3>브라우저에서 모니터링</h3>
-          <p>브라우저에서 작업 뷰를 사용합니다. 따로 설치할 필요 없이 작업 뷰를 열기만 하면 작업 상황을 알 수 있습니다. 이는 iPad에서도 가능합니다.</p>
-          <p>
-            <a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;방법 보기</a><br />
-            <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
-          </p>
-        </div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/story-graphic-4.png" />
-
-          <h3>개발 익스텐션</h3>
-          <p>사용자 정의 위젯, 피처 동작, 맵 도구를 사용하여 고유 비즈니스 로직을 작업 뷰에 가져옵니다. </p>
-          <p>
-            <a href="/ko/operations-dashboard/windows-desktop/author/custom-addins.htm" class="icon-right-arrow">&nbsp;방법 보기</a><br />
-          </p>
-        </div>        
-
-        <div class="clear"></div>
-
-
-	<a name="features" ></a>
-	<h2 class="divider">특징</h2>
-	<p>시스템의 공통 보기와 관리 리소스를 함께 가져옵니다. 데스크톱이나 태블릿 기기에서 대규모 이벤트 또는 일상 작업에 대한 실시간 데이터 피드를 모니터링합니다. 맵, 차트, 그래프를 통합하여 경영진을 위한 특성 대시보드를 생성합니다.</p>
-	
-	<ul>
-	<li>동적 데이터 원본이 있는 맵을 사용하여 실시간 뷰를 제공합니다.</li>
-	<li>차트, 게이지, 히스토그램 등을 구성하여 통계 정보를 제공합니다.</li>
-	<li>특정 요구 사항에 초점을 맞춘 작업 뷰를 생성하고 공유합니다.</li>
-	<li>여러 모니터에서 사용하거나 단일 디스플레이 기기에서 사용할 뷰를 설계합니다.</li>
-	<li>요구 사항에 맞게 사용자 정의 위젯 및 도구를 생성합니다.</li>
-	</ul>
-
-
-        <a name="systemRequirements"></a>
-        <h2 class="divider">시스템 요구 사항</h2>
-
-        <p>Operations Dashboard를 실행하는 데에는 특정한 기기 요구 사항이 있습니다. Operations Dashboard는 여러 언어로 지원됩니다.</p>
-
-
-<script> 
- function exp(e,strTag ,strAttribute){ 
- var elem = document.getElementsByTagName(strTag); 
- var elem1 = e.target;
- for (var i=0;i<elem1.children.length;i++){ 
- elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
- } 
- for (var i =0;i<elem.length;i++) 
- { 
- if(elem[i].getAttribute(strAttribute)=="yes") 
- { 
- elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
- } 
- } 
- } 
- </script> 
- <h3>Windows 앱</h3>
-  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">지원되는 운영 체제</a>
-     <div exp1='yes' style="display:none;padding:0 15px;">
-        <ul>
-          <li>Windows 10 Pro 및 Windows 10 Enterprise(32비트, 64비트[EM64T])</li>
-          <li>Windows 8.1, Windows 8.1 Pro, Windows 8.1 Enterprise(32비트, 64비트[EM64T])</li>
-          <li>Windows 8, Windows 8 Pro, Windows 8 Enterprise(32비트, 64비트[EM64T])</li>
-		  <li>Windows 7 Ultimate, Enterprise, Professional, Home Premium(32비트, 64비트[EM64T]) SP1</li>
-		  <li>Windows Server 2012 Standard, Datacenter(64비트[EM64T])</li>
-		<li>Windows Server 2008 R2 Standard, Enterprise, Datacenter(64비트[EM64T]) SP1</li>
-		<li>Windows Server 2008 Standard, Enterprise, Datacenter(32비트, 64비트[EM64T]) SP2</li>
-        </ul>
-</div>
-<div class="clear" style="padding:5px;"></div>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">하드웨어 요구 사항</a>
-	<div exp2='yes' style="display:none;padding:0 15px;">
-        <ul>
-			<li>CPU 속도: 2.2GHz 이상, HTT(Hyper-Threading Technology) 또는 멀티 코어 권장</li>
-			<li>프로세서: Intel Pentium 4, Core Duo 또는 Xeon 프로세서, 최소 SSE2 Windows 명령 프롬프트에서 Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> 유틸리티를 실행하여 프로세서를 확인합니다.</li>
-			<li>디스크 공간: 1.5GB의 사용 가능한 디스크 공간</li>
-			<li>메모리/RAM: 2GB 이상</li>
-			<li>디스플레이 등록정보: 24비트 색 농도</li>
-			<li>화면 해상도: 기본 크기일 때 1024x768 해상도 이상(96dpi)</li>
-			<li>스왑 공간: 운영 체제에 따라 결정됨, 최소 500MB</li>
-			<li>비디오/그래픽 어댑터: 최소 64MB RAM, 256MB RAM 권장, NVIDIA, ATI, Intel Chipset 지원 가속 그래픽 카드 드라이버. 최소 Shader Model 2.0. 사용 가능한 최신 드라이버를 확인하세요.</li>
-		</ul>
-</div>
-<div class="clear" style="padding:5px;"></div>
-
-<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">소프트웨어 요구 사항</a>
-	<div exp3='yes' style="display:none;padding:0 15px;">
-        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> 이상이 필요합니다. 이 소프트웨어를 설치하려면 컴퓨터에 대한 관리자 권한이 있어야 합니다.</p>
-        </div>
-        <div class="clear" style="padding:5px;"></div>
-        
-<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">개발자 요구 사항</a>
-		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px">Operations Dashboard for ArcGIS를 확장하려면 <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> 또는 <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a>가 필요합니다. ArcGIS API for JavaScript를 사용하려면 작업 뷰가 ArcGIS Online 또는 Portal for ArcGIS 10.4 이상에 있어야 합니다. ArcGIS Runtime SDK for WPF를 사용하려면 Microsoft Visual Studio 2012/2013 Professional, Premium 또는 Ultimate가 필요합니다.</p>
-
-     </div> 
-     <div class="clear" style="padding:5px;"></div>
-     
-<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">지원되는 언어</a>
-<div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">아랍어, 체코어, 덴마크어, 네덜란드어, 영어, 에스토니아어, 핀란드어, 프랑스어, 독일어, 그리스어, 히브리어, 이탈리아어, 일본어, 한국어, 라트비아어, 리투아니아어, 노르웨이어, 폴란드어, 포르투갈어(브라질), 포르투갈어(포르투갈), 루마니아어, 러시아어, 중국어(간체), 스페인어, 스웨덴어, 태국어, 중국어(번체, 홍콩), 중국어(번체, 대만), 터키어와 베트남어를 지원합니다.</p>
-     	<p style="padding:0 15px">앱의 Windows 버전에서 사용되는 언어는 운영 체제의 언어 설정에 따라 결정됩니다. 지원되지 않는 언어로 설정된 경우 앱에서 영어가 사용됩니다.</p>
-</div>
-<div class="clear"></div>
-
-     <h3/>
- <h3>브라우저 앱</h3>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">지원되는 브라우저</a>
-<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> 데스크톱
- <ul style="padding:0 15px">
- <li>Chrome 버전 19.0 이상</li>
- <li>Firefox 버전 4.0 이상</li>
- <li>Internet Explorer 버전 9.0 이상</li>
- <li>Microsoft Edge 버전 20.0 이상</li>
- <li>Safari 버전 5.1 이상</li>
- </ul> 
- 태블릿 
- <ul style="padding:0 15px">
- <li>Chrome 버전 19.0 이상을 실행하는 Android 4.0 이상</li>
- <li>Safari를 실행하는 iOS 6.0 이상</li>
- </ul>
- 휴대전화 
- <p style="padding:0 15px">스마트폰 브라우저는 현재 지원되지 않습니다.</p>
- </div></div> 
- <div class="clear" style="padding:5px;"></div>
- <a class="icon-right-arrow" onclick="exp(event,'div','exp12');" style="display:inline;">개발자 요구 사항</a>
- <div exp12='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Operations Dashboard for ArcGIS를 확장하려면 <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a>가 필요합니다. 작업 뷰가 ArcGIS Online 또는 Portal for ArcGIS 10.4 이상에 있어야 합니다.</p>
-</div>
-<div class="clear" style="padding:5px;"></div>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">지원되는 언어</a>
- <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">크로아티아어, 체코어, 덴마크어, 네덜란드어, 영어, 에스토니아어, 핀란드어, 프랑스어, 독일어, 그리스어, 이탈리아어, 일본어, 한국어, 라트비아어, 리투아니아어, 노르웨이어, 폴란드어, 포르투갈어(브라질), 포르투갈어(포르투갈), 루마니아어, 러시아어, 세르비아어, 중국어(간체), 스페인어, 스웨덴어, 태국어, 중국어(번체, 홍콩), 중국어(번체, 대만), 터키어와 베트남어를 지원합니다.</p>
-      	<p style="padding:0 15px">브라우저 앱은 ArcGIS Online 프로필 페이지에서 언어를 설정합니다. 지원되지 않는 언어로 설정된 경우 앱에서 영어가 사용됩니다.</p>
-</div>
-<div class="clear"></div>
-
-
-        <p style="padding:0 15px" />
-        <a name="arcgisRequirements"></a>
-        <h2 class="divider">ArcGIS 요구 사항</h2>
-        <p>Operations Dashboard에서 맵을 사용하려면 ArcGIS 기관 계정이 있어야 합니다. ArcGIS Online 및 Portal for ArcGIS 10.3.1 이상을 지원합니다. 브라우저 앱에 대한 익스텐션을 사용하려면 ArcGIS Online 또는 Portal for ArcGIS 10.4 이상이 있어야 합니다.</p>
-        <p>맵에 ArcGIS Online, Portal for ArcGIS, ArcGIS for Server의 데이터를 포함할 수 있습니다. 데이터 원본은 ArcGIS Online 또는 ArcGIS 10.1 for Server 이상에서 호스팅되어야 합니다.</p>
-        <p>공개적으로 공유한 경우 브라우저 앱에 로그인하지 않고도 작업 뷰를 볼 수 있습니다.</p>
-
-        <a name="whatsNew"></a>
-        <h2 class="divider">새로운 기능</h2>
-        <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>Operations Dashboard for ArcGIS 10.3.3은 2016년 8월에 출시되었습니다. 이 버전의 기능은 다음과 같습니다.</p>
-	        <ul>
-	          <li>중국어(번체, 홍콩/대만)로 현지화</li>
-	          <li>BUG-000095467 등의 다양한 버그 수정 및 개선</li>
-	        </ul>
-                </td>
-	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>브라우저</h4>
-	        <p>Operations Dashboard for ArcGIS의 브라우저 앱은 2016년 6월에 업데이트되었습니다. 향상된 기능은 다음과 같습니다.</p>
-	        <ul>
-	          <li>크로아티아어와 세르비아어로 현지화</li>
-	          <li>다양한 버그 수정 및 개선</li>
-        </ul></td><tr></table>
-        
-        
-        
-        
-        <a name="sneakPeek"></a>
-	<h2 class="divider">미리 보기</h2>
-	<p>현재의 Operations Dashboard는 작업을 모니터링하는 데 뛰어난 앱입니다. 하지만 앞으로 추가될 기능은 더욱 많습니다. 현재 Esri는 Windows 앱을 다운로드할 필요 없이 완전한 기능을 갖춘 브라우저 앱과 같은 차세대 앱을 구축하고 있습니다. 여러분은 브라우저에서 작업 뷰를 작성하는 기능을 오랜 시간 요청해 왔습니다. 이제 차세대 앱에서 이러한 기능이 지원됩니다! Windows 앱에서 여러분이 선호하는 위젯 레이아웃 및 고정 기능을 브라우저에서 실행하여 확인하실 수 있습니다. 또한 레이블과 스마트 매핑 기능도 지원됩니다. <a href="https://blogs.esri.com/esri/arcgis/2016/05/26/operations-dashboard-for-arcgis-a-new-experience-is-coming/">Esri 블로그 게시물</a>에서 자세한 내용을 살펴보거나 
-	 <a href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}">베타 버전에 참여</a>하세요.</p>
-	
-	<p><a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Boperations-dashboard-for-arcgis%5D">아이디어</a>를 공유하고 <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">피드백을 보내주세요.</a></p>
-        
-        <p>&nbsp;</p>
-        
-
+        <a href="/ko/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="btn btn-clear btn-fill leader-0">연습 시작</a>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-       <div class="greyFrame">
-	  이 곳에서 차세대 사용자 경험을 누리실 수 있습니다! <a class="btn secondary" href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}" style="margin: 15px 0 0 10px;">베타 버전에 참여하세요</a>
-       </div>
-       
-       <br/>
-       <div class="imgFrame block">
-          <h3>세부정보</h3>
-          
-	  <h4><a href="#features">특징</a></h4>
-	  <h4><a href="#systemRequirements">시스템 요구 사항</a></h4>
-	  <h4><a href="#arcgisRequirements">ArcGIS 요구 사항</a></h4>
-	  <h4><a href="#whatsNew">새로운 기능</a></h4>
-	  <h4><a href="#sneakPeek">미리 보기</a></h4>
-          
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">
+            <img alt="" src="img/monitorAndRespond.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">이벤트 모니터링 및 대응</a>
+          </h5>
+          <p>작업 뷰를 사용하여 중요한 작업 사항에 중점을 둡니다. 전 세계 어디서든 4단계를 통해 서비스, 배달, 사용자, 차량 등을 모니터링할 수 있습니다.</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>Esri 블로그</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <nav>
+          <a href="/ko/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="btn btn-grouped btn-clear btn-half leader-0">실행</a>
+          <a href="http://video.arcgis.com/iframe/2195/000000/width/960/1" class="btn btn-grouped btn-clear btn-half leader-0">보기</a>
+        </nav>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ko/operations-dashboard/web/user/monitor-and-respond-to-events.htm">
+            <img alt="" src="img/browserApp.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ko/operations-dashboard/web/user/monitor-and-respond-to-events.htm">브라우저에서 모니터링</a>
+          </h5>
+          <p>브라우저에서 작업 뷰를 사용합니다. 따로 설치할 필요 없이 작업 뷰를 열기만 하면 작업 상황을 알 수 있습니다. 이는 iPad에서도 가능합니다.</p>
         </div>
-
- </div>
-
+        <a href="/ko/operations-dashboard/web/user/monitor-and-respond-to-events.htm" class="btn btn-clear btn-fill leader-0">방법 알아보기</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ko/operations-dashboard/windows-desktop/author/custom-addins.htm">
+            <img alt="" src="img/developExtensions.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ko/operations-dashboard/windows-desktop/author/custom-addins.htm">개발 익스텐션</a>
+          </h5>
+          <p>사용자 정의 위젯, 피처 동작, 맵 도구를 사용하여 고유 비즈니스 로직을 작업 뷰에 가져옵니다.</p>
+        </div>
+        <nav>
+          <a href="/ko/operations-dashboard/windows-desktop/author/custom-addins.htm" class="btn btn-grouped btn-clear btn-half leader-0">자세한 내용</a>
+          <a href="https://github.com/Esri/dashboard-samples" class="btn btn-grouped btn-clear btn-half leader-0">샘플</a>
+        </nav>
+      </div>
     </div>
+  </div>
+</div>
 
-<!--	<script src="/js/main.js" type="text/javascript"></script>-->
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">더욱 효율적으로 ArcGIS 활용</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<!--div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div-->
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-$("#dashboardDownloadLink").click(function (){
-	window.location = "<%=data.page.dashboardDownloadLink%>";
-	return false;
-})
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Operations Dashboard에 연결</h4>
+    <a aria-label="LinkedIn에서 연결" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="GitHub 프로젝트 보기" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri/dashboard-samples"></a>
+    <a aria-label="커뮤니티 가입" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis"></a>
+    <a aria-label="의견 보내기" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-  </script>
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Esri 블로그 읽기
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/operations-dashboard/">더 많은 게시물</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">대화 참여
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis">더 많은 대화</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2121" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">상세 학습 진행</a></h5>
+          <p class="trailer-0">
+ ArcGIS 자세히 알아보기(Learn ArcGIS)를 검색하여 ArcGIS를 통해 실제 문제를 해결하는 방법을 익힐 수 있는 연습을 찾아서 수행할 수 있습니다.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">교육 과정 찾기</a></h5>
+          <p class="trailer-0">
+ 강의식 수업 과정(현재 우리나라에서는 진행하고 있지 않음), 웹 과정, 세미나를 통해 ArcGIS에 대해 더욱 자세히 알아봅니다.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">기술 지원 받기</a></h5>
+          <p class="trailer-0">
+ 채팅, 이메일 또는 전화를 통해 Esri Support에 문의할 수 있습니다.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">시스템 상태 확인</a></h5>
+          <p class="trailer-0">
+ ArcGIS Online 상태를 확인하고 문제를 보고합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
