@@ -1,321 +1,295 @@
 ---
 title: Operations Dashboard for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/operations-dashboard-1
-  - libs/jquery.colorbox-min.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+  - switchers/operations-dashboard-1
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2016-02-29"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ja">
-
-dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
-  
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2017-01-12"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="ja">
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/ja/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="ops-dashboard" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/ja/operations-dashboard/">ホーム</a></li>
-        <li><a href="/ja/operations-dashboard/windows-desktop/author/create-a-map.htm">ビューの作成 </a></li>
-        <li><a href="/ja/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">ビューの使用</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis">フォーラム</a></li>
+
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Operations Dashboard for ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Windows 版の取得</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/operations-dashboard/" selected>ホーム</option>
+        <option value="/en/operations-dashboard/overview/overview.htm">ビューの作成</a>
+        <option value="/en/operations-dashboard/windows-desktop/author/create-a-map.htm">ビューの使用</a>
+        <option value="/en/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">フォーラム</a>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/ja/operations-dashboard/">ホーム</a>
+        <a class="sub-nav-link" href="/ja/operations-dashboard/overview/overview.htm">ビューの作成</a>
+        <a class="sub-nav-link" href="/ja/operations-dashboard/windows-desktop/author/create-a-map.htm">ビューの使用</a>
+        <a class="sub-nav-link" href="/ja/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">フォーラム</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- beta announcement -->
+<div class="panel panel-dark panel-no-border panel-no-padding leader-2 text-center">
+  <div class="grid-container padding-leader-half padding-trailer-half trailer-0">
+    <div class="column-24">
+      <h5 class="trailer-0 leader-0">次世代のエクスペリエンスをぜひ体験してください <a class="btn secondary" href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}" style="margin: 0px 0 0 10px;">ベータ版に参加</a>
+      </h5>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>状況をすぐに把握</h1>
+      <!--<br/>
+      Know Operational Status Like You Are There<br/>
+      Be There Without Leaving Your Office<br/>
+      Know Operational Status Like You Are There<br/>
+      Know the Status of your Operations<br/>
+      Monitor, Track, and Assess Your Daily Operations<br/>
+      Monitor, Track, and Assess What Matters Most (to You)<br/>
+      Monitor, Track, and Assess with a Dynamic View of your Operations<br/>
+      Know; outlook; view <br/>-->
+      <h5>イベントや事故や災害状況の監視、フィールド調査員の追跡、日々の運用状態やパフォーマンスの評価をどこからでも行うことができます。</h5>
+      <!--Monitor, track, and assess what matters most to you from whereever you are. Use your laptop or tablet to see your operations as they progress. -->
+          
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Operations Dashboard のヘルプの検索">
+              <input type="hidden" name="collection" value="help" />
+              <!--input type="hidden" name="platform" value="detect" / -->
+              <input type="hidden" name="product" value="ops-dashboard" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-2 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <!--li><strong>Current update:</strong> December 2016</li-->
+        <li><a href="/ja/operations-dashboard/overview/whats-new.htm">新機能</a></li>
+	<li><a href="/ja/operations-dashboard/overview/requirements.htm">要件</a></li>
+        <li><a href="/ja/operations-dashboard/overview/sneak-peek.htm">追加予定の機能</a></li>
+	<li><a href="/ja/operations-dashboard/windows-desktop/author/faqs-author.htm">ビューの作成に関する FAQ</a></li>
+	<li><a href="/ja/operations-dashboard/windows-desktop/user/faqs-user.htm">ビューの使用に関する FAQ</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <h3 class="gray">事象の変化に対する監視、フィールド調査員の追跡、日々の運用状態やパフォーマンスの評価を行います。</h3>
-          
-          <!--
-          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
-          <span id="appReleased"><strong>Released:</strong> March 2014</span>
-	  -->	  
-
-          <p>
-            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">Operations Dashboard の取得</a>
-
-          </p>
-        <hr />
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/dashboard-create-small.png" />
-
-          <h3>オペレーション ビューの作成と共有</h3>
-          <p>3 つの簡単な手順で、マップまたは Web サービスで定義されたリアルタイムの地理データに基づいたマップ、リスト、チャート、ゲージなどを含むオペレーション ビューを作成し、共有します。</p>
-          <p>
-            <a href="/ja/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
-            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
-          </p>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ja/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">
+            <img alt="" src="img/createMaps.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ja/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">オペレーション ビューの作成と共有</a>
+          </h5>
+          <p>3 つの手順だけで、オペレーション ビューを簡単に作成および共有できます。オペレーション ビューには、マップまたは Web サービスで定義されているリアルタイムの地理データに基づいたマップ、リスト、チャート、ゲージなどを含めることができます。</p>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
-
-          <h3>事象の監視と対応</h3>
-          <p>オペレーション ビューを使用することで、重要な業務の遂行状況を明確にすることができます。4 つの手順で、サービス、配送、人員、車両など、世界中のあらゆるものを監視します。</p>
-          <p>
-            <a href="/ja/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
-            <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a title="事象の監視と対応" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;ビデオを見る</a>
-			<video width="320" height="240" controls id="2195" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
-			</video>
-          </p>
-        </div>
-	<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/story-graphic-3.png" />
-
-          <h3>ブラウザーでの監視</h3>
-          <p>ブラウザーでオペレーション ビューを使用することができます。何もインストールする必要はありません。オペレーション ビューを開くだけで、最新の運用状態を確認できます。iPad でも使用できます。</p>
-          <p>
-            <a href="/ja/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
-            <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
-          </p>
-        </div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/story-graphic-4.png" />
-
-          <h3>エクステンションの開発</h3>
-          <p>カスタム ウィジェット、フィーチャ アクション、およびマップ ツールを使用して、独自のビジネス ロジックをオペレーション ビューで表現することができます。</p>
-          <p>
-            <a href="/ja/operations-dashboard/windows-desktop/author/custom-addins.htm" class="icon-right-arrow">&nbsp;使用方法</a><br />
-          </p>
-        </div>        
-
-        <div class="clear"></div>
-
-
-	<a name="features" ></a>
-	<h2 class="divider">特長</h2>
-	<p>管理するシステムとリソースに共通のビューを提供します。デスクトップやタブレット デバイスから、大規模なイベントのリアルタイムなフィードや日々の運用を監視します。マップ、チャート、およびグラフを統合した専用の管理職用ダッシュボードを作成します。</p>
-	
-	<ul>
-	<li>動的なデータ ソースを含むマップを使用して、リアルタイム ビューを提供します。</li>
-	<li>チャート、ゲージ、ヒストグラムなどを構成して、統計情報を提供します。</li>
-	<li>特定のニーズに焦点を当てたオペレーション ビューを作成し、共有します。</li>
-	<li>複数のモニターまたはシングル ディスプレイ デバイス用にビューをデザインできます。</li>
-	<li>ニーズに合ったカスタム ウィジェットとツールを作成します。</li>
-	</ul>
-
-
-        <a name="systemRequirements"></a>
-        <h2 class="divider">システム要件</h2>
-
-        <p>Operations Dashboard を実行するためのデバイス要件は、次のとおりです。Operations Dashboard は、多数の言語でサポートされています。</p>
-
-
-<script> 
- function exp(e,strTag ,strAttribute){ 
- var elem = document.getElementsByTagName(strTag); 
- var elem1 = e.target;
- for (var i=0;i<elem1.children.length;i++){ 
- elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
- } 
- for (var i =0;i<elem.length;i++) 
- { 
- if(elem[i].getAttribute(strAttribute)=="yes") 
- { 
- elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
- } 
- } 
- } 
- </script> 
- <h3>Windows アプリ</h3>
-  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">サポートされているオペレーティング システム</a>
-     <div exp1='yes' style="display:none;padding:0 15px;">
-        <ul>
-          <li>Windows 10 Pro および Windows 10 Enterprise (32 ビット、64 ビット (EM64T))</li>
-          <li>Windows 8.1、Windows 8.1 Pro、Windows 8.1 Enterprise (32 ビット、64 ビット (EM64T))</li>
-          <li>Windows 8、Windows 8 Pro、Windows 8 Enterprise (32 ビット、64 ビット (EM64T))</li>
-		  <li>Windows 7 Ultimate、Enterprise、Professional、Home Premium (32 ビット、64 ビット (EM64T)) SP1</li>
-		  <li>Windows Server 2012 Standard、Datacenter (64 ビット (EM64T))</li>
-		<li>Windows Server 2008 R2 Standard、Enterprise、Datacenter (64 ビット (EM64T)) SP1</li>
-		<li>Windows Server 2008 Standard、Enterprise、Datacenter (32 ビット、64 ビット (EM64T)) SP2</li>
-        </ul>
-</div>
-<div class="clear" style="padding:5px;"></div>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">ハードウェア要件</a>
-	<div exp2='yes' style="display:none;padding:0 15px;">
-        <ul>
-			<li>CPU: 2.2 GHz 以上。ハイパースレッディング (HHT) またはマルチコアを推奨。</li>
-			<li>プロセッサ: Intel Pentium 4、Core Duo、または Xeon プロセッサ (SSE2 以上)。プロセッサを確認するには、Windows のコマンド プロンプトから Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> ユーティリティを実行してください。</li>
-			<li>ディスク容量: 1.5 GB の空きディスク容量。</li>
-			<li>メモリ/RAM: 2 GB 以上。</li>
-			<li>表示プロパティ: 24 ビット カラー。</li>
-			<li>画面の解像度: 通常サイズ (96 dpi) で 1024 x 768 以上。</li>
-			<li>スワップ領域: オペレーティング システムに依存 (500 MB 必須)。</li>
-			<li>ビデオ/グラフィックス アダプター: RAM: 64 MB (必須)、256 MB 以上 (推奨)。NVIDIA、ATI、Intel のチップセットをサポート。アクセラレーテッド グラフィックス カード ドライバー。Shader Model 2.0 以上。必ず最新のドライバーを使用してください。</li>
-		</ul>
-</div>
-<div class="clear" style="padding:5px;"></div>
-
-<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">ソフトウェア要件</a>
-	<div exp3='yes' style="display:none;padding:0 15px;">
-        <p style="padding:0 15px"><a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> 以降が必要です。ソフトウェアをインストールするには、お使いのコンピューターでの管理者権限が必要です。</p>
-        </div>
-        <div class="clear" style="padding:5px;"></div>
-        
-<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">開発環境要件</a>
-		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px">Operations Dashboard for ArcGIS を拡張するには、<a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> または <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a> が必要です。ArcGIS API for JavaScript を使用するには、オペレーション ビューを ArcGIS Online または Portal for ArcGIS 10.4 以降で使用する必要があります。ArcGIS Runtime SDK for WPF を使用するには、Microsoft Visual Studio 2012/2013 Professional、Premium、または Ultimate が必要です。</p>
-
-     </div> 
-     <div class="clear" style="padding:5px;"></div>
-     
-<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">サポートされている言語</a>
-<div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">アラビア語、チェコ語、デンマーク語、オランダ語、英語、エストニア語 、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、イタリア語、日本語、韓国語、ラトビア語 、リトアニア語 、ノルウェー語、ポーランド語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ルーマニア語、ロシア語、簡体字中国語 、スペイン語、スウェーデン語、タイ語、繁体字中国語 (香港)、繁体字中国語 (台湾)、トルコ語、およびベトナム語。</p>
-     	<p style="padding:0 15px">Windows 版アプリで使用される言語は、お使いのオペレーティング システムの言語設定によって決まります。サポートされていない言語設定を使用した場合、アプリは英語を使用します。</p>
-</div>
-<div class="clear"></div>
-
-     <h3/>
- <h3>ブラウザー アプリ</h3>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">サポートされているブラウザー</a>
-<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> デスクトップ
- <ul style="padding:0 15px">
- <li>Chrome バージョン 19.0 以降</li>
- <li>Firefox バージョン 4.0 以降</li>
- <li>Internet Explorer バージョン 9.0 以降</li>
- <li>Microsoft Edge バージョン 20.0 以降</li>
- <li>Safari バージョン 5.1 以降</li>
- </ul> 
- タブレット 
- <ul style="padding:0 15px">
- <li>Android 4.0 以降での Chrome バージョン 19.0 以降</li>
- <li>iOS 6.0 以降での Safari</li>
- </ul>
- スマートフォン 
- <p style="padding:0 15px">スマートフォンのブラウザーは現在サポートされていません。</p>
- </div></div> 
- <div class="clear" style="padding:5px;"></div>
- <a class="icon-right-arrow" onclick="exp(event,'div','exp12');" style="display:inline;">開発環境要件</a>
- <div exp12='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Operations Dashboard for ArcGIS を拡張するには、<a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> が必要です。オペレーション ビューを ArcGIS Online または Portal for ArcGIS 10.4 以降で使用する必要があります。</p>
-</div>
-<div class="clear" style="padding:5px;"></div>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">サポートされている言語</a>
- <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">クロアチア語、チェコ語、デンマーク語、オランダ語、英語、エストニア語 、フィンランド語、フランス語、ドイツ語、ギリシャ語、イタリア語、日本語、韓国語、ラトビア語 、リトアニア語、ノルウェー語、ポーランド語、ポルトガル (ブラジル) 語、ポルトガル (ポルトガル) 語、ルーマニア語、ロシア語、セルビア語、簡体字中国語、スペイン語、スウェーデン語、タイ語、繁体字中国語 (香港)、繁体字中国語 (台湾)、トルコ語、およびベトナム語。</p>
-      	<p style="padding:0 15px">ブラウザー版では、ArcGIS Online のプロフィールを使用して言語を設定します。サポートされていない言語設定を使用した場合、アプリは英語を使用します。</p>
-</div>
-<div class="clear"></div>
-
-
-        <p style="padding:0 15px" />
-        <a name="arcgisRequirements"></a>
-        <h2 class="divider">ArcGIS の要件</h2>
-        <p>Operations Dashboard でマップを使用するには、ArcGIS Online 組織アカウントが必要です。ArcGIS Online および Portal for ArcGIS 10.3.1 以降がサポートされています。ブラウザー アプリのエクステンションには、ArcGIS Online または Portal for ArcGIS 10.4 以降が必要です。</p>
-        <p>マップには、ArcGIS Online、Portal for ArcGIS、および ArcGIS for Server のデータを含めることができます。データ ソースは ArcGIS Online または ArcGIS 10.1 for Server 以降でホストされている必要があります。</p>
-        <p>一般ユーザーと共有する場合、サイン インしなくてもブラウザー アプリでオペレーション ビューを表示できます。</p>
-
-        <a name="whatsNew"></a>
-        <h2 class="divider">新機能</h2>
-        <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>Operations Dashboard for ArcGIS 10.3.3 は、2016 年 8 月にリリースされました。これには次のものが含まれます。</p>
-	        <ul>
-	          <li>繁体字中国語 (香港) および繁体字中国語 (台湾) に対応</li>
-	          <li>BUG-000095467 など、多数のバグ修正および機能改善</li>
-	        </ul>
-                </td>
-	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>ブラウザー</h4>
-	        <p>Operations Dashboard for ArcGIS のブラウザー アプリは、2016 年 6 月にアップデートされました。機能強化された点は次のとおりです。</p>
-	        <ul>
-	          <li>クロアチア語およびセルビア語に対応</li>
-	          <li>多数のバグ修正および機能改善</li>
-        </ul></td><tr></table>
-        
-        
-        
-        
-        <a name="sneakPeek"></a>
-	<h2 class="divider">追加予定の機能</h2>
-	<p>Operations Dashboard は、日々の運用状態の監視に最適なアプリです。今後、さまざまな機能の追加が予定されています。現在、Windows アプリをダウンロードしなくてもすべての機能を利用できる次世代型のブラウザー アプリを構築中です。これまで長い間、ブラウザーでオペレーション ビューを作成する機能のご要望をいただいていましたが、次世代のアプリによってそれが可能になります。Windows アプリだけでなくブラウザーでも、必要なウィジェットのレイアウトおよびドッキングを確認できるようになります。さらに、ラベルおよびスマート マッピングがサポートされます。詳細については、<a href="https://blogs.esri.com/esri/arcgis/2016/05/26/operations-dashboard-for-arcgis-a-new-experience-is-coming/">Esri ブログ記事</a>をご覧になるか、または<a href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}">ベータ版にご参加</a>ください。</p>
-	
-	<p><a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Boperations-dashboard-for-arcgis%5D">アイデア</a>を共有したり、<a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">フィードバックを送信</a>したりします。</p>
-        
-        <p>&nbsp;</p>
-        
-
+        <a href="/ja/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="btn btn-clear btn-fill leader-0">使用方法</a>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-       <div class="greyFrame">
-	  次世代のエクスペリエンスをぜひ体験してください <a class="btn secondary" href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}" style="margin: 15px 0 0 10px;">ベータ版に参加</a>
-       </div>
-       
-       <br/>
-       <div class="imgFrame block">
-          <h3>詳細</h3>
-          
-	  <h4><a href="#features">特長</a></h4>
-	  <h4><a href="#systemRequirements">システム要件</a></h4>
-	  <h4><a href="#arcgisRequirements">ArcGIS の要件</a></h4>
-	  <h4><a href="#whatsNew">新機能</a></h4>
-	  <h4><a href="#sneakPeek">追加予定の機能</a></h4>
-          
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ja/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">
+            <img alt="" src="img/monitorAndRespond.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ja/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">事故や災害状況の監視と対応</a>
+          </h5>
+          <p>オペレーション ビューを使用すると、重要な業務の遂行状況を明確にすることができます。4 つの手順で、サービス、配送、人員、車両など、世界中のあらゆるものを監視します。</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>ブログ</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <nav>
+          <a href="/ja/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="btn btn-grouped btn-clear btn-half leader-0">使用方法</a>
+          <a href="http://video.arcgis.com/iframe/2195/000000/width/960/1" class="btn btn-grouped btn-clear btn-half leader-0">ビデオを見る</a>
+        </nav>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ja/operations-dashboard/web/user/monitor-and-respond-to-events.htm">
+            <img alt="" src="img/browserApp.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ja/operations-dashboard/web/user/monitor-and-respond-to-events.htm">ブラウザーでの監視</a>
+          </h5>
+          <p>ブラウザーでオペレーション ビューを使用することができます。何もインストールする必要はありません。オペレーション ビューを開くだけで、最新の運用状態を確認できます。iPad でも使用できます。</p>
         </div>
-
- </div>
-
+        <a href="/ja/operations-dashboard/web/user/monitor-and-respond-to-events.htm" class="btn btn-clear btn-fill leader-0">使用方法</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/ja/operations-dashboard/windows-desktop/author/custom-addins.htm">
+            <img alt="" src="img/developExtensions.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/ja/operations-dashboard/windows-desktop/author/custom-addins.htm">エクステンションの開発</a>
+          </h5>
+          <p>カスタム ウィジェット、フィーチャ アクション、およびマップ ツールを使用して、独自のビジネス ロジックをオペレーション ビューで表現することができます。</p>
+        </div>
+        <nav>
+          <a href="/ja/operations-dashboard/windows-desktop/author/custom-addins.htm" class="btn btn-grouped btn-clear btn-half leader-0">使用方法</a>
+          <a href="https://github.com/Esri/dashboard-samples" class="btn btn-grouped btn-clear btn-half leader-0">サンプル</a>
+        </nav>
+      </div>
     </div>
+  </div>
+</div>
 
-<!--	<script src="/js/main.js" type="text/javascript"></script>-->
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">ArcGIS をもっと活用</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS for Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<!--div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div-->
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-$("#dashboardDownloadLink").click(function (){
-	window.location = "<%=data.page.dashboardDownloadLink%>";
-	return false;
-})
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Operations Dashboard とつながる</h4>
+    <a aria-label="LinkedIn に接続" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="GitHub プロジェクトを見る" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri/dashboard-samples"></a>
+    <a aria-label="コミュニティに参加" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis"></a>
+    <a aria-label="フィードバックを送信" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-  </script>
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Esri のブログを読む
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/operations-dashboard/">その他の記事</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">会話に参加する
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis">その他の会話</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2121" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">詳しいレッスンを受講</a></h5>
+          <p class="trailer-0">
+ Learn ArcGIS を検索して、ArcGIS で実世界の問題を解決する演習を検索および実行します。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">トレーニング コースの検索</a></h5>
+          <p class="trailer-0">
+ インストラクター主導型コース、Web コース、セミナーを通じて ArcGIS の詳細を学びます。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">テクニカル サポート</a></h5>
+          <p class="trailer-0">
+ チャット、電子メール、または電話で Esri Support に問い合わせます。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">システム状態のチェック</a></h5>
+          <p class="trailer-0">
+ ArcGIS Online のステータスを確認して、問題を報告します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
