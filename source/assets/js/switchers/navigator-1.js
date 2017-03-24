@@ -5,11 +5,10 @@ $(document).ready(function() {
       localedir =   docConfig['localedir'];
    }
    var dict = (window.localeJsonObj || {})[localedir];
-
    var val = '<p id="plats" class="doc-platform-switcher">' +
         '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-        '<a data-appname="navigator" data-plat="android-phone" data-prefix="/' + localedir +'/navigator/android-phone" href="/en/navigator/" data-langlabel="android-phone" class="">Android Phone</a>' +
-        '<a data-appname="navigator" data-plat="android-tablet" data-prefix="/' + localedir +'/navigator/android-tablet" href="/en/navigator/" data-langlabel="android-tablet" class="">Android Tablet</a>' +
+        '<a data-appname="navigator" data-plat="android-phone" data-prefix="/' + localedir +'/navigator/android-phone" href="/en/navigator/" data-langlabel="android-phone" class="">'+dict['android-phone']+'</a>' +
+        '<a data-appname="navigator" data-plat="android-tablet" data-prefix="/' + localedir +'/navigator/android-tablet" href="/en/navigator/" data-langlabel="android-tablet" class="">'+dict['android-tablet']+'</a>' +
 		    '<a data-appname="navigator" data-plat="ipad" data-prefix="/' + localedir +'/navigator/ipad" href="/en/navigator/" data-langlabel="ipad" class="">iPad</a>' +
         '<a data-appname="navigator" data-plat="iphone" data-prefix="/' + localedir +'/navigator/iphone" href="/en/navigator/" data-langlabel="iphone" class="">iPhone</a>'
         '</p>',
