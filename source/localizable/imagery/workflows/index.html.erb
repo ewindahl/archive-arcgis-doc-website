@@ -4,11 +4,15 @@ css:
   - homepage
   - /cdn/css/colorbox
   - video-play-button
+  - slideshow
+  - gallery
 
 js:
   - /cdn/js/libs/jquery.colorbox-min
   - video-playlist
   - rssfeed
+  - libs/jquery.cycle2.min
+  - slideshow
 
 metatags:
   - <META name="description" content="ArcGIS Imagery Workflows landing page. Tools and best practices to help you manage, analyze and use your imagery and rasters."><META name="last-modified" content="2017-3-3"><META name="product" content="imagery-workflows"><META name="sub_category" content="Imagery Workflows"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Imagery Workflows"><META name="search-category" content="help-general"><META name="version" content="10.5"><META name="content_type" content="Help Topic"><META name="subject" content=""><META name="content-language" content="en">
@@ -16,6 +20,9 @@ metatags:
 mobile: true
 
 ---
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+<script src="/<%= current_language %>/imagery/workflows/controllers.js" type="text/javascript"></script>
 <!--
 This is a tamplate for a simple homepage.  Please search for and replace each of the following, then remove these notes when you're done:
   PRODUCT_METADATA: The metadata for the product
@@ -95,73 +102,88 @@ Please search for INSTRUCTIONS within the file for element specific instructions
   </div>
 </div>
 
-<div class="grid-container leader-1 trailer-1">
+
+
+
+<div class="grid-container leader-1 trailer-1" ng-app="galleryApp" ng-controller="GalleryListCtrl">
+  <nav id='filter-list' class="column-18 pre-3 post-3">
+    <label class="trailer-half">
+      Gallery Search
+      <input type="text" ng-model="query" placeholder="Search" class="input-search">
+    </label>
+    <div class="filter-by">
+
+      <label class="text-left padding-right-1 trailer-half tablet-block" >Filter By:</label>
+      <label class="text-left padding-right-1 trailer-half">
+        <select ng-model="workflowType" ng-init="workflowType=''">
+          <option value="" hidden>Workflow Type</option>
+          <option value="all">All Workflow Types</option>
+          <option value="managingimagery">Managing Imagery</option>
+          <option value="analyzingimagery">Analyzing Imagery</option>
+          <option value="usingimagery">Using Imagery</option>
+        </select>
+      </label>
+      <label class="text-left padding-right-1 trailer-half">
+        <select ng-model="dataType" ng-init="dataType=''">
+          <option value="" hidden>Data Type</option>
+          <option value="all">All Data Types</option>
+          <option value="orthophotos">Orthophotos</option>
+          <option value="elevation">Elevation</option>
+          <option value="scannedmaps">Scanned Maps</option>
+        </select>
+      </label>
+      <label class="text-left padding-right-1 trailer-half">
+        <select ng-model="platform" ng-init="platform = preFilterInit()">
+          <option value="" hidden >Platform</option>
+          <option value="all">All Platforms</option>
+          <option value="arcgispro">ArcGIS Pro</option>
+          <option value="arcmap">ArcMap</option>
+          <option value="web">Web</option>
+          <option value="mobile">Mobile</option>
+          <option value="server">Server</option>
+        </select>
+      </label>
+      <label class="trailer-half right">
+        <a class="btn" ng-click="platform='';dataType='';workflowType='';query='';">Reset</a>
+      </label>
+    </div>
+
+  </nav>
+
+
+
   <div class="column-24">
     <div><h3>Manage Imagery</h3></div>
-    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
-    <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up">
-      <div class="card block">
-        <figure class="card-image-wrap">
-          <a href="http://doc.arcgis.com/en/imagery/workflows/managing-preprocessed-orthophotos/overview/">
-            <img alt="" src="img/OrthoIcon.bmp">
-          </a>
-        </figure>
-        <div class="card-content">
-          <h5 class="trailer-half leader-0">
-            <a href="http://doc.arcgis.com/en/imagery/workflows/managing-preprocessed-orthophotos/overview/">Managing Preprocessed Orthophotos</a>
-          </h5>
-          <p>Get tools and guidance for creating mosaic datasets to manage your preprocessed orthophotos, including imagery with multiple timesteps and resolutions. </p>
+    <div class="slideshow off-white centered-text top-border">
+      <a href="#" class="prev"></a>
+      <a href="#" class="next"></a>
+      <div id="gallerycontent" class="slide block-group block-group-4-up" ng-repeat="group in (galleryResults = (galleryitems | filter: query | filter:dataType | filter:workflowType | filter:platform | orderBy:orderProp))">
+        <div class="item card block trailer-1" ng-repeat="item in group">
+          <figure class="card-image-wrap">
+            <a href="/en/imagery/workflows/{{item.url}}" class="card-image">
+              <img ng-src="{{item.imageUrl}}" alt="{{item.name}}" title="{{item.name}}">
+            </a>
+          </figure>
+          <div class="card-content">
+            <a href="/en/imagery/workflows/{{item.id}}"><h5 class="trailer-half leader-0">{{item.name}}</h5></a>
+            <p>{{item.snippet}}</p>
+          </div>
         </div>
-        <a href="http://doc.arcgis.com/en/imagery/workflows/managing-preprocessed-orthophotos/overview/" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
-      <div class="card block">
-        <figure class="card-image-wrap">
-          <a href="http://doc.arcgis.com/en/imagery/workflows/managing-elevation/overview/">
-            <img alt="" src="img/ElevationIcon.bmp">
-          </a>
-        </figure>
-        <div class="card-content">
-          <h5 class="trailer-half leader-0">
-            <a href="http://doc.arcgis.com/en/imagery/workflows/managing-elevation/overview/">Managing Elevation</a>
-          </h5>
-          <p>Get tools and guidance for creating mosaic datasets to manage your elevation datasets and produce products like aspect, hillshades, and slope.</p>
+      <div ng-show="isEmpty(galleryResults)" class="empty-results panel alert-red">
+        <h3 class="text-center"><%= t("site.gallery.no_results")%></h3>
+        <div class="text-center">
+          <p><%= t("site.gallery.start_over")%></p>
+          <a class="btn" ng-click="products='';estTime='';capabilities='';query='';"><%= t("site.gallery.reset")%></a>
         </div>
-        <a href="http://doc.arcgis.com/en/imagery/workflows/managing-elevation/overview/" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
-      <div class="card block">
-        <figure class="card-image-wrap">
-          <a href="http://doc.arcgis.com/en/imagery/workflows/browse-imagery/overview/">
-            <img alt="" src="img/BrowseIcon.bmp">
-          </a>
-        </figure>
-        <div class="card-content">
-          <h5 class="trailer-half leader-0">
-            <a href="http://doc.arcgis.com/en/imagery/workflows/browse-imagery/overview/">Browse Imagery</a>
-          </h5>
-          <p>Get tools and guidance for managing and publishing reference imagery to help end users search, review, and order full-resolution content. </p>
-        </div>
-        <a href="http://doc.arcgis.com/en/imagery/workflows/browse-imagery/overview/" class="btn btn-clear btn-fill leader-0">Learn more</a>
-      </div>
-
-	<!--
-	  <div class="card block">
-        <figure class="card-image-wrap">
-          <a href="CARD_LINK_4">
-            <img alt="" src="img/CARD_IMAGE_4.png">
-          </a>
-        </figure>
-        <div class="card-content">
-          <h5 class="trailer-half leader-0">
-            <a href="CARD_LINK_4">Managing Scanned Maps</a>
-          </h5>
-          <p>TEXT</p>
-        </div>
-        <a href="CARD_LINK_4" class="btn btn-clear btn-fill leader-0">Learn more</a>
-      </div>
-	-->
-
+      <div class="cycle-pager"></div>
     </div>
-    <div class="leader-1 trailer-1"><h4>Check out our <a href="http://arcg.is/0b4zun">ArcGIS Online Group</a> for more tools to help you manage, analyze, and use your imagery.</h4></div>
+
+    <!--/div-->
+    <div class="leader-1 trailer-1">
+      <h4>Check out our <a href="http://arcg.is/0b4zun">ArcGIS Online Group</a> for more tools to help you manage, analyze, and use your imagery.</h4>
+    </div>
   </div>
 </div>
 
