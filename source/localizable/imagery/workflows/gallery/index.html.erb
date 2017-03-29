@@ -1,0 +1,106 @@
+---
+title: Imagery Workflows
+css:
+  - homepage
+  - /cdn/css/colorbox
+  - gallery
+
+js:
+  - /cdn/js/libs/jquery.colorbox-min
+  - //ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js
+  - //ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js
+  - /en/imagery/workflows/gallery_controller.js
+
+metatags:
+  - <META PRODUCT_METADATA>
+
+mobile: true
+
+---
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 link-white"><a href="/en/imagery/workflows/" style="text-decoration: none;">Imagery Workflows Gallery</a></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-1" ng-app="galleryApp" ng-controller="GalleryListCtrl">
+  <div class="column-24">
+    <nav id='filter-list' class="column-18 pre-3 post-3">
+      <label class="trailer-half">
+        Search
+        <input type="text" ng-model="query" placeholder="Enter Search Terms" class="input-search">
+      </label>
+      <div class="filter-by">
+        <label class="text-left padding-right-1 trailer-half tablet-block" >Filter By:</label>
+        <label class="text-left padding-right-1 trailer-half">
+          <select ng-model="workflowType" ng-init="workflowType=''">
+            <option value="" hidden>Workflow Type</option>
+            <option value="all">All Workflow Types</option>
+            <option value="managingimagery">Managing Imagery</option>
+            <option value="analyzingimagery">Analyzing Imagery</option>
+            <option value="usingimagery">Using Imagery</option>
+          </select>
+        </label>
+        <label class="text-left padding-right-1 trailer-half">
+          <select ng-model="dataType" ng-init="dataType=''">
+            <option value="" hidden>Data Type</option>
+            <option value="all">All Data Types</option>
+            <option value="orthophotos">Orthophotos</option>
+            <option value="elevation">Elevation</option>
+            <option value="scannedmaps">Scanned Maps</option>
+          </select>
+        </label>
+        <label class="text-left padding-right-1 trailer-half">
+          <select ng-model="platform" ng-init="platform = ''">
+            <option value="" hidden >Platform</option>
+            <option value="all">All Platforms</option>
+            <option value="arcgispro">ArcGIS Pro</option>
+            <option value="arcmap">ArcMap</option>
+            <option value="web">Web</option>
+            <option value="mobile">Mobile</option>
+            <option value="server">Server</option>
+          </select>
+        </label>
+        <label class="trailer-half right">
+          <a class="btn" ng-click="platform='';dataType='';workflowType='';query='';">Reset</a>
+        </label>
+      </div>
+    </nav>
+
+
+    <div class="column-24">
+      <hr class="leader-half">
+      <div class="off-white centered-text top-border">
+        <a href="#" class="prev"></a>
+        <a href="#" class="next"></a>
+        <div gallery-list id="gallerycontent" class="block-group block-group-4-up">
+          <div class="item card block trailer-1" ng-repeat="item in (galleryResults = (galleryitems | filter:query | filter:dataType | filter:workflowType | filter:platform | orderBy:orderProp))">
+            <figure class="card-image-wrap">
+              <a href="/en/imagery/workflows/{{item.url}}" class="card-image">
+                <img ng-src="{{item.imageUrl}}" alt="{{item.name}}" title="{{item.name}}">
+              </a>
+            </figure>
+            <div class="card-content">
+              <a href="/en/imagery/workflows/{{item.id}}"><h5 class="trailer-half leader-0">{{item.name}}</h5></a>
+              <p>{{item.snippet}}</p>
+            </div>
+          </div>
+        </div>
+        <div ng-show="isEmpty(galleryResults)" class="empty-results panel alert-red">
+          <h3 class="text-center"><%= t("site.gallery.no_results")%></h3>
+          <div class="text-center">
+            <p><%= t("site.gallery.start_over")%></p>
+            <a class="btn" ng-click="products='';estTime='';capabilities='';query='';"><%= t("site.gallery.reset")%></a>
+          </div>
+        </div>
+        <div class="cycle-pager"></div>
+      </div>
+    </div>
+  </div>
+</div>

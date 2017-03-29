@@ -1,0 +1,46 @@
+'use strict';
+/* Controllers */
+
+function callSlideshow(){
+  $(".slideshow").cycle({
+    timeout:0,
+    manualSpeed:200,
+    slides:"> .slide",
+    pager:"> .cycle-pager",
+    prev:"> .prev",
+    next:"> .next",
+    allowWrap:false,
+  });
+}
+var galleryApp = angular.module('galleryApp', ['ngAnimate']);
+galleryApp.controller('GalleryListCtrl', ['$scope', '$http', '$location',
+  function($scope, $http, $location) {
+    $http.get('/en/imagery/workflows/imagery_items.json').success(function(data) {
+      var galleryKey = -1;
+      $scope.galleryitems = [];
+      data.sort(function(a, b){
+        var a1= a.age, b1= b.age;
+        if(a1== b1) return 0;
+        return a1> b1? 1: -1;
+      });
+      for (var i = 0; i < data.length; i++) {
+        if((i % 4) == 0){
+          galleryKey++;
+          $scope.galleryitems[galleryKey] = [];
+        }
+        $scope.galleryitems[galleryKey].push(data[i]);
+      }
+    });
+}]);
+
+galleryApp.directive('galleryList', ['$timeout', function ($timeout) {
+  var def = {
+    restrict: 'A',
+    link: function (scope, element, attrs) {
+      if (scope.$last === true) {
+        $timeout(function(){callSlideshow();}, 0);  //Calling a scoped method
+      }
+    }
+  };
+  return def;
+}]);
