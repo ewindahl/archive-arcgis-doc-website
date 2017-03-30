@@ -16,7 +16,10 @@ function callSlideshow(){
     allowWrap:false,
   });
 }
+
 var galleryApp = angular.module('galleryApp', ['ngAnimate']);
+console.log(1);
+
 galleryApp.controller('GalleryListCtrl', ['$scope', '$http', '$location',
   function($scope, $http, $location) {
     $http.get('/en/imagery/workflows/imagery_items.json').success(function(data) {
