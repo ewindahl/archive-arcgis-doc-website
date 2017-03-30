@@ -1,149 +1,249 @@
 ---
-title: Data Appliance 6.2 for ArcGIS
+title: Data Appliance 6.3 for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - home
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/operations-dashboard-1
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="Data Appliance 6.2 for ArcGIS Home page."><META name="last-modified" content="2015-10-20"><META name="product" content="data-appl"><META name="sub_category" content="Data Appliance"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Data Appliance"><META name="search-category" content="help-general"><META name="subject_label" content="GEODATA,ARCGIS ONLINE"><META name="version" content="data-appl-6.1"><META name="content_type" content="Help Topic"><META name="subject" content="GEODATA,ARCGIS ONLINE"><META name="content-language" content="en">
+  - <META name="description" content="Data Appliance 6.3 for ArcGIS Home page."><META name="last-modified" content="2017-03-08"><META name="product" content="data-appl"><META name="sub_category" content="Data Appliance"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Data Appliance"><META name="search-category" content="help-general"><META name="subject_label" content="GEODATA,ARCGIS ONLINE"><META name="version" content="data-appl-6.3"><META name="content_type" content="Help Topic"><META name="subject" content="GEODATA,ARCGIS ONLINE"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/data-appliance/">Data Appliance 6.2 for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Data Appliance for ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="data-appl" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/data-appliance/">Home</a></li>
-        <li><a href="/en/data-appliance/6.2/maps/">Maps and Data</a></li>
-        <li><a href="/en/data-appliance/6.2/deploy/">Deploy</a></li>
-        <li><a href="/en/data-appliance/6.2/use/">Use</a></li>
-        <li><a href="/en/data-appliance/6.2/reference/">Reference</a></li>
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace each of the following, then remove these notes when you're done:
+  PRODUCT_METADATA: The metadata for the product
+  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
+  DOWNLOAD_LINK: A link to download the product, free trial, etc.
+  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
+  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
+  NAV_LINK_x: The link for the navigation tabs at the top.
+  NAV_TEXT_x: The text for the navigation tabs at the top.
+  PRODUCT_HEADLINE: The main headline for the product.  This should be very short.
+  PRODUCT_SUB_HEADLINE: A slightly longer blurb about the product.
+  PRODUCT_SEARCH_VALUE: The product value for the search form
+  ITUNES_STORE_LINK: Link to the product on the app store
+  GOOGLE_PLAY_LINK: Link to the product on Google Play
+  WINDOWS_STORE_LINK: Link to the product on the Windows store
+  POPULAR_LINK_x: Links to popular pages and topics. These should include "FAQs", "What's new", and "Supported environments", but may include other links as well.
+  POPULAR_TEXT_x: Text for links to popular pages and topics.
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  CARD_LINK_x: The page that the card should link to.
+  CARD_TITLE_x: The title of the card.
+  CARD_TEXT_x: The text inside the card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+  GEONET_LINK: Link to the product's Geonet page
+  BLOG_LINK: Link to the the product's blog
+  BLOG_FEED_URL: URL for the product's blog feed
+  GEONET_LINK: Link to the the product's geonet page
+  GEONET_FEED_URL: URL for the product's geonet feed
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Data Appliance 6.3 for ArcGIS</h1>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/data-appliance/" selected>Home</option>
+        <option value="/en/data-appliance/6.3/maps/">Maps and Data</option>
+        <option value="/en/data-appliance/6.3/deploy/">Deploy</option>
+        <option value="/en/data-appliance/6.3/use/">Use</option>
+        <option value="/en/data-appliance/6.3/reference/">Reference</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/en/data-appliance/">Home</a>
+        <a class="sub-nav-link" href="/en/data-appliance/6.3/maps/">Maps and Data</a>
+        <a class="sub-nav-link" href="/en/data-appliance/6.3/deploy/">Deploy</a>
+        <a class="sub-nav-link" href="/en/data-appliance/6.3/use/">Use</a>
+        <a class="sub-nav-link" href="/en/data-appliance/6.3/reference/">Reference</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Publish and Share Content On-premise</h1>
+      <h5>Data Appliance for ArcGIS is a content solution with much of the same data that is available through ArcGIS Online services</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Search Data Appliance for ArcGIS">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="data-appl" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="/en/data-appliance/6.3/reference/faq.htm">FAQs</a></li>
+        <li><a href="/en/data-appliance/6.3/reference/whats-new.htm">What's new</a></li>
+	      <li><a href="/en/data-appliance/6.3/deploy/system-reqs-63.htm">System requirements</a></li>
+        <li><a href="/en/data-appliance/6.3/deploy/quick-start-guides-63.htm">Quick-start guides</a></li>
+        <li><a href="/en/data-appliance/6.2/reference/data-appliance-overview.htm">Previous version (6.2)</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <h3 class="gray">Data Appliance for ArcGIS is a content solution with much of the same data that is available through ArcGIS Online services</h3>
-          
-          <!--
-          <span id="appVersion"><strong>Version:</strong> 6.2</span>
-          <span id="appReleased"><strong>Released:</strong> October 2015</span>
-	 	  -->
-
-        <hr />
-
-        <div id="collectorMapFeature" class="icon-container column-12 phone-column-24">
-          <h3 class="icon-map">Maps</h3>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/data-appliance/6.3/maps/">
+            <h3 class="icon-ui-maps link-darkest-gray font-size-8 leader-1" style="text-align:center;"></h3>
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/data-appliance/6.3/maps/">Maps</a>
+          </h5>
           <p>Learn about the available maps.</p>
-          <p>
-            <a href="/en/data-appliance/6.2/maps/" class="icon-right-arrow">&nbsp;Show me details</a><br />
-            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
-          </p>
         </div>
-
-
-        <div id="collectorDataFeature" class="icon-container column-12 phone-column-24">
-          <h3 class="icon-list">Deploy</h3>
-          <p>Configure your data appliance and deploy the services on ArcGIS for Server. </p>
-          <p>
-            <a href="/en/data-appliance/6.2/deploy/" class="icon-right-arrow">&nbsp;Show me how</a><br />
-            <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-          </p>
-        </div>
-	<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="icon-container column-12 phone-column-24">
-		  <h3 class="icon-map-trail">Use</h3>
-          <p>Use the services in your ArcGIS client. </p>
-          <p>
-            <a href="/en/data-appliance/6.2/use/" class="icon-right-arrow">&nbsp;Show me how</a><br />
-            <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
-          </p>
-        </div>
-
-        <div id="collectorDataFeature" class="icon-container column-12 phone-column-24">
-          <!-- <img src="/en/operations-dashboard/story-graphic-4.png" />  -->
-		<h3 class="icon-open-book">Reference</h3>
-          <p>View general information, frequently asked questions, and terms of use as well as links for the previous version.  </p>
-          <p>
-            <a href="/en/data-appliance/6.2/reference//" class="icon-right-arrow">&nbsp;Show me details</a><br />
-          </p>
-        </div>        
-
-        <div class="clear"></div>
-
-
-
-
-<script> 
- function exp(e,strTag ,strAttribute){ 
- var elem = document.getElementsByTagName(strTag); 
- var elem1 = e.target;
- for (var i=0;i<elem1.children.length;i++){ 
- elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
- } 
- for (var i =0;i<elem.length;i++) 
- { 
- if(elem[i].getAttribute(strAttribute)=="yes") 
- { 
- elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
- } 
- } 
- } 
- </script> 
-     
-
+        <a href="/en/data-appliance/6.3/maps/" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-       <div class="imgFrame block">
-          <h3>Details</h3>
-          
-	  <h4><a href="/en/data-appliance/6.2/reference/data-appliance-overview.htm">Data Appliance overview</a></h4>
-	  <h4><a href="/en/data-appliance/6.2/reference/whats-new.htm">What's new</a></h4>
-	  <h4><a href="/en/data-appliance/6.2/deploy/system-reqs-62.htm">System requirements</a></h4>
-	  <h4><a href="/en/data-appliance/6.2/deploy/quick-start-guides-62.htm">Quick-start guides</a></h4>
-          
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/data-appliance/6.3/deploy/">
+            <h3 class="icon-ui-settings2 link-darkest-gray font-size-8 leader-1" style="text-align:center;"></h3>
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/data-appliance/6.3/deploy/">Deploy</a>
+          </h5>
+          <p>Configure your data appliance and deploy the services on ArcGIS for Server.</p>
         </div>
-
-        <br />
-
-        <div class="panel">
-          <h3>Previous Version (6.1)</h3>
-		  <ul>
- 	          <li><a href="/en/data-appliance/6.2/reference/system-reqs-61.htm">System requirements</a></li>
- 	          <li><a href="/en/data-appliance/6.2/reference/quick-start-guides-61.htm">Quick-start guide</a></li>
- 	          <li><a href="/en/data-appliance/6.1/reference/data-appliance-overview.htm">Help documentation</a></li>
-		  </ul>
+        <a href="/en/data-appliance/6.3/deploy/" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/data-appliance/6.3/use/">
+            <h3 class="icon-ui-collection link-darkest-gray font-size-8 leader-1" style="text-align:center;"></h3>
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/data-appliance/6.3/use/">Use</a>
+          </h5>
+          <p>Use the services in your ArcGIS client.</p>
         </div>
-
- </div>
-
+        <a href="/en/data-appliance/6.3/use/" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/data-appliance/6.3/reference/">
+            <h3 class="icon-ui-documentation link-darkest-gray font-size-8 leader-1" style="text-align:center;"></h3>
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/data-appliance/6.3/reference/">Reference</a>
+          </h5>
+          <p>View general information, frequently asked questions, and terms of use as well as links for the previous version.</p>
+        </div>
+        <a href="/en/data-appliance/6.3/reference/" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
     </div>
+  </div>
+</div>
 
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Get even more out of ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Social -->
+<div class="panel panel-blue panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with Data Appliance for ArcGIS</h4>
+    <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Take an in-depth lesson</a></h5>
+          <p class="trailer-0">
+            Find and complete exercises that solve real-world problems with ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Find training courses</a></h5>
+          <p class="trailer-0">
+            Learn more about ArcGIS through instructor-led courses, web courses, and seminars.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Get technical support</a></h5>
+          <p class="trailer-0">
+            Contact Esri Support by chat, email, or telephone.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Check system health</a></h5>
+          <p class="trailer-0">
+            See the status of ArcGIS Online and report issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
