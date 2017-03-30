@@ -1,7 +1,11 @@
 'use strict';
 /* Controllers */
-
 function callSlideshow(){
+  $(function() {
+    $('.gallerycontent').each(function() {
+      $(this).children('.card').matchHeight();
+    });
+  });
   $(".slideshow").cycle({
     timeout:0,
     manualSpeed:200,

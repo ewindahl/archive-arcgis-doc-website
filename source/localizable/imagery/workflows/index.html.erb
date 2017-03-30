@@ -12,6 +12,7 @@ js:
   - video-playlist
   - rssfeed
   - libs/jquery.cycle2.min
+  - libs/jquery.matchHeight
   - //ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js
   - //ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js
   - /en/imagery/workflows/homepage_controller.js
@@ -77,7 +78,7 @@ mobile: true
     <div class="slideshow off-white centered-text top-border">
       <a href="#" class="prev"></a>
       <a href="#" class="next"></a>
-      <div gallery-list id="gallerycontent" class="slide block-group block-group-4-up" ng-repeat="group in galleryitems">
+      <div gallery-list class="gallerycontent slide block-group block-group-4-up" ng-repeat="group in galleryitems">
         <div class="item card block trailer-1" ng-repeat="item in group">
           <figure class="card-image-wrap">
             <a href="/en/imagery/workflows/{{item.url}}" class="card-image">
@@ -147,7 +148,7 @@ mobile: true
 </div>
 
 <!-- Blog -->
-<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+<!--div class="panel panel-white panel-no-border panel-no-padding leader-1">
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
       <h2 class="text-rule padding-trailer-half">Read our blog
@@ -155,13 +156,13 @@ mobile: true
       </h2>
       <div data-post-limit="3" data-blog-feed-url="https://geonet.esri.com/view-browse-feed.jspa?filterID=contentstatus[published]~objecttype~objecttype[blogpost]&browseSite=place-content&containerType=14&userIDs=-1&containerID=2161&browseViewID=placeContent" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
 			  <!-- Blog Content goes here -->
-			</div>
+			<!--/div>
     </div>
   </div>
 </div>
 
 <!-- Forum -->
-<div class="panel panel-white panel-no-border panel-no-padding">
+<!--div class="panel panel-white panel-no-border panel-no-padding">
   <div class="grid-container padding-trailer-1 padding-leader-1">
     <div class="column-24">
       <h2 class="text-rule padding-trailer-half">Join the conversation
@@ -169,10 +170,10 @@ mobile: true
       </h2>
       <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/view-browse-feed.jspa?browseSite=content&browseViewID=placeContent&userID=-1&containerType=14&containerID=2161&filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
 				<!-- Forum content goes here -->
-			</div>
+			<!--/div>
     </div>
   </div>
-</div>
+</div-->
 
 <div class="panel panel-dark panel-no-padding">
   <div class="grid-container">
