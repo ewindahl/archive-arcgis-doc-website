@@ -1,12 +1,14 @@
 ---
 title: Relatar uma Preocupação de Segurança
 css:
-  - documentation
+  - homepage
   - /en/asset/css/common
-  - stat-page-specific
-  - feedback
+  - /cdn/css/colorbox
+  - /css/stat-page-specific
+  - /css/feedback
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
   - securityForm
 
 languageSelector: "No"
@@ -17,149 +19,135 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/pt-br/Trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-  <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online Trust" href="/pt-br/trust/">Trust</a></li>
-        <li><a title="ArcGIS Online System Status" href="/pt-br/trust/system-status/">Status do Sistema</a></li>
-        <li><a title="ArcGIS Online Security" href="/pt-br/trust/security/">Segurança</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/pt-br/trust/privacy/">Privacidade</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/pt-br/trust/compliance/">Conformidade</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<!-- Page Content -->
-<div class="container feedback">
 
-  <div class="row main">
-	  
-  <div class="warning-signup">
-      <header>
-        <h2 data-langlabel="">Relatar uma Preocupação de Segurança</h2>
-      </header>
-	  <section>
-		<p data-langlabel="">Preencha o formulário à direita com todas as informações aplicáveis, incluindo detalhes suficientes sobre sua preocupação específica.Seus detalhes de contato serão utilizados para dar seguimento às informações que você forneceu.Selecione o assunto aplicável a partir do menu suspenso de assuntos.</p>
-		<ul>
-			<li data-langlabel="">Vulnerabilidade - relata uma vulnerabilidade encontrada em nosso site ou aplicativo.</li>
-			<li data-langlabel="">E-mail Suspeito da Esri - se você acredita que foi alvo de um possível ataque de phishing a partir de um endereço de e-mail da Esri ou recebeu outra correspondência de e-mail suspeita da Esri.</li>
-			<li data-langlabel="">Problema de Privacidade - se você tiver um uma preocupação sobre privacidade relacionada ao nosso aplicativo ou organização.</li>
-			<li data-langlabel="">Outro - para todas as outras preocupações relacionadas à segurança, privacidade e conformidade.</li>
-		</ul>
-		
-<div style="padding-bottom:15px;">		
-
-  </div>   
-	  <hr style="padding-bottom:20px;"/>
-	  	  <header>
-		<h3 data-langlabel="">Política para Relatar uma Vulnerabilidade</h3>
-	  </header>
-      
-        <p data-langlabel="">A equipe de segurança do ArcGIS.com reconhece o papel valioso que pesquisadores de segurança independentes desempenham na segurança da Internet.Nós encorajamos o responsável à reportar quaisquer vulnerabilidades que possam ser encontradas em nosso site ou aplicativo.A Esri tem o compromisso de trabalhar com a comunidade de segurança para verificar e responder por quaisquer potenciais vulnerabilidades que sejam reportadas para nós.A Esri não entrará com um processo ou começará uma investigação policial sobre você se esta política for seguida.</p>
-	  <header>
-		<h4 data-langlabel="">O ArcGIS.com <strong>não</strong> permite os seguintes tipos de pesquisa de segurança</h4>
-	  </header>
-	  <ul>
-			<li data-langlabel="">Causar ou tentar causar uma condição de Negação de Serviço (Dos).</li>
-		<li data-langlabel="">Utilizar ferramentas de segurança automatizadas sem consentimento explícito da Esri.O uso de ferramentas automatizadas pode resultar em ação investigativa ou seu IP ser bloqueado.</li>
-		<li data-langlabel="">Acessar ou tentar acessar, dados ou informações que não pertencem a você.</li>
-		<li data-langlabel="">Destruir ou corromper, ou tentar destruir ou corromper, dados ou informações que não pertencem a você.</li>  
-	  </ul>
-
-	 <header>
-	  <h4 data-langlabel="">O compromisso da Equipe de Segurança do ArcGIS.com</h4>
-	  </header>
-		<p data-langlabel="">Para todos os pesquisadores de segurança que seguem esta Política de Relatar a Vulnerabilidade do ArcGIS.com, a Equipe de Segurança do ArcGIS.com se compromete ao seguinte:</p>
-		
-		<ul>
-		<li data-langlabel="">Responder em tempo hábil, reconhecendo o recebimento do seu relatório.</li>
-		<li data-langlabel="">Fornecer um prazo estimado para abordar esta vulnerabilidade.</li>
-		<li data-langlabel="">Notificar o indivíduo do relatório quando a vulnerabilidade for corrigida.</li>		
-		</ul>
-      
-    <div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Pesquisadores de Segurança Participantes</span>
-      <div class="dropdown-content">
-        <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">Gostaríamos de agradecer os seguintes pesquisadores de segurança por participar do nosso programa de notícias confiável:</p>
-          <%= partial :"_partial/security_names" %>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="/pt-br/trust/system-status/">Verificar Status do Sistema</a>
         </div>
       </div>
     </div>
-      
-	 </section>
-	 
-  </div> 
-
-    <div class="contact-form-signup">
-		
-		<div id="form-fields">
-		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
-						
-			<fieldset id="security-form-fieldset">
-
-			  <label data-langlabel="" for="name">Nome: </label>
-			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">Endereço de E-mail:</label>
-			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">Número de Telefone:</label>
-			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
-			  <label data-langlabel="" for="organization">Organização <span class="optional">(opcional):</span> </label>
-			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">Assunto:</label>
-			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option>
-				  <option value="Vulnerability">Vulnerabilidade</option>
-				  <option value="Suspicious E-mail from Esri">E-mail Suspeito da Esri</option>
-				  <option value="Privacy Issue">Problema de Privacidade</option>
-				  <option value="audi">Outro</option>
-			  </select>
-
-			  <label data-langlabel="" for="description">Descrição: </label>
-			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">Para ajudar a prevenir spam automatizado, insira os números fornecidos:</label>
-			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-			  <label data-langlabel="numerals" for="captchaValue">Números: <strong><span id="txtCaptcha" class=""></span></strong></label>
-
-			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="internal" name="source" id="source">
-
-			  <input value="verbose" name="resultType" id="resultType" type="hidden">
-			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
-			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-			  <input type="hidden" value="pt-br" name="lg">
-			
-			</fieldset>
-			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Enviar</a>
-			
-		  </form>
-		</div>
-
-	  <div id="submission-confirmation" style="display:none;">	
-		<p data-langlabel=""><h4>Obrigado por reportar este problema.Vamos investigar e resolver a sua preocupação nos próximos dias úteis.</h4></p>
-	  </div>
-	  <div id="submission-error" style="display:none;">	
-		<p data-langlabel=""><h4>Ocorreu um erro durante seu enivo.Reenvie sua preocupação mais tarde.</h4></p>
-	  </div>
-
-	  <strong>
-			<span style="display:none;" id="referPageLink">Retornar à <a id="feedback-referring-link" href="">página de referência</a></span>
-			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Enviar</a> outra preocupação de segurança</span>
-	  </strong>
-
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/" selected>Trust</option>
+        <option value="/en/trust/system-status/">Status do ArcGIS Online</option>
+        <option value="/en/trust/security/">Segurança</option>
+        <option value="/en/trust/privacy/">Privacidade</option>
+        <option value="/en/trust/compliance/">Conformidade</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/pt-br/trust/">Trust</a>
+        <a class="sub-nav-link" href="/pt-br/trust/system-status/">Status do ArcGIS Online</a>
+        <a class="sub-nav-link" href="/pt-br/trust/security/">Segurança</a>
+        <a class="sub-nav-link" href="/pt-br/trust/privacy/">Privacidade</a>
+        <a class="sub-nav-link" href="/pt-br/trust/compliance/">Conformidade</a>
+      </nav>
     </div>
+  </div>
+</header>
 
-  </div> <!-- end of row main -->
+<div class="grid-container feedback">
+  <div class="column-24 leader-2 trailer-2">
+    <div class="column-12 trailer-2">
+      <div>
+        <h2 data-langlabel="">Relatar uma Preocupação de Segurança</h2>
+        <p data-langlabel="">Preencha o formulário à direita com todas as informações aplicáveis, incluindo detalhes suficientes sobre sua preocupação específica. Seus detalhes de contato serão utilizados para dar seguimento às informações que você forneceu. Selecione o assunto aplicável a partir do menu suspenso de assuntos.</p>
+    		<ul>
+    			<li data-langlabel="">Vulnerabilidade - relata uma vulnerabilidade encontrada em nosso site ou aplicativo.</li>
+    			<li data-langlabel="">E-mail Suspeito da Esri - se você acredita que foi alvo de um possível ataque de phishing a partir de um endereço de e-mail da Esri ou recebeu outra correspondência de e-mail suspeita da Esri.</li>
+    			<li data-langlabel="">Problema de Privacidade - se você tiver um uma preocupação sobre privacidade relacionada ao nosso aplicativo ou organização.</li>
+    			<li data-langlabel="">Outro - para todas as outras preocupações relacionadas à segurança, privacidade e conformidade.</li>
+    		</ul>
+      </div>
+      <hr>
+      <div>
+		    <h3 data-langlabel="">Política para Relatar uma Vulnerabilidade</h3>
+        <p data-langlabel="">A equipe de segurança do ArcGIS.com reconhece o papel valioso que pesquisadores de segurança independentes desempenham na segurança da Internet. Nós encorajamos o responsável à reportar quaisquer vulnerabilidades que possam ser encontradas em nosso site ou aplicativo. A Esri tem o compromisso de trabalhar com a comunidade de segurança para verificar e responder por quaisquer potenciais vulnerabilidades que sejam reportadas para nós. A Esri não entrará com um processo ou começará uma investigação policial sobre você se esta política for seguida.</p>
+        <h4 data-langlabel="">O ArcGIS.com <strong>não</strong> permite os seguintes tipos de pesquisa de segurança</h4>
+        <ul>
+          <li data-langlabel="">Causar ou tentar causar uma condição de Negação de Serviço (Dos).</li>
+          <li data-langlabel="">Utilizar ferramentas de segurança automatizadas sem consentimento explícito da Esri. O uso de ferramentas automatizadas pode resultar em ação investigativa ou seu IP ser bloqueado.</li>
+          <li data-langlabel="">Acessar ou tentar acessar, dados ou informações que não pertencem a você.</li>
+          <li data-langlabel="">Destruir ou corromper, ou tentar destruir ou corromper, dados ou informações que não pertencem a você.</li>
+        </ul>
+        <h4 data-langlabel="">O compromisso da Equipe de Segurança do ArcGIS.com</h4>
+        <p data-langlabel="">Para todos os pesquisadores de segurança que seguem esta Política de Relatar a Vulnerabilidade do ArcGIS.com, a Equipe de Segurança do ArcGIS.com se compromete ao seguinte:</p>
+        <ul>
+          <li data-langlabel="">Responder em tempo hábil, reconhecendo o recebimento do seu relatório.</li>
+          <li data-langlabel="">Fornecer um prazo estimado para abordar esta vulnerabilidade.</li>
+          <li data-langlabel="">Notificar o indivíduo do relatório quando a vulnerabilidade for corrigida.</li>
+        </ul>
+        <div class="dropdown-navigation dropdown-wrapper regular">
+          <span class="dropdown btn btn-fill btn-clear" data-langlabel="trust-researchers-title"> Pesquisadores de Segurança Participantes</span>
+          <div class="dropdown-content">
+            <div class="dropdown-menu">
+              <p data-langlabel="trust-researchers-desc">Gostaríamos de agradecer os seguintes pesquisadores de segurança por participarem do nosso programa de notícias confiável:</p>
+              <%= partial :"_partial/security_names" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column-11 right tablet-column-12">
+      <div class="contact-form-signups panel">
+        <div id="form-fields">
+          <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+            <fieldset id="security-form-fieldset">
+              <label data-langlabel="" for="name">Nome
+                <input type="text" autocomplete="off" id="name" name="name">
+              </label>
+              <label data-langlabel="email-address" for="email-address">Endereço de E-mail
+                <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+              </label>
+              <label data-langlabel="phone-number" for="phone-number">Telefone
+                <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+              </label>
+              <label data-langlabel="" for="organization">Organização <span class="optional">(opcional):</span>
+                <input type="text" autocomplete="off" id="organization" name="organization">
+              </label>
+              <label data-langlabel="" for="subject">Assunto
+                <select id="subject" autocomplete="off" name="subject" class="select-full">
+                  <option value="" style="display:none;"></option>
+                  <option value="Vulnerability">Vulnerabilidade</option>
+                  <option value="Privacy Issue">Problema de Privacidade</option>
+                  <option value="audi">Outro</option>
+                </select>
+              </label>
+              <label data-langlabel="" for="description">Descrição
+                <textarea autocomplete="off" data-langlabel="" placeholder="Eu encontrei um possível problema de segurança com ..." name="description" id="description"></textarea>
+              </label>
+              <label data-langlabel="feedback-spam-note" for="spam">Para ajudar a prevenir spam automatizado, insira os números fornecidos
+                <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+              </label>
+              <label data-langlabel="numerals" for="captchaValue">Números: <strong><span id="txtCaptcha" class=""></span></strong></label>
+              <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+              <input type="hidden" value="internal" name="source" id="source">
+              <input value="verbose" name="resultType" id="resultType" type="hidden">
+              <input value="Security Concern" name="datablock" id="datablock" type="hidden">
+              <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+              <input type="hidden" value="pt-br" name="lg">
+            </fieldset>
+            <a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Enviar</a>
+          </form>
+        </div>
+        <div id="submission-confirmation" style="display:none;">
+          <p data-langlabel=""><h4>Obrigado por reportar este problema. Vamos investigar e resolver a sua preocupação nos próximos dias úteis.</h4></p>
+        </div>
+        <div id="submission-error" style="display:none;">
+          <p data-langlabel=""><h4>Ocorreu um erro durante seu enivo. Reenvie sua preocupação mais tarde.</h4></p>
+        </div>
+        <strong> <span style="display:none;" id="referPageLink">Retornar à <a id="feedback-referring-link" href="">página de referência</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Enviar</a> outra preocupação de segurança</span> </strong>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 $(document).ready(function() {
@@ -172,4 +160,8 @@ $(document).ready(function() {
 </script>
 
 </div>
-
+<style>
+.wrapper{
+  overflow:visible;
+}
+</style>

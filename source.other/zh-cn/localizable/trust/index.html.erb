@@ -1,115 +1,173 @@
 ---
-title: Trust
+title: Trust ArcGIS
 css:
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - video-init
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - sitecfg.js
+  - /cdn/js/libs/jquery.colorbox-min
+  - rssfeed
 
 metatags:
   - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="zh-cn">
 
+
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/zh-cn/Trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-  <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online Trust" href="/zh-cn/trust/">Trust</a></li>
-        <li><a title="ArcGIS Online 系统状态" href="/zh-cn/trust/system-status/">ArcGIS Online 状态</a></li>
-        <li><a title="ArcGIS Online 安全性" href="/zh-cn/trust/security/">安全性</a></li>
-        <li><a title="ArcGIS Online 隐私策略" href="/zh-cn/trust/privacy/">隐私性</a></li>
-        <li><a title="ArcGIS Online 合规性" href="/zh-cn/trust/compliance/">合规性</a></li>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear" href="/zh-cn/trust/system-status/">检查系统状态</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/" selected>Trust</option>
+        <option value="/en/trust/system-status/">ArcGIS Online 状态</option>
+        <option value="/en/trust/security/">安全性</option>
+        <option value="/en/trust/privacy/">隐私性</option>
+        <option value="/en/trust/compliance/">合规性</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/zh-cn/trust/">Trust</a> <a class="sub-nav-link" href="/zh-cn/trust/system-status/">ArcGIS Online 状态</a> <a class="sub-nav-link" href="/zh-cn/trust/security/">安全性</a> <a class="sub-nav-link" href="/zh-cn/trust/privacy/">隐私性</a> <a class="sub-nav-link" href="/zh-cn/trust/compliance/">合规性</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-0">
+      <h1>ArcGIS - 安全可信的位置平台</h1>
+      <h5>Trust.ArcGIS.com 是您获取安全性、隐私性和合规性信息的关键资源</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <p class="trailer-0 leader-0 font-size--2">
+        <a href="http://www.fedramp.gov/"><img src="img/fedramp.png"/></a>
+        <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a>
+        <a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a>
+        <a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+      </p>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="/zh-cn/trust/security-concern/" class="icon-ui-notice-triangle">报告安全问题</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-  <div class="column-16 tablet-column-24">
-    <h3 class="gray">ArcGIS - 安全可信的位置平台</h3>
-    <hr />
-    <div id="collectorMapFeature" class="column-12 phone-column-24">
-      <img src="img/features-security-data-ownership.jpg" alt="Security data ownership" />
-	      <div style="padding-top:30px; text-align: center;">
-      <a href="/zh-cn/trust/system-status/" class="btn tertiary" style="width:75%;text-align:center; " >检查系统状态</a>
-    </div>
-    </div>
-    <div id="collectorDataFeature" class="column-12 phone-column-24">
-      <p>Trust.ArcGIS.com 是您获取安全性、隐私性和合规性信息的关键资源。 包括： </p>
-      <ul>
-        <li>ArcGIS Online 服务可用性、系统性能信息和状态历史记录</li>
-        <li>安全更新和当前警报</li>
-        <li>ArcGIS 平台的产品安全性信息</li>
-        <li>您所在组织的安全性最佳做法</li>
-        <li>隐私性和合规性信息</li>
-      </ul>
-      <p>Trust.ArcGIS.com 的灵感来源于我们与客户之间的对话。您希望看到哪些内容？如果您有任何建议，请将建议提交到 <a href="http://ideas.arcgis.com">ArcGIS Ideas</a>。</p>
 
-	
- </div>
-
-    <div class="clear"></div>
-    <div class="" style="text-align:center; padding-top:75px;">
-      <h4>“FedRAMP 中等认证修订版 4 合规性说明了经过独立验证的持续的 ArcGIS 平台安全提升。&quot;</h4>
-      <p>Esri 安全架构主管 Michael Young</p>
-
-    </div>
-    <div style="text-align:center; padding-top:45px;">
-      <a href="http://cloud.cio.gov/fedramp"><img src="img/fedramp.png"/></a><a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block card-bar-blue">
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-cn/trust/system-status/">ArcGIS Online 状态</a>
+          </h5>
+          <p>查看 ArcGIS Online 的服务可用性、系统性能信息和状态历史记录。</p>
+        </div>
+        <a href="/zh-cn/trust/system-status/" class="btn btn-clear btn-fill leader-0">了解更多信息</a>
+      </div>
+      <div class="card block card-bar-blue">
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-cn/trust/security/">安全性和最佳做法</a>
+          </h5>
+          <p>概览 ArcGIS 中的安全性功能。使用最佳做法实施这些功能。</p>
+        </div>
+        <a href="/zh-cn/trust/security/" class="btn btn-clear btn-fill leader-0">了解更多信息</a>
+      </div>
+      <div class="card block card-bar-blue">
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-cn/trust/privacy/">您的隐私和 Esri</a>
+          </h5>
+          <p>Esri 隐私声明和补充性产品及服务隐私声明可确保您获得预期应得级别的隐私保护。</p>
+        </div>
+        <a href="/zh-cn/trust/privacy/" class="btn btn-clear btn-fill leader-0">了解更多信息</a>
+      </div>
+      <div class="card block card-bar-blue">
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-cn/trust/compliance/">合规性举措</a>
+          </h5>
+          <p>ArcGIS 的设计和管理均符合法规、标准和最佳做法。阅读有关 Esri 合规性举措的详细信息。</p>
+        </div>
+        <a href="/zh-cn/trust/compliance/" class="btn btn-clear btn-fill leader-0">了解更多信息</a>
+      </div>
     </div>
   </div>
-  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+</div>
 
-    <br/>
-	        <!-- Blog Feed -->
-        <div class="imgFrame block">
-          <h3 class="icon-announcement">提醒和公告 &nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS 博客"><img src="img/rss.png" /></a></h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
-		  <div style="text-align:right;">
-		  <a class="btn transparent" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/">查看所有提醒</a> 
-		  </div>
-        </div><br/>
-		  		    <div class="" style="text-align:center;">
-      <h4><a style="color:orange;" class="icon-alert icon-orange" href="/zh-cn/trust/security-concern/"> 报告安全问题</a>  </h4>
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1">
+    <div class="column-24 text-center">
+      <h4>“Esri 致力于不断增强 ArcGIS 平台 DNA 中的嵌入式安全性。”</h4>
+      <p>Michael E. Young，Esri 产品安全总监</p>
     </div>
-    <br />
-
   </div>
+</div>
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">提醒和公告
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/">查看所有提醒</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
- </div>
-
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
-        max: 3,
-        layout: 0
-      });
-    });
-
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-
-  </script>
-
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">参加深入课程</a></h5>
+          <p class="trailer-0">
+查找和完成使用 ArcGIS 解决现实问题的练习。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">查找培训课程</a></h5>
+          <p class="trailer-0">
+ 通过导师授课式课程、web 课程和研讨会了解有关 ArcGIS 的详细信息。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">获取技术支持</a></h5>
+          <p class="trailer-0">
+ 通过聊天、电子邮件或电话联系 Esri 支持部门。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">检查系统状况</a></h5>
+          <p class="trailer-0">
+ 查看 ArcGIS Online 的状态并报告问题。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
