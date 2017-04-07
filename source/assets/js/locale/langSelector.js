@@ -441,9 +441,9 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "cognos";
   }else if (winloc.pathname.match( /(\/maps-for-microstrategy\/)/)){
     docCfg.langSelector = "micro";
-  }else if (winloc.pathname.match( /(\/explorer\/|\/operations-dashboard\/)/)){
+  }else if (winloc.pathname.match( /(\/explorer\/)/)){
     docCfg.langSelector = "marketplace";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/workforce\/|\/collector\/|\/web-appbuilder\/|\/appstudio\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/workforce\/|\/collector\/|\/web-appbuilder\/|\/appstudio\/|\/operations-dashboard\/)/)){
     docCfg.langSelector = "marketplaceptpt";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
