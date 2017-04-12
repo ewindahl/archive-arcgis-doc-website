@@ -150,7 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <h2 class="side-nav-title">Arc<span class="avenir-demi">GIS</span></h2>
 
             <form class="margin-left-half margin-right-half leader-half trailer-half" method="GET" action="/search">
-              <input type="search" name="q" value="" placeholder="<%= current_page.data.searchDfltStr %> Search" class="trailer-0">
+              <input type="search" name="q" value="" placeholder="<%= current_page.data.searchDfltStr %> <%= t("site.nav.search") %>" class="trailer-0">
               <input type="hidden" name="collection" value="help" />
               <input type="hidden" name="product" value="<%= current_page.data.productMeta %>" />
             </form>
@@ -182,11 +182,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <div class="grid-container padding-trailer-half padding-leader-1 padding-trailer-1">
 
           <form method="GET" action="//www.arcgis.com/home/search.html" class="column-24">
-            <label>Search ArcGIS
+            <label><%= t("site.nav.search_arcgis") %>
               <a href="#" class="icon-ui-close js-expand-toggle right" data-expand="search"></a>
-              <div class="search-bar">
-                <input type="search" name="q" placeholder="Search">
-                <button type="submit" class="search-submit icon-ui-search"></button>
+              <div class="search-bar input-group">
+                <input type="search" name="q" placeholder="<%= t("site.nav.search") %>" class="input-group-input">
+								<span class="input-group-button">
+	                <button class="search-submit icon-ui-search icon-ui-flush" type="submit"></button>
+	              </span>
               </div>
             </label>
           </form>
