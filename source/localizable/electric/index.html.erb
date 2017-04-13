@@ -51,42 +51,43 @@ This is a tamplate for a simple homepage.  Please search for and replace each of
   GEONET_FEED_URL: URL for the product's geonet feed
 Please search for INSTRUCTIONS within the file for element specific instructions.
 -->
-<header class="sub-nav sub-nav-blue">
-  <div class="grid-container">
-    <div class="column-24">
-      <div style="display:table;" class="sdk-home-banner">
-        <div class="sdk-home-banner-content">
-          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Electric Networks for ArcGIS</h1>
+<header class="sub-nav sub-nav-blue text-white" style="background-image:url('/en/electric/img/banner1.jpg');background-color:#1b2944;background-size:cover;background-position: 50% 50%;">
+    <div class="grid-container">
+        <div class="column-24 leader-2">
+            <div class="column-3">&nbsp;</div>
+            <div class="column-18 text-center center trailer-1">
+                <h1>ArcGIS Electric Network</h1>
+                <h5>Data model and tools to help you visualize, manage, and analyze your electric system</h5>
+            </div>
         </div>
-      </div>
+        <div class="column-24 trailer-1">
+            <div class="column-4">&nbsp;</div>
+            <div class="column-16 center trailer-1">
+                <div class="wf-nav" style="height:55px;">
+                    <div class="wf-nav search-bar column-16 trailer-0 leader-0">
+                        <form id="helpSearchForm" class="input-group" target="_top">
+                            <input type="search" name="q" class="leader input-group-input" placeholder="Search Electric Networks">
+                            <input type="hidden" name="collection" value="help"/>
+                            <input type="hidden" name="platform" value="detect"/>
+                            <input type="hidden" name="product" value="imagery-workflows"/>
+                            <input type="hidden" name="language" value="en"/>
+                            <span class="input-group-button">
+                                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
-<div class="grid-container leader-2 text-center">
-    <div class="column-18 pre-3 post-3 text-center center">
-        <h1>Snappy science of where-fied lead-in here</h1>
-        <h5>
-            <%= lorem.sentences 2 %>
-        </h5>
-    </div>
-    <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+<div class="grid-container text-center">
         <div class="column-9 pre-2 post-1 leader-2 trailer-2">
             <iframe src="//youtube.com/embed/XrU8GX7manc" width="100%" height="400px" frameborder="0"></iframe>
         </div>
         <div class="column-9 pre-1 post-2 leader-2 trailer-2">
-            <div class="embed-container">
-                <iframe
-                    width="100%"
-                    height="400px"
-                    frameborder="0"
-                    scrolling="no"
-                    marginheight="0"
-                    marginwidth="0"
-                    title="LP&L Customer Reported Outages"
-                    src="//www.arcgis.com/apps/Embed/index.html?webmap=f7cdfd715f504b9b83551b5fa1034b1b&amp;extent=-102.2556,33.3351,-101.459,33.8732&amp;zoom=true&amp;scale=true&amp;disable_scroll=true&amp;theme=light"></iframe>
-            </div>
+            <img src="http://placehold.it/528x400?text=Screenshot+of+story+map" alt="">
         </div>
-    </div>
 </div>
 <div class="panel panel-light-blue panel-no-border panel-no-padding">
     <div class="grid-container padding-leader-3 padding-trailer-3">
@@ -97,64 +98,100 @@ Please search for INSTRUCTIONS within the file for element specific instructions
         </div>
         <div class="column-24">
             <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
-            <div class="block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up">
-                <div class="card block">
+            <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+                <div class="card block trailer-1">
                     <figure class="card-image-wrap">
-                            <img alt="" src="http://placehold.it/400x300">
+                            <img alt="" src="/en/electric/img/FieldInspection.jpg">
                     </figure>
                     <div class="card-content">
                         <h5 class="trailer-half leader-0">
-                            The Electric Sandbox
+                            Field inspection
                         </h5>
-                        <p class="card-last"><%= lorem.sentences 2 %>.</p>
+                        <p class="card-last">Use the electric network on mobile devices to inspect equipment and record the poles where equipment requires maintenance or replacement.</p>
                     </div>
                     <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-1">Learn more</a>
                 </div>
-                <div class="card block">
+                <div class="card block trailer-1">
                     <figure class="card-image-wrap">
-                            <img alt="" src="http://placehold.it/400x300">
+                        <img alt="" src="/en/electric/img/LoadSummary.jpg">
                     </figure>
                     <div class="card-content">
                         <h5 class="trailer-half leader-0">
-                            Get set up
+                            Load summary
                         </h5>
-                        <p class="card-last"><%= lorem.sentences 2 %>.</p>
+                        <p class="card-last">Accumulate and report consumer loads by phase for a circuit or portion of a circuit.</p>
                     </div>
                     <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-1">Learn more</a>
                 </div>
-                <div class="card block">
+                <div class="card block trailer-1">
                     <figure class="card-image-wrap">
-                            <img alt="" src="http://placehold.it/400x300">
+                        <img alt="" src="/en/electric/img/StormResponse.jpg">
                     </figure>
                     <div class="card-content">
                         <h5 class="trailer-half leader-0">
-                            Workflow 1
+                            Storm response
                         </h5>
-                        <p class="card-last"><%= lorem.sentences 2 %>.</p>
+                        <p class="card-last">Analyze where circuits are de-energized, map damaged assets in real time, and generate lists of equipment to be replaced.</p>
                     </div>
                     <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-1">Learn more</a>
                 </div>
-                <div class="card block">
+                <div class="card block trailer-1">
                     <figure class="card-image-wrap">
-                            <img alt="" src="http://placehold.it/400x300">
+                        <img alt="" src="/en/electric/img/CustomerNotification.jpg">
                     </figure>
                     <div class="card-content">
                         <h5 class="trailer-half leader-0">
-                            Workflow 2
+                            Customer notification
                         </h5>
-                        <p class="card-last"><%= lorem.sentences 2 %>.</p>
+                        <p class="card-last">System maintenance and construction sometimes requires scheduled outages. Find affected customers and notify them of outage periods.</p>
                     </div>
                     <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-1">Learn more</a>
                 </div>
-                <div class="card block">
+                <div class="card block trailer-1">
                     <figure class="card-image-wrap">
-                            <img alt="" src="http://placehold.it/400x300">
+                        <img alt="" src="/en/electric/img/OutageNotification.jpg">
                     </figure>
                     <div class="card-content">
                         <h5 class="trailer-half leader-0">
-                            Workflow 3
+                            Outage notification
                         </h5>
-                        <p class="card-last"><%= lorem.sentences 2 %>.</p>
+                        <p class="card-last">Communicate outage status with your customers on maps accessible on mobile devices. Display the affected residences and expected restoration times.</p>
+                    </div>
+                    <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-1">Learn more</a>
+                </div>
+                <div class="card block trailer-1">
+                    <figure class="card-image-wrap">
+                        <img alt="" src="/en/electric/img/AddServiceDrop.jpg">
+                    </figure>
+                    <div class="card-content">
+                        <h5 class="trailer-half leader-0">
+                            Add a service drop
+                        </h5>
+                        <p class="card-last">When a customer requests a new service, determine whether the existing transformer can handle the additional load and what new equipment is required.</p>
+                    </div>
+                    <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-1">Learn more</a>
+                </div>
+                <div class="card block trailer-1">
+                    <figure class="card-image-wrap">
+                        <img alt="" src="/en/electric/img/BuildACircutMap.jpg">
+                    </figure>
+                    <div class="card-content">
+                        <h5 class="trailer-half leader-0">
+                            Build a circuit map
+                        </h5>
+                        <p class="card-last">Use the substation sources and current tie-switch status to display a circuit map showing the current status of your electric network.</p>
+                    </div>
+                    <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-1">Learn more</a>
+                </div>
+                <div class="card block trailer-1">
+                    <figure class="card-image-wrap">
+                        <img alt="" src="/en/electric/img/WorkWithCircuitSchematics.png">
+                    </figure>
+                    <div class="card-content">
+                        <h5 class="trailer-half leader-0">
+                            Work with circuit schematics
+                        </h5>
+                        <p class="card-last">Configure and display diagrams to highlight the devices and lines relevant for an engineering study.</p>
                     </div>
                     <a href="CARD_LINK_3" class="btn btn-clear btn-fill leader-1">Learn more</a>
                 </div>
@@ -167,12 +204,12 @@ Please search for INSTRUCTIONS within the file for element specific instructions
 <div class="panel panel-dark panel-no-border">
     <div class="grid-container">
         <div class="column-24 text-white text-center trailer-half leader-half">
-            <h4 class="trailer-half">ArcGIS Utiltiy Electric Networks</h4>
+            <h4 class="trailer-half">ArcGIS Electric Networks</h4>
             <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
-            <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="TWITTER_LINK"></a>
-            <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="LINKEDIN_LINK"></a>
+            <!-- <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="TWITTER_LINK"></a>
+            <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="LINKEDIN_LINK"></a> -->
             <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="GITHUB_LINK"></a>
-            <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="FACEBOOK_LINK"></a>
+            <!-- <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="FACEBOOK_LINK"></a> -->
             <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="GEONET_LINK"></a>
             <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
         </div>
@@ -180,24 +217,24 @@ Please search for INSTRUCTIONS within the file for element specific instructions
 </div>
 
 <!-- Blog -->
-<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+<!-- <div class="panel panel-white panel-no-border panel-no-padding leader-1">
     <div class="grid-container padding-leader-1 padding-trailer-1">
         <div class="column-24">
             <h2 class="text-rule padding-trailer-half">Read our blog
                 <a class="btn btn-transparent btn-large right" href="BLOG_LINK">More posts</a>
             </h2>
-            <div data-post-limit="3" data-blog-feed-url="BLOG_FEED_URL" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+            <div data-post-limit="3" data-blog-feed-url="BLOG_FEED_URL" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed"> -->
                 <!-- Blog Content goes here -->
-            </div>
+            <!-- </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Forum -->
 <div class="panel panel-white panel-no-border panel-no-padding">
     <div class="grid-container padding-trailer-1 padding-leader-1">
         <div class="column-24">
             <h2 class="text-rule padding-trailer-half">Join the conversation
-                <a class="btn btn-transparent btn-large right" href="GEONET_LINK">More conversations</a>
+                <a class="btn btn-transparent btn-large right" href="https://earlyadopter.esri.com/project/home.html?cap=2578B1991F9E43C7B114BD1BB37462C9">More conversations</a>
             </h2>
             <div data-post-limit="3" data-geonet-feed-url="GEONET_FEED_LINK" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
                 <!-- Forum content goes here -->
@@ -214,33 +251,31 @@ Please search for INSTRUCTIONS within the file for element specific instructions
                     <div class="card-content">
                         <h4>Download</h4>
                         <p class="font-size--1 card-last">
-                            <%= lorem.sentences 2 %>.
+                             Download the electric network model and migration documentation.
                         </p>
                     </div>
                     <nav>
-                      <a href="CARD_LINK_1" class="btn btn-grouped btn-clear btn-half leader-0">Download Model</a>
-                      <a href="CARD_LINK_1" class="btn btn-grouped btn-clear btn-half leader-0">Migration Documentation</a>
+                      <a href="CARD_LINK_1" class="btn btn-clear btn-fill leader-1">Migrate to the electric network</a>
                     </nav>
                 </div>
                 <div class="card card-bar-orange block trailer-1">
                     <div class="card-content">
                         <h4>Help</h4>
                         <p class="font-size--1 card-last">
-                            <%= lorem.sentences 2 %>.
+                            Learn more about the electric network from the online help system.
                         </p>
                     </div>
-                    <a href="#needslink" class="btn btn-clear btn-fill leader-1">Online Help system</a>
+                    <a href="http://prodev.arcgis.com/en/alpha/utility-network/what-is-a-utility-network-.htm" class="btn btn-clear btn-fill leader-1">Online Help system</a>
                 </div>
                 <div class="card card-bar-green block trailer-1">
                     <div class="card-content">
                         <h4>Develop</h4>
                         <p class="font-size--1 card-last">
-                            <%= lorem.sentences 2 %>.
+                            Design your own tools using our online SDK and GitHub repository
                         </p>
                     </div>
                     <nav>
-                      <a href="CARD_LINK_1" class="btn btn-grouped btn-clear btn-half leader-0">Online SDK</a>
-                      <a href="CARD_LINK_1" class="btn btn-grouped btn-clear btn-half leader-0">GitHub</a>
+                      <a href="https://github.com/esri/utility-network-sdk" class="btn btn-clear btn-fill leader-1">Online SDK</a>
                     </nav>
                 </div>
             </div>

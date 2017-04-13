@@ -285,3 +285,31 @@ div.card nav {
 div.card div.dropdown-wrapper:not(.is-active) nav.dropdown-menu {
   display:none
 }
+div.adsbox{
+  display:none;
+}
+
+.dropdown-wrapper {
+  z-index: 1;
+  position: relative;
+  &:hover {
+   .dropdown-content {
+      display: block;
+    }
+    .dropdown-menu {
+      display: block;
+    }
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    width: 100%;
+    min-width: 160px;
+    right: 0;
+    .dropdown-menu {
+      padding:20px;
+    }
+  }
+}
