@@ -36,11 +36,11 @@ mobile: true
     </div>
     <div class="column-24">
       <select class="tablet-show select-full trailer-half js-select-nav">
-        <option value="/en/trust/" selected>Güven</option>
-        <option value="/en/trust/system-status/">ArcGIS Online Status</option>
+        <option value="/en/trust/" selected>Trust</option>
+        <option value="/en/trust/system-status/">ArcGIS Online Durumu</option>
         <option value="/en/trust/security/">Güvenlik</option>
         <option value="/en/trust/privacy/">Gizlilik</option>
-        <option value="/en/trust/compliance/">Uyum</option>
+        <option value="/en/trust/compliance/">Uyumluluk</option>
       </select>
       <nav class="sub-nav-list tablet-hide">
         <a class="sub-nav-link is-active" href="/tr/trust/">Trust</a>
@@ -58,7 +58,7 @@ mobile: true
     <div class="column-12 trailer-2">
       <div>
         <h2 data-langlabel="">Güvenlikle İlgili Şüphe Bildirimi</h2>
-        <p data-langlabel="">Sağ taraftaki formu, şüpheniz hakkında yeterli ayrıntıyı da kapsayan geçerli bilgilerin tümüyle doldurun.Sağladığınız bilgiler çerçevesinde yapılacak izleme işlemleri için başvuru bilgileriniz kullanılır.Konu açılır menüsünden uygun konu başlığını seçin.</p>
+        <p data-langlabel="">Sağ taraftaki formu, şüpheniz hakkında yeterli ayrıntıyı da kapsayan geçerli bilgilerin tümüyle doldurun. Sağladığınız bilgiler çerçevesinde yapılacak izleme işlemleri için başvuru bilgileriniz kullanılır. Konu açılır menüsünden uygun konu başlığını seçin.</p>
     		<ul>
     			<li data-langlabel="">Güvenlik Açığı - sitemizde veya uygulamamızda bulunan bir güvenlik açığını bildirin.</li>
     			<li data-langlabel="">Esri'den Gelen Şüpheli E-posta - Bir Esri e-posta adresinden olası bir kimlik avı saldırısına uğradığınızı düşünüyorsanız veya Esri'den başka şüpheli e-postalar aldıysanız.</li>
@@ -69,11 +69,11 @@ mobile: true
       <hr>
       <div>
 		    <h3 data-langlabel="">Güvenlik Açığı Raporlama Politikası</h3>
-        <p data-langlabel="">ArcGIS.com güvenlik ekibi, İnternet güvenliğinde bağımsız güvenlik araştırmacılarının oynadığı değerli role dikkat çekmektedir.Sitemizde veya uygulamamızda bulunabilecek herhangi bir güvenlik açığının sorumlu biçimde bildirilmesini destekleriz.Esri, kendisine bildirilen olası herhangi bir güvenlik açığını doğrulamak ve düzeltmek amacıyla güvenlik topluluğuyla birlikte çalışmayı taahhüt eder.Esri, bu politika esaslarına uyulduğu takdirde, size karşı dava açmaz veya hakkınızda yasal soruşturma başlatmaz.</p>
+        <p data-langlabel="">ArcGIS.com güvenlik ekibi, İnternet güvenliğinde bağımsız güvenlik araştırmacılarının oynadığı değerli role dikkat çekmektedir. Sitemizde veya uygulamamızda bulunabilecek herhangi bir güvenlik açığının sorumlu biçimde bildirilmesini destekleriz. Esri, kendisine bildirilen olası herhangi bir güvenlik açığını doğrulamak ve düzeltmek amacıyla güvenlik topluluğuyla birlikte çalışmayı taahhüt eder. Esri, bu politika esaslarına uyulduğu takdirde, size karşı dava açmaz veya hakkınızda yasal soruşturma başlatmaz.</p>
         <h4 data-langlabel="">ArcGIS.com, aşağıdaki güvenlik araştırma türlerine izin <strong>vermez</strong></h4>
         <ul>
           <li data-langlabel="">Hizmet Reddi (DoS) koşuluna neden olma veya neden olmaya teşebbüs etme.</li>
-          <li data-langlabel="">Esri'nin açık izni olmadan otomatik güvenlik araçları kullanma.Otomatik araçların kullanılması, hakkınızda soruşturma açılmasına veya IP adres(ler)inizin engellenmesine neden olabilir.</li>
+          <li data-langlabel="">Esri'nin açık izni olmadan otomatik güvenlik araçları kullanma. Otomatik araçların kullanılması, hakkınızda soruşturma açılmasına veya IP adres(ler)inizin engellenmesine neden olabilir.</li>
           <li data-langlabel="">Size ait olmayan verilere veya bilgilere erişme veya erişmeye çalışma.</li>
           <li data-langlabel="">Size ait olmayan verileri veya bilgileri yok etme veya bozma veya yok etmeye veya bozmaya çalışma.</li>
         </ul>
@@ -100,7 +100,7 @@ mobile: true
         <div id="form-fields">
           <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
             <fieldset id="security-form-fieldset">
-              <label data-langlabel="" for="name">Ad
+              <label data-langlabel="" for="name">Adı
                 <input type="text" autocomplete="off" id="name" name="name">
               </label>
               <label data-langlabel="email-address" for="email-address">E-posta Adresi
@@ -121,9 +121,9 @@ mobile: true
                 </select>
               </label>
               <label data-langlabel="" for="description">Açıklama
-                <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
+                <textarea autocomplete="off" data-langlabel="" placeholder="Şununla ilgili olası bir güvenlik sorunu yaşıyorum ..." name="description" id="description"></textarea>
               </label>
-              <label data-langlabel="feedback-spam-note" for="spam">To help prevent automated spam, enter the numerals provided
+              <label data-langlabel="feedback-spam-note" for="spam">Otomatik istenmeyen elektronik postayı önlemek için verilen rakamları yazın
                 <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
               </label>
               <label data-langlabel="numerals" for="captchaValue">Rakamlar: <strong><span id="txtCaptcha" class=""></span></strong></label>
@@ -143,7 +143,10 @@ mobile: true
         <div id="submission-error" style="display:none;">
           <p data-langlabel=""><h4>Gönderme işlemi sırasında bir hata oluştu. Bildiriminizi daha sonra yeniden yapmayı deneyin.</h4></p>
         </div>
-        <strong> <span style="display:none;" id="referPageLink"><a id="feedback-referring-link" href="">Başvuru sayfasına</a></span> geri dön Başka bir güvenlik sorunu <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">gönder</a></span> </strong>
+        <strong>
+          <span style="display:none;" id="referPageLink"><a id="feedback-referring-link" href="">Başvuru sayfasına geri dön</a></span>
+          <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self"></a> Başka bir güvenlik sorunu gönder</span>
+        </strong>
       </div>
     </div>
   </div>
