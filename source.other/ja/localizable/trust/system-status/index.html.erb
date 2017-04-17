@@ -1,72 +1,68 @@
 ---
 title: Trust - システム ステータス
 css:
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - video-init
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - sitecfg.js
+  - /cdn/js/libs/jquery.colorbox-min
 
 metatags:
   - <META name="description" content="Trust ArcGIS System Status page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="ja">
 
+
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/ja/trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li><a title="ArcGIS Online Trust" href="/ja/trust/">Trust</a></li>
-        <li class='current'><a title="ArcGIS Online のシステム ステータス" href="/ja/trust/system-status/">ArcGIS Online のシステム ステータス</a></li>
-        <li><a title="ArcGIS Online のセキュリティ" href="/ja/trust/security/">セキュリティ</a></li>		
-        <li><a title="ArcGIS Online のプライバシー" href="/ja/trust/privacy/">プライバシー</a></li>
-        <li><a title="ArcGIS Online のプライバシー" href="/ja/trust/compliance/">コンプライアンス</a></li>
-	</ul>
-    </nav>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="/ja/trust/system-status/">システム ステータスのチェック</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/">信頼性</option>
+        <option value="/en/trust/system-status/" selected>ArcGIS Online のシステム ステータス</option>
+        <option value="/en/trust/security/">セキュリティ</option>
+        <option value="/en/trust/privacy/">プライバシー</option>
+        <option value="/en/trust/compliance/">コンプライアンス</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link" href="/ja/trust/">信頼性</a>
+        <a class="sub-nav-link is-active" href="/ja/trust/system-status/">ArcGIS Online のシステム ステータス</a>
+        <a class="sub-nav-link" href="/ja/trust/security/">セキュリティ</a>
+        <a class="sub-nav-link" href="/ja/trust/privacy/">プライバシー</a>
+        <a class="sub-nav-link" href="/ja/trust/compliance/">コンプライアンス</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div id="collectorMapFeature" class="text-center">
+      <iframe src="//status.arcgis.com/" width="1000" height="1250" frameborder="0">
+ エラー: エンベデッド データを表示できませんでした。
+      </iframe>
+    </div>
+    <div>
+      <p>ArcGIS Online Health Dashboard には、大多数のユーザーに影響を与えることが確認されたステータス情報が表示されます。ArcGIS Online は大規模なクラウドベースのプラットフォームであるため、多くの事象による影響は、その広範なユーザー層に対して限定的なものとなります。このステータス ページには、組織固有の問題は表示されません。それらの問題は、利用可能なサポート サービスを使用して解決することをお勧めしています。</p>
+    </div>
+    <div style="text-align:center; padding-top:15px;">
+      <a href="http://www.fedramp.gov/"><img src="/en/trust/img/fedramp.png"/></a>
+      <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="/en/trust/img/fisma.png"/></a>
+      <a href="https://www.privacyshield.gov/participant?id=a2zt00000004EspAAE"><img src="../img/PrivacyShield.png" width="170"></a>&nbsp;
+      <a href="http://privacy.truste.com/privacy-seal/validation?rid=40a3315c-842e-4e81-bf75-0c568255d039"><img src="../img/TrustePrivacy.png"></a>
+    </div>
   </div>
 </div>
-
-<!-- Page Content -->
-<div class="container">
-
-     <div class="">
-	
-        <div id="collectorMapFeature" >
-
-<iframe src="http://status.arcgis.com/" width="1000" height="1250" frameborder="0">
-  エラー: エンベデッド データを表示できませんでした。 
-</iframe>
-        </div>
- </div>
-
-<div>
-	<p>ArcGIS Online Health Dashboard には、大多数のユーザーに影響を与えることが確認されたステータス情報が表示されます。 ArcGIS Online は大規模なクラウドベースのプラットフォームであるため、多くの事象による影響は、その広範なユーザー層に対して限定的なものとなります。 このステータス ページには、組織固有の問題は表示されません。それらの問題は、利用可能なサポート サービスを使用して解決することをお勧めしています。</p>
-</div>
-
- <div style="text-align:center; padding-top:15px;">
-			 <a href="http://cloud.cio.gov/fedramp"><img src="../img/fedramp.png"/></a>
-			 <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="../img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="../img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="../img/safeharbor.png"/></a>
-		</div>	
-    </div>
- 
-
-		 		
-
-	
- </div>
-</div>
-	
