@@ -1836,6 +1836,7 @@ var localeJsonObj = {
       "blogs": "Blog",
       "blogs-ht": "Blog",
       "books": "Books",
+      "browser": "Browser",
       "bus-analyst-online": "Business Analyst",
       "bus-analyst-online-ht": "Business Analyst",
       "careers": "Careers",
