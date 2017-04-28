@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem "middleman", "~>3.0.13"
+gem 'haml', '~> 4.0.7'
 gem "xml-simple"
 gem "calcite-web", :git => "https://github.com/Esri/calcite-web.git", :tag => "v1.0.0-beta.33"
 #:git => "git@github.com:ArcGIS/arcgis-for-developers-css.git"
