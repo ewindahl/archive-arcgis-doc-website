@@ -26,20 +26,30 @@ mobile: true
           <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Online 도움말</h1>
         </div>
         <div class="leader-1 text-right">
-          <p> <a href="http://www.arcgis.com/features/free-trial.html"> <button class="btn margin-left-1 btn-clear">60일 무료 평가판</button></p>
+          <p><a href="http://www.arcgis.com/features/free-trial.html"><button class="btn margin-left-1 btn-clear">무료 평가판</button></a></p>
         </div>
       </div>
     </div>
     <div class="column-24">
-      <nav class="sub-nav-list">
-		    <a class="sub-nav-link  is-active" title="ArcGIS Online 도움말" href="/ko/arcgis-online/">홈</a>
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/arcgis-online/" selected>홈</option>
+        <option value="/en/arcgis-online/get-started/">시작하기</option>
+        <option value="/en/arcgis-online/create-maps/">생성</option>
+        <option value="/en/arcgis-online/analyze/">분석</option>
+        <option value="/en/arcgis-online/share-maps/">공유</option>
+        <option value="/en/arcgis-online/administer/">관리</option>
+        <option value="/en/arcgis-online/reference/">참조</option>
+        <option value="/en/arcgis-online/apps/arcgis-apps.htm">앱</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link  is-active" title="ArcGIS Online 도움말" href="/ko/arcgis-online/">홈</a>
         <a class="sub-nav-link" title="ArcGIS Online 시작하기" href="/ko/arcgis-online/get-started/">시작하기</a>
-			  <a class="sub-nav-link" title="맵, 씬, 앱 생성" href="/ko/arcgis-online/create-maps/">생성</a>
+        <a class="sub-nav-link" title="맵, 씬, 앱 생성" href="/ko/arcgis-online/create-maps/">생성</a>
         <a class="sub-nav-link" title="분석 수행" href="/ko/arcgis-online/analyze/">분석</a>
-			  <a class="sub-nav-link" title="맵, 씬, 앱 공유" href="/ko/arcgis-online/share-maps/">공유</a>
-			  <a class="sub-nav-link" title="내 기관 관리" href="/ko/arcgis-online/administer/">관리</a>
-			  <a class="sub-nav-link" title="참조" href="/ko/arcgis-online/reference/">참조</a>
-			  <a class="sub-nav-link" title="누구나 쉽게 사용하는 앱" href="/ko/arcgis-online/apps/arcgis-apps.htm">앱</a>
+        <a class="sub-nav-link" title="맵, 씬, 앱 공유" href="/ko/arcgis-online/share-maps/">공유</a>
+        <a class="sub-nav-link" title="내 기관 관리" href="/ko/arcgis-online/administer/">관리</a>
+        <a class="sub-nav-link" title="참조" href="/ko/arcgis-online/reference/">참조</a>
+        <a class="sub-nav-link" title="누구나 쉽게 사용하는 앱" href="/ko/arcgis-online/apps/arcgis-apps.htm">앱</a>
       </nav>
     </div>
   </div>
@@ -60,12 +70,14 @@ mobile: true
       <div container="" class="panel">
         <div class="wf-nav" style="height:55px;">
           <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
-            <form id="helpSearchForm" target="_top">
-              <input type="search" name="q" class="leader" placeholder="ArcGIS Online 도움말 검색">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="ArcGIS Online 도움말 검색">
               <input type="hidden" name="collection" value="help" />
               <input type="hidden" name="product" value="arcgis-online" />
               <input type="hidden" name="language" value="ko" />
-              <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
             </form>
           </div>
         </div>
@@ -74,9 +86,9 @@ mobile: true
     <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
       <hr class="leader-half trailer-half">
       <ul class="list-plain sdk-home-nav-list text-center">
-        <li><strong>최신 업데이트:</strong> 2016년 12월</li>
+        <li><strong>최신 업데이트:</strong> 2017년 3월</li>
         <li><a href="/ko/arcgis-online/reference/whats-new.htm">새로운 기능</a></li>
-	      <li><a href="/ko/arcgis-online/reference/faq.htm">FAQ</a></li>
+        <li><a href="/ko/arcgis-online/reference/faq.htm">FAQ</a></li>
       </ul>
     </nav>
   </div>
@@ -87,7 +99,7 @@ mobile: true
       <h2 class="trailer-half leader-1">시작하기
         <a class="btn btn-transparent text-white btn-large right" href="/ko/arcgis-online/get-started/online-quick-exercises.htm">추가 연습</a>
       </h2>
-      <div class="block-group block-group-6-up tablet-block-group-2-up leader-0 padding-leader-half trailer-half">
+      <div class="block-group block-group-6-up tablet-block-group-2-up leader-0 padding-leader-half trailer-half" style="clear:right;">
         <div class="card block leader-0">
           <figure class="card-image-wrap">
             <a href="/ko/arcgis-online/get-started/quick-exercise-maps.htm">
@@ -103,66 +115,38 @@ mobile: true
           </div>
           <a href="/ko/arcgis-online/get-started/quick-exercise-maps.htm" class="btn btn-clear btn-fill leader-0">연습 시작</a>
         </div>
+
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/">
-              <img alt="" src="img/create-an-app.png">
+            <a href="/ko/arcgis-online/get-started/quick-exercise-apps.htm">
+              <img alt="" src="img/create-an-app.jpg">
             </a>
           </figure>
           <div class="card-content leader-0 padding-leader-half">
             <h5 class="trailer-0 leader-0">
-              <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/">웹 앱 생성</a>
+              <a href="/ko/arcgis-online/get-started/quick-exercise-apps.htm">앱 생성</a>
             </h5>
-            <p class="font-size--2 text-light-gray trailer-half">1시간</p>
-            <p class="trailer-0 text-off-black">워싱턴 주의 오소 산사태 확인용 웹 앱을 생성합니다.</p>
+            <p class="font-size--2 text-light-gray trailer-half">20분</p>
+            <p class="trailer-0 text-off-black">웹 앱을 만들어 비즈니스 사이트 제안을 공유해 보세요.</p>
           </div>
-          <a href="http://learn.arcgis.com/en/projects/oso-mudslide-before-and-after/" class="btn btn-clear btn-fill leader-0">연습 시작</a>
+          <a href="/ko/arcgis-online/get-started/quick-exercise-apps.htm" class="btn btn-clear btn-fill leader-0">연습 시작</a>
         </div>
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">
-              <img alt="" src="img/get-started-with-scene-viewer.png">
+            <a href="/ko/arcgis-online/get-started/quick-exercise-analysis.htm">
+              <img alt="" src="img/solve-spatial-problem.png">
             </a>
           </figure>
           <div class="card-content leader-0 padding-leader-half">
             <h5 class="trailer-0 leader-0">
-              <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">씬 뷰어를 통해 3D 기능 활용</a>
+              <a href="/ko/arcgis-online/get-started/quick-exercise-analysis.htm">공간 문제 해결</a>
             </h5>
-            <p class="font-size--2 text-light-gray trailer-half">1시간 20분</p>
-            <p class="trailer-0 text-off-black">플로리다 주의 해변과 후미를 보여 주는 3D 씬을 생성합니다.</p>
+            <p class="font-size--2 text-light-gray trailer-half">25분</p>
+            <p class="trailer-0 text-off-black">분석 도구를 사용하여 캠핑장이 확산성 잡초의 서식 범위에 속하는지 확인합니다.</p>
           </div>
-          <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/" class="btn btn-clear btn-fill leader-0">연습 시작</a>
+          <a href="/ko/arcgis-online/get-started/quick-exercise-analysis.htm" class="btn btn-clear btn-fill leader-0">연습 시작</a>
         </div>
-        <div class="card block leader-0">
-          <figure class="card-image-wrap">
-            <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/">
-              <img alt="" src="img/track-crime-rates.png">
-            </a>
-          </figure>
-          <div class="card-content leader-0 padding-leader-half">
-            <h5 class="trailer-0 leader-0">
-              <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/">범죄율 추적</a>
-            </h5>
-            <p class="font-size--2 text-light-gray trailer-half">40분</p>
-            <p class="trailer-0 text-off-black">네브래스카 주 링컨의 범죄 밀도 맵을 생성합니다.</p>
-          </div>
-          <a href="http://learn.arcgis.com/en/projects/track-crime-patterns-to-aid-law-enforcement/" class="btn btn-clear btn-fill leader-0">연습 시작</a>
-        </div>
-        <div class="card block leader-0">
-          <figure class="card-image-wrap">
-            <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm">
-              <img alt="" src="img/get-started-with-collector.png">
-            </a>
-          </figure>
-          <div class="card-content leader-0 padding-leader-half">
-            <h5 class="trailer-0 leader-0">
-              <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm">Collector 맵 구성</a>
-            </h5>
-            <p class="font-size--2 text-light-gray trailer-half">30분</p>
-            <p class="trailer-0 text-off-black">피해 평가용 데이터 수집을 위해 Collector for ArcGIS에서 사용할 맵을 생성합니다.</p>
-          </div>
-          <a href="http://doc.arcgis.com/en/collector/windows/create-maps/create-and-share-a-collector-map.htm" class="btn btn-clear btn-fill leader-0">연습 시작</a>
-        </div>
+
         <div class="card block leader-0">
           <figure class="card-image-wrap">
             <a href="http://learn.arcgis.com/en/projects/set-up-an-arcgis-organization/">
@@ -178,6 +162,39 @@ mobile: true
           </div>
           <a href="http://learn.arcgis.com/en/projects/set-up-an-arcgis-organization/" class="btn btn-clear btn-fill leader-0">연습 시작</a>
         </div>
+
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">
+              <img alt="" src="img/get-started-with-scene-viewer.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/">씬 뷰어를 통해 3D 기능 활용</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">80분</p>
+            <p class="trailer-0 text-off-black">플로리다 주의 해변과 후미를 보여 주는 3D 씬을 생성합니다.</p>
+          </div>
+          <a href="http://learn.arcgis.com/en/projects/get-started-with-the-scene-viewer/" class="btn btn-clear btn-fill leader-0">연습 시작</a>
+        </div>
+
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="http://learn.arcgis.com/en/projects/get-started-with-survey123/">
+              <img alt="" src="img/get-started-with-survey123.png">
+            </a>
+          </figure>
+          <div class="card-content leader-0 padding-leader-half">
+            <h5 class="trailer-0 leader-0">
+              <a href="http://learn.arcgis.com/en/projects/get-started-with-survey123/">설문조사로 작업</a>
+            </h5>
+            <p class="font-size--2 text-light-gray trailer-half">95분</p>
+            <p class="trailer-0 text-off-black">안전 예방 조치에 대해 설문조사를 수행한 후 Survey123 for ArcGIS를 사용하여 비상 자산의 재고를 생성합니다.</p>
+          </div>
+          <a href="http://learn.arcgis.com/en/projects/get-started-with-survey123/" class="btn btn-clear btn-fill leader-0">연습 시작</a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -187,196 +204,195 @@ mobile: true
 <div class="panel panel panel-no-border panel-no-padding leader-0">
   <div class="grid-container">
     <div class="column-24">
-        <div class="row">
-          <h2>&nbsp;</h2>
-          <h2 class="text-center">ArcGIS Online에서 수행할 수 있는 작업</h2>
+      <div class="row">
+        <h2>&nbsp;</h2>
+        <h2 class="text-center">ArcGIS Online에서 수행할 수 있는 작업</h2>
+      </div>
+      <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up leader-1 trailer-1">
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-maps text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">맵 만들기</h3>
+            <p class="trailer-half">
+ 사용자들과 GIS를 공유하는 과정에서 맵의 역할에 대해 자세히 알아봅니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="/ko/arcgis-online/get-started/get-started-with-maps.htm">맵 생성 시작하기</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/share-maps/share-maps.htm">맵 공유</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/get-started/view-maps.htm">맵 뷰어에서 맵 보기</a>
+              </li>
+              <li>
+                <a href="//storymaps.arcgis.com/">스토리 맵을 사용하여 스토리 전달</a>
+              </li>
+              <li>
+                <a href="//links.esri.com/agol-help/storymap/how-to-smart-map">3단계를 수행하여 스마트 매핑 사용 방법 알아보기</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up leader-1 trailer-1">
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-              <h2 class="icon-ui-maps text-center trailer-half"></h2>
-              <h3 class="text-center trailer-0">맵 만들기</h3>
-              <p class="trailer-half">
-                사용자들과 GIS를 공유하는 과정에서 맵의 역할에 대해 자세히 알아봅니다.
-              </p>
-              <ul class="bulleted trailer-0">
-                <li>
-                  <a href="/ko/arcgis-online/get-started/get-started-with-maps.htm">맵 생성 시작하기</a>
-                </li>
-                <li>
-                  <a href="/ko/arcgis-online/share-maps/share-maps.htm">맵 공유</a>
-                </li>
-                <li>
-                  <a href="/ko/arcgis-online/get-started/view-maps.htm">맵 뷰어에서 맵 보기</a>
-                </li>
-                <li>
-                  <a href="//storymaps.arcgis.com/">스토리 맵을 사용하여 스토리 전달</a>
-                </li>
-                <li>
-                  <a href="//links.esri.com/agol-help/storymap/how-to-smart-map">3단계를 수행하여 스마트 매핑 사용 방법 알아보기</a>
-                </li>
-              </ul>
-            </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-globe text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">3D GIS 사용</h3>
+            <p class="trailer-half">
+ 3D로 정보를 시각화하여 새로운 관점에서 정보를 파악합니다. 3D GIS 기능을 사용하여 2D 상황 메뉴에서는 해결할 수 없는 문제를 해결합니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="/ko/arcgis-online/get-started/get-started-with-scenes.htm">씬 생성 시작하기</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/get-started/view-scenes.htm">씬 뷰어에서 씬 보기</a>
+              </li>
+              <li>
+                <a href="//links.esri.com/agol-help/livingatlas-3d">생동감 있는 지도에서 즉시 사용 가능한 3D 씬 접근</a>
+              </li>
+              <li>
+                <a href="/ko/drone2map/quick-start-exercises/3d-mapping.htm">Drone2Map for ArcGIS를 사용하여 3D 레이어 생성</a>
+              </li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-                <h2 class="icon-ui-globe text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">3D GIS 사용</h3>
-                <p class="trailer-half">
-                  3D로 정보를 시각화하여 새로운 관점에서 정보를 파악합니다. 3D GIS 기능을 사용하여 2D 상황 메뉴에서는 해결할 수 없는 문제를 해결합니다.
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li>
-                    <a href="/ko/arcgis-online/get-started/get-started-with-scenes.htm">씬 생성 시작하기</a>
-                  </li>
-                  <li>
-                    <a href="/ko/arcgis-online/get-started/view-scenes.htm">씬 뷰어에서 씬 보기</a>
-                  </li>
-                  <li>
-                    <a href="//links.esri.com/agol-help/livingatlas-3d">생동감 있는 지도에서 즉시 사용 가능한 3D 씬 접근</a>
-                  </li>
-                  <li>
-                    <a href="/ko/drone2map/quick-start-exercises/3d-mapping.htm">Drone2Map for ArcGIS를 사용하여 3D 레이어 생성</a>
-                  </li>
-                </ul>
-
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white primary trailer-0">
+            <h2 class="icon-ui-line-chart text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">분석 수행</h3>
+            <p class="trailer-half">
+ 여러 레이어의 정보를 결합하고 공간 작업을 적용하여 광범위한 문제를 해결합니다. 결과를 탐색 및 시각화하여 결정을 내리고 더욱 심층적인 정보를 파악합니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="/ko/arcgis-online/get-started/get-started-with-analysis.htm">분석 시작하기</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/analyze/perform-analysis.htm">맵을 사용하여 분석 수행</a>
+              </li>
+              <li>
+                <a href="//learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">인구 통계 분석을 사용하여 아동 빈곤 상황 탐색</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/create-maps/change-style.htm#ESRI_SECTION1_195BD40347774AEDAEC373A7A0898A80">스마트 매핑을 사용하여 공간 관련 질문에 답변 제시</a>
+              </li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white primary trailer-0">
-                <h2 class="icon-ui-line-chart text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">분석 수행</h3>
-                <p class="trailer-half">
-                   여러 레이어의 정보를 결합하고 공간 작업을 적용하여 광범위한 문제를 해결합니다. 결과를 탐색 및 시각화하여 결정을 내리고 더욱 심층적인 정보를 파악합니다.
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li>
-                    <a href="/ko/arcgis-online/get-started/get-started-with-analysis.htm">분석 시작하기</a>
-                  </li>
-                  <li>
-                    <a href="/ko/arcgis-online/analyze/perform-analysis.htm">맵을 사용하여 분석 수행</a>
-                  </li>
-                  <li>
-                    <a href="//learn.arcgis.com/en/projects/fight-child-poverty-with-demographic-analysis/">인구 통계 분석을 사용하여 아동 빈곤 상황 탐색</a>
-                  </li>
-				  <li>
-                    <a href="/ko/arcgis-online/create-maps/change-style.htm#ESRI_SECTION1_195BD40347774AEDAEC373A7A0898A80">스마트 매핑을 사용하여 공간 관련 질문에 답변 제시</a>
-                  </li>
-                </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-layers text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">생동감 있는 지도 접근</h3>
+            <p class="trailer-half">
+ 전 세계의 ArcGIS 사용자 및 Esri와 해당 파트너가 선별 제공하는 최적의 맵, 앱 및 데이터 컬렉션인 생동감 있는 세계 지도를 통해 GIS를 즉시 시작할 수 있습니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="http://links.esri.com/agol-help/living-atlas">생동감 있는 지도 접근</a>
+              </li>
+              <li>
+                <a href="//links.esri.com/agol-help/livingatlas-storymap">스토리 맵을 통해 생동감 있는 지도 탐색</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/create-maps/add-layers.htm#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">생동감 있는 지도 레이어를 찾아보고 맵에 인구 통계 데이터 추가</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/create-maps/add-layers-to-scene.htm#ESRI_SECTION1_8FC6CAC878CB41CD8F4B21F978D57135">씬에 생동감 있는 지도 콘텐츠 추가</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/get-started/quick-exercise-explore-data.htm">생동감 있는 지도 맵을 사용하여 공간 패턴 찾기</a>
+              </li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-                <h2 class="icon-ui-layers text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">생동감 있는 지도 접근</h3>
-                <p class="trailer-half">
-                  전 세계의 ArcGIS 사용자 및 Esri와 해당 파트너가 선별 제공하는 최적의 맵, 앱 및 데이터 컬렉션인 생동감 있는 세계 지도를 통해 GIS를 즉시 시작할 수 있습니다.
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li>
-                    <a href="http://links.esri.com/agol-help/living-atlas">생동감 있는 지도 접근</a>
-                  </li>
-                  <li>
-                    <a href="//links.esri.com/agol-help/livingatlas-storymap">스토리 맵을 통해 생동감 있는 지도 탐색</a>
-                  </li>
-                  <li>
-                    <a href="/ko/arcgis-online/create-maps/add-layers.htm#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">생동감 있는 지도 레이어를 찾아보고 맵에 인구 통계 데이터 추가</a>
-                  </li>
-                  <li>
-                    <a href="/ko/arcgis-online/create-maps/add-layers-to-scene.htm#ESRI_SECTION1_8FC6CAC878CB41CD8F4B21F978D57135">씬에 생동감 있는 지도 콘텐츠 추가</a>
-                  </li>
-                  <li>
-                    <a href="/ko/arcgis-online/get-started/quick-exercise-explore-data.htm">생동감 있는 지도 맵을 사용하여 공간 패턴 찾기</a>
-                  </li>
-                </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-collection text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">데이터 관리</h3>
+            <p class="trailer-half">
+ 데이터를 효율적으로 활용하는 방법을 알아봅니다. 다른 사용자가 맵과 씬에서 사용할 수 있는 레이어를 발행하여 피처와 기타 요소를 공유합니다. 편집을 활성화하여 커뮤니티 피드백을 수집합니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li>
+                <a href="/ko/arcgis-online/share-maps/hosted-web-layers.htm">피처, 타일 등을 레이어로 발행</a></li>
+              <li>
+                <a href="/ko/arcgis-online/create-maps/edit-features.htm">피처 편집</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/create-maps/take-maps-offline.htm">오프라인으로 맵 가져오기</a>
+              </li>
+              <li>
+                <a href="/ko/arcgis-online/reference/best-practices-layers.htm">맵의 레이어 사용에 대한 모범 사례 알아보기</a>
+              </li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-                <h2 class="icon-ui-collection text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">데이터 관리</h3>
-                <p class="trailer-half">
-                  데이터를 효율적으로 활용하는 방법을 알아봅니다. 다른 사용자가 맵과 씬에서 사용할 수 있는 레이어를 발행하여 피처와 기타 요소를 공유합니다. 편집을 활성화하여 커뮤니티 피드백을 수집합니다.
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li>
-                    <a href="/ko/arcgis-online/share-maps/hosted-web-layers.htm">피처, 타일 등을 레이어로 발행</a></li>
-                  <li>
-                    <a href="/ko/arcgis-online/create-maps/edit-features.htm">피처 편집</a>
-                  </li>
-                  <li>
-                    <a href="/ko/arcgis-online/create-maps/take-maps-offline.htm">오프라인으로 맵 가져오기</a>
-                  </li>
-                  <li>
-                    <a href="/ko/arcgis-online/reference/best-practices-layers.htm">맵의 레이어 사용에 대한 모범 사례 알아보기</a>
-                  </li>
-                </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white primary trailer-0">
+            <h2 class="icon-ui-share text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">작업 공유</h3>
+            <p class="trailer-half">
+ 다양한 지리 정보 항목을 사용자들과 공유할 수 있습니다. 여러 앱과 스토리 맵을 통해 접근 권한을 제공하여 유용한 정보를 활용할 수 있도록 합니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li><a href="/ko/arcgis-online/get-started/get-started-with-sharing.htm">공유 시작하기</a></li>
+              <li><a href="//storymaps.arcgis.com/en/">앱을 사용하여 스토리 공유</a></li>
+              <li><a href="/ko/arcgis-online/reference/best-practices-share.htm">공유에 대한 모범 사례 알아보기</a></li>
+              <li><a href="/ko/arcgis-online/reference/ogc.htm">개방형 표준을 통해 데이터 공유</a></li>
+              <li><a href="http://opendata.arcgis.com/">Open Data for ArcGIS를 통한 공유</a></li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white primary trailer-0">
-                <h2 class="icon-ui-share text-center trailer-half"></h2>
-                <h3 class="text-center trailer-0">작업 공유</h3>
-                <p class="trailer-half">
-                  다양한 지리 정보 항목을 사용자들과 공유할 수 있습니다. 여러 앱과 스토리 맵을 통해 접근 권한을 제공하여 유용한 정보를 활용할 수 있도록 합니다.
-                </p>
-                <ul class="bulleted trailer-0">
-                  <li><a href="/ko/arcgis-online/get-started/get-started-with-sharing.htm">공유 시작하기</a></li>
-                  <li><a href="//storymaps.arcgis.com/en/">앱을 사용하여 스토리 공유</a></li>
-                  <li><a href="/ko/arcgis-online/reference/best-practices-share.htm">공유에 대한 모범 사례 알아보기</a></li>
-                  <li><a href="/ko/arcgis-online/reference/ogc.htm">개방형 표준을 통해 데이터 공유</a></li>
-				  <li><a href="http://opendata.arcgis.com/">Open Data for ArcGIS를 통한 공유</a></li>
-                </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white trailer-0">
+            <h2 class="icon-ui-applications text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">앱 사용</h3>
+            <p class="trailer-half">
+ ArcGIS 앱은 맵, 씬, 데이터를 중점적으로 활용할 수 있는 인터페이스이자 도구입니다. ArcGIS Online에는 내 기관에서 업무를 수행할 수 있도록 하는 수십 개의 앱이 포함되어 있습니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li><a href="//www.esri.com/software/apps/field">현장에 적합한 앱 검토</a></li>
+              <li><a href="//www.esri.com/software/apps/office">사무실에 적합한 앱 검토</a></li>
+              <li><a href="//www.esri.com/software/apps/community">지역 사회에 적합한 앱 검토</a></li>
+              <li><a href="//www.esri.com/software/apps/builders">직접 앱 만들기</a></li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white trailer-0">
-              <h2 class="icon-ui-applications text-center trailer-half"></h2>
-              <h3 class="text-center trailer-0">앱 사용</h3>
-              <p class="trailer-half">
-                ArcGIS 앱은 맵, 씬, 데이터를 중점적으로 활용할 수 있는 인터페이스이자 도구입니다. ArcGIS Online에는 내 기관에서 업무를 수행할 수 있도록 하는 수십 개의 앱이 포함되어 있습니다.
-              </p>
-              <ul class="bulleted trailer-0">
-                <li><a href="//www.esri.com/software/apps/field">현장에 적합한 앱 검토</a></li>
-                <li><a href="//www.esri.com/software/apps/office">사무실에 적합한 앱 검토</a></li>
-                <li><a href="//www.esri.com/software/apps/community">지역 사회에 적합한 앱 검토</a></li>
-                <li><a href="//www.esri.com/software/apps/builders">직접 앱 만들기</a></li>
-              </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white primary trailer-0">
+            <h2 class="icon-ui-search text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">항목 찾기 및 관리</h3>
+            <p class="trailer-half">
+ ArcGIS Online에서는 GIS 커뮤니티, 내 기관, 내가 직접 제공하는 광범위한 맵, 씬, 레이어, 분석, 앱을 통해 검색 가능한 전 세계 GIS에 접근할 수 있습니다. 이러한 항목은 정보 갤러리로 구성되므로 작업에 관련된 콘텐츠를 빠르게 찾을 수 있습니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li><a href="/ko/arcgis-online/reference/geo-info.htm">ArcGIS 정보 모델 검토</a></li>
+              <li><a href="/ko/arcgis-online/share-maps/add-items.htm">ArcGIS Online에 항목 추가</a></li>
+              <li><a href="/ko/arcgis-online/get-started/get-started-with-groups.htm">정보 공유를 위해 그룹 사용</a></li>
+              <li><a href="//links.esri.com/agol-help/living-atlas">생동감 있는 지도에서 맵 및 기타 항목 찾기</a></li>
+              <li><a href="/ko/arcgis-online/reference/search.htm">ArcGIS Online에서 항목 찾기</a></li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white primary trailer-0">
-              <h2 class="icon-ui-search text-center trailer-half"></h2>
-              <h3 class="text-center trailer-0">항목 찾기 및 관리</h3>
-              <p class="trailer-half">
-                ArcGIS Online에서는 GIS 커뮤니티, 내 기관, 내가 직접 제공하는 광범위한 맵, 씬, 레이어, 분석, 앱을 통해 검색 가능한 전 세계 GIS에 접근할 수 있습니다. 이러한 항목은 정보 갤러리로 구성되므로 작업에 관련된 콘텐츠를 빠르게 찾을 수 있습니다.
-              </p>
-              <ul class="bulleted trailer-0">
-                <li><a href="/ko/arcgis-online/reference/geo-info.htm">ArcGIS 정보 모델 검토</a></li>
-                <li><a href="/ko/arcgis-online/share-maps/add-items.htm">ArcGIS Online에 항목 추가</a></li>
-                <li><a href="/ko/arcgis-online/get-started/get-started-with-groups.htm">정보 공유를 위해 그룹 사용</a></li>
-                <li><a href="//links.esri.com/agol-help/living-atlas">생동감 있는 지도에서 맵 및 기타 항목 찾기</a></li>
-                <li><a href="/ko/arcgis-online/reference/search.htm">ArcGIS Online에서 항목 찾기</a></li>
-              </ul>
-            </div>
+        </div>
+        <div class="card block trailer-1">
+          <div class="panel panel-no-border panel-white primary trailer-0">
+            <h2 class="icon-ui-settings2 text-center trailer-half"></h2>
+            <h3 class="text-center trailer-0">내 기관 관리</h3>
+            <p class="trailer-half">
+ ArcGIS Online에는 사용자 정의 역할과 보안 설정 구성, 라이선스 관리, 사용 보고서 보기 등 내 기관을 관리하는 데 필요한 모든 기능이 포함되어 있습니다.
+            </p>
+            <ul class="bulleted trailer-0">
+              <li><a href="/ko/arcgis-online/administer/get-started-with-administration.htm">운영 관리 시작하기</a></li>
+              <li><a href="//links.esri.com/agol-help/administering-platform">관리자를 위한 모범 사례 및 리소스 알아보기</a></li>
+              <li><a href="/ko/arcgis-online/reference/roles.htm">레벨, 역할, 권한 이해</a></li>
+              <li><a href="/ko/arcgis-online/reference/credits.htm">크레딧 이해</a></li>
+              <li><a href="/ko/trust/security/security-overview.htm">ArcGIS 보안 검토</a></li>
+              <li><a href="https://github.com/Esri/ago-admin-wiki/wiki/Tools">추가 관리 도구 찾아보기</a></li>
+            </ul>
           </div>
-          <div class="card block trailer-1">
-            <div class="panel panel-no-border panel-white primary trailer-0">
-              <h2 class="icon-ui-settings2 text-center trailer-half"></h2>
-              <h3 class="text-center trailer-0">내 기관 관리</h3>
-              <p class="trailer-half">
-                ArcGIS Online에는 사용자 정의 역할과 보안 설정 구성, 라이선스 관리, 사용 보고서 보기 등 내 기관을 관리하는 데 필요한 모든 기능이 포함되어 있습니다.
-              </p>
-              <ul class="bulleted trailer-0">
-                <li><a href="/ko/arcgis-online/administer/get-started-with-administration.htm">운영 관리 시작하기</a></li>
-                <li><a href="//links.esri.com/agol-help/administering-platform">관리자를 위한 모범 사례 및 리소스 알아보기</a></li>
-                <li><a href="/ko/arcgis-online/reference/roles.htm">레벨, 역할, 권한 이해</a></li>
-                <li><a href="/ko/arcgis-online/reference/credits.htm">크레딧 이해</a></li>
-                <li><a href="/ko/trust/security/security-overview.htm">ArcGIS 보안 검토</a></li>
-                <li><a href="https://github.com/Esri/ago-admin-wiki/wiki/Tools">추가 관리 도구 찾아보기</a></li>
-              </ul>
-            </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -401,11 +417,11 @@ mobile: true
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
       <h2 class="trailer-half leader-1">비디오 보기
-        <a class="btn btn-transparent text-white btn-large right" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf">더 많은 비디오</a>
+        <a class="btn btn-transparent text-white btn-large right" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IulSSoNHnpaprsxhbWPa3B">더 많은 비디오</a>
       </h2>
       <!--h3 class="leader-half trailer-0 padding-trailer-0">Watch our videos</h3>
       <a class="btn btn-transparent btn-large right padding-leader-0 padding-trailer-0 text-white" href="https://www.youtube.com/playlist?list=PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf">More videos</a-->
-      <div playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      <div style="clear:right;" playlistid="PLGZUzt4E4O2IJt1O_OTDFR-3dUpiCZGKf" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
       </div>
     </div>
   </div>
@@ -430,12 +446,13 @@ mobile: true
 <div class="panel panel-white panel-no-border panel-no-padding leader-1">
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">Esri 블로그 읽기
+      <h2 class="trailer-0">Esri 블로그 읽기
         <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/category/arcgis-online">더 많은 블로그 게시물</a>
       </h2>
-      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/" class="block-group block-group-3-up blogHpFeed">
-			  <!-- Blog Content goes here -->
-			</div>
+      <hr class="padding-trailer-1 trailer-0 leader-half" style="clear:right">
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/arcgis-online/feed/" class="block-group phone-block-group-1-up block-group-3-up blogHpFeed">
+        <!-- Blog Content goes here -->
+      </div>
     </div>
   </div>
 </div>
@@ -444,25 +461,28 @@ mobile: true
 <div class="panel panel-white panel-no-border panel-no-padding">
   <div class="grid-container padding-trailer-1 padding-leader-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">대화 참여
+      <h2 class="trailer-0">대화 참여
         <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/community/gis/web-gis/arcgisonline">더 많은 대화</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2106" class="block-group block-group-3-up geonetFeed">
-				<!-- Forum content goes here -->
-			</div>
+      <hr class="padding-trailer-1 trailer-0 leader-half" style="clear:right">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2106" class="block-group phone-block-group-1-up block-group-3-up geonetFeed">
+        <!-- Forum content goes here -->
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Books -->
 <div class="panel panel-blue panel-no-border panel-no-padding leader-0">
   <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
     <div class="column-24">
       <h2 class="trailer-half leader-1">도서 살펴보기
         <a class="btn btn-transparent text-white btn-large right" href="http://esripress.esri.com/">더 많은 도서</a>
       </h2>
-      <div class="block-group block-group-3-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      <div style="clear:right;" class="block-group block-group-3-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=289&moduleID=0">
+            <a href="http://links.esri.com/book/arcgis-book">
               <img alt="" src="img/arcgis-book.png">
             </a>
           </figure>
@@ -476,7 +496,7 @@ mobile: true
         </div>
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=289&moduleID=0">
+            <a href="http://links.esri.com/book/instructional-guide">
               <img alt="" src="img/instructional-guide.png">
             </a>
           </figure>
@@ -490,7 +510,7 @@ mobile: true
         </div>
         <div class="card block leader-0">
           <figure class="card-image-wrap">
-            <a href="//esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=308&moduleID=0">
+            <a href="http://links.esri.com/book/imagery">
               <img alt="" src="img/imagery-book.png">
             </a>
           </figure>
@@ -507,32 +527,33 @@ mobile: true
   </div>
 </div>
 
-<div class="panel panel-white panel-no-padding">
+<!-- Learn links -->
+<div class="panel panel-dark panel-no-padding">
   <div class="grid-container">
     <div class="column-24 leader-1 trailer-1 text-center">
       <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
         <div class="block ">
-          <h5 class="icon-ui-review icon-ui-purple trailer-half"><a href="http://links.esri.com/agol-help/learn/agol">상세 학습 진행</a></h5>
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://links.esri.com/agol-help/learn/agol">상세 학습 진행</a></h5>
           <p class="trailer-0">
-            ArcGIS 자세히 알아보기(Learn ArcGIS)를 검색하여 ArcGIS를 통해 실제 문제를 해결하는 방법을 익힐 수 있는 연습을 찾아서 수행할 수 있습니다.
+ ArcGIS 자세히 알아보기(Learn ArcGIS)를 검색하여 ArcGIS를 통해 실제 문제를 해결하는 방법을 익힐 수 있는 연습을 찾아서 수행할 수 있습니다.
           </p>
         </div>
         <div class="block ">
-          <h5 class="icon-ui-layers icon-ui-green trailer-half"><a href="http://www.esri.com/training/main/arcgis-online-training">교육 과정 찾기</a></h5>
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main/arcgis-online-training">교육 과정 찾기</a></h5>
           <p class="trailer-0">
-            강의식 수업 과정(현재 우리나라에서는 진행하고 있지 않음), 웹 과정, 세미나를 통해 ArcGIS에 대해 더욱 자세히 알아봅니다.
+ 강의식 수업 과정(현재 우리나라에서는 진행하고 있지 않음), 웹 과정, 세미나를 통해 ArcGIS에 대해 더욱 자세히 알아봅니다.
           </p>
         </div>
         <div class="block ">
-          <h5 class="icon-ui-question icon-ui-orange trailer-half"><a href="http://support.esri.com/en/">기술 지원 받기</a></h5>
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">기술 지원 받기</a></h5>
           <p class="trailer-0">
-            채팅, 이메일 또는 전화를 통해 Esri Support에 문의할 수 있습니다.
+ 채팅, 이메일 또는 전화를 통해 Esri Support에 문의할 수 있습니다.
           </p>
         </div>
         <div class="block ">
-          <h5 class="icon-ui-notice-triangle icon-ui-white trailer-half"><a href="http://doc.arcgis.com/en/trust/system-status/">시스템 상태 확인</a></h5>
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">시스템 상태 확인</a></h5>
           <p class="trailer-0">
-            ArcGIS Online 상태를 확인하고 문제를 보고합니다.
+ ArcGIS Online 상태를 확인하고 문제를 보고합니다.
           </p>
         </div>
       </div>

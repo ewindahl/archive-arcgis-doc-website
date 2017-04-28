@@ -14,7 +14,7 @@ doc.securityConcernForm = (function() {
 	return {
 	/* Function for the form validation */
 		validateForm : function(){
-				
+
 			if($('#name').val() == ""){
 				alert("Please enter your name!");
 				$('#name').focus();
@@ -27,7 +27,7 @@ doc.securityConcernForm = (function() {
 			}
 			if ($('#userPhone').val() == "") {
 			    alert("Please enter your phone number!");
-			    $('#userEmail').focus();
+			    $('#userPhone').focus();
 			    return false;
 			}
 			if ($('#subject').val() == "") {
@@ -45,7 +45,7 @@ doc.securityConcernForm = (function() {
 				$('#txtCaptchaInput').focus();
 				return false;
 			}
-			
+
 			if($('#subject').val() != ""){
 				$('#datablock').val("Security Concern:" + $('#subject').val());
 			}
@@ -108,28 +108,28 @@ doc.securityConcernForm = (function() {
                         $("#submission-error").show();
                     }
 				});
-				return; 
+				return;
 		},
-		
+
 		/*********** CAptcha related code ****************************/
 		/*** The Captcha code (ValidCaptcha, DrawCaptcha) has been copied from http://stackoverflow.com with a reference to http://osticket.com/forums/showthread.php?t=6489&highlight=captcha,
 		*	 We did some customization and using it for our feedback form.
 		*/
 		DrawCaptcha : function () {
 			var a = Math.ceil(Math.random() * 9)+ '';
-			var b = Math.ceil(Math.random() * 9)+ '';       
-			var c = Math.ceil(Math.random() * 9)+ '';  
-			var d = Math.ceil(Math.random() * 9)+ '';  
-			var e = Math.ceil(Math.random() * 9)+ '';  
-			var f = Math.ceil(Math.random() * 9)+ '';  
-			var g = '10';  
+			var b = Math.ceil(Math.random() * 9)+ '';
+			var c = Math.ceil(Math.random() * 9)+ '';
+			var d = Math.ceil(Math.random() * 9)+ '';
+			var e = Math.ceil(Math.random() * 9)+ '';
+			var f = Math.ceil(Math.random() * 9)+ '';
+			var g = '10';
 			var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
 			document.getElementById("txtCaptcha").innerHTML = code;
 			document.getElementById("txtHiddenCaptcha").value = code;
 		},
 
-		ValidCaptcha : function () { 
-			function removeSpaces (string) { 
+		ValidCaptcha : function () {
+			function removeSpaces (string) {
 				return string.split(' ').join('');
 			};
 
@@ -143,11 +143,11 @@ doc.securityConcernForm = (function() {
 	};
 })();
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 	var loc = window.location,
                 path = loc.pathname,
                 lg = path.split ("/")[1].toLowerCase();
-	
+
 	var dict = (window.localeJsonObj || {})[lg];
   if (dict) {
 	  $("*[data-langlabel]").each (function(i) {
@@ -156,8 +156,6 @@ $(document).ready(function() {
 		  if (txt) {
 			  o.html (txt);
 		  }
-	  });                
+	  });
   }
-});
-
-
+});*/
