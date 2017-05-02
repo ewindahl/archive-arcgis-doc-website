@@ -28,7 +28,7 @@ layout: docindex
     <div id="gallerycontent" class="block-group block-group-6-up tablet-block-group-3-up phone-block-group-1-up">
       <div class="card block trailer-2" ng-repeat="item in (galleryResults = (galleryitems | filter:query | orderBy:orderProp))">
         <figure class="card-image-wrap">
-          <img src="/assets/img/app-icons/test.png" class="card-image" alt="Placeholder" />
+          <img ng-src="{{item.appImg}}" class="card-image" alt="Placeholder" />
         </figure>
         <div class="card-content">
             <h5 class="card-last text-center trailer-0 ">{{item.appName}}</h5>
