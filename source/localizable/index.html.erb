@@ -29,7 +29,7 @@ layout: docindex
       <div class="card block trailer-2" ng-repeat="item in (galleryResults = (galleryitems | filter:query | orderBy:orderProp))" style="box-shadow:none;">
           <a href="{{item.appLink}}" title="{{item.appName}}">
         <figure class="card-image-wrap">
-          <img ng-src="{{item.appImg}}" class="card-image" alt="Placeholder" />
+          <img ng-src="{{item.appImg}}" class="card-image" alt="{{item.appName}}"/>
         </figure>
         <div class="card-content">
             <h5 class="card-last text-center trailer-0 ">{{item.appName}}</h5>
