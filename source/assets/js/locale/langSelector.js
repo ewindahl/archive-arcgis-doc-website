@@ -29,7 +29,7 @@ function replace_langd(lang){
 jQuery(document).ready(function ($) {
   var winloc = window.location;
 
-  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/)/)){
+  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/|\/maps-for-powerbi\/)/)){
     replace_langd();
     return;
   }
@@ -123,8 +123,9 @@ jQuery(document).ready(function ($) {
       lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
       lgMarketplaceptpt = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
       lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
-      lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
+      lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro']),
       lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
+      lgMapsPowerbi = ['en', 'de', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'ru', 'zh-cn', 'zh-tw'],
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -194,6 +195,8 @@ jQuery(document).ready(function ($) {
                 return true;
               }else if(langSelector === "sharepoint" && lgSharepoint.indexOf(lg) >= 0){
                 return true;
+              }else if(langSelector === "mapsPowerbi" && lgMapsPowerbi.indexOf(lg) >= 0){
+                  return true;
               }else{
                 return false;
               }
@@ -290,6 +293,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "marketplaceptpt":
                   lgList = lgMarketplaceptpt;
+                  break;
+                case "mapsPowerbi":
+                  lgList = lgMapsPowerbi;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -453,6 +459,8 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "openData";
   }else if (winloc.pathname.match( /(\/maps-for-office\/)/)){
     docCfg.langSelector = (winloc.pathname.match( /(\/3.1\/)/)) ? "generic" : "marketplace";
+  }else if (winloc.pathname.match( /(\/maps-for-powerbi\/)/)){
+    docCfg.langSelector = "mapsPowerbi";
   }
 
   dbg ("start: " + window.location.href);
