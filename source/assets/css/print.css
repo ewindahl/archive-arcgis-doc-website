@@ -1,5 +1,12 @@
 /*@import url("/en/asset/css/common.css");*/
 @media print {
+	@page  {
+    size: auto;   /* auto is the initial value */
+
+    /* this affects the margin in the printer settings */
+    margin: 25mm 25mm 25mm 25mm;
+	}
+
 	header.top-nav {
 		display: none;
 	}
@@ -316,14 +323,23 @@ margin-bottom: 1.71429em;
 		max-width: 100%;
 	}
 	.panel {
-		margin-bottom: 1.5em;
+		/*margin-bottom: 1.5em;*/
 		/*line-height: 1em;*/
-		border-radius: 10px;
+		/*border-radius: 10px;
 		float: none;
 		margin-left: 0.5em;
 		margin-right: 0.5em;
 		box-shadow: inset 0 0 0 1000px #F3F3EF;
-		padding: 0.0012em;
+		padding: 1.023rem;*/
+		background-color: #f8f8f8 !important;
+    border: 1px solid #efefef;
+		box-shadow: inset 0 0 0 1000px #f8f8f8;
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,s‌​tartColorstr='#f8f8f8', endColorstr='#f8f8f8')"; /* IE8 */
+    padding: 1.023rem;
+	}
+
+	.panel p {
+		margin-bottom: 0;
 	}
 
 	.page-content h5, .reference-content h5 {
@@ -332,14 +348,13 @@ margin-bottom: 1.71429em;
 	}
 	.panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6 {
 		margin-bottom: 0;
+		margin-top: 0;
 	}
 	h5 {
 		font-size: 1em;
 		line-height: 0px;
 	}
-	a {
-		text-decoration: none;
-	}
+
 	.reference-content h1 {
 		padding-left: 0;
 		padding-right: 0;
@@ -358,15 +373,21 @@ margin-bottom: 1.71429em;
 		margin-top: 0 !important;
 	}
 
-	#plats a.on {
+	#plats a.is-active {
 		font-weight: bold;
 		-moz-box-shadow:    inset 0 0 0px #007ac2;
 		-webkit-box-shadow: inset 0 0 0px #007ac2;
 		box-shadow:         inset 0 0 0px #007ac2;
 	}
 
-	#plats a.off {
+	#plats a.available {
 		opacity: 0.35;
+	}
+
+	.doc-platform-switcher a+a {
+    border-left: 1px solid #a9a9a9;
+    padding: 0 0 0 .375rem;
+    margin: 0 0 0 0.375rem;
 	}
 
 
