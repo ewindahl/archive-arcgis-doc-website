@@ -3,136 +3,249 @@ title: ArcGIS Maps for Power BI
 css:
   - homepage
   - /cdn/css/colorbox
+  - video-play-button
 
 js:
   - /cdn/js/libs/jquery.colorbox-min
-  - video-init
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="ArcGIS Maps for Power BI Home page."><META name="last-modified" content="2016-09-13"><META name="product" content="maps-power-bi"><META name="sub_category" content="Maps for Power BI"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Power BI"><META name="search-category" content="help-general"><META name="subject_label" content="BI,LOCATION ANALYTICS,MAPPING"><META name="version" content="power-bi-1.0"><META name="content_type" content="Help Topic"><META name="subject" content="BI,LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
+  - <META name="description" content="ArcGIS Maps for Power BI Home page."><META name="last-modified" content="2017-04-18"><META name="product" content="maps-power-bi"><META name="sub_category" content="Maps for Power BI"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Power BI"><META name="search-category" content="help-general"><META name="subject_label" content="BI,LOCATION ANALYTICS,MAPPING"><META name="version" content="power-bi-1.0.0.57"><META name="content_type" content="Help Topic"><META name="subject" content="BI,LOCATION ANALYTICS,MAPPING"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace each of the following, then remove these notes when you're done:
+  PRODUCT_METADATA: The metadata for the product
+  FULL_PRODUCT_NAME: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the FULL_PRODUCT_NAME.
+  DOWNLOAD_LINK: A link to download the product, free trial, etc.
+  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
+  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
+  NAV_LINK_x: The link for the navigation tabs at the top.
+  NAV_TEXT_x: The text for the navigation tabs at the top.
+  PRODUCT_HEADLINE: The main headline for the product.  This should be very short.
+  PRODUCT_SUB_HEADLINE: A slightly longer blurb about the product.
+  PRODUCT_SEARCH_VALUE: The product value for the search form
+  ITUNES_STORE_LINK: Link to the product on the app store
+  GOOGLE_PLAY_LINK: Link to the product on Google Play
+  WINDOWS_STORE_LINK: Link to the product on the Windows store
+  POPULAR_LINK_x: Links to popular pages and topics. These should include "FAQs", "What's new", and "Supported environments", but may include other links as well.
+  POPULAR_TEXT_x: Text for links to popular pages and topics.
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  CARD_LINK_x: The page that the card should link to.
+  CARD_TITLE_x: The title of the card.
+  CARD_TEXT_x: The text inside the card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+  GEONET_LINK: Link to the product's Geonet page
+  BLOG_LINK: Link to the the product's blog
+  BLOG_FEED_URL: URL for the product's blog feed
+  GEONET_LINK: Link to the the product's geonet page
+  GEONET_FEED_URL: URL for the product's geonet feed
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
 <header class="sub-nav sub-nav-blue">
   <div class="grid-container">
     <div class="column-24">
       <div style="display:table;" class="sdk-home-banner">
         <div class="sdk-home-banner-content">
-          <nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
-            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
-            <a class="crumb is-active" href="/en/maps-for-powerbi/">Maps for Power BI</a>
-          </nav>
-          <h1 class="sub-nav-title leader-1 text-white">ArcGIS Maps for Power BI</h1>
-          <p>&nbsp;</p>
-          <p class="text-white font-size--2"><strong>Version 1.0</strong> Fall 2016</p>
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Maps for Power BI</h1>
         </div>
-        <!-- Placeholder for image in blue banner-->
-        <div class="sdk-home-banner-image">
-          <img alt="ArcGIS Maps for Power BI" src="pbi_banner.png">
-        </div>
-        <div class="search-bar">
-          <form id="helpSearchForm" target="_top">
-            <input type="search" name="q" class="leader" placeholder="Search Maps for Power BI">
-            <input type="hidden" name="collection" value="help" />
-            <input type="hidden" name="product" value="maps-power-bi" />
-            <input type="hidden" name="language" value="<%= current_language %>" />
-            <button class="search-submit icon-ui-search" type="submit"></button>
-          </form>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="https://powerbi.microsoft.com/en-us/">Get ArcGIS Maps for Power BI</a>
+          <!-- INSTRUCTIONS: Remove this p tag if not needed -->
+          <p class="trailer-0 leader-0 text-white font-size--2">Version 1.0.0.57  Q1 2017</p>
         </div>
       </div>
     </div>
     <div class="column-24">
-      <nav class="sub-nav-list">
-		    <a class="sub-nav-link is-active" href="/en/maps-for-powerbi/">Home</a></li>
-        <a class="sub-nav-link" href="/en/maps-for-powerbi/get-started/">Get Started</a>
-        <a class="sub-nav-link" href="/en/maps-for-powerbi/design/">Design and Use Maps</a>
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/maps-for-powerbi/" selected>Home</option>
+        <option value="/en/maps-for-powerbi/get-started/">Get started</option>
+        <option value="/en/maps-for-powerbi/design/">Design and use maps</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/en/maps-for-powerbi/">Home</a>
+        <a class="sub-nav-link" href="/en/maps-for-powerbi/get-started/">Get started</a>
+        <a class="sub-nav-link" href="/en/maps-for-powerbi/design/">Design and use maps</a>
       </nav>
     </div>
   </div>
 </header>
 
-<div class="grid-container leader-2">
-  <div class="column-16">
-    <p>Be more productive with location-driven analytics. Bring a whole new analytical dimension to Microsoft Power BI. Start gaining new insights and making more informed decisions immediately. ArcGIS Maps for Power BI brings the world's leading spatial analytics to your reports, offering enhanced mapping capability, demographic data, and even more compelling map visualizations so you can tell your best story.</p>
-  </div>
-  <div class="column-8 tablet-column-12 right">
-	  <div class="panel panel-dark">
-      <h4 class="text-white icon-ui-announcement">What's new</h4>
-      <p class="text-white">ArcGIS Maps for Power BI is deployed as an add-on to Microsoft Power BI Service and Power BI Desktop.</p>
-    </div>
-  </div>
-</div>
-
-<div class="grid-container leader-1">
-  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
-    <hr class="leader-half trailer-half">
-      <ul class="list-plain sdk-home-nav-list">
-        <li><a href="/en/maps-for-powerbi/get-started/supported-env.htm">Supported environments</a></li>
-      </ul>
-    <hr class="leader-half trailer-half">
-  </nav>
-</div>
-
-
-<div class="grid-container trailer-1">
+<div class="grid-container leader-2 text-center">
   <div class="column-24">
-    <div class="block-group block-group-4-up tablet-block-group-1-up">
-      <div class="block leader-1">
-        <div class="panel panel-no-padding">
-          <img class="trailer-1" alt="Customize map contents" src="beyondShading.png">
-          <div class="margin-right-1 margin-left-1 trailer-1">
-            <h3 class="font-size-2">Go beyond shading and tinting</h3>
-            <p>ArcGIS Maps for Power BI includes a set of map tools that let you customize the contents of your map and how they're displayed, providing deeper insight into your data.</p>
-            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-powerbi/design/edit-map-contents.htm">Learn more</a></p>
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Bring your data to life</h1>
+      <h5>Power BI transforms your company's data into rich visuals for you to collect and organize</br> so you can focus on what matters to you.</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Search ArcGIS Maps for Power BI">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="maps-power-bi" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
           </div>
         </div>
       </div>
-      <div class="block leader-1">
-        <div class="panel panel-no-padding">
-          <img class="trailer-1" alt="Display two variables at once" src="variables.png">
-          <div class="margin-right-1 margin-left-1 trailer-1">
-            <h3 class="font-size-2">Display two variables at once</h3>
-            <p>In addition to location fields, you can add two additional data fields to a map to better tell your story.</p>
-            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-powerbi/design/add-location-data-to-the-map.htm">Learn more</a></p>
-          </div>
+
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="/en/maps-for-powerbi/get-started/whats-new.htm">What's new</a></li>
+        <li><a href="/en/maps-for-powerbi/get-started/supported-env.htm">Supported environments</a></li>
+        <li><a href="/en/maps-for-powerbi/get-started/prepare-your-data.htm">Prepare your data</a></li>
+	    <li><a href="/en/maps-for-powerbi/design/add-a-map-to-a-report.htm">Create a map</a></li>
+      </ul>
+      <hr class="leader-half trailer-half">
+    </nav>
+  </div>
+</div>
+
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/maps-for-powerbi/design/edit-map-contents.htm">
+            <img alt="" src="img/01_beyondShading.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/maps-for-powerbi/design/edit-map-contents.htm">Go beyond shading and tinting</a>
+          </h5>
+          <p>ArcGIS Maps for Power BI includes a set of map tools that let you customize the contents of your map and how they're displayed, providing deeper insight into your data</p>
         </div>
+        <!-- This is an example of a card with two buttons.  Only follow this example if you want two buttons on a card. -->
+        <nav>
+        <a href="/en/maps-for-powerbi/design/add-data-to-the-map.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
+        </nav>
       </div>
-      <div class="block leader-1">
-        <div class="panel panel-no-padding">
-          <img class="trailer-1" alt="Create heat maps" src="heatmap.png">
-          <div class="margin-right-1 margin-left-1 trailer-1">
-            <h3 class="font-size-2">Create heat maps with a click</h3>
-            <p>Heat maps are useful when many of the points on the map are close together or overlapping, making it difficult to distinguish between features.</p>
-            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-powerbi/design/change-the-map-theme.htm#ESRI_SECTION1_7BAB95E0E9C84CFA99E9EB52C9D4626E">Learn more</a></p>
-          </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/maps-for-powerbi/design/add-data-to-the-map.htm">
+            <img alt="" src="img/02_variables.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/maps-for-powerbi/design/add-data-to-the-map.htm">Display multiple variables at once</a>
+          </h5>
+          <p>In addition to location fields, you can add other data fields to a map to better tell your story.</p>
         </div>
+        <a href="/en/maps-for-powerbi/design/add-data-to-the-map.htm" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
-      <div class="block leader-1">
-        <div class="panel panel-no-padding">
-          <img class="trailer-1" alt="Aggregate data into clusters" src="cluster.png">
-          <div class="margin-right-1 margin-left-1 trailer-1">
-            <h3 class="font-size-2">Aggregate data into clusters</h3>
-            <p>When you add a large number of features to a map, it's often difficult to visually extract meaningful information when hundreds of points overlap. Clustering features into groups of features within a certain distance of one another makes it easier to quickly analyze your data.</p>
-            <p><a class="icon-ui-right icon-ui-small" href="/en/maps-for-powerbi/design/change-the-map-theme.htm#ESRI_SECTION1_D8568C5D4D2A4A86B95BCC3C02620F15">Learn more</a></p>
-          </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/maps-for-powerbi/design/change-the-map-theme.htm#ESRI_SECTION1_7BAB95E0E9C84CFA99E9EB52C9D4626E">
+            <img alt="" src="img/03_heatmap.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/maps-for-powerbi/design/change-the-map-theme.htm#ESRI_SECTION1_7BAB95E0E9C84CFA99E9EB52C9D4626E">Create heat maps with a click</a>
+          </h5>
+          <p>Heat maps are useful when many of the points on the map are close together or overlapping, making it difficult to distinguish between features.</p>
         </div>
+        <a href="/en/maps-for-powerbi/design/change-the-map-theme.htm#ESRI_SECTION1_7BAB95E0E9C84CFA99E9EB52C9D4626E" class="btn btn-clear btn-fill leader-0">Learn more</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/maps-for-powerbi/design/change-the-map-theme.htm#ESRI_SECTION1_D8568C5D4D2A4A86B95BCC3C02620F15">
+            <img alt="" src="img/04_cluster.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/maps-for-powerbi/design/change-the-map-theme.htm#ESRI_SECTION1_D8568C5D4D2A4A86B95BCC3C02620F15">Aggregate data into clusters</a>
+          </h5>
+          <p>When you add a large number of features to a map, it's often difficult to visually extract meaningful information if hundreds of points overlap. Clustering groups of features within a certain distance of one another makes it easier to quickly analyze your data.</p>
+        </div>
+        <a href="/en/maps-for-powerbi/design/change-the-map-theme.htm#ESRI_SECTION1_D8568C5D4D2A4A86B95BCC3C02620F15" class="btn btn-clear btn-fill leader-0">Learn more</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Collapsible contents -->
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Get even more out of ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos 
+<div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      !-- INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number. --
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with ArcGIS Maps for Power BI</h4>
+    <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISOnline"></a>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/esrigis/"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/web-gis/arcgisonline"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
 <!-- Blog -->
-<div class="panel panel panel-no-border panel-no-padding leader-1">
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">Read our Blog
-        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/location-analytics/">More Blog posts <span class="icon-ui-link-external icon-ui-small"></span></a>
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/location-analytics/">More posts</a>
       </h2>
-      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up blogHpFeed">
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
 			  <!-- Blog Content goes here -->
 			</div>
     </div>
@@ -144,79 +257,45 @@ mobile: true
   <div class="grid-container padding-trailer-1 padding-leader-1">
     <div class="column-24">
       <h2 class="text-rule padding-trailer-half">Join the conversation
-        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/">Read more  <span class="icon-ui-small icon-ui-link-external"></span></a>
-        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/discussion/create.jspa?question=false&suppressMarkQuestion=true&containerType=14&containerID=2086">Start discussion  <span class="icon-ui-small icon-ui-link-external"></span></a>
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/">More conversations</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="//geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="flexible-block-group flexible-block-group-3-up geonetFeed">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2086" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
     </div>
   </div>
 </div>
 
-<!-- Social
-<div class="panel panel-dark panel-no-border">
-	<div class="grid-container">
-	  <div class="column-25 text-white text-center">
-			<h4 class="trailer-half">Connect with the ArcGIS Maps for Power BI</h4>
-			<a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISRuntime"></a>
-			<a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://esri.github.io/#Android"></a>
-			<a aria-label="Connect on Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/EsriGeoDev"></a>
-			<a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/developers/native-app-developers/arcgis-runtime-sdk-for-android"></a>
-			<a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
-		</div>
-	</div>
-</div>
--->
-
-<!-- Videos
-<div class="panel panel-blue panel-no-border panel-no-padding">
-  <div class="grid-container padding-leader-1 padding-trailer-1">
-    <div class="column-24">
-      <h2 class="text-white text-rule padding-trailer-half">From our Videos
-        <a class="btn btn-transparent btn-large right text-white" href="http://video.esri.com/search/maps-for-power-bi">More Videos <span class="icon-ui-link-external icon-ui-small"></span></a>
-      </h2>
-      <div class="flexible-block-group flexible-block-group-4-up">
-        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
-          <div class="flexible-block-group-conent">
-            <a href="http://video.esri.com/iframe/3733/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for Salesforce"><img alt="Esri Maps for Salesforce" src="http://video.esri.com/thumbs/2014/08/3733/3733-2014-esri-business-summit-_dash_-part-13-demo_x.jpg"></a>
-            <h5 class="leader-1">Esri Maps for Salesforce</h5>
-          </div>
-          <div class="flexible-block-group-footer">
-            <a class="colorbox-evlarge text-white" href="http://video.esri.com/iframe/3733/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
-          </div>
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Take an in-depth lesson</a></h5>
+          <p class="trailer-0">
+            Find and complete exercises that solve real-world problems with ArcGIS.
+          </p>
         </div>
-        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
-          <div class="flexible-block-group-conent">
-            <a href="http://video.esri.com/iframe/3733/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for Salesforce"><img alt="Esri Maps for Salesforce" src="http://video.esri.com/thumbs/2014/08/3733/3733-2014-esri-business-summit-_dash_-part-13-demo_x.jpg"></a>
-            <h5 class="leader-1">Esri Maps for Salesforce</h5>
-          </div>
-          <div class="flexible-block-group-footer">
-            <a class="colorbox-evlarge text-white" href="http://video.esri.com/iframe/3733/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
-          </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Find training courses</a></h5>
+          <p class="trailer-0">
+            Learn more about ArcGIS through instructor-led courses, web courses, and seminars.
+          </p>
         </div>
-        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
-          <div class="flexible-block-group-conent">
-            <a href="http://video.esri.com/iframe/3733/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for Salesforce"><img alt="Esri Maps for Salesforce" src="http://video.esri.com/thumbs/2014/08/3733/3733-2014-esri-business-summit-_dash_-part-13-demo_x.jpg"></a>
-            <h5 class="leader-1">Esri Maps for Salesforce</h5>
-          </div>
-          <div class="flexible-block-group-footer">
-            <a class="colorbox-evlarge text-white" href="http://video.esri.com/iframe/3733/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
-          </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Get technical support</a></h5>
+          <p class="trailer-0">
+            Contact Esri Support by chat, email, or telephone.
+          </p>
         </div>
-        <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
-          <div class="flexible-block-group-conent">
-            <a href="http://video.esri.com/iframe/3733/000000/width/960/1" class="colorbox-evlarge" title="Esri Maps for Salesforce"><img alt="Esri Maps for Salesforce" src="http://video.esri.com/thumbs/2014/08/3733/3733-2014-esri-business-summit-_dash_-part-13-demo_x.jpg"></a>
-            <h5 class="leader-1">Esri Maps for Salesforce</h5>
-          </div>
-          <div class="flexible-block-group-footer">
-            <a class="colorbox-evlarge text-white" href="http://video.esri.com/iframe/3733/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
-          </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Check system health</a></h5>
+          <p class="trailer-0">
+            See the status of ArcGIS Online and report issues.
+          </p>
         </div>
       </div>
     </div>
   </div>
--->
-
-
+</div>
 <script src="/assets/js/rssfeed.js" type="text/javascript"></script>

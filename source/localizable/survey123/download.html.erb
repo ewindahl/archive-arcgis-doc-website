@@ -1,10 +1,10 @@
 ---
-title: Survey123 for ArcGIS 
+title: Survey123 for ArcGIS
 css:
-  - stat-page-specific
+  - homepage
 
 js:
-  - download.js
+  - download
   - /en/asset/js/survey123-1
 
 metatags:
@@ -13,207 +13,70 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/survey123/download/">Survey123 for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Survey123 for ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="survey123-desktop" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Survey123 for ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="search-bar">
+      	  <form id="helpSearchForm" target="_top">
+            <input type="search" name="q" placeholder="Search Survey123 for ArcGIS" class="leader">
+            <input type="hidden" name="collection" value="help">
+            <input type="hidden" name="product" value="survey123-desktop">
+            <input type="hidden" name="version" value="">
+            <input type="hidden" name="language" value="en">
+            <button class="search-submit icon-ui-search" type="submit"></button>
+          </form>
+      	</div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link" href="/en/survey123/">Home</a>
+        <a class="sub-nav-link" href="/en/survey123/desktop/create-surveys/">Create Surveys</a>
+        <a class="sub-nav-link" href="/en/survey123/desktop/get-answers/">Get Answers</a>
+        <a class="sub-nav-link" href="/en/survey123/browser/analyze-results/">Analyze Results</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container">
+  <div class="column-12 post-1 rtl-pre-0 trailer-2 secured-org downloads">
+    <header class="clearfix leader-1">
+      <h2 class="left trailer-half font-size-3" id="Survey123Connect">Survey123 Connect</h2>
+      <div class="dropdown js-dropdown right">
+        <%= generateDevVersionDropDown("survey123~secured~windows86") %>
+      </div>
     </header>
-	 <nav>
-      <ul>
-        <li><a href="/en/survey123/">Home</a></li>
-        <li><a href="/en/survey123/desktop/create-surveys/">Create Surveys</a></li>
-		<li><a href="/en/survey123/desktop/get-answers/">Get Answers</a></li>
-        <li><a href="/en/survey123/browser/analyze-results/">Analyze Results</a></li>
-        <li><a href="/en/survey123/community/">Community</a></li>
-        <li class='current'><a href="/en/survey123/download/">Download</a></li>
-      </ul>
-    </nav>
+    <hr class="leader-0 trailer-half">
+    <p class="trailer-half">Download Survey123 Connect to create and share a survey.</p>
+    <div class="clearfix">
+      <%= generateVersionButtons("survey123~secured~windows86") %>
+      <%= generateVersionButtons("survey123~secured~mac") %>
+      <%= generateVersionButtons("survey123~secured~linux") %>
+    </div>
+  </div>
+  <div class="column-11 trailer-2">
+    <header class="clearfix leader-1">
+      <h2 class="left trailer-half font-size-3" id="Survey123">Survey123 for ArcGIS</h2>
+    </header>
+    <hr class="leader-0 trailer-half">
+    <p class="trailer-half">Download Survey123 for ArcGIS to complete a survey and get answers.</p>
+    <div class="clearfix">
+      <%= generateVersionButtons("survey123~nonSecured~windows86") %>
+      <%= generateVersionButtons("survey123~nonSecured~mac") %>
+      <%= generateVersionButtons("survey123~nonSecured~linux") %>
+    </div>
+    <div class="leader-0">
+      <a href="<%= generateVersionButtons("survey123~nonSecured~ios", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="/assets/img/badges/app_store.svg" style="vertical-align:middle; height:40px;"></a>
+      <a href="<%= generateVersionButtons("survey123~nonSecured~android", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="vertical-align:middle; height:58px;"></a>
+      <a href="<%= generateVersionButtons("survey123~nonSecured~amazon", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="/assets/img/badges/amazon.png" style="vertical-align:middle;  height:40px;"></a>
+      <a href="<%= generateVersionButtons("survey123~nonSecured~windowsphone", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png" style="margin:10px; vertical-align:middle;  height:40px;"></a>
+    </div>
   </div>
 </div>
-
-<!-- Page Content -->
-<div class="container">
-
-    <h4 class="gray trailer">To create and share a survey, download Survey123 Connect.</h4>
-	 
-
-
-    <div class="download-section container">
-        <div class="row downloads secured-org">
-				
-				<div class="column-8 tablet-column-23">
-                <div id="desktop-win64" class="card">
-                    <div class="icon">
-                        <img src="/img/icon-download.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-Connect-Windows</h4>
-                        <p class="small-grey file-size"> </p>
-							<%= generateVersionDropDown("survey123~secured~windows86") %>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="column-8 tablet-column-23">
-                <div id="desktop-mac" class="card">
-                    <div class="icon">
-                        <img src="/img/icon-download.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-Connect-Mac</h4>
-                        <p class="small-grey file-size"> </p>
-                        <%= generateVersionDropDown("survey123~secured~mac") %>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column-8 tablet-column-23">
-                <div id="desktop-linux" class="card">
-                    <div class="icon">
-                        <img src="../img/icons/linux.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-Connect-Linux</h4>
-                        <p class="small-grey file-size"> </p>
-                        <%= generateVersionDropDown("survey123~secured~linux") %>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        <p>&nbsp;</p>
-        <div id="player" class="header leader trailer">
-            <h4 class="gray trailer">To complete a survey and get answers, download Survey123.</h4>
-        </div>
-        <div class="row downloads">
-				
-				<div class="column-6 tablet-column-23">
-                <div id="player-win64" class="card">
-                    <div class="icon">
-                        <img src="/img/icon-download.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-Windows</h4>
-                        <p class="small-grey file-size"></p>
-                        <a class="btn orange download-link" data-file-size="<%= data.downloads["en"].survey123.nonSecured.windows86.filesize %>" href="<%= data.downloads["en"].survey123.nonSecured.windows86.url %>">Download</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="column-6 tablet-column-23">
-                <div id="player-mac" class="card">
-                    <div class="icon">
-                        <img src="/img/icon-download.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-Mac</h4>
-                        <p class="small-grey file-size"></p>
-                        <a class="btn orange download-link" data-file-size="<%= data.downloads["en"].survey123.nonSecured.mac.filesize %>" href="<%= data.downloads["en"].survey123.nonSecured.mac.url %>">Download</a>
-                    </div>
-                </div>
-            </div>
-            <div class="column-6 tablet-column-23">
-                <div id="player-linux" class="card">
-                    <div class="icon">
-                        <img src="../img/icons/linux.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-Linux</h4>
-                        <p class="small-grey file-size"></p>
-                        <a class="btn orange download-link" data-file-size="<%= data.downloads["en"].survey123.nonSecured.linux.filesize %>"  href="<%= data.downloads["en"].survey123.nonSecured.linux.url %>">Download</a>
-                    </div>
-                </div>
-            </div>
-            
-				<div class="column-6 tablet-column-23">
-                <div id="player-android" class="card">
-                    <div class="icon">
-                        <img src="../img/icons/android.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-Android</h4>
-                        <p class="small-grey file-size">&nbsp;</p>
-                        <a href="<%= data.downloads["en"].survey123.nonSecured.android.url %>" class="btn orange">In Google Play</a>
-                    </div>
-                </div>
-            </div>
-				
-				<div class="clear"></div>
-
-            <div class="column-6 tablet-column-23">
-                <div id="player-ios" class="card">
-                    <div class="icon">
-                        <img src="/img/icon-download.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-iOS</h4>
-                        <p class="small-grey file-size">&nbsp;</p>
-                        <a href="<%= data.downloads["en"].survey123.nonSecured.ios.url %>" class="btn orange">In App Store</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column-6 tablet-column-23">
-                <div id="player-windows-phone" class="card">
-                    <div class="icon">
-                        <img src="/img/icon-download.png">
-                    </div>
-                    <div class="text">
-                        <h4>Survey123-Windows Phone</h4>
-                        <p class="small-grey file-size">&nbsp;</p>
-                        <a href="<%= data.downloads["en"].survey123.nonSecured.windowsphone.url %>" class="btn orange">In Windows Store</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>  <!-- End of Container -->
-
-<style>
-.download-section.container .downloads .card {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    margin: 35px auto;
-    min-width: 290px;
-}
-
-.download-section.container .downloads .card .icon {
-    display: flex;
-}
-.download-section.container .downloads .card .icon {
-    display: -ms-flexbox;
-}
-.download-section.container .downloads .card .text {
-    min-height: 100px;
-    padding-top: 55px;
-    text-align: center;
-    width: 100%;
-}
-
-.download-section.container .downloads .card img {
-    margin: -53px auto;
-}
-.download-section.container .downloads .column-6 {
-  float: left;
-  min-width: 302px;
-}
-
-.download-section.container .downloads .btn {
-  margin: 5px 5px 16px;
-}
-
-.download-section.container .downloads .dropdown::after {
-    right: 16px;
-    top: 16px;
-}
-</style>

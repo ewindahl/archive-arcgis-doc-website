@@ -1,262 +1,282 @@
 ---
 title: Collector for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - /en/asset/css/app-switch-1
-  - colorbox/colorbox
-  - jquery.smartbanner
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/app-collector-1
-  - libs/jquery.colorbox-min
-  - video-init
-  - libs/jquery.smartbanner
-  - smartbanner.init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+  - switchers/app-collector-1
 
 metatags:
-  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-10-01"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
-
-
+  - <META name="description" content="Collector for ArcGIS Home page."><META name="last-modified" content="2016-12-15"><META name="product" content="collector-android,collector-ios,collector-windows"><META name="sub_category" content="Collector for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Collector for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><meta name="apple-itunes-app" content="app-id=589674237"><meta name="google-play-app" content="app-id=com.esri.arcgis.collector"><META name="msApplication-TileImage" content="/img/app-tile/collector.jpg">
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1>Collector for ArcGIS</h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Collector">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />
-        <input type="hidden" name="product" value="collector-android" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Collector for ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="http://www.arcgis.com/features/free-trial.html">Free Trial</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/collector/" selected>Home</option>
+        <option value="/en/collector/overview/overview.htm">Overview</option>
+        <option value="/en/collector/android/create-maps/create-maps.htm">Create Maps</option>
+        <option value="/en/collector/android/collect-data/collect-tutorial.htm">Collect Data</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/en/collector/">Home</a>
+        <a class="sub-nav-link" href="/en/collector/overview/overview.htm">Overview</a>
+        <a class="sub-nav-link" href="/en/collector/android/create-maps/create-maps.htm">Create Maps</a>
+        <a class="sub-nav-link" href="/en/collector/android/collect-data/collect-tutorial.htm">Collect Data</a>        
+      </nav>      
+    </div>
+  </div>
+</header>
 
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/collector/">Home</a></li>
-        <li><a href="/en/collector/android/create-maps/create-maps.htm">Create Maps</a></li>
-        <li><a href="/en/collector/android/collect-data/collect-tutorial.htm">Collect Data</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/applications/collector-for-arcgis">Forum</a></li>
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Put Mapping in the Hands of your Field Workforce</h1>
+      <h5>Use your smartphone or tablet to collect and update information in the field, whether connected or disconnected.</h5>
+      <!--h5>Start using ArcGIS Online now. <a href="http://www.arcgis.com/features/free-trial.html" >Sign up for your free ArcGIS trial.</a></h5-->
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Search Collector Help">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="collector-android" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- download badges -->
+      <p class="trailer-0 leader-half font-size--2">
+        <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="/assets/img/badges/app_store.svg" alt="Download on the App Store" style="margin:10px; vertical-align:middle"/></a>
+        <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:10px; vertical-align:middle"/></a>
+        <a href="https://www.amazon.com/Esri-Inc-Collector-for-ArcGIS/dp/B00X8T73BE"><img alt="Available at Amazon" src="/assets/img/badges/amazon.png" style="height:40px; margin:10px; vertical-align:middle"/></a>
+        <a href="https://www.microsoft.com/store/apps/9wzdncrdg7lk"><img src="https://cmsresources.windowsphone.com/devcenter/common/resources/images/badgegenerator/English_wstore_black_258x67.png" alt="Download from Windows Store"  style="margin:10px; vertical-align:middle; height:40px"/></a>
+      </p>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <!--li><strong>Current update:</strong> December 2016</li-->
+        <li><a href="/en/collector/overview/what-s-new.htm">What's new</a></li>
+	<li><a href="/en/collector/overview/requirements.htm">Requirements</a></li>
+        <li><a href="/en/collector/overview/sneak-peek.htm">Sneak peek</a></li>
+	<li><a href="/en/collector/android/create-maps/faqs-create-map.htm">FAQs for creating maps</a></li>
+	<li><a href="/en/collector/android/collect-data/faqs-collect.htm">FAQs for collecting data</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-      <div class="column-16 tablet-column-24">
-
-        <h3 class="gray">Use your smartphone or tablet to collect and update information in the field, whether connected or disconnected.</h3>
-
-	  <!--
-          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
-          <span id="appReleased"><strong>Released:</strong> March 2014</span>
-	  -->
-
-
-        <p>
-	    <a href="https://itunes.apple.com/us/app/arcgis/id589674237"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a>
-	    <a href="https://play.google.com/store/apps/details?id=com.esri.arcgis.collector"><img src="android-app.png" style="margin:10px; vertical-align:middle"/></a>
-	    <a href="https://www.microsoft.com/store/apps/9wzdncrdg7lk"><img src="https://cmsresources.windowsphone.com/devcenter/common/resources/images/badgegenerator/English_wstore_black_258x67.png" alt="Download from Windows Store"  style="margin:10px; vertical-align:middle; height:40px"/></a>
-        </p>
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="app-collector-map.jpg" alt="Create a map" title="Create a map"/>
-
-          <h3>Create and share a map</h3>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/collector/android/create-maps/create-maps.htm">
+            <img alt="" src="img/createMaps.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/collector/android/create-maps/create-maps.htm">Create and share a map</a>
+          </h5>
           <p>Extend the reach of ArcGIS into the field, and improve the accuracy and currency of your spatial data. Create and share maps for data collection in two steps.</p>
-          <p>
-            <a href="/en/collector/android/create-maps/create-maps.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
-            <a href="https://www.arcgis.com/home/group.html?owner=esri_collector&title=Collector%20Templates" class="icon-right-arrow">&nbsp;Jump-start with templates</a>
-            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
-          </p>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="app-collector-data.jpg" alt="Collect data" title="Collect data"/>
-
-          <h3>Collect data</h3>
-          <p>Create the data that matters to your organization, from damage reports and service requests to places of historical interest. Easily include images and videos, and share your work.</p>
-          <p>
-            <a href="/en/collector/android/collect-data/collect-tutorial.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
-
-			<a title="Collect data" href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="icon-play colorbox-evlarge">&nbsp;Watch a video</a>
-			<video width="320" height="240" controls id="2194" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/2194/mp4/480">
-			</video>
-          </p>
-        </div>
-	<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="story-graphic-3.png" alt="Go offline" title="Go offline" />
-
-          <h3>Go offline</h3>
-          <p>Fieldwork takes you places without a data connection. Take your maps and data offline, collect data, and get back in sync once reconnected.</p>
-          <p>
-            <a href="/en/collector/android/collect-data/offline-use.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
-          </p>
-        </div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="story-graphic-4.png"  alt="Professional-grade accuracy" title="Professional-grade accuracy"/>
-
-          <h3>Get professional-grade accuracy</h3>
-          <p>Use a high-accuracy receiver and get up to centimeter accuracy. Capture with confidence and record GPS metadata to know the quality of your data.</p>
-          <p>
-            <a href="/en/collector/android/create-maps/gps-high-accuracy-receivers.htm" class="icon-right-arrow">&nbsp;Set up for collection</a><br />
-            <a href="/en/collector/android/collect-data/high-accuracy-gps.htm" class="icon-right-arrow">&nbsp;Use high-accuracy GPS</a><br />
-          </p>
-        </div>
-
-        <div class="clear"></div>
-
-	<a name="features"></a>
-	<h2 class="divider">Features</h2>
-	<p>Collect and update data in the field, log your current location, and put the data you capture to work so you can make more informed and timely decisions.
-	Use maps anywhere to ground-truth your data, make observations, and respond to events.
-	You'll improve the efficiency of your field workforce and the accuracy of your GIS.</p>
-
-	<ul>
-	<li>Collect and update data using the map or GPS.</li>
-	<li>Download maps to your device and work offline.</li>
-	<li>Collect points, lines, areas, and related data.</li>
-	<li>Fill out easy-to-use, map-driven forms.</li>
-	<li>Attach photos to your features.</li>
-	<li>Use professional-grade GPS receivers.</li>
-	<li>Search for places and features.</li>
-	<li>Track and report where you've been.</li>
-	<li>Integrate with <a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-apple"/>).</li>
-	<li>Integrate with <a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-apple"/>).</li>
-	</ul>
-
-        <a name="systemRequirements"></a>
-        <h2 class="divider">System requirements</h2>
-        <table><tr><td valign="top" width="320px;"><h4 class="icon-android">Android</h4>
-        <ul>
-          <li>Android 4.1 (Jelly Bean) or later</li>
-          <li>ARMv7 or x86 processor</li>
-          <li>OpenGL ES 2.0 support</li>
-          <li>Precise location (GPS and network-based) support</li>
-        </ul></td>
-        <td valign="top"><h4 class="icon-apple">iOS</h4>
-        <ul>
-          <li>iOS 8 or later</li>
-          <li>iPhone, iPad, iPod touch</li>
-        </ul></td>
-        <td valign="top"><h4 class="icon-windows-8">Windows</h4>
-        <ul>
-          <li>Windows 10.0.586 or later (tablet and PC; excluding LTSB)</li>
-        </ul></td></tr>
-        </table>
-
-        <h3>Supported languages</h3>
-        <p>Arabic, Croatian, Czech, Danish, Dutch, English, Estonian (<span class="icon-android"/>, <span class="icon-windows-8"/>), Finnish,
-           French, German, Greek, Hebrew, Italian, Japanese, Korean, Latvian (<span class="icon-android"/>, <span class="icon-windows-8"/>),
-           Lithuanian (<span class="icon-android"/>, <span class="icon-windows-8"/>), Norwegian, Polish, Portuguese (Brazil),
-           Portuguese (Portugal), Romanian, Russian, Simplified Chinese, Serbian (<span class="icon-android"/>, <span class="icon-windows-8"/>),
-           Spanish, Swedish, Thai, Traditional Chinese (Hong Kong), Traditional Chinese (Taiwan), Turkish, and Vietnamese.</p>
-        <p>The language used by the app is determined by your device's language setting.</p>
-
-        <a name="arcgisRequirements"></a>
-        <h2 class="divider">ArcGIS requirements</h2>
-        <p>To use your maps in Collector, you must have an ArcGIS organizational account. ArcGIS Online and Portal for ArcGIS 10.3.1 and later are supported.</p>
-        <p>Your maps can include data from ArcGIS Online, Portal for ArcGIS, and ArcGIS for Server. For details, see <a href="/en/collector/android/create-maps/supported-data.htm">Supported data</a>.</p>
-
-
-        <a name="whatsNew"></a>
-        <h2 class="divider">What's new</h2>
-        <p>Collector for ArcGIS 10.4 includes the following enhancements:</p>
-        <ul>
-	  <li>Support for high-accuracy GPS receivers</li>
-	  <li>Preserve EXIF data on attachments</li>
-	  <li>Support for attaching additional file types, including PDF and Word docs (<span class="icon-windows-8"/>)</li>
-	  <li>Integration with <a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-apple"/>)</li>
-	  <li>Localized into Croatian and Serbian</li>
-	  <li>Various bug fixes and improvements, including <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NDM1NQ==">BUG-000094355</a>, <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NDcwNA==">BUG-000094704</a>, and <a href="http://support.esri.com/bugs/nimbus/QlVHLTAwMDA5NTY2MA==">BUG-000095660</a></li>
-        </ul>
-	<p>It was released on iOS in July 2016, on Windows in August 2016, and on Android in October 2016.</p>
-
-	<a name="sneakPeek"></a>
-	<h2 class="divider">Sneak peek</h2>
-	<p>Today, Collector is a great app for collecting and editing your data in the field. But there is more to come!
-
-	<table><tr><td valign="top"><h4>In development</h4>
-	<p>We are currently working to add these features:</p>
-	<ul>
-		<li>Data collection with offsets</li>
-		<li>Integration with <a href="http://doc.arcgis.com/en/navigator">Navigator for ArcGIS</a> (<span class="icon-android"/>)</li>
-		<li>Integration with <a href="http://workforce.arcgis.com">Workforce for ArcGIS</a> (<span class="icon-android"/>, <span class="icon-windows-8"/>)</li>
-	</ul>
-	</td>
-	<td valign="top"><h4>Planned</h4>
-	<p>Over time, we plan to add the following features:</p>
-	<ul>
-		  <li>Smarter data collection forms</li>
-		  <li>More tools for planning offline field operations</li>
-		  <li>Integration of peripherals (laser range finders, bar code scanners, and so on)</li>
-		  <li>Support for Windows 10 Mobile</li>
-	</ul>
-	</td></tr></table>
-
-	<p>Share your <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bcollector-for-arcgis%5D">ideas</a>, and <a href="mailto:Collector4ArcGIS@esri.com?subject=Collector%20feedback">send us your feedback</a>.</p>
-
-        <p>&nbsp;</p>
-
+        <a href="/en/collector/android/create-maps/create-maps.htm" class="btn btn-clear btn-fill leader-0">Start the exercise</a>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-	  <h3>Details</h3>
-
-	  <h4><a href="#features">Features</a></h4>
-	  <h4><a href="#systemRequirements">System requirements</a></h4>
-	  <h4><a href="#arcgisRequirements">ArcGIS requirements</a></h4>
-	  <h4><a href="#whatsNew">What's new</a></h4>
-	  <h4><a href="#sneakPeek">Sneak peek</a></h4>
-
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/collector/android/collect-data/collect-tutorial.htm">
+            <img alt="" src="img/collectData.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/collector/android/collect-data/collect-tutorial.htm">Collect data</a>
+          </h5>
+          <p>Create the data that matters to your organization, from damage reports and service requests to places of historical interest. Easily include images and videos, and share your work.</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <nav>
+          <a href="/en/collector/android/collect-data/collect-tutorial.htm" class="btn btn-grouped btn-clear btn-half leader-0">Do it</a>
+          <a href="http://video.arcgis.com/iframe/2194/000000/width/960/1" class="btn btn-grouped btn-clear btn-half leader-0">Watch it</a>
+        </nav>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/collector/android/collect-data/offline-use.htm">
+            <img alt="" src="img/offline.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/collector/android/collect-data/offline-use.htm">Go offline</a>
+          </h5>
+          <p>Fieldwork takes you places without a data connection. Take your maps and data offline, collect data, and get back in sync once reconnected.</p>
         </div>
-
- </div>
-
+        <a href="/en/collector/android/collect-data/offline-use.htm" class="btn btn-clear btn-fill leader-0">Learn how</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/collector/android/create-maps/gps-high-accuracy-receivers.htm">
+            <img alt="" src="img/highAccuracy.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/collector/android/create-maps/gps-high-accuracy-receivers.htm">Get professional-grade accuracy</a>
+          </h5>
+          <p>Use a high-accuracy receiver and get up to centimeter accuracy. Capture with confidence and record GPS metadata to know the quality of your data.</p>
+        </div>
+        <nav>
+          <a href="/en/collector/android/create-maps/gps-high-accuracy-receivers.htm" class="btn btn-grouped btn-clear btn-half leader-0">Set up</a>
+          <a href="/en/collector/android/collect-data/high-accuracy-gps.htm" class="btn btn-grouped btn-clear btn-half leader-0">Use it</a>
+        </nav>
+      </div>
     </div>
+  </div>
+</div>
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/collector/feed/',
-        max: 5,
-        layout: 0
-      });
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Get even more out of ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<!--div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div-->
 
-    });
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with Collector</h4>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri/collector-tools"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/applications/collector-for-arcgis"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/collector/">More posts</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/collector/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-  </script>
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Join the conversation
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/applications/collector-for-arcgis">More conversations</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2120" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-   <script src="/en/asset/js/app-collector-1.js" type="text/javascript"></script>
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Take an in-depth lesson</a></h5>
+          <p class="trailer-0">
+            Find and complete exercises that solve real-world problems with ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Find training courses</a></h5>
+          <p class="trailer-0">
+            Learn more about ArcGIS through instructor-led courses, web courses, and seminars.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Get technical support</a></h5>
+          <p class="trailer-0">
+            Contact Esri Support by chat, email, or telephone.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Check system health</a></h5>
+          <p class="trailer-0">
+            See the status of ArcGIS Online and report issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

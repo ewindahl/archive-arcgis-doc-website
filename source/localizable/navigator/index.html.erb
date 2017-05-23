@@ -1,295 +1,277 @@
 ---
 title: Navigator for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/navigator-1
-  - libs/jquery.colorbox-min
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+  - switchers/navigator-1
 
 metatags:
-  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2016-07-05"><META name="product" content="navigator-iphone,navigator-ipad"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en">
-
+  - <META name="description" content="Navigator for ArcGIS Home page."><META name="last-modified" content="2017-01-11"><META name="product" content="navigator-iphone,navigator-ipad,navigator-android-tablet,navigator-android-phone"><META name="sub_category" content="Navigator for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Navigator for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="MOBILE,MOBILE APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="en"><META name="msApplication-TileImage" content="/img/app-tile/navigator.jpg">
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/navigator/">Navigator for ArcGIS</a></h1>
-	  <form id="helpSearchForm" target="_top">
-       <input type="search" name="q" class="leader" placeholder="Search Navigator"> 
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="navigator-ipad" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	 <nav>
-      <ul>
-        <li class='current'><a href="/en/navigator/">Home</a></li>
-        <li><a href="/en/navigator/prepare-maps/prepare-maps.htm">Prepare maps</a></li>
-        <li><a href="/en/navigator/ipad/navigate/guided-tour.htm">Navigate</a></li>
-        <li><a href="http://links.esri.com/geonet-navigator">Forum</a></li> 
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Navigator for ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="https://marketplace.arcgis.com/signin.html?returnUrl=purchase.html%3Fid%3Db2d9a4dd70174fac8986dd2bf15a477a%26trial%3Dtrue">Free Trial</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/navigator/" selected>Home</option>
+        <option value="/en/navigator/overview/overview.htm">Overview</a>
+	<option value="/en/navigator/prepare-maps/prepare-maps.htm">Prepare maps</a>
+        <option value="/en/navigator/android-phone/navigate/guided-tour.htm">Navigate</a>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/en/navigator/">Home</a>
+        <a class="sub-nav-link" href="/en/navigator/overview/overview.htm">Overview</a>
+        <a class="sub-nav-link" href="/en/navigator/prepare-maps/prepare-maps.htm">Prepare maps</a>
+        <a class="sub-nav-link" href="/en/navigator/android-phone/navigate/guided-tour.htm">Navigate</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Get Where You Need to Be</h1>
+      <h5>Use the data provided, your own custom data, or both, to search and navigate directly to your organization's assets, unlocking efficiency and improving your mobile workforce's reliability.</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Search Navigator Help">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="navigator-android-phone" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- download badges -->
+      <p class="trailer-0 leader-half font-size--2">
+        <a href="https://itunes.apple.com/us/app/navigator-for-arcgis/id980973560"><img src="/assets/img/badges/app_store.svg" alt="Download on the App Store" style="margin:10px; vertical-align:middle"/></a>
+        <a href="https://play.google.com/store/apps/details?id=com.esri.navigator&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:10px; vertical-align:middle"/></a>
+        <a href="https://www.amazon.com/Esri-Inc-Navigator-for-ArcGIS/dp/B01GKLLC36/"><img alt="Available at Amazon" src="/assets/img/badges/amazon.png" style="height:40px; margin:10px; vertical-align:middle"/></a>
+
+      </p>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <!--li><strong>Current update:</strong> December 2016</li-->
+        <li><a href="/en/navigator/overview/whats-new.htm">What's new</a></li>
+	<li><a href="/en/navigator/overview/requirements.htm">Requirements</a></li>
+	<li><a href="/en/navigator/prepare-maps/faqs-author.htm">FAQs for preparing maps</a></li>
+	<li><a href="/en/navigator/android-phone/navigate/faqs.htm">FAQs for navigating</a></li>
       </ul>
-    </nav>  
+      <hr class="leader-half trailer-half">
+    </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-    <div class="column-16 tablet-column-24">
-	   <h3 class="gray">Navigate to where you need to be, unlock efficiency, and improve your field workforce reliability.</h3>
-
-        <p>
-          <a href="http://links.esri.com/navigator-ios-install"><img src="ios-app.png" style="margin:10px; vertical-align:middle"/></a> 
-          <a style="font-size:1.23em; margin:10px; vertical-align:middle" class="btn primary icon-android" href="https://earlyadopter.esri.com/callout/?callid=%7b28F9956B-A1F0-4793-8B7E-BA0E9473D06A%7d">Android now in beta!</a>
-        </p> 
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-		<a href="http://video.arcgis.com/iframe/4633/000000/width/960/0/00:00:00" class="videoLink colorbox-evlarge cboxElement" title="Get Started with Navigator for ArcGIS"><img src="nav-home-1.png" /><img src="/img/playbtn.png" class="playbtn"></a>
-		
-          <h3>Guided tour</h3>
-          <p>Download maps relevant to you, create a route, reorder your stops, configure travel modes, and route to your destination.</p>
-          <p>
-		<a href="/en/navigator/ipad/navigate/guided-tour.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />  
-		<a href="http://video.arcgis.com/iframe/4633/000000/width/960/0/00:00:00" title="Get Started with Navigator for ArcGIS" class="videoLink colorbox-evlarge cboxElement icon-play">&nbsp;Watch a video</a>
-				
-          </p>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/navigator/android-phone/navigate/guided-tour.htm">
+            <img alt="" src="/en/navigator/img/guidedTour.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/navigator/android-phone/navigate/guided-tour.htm">Guided tour</a>
+          </h5>
+          <p>Follow along and try out Navigator&mdash;download maps relevant to you, create a route, reorder your stops, configure travel modes, and route to your destination.</p>
         </div>
-        
-	<div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="nav-home-2.png" title="Use your data"/>
-
-          <h3>Use your data</h3>
-          <p>Create navigation maps with your own data&mdash;search your assets, route on your roads, and view your layers.</p>
-          <p>
-		  
-		<a href="/en/navigator/prepare-maps/prepare-maps.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
-				
-          </p>
-        </div>
-        
-        <div class="clear"></div>
-        
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-		<img src="1.png" title="Integrate with Collector"/>
-		
-          <h3>Integrate with Collector</h3>
-          <p>Easily connect with other Esri apps such as Collector for ArcGIS to navigate to work sites while in the field.</p>
-          <p>
-		  
-		<a href="/en/navigator/ipad/navigate/esri-app-integration.htm" class="icon-right-arrow">&nbsp;Show me how</a><br />
-				
-          </p>
-        </div>
-        
-	<div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="4.PNG" title="Send stops to Navigator"/>
-
-          <h3>Send stops to Navigator</h3>
-          <p>Use the custom URL scheme so your users can start Navigator from your app, website, or email, and navigate based on parameters you've provided.</p>
-          <p>
-            <a href="https://github.com/Esri/navigator-integration" class="icon-github">&nbsp;See how on GitHub</a><br />
-          </p>
-        </div>
-        
-        <div class="clear"></div>
-
-        <a name="features"></a>
-        <h2 class="divider">Features</h2>
-        <p>Get directions, edit routes, and start navigating to get your workforce where it needs to be.</p>
-        <ul>
-          <li>Use voice-guided turn-by-turn directions with automatic route recalculation.</li>
-          <li>Navigate completely offline with locally stored data.</li>
-          <li>Access Esri's navigation data or use your own maps&mdash;search your assets, route on your roads, and view your layers.</li>
-          <li>Complete stops one at a time, or create a work list for an entire day's work.</li>
-          <li>Use vehicle-specific travel modes.</li>
-          <li>Receive stops from an email, your own app, or other ArcGIS apps such as Collector for ArcGIS.</li>
-        </ul>
-        
-        <a name="systemRequirements"></a>
-        <h2 class="divider">System requirements</h2>
-	<table><tr>
-          <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
-            <ul>
-              <li>Version 8 or later</li>
-              <li>iPad (fourth generation or later for best performance), iPhone (6 or later for best performance), iPod touch</li>
-            </ul>
-          </td>
-          <td valign="top" width="250px;"><h4 class="icon-android">Android (Beta)</h4>
-	    <ul>
-	      <li>Android 4.2 (Jelly Bean) or later</li>
-	      <li>ARMv7 or x86 processor</li>
-	      <li>OpenGL ES 2.0 support</li>
-	      <li>Precise location (GPS and network-based) support</li>
-            </ul>
-          </td>
-        <tr></table>
-
-	 <h3>Supported languages</h3>
-	    <p>Arabic, Dutch, English, French, German, Greek, Hebrew, Italian, Japanese, Korean, Portuguese (Brazil), Portuguese (Portugal), Russian, Simplified Chinese, Spanish, and Turkish.</p>        
-
-
-	<a name="arcgisRequirements"></a>
-        <h2 class="divider">ArcGIS requirements</h2>
-        <p>To use Navigator for ArcGIS, you must have an ArcGIS organizational account that has been configured with a Navigator for ArcGIS license. 
-        For details about using ArcGIS Online, see <a href="/en/arcgis-online/administer/manage-licenses.htm#ESRI_SECTION1_C9282762EB1F4A72BB3D8794F2E4E516" target="_blank">About Navigator for ArcGIS licensing</a>. 
-        For details about using Portal for ArcGIS, see <a href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-navigator-for-arcgis-licenses.htm#ESRI_SECTION1_D9DCE11B3F03413BBD608ECFA8BC4A04">Configure Navigator for ArcGIS licenses for your organization</a>. 
-        ArcGIS Online and Portal for ArcGIS 10.4 and later are supported. </p>
-        
-        <p>You can use Esri-provided navigation maps or you can create your own. Esri-provided maps are available in ArcGIS Online or Portal for ArcGIS and can be downloaded to your device. For more details on the provided maps, see <a href="http://server.arcgis.com/en/streetmap-premium/latest/coverage/navigator-maps.htm">Navigator Map coverage</a>.</p>
-        <p>The requirements for creating or modifying a map for use in Navigator depend on what you want to edit. See <a href="/en/navigator/prepare-maps/faqs-author.htm#anchor3">Which licenses do I need to work with navigation maps?</a></p>
-            
-        <a name="whatsNew"></a>
-        <h2 class="divider">What's new</h2>     
-        
-        <table>
-	  <tr>
-	    <td valign="top" width="250px;"><h4 class="icon-apple">iOS</h4>
-	      <p>Navigator for ArcGIS 2.0 was released in July 2016. It includes the following enhancements:</p>
-	    </td>
-	    <td valign="top" width="250px;"><h4 class="icon-android">Android (Beta)</h4>
-	      <p>Navigator for ArcGIS went into beta in May 2016. It includes the following enhancements:</p>
-	    </td>
-	  </tr>
-	  <tr>
-	    <td valign="top"><ul>
-              <li>Use your own maps&mdash;search your assets, route on your roads, and view your layers</li>
-              <li>Multiple stops can be automatically reordered into optimized routes</li>
-              <li>Pass addresses with the custom URL scheme</li>
-              <li>Support for Portal for ArcGIS 10.4 and later</li>
-              <li>Localized into Arabic, Dutch, Hebrew, and Portuguese (Brazil)</li>
-              <li>Various bug fixes and improvements</li>
-	    </ul></td>
-	    <td valign="top"><ul>
-	      <li>Includes all features listed as in development for Android in the <a href="#sneakPeek">Sneak peek</a> table. All features currently released on iOS are supported.</li>
-	    </ul></td>
-	  </tr>
-        </table>
-        
-	<a name="sneakPeek"></a>
-	<h2 class="divider">Sneak peek</h2>
-	<p>	The following table outlines the progress of this app, showing capabilities for each device platform: </p>
-	
-	<style>
-	  table.sneakPeek
-	  {
-	    text-align:center;
-	  }
-	  table.sneakPeek tr.heading th
-	  {
-	    background-color:lightgray;
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	  table.sneakPeek tr#deviceHeadings th
-	  {
-	    font-style:italic;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
-	  }
-	</style>
-        <table class="sneakPeek" border="1">
-	  <caption>Functionality by platform<br/>
-	  <span class="icon-check" style="color:black"></span> released, <span class="icon-check icon-orange"></span> in development, <span class="icon-check" style="color:lightgray"></span><span class="clear"/> later<br/>
-	  Blank cells indicate unplanned functionality.<br/>
-	  Support for desktops is currently not planned.
-	  </caption>
-	  <tr>
-	    <td></td>
-	    <td><span class="icon-apple"/></td>
-	    <td><span class="icon-android"/></td>
-	    <td><span class="icon-windows-8 icon-purple"/></td>
-	  </tr>
-	  <tr>
-	    <td>Navigate using included maps</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	  <tr>
-	    <td>Navigate using your own custom maps (geocoding, routing, and display)</td>
-	    <td><span class="icon-check"></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr> 
-	  <tr>
-	    <td>Work with ArcGIS Online</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>
-	  <tr>
-	    <td>Work with Portal for ArcGIS</td>
-	    <td><span class="icon-check"></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	  <tr>
-	    <td>Navigate, route, and search using maps stored on your device</td>
-	    <td><span class="icon-check"/></td>
-	    <td><span class="icon-check icon-orange"></td>
-	    <td><span class="icon-check" style="color:lightgray"/></td>
-	  </tr>	
-	</table>
-	
-	<p>Share your <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Bnavigator-for-arcgis%5D">ideas</a>, and <a href="mailto:Navigator4ArcGIS@esri.com?subject=Navigator%20feedback">send us your feedback</a>.</p>
-	
-        <p>&nbsp;</p>
-
-
+        <nav>
+          <a href="/en/navigator/android-phone/navigate/guided-tour.htm" class="btn btn-grouped btn-clear btn-half leader-0">Do it</a>
+          <a href="http://video.arcgis.com/iframe/4633/000000/width/960/1" class="btn btn-grouped btn-clear btn-half leader-0">Watch it</a>
+        </nav>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-	  <h3>Details</h3>
-	          
-	  <h4><a href="#features">Features</a></h4>
-	  <h4><a href="#systemRequirements">System requirements</a></h4>
-	  <h4><a href="#arcgisRequirements">ArcGIS requirements</a></h4>
-	  <h4><a href="#whatsNew">What's new</a></h4>
-	  <h4><a href="#sneakPeek">Sneak peek</a></h4>
-	          
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/navigator/prepare-maps/prepare-maps.htm">
+            <img alt="" src="/en/navigator/img/yourData.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/navigator/prepare-maps/prepare-maps.htm">Use your data</a>
+          </h5>
+          <p>Create navigation maps with your own data&mdash;search your assets, route on your roads, and view your layers.</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-       <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-          </div>
-        </div> 
-
- </div>
-
+        <a href="/en/navigator/prepare-maps/prepare-maps.htm" class="btn btn-clear btn-fill leader-0">Start the exercise</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/en/navigator/android-phone/navigate/esri-app-integration.htm">
+            <img alt="" src="/en/navigator/img/collectData.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/en/navigator/android-phone/navigate/esri-app-integration.htm">Integrate with Collector</a>
+          </h5>
+          <p>Easily connect with other Esri apps such as Collector for ArcGIS to navigate to work sites while in the field.</p>
+        </div>
+        <a href="/en/navigator/android-phone/navigate/esri-app-integration.htm" class="btn btn-clear btn-fill leader-0">Learn how</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="https://github.com/Esri/navigator-integration">
+            <img alt="" src="/en/navigator/img/sendStops.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="https://github.com/Esri/navigator-integration">Send stops to Navigator</a>
+          </h5>
+          <p>Use the custom URL scheme so your users can start Navigator from your app, website, or email, and navigate based on parameters you've provided.</p>
+        </div>
+        <a href="https://github.com/Esri/navigator-integration" class="btn btn-clear btn-fill leader-0">See how on GitHub</a>
+      </div>
     </div>
+  </div>
+</div>
 
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Get even more out of ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<!--div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div-->
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/navigator-for-arcgis/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-  </script>
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connect with Navigator</h4>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri/navigator-integration"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/groups/navigator"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
+
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/navigator-for-arcgis/">More posts</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/navigator-for-arcgis/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Join the conversation
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/groups/navigator">More conversations</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4109" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Take an in-depth lesson</a></h5>
+          <p class="trailer-0">
+            Find and complete exercises that solve real-world problems with ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/Bookmark/BJ6jZllDe">Find training courses</a></h5>
+          <p class="trailer-0">
+            Learn more about Navigator for ArcGIS through instructor-led courses, web courses, and seminars.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Get technical support</a></h5>
+          <p class="trailer-0">
+            Contact Esri Support by chat, email, or telephone.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Check system health</a></h5>
+          <p class="trailer-0">
+            See the status of ArcGIS Online and report issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

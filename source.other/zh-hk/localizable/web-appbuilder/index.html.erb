@@ -1,15 +1,14 @@
 ---
 title: Web AppBuilder for ArcGIS
 css:
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - video-init
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - sitecfg.js
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
   - <META name="description" content="Web AppBuilder for ArcGIS"><META name="last-modified" content="2014-9-18"><META name="product" content="web-appbuilder"><META name="sub_category" content="Web AppBuilder"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Web AppBuilder"><META name="search-category" content="help-general"><META name="subject_label" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS,WEB APPLICATIONS,WEB,ARCGIS ONLINE"><META name="content-language" content="zh-hk">
@@ -17,213 +16,230 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/zh-hk/web-appbuilder/">Web AppBuilder for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Web AppBuilder ">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="web-appbuilder" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	 <nav>
-      <ul>
-        <li class='current'><a href="/zh-hk/web-appbuilder/">首頁</a></li>
-        <li><a href="/zh-hk/web-appbuilder/create-apps/">建立應用程式</a></li>
-        <li><a href="/zh-hk/web-appbuilder/manage-apps/">管理應用程式</a></li>
-        <li><a href="/zh-hk/web-appbuilder/extend-apps/">延伸應用程式</a></li>
+
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Web AppBuilder for ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/web-appbuilder/" selected>首頁</option>
+        <option value="/en/web-appbuilder/create-apps/">建立應用程式</option>
+        <option value="/en/web-appbuilder/manage-apps/">管理應用程式</option>
+        <option value="/en/web-appbuilder/extend-apps/">延伸應用程式</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/zh-hk/web-appbuilder/">首頁</a> <a class="sub-nav-link" href="/zh-hk/web-appbuilder/create-apps/">建立應用程式</a> <a class="sub-nav-link" href="/zh-hk/web-appbuilder/manage-apps/">管理應用程式</a> <a class="sub-nav-link" href="/zh-hk/web-appbuilder/extend-apps/">延伸應用程式</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>建立功能強大且能執行於任何裝置的 GIS 應用程式。不需編寫程式碼。</h1>
+      <h5>請按一下<a href="http://www.arcgis.com/apps/MapAndAppGallery/index.html?appid=1e3085af6e1a48c8908fa624bdfef768">網站即時展示</a>，看看其他人的作品。</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="搜尋 Web AppBuilder for ArcGIS">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="web-appbuilder" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+
+   </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+		<li><strong>目前更新：</strong>2017 年 3 月</li>
+        <li><a href="/zh-hk/web-appbuilder/create-apps/what-s-new.htm">新功能</a></li>
+        <li><a href="/zh-hk/web-appbuilder/create-apps/what-is-web-appbuilder.htm#GUID-80FD326A-705E-4CBC-8514-8600D723182C">主要功能</a></li>
+	    <li><a href="/zh-hk/web-appbuilder/create-apps/what-is-web-appbuilder.htm#GUID-0ECD95DE-A8F6-4169-B9CE-E85E45490A45">授權</a></li>
+        <li><a href="/zh-hk/web-appbuilder/create-apps/supported-browsers.htm">支援的瀏覽器</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-  <div class="column-16 tablet-column-24"> 
-
-    <h3 class="gray">建立功能強大且能執行於任何裝置的 GIS 應用程式。不需編寫程式碼。</h3>
-	<h5>請按一下<a href="http://www.arcgis.com/apps/MapAndAppGallery/index.html?appid=1e3085af6e1a48c8908fa624bdfef768">網站即時展示</a>，看看其他人的作品。</h5>
-  
-    <hr />
-
-        <div id="firstApp" class="column-12 phone-column-24">
-          <img src="img/builder-firstapp.jpg" />
-          <p></p>
-
-          <h3>五分鐘就能建立您的第一款應用程式</h3>
-          
-          <p>
-            <a href="/zh-hk/web-appbuilder/create-apps/make-first-app.htm" class="icon-right-arrow">&nbsp;詳情介紹</a>
-          </p>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/zh-hk/web-appbuilder/create-apps/make-first-app.htm">
+            <img alt="" src="img/builder-firstapp.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-hk/web-appbuilder/create-apps/make-first-app.htm">五分鐘就能建立您的第一款應用程式</a>
+          </h5>
+          <p>只要五分鐘就能建立您的應用程式。</p>
         </div>
-
-        <div id="easyConfig" class="column-12 phone-column-24">
-          <img src="img/builder-widgets.jpg" />
-          <p></p>
-
-          <h3>簡易的設定方式</h3>
-          <p>運用簡易的設定方式就能建立應用程式。</p>
-          <p>
-            <a href="/zh-hk/web-appbuilder/create-apps/themes-tab.htm" class="icon-right-arrow">&nbsp;設定應用程式</a> <a href="/zh-hk/web-appbuilder/create-apps/widget-attribute-table.htm" class="icon-right-arrow">&nbsp;設定 Widget</a>
-          </p>
-        </div>
-
-        <div class="clear"></div>
-
-        <div id="customTemplates" class="column-12 phone-column-24">
-          <img src="img/builder-template.jpg" />
-          <p></p>
-
-          <h3>匯出範本</h3>
-          <p>建立可設定的應用程式範本，將範本新增至貴組織的應用程式庫。
-          <p>
-            <a href="/zh-hk/web-appbuilder/manage-apps/export-as-template.htm" class="icon-right-arrow">&nbsp;詳情介紹</a>
-          </p>
-        </div>
-
-        <div id="customize" class="column-12 phone-column-24">
-          <img src="img/builder-customize-encinitas.jpg" />
-          <p></p>
-
-          <h3>建立 Widget 和主題</h3>
-          <p>您可以下載應用程式並在 Web 伺服器上完成部署。此外，只要新增自訂的 Widget 和主題，就能進一步延伸應用程式功能。</p>
-          <p>
-            <a href="/zh-hk/web-appbuilder/extend-apps/" class="icon-right-arrow">&nbsp;詳情介紹</a>
-          </p>
-        </div>
-
-        <div class="clear"></div>
-		
-
-        <a name="supportedBrowsers"></a>
-        <h2 class="divider">支援的瀏覽器</h2>
-		<p>2D 應用程式支援下列瀏覽器：</p>
-        <ul>
-          <li>Chrome</li>
-          <li>Firefox</li>
-          <li>Safari 3 及更高版本</li>
-		  <li>Edge</li>
-          <li>Internet Explorer 9 及更高版本</li>
-        </ul>
-		<p>3D 應用程式支援下列瀏覽器：</p>
-        <ul>
-          <li>Chrome</li>
-          <li>Firefox</li>
-          <li>Safari 7.2 及更高版本</li>
-		  <li>Edge</li>
-          <li>Internet Explorer 11</li>
-        </ul>
-		
-        <a name="license"></a>
-        <h2 class="divider">許可</h2>
-
-        <p>若要使用 Web Appbuilder，您必須申請 ArcGIS 組織帳戶。</p>
-
-        <a name="features"></a>
-        <h2 class="divider">主要功能</h2>
-        <ul>
-          <li>建立能執行於任何裝置的 HTML/JavaScript 應用程式。</li>
-          <li>運用現成的 Widget 建立您需要的應用程式。</li>
-          <li>使用可設定的主題自訂應用程式的外觀。</li>
-          <li>線上託管您的應用程式或在您自己的伺服器上運行這些應用程式。</li>
-          <li>建立自訂應用程式樣板。</li>
-        </ul>
-        
-
-         <a name="whatIsNew"></a>
-        <h2 class="divider">新功能</h2>
-        <p>Web AppBuilder for ArcGIS 已於 2016 年 9 月更新。其中包含下列新功能和增強功能：</p>
-        <ul>
-          <li>您可以在「編輯」widget 中編輯相關記錄。</li>
-		  <li>您可以在「搜尋」widget 中執行本機搜尋。</li>
-		  <li>配置「篩選器」和「群組篩選器」widget 時，您可以關閉地圖中預設的篩選器。</li>
-		  <li>您可以在「查詢」和「篩選器」widget 中，根據先前的表達式篩選唯一值。</li>
-		  <li>「啟動」widget 可讓您將圖片作為啟動畫面的背景，並自訂啟動畫面的外觀，例如大小、背景，及按鈕的顏色和文字。</li>
-		  <li>「選擇」widget 可新增更多選擇工具，讓您除了矩形外，還可以按多邊形、折線或圓形選擇圖徵。</li>
-          <li>「靠近我」widget 可從結果清單中移除沒有結果的圖層。</li>
-		  <li>3DFx widget 可加入區域拉伸效果，讓您可以拉伸多邊形，而不只是點和折線。</li>
-		  <li>3D 應用程式支援 Web 場景中的整合式網格場景圖層。</li>
-		  <li>與具備更新能力的群組分享應用程式時，管理員和群組成員可編輯和儲存這些應用程式。</li>
-		  
-        </ul>
-
-         <a name="supportedAPI"></a>
-        <h2 class="divider">支援的 ArcGIS API for JavaScript 版本</h2>
-        <p>Web AppBuilder 支援 ArcGIS API for JavaScript 3.18。</p>
-
-        <h3>支援的語言</h3>
-        <p>阿拉伯語、克羅埃西亞語、捷克語、丹麥語、荷蘭語、英語、愛沙尼亞語、芬蘭語、法語、德語、希臘語、希伯來語、義大利語、日語、韓語、拉脫維亞語、立陶宛語、挪威語、波蘭語、葡萄牙語（巴西）、葡萄牙語（葡萄牙）、羅馬尼亞語、俄語、塞爾維亞語、簡體中文、西班牙語、瑞典語、泰語、繁體中文（台灣）、繁體中文（香港）、土耳其語和越南語。</p>
-        <p>應用程式所用的語言以瀏覽器的語言設定為準。</p>
-
-        <p>分享<a href="http://ideas.arcgis.com/">創意</a>並<a href="http://support.esri.com/en/">將您的意見寄給我們</a>。</p>
-  
-        <p>&nbsp;</p>
-
-  </div> 
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>詳細資訊</h3>
-          
-          <h4><a href="#features">主要功能</a></h4>
-          <h4><a href="#supportedBrowsers">支援的瀏覽器</a></h4>
-          <h4><a href="#license">授權</a></h4>
-          <h4><a href="#whatIsNew">新功能</a></h4>
-          <h4><a href="#supportedAPI">支援的 ArcGIS API for JavaScript 版本</a></h4>
-          
-        </div>
-
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>部落格</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
-          <a href="http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/" class="btn secondary">更多部落格文章</a>
-        </div>
-
-        <br />
-     
-        <section id="forum-container">
-        <div class="panel">
-        <h3>GeoNet 討論</h3>
-        <div id="forum"></div>
-        <a href="https://geonet.esri.com/discussion/create.jspa?containerType=14&containerID=2150" class="btn secondary">開始討論</a>&nbsp; <a href="https://geonet.esri.com/community/gis/web-gis/web-appbuilder/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D" class="btn light">參閱詳細資訊</a>
-        </div>
-        </section> 
-
+        <a href="/zh-hk/web-appbuilder/create-apps/make-first-app.htm" class="btn btn-clear btn-fill leader-0">顯示更多</a>
       </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/zh-hk/web-appbuilder/create-apps/themes-tab.htm">
+            <img alt="" src="img/builder-widgets.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-hk/web-appbuilder/create-apps/themes-tab.htm">簡易配置</a>
+          </h5>
+          <p>運用簡易的設定方式就能建立應用程式。</p>
+        </div>
+        <a href="/zh-hk/web-appbuilder/create-apps/themes-tab.htm" class="btn btn-clear btn-fill leader-0">配置應用程式</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/zh-hk/web-appbuilder/manage-apps/export-as-template.htm">
+            <img alt="" src="img/builder-template.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-hk/web-appbuilder/manage-apps/export-as-template.htm">匯出範本</a>
+          </h5>
+          <p>建立可設定的應用程式範本，將範本新增至貴組織的應用程式庫。</p>
+        </div>
+        <a href="/zh-hk/web-appbuilder/manage-apps/export-as-template.htm" class="btn btn-clear btn-fill leader-0">顯示更多</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/zh-hk/web-appbuilder/extend-apps/">
+            <img alt="" src="img/builder-customize-encinitas.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-hk/web-appbuilder/extend-apps/">建立 widget 和主題</a>
+          </h5>
+          <p>您可以下載應用程式並在 Web 伺服器上完成部署。此外，只要新增自訂的 Widget 和主題，就能進一步延伸應用程式功能。</p>
+        </div>
+        <a href="/zh-hk/web-appbuilder/extend-apps/" class="btn btn-clear btn-fill leader-0">顯示更多</a>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">發揮 ArcGIS 的最大功能</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/feed/',
-        max: 2,
-        layout: 0
-      });
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">與 Web AppBuilder for ArcGIS 連線</h4>
+    <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
+    <a aria-label="Connect on Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/esri_apps"></a>
+    <a aria-label="Connect on LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285 "></a>
+    <a aria-label="View GitHub projects" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href=" https://esri.github.io/"></a>
+    <a aria-label="Join the community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/web-gis/web-appbuilder/"></a>
+    <a aria-label="Send us feedback" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-      $("#forum").rssFeed({
-       url:"https://geonet.esri.com/view-browse-feed.jspa?containerType=14&browseSite=place-content&filterID=contentstatus[published]~objecttype~objecttype[thread]&userIDs=-1&browseViewID=placeContent&containerID=2150", 
-       max: 3,        
-       layout: 1
-      }); 
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">閱讀我們的部落格 <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/">更多文章</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/web-appbuilder/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-    });
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">參與討論 <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/web-gis/web-appbuilder/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D">更多討論</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2150" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-
-  </script>
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">參加深入課程</a></h5>
+          <p class="trailer-0">
+            尋找和完成練習，使用 ArcGIS 以解決實際的全球問題。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">尋找培訓課程</a></h5>
+          <p class="trailer-0">
+ 透過教師領導課程、Web 課程和研討會來深入瞭解 ArcGIS。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">取得技術支援</a></h5>
+          <p class="trailer-0">
+ 透過聊天、電子郵件或電話聯繫 Esri 支援。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">檢查系統健康</a></h5>
+          <p class="trailer-0">
+ 查看 ArcGIS Online 的狀態並回報問題。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

@@ -1,285 +1,264 @@
 ---
 title: ArcGIS Maps for Office
-
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.colorbox-min.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2015-10-30"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-4.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ar">
+  - <META name="description" content="ArcGIS Maps for Office Home page."><META name="last-modified" content="2017-04-19"><META name="product" content="esri-maps-office"><META name="sub_category" content="Maps for Office"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Maps for Office"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="arcgis-maps-office-5.0"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="ar">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-	<header>
-		<h1><a href="/ar/maps-for-office/">ArcGIS Maps for Office</a></h1>
-		<form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search ArcGIS Maps for Office">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="esri-maps-office" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	
-	<nav>
-      <ul>
-        <li class='current'><a href="/ar/maps-for-office/">الصفحة الرئيسية</a></li>
-        <li><a href="/ar/maps-for-office/install-and-configure/">تثبيت وتكوين</a></li>
-        <li><a href="/ar/maps-for-office/design-and-use/">تصميم الخرائط واستخدامها</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/content?filterID=contentstatus%5Bpublished%5D~tag%5B_office%5D">GeoNet</a></li>
+
+<!-- Updated template March 23/17 (kf) -->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Maps for Office</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="//www.esri.com/software/arcgis/arcgisonline/apps/download">تنزيل ArcGIS Maps for Office</a>
+          <!-- INSTRUCTIONS: Remove this p tag if not needed -->
+          <p class="trailer-0 leader-0 text-white font-size--2"><strong>الإصدار 4.1</strong> Q1 2017</p>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/maps-for-office/" selected>الصفحة الرئيسية</option>
+        <option value="/en/maps-for-office/install-and-configure/">تثبيت وتكوين</option>
+        <option value="/en/maps-for-office/design-and-use/">تصميم الخرائط واستخدامها</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/ar/maps-for-office/">الرئيسية</a>
+        <a class="sub-nav-link" href="/ar/maps-for-office/install-and-configure/">تثبيت وتكوين</a>
+        <a class="sub-nav-link" href="/ar/maps-for-office/design-and-use/">تصميم الخرائط واستخدامها</a></span>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>تعيين بيانات جدول البيانات</h1>
+      <h5>استخدم ArcGIS Maps for Office للحصول على أفق جديدة في بيانات Excel واتخاذ قرارات أكثر قرارات على الفور.</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="البحث في ArcGIS Maps for Office">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="esri-maps-office" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="/ar/maps-for-office/install-and-configure/whats-new.htm">ما الجديد</a></li>
+        <li><a href="/ar/maps-for-office/install-and-configure/supported-environments.htm">البيئات المدعومة</a></li>
+	      <li><a href="/ar/maps-for-office/install-and-configure/m4o-faq.htm">الأسئلة المتداولة (FAQs)</a></li>
+        <li><a href="/ar/maps-for-office/4.0/install-and-configure/about-esri-maps-for-office.htm">التعليمات المؤرشفة</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-    <div class="column-16 tablet-column-24">
-        <header>
-		<h2 id="appTitle">تنزيل التطبيق</h2>
-        <span id="appVersion"><strong>الإصدار:</strong> 4.0</span> <span id="appReleased"><strong>متوفر:</strong> ربيع 2016</span>
-
-          <p>كن إنتاجيًا بشكل أفضل مع عمليات التحليل المستندة إلى الموقع. قم بإحضار أبعاد تحليلية جديدة كاملة لـ Microsoft Office. ابدأ بالحصول على معالم جديدة واتخاذ قرارات أكثر فاعلية في الحال. إضافة التخطيط إلى جداول بيانات Excel والعروض التقديمية لـ PowerPoint بسهولة.</p>
-
-          <p>
-             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download">الحصول على ArcGIS Maps for Office</a>
-          </p>
-		  
-        </header>
-        <hr />
-        <br />
-
-<!-- features top row -->
-		<!-- Map your Excel data -->
-		<div id="em4oFirstFeature" class="column-12 phone-column-24">
-			<img src="Map-your-data.png" alt="Map your Excel data" />
-		  
-			<h3>تعيين بيانات Excel</h3>
-			<p>إنشاء خرائط تفاعلية لبيانات جداول البيانات في Excel مباشرةً. باستخدام عدة نقرات قم بإنشاء لون مُكود ونقطة ونقطة مُجمعة وخرائط حرارية والحصول على رؤى مرئية متعلقة بالبيانات.</p>
-			<p>&gt; <a href="/ar/maps-for-office/design-and-use/add-a-map-to-excel.htm">تعلم المزيد</a></p>
-		</div>
-
-		<!-- Analyze data -->
-        <div id="em4oSecondFeature" class="column-12 phone-column-24">
-			<!-- REPLACE IMAGE > PPT -->
-			<img src="Analyze-your-data.png" alt="Add a map to PowerPoint" />
-			<h3>إضافة خرائط ديناميكية إلى PowerPoint</h3>
-			<p>إضافة خرائط من منظمة ArcGIS إلى Powerpoint لإنشاء عروض تقديمية رائعة وديناميكية.</p>
-			<p>&gt; <a href="/ar/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">تعلم المزيد</a></p>
-		</div>
-        <div class="clear"></div>
-
-<!-- features second row -->
-		<!-- Enrich your data -->
-		<div id="em4oThirdFeature" class="column-12 phone-column-24">
-			<img src="Enrich-your-spreadsheets.png" alt="Enrich your data" />
-
-			<h3>إثراء جداول بيانات الأعمال</h3>
-			<p>إضافة بيانات التوزيع الجغرافي ونمط الحياة مباشرةً إلى جداول بيانات Excel والحصول على مزيد من السياق حول المواقع المهمة لك. استكشف المواقع سريعًا أثناء التشغيل باستخدام الإنفوجرافكس المنبثقة.</p>
-			<p>&gt; <a href="/ar/maps-for-office/design-and-use/enrich-your-data.htm">تعلم المزيد</a></p>
-		</div>
-
-		<!-- Share maps -->
-		<div id="em4oFourthFeature" class="column-12 phone-column-24">
-			<img src="Share-your-data.png" alt="Share maps on ArcGIS" />
-			<h3>شارك الخرائط من Excel</h3>
-			<p>شارك الخرائط باستخدام إما ArcGIS Online أو Portal for ArcGIS أو أدرجهم في رسائل البريد الإلكتروني أو العروض التقديمية PowerPoint أو مستندات Word.</p>
-			<p>&gt; <a href="/ar/maps-for-office/design-and-use/share-a-map-on-arcgis.htm">تعلم المزيد</a></p>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+	
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/add-a-map-to-excel.htm">
+            <img alt="تعيين البيانات" src="/en/maps-for-office/img/map-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/add-a-map-to-excel.htm">تعيين بيانات Excel</a>
+          </h5>
+          <p>إنشاء خرائط تفاعلية لبيانات جداول البيانات في Excel مباشرةً. ببضع نقرات، أنشئ لون مُكود ونقطة ونقطة مُجمعة وخرائط حرارية واحصل على رؤى مرئية متعلقة بالبيانات.</p>
         </div>
-	<div class="clear"></div> 
-
-		<br />
-		
-<!-- What's new section -->
-	<hr />
-	<a id="whatsNew"></a>
- 	<h2>ما الجديد</h2>	
-	<p>&gt; هل لديك فكرة عن المعلم الذي تود أن تراه في ArcGIS Maps for Office؟ أخبرنا عنه في موقع <a href="http://ideas.arcgis.com/ideaList?c=09a300000004xET&category=Esri+Maps+for+Office" target="_blank">ArcGIS Ideas</a>.</p>
- 	<p>يتوفر الإصدار ArcGIS Maps for Office 4.0 الأن. يعرض هذا الإصدار تحديثات وتحسينات هامة. فيما يلي بعض الملامح الرئيسية.</p>
-	
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-
-		<h3>تحديثات 4.0</h3>
-		<p>يشمل ArcGIS Maps for Office 4.0 الميزات الجديدة التالية:
-			<ul>
-				<li><b>استخدم <a href="/ar/maps-for-office/design-and-use/change-a-layer-s-style.htm">التخطيط الذكي</a> لإنشاء خرائط جميلة بسرعة</b>
-					<p>إذا كنت خبيرًا في العمل مع الخرائط أو فقط الشروع في العمل، فإنه لم يكن من السهل إنشاء خرائط رائعة تحكي القصص التي ترغب في إخبارها. يعمل ArcGIS Maps for Office على تحليل البيانات في جدول البيانات ويقترح أفضل الطرق لتمثيلها على الخريطة، مما يعرض مجموعة مختارة من الأنماط للاختيار منهم. اختر نمطًا وقم بإنشاء خريطة على الفور أو قم بتخصيص خيارات الأنماط تناسب قصتك. يوفر التخطيط الذكي أيضًا القدرة المطلوبة بكثرة على تعيين فواصل التصنيف للطبقات يدويًا.</p>
-				</li>
-				<li><b>العثور على الأنماط في موقعك بمرور الوقت مع <a href="/ar/maps-for-office/design-and-use/map-temporal-data.htm">حركات قائمة على الوقت</a></b>
-					<p>إذا كانت تحتوي البيانات على قيم مؤقتة، يمكنك إضافة طبقات على علم بالوقت إلى خريطة في Excel وتشغيل الحركات التي تظهر كيفية تغيير الأنماط في البيانات بالتدريج. تدعم هذه الميزة أيضًا الطبقات الممكنة بالوقت على نظام ArcGIS الأساسي، مما يسمح للمستخدم بمقارنة الأنماط المستندة إلى الوقت في البيانات مع أنماط مماثلة من داخل المؤسسة أو من المصادر الموثوقة مثل الإدارة الوطنية الأمريكية للمحيطات والغلاف الجوي (NOAA).</p>
-				</li>
-				<li><b>الاتصال بعمل بفاعلية أكثر مع تجربة كل ما هو جديد في <a href="/ar/maps-for-office/design-and-use/add-a-map-to-powerpoint.htm">PowerPoint</a></b>
-					<p>يوفر ArcGIS Maps for Office تجربة كاملة محدثة لتحسين عروض Powerpoint التقديمية مع خرائط تفاعلية وديناميكية عن طريق جعلها أبسط وأسرع في البحث عن المحتوى. أضف الخرائط مباشرةً إلى PowerPoint باستخدام المحتوى من مؤسسة ArcGIS أو تحرير شرائح الخريطة الموجودة. قم بإدراج الخريطة داخل شريحة وقم بوضعها على النحو المرغوب—بمفردها أو جنبًا إلى جنب مع ميزات Powerpoint القياسية الأخرى مثل المخططات والصور والنصوص. في وضع عرض الشرائح، يمكنك تكبير/تصغير وتحريك عبر الخريطة وتحديد المعالم لعرض المعلومات التفصيلية، مما يسمح للمستخدم بالإجابة عن الأسئلة سريعًا التي تأتي أثناء العرض التقديمي.</p>
-				<li><b>التركيز على الصفوف التي تكون هامة باستخدام <a href="/ar/maps-for-office/design-and-use/select-features.htm#ESRI_SECTION1_53FF2A6DECC04ED4A5AAED1BDDBC9515">التنقية المستندة إلى الخريطة</a></b>
-					<p>لقد أصبحت قادرًا على تنقية جداول البيانات بواسطة قيمة الخلية لوقت طويل. يتيح الأن ArcGIS Maps for Office تنقية جدول البيانات بواسطة تحديد العناصر على الخريطة، مما يسمح للمستخدم بالتركيز مباشرةً على المعالم التي تعمل معها حاليًا. قم بتنقية جدول البيانات لعرض المعالم المحددة فقط، ثم استخدم وظائف Excel القياسية للعمل مع البيانات التي تحتاجها.</p>
-				</li>
-				<li><b>تتبع تغيير البيانات بواسطة تعيين <a href="/ar/maps-for-office/design-and-use/set-refresh-interval.htm">الفاصل الزمني للتحديث</a></b>
-					<p>تساعد الطبقات الثابتة المضافة من ArcGIS في تصور كائنات بلا حركة مثل المباني أو الطرق أو الحدود. يتيح الأن ArcGIS Maps for Office تتبع الأشياء التي تتحرك أو تتغير أو تتطور — مثل العواصف أو المركبات أو حالة العمل الميداني. تتيح ميزة الفاصل الزمني للتحديث تحديد عدد المرات التي تم خلالها تحديث الطبقة؛ أو انقر فوق أحد الأزرار لتحديث الطبقة على الفور</p>
-				</li>
-			</ul>
-		</p>
-	
-
-
-<!-- Supported environments section -->
-	<hr />
-	<a id="supportedEnvironments"></a>
-        <h2>البيئات المدعومة</h2>
-		<p>يتم نشر ArcGIS Maps for Office في صورة وظيفة إضافية على Microsoft Excel وMicrosoft PowerPoint. لكي يعمل ArcGIS Maps for Office بصورة صحيحة، تفترض Esri تكوين عملية التشغيل لهذه التطبيقات. تقوم Esri باختبار ArcGIS Maps for Office فقط في بيئات البرامج المعتمدة كما هي مدعمة من قِبل Microsoft Excel أو PowerPoint؛ وليس كل بيئات التي تدعم Excel أو PowerPoint التي تم اختبارهم أو اعتمادهم. للحصول على مزيد من المعلومات، راجع <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>سياسة بيئة esri المدعمة</a>.</p>
-		
-		<p><b>ملحوظة:</b> تتيح Microsoft Word تضمين جدول بيانات Excel والعمل معه في مستند. لا يتم دعم سير العمل الحالي بواسطة ArcGIS Maps for Office وغير مستحسن.</p>
-		
-		<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-
-		<!-- Sys Reqs -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">متطلبات النظام</a>
-		</h3>
-			<div exp1='yes' style="display:none;padding:0 15px;">
-			<p>يتطلب ArcGIS Maps for Office حسابًا يكون جزء من مؤسسة ArcGIS وMicrosoft Office Excel أو PowerPoint (Microsoft Office 2010 أو 2013 أو 2016).</p>
-			<p>لمزيد من المعلومات الإضافية التي تشمل سرعة المعالج المطلوبة والذاكرة ومساحة القرص الصلب، راجع متطلبات النظام للتالي:
-			<ul>
-				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351(V=OFFICE.14).ASPX" target="_blank">Microsoft Office 2010</a></li>
-				<li><a href="http://technet.microsoft.com/EN-US/LIBRARY/EE624351.ASPX" target="_blank">Microsoft Office 2013</a></li>
-				<li><a href="https://products.office.com/en-ca/office-system-requirements#SUITES" target="_blank">Microsoft Office 2016</a></li>
-			</ul>	
-			</p>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Req'd SW -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">البرنامج المطلوب</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-			<p>يتطلب ArcGIS Maps for Office اشتراك مؤسسي على <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> أو نشر Portal for ArcGIS محليًا. من المفترض أنه تم تكوين طريقة المصادقة المستخدمة للوصول إلى النظام الأساسي بصورة صحيحة بواسطة مسئول ArcGIS.</p>
-
-			<p>بالإضافة إلى ذلك، يجب أن يتم تثبيت البرنامج التالي وتكوينه في النظام:</p>
-				<ul>
-					<li>Microsoft Office 2010 أو إصدار 2013 أو 2016*</br>
-						*يدعم ArcGIS Maps for Office برنامج Microsoft Office 2016 بالإصدارات 16.0.4266.1003 والإصدارات السابقة.
-					</li>
-					<li>Internet Explorer 9 أو 10 أو 11**</li>
-					<li>Microsoft Windows. الإصدارات المدعومة:
-						<ul>
-							<li>Windows 7 (32 بايت و64 بايت)</li>
-							<li>Windows 8 (32 بايت و64 بايت)</li>
-							<li>Windows 8.1 (32 بايت و64 بايت)</li>
-							<li>Windows 10 (32 بايت و64 بايت)</li>
-							<li>Windows Server 2008 R2</li>
-							<li>Windows Server 2012</li>
-							<li>Windows Server 2012 R2</li>
-						</ul>
-					</li>
-				</ul>
-			<p>** يقوم ArcGIS Maps for Office باستخدام JavaScript داخل مستعرض ويب لعرض الخرائط. نظرًا لأن Microsoft Excel يتطلب استخدام Internet Explorer (IE) لعرض محتوى الويب، فلا يوجد خيار لاستخدام مستعرض أخر. تتطلب الوظائف الموجودة داخل التطبيق استخدام IE9 أو إصدار أحدث؛ لا يتم دعم الإصدارات القديمة.</p>
-			</div>
-			
-		<!-- Supported languages -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">اللغات المدعومة</a>
-		</h3>
-			<div exp3='yes' style="display:none;padding:0 15px;">
-			<p>يتوفر ArcGIS Maps for Office باللغات التالية:</p>
-			<p>العربية، الصينية (المبسطة)، الصينية (التقليدية هونغ كونغ)، الصينية (تايوان التقليدية)، التشيكية، الدانماركية، الألمانية، اليونانية، الإنكليزية، الإسبانية، الإستونية، الفلندية، الفرنسية، العبرية، الإيطالية، اليابانية، الكورية، الليتوانية، اللاتفية، الهولندية، النرويجية، البولندية، البرتغالية (البرازيلية)، البرتغالية (البرتغال) والرومانية والروسية، والسويدية، التايلاندية، التركية والفيتنامية.</p>
-			
-			<p>يستخدم ArcGIS Maps for Office اللغة المحددة في خيارات Excel، وليس إعداد ثقافة نظام عملية التشغيل. إذا كنت تستخدم إعدادات اللغة غير المدعومة، سيقوم التطبيق باستخدام اللغة الإنجليزية.</p>
-			
-			</div>
-
-        <p>&nbsp;</p>
-	</div>
-	
-	
-<!-- Sidebars -->
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>البدء</h3>
-          <ul>
-           <li><a href="#whatsNew">ما الجديد</a></li>
-            <li><a href="#supportedEnvironments">البيئات المدعومة</a></li>
-			<li>تعليمات الإصدارات السابقة:
-				<ul>
-					<li><a href="/ar/maps-for-office/3.1/welcome.htm">3.1 التعليمات عبر الإنترنت</a></li>
-				</ul>
-			</li>
-			<li><a href="http://video.arcgis.com/series/143/esri-maps-for-office">مشاهدة مقطع الفيديو</a></li>
-
-          </ul>
+        <a href="design-and-use/add-a-map-to-excel.htm" class="btn btn-clear btn-fill leader-0">على المزيد عن</a>
+      </div>
+	  
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/add-a-map-to-powerpoint.htm">
+            <img alt="" src="/en/maps-for-office/img/analyze-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/add-a-map-to-powerpoint.htm">إضافة خرائط ديناميكية إلى PowerPoint</a>
+          </h5>
+          <p>إضافة خرائط من منظمة ArcGIS إلى Powerpoint لإنشاء عروض تقديمية رائعة وديناميكية.</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>من المدونة</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <a href="design-and-use/add-a-map-to-powerpoint.htm" class="btn btn-clear btn-fill leader-0">على المزيد عن</a>
+      </div>
+	  
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="design-and-use/enrich-your-data.htm">
+            <img alt="" src="/en/maps-for-office/img/enrich-data.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="design-and-use/enrich-your-data.htm">إثراء جداول بيانات الأعمال</a>
+          </h5>
+          <p>إضافة ديموغرافيات ArcGIS وبيانات نمط الحياة إلى جداول بيانات Excel مباشرةً والحصول على مزيد من السياق عن المواقع التي تعنيك. ويمكنك أيضًا استكشاف المواقع سريعًا أثناء التشغيل باستخدام الإنفوجرافكس المنبثقة.</p>
         </div>
-
-	 </div>
-
-
+        <a href="design-and-use/enrich-your-data.htm" class="btn btn-clear btn-fill leader-0">على المزيد عن</a>
+      </div>
+	  
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-maps-for-office/">
+            <img alt="" src="/en/maps-for-office/img/salon-lesson.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-maps-for-office/">البدء مع ArcGIS Maps for Office</a>
+          </h5>
+          <p>استخدم بيانات جدول البيانات للعثور على العملاء المحتملين بجوار صالون جديد وإنشاء شريحة PowerPoint لتمثيل النتائج.</p>
+        </div>
+        <a href="http://learn.arcgis.com/en/projects/get-started-with-arcgis-maps-for-office/" class="btn btn-clear btn-fill leader-0">بدء التدريب</a>
+      </div>
+    </div>
+  </div>
 </div>
 
-	 
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">الحصول على المزيد من ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
 
-<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script> <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<!-- Videos -->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">مشاهدة مقاطع فيديو <a class="btn btn-transparent text-white btn-large right" href="https://www.youtube.com/channel/UC-7QzZwqUK6gSxbXUf3qOQA">المزيد من مقاطع الفيديو</a>
+      </h2>
+      <!-- INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number. -->
+      <div playlistid="PLpq4BB-MZiMchCC8XEpSWGlEN89qls1FJ" class="video-holder block-group block-group-3-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div>
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">الاتصال بـ ArcGIS Maps for Office</h4>
+    <a aria-label="التواصل عبر التويتر" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/mapsforoffice"></a>
+    <a aria-label="التواصل على LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/company/5311?trk=vsrp_companies_hero_name&trkInfo=VSRPsearchId%3A62267361477673144233%2CVSRPtargetId%3A5311%2CVSRPcmpt%3Ahero"></a>
+    <a aria-label="التواصل على الفيسبوك" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/esrigis/"></a>
+    <a aria-label="الانضمام إلى المجتمع" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/groups/arcgis-maps-for-office"></a>
+    <a aria-label="أرسل لنا ملاحظاتك" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-  </script>
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">اقرأ مدونتنا <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/">المزيد من المنشورات</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/esri-maps-for-office/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+		<!-- Blog Content goes here -->
+	  </div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">الانضمام إلى المحادثة <a class="btn btn-transparent btn-large right" href="//geonet.esri.com/groups/arcgis-maps-for-office">المزيد من المحادثات</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/threads?socialGroup=4472" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+		<!-- Forum content goes here -->
+	  </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">تناول درس متعمق</a></h5>
+          <p class="trailer-0">
+ابحث عن "تعرف على ArcGIS" للعثور على التدريبات التي تقدم حلولاً لمشكلات عالم الواقع باستخدام ArcGIS وإكمالها.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">البحث عن الدورات التدريبية</a></h5>
+          <p class="trailer-0">
+ تعلم المزيد عن ArcGIS من خلال دورات تدريبية بإشراف محاضر، ودورات تدريبية على الويب، وندوات.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">الحصول على الدعم الفني</a></h5>
+          <p class="trailer-0">
+ الاتصال بدعم Esri عن طريق محادثات الدردشة أو البريد الإلكتروني أو الهاتف.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">التحقق من صحة النظام</a></h5>
+          <p class="trailer-0">
+ راجع حالة ArcGIS Online ومشكلات التقرير.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

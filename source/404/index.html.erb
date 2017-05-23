@@ -83,7 +83,7 @@ pageName: "404"
 					  <input type="hidden" value="en" name="lg">
 					  <input type="hidden" id="datablock" name="datablock" value="Doc site feedback">
 					  <input type="hidden" id="fname" name="fname" value="/assets/js/formConfig.json">
-					  <input type="submit" class="btn orange" data-langlabel="submit" value="Submit" name="submitFeedback">
+					  <a class="btn" name="submitFeedback" id="submitFeedback" data-langlabel="submit">Submit</a>
 					</form>
 				</div>
 				<div id="thank-you-confirmation" class="leader-1" style="display:none;">
@@ -117,7 +117,7 @@ $(document).ready(function() {
         urlLang = doc.l10n.getReferrerLang(),
         curlang = doc.l10n.calcPrefLang (docCfg["langSelector"] || "all", urlLang);
 
-	$('#feedback-form :submit').on ("click", function() {
+	$('#submitFeedback').on ("click", function() {
       return doc.supportForm.validateFeedbackForm(curlang);
     });
 	

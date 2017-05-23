@@ -1,119 +1,99 @@
 ---
 title: Esri Demographics
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - /en/asset/css/app-switch-1
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/arcgis-app-1
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
 
 metatags:
-  - <META name="description" content="Esri Demographics"><META name="last-modified" content="2014-7-2"><META name="product" content="esri-demographics"><META name="sub_category" content="Esri Demographics"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Demographics"><META name="search-category" content="help-general"><META name="subject_label" content="DATA,BUSINESS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="DATA,BUSINESS"><META name="content-language" content="en">
+   - <META name="description" content="Esri Demographics"><META name="last-modified" content="2014-7-2"><META name="product" content="esri-demographics"><META name="sub_category" content="Esri Demographics"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Demographics"><META name="search-category" content="help-general"><META name="subject_label" content="DATA,BUSINESS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="DATA,BUSINESS"><META name="content-language" content="en">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/esri-demographics/">Esri Demographics</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Esri Demographics">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="platform" value="detect" />          
-        <input type="hidden" name="product" value="esri-demographics" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/en/esri-demographics/">Home</a></li>
-        <li><a href="/en/esri-demographics/access/">Access</a></li>
-        <li><a href="/en/esri-demographics/data/">Data</a></li>
-        <li><a href="/en/esri-demographics/coverage/">Coverage</a></li>
-        <li><a href="/en/esri-demographics/reference/">Reference</a></li>
-      </ul>
-    </nav>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Esri Demographics</h1>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+        <a class="sub-nav-link is-active" href="/en/esri-demographics/">Home</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/access/">Access</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/data/">Data</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/coverage/">Coverage</a>
+        <a class="sub-nav-link" href="/en/esri-demographics/reference/">Reference</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Power your GIS with global demographic, spending, lifestyle, and business data.</h1>
+      <h5>Esri Demographics is used for mapping and analysis purposes. Esri Demographics supports commercial market analytics and noncommercial usages, such as economic development, planning, and at-risk population assessment. Esri Demographics is accessible in four ways: dynamic web maps, data enrichment, reports, and infographics.</h5>
+      <h5>Find out what's new in this release. <a href="/en/esri-demographics/reference/whats-new.htm">Learn more.</a></h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" target="_top">
+              <input type="search" name="q" class="leader" placeholder="Search Esri Demographics">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="esri-demographics" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <hr class="leader-half trailer-0">
+    </div>
+  </div>
+</div>
+<div class="grid-container leader-2">
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 text-center">
+      <h2 class="text-center">What demographics data is available?</h2>
+      <p>
+        To see the available comprehensive set of global Esri Demographics data, use the data browser below by selecting a country and peruse the available data categories.
+      </p>
+      <iframe src="//la.arcgis.com/databrowser/index.html" width="100%" height="550" frameborder="0">
+  			Error: Embedded data could not be displayed.
+  		</iframe>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-      <div class="column-16 tablet-column-24">
-
-	<h3 class="gray">Esri Demographics powers the ArcGIS System with access to global demographic, spending, lifestyle, and business data. </h3>
-	<p style="padding-top:15px;">Esri Demographics is used for mapping and analysis purposes. Esri Demographics supports commercial market analytics and noncommercial usages, such as economic development, planning, and at-risk population assessment. Esri Demographics is accessible in four ways: dynamic web maps, data enrichment, reports, and infographics. </p>
-	<p>To see the available comprehensive set of global Esri Demographics data, use the data browser below by selecting a country and peruse the available data categories.</p>	
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-
-        </div>
-			<iframe src="http://links.esri.com/data-browser/" width="815" height="850" frameborder="0">
-				Error: Embedded data could not be displayed. 
-			</iframe>
- 
-        <div class="clear"></div>
-
-
-
-      </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-          <h3>Get started</h3>
-          <ul>
-           <li><a href="/en/esri-demographics/reference/whats-new.htm">What's new</a></li>
-			  <li><a href="/en/esri-demographics/access/">Access</a></li>
-           <li><a href="/en/esri-demographics/data/">Data</a></li>
-           <li><a href="/en/esri-demographics/coverage/">Coverage</a></li>
-           <li><a href="/en/esri-demographics/reference/">Reference</a></li>
-
-
-          </ul>
-        </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>From our blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
-        </div>
-
- </div>
-
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Read our blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/demographics/">More posts</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/demographics/feed/" class="block-group block-group-3-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
     </div>
-
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/demographics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
-
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-
-  </script>
+  </div>
+</div>

@@ -1,12 +1,14 @@
 ---
 title: セキュリティ上の問題を連絡
 css:
-  - documentation
+  - homepage
   - /en/asset/css/common
-  - stat-page-specific
-  - feedback
+  - /cdn/css/colorbox
+  - /css/stat-page-specific
+  - /css/feedback
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
   - securityForm
 
 languageSelector: "No"
@@ -17,149 +19,138 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/ja/Trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-  <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online Trust" href="/ja/trust/">Trust</a></li>
-        <li><a title="ArcGIS Online のシステム ステータス" href="/ja/trust/system-status/">システム ステータス</a></li>
-        <li><a title="ArcGIS Online のセキュリティ" href="/ja/trust/security/">セキュリティ</a></li>
-        <li><a title="ArcGIS Online のプライバシー" href="/ja/trust/privacy/">プライバシー</a></li>
-        <li><a title="ArcGIS Online のプライバシー" href="/ja/trust/compliance/">コンプライアンス</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<!-- Page Content -->
-<div class="container feedback">
 
-  <div class="row main">
-	  
-  <div class="warning-signup">
-      <header>
-        <h2 data-langlabel="">セキュリティ上の問題を連絡</h2>
-      </header>
-	  <section>
-		<p data-langlabel="">右側のフォームに、発生している問題について必要な情報を詳細にすべて記入してください。 お客様の連絡先情報は、ご連絡いただいた情報の事後調査に使用されます。 件名のドロップダウン メニューから該当する件名を選択してください。</p>
-		<ul>
-			<li data-langlabel="">脆弱性 - サイトまたはアプリケーションで検出された脆弱性を報告します。</li>
-			<li data-langlabel="">Esri からの疑わしい電子メール - Esri の電子メール アドレスからフィッシング攻撃の標的にされたと考えられる場合、または Esri からその他の疑わしい電子メールを受信した場合です。</li>
-			<li data-langlabel="">プライバシー問題 - アプリケーションまたは組織に関連するプライバシーの問題がある場合です。</li>
-			<li data-langlabel="">その他 - その他のあらゆるセキュリティ、プライバシー、コンプライアンスに関する問題がある場合です。</li>
-		</ul>
-		
-<div style="padding-bottom:15px;">		
-
-  </div>   
-	  <hr style="padding-bottom:20px;"/>
-	  	  <header>
-		<h3 data-langlabel="">脆弱性報告ポリシー</h3>
-	  </header>
-      
-        <p data-langlabel="">ArcGIS.com セキュリティ チームは、独立したセキュリティ研究者がインターネット セキュリティにおいて果たす重要な役割について理解しています。 サイトまたはアプリケーションで脆弱性が発見された場合、積極的にご報告いただきたいと考えています。 Esri は、当社に報告される潜在的な脆弱性を検証しこれに対応するためのセキュリティ コミュニティの運営に努力しています。 このポリシーが順守されている限り、Esri は、訴訟を起こすことも、法執行機関による調査を行うこともありません。</p>
-	  <header>
-		<h4 data-langlabel="">ArcGIS.com では、次の種類のセキュリティ調査を許可<strong>していません</strong>。</h4>
-	  </header>
-	  <ul>
-			<li data-langlabel="">サービス不能 (DoS) 状態を発生させる、または発生させようとする。</li>
-		<li data-langlabel="">Esri が明示的に同意していないにもかかわらず、自動化されたセキュリティ ツールを使用する。 自動ツールを使用すると、調査の操作または IP がブロックされる可能性があります。</li>
-		<li data-langlabel="">権限のないデータまたは情報にアクセスする、またはアクセスしようとする。</li>
-		<li data-langlabel="">権限のないデータまたは情報を破損させる、または破損させようとする。</li>  
-	  </ul>
-
-	 <header>
-	  <h4 data-langlabel="">ArcGIS.com セキュリティ チームの取り組み</h4>
-	  </header>
-		<p data-langlabel="">この ArcGIS.com の脆弱性報告ポリシーに従うすべてのセキュリティ研究者に対して、ArcGIS.com セキュリティ チームは次の事項をお約束します。</p>
-		
-		<ul>
-		<li data-langlabel="">ご報告の受信を確認したら、時期を逸することなく応答します。</li>
-		<li data-langlabel="">その脆弱性を解決するためのタイム フレームを見積もります。</li>
-		<li data-langlabel="">脆弱性が解決したときに報告者に通知します。</li>		
-		</ul>
-      
-    <div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> 参加していただいたセキュリティ研究者</span>
-      <div class="dropdown-content">
-        <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">当社の重要なレポート プログラムに参加していただいた次のセキュリティ研究者にお礼を申し上げます。</p>
-          <%= partial :"_partial/security_names" %>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="/ja/trust/system-status/">システム ステータスのチェック</a>
         </div>
       </div>
     </div>
-      
-	 </section>
-	 
-  </div> 
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/" selected>信頼性</option>
+        <option value="/en/trust/system-status/">ArcGIS Online のシステム ステータス</option>
+        <option value="/en/trust/security/">セキュリティ</option>
+        <option value="/en/trust/privacy/">プライバシー</option>
+        <option value="/en/trust/compliance/">コンプライアンス</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/ja/trust/">信頼性</a>
+        <a class="sub-nav-link" href="/ja/trust/system-status/">ArcGIS Online のシステム ステータス</a>
+        <a class="sub-nav-link" href="/ja/trust/security/">セキュリティ</a>
+        <a class="sub-nav-link" href="/ja/trust/privacy/">プライバシー</a>
+        <a class="sub-nav-link" href="/ja/trust/compliance/">コンプライアンス</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
-    <div class="contact-form-signup">
-		
-		<div id="form-fields">
-		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
-						
-			<fieldset id="security-form-fieldset">
-
-			  <label data-langlabel="" for="name">名前: </label>
-			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">電子メール アドレス:</label>
-			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">電話番号: </label>
-			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
-			  <label data-langlabel="" for="organization">組織 <span class="optional">(任意):</span> </label>
-			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">件名: </label>
-			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option>
-				  <option value="Vulnerability">脆弱性</option>
-				  <option value="Suspicious E-mail from Esri">Esri からの疑わしい電子メール</option>
-				  <option value="Privacy Issue">プライバシー問題</option>
-				  <option value="audi">その他</option>
-			  </select>
-
-			  <label data-langlabel="" for="description">説明:</label>
-			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">スパムが自動生成されるのを防ぐために、表示されている数字を入力してください。</label>
-			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-			  <label data-langlabel="numerals" for="captchaValue">数字: <strong><span id="txtCaptcha" class=""></span></strong></label>
-
-			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="internal" name="source" id="source">
-
-			  <input value="verbose" name="resultType" id="resultType" type="hidden">
-			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
-			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-			  <input type="hidden" value="ja" name="lg">
-			
-			</fieldset>
-			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">送信</a>
-			
-		  </form>
-		</div>
-
-	  <div id="submission-confirmation" style="display:none;">	
-		<p data-langlabel=""><h4>問題をご連絡いただきありがとうございました。 2 ～ 3 営業日以内に問題を調査し対処します。</h4></p>
-	  </div>
-	  <div id="submission-error" style="display:none;">	
-		<p data-langlabel=""><h4>送信中にエラーが発生しました。 時間をおいてからもう一度送信してください。</h4></p>
-	  </div>
-
-	  <strong>
+<div class="grid-container feedback">
+  <div class="column-24 leader-2 trailer-2">
+    <div class="column-12 trailer-2">
+      <div>
+        <h2 data-langlabel="">セキュリティ上の問題を連絡</h2>
+        <p data-langlabel="">右側のフォームに、発生している問題について必要な情報を詳細にすべて記入してください。お客様の連絡先情報は、ご連絡いただいた情報の事後調査に使用されます。件名のドロップダウン メニューから該当する件名を選択してください。</p>
+    		<ul>
+    			<li data-langlabel="">脆弱性 - サイトまたはアプリケーションで検出された脆弱性を報告します。</li>
+    			<li data-langlabel="">Esri からの疑わしい電子メール - Esri の電子メール アドレスからフィッシング攻撃の標的にされたと考えられる場合、または Esri からその他の疑わしい電子メールを受信した場合です。</li>
+    			<li data-langlabel="">プライバシー問題 - アプリケーションまたは組織に関連するプライバシーの問題がある場合です。</li>
+    			<li data-langlabel="">その他 - 他のすべてのセキュリティ、プライバシー、またはコンプライアンスに関連する問題。</li>
+    		</ul>
+      </div>
+      <hr>
+      <div>
+		    <h3 data-langlabel="">脆弱性報告ポリシー</h3>
+        <p data-langlabel="">ArcGIS.com セキュリティ チームは、独立したセキュリティ研究者がインターネット セキュリティにおいて果たす重要な役割について理解しています。サイトまたはアプリケーションで脆弱性が発見された場合、積極的にご報告いただきたいと考えています。Esri は、当社に報告される潜在的な脆弱性を検証しこれに対応するためのセキュリティ コミュニティの運営に努力しています。このポリシーが順守されている限り、Esri は、訴訟を起こすことも、法執行機関による調査を行うこともありません。</p>
+        <h4 data-langlabel="">ArcGIS.com では、次の種類のセキュリティ調査を許可<strong>していません</strong>。</h4>
+        <ul>
+          <li data-langlabel="">サービス不能 (DoS) 状態を発生させる、または発生させようとする。</li>
+          <li data-langlabel="">Esri が明示的に同意していないにもかかわらず、自動化されたセキュリティ ツールを使用する。自動ツールを使用すると、調査の操作または IP がブロックされる可能性があります。</li>
+          <li data-langlabel="">権限のないデータまたは情報にアクセスする、またはアクセスしようとする。</li>
+          <li data-langlabel="">権限のないデータまたは情報を破損させる、または破損させようとする。</li>
+        </ul>
+        <h4 data-langlabel="">ArcGIS.com セキュリティ チームの取り組み</h4>
+        <p data-langlabel="">この ArcGIS.com の脆弱性報告ポリシーに従うすべてのセキュリティ研究者に対して、ArcGIS.com セキュリティ チームは次の事項をお約束します。</p>
+        <ul>
+          <li data-langlabel="">ご報告の受信を確認したら、時期を逸することなく応答します。</li>
+          <li data-langlabel="">その脆弱性を解決するためのタイム フレームを見積もります。</li>
+          <li data-langlabel="">脆弱性が解決したときに報告者に通知します。</li>
+        </ul>
+        <div class="dropdown-navigation dropdown-wrapper regular">
+          <span class="dropdown btn btn-fill btn-clear" data-langlabel="trust-researchers-title"> 参加していただいたセキュリティ研究者</span>
+          <div class="dropdown-content">
+            <div class="dropdown-menu">
+              <p data-langlabel="trust-researchers-desc">当社の重要なレポート プログラムに参加していただいた次のセキュリティ研究者にお礼を申し上げます。</p>
+              <%= partial :"_partial/security_names" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column-11 right tablet-column-12">
+      <div class="contact-form-signups panel">
+        <div id="form-fields">
+          <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+            <fieldset id="security-form-fieldset">
+              <label data-langlabel="" for="name">名前
+                <input type="text" autocomplete="off" id="name" name="name">
+              </label>
+              <label data-langlabel="email-address" for="email-address">電子メール アドレス
+                <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+              </label>
+              <label data-langlabel="phone-number" for="phone-number">電話番号
+                <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+              </label>
+              <label data-langlabel="" for="organization">組織 <span class="optional">(任意):</span>
+                <input type="text" autocomplete="off" id="organization" name="organization">
+              </label>
+              <label data-langlabel="" for="subject">件名
+                <select id="subject" autocomplete="off" name="subject" class="select-full">
+                  <option value="" style="display:none;"></option>
+                  <option value="Vulnerability">脆弱性</option>
+                  <option value="Privacy Issue">プライバシー問題</option>
+                  <option value="audi">その他</option>
+                </select>
+              </label>
+              <label data-langlabel="" for="description">内容
+                <textarea autocomplete="off" data-langlabel="" placeholder="セキュリティの問題が発生している可能性があります。" name="description" id="description"></textarea>
+              </label>
+              <label data-langlabel="feedback-spam-note" for="spam">自動生成されたスパムを防ぐために、表示されている数字を入力してください。
+                <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+              </label>
+              <label data-langlabel="numerals" for="captchaValue">数字: <strong><span id="txtCaptcha" class=""></span></strong></label>
+              <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+              <input type="hidden" value="internal" name="source" id="source">
+              <input value="verbose" name="resultType" id="resultType" type="hidden">
+              <input value="Security Concern" name="datablock" id="datablock" type="hidden">
+              <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+              <input type="hidden" value="ja" name="lg">
+            </fieldset>
+            <a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">送信</a>
+          </form>
+        </div>
+        <div id="submission-confirmation" style="display:none;">
+          <p data-langlabel=""><h4>問題をご連絡いただきありがとうございました。2 ～ 3 営業日以内に問題を調査し対処します。</h4></p>
+        </div>
+        <div id="submission-error" style="display:none;">
+          <p data-langlabel=""><h4>送信中にエラーが発生しました。時間をおいてからもう一度送信してください。</h4></p>
+        </div>
+        <strong>
 			<span style="display:none;" id="referPageLink"> <a id="feedback-referring-link" href="">参照ページ</a>に戻る</span>
 			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self"></a>他のセキュリティ問題</span>を送信
 	  </strong>
-
+      </div>
     </div>
-
-  </div> <!-- end of row main -->
+  </div>
+</div>
 
 <script>
 $(document).ready(function() {
@@ -172,4 +163,8 @@ $(document).ready(function() {
 </script>
 
 </div>
-
+<style>
+.wrapper{
+  overflow:visible;
+}
+</style>
