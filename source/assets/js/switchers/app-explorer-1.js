@@ -15,14 +15,14 @@ $(document).ready(function() {
 
   var val = '<p id="plats" class="doc-platform-switcher">' +
     '<span class="viewing" data-langlabel="viewing">' + dict['viewing'] + ': </span>' +
-    '<a data-appname="explorer" data-plat="android-phone" data-prefix="/' + localedir + '/explorer/android-phone" href="/en/explorer/" data-langlabel="android-phone" class="">' + dict['android-phone'] + '</a>' +
-    '<a data-appname="explorer" data-plat="android-tablet" data-prefix="/' + localedir + '/explorer/android-tablet" href="/en/explorer/" data-langlabel="android-tablet" class="">' + dict['android-tablet'] + '</a>' +
+    //'<a data-appname="explorer" data-plat="android-phone" data-prefix="/' + localedir + '/explorer/android-phone" href="/en/explorer/" data-langlabel="android-phone" class="">' + dict['android-phone'] + '</a>' +
+    //'<a data-appname="explorer" data-plat="android-tablet" data-prefix="/' + localedir + '/explorer/android-tablet" href="/en/explorer/" data-langlabel="android-tablet" class="">' + dict['android-tablet'] + '</a>' +
     '<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir + '/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class="">iPad</a>' +
     '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir + '/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class="">iPhone</a>' +
     '</p>',
 
     prodKey = "explorer",
-    prodDVal = "android-phone",
+    prodDVal = "ipad",
     prodIpadVal = "ipad",
     prodIOSVal = "iphone",
     //prodMacVal = "mac",
@@ -53,7 +53,7 @@ $(document).ready(function() {
     if (!isHome) {
       UASpecificRedirect(plat, pathname);
     }
-  } else if (!($.cookie(prodKey)) && (navigator.userAgent.match(/(Android)/gi))) {
+  } /*else if (!($.cookie(prodKey)) && (navigator.userAgent.match(/(Android)/gi))) {
     if (navigator.userAgent.match(/(Mobile)/gi)) {
       plat = prodAndroidPhoneVal;
     } else {
@@ -62,7 +62,7 @@ $(document).ready(function() {
     if (!isHome) {
       UASpecificRedirect(plat, pathname);
     }
-  }
+  }*/
 
   function UASpecificRedirect(plat, pathname) {
 
