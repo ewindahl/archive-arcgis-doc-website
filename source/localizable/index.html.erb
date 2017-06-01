@@ -26,13 +26,13 @@ layout: docindex
   </nav>
   <div class="column-24">
     <div id="gallerycontent" class="block-group block-group-6-up tablet-block-group-3-up phone-block-group-1-up">
-      <div class="card block trailer-1" ng-repeat="item in (galleryResults = (galleryitems | filter:query | orderBy:orderProp))" style="box-shadow:none;">
-          <a href="{{item.appLink}}" title="{{item.appName}}">
-        <figure class="card-image-wrap">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="card-image" alt="{{item.appName}}" style="height:128px;background: url('{{item.appImg}}') center center no-repeat"/>
+      <div class="card block trailer-1" ng-repeat="item in (galleryResults = (galleryitems | filter:query | orderBy:orderProp))" style="border-style: solid; border-width: 1px; border-color: #dddddd; box-shadow:none">
+          <a href="{{item.appLink}}" title="{{item.appName}}" class="link-dark-gray">
+        <figure class="card-image-wrap padding-left-half leader-half">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="card-image" alt="{{item.appName}}" style="height:80px;background: url('{{item.appImg}}') no-repeat"/>
         </figure>
         <div class="card-content padding-leader-0">
-            <h6 class="card-last text-center trailer-0 ">{{item.appName}}</h6>
+            <h3 class="card-last trailer-0 font-size--3">{{item.appName}}</h3>
         </div>
         </a>
       </div>
