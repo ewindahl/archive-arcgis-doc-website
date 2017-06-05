@@ -122,7 +122,7 @@ jQuery(document).ready(function ($) {
       lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
       lgMarketplaceptpt = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
       lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
-      lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'ro', 'zh-hk', 'zh-tw']),
+      lgSharepoint = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', 'it', 'ko', 'pt-br', 'ro'],
       lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
 
       //all langs
