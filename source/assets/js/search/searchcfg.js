@@ -277,6 +277,13 @@ var filterCfg = {
         }
       },
       {
+        k:"maps-for-adobecc",
+        q: {
+          r:"",
+          p:"(product:maps-for-adobecc)"
+        }
+      },
+      {
         k:"esri-maps-cognos",
         q: {
           r:"",
