@@ -39,6 +39,9 @@ This is a tamplate for a simple homepage.  Please search for and replace each of
   PRODUCT_HEADLINE: "Welcome to the New Spatial Anlytics"
   PRODUCT_SUB_HEADLINE: A slightly longer blurb about the product.
   PRODUCT_SEARCH_VALUE: The product value for the search form
+  ITUNES_STORE_LINK: Link to the product on the app store
+  GOOGLE_PLAY_LINK: Link to the product on Google Play
+  WINDOWS_STORE_LINK: Link to the product on the Windows store
   POPULAR_LINK_1: http://doc.arcgis.com/en/insights/reference/whats-new.htm
   POPULAR_TEXT_1: "What's new"
   POPULAR_LINK_2: http://doc.arcgis.com/en/insights/reference/faq.htm
@@ -129,7 +132,12 @@ Please search for INSTRUCTIONS within the file for element specific instructions
         </div>
       </div>
 
-
+      <!-- Delete the download badges you don't want to use.  Delete the p tag entirely if you don't want to use any of the download badges. -->
+      <p class="trailer-0 leader-half font-size--2">
+        <a href="ITUNES_STORE_LINK"><img src="/assets/img/badges/app_store.svg" alt="Download on the App Store" style="margin:10px; vertical-align:middle"/></a>
+        <a href="GOOGLE_PLAY_LINK"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="height:58px; margin:10px; vertical-align:middle"/></a>
+        <a href="WINDOWS_STORE_LINK"><img src="https://cmsresources.windowsphone.com/devcenter/common/resources/images/badgegenerator/English_wstore_black_258x67.png" alt="Download from Windows Store"  style="margin:10px; vertical-align:middle; height:40px"/></a>
+      </p>
     </div>
 
     <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
