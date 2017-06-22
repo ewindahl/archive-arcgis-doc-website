@@ -3,8 +3,8 @@
         <div class="grid-container">
           <div class="column-24">
 
-            <a href="/" class="top-nav-title tablet-hide">Documentation for Arc<span>GIS</span></a>
-            <a href="/" class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav">Documentation for Arc<span>GIS</span></a>
+            <a href="/" class="top-nav-title tablet-hide"><%= t("site.nav.root_nav_documentation") %></a>
+            <a href="/" class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><%= t("site.nav.root_nav_documentation") %></a>
 
             <!--<div class="logo-wrap"><a href="/" id="site-logo">Arc<span>GIS</span></a><span class="down-arrow" id="down-arrow"></span></div>-->
 
@@ -20,13 +20,13 @@
             <div class="lang-block dropdown js-dropdown right margin-left-1 top-nav-list right"></div>
 
             <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
-              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
+              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search"><%= t("site.nav.search") %></a>
               <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue" href="#"><%= t("site.nav.sign_in") %></a>
             </div>
 
 
             <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
-              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search">Search</a>
+              <a href="#" class="icon-ui-search js-expand-toggle top-nav-link" data-expand="search"><%= t("site.nav.search") %></a>
 
 
               <div class="dropdown js-dropdown right">
@@ -48,7 +48,7 @@
                   </div>-->
                   <a class="dropdown-link" id="agolProfile" href="http://www.arcgis.com/home/user.html"><%= t("site.nav.sign_in_myprofile") %></a>
                   <a class="dropdown-link" id="agolHelp" href="http://www.arcgis.com/home/support.html"><%= t("site.nav.help") %></a>
-                  <a class="dropdown-link" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#"><%= t("site.nav.sign_in_logout") %></a>
                 </nav>
               </div>
           </nav>
