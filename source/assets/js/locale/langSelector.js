@@ -18,7 +18,7 @@ if (!String.prototype.format) {
 function replace_langd(lang){
   var lang = lang || 'en';
   var help_link = $("a[data-langlabel='help']").attr('href');
-  if(help_link.indexOf("%(langd)s") >= 0){
+  if(help_link && help_link.indexOf("%(langd)s") >= 0){
     var new_help_link = help_link.replace("%(langd)s", lang);
     $("a[data-langlabel='help']").each(function(){
       $(this).attr('href', new_help_link);
