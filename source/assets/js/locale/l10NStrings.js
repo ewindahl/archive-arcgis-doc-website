@@ -1791,6 +1791,8 @@ var localeJsonObj = {
       "arcgis-desktop-ht": "Includes ArcMap, ArcCatalog, ArcGlobe, ArcScene and their extensions.",
       "arcgis-earth": "ArcGIS Earth",
       "arcgis-earth-ht": "ArcGIS Earth",
+      "arcgis-hub": "ArcGIS Hub",
+      "arcgis-hub-ht": "ArcGIS Hub",
       "arcgis-for-desktop": "ArcGIS Desktop",
       "arcgis-for-desktop-desc": "A complete professional GIS",
       "arcgis-for-developers": "ArcGIS for Developers",
