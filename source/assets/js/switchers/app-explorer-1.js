@@ -174,13 +174,16 @@ $(document).ready(function() {
       prefix = $ele.data("prefix"),
       dplat = $ele.data("plat"),
       url;
-
     if ((fldpath.indexOf(prefix) === 0)) {
       $ele.toggleClass("is-active");
       url = prefix + fldpath.replace(prefix, "") + "/" + fname;
     } else {
       $ele.toggleClass("available");
       url = prefix + "/" + fldpath.split("/").pop() + "/" + fname;
+    }
+    if($ele.hasClass('is-disabled')){
+      url = '#';
+      $ele.click(function () {return false;});
     }
 
     /*if (!fnameFilter.hasOwnProperty (fname)) {
