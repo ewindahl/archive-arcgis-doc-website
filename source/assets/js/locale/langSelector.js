@@ -18,7 +18,7 @@ if (!String.prototype.format) {
 function replace_langd(lang){
   var lang = lang || 'en';
   var help_link = $("a[data-langlabel='help']").attr('href');
-  if(help_link.indexOf("%(langd)s") >= 0){
+  if(help_link && help_link.indexOf("%(langd)s") >= 0){
     var new_help_link = help_link.replace("%(langd)s", lang);
     $("a[data-langlabel='help']").each(function(){
       $(this).attr('href', new_help_link);
@@ -28,8 +28,7 @@ function replace_langd(lang){
 
 jQuery(document).ready(function ($) {
   var winloc = window.location;
-
-  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/|\/maps-for-powerbi\/|\/survey123\/)/)){
+  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/|\/maps-for-powerbi\/|\/survey123\/|^(\/[a-zA-Z-]{2,5}\/)$)/)){
     replace_langd();
     return;
   }
