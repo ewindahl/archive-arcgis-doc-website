@@ -19,6 +19,7 @@ $(document).ready(function() {
     //'<a data-appname="explorer" data-plat="android-tablet" data-prefix="/' + localedir + '/explorer/android-tablet" href="/en/explorer/" data-langlabel="android-tablet" class="">' + dict['android-tablet'] + '</a>' +
     '<a data-appname="explorer" data-plat="ipad" data-prefix="/' + localedir + '/explorer/ipad" href="/en/explorer/" data-langlabel="ipad" class="">iPad</a>' +
     '<a data-appname="explorer" data-plat="iphone" data-prefix="/' + localedir + '/explorer/iphone" href="/en/explorer/" data-langlabel="iphone" class="">iPhone</a>' +
+    '<a data-appname="explorer" data-plat="android" data-prefix="/' + localedir + '/explorer/android" href="/en/explorer/" data-langlabel="android" class="is-disabled">Android coming soon</a>' +
     '</p>',
 
     prodKey = "explorer",
