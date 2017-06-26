@@ -31,6 +31,7 @@ $(document).ready(function() {
 		"survey123witharcgisserver.htm": "Desktop",
 		"useofflinebasemaps.htm": "Desktop",
 		"geopoints.htm": "Desktop",
+		"security.htm": "Desktop",
 	}
 
    var localedir = "en";

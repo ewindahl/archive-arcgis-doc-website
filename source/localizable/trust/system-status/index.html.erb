@@ -1,72 +1,67 @@
 ---
 title: Trust - System Status
 css:
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - video-init
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - sitecfg.js
+  - /cdn/js/libs/jquery.colorbox-min
 
 metatags:
   - <META name="description" content="Trust ArcGIS System Status page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="en">
 
+
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/en/trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li><a title="ArcGIS Online Trust" href="/en/trust/">Trust</a></li>
-        <li class='current'><a title="ArcGIS Online System Status" href="/en/trust/system-status/">ArcGIS Online Status</a></li>
-        <li><a title="ArcGIS Online Security" href="/en/trust/security/">Security</a></li>		
-        <li><a title="ArcGIS Online Privacy" href="/en/trust/privacy/">Privacy</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/en/trust/compliance/">Compliance</a></li>
-	</ul>
-    </nav>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="/en/trust/system-status/">Check System Status</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/">Trust</option>
+        <option value="/en/trust/system-status/" selected>ArcGIS Online Status</option>
+        <option value="/en/trust/security/">Security</option>
+        <option value="/en/trust/privacy/">Privacy</option>
+        <option value="/en/trust/compliance/">Compliance</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link" href="/en/trust/">Trust</a>
+        <a class="sub-nav-link is-active" href="/en/trust/system-status/">ArcGIS Online Status</a>
+        <a class="sub-nav-link" href="/en/trust/security/">Security</a>
+        <a class="sub-nav-link" href="/en/trust/privacy/">Privacy</a>
+        <a class="sub-nav-link" href="/en/trust/compliance/">Compliance</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div id="collectorMapFeature" class="text-center">
+      <iframe src="//status.arcgis.com/" width="1000" height="1250" frameborder="0">
+        Error: Embedded data could not be displayed.
+      </iframe>
+    </div>
+    <div>
+      <p>The ArcGIS Online Health Dashboard provides status information that has been verified as having impacted the majority of our users. As ArcGIS Online is a large cloud-based platform, many events have limited effect on our broader user base, if at all. This status page does not post organization-specific issues as we encourage these be resolved using our available support services.</p>
+    </div>
+    <div style="text-align:center; padding-top:15px;">
+			<a href="http://www.fedramp.gov/"><img src="../img/fedramp.png"></a>
+			<a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="../img/fisma.png"></a>
+	    <a href="https://www.privacyshield.gov/participant?id=a2zt00000004EspAAE"><img src="../img/PrivacyShield.png" width="170"></a>&nbsp;
+      <a href="http://privacy.truste.com/privacy-seal/validation?rid=40a3315c-842e-4e81-bf75-0c568255d039"><img src="../img/TrustePrivacy.png"></a>
+		</div>
   </div>
 </div>
-
-<!-- Page Content -->
-<div class="container">
-
-     <div class="">
-	
-        <div id="collectorMapFeature" >
-
-<iframe src="//status.arcgis.com/" width="1000" height="1250" frameborder="0">
-  Error: Embedded data could not be displayed. 
-</iframe>
-        </div>
- </div>
-
-<div>
-	<p>The ArcGIS Online Health Dashboard provides status information that has been verified as having impacted the majority of our users. As ArcGIS Online is a large cloud-based platform, many events have limited effect on our broader user base, if at all. This status page does not post organization-specific issues as we encourage these be resolved using our available support services.</p>
-</div>
-
- <div style="text-align:center; padding-top:15px;">
-			 <a href="http://www.fedramp.gov/"><img src="../img/fedramp.png"/></a>
-			 <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="../img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="../img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="../img/safeharbor.png"/></a>
-		</div>	
-    </div>
- 
-
-		 		
-
-	
- </div>
-</div>
-	
