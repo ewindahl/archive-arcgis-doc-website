@@ -28,8 +28,7 @@ function replace_langd(lang){
 
 jQuery(document).ready(function ($) {
   var winloc = window.location;
-
-  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/)/)){
+  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/|^(\/[a-zA-Z-]{2,5}\/)$)/)){
     replace_langd();
     return;
   }
