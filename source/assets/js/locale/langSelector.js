@@ -117,7 +117,7 @@ jQuery(document).ready(function ($) {
       lgPartial = ["it","ko", "pl","pt-br","pt-pt","ro"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
       lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
-      lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro","nl"],
+      lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
       lgCognos = ['en', 'de','fr','ja', 'ko','zh-cn'],
       lgMicro = ['en', 'de'],
       lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
