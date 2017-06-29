@@ -18,7 +18,7 @@ if (!String.prototype.format) {
 function replace_langd(lang){
   var lang = lang || 'en';
   var help_link = $("a[data-langlabel='help']").attr('href');
-  if(help_link.indexOf("%(langd)s") >= 0){
+  if(help_link && help_link.indexOf("%(langd)s") >= 0){
     var new_help_link = help_link.replace("%(langd)s", lang);
     $("a[data-langlabel='help']").each(function(){
       $(this).attr('href', new_help_link);
@@ -28,8 +28,7 @@ function replace_langd(lang){
 
 jQuery(document).ready(function ($) {
   var winloc = window.location;
-
-  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/|\/survey123\/)/)){
+  if(!winloc.pathname.match( /(\/workforce\/|\/maps-for-office\/|\/maps-for-sharepoint\/|\/operations-dashboard\/|\/collector\/|\/arcgis-online\/|\/marketplace\/|\/location-analytics\/|\/trust\/|\/maps-for-microstrategy\/|\/maps-for-cognos\/|\/navigator\/|\/open-data\/|\/appstudio\/|\/web-appbuilder\/|\/maps-for-powerbi\/|\/survey123\/|^(\/[a-zA-Z-]{2,5}\/)$)/)){
     replace_langd();
     return;
   }
@@ -117,14 +116,15 @@ jQuery(document).ready(function ($) {
       lgPartial = ["it","ko", "pl","pt-br","pt-pt","ro"],
       lgOthers = ["cs", "et", "fi", "he", "lt", "lv", "nl", "th", "tr"],
       lgTrustSite = ["en", "de", "es", "fr", "ja", "ru", "zh-cn", "ar", "it","ko","pl","pt-br","pt-pt","ro","cs","fi","tr"],
-      lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro","nl"],
+      lgAGOL = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
       lgCognos = ['en', 'de','fr','ja', 'ko','zh-cn'],
       lgMicro = ['en', 'de'],
       lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
       lgMarketplaceptpt = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
-      lgNavigator = lgPickFull.concat(["it","ko","pt-br"]),
-      lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro'])
+      lgNavigator = lgPickFull.concat(["it","ko", "pl","pt-br","pt-pt"]),
+      lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro']),
       lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
+      lgMapsPowerbi = ['en', 'de', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'ru', 'zh-cn', 'zh-tw'],
 
       //all langs
       lgPickerLabels = GLangLabels,
@@ -194,6 +194,8 @@ jQuery(document).ready(function ($) {
                 return true;
               }else if(langSelector === "sharepoint" && lgSharepoint.indexOf(lg) >= 0){
                 return true;
+              }else if(langSelector === "mapsPowerbi" && lgMapsPowerbi.indexOf(lg) >= 0){
+                  return true;
               }else{
                 return false;
               }
@@ -290,6 +292,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "marketplaceptpt":
                   lgList = lgMarketplaceptpt;
+                  break;
+                case "mapsPowerbi":
+                  lgList = lgMapsPowerbi;
                   break;
               }
               //var lgList = (selectorType === "all") ? lgPickFull.concat(lgPartial) : lgPickFull;
@@ -453,6 +458,8 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "openData";
   }else if (winloc.pathname.match( /(\/maps-for-office\/)/)){
     docCfg.langSelector = (winloc.pathname.match( /(\/3.1\/)/)) ? "generic" : "marketplace";
+  }else if (winloc.pathname.match( /(\/maps-for-powerbi\/)/)){
+    docCfg.langSelector = "mapsPowerbi";
   }
 
   dbg ("start: " + window.location.href);
