@@ -1,3 +1,4 @@
+
 function YTDurationToSeconds(duration) {
   var match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/)
   var times = {};
@@ -22,9 +23,14 @@ function YTDurationToSeconds(duration) {
 }
 
 function addVideo(video, duration){
+    var embed_link = 'https://www.youtube.com/embed/'+video.videoId+'?showinfo=0&amp;autoplay=1';
+    lang = $.cookie('preflang');
+    if(lang !== undefined){
+      embed_link += '&amp;hl='+lang;
+    }
     return '<div class="card block">'+
       '<figure class="card-image-wrap">'+
-        '<a href="https://www.youtube.com/embed/'+video.videoId+'?showinfo=0&amp;autoplay=1" class="colorbox-evlarge cboxElement videoElement" title="'+video.title+'" onclick="return false;">'+
+        '<a href="'+embed_link+'" class="colorbox-evlarge cboxElement videoElement" title="'+video.title+'" onclick="return false;">'+
           '<img class="card-image" alt="'+video.title+'" src="https://i.ytimg.com/vi/'+video.videoId+'/'+video.image+'.jpg">'+
           '<div class="play-button"><div class="play-icon"></div></div>'+
         '</a>'+
@@ -73,4 +79,6 @@ function onGoogleLoad() {
     });
   });});
 }
-$.getScript("https://apis.google.com/js/client.js?onload=onGoogleLoad");
+$(document).ready(function() {
+  $.getScript("https://apis.google.com/js/client.js?onload=onGoogleLoad");
+});
