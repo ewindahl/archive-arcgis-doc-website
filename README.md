@@ -13,7 +13,7 @@ This website is based off of [Middleman](http://middlemanapp.com/) + [ArcGIS CSS
 
 ### Installation Instructions
 
-Follow the [installation instructions](https://github.com/ArcGIS/arcgis-solutions-website/wiki/Setting-up-your-local-machine) on the Solutions wiki. If applicable, fork the Doc WebSite repo, not the Solution Website repo.
+Follow the [installation instructions](https://github.com/ArcGIS/resources-doc-web-mgmt-team/wiki/Get-started-with-our-GitHub-repositories) on the Resources wiki. If applicable, fork the Doc WebSite repo, not the Solution Website repo.
 
 
 ### Working with Bundler and MiddleMan
