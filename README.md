@@ -21,8 +21,8 @@ Follow the [installation instructions](https://github.com/ArcGIS/resources-doc-w
  * Run `bundle exec middleman build` to have middleman build the files into static HTML.
 
 ### Requirements
- * Ruby - http://rubyinstaller.org/ is a great way to go. You need Ruby 1.9.3.
- * Ruby Development Kit. `DevKit-tdm-32-x.x.x` A walkthrough is available [here](https://github.com/oneclick/rubyinstaller/wiki/development-kit)
+ * Ruby - http://rubyinstaller.org/ is a great way to go. You need Ruby 2.2.6.
+ * Ruby Development Kit. `DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe` A walkthrough is available [here](https://github.com/oneclick/rubyinstaller/wiki/development-kit)
  * [ArcGIS CSS Framework](https://github.com/ArcGIS/arcgis-for-developers-css)
 
 ## Working with branches
