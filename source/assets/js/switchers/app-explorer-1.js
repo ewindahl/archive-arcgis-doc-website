@@ -155,7 +155,7 @@ $(document).ready(function() {
       modForumUrls(plat);
     } else {
 
-      if (!window.location.pathname.match(/(\/whats-new\.htm|requirements\.htm|sneak-peek\.htm|faqs\.htm)/)) {
+      if (!window.location.pathname.match(/(\/whats-new\.htm|requirements\.htm|sneak-peek\.htm|faqs\.htm|make-maps\.htm)/)) {
         $('main.column-17 h1, div.content-section h1').after(val);
       } else {
         modHelpNavUrls(plat);
