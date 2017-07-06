@@ -52,7 +52,7 @@ $search-icon-height: 30px;
 #gallerySearchForm {
   position: relative;
   input[type="text"] {
- 	
+
   }
   input[type="submit"] {
     position:absolute;
@@ -67,8 +67,8 @@ $search-icon-height: 30px;
   input[type="search"] {
 	background-image: none;
   }
-  
-  
+
+
 }
 #gl-display
 {
@@ -112,6 +112,15 @@ $search-icon-height: 30px;
 	line-height:h5-lines;
   margin: 30px 0 10px 10px;*/
   padding: 6px;
+}
+
+div[ng-app="galleryApp"] #filter-list label {
+    display: inline;
+}
+
+div[ng-app="galleryApp"] #filter-list label select {
+    margin-bottom: 0.3875rem;
+    display: inline;
 }
 
 .ctrlbox {
@@ -237,7 +246,7 @@ $search-icon-height: 30px;
   min-height: 400px;
   min-width: 500;
   padding: 70px;
-  
+
 }
 
 .gl-content-errMsg {
@@ -637,24 +646,24 @@ li .current + ol > li
       vertical-align: 17px;
       width: 18px;
     }
-	 
+
 
 
 /* Media query section start */
 @media only screen and (max-device-width:320px){
-	
+
 	.container{padding:0;}
-	
+
 	#header{
 		background:none repeat scroll 0 0 white;
 		height:auto;
 		min-height:64px;
 		padding-bottom:0;
 	}
-	
+
 	.navigation-bar, .section-bar{
 		width:100%;
-		padding-bottom:20px;	
+		padding-bottom:20px;
 	}
 
     #reference-index{
@@ -666,7 +675,7 @@ li .current + ol > li
 	}
 	.logo-wrap .down-arrow{
 		display:none;}
-		
+
 	#lg-container{
 		/*display:none;*/
 	}
@@ -675,7 +684,7 @@ li .current + ol > li
 		font-size:23px;line-height:50px;
 		text-shadow:0 -1px 1px rgba(0,0,0,0.25)
 	}
-	
+
 	.navigation-bar input, .section-bar input {
 		border: medium none;
 		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
@@ -684,17 +693,17 @@ li .current + ol > li
 		width: 250px;
 		margin-top:0 !important;
 	}
-	
+
 	#gallerySearchForm input[type="search"]{
 		background-image:none;
-		
+
 	}
-	
+
 	#gl-search-btn{
 		right: 60px;
-    	top: 80px;	
+    	top: 80px;
 	}
-    
+
     .tablet-theme-dropDown {
       background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
       border-radius: 18px 18px 18px 18px;
@@ -717,19 +726,19 @@ li .current + ol > li
 }
 
 @media only screen and (max-width:320px){
-	
+
 .container{padding:0;}
-	
+
 	#header{
 		background:none repeat scroll 0 0 white;
 		height:auto;
 		min-height:64px;
 		padding-bottom:0;
 	}
-	
+
 	.navigation-bar, .section-bar{
 		width:100%;
-		padding-bottom:20px;	
+		padding-bottom:20px;
 	}
 
     #reference-index{
@@ -741,7 +750,7 @@ li .current + ol > li
 	}
 	.logo-wrap .down-arrow{
 		display:none;}
-		
+
 	#lg-container{
 		/*display:none;*/
 	}
@@ -750,7 +759,7 @@ li .current + ol > li
 		font-size:23px;line-height:50px;
 		text-shadow:0 -1px 1px rgba(0,0,0,0.25)
 	}
-	
+
 	.navigation-bar input, .section-bar input {
 		border: medium none;
 		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
@@ -759,17 +768,17 @@ li .current + ol > li
 		width: 250px;
 		margin-top:0 !important;
 	}
-	
+
 	#gallerySearchForm input[type="search"]{
 		background-image:none;
-		
+
 	}
-	
+
 	#gl-search-btn{
 		right: 60px;
-    	top: 80px;	
+    	top: 80px;
 	}
-    
+
     .tablet-theme-dropDown {
       background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
       border-radius: 18px 18px 18px 18px;
@@ -782,7 +791,7 @@ li .current + ol > li
       vertical-align: 17px;
       width: 18px;
     }
-	
+
 	#mobile-navigation {
 		margin-right: 5%;
 		margin-bottom: 14px;
@@ -790,23 +799,23 @@ li .current + ol > li
 		float: left;
 		margin-top: 0;
 	}
-	
-	
+
+
 }
 
 @media only screen and (min-device-width:321px) and (max-device-width:480px){
 	#header{
-		width:100%;	
+		width:100%;
 	}
-	
+
 	.navigation-bar, .section-bar{
-		width:100%;	
+		width:100%;
 	}
-	
+
 	#reference-index{
 		width:92%;
 	}
-	
+
 	.navigation-bar header h1,.section-bar header h1{
 		font-family:"Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif;
 		font-size: 1.5em;
@@ -820,21 +829,21 @@ li .current + ol > li
 		border-top:1px solid #D8D8D8;
 		padding:11px 8px 30px;
 	}
-	
+
 	.container{
 		padding:0;
-		width:100%;	
+		width:100%;
 	}
-	
+
 	#gl-pagenav{
 		display:none;
-		width:100%;	
+		width:100%;
 	}
-	
+
 	ul#gl-content-ul{
-		margin-left:30px;	
+		margin-left:30px;
 	}
-	
+
 	.display1 .item {
 		border: 0 solid black;
 		display: inline-block;
@@ -844,8 +853,8 @@ li .current + ol > li
 		overflow: hidden;
 		position: relative;
 		width: 270px;
-	}	
-	
+	}
+
 	.display1 .item-img {
 		box-shadow: 0 0 4px #666666;
 		display: block;
@@ -856,20 +865,20 @@ li .current + ol > li
     .banner-navigation{
 		/*display:none;	*/
 	}
-	
+
 	.toggle-dropdown{
 		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
 		float:right;height:20px;position:relative;width:20px
 	}
-	
+
 	.toggle-dropdown .close{
 			background-position:0 0
 	}
 
      #gl-search-btn{
-		display:none;	
+		display:none;
 	}
-	
+
 	.tablet-theme-dropDown {
       background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
       border-radius: 18px 18px 18px 18px;
@@ -882,7 +891,7 @@ li .current + ol > li
       vertical-align: 17px;
       width: 18px;
     }
-	
+
 	#mobile-navigation {
 		margin-right: 5%;
 		margin-bottom: 14px;
@@ -896,18 +905,18 @@ li .current + ol > li
 }
 
 @media only screen and (min-width:321px) and (max-width:480px){
-	
-	
-	
+
+
+
 	#header{
-		width:100%;	
+		width:100%;
 	}
-	
+
 	.navigation-bar, .section-bar{
 		width:100%;
-		padding-bottom:20px;	
+		padding-bottom:20px;
 	}
-	
+
 	#reference-index{
 		width:92%;
 	}
@@ -918,7 +927,7 @@ li .current + ol > li
 		border-top:1px solid #D8D8D8;
 		padding:11px 8px 30px;
 	}
-	
+
 	.navigation-bar input, .section-bar input {
 		border: medium none;
 		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
@@ -927,7 +936,7 @@ li .current + ol > li
 		width: 250px;
 		margin-top:0 !important;
 	}
-	
+
 	.display1 .item {
 		border: 0 solid black;
 		display: inline-block;
@@ -937,8 +946,8 @@ li .current + ol > li
 		overflow: hidden;
 		position: relative;
 		width: 270px;
-	}	
-	
+	}
+
 	.display1 .item-img {
 		box-shadow: 0 0 4px #666666;
 		display: block;
@@ -949,12 +958,12 @@ li .current + ol > li
     .banner-navigation{
 		/*display:none;	*/
 	}
-	
+
 	.toggle-dropdown{
 		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
 		float:right;height:20px;position:relative;width:20px
 	}
-	
+
 	.toggle-dropdown .close{
 			background-position:0 0
 	}
@@ -963,7 +972,7 @@ li .current + ol > li
 		display:none;
 
 	}
-	
+
 	.tablet-theme-dropDown {
       background: url("/img/mktplace-icons.png") no-repeat scroll -20px 0 transparent;
       border-radius: 18px 18px 18px 18px;
@@ -976,7 +985,7 @@ li .current + ol > li
       vertical-align: 17px;
       width: 18px;
     }
-	
+
 	#mobile-navigation {
 		margin-right: 5%;
 		margin-bottom: 14px;
@@ -990,24 +999,24 @@ li .current + ol > li
 
 
 @media only screen and (min-device-width:481px) and (max-device-width:640px){
-	
+
 	body{
-		width:100% !important;	
+		width:100% !important;
 	}
-	
+
 	#header{
-		width:640px;	
+		width:640px;
 	}
-	
+
 	.navigation-bar, .section-bar{
 		width:640px;
-		padding-bottom:20px;	
+		padding-bottom:20px;
 	}
-	
+
 	.banner-navigation {
     	/*display: none;*/
 	}
-	
+
 	.navigation-bar input, .section-bar input {
 		border: medium none;
 		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
@@ -1017,25 +1026,25 @@ li .current + ol > li
 		margin-top:0 !important;
 		padding-bottom:20px;
 	}
-	 
+
 	#reference-index{
             width:570px;
     }
-	
+
 	#reference-index header{
 		background:none repeat scroll 0 0 #EAEAEA;border-bottom:1px solid #D8D8D8;
 		border-top:1px solid #D8D8D8;padding:11px 8px 30px
 	}
-	
+
 	.toggle-dropdown{
 		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
 		float:right;height:20px;position:relative;width:20px
 	}
-	
+
 	.toggle-dropdown .close{
 			background-position:0 0
 	}
-	
+
 	.display1 .item {
 		border: 0 solid black;
 		display: inline-block;
@@ -1045,18 +1054,18 @@ li .current + ol > li
 		overflow: hidden;
 		position: relative;
 		width: 192px;
-	}	
-	
+	}
+
 	.display1 .item-img {
 		box-shadow: 0 0 4px #666666;
 		display: block;
 		height: 150px;
 		width: 192px;
 	}
-	
+
 	#gl-search-btn{
 		right: 350px;
-    	top: 92px;	
+    	top: 92px;
 	}
 
 	.see-more {
@@ -1076,27 +1085,27 @@ li .current + ol > li
 		float: left;
 		margin-top: 0;
 	}
-		
+
 }
 
 @media only screen and (min-width:481px) and (max-width:640px){
 	body {
-		width:100% !important;	
+		width:100% !important;
 	}
-	
+
 	#header{
-		width:640px;	
+		width:640px;
 	}
-	
+
 	.navigation-bar, .section-bar{
 		width:640px;
-		padding-bottom:20px;	
+		padding-bottom:20px;
 	}
-	
+
 	.banner-navigation {
     	/*display: none;*/
 	}
-	
+
 	.navigation-bar input, .section-bar input {
 		border: medium none;
 		box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
@@ -1104,18 +1113,18 @@ li .current + ol > li
 		opacity: 0.75;
 		width: 250px;
 		margin-top:0 !important;
-		
+
 	}
-	
+
 	#reference-index header{
 		background:none repeat scroll 0 0 #EAEAEA;border-bottom:1px solid #D8D8D8;
 		border-top:1px solid #D8D8D8;padding:11px 8px 30px;
 	}
-        
+
     #reference-index{
             width:564px;
     }
-	
+
 	.display1 .item {
 		border: 0 solid black;
 		display: inline-block;
@@ -1125,29 +1134,29 @@ li .current + ol > li
 		overflow: hidden;
 		position: relative;
 		width: 270px;
-	}	
-	
+	}
+
 	.display1 .item-img {
 		box-shadow: 0 0 4px #666666;
 		display: block;
 		height: 190px;
 		width: 270px;
 	}
-	
+
 	.toggle-dropdown{
 		background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
 		float:right;height:20px;position:relative;width:20px
 	}
-	
+
 	.toggle-dropdown .close{
 			background-position:0 0
 	}
-	
+
 	#gl-search-btn{
 		right: 350px;
-    	top: 92px;	
+    	top: 92px;
 	}
-	
+
 	.see-more {
 		background: none repeat scroll 0 0 #F2F2F2;
 		color: #999999;
@@ -1158,7 +1167,7 @@ li .current + ol > li
 		text-align: center;
 		width: 270px;
 	}
-	
+
 	#mobile-navigation {
 		margin-right: 5%;
 		margin-bottom: 14px;
@@ -1166,7 +1175,7 @@ li .current + ol > li
 		float: left;
 		margin-top: 0;
 	}
-    
+
 }
 
 @media only screen and (min-width:641px) and (max-width:768px){
@@ -1177,7 +1186,7 @@ li .current + ol > li
 			margin-right:12px;
 			width:260px;
 		}
-		
+
 		#gl-search-btn{
 			color:#F4803A;
 			cursor:pointer;
@@ -1186,12 +1195,12 @@ li .current + ol > li
 			right:15px;
 			top:36px;
 		}
-		
+
 		.navigation-bar, .section-bar{
 			width:768px;
-			padding-bottom:20px;	
+			padding-bottom:20px;
 		}
-			
+
 			#mobile-navigation{
 				display:inline-block;
 				margin-right:80px;
@@ -1199,7 +1208,7 @@ li .current + ol > li
 			.container .content{
 				width:670px;
 			}
-			
+
 			#gl-pagenav{
 				float:left;
 				height:52px;
@@ -1208,41 +1217,41 @@ li .current + ol > li
 				padding:5px;
 				position:relative
 			}
-			
+
 			#reference-index{
             	width:598px;
     		}
-			
-			#reference-index{		
+
+			#reference-index{
 				margin: 12px 12px 12px 60px;
 			}
-			
+
 			#reference-content{
-				margin-left: 60px;	
+				margin-left: 60px;
 			}
-			
+
 			#reference-index header{
 				background:none repeat scroll 0 0 #EAEAEA;
 				border-bottom:1px solid #D8D8D8;
 				border-top:1px solid #D8D8D8;
 				padding:11px 8px 30px;
 			}
-			
+
 			.toggle-dropdown{
 				background:url("/img/mktplace-icons.png") repeat scroll -20px 0 transparent;
 				float:right;height:20px;
 				position:relative;
 				width:20px}
-					
+
 			.toggle-dropdown .close{background-position:0 0}
-			
+
 			#gallerySearchForm{
-				float:left;	
+				float:left;
 			}
 }
 
 @media only screen and (min-width:769px) and (max-width:960px){
-	
+
 	#reference-content{/*width:100%*/}
 	.container{
 		/*width:960px;*/
@@ -1261,7 +1270,7 @@ li .current + ol > li
 .gl-pagination {
             font-size: 80%;
         }
-        
+
 
 .gl-pagination label {
     /*display: block;
@@ -1269,7 +1278,7 @@ li .current + ol > li
     padding: 0.3em 0.5em;
     margin-right: 5px;
 	margin-bottom: 5px;*/
-	
+
 	background: none repeat scroll 0 0 #F2F2F2;
     border: 1px solid #EDEDED;
     border-radius: 4px 4px 4px 4px;
@@ -1402,7 +1411,7 @@ li .current + ol > li
 	text-align: right;
 }
 
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
   .reset-filter {
      margin-top: -25px;
   }

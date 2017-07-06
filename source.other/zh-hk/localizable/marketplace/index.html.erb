@@ -3,123 +3,255 @@ layout: marketplace/layout
 
 title: ArcGIS Marketplace
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
+  - /cdn/js/libs/jquery.colorbox-min
   - video-init
 
 metatags:
-  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="last-modified" content="2013-6-18"><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING"><META name="content-language" content="zh-hk">
-
+  - <META name="description" content="ArcGIS Marketplace Help Home page."><META name="product" content="arcgis-marketplace"><META name="sub_category" content="ArcGIS Marketplace"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Marketplace"><META name="search-category" content="help-general"><META name="subject_label" content="Marketplace, MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="Marketplace, MAPPING">
 mobile: true
 
 ---
-<div class="section-bar marketplace">
-  <div class="container">
-    <header>
-      <h1><a href="/zh-hk/marketplace/">說明</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Marketplace Help">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="marketplace" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
 
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/zh-hk/marketplace/">主頁</a></li>
-        <li><a href="/zh-hk/marketplace/consumer/">針對消費者</a></li>
-        <li><a href="/zh-hk/marketplace/provider/">針對供應商</a></li>
-      </ul>
-    </nav>
+<header class="sub-nav sub-nav-marketplace">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+			<!--
+			<nav class="breadcrumbs breadcrumbs-white leader-1 clearfix">
+            <a class="crumb" href="//www.arcgis.com/">ArcGIS</a>
+            <a class="crumb is-active" href="/zh-hk/marketplace/">Marketplace</a>
+          </nav>
+			-->
+          <h1 class="sub-nav-title leader-1 text-white">ArcGIS Marketplace 說明</h1>
+        </div>
+        <!-- Placeholder for image in blue banner-->
+		  <!--<div class="sdk-home-banner-image">
+          <img src="img/epcot.jpg">
+        </div>-->
+		  <div class="search-bar">
+			 <form id="helpSearchForm" target="_top">
+			  <input type="search" name="q" class="leader" placeholder="搜尋 Marketplace 說明">
+			  <input type="hidden" name="collection" value="help" />
+			  <input type="hidden" name="product" value="marketplace" />
+			  <input type="hidden" name="language" value="<%= current_language %>" />
+			  <button class="search-submit icon-ui-search" type="submit"></button>
+			</form>
+		  </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list">
+	     <a href="/zh-hk/marketplace/" class="sub-nav-link  is-active">主頁</a> 
+	     <a href="/zh-hk/marketplace/consumer/" class="sub-nav-link ">針對客戶</a> 
+	     <a href="/zh-hk/marketplace/provider/" class="sub-nav-link ">針對供應商</a>
+        </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2">
+  <div class="column-16">
+    <h2>什麼是 Marketplace？</h2>
+    <p>ArcGIS Marketplace 可允許 ArcGIS Online 組織搜尋、發現，並取得合資格的供應商（Esri 業務合作夥伴、Esri 經銷商、Esri 初創公司和 Esri）所提供的應用程式和資料，以供組織內部使用。在 Marketplace 列出的應用程式和資料服務，可以提供給全世界的任何 ArcGIS Online 組織使用。</p>
+
+  </div>
+  <!--<div class="column-8 tablet-column-12 right">
+	 <div class="panel panel-dark">
+      <h4 class="text-white icon-ui-announcement">What's new</h4>
+      <p class="text-white">The December 2016 update includes a new enhancements to reviews and email notifications.</p>
+    </div>
+  </div>-->
+  <!--<div class="column-8 tablet-column-12 right">
+      <div class="panel-1">
+        <img class="trailer-1" alt="" src="img/epcot.jpg">
+      </div>
+    </div>-->
+</div>
+
+<div class="grid-container leader-1">
+  <hr class="leader-half trailer-half">
+  </div>
+
+<!-- option 2 -->
+<div class="grid-container trailer-1">
+  <div class="column-24">
+    <div class="block-group block-group-2-up tablet-block-group-1-up">
+      <div class="block leader-1 text-center">
+        <div class="panel panel-no-padding">
+            <a href="/zh-hk/marketplace/consumer/"><img class="gutter-left-1 leader-1 trailer-1" alt="" src="img/for-consumers.png"></a>
+            <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">針對消費者</h3>
+            <p>瞭解如何尋找及使用應用程式和資料。</p>
+				<p>
+				<a class="icon-ui-right icon-ui-small" href="/zh-hk/marketplace/consumer/search-for-apps-and-data.htm">搜尋應用程式和資料</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/zh-hk/marketplace/consumer/use-apps-and-data.htm">使用應用程式和資料</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/zh-hk/marketplace/consumer/manage-licenses.htm">管理授權</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/zh-hk/marketplace/consumer/faq.htm">常見問題集</a><br/>
+				</p>
+          </div>
+        </div>
+      </div>
+
+		<div class="block leader-1 text-center">
+        <div class="panel panel-no-padding">
+            <a href="/zh-hk/marketplace/provider/"><img class="leader-1 trailer-1" alt="" src="img/for-providers.png"></a>
+            <div class="gutter-right-1 gutter-left-1 trailer-1">
+            <h3 class="font-size-2">針對供應商</h3>
+            <p>瞭解如何新增、促銷及銷售您的應用程式和資料。</p>
+            <p>
+				<a class="icon-ui-right icon-ui-small" href="/zh-hk/marketplace/provider/become-a-provider.htm">成為供應商</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/zh-hk/marketplace/provider/create-listings.htm">建立清單</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/zh-hk/marketplace/provider/sales.htm">設置銷售</a><br/>
+				<a class="icon-ui-right icon-ui-small" href="/zh-hk/marketplace/provider/faq.htm">常見問題集</a><br/>
+				</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
+<!-- Forum -->
+	<div class="panel panel-white panel-no-border panel-no-padding">
+        <div class="grid-container padding-trailer-1 padding-leader-1">
+          <div class="column-24">
+            <h2 class="text-rule padding-trailer-half">參與討論 <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/groups/arcgis-marketplace-apps">更多討論 <span class="icon-ui-small icon-ui-link-external"></span></a>
+            </h2>
+            <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/groups/feeds/allcontent?socialGroup=1350" class="block-group block-group-3-up geonetFeed">
+				<!-- Forum content goes here -->
+				</div>
 
-
-     <div class="column-16 tablet-column-24">
-        <header>
-
-			 
-		 <!--<h2 id="appTitle" class="gray">What is the Marketplace?</h2>-->
-		<h5 class="gray">瞭解如何發揮 ArcGIS Marketplace 的最大功能。</h5>	
-
-        </header>
-        <hr />
-        <br />
-
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="img/for-consumers.png" />
-
-          <h3>針對消費者 </h3>
-          <p>瞭解如何尋找及使用應用程式和資料。</p>
-          <ul>			
-			<li><a href="/zh-hk/marketplace/consumer/get-started-consumers.htm">發揮 ArcGIS Marketplace 的最大功能</a></li>
-			<li><a href="/zh-hk/marketplace/consumer/search-for-apps-and-data.htm">搜尋項目</a></li>
-			<li><a href="/zh-hk/marketplace/consumer/subscribe-to-apps-and-data.htm">取得項目</a></li>
-			<li><a href="/zh-hk/marketplace/consumer/faq.htm">常見問題集</a></li>
-          </ul>
+          </div>
         </div>
+      </div>
 
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="img/for-providers.png" />
-
-          <h3>針對供應商</h3>
-          <p>瞭解如何新增、促銷及銷售您的應用程式和資料。</p>
-          <ul>			
-			<li><a href="/zh-hk/marketplace/provider/become-a-provider.htm">成為供應商</a></li>
-			<li><a href="/zh-hk/marketplace/provider/listing-tips.htm">成功清單的秘訣</a></li>
-			<li><a href="/zh-hk/marketplace/provider/create-listings.htm">關於清單</a></li>
-			<li><a href="/zh-hk/marketplace/provider/faq.htm">常見問題集</a></li>
-          </ul>
+<!-- Featured block-->
+<div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Marketplace 中的最新清單
+        <a class="btn btn-transparent text-white btn-large right" href="https://marketplace.arcgis.com/">更多清單</a>
+      </h2>
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up leader-0 padding-leader-half trailer-half">
+       	<div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="//marketplace.arcgis.com/listing.html?id=1b6e8ad44f8b49f186c869febe1b3782">
+              <img alt="Fasthome" src="/en/marketplace/img/fast_home.png">
+            </a>
+          </figure>
         </div>
-        <div class="clear"></div>
-
-<hr>
-<br>
-<div>
-    
-<div class="column-8 phone-column-24">
-
-    <section class="support-option">
-      <h4 class="icon-help icon-red"><a href="http://support.esri.com/en/" target="_blank">Esri 技術支援</a></h4>
-      <p>透過聊天、電子郵件或電話聯繫 Esri 支援部門。</p>
-    </section>
-    
-  </div> 
-  <div class="column-8 phone-column-24">
-
-    <section class="support-option">
-      <h4 class="icon-light-bulb icon-orange"><a href="https://geonet.esri.com/community/arcgis-ideas/" target="_blank">ArcGIS 構想</a></h4>
-      <p>提交您對軟體的回饋意見。</p>
-    </section>
-    
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="//marketplace.arcgis.com/listing.html?id=baca0d2258de46f9913ff30d147b6c7b">
+              <img alt="Mapillary for ArcGIS Online" src="/en/marketplace/img/mapillary.png">
+            </a>
+          </figure>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="//marketplace.arcgis.com/listing.html?id=53ed22682e6840598378ce2988d68b20">
+              <img alt="Survey123 for ArcGIS" src="/en/marketplace/img/survey123.png">
+            </a>
+          </figure>
+        </div>
+        <div class="card block leader-0">
+          <figure class="card-image-wrap">
+            <a href="//marketplace.arcgis.com/listing.html?id=d066a4c37f6e45d0aa0fffc617661ad8">
+              <img alt="AppSmart for ArcGIS" src="/en/marketplace/img/appsmart.png">
+            </a>
+          </figure>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="column-8 phone-column-24" >
-
-   <h4 class="icon-comment icon-blue"><a href="https://geonet.esri.com/groups/arcgis-marketplace-apps" target="_blank">Esri 社群</a></h4>
-      <p>在 GeoNet 中參與討論。</p>
-    
-  </div>
-  <!--<div class="row">-->
-
-  
 </div>
-        <p>&nbsp;</p>
+
+<!--Extra resources -->
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">參加深入課程</a></h5>
+          <p class="trailer-0">
+ 尋找和完成練習，使用 ArcGIS 以解決實際的全球問題。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">尋找培訓課程</a></h5>
+          <p class="trailer-0">
+            透過教師領導課程、Web 課程和研討會來深入瞭解 ArcGIS。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">取得技術支援</a></h5>
+          <p class="trailer-0">
+            透過聊天、電子郵件或電話聯繫 Esri 支援。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">檢查系統健康</a></h5>
+          <p class="trailer-0">
+            查看 ArcGIS Online 的狀態並回報問題。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	<!-- Videos -->
+	<!--<div class="panel panel-blue panel-no-border panel-no-padding">
+    <div class="grid-container padding-leader-1 padding-trailer-1">
+      <div class="column-24">
+        <h2 class="text-white text-rule padding-trailer-half">From our Videos
+          <a class="btn btn-transparent btn-large right text-white" href="http://video.esri.com/search/Collector for ArcGIS">More Videos  <span class="icon-ui-link-external icon-ui-small"></span></a>
+        </h2>
+        <div class="flexible-block-group flexible-block-group-4-up">
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="//video.arcgis.com/iframe/2672/000000/width/960/1" class="colorbox-evlarge" title="Getting Started with Collector" ><img alt="Getting Started with Collector" src="//video.arcgis.com/thumbs/2013/08/2672/2672-getting-started-with-collector-for-arcgis_x.jpg"></a>
+                <h5 class="leader-1">Getting Started With Collector</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge text-white" href="//video.arcgis.com/iframe/2672/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="//video.arcgis.com/iframe/3945/000000/width/960/1" class="colorbox-evlarge" title="Collector for ArcGIS - ArcGIS for the Military" ><img alt="Collector for ArcGIS - ArcGIS for the Military" src="//video.arcgis.com/thumbs/2014/11/3945/3945-collector-for-arcgis-_dash_-arcgis-for-the-military_x.jpg"></a>
+                <h5 class="leader-1">Collector for ArcGIS - ArcGIS for the Military</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge text-white" href="//video.arcgis.com/iframe/3945/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="//video.arcgis.com/iframe/3474/000000/width/960/1" class="colorbox-evlarge" title="Using Collector for ArcGIS with ArcGIS Server" ><img alt="Using Collector for ArcGIS with ArcGIS Server" src="//video.arcgis.com/thumbs/2014/04/3474/3474-using-collector-for-arcgis-with-arcgis-server-1022_x.jpg"></a>
+                <h5 class="leader-1">Using Collector for ArcGIS with ArcGIS Server</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge text-white" href="//video.arcgis.com/iframe/3474/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>
+            </div>
+          <div class="flexible-block-group-item flexible-block-group-item-blue flexible-block-group-no-header">
+              <div class="flexible-block-group-conent">
+                <a href="//video.arcgis.com/iframe/4154/000000/width/960/1" class="colorbox-evlarge" title="Offline Maps with ArcGIS for Server and Collector for ArcGIS" ><img alt="Offline Maps with ArcGIS for Server and Collector for ArcGIS" src="//video.arcgis.com/thumbs/2015/02/4154/4154-offline-maps-with-arcgis-for-server-and-collector-for-arcgis_x.jpg"></a>
+                <h5 class="leader-1">Offline Maps with ArcGIS for Server and Collector for ArcGIS</h5>
+              </div>
+              <div class="flexible-block-group-footer">
+                <a class="colorbox-evlarge text-white" href="//video.arcgis.com/iframe/4154/000000/width/960/1">Watch the Video <span class="icon-ui-right icon-ui-small"></span></a>
+              </div>-->
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 
 
-
-
-
-
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

@@ -1,12 +1,14 @@
 ---
 title: Raportoi suojausongelmasta
 css:
-  - documentation
+  - homepage
   - /en/asset/css/common
-  - stat-page-specific
-  - feedback
+  - /cdn/css/colorbox
+  - /css/stat-page-specific
+  - /css/feedback
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
   - securityForm
 
 languageSelector: "No"
@@ -17,149 +19,135 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/fi/Trust/">Luota ArcGIS:iin</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-  <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online Trust" href="/fi/trust/">Luottamus</a></li>
-        <li><a title="ArcGIS Online -järjestelmän tila" href="/fi/trust/system-status/">Järjestelmän tila</a></li>
-        <li><a title="ArcGIS Online -tietosuoja" href="/fi/trust/security/">Tietoturva</a></li>
-        <li><a title="ArcGIS Online -yksityisyys" href="/fi/trust/privacy/">Tietosuoja</a></li>
-        <li><a title="ArcGIS Online -yksityisyys" href="/fi/trust/compliance/">Vaatimustenmukaisuus</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<!-- Page Content -->
-<div class="container feedback">
 
-  <div class="row main">
-	  
-  <div class="warning-signup">
-      <header>
-        <h2 data-langlabel="">Raportoi suojausongelmasta</h2>
-      </header>
-	  <section>
-		<p data-langlabel="">Täytä oikealla oleva lomake käytettävissä olevilla tiedoilla. Täytä myös ongelmaasi liittyvät tiedot.Yhteystietojasi käytetään antamiesi tietojen seurantaan.Valitse soveltuva aihe avattavasta aiheluettelosta.</p>
-		<ul>
-			<li data-langlabel="">Haavoittuvuus – raportoi sivustosta tai sovelluksesta löytyneestä haavoittuvuudesta.</li>
-			<li data-langlabel="">Epäilyttävä Esrin lähettämä sähköpostiviesti – jos epäilet olevasi mahdollisen tietojen kalasteluviestin kohteena, joka on lähetetty Esrin sähköpostiosoitteesta, tai jos olet vastaanottanut muita epäilyttäviä sähköpostiviestejä Esriltä.</li>
-			<li data-langlabel="">Yksityisyyteen liittyvä ongelma – jos olet huolestunut sovellukseemme tai organisaatioomme liittyvistä yksityisyyskäytännöistä.</li>
-			<li data-langlabel="">Muu – kaikki muut tietosuojaan, yksityisyyteen tai lainmukaisuuteen liittyvät ongelmat.</li>
-		</ul>
-		
-<div style="padding-bottom:15px;">		
-
-  </div>   
-	  <hr style="padding-bottom:20px;"/>
-	  	  <header>
-		<h3 data-langlabel="">Haavoittuvuuden raportointikäytäntö</h3>
-	  </header>
-      
-        <p data-langlabel="">ArcGIS.com-tietosuojatyöryhmä arvostaa tärkeää roolia, joka itsenäisillä tietosuojan tutkijoilla on Internetin suojauksessa.Rohkaisemme käyttäjiä raportoimaan kaikista haavoittuvuuksista, joita saattaa esiintyä sivustollamme tai sovelluksessamme.Esri on sitoutunut työskentelemään tietosuojayhteisön kanssa kaikkien meille raportoitujen mahdollisten haavoittuvuuksien tarkistamiseksi ja niihin reagoimiseksi.Esri ei haasta sinua oikeuteen tai aloita lainvalvontaan liittyvää tutkimusta, jos noudatat tätä käytäntöä.</p>
-	  <header>
-		<h4 data-langlabel="">ArcGIS.com <strong>ei</strong> salli seuraavanlaista tietosuojatutkimusta</h4>
-	  </header>
-	  <ul>
-			<li data-langlabel="">Palvelunestotilanteen (DoS) aiheuttamista tai sen yrittämistä.</li>
-		<li data-langlabel="">Automaattisten tietosuojatyökalujen käyttö ilman Esrin erillistä lupaa.Automaattisten työkalujen käyttö voi johtaa tutkintaan tai IP-osoitteesi (tai -osoitteidesi) lukitsemiseen.</li>
-		<li data-langlabel="">Sellaisten tietojen käyttö tai käytön yritys, jotka eivät kuulu sinulle.</li>
-		<li data-langlabel="">Sellaisten tietojen tuhoaminen tai vioittaminen tai niiden yritys, jotka eivät kuulu sinulle.</li>  
-	  </ul>
-
-	 <header>
-	  <h4 data-langlabel="">ArcGIS.com-tietosuojatyöryhmän sitoutuminen</h4>
-	  </header>
-		<p data-langlabel="">Kaikkien niiden tietosuojan tutkijoiden osalta, jotka noudattavat tätä ArcGIS.comin haavoittuvuuden raportointikäytäntöä, ArcGIS.com-tietosuojatyöryhmä sitoutuu seuraavaan:</p>
-		
-		<ul>
-		<li data-langlabel="">vastaamaan ja kuittaamaan raportin vastaanoton nopeasti</li>
-		<li data-langlabel="">antamaan aika-arvion tämän haavoittuvuuden käsittelystä</li>
-		<li data-langlabel="">ilmoittamaan raportoineelle henkilölle, kun haavoittuvuus on korjattu.</li>		
-		</ul>
-      
-    <div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Tietoturvaraportoinnin osallistujat</span>
-      <div class="dropdown-content">
-        <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">Haluamme kiittää seuraavia tietoturvan tutkijoita, jotka ovat osallistuneet haavoittuvaisuuksien raportointiohjelmaamme:</p>
-          <%= partial :"_partial/security_names" %>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="/fi/trust/system-status/">Tarkista järjestelmän tila</a>
         </div>
       </div>
     </div>
-      
-	 </section>
-	 
-  </div> 
-
-    <div class="contact-form-signup">
-		
-		<div id="form-fields">
-		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
-						
-			<fieldset id="security-form-fieldset">
-
-			  <label data-langlabel="" for="name">Nimi:</label>
-			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">Sähköpostiosoite:</label>
-			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">Puhelinnumero:</label>
-			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
-			  <label data-langlabel="" for="organization">Organisaatio <span class="optional">(valinnainen):</span> </label>
-			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">Aihe:</label>
-			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option>
-				  <option value="Vulnerability">Haavoittuvuus</option>
-				  <option value="Suspicious E-mail from Esri">Epäilyttävä Esrin lähettämä sähköpostiviesti</option>
-				  <option value="Privacy Issue">Yksityisyyteen liittyvä ongelma</option>
-				  <option value="audi">Muu</option>
-			  </select>
-
-			  <label data-langlabel="" for="description">Kuvaus:</label>
-			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">Voit estää automaattisen roskapostin kirjoittamalla annetut numerot:</label>
-			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-			  <label data-langlabel="numerals" for="captchaValue">Numerot: <strong><span id="txtCaptcha" class=""></span></strong></label>
-
-			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="internal" name="source" id="source">
-
-			  <input value="verbose" name="resultType" id="resultType" type="hidden">
-			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
-			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-			  <input type="hidden" value="fi" name="lg">
-			
-			</fieldset>
-			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Lähetä</a>
-			
-		  </form>
-		</div>
-
-	  <div id="submission-confirmation" style="display:none;">	
-		<p data-langlabel=""><h4>Kiitos, että raportoit tästä ongelmasta.Tutkimme ongelmaa muutaman arkipäivän sisällä.</h4></p>
-	  </div>
-	  <div id="submission-error" style="display:none;">	
-		<p data-langlabel=""><h4>Lähetyksen aikana tapahtui virhe.Lähetä huolesi myöhemmin uudelleen.</h4></p>
-	  </div>
-
-	  <strong>
-			<span style="display:none;" id="referPageLink">Palaa <a id="feedback-referring-link" href="">viittaavalle sivulle</a></span>
-			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Lähetä</a> toinen tietosuojaongelma</span>
-	  </strong>
-
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/" selected>Luota</option>
+        <option value="/en/trust/system-status/">ArcGIS Online -tila</option>
+        <option value="/en/trust/security/">Security</option>
+        <option value="/en/trust/privacy/">Tietosuoja</option>
+        <option value="/en/trust/compliance/">Lainmukaisuus</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/fi/trust/">Luottamus</a>
+        <a class="sub-nav-link" href="/fi/trust/system-status/">ArcGIS Online -tila</a>
+        <a class="sub-nav-link" href="/fi/trust/security/">Suojaus</a>
+        <a class="sub-nav-link" href="/fi/trust/privacy/">Tietosuoja</a>
+        <a class="sub-nav-link" href="/fi/trust/compliance/">Yhdenmukaisuus</a>
+      </nav>
     </div>
+  </div>
+</header>
 
-  </div> <!-- end of row main -->
+<div class="grid-container feedback">
+  <div class="column-24 leader-2 trailer-2">
+    <div class="column-12 trailer-2">
+      <div>
+        <h2 data-langlabel="">Raportoi suojausongelmasta</h2>
+        <p data-langlabel="">Täytä oikealla oleva lomake käytettävissä olevilla tiedoilla. Täytä myös ongelmaasi liittyvät tiedot. Yhteystietojasi käytetään antamiesi tietojen seurantaan. Valitse soveltuva aihe avattavasta aiheluettelosta.</p>
+    		<ul>
+    			<li data-langlabel="">Haavoittuvuus – raportoi sivustosta tai sovelluksesta löytyneestä haavoittuvuudesta.</li>
+    			<li data-langlabel="">Epäilyttävä Esrin lähettämä sähköpostiviesti – jos epäilet olevasi mahdollisen tietojen kalasteluviestin kohteena, joka on lähetetty Esrin sähköpostiosoitteesta, tai jos olet vastaanottanut muita epäilyttäviä sähköpostiviestejä Esriltä.</li>
+    			<li data-langlabel="">Yksityisyyteen liittyvä ongelma – jos olet huolestunut sovellukseemme tai organisaatioomme liittyvistä yksityisyyskäytännöistä.</li>
+    			<li data-langlabel="">Muu – kaikki muut tietosuojaan, yksityisyyteen tai lainmukaisuuteen liittyvät ongelmat.</li>
+    		</ul>
+      </div>
+      <hr>
+      <div>
+		    <h3 data-langlabel="">Haavoittuvuuden raportointikäytäntö</h3>
+        <p data-langlabel="">ArcGIS.com-tietosuojatyöryhmä arvostaa tärkeää roolia, joka itsenäisillä tietosuojan tutkijoilla on Internetin suojauksessa. Rohkaisemme käyttäjiä raportoimaan kaikista haavoittuvuuksista, joita saattaa esiintyä sivustollamme tai sovelluksessamme. Esri on sitoutunut työskentelemään tietosuojayhteisön kanssa kaikkien meille raportoitujen mahdollisten haavoittuvuuksien tarkistamiseksi ja niihin reagoimiseksi. Esri ei haasta sinua oikeuteen tai aloita lainvalvontaan liittyvää tutkimusta, jos noudatat tätä käytäntöä.</p>
+        <h4 data-langlabel="">ArcGIS.com <strong>ei</strong> salli seuraavanlaista tietosuojatutkimusta</h4>
+        <ul>
+          <li data-langlabel="">Palvelunestotilanteen (DoS) aiheuttamista tai sen yrittämistä.</li>
+          <li data-langlabel="">Automaattisten tietosuojatyökalujen käyttö ilman Esrin erillistä lupaa. Automaattisten työkalujen käyttö voi johtaa tutkintaan tai IP-osoitteesi (tai -osoitteidesi) lukitsemiseen.</li>
+          <li data-langlabel="">Sellaisten tietojen käyttö tai käytön yritys, jotka eivät kuulu sinulle.</li>
+          <li data-langlabel="">Sellaisten tietojen tuhoaminen tai vioittaminen tai niiden yritys, jotka eivät kuulu sinulle.</li>
+        </ul>
+        <h4 data-langlabel="">ArcGIS.com-tietosuojatyöryhmän sitoutuminen</h4>
+        <p data-langlabel="">Kaikkien niiden tietosuojan tutkijoiden osalta, jotka noudattavat tätä ArcGIS.comin haavoittuvuuden raportointikäytäntöä, ArcGIS.com-tietosuojatyöryhmä sitoutuu seuraavaan:</p>
+        <ul>
+          <li data-langlabel="">vastaamaan ja kuittaamaan raportin vastaanoton nopeasti</li>
+          <li data-langlabel="">antamaan aika-arvion tämän haavoittuvuuden käsittelystä</li>
+          <li data-langlabel="">ilmoittamaan raportoineelle henkilölle, kun haavoittuvuus on korjattu.</li>
+        </ul>
+        <div class="dropdown-navigation dropdown-wrapper regular">
+          <span class="dropdown btn btn-fill btn-clear" data-langlabel="trust-researchers-title"> Tietoturvaraportoinnin osallistujat</span>
+          <div class="dropdown-content">
+            <div class="dropdown-menu">
+              <p data-langlabel="trust-researchers-desc">Haluamme kiittää seuraavia tietoturvan tutkijoita, jotka ovat osallistuneet haavoittuvaisuuksien raportointiohjelmaamme:</p>
+              <%= partial :"_partial/security_names" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column-11 right tablet-column-12">
+      <div class="contact-form-signups panel">
+        <div id="form-fields">
+          <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+            <fieldset id="security-form-fieldset">
+              <label data-langlabel="" for="name">Nimi
+                <input type="text" autocomplete="off" id="name" name="name">
+              </label>
+              <label data-langlabel="email-address" for="email-address">Sähköpostiosoite
+                <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+              </label>
+              <label data-langlabel="phone-number" for="phone-number">Puhelinnumero
+                <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+              </label>
+              <label data-langlabel="" for="organization">Organisaatio <span class="optional">(valinnainen):</span>
+                <input type="text" autocomplete="off" id="organization" name="organization">
+              </label>
+              <label data-langlabel="" for="subject">Aihe
+                <select id="subject" autocomplete="off" name="subject" class="select-full">
+                  <option value="" style="display:none;"></option>
+                  <option value="Vulnerability">Haavoittuvuus</option>
+                  <option value="Privacy Issue">Yksityisyyteen liittyvä ongelma</option>
+                  <option value="audi">Muu</option>
+                </select>
+              </label>
+              <label data-langlabel="" for="description">Kuvaus
+                <textarea autocomplete="off" data-langlabel="" placeholder="Järjestelmässäni tapahtui mahdollinen suojausongelma..." name="description" id="description"></textarea>
+              </label>
+              <label data-langlabel="feedback-spam-note" for="spam">Voit estää automaattisen roskapostin kirjoittamalla annetut numerot
+                <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+              </label>
+              <label data-langlabel="numerals" for="captchaValue">Numerot: <strong><span id="txtCaptcha" class=""></span></strong></label>
+              <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+              <input type="hidden" value="internal" name="source" id="source">
+              <input value="verbose" name="resultType" id="resultType" type="hidden">
+              <input value="Security Concern" name="datablock" id="datablock" type="hidden">
+              <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+              <input type="hidden" value="fi" name="lg">
+            </fieldset>
+            <a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Lähetä</a>
+          </form>
+        </div>
+        <div id="submission-confirmation" style="display:none;">
+          <p data-langlabel=""><h4>Kiitos, että raportoit tästä ongelmasta. Tutkimme ongelmaa muutaman arkipäivän sisällä.</h4></p>
+        </div>
+        <div id="submission-error" style="display:none;">
+          <p data-langlabel=""><h4>Lähetyksen aikana tapahtui virhe. Lähetä huolesi myöhemmin uudelleen.</h4></p>
+        </div>
+        <strong> <span style="display:none;" id="referPageLink">Palaa <a id="feedback-referring-link" href="">viittaavalle sivulle</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Lähetä</a> toinen tietosuojaongelma</span> </strong>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 $(document).ready(function() {
@@ -172,4 +160,8 @@ $(document).ready(function() {
 </script>
 
 </div>
-
+<style>
+.wrapper{
+  overflow:visible;
+}
+</style>

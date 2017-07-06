@@ -1,116 +1,178 @@
 ---
-title: Trust
+title: Trust ArcGIS
 css:
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
 
 js:
-  - video-init
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - jquery.colorbox.init.js
-  - sitecfg.js
+  - /cdn/js/libs/jquery.colorbox-min
+  - rssfeed
 
 metatags:
   - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="pt-br">
 
+
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/pt-br/Trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-  <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online Trust" href="/pt-br/trust/">Trust</a></li>
-        <li><a title="ArcGIS Online System Status" href="/pt-br/trust/system-status/">Status do ArcGIS Online</a></li>
-        <li><a title="ArcGIS Online Security" href="/pt-br/trust/security/">Segurança</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/pt-br/trust/privacy/">Privacidade</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/pt-br/trust/compliance/">Conformidade</a></li>
+
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear" href="/pt-br/trust/system-status/">Verificar Status do Sistema</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/" selected>Trust</option>
+        <option value="/en/trust/system-status/">Status do ArcGIS Online</option>
+        <option value="/en/trust/security/">Segurança</option>
+        <option value="/en/trust/privacy/">Privacidade</option>
+        <option value="/en/trust/compliance/">Conformidade</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/pt-br/trust/">Trust</a>
+        <a class="sub-nav-link" href="/pt-br/trust/system-status/">Status do ArcGIS Online</a>
+        <a class="sub-nav-link" href="/pt-br/trust/security/">Segurança</a>
+        <a class="sub-nav-link" href="/pt-br/trust/privacy/">Privacidade</a>
+        <a class="sub-nav-link" href="/pt-br/trust/compliance/">Conformidade</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-0">
+      <h1>ArcGIS—A plataforma de localização segura e confiável</h1>
+      <h5>O Trust.ArcGIS.com é seu caminho para recurso das informações de segurança, privacidade e conformidade.</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <p class="trailer-0 leader-0 font-size--2">
+        <a href="http://www.fedramp.gov/"><img src="img/fedramp.png"/></a>
+        <a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a>
+        <a href="https://www.privacyshield.gov/participant?id=a2zt00000004EspAAE"><img src="img/PrivacyShield.png" width="170"></a>&nbsp;
+        <a href="http://privacy.truste.com/privacy-seal/validation?rid=40a3315c-842e-4e81-bf75-0c568255d039"><img src="img/TrustePrivacy.png"></a>
+      </p>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="/pt-br/trust/security-concern/" class="icon-ui-notice-triangle font-size-1 link-red">Relatar uma Preocupação de Segurança</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-  <div class="column-16 tablet-column-24">
-    <h3 class="gray">ArcGIS—A plataforma de localização segura e confiável</h3>
-    <hr />
-    <div id="collectorMapFeature" class="column-12 phone-column-24">
-      <img src="img/features-security-data-ownership.jpg" alt="Security data ownership" />
-	      <div style="padding-top:30px; text-align: center;">
-      <a href="/pt-br/trust/system-status/" class="btn tertiary" style="width:75%;text-align:center; " >Verificar Status do Sistema</a>
-    </div>
-    </div>
-    <div id="collectorDataFeature" class="column-12 phone-column-24">
-      <p>O Trust.ArcGIS.com é seu caminho para recurso das informações de segurança, privacidade e conformidade.Find:</p>
-      <ul>
-        <li>Disponibilidade de serviço do ArcGIS Online, informações de desempenho do sistema e histórico de status</li>
-        <li>Atualizações de segurança e alertas atuais</li>
-        <li>Informações de segurança do produto para plataforma ArcGIS</li>
-        <li>Melhores práticas de segurança para sua organização</li>
-        <li>Informações de segurança e conformidade</li>
-      </ul>
-      <p>O Trust.ArcGIS.com é inspirado em conversações com nossos clientes.O que você gostaria de ver aqui?Se você tiver sugestões, poste no <a href="http://ideas.arcgis.com">ArcGIS Ideas</a>.</p>
 
-	
- </div>
-
-    <div class="clear"></div>
-    <div class="" style="text-align:center; padding-top:75px;">
-      <h4>&quot;O FedRAMP Moderado Revisão 4 compatível demonstra um avanço de segurança da Plataforma ArcGIS inflexível, independentemente verificado.&quot;</h4>
-      <p>Michael Young, Principal Arquiteto de Segurança, Esri</p>
-
-    </div>
-    <div style="text-align:center; padding-top:45px;">
-      <a href="http://cloud.cio.gov/fedramp"><img src="img/fedramp.png"/></a><a href="http://csrc.nist.gov/groups/SMA/fisma/"><img src="img/fisma.png"/></a><a href="http://www.truste.com/privacy-program-requirements/TRUSTed-cloud/"><img src="img/truste.png"/></a><a href="http://www.export.gov/safeharbor/"><img src="img/safeharbor.png"/></a>
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-half padding-trailer-1">
+    <div class="column-24">
+      <h2 class="padding-trailer-0">Alertas e anúncios
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/">Visualizar todos os alertas</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
     </div>
   </div>
-  <div class="column-8 tablet-column-24 blocks" style="padding-bottom:60px;">
+</div>
 
-    <br/>
-	        <!-- Blog Feed -->
-        <div class="imgFrame block">
-          <h3 class="icon-announcement">Alertas & Avisos &nbsp;&nbsp;<a id="rssIcon" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/" title="ArcGIS Blog"><img src="img/rss.png" /></a></h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
-		  <div style="text-align:right;">
-		  <a class="btn transparent" href="http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/">Visualizar Todos os Alertas</a> 
-		  </div>
-        </div><br/>
-		  		    <div class="" style="text-align:center;">
-      <h4><a style="color:orange;" class="icon-alert icon-orange" href="/pt-br/trust/security-concern/">Relatar uma Preocupação de Segurança</a>  </h4>
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-1">
+    <div class="column-24 text-center">
+      <h4>"A Esri continuamente incorpora segurança no DNA da Plataforma ArcGIS".</h4>
+      <p>Michael E. Young, Chefe de Segurança do Produto, Esri</p>
     </div>
-    <br />
-
   </div>
+</div>
 
- </div>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block card-bar-blue">
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/pt-br/trust/system-status/">Status do ArcGIS Online</a>
+          </h5>
+          <p>Consulte a disponibilidade do serviço, as informações de desempenho do sistema e o histórico de status do ArcGIS Online.</p>
+        </div>
+        <a href="/pt-br/trust/system-status/" class="btn btn-clear btn-fill leader-0">Mais informações</a>
+      </div>
+      <div class="card block card-bar-blue">
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/pt-br/trust/security/">Segurança e Melhores Práticas</a>
+          </h5>
+          <p>Obtenha uma visão geral dos recursos de segurança no ArcGIS. Implemente estes recursos utilizando as melhores práticas.</p>
+        </div>
+        <a href="/pt-br/trust/security/" class="btn btn-clear btn-fill leader-0">Mais informações</a>
+      </div>
+      <div class="card block card-bar-blue">
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/pt-br/trust/privacy/">Sua Privacidade e Esri</a>
+          </h5>
+          <p>A Declaração de Privacidade da Esri e uma Declaração de Privacidade de Produtos & Serviços complementar garantem que você receba o nível de privacidade que você merece e espera.</p>
+        </div>
+        <a href="/pt-br/trust/privacy/" class="btn btn-clear btn-fill leader-0">Mais informações</a>
+      </div>
+      <div class="card block card-bar-blue">
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/pt-br/trust/compliance/">Iniciativas de Conformidade</a>
+          </h5>
+          <p>O ArcGIS foi projetada e é gerenciada conforme os regulamentos, padrões e melhores práticas. Leia sobre as iniciativas de conformidade da Esri.</p>
+        </div>
+        <a href="/pt-br/trust/compliance/" class="btn btn-clear btn-fill leader-0">Mais informações</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/ssamymlgp/feed/',
-        max: 3,
-        layout: 0
-      });
-    });
-
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-
-  </script>
-
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Fazer uma lição detalhada</a></h5>
+          <p class="trailer-0">
+            Encontre e complete exercícios que resolvem problemas reais com ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Encontrar cursos de treinamento</a></h5>
+          <p class="trailer-0">
+            Aprenda mais sobre o ArcGIS através de cursos orientados por instrutores, cursos da web e seminários.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Obter técnica de suporte</a></h5>
+          <p class="trailer-0">
+            Entre em contato com Esri Support por chat, e-mail ou telefone.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Verificar desempenho do sistema</a></h5>
+          <p class="trailer-0">
+            Veja o status do ArcGIS Online e informe problemas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
