@@ -6,6 +6,7 @@ require "download"
 activate :i18n, :mount_at_root => false
 activate :directory_indexes
 activate :download
+activate :livereload, :host => "127.0.0.1"
 
 set :css_dir, 'assets/css'
 set :sass_dir, 'assets/sass'
@@ -50,7 +51,7 @@ configure :build do
 
   # Automatically compress PNG images
   # activate :smusher
-  
+
   ignore 'cdn/*'
   ignore 'css/*'
   ignore 'js/*'
