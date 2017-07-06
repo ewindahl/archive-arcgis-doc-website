@@ -94,7 +94,7 @@ mobile: true
         <div gallery-list id="gallerycontent" class="block-group block-group-4-up">
           <div class="item card block trailer-1" ng-repeat="item in (galleryResults = (galleryitems | filter:query | filter:topic | filter:platform | orderBy:orderProp))">
             <div class="card-content">
-              <a href="/en/trust/documents/{{item.id}}"><h5 class="trailer-half leader-0">{{item.name}}</h5></a>
+              <a href="{{item.url}}"><h5 class="trailer-half leader-0">{{item.name}}</h5></a>
               <p>{{item.snippet}}</p>
             </div>
           </div>
