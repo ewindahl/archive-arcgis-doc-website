@@ -255,34 +255,6 @@ var filterCfg = {
           p:"(product:explorer-mac)"
         }
       },
-    {
-        k:"explorer-beta-android-phone",
-        q: {
-          r:"",
-          p:"(product:explorer-beta-android-phone)"
-        }
-      },
-	  {
-        k:"explorer-beta-android-tablet",
-        q: {
-          r:"",
-          p:"(product:explorer-beta-android-tablet)"
-        }
-      },
-	  {
-        k:"explorer-beta-ipad",
-        q: {
-          r:"",
-          p:"(product:explorer-beta-ipad)"
-        }
-      },
-	  {
-        k:"explorer-beta-iphone",
-        q: {
-          r:"",
-          p:"(product:explorer-beta-iphone)"
-        }
-      },
 	  {
         k:"arcgis-geoplanner",
         q: {
