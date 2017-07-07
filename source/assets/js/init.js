@@ -13,10 +13,12 @@
 	}
 
 	try {
+		insertJS("/assets/js/anchor-links.js");
+		
 		var hn = window.location.hostname;
-		
+
 		if (hn === "doc.arcgis.com") {
-		
+
 		} else if (hn === "docdev.arcgis.com") {
 
 			insertCss ("/cdn/css/workflow.css");
@@ -25,11 +27,10 @@
 		} else if (hn === "docstg.arcgis.com") {
 
 			insertCss ("/cdn/css/workflow.css");
-			insertJS ("/assets/js/workflow.js");				
+			insertJS ("/assets/js/workflow.js");
 
 		}
 	} catch (e){
 		//console.log (e);
 	}
 })();
-

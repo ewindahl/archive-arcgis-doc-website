@@ -1,12 +1,14 @@
 ---
 title: Nahlášení problému se zabezpečením
 css:
-  - documentation
+  - homepage
   - /en/asset/css/common
-  - stat-page-specific
-  - feedback
+  - /cdn/css/colorbox
+  - /css/stat-page-specific
+  - /css/feedback
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
   - securityForm
 
 languageSelector: "No"
@@ -17,149 +19,135 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/cs/Trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-  <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online Trust" href="/cs/trust/">Trust</a></li>
-        <li><a title="ArcGIS Online System Status" href="/cs/trust/system-status/">Stav systému</a></li>
-        <li><a title="ArcGIS Online Security" href="/cs/trust/security/">Zabezpečení</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/cs/trust/privacy/">Soukromí</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/cs/trust/compliance/">Dodržování standardů</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<!-- Page Content -->
-<div class="container feedback">
 
-  <div class="row main">
-	  
-  <div class="warning-signup">
-      <header>
-        <h2 data-langlabel=""> Nahlášení problému se zabezpečením</h2>
-      </header>
-	  <section>
-		<p data-langlabel="">Vyplňte formulář vpravo a uveďte všechny relevantní informace včetně podrobného popisu vašeho problému. Vaše kontaktní údaje použijeme k tomu, abychom se s vámi mohli spojit v návaznosti na uvedené informace. V rozbalovací nabídce Předmět zvolte povahu problému.</p>
-		<ul>
-			<li data-langlabel="">Ohrožení zabezpečení – nahlášení ohrožení zabezpečení webu nebo aplikace.</li>
-			<li data-langlabel="">Podezřelý e-mail zaslaný společností Esri – máte podezření, že jste se stali cílem phishingového útoku z e-mailové adresy společnosti Esri, nebo jste obdrželi jiné podezřelé e-maily zaslané společností Esri.</li>
-			<li data-langlabel="">Problém s ochranou osobních údajů – problém týkající se ochrany osobních údajů související s některou z našich aplikací či organizací.</li>
-			<li data-langlabel="">Jiné – všechny ostatní problémy související se zabezpečením, ochranou osobních údajů nebo dodržováním standardů.</li>
-		</ul>
-		
-<div style="padding-bottom:15px;">		
-
-  </div>   
-	  <hr style="padding-bottom:20px;"/>
-	  	  <header>
-		<h3 data-langlabel="">Zásady pro hlášení ohrožení zabezpečení</h3>
-	  </header>
-      
-        <p data-langlabel="">Bezpečnostní tým webu ArcGIS.com si je vědom významu nezávislých bezpečnostních specialistů v otázce internetového zabezpečení. Doporučujeme zodpovědně nahlásit všechna případná ohrožení zabezpečení, která naleznete na našem webu nebo v některé z našich aplikací. Společnost Esri usiluje o spolupráci s komunitou zabývající se zabezpečením, aby mohla ověřovat a reagovat na všechny nahlášené problémy týkající se ohrožení zabezpečení. V případě dodržování těchto zásad nebude společnost Esri vznášet žaloby ani vést vyšetřování.</p>
-	  <header>
-		<h4 data-langlabel="">ArcGIS.com <strong>nepovoluje</strong> následující typy průzkumu zabezpečení:</h4>
-	  </header>
-	  <ul>
-			<li data-langlabel="">Vyvolání nebo pokus o vyvolání stavu Odmítnutí služby (Denial of Service, DoS).</li>
-		<li data-langlabel="">Používání nástrojů pro automatizované zabezpečení bez výslovného souhlasu společnosti Esri. Používání automatizovaných nástrojů může mít za následek vyšetřování nebo zablokování vámi používaných IP adres.</li>
-		<li data-langlabel="">Aktivity zahrnující přístup nebo pokus o získání přístupu k informacím, které vám nepatří.</li>
-		<li data-langlabel="">Aktivity zahrnující nebo pokus o zničení či poškození dat nebo informací, které vám nepatří.</li>  
-	  </ul>
-
-	 <header>
-	  <h4 data-langlabel="">Závazek bezpečnostního týmu webu ArcGIS.com</h4>
-	  </header>
-		<p data-langlabel="">Bezpečnostní tým ArcGIS.com se všem bezpečnostním specialistům dodržujícím Zásady pro hlášení ohrožení zabezpečení webu ArcGIS.com zavazuje, že bude:</p>
-		
-		<ul>
-		<li data-langlabel="">včas reagovat a potvrzovat přijetí hlášení,</li>
-		<li data-langlabel="">informovat o předpokládaném časovém rámci nutném pro vyřešení konkrétního ohrožení zabezpečení,</li>
-		<li data-langlabel="">informovat osoby, které ohrožení zabezpečení nahlásily, o jeho vyřešení.</li>		
-		</ul>
-      
-    <div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> Podílející se bezpečnostní specialisté</span>
-      <div class="dropdown-content">
-        <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">Chtěli bychom poděkovat následujícím bezpečnostním specialistům za účast v našem programu zodpovědného za hlášení:</p>
-          <%= partial :"_partial/security_names" %>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="/cs/trust/system-status/">Kontrola stavu systému</a>
         </div>
       </div>
     </div>
-      
-	 </section>
-	 
-  </div> 
-
-    <div class="contact-form-signup">
-		
-		<div id="form-fields">
-		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
-						
-			<fieldset id="security-form-fieldset">
-
-			  <label data-langlabel="" for="name">Název: </label>
-			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">E-mailová adresa:</label>
-			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">Telefonní číslo:</label>
-			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
-			  <label data-langlabel="" for="organization">Organizace <span class="optional">(volitelné):</span> </label>
-			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">Předmět:</label>
-			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option>
-				  <option value="Vulnerability">Slabina v zabezpečení</option>
-				  <option value="Suspicious E-mail from Esri">Podezřelý e-mail zaslaný společností Esri</option>
-				  <option value="Privacy Issue">Problém s ochranou osobních údajů</option>
-				  <option value="audi">Jiné</option>
-			  </select>
-
-			  <label data-langlabel="" for="description">Popis: </label>
-			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">Pomozte nám zabránit automaticky rozesílaným spamům – zadejte uvedená čísla: </label>
-			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-			  <label data-langlabel="numerals" for="captchaValue">Číslice: <strong><span id="txtCaptcha" class=""></span></strong></label>
-
-			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="internal" name="source" id="source">
-
-			  <input value="verbose" name="resultType" id="resultType" type="hidden">
-			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
-			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-			  <input type="hidden" value="cs" name="lg">
-			
-			</fieldset>
-			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Odeslat</a>
-			
-		  </form>
-		</div>
-
-	  <div id="submission-confirmation" style="display:none;">	
-		<p data-langlabel=""><h4>Děkujeme za nahlášení tohoto problému. V průběhu několika následujících pracovních dnů jej prozkoumáme a pokusíme se jej vyřešit.</h4></p>
-	  </div>
-	  <div id="submission-error" style="display:none;">	
-		<p data-langlabel=""><h4>Během odesílání došlo k nečekané chybě. Zkuste problém nahlásit později.</h4></p>
-	  </div>
-
-	  <strong>
-			<span style="display:none;" id="referPageLink">Návrat na <a id="feedback-referring-link" href="">odkazující stránku</a></span>
-			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Odeslat</a> další problém se zabezpečením</span>
-	  </strong>
-
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/" selected>Trust</option>
+        <option value="/en/trust/system-status/">Stav služby ArcGIS Online</option>
+        <option value="/en/trust/security/">Zabezpečení</option>
+        <option value="/en/trust/privacy/">Soukromí</option>
+        <option value="/en/trust/compliance/">Dodržování standardů</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/cs/trust/">Trust</a>
+        <a class="sub-nav-link" href="/cs/trust/system-status/">Stav služby ArcGIS Online</a>
+        <a class="sub-nav-link" href="/cs/trust/security/">Zabezpečení</a>
+        <a class="sub-nav-link" href="/cs/trust/privacy/">Soukromí</a>
+        <a class="sub-nav-link" href="/cs/trust/compliance/">Dodržování standardů</a>
+      </nav>
     </div>
+  </div>
+</header>
 
-  </div> <!-- end of row main -->
+<div class="grid-container feedback">
+  <div class="column-24 leader-2 trailer-2">
+    <div class="column-12 trailer-2">
+      <div>
+        <h2 data-langlabel="">Nahlášení problému se zabezpečením</h2>
+        <p data-langlabel="">Vyplňte formulář vpravo a uveďte všechny relevantní informace včetně podrobného popisu svého problému. Vaše kontaktní údaje použijeme k tomu, abychom se s vámi mohli spojit v návaznosti na uvedené informace. V rozbalovací nabídce Předmět zvolte povahu problému.</p>
+    		<ul>
+    			<li data-langlabel="">Ohrožení zabezpečení – nahlášení slabiny zabezpečení webu nebo aplikace.</li>
+    			<li data-langlabel="">Podezřelý e-mail zaslaný společností Esri – máte-li podezření, že jste se stali cílem phishingového útoku z e-mailové adresy společnosti Esri, nebo jste obdrželi jiné podezřelé e-maily zaslané společností Esri.</li>
+    			<li data-langlabel="">Problém s ochranou osobních údajů – problém týkající se ochrany osobních údajů související s některou z našich aplikací či organizací.</li>
+    			<li data-langlabel="">Jiné – všechny ostatní problémy související se zabezpečením, ochranou osobních údajů nebo dodržováním standardů.</li>
+    		</ul>
+      </div>
+      <hr>
+      <div>
+		    <h3 data-langlabel="">Zásady pro hlášení ohrožení zabezpečení</h3>
+        <p data-langlabel="">Bezpečnostní tým webu ArcGIS.com si je vědom významu nezávislých bezpečnostních specialistů v otázce internetového zabezpečení. Doporučujeme zodpovědně nahlásit všechna případná ohrožení zabezpečení, která naleznete na našem webu nebo v některé z našich aplikací. Společnost Esri usiluje o spolupráci s komunitou zabývající se zabezpečením, aby mohla ověřovat a reagovat na všechny nahlášené problémy týkající se ohrožení zabezpečení. V případě dodržování těchto zásad nebude společnost Esri vznášet žaloby ani vést vyšetřování.</p>
+        <h4 data-langlabel="">ArcGIS.com <strong>nepovoluje</strong> následující typy průzkumu zabezpečení:</h4>
+        <ul>
+          <li data-langlabel="">Vyvolání nebo pokus o vyvolání stavu Odmítnutí služby (Denial of Service, DoS).</li>
+          <li data-langlabel="">Používání nástrojů pro automatizované zabezpečení bez výslovného souhlasu společnosti Esri. Používání automatizovaných nástrojů může mít za následek vyšetřování nebo zablokování vámi používaných IP adres.</li>
+          <li data-langlabel="">Aktivity zahrnující přístup nebo pokus o získání přístupu k informacím, které vám nepřísluší.</li>
+          <li data-langlabel="">Aktivity zahrnující zničení nebo pokus o zničení či poškození dat nebo informací, které vám nepřísluší.</li>
+        </ul>
+        <h4 data-langlabel="">Závazek bezpečnostního týmu webu ArcGIS.com</h4>
+        <p data-langlabel="">Bezpečnostní tým ArcGIS.com se všem bezpečnostním specialistům dodržujícím Zásady pro hlášení ohrožení zabezpečení webu ArcGIS.com zavazuje, že bude:</p>
+        <ul>
+          <li data-langlabel="">včas reagovat a potvrzovat přijetí hlášení,</li>
+          <li data-langlabel="">informovat o předpokládaném časovém rámci nutném pro vyřešení konkrétního ohrožení zabezpečení,</li>
+          <li data-langlabel="">informovat osoby, které ohrožení zabezpečení nahlásily, o jeho vyřešení.</li>
+        </ul>
+        <div class="dropdown-navigation dropdown-wrapper regular">
+          <span class="dropdown btn btn-fill btn-clear" data-langlabel="trust-researchers-title"> Podílející se bezpečnostní specialisté</span>
+          <div class="dropdown-content">
+            <div class="dropdown-menu">
+              <p data-langlabel="trust-researchers-desc">Chtěli bychom poděkovat následujícím bezpečnostním specialistům za účast v našem programu zodpovědného hlášení:</p>
+              <%= partial :"_partial/security_names" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column-11 right tablet-column-12">
+      <div class="contact-form-signups panel">
+        <div id="form-fields">
+          <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+            <fieldset id="security-form-fieldset">
+              <label data-langlabel="" for="name">Název
+                <input type="text" autocomplete="off" id="name" name="name">
+              </label>
+              <label data-langlabel="email-address" for="email-address">E-mailová adresa
+                <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+              </label>
+              <label data-langlabel="phone-number" for="phone-number">Telefon
+                <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+              </label>
+              <label data-langlabel="" for="organization">Organizace <span class="optional">(volitelné):</span>
+                <input type="text" autocomplete="off" id="organization" name="organization">
+              </label>
+              <label data-langlabel="" for="subject">Předmět
+                <select id="subject" autocomplete="off" name="subject" class="select-full">
+                  <option value="" style="display:none;"></option>
+                  <option value="Vulnerability">Slabina v zabezpečení</option>
+                  <option value="Privacy Issue">Problém s ochranou osobních údajů</option>
+                  <option value="audi">Ostatní</option>
+                </select>
+              </label>
+              <label data-langlabel="" for="description">Popis
+                <textarea autocomplete="off" data-langlabel="" placeholder="Narazil(a) jsem na možný problém zabezpečení týkající se..." name="description" id="description"></textarea>
+              </label>
+              <label data-langlabel="feedback-spam-note" for="spam">Chceme předejít automatickým nevyžádaným zprávám, proto prosím zadejte uvedené číslice.
+                <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+              </label>
+              <label data-langlabel="numerals" for="captchaValue">Číslice: <strong><span id="txtCaptcha" class=""></span></strong></label>
+              <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+              <input type="hidden" value="internal" name="source" id="source">
+              <input value="verbose" name="resultType" id="resultType" type="hidden">
+              <input value="Security Concern" name="datablock" id="datablock" type="hidden">
+              <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+              <input type="hidden" value="cs" name="lg">
+            </fieldset>
+            <a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">Odeslat</a>
+          </form>
+        </div>
+        <div id="submission-confirmation" style="display:none;">
+          <p data-langlabel=""><h4>Děkujeme za nahlášení tohoto problému. V průběhu několika následujících pracovních dnů jej prozkoumáme a pokusíme se jej vyřešit.</h4></p>
+        </div>
+        <div id="submission-error" style="display:none;">
+          <p data-langlabel=""><h4>Během odesílání došlo k nečekané chybě. Zkuste prosím problém nahlásit později.</h4></p>
+        </div>
+        <strong> <span style="display:none;" id="referPageLink">Návrat na <a id="feedback-referring-link" href="">odkazující stránku</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">Odeslat</a> další problém se zabezpečením</span> </strong>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 $(document).ready(function() {
@@ -172,4 +160,8 @@ $(document).ready(function() {
 </script>
 
 </div>
-
+<style>
+.wrapper{
+  overflow:visible;
+}
+</style>

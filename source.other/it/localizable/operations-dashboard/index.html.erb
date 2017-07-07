@@ -1,321 +1,295 @@
 ---
 title: Operations Dashboard for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/operations-dashboard-1
-  - libs/jquery.colorbox-min.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+  - switchers/operations-dashboard-1
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2016-02-29"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="it">
-
-dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
-  
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2017-01-12"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="it">
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/it/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="ops-dashboard" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/it/operations-dashboard/">Home</a></li>
-        <li><a href="/it/operations-dashboard/windows-desktop/author/create-a-map.htm">Modifica viste</a></li>
-        <li><a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Usa viste</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis">Forum</a></li>
+
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Operations Dashboard for ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">Ottieni la versione di Windows</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/operations-dashboard/" selected>Home</option>
+        <option value="/en/operations-dashboard/overview/overview.htm">Panoramica</a>
+        <option value="/en/operations-dashboard/windows-desktop/author/create-a-map.htm">Modifica viste</a>
+        <option value="/en/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Usa viste</a>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/it/operations-dashboard/">Home</a>
+        <a class="sub-nav-link" href="/it/operations-dashboard/overview/overview.htm">Panoramica</a>
+        <a class="sub-nav-link" href="/it/operations-dashboard/windows-desktop/author/create-a-map.htm">Modifica viste</a>
+        <a class="sub-nav-link" href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Usa viste</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- beta announcement -->
+<div class="panel panel-dark panel-no-border panel-no-padding leader-2 text-center">
+  <div class="grid-container padding-leader-half padding-trailer-half trailer-0">
+    <div class="column-24">
+      <h5 class="trailer-0 leader-0">È arrivata una nuova esperienza di generazione <a class="btn secondary" href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}" style="margin: 0px 0 0 10px;">Iscriversi al programma di beta testing</a>
+      </h5>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Stato a portata di mano</h1>
+      <!--<br/>
+      Know Operational Status Like You Are There<br/>
+      Be There Without Leaving Your Office<br/>
+      Know Operational Status Like You Are There<br/>
+      Know the Status of your Operations<br/>
+      Monitor, Track, and Assess Your Daily Operations<br/>
+      Monitor, Track, and Assess What Matters Most (to You)<br/>
+      Monitor, Track, and Assess with a Dynamic View of your Operations<br/>
+      Know; outlook; view <br/>-->
+      <h5>Consente di monitorare attività ed eventi, tenere traccia degli addetti sul campo e valutare lo stato e le prestazioni delle operazioni giornaliere dalla propria postazione.</h5>
+      <!--Monitor, track, and assess what matters most to you from whereever you are. Use your laptop or tablet to see your operations as they progress. -->
+
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Cerca nella Guida di Operations Dashboard">
+              <input type="hidden" name="collection" value="help" />
+              <!--input type="hidden" name="platform" value="detect" / -->
+              <input type="hidden" name="product" value="ops-dashboard" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-2 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <!--li><strong>Current update:</strong> December 2016</li-->
+        <li><a href="/it/operations-dashboard/overview/whats-new.htm">Novità</a></li>
+	<li><a href="/it/operations-dashboard/overview/requirements.htm">Requisiti</a></li>
+        <li><a href="/it/operations-dashboard/overview/sneak-peek.htm">In anteprima</a></li>
+	<li><a href="/it/operations-dashboard/windows-desktop/author/faqs-author.htm">Domande frequenti per la modifica delle viste</a></li>
+	<li><a href="/it/operations-dashboard/windows-desktop/user/faqs-user.htm">Domande frequenti per l'uso di viste</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <h3 class="gray">Consente di monitorare attività ed eventi, tenere traccia degli addetti sul campo e valutare lo stato e le prestazioni delle operazioni giornaliere, insieme ai membri dell'organizzazione.</h3>
-          
-          <!--
-          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
-          <span id="appReleased"><strong>Released:</strong> March 2014</span>
-	  -->	  
-
-          <p>
-            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">Scarica Operations Dashboard</a>
-
-          </p>
-        <hr />
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/dashboard-create-small.png" />
-
-          <h3>Creare e condividere una vista operazioni</h3>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/it/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">
+            <img alt="" src="/en/operations-dashboard/img/createMaps.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/it/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">Creare e condividere una vista operazioni</a>
+          </h5>
           <p>In tre semplici passi è possibile creare e condividere viste operazioni che includono mappe, elenchi, grafici, indicatori di livello ed altro ancora sulla base dei dati geografici definiti in una mappa o un servizio Web.</p>
-          <p>
-            <a href="/it/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />
-            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
-          </p>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
-
-          <h3>Monitorare e rispondere ad eventi</h3>
-          <p>È possibile utilizzare la vista operazioni per focalizzare l'attenzione su aspetti dell'operazione di maggiore interesse. Consente di monitorare servizi, consegne, persone, veicoli ed altro, dovunque nel mondo, in quattro semplici passi.</p>
-          <p>
-            <a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />
-            <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a title="Monitorare e rispondere ad eventi" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Guardare il video</a>
-			<video width="320" height="240" controls id="2195" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
-			</video>
-          </p>
-        </div>
-	<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/story-graphic-3.png" />
-
-          <h3>Controllare nel browser</h3>
-          <p>È possibile utilizzare la vista operazioni in un browser. Non è richiesta alcuna installazione: basta aprire una vista operazioni per essere aggiornati sulle operazioni, persino dall'iPad.</p>
-          <p>
-            <a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />
-            <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
-          </p>
-        </div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/story-graphic-4.png" />
-
-          <h3>Estensioni sviluppo</h3>
-          <p>È possibile inserire la logica aziendale nella vista operazioni grazie a widget, azioni feature e strumenti mappa personalizzati. </p>
-          <p>
-            <a href="/it/operations-dashboard/windows-desktop/author/custom-addins.htm" class="icon-right-arrow">&nbsp;Mostrami come funziona</a><br />
-          </p>
-        </div>        
-
-        <div class="clear"></div>
-
-
-	<a name="features" ></a>
-	<h2 class="divider">Funzionalità</h2>
-	<p>È possibile riunire in un'unica visualizzazione comune tutti i sistemi e le risorse gestite emonitorare feed di dati in tempo reale per eventi su vasta scala o per le operazioni quotidiane sul computer desktop o dal tablet.È possibile creare dashboard esecutivi mirati che integrano mappe e grafici.</p>
-	
-	<ul>
-	<li>Utilizzo di mappe con origini dati dinamiche per offrire visualizzazioni in tempo reale</li>
-	<li>Configurazione di grafici, indicatori di livello, istogrammi ed altro ancora per offrire il contesto statistico</li>
-	<li>Creazione e condivisione di viste operazioni focalizzate su un'esigenza specifica</li>
-	<li>Progettazione di visualizzazioni per l\'uso su più monitor o dispositivi a singolo display</li>
-	<li>Creazione di widget e strumenti personalizzati in base alle esigenze</li>
-	</ul>
-
-
-        <a name="systemRequirements"></a>
-        <h2 class="divider">Requisiti di sistema</h2>
-
-        <p>Operations Dashboard prevede requisiti specifici relativi ai dispositivi. Operations Dashboard è disponibile in numerose lingue.</p>
-
-
-<script> 
- function exp(e,strTag ,strAttribute){ 
- var elem = document.getElementsByTagName(strTag); 
- var elem1 = e.target;
- for (var i=0;i<elem1.children.length;i++){ 
- elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
- } 
- for (var i =0;i<elem.length;i++) 
- { 
- if(elem[i].getAttribute(strAttribute)=="yes") 
- { 
- elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
- } 
- } 
- } 
- </script> 
- <h3>App di Windows</h3>
-  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Sistemi operativi supportati</a>
-     <div exp1='yes' style="display:none;padding:0 15px;">
-        <ul>
-          <li>Windows 10 Pro e Windows 10 Enterprise (32 bit e 64 bit [EM64T])</li>
-          <li>Windows 8.1, Windows 8.1 Pro e Windows 8.1 Enterprise (32 bit e 64 bit [EM64T])</li>
-          <li>Windows 8, Windows 8 Pro e Windows 8 Enterprise (32 bit e 64 bit [EM64T])</li>
-		  <li>Windows 7 Ultimate, Enterprise, Professional e Home Premium (32 bit e 64 bit [EM64T]) SP1</li>
-		  <li>Windows Server 2012 Standard e Datacenter (64 bit [EM64T])</li>
-		<li>Windows Server 2008 R2 Standard, Enterprise e Datacenter (64 bit [EM64T]) SP1</li>
-		<li>Windows Server 2008 Standard, Enterprise e Datacenter (32 bit e 64 bit [EM64T]) SP2</li>
-        </ul>
-</div>
-<div class="clear" style="padding:5px;"></div>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">Requisiti hardware</a>
-	<div exp2='yes' style="display:none;padding:0 15px;">
-        <ul>
-			<li>Velocità CPU: 2,2 GHz o superiore; consigliata tecnologia hyper-threading (HTT) o multicore.</li>
-			<li>Processore: Intel Pentium 4, Intel Core Duo o Xeon; SSE2 minimo. Per verificare il proprio processore, eseguire l'utilità Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> dal prompt dei comandi Windows.</li>
-			<li>Spazio su disco: 1,5 GB di spazio su disco disponibile.</li>
-			<li>Memoria/RAM: 2 GB o superiore.</li>
-			<li>Proprietà monitor: profondità colore a 24 bit.</li>
-			<li>Risoluzione dello schermo: 1024 x 768 o superiore a dimensioni normali (96 dpi).</li>
-			<li>Spazio di swapping: determinato dal sistema operativo; almeno 500 MB.</li>
-			<li>Scheda video/grafica: minimo 64 MB di RAM, 256 MB di RAM consigliati; sono supportati chipset NVIDIA, ATI ed Intel. Driver per schede grafiche accelerate Almeno Shader Model 2.0 Assicurarsi di utilizzare la versione di driver più recente disponibile.</li>
-		</ul>
-</div>
-<div class="clear" style="padding:5px;"></div>
-
-<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">Requisiti software</a>
-	<div exp3='yes' style="display:none;padding:0 15px;">
-        <p style="padding:0 15px">È necessario <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> o versione successiva. Per installarlo, è necessario disporre di privilegi amministrativi nel computer in uso.</p>
-        </div>
-        <div class="clear" style="padding:5px;"></div>
-        
-<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">Requisiti per gli sviluppatori</a>
-		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px">Per estendere Operations Dashboard for ArcGIS, è necessario<a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> oppure <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a>. Per utilizzare ArcGIS API for JavaScript, la vista operazioni deve essere disponibile su ArcGIS Online o Portal for ArcGIS 10.4 o versioni successive. Per utilizzare ArcGIS Runtime SDK for WPF, è inoltre necessario Microsoft Visual Studio 2012 oppure 2013 Professional, Premium oppure Ultimate.</p>
-
-     </div> 
-     <div class="clear" style="padding:5px;"></div>
-     
-<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">Lingue supportate</a>
-<div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">Arabo, Ceco, Cinese semplificato, Cinese tradizionale (Taiwan), Cinese tradizionale (Hong Kong), Coreano, Danese, Ebraico, Estone, Finlandese, Francese, Greco, Inglese, Italiano, Giapponese, Lettone, Lituano, Norvegese, Olandese, Polacco, Portoghese (Brasile), Portoghese (Portogallo), Rumeno, Russo, Spagnolo, Svedese, Tailandese, Tedesco, Turco e Vietnamita.</p>
-     	<p style="padding:0 15px">La lingua utilizzata nella versione Windows dell'app dipende dalla lingua impostata nel sistema operativo. Se si utilizza un'impostazione di lingua non supportata, per l'app verrà utilizzato l'inglese.</p>
-</div>
-<div class="clear"></div>
-
-     <h3/>
- <h3>App di tipo browser</h3>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">Browser supportati</a>
-<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> Desktop
- <ul style="padding:0 15px">
- <li>Chrome 19.0 e versioni successive</li>
- <li>Firefox 4.0 e versioni successive</li>
- <li>Internet Explorer 9.0 e versioni successive</li>
- <li>Microsoft Edge versione 20.0 e successive</li>
- <li>Safari 5.1 e versioni successive</li>
- </ul> 
- Tablet 
- <ul style="padding:0 15px">
- <li>Android 4.0 e versioni successive con Chrome 19.0 e versioni successive</li>
- <li>iOS 6.0 e versioni successive con Safari in esecuzione</li>
- </ul>
- Telefono 
- <p style="padding:0 15px">Al momento non sono supportati i browser per smartphone.</p>
- </div></div> 
- <div class="clear" style="padding:5px;"></div>
- <a class="icon-right-arrow" onclick="exp(event,'div','exp12');" style="display:inline;">Requisiti per gli sviluppatori</a>
- <div exp12='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Per estendere Operations Dashboard for ArcGIS, è necessario <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a>. La vista operazioni deve essere disponibile su ArcGIS Online o su Portal for ArcGIS 10.4 o versioni successive.</p>
-</div>
-<div class="clear" style="padding:5px;"></div>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">Lingue supportate</a>
- <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">Ceco, Cinese semplificato, Cinese tradizionale (Hong Kong), Cinese tradizionale (Taiwan), Coreano, Croato, Danese, Estone, Finlandese, Francese, Greco, Inglese, Italiano, Giapponese, Lettone, Lituano, Norvegese, Olandese, Polacco, Portoghese (Brasile), Portoghese (Portogallo), Rumeno, Russo, Serbo, Spagnolo, Svedese, Tailandese, Tedesco, Turco e Vietnamita.</p>
-      	<p style="padding:0 15px">Nella versione browser la lingua è quella impostata nel profilo di ArcGIS Online. Se si utilizza un'impostazione di lingua non supportata, per l'app verrà utilizzato l'inglese.</p>
-</div>
-<div class="clear"></div>
-
-
-        <p style="padding:0 15px" />
-        <a name="arcgisRequirements"></a>
-        <h2 class="divider">Requisiti di ArcGIS</h2>
-        <p>Per utilizzare le mappe in Operations Dashboard, è necessario disporre di un account aziendale ArcGIS. ArcGIS Online e Portal for ArcGIS 10.3.1 e versioni successive sono supportate. Estensioni all'app del browser richiedono ArcGIS Online o Portal for ArcGIS 10.4 o versioni successive.</p>
-        <p>Le mappe possono includere dati di ArcGIS Online, Portal for ArcGIS ed ArcGIS for Server. Le origini dati devono essere ospitate su ArcGIS Online o su ArcGIS 10.1 for Server o versioni successive.</p>
-        <p>Se condivisa pubblicamente, una vista operazioni può essere aperta nell'app browser senza effettuare l'accesso.</p>
-
-        <a name="whatsNew"></a>
-        <h2 class="divider">Novità</h2>
-        <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>La versione di Operations Dashboard for ArcGIS 10.3.3, rilasciata ad agosto 2016. Include quanto segue:</p>
-	        <ul>
-	          <li>Localizzato in Cinese tradizionale parlato a Taiwan e il Cinese tradizionale di Hong Kong.</li>
-	          <li>Correzioni di diversi bug e miglioramenti, tra cui BUG-000095467</li>
-	        </ul>
-                </td>
-	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>Browser</h4>
-	        <p>L'app browser per Operations Dashboard for ArcGIS è stata aggiornata nel mese di giugno 2016. Include i seguenti miglioramenti:</p>
-	        <ul>
-	          <li>Localizzazione in croato e serbo</li>
-	          <li>Correzioni di diversi bug e miglioramenti</li>
-        </ul></td><tr></table>
-        
-        
-        
-        
-        <a name="sneakPeek"></a>
-	<h2 class="divider">In anteprima</h2>
-	<p>Operations Dashboard è un'app straordinaria per il monitoraggio delle operazioni. Ma a breve includerà altre funzionalità, Stiamo creando la prossima generazione dell'app: un'app browser che sarà completamente funzionale, senza la necessità di scaricare un'app Windows. È stata richiesta da tempo la possibilità di modificare le viste operazioni nel browser e questo sarà possibile con la prossima generazione dell'app. Layout e ancoraggio dei widget preferiti nell'app Windows faranno la loro apparizione nel browser. Inoltre, saranno supportate etichette e mappatura smart. Ulteriori informazioni nel <a href="https://blogs.esri.com/esri/arcgis/2016/05/26/operations-dashboard-for-arcgis-a-new-experience-is-coming/">post di blog</a> 
-	oppure <a href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}">iscriversi al programma di beta testing</a>.</p>
-	
-	<p>Vi invitiamo a condividere le vostre <a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Boperations-dashboard-for-arcgis%5D">idee</a>, ed <a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">inviarci commenti e suggerimenti</a>.</p>
-        
-        <p>&nbsp;</p>
-        
-
+        <a href="/it/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="btn btn-clear btn-fill leader-0">Avviare l'esercizio</a>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-       <div class="greyFrame">
-	  È arrivata una nuova esperienza di generazione <a class="btn secondary" href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}" style="margin: 15px 0 0 10px;">Iscriversi al programma<br>di beta testing</a>
-       </div>
-       
-       <br/>
-       <div class="imgFrame block">
-          <h3>Dettagli</h3>
-          
-	  <h4><a href="#features">Funzionalità</a></h4>
-	  <h4><a href="#systemRequirements">Requisiti di sistema</a></h4>
-	  <h4><a href="#arcgisRequirements">Requisiti di ArcGIS</a></h4>
-	  <h4><a href="#whatsNew">Novità</a></h4>
-	  <h4><a href="#sneakPeek">In anteprima</a></h4>
-          
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">
+            <img alt="" src="/en/operations-dashboard/img/monitorAndRespond.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">Monitorare e rispondere ad eventi</a>
+          </h5>
+          <p>È possibile utilizzare la vista operazioni per focalizzare l'attenzione su aspetti dell'operazione di maggiore interesse. Consente di monitorare servizi, consegne, persone, veicoli ed altro, dovunque nel mondo, in quattro semplici passi.</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>Dal blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <nav>
+          <a href="/it/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="btn btn-grouped btn-clear btn-half leader-0">Eseguilo</a>
+          <a href="http://video.arcgis.com/iframe/2195/000000/width/960/1" class="btn btn-grouped btn-clear btn-half leader-0">Guardalo</a>
+        </nav>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/it/operations-dashboard/web/user/monitor-and-respond-to-events.htm">
+            <img alt="" src="/en/operations-dashboard/img/browserApp.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/it/operations-dashboard/web/user/monitor-and-respond-to-events.htm">Controllare nel browser</a>
+          </h5>
+          <p>È possibile utilizzare la vista operazioni in un browser. Non è richiesta alcuna installazione: basta aprire una vista operazioni per essere aggiornati sulle operazioni, persino dall'iPad.</p>
         </div>
-
- </div>
-
+        <a href="/it/operations-dashboard/web/user/monitor-and-respond-to-events.htm" class="btn btn-clear btn-fill leader-0">Ulteriori informazioni</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/it/operations-dashboard/windows-desktop/author/custom-addins.htm">
+            <img alt="" src="/en/operations-dashboard/img/developExtensions.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/it/operations-dashboard/windows-desktop/author/custom-addins.htm">Estensioni sviluppo</a>
+          </h5>
+          <p>È possibile inserire la logica aziendale nella vista operazioni grazie a widget, azioni feature e strumenti mappa personalizzati.</p>
+        </div>
+        <nav>
+          <a href="/it/operations-dashboard/windows-desktop/author/custom-addins.htm" class="btn btn-grouped btn-clear btn-half leader-0">Ulteriori informazioni</a>
+          <a href="https://github.com/Esri/dashboard-samples" class="btn btn-grouped btn-clear btn-half leader-0">Campioni</a>
+        </nav>
+      </div>
     </div>
+  </div>
+</div>
 
-<!--	<script src="/js/main.js" type="text/javascript"></script>-->
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Ottenere ancora di più da ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<!--div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div-->
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-$("#dashboardDownloadLink").click(function (){
-	window.location = "<%=data.page.dashboardDownloadLink%>";
-	return false;
-})
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Connettersi con Operations Dashboard</h4>
+    <a aria-label="Connettersi su LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="Visualizza progetti GitHub" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri/dashboard-samples"></a>
+    <a aria-label="Partecipazione alla community" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis"></a>
+    <a aria-label="Inviateci i vostri commenti e suggerimenti" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-  </script>
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Leggi il nostro blog
+        <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/operations-dashboard/">Altri post</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Partecipare alla conversazione
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis">Altre conversazioni</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2121" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Seguire una lezione approfondita</a></h5>
+          <p class="trailer-0">
+ Cercare informazioni in ArcGIS per trovare e completare gli esercizi in grado di risolvere i problemi del mondo reale con ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Trovare corsi di formazione</a></h5>
+          <p class="trailer-0">
+ Ulteriori informazioni su ArcGIS tramite corsi con istruttore, corsi Web e seminari.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Ottenere supporto tecnico</a></h5>
+          <p class="trailer-0">
+ Contattare il supporto Esri attraverso chat, e-mail o telefono.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Controllo dell'integrità del sistema</a></h5>
+          <p class="trailer-0">
+ Vedere lo stato di ArcGIS Online e segnalare problemi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
