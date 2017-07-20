@@ -121,6 +121,7 @@ jQuery(document).ready(function ($) {
       lgMicro = ['en', 'de'],
       lgMarketplace = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","pt-pt","ro"],
       lgMarketplaceptpt = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
+      lgMarketplacero = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br"],
       lgNavigator = lgPickFull.concat(["it","ko","pt-br"]),
       lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro']),
       lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
@@ -189,6 +190,8 @@ jQuery(document).ready(function ($) {
               }else if(langSelector === "marketplace" && lgMarketplace.indexOf(lg) >= 0){
                 return true;
               }else if(langSelector === "marketplaceptpt" && lgMarketplaceptpt.indexOf(lg) >= 0){
+                return true;
+              }else if(langSelector === "marketplacero" && lgMarketplacero.indexOf(lg) >= 0){
                 return true;
               }else if(langSelector === "navigator" && lgNavigator.indexOf(lg) >= 0){
                 return true;
@@ -292,6 +295,9 @@ jQuery(document).ready(function ($) {
                   break;
                 case "marketplaceptpt":
                   lgList = lgMarketplaceptpt;
+                  break;
+                case "marketplacero":
+                  lgList = lgMarketplacero;
                   break;
                 case "mapsPowerbi":
                   lgList = lgMapsPowerbi;
@@ -448,8 +454,10 @@ jQuery(document).ready(function ($) {
     docCfg.langSelector = "micro";
   //}else if (winloc.pathname.match( /(\/explorer\/)/)){
   //  docCfg.langSelector = "marketplace";
-  }else if (winloc.pathname.match( /(\/marketplace\/|\/workforce\/|\/collector\/|\/web-appbuilder\/|\/appstudio\/|\/operations-dashboard\/|\/survey123\/|\/explorer\/)/)){
+  }else if (winloc.pathname.match( /(\/marketplace\/|\/workforce\/|\/collector\/|\/web-appbuilder\/|\/appstudio\/|\/operations-dashboard\/|\/explorer\/)/)){
     docCfg.langSelector = "marketplaceptpt";
+  }else if (winloc.pathname.match( /(\/survey123\/)/)){
+    docCfg.langSelector = "marketplacero";
   }else if (winloc.pathname.match( /(\/navigator\/)/)){
     docCfg.langSelector = "navigator";
   }else if (winloc.pathname.match( /(\/maps-for-sharepoint\/)/)){
