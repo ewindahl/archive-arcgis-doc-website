@@ -123,7 +123,7 @@ jQuery(document).ready(function ($) {
       lgMarketplaceptpt = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br","ro"],
       lgMarketplacero = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', "it","ko", "pl","pt-br"],
       lgNavigator = lgPickFull.concat(["it","ko","pt-br"]),
-      lgSharepoint = lgPickFull.concat(['it', 'ko', 'pt-br', 'pt-pt', 'ro']),
+      lgSharepoint = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', 'ar', 'it', 'ko', 'pt-br', 'ro'],
       lgOpenData = ['en', 'de', 'es', 'fr', 'ja', 'ru', 'zh-cn', 'zh-hk', 'zh-tw', "it","ko", "pl","pt-br","pt-pt","ro"],
       lgMapsPowerbi = ['en', 'de', 'es', 'fr', 'it', 'ja', 'ko', 'pt-br', 'ru', 'zh-cn', 'zh-tw'],
 

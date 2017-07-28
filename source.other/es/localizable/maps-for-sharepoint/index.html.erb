@@ -1,362 +1,306 @@
 ---
-title: Esri Maps for SharePoint
+title: ArcGIS Maps for SharePoint
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - libs/jquery.colorbox-min.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+  - app.sharepoint.1
 
 metatags:
-  - <META name="description" content="Esri Maps for SharePoint Home page."><META name="last-modified" content="2016-07-22"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="Esri Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Esri Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="sharepoint-4.1"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="es">
+  - <META name="description" content="ArcGIS Maps for SharePoint Home page."><META name="last-modified" content="2017-06-19"><META name="product" content="esri-maps-sharepoint"><META name="sub_category" content="ArcGIS Maps for SharePoint"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="ArcGIS Maps for SharePoint"><META name="search-category" content="help-general"><META name="subject_label" content="LOCATION ANALYTICS,MAPPING"><META name="version" content="sharepoint-4.2"><META name="content_type" content="Help Topic"><META name="subject" content="LOCATION ANALYTICS,MAPPING"><META name="content-language" content="es">
 
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/es/maps-for-sharepoint/">Esri Maps for SharePoint</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Esri Maps for Sharepoint">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="esri-maps-sharepoint" /> 
-<input type="hidden" name="version" value="sharepoint-4.0" />		
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
 
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/es/maps-for-sharepoint/">Inicio</a></li>
-        <li><a href="/es/maps-for-sharepoint/foundation-server/install-and-configure/">Instalar y configurar</a></li>
-        <li><a href="/es/maps-for-sharepoint/foundation-server/esri-maps-web-part/">Esri Maps Web Part</a></li>
-        <li><a href="/es/maps-for-sharepoint/arcgis-map-web-part/">ArcGIS Map Web Part</a></li>
-		<li><a href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics">GeoNet</a></li>
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace each of the following, then remove these notes when you're done:
+  PRODUCT_METADATA: The metadata for the product
+  ArcGIS Maps for SharePoint: The full product name, for example "ArcGIS Maps for Office"
+  PRODUCT_NAME: The product name without the preceding Esri or ArcGIS.  For example "Maps for Office".  This may be the same as the ArcGIS Maps for SharePoint.
+  DOWNLOAD_LINK: A link to download the product, free trial, etc.
+  VERSION_NUMBER: The version number of the product.  This may be removed if not needed.
+  RELEASE_DATE: The time period of the release.  For example, "Fall 2016" or "October 2016"
+  NAV_LINK_x: The link for the navigation tabs at the top.
+  NAV_TEXT_x: The text for the navigation tabs at the top.
+  PRODUCT_HEADLINE: The main headline for the product.  This should be very short.
+  PRODUCT_SUB_HEADLINE: A slightly longer blurb about the product.
+  PRODUCT_SEARCH_VALUE: The product value for the search form
+  ITUNES_STORE_LINK: Link to the product on the app store
+  GOOGLE_PLAY_LINK: Link to the product on Google Play
+  WINDOWS_STORE_LINK: Link to the product on the Windows store
+  POPULAR_LINK_x: Links to popular pages and topics. These should include "FAQs", "What's new", and "Supported environments", but may include other links as well.
+  POPULAR_TEXT_x: Text for links to popular pages and topics.
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  CARD_LINK_x: The page that the card should link to.
+  CARD_TITLE_x: The title of the card.
+  CARD_TEXT_x: The text inside the card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+  GEONET_LINK: Link to the product's Geonet page
+  BLOG_LINK: Link to the the product's blog
+  BLOG_FEED_URL: URL for the product's blog feed
+  GEONET_LINK: Link to the the product's geonet page
+  GEONET_FEED_URL: URL for the product's geonet feed
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">ArcGIS Maps for SharePoint</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download ArcGIS Maps for SharePoint" text as needed. -->
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download-maps-for-sharepoint">Obtener ArcGIS Maps for SharePoint en local</a>
+          <a class="btn margin-left-1 btn-clear icon-ui-download">Próximamente: Office 365</a> <!-- href="https://store.office.com/search.aspx?productgroup=SharePoint&qu=esri" -->
+          <!-- INSTRUCTIONS: Remove this p tag if not needed -->
+          <p class="trailer-0 leader-0 text-white font-size--2"><strong>Versión 4.2</strong> Q2 2017</p>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/maps-for-sharepoint/" selected>Inicio</option>
+        <option value="/en/maps-for-sharepoint/foundation-server/install-and-configure/">Instalar y configurar</option>
+        <option value="/en/maps-for-sharepoint/foundation-server/prepare-data/">Preparar datos</option>
+        <option value="/en/maps-for-sharepoint/foundation-server/use-maps/">Diseñar y utilizar mapas</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/es/maps-for-sharepoint/">Inicio</a>
+        <a class="sub-nav-link" href="/es/maps-for-sharepoint/foundation-server/install-and-configure/">Instalar y configurar</a>
+        <a class="sub-nav-link" href="/es/maps-for-sharepoint/foundation-server/prepare-data/">Preparar datos</a>
+        <a class="sub-nav-link" href="/es/maps-for-sharepoint/foundation-server/use-maps/">Diseñar y utilizar mapas</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>Geohabilitar sus listas de SharePoint</h1>
+      <h5>ArcGIS Maps for SharePoint aprovecha el marco que ofrece Microsoft SharePoint para ofrecer componentes de representación cartográfica configurables e interactivos que pueden darle una vista geoespacial de los datos de su organización.</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="Buscar ArcGIS Maps for SharePoint">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="esri-maps-sharepoint" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <li><a href="/es/maps-for-sharepoint/foundation-server/install-and-configure/what-s-new.htm">Novedades</a></li>
+        <li><a href="/es/maps-for-sharepoint/foundation-server/install-and-configure/supported-environments.htm">Entornos compatibles</a></li>
+	      <li><a href="/es/maps-for-sharepoint/foundation-server/prepare-data/prepare-sharepoint-data.htm">Preparar datos</a></li>
+        <li><a href="/es/maps-for-sharepoint/foundation-server/prepare-data/frequently-asked-questions.htm">Preguntas frecuentes</a></li>
+        <li><a href="/es/maps-for-sharepoint/4.1/">Ayuda archivada</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <header>
-
-		  <h2 id="appTitle">Descargar la aplicación</h2>
-          <span id="appVersion"><strong>Versión:</strong> 4.1</span> <span id="appReleased"><strong>Disponible:</strong> otoño de 2015</span>
-
-          <p>Esri Maps for SharePoint aprovecha el marco de Microsoft SharePoint 2010 y 2013 y la plataforma online de SharePoint para ofrecer componentes de representación cartográfica configurables e interactivos que pueden proporcionar una vista geoespacial de los datos de la organización. </p>
-
-          <p>
-             <a class="btn primary" href="http://www.esri.com/software/arcgis/arcgisonline/apps/download-maps-for-sharepoint">Obtenga Esri Maps for SharePoint local</a> 
-          </p>
-		  <p>
-			<a class="btn primary" href="https://store.office.com/search.aspx?productgroup=SharePoint&qu=esri">Obtenga Esri Maps for SharePoint online</a>
-		  </p>
-
-        </header>
-        <hr />
-        <br />
-
-<!-- features top row -->
-		<!-- Enable mapping -->
-		<div id="enablemapping" class="column-12 phone-column-24">
-		  <a title="Habilite la representación cartográfica en SharePoint" class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/2906/000000/width/960/0/00:00:00" style="max-width: 325px"><img src="m4sp1.png"><img class="playbtn" src="/img/playbtn.png"></a>
-
-          <h3>Habilite la representación cartográfica en SharePoint</h3>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="foundation-server/use-maps/about-the-arcgis-maps-web-part.htm">
+            <img alt="" src="/en/maps-for-sharepoint/img/webpart.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="foundation-server/use-maps/about-the-arcgis-maps-web-part.htm">Habilitar la representación cartográfica en SharePoint</a>
+          </h5>
           <p>Agregue mapas dinámicos a su sitio de SharePoint para ayudarle a analizar sus datos de empresa de forma visual.</p>
-          <p>
-           <a href="/es/maps-for-sharepoint/foundation-server/esri-maps-web-part/add-esri-maps-web-part-to-a-page.htm" class="icon-right-arrow">&nbsp;Más información</a>
-			<br/>
-			<a title="Habilite la representación cartográfica en SharePoint" href="http://video.arcgis.com/iframe/2906/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Vea un vídeo</a>
-			<video width="320" height="240" controls id="2906" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/2906/mp4/480">
-			</video>
-          </p>
         </div>
-
-		<!-- Share maps -->
-        <div id="sharemaps" class="column-12 phone-column-24">
-          <a title="Comparta sus mapas de SharePoint" class="videoLink colorbox-evlarge" href="http://video.arcgis.com/iframe/2907/000000/width/960/0/00:00:00" style="max-width: 325px"><img src="m4sp2.png"><img class="playbtn" src="/img/playbtn.png"></a>
-
-          <h3>Comparta sus mapas de SharePoint</h3>
-          <p>Comparta mapas a partir de sus datos de SharePoint. Publique su mapa en ArcGIS Online para compartir con otros usuarios.</p>
-          <p>
-			<a href="/es/maps-for-sharepoint/foundation-server/esri-maps-web-part/share-a-layer-on-arcgis.htm" class="icon-right-arrow">&nbsp;Más información</a>
-			<br/>
-		   <a title="Comparta sus mapas de SharePoint" href="http://video.arcgis.com/iframe/2907/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;Vea un vídeo</a>
-		<video width="320" height="240" controls id="2907" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/2907/mp4/480">
-			</video>
-          </p>
-        </div>
-		<br/>
-        <div class="clear"></div>
-        <div class="clear"></div>
-
-
-<!-- What's new section -->
-	<hr />
-	<a name="whatsNew"></a>
- 	<h2>Novedades</h2>	
-	<p>&gt; ¿Hay alguna función que le gustaría ver en Esri Maps for SharePoint? Háblenos de ella en el sitio de <a href="http://ideas.arcgis.com/ideaList?c=09a300000004xET&category=Esri+Maps+for+Sharepoint" target="_blank">ArcGIS Ideas</a>.</p>
- 	<p>Esri Maps for SharePoint 4.1 ya está disponible.</p>
-	
-			<!-- script for collapsible headings -->
-		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
-		 </script> 
-		 
-		<h3>Actualizaciones de 4.1</h3>
-		<p>La versión 4.1 de Esri Maps for SharePoint incluye las siguientes actualizaciones y mejoras:
-			<ul>
-				<li>Localización en los siguientes idiomas: árabe, chino (simplificado), checo, danés, neerlandés, estonio, finés, francés, alemán, griego, hebreo, italiano, japonés, coreano, letón, lituano, noruego, polaco, portugués (Brasil), portugués (Portugal), rumano, ruso, español, tailandés, turco y vietnamita.
-				<p><strong>Nota:</strong> ArcGIS Map web part se basa en Silverlight 3.1 y, como tal, es posible que no sea compatible con todos los idiomas indicados arriba.</p>
-				</li>
-				<li>Varias soluciones de errores y mejoras.</li>
-			</ul>
-		</p>
-		<p><b>Nota:</b> dado que Esri Maps for SharePoint 4.1 es una versión de localización y corrección de bugs, la ayuda en línea para la versión 4.1 también se aplica a la versión 4.0. </p>
-		<p><strong>Importante:</strong> debido a las <a href="HTTP://BLOGS.ESRI.COM/ESRI/ARCGIS/2014/02/21/ESRIS-ROADMAP-FOR-WEB-DEVELOPERS/">tendencias de la tecnología web</a>, ArcGIS Maps web part basado en Silverlight quedará en desuso después de esta versión. Esri Maps web part basado en JavaScript contiene muchas funciones mejoradas que no están disponibles en ArcGIS Maps web part basado en Silverlight. Se recomienda utilizar Esri Maps web part basado en JavaScript en lugar de ArcGIS Maps web part basado en Silverlight (ya no podrá agregar nuevos elementos web basados en Silverlight a las páginas del sitio). Para continuar usando sus elementos web basados en Silverlight existentes, actualice todos los sitios que contengan ArcGIS Maps web part basado en Silverlight a Esri Maps for SharePoint 4.0 o posterior y guarde las páginas. De este modo podrá continuar usando los elementos web basados en Silverlight sin problemas.</p></p>
-		 
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Actualizaciones de 4.0</a>
-		</h3>
-		<div exp1='yes' style="display:none;padding:0 15px;">
-		<p>Esri Maps for SharePoint 4.0 se publicó en julio de 2015 e incluía las siguientes nuevas características. Muchos aspectos de la instalación y configuración han cambiado en esta versión; revise con detenimiento los temas de ayuda Requisitos del sistema y Configuración.
-			<ul>
-				<li>Compatibilidad con SharePoint Online</li>
-				<li>Permite a los invitados ver Esri Maps Web Part con una funcionalidad limitada sin tener que iniciar sesión</li>
-				<li>Compatibilidad con Portal for ArcGIS 10.3 y 10.3.1</li>
-				<li>Funciona con configuraciones comunes de Portal for ArcGIS (OAuth, SAML, IWA, PKI, LDAP)</li>
-				<li>Funciona con Portal for ArcGIS en un entorno sin conexión</li>
-				<li>Compatibilidad con el enriquecimiento de datos geográficos</li>
-				<li>Se han agregado nuevas herramientas a Esri Maps Web Part: imprimir, medir, editar (funciones agregar, modificar y eliminar), filtrar capa y actualización automática en las capas de SharePoint</li>
-				<li>Nuevas opciones de configuración de contenido de mapas para Esri Maps Web Part</li>
-				<li>El campo Esri Maps Location está ahora basado en JavaScript (y no en Silverlight) y se puede visualizar en dispositivos móviles</li>
-				<li>El campo Esri Maps Location proporciona un cuadro de búsqueda para buscar direcciones, lugares y coordenadas</li>
-				<li>Use el sistema de coordenadas que desee con el campo Esri Maps Location y superponga fácilmente otros datasets SIG que están en su sistema de coordenadas local</li>
-				<li>Ampliación: cree herramientas, comportamientos y conjuntos de símbolos personalizados para Esri Maps Web Part</li>
-				<li>Mejora en el tratamiento de errores y varias soluciones de errores</li>
-				<li>Diversas mejoras de la interfaz de usuario, que dan a la aplicación un nuevo aspecto</li>
-			</ul>
-		</p>
-		<p><strong>Importante:</strong> debido a las <a href="HTTP://BLOGS.ESRI.COM/ESRI/ARCGIS/2014/02/21/ESRIS-ROADMAP-FOR-WEB-DEVELOPERS/">tendencias de la tecnología web</a>, ArcGIS Maps web part basado en Silverlight quedará en desuso después de la versión 4.0 de Esri Maps for SharePoint. Esri Maps web part basado en JavaScript contiene muchas funciones mejoradas que no están disponibles en ArcGIS Maps web part basado en Silverlight. Se recomienda utilizar Esri Maps web part basado en JavaScript en lugar de ArcGIS Maps web part basado en Silverlight (ya no podrá agregar nuevos elementos web basados en Silverlight a las páginas del sitio). Para continuar usando sus elementos web basados en Silverlight existentes, actualice todos los sitios que contengan ArcGIS Maps web part basado en Silverlight a Esri Maps for SharePoint 4.0 o posterior y guarde las páginas. De este modo podrá continuar usando los elementos web basados en Silverlight sin problemas.</p></p>
-		</div>
-	
-
-		       
-
-			 
-<!-- Supported environments section -->
-	<hr />
-	<a name="supportedEnvironments"></a>
-        <h2>Entornos compatibles</h2>
-        <p>Esri Maps for SharePoint se implementa como complemento en Microsoft SharePoint. Para que Esri Maps for SharePoint funcione correctamente, Esri presupone que existe una configuración operativa de Microsoft SharePoint. Esri Maps for SharePoint es compatible con Microsoft SharePoint 2010 Server y Foundation y Microsoft SharePoint 2013 Server y Foundation. Esri prueba Esri Maps for SharePoint solo en entornos de software certificados o compatibles con Microsoft SharePoint; no todos los entornos compatibles con SharePoint se han probado o certificado. Para obtener más información, consulte <a href="http://support.esri.com/en/content/supportedenvironmentpolicy" target=blank>Política de entorno compatible de Esri</a>. <!-- script for collapsible headings --> 		<script> 
-		 function exp(e,strTag ,strAttribute){ 
-		 var elem = document.getElementsByTagName(strTag); 
-		 var elem1 = e.target;
-		for (var i=0;i<elem1.children.length;i++){ 
-		 elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
-		 } 
-		 for (var i =0;i<elem.length;i++) 
-		 { 
-		 if(elem[i].getAttribute(strAttribute)=="yes") 
-		 { 
-		 elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
-		 } 
-		 } 
-		 } 
----
-
-		 </script> <!-- Sys Reqs -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp1')">Requisitos del sistema</a>
-		</h3>
-			<div exp1='yes' style="display:none;padding:0 15px;">
-			<p>Consulte los requisitos de sistema de Microsoft SharePoint:
-			<ul>
-				<li><a href="https://technet.microsoft.com/en-us/library/cc262485(office.14).aspx">Requisitos de software y hardware (SharePoint Server 2010)</a></li>
-				<li><a href="https://technet.microsoft.com/en-us/library/cc262485(v=office.15).aspx">Requisitos de software y hardware para SharePoint 2013</a></li>
-				<li><a href="https://technet.microsoft.com/en-us/library/jj819267.aspx">Servicios de SharePoint Online</a></li>
-			</ul>	
-			</p>
-			</div>
-			
-		<div class="clear" style="padding:5px;"></div>
-
-		<!-- Req'd SW -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp2')">Software requerido</a>
-		</h3>
-			<div exp2='yes' style="display:none;padding:0 15px;">
-			<p>ArcGIS Maps for SharePoint requiere una organización de <a href="http://doc.arcgis.com/en/arcgis-online/reference/what-is-agol.htm" target="_blank">ArcGIS Online</a> o una cuenta de Portal for ArcGIS y Microsoft SharePoint 2010 o 2013 Foundation, Server Standard o Server Enterprise. Se supone que el administrador de ArcGIS ha configurado correctamente el método de autenticación utilizado para acceder a la plataforma.</p>
-			<p>ArcGIS Maps for SharePoint 4.1 es compatible con las siguientes versiones de ArcGIS:
-				<ul>
-					<li>ArcGIS Online: versión actual</li>
-					<li>Portal for ArcGIS: 10.2, 10.2.1, 10.3x, 10.4, 10.4.1</li>
-				</ul>
-			</p>
-
-			<p>Antes de instalar Esri Maps for SharePoint, debe instalar y configurar correctamente varios componentes de software en su sistema. Para obtener información detallada, consulte:</p>
-				<ul>
-					<li><a href="http://doc.arcgis.com/en/maps-for-sharepoint/foundation-server/install-and-configure/system-requirements.htm">Requisitos de SharePoint Server o Foundation</a></li>
-					<li><a href="http://doc.arcgis.com/en/maps-for-sharepoint/office-365/install-and-configure/system-requirements.htm">Requisitos de SharePoint Online</a></li>
-				</ul>
-			</div>
-		
-		<!-- Operating Systems -->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp3')">Sistemas operativos</a>
-		</h3>
-			<div exp3='yes' style="display:none;padding:0 15px;">
-			<p>Esri Maps for SharePoint es compatible con SharePoint 2010 y SharePoint 2013 en los siguientes sistemas operativos. Consulte la información sobre los entornos compatibles con Microsoft SharePoint para determinar las versiones compatibles de estos sistemas operativos:
-			<ul>
-				<li>Windows Server 2012</li>
-				<li>Windows Server 2008 R2 SP1</li>
-				<li>Windows Server 2008 R2</li>
-			</ul>
-			</p>
-			</div>
-
-		<!-- Languages-->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp4')">Idiomas compatibles</a>
-		</h3>
-			<div exp4='yes' style="display:none;padding:0 15px;">
-			<p>Esri Maps for SharePoint está disponible en los idiomas siguientes:</p>
-			<p>Árabe, chino (simplificado), checo, danés, holandés, inglés, estonio, finlandés, francés, alemán, griego, hebreo, italiano, japonés, coreano, letón, lituano, noruego, polaco, portugués (Brasil), portugués (Portugal), rumano, ruso, español, tailandés, turco y vietnamita.</p>
-			<p>El idioma utilizado en la versión de Windows de la aplicación viene determinado por la configuración de la colección de sitios Raíz. Si utiliza un idioma no compatible, la aplicación utilizará el inglés.</p>
-			<p>Nota: ArcGIS Map web part se basa en Silverlight 3.1 y, como tal, es posible que no sea compatible con todos los idiomas indicados arriba.</p>
-			</div>
-
-				
-		<!-- Browsers-->
-		<h3>
-		<a class="icon-right-arrow" onclick="exp(event,'div','exp5')">Navegadores web</a>
-		</h3>
-			<div exp5='yes' style="display:none;padding:0 15px;">
-			<p>Esri Maps for SharePoint es compatible con los navegadores siguientes:</p>
-	<table>
-	<colgroup width="*"></colgroup>
-	<colgroup width="*"></colgroup>
-	<colgroup width="*"></colgroup>
-	<colgroup width="*"></colgroup>
-	<thead>
-		<tr align="left">
-			<th>Nombre del navegador</th>
-			<th>SharePoint 2010</th>
-			<th>SharePoint 2013</th>
-			<th>SharePoint Online</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td rowspan="1" colspan="1"><p>Internet Explorer 11</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-		</tr>
-		<tr class="align-middle">
-			<td rowspan="1" colspan="1"><p>Internet Explorer 10</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-		</tr>
-		<tr class="align-middle">
-			<td rowspan="1" colspan="1"><p>Internet Explorer 9</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Limitado (según indicaciones de <a href="https://support.office.com/en-us/article/Office-365-system-requirements-719254c0-2671-4648-9c84-c6a3d4f3be45?CorrelationId=2526bbae-9d9f-497d-bb09-036433a33852&ui=en-US&rs=en-US&ad=US">Microsoft</a>)</p></td>
-		</tr>
-		<tr class="align-middle">
-			<td rowspan="1" colspan="1"><p>Internet Explorer 8</p></td>
-			<td rowspan="1" colspan="1"><p>No compatible</p></td>
-			<td rowspan="1" colspan="1"><p>No compatible</p></td>
-			<td rowspan="1" colspan="1"><p>No compatible</p></td>
-		</tr>
-		<tr class="align-middle">
-			<td rowspan="1" colspan="1"><p>Google Chrome*</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-		</tr>
-		<tr class="align-middle">
-			<td rowspan="1" colspan="1"><p>Mozilla Firefox*</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-			<td rowspan="1" colspan="1"><p>Completo</p></td>
-		</tr>
-	</tbody>
-	</table>
-</p>
-<p>* última versión publicada</p>			</div>
-        <p>&nbsp;</p>
-
+        <nav>
+        <a href="foundation-server/use-maps/about-the-arcgis-maps-web-part.htm" class="btn btn-clear btn-fill leader-0">Más información</a>
+        </nav>
       </div>
-
-	  
-<!-- Sidebars -->
-      <div class="column-8 tablet-column-24 blocks">
-
-        <div class="imgFrame block">
-			<h3>Primeros pasos</h3>
-				<ul>
-				<li><a href="#whatsNew">Novedades</a></li>
-				<li><a href="#supportedEnvironments">Entornos compatibles</a></li>
-				<li>Ayuda para versiones anteriores:
-					<ul>
-						<li><a href="/es/maps-for-sharepoint/3.0.1/get-started/included-files.htm">Esri Maps for SharePoint 3.0.1</a></li>
-					</ul>
-				</li>
-			</ul>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="foundation-server/use-maps/add-data-from-arcgis.htm">
+            <img alt="" src="/en/maps-for-sharepoint/img/addArcGIS.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="foundation-server/use-maps/add-data-from-arcgis.htm">Agregar datos desde ArcGIS</a>
+          </h5>
+          <p>Fügen Sie veröffentlichte geographische Daten aus ArcGIS zu Ihrem Bericht mit aktivierter Karte hinzu, um die Durchführung von Analysen Ihrer Daten zu vereinfachen.</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>En nuestro blog</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <a href="foundation-server/use-maps/add-data-from-arcgis.htm" class="btn btn-clear btn-fill leader-0">Más información</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="foundation-server/use-maps/configure-clustering.htm">
+            <img alt="" src="/en/maps-for-sharepoint/img/clusters.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="foundation-server/use-maps/configure-clustering.htm">Agregar datos en clústeres</a>
+          </h5>
+          <p>Agrupar entidades que estén a una determinada distancia entre sí facilita poder analizar rápidamente los datos.</p>
         </div>
-
- </div>
-
+        <a href="foundation-server/use-maps/configure-clustering.htm" class="btn btn-clear btn-fill leader-0">Más información</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="foundation-server/use-maps/share-a-layer-on-arcgis.htm">
+            <img alt="" src="/en/maps-for-sharepoint/img/share.png">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="foundation-server/use-maps/share-a-layer-on-arcgis.htm">Compartir los mapas</a>
+          </h5>
+          <p>Publique los mapas que ha creado a partir de los datos de SharePoint en ArcGIS para compartirlos con otros usuarios.</p>
+        </div>
+        <a href="foundation-server/use-maps/share-a-layer-on-arcgis.htm" class="btn btn-clear btn-fill leader-0">Más información</a>
+      </div>
     </div>
+  </div>
+</div>
 
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>  <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/category/location-analytics/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">Saque mucho más partido a ArcGIS</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS for Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
+<!-- Videos
+<div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+		INSTRUCTIONS: If your playlist has fewer than 5 videos, please update "block-group-5-up" below with the correct number.
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div>
+-->
 
-  </script>
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">Conectar con ArcGIS Maps for SharePoint</h4>
+    <!-- INSTRUCTIONS: Remove any links that are not applicable. -->
+    <a aria-label="Conectar en Twitter" class="icon-social-sdk-home icon-social-twitter tooltip tooltip-top" href="https://twitter.com/ArcGISOnline"></a>
+    <a aria-label="Conectar en LinkedIn" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="Conectar en Facebook" class="icon-social-sdk-home icon-social-facebook tooltip tooltip-top" href="https://www.facebook.com/esrigis/"></a>
+    <a aria-label="Únase a la comunidad" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics"></a>
+    <a aria-label="Envíenos sus comentarios" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
+
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Lea nuestro blog
+        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/category/location-analytics/">Más publicaciones</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/category/location-analytics/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">Únase a la conversación
+        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/analysis/esri-maps-for-location-analytics/">Más conversaciones</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2086" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">Realizar un análisis detallado</a></h5>
+          <p class="trailer-0">
+ Busque y complete ejercicios que resuelvan problemas del mundo real con ArcGIS.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">Buscar cursos de formación</a></h5>
+          <p class="trailer-0">
+ Más información sobre ArcGIS a través de cursos impartidos por un profesor, cursos web y seminarios.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">Obtener soporte técnico</a></h5>
+          <p class="trailer-0">
+ Póngase en contacto con el soporte técnico por chat de Esri, por correo electrónico o por teléfono.
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">Comprobar el estado del sistema</a></h5>
+          <p class="trailer-0">
+ Consulte el estado de ArcGIS Online y notifique los problemas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>
