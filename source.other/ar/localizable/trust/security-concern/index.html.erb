@@ -1,12 +1,14 @@
 ---
 title: إقرار مشكلة الامان
 css:
-  - documentation
+  - homepage
   - /en/asset/css/common
-  - stat-page-specific
-  - feedback
+  - /cdn/css/colorbox
+  - /css/stat-page-specific
+  - /css/feedback
 
 js:
+  - /cdn/js/libs/jquery.colorbox-min
   - securityForm
 
 languageSelector: "No"
@@ -17,149 +19,135 @@ metatags:
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/ar/Trust/">Trust ArcGIS</a></h1>
-       <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Trust ArcGIS">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="arcgis-online" />
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-  <nav>
-      <ul>
-        <li class='current'><a title="ArcGIS Online Trust" href="/ar/trust/">الثقة</a></li>
-        <li><a title="ArcGIS Online System Status" href="/ar/trust/system-status/">حالة النظام</a></li>
-        <li><a title="ArcGIS Online Security" href="/ar/trust/security/">الأمان</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/ar/trust/privacy/">الخصوصية</a></li>
-        <li><a title="ArcGIS Online Privacy" href="/ar/trust/compliance/">التوافق</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<!-- Page Content -->
-<div class="container feedback">
 
-  <div class="row main">
-	  
-  <div class="warning-signup">
-      <header>
-        <h2 data-langlabel="">إقرار مشكلة الامان</h2>
-      </header>
-	  <section>
-		<p data-langlabel="">الرجاء تعبئة النموذج الموجود إلى اليمين بالمعلومات التي يُمكن تطبيقها بما في ذلك التفاصيل المُحددة. سيتم استخدام تفاصيل الاتصال لتتبع المعلومات المُقدمة. الرجاء حدد الموضوع الذي يُمكن تطبيقه من قائمة المنسدلة للموضوع.</p>
-		<ul>
-			<li data-langlabel="">ثغرة أمنية - تقرير الثغرة الأمنية التي تم إيجادها داخل الموقع أو التطبيق.</li>
-			<li data-langlabel="">رسالة البريد الإلكتروني المريبة المُستلمة من Esri - إذا استهدفت من قبل التصيد الاحتيالي من قبل عنوان البريد الإلكتروني لـ Esri أو استلمت أي رسائل بريد إلكتروني مُريبة من Esri.</li>
-			<li data-langlabel="">مشاكل الخصوصية - إذا كان لديك أي موضوع خصوصية مُرتبط بالتطبيق أو المؤسسة.</li>
-			<li data-langlabel="">أخرى - لجميع موضوعات الأمان أو الخصوصية الأخرى.</li>
-		</ul>
-		
-<div style="padding-bottom:15px;">		
-
-  </div>   
-	  <hr style="padding-bottom:20px;"/>
-	  	  <header>
-		<h3 data-langlabel="">سياسة ذكر الثغرة الأمنية</h3>
-	  </header>
-      
-        <p data-langlabel="">يقوم فريق أمان ArcGIS.com بإقرار دور القيمة الذي يلعبه باحثين الأمان في تأمين الإنترنت. نقوم بتشجيع المسئولية الخاصة بأي من الثغرات الأمنية التي يُمكن إيجادها داخل الموقع أو التطبيق. تلتزم Esri بالتعامل مع المجتمع للتحقق والاستجابة غلى أي ثغرات أمنية مُحتملة تم ذكرها لنا. لن تخضع Esri للمُحاكمة أو لتحقيق قضائي عند اتباع هذه السياسة.</p>
-	  <header>
-		<h4 data-langlabel="">لا يسمح ArcGIS.com <strong>بالأنواع التالية</strong> من أبحاث الأمان</h4>
-	  </header>
-	  <ul>
-			<li data-langlabel="">هذا بسبب شرط قطع الخدمة (DoS).</li>
-		<li data-langlabel="">استخدام أداوات الأمان التلقائية بدون موافقة صريحة من Esri. يُمكن أن يتسبب استخدام الأدوات التلقائية في التحقيق في الإجراء أو حظر عناوين IP.</li>
-		<li data-langlabel="">الوصول، أو محاولة الوصول، إلى البيانات أو المعلومات التي لا تخصك.</li>
-		<li data-langlabel="">تدمير أو فشل، أو محاولة تدمير أو فشل، البيانات أو المعلومات التي لا تخصك.</li>  
-	  </ul>
-
-	 <header>
-	  <h4 data-langlabel="">التزام فريق أمان ArcGIS.com</h4>
-	  </header>
-		<p data-langlabel="">لجميع الباحثين الذين تتبعوا سياسة التقرير عن الثغرات الأمنية الخاصة بـ ArcGIS.com، سيقوم فريق أمان ArcGIS.com بما يلي:</p>
-		
-		<ul>
-		<li data-langlabel="">للاستجابة للسلوك المناسب، يُرجى استلام التقرير.</li>
-		<li data-langlabel="">لتوفير إطار زمني مُقدر لعنونة الثغرة الأمنية.</li>
-		<li data-langlabel="">لإخبار الأفراد عند إصلاح الثغرة الامنية.</li>		
-		</ul>
-      
-    <div class="dropdown-navigation dropdown-wrapper regular">
-      <span class="dropdown btn small light" data-langlabel="trust-researchers-title"> مشاركة باحثي التأمين
-      <div class="dropdown-content">
-        <div class="dropdown-menu">
-          <p data-langlabel="trust-researchers-desc">نود أن نشكر باحثي الأمان التاليين للمشاركة في برنامج التقارير المسئول:</p>
-          <%= partial :"_partial/security_names" %>
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+          <!-- INSTRUCTIONS: Remove this a tag if not needed. Feel free to replace the "Download PRODUCT_NAME" text as needed. -->
+          <a class="btn margin-left-1 btn-clear" href="/ar/trust/system-status/">التحقق من حالة النظام</a>
         </div>
       </div>
     </div>
-      
-	 </section>
-	 
-  </div> 
-
-    <div class="contact-form-signup">
-		
-		<div id="form-fields">
-		  <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
-						
-			<fieldset id="security-form-fieldset">
-
-			  <label data-langlabel="" for="name">الاسم:</label>
-			  <input type="text" autocomplete="off" id="name" name="name">
-			  <label data-langlabel="email-address" for="email-address">عنوان البريد الإلكتروني:</label>
-			  <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
-			  <label data-langlabel="phone-number" for="phone-number">رقم الهاتف:</label>
-			  <input type="text" autocomplete="off" id="userPhone" name="userPhone">
-			  <label data-langlabel="" for="organization">المؤسسة <span class="optional">(اختياريًا): </label>
-			  <input type="text" autocomplete="off" id="organization" name="organization">
-			  <label data-langlabel="" for="subject">الموضوع:</label>
-			  <select id="subject" autocomplete="off" name="subject">
-				  <option value="" style="display:none;"></option>
-				  <option value="Vulnerability">ثغرة أمنية</option>
-				  <option value="Suspicious E-mail from Esri">رسالة بريد إلكتروني مريبة من Esri</option>
-				  <option value="Privacy Issue">مشكلة الخصوصية</option>
-				  <option value="audi">آخر</option>
-			  </select>
-
-			  <label data-langlabel="" for="description">الوصف: </label>
-			  <textarea autocomplete="off" data-langlabel="" placeholder="I encountered a possible security problem with ..." name="description" id="description"></textarea>
-			  <label data-langlabel="feedback-spam-note" for="spam">للمساعدة في منع وصول رسائل البريد العشوائي، أدخل الأرقام المتاحة:</label>
-			  <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
-			  <label data-langlabel="numerals" for="captchaValue">أرقام: <strong><span id="txtCaptcha" class=""></strong></label>
-
-			  <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
-			  <input type="hidden" value="internal" name="source" id="source">
-
-			  <input value="verbose" name="resultType" id="resultType" type="hidden">
-			  <input value="Security Concern" name="datablock" id="datablock" type="hidden">
-			  <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
-			  <input type="hidden" value="ar" name="lg">
-			
-			</fieldset>
-			<a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">ارسال</a>
-			
-		  </form>
-		</div>
-
-	  <div id="submission-confirmation" style="display:none;">	
-		<p data-langlabel=""><h4>نشكرك على الإبلاغ عن المشكلة. سنتحقق منها وسنستجيب خلال أيام العمل التالية.</h4></p>
-	  </div>
-	  <div id="submission-error" style="display:none;">	
-		<p data-langlabel=""><h4>حدث خطأ أثناء الإرسال. الرجاء إرسال المشكلة فيما بعد.</h4></p>
-	  </div>
-
-	  <strong>
-			<span style="display:none;" id="referPageLink">الرجوع إلى <a id="feedback-referring-link" href="">صفحة الإشارة</a>
-			<span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">إرسال</a> مشكلة امان أخرى</span>
-	  </strong></span>
-
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/" selected>الثقة</option>
+        <option value="/en/trust/system-status/">حالة ‎ArcGIS Online</option>
+        <option value="/en/trust/security/">الأمان</option>
+        <option value="/en/trust/privacy/">الخصوصية</option>
+        <option value="/en/trust/compliance/">التوافق</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/ar/trust/">ثقة</a>
+        <a class="sub-nav-link" href="/ar/trust/system-status/">حالة ArcGIS على الإنترنت</a>
+        <a class="sub-nav-link" href="/ar/trust/security/">الأمان</a>
+        <a class="sub-nav-link" href="/ar/trust/privacy/">الخصوصية</a>
+        <a class="sub-nav-link" href="/ar/trust/compliance/">التوافق</a></span>
+      </nav>
     </div>
+  </div>
+</header>
 
-  </div> <!-- end of row main -->
+<div class="grid-container feedback">
+  <div class="column-24 leader-2 trailer-2">
+    <div class="column-12 trailer-2">
+      <div>
+        <h2 data-langlabel="">إقرار مشكلة الامان</h2>
+        <p data-langlabel="">الرجاء تعبئة النموذج الموجود إلى اليمين بالمعلومات التي يُمكن تطبيقها بما في ذلك التفاصيل المُحددة. سيتم استخدام تفاصيل الاتصال لتتبع المعلومات المُقدمة. الرجاء حدد الموضوع الذي يُمكن تطبيقه من قائمة المنسدلة للموضوع.</p>
+    		<ul>
+    			<li data-langlabel="">ثغرة أمنية - تقرير الثغرة الأمنية التي تم إيجادها داخل الموقع أو التطبيق.</li>
+    			<li data-langlabel="">رسالة البريد الإلكتروني المريبة المُستلمة من Esri - إذا استهدفت من قبل التصيد الاحتيالي من قبل عنوان البريد الإلكتروني لـ Esri أو استلمت أي رسائل بريد إلكتروني مُريبة من Esri.</li>
+    			<li data-langlabel="">مشاكل الخصوصية - إذا كان لديك أي موضوع خصوصية مُرتبط بالتطبيق أو المؤسسة.</li>
+    			<li data-langlabel="">أخرى - لجميع موضوعات الأمان أو الخصوصية الأخرى.</li>
+    		</ul>
+      </div>
+      <hr>
+      <div>
+		    <h3 data-langlabel="">سياسة ذكر الثغرة الأمنية</h3>
+        <p data-langlabel="">يقوم فريق أمان ArcGIS.com بإقرار دور القيمة الذي يلعبه باحثين الأمان في تأمين الإنترنت. نقوم بتشجيع المسئولية الخاصة بأي من الثغرات الأمنية التي يُمكن إيجادها داخل الموقع أو التطبيق. تلتزم Esri بالتعامل مع المجتمع للتحقق والاستجابة غلى أي ثغرات أمنية مُحتملة تم ذكرها لنا. لن تخضع Esri للمُحاكمة أو لتحقيق قضائي عند اتباع هذه السياسة.</p>
+        <h4 data-langlabel="">لا يسمح ArcGIS.com <strong>بالأنواع التالية</strong> من أبحاث الأمان</h4>
+        <ul>
+          <li data-langlabel="">هذا بسبب شرط قطع الخدمة (DoS).</li>
+          <li data-langlabel="">استخدام أداوات الأمان التلقائية بدون موافقة صريحة من Esri. يُمكن أن يتسبب استخدام الأدوات التلقائية في التحقيق في الإجراء أو حظر عناوين IP.</li>
+          <li data-langlabel="">الوصول، أو محاولة الوصول، إلى البيانات أو المعلومات التي لا تخصك.</li>
+          <li data-langlabel="">تدمير أو فشل، أو محاولة تدمير أو فشل، البيانات أو المعلومات التي لا تخصك.</li>
+        </ul>
+        <h4 data-langlabel="">التزام فريق أمان ArcGIS.com</h4>
+        <p data-langlabel="">لجميع الباحثين الذين تتبعوا سياسة التقرير عن الثغرات الأمنية الخاصة بـ ArcGIS.com، سيقوم فريق أمان ArcGIS.com بما يلي:</p>
+        <ul>
+          <li data-langlabel="">للاستجابة للسلوك المناسب، يُرجى استلام التقرير.</li>
+          <li data-langlabel="">لتوفير إطار زمني مُقدر لعنونة الثغرة الأمنية.</li>
+          <li data-langlabel="">لإخبار الأفراد عند إصلاح الثغرة الامنية.</li>
+        </ul>
+        <div class="dropdown-navigation dropdown-wrapper regular">
+          <span class="dropdown btn btn-fill btn-clear" data-langlabel="trust-researchers-title"> مشاركة باحثي التأمين</span>
+          <div class="dropdown-content">
+            <div class="dropdown-menu">
+              <p data-langlabel="trust-researchers-desc">نود أن نشكر باحثي الأمان التاليين للمشاركة في برنامج التقارير المسئول:</p>
+              <%= partial :"_partial/security_names" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column-11 right tablet-column-12">
+      <div class="contact-form-signups panel">
+        <div id="form-fields">
+          <form id="securityConcernForm" name="securityConcernForm" method="post" action="/apps/feedback/api/">
+            <fieldset id="security-form-fieldset">
+              <label data-langlabel="" for="name">الاسم
+                <input type="text" autocomplete="off" id="name" name="name">
+              </label>
+              <label data-langlabel="email-address" for="email-address">عنوان البريد الإلكتروني
+                <input type="text" autocomplete="off" id="userEmail" placeholder="johnsmith@esri.com" name="userEmail">
+              </label>
+              <label data-langlabel="phone-number" for="phone-number">رقم الهاتف
+                <input type="text" autocomplete="off" id="userPhone" name="userPhone">
+              </label>
+              <label data-langlabel="" for="organization">المؤسسة <span class="optional">(اختياريًا):</span>
+                <input type="text" autocomplete="off" id="organization" name="organization">
+              </label>
+              <label data-langlabel="" for="subject">الموضوع
+                <select id="subject" autocomplete="off" name="subject" class="select-full">
+                  <option value="" style="display:none;"></option>
+                  <option value="Vulnerability">ثغرة أمنية</option>
+                  <option value="Privacy Issue">مشكلة الخصوصية</option>
+                  <option value="audi">أخرى</option>
+                </select>
+              </label>
+              <label data-langlabel="" for="description">الوصف
+                <textarea autocomplete="off" data-langlabel="" placeholder="واجهت مشكلة محتملة للأمان مع..." name="description" id="description"></textarea>
+              </label>
+              <label data-langlabel="feedback-spam-note" for="spam">للمساعدة في منع وصول رسائل البريد العشوائي، أدخل الأرقام المتاحة
+                <input type="text" autocomplete="off" value="" name="txtCaptchaInput" id="txtCaptchaInput">
+              </label>
+              <label data-langlabel="numerals" for="captchaValue">أرقام: <strong><span id="txtCaptcha" class=""></span></strong></label>
+              <input type="hidden" value="" name="txtHiddenCaptcha" id="txtHiddenCaptcha">
+              <input type="hidden" value="internal" name="source" id="source">
+              <input value="verbose" name="resultType" id="resultType" type="hidden">
+              <input value="Security Concern" name="datablock" id="datablock" type="hidden">
+              <input value="/js/formConfig.json" name="fname" id="fname" type="hidden">
+              <input type="hidden" value="ar" name="lg">
+            </fieldset>
+            <a class="btn orange" name="submit-concern" id="submit" data-langlabel="contact-us">ارسال</a>
+          </form>
+        </div>
+        <div id="submission-confirmation" style="display:none;">
+          <p data-langlabel=""><h4>نشكرك على الإبلاغ عن المشكلة. سنتحقق منها وسنستجيب خلال أيام العمل التالية.</h4></p>
+        </div>
+        <div id="submission-error" style="display:none;">
+          <p data-langlabel=""><h4>حدث خطأ أثناء الإرسال. الرجاء إرسال المشكلة فيما بعد.</h4></p>
+        </div>
+        <strong> <span style="display:none;" id="referPageLink">الرجوع إلى <a id="feedback-referring-link" href="">صفحة الإشارة</a></span> <span style="display:none;" id="resubmit"><a id="resubmit" href="" target="_self">إرسال</a> مشكلة امان أخرى</span> </strong>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 $(document).ready(function() {
@@ -172,4 +160,8 @@ $(document).ready(function() {
 </script>
 
 </div>
-
+<style>
+.wrapper{
+  overflow:visible;
+}
+</style>

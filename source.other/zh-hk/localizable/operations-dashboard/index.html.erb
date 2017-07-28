@@ -1,327 +1,293 @@
 ---
 title: Operations Dashboard for ArcGIS
 css:
-  - documentation
-  - /en/asset/css/common
-  - stat-page-specific
-  - colorbox/colorbox
+  - homepage
+  - /cdn/css/colorbox
+  - video-play-button
 
 js:
-  - libs/jquery.cookie
-  - /en/asset/js/operations-dashboard-1
-  - libs/jquery.colorbox-min.js
-  - video-init
+  - /cdn/js/libs/jquery.colorbox-min
+  - video-playlist
+  - rssfeed
+  - switchers/operations-dashboard-1
 
 metatags:
-  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2016-02-29"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="zh-hk">
-
-dashboardDownloadLink: http://www.arcgis.com/opsdashboard/OperationsDashboard.application
-  
+  - <META name="description" content="Operations Dashboard for ArcGIS Home page."><META name="last-modified" content="2017-01-12"><META name="product" content="ops-dashboard,ops-dashboard-browser"><META name="sub_category" content="Operations Dashboard"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Operations Dashboard"><META name="search-category" content="help-general"><META name="subject_label" content="MAPPING"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MAPPING"><META name="content-language" content="zh-hk">
 mobile: true
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1><a href="/zh-hk/operations-dashboard/">Operations Dashboard for ArcGIS</a></h1>
-      <form id="helpSearchForm" target="_top">
-        <input type="search" name="q" class="leader" placeholder="Search Operations Dashboard">
-        <input type="hidden" name="collection" value="help" />
-        <input type="hidden" name="product" value="ops-dashboard" />          
-        <input type="hidden" name="language" value="<%= current_language %>" />
-      </form>
-    </header>
-	<nav>
-      <ul>
-        <li class='current'><a href="/zh-hk/operations-dashboard/">首頁</a></li>
-        <li><a href="/zh-hk/operations-dashboard/windows-desktop/author/create-a-map.htm">創作者視圖</a></li>
-        <li><a href="/zh-hk/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">使用視圖</a></li>
-        <li><a href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis">論壇</a></li>
+
+<!--
+This is a tamplate for a simple homepage.  Please search for and replace the following:
+  CARD_IMAGE_x.png: Images for the cards.  These images should be at least 439px wide if using 4 or more cards, 461px wide if using 3 cards, or 704px wide if using 1 card.
+  MORE_VIDEOS_LINK: Page to link to for more videos.
+  YOUTUBE_PLAYLIST_ID: The ID for the playlist on Youtube
+  TWITTER_LINK: Link to the product's Twitter page
+  LINKEDIN_LINK: Link to the product's LinkedIn page
+  GITHUB_LINK: Link to the product's GitHub page
+  FACEBOOK_LINK: Link to the product's Facebook page
+Please search for INSTRUCTIONS within the file for element specific instructions.
+-->
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Operations Dashboard for ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear icon-ui-download" href="http://www.arcgis.com/opsdashboard/OperationsDashboard.application">取得 Windows 版本</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/operations-dashboard/" selected>首頁</option>
+        <option value="/en/operations-dashboard/overview/overview.htm">概述</a>
+        <option value="/en/operations-dashboard/windows-desktop/author/create-a-map.htm">創作視圖</a>
+        <option value="/en/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">使用視圖</a>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/zh-hk/operations-dashboard/">首頁</a>
+        <a class="sub-nav-link" href="/zh-hk/operations-dashboard/overview/overview.htm">概觀</a>
+        <a class="sub-nav-link" href="/zh-hk/operations-dashboard/windows-desktop/author/create-a-map.htm">創作視圖</a>
+        <a class="sub-nav-link" href="/zh-hk/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">使用視圖</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- beta announcement -->
+<div class="panel panel-dark panel-no-border panel-no-padding leader-2 text-center">
+  <div class="grid-container padding-leader-half padding-trailer-half trailer-0">
+    <div class="column-24">
+      <h5 class="trailer-0 leader-0">請在進裡享受新世代體驗！ <a class="btn secondary" href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}" style="margin: 0px 0 0 10px;">加入 beta</a>
+      </h5>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>彈指間掌握狀態</h1>
+      <!--<br/>
+      Know Operational Status Like You Are There<br/>
+      Be There Without Leaving Your Office<br/>
+      Know Operational Status Like You Are There<br/>
+      Know the Status of your Operations<br/>
+      Monitor, Track, and Assess Your Daily Operations<br/>
+      Monitor, Track, and Assess What Matters Most (to You)<br/>
+      Monitor, Track, and Assess with a Dynamic View of your Operations<br/>
+      Know; outlook; view <br/>-->
+      <h5>監視活動和事件，追蹤現場工作人員，並從任何地方評估日常營運的狀態和性能。</h5>
+      <!--Monitor, track, and assess what matters most to you from whereever you are. Use your laptop or tablet to see your operations as they progress. -->
+
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="搜尋 Operations Dashboard 說明">
+              <input type="hidden" name="collection" value="help" />
+              <!--input type="hidden" name="platform" value="detect" / -->
+              <input type="hidden" name="product" value="ops-dashboard" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-2 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+        <!--li><strong>Current update:</strong> December 2016</li-->
+        <li><a href="/zh-hk/operations-dashboard/overview/whats-new.htm">新功能</a></li>
+	<li><a href="/zh-hk/operations-dashboard/overview/requirements.htm">需求</a></li>
+        <li><a href="/zh-hk/operations-dashboard/overview/sneak-peek.htm">搶先預覽</a></li>
+	<li><a href="/zh-hk/operations-dashboard/windows-desktop/author/faqs-author.htm">創作視圖的常見問題集</a></li>
+	<li><a href="/zh-hk/operations-dashboard/windows-desktop/user/faqs-user.htm">使用視圖的常見問題集</a></li>
       </ul>
+      <hr class="leader-half trailer-half">
     </nav>
   </div>
 </div>
 
-<!-- Page Content -->
-<div class="container">
-
-     <div class="column-16 tablet-column-24">
-        <h3 class="gray">監視活動和事件，追蹤現場工作人員，並評估日常營運的狀態和性能。</h3>
-          
-          <!--
-          <span id="appVersion"><strong>Version:</strong> 10.2.2</span>
-          <span id="appReleased"><strong>Released:</strong> March 2014</span>
-	  -->	  
-
-          <p>
-            <a class="btn primary icon-windows-8" id="dashboardDownloadLink" href="#">取得 Operations Dashboard</a>
-
-          </p>
-        <hr />
-
-        <div id="collectorMapFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/dashboard-create-small.png" />
-
-          <h3>建立和分享操作視圖</h3>
+<div class="grid-container leader-1 trailer-2">
+  <div class="column-24">
+    <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/zh-hk/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">
+            <img alt="" src="/en/operations-dashboard/img/createMaps.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-hk/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm">建立和分享操作視圖</a>
+          </h5>
           <p>在三個簡單的步驟中，根據地圖或網路服務中定義的即時地理資料，建立和共用包括地圖、清單、圖表、儀錶及更多項目的操作視圖。</p>
-          <p>
-            <a href="/zh-hk/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="icon-right-arrow">&nbsp;詳情介紹</a><br />
-            <!--<a href="#" class="icon-play">&nbsp;Watch a video</a>-->
-          </p>
         </div>
-
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/dashboard-monitor-small.png" />
-
-          <h3>監視和回應事件</h3>
-          <p>使用操作視圖來關注對您而言最重要的操作。透過四個步驟即可監控世界任意位置處的服務、配送、人員、車輛及其他資訊。</p>
-          <p>
-            <a href="/zh-hk/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;詳情介紹</a><br />
-            <!--<a href="http://resources.arcgis.com/en/operations-dashboard/video2195.html" class="icon-play">&nbsp;Watch a video</a> -->
-			<a title="監視和回應事件" href="http://video.arcgis.com/iframe/2195/000000/width/960/0/00:00:00" class="icon-play colorbox-evlarge">&nbsp;觀看影片</a>
-			<video width="320" height="240" controls id="2195" class="mobileVideo">
-			  <source src="http://video.arcgis.com/download-video/2195/mp4/480">
-			</video>
-          </p>
-        </div>
-	<div class="clear"></div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/story-graphic-3.png" />
-
-          <h3>在瀏覽器中監視</h3>
-          <p>在瀏覽器中使用您的操作視圖。不需要進行任何安裝——只要開啟操作視圖並持續更新您的操作，即使是從 iPad 上進行更新也可以。</p>
-          <p>
-            <a href="/zh-hk/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="icon-right-arrow">&nbsp;詳情介紹</a><br />
-            <!--<a href="" class="icon-right-arrow">&nbsp;See an example</a><br />-->
-          </p>
-        </div>
-
-        <div id="collectorDataFeature" class="column-12 phone-column-24">
-          <img src="/en/operations-dashboard/story-graphic-4.png" />
-
-          <h3>開發擴充模組</h3>
-          <p>使用自訂 widget、圖徵動作和地圖工具，將您獨特的商務邏輯融入您的操作視圖中。</p>
-          <p>
-            <a href="/zh-hk/operations-dashboard/windows-desktop/author/custom-addins.htm" class="icon-right-arrow">&nbsp;詳情介紹</a><br />
-          </p>
-        </div>        
-
-        <div class="clear"></div>
-
-
-	<a name="features" ></a>
-	<h2 class="divider">圖徵</h2>
-	<p>將系統和您所管理的資源整合為一個普通視圖。在桌面或平板電腦裝置上，監視大規模事件或日常操作的即時資料摘要。建立整合了地圖、圖表和圖形的專用執行儀錶板。</p>
-	
-	<ul>
-	<li>將地圖與動態資料搭配使用以提供即時視圖。</li>
-	<li>配置圖表、儀錶、直方圖及更多資訊來提供統計內容。</li>
-	<li>建立和分享針對特殊需求的操作視圖。</li>
-	<li>設計可在多個監視器或單一顯示裝置上使用的視圖。</li>
-	<li>建立適合您需求的自訂 widget 和工具。</li>
-	</ul>
-
-
-        <a name="systemRequirements"></a>
-        <h2 class="divider">系統要求</h2>
-
-        <p>若要執行 Operations Dashboard，必須符合特定的裝置需求。
-        Operations Dashboard 支援多種語言。</p>
-
-
-<script> 
- function exp(e,strTag ,strAttribute){ 
- var elem = document.getElementsByTagName(strTag); 
- var elem1 = e.target;
- for (var i=0;i<elem1.children.length;i++){ 
- elem1.children[i].innerText=="4"?elem1.children[i].innerText="6":elem1.children[i].innerText="4"; 
- } 
- for (var i =0;i<elem.length;i++) 
- { 
- if(elem[i].getAttribute(strAttribute)=="yes") 
- { 
- elem[i].style.display=='none'? elem[i].style.display='block':elem[i].style.display='none'; 
- } 
- } 
- } 
- </script> 
- <h3>Windows 應用程式</h3>
-  <a class="icon-right-arrow" onclick="exp(event,'div','exp1')">支援的作業系統</a>
-     <div exp1='yes' style="display:none;padding:0 15px;">
-        <ul>
-          <li>Windows 10 Pro 和 Windows 10 Enterprise (32 位元和 64 位元 [EM64T])</li>
-          <li>Windows 8.1、Windows 8.1 Pro 和 Windows 8.1 Enterprise (32 位元和 64 位元 [EM64T])</li>
-          <li>Windows 8、Windows 8 Pro 和 Windows 8 Enterprise (32 位元和 64 位元 [EM64T])</li>
-		  <li>Windows 7 Ultimate、Enterprise、Professional 和 Home Premium (32 位元和 64 位元 [EM64T]) SP1</li>
-		  <li>Windows Server 2012 Standard 和 Datacenter (64 位元 [EM64T])</li>
-		<li>Windows Server 2008 R2 Standard、Enterprise 和 Datacenter (64 位元 [EM64T]) SP1</li>
-		<li>Windows Server 2008 Standard、Enterprise 和 Datacenter (32 位元和 64 位元 [EM64T]) SP2</li>
-        </ul>
-</div>
-<div class="clear" style="padding:5px;"></div>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp2');" style="display:inline;">硬體需求</a>
-	<div exp2='yes' style="display:none;padding:0 15px;">
-        <ul>
-			<li>CPU 速度：建議使用 2.2 GHz 或更高時脈；超執行緒技術 (HTT) 或多核心。</li>
-			<li>處理器：Intel Pentium 4、Core Duo 或 Xeon 處理器；至少為 SSE2。從 Windows 命令提示字元執行 Microsoft <a href="http://technet.microsoft.com/en-us/sysinternals/cc835722">Coreinfo</a> 公用程式以檢查處理器。</li>
-			<li>磁碟規格：1.5 GB 可用的磁碟空間。</li>
-			<li>記憶體/RAM：2 GB 或更多。</li>
-			<li>顯示屬性：24 位元色彩深度。</li>
-			<li>螢幕解析度：一般大小 (96 dpi) 下為 1024x768 或更高。</li>
-			<li>交換空間：由作業系統決定；最少 500 MB。</li>
-			<li>視訊/圖形介面卡：最少 64 MB RAM，建議 256 MB RAM；支援 NVIDIA、ATI 和 Intel 晶片組。加速的圖形卡驅動程式。至少 Shader Model 2.0。請務必使用最新的可用驅動程式。</li>
-		</ul>
-</div>
-<div class="clear" style="padding:5px;"></div>
-
-<a class="icon-right-arrow" onclick="exp(event,'div','exp3');" style="display:inline;">軟體需求</a>
-	<div exp3='yes' style="display:none;padding:0 15px;">
-        <p style="padding:0 15px">需要 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a> 或更高版本。您必須擁有對電腦的管理權限才能安裝它。</p>
-        </div>
-        <div class="clear" style="padding:5px;"></div>
-        
-<a class="icon-right-arrow" onclick="exp(event,'div','exp4');" style="display:inline;">開發人員需求</a>
-		<div exp4='yes' style="display:none;padding:0 15px;">
-	<p style="padding:0 15px">擴充 Operations Dashboard for ArcGIS 需要使用 <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> 或 <a href="http://resources.arcgis.com/en/communities/runtime-wpf/index.html">ArcGIS Runtime SDK 10.2.5 for WPF</a>。若要使用 ArcGIS API for JavaScript，操作視圖必須位於 ArcGIS Online 或 Portal for ArcGIS 10.4 及更高版本。若要使用 ArcGIS Runtime SDK for WPF，則需要 Microsoft Visual Studio 2012 或 2013 Professional、Premium 或 Ultimate。</p>
-
-     </div> 
-     <div class="clear" style="padding:5px;"></div>
-     
-<a class="icon-right-arrow" onclick="exp(event,'div','exp5');" style="display:inline;">受支援的語言</a>
-<div exp5='yes' style="display:none;padding:0 15px;">
-     	<p style="padding:0 15px">阿拉伯語、捷克語、丹麥語、荷蘭語、英語、愛沙尼亞語、芬蘭語、法語、德語、希獵語、希伯來語、義大利語、日語、韓語、拉脫維亞語、立陶宛語、挪威語、波蘭語、葡萄牙語（巴西）、葡萄牙語（葡萄牙）、羅馬尼亞語、俄語、簡體中文、西班牙語、瑞典語、泰語、繁體中文（香港）、繁體中文（台灣）、土耳其語和越南語。</p>
-     	<p style="padding:0 15px">Windows 版應用程式中使用的語言取決於作業系統的語言設定。如果使用不受支援的語言設定，則應用程式會使用英語。</p>
-</div>
-<div class="clear"></div>
-
-     <h3/>
- <h3>瀏覽器應用程式</h3>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp10');" style="display:inline;">受支援的瀏覽器</a>
-<div exp10='yes' style="display:none;padding:0 15px;"><div style="padding:0 15px"> 桌上電腦
- <ul style="padding:0 15px">
- <li>Chrome 19.0 及更新版本</li>
- <li>Firefox 4.0 及更新版本</li>
- <li>Internet Explorer 9.0 及更新版本</li>
- <li>Microsoft Edge 20.0 及更高版本</li>
- <li>Safari 5.1 及更新版本</li>
- </ul> 
-平板電腦 
- <ul style="padding:0 15px">
- <li>執行 Chrome 19.0 及更新版本的 Android 4.0 及更新版本</li>
- <li>執行 Safari 的 iOS 6.0 及更新版本</li>
- </ul>
- 手提電話 
- <p style="padding:0 15px">目前不支援智慧型手機的瀏覽器。</p>
- </div></div> 
- <div class="clear" style="padding:5px;"></div>
- <a class="icon-right-arrow" onclick="exp(event,'div','exp12');" style="display:inline;">開發人員需求</a>
- <div exp12='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">擴充 Operations Dashboard for ArcGIS 需要使用 <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a>。操作視圖必須位於 ArcGIS Online 或 Portal for ArcGIS 10.4 及更高版本。</p>
-</div>
-<div class="clear" style="padding:5px;"></div>
-<a class="icon-right-arrow" onclick="exp(event,'div','exp11');" style="display:inline;">受支援的語言</a>
- <div exp11='yes' style="display:none;padding:0 15px;">
-      	<p style="padding:0 15px">克羅埃西亞語、捷克語、丹麥語、荷蘭語、英語、愛沙尼亞語、芬蘭語、法語、德語、希獵語、義大利語、日語、韓語、拉脫維亞語、挪威語、波蘭語、葡萄牙語 (巴西)、葡萄牙語 (葡萄牙)、羅馬尼亞語、俄語、塞爾維亞語、簡體中文、西班牙語、瑞典語、泰語、繁體中文 (香港)、繁體中文 (台灣)、土耳其語和越南語。</p>
-      	<p style="padding:0 15px">在瀏覽器版本中，可使用您的 ArcGIS Online 設定檔來設定語言。如果使用不受支援的語言設定，則應用程式會使用英語。</p>
-</div>
-<div class="clear"></div>
-
-
-        <p style="padding:0 15px" />
-        <a name="arcgisRequirements"></a>
-        <h2 class="divider">ArcGIS 需求</h2>
-        <p>若要在 Operations Dashboard 中使用地圖，您必須擁有 ArcGIS 組織帳號。支援 ArcGIS Online 及 Portal for ArcGIS 10.3.1 和更高版本。瀏覽器應用程式的延伸模組需要 ArcGIS Online 或 Portal for ArcGIS 10.4 或更高版本。</p>
-        <p>您的地圖可包含來自 ArcGIS Online、Portal for ArcGIS 和 ArcGIS for Server 的資料。資料來源必須託管在 ArcGIS Online 或 ArcGIS 10.1 for Server 或更新版本中。</p>
-        <p>如果操作視圖公開分享，則可在瀏覽器應用程式中對其進行檢視而不必登入。</p>
-
-        <a name="whatsNew"></a>
-        <h2 class="divider">新功能</h2>
-        <table><tr><td valign="top" class="column-12"><h4 class="icon-windows-8">Windows</h4>
-	        <p>Operations Dashboard for ArcGIS 10.3.3 是在 2016 年 8 月發行。它包括以下內容：</p>
-	        <ul>
-	          <li>本地化為繁體中文 (香港) 和繁體中文 (台灣)。</li>
-	          <li>修復若干錯誤並進行多處改進，包括 BUG-000095467</li>
-	        </ul>
-                </td>
-	        <td valign="top" class="column-12"><h4><img src="icon-browser.png" style="margin-right:4px"/>瀏覽器</h4>
-	        <p>已在 2016 年 6 月更新 Operations Dashboard for ArcGIS 的瀏覽器應用程式。它包括以下增強功能：</p>
-	        <ul>
-	          <li>本地化為克羅埃西亞語和塞爾維亞語</li>
-	          <li>修復若干錯誤並進行多處改進</li>
-        </ul></td><tr></table>
-        
-        
-        
-        
-        <a name="sneakPeek"></a>
-	<h2 class="divider">搶先預覽</h2>
-	<p>Operations Dashboard 現已成為可對操作進行監控的優秀應用程式。但它不僅限於此！ 我們目前正在建構新世代應用程式：一個將完整運作，且不需要下載 Windows 應用程式的瀏覽器應用程式。
-	您已長期請求在瀏覽器中創作操作視圖，您可以使用新世代應用程式達到此目的！ 
-	您會在 Windows 應用程式中看到所要的 widget 版面配置和站點，方便您進入瀏覽器中執行。
-	此外，也將支援標籤和智慧型製圖。
-	在<a href="https://blogs.esri.com/esri/arcgis/2016/05/26/operations-dashboard-for-arcgis-a-new-experience-is-coming/">我們的部落格文章</a>
-	或<a href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}">加入 beta</a> 中閱讀更多相關資料。</p>
-	
-	<p>分享您的<a href="https://geonet.esri.com/community/arcgis-ideas/content?filterID=contentstatus%5Bpublished%5D~category%5Boperations-dashboard-for-arcgis%5D">想法</a>並告訴我們<a href="mailto:Dashboard4ArcGIS@esri.com?subject=Operations%20Dashboard%20feedback">您的意見反饋</a>。</p>
-        
-        <p>&nbsp;</p>
-        
-
+        <a href="/zh-hk/operations-dashboard/windows-desktop/author/create-and-share-a-dashboard.htm" class="btn btn-clear btn-fill leader-0">啟動練習</a>
       </div>
-
-
-      <div class="column-8 tablet-column-24 blocks">
-
-       <div class="greyFrame">
-	  請在進裡享受新世代體驗！ <a class="btn secondary" href="https://earlyadopter.esri.com/callout/?callid={0EE9717B-7EDD-4468-8D02-DACF3E0E8810}" style="margin: 15px 0 0 10px;">加入 beta</a>
-       </div>
-       
-       <br/>
-       <div class="imgFrame block">
-          <h3>詳細資訊</h3>
-          
-	  <h4><a href="#features">特性</a></h4>
-	  <h4><a href="#systemRequirements">系統要求</a></h4>
-	  <h4><a href="#arcgisRequirements">ArcGIS 需求</a></h4>
-	  <h4><a href="#whatsNew">新功能</a></h4>
-	  <h4><a href="#sneakPeek">搶先預覽</a></h4>
-          
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/zh-hk/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">
+            <img alt="" src="/en/operations-dashboard/img/monitorAndRespond.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-hk/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm">監視和回應事件</a>
+          </h5>
+          <p>使用操作視圖來關注對您而言最重要的操作。透過四個步驟即可監控世界任意位置處的服務、配送、人員、車輛及其他資訊。</p>
         </div>
-
-        <br />
-
-        <!-- Blog Feed -->
-        <div class="greyFrame">
-          <h3>部落格</h3>
-          <div id="blog">
-            <!-- blog goes here -->
-          </div>
+        <nav>
+          <a href="/zh-hk/operations-dashboard/windows-desktop/user/monitor-and-respond-to-events.htm" class="btn btn-grouped btn-clear btn-half leader-0">創作作品</a>
+          <a href="http://video.arcgis.com/iframe/2195/000000/width/960/1" class="btn btn-grouped btn-clear btn-half leader-0">觀賞作品</a>
+        </nav>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/zh-hk/operations-dashboard/web/user/monitor-and-respond-to-events.htm">
+            <img alt="" src="/en/operations-dashboard/img/browserApp.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-hk/operations-dashboard/web/user/monitor-and-respond-to-events.htm">在瀏覽器中監視</a>
+          </h5>
+          <p>在瀏覽器中使用您的操作視圖。不需要進行任何安裝——只要開啟操作視圖並持續更新您的操作，即使是從 iPad 上進行更新也可以。</p>
         </div>
-
- </div>
-
+        <a href="/zh-hk/operations-dashboard/web/user/monitor-and-respond-to-events.htm" class="btn btn-clear btn-fill leader-0">瞭解作法</a>
+      </div>
+      <div class="card block">
+        <figure class="card-image-wrap">
+          <a href="/zh-hk/operations-dashboard/windows-desktop/author/custom-addins.htm">
+            <img alt="" src="/en/operations-dashboard/img/developExtensions.jpg">
+          </a>
+        </figure>
+        <div class="card-content">
+          <h5 class="trailer-half leader-0">
+            <a href="/zh-hk/operations-dashboard/windows-desktop/author/custom-addins.htm">開發擴充模組</a>
+          </h5>
+          <p>使用自訂 widget、圖徵動作和地圖工具，將您獨特的商務邏輯融入您的操作視圖中。</p>
+        </div>
+        <nav>
+          <a href="/zh-hk/operations-dashboard/windows-desktop/author/custom-addins.htm" class="btn btn-grouped btn-clear btn-half leader-0">參閱詳細資訊</a>
+          <a href="https://github.com/Esri/dashboard-samples" class="btn btn-grouped btn-clear btn-half leader-0">範例</a>
+        </nav>
+      </div>
     </div>
+  </div>
+</div>
 
-<!--	<script src="/js/main.js" type="text/javascript"></script>-->
-	<script src="/en/asset/js/rssfeed.js" type="text/javascript"></script>
- <script type="text/javascript">
-    $(window).load(function() {
-      $('#blog').rssFeed({
-        url:'http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/',
-        max: 5,
-        layout: 0
-      });
-    });
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">發揮 ArcGIS 的最大功能</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Videos -->
+<!--div class="panel panel-blue panel-no-border panel-no-padding leader-0">
+  <div class="grid-container padding-leader-1 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="trailer-half leader-1">Watch our videos
+        <a class="btn btn-transparent text-white btn-large right" href="MORE_VIDEOS_LINK">More videos</a>
+      </h2>
+      <div playlistid="YOUTUBE_PLAYLIST_ID" class="video-holder block-group block-group-5-up tablet-block-group-1-up leader-0 padding-leader-half trailer-half">
+      </div>
+    </div>
+  </div>
+</div-->
 
-/*
-N = # of article shown (default is 2)
-L = 0, 1 (default is 0)
-*/
-$("#dashboardDownloadLink").click(function (){
-	window.location = "<%=data.page.dashboardDownloadLink%>";
-	return false;
-})
+<!-- Social -->
+<div class="panel panel-dark panel-no-border">
+  <div class="grid-container">
+   <div class="column-24 text-white text-center trailer-half leader-half">
+    <h4 class="trailer-half">連線 Operations Dashboard</h4>
+    <a aria-label="在 LinkedIn 上連線" class="icon-social-sdk-home icon-social-linkedin tooltip tooltip-top" href="https://www.linkedin.com/groups/47285"></a>
+    <a aria-label="檢視 GitHub 專案" class="icon-social-sdk-home icon-social-github tooltip tooltip-top" href="https://github.com/Esri/dashboard-samples"></a>
+    <a aria-label="加入社群" class="icon-social-sdk-home icon-social-geonet tooltip tooltip-top" href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis"></a>
+    <a aria-label="將回饋意見寄給我們" class="icon-social-sdk-home icon-social-contact tooltip tooltip-top" href="/feedback"></a>
+   </div>
+  </div>
+</div>
 
-  </script>
+<!-- Blog -->
+<div class="panel panel-white panel-no-border panel-no-padding leader-1">
+  <div class="grid-container padding-leader-1 padding-trailer-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">閱讀我們的部落格 <a class="btn btn-transparent btn-large right" href="https://blogs.esri.com/esri/arcgis/tag/operations-dashboard/">更多文章</a>
+      </h2>
+      <div data-post-limit="3" data-blog-feed-url="http://blogs.esri.com/esri/arcgis/tag/operations-dashboard/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
+			  <!-- Blog Content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Forum -->
+<div class="panel panel-white panel-no-border panel-no-padding">
+  <div class="grid-container padding-trailer-1 padding-leader-1">
+    <div class="column-24">
+      <h2 class="text-rule padding-trailer-half">參與討論 <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/applications/operations-dashboard-for-arcgis">更多討論</a>
+      </h2>
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2121" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
+				<!-- Forum content goes here -->
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">參加深入課程</a></h5>
+          <p class="trailer-0">
+ 搜尋「學習 ArcGIS」來尋找和完成練習，使用 ArcGIS 以解決實際的全球問題。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">尋找培訓課程</a></h5>
+          <p class="trailer-0">
+ 透過教師領導課程、Web 課程和研討會來深入瞭解 ArcGIS。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">取得技術支援</a></h5>
+          <p class="trailer-0">
+ 透過聊天、電子郵件或電話聯繫 Esri 支援。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">檢查系統健康</a></h5>
+          <p class="trailer-0">
+ 查看 ArcGIS Online 的狀態並回報問題。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,76 +25,72 @@ mobile: true
         <div class="sdk-home-banner-content">
           <h1 class="sub-nav-title leader-1 trailer-1 text-white">Web AppBuilder for ArcGIS</h1>
         </div>
-
+        <!-- INSTRUCTIONS: Remove this div tag if the a and p tags within are not needed -->
+        <div class="leader-1 text-right">
+        </div>
       </div>
     </div>
     <div class="column-24">
-      <nav class="sub-nav-list">
-        <a class="sub-nav-link is-active" href="/zh-tw/web-appbuilder/">首頁</a>
-        <a class="sub-nav-link" href="/zh-tw/web-appbuilder/create-apps/">建立應用程式</a>
-        <a class="sub-nav-link" href="/zh-tw/web-appbuilder/manage-apps/">管理應用程式</a>
-        <a class="sub-nav-link" href="/zh-tw/web-appbuilder/extend-apps/">延伸應用程式</a>
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/web-appbuilder/" selected>首頁</option>
+        <option value="/en/web-appbuilder/create-apps/">建立應用程式</option>
+        <option value="/en/web-appbuilder/manage-apps/">管理應用程式</option>
+        <option value="/en/web-appbuilder/extend-apps/">延伸應用程式</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link is-active" href="/zh-tw/web-appbuilder/">首頁</a> <a class="sub-nav-link" href="/zh-tw/web-appbuilder/create-apps/">建立應用程式</a> <a class="sub-nav-link" href="/zh-tw/web-appbuilder/manage-apps/">管理應用程式</a> <a class="sub-nav-link" href="/zh-tw/web-appbuilder/extend-apps/">延伸應用程式</a>
       </nav>
     </div>
   </div>
 </header>
 
-<div class="grid-container leader-2">
-  <div class="column-16">
-    <div class="wf-nav" style="height:55px;">
-      <div class="wf-nav search-bar column-16 trailer-1 leader-0 padding-right-2">
-        <form id="helpSearchForm" target="_top">
-          <input type="search" name="q" class="leader" placeholder="搜尋 Web AppBuilder for ArcGIS">
-          <input type="hidden" name="collection" value="help" />
-          <input type="hidden" name="product" value="web-appbuilder" />
-          <input type="hidden" name="language" value="<%= current_language %>" />
-          <button class="search-submit icon-ui-search margin-right-2" type="submit"></button>
-        </form>
+<div class="grid-container leader-2 text-center">
+  <div class="column-24">
+    <div class="column-3">&nbsp;</div>
+    <div class="column-18 text-center center trailer-1">
+      <h1>建立功能強大且能執行於任何裝置的 GIS 應用程式。不需編寫程式碼。</h1>
+      <h5>請按一下<a href="http://www.arcgis.com/apps/MapAndAppGallery/index.html?appid=1e3085af6e1a48c8908fa624bdfef768">網站即時展示</a>，看看其他人的作品。</h5>
+    </div>
+  </div>
+  <div class="column-24">
+    <div class="column-4">&nbsp;</div>
+    <div class="column-16 center trailer-1">
+      <div container="" class="panel">
+        <div class="wf-nav" style="height:55px;">
+          <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+            <form id="helpSearchForm" class="input-group" target="_top">
+              <input type="search" name="q" class="leader input-group-input" placeholder="搜尋 Web AppBuilder for ArcGIS">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="platform" value="detect" />
+              <input type="hidden" name="product" value="web-appbuilder" />
+              <input type="hidden" name="language" value="<%= current_language %>" />
+              <span class="input-group-button">
+                <button class="icon-ui-search icon-ui-flush" type="submit"></button>
+              </span>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
 
+   </div>
 
-    <div class="column-16 tablet-column-7">
- 
-	  <h3 class="gray">建立功能強大且能執行於任何裝置的 GIS 應用程式。不需編寫程式碼。</h3>
-	<h5>請按一下<a href="http://www.arcgis.com/apps/MapAndAppGallery/index.html?appid=1e3085af6e1a48c8908fa624bdfef768">網站即時展示</a>，看看其他人的作品。</h5>
-    </div>
-
-    <!-- INSTRUCTIONS: If you don't want to use an image in this section, uncomment the div above and remove the two divs below.
-    <div class="column-4 right margin-right-1 padding-left-0">
-      <img src="img/PRODUCT_IMAGE_231x149.png">
-    </div>
-    <div class="column-11 tablet-column-7">
-      <p>MAIN_TEXT</p>
-    </div>-->
-
-
-  </div>
-  <div class="column-8 tablet-column-12 right">
-    <div class="panel">
-      <h4 class="icon-ui-announcement">新增功能</h4>
-      <p>2016 年 12 月的更新包括可將地圖導航到下一個或上一個範圍的新 widget、若干現有 widget 的增強功能，及其他改善功能。</p>
-      <a class="btn secondary" href="/zh-tw/web-appbuilder/create-apps/what-s-new.htm">資源</a>
-    </div>
-  </div>
-</div>
-
-<div class="grid-container leader-1">
-  <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
-    <hr class="leader-half trailer-half">
-      <ul class="list-plain sdk-home-nav-list">
-        <!--<li><a href="POPULAR_LINK_1">POPULAR_TEXT_1</a></li>-->
+    <nav aria-labelledby="thirdnav" role="navigation" class="column-24 text-center">
+      <hr class="leader-0 trailer-half">
+      <ul class="list-plain sdk-home-nav-list text-center">
+		<li><strong>目前更新：</strong>2017 年 3 月</li>
+        <li><a href="/zh-tw/web-appbuilder/create-apps/what-s-new.htm">新功能</a></li>
         <li><a href="/zh-tw/web-appbuilder/create-apps/what-is-web-appbuilder.htm#GUID-80FD326A-705E-4CBC-8514-8600D723182C">主要功能</a></li>
-	      <li><a href="/zh-tw/web-appbuilder/create-apps/what-is-web-appbuilder.htm#GUID-0ECD95DE-A8F6-4169-B9CE-E85E45490A45">授權</a></li>
+	    <li><a href="/zh-tw/web-appbuilder/create-apps/what-is-web-appbuilder.htm#GUID-0ECD95DE-A8F6-4169-B9CE-E85E45490A45">授權</a></li>
         <li><a href="/zh-tw/web-appbuilder/create-apps/supported-browsers.htm">支援的瀏覽器</a></li>
       </ul>
-    <hr class="leader-half trailer-half">
-  </nav>
+      <hr class="leader-half trailer-half">
+    </nav>
+  </div>
 </div>
 
-<div class="grid-container leader-1 trailer-1">
+<div class="grid-container leader-1 trailer-2">
   <div class="column-24">
-    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would be better with wider, shorter images. -->
+    <!-- INSTRUCTIONS: If you want to use more or fewer than 4 cards, change "block-group-4-up" to the number you will use.  Keep in mind that using fewer cards would look better with wider, shorter images. -->
     <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
       <div class="card block">
         <figure class="card-image-wrap">
@@ -156,6 +152,22 @@ mobile: true
   </div>
 </div>
 
+<div class="panel panel-grey panel-no-border panel-no-padding">
+  <div class="grid-container padding-leader-2 padding-trailer-1 trailer-1">
+    <div class="column-24">
+      <h2 class="text-center trailer-0">發揮 ArcGIS 的最大功能</h2>
+      <p>
+        <ul class="list-plain sdk-home-nav-list text-center">
+          <li><a href="https://arcgis.com/" title="ArcGIS Online">ArcGIS Online</a></li>
+          <li><a href="http://links.esri.com/agol-help/enterprise" title="ArcGIS Enterprise">ArcGIS Enterprise</a></li>
+          <li><a href="http://links.esri.com/agol-help/pro-help" title="ArcGIS Pro">ArcGIS Pro</a></li>
+          <li><a href="http://marketplace.arcgis.com/" title="ArcGIS Marketplace">ArcGIS Marketplace</a></li>
+          <li><a href="https://developers.arcgis.com/" title="ArcGIS For Developers">ArcGIS for Developers</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
 
 <!-- Social -->
 <div class="panel panel-dark panel-no-border">
@@ -176,10 +188,9 @@ mobile: true
 <div class="panel panel-white panel-no-border panel-no-padding leader-1">
   <div class="grid-container padding-leader-1 padding-trailer-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">閱讀我們的部落格
-        <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/">更多文章</a>
+      <h2 class="text-rule padding-trailer-half">閱讀我們的部落格 <a class="btn btn-transparent btn-large right" href="http://blogs.esri.com/esri/arcgis/tag/web-appbuilder/">更多文章</a>
       </h2>
-      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/web-appbuilder/feed/" class="block-group block-group-3-up blogHpFeed">
+      <div data-post-limit="3" data-blog-feed-url="https://blogs.esri.com/esri/arcgis/tag/web-appbuilder/feed/" class="block-group block-group-3-up phone-block-group-1-up blogHpFeed">
 			  <!-- Blog Content goes here -->
 			</div>
     </div>
@@ -190,12 +201,45 @@ mobile: true
 <div class="panel panel-white panel-no-border panel-no-padding">
   <div class="grid-container padding-trailer-1 padding-leader-1">
     <div class="column-24">
-      <h2 class="text-rule padding-trailer-half">參與討論
-        <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/web-gis/web-appbuilder/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D">更多討論</a>
+      <h2 class="text-rule padding-trailer-half">參與討論 <a class="btn btn-transparent btn-large right" href="https://geonet.esri.com/community/gis/web-gis/web-appbuilder/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bthread%5D">更多討論</a>
       </h2>
-      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2150" class="block-group block-group-3-up geonetFeed">
+      <div data-post-limit="3" data-geonet-feed-url="https://geonet.esri.com/community/feeds/threads?community=2150" class="block-group block-group-3-up phone-block-group-1-up geonetFeed">
 				<!-- Forum content goes here -->
 			</div>
     </div>
   </div>
 </div>
+
+<div class="panel panel-dark panel-no-padding">
+  <div class="grid-container">
+    <div class="column-24 leader-1 trailer-1 text-center">
+      <div class="block-group block-group-4-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="block ">
+          <h5 class="icon-ui-review icon-ui-light-blue trailer-half"><a class="link-light-blue" href="https://learn.arcgis.com">參加深入課程</a></h5>
+          <p class="trailer-0">
+            尋找和完成練習，使用 ArcGIS 以解決實際的全球問題。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-layers icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://www.esri.com/training/main">尋找培訓課程</a></h5>
+          <p class="trailer-0">
+ 透過教師領導課程、Web 課程和研討會來深入瞭解 ArcGIS。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-question icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://support.esri.com/en/">取得技術支援</a></h5>
+          <p class="trailer-0">
+ 透過聊天、電子郵件或電話聯繫 Esri 支援。
+          </p>
+        </div>
+        <div class="block ">
+          <h5 class="icon-ui-notice-triangle icon-ui-light-blue trailer-half"><a class="link-light-blue" href="http://doc.arcgis.com/en/trust/system-status/">檢查系統健康</a></h5>
+          <p class="trailer-0">
+ 查看 ArcGIS Online 的狀態並回報問題。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/rssfeed.js" type="text/javascript"></script>

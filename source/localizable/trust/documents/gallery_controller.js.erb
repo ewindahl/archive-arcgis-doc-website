@@ -1,0 +1,40 @@
+'use strict';
+/* Controllers */
+
+var galleryApp = angular.module('galleryApp', ['ngAnimate']);
+galleryApp.controller('GalleryListCtrl', ['$scope', '$http', '$location',
+  function($scope, $http, $location) {
+    $http.get('/en/trust/documents/trust_items.json').success(function(data) {
+      $scope.galleryitems = data;
+    });
+    $scope.orderProp = 'age';
+
+    $scope.isEmpty = function(items) {
+      return angular.isArray(items) && items.length === 0;
+    };
+
+    $scope.resultsCount = function(items) {
+      if (angular.isArray(items) && items.length > 1) {
+        return items.length + " Results";
+      } else if (angular.isArray(items) && items.length === 1) {
+        return 1 + " Result";
+      } else {
+        return 0 + " Results";
+      };
+    };
+
+    // Check for prefilter
+    // url example to work http://bradley.arcgis.com:4567/en/gallery/#?p=arcmap
+    var prefilter = $location.search();
+
+    $scope.preFilterInit = function(){
+      if (angular.equals({},prefilter)) { //checking for empty object returned from $location.search
+        return "";
+      }
+      else {
+        return (prefilter.p);
+
+      }
+
+    }
+}]);

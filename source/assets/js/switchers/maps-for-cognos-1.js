@@ -51,7 +51,7 @@ $(document).ready(function () {
     }
 
     if (!isHome) {
-        $('main h1').after(val);
+        $('main.column-17 h1, div.content-section h1').after(val);
     } else {
         modHomeUrls(plat);
     }

@@ -1,0 +1,113 @@
+---
+title: Trust ArcGIS
+css:
+  - homepage
+  - /cdn/css/colorbox
+  - gallery
+
+js:
+  - /cdn/js/libs/jquery.colorbox-min
+  - //ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js
+  - //ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js
+  - /en/trust/documents/gallery_controller.js
+
+metatags:
+  - <META name="description" content="Trust ArcGIS Home page."><META name="last-modified" content="2014-09-22"><META name="product" content="arcgis-online"><META name="sub_category" content="Trust ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="Help Topic"><META name="sub_category_label" content="Trust ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="version" content="1.0"><META name="content_type" content="Help Topic"><META name="subject" content="TRUST,ONLINE,SECURITY,PRIVACY,COMPLIANCE"><META name="content-language" content="en">
+
+
+mobile: true
+
+---
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Trust ArcGIS</h1>
+        </div>
+        <div class="leader-1 text-right">
+          <a class="btn margin-left-1 btn-clear" href="/en/trust/system-status/">Check System Status</a>
+        </div>
+      </div>
+    </div>
+    <div class="column-24">
+      <select class="tablet-show select-full trailer-half js-select-nav">
+        <option value="/en/trust/">Trust</option>
+        <option value="/en/trust/system-status/">ArcGIS Online Status</option>
+        <option value="/en/trust/security/">Security</option>
+        <option value="/en/trust/privacy/">Privacy</option>
+        <option value="/en/trust/compliance/">Compliance</option>
+        <option value="/en/trust/documents/" selected>Documents</option>
+      </select>
+      <nav class="sub-nav-list tablet-hide">
+        <a class="sub-nav-link" href="/en/trust/">Trust</a>
+        <a class="sub-nav-link" href="/en/trust/system-status/">ArcGIS Online Status</a>
+        <a class="sub-nav-link" href="/en/trust/security/">Security</a>
+        <a class="sub-nav-link" href="/en/trust/privacy/">Privacy</a>
+        <a class="sub-nav-link" href="/en/trust/compliance/">Compliance</a>
+        <a class="sub-nav-link is-active" href="/en/trust/documents/">Documents</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="grid-container leader-1" ng-app="galleryApp" ng-controller="GalleryListCtrl">
+  <div class="column-24">
+    <nav id='filter-list' class="column-18 pre-3 post-3">
+      <label class="trailer-half">
+        Search
+        <input type="text" ng-model="query" placeholder="Enter Search Terms" class="input-search">
+      </label>
+      <div class="filter-by leader-half">
+        <label class="text-left padding-right-1 trailer-half tablet-block" >Filter By:</label>
+        <label class="text-left padding-right-1 trailer-half">
+          <select ng-model="platform" ng-init="platform=''">
+            <option value="" hidden>Platform</option>
+            <option value="all">All Platforms</option>
+            <option value="cloud">Cloud</option>
+            <option value="server">Server</option>
+            <option value="desktop">Desktop</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </label>
+        <label class="text-left padding-right-1 trailer-half">
+          <select ng-model="topic" ng-init="topic=''">
+            <option value="" hidden>Topic</option>
+            <option value="all">All Topics</option>
+            <option value="security">Security</option>
+            <option value="privacy">Privacy</option>
+            <option value="compliance">Compliance</option>
+          </select>
+        </label>
+        <label class="trailer-half right">
+          <a class="btn" ng-click="platform='';topic='';query='';">Reset</a>
+        </label>
+      </div>
+    </nav>
+
+
+    <div class="column-24">
+      <hr class="leader-half">
+      <div class="off-white centered-text top-border">
+        <a href="#" class="prev"></a>
+        <a href="#" class="next"></a>
+        <div gallery-list id="gallerycontent" class="block-group block-group-4-up">
+          <div class="item card block trailer-1" ng-repeat="item in (galleryResults = (galleryitems | filter:query | filter:topic | filter:platform | orderBy:orderProp))">
+            <div class="card-content">
+              <a href="{{item.url}}"><h5 class="trailer-half leader-0">{{item.name}}</h5></a>
+              <p>{{item.snippet}}</p>
+            </div>
+          </div>
+        </div>
+        <div ng-show="isEmpty(galleryResults)" class="empty-results panel trailer-1">
+          <h3 class="text-center">No results found.<%#= t("site.gallery.no_results")%></h3>
+          <div class="text-center">
+            <p>Would you like to start over?<%#= t("site.gallery.start_over")%></p>
+            <a class="btn" ng-click="platform='';topic='';query='';">Reset<%#= t("site.gallery.reset")%></a>
+          </div>
+        </div>
+        <div class="cycle-pager"></div>
+      </div>
+    </div>
+  </div>
+</div>

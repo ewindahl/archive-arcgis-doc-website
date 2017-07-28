@@ -2,6 +2,7 @@
 title: AppStudio for ArcGIS
 css:
   - homepage
+  - downloads
 
 js:
   - download
@@ -38,154 +39,55 @@ mobile: true
         <option value="/en/appstudio/">Home</option>
         <option value="/en/appstudio/create-apps/">Create Apps</option>
         <option value="/en/appstudio/extend-apps/">Extend Apps</option>
-        <option value="/en/appstudio/api-guide/">API Guide</option>
-        <option value="http://links.esri.com/appstudio/apireference">API Reference</option>
+        <option value="/en/appstudio/api/guide/">API Guide</option>
+        <option value="/en/appstudio/api/reference/">API Reference</option>
       </select>
       <nav class="sub-nav-list tablet-hide">
         <a class="sub-nav-link" href="/en/appstudio/">Home</a>
         <a class="sub-nav-link" href="/en/appstudio/create-apps/">Create Apps</a>
         <a class="sub-nav-link" href="/en/appstudio/extend-apps/">Extend Apps</a>
-        <a class="sub-nav-link" href="/en/appstudio/api-guide/">API Guide</a>
-        <a class="sub-nav-link" href="http://links.esri.com/appstudio/apireference">API Reference</a>
+        <a class="sub-nav-link" href="/en/appstudio/api/guide/">API Guide</a>
+        <a class="sub-nav-link" href="/en/appstudio/api/reference/">API Reference</a>
       </nav>
     </div>
   </div>
 </header>
-<div class="grid-container leader-2 download-section">
-  <div class="column-24">
-    <p>In addition to creating and building native apps, AppStudio for ArcGIS (Desktop Edition) allows you to do advanced customization or development work on your apps.</p>
-    <div class="download-section">
-      <div class="block-group block-group-4-up tablet-block-group-1-up secured-org downloads">
-        <div id="desktop-win64" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/win64.png" alt="AppStudio-Windows-x64" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudio-Windows-x64</h4>
-              <p class="text-light file-size">180 MB</p>
-              <%= generateVersionDropDown("appstudio~secured~windows64") %>
-            </div>
-          </div>
-        </div>
-        <div id="desktop-win32" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/win32.png" alt="AppStudio-Windows-x32" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudio-Windows-x86</h4>
-              <p class="text-light file-size">171 MB</p>
-              <%= generateVersionDropDown("appstudio~secured~windows86") %>
-            </div>
-          </div>
-        </div>
-        <div id="desktop-mac" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/apple.png" alt="AppStudio-Mac" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudio-Mac</h4>
-              <p class="text-light file-size">481 MB</p>
-              <%= generateVersionDropDown("appstudio~secured~mac") %>
-            </div>
-          </div>
-        </div>
-        <div id="desktop-linux" class="card card-shaped block card-last">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/linux.png" alt="AppStudio-Linux" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudio-Linux</h4>
-              <p class="text-light file-size">229 MB</p>
-              <%= generateVersionDropDown("appstudio~secured~linux") %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p>&nbsp;</p>
-      <p>Use AppStudio Player to preview apps on your devices before you build!</p>
 
-      <div class="block-group block-group-3-up tablet-block-group-1-up downloads">
-        <div id="player-win64" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/win64.png" alt="AppStudioPlayer-Windows-x64" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudioPlayer-Windows-x64</h4>
-              <p class="text-light file-size"></p>
-              <a class="btn download-link" data-file-size="<%= data.downloads["en"].appstudio.nonSecured.windows64.filesize %>" href="<%= data.downloads["en"].appstudio.nonSecured.windows64.url %>">Download</a>
-            </div>
-          </div>
-        </div>
-        <div id="player-win32" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/win32.png" alt="AppStudioPlayer-Windows-x32" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudioPlayer-Windows-x86</h4>
-              <p class="text-light file-size"></p>
-              <a class="btn download-link" data-file-size="<%= data.downloads["en"].appstudio.nonSecured.windows86.filesize %>" href="<%= data.downloads["en"].appstudio.nonSecured.windows86.url %>">Download</a>
-            </div>
-          </div>
-        </div>
-        <div id="player-mac" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/apple.png" alt="AppStudioPlayer-Mac" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudioPlayer-Mac</h4>
-              <p class="text-light file-size"></p>
-              <a class="btn download-link" data-file-size="<%= data.downloads["en"].appstudio.nonSecured.mac.filesize %>" href="<%= data.downloads["en"].appstudio.nonSecured.mac.url %>">Download</a>
-            </div>
-          </div>
-        </div>
+<div class="grid-container">
+  <div class="column-12 post-1 rtl-pre-0 trailer-2 secured-org downloads">
+    <header class="clearfix leader-1">
+      <h2 class="left trailer-half font-size-3" id="AppStudio">AppStudio</h2>
+      <div class="dropdown js-dropdown right">
+        <%= generateDevVersionDropDown("appstudio~secured~windows64") %>
       </div>
-      <p>&nbsp;</p>
-      <div class="block-group block-group-3-up tablet-block-group-1-up downloads">
-        <div id="player-linux" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/linux.png" alt="AppStudioPlayer-Linux" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudioPlayer-Linux</h4>
-              <p class="text-light file-size"></p>
-              <a class="btn download-link" data-file-size="<%= data.downloads["en"].appstudio.nonSecured.linux.filesize %>"  href="<%= data.downloads["en"].appstudio.nonSecured.linux.url %>">Download</a>
-            </div>
-          </div>
-        </div>
-        <div id="player-android" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/android.png" alt="AppStudioPlayer-Android" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudioPlayer-Android</h4>
-              <p class="text-light file-size">&nbsp;</p>
-              <a href="<%= data.downloads["en"].appstudio.nonSecured.android.url %>" class="btn">In Google Play</a>
-            </div>
-          </div>
-        </div>
-        <div id="player-ios" class="card card-shaped block">
-          <figure class="card-image-wrap">
-            <img src="../img/icons/apple.png" alt="AppStudioPlayer-iOS" class="card-image">
-          </figure>
-          <div class="card-content">
-            <div class="text-center">
-              <h4>AppStudioPlayer-iOS</h4>
-              <p class="text-light file-size">&nbsp;</p>
-              <a href="<%= data.downloads["en"].appstudio.nonSecured.ios.url %>" class="btn">In App Store</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    </header>
+    <hr class="leader-0 trailer-half">
+    <p class="trailer-half">Download AppStudio for ArcGIS (Desktop Edition) to do advanced customization or development work on your apps.</p>
+    <div class="clearfix">
+      <%= generateVersionButtons("appstudio~secured~windows64") %>
+      <%= generateVersionButtons("appstudio~secured~windows86") %>
+      <%= generateVersionButtons("appstudio~secured~mac") %>
+      <%= generateVersionButtons("appstudio~secured~linux") %>
+    </div>
+  </div>
+  <div class="column-11 trailer-2">
+    <header class="clearfix leader-1">
+      <h2 class="left trailer-half font-size-3" id="AppStudioPlayer">AppStudio Player</h2>
+      <!--div class="dropdown js-dropdown right">
+        <a href="#AppStudioPlayer" class="btn btn-clear btn-small" aria-expanded="false">Version 1.3</a>
+      </div-->
+    </header>
+    <hr class="leader-0 trailer-half">
+    <p class="trailer-half">Download AppStudio Player to preview apps on your devices before you build.</p>
+    <div class="clearfix">
+      <%= generateVersionButtons("appstudio~nonSecured~windows64") %>
+      <%= generateVersionButtons("appstudio~nonSecured~windows86") %>
+      <%= generateVersionButtons("appstudio~nonSecured~mac") %>
+      <%= generateVersionButtons("appstudio~nonSecured~linux") %>
+    </div>
+    <div class="leader-0">
+      <a href="<%= generateVersionButtons("appstudio~nonSecured~ios", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="/assets/img/badges/app_store.svg" style="vertical-align:middle; height:40px;"></a>
+      <a href="<%= generateVersionButtons("appstudio~nonSecured~android", false, true) %>" class="download-link" style="margin:.375rem 0"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="vertical-align:middle; height:58px;"></a>
     </div>
   </div>
 </div>
-<p>&nbsp;</p>
