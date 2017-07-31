@@ -1,7 +1,8 @@
 ---
-title: MOOC Download 
+title: MOOC Download
 css:
   - stat-page-specific
+  - homepage
 
 js:
   - download.js
@@ -13,94 +14,43 @@ mobile: true
 require_login: Yes
 
 ---
-<div class="navigation-bar blue">
-  <div class="container">
-    <header>
-      <h1>MOOC Download</h1>
-    </header>
-	 
+<header class="sub-nav sub-nav-blue">
+  <div class="grid-container">
+    <div class="column-24">
+      <div style="display:table;" class="sdk-home-banner">
+        <div class="sdk-home-banner-content">
+          <h1 class="sub-nav-title leader-1 trailer-1 text-white">Software downloads for MOOC attendees</h1>
+        </div>
+      </div>
+    </div>
   </div>
+</header>
+
+<div class="grid-container">
+<div class="column-24 leader-1">
+ <div class="block-group block-group-2-up tablet-block-group-2-up phone-block-group-1-up">
+   <div class="card block trailer-1">
+
+    <div class="card-content">
+      <p class="font-size-1 card-last">ArcGIS Pro 2.0</p>
+
+      <%= generateVersionButtons("pro~secured") %>
+    </div>
+  </div>
+  
+<!--  <div class="card block trailer-1">
+   <div class="card-content">
+     <p class="font-size-1 card-last">Drone2Map for ArcGIS</p>
+
+     <%= generateVersionButtons("drone2map~secured") %>
+   </div>
+ </div> -->
+ </div>
+
 </div>
 
-<!-- Page Content -->
-<div class="container">
 
-    <h2 class="leader"></h2>
-	 <div class="download-section container">
-        <div class="row downloads secured-org">
-				
-				<div class="column-12 tablet-column-23">
-                <div class="card">
-                    <div class="icon">
-                        <img src="/img/icon-download.png">
-                    </div>
-                    <div class="text">
-                        <h4>ArcGIS Pro</h4>
-                        <p class="small-grey file-size"> </p>
-							<%= generateVersionDropDown("pro~secured") %>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="column-12 tablet-column-23">
-                <div  class="card">
-                    <div class="icon">
-                        <img src="/img/icon-download.png">
-                    </div>
-                    <div class="text">
-                        <h4>Drone2Map</h4>
-                        <p class="small-grey file-size"> </p>
-                        <%= generateVersionDropDown("drone2map~secured") %>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        
-    </div>
-
-
-</div>  <!-- End of Container -->
 
 <script>
 	var allowedSubTypes = ["In House"]
 </script>
-<style>
-.download-section.container .downloads .card {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    margin: 35px auto;
-    min-width: 290px;
-}
-
-.download-section.container .downloads .card .icon {
-    display: flex;
-}
-.download-section.container .downloads .card .icon {
-    display: -ms-flexbox;
-}
-.download-section.container .downloads .card .text {
-    min-height: 100px;
-    padding-top: 55px;
-    text-align: center;
-    width: 100%;
-}
-
-.download-section.container .downloads .card img {
-    margin: -53px auto;
-}
-.download-section.container .downloads .column-6 {
-  float: left;
-  min-width: 302px;
-}
-
-.download-section.container .downloads .btn {
-  margin: 5px 5px 16px;
-}
-
-.download-section.container .downloads .dropdown::after {
-    right: 16px;
-    top: 16px;
-}
-</style>
