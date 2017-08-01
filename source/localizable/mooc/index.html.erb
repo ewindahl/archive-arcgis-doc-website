@@ -11,7 +11,7 @@ metatags:
   - <META name="robot" content="NOINDEX|NOFOLLOW">
 
 mobile: true
-require_login: Yes
+
 
 ---
 <header class="sub-nav sub-nav-blue">
@@ -36,6 +36,7 @@ require_login: Yes
         <div class="card-content">
           <div class="text-center">
             <h4>ArcGIS Pro</h4>
+            <p class="text-light file-size"><%= getAttrData("pro~secured", 'filesize') %></p>
             <%= generateVersionDropDown("pro~secured") %>
           </div>
         </div>
