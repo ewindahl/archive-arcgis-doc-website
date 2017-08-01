@@ -25,30 +25,38 @@ require_login: Yes
     </div>
   </div>
 </header>
-
 <div class="grid-container">
-<div class="column-24 leader-1">
- <div class="block-group block-group-2-up tablet-block-group-2-up phone-block-group-1-up">
-   <div class="card block trailer-1">
+  <div class="column-6 leader-2 trailer-2 pre-9 download-section">
+    <div class="block-group block-group-1-up tablet-block-group-1-up phone-block-group-1-up row downloads secured-org">
+      <div class="card card-shaped block trailer-1">
+        <figure class="card-image-wrap">
+          <img src="img/icon-download.png" alt="ArcGIS Pro" class="card-image">
+        </figure>
 
-    <div class="card-content">
-      <p class="font-size-1 card-last">ArcGIS Pro 2.0</p>
-
-      <%= generateVersionButtons("pro~secured") %>
+        <div class="card-content">
+          <div class="text-center">
+            <h4>ArcGIS Pro</h4>
+            <%= generateVersionDropDown("pro~secured") %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  
-<!--  <div class="card block trailer-1">
-   <div class="card-content">
-     <p class="font-size-1 card-last">Drone2Map for ArcGIS</p>
-
-     <%= generateVersionButtons("drone2map~secured") %>
-   </div>
- </div> -->
- </div>
-
 </div>
+ <!--  <div class="card block trailer-1">
+<div class="card-content">
+<p class="font-size-1 card-last">Drone2Map for ArcGIS</p>
 
+<div class="js-download  clearfix" data-sdk="drone2map-secured-1.2">
+       <div class="column-5 first-column">
+         <a href="#" class="btn btn-fill icon-ui-download download-link" style="margin:.375rem 0" data-filename="Drone2Map_12_158101.exe" data-folder="software/Drone2Map"></a>
+       </div>
+       <div class="column-6 text-gray font-size--3 last-column">
+         <p class="trailer-0 leader-half"><b>Size:</b> <span>270 MB</span></p>
+       </div>
+     </div>
+</div>
+</div> -->
 
 
 <script>
