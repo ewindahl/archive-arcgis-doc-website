@@ -4,7 +4,6 @@ css:
   - homepage
   - /cdn/css/colorbox
   - video-play-button
-  - slideshow
   - gallery
 
 js:
@@ -110,11 +109,9 @@ mobile: true
 <div class="grid-container leader-1 trailer-1" ng-app="galleryApp">
   <div class="column-24">
     <div><h3>Imagery Workflows<a class="btn btn-transparent btn-large right" href="gallery/">More workflows</a></h3></div>
-    <div class="slideshow off-white centered-text top-border" ng-controller="GalleryListCtrl">
-      <a href="#" class="prev"></a>
-      <a href="#" class="next"></a>
-      <div gallery-list class="gallerycontent slide block-group phone-block-group-1-up tablet-block-group-2-up block-group-4-up" ng-repeat="group in galleryitems">
-        <div class="item card block trailer-1" ng-repeat="item in group">
+    <div class="off-white centered-text top-border" ng-controller="GalleryListCtrl">
+      <div gallery-list class="gallerycontent block-group phone-block-group-1-up tablet-block-group-2-up block-group-4-up">
+        <div class="item card block trailer-1" ng-repeat="item in galleryitems | limitTo: 4">
           <figure class="card-image-wrap">
             <a href="/en/imagery/workflows/{{item.url}}" class="card-image">
               <img ng-src="{{item.imageUrl}}" alt="{{item.name}}" title="{{item.name}}">
